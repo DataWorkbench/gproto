@@ -62,48 +62,46 @@ public final class PBModelOpAudit {
 
     /**
      * <pre>
-     *	-- The operation of user behavior.
-     * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+     *The operation of user behavior.
+     * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
      * </pre>
      *
-     * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-     * @return The opName.
+     * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+     * @return The apiName.
      */
-    java.lang.String getOpName();
+    java.lang.String getApiName();
     /**
      * <pre>
-     *	-- The operation of user behavior.
-     * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+     *The operation of user behavior.
+     * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
      * </pre>
      *
-     * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for opName.
+     * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
      */
     com.google.protobuf.ByteString
-        getOpNameBytes();
+        getApiNameBytes();
 
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-     * FIXME: review it.
-     * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+     * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opType.
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
      */
-    int getOpTypeValue();
+    int getPermTypeValue();
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-     * FIXME: review it.
-     * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+     * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The opType.
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The permType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType();
 
     /**
      * <pre>
@@ -156,8 +154,8 @@ public final class PBModelOpAudit {
     private OpAudit() {
       userId_ = "";
       spaceId_ = "";
-      opName_ = "";
-      opType_ = 0;
+      apiName_ = "";
+      permType_ = 0;
       state_ = 0;
     }
 
@@ -206,13 +204,13 @@ public final class PBModelOpAudit {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              opName_ = s;
+              apiName_ = s;
               break;
             }
             case 32: {
               int rawValue = input.readEnum();
 
-              opType_ = rawValue;
+              permType_ = rawValue;
               break;
             }
             case 40: {
@@ -473,83 +471,81 @@ public final class PBModelOpAudit {
       }
     }
 
-    public static final int OP_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object opName_;
+    public static final int API_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object apiName_;
     /**
      * <pre>
-     *	-- The operation of user behavior.
-     * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+     *The operation of user behavior.
+     * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
      * </pre>
      *
-     * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-     * @return The opName.
+     * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+     * @return The apiName.
      */
     @java.lang.Override
-    public java.lang.String getOpName() {
-      java.lang.Object ref = opName_;
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        opName_ = s;
+        apiName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     *	-- The operation of user behavior.
-     * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+     *The operation of user behavior.
+     * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
      * </pre>
      *
-     * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for opName.
+     * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOpNameBytes() {
-      java.lang.Object ref = opName_;
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        opName_ = b;
+        apiName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int OP_TYPE_FIELD_NUMBER = 4;
-    private int opType_;
+    public static final int PERM_TYPE_FIELD_NUMBER = 4;
+    private int permType_;
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-     * FIXME: review it.
-     * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+     * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opType.
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
      */
-    @java.lang.Override public int getOpTypeValue() {
-      return opType_;
+    @java.lang.Override public int getPermTypeValue() {
+      return permType_;
     }
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-     * FIXME: review it.
-     * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+     * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The opType.
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The permType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
@@ -617,11 +613,11 @@ public final class PBModelOpAudit {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, opName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
-        output.writeEnum(4, opType_);
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
+        output.writeEnum(4, permType_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         output.writeEnum(5, state_);
@@ -644,12 +640,12 @@ public final class PBModelOpAudit {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, opName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, opType_);
+          .computeEnumSize(4, permType_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -678,9 +674,9 @@ public final class PBModelOpAudit {
           .equals(other.getUserId())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getOpName()
-          .equals(other.getOpName())) return false;
-      if (opType_ != other.opType_) return false;
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
+      if (permType_ != other.permType_) return false;
       if (state_ != other.state_) return false;
       if (getCreated()
           != other.getCreated()) return false;
@@ -699,10 +695,10 @@ public final class PBModelOpAudit {
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + OP_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOpName().hashCode();
-      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + opType_;
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
+      hash = (37 * hash) + PERM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + permType_;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
@@ -849,9 +845,9 @@ public final class PBModelOpAudit {
 
         spaceId_ = "";
 
-        opName_ = "";
+        apiName_ = "";
 
-        opType_ = 0;
+        permType_ = 0;
 
         state_ = 0;
 
@@ -885,8 +881,8 @@ public final class PBModelOpAudit {
         com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit result = new com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit(this);
         result.userId_ = userId_;
         result.spaceId_ = spaceId_;
-        result.opName_ = opName_;
-        result.opType_ = opType_;
+        result.apiName_ = apiName_;
+        result.permType_ = permType_;
         result.state_ = state_;
         result.created_ = created_;
         onBuilt();
@@ -945,12 +941,12 @@ public final class PBModelOpAudit {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getOpName().isEmpty()) {
-          opName_ = other.opName_;
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
           onChanged();
         }
-        if (other.opType_ != 0) {
-          setOpTypeValue(other.getOpTypeValue());
+        if (other.permType_ != 0) {
+          setPermTypeValue(other.getPermTypeValue());
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
@@ -1184,23 +1180,23 @@ public final class PBModelOpAudit {
         return this;
       }
 
-      private java.lang.Object opName_ = "";
+      private java.lang.Object apiName_ = "";
       /**
        * <pre>
-       *	-- The operation of user behavior.
-       * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+       *The operation of user behavior.
+       * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
        * </pre>
        *
-       * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-       * @return The opName.
+       * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+       * @return The apiName.
        */
-      public java.lang.String getOpName() {
-        java.lang.Object ref = opName_;
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          opName_ = s;
+          apiName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1208,21 +1204,21 @@ public final class PBModelOpAudit {
       }
       /**
        * <pre>
-       *	-- The operation of user behavior.
-       * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+       *The operation of user behavior.
+       * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
        * </pre>
        *
-       * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for opName.
+       * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiName.
        */
       public com.google.protobuf.ByteString
-          getOpNameBytes() {
-        java.lang.Object ref = opName_;
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          opName_ = b;
+          apiName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1230,141 +1226,136 @@ public final class PBModelOpAudit {
       }
       /**
        * <pre>
-       *	-- The operation of user behavior.
-       * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+       *The operation of user behavior.
+       * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
        * </pre>
        *
-       * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The opName to set.
+       * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The apiName to set.
        * @return This builder for chaining.
        */
-      public Builder setOpName(
+      public Builder setApiName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        opName_ = value;
+        apiName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *	-- The operation of user behavior.
-       * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+       *The operation of user behavior.
+       * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
        * </pre>
        *
-       * <code>string op_name = 3 [(.validator.field) = { ... }</code>
+       * <code>string api_name = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearOpName() {
+      public Builder clearApiName() {
         
-        opName_ = getDefaultInstance().getOpName();
+        apiName_ = getDefaultInstance().getApiName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *	-- The operation of user behavior.
-       * &#64;inject_tag: json:"op_name" gorm:"column:op_name;"
+       *The operation of user behavior.
+       * &#64;inject_tag: json:"api_name" gorm:"column:api_name;"
        * </pre>
        *
-       * <code>string op_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for opName to set.
+       * <code>string api_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiName to set.
        * @return This builder for chaining.
        */
-      public Builder setOpNameBytes(
+      public Builder setApiNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        opName_ = value;
+        apiName_ = value;
         onChanged();
         return this;
       }
 
-      private int opType_ = 0;
+      private int permType_ = 0;
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-       * FIXME: review it.
-       * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+       * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for opType.
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for permType.
        */
-      @java.lang.Override public int getOpTypeValue() {
-        return opType_;
+      @java.lang.Override public int getPermTypeValue() {
+        return permType_;
       }
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-       * FIXME: review it.
-       * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+       * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for opType to set.
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for permType to set.
        * @return This builder for chaining.
        */
-      public Builder setOpTypeValue(int value) {
+      public Builder setPermTypeValue(int value) {
         
-        opType_ = value;
+        permType_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-       * FIXME: review it.
-       * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+       * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @return The opType.
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @return The permType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-       * FIXME: review it.
-       * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+       * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The opType to set.
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The permType to set.
        * @return This builder for chaining.
        */
-      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
+      public Builder setPermType(com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        opType_ = value.getNumber();
+        permType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
-       * FIXME: review it.
-       * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
+       * &#64;inject_tag: json:"perm_type" gorm:"column:perm_type;"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearOpType() {
+      public Builder clearPermType() {
         
-        opType_ = 0;
+        permType_ = 0;
         onChanged();
         return this;
       }
@@ -1563,16 +1554,17 @@ public final class PBModelOpAudit {
       "\n\037proto/types/model/opaudit.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
       "lidator.proto\032\034proto/types/model/role.pr" +
-      "oto\"\223\002\n\007OpAudit\022\037\n\007user_id\030\001 \001(\tB\016\342\337\037\n\022\010" +
-      "\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022\034\n\007op_name\030\003 " +
-      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0223\n\007op_type\030\004 \001(\0162\023.mode" +
-      "l.APIDesc.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\0222\n\005state\030\005" +
-      " \001(\0162\024.model.OpAudit.StateB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"0\n\005State" +
-      "\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020" +
-      "\002Bi\n\"com.dataomnis.gproto.types.pbmodelB" +
-      "\016PBModelOpAuditP\000Z1github.com/DataWorkbe" +
-      "nch/gproto/xgo/types/pbmodelb\006proto3"
+      "oto\"\235\002\n\007OpAudit\022\037\n\007user_id\030\001 \001(\tB\016\342\337\037\n\022\010" +
+      "\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022\035\n\010api_name\030\003" +
+      " \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\tperm_type\030\004 \001(\0162\032.m" +
+      "odel.ProjectAPI.PermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "2\n\005state\030\005 \001(\0162\024.model.OpAudit.StateB\r\342\337" +
+      "\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\"0\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022" +
+      "\n\n\006Failed\020\002Bi\n\"com.dataomnis.gproto.type" +
+      "s.pbmodelB\016PBModelOpAuditP\000Z1github.com/" +
+      "DataWorkbench/gproto/xgo/types/pbmodelb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1585,7 +1577,7 @@ public final class PBModelOpAudit {
     internal_static_model_OpAudit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_OpAudit_descriptor,
-        new java.lang.String[] { "UserId", "SpaceId", "OpName", "OpType", "State", "Created", });
+        new java.lang.String[] { "UserId", "SpaceId", "ApiName", "PermType", "State", "Created", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

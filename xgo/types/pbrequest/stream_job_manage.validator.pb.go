@@ -82,8 +82,18 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_space_id() error {
 }
 
 func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateStreamJob", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
 	if !(len(this.CreatedBy) < 65) {
 		return protovalidator.FieldError1("CreateStreamJob", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -147,13 +157,6 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
-func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.CreateStreamJob
 func (this *CreateStreamJob) Validate() error {
 	if this == nil {
@@ -163,6 +166,9 @@ func (this *CreateStreamJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
@@ -175,9 +181,6 @@ func (this *CreateStreamJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil
@@ -653,6 +656,9 @@ func (this *ReleaseStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 }
 
 func (this *ReleaseStreamJob) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ReleaseStreamJob", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
 	if !(len(this.CreatedBy) < 65) {
 		return protovalidator.FieldError1("ReleaseStreamJob", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}

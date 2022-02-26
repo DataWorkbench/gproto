@@ -756,47 +756,45 @@ public final class PBRequestOpAuditManage {
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * FIXME:
+     * &#64;inject_tag: json:"perm_type" form:"perm_type"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
      */
-    int getTypeValue();
+    int getPermTypeValue();
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * FIXME:
+     * &#64;inject_tag: json:"perm_type" form:"perm_type"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-     * @return The type.
+     * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+     * @return The permType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType();
 
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"action" form:"action"
+     * &#64;inject_tag: json:"api_name" form:"api_name"
      * </pre>
      *
-     * <code>string action = 8 [(.validator.field) = { ... }</code>
-     * @return The action.
+     * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+     * @return The apiName.
      */
-    java.lang.String getAction();
+    java.lang.String getApiName();
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"action" form:"action"
+     * &#64;inject_tag: json:"api_name" form:"api_name"
      * </pre>
      *
-     * <code>string action = 8 [(.validator.field) = { ... }</code>
-     * @return The bytes for action.
+     * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
      */
     com.google.protobuf.ByteString
-        getActionBytes();
+        getApiNameBytes();
 
     /**
      * <pre>
@@ -863,8 +861,8 @@ public final class PBRequestOpAuditManage {
       sortBy_ = "";
       userId_ = "";
       spaceId_ = "";
-      type_ = 0;
-      action_ = "";
+      permType_ = 0;
+      apiName_ = "";
       state_ = 0;
     }
 
@@ -934,13 +932,13 @@ public final class PBRequestOpAuditManage {
             case 56: {
               int rawValue = input.readEnum();
 
-              type_ = rawValue;
+              permType_ = rawValue;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              action_ = s;
+              apiName_ = s;
               break;
             }
             case 72: {
@@ -1190,79 +1188,77 @@ public final class PBRequestOpAuditManage {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 7;
-    private int type_;
+    public static final int PERM_TYPE_FIELD_NUMBER = 7;
+    private int permType_;
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * FIXME:
+     * &#64;inject_tag: json:"perm_type" form:"perm_type"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    @java.lang.Override public int getPermTypeValue() {
+      return permType_;
     }
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * FIXME:
+     * &#64;inject_tag: json:"perm_type" form:"perm_type"
      * </pre>
      *
-     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-     * @return The type.
+     * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+     * @return The permType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
     }
 
-    public static final int ACTION_FIELD_NUMBER = 8;
-    private volatile java.lang.Object action_;
+    public static final int API_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object apiName_;
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"action" form:"action"
+     * &#64;inject_tag: json:"api_name" form:"api_name"
      * </pre>
      *
-     * <code>string action = 8 [(.validator.field) = { ... }</code>
-     * @return The action.
+     * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+     * @return The apiName.
      */
     @java.lang.Override
-    public java.lang.String getAction() {
-      java.lang.Object ref = action_;
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        action_ = s;
+        apiName_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Querying conditions. Not required.
-     * &#64;inject_tag: json:"action" form:"action"
+     * &#64;inject_tag: json:"api_name" form:"api_name"
      * </pre>
      *
-     * <code>string action = 8 [(.validator.field) = { ... }</code>
-     * @return The bytes for action.
+     * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getActionBytes() {
-      java.lang.Object ref = action_;
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        action_ = b;
+        apiName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1364,11 +1360,11 @@ public final class PBRequestOpAuditManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceId_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
-        output.writeEnum(7, type_);
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
+        output.writeEnum(7, permType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, action_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, apiName_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         output.writeEnum(9, state_);
@@ -1409,12 +1405,12 @@ public final class PBRequestOpAuditManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceId_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, type_);
+          .computeEnumSize(7, permType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, action_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, apiName_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -1455,9 +1451,9 @@ public final class PBRequestOpAuditManage {
           .equals(other.getUserId())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (type_ != other.type_) return false;
-      if (!getAction()
-          .equals(other.getAction())) return false;
+      if (permType_ != other.permType_) return false;
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
       if (state_ != other.state_) return false;
       if (getStarted()
           != other.getStarted()) return false;
@@ -1487,10 +1483,10 @@ public final class PBRequestOpAuditManage {
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + getAction().hashCode();
+      hash = (37 * hash) + PERM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + permType_;
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
       hash = (37 * hash) + STARTED_FIELD_NUMBER;
@@ -1648,9 +1644,9 @@ public final class PBRequestOpAuditManage {
 
         spaceId_ = "";
 
-        type_ = 0;
+        permType_ = 0;
 
-        action_ = "";
+        apiName_ = "";
 
         state_ = 0;
 
@@ -1690,8 +1686,8 @@ public final class PBRequestOpAuditManage {
         result.reverse_ = reverse_;
         result.userId_ = userId_;
         result.spaceId_ = spaceId_;
-        result.type_ = type_;
-        result.action_ = action_;
+        result.permType_ = permType_;
+        result.apiName_ = apiName_;
         result.state_ = state_;
         result.started_ = started_;
         result.ended_ = ended_;
@@ -1764,11 +1760,11 @@ public final class PBRequestOpAuditManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
+        if (other.permType_ != 0) {
+          setPermTypeValue(other.getPermTypeValue());
         }
-        if (!other.getAction().isEmpty()) {
-          action_ = other.action_;
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
           onChanged();
         }
         if (other.state_ != 0) {
@@ -2268,107 +2264,102 @@ public final class PBRequestOpAuditManage {
         return this;
       }
 
-      private int type_ = 0;
+      private int permType_ = 0;
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * FIXME:
+       * &#64;inject_tag: json:"perm_type" form:"perm_type"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
+       * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for permType.
        */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
+      @java.lang.Override public int getPermTypeValue() {
+        return permType_;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * FIXME:
+       * &#64;inject_tag: json:"perm_type" form:"perm_type"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
+       * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for permType to set.
        * @return This builder for chaining.
        */
-      public Builder setTypeValue(int value) {
+      public Builder setPermTypeValue(int value) {
         
-        type_ = value;
+        permType_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * FIXME:
+       * &#64;inject_tag: json:"perm_type" form:"perm_type"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-       * @return The type.
+       * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+       * @return The permType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * FIXME:
+       * &#64;inject_tag: json:"perm_type" form:"perm_type"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
+       * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The permType to set.
        * @return This builder for chaining.
        */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
+      public Builder setPermType(com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        type_ = value.getNumber();
+        permType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * FIXME:
+       * &#64;inject_tag: json:"perm_type" form:"perm_type"
        * </pre>
        *
-       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.ProjectAPI.PermType perm_type = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearType() {
+      public Builder clearPermType() {
         
-        type_ = 0;
+        permType_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object action_ = "";
+      private java.lang.Object apiName_ = "";
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"action" form:"action"
+       * &#64;inject_tag: json:"api_name" form:"api_name"
        * </pre>
        *
-       * <code>string action = 8 [(.validator.field) = { ... }</code>
-       * @return The action.
+       * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+       * @return The apiName.
        */
-      public java.lang.String getAction() {
-        java.lang.Object ref = action_;
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          action_ = s;
+          apiName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2377,20 +2368,20 @@ public final class PBRequestOpAuditManage {
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"action" form:"action"
+       * &#64;inject_tag: json:"api_name" form:"api_name"
        * </pre>
        *
-       * <code>string action = 8 [(.validator.field) = { ... }</code>
-       * @return The bytes for action.
+       * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiName.
        */
       public com.google.protobuf.ByteString
-          getActionBytes() {
-        java.lang.Object ref = action_;
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          action_ = b;
+          apiName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2399,56 +2390,56 @@ public final class PBRequestOpAuditManage {
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"action" form:"action"
+       * &#64;inject_tag: json:"api_name" form:"api_name"
        * </pre>
        *
-       * <code>string action = 8 [(.validator.field) = { ... }</code>
-       * @param value The action to set.
+       * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+       * @param value The apiName to set.
        * @return This builder for chaining.
        */
-      public Builder setAction(
+      public Builder setApiName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        action_ = value;
+        apiName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"action" form:"action"
+       * &#64;inject_tag: json:"api_name" form:"api_name"
        * </pre>
        *
-       * <code>string action = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_name = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearAction() {
+      public Builder clearApiName() {
         
-        action_ = getDefaultInstance().getAction();
+        apiName_ = getDefaultInstance().getApiName();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
-       * &#64;inject_tag: json:"action" form:"action"
+       * &#64;inject_tag: json:"api_name" form:"api_name"
        * </pre>
        *
-       * <code>string action = 8 [(.validator.field) = { ... }</code>
-       * @param value The bytes for action to set.
+       * <code>string api_name = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiName to set.
        * @return This builder for chaining.
        */
-      public Builder setActionBytes(
+      public Builder setApiNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        action_ = value;
+        apiName_ = value;
         onChanged();
         return this;
       }
@@ -2707,19 +2698,20 @@ public final class PBRequestOpAuditManage {
       "1/protoc-plugin/proto/defaults.proto\032\037pr" +
       "oto/types/model/opaudit.proto\032\034proto/typ" +
       "es/model/role.proto\"0\n\nAddOpAudit\022\"\n\004inf" +
-      "o\030\001 \001(\0132\016.model.OpAuditB\004\342\337\037\000\"\351\002\n\014ListOp" +
+      "o\030\001 \001(\0132\016.model.OpAuditB\004\342\337\037\000\"\367\002\n\014ListOp" +
       "Audits\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
       "\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022)\n\007s" +
       "ort_by\030\003 \001(\tB\030\342\337\037\024\022\022\302\001\017J\000J\002idJ\007created\022\025" +
       "\n\007reverse\030\004 \001(\010B\004\342\337\037\000\022\035\n\007user_id\030\005 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\210\002A\022\026\n\010space_id\030\006 \001(\tB\004\342\337\037\000\022.\n\004" +
-      "type\030\007 \001(\0162\023.model.APIDesc.KindB\013\342\337\037\007\022\005\332" +
-      "\001\002X\001\022\024\n\006action\030\010 \001(\tB\004\342\337\037\000\022)\n\005state\030\t \001(" +
-      "\0162\024.model.OpAudit.StateB\004\342\337\037\000\022\025\n\007started" +
-      "\030\n \001(\003B\004\342\337\037\000\022\023\n\005ended\030\013 \001(\003B\004\342\337\037\000Bu\n$com" +
-      ".dataomnis.gproto.types.pbrequestB\026PBReq" +
-      "uestOpAuditManageP\000Z3github.com/DataWork" +
-      "bench/gproto/xgo/types/pbrequestb\006proto3"
+      "\342\337\037\010\022\006\302\001\003\210\002A\022\026\n\010space_id\030\006 \001(\tB\004\342\337\037\000\022:\n\t" +
+      "perm_type\030\007 \001(\0162\032.model.ProjectAPI.PermT" +
+      "ypeB\013\342\337\037\007\022\005\332\001\002X\001\022\026\n\010api_name\030\010 \001(\tB\004\342\337\037\000" +
+      "\022)\n\005state\030\t \001(\0162\024.model.OpAudit.StateB\004\342" +
+      "\337\037\000\022\025\n\007started\030\n \001(\003B\004\342\337\037\000\022\023\n\005ended\030\013 \001(" +
+      "\003B\004\342\337\037\000Bu\n$com.dataomnis.gproto.types.pb" +
+      "requestB\026PBRequestOpAuditManageP\000Z3githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "equestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2740,7 +2732,7 @@ public final class PBRequestOpAuditManage {
     internal_static_request_ListOpAudits_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListOpAudits_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "UserId", "SpaceId", "Type", "Action", "State", "Started", "Ended", });
+        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "UserId", "SpaceId", "PermType", "ApiName", "State", "Started", "Ended", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

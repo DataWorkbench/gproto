@@ -332,9 +332,24 @@ func (this *CheckPermission) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_module_name() error {
-	if !(len(this.ModuleName) > 0) {
-		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'module_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ModuleName))
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_module_id() error {
+	if !(len(this.ModuleId) == 20) {
+		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
+	}
+	if !(strings.HasPrefix(this.ModuleId, "pmo-")) {
+		return protovalidator.FieldError1("CheckPermission", "the value of field 'module_id' must start with string 'pmo-'", this.ModuleId)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_CheckPermission_InEnums_PermType = map[pbmodel.ProjectAPI_PermType]bool{0: true, 1: true, 2: true}
+
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_perm_type() error {
+	if !(this.PermType > 0) {
+		return protovalidator.FieldError1("CheckPermission", "the value of field 'perm_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.PermType)))
+	}
+	if !(_xxx_xxx_Validator_CheckPermission_InEnums_PermType[this.PermType]) {
+		return protovalidator.FieldError1("CheckPermission", "the value of field 'perm_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.PermType)))
 	}
 	return nil
 }
@@ -342,18 +357,6 @@ func (this *CheckPermission) _xxx_xxx_Validator_Validate_module_name() error {
 func (this *CheckPermission) _xxx_xxx_Validator_Validate_api_name() error {
 	if !(len(this.ApiName) > 0) {
 		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_CheckPermission_InEnums_OpType = map[pbmodel.APIDesc_Kind]bool{0: true, 1: true, 2: true}
-
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_op_type() error {
-	if !(this.OpType > 0) {
-		return protovalidator.FieldError1("CheckPermission", "the value of field 'op_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpType)))
-	}
-	if !(_xxx_xxx_Validator_CheckPermission_InEnums_OpType[this.OpType]) {
-		return protovalidator.FieldError1("CheckPermission", "the value of field 'op_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpType)))
 	}
 	return nil
 }
@@ -376,13 +379,13 @@ func (this *CheckPermission) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_module_name(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_perm_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_op_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_system_roles(); err != nil {

@@ -7561,11 +7561,19 @@ public final class PBRequestSpaceManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The user id of this request.
+     * </pre>
+     *
      * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
      * @return The reqUserId.
      */
     java.lang.String getReqUserId();
     /**
+     * <pre>
+     * The user id of this request.
+     * </pre>
+     *
      * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for reqUserId.
      */
@@ -7573,11 +7581,19 @@ public final class PBRequestSpaceManage {
         getReqUserIdBytes();
 
     /**
+     * <pre>
+     * The workspace id of this request.
+     * </pre>
+     *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     java.lang.String getSpaceId();
     /**
+     * <pre>
+     * The workspace id of this request.
+     * </pre>
+     *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
@@ -7585,23 +7601,58 @@ public final class PBRequestSpaceManage {
         getSpaceIdBytes();
 
     /**
-     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-     * @return The moduleName.
+     * <pre>
+     * The id of module that this api belongs.
+     * </pre>
+     *
+     * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
      */
-    java.lang.String getModuleName();
+    java.lang.String getModuleId();
     /**
-     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleName.
+     * <pre>
+     * The id of module that this api belongs.
+     * </pre>
+     *
+     * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
      */
     com.google.protobuf.ByteString
-        getModuleNameBytes();
+        getModuleIdBytes();
 
     /**
+     * <pre>
+     * The permission type of this api.
+     * </pre>
+     *
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
+     */
+    int getPermTypeValue();
+    /**
+     * <pre>
+     * The permission type of this api.
+     * </pre>
+     *
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The permType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType();
+
+    /**
+     * <pre>
+     * The name of this api.
+     * </pre>
+     *
      * <code>string api_name = 5 [(.validator.field) = { ... }</code>
      * @return The apiName.
      */
     java.lang.String getApiName();
     /**
+     * <pre>
+     * The name of this api.
+     * </pre>
+     *
      * <code>string api_name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for apiName.
      */
@@ -7609,19 +7660,8 @@ public final class PBRequestSpaceManage {
         getApiNameBytes();
 
     /**
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opType.
-     */
-    int getOpTypeValue();
-    /**
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The opType.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType();
-
-    /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -7629,7 +7669,7 @@ public final class PBRequestSpaceManage {
     int getSystemRolesCount();
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -7644,7 +7684,7 @@ public final class PBRequestSpaceManage {
     getSystemRoles();
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -7653,7 +7693,7 @@ public final class PBRequestSpaceManage {
     getSystemRolesMap();
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -7664,7 +7704,7 @@ public final class PBRequestSpaceManage {
         boolean defaultValue);
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -7692,9 +7732,9 @@ public final class PBRequestSpaceManage {
     private CheckPermission() {
       reqUserId_ = "";
       spaceId_ = "";
-      moduleName_ = "";
+      moduleId_ = "";
+      permType_ = 0;
       apiName_ = "";
-      opType_ = 0;
     }
 
     @java.lang.Override
@@ -7743,13 +7783,13 @@ public final class PBRequestSpaceManage {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              moduleName_ = s;
+              moduleId_ = s;
               break;
             }
             case 32: {
               int rawValue = input.readEnum();
 
-              opType_ = rawValue;
+              permType_ = rawValue;
               break;
             }
             case 42: {
@@ -7818,6 +7858,10 @@ public final class PBRequestSpaceManage {
     public static final int REQ_USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object reqUserId_;
     /**
+     * <pre>
+     * The user id of this request.
+     * </pre>
+     *
      * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
      * @return The reqUserId.
      */
@@ -7835,6 +7879,10 @@ public final class PBRequestSpaceManage {
       }
     }
     /**
+     * <pre>
+     * The user id of this request.
+     * </pre>
+     *
      * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for reqUserId.
      */
@@ -7856,6 +7904,10 @@ public final class PBRequestSpaceManage {
     public static final int SPACE_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object spaceId_;
     /**
+     * <pre>
+     * The workspace id of this request.
+     * </pre>
+     *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
@@ -7873,6 +7925,10 @@ public final class PBRequestSpaceManage {
       }
     }
     /**
+     * <pre>
+     * The workspace id of this request.
+     * </pre>
+     *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
@@ -7891,47 +7947,86 @@ public final class PBRequestSpaceManage {
       }
     }
 
-    public static final int MODULE_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object moduleName_;
+    public static final int MODULE_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object moduleId_;
     /**
-     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-     * @return The moduleName.
+     * <pre>
+     * The id of module that this api belongs.
+     * </pre>
+     *
+     * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
      */
     @java.lang.Override
-    public java.lang.String getModuleName() {
-      java.lang.Object ref = moduleName_;
+    public java.lang.String getModuleId() {
+      java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        moduleName_ = s;
+        moduleId_ = s;
         return s;
       }
     }
     /**
-     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleName.
+     * <pre>
+     * The id of module that this api belongs.
+     * </pre>
+     *
+     * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getModuleNameBytes() {
-      java.lang.Object ref = moduleName_;
+        getModuleIdBytes() {
+      java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        moduleName_ = b;
+        moduleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int PERM_TYPE_FIELD_NUMBER = 4;
+    private int permType_;
+    /**
+     * <pre>
+     * The permission type of this api.
+     * </pre>
+     *
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
+     */
+    @java.lang.Override public int getPermTypeValue() {
+      return permType_;
+    }
+    /**
+     * <pre>
+     * The permission type of this api.
+     * </pre>
+     *
+     * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+     * @return The permType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
+    }
+
     public static final int API_NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object apiName_;
     /**
+     * <pre>
+     * The name of this api.
+     * </pre>
+     *
      * <code>string api_name = 5 [(.validator.field) = { ... }</code>
      * @return The apiName.
      */
@@ -7949,6 +8044,10 @@ public final class PBRequestSpaceManage {
       }
     }
     /**
+     * <pre>
+     * The name of this api.
+     * </pre>
+     *
      * <code>string api_name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for apiName.
      */
@@ -7965,25 +8064,6 @@ public final class PBRequestSpaceManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int OP_TYPE_FIELD_NUMBER = 4;
-    private int opType_;
-    /**
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opType.
-     */
-    @java.lang.Override public int getOpTypeValue() {
-      return opType_;
-    }
-    /**
-     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-     * @return The opType.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
     }
 
     public static final int SYSTEM_ROLES_FIELD_NUMBER = 6;
@@ -8014,7 +8094,7 @@ public final class PBRequestSpaceManage {
     }
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8036,7 +8116,7 @@ public final class PBRequestSpaceManage {
     }
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8048,7 +8128,7 @@ public final class PBRequestSpaceManage {
     }
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8065,7 +8145,7 @@ public final class PBRequestSpaceManage {
     }
     /**
      * <pre>
-     * key(role_id) =&gt; (IsAllowed)
+     * The permissions of system roles. key(role_id) =&gt; (Allowed)
      * </pre>
      *
      * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8103,11 +8183,11 @@ public final class PBRequestSpaceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleId_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
-        output.writeEnum(4, opType_);
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
+        output.writeEnum(4, permType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, apiName_);
@@ -8133,12 +8213,12 @@ public final class PBRequestSpaceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleId_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.PermTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, opType_);
+          .computeEnumSize(4, permType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, apiName_);
@@ -8172,11 +8252,11 @@ public final class PBRequestSpaceManage {
           .equals(other.getReqUserId())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getModuleName()
-          .equals(other.getModuleName())) return false;
+      if (!getModuleId()
+          .equals(other.getModuleId())) return false;
+      if (permType_ != other.permType_) return false;
       if (!getApiName()
           .equals(other.getApiName())) return false;
-      if (opType_ != other.opType_) return false;
       if (!internalGetSystemRoles().equals(
           other.internalGetSystemRoles())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8194,12 +8274,12 @@ public final class PBRequestSpaceManage {
       hash = (53 * hash) + getReqUserId().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getModuleName().hashCode();
+      hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleId().hashCode();
+      hash = (37 * hash) + PERM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + permType_;
       hash = (37 * hash) + API_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getApiName().hashCode();
-      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + opType_;
       if (!internalGetSystemRoles().getMap().isEmpty()) {
         hash = (37 * hash) + SYSTEM_ROLES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSystemRoles().hashCode();
@@ -8367,11 +8447,11 @@ public final class PBRequestSpaceManage {
 
         spaceId_ = "";
 
-        moduleName_ = "";
+        moduleId_ = "";
+
+        permType_ = 0;
 
         apiName_ = "";
-
-        opType_ = 0;
 
         internalGetMutableSystemRoles().clear();
         return this;
@@ -8403,9 +8483,9 @@ public final class PBRequestSpaceManage {
         int from_bitField0_ = bitField0_;
         result.reqUserId_ = reqUserId_;
         result.spaceId_ = spaceId_;
-        result.moduleName_ = moduleName_;
+        result.moduleId_ = moduleId_;
+        result.permType_ = permType_;
         result.apiName_ = apiName_;
-        result.opType_ = opType_;
         result.systemRoles_ = internalGetSystemRoles();
         result.systemRoles_.makeImmutable();
         onBuilt();
@@ -8464,16 +8544,16 @@ public final class PBRequestSpaceManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getModuleName().isEmpty()) {
-          moduleName_ = other.moduleName_;
+        if (!other.getModuleId().isEmpty()) {
+          moduleId_ = other.moduleId_;
           onChanged();
+        }
+        if (other.permType_ != 0) {
+          setPermTypeValue(other.getPermTypeValue());
         }
         if (!other.getApiName().isEmpty()) {
           apiName_ = other.apiName_;
           onChanged();
-        }
-        if (other.opType_ != 0) {
-          setOpTypeValue(other.getOpTypeValue());
         }
         internalGetMutableSystemRoles().mergeFrom(
             other.internalGetSystemRoles());
@@ -8509,6 +8589,10 @@ public final class PBRequestSpaceManage {
 
       private java.lang.Object reqUserId_ = "";
       /**
+       * <pre>
+       * The user id of this request.
+       * </pre>
+       *
        * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
        * @return The reqUserId.
        */
@@ -8525,6 +8609,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The user id of this request.
+       * </pre>
+       *
        * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for reqUserId.
        */
@@ -8542,6 +8630,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The user id of this request.
+       * </pre>
+       *
        * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The reqUserId to set.
        * @return This builder for chaining.
@@ -8557,6 +8649,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The user id of this request.
+       * </pre>
+       *
        * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -8567,6 +8663,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The user id of this request.
+       * </pre>
+       *
        * <code>string req_user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for reqUserId to set.
        * @return This builder for chaining.
@@ -8585,6 +8685,10 @@ public final class PBRequestSpaceManage {
 
       private java.lang.Object spaceId_ = "";
       /**
+       * <pre>
+       * The workspace id of this request.
+       * </pre>
+       *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @return The spaceId.
        */
@@ -8601,6 +8705,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The workspace id of this request.
+       * </pre>
+       *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceId.
        */
@@ -8618,6 +8726,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The workspace id of this request.
+       * </pre>
+       *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @param value The spaceId to set.
        * @return This builder for chaining.
@@ -8633,6 +8745,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The workspace id of this request.
+       * </pre>
+       *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -8643,6 +8759,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The workspace id of this request.
+       * </pre>
+       *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
@@ -8659,84 +8779,182 @@ public final class PBRequestSpaceManage {
         return this;
       }
 
-      private java.lang.Object moduleName_ = "";
+      private java.lang.Object moduleId_ = "";
       /**
-       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-       * @return The moduleName.
+       * <pre>
+       * The id of module that this api belongs.
+       * </pre>
+       *
+       * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+       * @return The moduleId.
        */
-      public java.lang.String getModuleName() {
-        java.lang.Object ref = moduleName_;
+      public java.lang.String getModuleId() {
+        java.lang.Object ref = moduleId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          moduleName_ = s;
+          moduleId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for moduleName.
+       * <pre>
+       * The id of module that this api belongs.
+       * </pre>
+       *
+       * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleId.
        */
       public com.google.protobuf.ByteString
-          getModuleNameBytes() {
-        java.lang.Object ref = moduleName_;
+          getModuleIdBytes() {
+        java.lang.Object ref = moduleId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          moduleName_ = b;
+          moduleId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The moduleName to set.
+       * <pre>
+       * The id of module that this api belongs.
+       * </pre>
+       *
+       * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The moduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleName(
+      public Builder setModuleId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        moduleName_ = value;
+        moduleId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+       * <pre>
+       * The id of module that this api belongs.
+       * </pre>
+       *
+       * <code>string module_id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearModuleName() {
+      public Builder clearModuleId() {
         
-        moduleName_ = getDefaultInstance().getModuleName();
+        moduleId_ = getDefaultInstance().getModuleId();
         onChanged();
         return this;
       }
       /**
-       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for moduleName to set.
+       * <pre>
+       * The id of module that this api belongs.
+       * </pre>
+       *
+       * <code>string module_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleNameBytes(
+      public Builder setModuleIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        moduleName_ = value;
+        moduleId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int permType_ = 0;
+      /**
+       * <pre>
+       * The permission type of this api.
+       * </pre>
+       *
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for permType.
+       */
+      @java.lang.Override public int getPermTypeValue() {
+        return permType_;
+      }
+      /**
+       * <pre>
+       * The permission type of this api.
+       * </pre>
+       *
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for permType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermTypeValue(int value) {
+        
+        permType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The permission type of this api.
+       * </pre>
+       *
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @return The permType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType getPermType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.valueOf(permType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The permission type of this api.
+       * </pre>
+       *
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The permType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermType(com.dataomnis.gproto.types.pbmodel.PBModelRole.ProjectAPI.PermType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        permType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The permission type of this api.
+       * </pre>
+       *
+       * <code>.model.ProjectAPI.PermType perm_type = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPermType() {
+        
+        permType_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object apiName_ = "";
       /**
+       * <pre>
+       * The name of this api.
+       * </pre>
+       *
        * <code>string api_name = 5 [(.validator.field) = { ... }</code>
        * @return The apiName.
        */
@@ -8753,6 +8971,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The name of this api.
+       * </pre>
+       *
        * <code>string api_name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for apiName.
        */
@@ -8770,6 +8992,10 @@ public final class PBRequestSpaceManage {
         }
       }
       /**
+       * <pre>
+       * The name of this api.
+       * </pre>
+       *
        * <code>string api_name = 5 [(.validator.field) = { ... }</code>
        * @param value The apiName to set.
        * @return This builder for chaining.
@@ -8785,6 +9011,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The name of this api.
+       * </pre>
+       *
        * <code>string api_name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -8795,6 +9025,10 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * The name of this api.
+       * </pre>
+       *
        * <code>string api_name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiName to set.
        * @return This builder for chaining.
@@ -8807,60 +9041,6 @@ public final class PBRequestSpaceManage {
   checkByteStringIsUtf8(value);
         
         apiName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int opType_ = 0;
-      /**
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for opType.
-       */
-      @java.lang.Override public int getOpTypeValue() {
-        return opType_;
-      }
-      /**
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for opType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpTypeValue(int value) {
-        
-        opType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @return The opType.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The opType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        opType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOpType() {
-        
-        opType_ = 0;
         onChanged();
         return this;
       }
@@ -8893,7 +9073,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8915,7 +9095,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8927,7 +9107,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8944,7 +9124,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8969,7 +9149,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -8992,7 +9172,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -9008,7 +9188,7 @@ public final class PBRequestSpaceManage {
       }
       /**
        * <pre>
-       * key(role_id) =&gt; (IsAllowed)
+       * The permissions of system roles. key(role_id) =&gt; (Allowed)
        * </pre>
        *
        * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
@@ -9155,19 +9335,19 @@ public final class PBRequestSpaceManage {
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337" +
       "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310" +
       "\001\200\010\":\n\021DescribeWorkspace\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\330\002\n\017CheckPermiss" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\346\002\n\017CheckPermiss" +
       "ion\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002" +
       "A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022!\n\013module_name\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\036\n\010a" +
-      "pi_name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\0223\n\007op_type\030\004" +
-      " \001(\0162\023.model.APIDesc.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022L\n\014system_roles\030\006 \003(\0132).request.CheckPe" +
-      "rmission.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\0322" +
-      "\n\020SystemRolesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\010:\0028\001Bs\n$com.dataomnis.gproto.types" +
-      ".pbrequestB\024PBRequestSpaceManageP\000Z3gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "requestb\006proto3"
+      "\022&\n\tmodule_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-" +
+      "\022<\n\tperm_type\030\004 \001(\0162\032.model.ProjectAPI.P" +
+      "ermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\036\n\010api_name\030\005 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\022L\n\014system_roles\030\006 \003(\0132).r" +
+      "equest.CheckPermission.SystemRolesEntryB" +
+      "\013\342\337\037\007\022\005\362\001\0020\000\0322\n\020SystemRolesEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001Bs\n$com.dataomni" +
+      "s.gproto.types.pbrequestB\024PBRequestSpace" +
+      "ManageP\000Z3github.com/DataWorkbench/gprot" +
+      "o/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9224,7 +9404,7 @@ public final class PBRequestSpaceManage {
     internal_static_request_CheckPermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CheckPermission_descriptor,
-        new java.lang.String[] { "ReqUserId", "SpaceId", "ModuleName", "ApiName", "OpType", "SystemRoles", });
+        new java.lang.String[] { "ReqUserId", "SpaceId", "ModuleId", "PermType", "ApiName", "SystemRoles", });
     internal_static_request_CheckPermission_SystemRolesEntry_descriptor =
       internal_static_request_CheckPermission_descriptor.getNestedTypes().get(0);
     internal_static_request_CheckPermission_SystemRolesEntry_fieldAccessorTable = new

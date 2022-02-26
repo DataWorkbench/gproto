@@ -83,8 +83,11 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_status() error {
 }
 
 func (this *DataSource) _xxx_xxx_Validator_Validate_created_by() error {
-	if !(len(this.CreatedBy) <= 64) {
-		return protovalidator.FieldError1("DataSource", "the byte length of field 'created_by' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.CreatedBy))
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("DataSource", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("DataSource", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }

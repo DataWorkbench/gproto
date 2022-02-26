@@ -18,37 +18,6 @@ public final class MemberManageGrpc {
   public static final String SERVICE_NAME = "spacemanager.MemberManage";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles,
-      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> getListSystemRolesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListSystemRoles",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles,
-      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> getListSystemRolesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> getListSystemRolesMethod;
-    if ((getListSystemRolesMethod = MemberManageGrpc.getListSystemRolesMethod) == null) {
-      synchronized (MemberManageGrpc.class) {
-        if ((getListSystemRolesMethod = MemberManageGrpc.getListSystemRolesMethod) == null) {
-          MemberManageGrpc.getListSystemRolesMethod = getListSystemRolesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSystemRoles"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles.getDefaultInstance()))
-              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("ListSystemRoles"))
-              .build();
-        }
-      }
-    }
-    return getListSystemRolesMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers,
       com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers> getListMembersMethod;
 
@@ -111,35 +80,35 @@ public final class MemberManageGrpc {
     return getDeleteMembersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddMembersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpsertMembers",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.class,
+      fullMethodName = SERVICE_NAME + '/' + "AddMembers",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod;
-    if ((getUpsertMembersMethod = MemberManageGrpc.getUpsertMembersMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddMembersMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddMembersMethod;
+    if ((getAddMembersMethod = MemberManageGrpc.getAddMembersMethod) == null) {
       synchronized (MemberManageGrpc.class) {
-        if ((getUpsertMembersMethod = MemberManageGrpc.getUpsertMembersMethod) == null) {
-          MemberManageGrpc.getUpsertMembersMethod = getUpsertMembersMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getAddMembersMethod = MemberManageGrpc.getAddMembersMethod) == null) {
+          MemberManageGrpc.getAddMembersMethod = getAddMembersMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertMembers"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddMembers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("UpsertMembers"))
+              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("AddMembers"))
               .build();
         }
       }
     }
-    return getUpsertMembersMethod;
+    return getAddMembersMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpdateMember,
@@ -171,6 +140,37 @@ public final class MemberManageGrpc {
       }
     }
     return getUpdateMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember,
+      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> getDescribeMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeMember",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember,
+      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> getDescribeMemberMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> getDescribeMemberMethod;
+    if ((getDescribeMemberMethod = MemberManageGrpc.getDescribeMemberMethod) == null) {
+      synchronized (MemberManageGrpc.class) {
+        if ((getDescribeMemberMethod = MemberManageGrpc.getDescribeMemberMethod) == null) {
+          MemberManageGrpc.getDescribeMemberMethod = getDescribeMemberMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeMember"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember.getDefaultInstance()))
+              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("DescribeMember"))
+              .build();
+        }
+      }
+    }
+    return getDescribeMemberMethod;
   }
 
   /**
@@ -225,13 +225,6 @@ public final class MemberManageGrpc {
   public static abstract class MemberManageImplBase implements io.grpc.BindableService {
 
     /**
-     */
-    public void listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSystemRolesMethod(), responseObserver);
-    }
-
-    /**
      * <pre>
      * ListMembers get a lists of workspace member.
      * </pre>
@@ -250,9 +243,9 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public void upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request,
+    public void addMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertMembersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddMembersMethod(), responseObserver);
     }
 
     /**
@@ -262,15 +255,15 @@ public final class MemberManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMemberMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void describeMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeMemberMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getListSystemRolesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles,
-                com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles>(
-                  this, METHODID_LIST_SYSTEM_ROLES)))
           .addMethod(
             getListMembersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -286,12 +279,12 @@ public final class MemberManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_MEMBERS)))
           .addMethod(
-            getUpsertMembersMethod(),
+            getAddMembersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_UPSERT_MEMBERS)))
+                  this, METHODID_ADD_MEMBERS)))
           .addMethod(
             getUpdateMemberMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -299,6 +292,13 @@ public final class MemberManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpdateMember,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_UPDATE_MEMBER)))
+          .addMethod(
+            getDescribeMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember,
+                com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember>(
+                  this, METHODID_DESCRIBE_MEMBER)))
           .build();
     }
   }
@@ -318,14 +318,6 @@ public final class MemberManageGrpc {
     protected MemberManageStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MemberManageStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public void listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListSystemRolesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -349,10 +341,10 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public void upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request,
+    public void addMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpsertMembersMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAddMembersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -361,6 +353,14 @@ public final class MemberManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMemberMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void describeMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeMemberMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -382,13 +382,6 @@ public final class MemberManageGrpc {
     }
 
     /**
-     */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSystemRolesMethod(), getCallOptions(), request);
-    }
-
-    /**
      * <pre>
      * ListMembers get a lists of workspace member.
      * </pre>
@@ -407,9 +400,9 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct addMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpsertMembersMethod(), getCallOptions(), request);
+          getChannel(), getAddMembersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -417,6 +410,13 @@ public final class MemberManageGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpdateMember request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember describeMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeMemberMethod(), getCallOptions(), request);
     }
   }
 
@@ -435,14 +435,6 @@ public final class MemberManageGrpc {
     protected MemberManageFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MemberManageFutureStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> listSystemRoles(
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListSystemRolesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -466,10 +458,10 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> upsertMembers(
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> addMembers(
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpsertMembersMethod(), getCallOptions()), request);
+          getChannel().newCall(getAddMembersMethod(), getCallOptions()), request);
     }
 
     /**
@@ -479,13 +471,21 @@ public final class MemberManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMemberMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember> describeMember(
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeMemberMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_LIST_SYSTEM_ROLES = 0;
-  private static final int METHODID_LIST_MEMBERS = 1;
-  private static final int METHODID_DELETE_MEMBERS = 2;
-  private static final int METHODID_UPSERT_MEMBERS = 3;
-  private static final int METHODID_UPDATE_MEMBER = 4;
+  private static final int METHODID_LIST_MEMBERS = 0;
+  private static final int METHODID_DELETE_MEMBERS = 1;
+  private static final int METHODID_ADD_MEMBERS = 2;
+  private static final int METHODID_UPDATE_MEMBER = 3;
+  private static final int METHODID_DESCRIBE_MEMBER = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -504,10 +504,6 @@ public final class MemberManageGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LIST_SYSTEM_ROLES:
-          serviceImpl.listSystemRoles((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles>) responseObserver);
-          break;
         case METHODID_LIST_MEMBERS:
           serviceImpl.listMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers>) responseObserver);
@@ -516,13 +512,17 @@ public final class MemberManageGrpc {
           serviceImpl.deleteMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_UPSERT_MEMBERS:
-          serviceImpl.upsertMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers) request,
+        case METHODID_ADD_MEMBERS:
+          serviceImpl.addMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_UPDATE_MEMBER:
           serviceImpl.updateMember((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpdateMember) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_MEMBER:
+          serviceImpl.describeMember((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.DescribeMember>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -585,11 +585,11 @@ public final class MemberManageGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MemberManageFileDescriptorSupplier())
-              .addMethod(getListSystemRolesMethod())
               .addMethod(getListMembersMethod())
               .addMethod(getDeleteMembersMethod())
-              .addMethod(getUpsertMembersMethod())
+              .addMethod(getAddMembersMethod())
               .addMethod(getUpdateMemberMethod())
+              .addMethod(getDescribeMemberMethod())
               .build();
         }
       }

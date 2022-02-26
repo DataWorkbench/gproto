@@ -9,42 +9,45 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.Module
-func (this *Module) SetDefaults() {
+// Set default value for message model.CustomRole
+func (this *CustomRole) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.PermissionSystemRole
-func (this *PermissionSystemRole) SetDefaults() {
+// Set default value for message model.SystemRole
+func (this *SystemRole) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.APIDesc
-func (this *APIDesc) SetDefaults() {
+// Set default value for message model.ProjectModule
+func (this *ProjectModule) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Module != nil {
-		if dt, ok := interface{}(this.Module).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }
 
-// Set default value for message model.PermissionModule
-func (this *PermissionModule) SetDefaults() {
+// Set default value for message model.ProjectAPI
+func (this *ProjectAPI) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Module != nil {
-		if dt, ok := interface{}(this.Module).(interface{ SetDefaults() }); ok {
+	return
+}
+
+// Set default value for message model.ProjectAPI.Permission
+func (this *ProjectAPI_Permission) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.SystemRole != nil {
+		if dt, ok := interface{}(this.SystemRole).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

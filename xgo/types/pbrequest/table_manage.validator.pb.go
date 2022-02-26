@@ -15,9 +15,22 @@ import (
 	strings "strings"
 )
 
-func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_table_id() error {
-	if !(len(this.TableId) < 21) {
-		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'table_id' must be less than '21'", protovalidator.StringByteLenToString(this.TableId))
+func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("CreateFlinkTable", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -25,16 +38,6 @@ func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_table_id() error {
 func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	return nil
-}
-
-func (this *CreateFlinkTable) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("CreateFlinkTable", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("CreateFlinkTable", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -82,13 +85,13 @@ func (this *CreateFlinkTable) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_table_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {

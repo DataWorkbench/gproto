@@ -81,6 +81,23 @@ func (this *CreateDataSource) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 func (this *CreateDataSource) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) > 1) {
 		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'name' must be greater than '1'", protovalidator.StringByteLenToString(this.Name))
@@ -117,25 +134,11 @@ func (this *CreateDataSource) _xxx_xxx_Validator_Validate_url() error {
 	return nil
 }
 
-func (this *CreateDataSource) _xxx_xxx_Validator_Validate_created_by() error {
-	if !(this.CreatedBy != "") {
-		return protovalidator.FieldError1("CreateDataSource", "the value of field 'created_by' must be not equal to ''", this.CreatedBy)
-	}
-	return nil
-}
-
 func (this *CreateDataSource) _xxx_xxx_Validator_Validate_last_connection() error {
 	if dt, ok := interface{}(this.LastConnection).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
-	}
-	return nil
-}
-
-func (this *CreateDataSource) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("CreateDataSource", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -146,6 +149,12 @@ func (this *CreateDataSource) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
@@ -160,13 +169,7 @@ func (this *CreateDataSource) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_last_connection(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

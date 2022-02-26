@@ -14,2484 +14,6 @@ public final class PBModelMember {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface RoleOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.Role)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The workspace id.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    java.lang.String getSpaceId();
-    /**
-     * <pre>
-     * The workspace id.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
-
-    /**
-     * <pre>
-     * The role id.
-     * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-     * </pre>
-     *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <pre>
-     * The role id.
-     * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-     * </pre>
-     *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <pre>
-     * The name of role. unique in a workspace.
-     * &#64;inject_tag: json:"name" gorm:"column:name;"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <pre>
-     * The name of role. unique in a workspace.
-     * &#64;inject_tag: json:"name" gorm:"column:name;"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <pre>
-     * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type getType();
-
-    /**
-     * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-     * @return The status.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status getStatus();
-
-    /**
-     * <pre>
-     * Description for this Role. Not required. Max Charset Length: 1024.
-     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-     * </pre>
-     *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
-     * @return The desc.
-     */
-    java.lang.String getDesc();
-    /**
-     * <pre>
-     * Description for this Role. Not required. Max Charset Length: 1024.
-     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-     * </pre>
-     *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for desc.
-     */
-    com.google.protobuf.ByteString
-        getDescBytes();
-
-    /**
-     * <pre>
-     * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-     * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-     * </pre>
-     *
-     * <code>string modules = 7;</code>
-     * @return The modules.
-     */
-    java.lang.String getModules();
-    /**
-     * <pre>
-     * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-     * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-     * </pre>
-     *
-     * <code>string modules = 7;</code>
-     * @return The bytes for modules.
-     */
-    com.google.protobuf.ByteString
-        getModulesBytes();
-
-    /**
-     * <pre>
-     * Allowed operation kind for specified modules.
-     * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-     * </pre>
-     *
-     * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opKind.
-     */
-    int getOpKindValue();
-    /**
-     * <pre>
-     * Allowed operation kind for specified modules.
-     * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-     * </pre>
-     *
-     * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-     * @return The opKind.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpKind();
-
-    /**
-     * <pre>
-     * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-     * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-     * </pre>
-     *
-     * <code>string apis = 9;</code>
-     * @return The apis.
-     */
-    java.lang.String getApis();
-    /**
-     * <pre>
-     * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-     * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-     * </pre>
-     *
-     * <code>string apis = 9;</code>
-     * @return The bytes for apis.
-     */
-    com.google.protobuf.ByteString
-        getApisBytes();
-
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 10;</code>
-     * @return The created.
-     */
-    long getCreated();
-
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 11;</code>
-     * @return The updated.
-     */
-    long getUpdated();
-  }
-  /**
-   * <pre>
-   * The Role schema.
-   * </pre>
-   *
-   * Protobuf type {@code model.Role}
-   */
-  public static final class Role extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.Role)
-      RoleOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Role.newBuilder() to construct.
-    private Role(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Role() {
-      spaceId_ = "";
-      id_ = "";
-      name_ = "";
-      type_ = 0;
-      status_ = 0;
-      desc_ = "";
-      modules_ = "";
-      opKind_ = 0;
-      apis_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Role();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Role(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desc_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              modules_ = s;
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              opKind_ = rawValue;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              apis_ = s;
-              break;
-            }
-            case 80: {
-
-              created_ = input.readInt64();
-              break;
-            }
-            case 88: {
-
-              updated_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelMember.internal_static_model_Role_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelMember.internal_static_model_Role_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.class, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code model.Role.Type}
-     */
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>TypeUnset = 0;</code>
-       */
-      TypeUnset(0),
-      /**
-       * <code>System = 1;</code>
-       */
-      System(1),
-      /**
-       * <code>Custom = 2;</code>
-       */
-      Custom(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>TypeUnset = 0;</code>
-       */
-      public static final int TypeUnset_VALUE = 0;
-      /**
-       * <code>System = 1;</code>
-       */
-      public static final int System_VALUE = 1;
-      /**
-       * <code>Custom = 2;</code>
-       */
-      public static final int Custom_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Type valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Type forNumber(int value) {
-        switch (value) {
-          case 0: return TypeUnset;
-          case 1: return System;
-          case 2: return Custom;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Type[] VALUES = values();
-
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Type(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.Role.Type)
-    }
-
-    /**
-     * Protobuf enum {@code model.Role.Status}
-     */
-    public enum Status
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>StatusUnset = 0;</code>
-       */
-      StatusUnset(0),
-      /**
-       * <code>Deleted = 1;</code>
-       */
-      Deleted(1),
-      /**
-       * <code>Enabled = 2;</code>
-       */
-      Enabled(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>StatusUnset = 0;</code>
-       */
-      public static final int StatusUnset_VALUE = 0;
-      /**
-       * <code>Deleted = 1;</code>
-       */
-      public static final int Deleted_VALUE = 1;
-      /**
-       * <code>Enabled = 2;</code>
-       */
-      public static final int Enabled_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Status valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Status forNumber(int value) {
-        switch (value) {
-          case 0: return StatusUnset;
-          case 1: return Deleted;
-          case 2: return Enabled;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Status>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Status> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-              public Status findValueByNumber(int number) {
-                return Status.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final Status[] VALUES = values();
-
-      public static Status valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Status(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.Role.Status)
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object spaceId_;
-    /**
-     * <pre>
-     * The workspace id.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The workspace id.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object id_;
-    /**
-     * <pre>
-     * The role id.
-     * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-     * </pre>
-     *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The role id.
-     * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-     * </pre>
-     *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * The name of role. unique in a workspace.
-     * &#64;inject_tag: json:"name" gorm:"column:name;"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The name of role. unique in a workspace.
-     * &#64;inject_tag: json:"name" gorm:"column:name;"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 4;
-    private int type_;
-    /**
-     * <pre>
-     * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type result = com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 5;
-    private int status_;
-    /**
-     * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
-    }
-    /**
-     * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-     * @return The status.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status result = com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.valueOf(status_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.UNRECOGNIZED : result;
-    }
-
-    public static final int DESC_FIELD_NUMBER = 6;
-    private volatile java.lang.Object desc_;
-    /**
-     * <pre>
-     * Description for this Role. Not required. Max Charset Length: 1024.
-     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-     * </pre>
-     *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
-     * @return The desc.
-     */
-    @java.lang.Override
-    public java.lang.String getDesc() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        desc_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Description for this Role. Not required. Max Charset Length: 1024.
-     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-     * </pre>
-     *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for desc.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDescBytes() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        desc_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MODULES_FIELD_NUMBER = 7;
-    private volatile java.lang.Object modules_;
-    /**
-     * <pre>
-     * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-     * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-     * </pre>
-     *
-     * <code>string modules = 7;</code>
-     * @return The modules.
-     */
-    @java.lang.Override
-    public java.lang.String getModules() {
-      java.lang.Object ref = modules_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        modules_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-     * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-     * </pre>
-     *
-     * <code>string modules = 7;</code>
-     * @return The bytes for modules.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getModulesBytes() {
-      java.lang.Object ref = modules_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        modules_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OP_KIND_FIELD_NUMBER = 8;
-    private int opKind_;
-    /**
-     * <pre>
-     * Allowed operation kind for specified modules.
-     * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-     * </pre>
-     *
-     * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for opKind.
-     */
-    @java.lang.Override public int getOpKindValue() {
-      return opKind_;
-    }
-    /**
-     * <pre>
-     * Allowed operation kind for specified modules.
-     * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-     * </pre>
-     *
-     * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-     * @return The opKind.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpKind() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opKind_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
-    }
-
-    public static final int APIS_FIELD_NUMBER = 9;
-    private volatile java.lang.Object apis_;
-    /**
-     * <pre>
-     * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-     * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-     * </pre>
-     *
-     * <code>string apis = 9;</code>
-     * @return The apis.
-     */
-    @java.lang.Override
-    public java.lang.String getApis() {
-      java.lang.Object ref = apis_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apis_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-     * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-     * </pre>
-     *
-     * <code>string apis = 9;</code>
-     * @return The bytes for apis.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getApisBytes() {
-      java.lang.Object ref = apis_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apis_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATED_FIELD_NUMBER = 10;
-    private long created_;
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 10;</code>
-     * @return The created.
-     */
-    @java.lang.Override
-    public long getCreated() {
-      return created_;
-    }
-
-    public static final int UPDATED_FIELD_NUMBER = 11;
-    private long updated_;
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 11;</code>
-     * @return The updated.
-     */
-    @java.lang.Override
-    public long getUpdated() {
-      return updated_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.TypeUnset.getNumber()) {
-        output.writeEnum(4, type_);
-      }
-      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.StatusUnset.getNumber()) {
-        output.writeEnum(5, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modules_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, modules_);
-      }
-      if (opKind_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
-        output.writeEnum(8, opKind_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apis_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, apis_);
-      }
-      if (created_ != 0L) {
-        output.writeInt64(10, created_);
-      }
-      if (updated_ != 0L) {
-        output.writeInt64(11, updated_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.TypeUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, type_);
-      }
-      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.StatusUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modules_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, modules_);
-      }
-      if (opKind_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, opKind_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apis_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, apis_);
-      }
-      if (created_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, created_);
-      }
-      if (updated_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, updated_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelMember.Role)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelMember.Role other = (com.dataomnis.gproto.types.pbmodel.PBModelMember.Role) obj;
-
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (type_ != other.type_) return false;
-      if (status_ != other.status_) return false;
-      if (!getDesc()
-          .equals(other.getDesc())) return false;
-      if (!getModules()
-          .equals(other.getModules())) return false;
-      if (opKind_ != other.opKind_) return false;
-      if (!getApis()
-          .equals(other.getApis())) return false;
-      if (getCreated()
-          != other.getCreated()) return false;
-      if (getUpdated()
-          != other.getUpdated()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      hash = (37 * hash) + DESC_FIELD_NUMBER;
-      hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + MODULES_FIELD_NUMBER;
-      hash = (53 * hash) + getModules().hashCode();
-      hash = (37 * hash) + OP_KIND_FIELD_NUMBER;
-      hash = (53 * hash) + opKind_;
-      hash = (37 * hash) + APIS_FIELD_NUMBER;
-      hash = (53 * hash) + getApis().hashCode();
-      hash = (37 * hash) + CREATED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreated());
-      hash = (37 * hash) + UPDATED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUpdated());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Role schema.
-     * </pre>
-     *
-     * Protobuf type {@code model.Role}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.Role)
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.internal_static_model_Role_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.internal_static_model_Role_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.class, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        spaceId_ = "";
-
-        id_ = "";
-
-        name_ = "";
-
-        type_ = 0;
-
-        status_ = 0;
-
-        desc_ = "";
-
-        modules_ = "";
-
-        opKind_ = 0;
-
-        apis_ = "";
-
-        created_ = 0L;
-
-        updated_ = 0L;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.internal_static_model_Role_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.Role result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.Role result = new com.dataomnis.gproto.types.pbmodel.PBModelMember.Role(this);
-        result.spaceId_ = spaceId_;
-        result.id_ = id_;
-        result.name_ = name_;
-        result.type_ = type_;
-        result.status_ = status_;
-        result.desc_ = desc_;
-        result.modules_ = modules_;
-        result.opKind_ = opKind_;
-        result.apis_ = apis_;
-        result.created_ = created_;
-        result.updated_ = updated_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelMember.Role) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelMember.Role)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance()) return this;
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
-        }
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
-        if (!other.getDesc().isEmpty()) {
-          desc_ = other.desc_;
-          onChanged();
-        }
-        if (!other.getModules().isEmpty()) {
-          modules_ = other.modules_;
-          onChanged();
-        }
-        if (other.opKind_ != 0) {
-          setOpKindValue(other.getOpKindValue());
-        }
-        if (!other.getApis().isEmpty()) {
-          apis_ = other.apis_;
-          onChanged();
-        }
-        if (other.getCreated() != 0L) {
-          setCreated(other.getCreated());
-        }
-        if (other.getUpdated() != 0L) {
-          setUpdated(other.getUpdated());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.Role parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelMember.Role) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object spaceId_ = "";
-      /**
-       * <pre>
-       * The workspace id.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The spaceId.
-       */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceId() {
-        
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object id_ = "";
-      /**
-       * <pre>
-       * The role id.
-       * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-       * </pre>
-       *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The role id.
-       * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-       * </pre>
-       *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The role id.
-       * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-       * </pre>
-       *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The role id.
-       * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-       * </pre>
-       *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The role id.
-       * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
-       * </pre>
-       *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <pre>
-       * The name of role. unique in a workspace.
-       * &#64;inject_tag: json:"name" gorm:"column:name;"
-       * </pre>
-       *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The name of role. unique in a workspace.
-       * &#64;inject_tag: json:"name" gorm:"column:name;"
-       * </pre>
-       *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The name of role. unique in a workspace.
-       * &#64;inject_tag: json:"name" gorm:"column:name;"
-       * </pre>
-       *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The name of role. unique in a workspace.
-       * &#64;inject_tag: json:"name" gorm:"column:name;"
-       * </pre>
-       *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The name of role. unique in a workspace.
-       * &#64;inject_tag: json:"name" gorm:"column:name;"
-       * </pre>
-       *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type result = com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Type. 1 =&gt; "System" 2 =&gt; "Custom"
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Role.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status getStatus() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status result = com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.valueOf(status_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Status value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Role.Status status = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object desc_ = "";
-      /**
-       * <pre>
-       * Description for this Role. Not required. Max Charset Length: 1024.
-       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-       * </pre>
-       *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
-       * @return The desc.
-       */
-      public java.lang.String getDesc() {
-        java.lang.Object ref = desc_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          desc_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Description for this Role. Not required. Max Charset Length: 1024.
-       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-       * </pre>
-       *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for desc.
-       */
-      public com.google.protobuf.ByteString
-          getDescBytes() {
-        java.lang.Object ref = desc_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          desc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Description for this Role. Not required. Max Charset Length: 1024.
-       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-       * </pre>
-       *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
-       * @param value The desc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDesc(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        desc_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Description for this Role. Not required. Max Charset Length: 1024.
-       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-       * </pre>
-       *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDesc() {
-        
-        desc_ = getDefaultInstance().getDesc();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Description for this Role. Not required. Max Charset Length: 1024.
-       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
-       * </pre>
-       *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for desc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDescBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        desc_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object modules_ = "";
-      /**
-       * <pre>
-       * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-       * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-       * </pre>
-       *
-       * <code>string modules = 7;</code>
-       * @return The modules.
-       */
-      public java.lang.String getModules() {
-        java.lang.Object ref = modules_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          modules_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-       * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-       * </pre>
-       *
-       * <code>string modules = 7;</code>
-       * @return The bytes for modules.
-       */
-      public com.google.protobuf.ByteString
-          getModulesBytes() {
-        java.lang.Object ref = modules_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          modules_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-       * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-       * </pre>
-       *
-       * <code>string modules = 7;</code>
-       * @param value The modules to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModules(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        modules_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-       * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-       * </pre>
-       *
-       * <code>string modules = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearModules() {
-        
-        modules_ = getDefaultInstance().getModules();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-       * &#64;inject_tag: json:"modules" gorm:"column:modules;"
-       * </pre>
-       *
-       * <code>string modules = 7;</code>
-       * @param value The bytes for modules to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModulesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        modules_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int opKind_ = 0;
-      /**
-       * <pre>
-       * Allowed operation kind for specified modules.
-       * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-       * </pre>
-       *
-       * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for opKind.
-       */
-      @java.lang.Override public int getOpKindValue() {
-        return opKind_;
-      }
-      /**
-       * <pre>
-       * Allowed operation kind for specified modules.
-       * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-       * </pre>
-       *
-       * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for opKind to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpKindValue(int value) {
-        
-        opKind_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Allowed operation kind for specified modules.
-       * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-       * </pre>
-       *
-       * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-       * @return The opKind.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpKind() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opKind_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Allowed operation kind for specified modules.
-       * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-       * </pre>
-       *
-       * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-       * @param value The opKind to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpKind(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        opKind_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Allowed operation kind for specified modules.
-       * &#64;inject_tag: json:"op_kind" gorm:"column:op_kind;"
-       * </pre>
-       *
-       * <code>.model.APIDesc.Kind op_kind = 8 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOpKind() {
-        
-        opKind_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object apis_ = "";
-      /**
-       * <pre>
-       * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-       * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-       * </pre>
-       *
-       * <code>string apis = 9;</code>
-       * @return The apis.
-       */
-      public java.lang.String getApis() {
-        java.lang.Object ref = apis_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apis_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-       * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-       * </pre>
-       *
-       * <code>string apis = 9;</code>
-       * @return The bytes for apis.
-       */
-      public com.google.protobuf.ByteString
-          getApisBytes() {
-        java.lang.Object ref = apis_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apis_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-       * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-       * </pre>
-       *
-       * <code>string apis = 9;</code>
-       * @param value The apis to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApis(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        apis_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-       * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-       * </pre>
-       *
-       * <code>string apis = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearApis() {
-        
-        apis_ = getDefaultInstance().getApis();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-       * &#64;inject_tag: json:"apis" gorm:"column:apis;"
-       * </pre>
-       *
-       * <code>string apis = 9;</code>
-       * @param value The bytes for apis to set.
-       * @return This builder for chaining.
-       */
-      public Builder setApisBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        apis_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long created_ ;
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 10;</code>
-       * @return The created.
-       */
-      @java.lang.Override
-      public long getCreated() {
-        return created_;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 10;</code>
-       * @param value The created to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreated(long value) {
-        
-        created_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreated() {
-        
-        created_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long updated_ ;
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 11;</code>
-       * @return The updated.
-       */
-      @java.lang.Override
-      public long getUpdated() {
-        return updated_;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 11;</code>
-       * @param value The updated to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdated(long value) {
-        
-        updated_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdated() {
-        
-        updated_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.Role)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.Role)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelMember.Role DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelMember.Role();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Role>
-        PARSER = new com.google.protobuf.AbstractParser<Role>() {
-      @java.lang.Override
-      public Role parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Role(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Role> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Role> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface MemberOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.Member)
       com.google.protobuf.MessageOrBuilder {
@@ -2522,7 +44,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
      * </pre>
      *
-     * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     java.lang.String getUserId();
@@ -2532,7 +54,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
      * </pre>
      *
-     * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -2540,33 +62,11 @@ public final class PBModelMember {
 
     /**
      * <pre>
-     * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-     * </pre>
-     *
-     * <code>string role_ids = 4;</code>
-     * @return The roleIds.
-     */
-    java.lang.String getRoleIds();
-    /**
-     * <pre>
-     * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-     * </pre>
-     *
-     * <code>string role_ids = 4;</code>
-     * @return The bytes for roleIds.
-     */
-    com.google.protobuf.ByteString
-        getRoleIdsBytes();
-
-    /**
-     * <pre>
      * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
@@ -2576,10 +76,102 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
      * @return The status.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelMember.Member.Status getStatus();
+
+    /**
+     * <pre>
+     * Description for member. Max charset: 1024.
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    java.lang.String getDesc();
+    /**
+     * <pre>
+     * Description for member. Max charset: 1024.
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    com.google.protobuf.ByteString
+        getDescBytes();
+
+    /**
+     * <pre>
+     * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+     * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+     * </pre>
+     *
+     * <code>string system_role_ids = 5;</code>
+     * @return The systemRoleIds.
+     */
+    java.lang.String getSystemRoleIds();
+    /**
+     * <pre>
+     * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+     * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+     * </pre>
+     *
+     * <code>string system_role_ids = 5;</code>
+     * @return The bytes for systemRoleIds.
+     */
+    com.google.protobuf.ByteString
+        getSystemRoleIdsBytes();
+
+    /**
+     * <pre>
+     * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+     * A member can have up to 100 custom roles.
+     * TODO: reserved field. unused on present.
+     * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+     * </pre>
+     *
+     * <code>string custom_role_ids = 6;</code>
+     * @return The customRoleIds.
+     */
+    java.lang.String getCustomRoleIds();
+    /**
+     * <pre>
+     * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+     * A member can have up to 100 custom roles.
+     * TODO: reserved field. unused on present.
+     * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+     * </pre>
+     *
+     * <code>string custom_role_ids = 6;</code>
+     * @return The bytes for customRoleIds.
+     */
+    com.google.protobuf.ByteString
+        getCustomRoleIdsBytes();
+
+    /**
+     * <pre>
+     * The user-id of created this network.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * The user-id of created this network.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
 
     /**
      * <pre>
@@ -2587,7 +179,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     long getCreated();
@@ -2598,7 +190,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     long getUpdated();
@@ -2609,7 +201,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      * @return Whether the userInfo field is set.
      */
     boolean hasUserInfo();
@@ -2619,7 +211,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      * @return The userInfo.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getUserInfo();
@@ -2629,57 +221,57 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder();
 
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> 
-        getRolesList();
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> 
+        getSystemRolesList();
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index);
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole getSystemRoles(int index);
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
-    int getRolesCount();
+    int getSystemRolesCount();
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
-        getRolesOrBuilderList();
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder> 
+        getSystemRolesOrBuilderList();
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder getSystemRolesOrBuilder(
         int index);
   }
   /**
@@ -2701,9 +293,12 @@ public final class PBModelMember {
     private Member() {
       spaceId_ = "";
       userId_ = "";
-      roleIds_ = "";
       status_ = 0;
-      roles_ = java.util.Collections.emptyList();
+      desc_ = "";
+      systemRoleIds_ = "";
+      customRoleIds_ = "";
+      createdBy_ = "";
+      systemRoles_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2743,35 +338,53 @@ public final class PBModelMember {
               spaceId_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              roleIds_ = s;
-              break;
-            }
-            case 40: {
+            case 24: {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
               break;
             }
-            case 48: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              desc_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              systemRoleIds_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              customRoleIds_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 64: {
 
               created_ = input.readInt64();
               break;
             }
-            case 56: {
+            case 72: {
 
               updated_ = input.readInt64();
               break;
             }
-            case 66: {
+            case 82: {
               com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder subBuilder = null;
               if (userInfo_ != null) {
                 subBuilder = userInfo_.toBuilder();
@@ -2784,13 +397,13 @@ public final class PBModelMember {
 
               break;
             }
-            case 74: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role>();
+                systemRoles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              roles_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.parser(), extensionRegistry));
+              systemRoles_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -2809,7 +422,7 @@ public final class PBModelMember {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roles_ = java.util.Collections.unmodifiableList(roles_);
+          systemRoles_ = java.util.Collections.unmodifiableList(systemRoles_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2991,7 +604,7 @@ public final class PBModelMember {
       }
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 3;
+    public static final int USER_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object userId_;
     /**
      * <pre>
@@ -2999,7 +612,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
      * </pre>
      *
-     * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -3021,7 +634,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
      * </pre>
      *
-     * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -3039,55 +652,7 @@ public final class PBModelMember {
       }
     }
 
-    public static final int ROLE_IDS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object roleIds_;
-    /**
-     * <pre>
-     * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-     * </pre>
-     *
-     * <code>string role_ids = 4;</code>
-     * @return The roleIds.
-     */
-    @java.lang.Override
-    public java.lang.String getRoleIds() {
-      java.lang.Object ref = roleIds_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        roleIds_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-     * </pre>
-     *
-     * <code>string role_ids = 4;</code>
-     * @return The bytes for roleIds.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRoleIdsBytes() {
-      java.lang.Object ref = roleIds_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        roleIds_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 5;
+    public static final int STATUS_FIELD_NUMBER = 3;
     private int status_;
     /**
      * <pre>
@@ -3095,7 +660,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -3107,7 +672,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
      * @return The status.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelMember.Member.Status getStatus() {
@@ -3116,7 +681,203 @@ public final class PBModelMember {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelMember.Member.Status.UNRECOGNIZED : result;
     }
 
-    public static final int CREATED_FIELD_NUMBER = 6;
+    public static final int DESC_FIELD_NUMBER = 4;
+    private volatile java.lang.Object desc_;
+    /**
+     * <pre>
+     * Description for member. Max charset: 1024.
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Description for member. Max charset: 1024.
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SYSTEM_ROLE_IDS_FIELD_NUMBER = 5;
+    private volatile java.lang.Object systemRoleIds_;
+    /**
+     * <pre>
+     * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+     * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+     * </pre>
+     *
+     * <code>string system_role_ids = 5;</code>
+     * @return The systemRoleIds.
+     */
+    @java.lang.Override
+    public java.lang.String getSystemRoleIds() {
+      java.lang.Object ref = systemRoleIds_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemRoleIds_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+     * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+     * </pre>
+     *
+     * <code>string system_role_ids = 5;</code>
+     * @return The bytes for systemRoleIds.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSystemRoleIdsBytes() {
+      java.lang.Object ref = systemRoleIds_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        systemRoleIds_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CUSTOM_ROLE_IDS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object customRoleIds_;
+    /**
+     * <pre>
+     * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+     * A member can have up to 100 custom roles.
+     * TODO: reserved field. unused on present.
+     * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+     * </pre>
+     *
+     * <code>string custom_role_ids = 6;</code>
+     * @return The customRoleIds.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomRoleIds() {
+      java.lang.Object ref = customRoleIds_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customRoleIds_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+     * A member can have up to 100 custom roles.
+     * TODO: reserved field. unused on present.
+     * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+     * </pre>
+     *
+     * <code>string custom_role_ids = 6;</code>
+     * @return The bytes for customRoleIds.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomRoleIdsBytes() {
+      java.lang.Object ref = customRoleIds_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customRoleIds_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * The user-id of created this network.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of created this network.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_FIELD_NUMBER = 8;
     private long created_;
     /**
      * <pre>
@@ -3124,7 +885,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     @java.lang.Override
@@ -3132,7 +893,7 @@ public final class PBModelMember {
       return created_;
     }
 
-    public static final int UPDATED_FIELD_NUMBER = 7;
+    public static final int UPDATED_FIELD_NUMBER = 9;
     private long updated_;
     /**
      * <pre>
@@ -3140,7 +901,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     @java.lang.Override
@@ -3148,7 +909,7 @@ public final class PBModelMember {
       return updated_;
     }
 
-    public static final int USER_INFO_FIELD_NUMBER = 8;
+    public static final int USER_INFO_FIELD_NUMBER = 10;
     private com.dataomnis.gproto.types.pbmodel.PBModelAccount.User userInfo_;
     /**
      * <pre>
@@ -3156,7 +917,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      * @return Whether the userInfo field is set.
      */
     @java.lang.Override
@@ -3169,7 +930,7 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      * @return The userInfo.
      */
     @java.lang.Override
@@ -3182,76 +943,76 @@ public final class PBModelMember {
      * &#64;inject_tag: json:"user_info" gorm:"-"
      * </pre>
      *
-     * <code>.model.User user_info = 8;</code>
+     * <code>.model.User user_info = 10;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder() {
       return getUserInfo();
     }
 
-    public static final int ROLES_FIELD_NUMBER = 9;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> roles_;
+    public static final int SYSTEM_ROLES_FIELD_NUMBER = 11;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> systemRoles_;
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> getRolesList() {
-      return roles_;
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> getSystemRolesList() {
+      return systemRoles_;
     }
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
-        getRolesOrBuilderList() {
-      return roles_;
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder> 
+        getSystemRolesOrBuilderList() {
+      return systemRoles_;
     }
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
     @java.lang.Override
-    public int getRolesCount() {
-      return roles_.size();
+    public int getSystemRolesCount() {
+      return systemRoles_.size();
     }
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index) {
-      return roles_.get(index);
+    public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole getSystemRoles(int index) {
+      return systemRoles_.get(index);
     }
     /**
      * <pre>
-     * The lis of role info.
-     * &#64;inject_tag: json:"roles" gorm:"-"
+     * The lis of system role info.
+     * &#64;inject_tag: json:"system_roles" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.Role roles = 9;</code>
+     * <code>repeated .model.SystemRole system_roles = 11;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder getSystemRolesOrBuilder(
         int index) {
-      return roles_.get(index);
+      return systemRoles_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3272,25 +1033,34 @@ public final class PBModelMember {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleIds_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleIds_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Member.Status.StatusUnset.getNumber()) {
-        output.writeEnum(5, status_);
+        output.writeEnum(3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemRoleIds_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, systemRoleIds_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customRoleIds_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, customRoleIds_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdBy_);
       }
       if (created_ != 0L) {
-        output.writeInt64(6, created_);
+        output.writeInt64(8, created_);
       }
       if (updated_ != 0L) {
-        output.writeInt64(7, updated_);
+        output.writeInt64(9, updated_);
       }
       if (userInfo_ != null) {
-        output.writeMessage(8, getUserInfo());
+        output.writeMessage(10, getUserInfo());
       }
-      for (int i = 0; i < roles_.size(); i++) {
-        output.writeMessage(9, roles_.get(i));
+      for (int i = 0; i < systemRoles_.size(); i++) {
+        output.writeMessage(11, systemRoles_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3305,30 +1075,39 @@ public final class PBModelMember {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleIds_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleIds_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMember.Member.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, status_);
+          .computeEnumSize(3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemRoleIds_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, systemRoleIds_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customRoleIds_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, customRoleIds_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdBy_);
       }
       if (created_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, created_);
+          .computeInt64Size(8, created_);
       }
       if (updated_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, updated_);
+          .computeInt64Size(9, updated_);
       }
       if (userInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getUserInfo());
+          .computeMessageSize(10, getUserInfo());
       }
-      for (int i = 0; i < roles_.size(); i++) {
+      for (int i = 0; i < systemRoles_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, roles_.get(i));
+          .computeMessageSize(11, systemRoles_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3349,9 +1128,15 @@ public final class PBModelMember {
           .equals(other.getSpaceId())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getRoleIds()
-          .equals(other.getRoleIds())) return false;
       if (status_ != other.status_) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
+      if (!getSystemRoleIds()
+          .equals(other.getSystemRoleIds())) return false;
+      if (!getCustomRoleIds()
+          .equals(other.getCustomRoleIds())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (getCreated()
           != other.getCreated()) return false;
       if (getUpdated()
@@ -3361,8 +1146,8 @@ public final class PBModelMember {
         if (!getUserInfo()
             .equals(other.getUserInfo())) return false;
       }
-      if (!getRolesList()
-          .equals(other.getRolesList())) return false;
+      if (!getSystemRolesList()
+          .equals(other.getSystemRolesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3378,10 +1163,16 @@ public final class PBModelMember {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + ROLE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getRoleIds().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + SYSTEM_ROLE_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemRoleIds().hashCode();
+      hash = (37 * hash) + CUSTOM_ROLE_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomRoleIds().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
@@ -3392,9 +1183,9 @@ public final class PBModelMember {
         hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getUserInfo().hashCode();
       }
-      if (getRolesCount() > 0) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesList().hashCode();
+      if (getSystemRolesCount() > 0) {
+        hash = (37 * hash) + SYSTEM_ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + getSystemRolesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3528,7 +1319,7 @@ public final class PBModelMember {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRolesFieldBuilder();
+          getSystemRolesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3538,9 +1329,15 @@ public final class PBModelMember {
 
         userId_ = "";
 
-        roleIds_ = "";
-
         status_ = 0;
+
+        desc_ = "";
+
+        systemRoleIds_ = "";
+
+        customRoleIds_ = "";
+
+        createdBy_ = "";
 
         created_ = 0L;
 
@@ -3552,11 +1349,11 @@ public final class PBModelMember {
           userInfo_ = null;
           userInfoBuilder_ = null;
         }
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
+        if (systemRolesBuilder_ == null) {
+          systemRoles_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          rolesBuilder_.clear();
+          systemRolesBuilder_.clear();
         }
         return this;
       }
@@ -3587,8 +1384,11 @@ public final class PBModelMember {
         int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         result.userId_ = userId_;
-        result.roleIds_ = roleIds_;
         result.status_ = status_;
+        result.desc_ = desc_;
+        result.systemRoleIds_ = systemRoleIds_;
+        result.customRoleIds_ = customRoleIds_;
+        result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
         if (userInfoBuilder_ == null) {
@@ -3596,14 +1396,14 @@ public final class PBModelMember {
         } else {
           result.userInfo_ = userInfoBuilder_.build();
         }
-        if (rolesBuilder_ == null) {
+        if (systemRolesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            roles_ = java.util.Collections.unmodifiableList(roles_);
+            systemRoles_ = java.util.Collections.unmodifiableList(systemRoles_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.roles_ = roles_;
+          result.systemRoles_ = systemRoles_;
         } else {
-          result.roles_ = rolesBuilder_.build();
+          result.systemRoles_ = systemRolesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3661,12 +1461,24 @@ public final class PBModelMember {
           userId_ = other.userId_;
           onChanged();
         }
-        if (!other.getRoleIds().isEmpty()) {
-          roleIds_ = other.roleIds_;
-          onChanged();
-        }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
+          onChanged();
+        }
+        if (!other.getSystemRoleIds().isEmpty()) {
+          systemRoleIds_ = other.systemRoleIds_;
+          onChanged();
+        }
+        if (!other.getCustomRoleIds().isEmpty()) {
+          customRoleIds_ = other.customRoleIds_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
         }
         if (other.getCreated() != 0L) {
           setCreated(other.getCreated());
@@ -3677,29 +1489,29 @@ public final class PBModelMember {
         if (other.hasUserInfo()) {
           mergeUserInfo(other.getUserInfo());
         }
-        if (rolesBuilder_ == null) {
-          if (!other.roles_.isEmpty()) {
-            if (roles_.isEmpty()) {
-              roles_ = other.roles_;
+        if (systemRolesBuilder_ == null) {
+          if (!other.systemRoles_.isEmpty()) {
+            if (systemRoles_.isEmpty()) {
+              systemRoles_ = other.systemRoles_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureRolesIsMutable();
-              roles_.addAll(other.roles_);
+              ensureSystemRolesIsMutable();
+              systemRoles_.addAll(other.systemRoles_);
             }
             onChanged();
           }
         } else {
-          if (!other.roles_.isEmpty()) {
-            if (rolesBuilder_.isEmpty()) {
-              rolesBuilder_.dispose();
-              rolesBuilder_ = null;
-              roles_ = other.roles_;
+          if (!other.systemRoles_.isEmpty()) {
+            if (systemRolesBuilder_.isEmpty()) {
+              systemRolesBuilder_.dispose();
+              systemRolesBuilder_ = null;
+              systemRoles_ = other.systemRoles_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              rolesBuilder_ = 
+              systemRolesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRolesFieldBuilder() : null;
+                   getSystemRolesFieldBuilder() : null;
             } else {
-              rolesBuilder_.addAllMessages(other.roles_);
+              systemRolesBuilder_.addAllMessages(other.systemRoles_);
             }
           }
         }
@@ -3836,7 +1648,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
        * </pre>
        *
-       * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -3857,7 +1669,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
        * </pre>
        *
-       * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -3879,7 +1691,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
        * </pre>
        *
-       * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -3899,7 +1711,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
        * </pre>
        *
-       * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -3914,7 +1726,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
        * </pre>
        *
-       * <code>string user_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -3930,107 +1742,6 @@ public final class PBModelMember {
         return this;
       }
 
-      private java.lang.Object roleIds_ = "";
-      /**
-       * <pre>
-       * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-       * </pre>
-       *
-       * <code>string role_ids = 4;</code>
-       * @return The roleIds.
-       */
-      public java.lang.String getRoleIds() {
-        java.lang.Object ref = roleIds_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          roleIds_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-       * </pre>
-       *
-       * <code>string role_ids = 4;</code>
-       * @return The bytes for roleIds.
-       */
-      public com.google.protobuf.ByteString
-          getRoleIdsBytes() {
-        java.lang.Object ref = roleIds_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          roleIds_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-       * </pre>
-       *
-       * <code>string role_ids = 4;</code>
-       * @param value The roleIds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoleIds(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        roleIds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-       * </pre>
-       *
-       * <code>string role_ids = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoleIds() {
-        
-        roleIds_ = getDefaultInstance().getRoleIds();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
-       * </pre>
-       *
-       * <code>string role_ids = 4;</code>
-       * @param value The bytes for roleIds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoleIdsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        roleIds_ = value;
-        onChanged();
-        return this;
-      }
-
       private int status_ = 0;
       /**
        * <pre>
@@ -4038,7 +1749,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for status.
        */
       @java.lang.Override public int getStatusValue() {
@@ -4050,7 +1761,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -4066,7 +1777,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
        * @return The status.
        */
       @java.lang.Override
@@ -4081,7 +1792,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -4100,12 +1811,426 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.Member.Status status = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Member.Status status = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
         
         status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object desc_ = "";
+      /**
+       * <pre>
+       * Description for member. Max charset: 1024.
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The desc.
+       */
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          desc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Description for member. Max charset: 1024.
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
+       */
+      public com.google.protobuf.ByteString
+          getDescBytes() {
+        java.lang.Object ref = desc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          desc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Description for member. Max charset: 1024.
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDesc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Description for member. Max charset: 1024.
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDesc() {
+        
+        desc_ = getDefaultInstance().getDesc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Description for member. Max charset: 1024.
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object systemRoleIds_ = "";
+      /**
+       * <pre>
+       * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+       * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+       * </pre>
+       *
+       * <code>string system_role_ids = 5;</code>
+       * @return The systemRoleIds.
+       */
+      public java.lang.String getSystemRoleIds() {
+        java.lang.Object ref = systemRoleIds_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          systemRoleIds_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+       * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+       * </pre>
+       *
+       * <code>string system_role_ids = 5;</code>
+       * @return The bytes for systemRoleIds.
+       */
+      public com.google.protobuf.ByteString
+          getSystemRoleIdsBytes() {
+        java.lang.Object ref = systemRoleIds_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          systemRoleIds_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+       * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+       * </pre>
+       *
+       * <code>string system_role_ids = 5;</code>
+       * @param value The systemRoleIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSystemRoleIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        systemRoleIds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+       * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+       * </pre>
+       *
+       * <code>string system_role_ids = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSystemRoleIds() {
+        
+        systemRoleIds_ = getDefaultInstance().getSystemRoleIds();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+       * &#64;inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+       * </pre>
+       *
+       * <code>string system_role_ids = 5;</code>
+       * @param value The bytes for systemRoleIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSystemRoleIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        systemRoleIds_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customRoleIds_ = "";
+      /**
+       * <pre>
+       * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+       * A member can have up to 100 custom roles.
+       * TODO: reserved field. unused on present.
+       * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+       * </pre>
+       *
+       * <code>string custom_role_ids = 6;</code>
+       * @return The customRoleIds.
+       */
+      public java.lang.String getCustomRoleIds() {
+        java.lang.Object ref = customRoleIds_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customRoleIds_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+       * A member can have up to 100 custom roles.
+       * TODO: reserved field. unused on present.
+       * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+       * </pre>
+       *
+       * <code>string custom_role_ids = 6;</code>
+       * @return The bytes for customRoleIds.
+       */
+      public com.google.protobuf.ByteString
+          getCustomRoleIdsBytes() {
+        java.lang.Object ref = customRoleIds_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customRoleIds_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+       * A member can have up to 100 custom roles.
+       * TODO: reserved field. unused on present.
+       * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+       * </pre>
+       *
+       * <code>string custom_role_ids = 6;</code>
+       * @param value The customRoleIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomRoleIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        customRoleIds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+       * A member can have up to 100 custom roles.
+       * TODO: reserved field. unused on present.
+       * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+       * </pre>
+       *
+       * <code>string custom_role_ids = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomRoleIds() {
+        
+        customRoleIds_ = getDefaultInstance().getCustomRoleIds();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+       * A member can have up to 100 custom roles.
+       * TODO: reserved field. unused on present.
+       * &#64;inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+       * </pre>
+       *
+       * <code>string custom_role_ids = 6;</code>
+       * @param value The bytes for customRoleIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomRoleIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        customRoleIds_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * The user-id of created this network.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this network.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this network.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this network.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this network.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -4117,7 +2242,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
        * @return The created.
        */
       @java.lang.Override
@@ -4130,7 +2255,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
        * @param value The created to set.
        * @return This builder for chaining.
        */
@@ -4146,7 +2271,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreated() {
@@ -4163,7 +2288,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
        * @return The updated.
        */
       @java.lang.Override
@@ -4176,7 +2301,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
        * @param value The updated to set.
        * @return This builder for chaining.
        */
@@ -4192,7 +2317,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdated() {
@@ -4211,7 +2336,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        * @return Whether the userInfo field is set.
        */
       public boolean hasUserInfo() {
@@ -4223,7 +2348,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        * @return The userInfo.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getUserInfo() {
@@ -4239,7 +2364,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public Builder setUserInfo(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
         if (userInfoBuilder_ == null) {
@@ -4260,7 +2385,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public Builder setUserInfo(
           com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder builderForValue) {
@@ -4279,7 +2404,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public Builder mergeUserInfo(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
         if (userInfoBuilder_ == null) {
@@ -4302,7 +2427,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public Builder clearUserInfo() {
         if (userInfoBuilder_ == null) {
@@ -4321,7 +2446,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder getUserInfoBuilder() {
         
@@ -4334,7 +2459,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder() {
         if (userInfoBuilder_ != null) {
@@ -4350,7 +2475,7 @@ public final class PBModelMember {
        * &#64;inject_tag: json:"user_info" gorm:"-"
        * </pre>
        *
-       * <code>.model.User user_info = 8;</code>
+       * <code>.model.User user_info = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
@@ -4366,334 +2491,334 @@ public final class PBModelMember {
         return userInfoBuilder_;
       }
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> roles_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> systemRoles_ =
         java.util.Collections.emptyList();
-      private void ensureRolesIsMutable() {
+      private void ensureSystemRolesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          roles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role>(roles_);
+          systemRoles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole>(systemRoles_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> rolesBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder> systemRolesBuilder_;
 
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> getRolesList() {
-        if (rolesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roles_);
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> getSystemRolesList() {
+        if (systemRolesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(systemRoles_);
         } else {
-          return rolesBuilder_.getMessageList();
+          return systemRolesBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public int getRolesCount() {
-        if (rolesBuilder_ == null) {
-          return roles_.size();
+      public int getSystemRolesCount() {
+        if (systemRolesBuilder_ == null) {
+          return systemRoles_.size();
         } else {
-          return rolesBuilder_.getCount();
+          return systemRolesBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole getSystemRoles(int index) {
+        if (systemRolesBuilder_ == null) {
+          return systemRoles_.get(index);
         } else {
-          return rolesBuilder_.getMessage(index);
+          return systemRolesBuilder_.getMessage(index);
         }
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder setRoles(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
-        if (rolesBuilder_ == null) {
+      public Builder setSystemRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole value) {
+        if (systemRolesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRolesIsMutable();
-          roles_.set(index, value);
+          ensureSystemRolesIsMutable();
+          systemRoles_.set(index, value);
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, value);
+          systemRolesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder setRoles(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.set(index, builderForValue.build());
+      public Builder setSystemRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder builderForValue) {
+        if (systemRolesBuilder_ == null) {
+          ensureSystemRolesIsMutable();
+          systemRoles_.set(index, builderForValue.build());
           onChanged();
         } else {
-          rolesBuilder_.setMessage(index, builderForValue.build());
+          systemRolesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder addRoles(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
-        if (rolesBuilder_ == null) {
+      public Builder addSystemRoles(com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole value) {
+        if (systemRolesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRolesIsMutable();
-          roles_.add(value);
+          ensureSystemRolesIsMutable();
+          systemRoles_.add(value);
           onChanged();
         } else {
-          rolesBuilder_.addMessage(value);
+          systemRolesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder addRoles(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
-        if (rolesBuilder_ == null) {
+      public Builder addSystemRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole value) {
+        if (systemRolesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRolesIsMutable();
-          roles_.add(index, value);
+          ensureSystemRolesIsMutable();
+          systemRoles_.add(index, value);
           onChanged();
         } else {
-          rolesBuilder_.addMessage(index, value);
+          systemRolesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder addRoles(
-          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(builderForValue.build());
+      public Builder addSystemRoles(
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder builderForValue) {
+        if (systemRolesBuilder_ == null) {
+          ensureSystemRolesIsMutable();
+          systemRoles_.add(builderForValue.build());
           onChanged();
         } else {
-          rolesBuilder_.addMessage(builderForValue.build());
+          systemRolesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder addRoles(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.add(index, builderForValue.build());
+      public Builder addSystemRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder builderForValue) {
+        if (systemRolesBuilder_ == null) {
+          ensureSystemRolesIsMutable();
+          systemRoles_.add(index, builderForValue.build());
           onChanged();
         } else {
-          rolesBuilder_.addMessage(index, builderForValue.build());
+          systemRolesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder addAllRoles(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> values) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
+      public Builder addAllSystemRoles(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole> values) {
+        if (systemRolesBuilder_ == null) {
+          ensureSystemRolesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roles_);
+              values, systemRoles_);
           onChanged();
         } else {
-          rolesBuilder_.addAllMessages(values);
+          systemRolesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder clearRoles() {
-        if (rolesBuilder_ == null) {
-          roles_ = java.util.Collections.emptyList();
+      public Builder clearSystemRoles() {
+        if (systemRolesBuilder_ == null) {
+          systemRoles_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          rolesBuilder_.clear();
+          systemRolesBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public Builder removeRoles(int index) {
-        if (rolesBuilder_ == null) {
-          ensureRolesIsMutable();
-          roles_.remove(index);
+      public Builder removeSystemRoles(int index) {
+        if (systemRolesBuilder_ == null) {
+          ensureSystemRolesIsMutable();
+          systemRoles_.remove(index);
           onChanged();
         } else {
-          rolesBuilder_.remove(index);
+          systemRolesBuilder_.remove(index);
         }
         return this;
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder getRolesBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder getSystemRolesBuilder(
           int index) {
-        return getRolesFieldBuilder().getBuilder(index);
+        return getSystemRolesFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder getSystemRolesOrBuilder(
           int index) {
-        if (rolesBuilder_ == null) {
-          return roles_.get(index);  } else {
-          return rolesBuilder_.getMessageOrBuilder(index);
+        if (systemRolesBuilder_ == null) {
+          return systemRoles_.get(index);  } else {
+          return systemRolesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
-           getRolesOrBuilderList() {
-        if (rolesBuilder_ != null) {
-          return rolesBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder> 
+           getSystemRolesOrBuilderList() {
+        if (systemRolesBuilder_ != null) {
+          return systemRolesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(roles_);
+          return java.util.Collections.unmodifiableList(systemRoles_);
         }
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder addRolesBuilder() {
-        return getRolesFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance());
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder addSystemRolesBuilder() {
+        return getSystemRolesFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.getDefaultInstance());
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder addRolesBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder addSystemRolesBuilder(
           int index) {
-        return getRolesFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance());
+        return getSystemRolesFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.getDefaultInstance());
       }
       /**
        * <pre>
-       * The lis of role info.
-       * &#64;inject_tag: json:"roles" gorm:"-"
+       * The lis of system role info.
+       * &#64;inject_tag: json:"system_roles" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.Role roles = 9;</code>
+       * <code>repeated .model.SystemRole system_roles = 11;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder> 
-           getRolesBuilderList() {
-        return getRolesFieldBuilder().getBuilderList();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder> 
+           getSystemRolesBuilderList() {
+        return getSystemRolesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
-          getRolesFieldBuilder() {
-        if (rolesBuilder_ == null) {
-          rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder>(
-                  roles_,
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder> 
+          getSystemRolesFieldBuilder() {
+        if (systemRolesBuilder_ == null) {
+          systemRolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelRole.SystemRoleOrBuilder>(
+                  systemRoles_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          roles_ = null;
+          systemRoles_ = null;
         }
-        return rolesBuilder_;
+        return systemRolesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4749,11 +2874,6 @@ public final class PBModelMember {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_Role_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_Role_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_Member_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4770,30 +2890,21 @@ public final class PBModelMember {
       "\n\036proto/types/model/member.proto\022\005model\032" +
       "3github.com/yu31/protoc-plugin/proto/val" +
       "idator.proto\032\037proto/types/model/account." +
-      "proto\032\034proto/types/model/role.proto\"\326\003\n\004" +
-      "Role\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\001\022-\n\004type\030\004 \001(\0162\020.mo" +
-      "del.Role.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\006status\030\005" +
-      " \001(\0162\022.model.Role.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\017\n\007modules\030" +
-      "\007 \001(\t\022I\n\007op_kind\030\010 \001(\0162\023.model.APIDesc.K" +
-      "indB#\342\337\037\022\n\020\n\007modules\022\005\302\001\002\"\000\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022\014\n\004apis\030\t \001(\t\022\017\n\007created\030\n \001(\003\022\017\n\007updat" +
-      "ed\030\013 \001(\003\"-\n\004Type\022\r\n\tTypeUnset\020\000\022\n\n\006Syste" +
-      "m\020\001\022\n\n\006Custom\020\002\"3\n\006Status\022\017\n\013StatusUnset" +
-      "\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\302\002\n\006Member\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035" +
-      "\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n\010role_id" +
-      "s\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model.Member.S" +
-      "tatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013\342" +
-      "\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
-      "\022\036\n\tuser_info\030\010 \001(\0132\013.model.User\022\032\n\005role" +
-      "s\030\t \003(\0132\013.model.Role\"3\n\006Status\022\017\n\013Status" +
-      "Unset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bh\n\"com" +
-      ".dataomnis.gproto.types.pbmodelB\rPBModel" +
-      "MemberP\000Z1github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbmodelb\006proto3"
+      "proto\032\034proto/types/model/role.proto\"\261\003\n\006" +
+      "Member\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022\035\n\007user_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\0223\n\006" +
+      "status\030\003 \001(\0162\024.model.Member.StatusB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\027" +
+      "\n\017system_role_ids\030\005 \001(\t\022\027\n\017custom_role_i" +
+      "ds\030\006 \001(\t\022#\n\ncreated_by\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\000\230\002A\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
+      "pdated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\036\n\tuser_info\030\n" +
+      " \001(\0132\013.model.User\022\'\n\014system_roles\030\013 \003(\0132" +
+      "\021.model.SystemRole\"3\n\006Status\022\017\n\013StatusUn" +
+      "set\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bh\n\"com.d" +
+      "ataomnis.gproto.types.pbmodelB\rPBModelMe" +
+      "mberP\000Z1github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4802,18 +2913,12 @@ public final class PBModelMember {
           com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor(),
         });
-    internal_static_model_Role_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_model_Role_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_Role_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Name", "Type", "Status", "Desc", "Modules", "OpKind", "Apis", "Created", "Updated", });
     internal_static_model_Member_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_model_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Member_descriptor,
-        new java.lang.String[] { "SpaceId", "UserId", "RoleIds", "Status", "Created", "Updated", "UserInfo", "Roles", });
+        new java.lang.String[] { "SpaceId", "UserId", "Status", "Desc", "SystemRoleIds", "CustomRoleIds", "CreatedBy", "Created", "Updated", "UserInfo", "SystemRoles", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

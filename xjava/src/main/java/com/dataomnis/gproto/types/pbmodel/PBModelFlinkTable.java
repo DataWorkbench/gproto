@@ -2655,7 +2655,7 @@ public final class PBModelFlinkTable {
       "\n\035proto/types/model/table.proto\022\005model\0323" +
       "github.com/yu31/protoc-plugin/proto/vali" +
       "dator.proto\032)proto/types/model/flink/fli" +
-      "nk_table.proto\"\254\004\n\nFlinkTable\022%\n\010space_i" +
+      "nk_table.proto\"\257\004\n\nFlinkTable\022%\n\010space_i" +
       "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tsource_id\030\003 \001(\tB\014\342\337\037\010\022" +
       "\006\302\001\003\360\001\024\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033" +
@@ -2663,16 +2663,16 @@ public final class PBModelFlinkTable {
       "ema\030\006 \001(\0132\022.flink.TableSchema\0227\n\006status\030" +
       "\t \001(\0162\030.model.FlinkTable.StatusB\r\342\337\037\t\022\007\332" +
       "\001\0040\000X\001\0229\n\ntable_kind\030\n \001(\0162\026.model.Flink" +
-      "Table.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030" +
-      "\r \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\007 \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"" +
-      "A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020\001\022\017\n\013De" +
-      "stination\020\002\022\r\n\tDimension\020\003\"A\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\022" +
-      "\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gproto.ty" +
-      "pes.pbmodelB\021PBModelFlinkTableP\000Z1github" +
-      ".com/DataWorkbench/gproto/xgo/types/pbmo" +
-      "delb\006proto3"
+      "Table.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\ncreated_by\030" +
+      "\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\007 \001(\003B" +
+      "\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\"A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020\001\022\017\n" +
+      "\013Destination\020\002\022\r\n\tDimension\020\003\"A\n\006Status\022" +
+      "\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled" +
+      "\020\002\022\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gproto" +
+      ".types.pbmodelB\021PBModelFlinkTableP\000Z1git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

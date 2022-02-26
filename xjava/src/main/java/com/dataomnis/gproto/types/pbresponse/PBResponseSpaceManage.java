@@ -2364,19 +2364,19 @@ public final class PBResponseSpaceManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.Workspace info = 1;</code>
-     * @return Whether the info field is set.
+     * <code>.model.Workspace workspace = 1;</code>
+     * @return Whether the workspace field is set.
      */
-    boolean hasInfo();
+    boolean hasWorkspace();
     /**
-     * <code>.model.Workspace info = 1;</code>
-     * @return The info.
+     * <code>.model.Workspace workspace = 1;</code>
+     * @return The workspace.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getInfo();
+    com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getWorkspace();
     /**
-     * <code>.model.Workspace info = 1;</code>
+     * <code>.model.Workspace workspace = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getInfoOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getWorkspaceOrBuilder();
   }
   /**
    * Protobuf type {@code response.CheckPermission}
@@ -2425,13 +2425,13 @@ public final class PBResponseSpaceManage {
               break;
             case 10: {
               com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder subBuilder = null;
-              if (info_ != null) {
-                subBuilder = info_.toBuilder();
+              if (workspace_ != null) {
+                subBuilder = workspace_.toBuilder();
               }
-              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.parser(), extensionRegistry);
+              workspace_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(info_);
-                info_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(workspace_);
+                workspace_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2468,30 +2468,30 @@ public final class PBResponseSpaceManage {
               com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace info_;
+    public static final int WORKSPACE_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace workspace_;
     /**
-     * <code>.model.Workspace info = 1;</code>
-     * @return Whether the info field is set.
+     * <code>.model.Workspace workspace = 1;</code>
+     * @return Whether the workspace field is set.
      */
     @java.lang.Override
-    public boolean hasInfo() {
-      return info_ != null;
+    public boolean hasWorkspace() {
+      return workspace_ != null;
     }
     /**
-     * <code>.model.Workspace info = 1;</code>
-     * @return The info.
+     * <code>.model.Workspace workspace = 1;</code>
+     * @return The workspace.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getInfo() {
-      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : info_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getWorkspace() {
+      return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : workspace_;
     }
     /**
-     * <code>.model.Workspace info = 1;</code>
+     * <code>.model.Workspace workspace = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getInfoOrBuilder() {
-      return getInfo();
+    public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getWorkspaceOrBuilder() {
+      return getWorkspace();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2508,8 +2508,8 @@ public final class PBResponseSpaceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (info_ != null) {
-        output.writeMessage(1, getInfo());
+      if (workspace_ != null) {
+        output.writeMessage(1, getWorkspace());
       }
       unknownFields.writeTo(output);
     }
@@ -2520,9 +2520,9 @@ public final class PBResponseSpaceManage {
       if (size != -1) return size;
 
       size = 0;
-      if (info_ != null) {
+      if (workspace_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getInfo());
+          .computeMessageSize(1, getWorkspace());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2539,10 +2539,10 @@ public final class PBResponseSpaceManage {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission) obj;
 
-      if (hasInfo() != other.hasInfo()) return false;
-      if (hasInfo()) {
-        if (!getInfo()
-            .equals(other.getInfo())) return false;
+      if (hasWorkspace() != other.hasWorkspace()) return false;
+      if (hasWorkspace()) {
+        if (!getWorkspace()
+            .equals(other.getWorkspace())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2555,9 +2555,9 @@ public final class PBResponseSpaceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasInfo()) {
-        hash = (37 * hash) + INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getInfo().hashCode();
+      if (hasWorkspace()) {
+        hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkspace().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2692,11 +2692,11 @@ public final class PBResponseSpaceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (infoBuilder_ == null) {
-          info_ = null;
+        if (workspaceBuilder_ == null) {
+          workspace_ = null;
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          workspace_ = null;
+          workspaceBuilder_ = null;
         }
         return this;
       }
@@ -2724,10 +2724,10 @@ public final class PBResponseSpaceManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission(this);
-        if (infoBuilder_ == null) {
-          result.info_ = info_;
+        if (workspaceBuilder_ == null) {
+          result.workspace_ = workspace_;
         } else {
-          result.info_ = infoBuilder_.build();
+          result.workspace_ = workspaceBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2777,8 +2777,8 @@ public final class PBResponseSpaceManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.getDefaultInstance()) return this;
-        if (other.hasInfo()) {
-          mergeInfo(other.getInfo());
+        if (other.hasWorkspace()) {
+          mergeWorkspace(other.getWorkspace());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2809,123 +2809,123 @@ public final class PBResponseSpaceManage {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace info_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace workspace_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder> infoBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder> workspaceBuilder_;
       /**
-       * <code>.model.Workspace info = 1;</code>
-       * @return Whether the info field is set.
+       * <code>.model.Workspace workspace = 1;</code>
+       * @return Whether the workspace field is set.
        */
-      public boolean hasInfo() {
-        return infoBuilder_ != null || info_ != null;
+      public boolean hasWorkspace() {
+        return workspaceBuilder_ != null || workspace_ != null;
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
-       * @return The info.
+       * <code>.model.Workspace workspace = 1;</code>
+       * @return The workspace.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getInfo() {
-        if (infoBuilder_ == null) {
-          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : info_;
+      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getWorkspace() {
+        if (workspaceBuilder_ == null) {
+          return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : workspace_;
         } else {
-          return infoBuilder_.getMessage();
+          return workspaceBuilder_.getMessage();
         }
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
-        if (infoBuilder_ == null) {
+      public Builder setWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
+        if (workspaceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          info_ = value;
+          workspace_ = value;
           onChanged();
         } else {
-          infoBuilder_.setMessage(value);
+          workspaceBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public Builder setInfo(
+      public Builder setWorkspace(
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          info_ = builderForValue.build();
+        if (workspaceBuilder_ == null) {
+          workspace_ = builderForValue.build();
           onChanged();
         } else {
-          infoBuilder_.setMessage(builderForValue.build());
+          workspaceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
-        if (infoBuilder_ == null) {
-          if (info_ != null) {
-            info_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.newBuilder(info_).mergeFrom(value).buildPartial();
+      public Builder mergeWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
+        if (workspaceBuilder_ == null) {
+          if (workspace_ != null) {
+            workspace_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.newBuilder(workspace_).mergeFrom(value).buildPartial();
           } else {
-            info_ = value;
+            workspace_ = value;
           }
           onChanged();
         } else {
-          infoBuilder_.mergeFrom(value);
+          workspaceBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = null;
+      public Builder clearWorkspace() {
+        if (workspaceBuilder_ == null) {
+          workspace_ = null;
           onChanged();
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          workspace_ = null;
+          workspaceBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder getInfoBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder getWorkspaceBuilder() {
         
         onChanged();
-        return getInfoFieldBuilder().getBuilder();
+        return getWorkspaceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getInfoOrBuilder() {
-        if (infoBuilder_ != null) {
-          return infoBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getWorkspaceOrBuilder() {
+        if (workspaceBuilder_ != null) {
+          return workspaceBuilder_.getMessageOrBuilder();
         } else {
-          return info_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : info_;
+          return workspace_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : workspace_;
         }
       }
       /**
-       * <code>.model.Workspace info = 1;</code>
+       * <code>.model.Workspace workspace = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getWorkspaceFieldBuilder() {
+        if (workspaceBuilder_ == null) {
+          workspaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder>(
-                  getInfo(),
+                  getWorkspace(),
                   getParentForChildren(),
                   isClean());
-          info_ = null;
+          workspace_ = null;
         }
-        return infoBuilder_;
+        return workspaceBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3017,11 +3017,11 @@ public final class PBResponseSpaceManage {
       "re\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"2\n\017CreateWorkspa" +
       "ce\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021D" +
       "escribeWorkspace\022\036\n\004info\030\001 \001(\0132\020.model.W" +
-      "orkspace\"1\n\017CheckPermission\022\036\n\004info\030\001 \001(" +
-      "\0132\020.model.WorkspaceBv\n%com.dataomnis.gpr" +
-      "oto.types.pbresponseB\025PBResponseSpaceMan" +
-      "ageP\000Z4github.com/DataWorkbench/gproto/x" +
-      "go/types/pbresponseb\006proto3"
+      "orkspace\"6\n\017CheckPermission\022#\n\tworkspace" +
+      "\030\001 \001(\0132\020.model.WorkspaceBv\n%com.dataomni" +
+      "s.gproto.types.pbresponseB\025PBResponseSpa" +
+      "ceManageP\000Z4github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3052,7 +3052,7 @@ public final class PBResponseSpaceManage {
     internal_static_response_CheckPermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_CheckPermission_descriptor,
-        new java.lang.String[] { "Info", });
+        new java.lang.String[] { "Workspace", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

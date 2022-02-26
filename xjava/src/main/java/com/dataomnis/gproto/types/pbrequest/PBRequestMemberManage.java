@@ -14,627 +14,6 @@ public final class PBRequestMemberManage {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ListSystemRolesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.ListSystemRoles)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    java.lang.String getSpaceId();
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
-  }
-  /**
-   * <pre>
-   * ListSystemRoles used as reply parameters in RPC or response body in HTTP.
-   * </pre>
-   *
-   * Protobuf type {@code request.ListSystemRoles}
-   */
-  public static final class ListSystemRoles extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.ListSystemRoles)
-      ListSystemRolesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ListSystemRoles.newBuilder() to construct.
-    private ListSystemRoles(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ListSystemRoles() {
-      spaceId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ListSystemRoles();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ListSystemRoles(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListSystemRoles_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListSystemRoles_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.Builder.class);
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object spaceId_;
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles other = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles) obj;
-
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * ListSystemRoles used as reply parameters in RPC or response body in HTTP.
-     * </pre>
-     *
-     * Protobuf type {@code request.ListSystemRoles}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.ListSystemRoles)
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRolesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListSystemRoles_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListSystemRoles_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        spaceId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListSystemRoles_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles(this);
-        result.spaceId_ = spaceId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles.getDefaultInstance()) return this;
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object spaceId_ = "";
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The spaceId.
-       */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceId() {
-        
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:request.ListSystemRoles)
-    }
-
-    // @@protoc_insertion_point(class_scope:request.ListSystemRoles)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles();
-    }
-
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ListSystemRoles>
-        PARSER = new com.google.protobuf.AbstractParser<ListSystemRoles>() {
-      @java.lang.Override
-      public ListSystemRoles parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListSystemRoles(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ListSystemRoles> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ListSystemRoles> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface ListMembersOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.ListMembers)
       com.google.protobuf.MessageOrBuilder {
@@ -688,7 +67,7 @@ public final class PBRequestMemberManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {user_id, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -701,7 +80,7 @@ public final class PBRequestMemberManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {user_id, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -920,7 +299,7 @@ public final class PBRequestMemberManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {user_id, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -945,7 +324,7 @@ public final class PBRequestMemberManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {user_id, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -1560,7 +939,7 @@ public final class PBRequestMemberManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {user_id, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1584,7 +963,7 @@ public final class PBRequestMemberManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {user_id, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1609,7 +988,7 @@ public final class PBRequestMemberManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {user_id, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1632,7 +1011,7 @@ public final class PBRequestMemberManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {user_id, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1650,7 +1029,7 @@ public final class PBRequestMemberManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {user_id, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="user_id|name|updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="user_id|created|updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -2695,8 +2074,8 @@ public final class PBRequestMemberManage {
 
   }
 
-  public interface UpsertMembersOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.UpsertMembers)
+  public interface AddMembersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.AddMembers)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2723,11 +2102,55 @@ public final class PBRequestMemberManage {
 
     /**
      * <pre>
+     * The user-id of created this cluster. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * The user-id of created this cluster. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * The account user_id. Is Required. Min: 1, Max: 100
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @return A list containing the userIds.
      */
     java.util.List<java.lang.String>
@@ -2738,7 +2161,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @return The count of userIds.
      */
     int getUserIdsCount();
@@ -2748,7 +2171,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -2759,7 +2182,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -2768,48 +2191,48 @@ public final class PBRequestMemberManage {
 
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the roleIds.
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+     * @return A list containing the systemRoleIds.
      */
     java.util.List<java.lang.String>
-        getRoleIdsList();
+        getSystemRoleIdsList();
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of roleIds.
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+     * @return The count of systemRoleIds.
      */
-    int getRoleIdsCount();
+    int getSystemRoleIdsCount();
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The roleIds at the given index.
+     * @return The systemRoleIds at the given index.
      */
-    java.lang.String getRoleIds(int index);
+    java.lang.String getSystemRoleIds(int index);
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the roleIds at the given index.
+     * @return The bytes of the systemRoleIds at the given index.
      */
     com.google.protobuf.ByteString
-        getRoleIdsBytes(int index);
+        getSystemRoleIdsBytes(int index);
 
     /**
      * <pre>
@@ -2817,7 +2240,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"desc""
      * </pre>
      *
-     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -2827,7 +2250,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"desc""
      * </pre>
      *
-     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -2838,21 +2261,23 @@ public final class PBRequestMemberManage {
    * UpsertMembers used as a request parameters for RPC and HTTP(based on Body).
    * </pre>
    *
-   * Protobuf type {@code request.UpsertMembers}
+   * Protobuf type {@code request.AddMembers}
    */
-  public static final class UpsertMembers extends
+  public static final class AddMembers extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.UpsertMembers)
-      UpsertMembersOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.AddMembers)
+      AddMembersOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpsertMembers.newBuilder() to construct.
-    private UpsertMembers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddMembers.newBuilder() to construct.
+    private AddMembers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpsertMembers() {
+    private AddMembers() {
       spaceId_ = "";
+      createdBy_ = "";
+      spaceOwner_ = "";
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       desc_ = "";
     }
 
@@ -2860,7 +2285,7 @@ public final class PBRequestMemberManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpsertMembers();
+      return new AddMembers();
     }
 
     @java.lang.Override
@@ -2868,7 +2293,7 @@ public final class PBRequestMemberManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpsertMembers(
+    private AddMembers(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2895,6 +2320,18 @@ public final class PBRequestMemberManage {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 userIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
@@ -2902,16 +2339,16 @@ public final class PBRequestMemberManage {
               userIds_.add(s);
               break;
             }
-            case 26: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                roleIds_ = new com.google.protobuf.LazyStringArrayList();
+                systemRoleIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              roleIds_.add(s);
+              systemRoleIds_.add(s);
               break;
             }
-            case 34: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               desc_ = s;
@@ -2936,7 +2373,7 @@ public final class PBRequestMemberManage {
           userIds_ = userIds_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          roleIds_ = roleIds_.getUnmodifiableView();
+          systemRoleIds_ = systemRoleIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2944,15 +2381,15 @@ public final class PBRequestMemberManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_UpsertMembers_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_AddMembers_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_UpsertMembers_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_AddMembers_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -3003,7 +2440,103 @@ public final class PBRequestMemberManage {
       }
     }
 
-    public static final int USER_IDS_FIELD_NUMBER = 2;
+    public static final int CREATED_BY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * The user-id of created this cluster. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of created this cluster. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_IDS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList userIds_;
     /**
      * <pre>
@@ -3011,7 +2544,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @return A list containing the userIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -3024,7 +2557,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @return The count of userIds.
      */
     public int getUserIdsCount() {
@@ -3036,7 +2569,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -3049,7 +2582,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"user_ids"
      * </pre>
      *
-     * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+     * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -3058,62 +2591,62 @@ public final class PBRequestMemberManage {
       return userIds_.getByteString(index);
     }
 
-    public static final int ROLE_IDS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList roleIds_;
+    public static final int SYSTEM_ROLE_IDS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList systemRoleIds_;
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the roleIds.
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+     * @return A list containing the systemRoleIds.
      */
     public com.google.protobuf.ProtocolStringList
-        getRoleIdsList() {
-      return roleIds_;
+        getSystemRoleIdsList() {
+      return systemRoleIds_;
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of roleIds.
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+     * @return The count of systemRoleIds.
      */
-    public int getRoleIdsCount() {
-      return roleIds_.size();
+    public int getSystemRoleIdsCount() {
+      return systemRoleIds_.size();
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The roleIds at the given index.
+     * @return The systemRoleIds at the given index.
      */
-    public java.lang.String getRoleIds(int index) {
-      return roleIds_.get(index);
+    public java.lang.String getSystemRoleIds(int index) {
+      return systemRoleIds_.get(index);
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the roleIds at the given index.
+     * @return The bytes of the systemRoleIds at the given index.
      */
     public com.google.protobuf.ByteString
-        getRoleIdsBytes(int index) {
-      return roleIds_.getByteString(index);
+        getSystemRoleIdsBytes(int index) {
+      return systemRoleIds_.getByteString(index);
     }
 
-    public static final int DESC_FIELD_NUMBER = 4;
+    public static final int DESC_FIELD_NUMBER = 6;
     private volatile java.lang.Object desc_;
     /**
      * <pre>
@@ -3121,7 +2654,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"desc""
      * </pre>
      *
-     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -3143,7 +2676,7 @@ public final class PBRequestMemberManage {
      * &#64;inject_tag: json:"desc""
      * </pre>
      *
-     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -3178,14 +2711,20 @@ public final class PBRequestMemberManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      for (int i = 0; i < userIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userIds_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
       }
-      for (int i = 0; i < roleIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleIds_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
+      for (int i = 0; i < userIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userIds_.getRaw(i));
+      }
+      for (int i = 0; i < systemRoleIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, systemRoleIds_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
       unknownFields.writeTo(output);
     }
@@ -3199,6 +2738,12 @@ public final class PBRequestMemberManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < userIds_.size(); i++) {
@@ -3209,14 +2754,14 @@ public final class PBRequestMemberManage {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < roleIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(roleIds_.getRaw(i));
+        for (int i = 0; i < systemRoleIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(systemRoleIds_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getRoleIdsList().size();
+        size += 1 * getSystemRoleIdsList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3228,17 +2773,21 @@ public final class PBRequestMemberManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers other = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers other = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getUserIdsList()
           .equals(other.getUserIdsList())) return false;
-      if (!getRoleIdsList()
-          .equals(other.getRoleIdsList())) return false;
+      if (!getSystemRoleIdsList()
+          .equals(other.getSystemRoleIdsList())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3254,13 +2803,17 @@ public final class PBRequestMemberManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       if (getUserIdsCount() > 0) {
         hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getUserIdsList().hashCode();
       }
-      if (getRoleIdsCount() > 0) {
-        hash = (37 * hash) + ROLE_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getRoleIdsList().hashCode();
+      if (getSystemRoleIdsCount() > 0) {
+        hash = (37 * hash) + SYSTEM_ROLE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getSystemRoleIdsList().hashCode();
       }
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
@@ -3269,69 +2822,69 @@ public final class PBRequestMemberManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3344,7 +2897,7 @@ public final class PBRequestMemberManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3364,26 +2917,26 @@ public final class PBRequestMemberManage {
      * UpsertMembers used as a request parameters for RPC and HTTP(based on Body).
      * </pre>
      *
-     * Protobuf type {@code request.UpsertMembers}
+     * Protobuf type {@code request.AddMembers}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.UpsertMembers)
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembersOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.AddMembers)
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembersOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_UpsertMembers_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_AddMembers_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_UpsertMembers_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_AddMembers_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3403,9 +2956,13 @@ public final class PBRequestMemberManage {
         super.clear();
         spaceId_ = "";
 
+        createdBy_ = "";
+
+        spaceOwner_ = "";
+
         userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         desc_ = "";
 
@@ -3415,17 +2972,17 @@ public final class PBRequestMemberManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_UpsertMembers_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_AddMembers_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3433,20 +2990,22 @@ public final class PBRequestMemberManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers(this);
         int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
+        result.spaceOwner_ = spaceOwner_;
         if (((bitField0_ & 0x00000001) != 0)) {
           userIds_ = userIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.userIds_ = userIds_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          roleIds_ = roleIds_.getUnmodifiableView();
+          systemRoleIds_ = systemRoleIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.roleIds_ = roleIds_;
+        result.systemRoleIds_ = systemRoleIds_;
         result.desc_ = desc_;
         onBuilt();
         return result;
@@ -3486,18 +3045,26 @@ public final class PBRequestMemberManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         if (!other.userIds_.isEmpty()) {
@@ -3510,13 +3077,13 @@ public final class PBRequestMemberManage {
           }
           onChanged();
         }
-        if (!other.roleIds_.isEmpty()) {
-          if (roleIds_.isEmpty()) {
-            roleIds_ = other.roleIds_;
+        if (!other.systemRoleIds_.isEmpty()) {
+          if (systemRoleIds_.isEmpty()) {
+            systemRoleIds_ = other.systemRoleIds_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureRoleIdsIsMutable();
-            roleIds_.addAll(other.roleIds_);
+            ensureSystemRoleIdsIsMutable();
+            systemRoleIds_.addAll(other.systemRoleIds_);
           }
           onChanged();
         }
@@ -3539,11 +3106,11 @@ public final class PBRequestMemberManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3655,6 +3222,208 @@ public final class PBRequestMemberManage {
         return this;
       }
 
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * The user-id of created this cluster. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this cluster. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this cluster. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this cluster. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this cluster. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureUserIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -3668,7 +3437,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @return A list containing the userIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -3681,7 +3450,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @return The count of userIds.
        */
       public int getUserIdsCount() {
@@ -3693,7 +3462,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The userIds at the given index.
        */
@@ -3706,7 +3475,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the userIds at the given index.
        */
@@ -3720,7 +3489,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The userIds to set.
        * @return This builder for chaining.
@@ -3741,7 +3510,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param value The userIds to add.
        * @return This builder for chaining.
        */
@@ -3761,7 +3530,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param values The userIds to add.
        * @return This builder for chaining.
        */
@@ -3779,7 +3548,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserIds() {
@@ -3794,7 +3563,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"user_ids"
        * </pre>
        *
-       * <code>repeated string user_ids = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string user_ids = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes of the userIds to add.
        * @return This builder for chaining.
        */
@@ -3810,157 +3579,157 @@ public final class PBRequestMemberManage {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureRoleIdsIsMutable() {
+      private com.google.protobuf.LazyStringList systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSystemRoleIdsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          roleIds_ = new com.google.protobuf.LazyStringArrayList(roleIds_);
+          systemRoleIds_ = new com.google.protobuf.LazyStringArrayList(systemRoleIds_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @return A list containing the roleIds.
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+       * @return A list containing the systemRoleIds.
        */
       public com.google.protobuf.ProtocolStringList
-          getRoleIdsList() {
-        return roleIds_.getUnmodifiableView();
+          getSystemRoleIdsList() {
+        return systemRoleIds_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @return The count of roleIds.
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+       * @return The count of systemRoleIds.
        */
-      public int getRoleIdsCount() {
-        return roleIds_.size();
+      public int getSystemRoleIdsCount() {
+        return systemRoleIds_.size();
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
-       * @return The roleIds at the given index.
+       * @return The systemRoleIds at the given index.
        */
-      public java.lang.String getRoleIds(int index) {
-        return roleIds_.get(index);
+      public java.lang.String getSystemRoleIds(int index) {
+        return systemRoleIds_.get(index);
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
-       * @return The bytes of the roleIds at the given index.
+       * @return The bytes of the systemRoleIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getRoleIdsBytes(int index) {
-        return roleIds_.getByteString(index);
+          getSystemRoleIdsBytes(int index) {
+        return systemRoleIds_.getByteString(index);
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
-       * @param value The roleIds to set.
+       * @param value The systemRoleIds to set.
        * @return This builder for chaining.
        */
-      public Builder setRoleIds(
+      public Builder setSystemRoleIds(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureRoleIdsIsMutable();
-        roleIds_.set(index, value);
+  ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The roleIds to add.
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+       * @param value The systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRoleIds(
+      public Builder addSystemRoleIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureRoleIdsIsMutable();
-        roleIds_.add(value);
+  ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param values The roleIds to add.
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+       * @param values The systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addAllRoleIds(
+      public Builder addAllSystemRoleIds(
           java.lang.Iterable<java.lang.String> values) {
-        ensureRoleIdsIsMutable();
+        ensureSystemRoleIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, roleIds_);
+            values, systemRoleIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoleIds() {
-        roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearSystemRoleIds() {
+        systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the roleIds to add.
+       * <code>repeated string system_role_ids = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRoleIdsBytes(
+      public Builder addSystemRoleIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureRoleIdsIsMutable();
-        roleIds_.add(value);
+        ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.add(value);
         onChanged();
         return this;
       }
@@ -3972,7 +3741,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"desc""
        * </pre>
        *
-       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -3993,7 +3762,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"desc""
        * </pre>
        *
-       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -4015,7 +3784,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"desc""
        * </pre>
        *
-       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -4035,7 +3804,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"desc""
        * </pre>
        *
-       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -4050,7 +3819,7 @@ public final class PBRequestMemberManage {
        * &#64;inject_tag: json:"desc""
        * </pre>
        *
-       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -4078,41 +3847,41 @@ public final class PBRequestMemberManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.UpsertMembers)
+      // @@protoc_insertion_point(builder_scope:request.AddMembers)
     }
 
-    // @@protoc_insertion_point(class_scope:request.UpsertMembers)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.AddMembers)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpsertMembers>
-        PARSER = new com.google.protobuf.AbstractParser<UpsertMembers>() {
+    private static final com.google.protobuf.Parser<AddMembers>
+        PARSER = new com.google.protobuf.AbstractParser<AddMembers>() {
       @java.lang.Override
-      public UpsertMembers parsePartialFrom(
+      public AddMembers parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpsertMembers(input, extensionRegistry);
+        return new AddMembers(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpsertMembers> parser() {
+    public static com.google.protobuf.Parser<AddMembers> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpsertMembers> getParserForType() {
+    public com.google.protobuf.Parser<AddMembers> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.AddMembers getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4168,48 +3937,48 @@ public final class PBRequestMemberManage {
 
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the roleIds.
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the systemRoleIds.
      */
     java.util.List<java.lang.String>
-        getRoleIdsList();
+        getSystemRoleIdsList();
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of roleIds.
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+     * @return The count of systemRoleIds.
      */
-    int getRoleIdsCount();
+    int getSystemRoleIdsCount();
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The roleIds at the given index.
+     * @return The systemRoleIds at the given index.
      */
-    java.lang.String getRoleIds(int index);
+    java.lang.String getSystemRoleIds(int index);
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the roleIds at the given index.
+     * @return The bytes of the systemRoleIds at the given index.
      */
     com.google.protobuf.ByteString
-        getRoleIdsBytes(int index);
+        getSystemRoleIdsBytes(int index);
 
     /**
      * <pre>
@@ -4252,7 +4021,7 @@ public final class PBRequestMemberManage {
     private UpdateMember() {
       spaceId_ = "";
       userId_ = "";
-      roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       desc_ = "";
     }
 
@@ -4302,10 +4071,10 @@ public final class PBRequestMemberManage {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roleIds_ = new com.google.protobuf.LazyStringArrayList();
+                systemRoleIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              roleIds_.add(s);
+              systemRoleIds_.add(s);
               break;
             }
             case 34: {
@@ -4330,7 +4099,7 @@ public final class PBRequestMemberManage {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          roleIds_ = roleIds_.getUnmodifiableView();
+          systemRoleIds_ = systemRoleIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -4445,59 +4214,59 @@ public final class PBRequestMemberManage {
       }
     }
 
-    public static final int ROLE_IDS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList roleIds_;
+    public static final int SYSTEM_ROLE_IDS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList systemRoleIds_;
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the roleIds.
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the systemRoleIds.
      */
     public com.google.protobuf.ProtocolStringList
-        getRoleIdsList() {
-      return roleIds_;
+        getSystemRoleIdsList() {
+      return systemRoleIds_;
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of roleIds.
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+     * @return The count of systemRoleIds.
      */
-    public int getRoleIdsCount() {
-      return roleIds_.size();
+    public int getSystemRoleIdsCount() {
+      return systemRoleIds_.size();
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The roleIds at the given index.
+     * @return The systemRoleIds at the given index.
      */
-    public java.lang.String getRoleIds(int index) {
-      return roleIds_.get(index);
+    public java.lang.String getSystemRoleIds(int index) {
+      return systemRoleIds_.get(index);
     }
     /**
      * <pre>
-     * The lists of role_id. Is Required, Min 1, Max 10.
-     * &#64;inject_tag: json:"role_ids"
+     * The is list of system role. Is Required.
+     * &#64;inject_tag: json:"system_role_ids"
      * </pre>
      *
-     * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the roleIds at the given index.
+     * @return The bytes of the systemRoleIds at the given index.
      */
     public com.google.protobuf.ByteString
-        getRoleIdsBytes(int index) {
-      return roleIds_.getByteString(index);
+        getSystemRoleIdsBytes(int index) {
+      return systemRoleIds_.getByteString(index);
     }
 
     public static final int DESC_FIELD_NUMBER = 4;
@@ -4568,8 +4337,8 @@ public final class PBRequestMemberManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      for (int i = 0; i < roleIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleIds_.getRaw(i));
+      for (int i = 0; i < systemRoleIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, systemRoleIds_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
@@ -4591,11 +4360,11 @@ public final class PBRequestMemberManage {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < roleIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(roleIds_.getRaw(i));
+        for (int i = 0; i < systemRoleIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(systemRoleIds_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getRoleIdsList().size();
+        size += 1 * getSystemRoleIdsList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
@@ -4619,8 +4388,8 @@ public final class PBRequestMemberManage {
           .equals(other.getSpaceId())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getRoleIdsList()
-          .equals(other.getRoleIdsList())) return false;
+      if (!getSystemRoleIdsList()
+          .equals(other.getSystemRoleIdsList())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -4638,9 +4407,9 @@ public final class PBRequestMemberManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      if (getRoleIdsCount() > 0) {
-        hash = (37 * hash) + ROLE_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getRoleIdsList().hashCode();
+      if (getSystemRoleIdsCount() > 0) {
+        hash = (37 * hash) + SYSTEM_ROLE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getSystemRoleIdsList().hashCode();
       }
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
@@ -4785,7 +4554,7 @@ public final class PBRequestMemberManage {
 
         userId_ = "";
 
-        roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         desc_ = "";
 
@@ -4819,10 +4588,10 @@ public final class PBRequestMemberManage {
         result.spaceId_ = spaceId_;
         result.userId_ = userId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          roleIds_ = roleIds_.getUnmodifiableView();
+          systemRoleIds_ = systemRoleIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.roleIds_ = roleIds_;
+        result.systemRoleIds_ = systemRoleIds_;
         result.desc_ = desc_;
         onBuilt();
         return result;
@@ -4880,13 +4649,13 @@ public final class PBRequestMemberManage {
           userId_ = other.userId_;
           onChanged();
         }
-        if (!other.roleIds_.isEmpty()) {
-          if (roleIds_.isEmpty()) {
-            roleIds_ = other.roleIds_;
+        if (!other.systemRoleIds_.isEmpty()) {
+          if (systemRoleIds_.isEmpty()) {
+            systemRoleIds_ = other.systemRoleIds_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureRoleIdsIsMutable();
-            roleIds_.addAll(other.roleIds_);
+            ensureSystemRoleIdsIsMutable();
+            systemRoleIds_.addAll(other.systemRoleIds_);
           }
           onChanged();
         }
@@ -5126,157 +4895,157 @@ public final class PBRequestMemberManage {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureRoleIdsIsMutable() {
+      private com.google.protobuf.LazyStringList systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSystemRoleIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          roleIds_ = new com.google.protobuf.LazyStringArrayList(roleIds_);
+          systemRoleIds_ = new com.google.protobuf.LazyStringArrayList(systemRoleIds_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @return A list containing the roleIds.
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+       * @return A list containing the systemRoleIds.
        */
       public com.google.protobuf.ProtocolStringList
-          getRoleIdsList() {
-        return roleIds_.getUnmodifiableView();
+          getSystemRoleIdsList() {
+        return systemRoleIds_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @return The count of roleIds.
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+       * @return The count of systemRoleIds.
        */
-      public int getRoleIdsCount() {
-        return roleIds_.size();
+      public int getSystemRoleIdsCount() {
+        return systemRoleIds_.size();
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
-       * @return The roleIds at the given index.
+       * @return The systemRoleIds at the given index.
        */
-      public java.lang.String getRoleIds(int index) {
-        return roleIds_.get(index);
+      public java.lang.String getSystemRoleIds(int index) {
+        return systemRoleIds_.get(index);
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
-       * @return The bytes of the roleIds at the given index.
+       * @return The bytes of the systemRoleIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getRoleIdsBytes(int index) {
-        return roleIds_.getByteString(index);
+          getSystemRoleIdsBytes(int index) {
+        return systemRoleIds_.getByteString(index);
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
-       * @param value The roleIds to set.
+       * @param value The systemRoleIds to set.
        * @return This builder for chaining.
        */
-      public Builder setRoleIds(
+      public Builder setSystemRoleIds(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureRoleIdsIsMutable();
-        roleIds_.set(index, value);
+  ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The roleIds to add.
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+       * @param value The systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRoleIds(
+      public Builder addSystemRoleIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureRoleIdsIsMutable();
-        roleIds_.add(value);
+  ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param values The roleIds to add.
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+       * @param values The systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addAllRoleIds(
+      public Builder addAllSystemRoleIds(
           java.lang.Iterable<java.lang.String> values) {
-        ensureRoleIdsIsMutable();
+        ensureSystemRoleIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, roleIds_);
+            values, systemRoleIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoleIds() {
-        roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearSystemRoleIds() {
+        systemRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The lists of role_id. Is Required, Min 1, Max 10.
-       * &#64;inject_tag: json:"role_ids"
+       * The is list of system role. Is Required.
+       * &#64;inject_tag: json:"system_role_ids"
        * </pre>
        *
-       * <code>repeated string role_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the roleIds to add.
+       * <code>repeated string system_role_ids = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the systemRoleIds to add.
        * @return This builder for chaining.
        */
-      public Builder addRoleIdsBytes(
+      public Builder addSystemRoleIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureRoleIdsIsMutable();
-        roleIds_.add(value);
+        ensureSystemRoleIdsIsMutable();
+        systemRoleIds_.add(value);
         onChanged();
         return this;
       }
@@ -5434,11 +5203,822 @@ public final class PBRequestMemberManage {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_ListSystemRoles_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_ListSystemRoles_fieldAccessorTable;
+  public interface DescribeMemberOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeMember)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * The account user_id. Is Required.
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * The account user_id. Is Required.
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+  }
+  /**
+   * <pre>
+   * DescribeMember used as a request parameters for RPC and HTTP(based on Body).
+   * </pre>
+   *
+   * Protobuf type {@code request.DescribeMember}
+   */
+  public static final class DescribeMember extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DescribeMember)
+      DescribeMemberOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeMember.newBuilder() to construct.
+    private DescribeMember(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeMember() {
+      spaceId_ = "";
+      userId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeMember();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeMember(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_DescribeMember_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_DescribeMember_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * The account user_id. Is Required.
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The account user_id. Is Required.
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember other = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * DescribeMember used as a request parameters for RPC and HTTP(based on Body).
+     * </pre>
+     *
+     * Protobuf type {@code request.DescribeMember}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DescribeMember)
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMemberOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_DescribeMember_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_DescribeMember_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        userId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_DescribeMember_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember(this);
+        result.spaceId_ = spaceId_;
+        result.userId_ = userId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * The account user_id. Is Required.
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The account user_id. Is Required.
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The account user_id. Is Required.
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The account user_id. Is Required.
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The account user_id. Is Required.
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DescribeMember)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DescribeMember)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeMember>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeMember>() {
+      @java.lang.Override
+      public DescribeMember parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeMember(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeMember> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeMember> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DescribeMember getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListMembers_descriptor;
   private static final 
@@ -5450,15 +6030,20 @@ public final class PBRequestMemberManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteMembers_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_UpsertMembers_descriptor;
+    internal_static_request_AddMembers_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_UpsertMembers_fieldAccessorTable;
+      internal_static_request_AddMembers_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_UpdateMember_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_UpdateMember_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DescribeMember_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DescribeMember_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5471,27 +6056,30 @@ public final class PBRequestMemberManage {
       "\n\'proto/types/request/member_manage.prot" +
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
-      "/protoc-plugin/proto/defaults.proto\"8\n\017L" +
-      "istSystemRoles\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\"\303\001\n\013ListMembers\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 " +
-      "\001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003" +
-      " \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\004 \001(\tB&\342\337\037\"" +
-      "\022 \302\001\035J\000J\007user_idJ\007createdJ\007updated\022\017\n\007re" +
-      "verse\030\005 \001(\010\"U\n\rDeleteMembers\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\010user_ids\030" +
-      "\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\225\001\n\rUpsertMembers\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\010u" +
-      "ser_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\022\037\n\010role_ids" +
-      "\030\003 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008\n\022\033\n\004desc\030\004 \001(\tB\r\342\337\037" +
-      "\t\022\007\302\001\004\310\001\200\010\"\222\001\n\014UpdateMember\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\007user_id\030\002 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\037\n\010role_ids\030\003 \003(\tB\r\342\337\037" +
-      "\t\022\007\352\001\0040\0008\n\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010B" +
-      "t\n$com.dataomnis.gproto.types.pbrequestB" +
-      "\025PBRequestMemberManageP\000Z3github.com/Dat" +
-      "aWorkbench/gproto/xgo/types/pbrequestb\006p" +
-      "roto3"
+      "/protoc-plugin/proto/defaults.proto\"\303\001\n\013" +
+      "ListMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037" +
+      "\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022" +
+      "7\n\007sort_by\030\004 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007user_idJ\007" +
+      "createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\"U\n\rDel" +
+      "eteMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d" +
+      "\"\354\001\n\nAddMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013" +
+      "\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005" +
+      "\302\001\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222" +
+      "\n\017system_role_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n" +
+      "\302\001\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"" +
+      "\250\001\n\014UpdateMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t" +
+      "\302\001\006\200\002\000\210\002A\0222\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025" +
+      "\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037" +
+      "\t\022\007\302\001\004\310\001\200\010\"Y\n\016DescribeMember\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.g" +
+      "proto.types.pbrequestB\025PBRequestMemberMa" +
+      "nageP\000Z3github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5499,36 +6087,36 @@ public final class PBRequestMemberManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
-    internal_static_request_ListSystemRoles_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_request_ListSystemRoles_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_ListSystemRoles_descriptor,
-        new java.lang.String[] { "SpaceId", });
     internal_static_request_ListMembers_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_request_ListMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListMembers_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", });
     internal_static_request_DeleteMembers_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_request_DeleteMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteMembers_descriptor,
         new java.lang.String[] { "SpaceId", "UserIds", });
-    internal_static_request_UpsertMembers_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_request_UpsertMembers_fieldAccessorTable = new
+    internal_static_request_AddMembers_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_request_AddMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_UpsertMembers_descriptor,
-        new java.lang.String[] { "SpaceId", "UserIds", "RoleIds", "Desc", });
+        internal_static_request_AddMembers_descriptor,
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "UserIds", "SystemRoleIds", "Desc", });
     internal_static_request_UpdateMember_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_request_UpdateMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateMember_descriptor,
-        new java.lang.String[] { "SpaceId", "UserId", "RoleIds", "Desc", });
+        new java.lang.String[] { "SpaceId", "UserId", "SystemRoleIds", "Desc", });
+    internal_static_request_DescribeMember_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_request_DescribeMember_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DescribeMember_descriptor,
+        new java.lang.String[] { "SpaceId", "UserId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

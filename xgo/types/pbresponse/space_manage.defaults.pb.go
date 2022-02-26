@@ -44,8 +44,8 @@ func (this *CheckPermission) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+	if this.Workspace != nil {
+		if dt, ok := interface{}(this.Workspace).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

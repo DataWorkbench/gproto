@@ -65,11 +65,11 @@ func (this *ListOpAudits) _xxx_xxx_Validator_Validate_user_id() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListOpAudits_InEnums_Type = map[pbmodel.APIDesc_Kind]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_ListOpAudits_InEnums_PermType = map[pbmodel.ProjectAPI_PermType]bool{0: true, 1: true, 2: true}
 
-func (this *ListOpAudits) _xxx_xxx_Validator_Validate_type() error {
-	if !(_xxx_xxx_Validator_ListOpAudits_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("ListOpAudits", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_perm_type() error {
+	if !(_xxx_xxx_Validator_ListOpAudits_InEnums_PermType[this.PermType]) {
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'perm_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.PermType)))
 	}
 	return nil
 }
@@ -91,7 +91,7 @@ func (this *ListOpAudits) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_perm_type(); err != nil {
 		return err
 	}
 	return nil

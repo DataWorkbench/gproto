@@ -120,8 +120,18 @@ func (this *CreateNetwork) _xxx_xxx_Validator_Validate_space_id() error {
 }
 
 func (this *CreateNetwork) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateNetwork", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
 	if !(len(this.CreatedBy) < 65) {
 		return protovalidator.FieldError1("CreateNetwork", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *CreateNetwork) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateNetwork", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -150,13 +160,6 @@ func (this *CreateNetwork) _xxx_xxx_Validator_Validate_vxnet_id() error {
 	return nil
 }
 
-func (this *CreateNetwork) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("CreateNetwork", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.CreateNetwork
 func (this *CreateNetwork) Validate() error {
 	if this == nil {
@@ -168,6 +171,9 @@ func (this *CreateNetwork) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
@@ -175,9 +181,6 @@ func (this *CreateNetwork) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_vxnet_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

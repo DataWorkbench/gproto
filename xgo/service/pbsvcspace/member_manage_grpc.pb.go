@@ -25,12 +25,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MemberManageClient interface {
-	ListSystemRoles(ctx context.Context, in *pbrequest.ListSystemRoles, opts ...grpc.CallOption) (*pbresponse.ListSystemRoles, error)
 	// ListMembers get a lists of workspace member.
 	ListMembers(ctx context.Context, in *pbrequest.ListMembers, opts ...grpc.CallOption) (*pbresponse.ListMembers, error)
 	DeleteMembers(ctx context.Context, in *pbrequest.DeleteMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	UpsertMembers(ctx context.Context, in *pbrequest.UpsertMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	AddMembers(ctx context.Context, in *pbrequest.AddMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	UpdateMember(ctx context.Context, in *pbrequest.UpdateMember, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DescribeMember(ctx context.Context, in *pbrequest.DescribeMember, opts ...grpc.CallOption) (*pbresponse.DescribeMember, error)
 }
 
 type memberManageClient struct {
@@ -39,15 +39,6 @@ type memberManageClient struct {
 
 func NewMemberManageClient(cc grpc.ClientConnInterface) MemberManageClient {
 	return &memberManageClient{cc}
-}
-
-func (c *memberManageClient) ListSystemRoles(ctx context.Context, in *pbrequest.ListSystemRoles, opts ...grpc.CallOption) (*pbresponse.ListSystemRoles, error) {
-	out := new(pbresponse.ListSystemRoles)
-	err := c.cc.Invoke(ctx, "/spacemanager.MemberManage/ListSystemRoles", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *memberManageClient) ListMembers(ctx context.Context, in *pbrequest.ListMembers, opts ...grpc.CallOption) (*pbresponse.ListMembers, error) {
@@ -68,9 +59,9 @@ func (c *memberManageClient) DeleteMembers(ctx context.Context, in *pbrequest.De
 	return out, nil
 }
 
-func (c *memberManageClient) UpsertMembers(ctx context.Context, in *pbrequest.UpsertMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *memberManageClient) AddMembers(ctx context.Context, in *pbrequest.AddMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.MemberManage/UpsertMembers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.MemberManage/AddMembers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,16 +77,25 @@ func (c *memberManageClient) UpdateMember(ctx context.Context, in *pbrequest.Upd
 	return out, nil
 }
 
+func (c *memberManageClient) DescribeMember(ctx context.Context, in *pbrequest.DescribeMember, opts ...grpc.CallOption) (*pbresponse.DescribeMember, error) {
+	out := new(pbresponse.DescribeMember)
+	err := c.cc.Invoke(ctx, "/spacemanager.MemberManage/DescribeMember", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MemberManageServer is the server API for MemberManage service.
 // All implementations must embed UnimplementedMemberManageServer
 // for forward compatibility
 type MemberManageServer interface {
-	ListSystemRoles(context.Context, *pbrequest.ListSystemRoles) (*pbresponse.ListSystemRoles, error)
 	// ListMembers get a lists of workspace member.
 	ListMembers(context.Context, *pbrequest.ListMembers) (*pbresponse.ListMembers, error)
 	DeleteMembers(context.Context, *pbrequest.DeleteMembers) (*pbmodel.EmptyStruct, error)
-	UpsertMembers(context.Context, *pbrequest.UpsertMembers) (*pbmodel.EmptyStruct, error)
+	AddMembers(context.Context, *pbrequest.AddMembers) (*pbmodel.EmptyStruct, error)
 	UpdateMember(context.Context, *pbrequest.UpdateMember) (*pbmodel.EmptyStruct, error)
+	DescribeMember(context.Context, *pbrequest.DescribeMember) (*pbresponse.DescribeMember, error)
 	mustEmbedUnimplementedMemberManageServer()
 }
 
@@ -103,20 +103,20 @@ type MemberManageServer interface {
 type UnimplementedMemberManageServer struct {
 }
 
-func (UnimplementedMemberManageServer) ListSystemRoles(context.Context, *pbrequest.ListSystemRoles) (*pbresponse.ListSystemRoles, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSystemRoles not implemented")
-}
 func (UnimplementedMemberManageServer) ListMembers(context.Context, *pbrequest.ListMembers) (*pbresponse.ListMembers, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMembers not implemented")
 }
 func (UnimplementedMemberManageServer) DeleteMembers(context.Context, *pbrequest.DeleteMembers) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMembers not implemented")
 }
-func (UnimplementedMemberManageServer) UpsertMembers(context.Context, *pbrequest.UpsertMembers) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpsertMembers not implemented")
+func (UnimplementedMemberManageServer) AddMembers(context.Context, *pbrequest.AddMembers) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddMembers not implemented")
 }
 func (UnimplementedMemberManageServer) UpdateMember(context.Context, *pbrequest.UpdateMember) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMember not implemented")
+}
+func (UnimplementedMemberManageServer) DescribeMember(context.Context, *pbrequest.DescribeMember) (*pbresponse.DescribeMember, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeMember not implemented")
 }
 func (UnimplementedMemberManageServer) mustEmbedUnimplementedMemberManageServer() {}
 
@@ -129,24 +129,6 @@ type UnsafeMemberManageServer interface {
 
 func RegisterMemberManageServer(s grpc.ServiceRegistrar, srv MemberManageServer) {
 	s.RegisterService(&MemberManage_ServiceDesc, srv)
-}
-
-func _MemberManage_ListSystemRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListSystemRoles)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MemberManageServer).ListSystemRoles(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.MemberManage/ListSystemRoles",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MemberManageServer).ListSystemRoles(ctx, req.(*pbrequest.ListSystemRoles))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _MemberManage_ListMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -185,20 +167,20 @@ func _MemberManage_DeleteMembers_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MemberManage_UpsertMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.UpsertMembers)
+func _MemberManage_AddMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.AddMembers)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MemberManageServer).UpsertMembers(ctx, in)
+		return srv.(MemberManageServer).AddMembers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.MemberManage/UpsertMembers",
+		FullMethod: "/spacemanager.MemberManage/AddMembers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MemberManageServer).UpsertMembers(ctx, req.(*pbrequest.UpsertMembers))
+		return srv.(MemberManageServer).AddMembers(ctx, req.(*pbrequest.AddMembers))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -221,6 +203,24 @@ func _MemberManage_UpdateMember_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MemberManage_DescribeMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeMember)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).DescribeMember(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.MemberManage/DescribeMember",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).DescribeMember(ctx, req.(*pbrequest.DescribeMember))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MemberManage_ServiceDesc is the grpc.ServiceDesc for MemberManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -228,10 +228,6 @@ var MemberManage_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "spacemanager.MemberManage",
 	HandlerType: (*MemberManageServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "ListSystemRoles",
-			Handler:    _MemberManage_ListSystemRoles_Handler,
-		},
 		{
 			MethodName: "ListMembers",
 			Handler:    _MemberManage_ListMembers_Handler,
@@ -241,12 +237,16 @@ var MemberManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _MemberManage_DeleteMembers_Handler,
 		},
 		{
-			MethodName: "UpsertMembers",
-			Handler:    _MemberManage_UpsertMembers_Handler,
+			MethodName: "AddMembers",
+			Handler:    _MemberManage_AddMembers_Handler,
 		},
 		{
 			MethodName: "UpdateMember",
 			Handler:    _MemberManage_UpdateMember_Handler,
+		},
+		{
+			MethodName: "DescribeMember",
+			Handler:    _MemberManage_DescribeMember_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

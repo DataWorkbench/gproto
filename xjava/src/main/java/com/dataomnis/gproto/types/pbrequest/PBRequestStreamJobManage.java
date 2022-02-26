@@ -1579,11 +1579,33 @@ public final class PBRequestStreamJobManage {
 
     /**
      * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * PID is the parent id(directory). pid is "" means root(`/`)
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     java.lang.String getPid();
@@ -1593,7 +1615,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -1605,7 +1627,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"is_directory"
      * </pre>
      *
-     * <code>bool is_directory = 4;</code>
+     * <code>bool is_directory = 5;</code>
      * @return The isDirectory.
      */
     boolean getIsDirectory();
@@ -1617,7 +1639,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -1628,7 +1650,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -1640,7 +1662,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 7 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -1650,7 +1672,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -1664,7 +1686,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -1676,7 +1698,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type getType();
@@ -1687,7 +1709,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
      * @return The clusterId.
      */
     java.lang.String getClusterId();
@@ -1697,33 +1719,11 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for clusterId.
      */
     com.google.protobuf.ByteString
         getClusterIdBytes();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * <pre>
@@ -1744,12 +1744,12 @@ public final class PBRequestStreamJobManage {
     private CreateStreamJob() {
       spaceId_ = "";
       createdBy_ = "";
+      spaceOwner_ = "";
       pid_ = "";
       name_ = "";
       desc_ = "";
       type_ = 0;
       clusterId_ = "";
-      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -1797,42 +1797,42 @@ public final class PBRequestStreamJobManage {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              spaceOwner_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               pid_ = s;
               break;
             }
-            case 32: {
+            case 40: {
 
               isDirectory_ = input.readBool();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              name_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               desc_ = s;
               break;
             }
-            case 56: {
+            case 64: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterId_ = s;
-              break;
-            }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceOwner_ = s;
+              clusterId_ = s;
               break;
             }
             default: {
@@ -1963,7 +1963,55 @@ public final class PBRequestStreamJobManage {
       }
     }
 
-    public static final int PID_FIELD_NUMBER = 3;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 4;
     private volatile java.lang.Object pid_;
     /**
      * <pre>
@@ -1971,7 +2019,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     @java.lang.Override
@@ -1993,7 +2041,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     @java.lang.Override
@@ -2011,7 +2059,7 @@ public final class PBRequestStreamJobManage {
       }
     }
 
-    public static final int IS_DIRECTORY_FIELD_NUMBER = 4;
+    public static final int IS_DIRECTORY_FIELD_NUMBER = 5;
     private boolean isDirectory_;
     /**
      * <pre>
@@ -2019,7 +2067,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"is_directory"
      * </pre>
      *
-     * <code>bool is_directory = 4;</code>
+     * <code>bool is_directory = 5;</code>
      * @return The isDirectory.
      */
     @java.lang.Override
@@ -2027,7 +2075,7 @@ public final class PBRequestStreamJobManage {
       return isDirectory_;
     }
 
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 6;
     private volatile java.lang.Object name_;
     /**
      * <pre>
@@ -2036,7 +2084,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -2059,7 +2107,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -2077,7 +2125,7 @@ public final class PBRequestStreamJobManage {
       }
     }
 
-    public static final int DESC_FIELD_NUMBER = 6;
+    public static final int DESC_FIELD_NUMBER = 7;
     private volatile java.lang.Object desc_;
     /**
      * <pre>
@@ -2085,7 +2133,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 7 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -2107,7 +2155,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -2125,7 +2173,7 @@ public final class PBRequestStreamJobManage {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 7;
+    public static final int TYPE_FIELD_NUMBER = 8;
     private int type_;
     /**
      * <pre>
@@ -2135,7 +2183,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -2149,7 +2197,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type getType() {
@@ -2158,7 +2206,7 @@ public final class PBRequestStreamJobManage {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.UNRECOGNIZED : result;
     }
 
-    public static final int CLUSTER_ID_FIELD_NUMBER = 8;
+    public static final int CLUSTER_ID_FIELD_NUMBER = 9;
     private volatile java.lang.Object clusterId_;
     /**
      * <pre>
@@ -2166,7 +2214,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
      * @return The clusterId.
      */
     @java.lang.Override
@@ -2188,7 +2236,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for clusterId.
      */
     @java.lang.Override
@@ -2200,54 +2248,6 @@ public final class PBRequestStreamJobManage {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         clusterId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_OWNER_FIELD_NUMBER = 9;
-    private volatile java.lang.Object spaceOwner_;
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceOwner() {
-      java.lang.Object ref = spaceOwner_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceOwner_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceOwnerBytes() {
-      java.lang.Object ref = spaceOwner_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceOwner_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2274,26 +2274,26 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pid_);
       }
       if (isDirectory_ != false) {
-        output.writeBool(4, isDirectory_);
+        output.writeBool(5, isDirectory_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, desc_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
-        output.writeEnum(7, type_);
+        output.writeEnum(8, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, clusterId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, spaceOwner_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clusterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2310,28 +2310,28 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pid_);
       }
       if (isDirectory_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isDirectory_);
+          .computeBoolSize(5, isDirectory_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, desc_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, type_);
+          .computeEnumSize(8, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, clusterId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, spaceOwner_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2352,6 +2352,8 @@ public final class PBRequestStreamJobManage {
           .equals(other.getSpaceId())) return false;
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
       if (getIsDirectory()
@@ -2363,8 +2365,6 @@ public final class PBRequestStreamJobManage {
       if (type_ != other.type_) return false;
       if (!getClusterId()
           .equals(other.getClusterId())) return false;
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2380,6 +2380,8 @@ public final class PBRequestStreamJobManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
       hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
@@ -2393,8 +2395,6 @@ public final class PBRequestStreamJobManage {
       hash = (53 * hash) + type_;
       hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClusterId().hashCode();
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2536,6 +2536,8 @@ public final class PBRequestStreamJobManage {
 
         createdBy_ = "";
 
+        spaceOwner_ = "";
+
         pid_ = "";
 
         isDirectory_ = false;
@@ -2547,8 +2549,6 @@ public final class PBRequestStreamJobManage {
         type_ = 0;
 
         clusterId_ = "";
-
-        spaceOwner_ = "";
 
         return this;
       }
@@ -2578,13 +2578,13 @@ public final class PBRequestStreamJobManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.CreateStreamJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.CreateStreamJob(this);
         result.spaceId_ = spaceId_;
         result.createdBy_ = createdBy_;
+        result.spaceOwner_ = spaceOwner_;
         result.pid_ = pid_;
         result.isDirectory_ = isDirectory_;
         result.name_ = name_;
         result.desc_ = desc_;
         result.type_ = type_;
         result.clusterId_ = clusterId_;
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -2641,6 +2641,10 @@ public final class PBRequestStreamJobManage {
           createdBy_ = other.createdBy_;
           onChanged();
         }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
         if (!other.getPid().isEmpty()) {
           pid_ = other.pid_;
           onChanged();
@@ -2661,10 +2665,6 @@ public final class PBRequestStreamJobManage {
         }
         if (!other.getClusterId().isEmpty()) {
           clusterId_ = other.clusterId_;
-          onChanged();
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2898,6 +2898,107 @@ public final class PBRequestStreamJobManage {
         return this;
       }
 
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object pid_ = "";
       /**
        * <pre>
@@ -2905,7 +3006,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -2926,7 +3027,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -2948,7 +3049,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -2968,7 +3069,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -2983,7 +3084,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -3006,7 +3107,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"is_directory"
        * </pre>
        *
-       * <code>bool is_directory = 4;</code>
+       * <code>bool is_directory = 5;</code>
        * @return The isDirectory.
        */
       @java.lang.Override
@@ -3019,7 +3120,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"is_directory"
        * </pre>
        *
-       * <code>bool is_directory = 4;</code>
+       * <code>bool is_directory = 5;</code>
        * @param value The isDirectory to set.
        * @return This builder for chaining.
        */
@@ -3035,7 +3136,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"is_directory"
        * </pre>
        *
-       * <code>bool is_directory = 4;</code>
+       * <code>bool is_directory = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsDirectory() {
@@ -3053,7 +3154,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -3075,7 +3176,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -3098,7 +3199,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -3119,7 +3220,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -3135,7 +3236,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -3158,7 +3259,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 7 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -3179,7 +3280,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 7 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -3201,7 +3302,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 7 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -3221,7 +3322,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -3236,7 +3337,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 7 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -3261,7 +3362,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -3275,7 +3376,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -3293,7 +3394,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
@@ -3310,7 +3411,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -3331,7 +3432,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -3348,7 +3449,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
        * @return The clusterId.
        */
       public java.lang.String getClusterId() {
@@ -3369,7 +3470,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
        * @return The bytes for clusterId.
        */
       public com.google.protobuf.ByteString
@@ -3391,7 +3492,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
        * @param value The clusterId to set.
        * @return This builder for chaining.
        */
@@ -3411,7 +3512,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearClusterId() {
@@ -3426,7 +3527,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 9 [(.validator.field) = { ... }</code>
        * @param value The bytes for clusterId to set.
        * @return This builder for chaining.
        */
@@ -3438,107 +3539,6 @@ public final class PBRequestStreamJobManage {
   checkByteStringIsUtf8(value);
         
         clusterId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -20699,76 +20699,76 @@ public final class PBRequestStreamJobManage {
       "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
       "@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004na" +
       "meJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n" +
-      "\006search\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\"\354\002\n\017CreateStr" +
+      "\006search\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\"\357\002\n\017CreateStr" +
       "eamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022" +
-      "2\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004stj-\022\024\n\014is_directory\030\004 \001(\010\022\036\n\004nam" +
-      "e\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB" +
-      "\r\342\337\037\t\022\007\302\001\004\310\001\374\007\022M\n\004type\030\007 \001(\0162\025.model.Str" +
-      "eamJob.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\ncluster_id\030\010 \001(\tB\004\342\337\037\000\022" +
-      " \n\013space_owner\030\t \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"e\n\020Del" +
-      "eteStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\020" +
-      "0\0008dZ\n\302\001\007\312\002\004stj-\"\235\001\n\016MoveStreamJobs\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007jo" +
-      "b_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-\0228" +
-      "\n\006target\030\003 \001(\tB(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\232\001\n\017UpdateStreamJob\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
-      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\036\n\004name" +
-      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r" +
-      "\342\337\037\t\022\007\302\001\004\310\001\200\010\"O\n\021DescribeStreamJob\022#\n\006jo" +
-      "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007versi" +
-      "on\030\002 \001(\tB\004\342\337\037\000\"\217\001\n\020SetStreamJobCode\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006jo" +
-      "b_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004code\030" +
-      "\003 \001(\0132\024.model.StreamJobCodeB\013\342\337\037\007\022\005\342\001\002\020\001" +
-      "\"\233\001\n\024SetStreamJobSchedule\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\0227\n\010schedule\030\003 \001(\0132" +
-      "\030.model.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\217" +
-      "\001\n\020SetStreamJobArgs\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004args\030\003 \001(\0132\024.model.St" +
-      "reamJobArgsB\013\342\337\037\007\022\005\342\001\002\020\001\"N\n\020GetStreamJob" +
-      "Code\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj" +
-      "-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"R\n\024GetStreamJob" +
-      "Schedule\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"N\n\020GetStrea" +
-      "mJobArgs\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\253\002\n\025ListRel" +
-      "easeStreamJobs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\00310" +
-      "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001" +
-      "\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004na" +
-      "meJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010\022\016\n" +
-      "\006search\030\006 \001(\t\022;\n\006status\030\007 \001(\0162\036.model.St" +
-      "reamJobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006jo" +
-      "b_id\030\010 \001(\t\"}\n\020ReleaseStreamJob\022#\n\006job_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022 \n\ncreated_b" +
-      "y\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030\003 \001(\t\022\024\n\014s" +
-      "top_running\030\004 \001(\010\"{\n\027OfflineReleaseStrea" +
-      "mJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-" +
-      "\022\024\n\014stop_running\030\004 \001(\010\"\201\001\n\027SuspendReleas" +
-      "eStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004stj-\022\032\n\014stop_running\030\003 \001(\010B\004\342\337\037\000\"d\n\026Re" +
-      "sumeReleaseStreamJob\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\313\001\n\025ListStreamJobVersio" +
-      "ns\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022" +
-      "&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
-      "\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030" +
-      "\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007up" +
-      "dated\022\017\n\007reverse\030\004 \001(\010\"G\n\033DescribeFlinkU" +
-      "IByInstanceId\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dataomnis.gproto." +
-      "types.pbrequestB\030PBRequestStreamJobManag" +
-      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210" +
+      "\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0222\n\003" +
+      "pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004stj-\022\024\n\014is_directory\030\005 \001(\010\022\036\n\004name\030\006" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\007 \001(\tB\r\342\337" +
+      "\037\t\022\007\302\001\004\310\001\374\007\022M\n\004type\030\010 \001(\0162\025.model.Stream" +
+      "Job.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037" +
+      "\t\022\007\332\001\0040\000X\001\022\030\n\ncluster_id\030\t \001(\tB\004\342\337\037\000\"e\n\020" +
+      "DeleteStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023" +
+      "\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-\"\235\001\n\016MoveStreamJobs\022%" +
+      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n" +
+      "\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj" +
+      "-\0228\n\006target\030\003 \001(\tB(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\232\001\n\017UpdateStreamJob\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#" +
+      "\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\036\n\004n" +
+      "ame\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(" +
+      "\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"O\n\021DescribeStreamJob\022#\n" +
+      "\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007ve" +
+      "rsion\030\002 \001(\tB\004\342\337\037\000\"\217\001\n\020SetStreamJobCode\022%" +
+      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n" +
+      "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004co" +
+      "de\030\003 \001(\0132\024.model.StreamJobCodeB\013\342\337\037\007\022\005\342\001" +
+      "\002\020\001\"\233\001\n\024SetStreamJobSchedule\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\0227\n\010schedule\030\003 \001" +
+      "(\0132\030.model.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020" +
+      "\001\"\217\001\n\020SetStreamJobArgs\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004args\030\003 \001(\0132\024.model" +
+      ".StreamJobArgsB\013\342\337\037\007\022\005\342\001\002\020\001\"N\n\020GetStream" +
+      "JobCode\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"R\n\024GetStream" +
+      "JobSchedule\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"N\n\020GetSt" +
+      "reamJobArgs\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\253\002\n\025List" +
+      "ReleaseStreamJobs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022" +
+      "\005\262\001\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ" +
+      "\004nameJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010" +
+      "\022\016\n\006search\030\006 \001(\t\022;\n\006status\030\007 \001(\0162\036.model" +
+      ".StreamJobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n" +
+      "\006job_id\030\010 \001(\t\"\200\001\n\020ReleaseStreamJob\022#\n\006jo" +
+      "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022#\n\ncreat" +
+      "ed_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\014\n\004desc\030\003 \001" +
+      "(\t\022\024\n\014stop_running\030\004 \001(\010\"{\n\027OfflineRelea" +
+      "seStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004stj-\022\024\n\014stop_running\030\004 \001(\010\"\201\001\n\027Suspen" +
+      "dReleaseStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_running\030\003 \001(\010B\004\342\337\037" +
+      "\000\"d\n\026ResumeReleaseStreamJob\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\313\001\n\025ListStreamJo" +
+      "bVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004stj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
+      "\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007s" +
+      "ort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007crea" +
+      "tedJ\007updated\022\017\n\007reverse\030\004 \001(\010\"G\n\033Describ" +
+      "eFlinkUIByInstanceId\022(\n\013instance_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dataomnis." +
+      "gproto.types.pbrequestB\030PBRequestStreamJ" +
+      "obManageP\000Z3github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20788,7 +20788,7 @@ public final class PBRequestStreamJobManage {
     internal_static_request_CreateStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateStreamJob_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "Pid", "IsDirectory", "Name", "Desc", "Type", "ClusterId", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Pid", "IsDirectory", "Name", "Desc", "Type", "ClusterId", });
     internal_static_request_DeleteStreamJobs_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_DeleteStreamJobs_fieldAccessorTable = new

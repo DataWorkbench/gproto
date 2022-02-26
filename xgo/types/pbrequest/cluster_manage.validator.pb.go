@@ -245,8 +245,18 @@ func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_space_id() error {
 }
 
 func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateFlinkCluster", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
 	if !(len(this.CreatedBy) < 65) {
 		return protovalidator.FieldError1("CreateFlinkCluster", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateFlinkCluster", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -328,13 +338,6 @@ func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_config() error {
 	return nil
 }
 
-func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("CreateFlinkCluster", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.CreateFlinkCluster
 func (this *CreateFlinkCluster) Validate() error {
 	if this == nil {
@@ -344,6 +347,9 @@ func (this *CreateFlinkCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
@@ -370,9 +376,6 @@ func (this *CreateFlinkCluster) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_config(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -382,6 +385,13 @@ func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_space_id() error {
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
 		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -464,19 +474,15 @@ func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_config() error {
 	return nil
 }
 
-func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.UpdateFlinkCluster
 func (this *UpdateFlinkCluster) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
@@ -501,9 +507,6 @@ func (this *UpdateFlinkCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_config(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

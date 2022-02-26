@@ -10,14 +10,6 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message request.ListSystemRoles
-func (this *ListSystemRoles) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.ListMembers
 func (this *ListMembers) SetDefaults() {
 	if this == nil {
@@ -37,8 +29,8 @@ func (this *DeleteMembers) SetDefaults() {
 	return
 }
 
-// Set default value for message request.UpsertMembers
-func (this *UpsertMembers) SetDefaults() {
+// Set default value for message request.AddMembers
+func (this *AddMembers) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -47,6 +39,14 @@ func (this *UpsertMembers) SetDefaults() {
 
 // Set default value for message request.UpdateMember
 func (this *UpdateMember) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DescribeMember
+func (this *DescribeMember) SetDefaults() {
 	if this == nil {
 		return
 	}

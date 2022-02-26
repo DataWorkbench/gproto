@@ -2939,7 +2939,7 @@ public final class PBModelResource {
     java.lang.String[] descriptorData = {
       "\n\034proto/types/model/file.proto\022\005model\0323g" +
       "ithub.com/yu31/protoc-plugin/proto/valid" +
-      "ator.proto\"\265\004\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "ator.proto\"\270\004\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
       "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004res-\022\013\n\003pid\030\003 \001(\t\022\024\n\014is_directory" +
       "\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\033" +
@@ -2948,15 +2948,15 @@ public final class PBModelResource {
       "\001 \022-\n\004type\030\t \001(\0162\020.model.File.TypeB\r\342\337\037\t" +
       "\022\007\332\001\0040\000X\001\0221\n\006status\030\n \001(\0162\022.model.File.S" +
       "tatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\360\001\020\022 \n\ncreated_by\030\014 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\200\002\001\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
-      "pdated\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\":\n\004Type\022\021\n\rRes" +
-      "ourceUnset\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNEC" +
-      "TOR\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
-      "ted\020\001\022\013\n\007Enabled\020\002Bj\n\"com.dataomnis.gpro" +
-      "to.types.pbmodelB\017PBModelResourceP\000Z1git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodelb\006proto3"
+      "\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\200\002\000\210\002A\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034" +
+      "\n\007updated\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\":\n\004Type\022\021\n\r" +
+      "ResourceUnset\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCON" +
+      "NECTOR\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007D" +
+      "eleted\020\001\022\013\n\007Enabled\020\002Bj\n\"com.dataomnis.g" +
+      "proto.types.pbmodelB\017PBModelResourceP\000Z1" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

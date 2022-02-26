@@ -76,8 +76,8 @@ func (this *DescribeWorkspace) Validate() error {
 	return nil
 }
 
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_info() error {
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_workspace() error {
+	if dt, ok := interface{}(this.Workspace).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -90,7 +90,7 @@ func (this *CheckPermission) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_workspace(); err != nil {
 		return err
 	}
 	return nil

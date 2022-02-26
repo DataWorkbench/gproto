@@ -27,19 +27,18 @@ public final class PBSvcMemberManage {
       "ge.proto\022\014spacemanager\032\035proto/types/mode" +
       "l/empty.proto\032\'proto/types/request/membe" +
       "r_manage.proto\032(proto/types/response/mem" +
-      "ber_manage.proto2\321\002\n\014MemberManage\022H\n\017Lis" +
-      "tSystemRoles\022\030.request.ListSystemRoles\032\031" +
-      ".response.ListSystemRoles\"\000\022<\n\013ListMembe" +
-      "rs\022\024.request.ListMembers\032\025.response.List" +
-      "Members\"\000\022=\n\rDeleteMembers\022\026.request.Del" +
-      "eteMembers\032\022.model.EmptyStruct\"\000\022=\n\rUpse" +
-      "rtMembers\022\026.request.UpsertMembers\032\022.mode" +
+      "ber_manage.proto2\310\002\n\014MemberManage\022<\n\013Lis" +
+      "tMembers\022\024.request.ListMembers\032\025.respons" +
+      "e.ListMembers\"\000\022=\n\rDeleteMembers\022\026.reque" +
+      "st.DeleteMembers\032\022.model.EmptyStruct\"\000\0227" +
+      "\n\nAddMembers\022\023.request.AddMembers\032\022.mode" +
       "l.EmptyStruct\"\000\022;\n\014UpdateMember\022\025.reques" +
-      "t.UpdateMember\032\022.model.EmptyStruct\"\000Bv\n\'" +
-      "com.dataomnis.gproto.service.pbsvcspaceB" +
-      "\021PBSvcMemberManageP\000Z6github.com/DataWor" +
-      "kbench/gproto/xgo/service/pbsvcspaceb\006pr" +
-      "oto3"
+      "t.UpdateMember\032\022.model.EmptyStruct\"\000\022E\n\016" +
+      "DescribeMember\022\027.request.DescribeMember\032" +
+      "\030.response.DescribeMember\"\000Bv\n\'com.datao" +
+      "mnis.gproto.service.pbsvcspaceB\021PBSvcMem" +
+      "berManageP\000Z6github.com/DataWorkbench/gp" +
+      "roto/xgo/service/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

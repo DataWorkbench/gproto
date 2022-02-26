@@ -25,6 +25,13 @@ func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 func (this *CreateFilePrepare) _xxx_xxx_Validator_CheckIf_pid() bool {
 	if !(this.Pid != "") {
 		return false
@@ -74,19 +81,15 @@ func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
-func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.CreateFilePrepare
 func (this *CreateFilePrepare) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
@@ -101,9 +104,6 @@ func (this *CreateFilePrepare) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -113,6 +113,16 @@ func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_space_id() error {
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
 		return protovalidator.FieldError1("CreateFileMeta", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateFileMeta", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateFileMeta", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -197,22 +207,15 @@ func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_version() error {
 	return nil
 }
 
-func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_created_by() error {
-	if !(len(this.CreatedBy) > 0) {
-		return protovalidator.FieldError1("CreateFileMeta", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
-	}
-	if !(len(this.CreatedBy) < 65) {
-		return protovalidator.FieldError1("CreateFileMeta", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
-	}
-	return nil
-}
-
 // Set default value for message request.CreateFileMeta
 func (this *CreateFileMeta) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
@@ -239,9 +242,6 @@ func (this *CreateFileMeta) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -251,6 +251,13 @@ func (this *ReCreateFilePrepare) _xxx_xxx_Validator_Validate_space_id() error {
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
 		return protovalidator.FieldError1("ReCreateFilePrepare", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ReCreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("ReCreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
 	}
 	return nil
 }
@@ -272,13 +279,6 @@ func (this *ReCreateFilePrepare) _xxx_xxx_Validator_Validate_size() error {
 	return nil
 }
 
-func (this *ReCreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
-	if !(this.SpaceOwner != "") {
-		return protovalidator.FieldError1("ReCreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
-	}
-	return nil
-}
-
 // Set default value for message request.ReCreateFilePrepare
 func (this *ReCreateFilePrepare) Validate() error {
 	if this == nil {
@@ -287,13 +287,13 @@ func (this *ReCreateFilePrepare) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_size(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

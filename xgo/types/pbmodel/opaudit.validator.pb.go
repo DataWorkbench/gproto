@@ -20,21 +20,21 @@ func (this *OpAudit) _xxx_xxx_Validator_Validate_user_id() error {
 	return nil
 }
 
-func (this *OpAudit) _xxx_xxx_Validator_Validate_op_name() error {
-	if !(this.OpName != "") {
-		return protovalidator.FieldError1("OpAudit", "the value of field 'op_name' must be not equal to ''", this.OpName)
+func (this *OpAudit) _xxx_xxx_Validator_Validate_api_name() error {
+	if !(this.ApiName != "") {
+		return protovalidator.FieldError1("OpAudit", "the value of field 'api_name' must be not equal to ''", this.ApiName)
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_OpAudit_InEnums_OpType = map[APIDesc_Kind]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_OpAudit_InEnums_PermType = map[ProjectAPI_PermType]bool{0: true, 1: true, 2: true}
 
-func (this *OpAudit) _xxx_xxx_Validator_Validate_op_type() error {
-	if !(this.OpType > 0) {
-		return protovalidator.FieldError1("OpAudit", "the value of field 'op_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpType)))
+func (this *OpAudit) _xxx_xxx_Validator_Validate_perm_type() error {
+	if !(this.PermType > 0) {
+		return protovalidator.FieldError1("OpAudit", "the value of field 'perm_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.PermType)))
 	}
-	if !(_xxx_xxx_Validator_OpAudit_InEnums_OpType[this.OpType]) {
-		return protovalidator.FieldError1("OpAudit", "the value of field 'op_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpType)))
+	if !(_xxx_xxx_Validator_OpAudit_InEnums_PermType[this.PermType]) {
+		return protovalidator.FieldError1("OpAudit", "the value of field 'perm_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.PermType)))
 	}
 	return nil
 }
@@ -66,10 +66,10 @@ func (this *OpAudit) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_op_name(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_op_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_perm_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_state(); err != nil {

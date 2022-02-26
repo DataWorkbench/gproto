@@ -2498,11 +2498,33 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * Network Name. Is required.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -2512,7 +2534,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -2524,7 +2546,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"router_id"
      * </pre>
      *
-     * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string router_id = 5 [(.validator.field) = { ... }</code>
      * @return The routerId.
      */
     java.lang.String getRouterId();
@@ -2534,7 +2556,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"router_id"
      * </pre>
      *
-     * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string router_id = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for routerId.
      */
     com.google.protobuf.ByteString
@@ -2546,7 +2568,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
      *
-     * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
      * @return The vxnetId.
      */
     java.lang.String getVxnetId();
@@ -2556,33 +2578,11 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
      *
-     * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for vxnetId.
      */
     com.google.protobuf.ByteString
         getVxnetIdBytes();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.CreateNetwork}
@@ -2599,10 +2599,10 @@ public final class PBRequestNetworkManage {
     private CreateNetwork() {
       spaceId_ = "";
       createdBy_ = "";
+      spaceOwner_ = "";
       name_ = "";
       routerId_ = "";
       vxnetId_ = "";
-      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -2650,25 +2650,25 @@ public final class PBRequestNetworkManage {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              spaceOwner_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              routerId_ = s;
+              name_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vxnetId_ = s;
+              routerId_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceOwner_ = s;
+              vxnetId_ = s;
               break;
             }
             default: {
@@ -2799,151 +2799,7 @@ public final class PBRequestNetworkManage {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * Network Name. Is required.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Network Name. Is required.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROUTER_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object routerId_;
-    /**
-     * <pre>
-     * VPC's route id, Is required.
-     * &#64;inject_tag: json:"router_id"
-     * </pre>
-     *
-     * <code>string router_id = 4 [(.validator.field) = { ... }</code>
-     * @return The routerId.
-     */
-    @java.lang.Override
-    public java.lang.String getRouterId() {
-      java.lang.Object ref = routerId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        routerId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * VPC's route id, Is required.
-     * &#64;inject_tag: json:"router_id"
-     * </pre>
-     *
-     * <code>string router_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for routerId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRouterIdBytes() {
-      java.lang.Object ref = routerId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        routerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VXNET_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object vxnetId_;
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_id"
-     * </pre>
-     *
-     * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
-     * @return The vxnetId.
-     */
-    @java.lang.Override
-    public java.lang.String getVxnetId() {
-      java.lang.Object ref = vxnetId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vxnetId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_id"
-     * </pre>
-     *
-     * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for vxnetId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVxnetIdBytes() {
-      java.lang.Object ref = vxnetId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vxnetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -2951,7 +2807,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -2973,7 +2829,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -2985,6 +2841,150 @@ public final class PBRequestNetworkManage {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * Network Name. Is required.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Network Name. Is required.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROUTER_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object routerId_;
+    /**
+     * <pre>
+     * VPC's route id, Is required.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5 [(.validator.field) = { ... }</code>
+     * @return The routerId.
+     */
+    @java.lang.Override
+    public java.lang.String getRouterId() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * VPC's route id, Is required.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for routerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRouterIdBytes() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VXNET_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object vxnetId_;
+    /**
+     * <pre>
+     * vxnet id. Is required.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
+     * @return The vxnetId.
+     */
+    @java.lang.Override
+    public java.lang.String getVxnetId() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vxnetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * vxnet id. Is required.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for vxnetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVxnetIdBytes() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vxnetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3011,17 +3011,17 @@ public final class PBRequestNetworkManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, routerId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, routerId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, vxnetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vxnetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3038,17 +3038,17 @@ public final class PBRequestNetworkManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, routerId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, routerId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, vxnetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vxnetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3069,14 +3069,14 @@ public final class PBRequestNetworkManage {
           .equals(other.getSpaceId())) return false;
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getRouterId()
           .equals(other.getRouterId())) return false;
       if (!getVxnetId()
           .equals(other.getVxnetId())) return false;
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3092,14 +3092,14 @@ public final class PBRequestNetworkManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ROUTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRouterId().hashCode();
       hash = (37 * hash) + VXNET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVxnetId().hashCode();
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3237,13 +3237,13 @@ public final class PBRequestNetworkManage {
 
         createdBy_ = "";
 
+        spaceOwner_ = "";
+
         name_ = "";
 
         routerId_ = "";
 
         vxnetId_ = "";
-
-        spaceOwner_ = "";
 
         return this;
       }
@@ -3273,10 +3273,10 @@ public final class PBRequestNetworkManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.CreateNetwork result = new com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.CreateNetwork(this);
         result.spaceId_ = spaceId_;
         result.createdBy_ = createdBy_;
+        result.spaceOwner_ = spaceOwner_;
         result.name_ = name_;
         result.routerId_ = routerId_;
         result.vxnetId_ = vxnetId_;
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -3333,6 +3333,10 @@ public final class PBRequestNetworkManage {
           createdBy_ = other.createdBy_;
           onChanged();
         }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -3343,10 +3347,6 @@ public final class PBRequestNetworkManage {
         }
         if (!other.getVxnetId().isEmpty()) {
           vxnetId_ = other.vxnetId_;
-          onChanged();
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3580,6 +3580,107 @@ public final class PBRequestNetworkManage {
         return this;
       }
 
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object name_ = "";
       /**
        * <pre>
@@ -3587,7 +3688,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -3608,7 +3709,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -3630,7 +3731,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -3650,7 +3751,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -3665,7 +3766,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -3688,7 +3789,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"router_id"
        * </pre>
        *
-       * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string router_id = 5 [(.validator.field) = { ... }</code>
        * @return The routerId.
        */
       public java.lang.String getRouterId() {
@@ -3709,7 +3810,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"router_id"
        * </pre>
        *
-       * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string router_id = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for routerId.
        */
       public com.google.protobuf.ByteString
@@ -3731,7 +3832,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"router_id"
        * </pre>
        *
-       * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string router_id = 5 [(.validator.field) = { ... }</code>
        * @param value The routerId to set.
        * @return This builder for chaining.
        */
@@ -3751,7 +3852,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"router_id"
        * </pre>
        *
-       * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string router_id = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearRouterId() {
@@ -3766,7 +3867,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"router_id"
        * </pre>
        *
-       * <code>string router_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string router_id = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for routerId to set.
        * @return This builder for chaining.
        */
@@ -3789,7 +3890,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
        *
-       * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
        * @return The vxnetId.
        */
       public java.lang.String getVxnetId() {
@@ -3810,7 +3911,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
        *
-       * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for vxnetId.
        */
       public com.google.protobuf.ByteString
@@ -3832,7 +3933,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
        *
-       * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
        * @param value The vxnetId to set.
        * @return This builder for chaining.
        */
@@ -3852,7 +3953,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
        *
-       * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearVxnetId() {
@@ -3867,7 +3968,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
        *
-       * <code>string vxnet_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string vxnet_id = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for vxnetId to set.
        * @return This builder for chaining.
        */
@@ -3879,107 +3980,6 @@ public final class PBRequestNetworkManage {
   checkByteStringIsUtf8(value);
         
         vxnetId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -6088,22 +6088,22 @@ public final class PBRequestNetworkManage {
       "search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\"g\n\016DeleteNetw" +
       "orks\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\022.\n\013network_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ" +
-      "\n\302\001\007\312\002\004net-\"\345\001\n\rCreateNetwork\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_" +
-      "by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022" +
-      "\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t" +
-      "\312\002\006vxnet-\022 \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\"\312\001\n\rUpdateNetwork\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id\030\002 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
-      "\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022\n" +
-      "\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t\312" +
-      "\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nnetwork_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$com.data" +
-      "omnis.gproto.types.pbrequestB\026PBRequestN" +
-      "etworkManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "\n\302\001\007\312\002\004net-\"\350\001\n\rCreateNetwork\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_" +
+      "by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner" +
+      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\005 \001(\tB\020\342\337\037\014\022\n\302\001" +
+      "\007\312\002\004rtr-\022$\n\010vxnet_id\030\006 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006" +
+      "vxnet-\"\312\001\n\rUpdateNetwork\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id\030\002 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001(\tB\020" +
+      "\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037" +
+      "\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302" +
+      "\001\t\312\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nnetwor" +
+      "k_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$com.d" +
+      "ataomnis.gproto.types.pbrequestB\026PBReque" +
+      "stNetworkManageP\000Z3github.com/DataWorkbe" +
+      "nch/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6128,7 +6128,7 @@ public final class PBRequestNetworkManage {
     internal_static_request_CreateNetwork_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateNetwork_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "Name", "RouterId", "VxnetId", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Name", "RouterId", "VxnetId", });
     internal_static_request_UpdateNetwork_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_UpdateNetwork_fieldAccessorTable = new

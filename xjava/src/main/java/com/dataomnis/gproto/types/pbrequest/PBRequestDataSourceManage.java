@@ -1661,11 +1661,55 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
+     * Source owner.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * Source owner.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * Source name unique within a space.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 2 [(.validator.field) = { ... }</code>
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -1675,7 +1719,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 2 [(.validator.field) = { ... }</code>
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -1687,7 +1731,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 3 [(.validator.field) = { ... }</code>
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -1697,7 +1741,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 3 [(.validator.field) = { ... }</code>
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -1709,7 +1753,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -1719,7 +1763,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType();
@@ -1730,7 +1774,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"url"
      * </pre>
      *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
      * @return Whether the url field is set.
      */
     boolean hasUrl();
@@ -1740,7 +1784,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"url"
      * </pre>
      *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
      * @return The url.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL getUrl();
@@ -1750,83 +1794,39 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"url"
      * </pre>
      *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder getUrlOrBuilder();
 
     /**
      * <pre>
-     * Source owner.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-     * @return The createdBy.
-     */
-    java.lang.String getCreatedBy();
-    /**
-     * <pre>
-     * Source owner.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for createdBy.
-     */
-    com.google.protobuf.ByteString
-        getCreatedByBytes();
-
-    /**
-     * <pre>
      * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
+     * &#64;inject_tag: json:"last_connection"
      * </pre>
      *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
      * @return Whether the lastConnection field is set.
      */
     boolean hasLastConnection();
     /**
      * <pre>
      * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
+     * &#64;inject_tag: json:"last_connection"
      * </pre>
      *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
      * @return The lastConnection.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection();
     /**
      * <pre>
      * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
+     * &#64;inject_tag: json:"last_connection"
      * </pre>
      *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * <pre>
@@ -1846,11 +1846,11 @@ public final class PBRequestDataSourceManage {
     }
     private CreateDataSource() {
       spaceId_ = "";
+      createdBy_ = "";
+      spaceOwner_ = "";
       name_ = "";
       desc_ = "";
       type_ = 0;
-      createdBy_ = "";
-      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -1892,22 +1892,34 @@ public final class PBRequestDataSourceManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              createdBy_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              spaceOwner_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               desc_ = s;
               break;
             }
-            case 32: {
+            case 48: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 42: {
+            case 58: {
               com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder subBuilder = null;
               if (url_ != null) {
                 subBuilder = url_.toBuilder();
@@ -1920,13 +1932,7 @@ public final class PBRequestDataSourceManage {
 
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createdBy_ = s;
-              break;
-            }
-            case 58: {
+            case 66: {
               com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder subBuilder = null;
               if (lastConnection_ != null) {
                 subBuilder = lastConnection_.toBuilder();
@@ -1937,12 +1943,6 @@ public final class PBRequestDataSourceManage {
                 lastConnection_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceOwner_ = s;
               break;
             }
             default: {
@@ -2025,181 +2025,15 @@ public final class PBRequestDataSourceManage {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * Source name unique within a space.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 2 [(.validator.field) = { ... }</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Source name unique within a space.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DESC_FIELD_NUMBER = 3;
-    private volatile java.lang.Object desc_;
-    /**
-     * <pre>
-     * describe this source.
-     * &#64;inject_tag: json:"desc"
-     * </pre>
-     *
-     * <code>string desc = 3 [(.validator.field) = { ... }</code>
-     * @return The desc.
-     */
-    @java.lang.Override
-    public java.lang.String getDesc() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        desc_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * describe this source.
-     * &#64;inject_tag: json:"desc"
-     * </pre>
-     *
-     * <code>string desc = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for desc.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDescBytes() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        desc_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 4;
-    private int type_;
-    /**
-     * <pre>
-     * Source Type, one of 12345678 1-&gt;MySQL/2-&gt;PostgreSQL/3-&gt;Kafka/4-&gt;S3/5-&gt;ClickHouse/6-&gt;Hbase/7-&gt;Ftp/8-&gt;HDFS
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * Source Type, one of 12345678 1-&gt;MySQL/2-&gt;PostgreSQL/3-&gt;Kafka/4-&gt;S3/5-&gt;ClickHouse/6-&gt;Hbase/7-&gt;Ftp/8-&gt;HDFS
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int URL_FIELD_NUMBER = 5;
-    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL url_;
-    /**
-     * <pre>
-     * this source connection info
-     * &#64;inject_tag: json:"url"
-     * </pre>
-     *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
-     * @return Whether the url field is set.
-     */
-    @java.lang.Override
-    public boolean hasUrl() {
-      return url_ != null;
-    }
-    /**
-     * <pre>
-     * this source connection info
-     * &#64;inject_tag: json:"url"
-     * </pre>
-     *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
-     * @return The url.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL getUrl() {
-      return url_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.getDefaultInstance() : url_;
-    }
-    /**
-     * <pre>
-     * this source connection info
-     * &#64;inject_tag: json:"url"
-     * </pre>
-     *
-     * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder getUrlOrBuilder() {
-      return getUrl();
-    }
-
-    public static final int CREATED_BY_FIELD_NUMBER = 6;
+    public static final int CREATED_BY_FIELD_NUMBER = 2;
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
      * Source owner.
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
-     * <code>string created_by = 6 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     @java.lang.Override
@@ -2218,10 +2052,10 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * Source owner.
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
-     * <code>string created_by = 6 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     @java.lang.Override
@@ -2239,48 +2073,7 @@ public final class PBRequestDataSourceManage {
       }
     }
 
-    public static final int LAST_CONNECTION_FIELD_NUMBER = 7;
-    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection lastConnection_;
-    /**
-     * <pre>
-     * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
-     * </pre>
-     *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
-     * @return Whether the lastConnection field is set.
-     */
-    @java.lang.Override
-    public boolean hasLastConnection() {
-      return lastConnection_ != null;
-    }
-    /**
-     * <pre>
-     * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
-     * </pre>
-     *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
-     * @return The lastConnection.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection() {
-      return lastConnection_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : lastConnection_;
-    }
-    /**
-     * <pre>
-     * The last connection record. The value is nil if never tested for usability.
-     * &#64;inject_tag: json:"last_connection" gorm:"-"
-     * </pre>
-     *
-     * <code>.model.DataSourceConnection last_connection = 7;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder() {
-      return getLastConnection();
-    }
-
-    public static final int SPACE_OWNER_FIELD_NUMBER = 8;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -2288,7 +2081,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -2310,7 +2103,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -2326,6 +2119,213 @@ public final class PBRequestDataSourceManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * Source name unique within a space.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Source name unique within a space.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object desc_;
+    /**
+     * <pre>
+     * describe this source.
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * describe this source.
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 6;
+    private int type_;
+    /**
+     * <pre>
+     * Source Type, one of 12345678 1-&gt;MySQL/2-&gt;PostgreSQL/3-&gt;Kafka/4-&gt;S3/5-&gt;ClickHouse/6-&gt;Hbase/7-&gt;Ftp/8-&gt;HDFS
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Source Type, one of 12345678 1-&gt;MySQL/2-&gt;PostgreSQL/3-&gt;Kafka/4-&gt;S3/5-&gt;ClickHouse/6-&gt;Hbase/7-&gt;Ftp/8-&gt;HDFS
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int URL_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL url_;
+    /**
+     * <pre>
+     * this source connection info
+     * &#64;inject_tag: json:"url"
+     * </pre>
+     *
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
+     * @return Whether the url field is set.
+     */
+    @java.lang.Override
+    public boolean hasUrl() {
+      return url_ != null;
+    }
+    /**
+     * <pre>
+     * this source connection info
+     * &#64;inject_tag: json:"url"
+     * </pre>
+     *
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL getUrl() {
+      return url_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.getDefaultInstance() : url_;
+    }
+    /**
+     * <pre>
+     * this source connection info
+     * &#64;inject_tag: json:"url"
+     * </pre>
+     *
+     * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder getUrlOrBuilder() {
+      return getUrl();
+    }
+
+    public static final int LAST_CONNECTION_FIELD_NUMBER = 8;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection lastConnection_;
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
+     * @return Whether the lastConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastConnection() {
+      return lastConnection_ != null;
+    }
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
+     * @return The lastConnection.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection() {
+      return lastConnection_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : lastConnection_;
+    }
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 8;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder() {
+      return getLastConnection();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2345,26 +2345,26 @@ public final class PBRequestDataSourceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-        output.writeEnum(4, type_);
-      }
-      if (url_ != null) {
-        output.writeMessage(5, getUrl());
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdBy_);
-      }
-      if (lastConnection_ != null) {
-        output.writeMessage(7, getLastConnection());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, spaceOwner_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(6, type_);
+      }
+      if (url_ != null) {
+        output.writeMessage(7, getUrl());
+      }
+      if (lastConnection_ != null) {
+        output.writeMessage(8, getLastConnection());
       }
       unknownFields.writeTo(output);
     }
@@ -2378,29 +2378,29 @@ public final class PBRequestDataSourceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, type_);
+          .computeEnumSize(6, type_);
       }
       if (url_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getUrl());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdBy_);
+          .computeMessageSize(7, getUrl());
       }
       if (lastConnection_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getLastConnection());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, spaceOwner_);
+          .computeMessageSize(8, getLastConnection());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2419,6 +2419,10 @@ public final class PBRequestDataSourceManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getDesc()
@@ -2429,15 +2433,11 @@ public final class PBRequestDataSourceManage {
         if (!getUrl()
             .equals(other.getUrl())) return false;
       }
-      if (!getCreatedBy()
-          .equals(other.getCreatedBy())) return false;
       if (hasLastConnection() != other.hasLastConnection()) return false;
       if (hasLastConnection()) {
         if (!getLastConnection()
             .equals(other.getLastConnection())) return false;
       }
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2451,6 +2451,10 @@ public final class PBRequestDataSourceManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
@@ -2461,14 +2465,10 @@ public final class PBRequestDataSourceManage {
         hash = (37 * hash) + URL_FIELD_NUMBER;
         hash = (53 * hash) + getUrl().hashCode();
       }
-      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedBy().hashCode();
       if (hasLastConnection()) {
         hash = (37 * hash) + LAST_CONNECTION_FIELD_NUMBER;
         hash = (53 * hash) + getLastConnection().hashCode();
       }
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2608,6 +2608,10 @@ public final class PBRequestDataSourceManage {
         super.clear();
         spaceId_ = "";
 
+        createdBy_ = "";
+
+        spaceOwner_ = "";
+
         name_ = "";
 
         desc_ = "";
@@ -2620,16 +2624,12 @@ public final class PBRequestDataSourceManage {
           url_ = null;
           urlBuilder_ = null;
         }
-        createdBy_ = "";
-
         if (lastConnectionBuilder_ == null) {
           lastConnection_ = null;
         } else {
           lastConnection_ = null;
           lastConnectionBuilder_ = null;
         }
-        spaceOwner_ = "";
-
         return this;
       }
 
@@ -2657,6 +2657,8 @@ public final class PBRequestDataSourceManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.CreateDataSource buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.CreateDataSource result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.CreateDataSource(this);
         result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
+        result.spaceOwner_ = spaceOwner_;
         result.name_ = name_;
         result.desc_ = desc_;
         result.type_ = type_;
@@ -2665,13 +2667,11 @@ public final class PBRequestDataSourceManage {
         } else {
           result.url_ = urlBuilder_.build();
         }
-        result.createdBy_ = createdBy_;
         if (lastConnectionBuilder_ == null) {
           result.lastConnection_ = lastConnection_;
         } else {
           result.lastConnection_ = lastConnectionBuilder_.build();
         }
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -2724,6 +2724,14 @@ public final class PBRequestDataSourceManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -2738,16 +2746,8 @@ public final class PBRequestDataSourceManage {
         if (other.hasUrl()) {
           mergeUrl(other.getUrl());
         }
-        if (!other.getCreatedBy().isEmpty()) {
-          createdBy_ = other.createdBy_;
-          onChanged();
-        }
         if (other.hasLastConnection()) {
           mergeLastConnection(other.getLastConnection());
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2879,6 +2879,208 @@ public final class PBRequestDataSourceManage {
         return this;
       }
 
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * Source owner.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Source owner.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Source owner.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Source owner.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Source owner.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object name_ = "";
       /**
        * <pre>
@@ -2886,7 +3088,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 2 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -2907,7 +3109,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 2 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -2929,7 +3131,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 2 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -2949,7 +3151,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 2 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -2964,7 +3166,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 2 [(.validator.field) = { ... }</code>
+       * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -2987,7 +3189,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 3 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -3008,7 +3210,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 3 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -3030,7 +3232,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 3 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -3050,7 +3252,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 3 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -3065,7 +3267,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 3 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -3088,7 +3290,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -3100,7 +3302,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -3116,7 +3318,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
@@ -3131,7 +3333,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -3150,7 +3352,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -3169,7 +3371,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        * @return Whether the url field is set.
        */
       public boolean hasUrl() {
@@ -3181,7 +3383,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        * @return The url.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL getUrl() {
@@ -3197,7 +3399,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public Builder setUrl(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL value) {
         if (urlBuilder_ == null) {
@@ -3218,7 +3420,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public Builder setUrl(
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder builderForValue) {
@@ -3237,7 +3439,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public Builder mergeUrl(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL value) {
         if (urlBuilder_ == null) {
@@ -3260,7 +3462,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public Builder clearUrl() {
         if (urlBuilder_ == null) {
@@ -3279,7 +3481,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder getUrlBuilder() {
         
@@ -3292,7 +3494,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder getUrlOrBuilder() {
         if (urlBuilder_ != null) {
@@ -3308,7 +3510,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"url"
        * </pre>
        *
-       * <code>.model.DataSource.URL url = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.URL url = 7 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder> 
@@ -3324,117 +3526,16 @@ public final class PBRequestDataSourceManage {
         return urlBuilder_;
       }
 
-      private java.lang.Object createdBy_ = "";
-      /**
-       * <pre>
-       * Source owner.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-       * @return The createdBy.
-       */
-      public java.lang.String getCreatedBy() {
-        java.lang.Object ref = createdBy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createdBy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Source owner.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for createdBy.
-       */
-      public com.google.protobuf.ByteString
-          getCreatedByBytes() {
-        java.lang.Object ref = createdBy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createdBy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Source owner.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-       * @param value The createdBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedBy(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createdBy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Source owner.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatedBy() {
-        
-        createdBy_ = getDefaultInstance().getCreatedBy();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Source owner.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for createdBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedByBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createdBy_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection lastConnection_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> lastConnectionBuilder_;
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        * @return Whether the lastConnection field is set.
        */
       public boolean hasLastConnection() {
@@ -3443,10 +3544,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        * @return The lastConnection.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection() {
@@ -3459,10 +3560,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public Builder setLastConnection(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
         if (lastConnectionBuilder_ == null) {
@@ -3480,10 +3581,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public Builder setLastConnection(
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder builderForValue) {
@@ -3499,10 +3600,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public Builder mergeLastConnection(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
         if (lastConnectionBuilder_ == null) {
@@ -3522,10 +3623,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public Builder clearLastConnection() {
         if (lastConnectionBuilder_ == null) {
@@ -3541,10 +3642,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder getLastConnectionBuilder() {
         
@@ -3554,10 +3655,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder() {
         if (lastConnectionBuilder_ != null) {
@@ -3570,10 +3671,10 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * The last connection record. The value is nil if never tested for usability.
-       * &#64;inject_tag: json:"last_connection" gorm:"-"
+       * &#64;inject_tag: json:"last_connection"
        * </pre>
        *
-       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * <code>.model.DataSourceConnection last_connection = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> 
@@ -3587,107 +3688,6 @@ public final class PBRequestDataSourceManage {
           lastConnection_ = null;
         }
         return lastConnectionBuilder_;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 8 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13760,58 +13760,58 @@ public final class PBRequestDataSourceManage {
       "\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004n" +
       "ameJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016" +
       "\n\006search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\022\017\n\007verbose\030" +
-      "\010 \001(\005\"\326\002\n\020CreateDataSource\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB" +
-      "\017\342\337\037\013\022\t\302\001\006\200\002\001\230\002@\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001" +
-      "\004\310\001\200\002\0223\n\004type\030\004 \001(\0162\026.model.DataSource.T" +
-      "ypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\005 \001(\0132\025.model." +
-      "DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\022\037\n\ncreated" +
-      "_by\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0224\n\017last_connectio" +
-      "n\030\007 \001(\0132\033.model.DataSourceConnection\022 \n\013" +
-      "space_owner\030\010 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\205\002\n\020Updat" +
-      "eDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
-      "@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005" +
-      " \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource.URLB" +
-      "\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nso" +
-      "urce_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som" +
-      "-\"<\n\022DescribeDataSource\022&\n\tsource_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDataSou" +
-      "rces\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n" +
-      "\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nsourc" +
-      "e_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-\"\374" +
-      "\001\n\031ListDataSourceConnections\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id" +
-      "\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B\027\242\241\037" +
-      "\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337" +
-      "\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026J\000J" +
-      "\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022\017\n\007" +
-      "verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConnecti" +
-      "on\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n\005s" +
-      "tage\030\003 \001(\0162\'.request.PingDataSourceConne" +
-      "ction.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_id\030" +
-      "\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001\024\022" +
-      "G\n\004type\030\005 \001(\0162\026.model.DataSource.TypeB!\342" +
-      "\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003url\030" +
-      "\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n\005st" +
-      "age\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPhas" +
-      "eUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCreat" +
-      "e\020\002\"i\n\030DescribeDataSourceTables\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource" +
-      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035Descr" +
-      "ibeDataSourceTableSchema\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030\003 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.g" +
-      "proto.types.pbrequestB\031PBRequestDataSour" +
-      "ceManageP\000Z3github.com/DataWorkbench/gpr" +
-      "oto/xgo/types/pbrequestb\006proto3"
+      "\010 \001(\005\"\332\002\n\020CreateDataSource\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030" +
+      "\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 " +
+      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\001\230\002@\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004" +
+      "type\030\006 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\0221\n\003url\030\007 \001(\0132\025.model.DataSourc" +
+      "e.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0224\n\017last_connection\030" +
+      "\010 \001(\0132\033.model.DataSourceConnection\"\205\002\n\020U" +
+      "pdateDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\000\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004ty" +
+      "pe\030\005 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource." +
+      "URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-" +
+      "\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002" +
+      "\004som-\"<\n\022DescribeDataSource\022&\n\tsource_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDat" +
+      "aSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d" +
+      "@\001Z\n\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\ns" +
+      "ource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004so" +
+      "m-\"\374\001\n\031ListDataSourceConnections\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsourc" +
+      "e_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B" +
+      "\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005" +
+      "B\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001" +
+      "\026J\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010" +
+      "\022\017\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConn" +
+      "ection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
+      "E\n\005stage\030\003 \001(\0162\'.request.PingDataSourceC" +
+      "onnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource" +
+      "_id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003" +
+      "\360\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.Typ" +
+      "eB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003" +
+      "url\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016" +
+      "\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\n" +
+      "PhaseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterC" +
+      "reate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tso" +
+      "urce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035D" +
+      "escribeDataSourceTableSchema\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id" +
+      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_nam" +
+      "e\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomn" +
+      "is.gproto.types.pbrequestB\031PBRequestData" +
+      "SourceManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13831,7 +13831,7 @@ public final class PBRequestDataSourceManage {
     internal_static_request_CreateDataSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateDataSource_descriptor,
-        new java.lang.String[] { "SpaceId", "Name", "Desc", "Type", "Url", "CreatedBy", "LastConnection", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Name", "Desc", "Type", "Url", "LastConnection", });
     internal_static_request_UpdateDataSource_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_UpdateDataSource_fieldAccessorTable = new

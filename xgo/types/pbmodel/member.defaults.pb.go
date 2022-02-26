@@ -9,14 +9,6 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.Role
-func (this *Role) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message model.Member
 func (this *Member) SetDefaults() {
 	if this == nil {

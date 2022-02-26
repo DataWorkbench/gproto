@@ -12,115 +12,6 @@ import (
 	utf8 "unicode/utf8"
 )
 
-func (this *Role) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("Role", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("Role", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *Role) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) == 20) {
-		return protovalidator.FieldError1("Role", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
-	}
-	return nil
-}
-
-func (this *Role) _xxx_xxx_Validator_Validate_name() error {
-	if !(len(this.Name) >= 1) {
-		return protovalidator.FieldError1("Role", "the byte length of field 'name' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Name))
-	}
-	if !(len(this.Name) <= 128) {
-		return protovalidator.FieldError1("Role", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_Role_InEnums_Type = map[Role_Type]bool{0: true, 1: true, 2: true}
-
-func (this *Role) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type > 0) {
-		return protovalidator.FieldError1("Role", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	if !(_xxx_xxx_Validator_Role_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("Role", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_Role_InEnums_Status = map[Role_Status]bool{0: true, 1: true, 2: true}
-
-func (this *Role) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status > 0) {
-		return protovalidator.FieldError1("Role", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	if !(_xxx_xxx_Validator_Role_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("Role", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	return nil
-}
-
-func (this *Role) _xxx_xxx_Validator_Validate_desc() error {
-	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
-		return protovalidator.FieldError1("Role", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
-	}
-	return nil
-}
-
-func (this *Role) _xxx_xxx_Validator_CheckIf_op_kind() bool {
-	if !(this.Modules != "") {
-		return false
-	}
-	return true
-}
-
-var _xxx_xxx_Validator_Role_InEnums_OpKind = map[APIDesc_Kind]bool{0: true, 1: true, 2: true}
-
-func (this *Role) _xxx_xxx_Validator_Validate_op_kind() error {
-	if !this._xxx_xxx_Validator_CheckIf_op_kind() {
-		return nil
-	}
-	if !(this.OpKind > 0) {
-		return protovalidator.FieldError1("Role", "the value of field 'op_kind' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpKind)))
-	}
-	if !(_xxx_xxx_Validator_Role_InEnums_OpKind[this.OpKind]) {
-		return protovalidator.FieldError1("Role", "the value of field 'op_kind' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpKind)))
-	}
-	return nil
-}
-
-// Set default value for message model.Role
-func (this *Role) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_op_kind(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *Member) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("Member", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -150,6 +41,23 @@ func (this *Member) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
+func (this *Member) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("Member", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
+func (this *Member) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("Member", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) <= 65) {
+		return protovalidator.FieldError1("Member", "the byte length of field 'created_by' must be less than or equal to '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 func (this *Member) _xxx_xxx_Validator_Validate_created() error {
 	if !(this.Created > 0) {
 		return protovalidator.FieldError1("Member", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
@@ -173,8 +81,8 @@ func (this *Member) _xxx_xxx_Validator_Validate_user_info() error {
 	return nil
 }
 
-func (this *Member) _xxx_xxx_Validator_Validate_roles() error {
-	for _, item := range this.Roles {
+func (this *Member) _xxx_xxx_Validator_Validate_system_roles() error {
+	for _, item := range this.SystemRoles {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -199,6 +107,12 @@ func (this *Member) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
 		return err
 	}
@@ -208,7 +122,7 @@ func (this *Member) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_user_info(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_roles(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_system_roles(); err != nil {
 		return err
 	}
 	return nil

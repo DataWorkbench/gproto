@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\024PBRequestTableManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/request/table_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/table.proto\x1a)proto/types/model/flink/flink_table.proto\"\xb8\x02\n\x10\x43reateFlinkTable\x12\x1e\n\x08table_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x15\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1e\n\x07\x63omment\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x02\x12(\n\x0ctable_schema\x18\x06 \x01(\x0b\x32\x12.flink.TableSchema\x12\x39\n\ntable_kind\x18\x07 \x01(\x0e\x32\x16.model.FlinkTable.KindB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x18\n\ncreated_by\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xd9\x01\n\x10UpdateFlinkTable\x12\x1e\n\x08table_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x15\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x07\x43omment\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x02\x12(\n\x0ctable_schema\x18\x04 \x01(\x0b\x32\x12.flink.TableSchema\x12\x39\n\ntable_kind\x18\x05 \x01(\x0e\x32\x16.model.FlinkTable.KindB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"6\n\x11\x44\x65leteFlinkTables\x12!\n\ttable_ids\x18\x01 \x03(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\xcc\x08@\x01\"4\n\x12\x44\x65scribeFlinkTable\x12\x1e\n\x08table_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xb6\x02\n\x0fListFlinkTables\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12>\n\x07sort_by\x18\x03 \x01(\tB-\xe2\xdf\x1f)\x12\'\xc2\x01$J\x00J\x08table_idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12%\n\x08space_id\x18\x06 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x11\n\tsource_id\x18\x07 \x01(\t\x12\x37\n\ntable_kind\x18\x08 \x01(\x0e\x32\x16.model.FlinkTable.KindB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestTableManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n&proto/types/request/table_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/table.proto\x1a)proto/types/model/flink/flink_table.proto\"\xa3\x02\n\x10\x43reateFlinkTable\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1f\n\tsource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1d\n\x04name\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1e\n\x07\x63omment\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x02\x12(\n\x0ctable_schema\x18\x07 \x01(\x0b\x32\x12.flink.TableSchema\x12\x39\n\ntable_kind\x18\x08 \x01(\x0e\x32\x16.model.FlinkTable.KindB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\xd9\x01\n\x10UpdateFlinkTable\x12\x1e\n\x08table_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x15\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x07\x43omment\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x02\x12(\n\x0ctable_schema\x18\x04 \x01(\x0b\x32\x12.flink.TableSchema\x12\x39\n\ntable_kind\x18\x05 \x01(\x0e\x32\x16.model.FlinkTable.KindB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"6\n\x11\x44\x65leteFlinkTables\x12!\n\ttable_ids\x18\x01 \x03(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\xcc\x08@\x01\"4\n\x12\x44\x65scribeFlinkTable\x12\x1e\n\x08table_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xb6\x02\n\x0fListFlinkTables\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12>\n\x07sort_by\x18\x03 \x01(\tB-\xe2\xdf\x1f)\x12\'\xc2\x01$J\x00J\x08table_idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12%\n\x08space_id\x18\x06 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x11\n\tsource_id\x18\x07 \x01(\t\x12\x37\n\ntable_kind\x18\x08 \x01(\x0e\x32\x16.model.FlinkTable.KindB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestTableManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_table__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_flink_dot_flink__table__pb2.DESCRIPTOR,])
 
@@ -39,61 +39,54 @@ _CREATEFLINKTABLE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='table_id', full_name='request.CreateFlinkTable.table_id', index=0,
+      name='space_id', full_name='request.CreateFlinkTable.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\210\002\025', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='source_id', full_name='request.CreateFlinkTable.source_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.CreateFlinkTable.space_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='request.CreateFlinkTable.name', index=3,
+      name='created_by', full_name='request.CreateFlinkTable.created_by', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='source_id', full_name='request.CreateFlinkTable.source_id', index=2,
       number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.CreateFlinkTable.name', index=3,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='comment', full_name='request.CreateFlinkTable.comment', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='table_schema', full_name='request.CreateFlinkTable.table_schema', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='table_kind', full_name='request.CreateFlinkTable.table_kind', index=6,
-      number=7, type=14, cpp_type=8, label=1,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_by', full_name='request.CreateFlinkTable.created_by', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -107,7 +100,7 @@ _CREATEFLINKTABLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=231,
-  serialized_end=543,
+  serialized_end=522,
 )
 
 
@@ -166,8 +159,8 @@ _UPDATEFLINKTABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=546,
-  serialized_end=763,
+  serialized_start=525,
+  serialized_end=742,
 )
 
 
@@ -198,8 +191,8 @@ _DELETEFLINKTABLES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=765,
-  serialized_end=819,
+  serialized_start=744,
+  serialized_end=798,
 )
 
 
@@ -230,8 +223,8 @@ _DESCRIBEFLINKTABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=821,
-  serialized_end=873,
+  serialized_start=800,
+  serialized_end=852,
 )
 
 
@@ -311,8 +304,8 @@ _LISTFLINKTABLES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=1186,
+  serialized_start=855,
+  serialized_end=1165,
 )
 
 _CREATEFLINKTABLE.fields_by_name['table_schema'].message_type = proto_dot_types_dot_model_dot_flink_dot_flink__table__pb2._TABLESCHEMA
@@ -364,13 +357,12 @@ _sym_db.RegisterMessage(ListFlinkTables)
 
 
 DESCRIPTOR._options = None
-_CREATEFLINKTABLE.fields_by_name['table_id']._options = None
-_CREATEFLINKTABLE.fields_by_name['source_id']._options = None
 _CREATEFLINKTABLE.fields_by_name['space_id']._options = None
+_CREATEFLINKTABLE.fields_by_name['created_by']._options = None
+_CREATEFLINKTABLE.fields_by_name['source_id']._options = None
 _CREATEFLINKTABLE.fields_by_name['name']._options = None
 _CREATEFLINKTABLE.fields_by_name['comment']._options = None
 _CREATEFLINKTABLE.fields_by_name['table_kind']._options = None
-_CREATEFLINKTABLE.fields_by_name['created_by']._options = None
 _UPDATEFLINKTABLE.fields_by_name['table_id']._options = None
 _UPDATEFLINKTABLE.fields_by_name['name']._options = None
 _UPDATEFLINKTABLE.fields_by_name['Comment']._options = None

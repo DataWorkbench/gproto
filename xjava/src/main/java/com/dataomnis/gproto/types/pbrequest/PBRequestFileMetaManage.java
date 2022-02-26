@@ -42,11 +42,33 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * PID is the parent id(directory). pid is "" means root(`/`)
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * <code>string pid = 3 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     java.lang.String getPid();
@@ -56,7 +78,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * <code>string pid = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -68,7 +90,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -78,7 +100,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -90,7 +112,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
+     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -101,7 +123,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -111,32 +133,10 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.CreateFilePrepare}
@@ -152,10 +152,10 @@ public final class PBRequestFileMetaManage {
     }
     private CreateFilePrepare() {
       spaceId_ = "";
+      spaceOwner_ = "";
       pid_ = "";
       name_ = "";
       type_ = 0;
-      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -197,30 +197,30 @@ public final class PBRequestFileMetaManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pid_ = s;
+              spaceOwner_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              pid_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               name_ = s;
               break;
             }
-            case 32: {
+            case 48: {
 
               size_ = input.readInt64();
               break;
             }
-            case 40: {
+            case 56: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceOwner_ = s;
               break;
             }
             default: {
@@ -303,148 +303,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int PID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object pid_;
-    /**
-     * <pre>
-     * PID is the parent id(directory). pid is "" means root(`/`)
-     * &#64;inject_tag: json:"pid"
-     * </pre>
-     *
-     * <code>string pid = 2 [(.validator.field) = { ... }</code>
-     * @return The pid.
-     */
-    @java.lang.Override
-    public java.lang.String getPid() {
-      java.lang.Object ref = pid_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pid_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * PID is the parent id(directory). pid is "" means root(`/`)
-     * &#64;inject_tag: json:"pid"
-     * </pre>
-     *
-     * <code>string pid = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for pid.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPidBytes() {
-      java.lang.Object ref = pid_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pid_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * The file name. required.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The file name. required.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>string name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SIZE_FIELD_NUMBER = 4;
-    private long size_;
-    /**
-     * <pre>
-     * The file Size. used to check quota. Max Size: 100M by default.
-     * &#64;inject_tag: json:"size"
-     * </pre>
-     *
-     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
-     * @return The size.
-     */
-    @java.lang.Override
-    public long getSize() {
-      return size_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -452,7 +311,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -474,7 +333,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -490,6 +349,147 @@ public final class PBRequestFileMetaManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int PID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object pid_;
+    /**
+     * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid"
+     * </pre>
+     *
+     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public java.lang.String getPid() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid"
+     * </pre>
+     *
+     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for pid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPidBytes() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * The file name. required.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The file name. required.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 6;
+    private long size_;
+    /**
+     * <pre>
+     * The file Size. used to check quota. Max Size: 100M by default.
+     * &#64;inject_tag: json:"size"
+     * </pre>
+     *
+     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public long getSize() {
+      return size_;
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 7;
+    private int type_;
+    /**
+     * <pre>
+     * The file type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The file type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -509,20 +509,20 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (size_ != 0L) {
-        output.writeInt64(4, size_);
+        output.writeInt64(6, size_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(5, type_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+        output.writeEnum(7, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -536,22 +536,22 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, size_);
+          .computeInt64Size(6, size_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, type_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
+          .computeEnumSize(7, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -570,6 +570,8 @@ public final class PBRequestFileMetaManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
       if (!getName()
@@ -577,8 +579,6 @@ public final class PBRequestFileMetaManage {
       if (getSize()
           != other.getSize()) return false;
       if (type_ != other.type_) return false;
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -592,6 +592,8 @@ public final class PBRequestFileMetaManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -601,8 +603,6 @@ public final class PBRequestFileMetaManage {
           getSize());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -738,6 +738,8 @@ public final class PBRequestFileMetaManage {
         super.clear();
         spaceId_ = "";
 
+        spaceOwner_ = "";
+
         pid_ = "";
 
         name_ = "";
@@ -745,8 +747,6 @@ public final class PBRequestFileMetaManage {
         size_ = 0L;
 
         type_ = 0;
-
-        spaceOwner_ = "";
 
         return this;
       }
@@ -775,11 +775,11 @@ public final class PBRequestFileMetaManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare result = new com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare(this);
         result.spaceId_ = spaceId_;
+        result.spaceOwner_ = spaceOwner_;
         result.pid_ = pid_;
         result.name_ = name_;
         result.size_ = size_;
         result.type_ = type_;
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -832,6 +832,10 @@ public final class PBRequestFileMetaManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
         if (!other.getPid().isEmpty()) {
           pid_ = other.pid_;
           onChanged();
@@ -845,10 +849,6 @@ public final class PBRequestFileMetaManage {
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -980,6 +980,107 @@ public final class PBRequestFileMetaManage {
         return this;
       }
 
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object pid_ = "";
       /**
        * <pre>
@@ -987,7 +1088,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * <code>string pid = 3 [(.validator.field) = { ... }</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -1008,7 +1109,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * <code>string pid = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -1030,7 +1131,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * <code>string pid = 3 [(.validator.field) = { ... }</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -1050,7 +1151,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * <code>string pid = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -1065,7 +1166,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * <code>string pid = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -1088,7 +1189,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1109,7 +1210,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1131,7 +1232,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1151,7 +1252,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1166,7 +1267,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1189,7 +1290,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -1202,7 +1303,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -1218,7 +1319,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -1235,7 +1336,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -1247,7 +1348,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -1263,7 +1364,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
@@ -1278,7 +1379,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -1297,113 +1398,12 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
         
         type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -1488,10 +1488,32 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
+     * The request user-id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * The request user-id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The fileId.
      */
     java.lang.String getFileId();
@@ -1500,7 +1522,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for fileId.
      */
     com.google.protobuf.ByteString
@@ -1512,7 +1534,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     java.lang.String getPid();
@@ -1522,7 +1544,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -1534,7 +1556,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -1544,7 +1566,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -1556,7 +1578,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -1566,7 +1588,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -1578,7 +1600,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+     * <code>int64 size = 7 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -1589,7 +1611,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"etag"
      * </pre>
      *
-     * <code>string etag = 7 [(.validator.field) = { ... }</code>
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
      * @return The etag.
      */
     java.lang.String getEtag();
@@ -1599,7 +1621,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"etag"
      * </pre>
      *
-     * <code>string etag = 7 [(.validator.field) = { ... }</code>
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for etag.
      */
     com.google.protobuf.ByteString
@@ -1611,7 +1633,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -1621,7 +1643,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
@@ -1632,7 +1654,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"version"
      * </pre>
      *
-     * <code>string version = 9 [(.validator.field) = { ... }</code>
+     * <code>string version = 10 [(.validator.field) = { ... }</code>
      * @return The version.
      */
     java.lang.String getVersion();
@@ -1642,33 +1664,11 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"version"
      * </pre>
      *
-     * <code>string version = 9 [(.validator.field) = { ... }</code>
+     * <code>string version = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for version.
      */
     com.google.protobuf.ByteString
         getVersionBytes();
-
-    /**
-     * <pre>
-     * The request user-id.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-     * @return The createdBy.
-     */
-    java.lang.String getCreatedBy();
-    /**
-     * <pre>
-     * The request user-id.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-     * @return The bytes for createdBy.
-     */
-    com.google.protobuf.ByteString
-        getCreatedByBytes();
   }
   /**
    * Protobuf type {@code request.CreateFileMeta}
@@ -1684,6 +1684,7 @@ public final class PBRequestFileMetaManage {
     }
     private CreateFileMeta() {
       spaceId_ = "";
+      createdBy_ = "";
       fileId_ = "";
       pid_ = "";
       name_ = "";
@@ -1691,7 +1692,6 @@ public final class PBRequestFileMetaManage {
       etag_ = "";
       type_ = 0;
       version_ = "";
-      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -1733,54 +1733,54 @@ public final class PBRequestFileMetaManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              fileId_ = s;
+              createdBy_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pid_ = s;
+              fileId_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              pid_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              name_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               desc_ = s;
               break;
             }
-            case 48: {
+            case 56: {
 
               size_ = input.readInt64();
               break;
             }
-            case 58: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               etag_ = s;
               break;
             }
-            case 64: {
+            case 72: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              createdBy_ = s;
+              version_ = s;
               break;
             }
             default: {
@@ -1863,14 +1863,62 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int FILE_ID_FIELD_NUMBER = 2;
+    public static final int CREATED_BY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * The request user-id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The request user-id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object fileId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The fileId.
      */
     @java.lang.Override
@@ -1891,7 +1939,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for fileId.
      */
     @java.lang.Override
@@ -1909,7 +1957,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int PID_FIELD_NUMBER = 3;
+    public static final int PID_FIELD_NUMBER = 4;
     private volatile java.lang.Object pid_;
     /**
      * <pre>
@@ -1917,7 +1965,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     @java.lang.Override
@@ -1939,7 +1987,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     @java.lang.Override
@@ -1957,7 +2005,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 4;
+    public static final int NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object name_;
     /**
      * <pre>
@@ -1965,7 +2013,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -1987,7 +2035,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -2005,7 +2053,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int DESC_FIELD_NUMBER = 5;
+    public static final int DESC_FIELD_NUMBER = 6;
     private volatile java.lang.Object desc_;
     /**
      * <pre>
@@ -2013,7 +2061,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -2035,7 +2083,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -2053,7 +2101,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int SIZE_FIELD_NUMBER = 6;
+    public static final int SIZE_FIELD_NUMBER = 7;
     private long size_;
     /**
      * <pre>
@@ -2061,7 +2109,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+     * <code>int64 size = 7 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     @java.lang.Override
@@ -2069,7 +2117,7 @@ public final class PBRequestFileMetaManage {
       return size_;
     }
 
-    public static final int ETAG_FIELD_NUMBER = 7;
+    public static final int ETAG_FIELD_NUMBER = 8;
     private volatile java.lang.Object etag_;
     /**
      * <pre>
@@ -2077,7 +2125,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"etag"
      * </pre>
      *
-     * <code>string etag = 7 [(.validator.field) = { ... }</code>
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
      * @return The etag.
      */
     @java.lang.Override
@@ -2099,7 +2147,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"etag"
      * </pre>
      *
-     * <code>string etag = 7 [(.validator.field) = { ... }</code>
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for etag.
      */
     @java.lang.Override
@@ -2117,7 +2165,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 8;
+    public static final int TYPE_FIELD_NUMBER = 9;
     private int type_;
     /**
      * <pre>
@@ -2125,7 +2173,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -2137,7 +2185,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
@@ -2146,7 +2194,7 @@ public final class PBRequestFileMetaManage {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 9;
+    public static final int VERSION_FIELD_NUMBER = 10;
     private volatile java.lang.Object version_;
     /**
      * <pre>
@@ -2154,7 +2202,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"version"
      * </pre>
      *
-     * <code>string version = 9 [(.validator.field) = { ... }</code>
+     * <code>string version = 10 [(.validator.field) = { ... }</code>
      * @return The version.
      */
     @java.lang.Override
@@ -2176,7 +2224,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"version"
      * </pre>
      *
-     * <code>string version = 9 [(.validator.field) = { ... }</code>
+     * <code>string version = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for version.
      */
     @java.lang.Override
@@ -2188,54 +2236,6 @@ public final class PBRequestFileMetaManage {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATED_BY_FIELD_NUMBER = 10;
-    private volatile java.lang.Object createdBy_;
-    /**
-     * <pre>
-     * The request user-id.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-     * @return The createdBy.
-     */
-    @java.lang.Override
-    public java.lang.String getCreatedBy() {
-      java.lang.Object ref = createdBy_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdBy_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The request user-id.
-     * &#64;inject_tag: json:"created_by"
-     * </pre>
-     *
-     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-     * @return The bytes for createdBy.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreatedByBytes() {
-      java.lang.Object ref = createdBy_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2259,32 +2259,32 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
       if (size_ != 0L) {
-        output.writeInt64(6, size_);
+        output.writeInt64(7, size_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, etag_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(8, type_);
+        output.writeEnum(9, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
       }
       unknownFields.writeTo(output);
     }
@@ -2298,34 +2298,34 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, size_);
+          .computeInt64Size(7, size_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, etag_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, type_);
+          .computeEnumSize(9, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2344,6 +2344,8 @@ public final class PBRequestFileMetaManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!getFileId()
           .equals(other.getFileId())) return false;
       if (!getPid()
@@ -2359,8 +2361,6 @@ public final class PBRequestFileMetaManage {
       if (type_ != other.type_) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
-      if (!getCreatedBy()
-          .equals(other.getCreatedBy())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2374,6 +2374,8 @@ public final class PBRequestFileMetaManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFileId().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
@@ -2391,8 +2393,6 @@ public final class PBRequestFileMetaManage {
       hash = (53 * hash) + type_;
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2528,6 +2528,8 @@ public final class PBRequestFileMetaManage {
         super.clear();
         spaceId_ = "";
 
+        createdBy_ = "";
+
         fileId_ = "";
 
         pid_ = "";
@@ -2543,8 +2545,6 @@ public final class PBRequestFileMetaManage {
         type_ = 0;
 
         version_ = "";
-
-        createdBy_ = "";
 
         return this;
       }
@@ -2573,6 +2573,7 @@ public final class PBRequestFileMetaManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFileMeta buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFileMeta result = new com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFileMeta(this);
         result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
         result.fileId_ = fileId_;
         result.pid_ = pid_;
         result.name_ = name_;
@@ -2581,7 +2582,6 @@ public final class PBRequestFileMetaManage {
         result.etag_ = etag_;
         result.type_ = type_;
         result.version_ = version_;
-        result.createdBy_ = createdBy_;
         onBuilt();
         return result;
       }
@@ -2634,6 +2634,10 @@ public final class PBRequestFileMetaManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
         if (!other.getFileId().isEmpty()) {
           fileId_ = other.fileId_;
           onChanged();
@@ -2662,10 +2666,6 @@ public final class PBRequestFileMetaManage {
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getCreatedBy().isEmpty()) {
-          createdBy_ = other.createdBy_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2798,13 +2798,114 @@ public final class PBRequestFileMetaManage {
         return this;
       }
 
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * The request user-id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The request user-id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The request user-id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The request user-id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The request user-id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object fileId_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return The fileId.
        */
       public java.lang.String getFileId() {
@@ -2824,7 +2925,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for fileId.
        */
       public com.google.protobuf.ByteString
@@ -2845,7 +2946,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @param value The fileId to set.
        * @return This builder for chaining.
        */
@@ -2864,7 +2965,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFileId() {
@@ -2878,7 +2979,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for fileId to set.
        * @return This builder for chaining.
        */
@@ -2901,7 +3002,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -2922,7 +3023,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -2944,7 +3045,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -2964,7 +3065,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -2979,7 +3080,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -3002,7 +3103,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -3023,7 +3124,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -3045,7 +3146,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -3065,7 +3166,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -3080,7 +3181,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -3103,7 +3204,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -3124,7 +3225,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -3146,7 +3247,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -3166,7 +3267,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -3181,7 +3282,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -3204,7 +3305,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -3217,7 +3318,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -3233,7 +3334,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -3250,7 +3351,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"etag"
        * </pre>
        *
-       * <code>string etag = 7 [(.validator.field) = { ... }</code>
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
        * @return The etag.
        */
       public java.lang.String getEtag() {
@@ -3271,7 +3372,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"etag"
        * </pre>
        *
-       * <code>string etag = 7 [(.validator.field) = { ... }</code>
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
        * @return The bytes for etag.
        */
       public com.google.protobuf.ByteString
@@ -3293,7 +3394,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"etag"
        * </pre>
        *
-       * <code>string etag = 7 [(.validator.field) = { ... }</code>
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
        * @param value The etag to set.
        * @return This builder for chaining.
        */
@@ -3313,7 +3414,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"etag"
        * </pre>
        *
-       * <code>string etag = 7 [(.validator.field) = { ... }</code>
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearEtag() {
@@ -3328,7 +3429,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"etag"
        * </pre>
        *
-       * <code>string etag = 7 [(.validator.field) = { ... }</code>
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes for etag to set.
        * @return This builder for chaining.
        */
@@ -3351,7 +3452,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -3363,7 +3464,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -3379,7 +3480,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
@@ -3394,7 +3495,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -3413,7 +3514,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>.model.File.Type type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -3430,7 +3531,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"version"
        * </pre>
        *
-       * <code>string version = 9 [(.validator.field) = { ... }</code>
+       * <code>string version = 10 [(.validator.field) = { ... }</code>
        * @return The version.
        */
       public java.lang.String getVersion() {
@@ -3451,7 +3552,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"version"
        * </pre>
        *
-       * <code>string version = 9 [(.validator.field) = { ... }</code>
+       * <code>string version = 10 [(.validator.field) = { ... }</code>
        * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
@@ -3473,7 +3574,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"version"
        * </pre>
        *
-       * <code>string version = 9 [(.validator.field) = { ... }</code>
+       * <code>string version = 10 [(.validator.field) = { ... }</code>
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -3493,7 +3594,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"version"
        * </pre>
        *
-       * <code>string version = 9 [(.validator.field) = { ... }</code>
+       * <code>string version = 10 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -3508,7 +3609,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"version"
        * </pre>
        *
-       * <code>string version = 9 [(.validator.field) = { ... }</code>
+       * <code>string version = 10 [(.validator.field) = { ... }</code>
        * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
@@ -3520,107 +3621,6 @@ public final class PBRequestFileMetaManage {
   checkByteStringIsUtf8(value);
         
         version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createdBy_ = "";
-      /**
-       * <pre>
-       * The request user-id.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-       * @return The createdBy.
-       */
-      public java.lang.String getCreatedBy() {
-        java.lang.Object ref = createdBy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createdBy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The request user-id.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-       * @return The bytes for createdBy.
-       */
-      public com.google.protobuf.ByteString
-          getCreatedByBytes() {
-        java.lang.Object ref = createdBy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createdBy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The request user-id.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-       * @param value The createdBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedBy(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createdBy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The request user-id.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatedBy() {
-        
-        createdBy_ = getDefaultInstance().getCreatedBy();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The request user-id.
-       * &#64;inject_tag: json:"created_by"
-       * </pre>
-       *
-       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
-       * @param value The bytes for createdBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedByBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -3705,10 +3705,32 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The fileId.
      */
     java.lang.String getFileId();
@@ -3717,7 +3739,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for fileId.
      */
     com.google.protobuf.ByteString
@@ -3729,32 +3751,10 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 3 [(.validator.field) = { ... }</code>
+     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.ReCreateFilePrepare}
@@ -3770,8 +3770,8 @@ public final class PBRequestFileMetaManage {
     }
     private ReCreateFilePrepare() {
       spaceId_ = "";
-      fileId_ = "";
       spaceOwner_ = "";
+      fileId_ = "";
     }
 
     @java.lang.Override
@@ -3813,18 +3813,18 @@ public final class PBRequestFileMetaManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              spaceOwner_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               fileId_ = s;
               break;
             }
-            case 24: {
+            case 32: {
 
               size_ = input.readInt64();
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceOwner_ = s;
               break;
             }
             default: {
@@ -3907,69 +3907,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int FILE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fileId_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file_id"
-     * </pre>
-     *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
-     * @return The fileId.
-     */
-    @java.lang.Override
-    public java.lang.String getFileId() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fileId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file_id"
-     * </pre>
-     *
-     * <code>string file_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for fileId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFileIdBytes() {
-      java.lang.Object ref = fileId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fileId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SIZE_FIELD_NUMBER = 3;
-    private long size_;
-    /**
-     * <pre>
-     * The file size. used to check quota. Max Size: 100M by default.
-     * &#64;inject_tag: json:"size"
-     * </pre>
-     *
-     * <code>int64 size = 3 [(.validator.field) = { ... }</code>
-     * @return The size.
-     */
-    @java.lang.Override
-    public long getSize() {
-      return size_;
-    }
-
-    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -3977,7 +3915,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -3999,7 +3937,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -4015,6 +3953,68 @@ public final class PBRequestFileMetaManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int FILE_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object fileId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"file_id"
+     * </pre>
+     *
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
+     * @return The fileId.
+     */
+    @java.lang.Override
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"file_id"
+     * </pre>
+     *
+     * <code>string file_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFileIdBytes() {
+      java.lang.Object ref = fileId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 4;
+    private long size_;
+    /**
+     * <pre>
+     * The file size. used to check quota. Max Size: 100M by default.
+     * &#64;inject_tag: json:"size"
+     * </pre>
+     *
+     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
+     * @return The size.
+     */
+    @java.lang.Override
+    public long getSize() {
+      return size_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4034,14 +4034,14 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileId_);
       }
       if (size_ != 0L) {
-        output.writeInt64(3, size_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+        output.writeInt64(4, size_);
       }
       unknownFields.writeTo(output);
     }
@@ -4055,15 +4055,15 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceOwner_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileId_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, size_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
+          .computeInt64Size(4, size_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4082,12 +4082,12 @@ public final class PBRequestFileMetaManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!getFileId()
           .equals(other.getFileId())) return false;
       if (getSize()
           != other.getSize()) return false;
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4101,13 +4101,13 @@ public final class PBRequestFileMetaManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFileId().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4243,11 +4243,11 @@ public final class PBRequestFileMetaManage {
         super.clear();
         spaceId_ = "";
 
+        spaceOwner_ = "";
+
         fileId_ = "";
 
         size_ = 0L;
-
-        spaceOwner_ = "";
 
         return this;
       }
@@ -4276,9 +4276,9 @@ public final class PBRequestFileMetaManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ReCreateFilePrepare buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ReCreateFilePrepare result = new com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ReCreateFilePrepare(this);
         result.spaceId_ = spaceId_;
+        result.spaceOwner_ = spaceOwner_;
         result.fileId_ = fileId_;
         result.size_ = size_;
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -4331,16 +4331,16 @@ public final class PBRequestFileMetaManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
         if (!other.getFileId().isEmpty()) {
           fileId_ = other.fileId_;
           onChanged();
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4472,13 +4472,114 @@ public final class PBRequestFileMetaManage {
         return this;
       }
 
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object fileId_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return The fileId.
        */
       public java.lang.String getFileId() {
@@ -4498,7 +4599,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for fileId.
        */
       public com.google.protobuf.ByteString
@@ -4519,7 +4620,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @param value The fileId to set.
        * @return This builder for chaining.
        */
@@ -4538,7 +4639,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFileId() {
@@ -4552,7 +4653,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
-       * <code>string file_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for fileId to set.
        * @return This builder for chaining.
        */
@@ -4575,7 +4676,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -4588,7 +4689,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -4604,113 +4705,12 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
         
         size_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -10681,25 +10681,25 @@ public final class PBRequestFileMetaManage {
       "u31/protoc-plugin/proto/defaults.proto\032\034" +
       "proto/types/model/file.proto\"\372\001\n\021CreateF" +
       "ilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002" +
-      "\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
-      "\014\022\n\302\001\007\300\001\002\310\001\200\001\022\031\n\004size\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
-      "\022-\n\004type\030\005 \001(\0162\020.model.File.TypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022 \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
-      "\000\"\370\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\007file_id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003" +
-      "pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\004 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\005 \001(\tB\r\342\337\037" +
-      "\t\022\007\302\001\004\310\001\200\010\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n" +
-      "\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022-\n\004type\030\010 \001(\0162" +
-      "\020.model.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007vers" +
-      "ion\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\n " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\237\001\n\023ReCreateFilePre" +
+      "\001\024\312\002\004wks-\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
+      "\300\001\002\310\001\200\001\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022-\n\004ty" +
+      "pe\030\007 \001(\0162\020.model.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\"\370\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\007file_id\030\003 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid" +
+      "\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004et" +
+      "ag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022-\n\004type\030\t \001(\0162\020.m" +
+      "odel.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version" +
+      "\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\237\001\n\023ReCreateFilePre" +
       "pare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022$\n\007file_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res" +
-      "-\022\031\n\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\013space_ow" +
-      "ner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\265\001\n\020ReCreateFileM" +
+      "ks-\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022$\n" +
+      "\007file_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004s" +
+      "ize\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\265\001\n\020ReCreateFileM" +
       "eta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
       "s-\022$\n\007file_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-" +
       "\022\031\n\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(" +
@@ -10736,19 +10736,19 @@ public final class PBRequestFileMetaManage {
     internal_static_request_CreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "Pid", "Name", "Size", "Type", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "SpaceOwner", "Pid", "Name", "Size", "Type", });
     internal_static_request_CreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "FileId", "Pid", "Name", "Desc", "Size", "Etag", "Type", "Version", "CreatedBy", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "FileId", "Pid", "Name", "Desc", "Size", "Etag", "Type", "Version", });
     internal_static_request_ReCreateFilePrepare_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ReCreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ReCreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "FileId", "Size", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "SpaceOwner", "FileId", "Size", });
     internal_static_request_ReCreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_ReCreateFileMeta_fieldAccessorTable = new

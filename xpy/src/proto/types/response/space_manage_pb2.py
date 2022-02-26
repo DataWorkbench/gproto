@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\025PBResponseSpaceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"1\n\x0f\x43heckPermission\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.WorkspaceBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"6\n\x0f\x43heckPermission\x12#\n\tworkspace\x18\x01 \x01(\x0b\x32\x10.model.WorkspaceBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,])
 
@@ -147,7 +147,7 @@ _CHECKPERMISSION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='info', full_name='response.CheckPermission.info', index=0,
+      name='workspace', full_name='response.CheckPermission.workspace', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -166,12 +166,12 @@ _CHECKPERMISSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=330,
-  serialized_end=379,
+  serialized_end=384,
 )
 
 _LISTWORKSPACES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 _DESCRIBEWORKSPACE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
-_CHECKPERMISSION.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
+_CHECKPERMISSION.fields_by_name['workspace'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 DESCRIPTOR.message_types_by_name['ListWorkspaces'] = _LISTWORKSPACES
 DESCRIPTOR.message_types_by_name['CreateWorkspace'] = _CREATEWORKSPACE
 DESCRIPTOR.message_types_by_name['DescribeWorkspace'] = _DESCRIBEWORKSPACE

@@ -3051,7 +3051,7 @@ public final class PBModelUDF {
     java.lang.String[] descriptorData = {
       "\n\033proto/types/model/udf.proto\022\005model\0323gi" +
       "thub.com/yu31/protoc-plugin/proto/valida" +
-      "tor.proto\"\303\005\n\003UDF\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "tor.proto\"\306\005\n\003UDF\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
       "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004udf-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@" +
       "\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0220\n\006status\030" +
@@ -3062,16 +3062,16 @@ public final class PBModelUDF {
       "\037\023\n\021\n\010language\022\005\332\001\002\030\002\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-" +
       "\0228\n\004code\030\t \001(\tB*\342\337\037\025\n\023\n\010language\022\007\332\001\004J\002\001" +
       "\003\342\337\037\r\022\013\302\001\010\260\001\000\310\001\240\234\001\022#\n\014usage_sample\030\n \001(\t" +
-      "B\r\342\337\037\t\022\007\302\001\004\310\001\320\017\022 \n\ncreated_by\030\013 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\230\002@\022\034\n\007created\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022" +
-      "\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\004Type\022\r\n" +
-      "\tTypeUnset\020\000\022\007\n\003UDF\020\001\022\010\n\004UDTF\020\002\022\t\n\005UDTTF" +
-      "\020\003\">\n\010Language\022\021\n\rLanguageUnset\020\000\022\t\n\005Sca" +
-      "la\020\001\022\010\n\004Java\020\002\022\n\n\006Python\020\003\"3\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002B" +
-      "e\n\"com.dataomnis.gproto.types.pbmodelB\nP" +
-      "BModelUDFP\000Z1github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodelb\006proto3"
+      "B\r\342\337\037\t\022\007\302\001\004\310\001\320\017\022#\n\ncreated_by\030\013 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\022\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\004Type" +
+      "\022\r\n\tTypeUnset\020\000\022\007\n\003UDF\020\001\022\010\n\004UDTF\020\002\022\t\n\005UD" +
+      "TTF\020\003\">\n\010Language\022\021\n\rLanguageUnset\020\000\022\t\n\005" +
+      "Scala\020\001\022\010\n\004Java\020\002\022\n\n\006Python\020\003\"3\n\006Status\022" +
+      "\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled" +
+      "\020\002Be\n\"com.dataomnis.gproto.types.pbmodel" +
+      "B\nPBModelUDFP\000Z1github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
