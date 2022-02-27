@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestQuotaManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/quota.proto";
+
+message DescribeUserQuota {
+  // The id of user in HTTP Request-URI.
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+}
+message UpsertUserQuota {
+  // The id of user in HTTP Request-URI.
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // @inject_tag: json:"quota_set"
+  model.QuotaSet quota_set = 2 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+message DescribeWorkspaceQuota {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+}
+message UpsertWorkspaceQuota {
+  // The user-id of workspace owner.
+  // @inject_tag: json:"space_owner" uri:"-" swaggerignore:"true"
+  string space_owner = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // @inject_tag: json:"quota_set"
+  model.QuotaSet quota_set = 3 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+message DescribeMemberQuota {
+  // The id of user in HTTP Request-URI.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The user id of workspace member in HTTP Request-URI.
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+}
+message UpsertMemberQuota {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The id of workspace member in HTTP Request-URI.
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // The user-id of workspace owner.
+  // @inject_tag: json:"space_owner" uri:"-" swaggerignore:"true"
+  string space_owner = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // @inject_tag: json:"quota_set"
+  model.QuotaSet quota_set = 4 [ (validator.field).tags.message = { not_null: true } ];
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcQuotaManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/quota_manage.proto";
+import "proto/types/response/quota_manage.proto";
+
+service QuotaManage {
+  rpc DescribeUserQuota(request.DescribeUserQuota) returns (response.DescribeUserQuota) {}
+  rpc UpsertUserQuota(request.UpsertUserQuota) returns (model.EmptyStruct) {}
+
+  rpc DescribeWorkspaceQuota(request.DescribeWorkspaceQuota) returns (response.DescribeWorkspaceQuota) {}
+  rpc UpsertWorkspaceQuota(request.UpsertWorkspaceQuota) returns (model.EmptyStruct) {}
+
+  rpc DescribeMemberQuota(request.DescribeMemberQuota) returns (response.DescribeMemberQuota) {}
+  rpc UpsertMemberQuota(request.UpsertMemberQuota) returns(model.EmptyStruct) {}
+}

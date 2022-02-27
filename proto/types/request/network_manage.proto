@@ -63,7 +63,7 @@ message CreateNetwork {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The user-id of created this cluster. It fixed to request user id.
+  // The user-id of created this network. It fixed to request user id.
   // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 2 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 

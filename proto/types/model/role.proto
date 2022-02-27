@@ -91,36 +91,34 @@ message ProjectModule {
     ClassifyUnSet = 0;
     // Module In project.
     AuditManage = 1;
-    ProjectQuota = 2;
-    SpaceManage = 3;
+    SpaceManage = 2;
     // Module In workspace;
-    WorkspaceQuota = 4;
-    MemberManage = 5;
-    RoleManage = 6;
-    DataSourceMange = 7;
-    UDFManage = 8;
-    FileManage = 9;
-    NetworkMange = 10;
-    ClusterMange = 11;
-    StreamJobDevMange = 12;
-    StreamJobReleaseManage = 13;
-    StreamJobVersionManage = 14;
-    StreamJobInstanceManage = 15;
-    SyncJobDevMange = 16;
-    SyncJobReleaseManage = 17;
-    SyncJobVersionManage = 18;
-    SyncJobInstanceManage = 19;
+    MemberManage = 101;
+    RoleManage = 102;
+    DataSourceMange = 103;
+    UDFManage = 104;
+    FileManage = 105;
+    NetworkMange = 106;
+    ClusterMange = 107;
+    StreamJobDevMange = 108;
+    StreamJobReleaseManage = 109;
+    StreamJobVersionManage = 110;
+    StreamJobInstanceManage = 111;
+    SyncJobDevMange = 112;
+    SyncJobReleaseManage = 113;
+    SyncJobVersionManage = 114;
+    SyncJobInstanceManage = 115;
   }
 
   // The module id.
   // @inject_tag: json:"id"
   string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "pmo-" }];
 
-  // The module name.
+  // The module classify.
   // @inject_tag: json:"classify"
   Classify classify = 2 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
-  // DisplayName is the display name of this Module. Is user readable.
+  // Name is the display name of this Module. Is user readable.
   // @inject_tag: json:"name"
   string name = 3 [ (validator.field).tags.string = { ne: "" } ];
 

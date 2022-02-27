@@ -20,13 +20,17 @@ message CreateFilePrepare {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
+  // The user-id of created this file. It fixed to request user id.
+  // @inject_tag: json:"created_by" swaggerignore:"true"
+  string created_by = 2 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+
   // The owner of workspace, only used to check quota. Set by APIServer.
   // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 2 [(validator.field).tags.string = { ne: "" } ];
+  string space_owner = 3 [(validator.field).tags.string = { ne: "" } ];
 
   // PID is the parent id(directory). pid is "" means root(`/`)
   // @inject_tag: json:"pid"
-  string pid = 3 [
+  string pid = 4 [
     (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
   ];

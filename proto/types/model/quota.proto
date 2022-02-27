@@ -10,112 +10,169 @@ option java_package = "com.dataomnis.gproto.types.pbmodel";
 option java_outer_classname = "PBModelQuota";
 option java_multiple_files = false;
 
-//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-message QuotaWorkspace {
+message QuotaSetWorkspace {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of workspace for every user. default 10.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 }
 
-message QuotaStreamJob {
+message QuotaSetMember {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of workspace member for every user. default 500.
+  // @inject_tag: json:"limit"
+  int64 limit = 1;
+}
+
+message QuotaSetCustomRole {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of custom role for every user. default 500.
+  // @inject_tag: json:"limit"
+  int64 limit = 1;
+}
+
+message QuotaSetStreamJob {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of stream job for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 }
 
-
-message QuotaSyncJob {
+message QuotaSetSyncJob {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of stream job for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 }
 
-message QuotaDataSource {
+message QuotaSetDataSource {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of datasource for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 }
 
-message QuotaUDF {
+message QuotaSetUDF {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of datasource for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 }
 
-message QuotaFile {
+message QuotaSetFile {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of resource for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 
-  // Size is the maximum size of every file. default is 100MB.
-  int64 size = 2;
+  // Size is the maximum size of single file. default is 100MB.
+  // @inject_tag: json:"size"
+  int64 size_single = 2;
 
-  // SizeTotal is the maximum size of every user. default 5GB.
+  // SizeTotal is the maximum size of every user. default 1GB.
+  // @inject_tag: json:"size_total"
   int64 size_total = 3;
 }
 
-message QuotaFlinkCluster {
+message QuotaSetFlinkCluster {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of clusters for every user. default 5.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
 
-  // Cu is the maximum number of cu for every cluster. default 8.
-  float cu = 2;
+  // Cu is the maximum number of cu for single cluster. default 8.
+  // @inject_tag: json:"cu"
+  float cu_single = 2;
 
   // CuTotal is the maximum number of cu for every user. default 12.
+  // @inject_tag: json:"cu_total"
   float cu_total = 3;
 }
 
-message QuotaNetwork {
+message QuotaSetNetwork {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of datasource for every user. default 500.
+  // @inject_tag: json:"limit"
   int64 limit = 1;
+}
+
+// QuotaSet declares the quota setttings.
+message QuotaSet {
+  // Quota settings for workspace.
+  // @inject_tag: json:"workspace" gorm:"column:workspace;"
+  QuotaSetWorkspace workspace = 2 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for member.
+  // @inject_tag: json:"member" gorm:"column:member;"
+  QuotaSetMember member = 1 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for custom role.
+  // @inject_tag: json:"custom_role" gorm:"column:custom_role;"
+  QuotaSetCustomRole custom_role = 10 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for stream job.
+  // @inject_tag: json:"stream_job" gorm:"column:stream_job;"
+  QuotaSetStreamJob stream_job = 3 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for data sync job.
+  // @inject_tag: json:"sync_job" gorm:"column:sync_job;"
+  QuotaSetSyncJob sync_job = 9 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for data source.
+  // @inject_tag: json:"data_source" gorm:"column:data_source;"
+  QuotaSetDataSource data_source = 4 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for UDF.
+  // @inject_tag: json:"udf" gorm:"column:udf;"
+  QuotaSetUDF udf = 5 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for file
+  // @inject_tag: json:"file" gorm:"column:file;"
+  QuotaSetFile file = 6 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for flink cluster.
+  // @inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+  QuotaSetFlinkCluster flink_cluster = 7 [ (validator.field).tags.message = { not_null: true } ];
+
+  // Quota settings for network.
+  // @inject_tag: json:"network" gorm:"column:network;"
+  QuotaSetNetwork network = 8 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // Quota for user level. supported modified by Platform Administrator.
 message UserQuota {
-  // The user id of owner.
+  // The id of user.
   // @inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
-  string user_id = 1;
+  string user_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
 
-  // @inject_tag: json:"workspace" gorm:"column:workspace;"
-  QuotaWorkspace workspace = 2;
-
-  // @inject_tag: json:"stream_job" gorm:"column:stream_job;"
-  QuotaStreamJob stream_job = 3;
-
-  // @inject_tag: json:"data_source" gorm:"column:data_source;"
-  QuotaDataSource data_source = 4;
-
-  // @inject_tag: json:"udf" gorm:"column:udf;"
-  QuotaUDF udf = 5;
-
-  // @inject_tag: json:"file" gorm:"column:file;"
-  QuotaFile file = 6;
-
-  // @inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-  QuotaFlinkCluster flink_cluster = 7;
-
-  // @inject_tag: json:"network" gorm:"column:network;"
-  QuotaNetwork network = 8;
-
-  // @inject_tag: json:"sync_job" gorm:"column:sync_job;"
-  QuotaSyncJob sync_job = 9;
+  // Quota settings.
+  // @inject_tag: json:"quota_set" gorm:"embedded;"
+  QuotaSet quota_set = 2;
 }
 
-// Quota for project level. supported modified by Tenant Administrator.
-message ProjectQuota {
-  // The user id of workspace owner.
-  string user_id = 1;
-  string space_id = 2;
-}
-
-// Quota for workspace level. supported modified by Workspace Owner and Workspace Administrator.
+// Quota for workspace. supported modified by Tenant Administrator.
 message WorkspaceQuota {
-  string space_id = 2;
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Quota settings.
+  // @inject_tag: json:"quota_set" gorm:"embedded;"
+  QuotaSet quota_set = 2;
+}
+
+// Quota for workspace member. supported modified by Workspace Owner and Workspace Administrator.
+message MemberQuota {
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
   // The user id of workspace member.
-  string user_id = 1;
+  // @inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+  string user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // Quota settings.
+  // @inject_tag: json:"quota_set" gorm:"embedded;"
+  QuotaSet quota_set = 3;
 }
