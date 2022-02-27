@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 
 
@@ -20,23 +21,23 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelQuotaP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaSyncJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"D\n\tQuotaFile\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xda\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12\x1e\n\x04\x66ile\x18\x06 \x01(\x0b\x32\x10.model.QuotaFile\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetwork\x12%\n\x08sync_job\x18\t \x01(\x0b\x32\x13.model.QuotaSyncJob\"1\n\x0cProjectQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08space_id\x18\x02 \x01(\t\"3\n\x0eWorkspaceQuota\x12\x10\n\x08space_id\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x01 \x01(\tBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"*\n\x11QuotaSetWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaSetMember\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"+\n\x12QuotaSetCustomRole\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"*\n\x11QuotaSetStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaSetSyncJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"+\n\x12QuotaSetDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"$\n\x0bQuotaSetUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"N\n\x0cQuotaSetFile\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x13\n\x0bsize_single\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"R\n\x14QuotaSetFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x11\n\tcu_single\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaSetNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xb9\x04\n\x08QuotaSet\x12\x38\n\tworkspace\x18\x02 \x01(\x0b\x32\x18.model.QuotaSetWorkspaceB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x32\n\x06member\x18\x01 \x01(\x0b\x32\x15.model.QuotaSetMemberB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12;\n\x0b\x63ustom_role\x18\n \x01(\x0b\x32\x19.model.QuotaSetCustomRoleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x39\n\nstream_job\x18\x03 \x01(\x0b\x32\x18.model.QuotaSetStreamJobB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x35\n\x08sync_job\x18\t \x01(\x0b\x32\x16.model.QuotaSetSyncJobB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12;\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x19.model.QuotaSetDataSourceB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12,\n\x03udf\x18\x05 \x01(\x0b\x32\x12.model.QuotaSetUDFB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12.\n\x04\x66ile\x18\x06 \x01(\x0b\x32\x13.model.QuotaSetFileB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12?\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x1b.model.QuotaSetFlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x34\n\x07network\x18\x08 \x01(\x0b\x32\x16.model.QuotaSetNetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"Q\n\tUserQuota\x12 \n\x07user_id\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\"\n\tquota_set\x18\x02 \x01(\x0b\x32\x0f.model.QuotaSet\"[\n\x0eWorkspaceQuota\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\"\n\tquota_set\x18\x02 \x01(\x0b\x32\x0f.model.QuotaSet\"z\n\x0bMemberQuota\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\x07user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\"\n\tquota_set\x18\x03 \x01(\x0b\x32\x0f.model.QuotaSetBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
 
-_QUOTAWORKSPACE = _descriptor.Descriptor(
-  name='QuotaWorkspace',
-  full_name='model.QuotaWorkspace',
+_QUOTASETWORKSPACE = _descriptor.Descriptor(
+  name='QuotaSetWorkspace',
+  full_name='model.QuotaSetWorkspace',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaWorkspace.limit', index=0,
+      name='limit', full_name='model.QuotaSetWorkspace.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -54,21 +55,21 @@ _QUOTAWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=89,
-  serialized_end=128,
+  serialized_start=142,
+  serialized_end=184,
 )
 
 
-_QUOTASTREAMJOB = _descriptor.Descriptor(
-  name='QuotaStreamJob',
-  full_name='model.QuotaStreamJob',
+_QUOTASETMEMBER = _descriptor.Descriptor(
+  name='QuotaSetMember',
+  full_name='model.QuotaSetMember',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaStreamJob.limit', index=0,
+      name='limit', full_name='model.QuotaSetMember.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -86,21 +87,21 @@ _QUOTASTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=130,
-  serialized_end=169,
+  serialized_start=186,
+  serialized_end=225,
 )
 
 
-_QUOTASYNCJOB = _descriptor.Descriptor(
-  name='QuotaSyncJob',
-  full_name='model.QuotaSyncJob',
+_QUOTASETCUSTOMROLE = _descriptor.Descriptor(
+  name='QuotaSetCustomRole',
+  full_name='model.QuotaSetCustomRole',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaSyncJob.limit', index=0,
+      name='limit', full_name='model.QuotaSetCustomRole.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -118,21 +119,21 @@ _QUOTASYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=208,
+  serialized_start=227,
+  serialized_end=270,
 )
 
 
-_QUOTADATASOURCE = _descriptor.Descriptor(
-  name='QuotaDataSource',
-  full_name='model.QuotaDataSource',
+_QUOTASETSTREAMJOB = _descriptor.Descriptor(
+  name='QuotaSetStreamJob',
+  full_name='model.QuotaSetStreamJob',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaDataSource.limit', index=0,
+      name='limit', full_name='model.QuotaSetStreamJob.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -150,21 +151,21 @@ _QUOTADATASOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=210,
-  serialized_end=250,
+  serialized_start=272,
+  serialized_end=314,
 )
 
 
-_QUOTAUDF = _descriptor.Descriptor(
-  name='QuotaUDF',
-  full_name='model.QuotaUDF',
+_QUOTASETSYNCJOB = _descriptor.Descriptor(
+  name='QuotaSetSyncJob',
+  full_name='model.QuotaSetSyncJob',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaUDF.limit', index=0,
+      name='limit', full_name='model.QuotaSetSyncJob.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -182,35 +183,99 @@ _QUOTAUDF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=252,
-  serialized_end=285,
+  serialized_start=316,
+  serialized_end=356,
 )
 
 
-_QUOTAFILE = _descriptor.Descriptor(
-  name='QuotaFile',
-  full_name='model.QuotaFile',
+_QUOTASETDATASOURCE = _descriptor.Descriptor(
+  name='QuotaSetDataSource',
+  full_name='model.QuotaSetDataSource',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaFile.limit', index=0,
+      name='limit', full_name='model.QuotaSetDataSource.limit', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=358,
+  serialized_end=401,
+)
+
+
+_QUOTASETUDF = _descriptor.Descriptor(
+  name='QuotaSetUDF',
+  full_name='model.QuotaSetUDF',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='model.QuotaSetUDF.limit', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=403,
+  serialized_end=439,
+)
+
+
+_QUOTASETFILE = _descriptor.Descriptor(
+  name='QuotaSetFile',
+  full_name='model.QuotaSetFile',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='model.QuotaSetFile.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size', full_name='model.QuotaFile.size', index=1,
+      name='size_single', full_name='model.QuotaSetFile.size_single', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size_total', full_name='model.QuotaFile.size_total', index=2,
+      name='size_total', full_name='model.QuotaSetFile.size_total', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -228,35 +293,35 @@ _QUOTAFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=287,
-  serialized_end=355,
+  serialized_start=441,
+  serialized_end=519,
 )
 
 
-_QUOTAFLINKCLUSTER = _descriptor.Descriptor(
-  name='QuotaFlinkCluster',
-  full_name='model.QuotaFlinkCluster',
+_QUOTASETFLINKCLUSTER = _descriptor.Descriptor(
+  name='QuotaSetFlinkCluster',
+  full_name='model.QuotaSetFlinkCluster',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaFlinkCluster.limit', index=0,
+      name='limit', full_name='model.QuotaSetFlinkCluster.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cu', full_name='model.QuotaFlinkCluster.cu', index=1,
+      name='cu_single', full_name='model.QuotaSetFlinkCluster.cu_single', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cu_total', full_name='model.QuotaFlinkCluster.cu_total', index=2,
+      name='cu_total', full_name='model.QuotaSetFlinkCluster.cu_total', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -274,21 +339,21 @@ _QUOTAFLINKCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=357,
-  serialized_end=429,
+  serialized_start=521,
+  serialized_end=603,
 )
 
 
-_QUOTANETWORK = _descriptor.Descriptor(
-  name='QuotaNetwork',
-  full_name='model.QuotaNetwork',
+_QUOTASETNETWORK = _descriptor.Descriptor(
+  name='QuotaSetNetwork',
+  full_name='model.QuotaSetNetwork',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaNetwork.limit', index=0,
+      name='limit', full_name='model.QuotaSetNetwork.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -306,8 +371,103 @@ _QUOTANETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=431,
-  serialized_end=468,
+  serialized_start=605,
+  serialized_end=645,
+)
+
+
+_QUOTASET = _descriptor.Descriptor(
+  name='QuotaSet',
+  full_name='model.QuotaSet',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='workspace', full_name='model.QuotaSet.workspace', index=0,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='member', full_name='model.QuotaSet.member', index=1,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='custom_role', full_name='model.QuotaSet.custom_role', index=2,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_job', full_name='model.QuotaSet.stream_job', index=3,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_job', full_name='model.QuotaSet.sync_job', index=4,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='data_source', full_name='model.QuotaSet.data_source', index=5,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='udf', full_name='model.QuotaSet.udf', index=6,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file', full_name='model.QuotaSet.file', index=7,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_cluster', full_name='model.QuotaSet.flink_cluster', index=8,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network', full_name='model.QuotaSet.network', index=9,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=648,
+  serialized_end=1217,
 )
 
 
@@ -325,63 +485,14 @@ _USERQUOTA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='workspace', full_name='model.UserQuota.workspace', index=1,
+      name='quota_set', full_name='model.UserQuota.quota_set', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stream_job', full_name='model.UserQuota.stream_job', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data_source', full_name='model.UserQuota.data_source', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='udf', full_name='model.UserQuota.udf', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='file', full_name='model.UserQuota.file', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='flink_cluster', full_name='model.UserQuota.flink_cluster', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='network', full_name='model.UserQuota.network', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sync_job', full_name='model.UserQuota.sync_job', index=8,
-      number=9, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -394,47 +505,8 @@ _USERQUOTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=817,
-)
-
-
-_PROJECTQUOTA = _descriptor.Descriptor(
-  name='ProjectQuota',
-  full_name='model.ProjectQuota',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='user_id', full_name='model.ProjectQuota.user_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='model.ProjectQuota.space_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=819,
-  serialized_end=868,
+  serialized_start=1219,
+  serialized_end=1300,
 )
 
 
@@ -448,15 +520,15 @@ _WORKSPACEQUOTA = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='space_id', full_name='model.WorkspaceQuota.space_id', index=0,
-      number=2, type=9, cpp_type=9, label=1,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='model.WorkspaceQuota.user_id', index=1,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='quota_set', full_name='model.WorkspaceQuota.quota_set', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -472,86 +544,161 @@ _WORKSPACEQUOTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=870,
-  serialized_end=921,
+  serialized_start=1302,
+  serialized_end=1393,
 )
 
-_USERQUOTA.fields_by_name['workspace'].message_type = _QUOTAWORKSPACE
-_USERQUOTA.fields_by_name['stream_job'].message_type = _QUOTASTREAMJOB
-_USERQUOTA.fields_by_name['data_source'].message_type = _QUOTADATASOURCE
-_USERQUOTA.fields_by_name['udf'].message_type = _QUOTAUDF
-_USERQUOTA.fields_by_name['file'].message_type = _QUOTAFILE
-_USERQUOTA.fields_by_name['flink_cluster'].message_type = _QUOTAFLINKCLUSTER
-_USERQUOTA.fields_by_name['network'].message_type = _QUOTANETWORK
-_USERQUOTA.fields_by_name['sync_job'].message_type = _QUOTASYNCJOB
-DESCRIPTOR.message_types_by_name['QuotaWorkspace'] = _QUOTAWORKSPACE
-DESCRIPTOR.message_types_by_name['QuotaStreamJob'] = _QUOTASTREAMJOB
-DESCRIPTOR.message_types_by_name['QuotaSyncJob'] = _QUOTASYNCJOB
-DESCRIPTOR.message_types_by_name['QuotaDataSource'] = _QUOTADATASOURCE
-DESCRIPTOR.message_types_by_name['QuotaUDF'] = _QUOTAUDF
-DESCRIPTOR.message_types_by_name['QuotaFile'] = _QUOTAFILE
-DESCRIPTOR.message_types_by_name['QuotaFlinkCluster'] = _QUOTAFLINKCLUSTER
-DESCRIPTOR.message_types_by_name['QuotaNetwork'] = _QUOTANETWORK
+
+_MEMBERQUOTA = _descriptor.Descriptor(
+  name='MemberQuota',
+  full_name='model.MemberQuota',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.MemberQuota.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='model.MemberQuota.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='quota_set', full_name='model.MemberQuota.quota_set', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1395,
+  serialized_end=1517,
+)
+
+_QUOTASET.fields_by_name['workspace'].message_type = _QUOTASETWORKSPACE
+_QUOTASET.fields_by_name['member'].message_type = _QUOTASETMEMBER
+_QUOTASET.fields_by_name['custom_role'].message_type = _QUOTASETCUSTOMROLE
+_QUOTASET.fields_by_name['stream_job'].message_type = _QUOTASETSTREAMJOB
+_QUOTASET.fields_by_name['sync_job'].message_type = _QUOTASETSYNCJOB
+_QUOTASET.fields_by_name['data_source'].message_type = _QUOTASETDATASOURCE
+_QUOTASET.fields_by_name['udf'].message_type = _QUOTASETUDF
+_QUOTASET.fields_by_name['file'].message_type = _QUOTASETFILE
+_QUOTASET.fields_by_name['flink_cluster'].message_type = _QUOTASETFLINKCLUSTER
+_QUOTASET.fields_by_name['network'].message_type = _QUOTASETNETWORK
+_USERQUOTA.fields_by_name['quota_set'].message_type = _QUOTASET
+_WORKSPACEQUOTA.fields_by_name['quota_set'].message_type = _QUOTASET
+_MEMBERQUOTA.fields_by_name['quota_set'].message_type = _QUOTASET
+DESCRIPTOR.message_types_by_name['QuotaSetWorkspace'] = _QUOTASETWORKSPACE
+DESCRIPTOR.message_types_by_name['QuotaSetMember'] = _QUOTASETMEMBER
+DESCRIPTOR.message_types_by_name['QuotaSetCustomRole'] = _QUOTASETCUSTOMROLE
+DESCRIPTOR.message_types_by_name['QuotaSetStreamJob'] = _QUOTASETSTREAMJOB
+DESCRIPTOR.message_types_by_name['QuotaSetSyncJob'] = _QUOTASETSYNCJOB
+DESCRIPTOR.message_types_by_name['QuotaSetDataSource'] = _QUOTASETDATASOURCE
+DESCRIPTOR.message_types_by_name['QuotaSetUDF'] = _QUOTASETUDF
+DESCRIPTOR.message_types_by_name['QuotaSetFile'] = _QUOTASETFILE
+DESCRIPTOR.message_types_by_name['QuotaSetFlinkCluster'] = _QUOTASETFLINKCLUSTER
+DESCRIPTOR.message_types_by_name['QuotaSetNetwork'] = _QUOTASETNETWORK
+DESCRIPTOR.message_types_by_name['QuotaSet'] = _QUOTASET
 DESCRIPTOR.message_types_by_name['UserQuota'] = _USERQUOTA
-DESCRIPTOR.message_types_by_name['ProjectQuota'] = _PROJECTQUOTA
 DESCRIPTOR.message_types_by_name['WorkspaceQuota'] = _WORKSPACEQUOTA
+DESCRIPTOR.message_types_by_name['MemberQuota'] = _MEMBERQUOTA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-QuotaWorkspace = _reflection.GeneratedProtocolMessageType('QuotaWorkspace', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTAWORKSPACE,
+QuotaSetWorkspace = _reflection.GeneratedProtocolMessageType('QuotaSetWorkspace', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETWORKSPACE,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaWorkspace)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetWorkspace)
   })
-_sym_db.RegisterMessage(QuotaWorkspace)
+_sym_db.RegisterMessage(QuotaSetWorkspace)
 
-QuotaStreamJob = _reflection.GeneratedProtocolMessageType('QuotaStreamJob', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTASTREAMJOB,
+QuotaSetMember = _reflection.GeneratedProtocolMessageType('QuotaSetMember', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETMEMBER,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaStreamJob)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetMember)
   })
-_sym_db.RegisterMessage(QuotaStreamJob)
+_sym_db.RegisterMessage(QuotaSetMember)
 
-QuotaSyncJob = _reflection.GeneratedProtocolMessageType('QuotaSyncJob', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTASYNCJOB,
+QuotaSetCustomRole = _reflection.GeneratedProtocolMessageType('QuotaSetCustomRole', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETCUSTOMROLE,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaSyncJob)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetCustomRole)
   })
-_sym_db.RegisterMessage(QuotaSyncJob)
+_sym_db.RegisterMessage(QuotaSetCustomRole)
 
-QuotaDataSource = _reflection.GeneratedProtocolMessageType('QuotaDataSource', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTADATASOURCE,
+QuotaSetStreamJob = _reflection.GeneratedProtocolMessageType('QuotaSetStreamJob', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETSTREAMJOB,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaDataSource)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetStreamJob)
   })
-_sym_db.RegisterMessage(QuotaDataSource)
+_sym_db.RegisterMessage(QuotaSetStreamJob)
 
-QuotaUDF = _reflection.GeneratedProtocolMessageType('QuotaUDF', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTAUDF,
+QuotaSetSyncJob = _reflection.GeneratedProtocolMessageType('QuotaSetSyncJob', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETSYNCJOB,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaUDF)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetSyncJob)
   })
-_sym_db.RegisterMessage(QuotaUDF)
+_sym_db.RegisterMessage(QuotaSetSyncJob)
 
-QuotaFile = _reflection.GeneratedProtocolMessageType('QuotaFile', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTAFILE,
+QuotaSetDataSource = _reflection.GeneratedProtocolMessageType('QuotaSetDataSource', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETDATASOURCE,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaFile)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetDataSource)
   })
-_sym_db.RegisterMessage(QuotaFile)
+_sym_db.RegisterMessage(QuotaSetDataSource)
 
-QuotaFlinkCluster = _reflection.GeneratedProtocolMessageType('QuotaFlinkCluster', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTAFLINKCLUSTER,
+QuotaSetUDF = _reflection.GeneratedProtocolMessageType('QuotaSetUDF', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETUDF,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaFlinkCluster)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetUDF)
   })
-_sym_db.RegisterMessage(QuotaFlinkCluster)
+_sym_db.RegisterMessage(QuotaSetUDF)
 
-QuotaNetwork = _reflection.GeneratedProtocolMessageType('QuotaNetwork', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTANETWORK,
+QuotaSetFile = _reflection.GeneratedProtocolMessageType('QuotaSetFile', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETFILE,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaNetwork)
+  # @@protoc_insertion_point(class_scope:model.QuotaSetFile)
   })
-_sym_db.RegisterMessage(QuotaNetwork)
+_sym_db.RegisterMessage(QuotaSetFile)
+
+QuotaSetFlinkCluster = _reflection.GeneratedProtocolMessageType('QuotaSetFlinkCluster', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETFLINKCLUSTER,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.QuotaSetFlinkCluster)
+  })
+_sym_db.RegisterMessage(QuotaSetFlinkCluster)
+
+QuotaSetNetwork = _reflection.GeneratedProtocolMessageType('QuotaSetNetwork', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASETNETWORK,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.QuotaSetNetwork)
+  })
+_sym_db.RegisterMessage(QuotaSetNetwork)
+
+QuotaSet = _reflection.GeneratedProtocolMessageType('QuotaSet', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTASET,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.QuotaSet)
+  })
+_sym_db.RegisterMessage(QuotaSet)
 
 UserQuota = _reflection.GeneratedProtocolMessageType('UserQuota', (_message.Message,), {
   'DESCRIPTOR' : _USERQUOTA,
@@ -560,13 +707,6 @@ UserQuota = _reflection.GeneratedProtocolMessageType('UserQuota', (_message.Mess
   })
 _sym_db.RegisterMessage(UserQuota)
 
-ProjectQuota = _reflection.GeneratedProtocolMessageType('ProjectQuota', (_message.Message,), {
-  'DESCRIPTOR' : _PROJECTQUOTA,
-  '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.ProjectQuota)
-  })
-_sym_db.RegisterMessage(ProjectQuota)
-
 WorkspaceQuota = _reflection.GeneratedProtocolMessageType('WorkspaceQuota', (_message.Message,), {
   'DESCRIPTOR' : _WORKSPACEQUOTA,
   '__module__' : 'proto.types.model.quota_pb2'
@@ -574,14 +714,37 @@ WorkspaceQuota = _reflection.GeneratedProtocolMessageType('WorkspaceQuota', (_me
   })
 _sym_db.RegisterMessage(WorkspaceQuota)
 
+MemberQuota = _reflection.GeneratedProtocolMessageType('MemberQuota', (_message.Message,), {
+  'DESCRIPTOR' : _MEMBERQUOTA,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.MemberQuota)
+  })
+_sym_db.RegisterMessage(MemberQuota)
+
 
 DESCRIPTOR._options = None
-_QUOTAWORKSPACE._options = None
-_QUOTASTREAMJOB._options = None
-_QUOTASYNCJOB._options = None
-_QUOTADATASOURCE._options = None
-_QUOTAUDF._options = None
-_QUOTAFILE._options = None
-_QUOTAFLINKCLUSTER._options = None
-_QUOTANETWORK._options = None
+_QUOTASETWORKSPACE._options = None
+_QUOTASETMEMBER._options = None
+_QUOTASETCUSTOMROLE._options = None
+_QUOTASETSTREAMJOB._options = None
+_QUOTASETSYNCJOB._options = None
+_QUOTASETDATASOURCE._options = None
+_QUOTASETUDF._options = None
+_QUOTASETFILE._options = None
+_QUOTASETFLINKCLUSTER._options = None
+_QUOTASETNETWORK._options = None
+_QUOTASET.fields_by_name['workspace']._options = None
+_QUOTASET.fields_by_name['member']._options = None
+_QUOTASET.fields_by_name['custom_role']._options = None
+_QUOTASET.fields_by_name['stream_job']._options = None
+_QUOTASET.fields_by_name['sync_job']._options = None
+_QUOTASET.fields_by_name['data_source']._options = None
+_QUOTASET.fields_by_name['udf']._options = None
+_QUOTASET.fields_by_name['file']._options = None
+_QUOTASET.fields_by_name['flink_cluster']._options = None
+_QUOTASET.fields_by_name['network']._options = None
+_USERQUOTA.fields_by_name['user_id']._options = None
+_WORKSPACEQUOTA.fields_by_name['space_id']._options = None
+_MEMBERQUOTA.fields_by_name['space_id']._options = None
+_MEMBERQUOTA.fields_by_name['user_id']._options = None
 # @@protoc_insertion_point(module_scope)

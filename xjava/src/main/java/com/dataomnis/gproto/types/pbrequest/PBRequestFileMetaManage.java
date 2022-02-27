@@ -42,11 +42,33 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
+     * The user-id of created this file. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * The user-id of created this file. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
      * The owner of workspace, only used to check quota. Set by APIServer.
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     java.lang.String getSpaceOwner();
@@ -56,7 +78,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     com.google.protobuf.ByteString
@@ -68,7 +90,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     java.lang.String getPid();
@@ -78,7 +100,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -152,6 +174,7 @@ public final class PBRequestFileMetaManage {
     }
     private CreateFilePrepare() {
       spaceId_ = "";
+      createdBy_ = "";
       spaceOwner_ = "";
       pid_ = "";
       name_ = "";
@@ -197,10 +220,16 @@ public final class PBRequestFileMetaManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceOwner_ = s;
+              createdBy_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
+              break;
+            }
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               pid_ = s;
@@ -303,7 +332,55 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int SPACE_OWNER_FIELD_NUMBER = 2;
+    public static final int CREATED_BY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * The user-id of created this file. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of created this file. It fixed to request user id.
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -311,7 +388,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -333,7 +410,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -351,7 +428,7 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int PID_FIELD_NUMBER = 3;
+    public static final int PID_FIELD_NUMBER = 4;
     private volatile java.lang.Object pid_;
     /**
      * <pre>
@@ -359,7 +436,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The pid.
      */
     @java.lang.Override
@@ -381,7 +458,7 @@ public final class PBRequestFileMetaManage {
      * &#64;inject_tag: json:"pid"
      * </pre>
      *
-     * <code>string pid = 3 [(.validator.field) = { ... }</code>
+     * <code>string pid = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for pid.
      */
     @java.lang.Override
@@ -509,11 +586,14 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceOwner_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
@@ -536,11 +616,14 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceOwner_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
@@ -570,6 +653,8 @@ public final class PBRequestFileMetaManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!getSpaceOwner()
           .equals(other.getSpaceOwner())) return false;
       if (!getPid()
@@ -592,6 +677,8 @@ public final class PBRequestFileMetaManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
@@ -738,6 +825,8 @@ public final class PBRequestFileMetaManage {
         super.clear();
         spaceId_ = "";
 
+        createdBy_ = "";
+
         spaceOwner_ = "";
 
         pid_ = "";
@@ -775,6 +864,7 @@ public final class PBRequestFileMetaManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare result = new com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare(this);
         result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
         result.spaceOwner_ = spaceOwner_;
         result.pid_ = pid_;
         result.name_ = name_;
@@ -830,6 +920,10 @@ public final class PBRequestFileMetaManage {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.CreateFilePrepare.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         if (!other.getSpaceOwner().isEmpty()) {
@@ -980,6 +1074,107 @@ public final class PBRequestFileMetaManage {
         return this;
       }
 
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * The user-id of created this file. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this file. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of created this file. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this file. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of created this file. It fixed to request user id.
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string created_by = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object spaceOwner_ = "";
       /**
        * <pre>
@@ -987,7 +1182,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
        * @return The spaceOwner.
        */
       public java.lang.String getSpaceOwner() {
@@ -1008,7 +1203,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceOwner.
        */
       public com.google.protobuf.ByteString
@@ -1030,7 +1225,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
        * @param value The spaceOwner to set.
        * @return This builder for chaining.
        */
@@ -1050,7 +1245,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSpaceOwner() {
@@ -1065,7 +1260,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceOwner to set.
        * @return This builder for chaining.
        */
@@ -1088,7 +1283,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -1109,7 +1304,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -1131,7 +1326,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -1151,7 +1346,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -1166,7 +1361,7 @@ public final class PBRequestFileMetaManage {
        * &#64;inject_tag: json:"pid"
        * </pre>
        *
-       * <code>string pid = 3 [(.validator.field) = { ... }</code>
+       * <code>string pid = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -10679,50 +10874,51 @@ public final class PBRequestFileMetaManage {
       "roto\022\007request\0323github.com/yu31/protoc-pl" +
       "ugin/proto/validator.proto\0322github.com/y" +
       "u31/protoc-plugin/proto/defaults.proto\032\034" +
-      "proto/types/model/file.proto\"\372\001\n\021CreateF" +
+      "proto/types/model/file.proto\"\237\002\n\021CreateF" +
       "ilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
-      "\300\001\002\310\001\200\001\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022-\n\004ty" +
-      "pe\030\007 \001(\0162\020.model.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\"\370\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB" +
-      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\007file_id\030\003 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid" +
-      "\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007" +
-      "\302\001\004\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004et" +
-      "ag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022-\n\004type\030\t \001(\0162\020.m" +
-      "odel.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version" +
-      "\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\237\001\n\023ReCreateFilePre" +
-      "pare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022$\n" +
-      "\007file_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004s" +
-      "ize\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\265\001\n\020ReCreateFileM" +
-      "eta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022$\n\007file_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-" +
-      "\022\031\n\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\020\"8\n\020DescribeFileMeta\022$\n\007file_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileM" +
-      "eta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022\035\n\007file_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004nam" +
-      "e\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337" +
-      "\037\000\"\263\002\n\rListFileMetas\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006" +
-      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\002@\000\022+\n\004type\030\004 \001(\0162\020.model.File.Type" +
-      "B\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 " +
-      "\001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037" +
-      ")\022\'\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004si" +
-      "ze\022\017\n\007reverse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017Dele" +
-      "teFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200" +
-      "\0008dZ\n\302\001\007\312\002\004res-Bv\n$com.dataomnis.gproto." +
-      "types.pbrequestB\027PBRequestFileMetaManage" +
-      "P\000Z3github.com/DataWorkbench/gproto/xgo/" +
-      "types/pbrequestb\006proto3"
+      "\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000" +
+      "\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002" +
+      "\310\001\200\001\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022-\n\004type\030" +
+      "\007 \001(\0162\020.model.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\370" +
+      "\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\007file_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004res-\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
+      "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030" +
+      "\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022-\n\004type\030\t \001(\0162\020.mode" +
+      "l.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\n " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\237\001\n\023ReCreateFilePrepar" +
+      "e\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022$\n\007fi" +
+      "le_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004size" +
+      "\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\265\001\n\020ReCreateFileMeta" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "$\n\007file_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n" +
+      "\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\360\001\020\"8\n\020DescribeFileMeta\022$\n\007file_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileMeta" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "\035\n\007file_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003" +
+      " \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\"" +
+      "\263\002\n\rListFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003" +
+      "100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005" +
+      "\262\001\002@\000\022+\n\004type\030\004 \001(\0162\020.model.File.TypeB\013\342" +
+      "\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'" +
+      "\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022" +
+      "\017\n\007reverse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017DeleteF" +
+      "ileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008d" +
+      "Z\n\302\001\007\312\002\004res-Bv\n$com.dataomnis.gproto.typ" +
+      "es.pbrequestB\027PBRequestFileMetaManageP\000Z" +
+      "3github.com/DataWorkbench/gproto/xgo/typ" +
+      "es/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10736,7 +10932,7 @@ public final class PBRequestFileMetaManage {
     internal_static_request_CreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "SpaceOwner", "Pid", "Name", "Size", "Type", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Pid", "Name", "Size", "Type", });
     internal_static_request_CreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateFileMeta_fieldAccessorTable = new

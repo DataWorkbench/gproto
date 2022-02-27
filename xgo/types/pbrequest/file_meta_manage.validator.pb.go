@@ -25,6 +25,16 @@ func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateFilePrepare", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateFilePrepare", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
 	if !(this.SpaceOwner != "") {
 		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
@@ -87,6 +97,9 @@ func (this *CreateFilePrepare) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {

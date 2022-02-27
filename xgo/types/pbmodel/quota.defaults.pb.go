@@ -7,74 +7,91 @@ package pbmodel
 
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.QuotaWorkspace
-func (this *QuotaWorkspace) SetDefaults() {
+// Set default value for message model.QuotaSetWorkspace
+func (this *QuotaSetWorkspace) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaStreamJob
-func (this *QuotaStreamJob) SetDefaults() {
+// Set default value for message model.QuotaSetMember
+func (this *QuotaSetMember) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaSyncJob
-func (this *QuotaSyncJob) SetDefaults() {
+// Set default value for message model.QuotaSetCustomRole
+func (this *QuotaSetCustomRole) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaDataSource
-func (this *QuotaDataSource) SetDefaults() {
+// Set default value for message model.QuotaSetStreamJob
+func (this *QuotaSetStreamJob) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaUDF
-func (this *QuotaUDF) SetDefaults() {
+// Set default value for message model.QuotaSetSyncJob
+func (this *QuotaSetSyncJob) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaFile
-func (this *QuotaFile) SetDefaults() {
+// Set default value for message model.QuotaSetDataSource
+func (this *QuotaSetDataSource) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaFlinkCluster
-func (this *QuotaFlinkCluster) SetDefaults() {
+// Set default value for message model.QuotaSetUDF
+func (this *QuotaSetUDF) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.QuotaNetwork
-func (this *QuotaNetwork) SetDefaults() {
+// Set default value for message model.QuotaSetFile
+func (this *QuotaSetFile) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.UserQuota
-func (this *UserQuota) SetDefaults() {
+// Set default value for message model.QuotaSetFlinkCluster
+func (this *QuotaSetFlinkCluster) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.QuotaSetNetwork
+func (this *QuotaSetNetwork) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.QuotaSet
+func (this *QuotaSet) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -83,8 +100,23 @@ func (this *UserQuota) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.Member != nil {
+		if dt, ok := interface{}(this.Member).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.CustomRole != nil {
+		if dt, ok := interface{}(this.CustomRole).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	if this.StreamJob != nil {
 		if dt, ok := interface{}(this.StreamJob).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SyncJob != nil {
+		if dt, ok := interface{}(this.SyncJob).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -113,18 +145,18 @@ func (this *UserQuota) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.SyncJob != nil {
-		if dt, ok := interface{}(this.SyncJob).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
-// Set default value for message model.ProjectQuota
-func (this *ProjectQuota) SetDefaults() {
+// Set default value for message model.UserQuota
+func (this *UserQuota) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.QuotaSet != nil {
+		if dt, ok := interface{}(this.QuotaSet).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }
@@ -133,6 +165,24 @@ func (this *ProjectQuota) SetDefaults() {
 func (this *WorkspaceQuota) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.QuotaSet != nil {
+		if dt, ok := interface{}(this.QuotaSet).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message model.MemberQuota
+func (this *MemberQuota) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.QuotaSet != nil {
+		if dt, ok := interface{}(this.QuotaSet).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }

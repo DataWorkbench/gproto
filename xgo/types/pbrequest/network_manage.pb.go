@@ -192,7 +192,7 @@ type CreateNetwork struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The user-id of created this cluster. It fixed to request user id.
+	// The user-id of created this network. It fixed to request user id.
 	CreatedBy string `protobuf:"bytes,2,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
 	// The owner of workspace, only used to check quota. Set by APIServer.
 	SpaceOwner string `protobuf:"bytes,3,opt,name=space_owner,json=spaceOwner,proto3" json:"space_owner" swaggerignore:"true"`

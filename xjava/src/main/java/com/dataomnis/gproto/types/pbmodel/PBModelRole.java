@@ -3335,7 +3335,7 @@ public final class PBModelRole {
 
     /**
      * <pre>
-     * The module name.
+     * The module classify.
      * &#64;inject_tag: json:"classify"
      * </pre>
      *
@@ -3345,7 +3345,7 @@ public final class PBModelRole {
     int getClassifyValue();
     /**
      * <pre>
-     * The module name.
+     * The module classify.
      * &#64;inject_tag: json:"classify"
      * </pre>
      *
@@ -3356,7 +3356,7 @@ public final class PBModelRole {
 
     /**
      * <pre>
-     * DisplayName is the display name of this Module. Is user readable.
+     * Name is the display name of this Module. Is user readable.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
@@ -3366,7 +3366,7 @@ public final class PBModelRole {
     java.lang.String getName();
     /**
      * <pre>
-     * DisplayName is the display name of this Module. Is user readable.
+     * Name is the display name of this Module. Is user readable.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
@@ -3559,81 +3559,73 @@ public final class PBModelRole {
        */
       AuditManage(1),
       /**
-       * <code>ProjectQuota = 2;</code>
+       * <code>SpaceManage = 2;</code>
        */
-      ProjectQuota(2),
-      /**
-       * <code>SpaceManage = 3;</code>
-       */
-      SpaceManage(3),
+      SpaceManage(2),
       /**
        * <pre>
        * Module In workspace;
        * </pre>
        *
-       * <code>WorkspaceQuota = 4;</code>
+       * <code>MemberManage = 101;</code>
        */
-      WorkspaceQuota(4),
+      MemberManage(101),
       /**
-       * <code>MemberManage = 5;</code>
+       * <code>RoleManage = 102;</code>
        */
-      MemberManage(5),
+      RoleManage(102),
       /**
-       * <code>RoleManage = 6;</code>
+       * <code>DataSourceMange = 103;</code>
        */
-      RoleManage(6),
+      DataSourceMange(103),
       /**
-       * <code>DataSourceMange = 7;</code>
+       * <code>UDFManage = 104;</code>
        */
-      DataSourceMange(7),
+      UDFManage(104),
       /**
-       * <code>UDFManage = 8;</code>
+       * <code>FileManage = 105;</code>
        */
-      UDFManage(8),
+      FileManage(105),
       /**
-       * <code>FileManage = 9;</code>
+       * <code>NetworkMange = 106;</code>
        */
-      FileManage(9),
+      NetworkMange(106),
       /**
-       * <code>NetworkMange = 10;</code>
+       * <code>ClusterMange = 107;</code>
        */
-      NetworkMange(10),
+      ClusterMange(107),
       /**
-       * <code>ClusterMange = 11;</code>
+       * <code>StreamJobDevMange = 108;</code>
        */
-      ClusterMange(11),
+      StreamJobDevMange(108),
       /**
-       * <code>StreamJobDevMange = 12;</code>
+       * <code>StreamJobReleaseManage = 109;</code>
        */
-      StreamJobDevMange(12),
+      StreamJobReleaseManage(109),
       /**
-       * <code>StreamJobReleaseManage = 13;</code>
+       * <code>StreamJobVersionManage = 110;</code>
        */
-      StreamJobReleaseManage(13),
+      StreamJobVersionManage(110),
       /**
-       * <code>StreamJobVersionManage = 14;</code>
+       * <code>StreamJobInstanceManage = 111;</code>
        */
-      StreamJobVersionManage(14),
+      StreamJobInstanceManage(111),
       /**
-       * <code>StreamJobInstanceManage = 15;</code>
+       * <code>SyncJobDevMange = 112;</code>
        */
-      StreamJobInstanceManage(15),
+      SyncJobDevMange(112),
       /**
-       * <code>SyncJobDevMange = 16;</code>
+       * <code>SyncJobReleaseManage = 113;</code>
        */
-      SyncJobDevMange(16),
+      SyncJobReleaseManage(113),
       /**
-       * <code>SyncJobReleaseManage = 17;</code>
+       * <code>SyncJobVersionManage = 114;</code>
        */
-      SyncJobReleaseManage(17),
+      SyncJobVersionManage(114),
       /**
-       * <code>SyncJobVersionManage = 18;</code>
+       * <code>SyncJobInstanceManage = 115;</code>
        */
-      SyncJobVersionManage(18),
-      /**
-       * <code>SyncJobInstanceManage = 19;</code>
-       */
-      SyncJobInstanceManage(19),
+      SyncJobInstanceManage(115),
       UNRECOGNIZED(-1),
       ;
 
@@ -3650,81 +3642,73 @@ public final class PBModelRole {
        */
       public static final int AuditManage_VALUE = 1;
       /**
-       * <code>ProjectQuota = 2;</code>
+       * <code>SpaceManage = 2;</code>
        */
-      public static final int ProjectQuota_VALUE = 2;
-      /**
-       * <code>SpaceManage = 3;</code>
-       */
-      public static final int SpaceManage_VALUE = 3;
+      public static final int SpaceManage_VALUE = 2;
       /**
        * <pre>
        * Module In workspace;
        * </pre>
        *
-       * <code>WorkspaceQuota = 4;</code>
+       * <code>MemberManage = 101;</code>
        */
-      public static final int WorkspaceQuota_VALUE = 4;
+      public static final int MemberManage_VALUE = 101;
       /**
-       * <code>MemberManage = 5;</code>
+       * <code>RoleManage = 102;</code>
        */
-      public static final int MemberManage_VALUE = 5;
+      public static final int RoleManage_VALUE = 102;
       /**
-       * <code>RoleManage = 6;</code>
+       * <code>DataSourceMange = 103;</code>
        */
-      public static final int RoleManage_VALUE = 6;
+      public static final int DataSourceMange_VALUE = 103;
       /**
-       * <code>DataSourceMange = 7;</code>
+       * <code>UDFManage = 104;</code>
        */
-      public static final int DataSourceMange_VALUE = 7;
+      public static final int UDFManage_VALUE = 104;
       /**
-       * <code>UDFManage = 8;</code>
+       * <code>FileManage = 105;</code>
        */
-      public static final int UDFManage_VALUE = 8;
+      public static final int FileManage_VALUE = 105;
       /**
-       * <code>FileManage = 9;</code>
+       * <code>NetworkMange = 106;</code>
        */
-      public static final int FileManage_VALUE = 9;
+      public static final int NetworkMange_VALUE = 106;
       /**
-       * <code>NetworkMange = 10;</code>
+       * <code>ClusterMange = 107;</code>
        */
-      public static final int NetworkMange_VALUE = 10;
+      public static final int ClusterMange_VALUE = 107;
       /**
-       * <code>ClusterMange = 11;</code>
+       * <code>StreamJobDevMange = 108;</code>
        */
-      public static final int ClusterMange_VALUE = 11;
+      public static final int StreamJobDevMange_VALUE = 108;
       /**
-       * <code>StreamJobDevMange = 12;</code>
+       * <code>StreamJobReleaseManage = 109;</code>
        */
-      public static final int StreamJobDevMange_VALUE = 12;
+      public static final int StreamJobReleaseManage_VALUE = 109;
       /**
-       * <code>StreamJobReleaseManage = 13;</code>
+       * <code>StreamJobVersionManage = 110;</code>
        */
-      public static final int StreamJobReleaseManage_VALUE = 13;
+      public static final int StreamJobVersionManage_VALUE = 110;
       /**
-       * <code>StreamJobVersionManage = 14;</code>
+       * <code>StreamJobInstanceManage = 111;</code>
        */
-      public static final int StreamJobVersionManage_VALUE = 14;
+      public static final int StreamJobInstanceManage_VALUE = 111;
       /**
-       * <code>StreamJobInstanceManage = 15;</code>
+       * <code>SyncJobDevMange = 112;</code>
        */
-      public static final int StreamJobInstanceManage_VALUE = 15;
+      public static final int SyncJobDevMange_VALUE = 112;
       /**
-       * <code>SyncJobDevMange = 16;</code>
+       * <code>SyncJobReleaseManage = 113;</code>
        */
-      public static final int SyncJobDevMange_VALUE = 16;
+      public static final int SyncJobReleaseManage_VALUE = 113;
       /**
-       * <code>SyncJobReleaseManage = 17;</code>
+       * <code>SyncJobVersionManage = 114;</code>
        */
-      public static final int SyncJobReleaseManage_VALUE = 17;
+      public static final int SyncJobVersionManage_VALUE = 114;
       /**
-       * <code>SyncJobVersionManage = 18;</code>
+       * <code>SyncJobInstanceManage = 115;</code>
        */
-      public static final int SyncJobVersionManage_VALUE = 18;
-      /**
-       * <code>SyncJobInstanceManage = 19;</code>
-       */
-      public static final int SyncJobInstanceManage_VALUE = 19;
+      public static final int SyncJobInstanceManage_VALUE = 115;
 
 
       public final int getNumber() {
@@ -3753,24 +3737,22 @@ public final class PBModelRole {
         switch (value) {
           case 0: return ClassifyUnSet;
           case 1: return AuditManage;
-          case 2: return ProjectQuota;
-          case 3: return SpaceManage;
-          case 4: return WorkspaceQuota;
-          case 5: return MemberManage;
-          case 6: return RoleManage;
-          case 7: return DataSourceMange;
-          case 8: return UDFManage;
-          case 9: return FileManage;
-          case 10: return NetworkMange;
-          case 11: return ClusterMange;
-          case 12: return StreamJobDevMange;
-          case 13: return StreamJobReleaseManage;
-          case 14: return StreamJobVersionManage;
-          case 15: return StreamJobInstanceManage;
-          case 16: return SyncJobDevMange;
-          case 17: return SyncJobReleaseManage;
-          case 18: return SyncJobVersionManage;
-          case 19: return SyncJobInstanceManage;
+          case 2: return SpaceManage;
+          case 101: return MemberManage;
+          case 102: return RoleManage;
+          case 103: return DataSourceMange;
+          case 104: return UDFManage;
+          case 105: return FileManage;
+          case 106: return NetworkMange;
+          case 107: return ClusterMange;
+          case 108: return StreamJobDevMange;
+          case 109: return StreamJobReleaseManage;
+          case 110: return StreamJobVersionManage;
+          case 111: return StreamJobInstanceManage;
+          case 112: return SyncJobDevMange;
+          case 113: return SyncJobReleaseManage;
+          case 114: return SyncJobVersionManage;
+          case 115: return SyncJobInstanceManage;
           default: return null;
         }
       }
@@ -3879,7 +3861,7 @@ public final class PBModelRole {
     private int classify_;
     /**
      * <pre>
-     * The module name.
+     * The module classify.
      * &#64;inject_tag: json:"classify"
      * </pre>
      *
@@ -3891,7 +3873,7 @@ public final class PBModelRole {
     }
     /**
      * <pre>
-     * The module name.
+     * The module classify.
      * &#64;inject_tag: json:"classify"
      * </pre>
      *
@@ -3908,7 +3890,7 @@ public final class PBModelRole {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * DisplayName is the display name of this Module. Is user readable.
+     * Name is the display name of this Module. Is user readable.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
@@ -3930,7 +3912,7 @@ public final class PBModelRole {
     }
     /**
      * <pre>
-     * DisplayName is the display name of this Module. Is user readable.
+     * Name is the display name of this Module. Is user readable.
      * &#64;inject_tag: json:"name"
      * </pre>
      *
@@ -4517,7 +4499,7 @@ public final class PBModelRole {
       private int classify_ = 0;
       /**
        * <pre>
-       * The module name.
+       * The module classify.
        * &#64;inject_tag: json:"classify"
        * </pre>
        *
@@ -4529,7 +4511,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * The module name.
+       * The module classify.
        * &#64;inject_tag: json:"classify"
        * </pre>
        *
@@ -4545,7 +4527,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * The module name.
+       * The module classify.
        * &#64;inject_tag: json:"classify"
        * </pre>
        *
@@ -4560,7 +4542,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * The module name.
+       * The module classify.
        * &#64;inject_tag: json:"classify"
        * </pre>
        *
@@ -4579,7 +4561,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * The module name.
+       * The module classify.
        * &#64;inject_tag: json:"classify"
        * </pre>
        *
@@ -4596,7 +4578,7 @@ public final class PBModelRole {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * DisplayName is the display name of this Module. Is user readable.
+       * Name is the display name of this Module. Is user readable.
        * &#64;inject_tag: json:"name"
        * </pre>
        *
@@ -4617,7 +4599,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * DisplayName is the display name of this Module. Is user readable.
+       * Name is the display name of this Module. Is user readable.
        * &#64;inject_tag: json:"name"
        * </pre>
        *
@@ -4639,7 +4621,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * DisplayName is the display name of this Module. Is user readable.
+       * Name is the display name of this Module. Is user readable.
        * &#64;inject_tag: json:"name"
        * </pre>
        *
@@ -4659,7 +4641,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * DisplayName is the display name of this Module. Is user readable.
+       * Name is the display name of this Module. Is user readable.
        * &#64;inject_tag: json:"name"
        * </pre>
        *
@@ -4674,7 +4656,7 @@ public final class PBModelRole {
       }
       /**
        * <pre>
-       * DisplayName is the display name of this Module. Is user readable.
+       * Name is the display name of this Module. Is user readable.
        * &#64;inject_tag: json:"name"
        * </pre>
        *
@@ -7964,36 +7946,36 @@ public final class PBModelRole {
       "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302" +
       "\001\002\"\000\"^\n\004Type\022\r\n\tTypeUnset\020\000\022\016\n\nSpaceAdmi" +
       "n\020\001\022\022\n\016SpaceDeveloper\020\002\022\021\n\rSpaceOperator" +
-      "\020\003\022\020\n\014SpaceVisitor\020\004\"\343\004\n\rProjectModule\022\037" +
+      "\020\003\022\020\n\014SpaceVisitor\020\004\"\275\004\n\rProjectModule\022\037" +
       "\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-\022>\n\010class" +
       "ify\030\002 \001(\0162\035.model.ProjectModule.Classify" +
       "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
       "\"\000\022$\n\tapi_lists\030\004 \003(\0132\021.model.ProjectAPI" +
-      "\"\257\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
-      "tManage\020\001\022\020\n\014ProjectQuota\020\002\022\017\n\013SpaceMana" +
-      "ge\020\003\022\022\n\016WorkspaceQuota\020\004\022\020\n\014MemberManage" +
-      "\020\005\022\016\n\nRoleManage\020\006\022\023\n\017DataSourceMange\020\007\022" +
-      "\r\n\tUDFManage\020\010\022\016\n\nFileManage\020\t\022\020\n\014Networ" +
-      "kMange\020\n\022\020\n\014ClusterMange\020\013\022\025\n\021StreamJobD" +
-      "evMange\020\014\022\032\n\026StreamJobReleaseManage\020\r\022\032\n" +
-      "\026StreamJobVersionManage\020\016\022\033\n\027StreamJobIn" +
-      "stanceManage\020\017\022\023\n\017SyncJobDevMange\020\020\022\030\n\024S" +
-      "yncJobReleaseManage\020\021\022\030\n\024SyncJobVersionM" +
-      "anage\020\022\022\031\n\025SyncJobInstanceManage\020\023\"\302\003\n\nP" +
-      "rojectAPI\022\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000" +
-      "\022!\n\014display_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\tp" +
-      "erm_type\030\003 \001(\0162\032.model.ProjectAPI.PermTy" +
-      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\013permissions\030\004 \003(\0132\034" +
-      ".model.ProjectAPI.PermissionB\013\342\337\037\007\022\005\352\001\0020" +
-      "\000\022E\n\014system_roles\030\006 \003(\0132\".model.ProjectA" +
-      "PI.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPerm" +
-      "ission\022&\n\013system_role\030\001 \001(\0132\021.model.Syst" +
-      "emRole\022\017\n\007allowed\030\002 \001(\010\0322\n\020SystemRolesEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010P" +
-      "ermType\022\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n" +
-      "\004Read\020\002Bf\n\"com.dataomnis.gproto.types.pb" +
-      "modelB\013PBModelRoleP\000Z1github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbmodelb\006proto3"
+      "\"\211\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
+      "tManage\020\001\022\017\n\013SpaceManage\020\002\022\020\n\014MemberMana" +
+      "ge\020e\022\016\n\nRoleManage\020f\022\023\n\017DataSourceMange\020" +
+      "g\022\r\n\tUDFManage\020h\022\016\n\nFileManage\020i\022\020\n\014Netw" +
+      "orkMange\020j\022\020\n\014ClusterMange\020k\022\025\n\021StreamJo" +
+      "bDevMange\020l\022\032\n\026StreamJobReleaseManage\020m\022" +
+      "\032\n\026StreamJobVersionManage\020n\022\033\n\027StreamJob" +
+      "InstanceManage\020o\022\023\n\017SyncJobDevMange\020p\022\030\n" +
+      "\024SyncJobReleaseManage\020q\022\030\n\024SyncJobVersio" +
+      "nManage\020r\022\031\n\025SyncJobInstanceManage\020s\"\302\003\n" +
+      "\nProjectAPI\022\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
+      "\"\000\022!\n\014display_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n" +
+      "\tperm_type\030\003 \001(\0162\032.model.ProjectAPI.Perm" +
+      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\013permissions\030\004 \003(\013" +
+      "2\034.model.ProjectAPI.PermissionB\013\342\337\037\007\022\005\352\001" +
+      "\0020\000\022E\n\014system_roles\030\006 \003(\0132\".model.Projec" +
+      "tAPI.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPe" +
+      "rmission\022&\n\013system_role\030\001 \001(\0132\021.model.Sy" +
+      "stemRole\022\017\n\007allowed\030\002 \001(\010\0322\n\020SystemRoles" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n" +
+      "\010PermType\022\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022" +
+      "\010\n\004Read\020\002Bf\n\"com.dataomnis.gproto.types." +
+      "pbmodelB\013PBModelRoleP\000Z1github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbmodelb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

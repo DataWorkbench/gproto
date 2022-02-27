@@ -9,15 +9,16 @@ import (
 	driver "database/sql/driver"
 	json "encoding/json"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaWorkspace) Scan(val interface{}) error {
+func (t *QuotaSetWorkspace) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaWorkspace) Value() (driver.Value, error) {
+func (t *QuotaSetWorkspace) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -25,12 +26,12 @@ func (t *QuotaWorkspace) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaStreamJob) Scan(val interface{}) error {
+func (t *QuotaSetMember) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaStreamJob) Value() (driver.Value, error) {
+func (t *QuotaSetMember) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -38,12 +39,12 @@ func (t *QuotaStreamJob) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaSyncJob) Scan(val interface{}) error {
+func (t *QuotaSetCustomRole) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaSyncJob) Value() (driver.Value, error) {
+func (t *QuotaSetCustomRole) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -51,12 +52,12 @@ func (t *QuotaSyncJob) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaDataSource) Scan(val interface{}) error {
+func (t *QuotaSetStreamJob) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaDataSource) Value() (driver.Value, error) {
+func (t *QuotaSetStreamJob) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -64,12 +65,12 @@ func (t *QuotaDataSource) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaUDF) Scan(val interface{}) error {
+func (t *QuotaSetSyncJob) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaUDF) Value() (driver.Value, error) {
+func (t *QuotaSetSyncJob) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -77,12 +78,12 @@ func (t *QuotaUDF) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaFile) Scan(val interface{}) error {
+func (t *QuotaSetDataSource) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaFile) Value() (driver.Value, error) {
+func (t *QuotaSetDataSource) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -90,12 +91,12 @@ func (t *QuotaFile) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaFlinkCluster) Scan(val interface{}) error {
+func (t *QuotaSetUDF) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaFlinkCluster) Value() (driver.Value, error) {
+func (t *QuotaSetUDF) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -103,12 +104,38 @@ func (t *QuotaFlinkCluster) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaNetwork) Scan(val interface{}) error {
+func (t *QuotaSetFile) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaNetwork) Value() (driver.Value, error) {
+func (t *QuotaSetFile) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *QuotaSetFlinkCluster) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *QuotaSetFlinkCluster) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *QuotaSetNetwork) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *QuotaSetNetwork) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

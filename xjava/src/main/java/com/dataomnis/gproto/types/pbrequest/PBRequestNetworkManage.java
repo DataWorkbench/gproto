@@ -2476,7 +2476,7 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
-     * The user-id of created this cluster. It fixed to request user id.
+     * The user-id of created this network. It fixed to request user id.
      * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
@@ -2486,7 +2486,7 @@ public final class PBRequestNetworkManage {
     java.lang.String getCreatedBy();
     /**
      * <pre>
-     * The user-id of created this cluster. It fixed to request user id.
+     * The user-id of created this network. It fixed to request user id.
      * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
@@ -2755,7 +2755,7 @@ public final class PBRequestNetworkManage {
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * The user-id of created this cluster. It fixed to request user id.
+     * The user-id of created this network. It fixed to request user id.
      * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
@@ -2777,7 +2777,7 @@ public final class PBRequestNetworkManage {
     }
     /**
      * <pre>
-     * The user-id of created this cluster. It fixed to request user id.
+     * The user-id of created this network. It fixed to request user id.
      * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
@@ -3482,7 +3482,7 @@ public final class PBRequestNetworkManage {
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * The user-id of created this cluster. It fixed to request user id.
+       * The user-id of created this network. It fixed to request user id.
        * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
@@ -3503,7 +3503,7 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * The user-id of created this cluster. It fixed to request user id.
+       * The user-id of created this network. It fixed to request user id.
        * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
@@ -3525,7 +3525,7 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * The user-id of created this cluster. It fixed to request user id.
+       * The user-id of created this network. It fixed to request user id.
        * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
@@ -3545,7 +3545,7 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * The user-id of created this cluster. It fixed to request user id.
+       * The user-id of created this network. It fixed to request user id.
        * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
@@ -3560,7 +3560,7 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * The user-id of created this cluster. It fixed to request user id.
+       * The user-id of created this network. It fixed to request user id.
        * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *

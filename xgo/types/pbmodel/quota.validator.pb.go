@@ -7,73 +7,95 @@ package pbmodel
 
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strings "strings"
 )
 
-// Set default value for message model.QuotaWorkspace
-func (this *QuotaWorkspace) Validate() error {
+// Set default value for message model.QuotaSetWorkspace
+func (this *QuotaSetWorkspace) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaStreamJob
-func (this *QuotaStreamJob) Validate() error {
+// Set default value for message model.QuotaSetMember
+func (this *QuotaSetMember) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaSyncJob
-func (this *QuotaSyncJob) Validate() error {
+// Set default value for message model.QuotaSetCustomRole
+func (this *QuotaSetCustomRole) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaDataSource
-func (this *QuotaDataSource) Validate() error {
+// Set default value for message model.QuotaSetStreamJob
+func (this *QuotaSetStreamJob) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaUDF
-func (this *QuotaUDF) Validate() error {
+// Set default value for message model.QuotaSetSyncJob
+func (this *QuotaSetSyncJob) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaFile
-func (this *QuotaFile) Validate() error {
+// Set default value for message model.QuotaSetDataSource
+func (this *QuotaSetDataSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaFlinkCluster
-func (this *QuotaFlinkCluster) Validate() error {
+// Set default value for message model.QuotaSetUDF
+func (this *QuotaSetUDF) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.QuotaNetwork
-func (this *QuotaNetwork) Validate() error {
+// Set default value for message model.QuotaSetFile
+func (this *QuotaSetFile) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-func (this *UserQuota) _xxx_xxx_Validator_Validate_workspace() error {
+// Set default value for message model.QuotaSetFlinkCluster
+func (this *QuotaSetFlinkCluster) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message model.QuotaSetNetwork
+func (this *QuotaSetNetwork) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_workspace() error {
+	if !(this.Workspace != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'workspace' cannot be null")
+	}
 	if dt, ok := interface{}(this.Workspace).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -82,7 +104,34 @@ func (this *UserQuota) _xxx_xxx_Validator_Validate_workspace() error {
 	return nil
 }
 
-func (this *UserQuota) _xxx_xxx_Validator_Validate_stream_job() error {
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_member() error {
+	if !(this.Member != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'member' cannot be null")
+	}
+	if dt, ok := interface{}(this.Member).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_custom_role() error {
+	if !(this.CustomRole != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'custom_role' cannot be null")
+	}
+	if dt, ok := interface{}(this.CustomRole).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_stream_job() error {
+	if !(this.StreamJob != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'stream_job' cannot be null")
+	}
 	if dt, ok := interface{}(this.StreamJob).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -91,52 +140,10 @@ func (this *UserQuota) _xxx_xxx_Validator_Validate_stream_job() error {
 	return nil
 }
 
-func (this *UserQuota) _xxx_xxx_Validator_Validate_data_source() error {
-	if dt, ok := interface{}(this.DataSource).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_sync_job() error {
+	if !(this.SyncJob != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'sync_job' cannot be null")
 	}
-	return nil
-}
-
-func (this *UserQuota) _xxx_xxx_Validator_Validate_udf() error {
-	if dt, ok := interface{}(this.Udf).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *UserQuota) _xxx_xxx_Validator_Validate_file() error {
-	if dt, ok := interface{}(this.File).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *UserQuota) _xxx_xxx_Validator_Validate_flink_cluster() error {
-	if dt, ok := interface{}(this.FlinkCluster).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *UserQuota) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *UserQuota) _xxx_xxx_Validator_Validate_sync_job() error {
 	if dt, ok := interface{}(this.SyncJob).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -145,15 +152,84 @@ func (this *UserQuota) _xxx_xxx_Validator_Validate_sync_job() error {
 	return nil
 }
 
-// Set default value for message model.UserQuota
-func (this *UserQuota) Validate() error {
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_data_source() error {
+	if !(this.DataSource != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'data_source' cannot be null")
+	}
+	if dt, ok := interface{}(this.DataSource).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_udf() error {
+	if !(this.Udf != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'udf' cannot be null")
+	}
+	if dt, ok := interface{}(this.Udf).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_file() error {
+	if !(this.File != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'file' cannot be null")
+	}
+	if dt, ok := interface{}(this.File).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_flink_cluster() error {
+	if !(this.FlinkCluster != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'flink_cluster' cannot be null")
+	}
+	if dt, ok := interface{}(this.FlinkCluster).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *QuotaSet) _xxx_xxx_Validator_Validate_network() error {
+	if !(this.Network != nil) {
+		return protovalidator.FieldError2("QuotaSet", "the value of field 'network' cannot be null")
+	}
+	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.QuotaSet
+func (this *QuotaSet) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_workspace(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_member(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_custom_role(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_stream_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_data_source(); err != nil {
@@ -171,16 +247,57 @@ func (this *UserQuota) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
+	return nil
+}
+
+func (this *UserQuota) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) > 0) {
+		return protovalidator.FieldError1("UserQuota", "the byte length of field 'user_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(len(this.UserId) < 65) {
+		return protovalidator.FieldError1("UserQuota", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	return nil
+}
+
+func (this *UserQuota) _xxx_xxx_Validator_Validate_quota_set() error {
+	if dt, ok := interface{}(this.QuotaSet).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.UserQuota
+func (this *UserQuota) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_quota_set(); err != nil {
 		return err
 	}
 	return nil
 }
 
-// Set default value for message model.ProjectQuota
-func (this *ProjectQuota) Validate() error {
-	if this == nil {
-		return nil
+func (this *WorkspaceQuota) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("WorkspaceQuota", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("WorkspaceQuota", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *WorkspaceQuota) _xxx_xxx_Validator_Validate_quota_set() error {
+	if dt, ok := interface{}(this.QuotaSet).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
 	}
 	return nil
 }
@@ -189,6 +306,58 @@ func (this *ProjectQuota) Validate() error {
 func (this *WorkspaceQuota) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_quota_set(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *MemberQuota) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("MemberQuota", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("MemberQuota", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *MemberQuota) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) > 0) {
+		return protovalidator.FieldError1("MemberQuota", "the byte length of field 'user_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(len(this.UserId) < 65) {
+		return protovalidator.FieldError1("MemberQuota", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	return nil
+}
+
+func (this *MemberQuota) _xxx_xxx_Validator_Validate_quota_set() error {
+	if dt, ok := interface{}(this.QuotaSet).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.MemberQuota
+func (this *MemberQuota) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_quota_set(); err != nil {
+		return err
 	}
 	return nil
 }

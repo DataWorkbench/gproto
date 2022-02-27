@@ -14,13 +14,14 @@ public final class PBModelQuota {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface QuotaWorkspaceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaWorkspace)
+  public interface QuotaSetWorkspaceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetWorkspace)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of workspace for every user. default 10.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -29,25 +30,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaWorkspace}
+   * Protobuf type {@code model.QuotaSetWorkspace}
    */
-  public static final class QuotaWorkspace extends
+  public static final class QuotaSetWorkspace extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaWorkspace)
-      QuotaWorkspaceOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetWorkspace)
+      QuotaSetWorkspaceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaWorkspace.newBuilder() to construct.
-    private QuotaWorkspace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetWorkspace.newBuilder() to construct.
+    private QuotaSetWorkspace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaWorkspace() {
+    private QuotaSetWorkspace() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaWorkspace();
+      return new QuotaSetWorkspace();
     }
 
     @java.lang.Override
@@ -55,7 +56,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaWorkspace(
+    private QuotaSetWorkspace(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -99,15 +100,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaWorkspace_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetWorkspace_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaWorkspace_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetWorkspace_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -115,6 +116,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of workspace for every user. default 10.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -165,10 +167,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -191,69 +193,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -266,7 +268,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -282,26 +284,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaWorkspace}
+     * Protobuf type {@code model.QuotaSetWorkspace}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaWorkspace)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetWorkspace)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetWorkspace_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaWorkspace_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetWorkspace_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -327,17 +329,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetWorkspace_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -345,8 +347,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -386,16 +388,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -414,11 +416,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -432,6 +434,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of workspace for every user. default 10.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -444,6 +447,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of workspace for every user. default 10.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -459,6 +463,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of workspace for every user. default 10.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -483,53 +488,54 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaWorkspace)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetWorkspace)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaWorkspace)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetWorkspace)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaWorkspace>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaWorkspace>() {
+    private static final com.google.protobuf.Parser<QuotaSetWorkspace>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetWorkspace>() {
       @java.lang.Override
-      public QuotaWorkspace parsePartialFrom(
+      public QuotaSetWorkspace parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaWorkspace(input, extensionRegistry);
+        return new QuotaSetWorkspace(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaWorkspace> parser() {
+    public static com.google.protobuf.Parser<QuotaSetWorkspace> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaWorkspace> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetWorkspace> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaStreamJobOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaStreamJob)
+  public interface QuotaSetMemberOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetMember)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Limit is the maximum number of stream job for every user. default 500.
+     * Limit is the maximum number of workspace member for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -538,25 +544,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaStreamJob}
+   * Protobuf type {@code model.QuotaSetMember}
    */
-  public static final class QuotaStreamJob extends
+  public static final class QuotaSetMember extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaStreamJob)
-      QuotaStreamJobOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetMember)
+      QuotaSetMemberOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaStreamJob.newBuilder() to construct.
-    private QuotaStreamJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetMember.newBuilder() to construct.
+    private QuotaSetMember(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaStreamJob() {
+    private QuotaSetMember() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaStreamJob();
+      return new QuotaSetMember();
     }
 
     @java.lang.Override
@@ -564,7 +570,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaStreamJob(
+    private QuotaSetMember(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -608,22 +614,23 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaStreamJob_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetMember_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaStreamJob_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetMember_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
-     * Limit is the maximum number of stream job for every user. default 500.
+     * Limit is the maximum number of workspace member for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -674,10 +681,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -700,69 +707,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -775,7 +782,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -791,26 +798,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaStreamJob}
+     * Protobuf type {@code model.QuotaSetMember}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaStreamJob)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetMember)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaStreamJob_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetMember_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaStreamJob_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetMember_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -836,17 +843,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaStreamJob_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetMember_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -854,8 +861,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -895,16 +902,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -923,11 +930,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -940,7 +947,8 @@ public final class PBModelQuota {
       private long limit_ ;
       /**
        * <pre>
-       * Limit is the maximum number of stream job for every user. default 500.
+       * Limit is the maximum number of workspace member for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -952,7 +960,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * Limit is the maximum number of stream job for every user. default 500.
+       * Limit is the maximum number of workspace member for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -967,7 +976,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * Limit is the maximum number of stream job for every user. default 500.
+       * Limit is the maximum number of workspace member for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -992,53 +1002,568 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaStreamJob)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetMember)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaStreamJob)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetMember)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaStreamJob>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaStreamJob>() {
+    private static final com.google.protobuf.Parser<QuotaSetMember>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetMember>() {
       @java.lang.Override
-      public QuotaStreamJob parsePartialFrom(
+      public QuotaSetMember parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaStreamJob(input, extensionRegistry);
+        return new QuotaSetMember(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaStreamJob> parser() {
+    public static com.google.protobuf.Parser<QuotaSetMember> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaStreamJob> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetMember> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaSyncJobOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaSyncJob)
+  public interface QuotaSetCustomRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetCustomRole)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Limit is the maximum number of custom role for every user. default 500.
+     * &#64;inject_tag: json:"limit"
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    long getLimit();
+  }
+  /**
+   * Protobuf type {@code model.QuotaSetCustomRole}
+   */
+  public static final class QuotaSetCustomRole extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.QuotaSetCustomRole)
+      QuotaSetCustomRoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuotaSetCustomRole.newBuilder() to construct.
+    private QuotaSetCustomRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuotaSetCustomRole() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuotaSetCustomRole();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuotaSetCustomRole(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              limit_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetCustomRole_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetCustomRole_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder.class);
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 1;
+    private long limit_;
+    /**
+     * <pre>
+     * Limit is the maximum number of custom role for every user. default 500.
+     * &#64;inject_tag: json:"limit"
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (limit_ != 0L) {
+        output.writeInt64(1, limit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, limit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole) obj;
+
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.QuotaSetCustomRole}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetCustomRole)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetCustomRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetCustomRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        limit_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetCustomRole_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole(this);
+        result.limit_ = limit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.getDefaultInstance()) return this;
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <pre>
+       * Limit is the maximum number of custom role for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of custom role for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of custom role for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetCustomRole)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.QuotaSetCustomRole)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuotaSetCustomRole>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetCustomRole>() {
+      @java.lang.Override
+      public QuotaSetCustomRole parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuotaSetCustomRole(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuotaSetCustomRole> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuotaSetCustomRole> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuotaSetStreamJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetStreamJob)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of stream job for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -1047,25 +1572,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaSyncJob}
+   * Protobuf type {@code model.QuotaSetStreamJob}
    */
-  public static final class QuotaSyncJob extends
+  public static final class QuotaSetStreamJob extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaSyncJob)
-      QuotaSyncJobOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetStreamJob)
+      QuotaSetStreamJobOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaSyncJob.newBuilder() to construct.
-    private QuotaSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetStreamJob.newBuilder() to construct.
+    private QuotaSetStreamJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaSyncJob() {
+    private QuotaSetStreamJob() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaSyncJob();
+      return new QuotaSetStreamJob();
     }
 
     @java.lang.Override
@@ -1073,7 +1598,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaSyncJob(
+    private QuotaSetStreamJob(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1117,15 +1642,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetStreamJob_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetStreamJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -1133,6 +1658,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of stream job for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -1183,10 +1709,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -1209,69 +1735,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1284,7 +1810,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1300,26 +1826,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaSyncJob}
+     * Protobuf type {@code model.QuotaSetStreamJob}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaSyncJob)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetStreamJob)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetStreamJob_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetStreamJob_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1345,17 +1871,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetStreamJob_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1363,8 +1889,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -1404,16 +1930,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -1432,11 +1958,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1450,6 +1976,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -1462,6 +1989,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -1477,6 +2005,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -1501,53 +2030,54 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaSyncJob)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetStreamJob)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaSyncJob)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetStreamJob)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaSyncJob>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaSyncJob>() {
+    private static final com.google.protobuf.Parser<QuotaSetStreamJob>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetStreamJob>() {
       @java.lang.Override
-      public QuotaSyncJob parsePartialFrom(
+      public QuotaSetStreamJob parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaSyncJob(input, extensionRegistry);
+        return new QuotaSetStreamJob(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaSyncJob> parser() {
+    public static com.google.protobuf.Parser<QuotaSetStreamJob> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaSyncJob> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetStreamJob> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaDataSourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaDataSource)
+  public interface QuotaSetSyncJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetSyncJob)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Limit is the maximum number of datasource for every user. default 500.
+     * Limit is the maximum number of stream job for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -1556,25 +2086,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaDataSource}
+   * Protobuf type {@code model.QuotaSetSyncJob}
    */
-  public static final class QuotaDataSource extends
+  public static final class QuotaSetSyncJob extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaDataSource)
-      QuotaDataSourceOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetSyncJob)
+      QuotaSetSyncJobOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaDataSource.newBuilder() to construct.
-    private QuotaDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetSyncJob.newBuilder() to construct.
+    private QuotaSetSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaDataSource() {
+    private QuotaSetSyncJob() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaDataSource();
+      return new QuotaSetSyncJob();
     }
 
     @java.lang.Override
@@ -1582,7 +2112,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaDataSource(
+    private QuotaSetSyncJob(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1626,22 +2156,23 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaDataSource_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetSyncJob_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaDataSource_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetSyncJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
-     * Limit is the maximum number of datasource for every user. default 500.
+     * Limit is the maximum number of stream job for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -1692,10 +2223,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -1718,69 +2249,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1793,7 +2324,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1809,26 +2340,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaDataSource}
+     * Protobuf type {@code model.QuotaSetSyncJob}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaDataSource)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetSyncJob)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaDataSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetSyncJob_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaDataSource_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetSyncJob_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1854,17 +2385,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaDataSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetSyncJob_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1872,8 +2403,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -1913,16 +2444,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -1941,11 +2472,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1958,7 +2489,8 @@ public final class PBModelQuota {
       private long limit_ ;
       /**
        * <pre>
-       * Limit is the maximum number of datasource for every user. default 500.
+       * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -1970,7 +2502,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * Limit is the maximum number of datasource for every user. default 500.
+       * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -1985,7 +2518,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * Limit is the maximum number of datasource for every user. default 500.
+       * Limit is the maximum number of stream job for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -2010,53 +2544,54 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaDataSource)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetSyncJob)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaDataSource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetSyncJob)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaDataSource>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaDataSource>() {
+    private static final com.google.protobuf.Parser<QuotaSetSyncJob>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetSyncJob>() {
       @java.lang.Override
-      public QuotaDataSource parsePartialFrom(
+      public QuotaSetSyncJob parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaDataSource(input, extensionRegistry);
+        return new QuotaSetSyncJob(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaDataSource> parser() {
+    public static com.google.protobuf.Parser<QuotaSetSyncJob> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaDataSource> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetSyncJob> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaUDFOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaUDF)
+  public interface QuotaSetDataSourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetDataSource)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -2065,25 +2600,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaUDF}
+   * Protobuf type {@code model.QuotaSetDataSource}
    */
-  public static final class QuotaUDF extends
+  public static final class QuotaSetDataSource extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaUDF)
-      QuotaUDFOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetDataSource)
+      QuotaSetDataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaUDF.newBuilder() to construct.
-    private QuotaUDF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetDataSource.newBuilder() to construct.
+    private QuotaSetDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaUDF() {
+    private QuotaSetDataSource() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaUDF();
+      return new QuotaSetDataSource();
     }
 
     @java.lang.Override
@@ -2091,7 +2626,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaUDF(
+    private QuotaSetDataSource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2135,15 +2670,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaUDF_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetDataSource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaUDF_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetDataSource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -2151,6 +2686,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -2201,10 +2737,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -2227,69 +2763,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2302,7 +2838,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2318,26 +2854,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaUDF}
+     * Protobuf type {@code model.QuotaSetDataSource}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaUDF)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetDataSource)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaUDF_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetDataSource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaUDF_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetDataSource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2363,17 +2899,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaUDF_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetDataSource_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2381,8 +2917,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -2422,16 +2958,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -2450,11 +2986,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2468,6 +3004,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -2480,6 +3017,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -2495,6 +3033,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -2519,53 +3058,568 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaUDF)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetDataSource)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaUDF)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetDataSource)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaUDF>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaUDF>() {
+    private static final com.google.protobuf.Parser<QuotaSetDataSource>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetDataSource>() {
       @java.lang.Override
-      public QuotaUDF parsePartialFrom(
+      public QuotaSetDataSource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaUDF(input, extensionRegistry);
+        return new QuotaSetDataSource(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaUDF> parser() {
+    public static com.google.protobuf.Parser<QuotaSetDataSource> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaUDF> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetDataSource> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaFileOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaFile)
+  public interface QuotaSetUDFOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetUDF)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    long getLimit();
+  }
+  /**
+   * Protobuf type {@code model.QuotaSetUDF}
+   */
+  public static final class QuotaSetUDF extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.QuotaSetUDF)
+      QuotaSetUDFOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuotaSetUDF.newBuilder() to construct.
+    private QuotaSetUDF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuotaSetUDF() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuotaSetUDF();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuotaSetUDF(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              limit_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetUDF_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetUDF_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder.class);
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 1;
+    private long limit_;
+    /**
+     * <pre>
+     * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (limit_ != 0L) {
+        output.writeInt64(1, limit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, limit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF) obj;
+
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.QuotaSetUDF}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetUDF)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetUDF_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetUDF_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        limit_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetUDF_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF(this);
+        result.limit_ = limit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.getDefaultInstance()) return this;
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <pre>
+       * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetUDF)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.QuotaSetUDF)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuotaSetUDF>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetUDF>() {
+      @java.lang.Override
+      public QuotaSetUDF parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuotaSetUDF(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuotaSetUDF> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuotaSetUDF> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuotaSetFileOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetFile)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of resource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -2575,17 +3629,19 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * Size is the maximum size of every file. default is 100MB.
+     * Size is the maximum size of single file. default is 100MB.
+     * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 2;</code>
-     * @return The size.
+     * <code>int64 size_single = 2;</code>
+     * @return The sizeSingle.
      */
-    long getSize();
+    long getSizeSingle();
 
     /**
      * <pre>
-     * SizeTotal is the maximum size of every user. default 5GB.
+     * SizeTotal is the maximum size of every user. default 1GB.
+     * &#64;inject_tag: json:"size_total"
      * </pre>
      *
      * <code>int64 size_total = 3;</code>
@@ -2594,25 +3650,25 @@ public final class PBModelQuota {
     long getSizeTotal();
   }
   /**
-   * Protobuf type {@code model.QuotaFile}
+   * Protobuf type {@code model.QuotaSetFile}
    */
-  public static final class QuotaFile extends
+  public static final class QuotaSetFile extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaFile)
-      QuotaFileOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetFile)
+      QuotaSetFileOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaFile.newBuilder() to construct.
-    private QuotaFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetFile.newBuilder() to construct.
+    private QuotaSetFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaFile() {
+    private QuotaSetFile() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaFile();
+      return new QuotaSetFile();
     }
 
     @java.lang.Override
@@ -2620,7 +3676,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaFile(
+    private QuotaSetFile(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2645,7 +3701,7 @@ public final class PBModelQuota {
             }
             case 16: {
 
-              size_ = input.readInt64();
+              sizeSingle_ = input.readInt64();
               break;
             }
             case 24: {
@@ -2674,15 +3730,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFile_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFile_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -2690,6 +3746,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of resource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -2700,26 +3757,28 @@ public final class PBModelQuota {
       return limit_;
     }
 
-    public static final int SIZE_FIELD_NUMBER = 2;
-    private long size_;
+    public static final int SIZE_SINGLE_FIELD_NUMBER = 2;
+    private long sizeSingle_;
     /**
      * <pre>
-     * Size is the maximum size of every file. default is 100MB.
+     * Size is the maximum size of single file. default is 100MB.
+     * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 2;</code>
-     * @return The size.
+     * <code>int64 size_single = 2;</code>
+     * @return The sizeSingle.
      */
     @java.lang.Override
-    public long getSize() {
-      return size_;
+    public long getSizeSingle() {
+      return sizeSingle_;
     }
 
     public static final int SIZE_TOTAL_FIELD_NUMBER = 3;
     private long sizeTotal_;
     /**
      * <pre>
-     * SizeTotal is the maximum size of every user. default 5GB.
+     * SizeTotal is the maximum size of every user. default 1GB.
+     * &#64;inject_tag: json:"size_total"
      * </pre>
      *
      * <code>int64 size_total = 3;</code>
@@ -2747,8 +3806,8 @@ public final class PBModelQuota {
       if (limit_ != 0L) {
         output.writeInt64(1, limit_);
       }
-      if (size_ != 0L) {
-        output.writeInt64(2, size_);
+      if (sizeSingle_ != 0L) {
+        output.writeInt64(2, sizeSingle_);
       }
       if (sizeTotal_ != 0L) {
         output.writeInt64(3, sizeTotal_);
@@ -2766,9 +3825,9 @@ public final class PBModelQuota {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, limit_);
       }
-      if (size_ != 0L) {
+      if (sizeSingle_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, size_);
+          .computeInt64Size(2, sizeSingle_);
       }
       if (sizeTotal_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -2784,15 +3843,15 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
-      if (getSize()
-          != other.getSize()) return false;
+      if (getSizeSingle()
+          != other.getSizeSingle()) return false;
       if (getSizeTotal()
           != other.getSizeTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2809,9 +3868,9 @@ public final class PBModelQuota {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLimit());
-      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (37 * hash) + SIZE_SINGLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSize());
+          getSizeSingle());
       hash = (37 * hash) + SIZE_TOTAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSizeTotal());
@@ -2820,69 +3879,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2895,7 +3954,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2911,26 +3970,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaFile}
+     * Protobuf type {@code model.QuotaSetFile}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaFile)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetFile)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFile_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFile_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2950,7 +4009,7 @@ public final class PBModelQuota {
         super.clear();
         limit_ = 0L;
 
-        size_ = 0L;
+        sizeSingle_ = 0L;
 
         sizeTotal_ = 0L;
 
@@ -2960,17 +4019,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFile_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2978,10 +4037,10 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile(this);
         result.limit_ = limit_;
-        result.size_ = size_;
+        result.sizeSingle_ = sizeSingle_;
         result.sizeTotal_ = sizeTotal_;
         onBuilt();
         return result;
@@ -3021,21 +4080,21 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
-        if (other.getSize() != 0L) {
-          setSize(other.getSize());
+        if (other.getSizeSingle() != 0L) {
+          setSizeSingle(other.getSizeSingle());
         }
         if (other.getSizeTotal() != 0L) {
           setSizeTotal(other.getSizeTotal());
@@ -3055,11 +4114,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3073,6 +4132,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of resource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3085,6 +4145,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of resource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3100,6 +4161,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of resource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3112,45 +4174,48 @@ public final class PBModelQuota {
         return this;
       }
 
-      private long size_ ;
+      private long sizeSingle_ ;
       /**
        * <pre>
-       * Size is the maximum size of every file. default is 100MB.
+       * Size is the maximum size of single file. default is 100MB.
+       * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 2;</code>
-       * @return The size.
+       * <code>int64 size_single = 2;</code>
+       * @return The sizeSingle.
        */
       @java.lang.Override
-      public long getSize() {
-        return size_;
+      public long getSizeSingle() {
+        return sizeSingle_;
       }
       /**
        * <pre>
-       * Size is the maximum size of every file. default is 100MB.
+       * Size is the maximum size of single file. default is 100MB.
+       * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 2;</code>
-       * @param value The size to set.
+       * <code>int64 size_single = 2;</code>
+       * @param value The sizeSingle to set.
        * @return This builder for chaining.
        */
-      public Builder setSize(long value) {
+      public Builder setSizeSingle(long value) {
         
-        size_ = value;
+        sizeSingle_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Size is the maximum size of every file. default is 100MB.
+       * Size is the maximum size of single file. default is 100MB.
+       * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 2;</code>
+       * <code>int64 size_single = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSize() {
+      public Builder clearSizeSingle() {
         
-        size_ = 0L;
+        sizeSingle_ = 0L;
         onChanged();
         return this;
       }
@@ -3158,7 +4223,8 @@ public final class PBModelQuota {
       private long sizeTotal_ ;
       /**
        * <pre>
-       * SizeTotal is the maximum size of every user. default 5GB.
+       * SizeTotal is the maximum size of every user. default 1GB.
+       * &#64;inject_tag: json:"size_total"
        * </pre>
        *
        * <code>int64 size_total = 3;</code>
@@ -3170,7 +4236,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * SizeTotal is the maximum size of every user. default 5GB.
+       * SizeTotal is the maximum size of every user. default 1GB.
+       * &#64;inject_tag: json:"size_total"
        * </pre>
        *
        * <code>int64 size_total = 3;</code>
@@ -3185,7 +4252,8 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * SizeTotal is the maximum size of every user. default 5GB.
+       * SizeTotal is the maximum size of every user. default 1GB.
+       * &#64;inject_tag: json:"size_total"
        * </pre>
        *
        * <code>int64 size_total = 3;</code>
@@ -3210,53 +4278,54 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaFile)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetFile)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaFile)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetFile)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaFile>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaFile>() {
+    private static final com.google.protobuf.Parser<QuotaSetFile>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetFile>() {
       @java.lang.Override
-      public QuotaFile parsePartialFrom(
+      public QuotaSetFile parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaFile(input, extensionRegistry);
+        return new QuotaSetFile(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaFile> parser() {
+    public static com.google.protobuf.Parser<QuotaSetFile> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaFile> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetFile> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaFlinkClusterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaFlinkCluster)
+  public interface QuotaSetFlinkClusterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetFlinkCluster)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of clusters for every user. default 5.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -3266,17 +4335,19 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * Cu is the maximum number of cu for every cluster. default 8.
+     * Cu is the maximum number of cu for single cluster. default 8.
+     * &#64;inject_tag: json:"cu"
      * </pre>
      *
-     * <code>float cu = 2;</code>
-     * @return The cu.
+     * <code>float cu_single = 2;</code>
+     * @return The cuSingle.
      */
-    float getCu();
+    float getCuSingle();
 
     /**
      * <pre>
      * CuTotal is the maximum number of cu for every user. default 12.
+     * &#64;inject_tag: json:"cu_total"
      * </pre>
      *
      * <code>float cu_total = 3;</code>
@@ -3285,25 +4356,25 @@ public final class PBModelQuota {
     float getCuTotal();
   }
   /**
-   * Protobuf type {@code model.QuotaFlinkCluster}
+   * Protobuf type {@code model.QuotaSetFlinkCluster}
    */
-  public static final class QuotaFlinkCluster extends
+  public static final class QuotaSetFlinkCluster extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaFlinkCluster)
-      QuotaFlinkClusterOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetFlinkCluster)
+      QuotaSetFlinkClusterOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaFlinkCluster.newBuilder() to construct.
-    private QuotaFlinkCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetFlinkCluster.newBuilder() to construct.
+    private QuotaSetFlinkCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaFlinkCluster() {
+    private QuotaSetFlinkCluster() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaFlinkCluster();
+      return new QuotaSetFlinkCluster();
     }
 
     @java.lang.Override
@@ -3311,7 +4382,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaFlinkCluster(
+    private QuotaSetFlinkCluster(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3336,7 +4407,7 @@ public final class PBModelQuota {
             }
             case 21: {
 
-              cu_ = input.readFloat();
+              cuSingle_ = input.readFloat();
               break;
             }
             case 29: {
@@ -3365,15 +4436,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFlinkCluster_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFlinkCluster_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFlinkCluster_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFlinkCluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -3381,6 +4452,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of clusters for every user. default 5.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -3391,19 +4463,20 @@ public final class PBModelQuota {
       return limit_;
     }
 
-    public static final int CU_FIELD_NUMBER = 2;
-    private float cu_;
+    public static final int CU_SINGLE_FIELD_NUMBER = 2;
+    private float cuSingle_;
     /**
      * <pre>
-     * Cu is the maximum number of cu for every cluster. default 8.
+     * Cu is the maximum number of cu for single cluster. default 8.
+     * &#64;inject_tag: json:"cu"
      * </pre>
      *
-     * <code>float cu = 2;</code>
-     * @return The cu.
+     * <code>float cu_single = 2;</code>
+     * @return The cuSingle.
      */
     @java.lang.Override
-    public float getCu() {
-      return cu_;
+    public float getCuSingle() {
+      return cuSingle_;
     }
 
     public static final int CU_TOTAL_FIELD_NUMBER = 3;
@@ -3411,6 +4484,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * CuTotal is the maximum number of cu for every user. default 12.
+     * &#64;inject_tag: json:"cu_total"
      * </pre>
      *
      * <code>float cu_total = 3;</code>
@@ -3438,8 +4512,8 @@ public final class PBModelQuota {
       if (limit_ != 0L) {
         output.writeInt64(1, limit_);
       }
-      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
-        output.writeFloat(2, cu_);
+      if (java.lang.Float.floatToRawIntBits(cuSingle_) != 0) {
+        output.writeFloat(2, cuSingle_);
       }
       if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
         output.writeFloat(3, cuTotal_);
@@ -3457,9 +4531,9 @@ public final class PBModelQuota {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, limit_);
       }
-      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cuSingle_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, cu_);
+          .computeFloatSize(2, cuSingle_);
       }
       if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -3475,16 +4549,16 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
-      if (java.lang.Float.floatToIntBits(getCu())
+      if (java.lang.Float.floatToIntBits(getCuSingle())
           != java.lang.Float.floatToIntBits(
-              other.getCu())) return false;
+              other.getCuSingle())) return false;
       if (java.lang.Float.floatToIntBits(getCuTotal())
           != java.lang.Float.floatToIntBits(
               other.getCuTotal())) return false;
@@ -3502,9 +4576,9 @@ public final class PBModelQuota {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLimit());
-      hash = (37 * hash) + CU_FIELD_NUMBER;
+      hash = (37 * hash) + CU_SINGLE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCu());
+          getCuSingle());
       hash = (37 * hash) + CU_TOTAL_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCuTotal());
@@ -3513,69 +4587,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3588,7 +4662,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3604,26 +4678,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaFlinkCluster}
+     * Protobuf type {@code model.QuotaSetFlinkCluster}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaFlinkCluster)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetFlinkCluster)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFlinkCluster_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFlinkCluster_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFlinkCluster_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFlinkCluster_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3643,7 +4717,7 @@ public final class PBModelQuota {
         super.clear();
         limit_ = 0L;
 
-        cu_ = 0F;
+        cuSingle_ = 0F;
 
         cuTotal_ = 0F;
 
@@ -3653,17 +4727,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFlinkCluster_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetFlinkCluster_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3671,10 +4745,10 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster(this);
         result.limit_ = limit_;
-        result.cu_ = cu_;
+        result.cuSingle_ = cuSingle_;
         result.cuTotal_ = cuTotal_;
         onBuilt();
         return result;
@@ -3714,21 +4788,21 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
-        if (other.getCu() != 0F) {
-          setCu(other.getCu());
+        if (other.getCuSingle() != 0F) {
+          setCuSingle(other.getCuSingle());
         }
         if (other.getCuTotal() != 0F) {
           setCuTotal(other.getCuTotal());
@@ -3748,11 +4822,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3766,6 +4840,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of clusters for every user. default 5.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3778,6 +4853,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of clusters for every user. default 5.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3793,6 +4869,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of clusters for every user. default 5.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -3805,45 +4882,48 @@ public final class PBModelQuota {
         return this;
       }
 
-      private float cu_ ;
+      private float cuSingle_ ;
       /**
        * <pre>
-       * Cu is the maximum number of cu for every cluster. default 8.
+       * Cu is the maximum number of cu for single cluster. default 8.
+       * &#64;inject_tag: json:"cu"
        * </pre>
        *
-       * <code>float cu = 2;</code>
-       * @return The cu.
+       * <code>float cu_single = 2;</code>
+       * @return The cuSingle.
        */
       @java.lang.Override
-      public float getCu() {
-        return cu_;
+      public float getCuSingle() {
+        return cuSingle_;
       }
       /**
        * <pre>
-       * Cu is the maximum number of cu for every cluster. default 8.
+       * Cu is the maximum number of cu for single cluster. default 8.
+       * &#64;inject_tag: json:"cu"
        * </pre>
        *
-       * <code>float cu = 2;</code>
-       * @param value The cu to set.
+       * <code>float cu_single = 2;</code>
+       * @param value The cuSingle to set.
        * @return This builder for chaining.
        */
-      public Builder setCu(float value) {
+      public Builder setCuSingle(float value) {
         
-        cu_ = value;
+        cuSingle_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Cu is the maximum number of cu for every cluster. default 8.
+       * Cu is the maximum number of cu for single cluster. default 8.
+       * &#64;inject_tag: json:"cu"
        * </pre>
        *
-       * <code>float cu = 2;</code>
+       * <code>float cu_single = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCu() {
+      public Builder clearCuSingle() {
         
-        cu_ = 0F;
+        cuSingle_ = 0F;
         onChanged();
         return this;
       }
@@ -3852,6 +4932,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * CuTotal is the maximum number of cu for every user. default 12.
+       * &#64;inject_tag: json:"cu_total"
        * </pre>
        *
        * <code>float cu_total = 3;</code>
@@ -3864,6 +4945,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * CuTotal is the maximum number of cu for every user. default 12.
+       * &#64;inject_tag: json:"cu_total"
        * </pre>
        *
        * <code>float cu_total = 3;</code>
@@ -3879,6 +4961,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * CuTotal is the maximum number of cu for every user. default 12.
+       * &#64;inject_tag: json:"cu_total"
        * </pre>
        *
        * <code>float cu_total = 3;</code>
@@ -3903,53 +4986,54 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaFlinkCluster)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetFlinkCluster)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaFlinkCluster)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetFlinkCluster)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaFlinkCluster>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaFlinkCluster>() {
+    private static final com.google.protobuf.Parser<QuotaSetFlinkCluster>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetFlinkCluster>() {
       @java.lang.Override
-      public QuotaFlinkCluster parsePartialFrom(
+      public QuotaSetFlinkCluster parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaFlinkCluster(input, extensionRegistry);
+        return new QuotaSetFlinkCluster(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaFlinkCluster> parser() {
+    public static com.google.protobuf.Parser<QuotaSetFlinkCluster> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaFlinkCluster> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetFlinkCluster> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface QuotaNetworkOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaNetwork)
+  public interface QuotaSetNetworkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSetNetwork)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -3958,25 +5042,25 @@ public final class PBModelQuota {
     long getLimit();
   }
   /**
-   * Protobuf type {@code model.QuotaNetwork}
+   * Protobuf type {@code model.QuotaSetNetwork}
    */
-  public static final class QuotaNetwork extends
+  public static final class QuotaSetNetwork extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaNetwork)
-      QuotaNetworkOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaSetNetwork)
+      QuotaSetNetworkOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaNetwork.newBuilder() to construct.
-    private QuotaNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaSetNetwork.newBuilder() to construct.
+    private QuotaSetNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaNetwork() {
+    private QuotaSetNetwork() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaNetwork();
+      return new QuotaSetNetwork();
     }
 
     @java.lang.Override
@@ -3984,7 +5068,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaNetwork(
+    private QuotaSetNetwork(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4028,15 +5112,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaNetwork_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetNetwork_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaNetwork_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetNetwork_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -4044,6 +5128,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
+     * &#64;inject_tag: json:"limit"
      * </pre>
      *
      * <code>int64 limit = 1;</code>
@@ -4094,10 +5179,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -4120,69 +5205,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4195,7 +5280,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4211,26 +5296,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaNetwork}
+     * Protobuf type {@code model.QuotaSetNetwork}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaNetwork)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaSetNetwork)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaNetwork_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetNetwork_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaNetwork_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetNetwork_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4256,17 +5341,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaNetwork_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSetNetwork_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4274,8 +5359,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork(this);
         result.limit_ = limit_;
         onBuilt();
         return result;
@@ -4315,16 +5400,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -4343,11 +5428,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4361,6 +5446,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -4373,6 +5459,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -4388,6 +5475,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Limit is the maximum number of datasource for every user. default 500.
+       * &#64;inject_tag: json:"limit"
        * </pre>
        *
        * <code>int64 limit = 1;</code>
@@ -4412,41 +5500,3247 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaNetwork)
+      // @@protoc_insertion_point(builder_scope:model.QuotaSetNetwork)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaNetwork)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaSetNetwork)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaNetwork>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaNetwork>() {
+    private static final com.google.protobuf.Parser<QuotaSetNetwork>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSetNetwork>() {
       @java.lang.Override
-      public QuotaNetwork parsePartialFrom(
+      public QuotaSetNetwork parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaNetwork(input, extensionRegistry);
+        return new QuotaSetNetwork(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaNetwork> parser() {
+    public static com.google.protobuf.Parser<QuotaSetNetwork> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaNetwork> getParserForType() {
+    public com.google.protobuf.Parser<QuotaSetNetwork> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuotaSetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSet)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the workspace field is set.
+     */
+    boolean hasWorkspace();
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     * @return The workspace.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getWorkspace();
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder getWorkspaceOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the member field is set.
+     */
+    boolean hasMember();
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     * @return The member.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getMember();
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder getMemberOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     * @return Whether the customRole field is set.
+     */
+    boolean hasCustomRole();
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     * @return The customRole.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getCustomRole();
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder getCustomRoleOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     * @return Whether the streamJob field is set.
+     */
+    boolean hasStreamJob();
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     * @return The streamJob.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getStreamJob();
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder getStreamJobOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     * @return Whether the syncJob field is set.
+     */
+    boolean hasSyncJob();
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     * @return The syncJob.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getSyncJob();
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder getSyncJobOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     * @return Whether the dataSource field is set.
+     */
+    boolean hasDataSource();
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     * @return The dataSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDataSource();
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder getDataSourceOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     * @return Whether the udf field is set.
+     */
+    boolean hasUdf();
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     * @return The udf.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getUdf();
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder getUdfOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the file field is set.
+     */
+    boolean hasFile();
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     * @return The file.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getFile();
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder getFileOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     * @return Whether the flinkCluster field is set.
+     */
+    boolean hasFlinkCluster();
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     * @return The flinkCluster.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getFlinkCluster();
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder getFlinkClusterOrBuilder();
+
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     * @return Whether the network field is set.
+     */
+    boolean hasNetwork();
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     * @return The network.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getNetwork();
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder getNetworkOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuotaSet declares the quota setttings.
+   * </pre>
+   *
+   * Protobuf type {@code model.QuotaSet}
+   */
+  public static final class QuotaSet extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.QuotaSet)
+      QuotaSetOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuotaSet.newBuilder() to construct.
+    private QuotaSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuotaSet() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuotaSet();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuotaSet(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder subBuilder = null;
+              if (member_ != null) {
+                subBuilder = member_.toBuilder();
+              }
+              member_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(member_);
+                member_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder subBuilder = null;
+              if (workspace_ != null) {
+                subBuilder = workspace_.toBuilder();
+              }
+              workspace_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workspace_);
+                workspace_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder subBuilder = null;
+              if (streamJob_ != null) {
+                subBuilder = streamJob_.toBuilder();
+              }
+              streamJob_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(streamJob_);
+                streamJob_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder subBuilder = null;
+              if (dataSource_ != null) {
+                subBuilder = dataSource_.toBuilder();
+              }
+              dataSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dataSource_);
+                dataSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder subBuilder = null;
+              if (udf_ != null) {
+                subBuilder = udf_.toBuilder();
+              }
+              udf_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(udf_);
+                udf_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder subBuilder = null;
+              if (file_ != null) {
+                subBuilder = file_.toBuilder();
+              }
+              file_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(file_);
+                file_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder subBuilder = null;
+              if (flinkCluster_ != null) {
+                subBuilder = flinkCluster_.toBuilder();
+              }
+              flinkCluster_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(flinkCluster_);
+                flinkCluster_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder subBuilder = null;
+              if (network_ != null) {
+                subBuilder = network_.toBuilder();
+              }
+              network_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(network_);
+                network_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder subBuilder = null;
+              if (syncJob_ != null) {
+                subBuilder = syncJob_.toBuilder();
+              }
+              syncJob_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(syncJob_);
+                syncJob_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder subBuilder = null;
+              if (customRole_ != null) {
+                subBuilder = customRole_.toBuilder();
+              }
+              customRole_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(customRole_);
+                customRole_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSet_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder.class);
+    }
+
+    public static final int WORKSPACE_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace workspace_;
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the workspace field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkspace() {
+      return workspace_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     * @return The workspace.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getWorkspace() {
+      return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.getDefaultInstance() : workspace_;
+    }
+    /**
+     * <pre>
+     * Quota settings for workspace.
+     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder getWorkspaceOrBuilder() {
+      return getWorkspace();
+    }
+
+    public static final int MEMBER_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember member_;
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the member field is set.
+     */
+    @java.lang.Override
+    public boolean hasMember() {
+      return member_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     * @return The member.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getMember() {
+      return member_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.getDefaultInstance() : member_;
+    }
+    /**
+     * <pre>
+     * Quota settings for member.
+     * &#64;inject_tag: json:"member" gorm:"column:member;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder getMemberOrBuilder() {
+      return getMember();
+    }
+
+    public static final int CUSTOM_ROLE_FIELD_NUMBER = 10;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole customRole_;
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     * @return Whether the customRole field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRole() {
+      return customRole_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     * @return The customRole.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getCustomRole() {
+      return customRole_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.getDefaultInstance() : customRole_;
+    }
+    /**
+     * <pre>
+     * Quota settings for custom role.
+     * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder getCustomRoleOrBuilder() {
+      return getCustomRole();
+    }
+
+    public static final int STREAM_JOB_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob streamJob_;
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     * @return Whether the streamJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamJob() {
+      return streamJob_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     * @return The streamJob.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getStreamJob() {
+      return streamJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.getDefaultInstance() : streamJob_;
+    }
+    /**
+     * <pre>
+     * Quota settings for stream job.
+     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder getStreamJobOrBuilder() {
+      return getStreamJob();
+    }
+
+    public static final int SYNC_JOB_FIELD_NUMBER = 9;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob syncJob_;
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     * @return Whether the syncJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyncJob() {
+      return syncJob_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     * @return The syncJob.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getSyncJob() {
+      return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.getDefaultInstance() : syncJob_;
+    }
+    /**
+     * <pre>
+     * Quota settings for data sync job.
+     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder getSyncJobOrBuilder() {
+      return getSyncJob();
+    }
+
+    public static final int DATA_SOURCE_FIELD_NUMBER = 4;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource dataSource_;
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     * @return Whether the dataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataSource() {
+      return dataSource_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     * @return The dataSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDataSource() {
+      return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.getDefaultInstance() : dataSource_;
+    }
+    /**
+     * <pre>
+     * Quota settings for data source.
+     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder getDataSourceOrBuilder() {
+      return getDataSource();
+    }
+
+    public static final int UDF_FIELD_NUMBER = 5;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF udf_;
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     * @return Whether the udf field is set.
+     */
+    @java.lang.Override
+    public boolean hasUdf() {
+      return udf_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     * @return The udf.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getUdf() {
+      return udf_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.getDefaultInstance() : udf_;
+    }
+    /**
+     * <pre>
+     * Quota settings for UDF.
+     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder getUdfOrBuilder() {
+      return getUdf();
+    }
+
+    public static final int FILE_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile file_;
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the file field is set.
+     */
+    @java.lang.Override
+    public boolean hasFile() {
+      return file_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     * @return The file.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getFile() {
+      return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.getDefaultInstance() : file_;
+    }
+    /**
+     * <pre>
+     * Quota settings for file
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder getFileOrBuilder() {
+      return getFile();
+    }
+
+    public static final int FLINK_CLUSTER_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster flinkCluster_;
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     * @return Whether the flinkCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlinkCluster() {
+      return flinkCluster_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     * @return The flinkCluster.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getFlinkCluster() {
+      return flinkCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.getDefaultInstance() : flinkCluster_;
+    }
+    /**
+     * <pre>
+     * Quota settings for flink cluster.
+     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
+      return getFlinkCluster();
+    }
+
+    public static final int NETWORK_FIELD_NUMBER = 8;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork network_;
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     * @return Whether the network field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetwork() {
+      return network_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     * @return The network.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getNetwork() {
+      return network_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.getDefaultInstance() : network_;
+    }
+    /**
+     * <pre>
+     * Quota settings for network.
+     * &#64;inject_tag: json:"network" gorm:"column:network;"
+     * </pre>
+     *
+     * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder getNetworkOrBuilder() {
+      return getNetwork();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (member_ != null) {
+        output.writeMessage(1, getMember());
+      }
+      if (workspace_ != null) {
+        output.writeMessage(2, getWorkspace());
+      }
+      if (streamJob_ != null) {
+        output.writeMessage(3, getStreamJob());
+      }
+      if (dataSource_ != null) {
+        output.writeMessage(4, getDataSource());
+      }
+      if (udf_ != null) {
+        output.writeMessage(5, getUdf());
+      }
+      if (file_ != null) {
+        output.writeMessage(6, getFile());
+      }
+      if (flinkCluster_ != null) {
+        output.writeMessage(7, getFlinkCluster());
+      }
+      if (network_ != null) {
+        output.writeMessage(8, getNetwork());
+      }
+      if (syncJob_ != null) {
+        output.writeMessage(9, getSyncJob());
+      }
+      if (customRole_ != null) {
+        output.writeMessage(10, getCustomRole());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (member_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMember());
+      }
+      if (workspace_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getWorkspace());
+      }
+      if (streamJob_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getStreamJob());
+      }
+      if (dataSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getDataSource());
+      }
+      if (udf_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getUdf());
+      }
+      if (file_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getFile());
+      }
+      if (flinkCluster_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getFlinkCluster());
+      }
+      if (network_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getNetwork());
+      }
+      if (syncJob_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getSyncJob());
+      }
+      if (customRole_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getCustomRole());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet) obj;
+
+      if (hasWorkspace() != other.hasWorkspace()) return false;
+      if (hasWorkspace()) {
+        if (!getWorkspace()
+            .equals(other.getWorkspace())) return false;
+      }
+      if (hasMember() != other.hasMember()) return false;
+      if (hasMember()) {
+        if (!getMember()
+            .equals(other.getMember())) return false;
+      }
+      if (hasCustomRole() != other.hasCustomRole()) return false;
+      if (hasCustomRole()) {
+        if (!getCustomRole()
+            .equals(other.getCustomRole())) return false;
+      }
+      if (hasStreamJob() != other.hasStreamJob()) return false;
+      if (hasStreamJob()) {
+        if (!getStreamJob()
+            .equals(other.getStreamJob())) return false;
+      }
+      if (hasSyncJob() != other.hasSyncJob()) return false;
+      if (hasSyncJob()) {
+        if (!getSyncJob()
+            .equals(other.getSyncJob())) return false;
+      }
+      if (hasDataSource() != other.hasDataSource()) return false;
+      if (hasDataSource()) {
+        if (!getDataSource()
+            .equals(other.getDataSource())) return false;
+      }
+      if (hasUdf() != other.hasUdf()) return false;
+      if (hasUdf()) {
+        if (!getUdf()
+            .equals(other.getUdf())) return false;
+      }
+      if (hasFile() != other.hasFile()) return false;
+      if (hasFile()) {
+        if (!getFile()
+            .equals(other.getFile())) return false;
+      }
+      if (hasFlinkCluster() != other.hasFlinkCluster()) return false;
+      if (hasFlinkCluster()) {
+        if (!getFlinkCluster()
+            .equals(other.getFlinkCluster())) return false;
+      }
+      if (hasNetwork() != other.hasNetwork()) return false;
+      if (hasNetwork()) {
+        if (!getNetwork()
+            .equals(other.getNetwork())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWorkspace()) {
+        hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkspace().hashCode();
+      }
+      if (hasMember()) {
+        hash = (37 * hash) + MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getMember().hashCode();
+      }
+      if (hasCustomRole()) {
+        hash = (37 * hash) + CUSTOM_ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomRole().hashCode();
+      }
+      if (hasStreamJob()) {
+        hash = (37 * hash) + STREAM_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getStreamJob().hashCode();
+      }
+      if (hasSyncJob()) {
+        hash = (37 * hash) + SYNC_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJob().hashCode();
+      }
+      if (hasDataSource()) {
+        hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataSource().hashCode();
+      }
+      if (hasUdf()) {
+        hash = (37 * hash) + UDF_FIELD_NUMBER;
+        hash = (53 * hash) + getUdf().hashCode();
+      }
+      if (hasFile()) {
+        hash = (37 * hash) + FILE_FIELD_NUMBER;
+        hash = (53 * hash) + getFile().hashCode();
+      }
+      if (hasFlinkCluster()) {
+        hash = (37 * hash) + FLINK_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFlinkCluster().hashCode();
+      }
+      if (hasNetwork()) {
+        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+        hash = (53 * hash) + getNetwork().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuotaSet declares the quota setttings.
+     * </pre>
+     *
+     * Protobuf type {@code model.QuotaSet}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.QuotaSet)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSet_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (workspaceBuilder_ == null) {
+          workspace_ = null;
+        } else {
+          workspace_ = null;
+          workspaceBuilder_ = null;
+        }
+        if (memberBuilder_ == null) {
+          member_ = null;
+        } else {
+          member_ = null;
+          memberBuilder_ = null;
+        }
+        if (customRoleBuilder_ == null) {
+          customRole_ = null;
+        } else {
+          customRole_ = null;
+          customRoleBuilder_ = null;
+        }
+        if (streamJobBuilder_ == null) {
+          streamJob_ = null;
+        } else {
+          streamJob_ = null;
+          streamJobBuilder_ = null;
+        }
+        if (syncJobBuilder_ == null) {
+          syncJob_ = null;
+        } else {
+          syncJob_ = null;
+          syncJobBuilder_ = null;
+        }
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+        if (udfBuilder_ == null) {
+          udf_ = null;
+        } else {
+          udf_ = null;
+          udfBuilder_ = null;
+        }
+        if (fileBuilder_ == null) {
+          file_ = null;
+        } else {
+          file_ = null;
+          fileBuilder_ = null;
+        }
+        if (flinkClusterBuilder_ == null) {
+          flinkCluster_ = null;
+        } else {
+          flinkCluster_ = null;
+          flinkClusterBuilder_ = null;
+        }
+        if (networkBuilder_ == null) {
+          network_ = null;
+        } else {
+          network_ = null;
+          networkBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSet_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet(this);
+        if (workspaceBuilder_ == null) {
+          result.workspace_ = workspace_;
+        } else {
+          result.workspace_ = workspaceBuilder_.build();
+        }
+        if (memberBuilder_ == null) {
+          result.member_ = member_;
+        } else {
+          result.member_ = memberBuilder_.build();
+        }
+        if (customRoleBuilder_ == null) {
+          result.customRole_ = customRole_;
+        } else {
+          result.customRole_ = customRoleBuilder_.build();
+        }
+        if (streamJobBuilder_ == null) {
+          result.streamJob_ = streamJob_;
+        } else {
+          result.streamJob_ = streamJobBuilder_.build();
+        }
+        if (syncJobBuilder_ == null) {
+          result.syncJob_ = syncJob_;
+        } else {
+          result.syncJob_ = syncJobBuilder_.build();
+        }
+        if (dataSourceBuilder_ == null) {
+          result.dataSource_ = dataSource_;
+        } else {
+          result.dataSource_ = dataSourceBuilder_.build();
+        }
+        if (udfBuilder_ == null) {
+          result.udf_ = udf_;
+        } else {
+          result.udf_ = udfBuilder_.build();
+        }
+        if (fileBuilder_ == null) {
+          result.file_ = file_;
+        } else {
+          result.file_ = fileBuilder_.build();
+        }
+        if (flinkClusterBuilder_ == null) {
+          result.flinkCluster_ = flinkCluster_;
+        } else {
+          result.flinkCluster_ = flinkClusterBuilder_.build();
+        }
+        if (networkBuilder_ == null) {
+          result.network_ = network_;
+        } else {
+          result.network_ = networkBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance()) return this;
+        if (other.hasWorkspace()) {
+          mergeWorkspace(other.getWorkspace());
+        }
+        if (other.hasMember()) {
+          mergeMember(other.getMember());
+        }
+        if (other.hasCustomRole()) {
+          mergeCustomRole(other.getCustomRole());
+        }
+        if (other.hasStreamJob()) {
+          mergeStreamJob(other.getStreamJob());
+        }
+        if (other.hasSyncJob()) {
+          mergeSyncJob(other.getSyncJob());
+        }
+        if (other.hasDataSource()) {
+          mergeDataSource(other.getDataSource());
+        }
+        if (other.hasUdf()) {
+          mergeUdf(other.getUdf());
+        }
+        if (other.hasFile()) {
+          mergeFile(other.getFile());
+        }
+        if (other.hasFlinkCluster()) {
+          mergeFlinkCluster(other.getFlinkCluster());
+        }
+        if (other.hasNetwork()) {
+          mergeNetwork(other.getNetwork());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace workspace_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder> workspaceBuilder_;
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       * @return Whether the workspace field is set.
+       */
+      public boolean hasWorkspace() {
+        return workspaceBuilder_ != null || workspace_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       * @return The workspace.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace getWorkspace() {
+        if (workspaceBuilder_ == null) {
+          return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.getDefaultInstance() : workspace_;
+        } else {
+          return workspaceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace value) {
+        if (workspaceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          workspace_ = value;
+          onChanged();
+        } else {
+          workspaceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setWorkspace(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder builderForValue) {
+        if (workspaceBuilder_ == null) {
+          workspace_ = builderForValue.build();
+          onChanged();
+        } else {
+          workspaceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace value) {
+        if (workspaceBuilder_ == null) {
+          if (workspace_ != null) {
+            workspace_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.newBuilder(workspace_).mergeFrom(value).buildPartial();
+          } else {
+            workspace_ = value;
+          }
+          onChanged();
+        } else {
+          workspaceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearWorkspace() {
+        if (workspaceBuilder_ == null) {
+          workspace_ = null;
+          onChanged();
+        } else {
+          workspace_ = null;
+          workspaceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder getWorkspaceBuilder() {
+        
+        onChanged();
+        return getWorkspaceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder getWorkspaceOrBuilder() {
+        if (workspaceBuilder_ != null) {
+          return workspaceBuilder_.getMessageOrBuilder();
+        } else {
+          return workspace_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.getDefaultInstance() : workspace_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for workspace.
+       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetWorkspace workspace = 2 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder> 
+          getWorkspaceFieldBuilder() {
+        if (workspaceBuilder_ == null) {
+          workspaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetWorkspaceOrBuilder>(
+                  getWorkspace(),
+                  getParentForChildren(),
+                  isClean());
+          workspace_ = null;
+        }
+        return workspaceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember member_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder> memberBuilder_;
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the member field is set.
+       */
+      public boolean hasMember() {
+        return memberBuilder_ != null || member_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       * @return The member.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember getMember() {
+        if (memberBuilder_ == null) {
+          return member_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.getDefaultInstance() : member_;
+        } else {
+          return memberBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMember(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember value) {
+        if (memberBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          member_ = value;
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMember(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder builderForValue) {
+        if (memberBuilder_ == null) {
+          member_ = builderForValue.build();
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeMember(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember value) {
+        if (memberBuilder_ == null) {
+          if (member_ != null) {
+            member_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.newBuilder(member_).mergeFrom(value).buildPartial();
+          } else {
+            member_ = value;
+          }
+          onChanged();
+        } else {
+          memberBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearMember() {
+        if (memberBuilder_ == null) {
+          member_ = null;
+          onChanged();
+        } else {
+          member_ = null;
+          memberBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder getMemberBuilder() {
+        
+        onChanged();
+        return getMemberFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder getMemberOrBuilder() {
+        if (memberBuilder_ != null) {
+          return memberBuilder_.getMessageOrBuilder();
+        } else {
+          return member_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.getDefaultInstance() : member_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for member.
+       * &#64;inject_tag: json:"member" gorm:"column:member;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetMember member = 1 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder> 
+          getMemberFieldBuilder() {
+        if (memberBuilder_ == null) {
+          memberBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMember.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetMemberOrBuilder>(
+                  getMember(),
+                  getParentForChildren(),
+                  isClean());
+          member_ = null;
+        }
+        return memberBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole customRole_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder> customRoleBuilder_;
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       * @return Whether the customRole field is set.
+       */
+      public boolean hasCustomRole() {
+        return customRoleBuilder_ != null || customRole_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       * @return The customRole.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole getCustomRole() {
+        if (customRoleBuilder_ == null) {
+          return customRole_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.getDefaultInstance() : customRole_;
+        } else {
+          return customRoleBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public Builder setCustomRole(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole value) {
+        if (customRoleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          customRole_ = value;
+          onChanged();
+        } else {
+          customRoleBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public Builder setCustomRole(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder builderForValue) {
+        if (customRoleBuilder_ == null) {
+          customRole_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRoleBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeCustomRole(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole value) {
+        if (customRoleBuilder_ == null) {
+          if (customRole_ != null) {
+            customRole_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.newBuilder(customRole_).mergeFrom(value).buildPartial();
+          } else {
+            customRole_ = value;
+          }
+          onChanged();
+        } else {
+          customRoleBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearCustomRole() {
+        if (customRoleBuilder_ == null) {
+          customRole_ = null;
+          onChanged();
+        } else {
+          customRole_ = null;
+          customRoleBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder getCustomRoleBuilder() {
+        
+        onChanged();
+        return getCustomRoleFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder getCustomRoleOrBuilder() {
+        if (customRoleBuilder_ != null) {
+          return customRoleBuilder_.getMessageOrBuilder();
+        } else {
+          return customRole_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.getDefaultInstance() : customRole_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for custom role.
+       * &#64;inject_tag: json:"custom_role" gorm:"column:custom_role;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetCustomRole custom_role = 10 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder> 
+          getCustomRoleFieldBuilder() {
+        if (customRoleBuilder_ == null) {
+          customRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRole.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetCustomRoleOrBuilder>(
+                  getCustomRole(),
+                  getParentForChildren(),
+                  isClean());
+          customRole_ = null;
+        }
+        return customRoleBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob streamJob_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder> streamJobBuilder_;
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       * @return Whether the streamJob field is set.
+       */
+      public boolean hasStreamJob() {
+        return streamJobBuilder_ != null || streamJob_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       * @return The streamJob.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob getStreamJob() {
+        if (streamJobBuilder_ == null) {
+          return streamJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.getDefaultInstance() : streamJob_;
+        } else {
+          return streamJobBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public Builder setStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob value) {
+        if (streamJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          streamJob_ = value;
+          onChanged();
+        } else {
+          streamJobBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public Builder setStreamJob(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder builderForValue) {
+        if (streamJobBuilder_ == null) {
+          streamJob_ = builderForValue.build();
+          onChanged();
+        } else {
+          streamJobBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob value) {
+        if (streamJobBuilder_ == null) {
+          if (streamJob_ != null) {
+            streamJob_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.newBuilder(streamJob_).mergeFrom(value).buildPartial();
+          } else {
+            streamJob_ = value;
+          }
+          onChanged();
+        } else {
+          streamJobBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearStreamJob() {
+        if (streamJobBuilder_ == null) {
+          streamJob_ = null;
+          onChanged();
+        } else {
+          streamJob_ = null;
+          streamJobBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder getStreamJobBuilder() {
+        
+        onChanged();
+        return getStreamJobFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder getStreamJobOrBuilder() {
+        if (streamJobBuilder_ != null) {
+          return streamJobBuilder_.getMessageOrBuilder();
+        } else {
+          return streamJob_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.getDefaultInstance() : streamJob_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for stream job.
+       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetStreamJob stream_job = 3 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder> 
+          getStreamJobFieldBuilder() {
+        if (streamJobBuilder_ == null) {
+          streamJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetStreamJobOrBuilder>(
+                  getStreamJob(),
+                  getParentForChildren(),
+                  isClean());
+          streamJob_ = null;
+        }
+        return streamJobBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob syncJob_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder> syncJobBuilder_;
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       * @return Whether the syncJob field is set.
+       */
+      public boolean hasSyncJob() {
+        return syncJobBuilder_ != null || syncJob_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       * @return The syncJob.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob getSyncJob() {
+        if (syncJobBuilder_ == null) {
+          return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.getDefaultInstance() : syncJob_;
+        } else {
+          return syncJobBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public Builder setSyncJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          syncJob_ = value;
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public Builder setSyncJob(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder builderForValue) {
+        if (syncJobBuilder_ == null) {
+          syncJob_ = builderForValue.build();
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeSyncJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (syncJob_ != null) {
+            syncJob_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.newBuilder(syncJob_).mergeFrom(value).buildPartial();
+          } else {
+            syncJob_ = value;
+          }
+          onChanged();
+        } else {
+          syncJobBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearSyncJob() {
+        if (syncJobBuilder_ == null) {
+          syncJob_ = null;
+          onChanged();
+        } else {
+          syncJob_ = null;
+          syncJobBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder getSyncJobBuilder() {
+        
+        onChanged();
+        return getSyncJobFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder getSyncJobOrBuilder() {
+        if (syncJobBuilder_ != null) {
+          return syncJobBuilder_.getMessageOrBuilder();
+        } else {
+          return syncJob_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.getDefaultInstance() : syncJob_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for data sync job.
+       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetSyncJob sync_job = 9 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder> 
+          getSyncJobFieldBuilder() {
+        if (syncJobBuilder_ == null) {
+          syncJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetSyncJobOrBuilder>(
+                  getSyncJob(),
+                  getParentForChildren(),
+                  isClean());
+          syncJob_ = null;
+        }
+        return syncJobBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource dataSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder> dataSourceBuilder_;
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       * @return Whether the dataSource field is set.
+       */
+      public boolean hasDataSource() {
+        return dataSourceBuilder_ != null || dataSource_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       * @return The dataSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource getDataSource() {
+        if (dataSourceBuilder_ == null) {
+          return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.getDefaultInstance() : dataSource_;
+        } else {
+          return dataSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder setDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSource_ = value;
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder setDataSource(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder builderForValue) {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (dataSource_ != null) {
+            dataSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.newBuilder(dataSource_).mergeFrom(value).buildPartial();
+          } else {
+            dataSource_ = value;
+          }
+          onChanged();
+        } else {
+          dataSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearDataSource() {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+          onChanged();
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder getDataSourceBuilder() {
+        
+        onChanged();
+        return getDataSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder getDataSourceOrBuilder() {
+        if (dataSourceBuilder_ != null) {
+          return dataSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return dataSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.getDefaultInstance() : dataSource_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for data source.
+       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetDataSource data_source = 4 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder> 
+          getDataSourceFieldBuilder() {
+        if (dataSourceBuilder_ == null) {
+          dataSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetDataSourceOrBuilder>(
+                  getDataSource(),
+                  getParentForChildren(),
+                  isClean());
+          dataSource_ = null;
+        }
+        return dataSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF udf_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder> udfBuilder_;
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       * @return Whether the udf field is set.
+       */
+      public boolean hasUdf() {
+        return udfBuilder_ != null || udf_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       * @return The udf.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF getUdf() {
+        if (udfBuilder_ == null) {
+          return udf_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.getDefaultInstance() : udf_;
+        } else {
+          return udfBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder setUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF value) {
+        if (udfBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          udf_ = value;
+          onChanged();
+        } else {
+          udfBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder setUdf(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder builderForValue) {
+        if (udfBuilder_ == null) {
+          udf_ = builderForValue.build();
+          onChanged();
+        } else {
+          udfBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF value) {
+        if (udfBuilder_ == null) {
+          if (udf_ != null) {
+            udf_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.newBuilder(udf_).mergeFrom(value).buildPartial();
+          } else {
+            udf_ = value;
+          }
+          onChanged();
+        } else {
+          udfBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearUdf() {
+        if (udfBuilder_ == null) {
+          udf_ = null;
+          onChanged();
+        } else {
+          udf_ = null;
+          udfBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder getUdfBuilder() {
+        
+        onChanged();
+        return getUdfFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder getUdfOrBuilder() {
+        if (udfBuilder_ != null) {
+          return udfBuilder_.getMessageOrBuilder();
+        } else {
+          return udf_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.getDefaultInstance() : udf_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for UDF.
+       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetUDF udf = 5 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder> 
+          getUdfFieldBuilder() {
+        if (udfBuilder_ == null) {
+          udfBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetUDFOrBuilder>(
+                  getUdf(),
+                  getParentForChildren(),
+                  isClean());
+          udf_ = null;
+        }
+        return udfBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile file_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder> fileBuilder_;
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       * @return Whether the file field is set.
+       */
+      public boolean hasFile() {
+        return fileBuilder_ != null || file_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       * @return The file.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile getFile() {
+        if (fileBuilder_ == null) {
+          return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.getDefaultInstance() : file_;
+        } else {
+          return fileBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile value) {
+        if (fileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          file_ = value;
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setFile(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder builderForValue) {
+        if (fileBuilder_ == null) {
+          file_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile value) {
+        if (fileBuilder_ == null) {
+          if (file_ != null) {
+            file_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.newBuilder(file_).mergeFrom(value).buildPartial();
+          } else {
+            file_ = value;
+          }
+          onChanged();
+        } else {
+          fileBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearFile() {
+        if (fileBuilder_ == null) {
+          file_ = null;
+          onChanged();
+        } else {
+          file_ = null;
+          fileBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder getFileBuilder() {
+        
+        onChanged();
+        return getFileFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder getFileOrBuilder() {
+        if (fileBuilder_ != null) {
+          return fileBuilder_.getMessageOrBuilder();
+        } else {
+          return file_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.getDefaultInstance() : file_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for file
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFile file = 6 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder> 
+          getFileFieldBuilder() {
+        if (fileBuilder_ == null) {
+          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFileOrBuilder>(
+                  getFile(),
+                  getParentForChildren(),
+                  isClean());
+          file_ = null;
+        }
+        return fileBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster flinkCluster_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder> flinkClusterBuilder_;
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       * @return Whether the flinkCluster field is set.
+       */
+      public boolean hasFlinkCluster() {
+        return flinkClusterBuilder_ != null || flinkCluster_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       * @return The flinkCluster.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster getFlinkCluster() {
+        if (flinkClusterBuilder_ == null) {
+          return flinkCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.getDefaultInstance() : flinkCluster_;
+        } else {
+          return flinkClusterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public Builder setFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster value) {
+        if (flinkClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          flinkCluster_ = value;
+          onChanged();
+        } else {
+          flinkClusterBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public Builder setFlinkCluster(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder builderForValue) {
+        if (flinkClusterBuilder_ == null) {
+          flinkCluster_ = builderForValue.build();
+          onChanged();
+        } else {
+          flinkClusterBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster value) {
+        if (flinkClusterBuilder_ == null) {
+          if (flinkCluster_ != null) {
+            flinkCluster_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.newBuilder(flinkCluster_).mergeFrom(value).buildPartial();
+          } else {
+            flinkCluster_ = value;
+          }
+          onChanged();
+        } else {
+          flinkClusterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearFlinkCluster() {
+        if (flinkClusterBuilder_ == null) {
+          flinkCluster_ = null;
+          onChanged();
+        } else {
+          flinkCluster_ = null;
+          flinkClusterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder getFlinkClusterBuilder() {
+        
+        onChanged();
+        return getFlinkClusterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
+        if (flinkClusterBuilder_ != null) {
+          return flinkClusterBuilder_.getMessageOrBuilder();
+        } else {
+          return flinkCluster_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.getDefaultInstance() : flinkCluster_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for flink cluster.
+       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetFlinkCluster flink_cluster = 7 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder> 
+          getFlinkClusterFieldBuilder() {
+        if (flinkClusterBuilder_ == null) {
+          flinkClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetFlinkClusterOrBuilder>(
+                  getFlinkCluster(),
+                  getParentForChildren(),
+                  isClean());
+          flinkCluster_ = null;
+        }
+        return flinkClusterBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork network_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder> networkBuilder_;
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       * @return Whether the network field is set.
+       */
+      public boolean hasNetwork() {
+        return networkBuilder_ != null || network_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       * @return The network.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork getNetwork() {
+        if (networkBuilder_ == null) {
+          return network_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.getDefaultInstance() : network_;
+        } else {
+          return networkBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork value) {
+        if (networkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          network_ = value;
+          onChanged();
+        } else {
+          networkBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNetwork(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder builderForValue) {
+        if (networkBuilder_ == null) {
+          network_ = builderForValue.build();
+          onChanged();
+        } else {
+          networkBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork value) {
+        if (networkBuilder_ == null) {
+          if (network_ != null) {
+            network_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
+          } else {
+            network_ = value;
+          }
+          onChanged();
+        } else {
+          networkBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearNetwork() {
+        if (networkBuilder_ == null) {
+          network_ = null;
+          onChanged();
+        } else {
+          network_ = null;
+          networkBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder getNetworkBuilder() {
+        
+        onChanged();
+        return getNetworkFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder getNetworkOrBuilder() {
+        if (networkBuilder_ != null) {
+          return networkBuilder_.getMessageOrBuilder();
+        } else {
+          return network_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.getDefaultInstance() : network_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings for network.
+       * &#64;inject_tag: json:"network" gorm:"column:network;"
+       * </pre>
+       *
+       * <code>.model.QuotaSetNetwork network = 8 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder> 
+          getNetworkFieldBuilder() {
+        if (networkBuilder_ == null) {
+          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetNetworkOrBuilder>(
+                  getNetwork(),
+                  getParentForChildren(),
+                  isClean());
+          network_ = null;
+        }
+        return networkBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.QuotaSet)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.QuotaSet)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuotaSet>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSet>() {
+      @java.lang.Override
+      public QuotaSet parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuotaSet(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuotaSet> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuotaSet> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4458,21 +8752,21 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * The user id of owner.
+     * The id of user.
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     java.lang.String getUserId();
     /**
      * <pre>
-     * The user id of owner.
+     * The id of user.
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -4480,219 +8774,33 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
-     * @return Whether the workspace field is set.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return Whether the quotaSet field is set.
      */
-    boolean hasWorkspace();
+    boolean hasQuotaSet();
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
-     * @return The workspace.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return The quotaSet.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getWorkspace();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet();
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
+     * <code>.model.QuotaSet quota_set = 2;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     * @return Whether the streamJob field is set.
-     */
-    boolean hasStreamJob();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     * @return The streamJob.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getStreamJob();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     * @return Whether the dataSource field is set.
-     */
-    boolean hasDataSource();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     * @return The dataSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDataSource();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     * @return Whether the udf field is set.
-     */
-    boolean hasUdf();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     * @return The udf.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getUdf();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     * @return Whether the file field is set.
-     */
-    boolean hasFile();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     * @return The file.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     * @return Whether the flinkCluster field is set.
-     */
-    boolean hasFlinkCluster();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     * @return The flinkCluster.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getFlinkCluster();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getNetwork();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     * @return Whether the syncJob field is set.
-     */
-    boolean hasSyncJob();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     * @return The syncJob.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getSyncJob();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder getSyncJobOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder();
   }
   /**
    * <pre>
@@ -4751,105 +8859,14 @@ public final class PBModelQuota {
               break;
             }
             case 18: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder subBuilder = null;
-              if (workspace_ != null) {
-                subBuilder = workspace_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder subBuilder = null;
+              if (quotaSet_ != null) {
+                subBuilder = quotaSet_.toBuilder();
               }
-              workspace_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.parser(), extensionRegistry);
+              quotaSet_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(workspace_);
-                workspace_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder subBuilder = null;
-              if (streamJob_ != null) {
-                subBuilder = streamJob_.toBuilder();
-              }
-              streamJob_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(streamJob_);
-                streamJob_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder subBuilder = null;
-              if (dataSource_ != null) {
-                subBuilder = dataSource_.toBuilder();
-              }
-              dataSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataSource_);
-                dataSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder subBuilder = null;
-              if (udf_ != null) {
-                subBuilder = udf_.toBuilder();
-              }
-              udf_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(udf_);
-                udf_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder subBuilder = null;
-              if (file_ != null) {
-                subBuilder = file_.toBuilder();
-              }
-              file_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(file_);
-                file_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder subBuilder = null;
-              if (flinkCluster_ != null) {
-                subBuilder = flinkCluster_.toBuilder();
-              }
-              flinkCluster_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(flinkCluster_);
-                flinkCluster_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder subBuilder = null;
-              if (syncJob_ != null) {
-                subBuilder = syncJob_.toBuilder();
-              }
-              syncJob_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(syncJob_);
-                syncJob_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(quotaSet_);
+                quotaSet_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4890,11 +8907,11 @@ public final class PBModelQuota {
     private volatile java.lang.Object userId_;
     /**
      * <pre>
-     * The user id of owner.
+     * The id of user.
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -4912,11 +8929,11 @@ public final class PBModelQuota {
     }
     /**
      * <pre>
-     * The user id of owner.
+     * The id of user.
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -4934,308 +8951,45 @@ public final class PBModelQuota {
       }
     }
 
-    public static final int WORKSPACE_FIELD_NUMBER = 2;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace workspace_;
+    public static final int QUOTA_SET_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
-     * @return Whether the workspace field is set.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return Whether the quotaSet field is set.
      */
     @java.lang.Override
-    public boolean hasWorkspace() {
-      return workspace_ != null;
+    public boolean hasQuotaSet() {
+      return quotaSet_ != null;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
-     * @return The workspace.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return The quotaSet.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getWorkspace() {
-      return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.getDefaultInstance() : workspace_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+      return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 2;</code>
+     * <code>.model.QuotaSet quota_set = 2;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder() {
-      return getWorkspace();
-    }
-
-    public static final int STREAM_JOB_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob streamJob_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     * @return Whether the streamJob field is set.
-     */
-    @java.lang.Override
-    public boolean hasStreamJob() {
-      return streamJob_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     * @return The streamJob.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getStreamJob() {
-      return streamJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.getDefaultInstance() : streamJob_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaStreamJob stream_job = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder() {
-      return getStreamJob();
-    }
-
-    public static final int DATA_SOURCE_FIELD_NUMBER = 4;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource dataSource_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     * @return Whether the dataSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasDataSource() {
-      return dataSource_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     * @return The dataSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDataSource() {
-      return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.getDefaultInstance() : dataSource_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-     * </pre>
-     *
-     * <code>.model.QuotaDataSource data_source = 4;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder() {
-      return getDataSource();
-    }
-
-    public static final int UDF_FIELD_NUMBER = 5;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF udf_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     * @return Whether the udf field is set.
-     */
-    @java.lang.Override
-    public boolean hasUdf() {
-      return udf_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     * @return The udf.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getUdf() {
-      return udf_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.getDefaultInstance() : udf_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-     * </pre>
-     *
-     * <code>.model.QuotaUDF udf = 5;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder() {
-      return getUdf();
-    }
-
-    public static final int FILE_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile file_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     * @return Whether the file field is set.
-     */
-    @java.lang.Override
-    public boolean hasFile() {
-      return file_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     * @return The file.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile() {
-      return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"file" gorm:"column:file;"
-     * </pre>
-     *
-     * <code>.model.QuotaFile file = 6;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder() {
-      return getFile();
-    }
-
-    public static final int FLINK_CLUSTER_FIELD_NUMBER = 7;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster flinkCluster_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     * @return Whether the flinkCluster field is set.
-     */
-    @java.lang.Override
-    public boolean hasFlinkCluster() {
-      return flinkCluster_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     * @return The flinkCluster.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getFlinkCluster() {
-      return flinkCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.getDefaultInstance() : flinkCluster_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-     * </pre>
-     *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
-      return getFlinkCluster();
-    }
-
-    public static final int NETWORK_FIELD_NUMBER = 8;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork network_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"network" gorm:"column:network;"
-     * </pre>
-     *
-     * <code>.model.QuotaNetwork network = 8;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
-    }
-
-    public static final int SYNC_JOB_FIELD_NUMBER = 9;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob syncJob_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     * @return Whether the syncJob field is set.
-     */
-    @java.lang.Override
-    public boolean hasSyncJob() {
-      return syncJob_ != null;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     * @return The syncJob.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getSyncJob() {
-      return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance() : syncJob_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-     * </pre>
-     *
-     * <code>.model.QuotaSyncJob sync_job = 9;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder getSyncJobOrBuilder() {
-      return getSyncJob();
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+      return getQuotaSet();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5255,29 +9009,8 @@ public final class PBModelQuota {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (workspace_ != null) {
-        output.writeMessage(2, getWorkspace());
-      }
-      if (streamJob_ != null) {
-        output.writeMessage(3, getStreamJob());
-      }
-      if (dataSource_ != null) {
-        output.writeMessage(4, getDataSource());
-      }
-      if (udf_ != null) {
-        output.writeMessage(5, getUdf());
-      }
-      if (file_ != null) {
-        output.writeMessage(6, getFile());
-      }
-      if (flinkCluster_ != null) {
-        output.writeMessage(7, getFlinkCluster());
-      }
-      if (network_ != null) {
-        output.writeMessage(8, getNetwork());
-      }
-      if (syncJob_ != null) {
-        output.writeMessage(9, getSyncJob());
+      if (quotaSet_ != null) {
+        output.writeMessage(2, getQuotaSet());
       }
       unknownFields.writeTo(output);
     }
@@ -5291,37 +9024,9 @@ public final class PBModelQuota {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (workspace_ != null) {
+      if (quotaSet_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getWorkspace());
-      }
-      if (streamJob_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getStreamJob());
-      }
-      if (dataSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDataSource());
-      }
-      if (udf_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getUdf());
-      }
-      if (file_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getFile());
-      }
-      if (flinkCluster_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getFlinkCluster());
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getNetwork());
-      }
-      if (syncJob_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getSyncJob());
+          .computeMessageSize(2, getQuotaSet());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5340,45 +9045,10 @@ public final class PBModelQuota {
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (hasWorkspace() != other.hasWorkspace()) return false;
-      if (hasWorkspace()) {
-        if (!getWorkspace()
-            .equals(other.getWorkspace())) return false;
-      }
-      if (hasStreamJob() != other.hasStreamJob()) return false;
-      if (hasStreamJob()) {
-        if (!getStreamJob()
-            .equals(other.getStreamJob())) return false;
-      }
-      if (hasDataSource() != other.hasDataSource()) return false;
-      if (hasDataSource()) {
-        if (!getDataSource()
-            .equals(other.getDataSource())) return false;
-      }
-      if (hasUdf() != other.hasUdf()) return false;
-      if (hasUdf()) {
-        if (!getUdf()
-            .equals(other.getUdf())) return false;
-      }
-      if (hasFile() != other.hasFile()) return false;
-      if (hasFile()) {
-        if (!getFile()
-            .equals(other.getFile())) return false;
-      }
-      if (hasFlinkCluster() != other.hasFlinkCluster()) return false;
-      if (hasFlinkCluster()) {
-        if (!getFlinkCluster()
-            .equals(other.getFlinkCluster())) return false;
-      }
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
-      if (hasSyncJob() != other.hasSyncJob()) return false;
-      if (hasSyncJob()) {
-        if (!getSyncJob()
-            .equals(other.getSyncJob())) return false;
+      if (hasQuotaSet() != other.hasQuotaSet()) return false;
+      if (hasQuotaSet()) {
+        if (!getQuotaSet()
+            .equals(other.getQuotaSet())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -5393,37 +9063,9 @@ public final class PBModelQuota {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      if (hasWorkspace()) {
-        hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkspace().hashCode();
-      }
-      if (hasStreamJob()) {
-        hash = (37 * hash) + STREAM_JOB_FIELD_NUMBER;
-        hash = (53 * hash) + getStreamJob().hashCode();
-      }
-      if (hasDataSource()) {
-        hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getDataSource().hashCode();
-      }
-      if (hasUdf()) {
-        hash = (37 * hash) + UDF_FIELD_NUMBER;
-        hash = (53 * hash) + getUdf().hashCode();
-      }
-      if (hasFile()) {
-        hash = (37 * hash) + FILE_FIELD_NUMBER;
-        hash = (53 * hash) + getFile().hashCode();
-      }
-      if (hasFlinkCluster()) {
-        hash = (37 * hash) + FLINK_CLUSTER_FIELD_NUMBER;
-        hash = (53 * hash) + getFlinkCluster().hashCode();
-      }
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
-      if (hasSyncJob()) {
-        hash = (37 * hash) + SYNC_JOB_FIELD_NUMBER;
-        hash = (53 * hash) + getSyncJob().hashCode();
+      if (hasQuotaSet()) {
+        hash = (37 * hash) + QUOTA_SET_FIELD_NUMBER;
+        hash = (53 * hash) + getQuotaSet().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5564,53 +9206,11 @@ public final class PBModelQuota {
         super.clear();
         userId_ = "";
 
-        if (workspaceBuilder_ == null) {
-          workspace_ = null;
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
         } else {
-          workspace_ = null;
-          workspaceBuilder_ = null;
-        }
-        if (streamJobBuilder_ == null) {
-          streamJob_ = null;
-        } else {
-          streamJob_ = null;
-          streamJobBuilder_ = null;
-        }
-        if (dataSourceBuilder_ == null) {
-          dataSource_ = null;
-        } else {
-          dataSource_ = null;
-          dataSourceBuilder_ = null;
-        }
-        if (udfBuilder_ == null) {
-          udf_ = null;
-        } else {
-          udf_ = null;
-          udfBuilder_ = null;
-        }
-        if (fileBuilder_ == null) {
-          file_ = null;
-        } else {
-          file_ = null;
-          fileBuilder_ = null;
-        }
-        if (flinkClusterBuilder_ == null) {
-          flinkCluster_ = null;
-        } else {
-          flinkCluster_ = null;
-          flinkClusterBuilder_ = null;
-        }
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-        if (syncJobBuilder_ == null) {
-          syncJob_ = null;
-        } else {
-          syncJob_ = null;
-          syncJobBuilder_ = null;
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
         }
         return this;
       }
@@ -5639,45 +9239,10 @@ public final class PBModelQuota {
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.UserQuota buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelQuota.UserQuota result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.UserQuota(this);
         result.userId_ = userId_;
-        if (workspaceBuilder_ == null) {
-          result.workspace_ = workspace_;
+        if (quotaSetBuilder_ == null) {
+          result.quotaSet_ = quotaSet_;
         } else {
-          result.workspace_ = workspaceBuilder_.build();
-        }
-        if (streamJobBuilder_ == null) {
-          result.streamJob_ = streamJob_;
-        } else {
-          result.streamJob_ = streamJobBuilder_.build();
-        }
-        if (dataSourceBuilder_ == null) {
-          result.dataSource_ = dataSource_;
-        } else {
-          result.dataSource_ = dataSourceBuilder_.build();
-        }
-        if (udfBuilder_ == null) {
-          result.udf_ = udf_;
-        } else {
-          result.udf_ = udfBuilder_.build();
-        }
-        if (fileBuilder_ == null) {
-          result.file_ = file_;
-        } else {
-          result.file_ = fileBuilder_.build();
-        }
-        if (flinkClusterBuilder_ == null) {
-          result.flinkCluster_ = flinkCluster_;
-        } else {
-          result.flinkCluster_ = flinkClusterBuilder_.build();
-        }
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
-        if (syncJobBuilder_ == null) {
-          result.syncJob_ = syncJob_;
-        } else {
-          result.syncJob_ = syncJobBuilder_.build();
+          result.quotaSet_ = quotaSetBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5731,29 +9296,8 @@ public final class PBModelQuota {
           userId_ = other.userId_;
           onChanged();
         }
-        if (other.hasWorkspace()) {
-          mergeWorkspace(other.getWorkspace());
-        }
-        if (other.hasStreamJob()) {
-          mergeStreamJob(other.getStreamJob());
-        }
-        if (other.hasDataSource()) {
-          mergeDataSource(other.getDataSource());
-        }
-        if (other.hasUdf()) {
-          mergeUdf(other.getUdf());
-        }
-        if (other.hasFile()) {
-          mergeFile(other.getFile());
-        }
-        if (other.hasFlinkCluster()) {
-          mergeFlinkCluster(other.getFlinkCluster());
-        }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
-        }
-        if (other.hasSyncJob()) {
-          mergeSyncJob(other.getSyncJob());
+        if (other.hasQuotaSet()) {
+          mergeQuotaSet(other.getQuotaSet());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5787,11 +9331,11 @@ public final class PBModelQuota {
       private java.lang.Object userId_ = "";
       /**
        * <pre>
-       * The user id of owner.
+       * The id of user.
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -5808,11 +9352,11 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * The user id of owner.
+       * The id of user.
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -5830,11 +9374,11 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * The user id of owner.
+       * The id of user.
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -5850,11 +9394,11 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * The user id of owner.
+       * The id of user.
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -5865,11 +9409,11 @@ public final class PBModelQuota {
       }
       /**
        * <pre>
-       * The user id of owner.
+       * The id of user.
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -5885,1244 +9429,168 @@ public final class PBModelQuota {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace workspace_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder> workspaceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> quotaSetBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
-       * @return Whether the workspace field is set.
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       * @return Whether the quotaSet field is set.
        */
-      public boolean hasWorkspace() {
-        return workspaceBuilder_ != null || workspace_ != null;
+      public boolean hasQuotaSet() {
+        return quotaSetBuilder_ != null || quotaSet_ != null;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
-       * @return The workspace.
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       * @return The quotaSet.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getWorkspace() {
-        if (workspaceBuilder_ == null) {
-          return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.getDefaultInstance() : workspace_;
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
         } else {
-          return workspaceBuilder_.getMessage();
+          return quotaSetBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public Builder setWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace value) {
-        if (workspaceBuilder_ == null) {
+      public Builder setQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          workspace_ = value;
+          quotaSet_ = value;
           onChanged();
         } else {
-          workspaceBuilder_.setMessage(value);
+          quotaSetBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public Builder setWorkspace(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder builderForValue) {
-        if (workspaceBuilder_ == null) {
-          workspace_ = builderForValue.build();
+      public Builder setQuotaSet(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder builderForValue) {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = builderForValue.build();
           onChanged();
         } else {
-          workspaceBuilder_.setMessage(builderForValue.build());
+          quotaSetBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public Builder mergeWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace value) {
-        if (workspaceBuilder_ == null) {
-          if (workspace_ != null) {
-            workspace_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.newBuilder(workspace_).mergeFrom(value).buildPartial();
+      public Builder mergeQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (quotaSet_ != null) {
+            quotaSet_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.newBuilder(quotaSet_).mergeFrom(value).buildPartial();
           } else {
-            workspace_ = value;
+            quotaSet_ = value;
           }
           onChanged();
         } else {
-          workspaceBuilder_.mergeFrom(value);
+          quotaSetBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public Builder clearWorkspace() {
-        if (workspaceBuilder_ == null) {
-          workspace_ = null;
+      public Builder clearQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
           onChanged();
         } else {
-          workspace_ = null;
-          workspaceBuilder_ = null;
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder getWorkspaceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder getQuotaSetBuilder() {
         
         onChanged();
-        return getWorkspaceFieldBuilder().getBuilder();
+        return getQuotaSetFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder() {
-        if (workspaceBuilder_ != null) {
-          return workspaceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+        if (quotaSetBuilder_ != null) {
+          return quotaSetBuilder_.getMessageOrBuilder();
         } else {
-          return workspace_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.getDefaultInstance() : workspace_;
+          return quotaSet_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 2;</code>
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder> 
-          getWorkspaceFieldBuilder() {
-        if (workspaceBuilder_ == null) {
-          workspaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder>(
-                  getWorkspace(),
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> 
+          getQuotaSetFieldBuilder() {
+        if (quotaSetBuilder_ == null) {
+          quotaSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder>(
+                  getQuotaSet(),
                   getParentForChildren(),
                   isClean());
-          workspace_ = null;
+          quotaSet_ = null;
         }
-        return workspaceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob streamJob_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder> streamJobBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       * @return Whether the streamJob field is set.
-       */
-      public boolean hasStreamJob() {
-        return streamJobBuilder_ != null || streamJob_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       * @return The streamJob.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getStreamJob() {
-        if (streamJobBuilder_ == null) {
-          return streamJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.getDefaultInstance() : streamJob_;
-        } else {
-          return streamJobBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public Builder setStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob value) {
-        if (streamJobBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          streamJob_ = value;
-          onChanged();
-        } else {
-          streamJobBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public Builder setStreamJob(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder builderForValue) {
-        if (streamJobBuilder_ == null) {
-          streamJob_ = builderForValue.build();
-          onChanged();
-        } else {
-          streamJobBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public Builder mergeStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob value) {
-        if (streamJobBuilder_ == null) {
-          if (streamJob_ != null) {
-            streamJob_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.newBuilder(streamJob_).mergeFrom(value).buildPartial();
-          } else {
-            streamJob_ = value;
-          }
-          onChanged();
-        } else {
-          streamJobBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public Builder clearStreamJob() {
-        if (streamJobBuilder_ == null) {
-          streamJob_ = null;
-          onChanged();
-        } else {
-          streamJob_ = null;
-          streamJobBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder getStreamJobBuilder() {
-        
-        onChanged();
-        return getStreamJobFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder() {
-        if (streamJobBuilder_ != null) {
-          return streamJobBuilder_.getMessageOrBuilder();
-        } else {
-          return streamJob_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.getDefaultInstance() : streamJob_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaStreamJob stream_job = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder> 
-          getStreamJobFieldBuilder() {
-        if (streamJobBuilder_ == null) {
-          streamJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder>(
-                  getStreamJob(),
-                  getParentForChildren(),
-                  isClean());
-          streamJob_ = null;
-        }
-        return streamJobBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource dataSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder> dataSourceBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       * @return Whether the dataSource field is set.
-       */
-      public boolean hasDataSource() {
-        return dataSourceBuilder_ != null || dataSource_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       * @return The dataSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDataSource() {
-        if (dataSourceBuilder_ == null) {
-          return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.getDefaultInstance() : dataSource_;
-        } else {
-          return dataSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public Builder setDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource value) {
-        if (dataSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dataSource_ = value;
-          onChanged();
-        } else {
-          dataSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public Builder setDataSource(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder builderForValue) {
-        if (dataSourceBuilder_ == null) {
-          dataSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          dataSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public Builder mergeDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource value) {
-        if (dataSourceBuilder_ == null) {
-          if (dataSource_ != null) {
-            dataSource_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.newBuilder(dataSource_).mergeFrom(value).buildPartial();
-          } else {
-            dataSource_ = value;
-          }
-          onChanged();
-        } else {
-          dataSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public Builder clearDataSource() {
-        if (dataSourceBuilder_ == null) {
-          dataSource_ = null;
-          onChanged();
-        } else {
-          dataSource_ = null;
-          dataSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder getDataSourceBuilder() {
-        
-        onChanged();
-        return getDataSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder() {
-        if (dataSourceBuilder_ != null) {
-          return dataSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return dataSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.getDefaultInstance() : dataSource_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
-       * </pre>
-       *
-       * <code>.model.QuotaDataSource data_source = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder> 
-          getDataSourceFieldBuilder() {
-        if (dataSourceBuilder_ == null) {
-          dataSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder>(
-                  getDataSource(),
-                  getParentForChildren(),
-                  isClean());
-          dataSource_ = null;
-        }
-        return dataSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF udf_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder> udfBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       * @return Whether the udf field is set.
-       */
-      public boolean hasUdf() {
-        return udfBuilder_ != null || udf_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       * @return The udf.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getUdf() {
-        if (udfBuilder_ == null) {
-          return udf_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.getDefaultInstance() : udf_;
-        } else {
-          return udfBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public Builder setUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF value) {
-        if (udfBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          udf_ = value;
-          onChanged();
-        } else {
-          udfBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public Builder setUdf(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder builderForValue) {
-        if (udfBuilder_ == null) {
-          udf_ = builderForValue.build();
-          onChanged();
-        } else {
-          udfBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public Builder mergeUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF value) {
-        if (udfBuilder_ == null) {
-          if (udf_ != null) {
-            udf_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.newBuilder(udf_).mergeFrom(value).buildPartial();
-          } else {
-            udf_ = value;
-          }
-          onChanged();
-        } else {
-          udfBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public Builder clearUdf() {
-        if (udfBuilder_ == null) {
-          udf_ = null;
-          onChanged();
-        } else {
-          udf_ = null;
-          udfBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder getUdfBuilder() {
-        
-        onChanged();
-        return getUdfFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder() {
-        if (udfBuilder_ != null) {
-          return udfBuilder_.getMessageOrBuilder();
-        } else {
-          return udf_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.getDefaultInstance() : udf_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"udf" gorm:"column:udf;"
-       * </pre>
-       *
-       * <code>.model.QuotaUDF udf = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder> 
-          getUdfFieldBuilder() {
-        if (udfBuilder_ == null) {
-          udfBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder>(
-                  getUdf(),
-                  getParentForChildren(),
-                  isClean());
-          udf_ = null;
-        }
-        return udfBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile file_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder> fileBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       * @return Whether the file field is set.
-       */
-      public boolean hasFile() {
-        return fileBuilder_ != null || file_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       * @return The file.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile() {
-        if (fileBuilder_ == null) {
-          return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
-        } else {
-          return fileBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public Builder setFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile value) {
-        if (fileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          file_ = value;
-          onChanged();
-        } else {
-          fileBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public Builder setFile(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder builderForValue) {
-        if (fileBuilder_ == null) {
-          file_ = builderForValue.build();
-          onChanged();
-        } else {
-          fileBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public Builder mergeFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile value) {
-        if (fileBuilder_ == null) {
-          if (file_ != null) {
-            file_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.newBuilder(file_).mergeFrom(value).buildPartial();
-          } else {
-            file_ = value;
-          }
-          onChanged();
-        } else {
-          fileBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public Builder clearFile() {
-        if (fileBuilder_ == null) {
-          file_ = null;
-          onChanged();
-        } else {
-          file_ = null;
-          fileBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder getFileBuilder() {
-        
-        onChanged();
-        return getFileFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder() {
-        if (fileBuilder_ != null) {
-          return fileBuilder_.getMessageOrBuilder();
-        } else {
-          return file_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"file" gorm:"column:file;"
-       * </pre>
-       *
-       * <code>.model.QuotaFile file = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder> 
-          getFileFieldBuilder() {
-        if (fileBuilder_ == null) {
-          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder>(
-                  getFile(),
-                  getParentForChildren(),
-                  isClean());
-          file_ = null;
-        }
-        return fileBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster flinkCluster_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder> flinkClusterBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       * @return Whether the flinkCluster field is set.
-       */
-      public boolean hasFlinkCluster() {
-        return flinkClusterBuilder_ != null || flinkCluster_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       * @return The flinkCluster.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getFlinkCluster() {
-        if (flinkClusterBuilder_ == null) {
-          return flinkCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.getDefaultInstance() : flinkCluster_;
-        } else {
-          return flinkClusterBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public Builder setFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster value) {
-        if (flinkClusterBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          flinkCluster_ = value;
-          onChanged();
-        } else {
-          flinkClusterBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public Builder setFlinkCluster(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder builderForValue) {
-        if (flinkClusterBuilder_ == null) {
-          flinkCluster_ = builderForValue.build();
-          onChanged();
-        } else {
-          flinkClusterBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public Builder mergeFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster value) {
-        if (flinkClusterBuilder_ == null) {
-          if (flinkCluster_ != null) {
-            flinkCluster_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.newBuilder(flinkCluster_).mergeFrom(value).buildPartial();
-          } else {
-            flinkCluster_ = value;
-          }
-          onChanged();
-        } else {
-          flinkClusterBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public Builder clearFlinkCluster() {
-        if (flinkClusterBuilder_ == null) {
-          flinkCluster_ = null;
-          onChanged();
-        } else {
-          flinkCluster_ = null;
-          flinkClusterBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder getFlinkClusterBuilder() {
-        
-        onChanged();
-        return getFlinkClusterFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
-        if (flinkClusterBuilder_ != null) {
-          return flinkClusterBuilder_.getMessageOrBuilder();
-        } else {
-          return flinkCluster_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.getDefaultInstance() : flinkCluster_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
-       * </pre>
-       *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder> 
-          getFlinkClusterFieldBuilder() {
-        if (flinkClusterBuilder_ == null) {
-          flinkClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder>(
-                  getFlinkCluster(),
-                  getParentForChildren(),
-                  isClean());
-          flinkCluster_ = null;
-        }
-        return flinkClusterBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"network" gorm:"column:network;"
-       * </pre>
-       *
-       * <code>.model.QuotaNetwork network = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob syncJob_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder> syncJobBuilder_;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       * @return Whether the syncJob field is set.
-       */
-      public boolean hasSyncJob() {
-        return syncJobBuilder_ != null || syncJob_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       * @return The syncJob.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getSyncJob() {
-        if (syncJobBuilder_ == null) {
-          return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance() : syncJob_;
-        } else {
-          return syncJobBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public Builder setSyncJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob value) {
-        if (syncJobBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          syncJob_ = value;
-          onChanged();
-        } else {
-          syncJobBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public Builder setSyncJob(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder builderForValue) {
-        if (syncJobBuilder_ == null) {
-          syncJob_ = builderForValue.build();
-          onChanged();
-        } else {
-          syncJobBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public Builder mergeSyncJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob value) {
-        if (syncJobBuilder_ == null) {
-          if (syncJob_ != null) {
-            syncJob_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.newBuilder(syncJob_).mergeFrom(value).buildPartial();
-          } else {
-            syncJob_ = value;
-          }
-          onChanged();
-        } else {
-          syncJobBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public Builder clearSyncJob() {
-        if (syncJobBuilder_ == null) {
-          syncJob_ = null;
-          onChanged();
-        } else {
-          syncJob_ = null;
-          syncJobBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder getSyncJobBuilder() {
-        
-        onChanged();
-        return getSyncJobFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder getSyncJobOrBuilder() {
-        if (syncJobBuilder_ != null) {
-          return syncJobBuilder_.getMessageOrBuilder();
-        } else {
-          return syncJob_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance() : syncJob_;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"sync_job" gorm:"column:sync_job;"
-       * </pre>
-       *
-       * <code>.model.QuotaSyncJob sync_job = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder> 
-          getSyncJobFieldBuilder() {
-        if (syncJobBuilder_ == null) {
-          syncJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder>(
-                  getSyncJob(),
-                  getParentForChildren(),
-                  isClean());
-          syncJob_ = null;
-        }
-        return syncJobBuilder_;
+        return quotaSetBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7177,779 +9645,25 @@ public final class PBModelQuota {
 
   }
 
-  public interface ProjectQuotaOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.ProjectQuota)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The user id of workspace owner.
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     * @return The userId.
-     */
-    java.lang.String getUserId();
-    /**
-     * <pre>
-     * The user id of workspace owner.
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <code>string space_id = 2;</code>
-     * @return The spaceId.
-     */
-    java.lang.String getSpaceId();
-    /**
-     * <code>string space_id = 2;</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
-  }
-  /**
-   * <pre>
-   * Quota for project level. supported modified by Tenant Administrator.
-   * </pre>
-   *
-   * Protobuf type {@code model.ProjectQuota}
-   */
-  public static final class ProjectQuota extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.ProjectQuota)
-      ProjectQuotaOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ProjectQuota.newBuilder() to construct.
-    private ProjectQuota(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ProjectQuota() {
-      userId_ = "";
-      spaceId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ProjectQuota();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ProjectQuota(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_ProjectQuota_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_ProjectQuota_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.Builder.class);
-    }
-
-    public static final int USER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userId_;
-    /**
-     * <pre>
-     * The user id of workspace owner.
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     * @return The userId.
-     */
-    @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The user id of workspace owner.
-     * </pre>
-     *
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object spaceId_;
-    /**
-     * <code>string space_id = 2;</code>
-     * @return The spaceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string space_id = 2;</code>
-     * @return The bytes for spaceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota) obj;
-
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Quota for project level. supported modified by Tenant Administrator.
-     * </pre>
-     *
-     * Protobuf type {@code model.ProjectQuota}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.ProjectQuota)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuotaOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_ProjectQuota_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_ProjectQuota_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        userId_ = "";
-
-        spaceId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_ProjectQuota_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota(this);
-        result.userId_ = userId_;
-        result.spaceId_ = spaceId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota.getDefaultInstance()) return this;
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
-        }
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <pre>
-       * The user id of workspace owner.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The user id of workspace owner.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @return The bytes for userId.
-       */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The user id of workspace owner.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The user id of workspace owner.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The user id of workspace owner.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceId_ = "";
-      /**
-       * <code>string space_id = 2;</code>
-       * @return The spaceId.
-       */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string space_id = 2;</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string space_id = 2;</code>
-       * @param value The spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string space_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceId() {
-        
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string space_id = 2;</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.ProjectQuota)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.ProjectQuota)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProjectQuota>
-        PARSER = new com.google.protobuf.AbstractParser<ProjectQuota>() {
-      @java.lang.Override
-      public ProjectQuota parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProjectQuota(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProjectQuota> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProjectQuota> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.ProjectQuota getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface WorkspaceQuotaOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.WorkspaceQuota)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string space_id = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     java.lang.String getSpaceId();
     /**
-     * <code>string space_id = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
@@ -7957,27 +9671,37 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * The user id of workspace member.
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
-     * @return The userId.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return Whether the quotaSet field is set.
      */
-    java.lang.String getUserId();
+    boolean hasQuotaSet();
     /**
      * <pre>
-     * The user id of workspace member.
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return The quotaSet.
      */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet();
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder();
   }
   /**
    * <pre>
-   * Quota for workspace level. supported modified by Workspace Owner and Workspace Administrator.
+   * Quota for workspace. supported modified by Tenant Administrator.
    * </pre>
    *
    * Protobuf type {@code model.WorkspaceQuota}
@@ -7993,7 +9717,6 @@ public final class PBModelQuota {
     }
     private WorkspaceQuota() {
       spaceId_ = "";
-      userId_ = "";
     }
 
     @java.lang.Override
@@ -8029,13 +9752,20 @@ public final class PBModelQuota {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              spaceId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder subBuilder = null;
+              if (quotaSet_ != null) {
+                subBuilder = quotaSet_.toBuilder();
+              }
+              quotaSet_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(quotaSet_);
+                quotaSet_ = subBuilder.buildPartial();
+              }
 
-              spaceId_ = s;
               break;
             }
             default: {
@@ -8070,10 +9800,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.WorkspaceQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.WorkspaceQuota.Builder.class);
     }
 
-    public static final int SPACE_ID_FIELD_NUMBER = 2;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object spaceId_;
     /**
-     * <code>string space_id = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     @java.lang.Override
@@ -8090,7 +9824,11 @@ public final class PBModelQuota {
       }
     }
     /**
-     * <code>string space_id = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     @java.lang.Override
@@ -8108,50 +9846,45 @@ public final class PBModelQuota {
       }
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userId_;
+    public static final int QUOTA_SET_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
     /**
      * <pre>
-     * The user id of workspace member.
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
-     * @return The userId.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return Whether the quotaSet field is set.
      */
     @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
+    public boolean hasQuotaSet() {
+      return quotaSet_ != null;
     }
     /**
      * <pre>
-     * The user id of workspace member.
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
      * </pre>
      *
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     * @return The quotaSet.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+      return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+    }
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+      return getQuotaSet();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8168,11 +9901,11 @@ public final class PBModelQuota {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (quotaSet_ != null) {
+        output.writeMessage(2, getQuotaSet());
       }
       unknownFields.writeTo(output);
     }
@@ -8183,11 +9916,12 @@ public final class PBModelQuota {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (quotaSet_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getQuotaSet());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8206,8 +9940,11 @@ public final class PBModelQuota {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
+      if (hasQuotaSet() != other.hasQuotaSet()) return false;
+      if (hasQuotaSet()) {
+        if (!getQuotaSet()
+            .equals(other.getQuotaSet())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8221,8 +9958,10 @@ public final class PBModelQuota {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
+      if (hasQuotaSet()) {
+        hash = (37 * hash) + QUOTA_SET_FIELD_NUMBER;
+        hash = (53 * hash) + getQuotaSet().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8320,7 +10059,7 @@ public final class PBModelQuota {
     }
     /**
      * <pre>
-     * Quota for workspace level. supported modified by Workspace Owner and Workspace Administrator.
+     * Quota for workspace. supported modified by Tenant Administrator.
      * </pre>
      *
      * Protobuf type {@code model.WorkspaceQuota}
@@ -8362,8 +10101,12 @@ public final class PBModelQuota {
         super.clear();
         spaceId_ = "";
 
-        userId_ = "";
-
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
         return this;
       }
 
@@ -8391,7 +10134,11 @@ public final class PBModelQuota {
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.WorkspaceQuota buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelQuota.WorkspaceQuota result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.WorkspaceQuota(this);
         result.spaceId_ = spaceId_;
-        result.userId_ = userId_;
+        if (quotaSetBuilder_ == null) {
+          result.quotaSet_ = quotaSet_;
+        } else {
+          result.quotaSet_ = quotaSetBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -8444,9 +10191,8 @@ public final class PBModelQuota {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
+        if (other.hasQuotaSet()) {
+          mergeQuotaSet(other.getQuotaSet());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8479,7 +10225,11 @@ public final class PBModelQuota {
 
       private java.lang.Object spaceId_ = "";
       /**
-       * <code>string space_id = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return The spaceId.
        */
       public java.lang.String getSpaceId() {
@@ -8495,7 +10245,11 @@ public final class PBModelQuota {
         }
       }
       /**
-       * <code>string space_id = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
@@ -8512,7 +10266,11 @@ public final class PBModelQuota {
         }
       }
       /**
-       * <code>string space_id = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @param value The spaceId to set.
        * @return This builder for chaining.
        */
@@ -8527,7 +10285,11 @@ public final class PBModelQuota {
         return this;
       }
       /**
-       * <code>string space_id = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSpaceId() {
@@ -8537,7 +10299,11 @@ public final class PBModelQuota {
         return this;
       }
       /**
-       * <code>string space_id = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
@@ -8553,100 +10319,168 @@ public final class PBModelQuota {
         return this;
       }
 
-      private java.lang.Object userId_ = "";
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> quotaSetBuilder_;
       /**
        * <pre>
-       * The user id of workspace member.
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
-       * @return The userId.
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       * @return Whether the quotaSet field is set.
        */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
+      public boolean hasQuotaSet() {
+        return quotaSetBuilder_ != null || quotaSet_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       * @return The quotaSet.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
         } else {
-          return (java.lang.String) ref;
+          return quotaSetBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * The user id of workspace member.
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
-       * @return The bytes for userId.
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
+      public Builder setQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          quotaSet_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          quotaSetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       */
+      public Builder setQuotaSet(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder builderForValue) {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = builderForValue.build();
+          onChanged();
+        } else {
+          quotaSetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       */
+      public Builder mergeQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (quotaSet_ != null) {
+            quotaSet_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.newBuilder(quotaSet_).mergeFrom(value).buildPartial();
+          } else {
+            quotaSet_ = value;
+          }
+          onChanged();
+        } else {
+          quotaSetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       */
+      public Builder clearQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+          onChanged();
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder getQuotaSetBuilder() {
+        
+        onChanged();
+        return getQuotaSetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+        if (quotaSetBuilder_ != null) {
+          return quotaSetBuilder_.getMessageOrBuilder();
+        } else {
+          return quotaSet_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
         }
       }
       /**
        * <pre>
-       * The user id of workspace member.
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
        * </pre>
        *
-       * <code>string user_id = 1;</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
+       * <code>.model.QuotaSet quota_set = 2;</code>
        */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The user id of workspace member.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The user id of workspace member.
-       * </pre>
-       *
-       * <code>string user_id = 1;</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> 
+          getQuotaSetFieldBuilder() {
+        if (quotaSetBuilder_ == null) {
+          quotaSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder>(
+                  getQuotaSet(),
+                  getParentForChildren(),
+                  isClean());
+          quotaSet_ = null;
+        }
+        return quotaSetBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8701,61 +10535,1161 @@ public final class PBModelQuota {
 
   }
 
+  public interface MemberQuotaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.MemberQuota)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * The user id of workspace member.
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * The user id of workspace member.
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     * @return Whether the quotaSet field is set.
+     */
+    boolean hasQuotaSet();
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     * @return The quotaSet.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet();
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder();
+  }
+  /**
+   * <pre>
+   * Quota for workspace member. supported modified by Workspace Owner and Workspace Administrator.
+   * </pre>
+   *
+   * Protobuf type {@code model.MemberQuota}
+   */
+  public static final class MemberQuota extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.MemberQuota)
+      MemberQuotaOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MemberQuota.newBuilder() to construct.
+    private MemberQuota(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MemberQuota() {
+      spaceId_ = "";
+      userId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MemberQuota();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MemberQuota(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 26: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder subBuilder = null;
+              if (quotaSet_ != null) {
+                subBuilder = quotaSet_.toBuilder();
+              }
+              quotaSet_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(quotaSet_);
+                quotaSet_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_MemberQuota_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_MemberQuota_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * The user id of workspace member.
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user id of workspace member.
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUOTA_SET_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     * @return Whether the quotaSet field is set.
+     */
+    @java.lang.Override
+    public boolean hasQuotaSet() {
+      return quotaSet_ != null;
+    }
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     * @return The quotaSet.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+      return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+    }
+    /**
+     * <pre>
+     * Quota settings.
+     * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+      return getQuotaSet();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      }
+      if (quotaSet_ != null) {
+        output.writeMessage(3, getQuotaSet());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
+      if (quotaSet_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getQuotaSet());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (hasQuotaSet() != other.hasQuotaSet()) return false;
+      if (hasQuotaSet()) {
+        if (!getQuotaSet()
+            .equals(other.getQuotaSet())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      if (hasQuotaSet()) {
+        hash = (37 * hash) + QUOTA_SET_FIELD_NUMBER;
+        hash = (53 * hash) + getQuotaSet().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Quota for workspace member. supported modified by Workspace Owner and Workspace Administrator.
+     * </pre>
+     *
+     * Protobuf type {@code model.MemberQuota}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.MemberQuota)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuotaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_MemberQuota_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_MemberQuota_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        userId_ = "";
+
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_MemberQuota_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota(this);
+        result.spaceId_ = spaceId_;
+        result.userId_ = userId_;
+        if (quotaSetBuilder_ == null) {
+          result.quotaSet_ = quotaSet_;
+        } else {
+          result.quotaSet_ = quotaSetBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasQuotaSet()) {
+          mergeQuotaSet(other.getQuotaSet());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * The user id of workspace member.
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user id of workspace member.
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user id of workspace member.
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user id of workspace member.
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user id of workspace member.
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> quotaSetBuilder_;
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       * @return Whether the quotaSet field is set.
+       */
+      public boolean hasQuotaSet() {
+        return quotaSetBuilder_ != null || quotaSet_ != null;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       * @return The quotaSet.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+        } else {
+          return quotaSetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public Builder setQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          quotaSet_ = value;
+          onChanged();
+        } else {
+          quotaSetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public Builder setQuotaSet(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder builderForValue) {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = builderForValue.build();
+          onChanged();
+        } else {
+          quotaSetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public Builder mergeQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (quotaSet_ != null) {
+            quotaSet_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.newBuilder(quotaSet_).mergeFrom(value).buildPartial();
+          } else {
+            quotaSet_ = value;
+          }
+          onChanged();
+        } else {
+          quotaSetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public Builder clearQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+          onChanged();
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder getQuotaSetBuilder() {
+        
+        onChanged();
+        return getQuotaSetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+        if (quotaSetBuilder_ != null) {
+          return quotaSetBuilder_.getMessageOrBuilder();
+        } else {
+          return quotaSet_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+        }
+      }
+      /**
+       * <pre>
+       * Quota settings.
+       * &#64;inject_tag: json:"quota_set" gorm:"embedded;"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> 
+          getQuotaSetFieldBuilder() {
+        if (quotaSetBuilder_ == null) {
+          quotaSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder>(
+                  getQuotaSet(),
+                  getParentForChildren(),
+                  isClean());
+          quotaSet_ = null;
+        }
+        return quotaSetBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.MemberQuota)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.MemberQuota)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MemberQuota>
+        PARSER = new com.google.protobuf.AbstractParser<MemberQuota>() {
+      @java.lang.Override
+      public MemberQuota parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MemberQuota(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MemberQuota> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MemberQuota> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.MemberQuota getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaWorkspace_descriptor;
+    internal_static_model_QuotaSetWorkspace_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaWorkspace_fieldAccessorTable;
+      internal_static_model_QuotaSetWorkspace_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaStreamJob_descriptor;
+    internal_static_model_QuotaSetMember_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaStreamJob_fieldAccessorTable;
+      internal_static_model_QuotaSetMember_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaSyncJob_descriptor;
+    internal_static_model_QuotaSetCustomRole_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaSyncJob_fieldAccessorTable;
+      internal_static_model_QuotaSetCustomRole_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaDataSource_descriptor;
+    internal_static_model_QuotaSetStreamJob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaDataSource_fieldAccessorTable;
+      internal_static_model_QuotaSetStreamJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaUDF_descriptor;
+    internal_static_model_QuotaSetSyncJob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaUDF_fieldAccessorTable;
+      internal_static_model_QuotaSetSyncJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaFile_descriptor;
+    internal_static_model_QuotaSetDataSource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaFile_fieldAccessorTable;
+      internal_static_model_QuotaSetDataSource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaFlinkCluster_descriptor;
+    internal_static_model_QuotaSetUDF_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaFlinkCluster_fieldAccessorTable;
+      internal_static_model_QuotaSetUDF_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaNetwork_descriptor;
+    internal_static_model_QuotaSetFile_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaNetwork_fieldAccessorTable;
+      internal_static_model_QuotaSetFile_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_QuotaSetFlinkCluster_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_QuotaSetFlinkCluster_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_QuotaSetNetwork_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_QuotaSetNetwork_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_QuotaSet_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_QuotaSet_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_UserQuota_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_UserQuota_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_ProjectQuota_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_ProjectQuota_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_WorkspaceQuota_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_WorkspaceQuota_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_MemberQuota_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_MemberQuota_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8765,109 +11699,145 @@ public final class PBModelQuota {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035proto/types/model/quota.proto\022\005model\032/" +
-      "github.com/yu31/protoc-plugin/proto/gosq" +
-      "l.proto\"\'\n\016QuotaWorkspace\022\r\n\005limit\030\001 \001(\003" +
-      ":\006\312\262\004\002\n\000\"\'\n\016QuotaStreamJob\022\r\n\005limit\030\001 \001(" +
-      "\003:\006\312\262\004\002\n\000\"%\n\014QuotaSyncJob\022\r\n\005limit\030\001 \001(\003" +
-      ":\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\001 \001" +
-      "(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\001 \001(\003:\006\312" +
-      "\262\004\002\n\000\"D\n\tQuotaFile\022\r\n\005limit\030\001 \001(\003\022\014\n\004siz" +
-      "e\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000\"H\n\021Q" +
-      "uotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002cu\030\002 " +
-      "\001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014QuotaNe" +
-      "twork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\332\002\n\tUserQuo" +
-      "ta\022\017\n\007user_id\030\001 \001(\t\022(\n\tworkspace\030\002 \001(\0132\025" +
-      ".model.QuotaWorkspace\022)\n\nstream_job\030\003 \001(" +
-      "\0132\025.model.QuotaStreamJob\022+\n\013data_source\030" +
-      "\004 \001(\0132\026.model.QuotaDataSource\022\034\n\003udf\030\005 \001" +
-      "(\0132\017.model.QuotaUDF\022\036\n\004file\030\006 \001(\0132\020.mode" +
-      "l.QuotaFile\022/\n\rflink_cluster\030\007 \001(\0132\030.mod" +
-      "el.QuotaFlinkCluster\022$\n\007network\030\010 \001(\0132\023." +
-      "model.QuotaNetwork\022%\n\010sync_job\030\t \001(\0132\023.m" +
-      "odel.QuotaSyncJob\"1\n\014ProjectQuota\022\017\n\007use" +
-      "r_id\030\001 \001(\t\022\020\n\010space_id\030\002 \001(\t\"3\n\016Workspac" +
-      "eQuota\022\020\n\010space_id\030\002 \001(\t\022\017\n\007user_id\030\001 \001(" +
-      "\tBg\n\"com.dataomnis.gproto.types.pbmodelB" +
-      "\014PBModelQuotaP\000Z1github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodelb\006proto3"
+      "\n\035proto/types/model/quota.proto\022\005model\0323" +
+      "github.com/yu31/protoc-plugin/proto/vali" +
+      "dator.proto\032/github.com/yu31/protoc-plug" +
+      "in/proto/gosql.proto\"*\n\021QuotaSetWorkspac" +
+      "e\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\'\n\016QuotaSetMemb" +
+      "er\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"+\n\022QuotaSetCus" +
+      "tomRole\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"*\n\021QuotaS" +
+      "etStreamJob\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"(\n\017Qu" +
+      "otaSetSyncJob\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"+\n\022" +
+      "QuotaSetDataSource\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n" +
+      "\000\"$\n\013QuotaSetUDF\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"" +
+      "N\n\014QuotaSetFile\022\r\n\005limit\030\001 \001(\003\022\023\n\013size_s" +
+      "ingle\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000\"" +
+      "R\n\024QuotaSetFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\021" +
+      "\n\tcu_single\030\002 \001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004" +
+      "\002\n\000\"(\n\017QuotaSetNetwork\022\r\n\005limit\030\001 \001(\003:\006\312" +
+      "\262\004\002\n\000\"\271\004\n\010QuotaSet\0228\n\tworkspace\030\002 \001(\0132\030." +
+      "model.QuotaSetWorkspaceB\013\342\337\037\007\022\005\342\001\002\020\001\0222\n\006" +
+      "member\030\001 \001(\0132\025.model.QuotaSetMemberB\013\342\337\037" +
+      "\007\022\005\342\001\002\020\001\022;\n\013custom_role\030\n \001(\0132\031.model.Qu" +
+      "otaSetCustomRoleB\013\342\337\037\007\022\005\342\001\002\020\001\0229\n\nstream_" +
+      "job\030\003 \001(\0132\030.model.QuotaSetStreamJobB\013\342\337\037" +
+      "\007\022\005\342\001\002\020\001\0225\n\010sync_job\030\t \001(\0132\026.model.Quota" +
+      "SetSyncJobB\013\342\337\037\007\022\005\342\001\002\020\001\022;\n\013data_source\030\004" +
+      " \001(\0132\031.model.QuotaSetDataSourceB\013\342\337\037\007\022\005\342" +
+      "\001\002\020\001\022,\n\003udf\030\005 \001(\0132\022.model.QuotaSetUDFB\013\342" +
+      "\337\037\007\022\005\342\001\002\020\001\022.\n\004file\030\006 \001(\0132\023.model.QuotaSe" +
+      "tFileB\013\342\337\037\007\022\005\342\001\002\020\001\022?\n\rflink_cluster\030\007 \001(" +
+      "\0132\033.model.QuotaSetFlinkClusterB\013\342\337\037\007\022\005\342\001" +
+      "\002\020\001\0224\n\007network\030\010 \001(\0132\026.model.QuotaSetNet" +
+      "workB\013\342\337\037\007\022\005\342\001\002\020\001\"Q\n\tUserQuota\022 \n\007user_i" +
+      "d\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\"\n\tquota_set\030\002 " +
+      "\001(\0132\017.model.QuotaSet\"[\n\016WorkspaceQuota\022%" +
+      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\"\n" +
+      "\tquota_set\030\002 \001(\0132\017.model.QuotaSet\"z\n\013Mem" +
+      "berQuota\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002" +
+      "A\022\"\n\tquota_set\030\003 \001(\0132\017.model.QuotaSetBg\n" +
+      "\"com.dataomnis.gproto.types.pbmodelB\014PBM" +
+      "odelQuotaP\000Z1github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
-    internal_static_model_QuotaWorkspace_descriptor =
+    internal_static_model_QuotaSetWorkspace_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_model_QuotaWorkspace_fieldAccessorTable = new
+    internal_static_model_QuotaSetWorkspace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaWorkspace_descriptor,
+        internal_static_model_QuotaSetWorkspace_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaStreamJob_descriptor =
+    internal_static_model_QuotaSetMember_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_model_QuotaStreamJob_fieldAccessorTable = new
+    internal_static_model_QuotaSetMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaStreamJob_descriptor,
+        internal_static_model_QuotaSetMember_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaSyncJob_descriptor =
+    internal_static_model_QuotaSetCustomRole_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_model_QuotaSyncJob_fieldAccessorTable = new
+    internal_static_model_QuotaSetCustomRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaSyncJob_descriptor,
+        internal_static_model_QuotaSetCustomRole_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaDataSource_descriptor =
+    internal_static_model_QuotaSetStreamJob_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_model_QuotaDataSource_fieldAccessorTable = new
+    internal_static_model_QuotaSetStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaDataSource_descriptor,
+        internal_static_model_QuotaSetStreamJob_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaUDF_descriptor =
+    internal_static_model_QuotaSetSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_model_QuotaUDF_fieldAccessorTable = new
+    internal_static_model_QuotaSetSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaUDF_descriptor,
+        internal_static_model_QuotaSetSyncJob_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaFile_descriptor =
+    internal_static_model_QuotaSetDataSource_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_model_QuotaFile_fieldAccessorTable = new
+    internal_static_model_QuotaSetDataSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaFile_descriptor,
-        new java.lang.String[] { "Limit", "Size", "SizeTotal", });
-    internal_static_model_QuotaFlinkCluster_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_model_QuotaFlinkCluster_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaFlinkCluster_descriptor,
-        new java.lang.String[] { "Limit", "Cu", "CuTotal", });
-    internal_static_model_QuotaNetwork_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_model_QuotaNetwork_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaNetwork_descriptor,
+        internal_static_model_QuotaSetDataSource_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_UserQuota_descriptor =
+    internal_static_model_QuotaSetUDF_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_model_QuotaSetUDF_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSetUDF_descriptor,
+        new java.lang.String[] { "Limit", });
+    internal_static_model_QuotaSetFile_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_model_QuotaSetFile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSetFile_descriptor,
+        new java.lang.String[] { "Limit", "SizeSingle", "SizeTotal", });
+    internal_static_model_QuotaSetFlinkCluster_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_model_QuotaSetFlinkCluster_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSetFlinkCluster_descriptor,
+        new java.lang.String[] { "Limit", "CuSingle", "CuTotal", });
+    internal_static_model_QuotaSetNetwork_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_model_QuotaSetNetwork_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSetNetwork_descriptor,
+        new java.lang.String[] { "Limit", });
+    internal_static_model_QuotaSet_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_model_QuotaSet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSet_descriptor,
+        new java.lang.String[] { "Workspace", "Member", "CustomRole", "StreamJob", "SyncJob", "DataSource", "Udf", "File", "FlinkCluster", "Network", });
+    internal_static_model_UserQuota_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_model_UserQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UserQuota_descriptor,
-        new java.lang.String[] { "UserId", "Workspace", "StreamJob", "DataSource", "Udf", "File", "FlinkCluster", "Network", "SyncJob", });
-    internal_static_model_ProjectQuota_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_model_ProjectQuota_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_ProjectQuota_descriptor,
-        new java.lang.String[] { "UserId", "SpaceId", });
+        new java.lang.String[] { "UserId", "QuotaSet", });
     internal_static_model_WorkspaceQuota_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_model_WorkspaceQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_WorkspaceQuota_descriptor,
-        new java.lang.String[] { "SpaceId", "UserId", });
+        new java.lang.String[] { "SpaceId", "QuotaSet", });
+    internal_static_model_MemberQuota_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_model_MemberQuota_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_MemberQuota_descriptor,
+        new java.lang.String[] { "SpaceId", "UserId", "QuotaSet", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
