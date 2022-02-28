@@ -39,7 +39,7 @@ message DescribeSyncJob {
 
 // GetSyncJobConf used as reply parameters in RPC.
 message GetSyncJobConf {
-    model.SyncJobConf args = 1 [ (validator.field).tags.message = { skip: true} ];
+    model.SyncJobConf conf = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // GetSyncJobSchedule used as reply parameters in RPC.
