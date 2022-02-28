@@ -219,7 +219,6 @@ message SyncJobConf {
     // hive target
     // @inject_tag: json:"hive_target"
     HiveTarget hive_target = 28;
-
     // The flink cluster id. Is required.
     // @inject_tag: json:"cluster_id"
     string cluster_id = 29 [(validator.field) = {}];
