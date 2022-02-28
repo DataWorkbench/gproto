@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBMongodb";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/syncjob/column.proto";
+
+
+message MongodbSource {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // database
+    // @inject_tag: json:"database" 
+    string database = 2;
+    // collection name
+    // @inject_tag: json:"collection_name" 
+    string collection_name = 3;
+    // fetch size
+    // @inject_tag: json:"fetch_size" 
+    int32 fetch_size = 4;
+    // filter
+    // @inject_tag: json:"filter" 
+    string filter = 5;
+
+}
+
+message MongodbTarget {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // database
+    // @inject_tag: json:"database" 
+    string database = 2;
+    // collection name
+    // @inject_tag: json:"collection_name" 
+    string collection_name = 3;
+    // replace key
+    // @inject_tag: json:"replace_key" 
+    string replace_key = 4;
+    // write mode
+    // @inject_tag: json:"write_mode" 
+    string write_mode = 5;
+    // batch size
+    // @inject_tag: json:"batch_size" 
+    int32 batch_size = 6;
+    // flush interval mills
+    // @inject_tag: json:"flush_interval_mills" 
+    int32 flush_interval_mills = 7;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBSqlservercdc";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+message SqlServerCdcSource {
+    // table list
+    // @inject_tag: json:"table_list"
+    repeated string table_list = 1;
+    // split update
+    // @inject_tag: json:"split_update" 
+    bool split_update = 2;
+    // paving data
+    // @inject_tag: json:"paving_data" 
+    bool paving_data = 3;
+    // cat
+    // @inject_tag: json:"cat" 
+    string cat = 4;
+    // lsn
+    // @inject_tag: json:"lsn" 
+    string lsn = 5;
+    // poll interval
+    // @inject_tag: json:"poll_interval" 
+    int64 poll_interval = 6;
+    // database name
+    // @inject_tag: json:"database_name" 
+    string database_name = 7;
+}

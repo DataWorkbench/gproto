@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBHive";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+
+message HiveTarget {
+    // partition
+    // @inject_tag: json:"partition" 
+    string partition = 1;
+    // partition_type
+    // @inject_tag: json:"partition_type" 
+    string partition_type = 2;
+    // tables column
+    // @inject_tag: json:"tables_column" 
+    string tables_column = 3;
+    // analytical rules
+    // @inject_tag: json:"analytical_rules" 
+    string analytical_rules = 4;
+    // schema
+    // @inject_tag: json:"schema" 
+    string schema = 5;
+    // distribute table
+    // @inject_tag: json:"distribute_table" 
+    string distribute_table = 6;
+    // write mode
+    // @inject_tag: json:"write_mode" 
+    string write_mode = 7;
+    // Relationaldb column
+    // @inject_tag: json:"file_type" 
+    string file_type = 8;
+    // default_fs
+    // @inject_tag: json:"default_fs" 
+    string default_fs = 9;
+    // max file size
+    // @inject_tag: json:"max_file_size" 
+    int64 max_file_size = 10;
+    // next check rows
+    // @inject_tag: json:"next_check_rows" 
+    int64 next_check_rows = 11;
+    // row group size
+    // @inject_tag: json:"row_group_size" 
+    int64 row_group_size = 12;
+    // enable dictionary
+    // @inject_tag: json:"enable_dictionary" 
+    bool enable_dictionary = 13;
+    // encoding
+    // @inject_tag: json:"encoding" 
+    string encoding = 14;
+    // field_delimiter
+    // @inject_tag: json:"field_delimiter" 
+    string field_delimiter = 15;
+    // compress
+    // @inject_tag: json:"compress" 
+    string compress = 16;
+    // charset_name
+    // @inject_tag: json:"charset_name" 
+    string charset_name = 17;
+    // hadoop config
+    // @inject_tag: json:"hadoop_config" 
+    string hadoop_config = 18;
+
+}

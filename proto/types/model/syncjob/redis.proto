@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBRedis";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+message RedisTarget {
+    // select database
+    // @inject_tag: json:"database" 
+    int32 database = 1;
+    // keyIndexes
+    // @inject_tag: json:"keyIndexes" 
+    repeated int32 keyIndexes = 2;
+    // date_format
+    // @inject_tag: json:"date_format" 
+    string date_format = 3;
+    // expire time
+    // @inject_tag: json:"expire_time" 
+    int64 expire_time = 4;
+    // type
+    // @inject_tag: json:"type" 
+    string type = 5;
+    // mode
+    // @inject_tag: json:"mode" 
+    string mode = 6;
+    // key field delimiter
+    // @inject_tag: json:"key_field_delimiter" 
+    string key_field_delimiter = 7;
+    // value field delimiter
+    // @inject_tag: json:"value_field_delimiter" 
+    string value_field_delimiter = 8;
+    // timeout
+    // @inject_tag: json:"timeout" 
+    int32 timeout = 9;
+}

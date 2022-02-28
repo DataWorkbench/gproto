@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBElasticSearch";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/syncjob/column.proto";
+
+
+message ElasticSearchSource {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // version
+    // @inject_tag: json:"version" 
+    string version = 2;
+    // index
+    // @inject_tag: json:"index" 
+    string index = 3;
+    // batch size
+    // @inject_tag: json:"batch_size" 
+    int32 batch_size = 4;
+}
+
+
+message ElasticSearchTarget {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // version
+    // @inject_tag: json:"version" 
+    string version = 2;
+    // index
+    // @inject_tag: json:"index" 
+    string index = 3;
+    // batch size
+    // @inject_tag: json:"batch_size" 
+    int32 batch_size = 4;
+    // key delimiter
+    // @inject_tag: json:"key_delimiter" 
+    string key_delimiter = 5;
+}

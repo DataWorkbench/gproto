@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBBinlog";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/syncjob/column.proto";
+
+
+message BinlogSource {
+    // schema
+    // @inject_tag: json:"schema" 
+    string schema = 1;
+    // cat
+    // @inject_tag: json:"cat" 
+    string cat = 2;
+    // start
+    // @inject_tag: json:"start" 
+    Start start = 3;
+    // table
+    // @inject_tag: json:"table" 
+    repeated string table = 4;
+    // split update
+    // @inject_tag: json:"split_update" 
+    bool split_update = 5;
+    // paving data
+    // @inject_tag: json:"paving_data" 
+    bool paving_data = 6;
+    // filter
+    // @inject_tag: json:"filter" 
+    string filter = 7;
+    // is gtid mode
+    // @inject_tag: json:"is_gtid_mode" 
+    bool is_gtid_mode = 8;
+    // query_timeout
+    // @inject_tag: json:"query_timeout" 
+    int32 query_timeout = 9;
+    // connect_timeout
+    // @inject_tag: json:"connect_timeout" 
+    int32 connect_timeout = 10;
+}
+
+message Start {
+    // timestamp
+    // @inject_tag: json:"timestamp" 
+    int64 timestamp = 1;
+    // journal name
+    // @inject_tag: json:"journal_name" 
+    string journal_name = 2;
+    // position
+    // @inject_tag: json:"position" 
+    int64 position = 3;
+}

@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBRelationaldb";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/syncjob/column.proto";
+
+
+
+message RelationaldbSource {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // table
+    // @inject_tag: json:"table" 
+    repeated string table = 2;
+    // schema
+    // @inject_tag: json:"schema" 
+    string schema = 3;
+    // where
+    // @inject_tag: json:"where" 
+    string where = 4;
+    // split_pk
+    // @inject_tag: json:"split_pk" 
+    string split_pk = 5;
+}
+
+message RelationaldbTarget {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // table
+    // @inject_tag: json:"table" 
+    repeated string table = 2;
+    // schema
+    // @inject_tag: json:"schema" 
+    string schema = 3;
+    // pre sql
+    // @inject_tag: json:"pre_sql" 
+    repeated string pre_sql = 4;
+    // post sql
+    // @inject_tag: json:"post_sql" 
+    repeated string post_sql = 5;
+    // write mode
+    // @inject_tag: json:"write_mode" 
+    string write_mode = 6;
+    // batch size
+    // @inject_tag: json:"batch_size" 
+    int32 batch_size = 7;
+    // update key
+    // @inject_tag: json:"update_key" 
+    repeated string update_key = 8;
+    // mode
+    // @inject_tag: json:"mode" 
+    string mode = 9;
+    // semantic
+    // @inject_tag: json:"semantic" 
+    string semantic = 10;
+    // with no lock
+    // @inject_tag: json:"with_no_lock" 
+    string with_no_lock = 11;
+}

@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBLogminer";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+
+message LogMinerSource {
+    // table
+    // @inject_tag: json:"table" 
+    repeated string table = 1;
+    // split update
+    // @inject_tag: json:"split_update" 
+    bool split_update = 2;
+    // paving data
+    // @inject_tag: json:"paving_data" 
+    bool paving_data = 3;
+    // cat
+    // @inject_tag: json:"cat" 
+    string cat = 4;
+    // read position
+    // @inject_tag: json:"read_position" 
+    string read_position = 5;
+    // start time
+    // @inject_tag: json:"start_time" 
+    int64 start_time = 6;
+    // start scn
+    // @inject_tag: json:"start_scn" 
+    string start_scn = 7;
+    // fetch size
+    // @inject_tag: json:"fetch_size" 
+    int32 fetch_size = 8;
+    // support auto add log
+    // @inject_tag: json:"support_auto_add_log" 
+    bool support_auto_add_log = 9;
+    // support auto add log
+    // @inject_tag: json:"query_timeout" 
+    int32 query_timeout = 10;
+}
+

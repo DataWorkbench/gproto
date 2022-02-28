@@ -172,19 +172,19 @@ string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "
 model.SyncJobSchedule schedule = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
-// SetSyncJobArgs used as a request parameters for RPC.
-message SetSyncJobArgs {
+// SetSyncJobConf used as a request parameters for RPC.
+message SetSyncJobConf {
     // The workspace id in HTTP Request-URI
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The stream job ID it belongs to.
-// @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    // The stream job ID it belongs to.
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
-// The args set.
-// @inject_tag: json:"args"
-model.SyncJobArgs args = 3 [ (validator.field).tags.message = { not_null: true } ];
+    // The args set.
+    // @inject_tag: json:"args"
+    model.SyncJobConf conf = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 
@@ -199,8 +199,8 @@ message GetSyncJobSchedule {
     string version = 2 [(validator.field) = {}];
 }
 
-// GetSyncJobArgs used as a request parameters for RPC.
-message GetSyncJobArgs {
+// GetSyncJobConf used as a request parameters for RPC.
+message GetSyncJobConf {
     // The stream job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];

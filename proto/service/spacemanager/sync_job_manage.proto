@@ -42,11 +42,11 @@ service SyncJobManage {
     // DescribeSyncJob to get the info of the specified Sync job.
     rpc DescribeSyncJob(request.DescribeSyncJob) returns (response.DescribeSyncJob) {}
 
-    // SetSyncJobArgs to set the run parameters of the specified Sync job.
-    rpc SetSyncJobArgs(request.SetSyncJobArgs) returns (model.EmptyStruct) {}
+    // SetSyncJobConf to set the run parameters of the specified Sync job.
+    rpc SetSyncJobConf(request.SetSyncJobConf) returns (model.EmptyStruct) {}
 
-    // GetSyncJobArgs to get the run parameters of the specified Sync job.
-    rpc GetSyncJobArgs(request.GetSyncJobArgs) returns (response.GetSyncJobArgs) {}
+    // GetSyncJobConf to get the run parameters of the specified Sync job.
+    rpc GetSyncJobConf(request.GetSyncJobConf) returns (response.GetSyncJobConf) {}
 
     // SetSyncJobSchedule to set the schedule properties of the specified Sync job.
     rpc SetSyncJobSchedule(request.SetSyncJobSchedule) returns (model.EmptyStruct) {}
@@ -80,7 +80,7 @@ service SyncJobManage {
     rpc DescribeSyncJobVersion(request.DescribeSyncJob) returns (response.DescribeSyncJob) {}
 
     // GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
-    rpc GetSyncJobVersionArgs(request.GetSyncJobArgs) returns (response.GetSyncJobArgs) {}
+    rpc GetSyncJobVersionConf(request.GetSyncJobConf) returns (response.GetSyncJobConf) {}
 
     // GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
     rpc GetSyncJobVersionSchedule(request.GetSyncJobSchedule) returns (response.GetSyncJobSchedule) {}

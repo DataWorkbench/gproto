@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBKafka";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/syncjob/column.proto";
+
+
+message KafkaSource {
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // topic
+    // @inject_tag: json:"topic" 
+    string topic = 2;
+    // mode
+    // @inject_tag: json:"mode" 
+    string mode = 3;
+    // timestamp
+    // @inject_tag: json:"timestamp" 
+    int64 timestamp = 4;
+    // offset
+    // @inject_tag: json:"offset" 
+    string offset = 5;
+    // consumer group_id
+    // @inject_tag: json:"group_id" 
+    string group_id = 6;
+    // encoding
+    // @inject_tag: json:"encoding" 
+    string encoding = 7;
+    // codec
+    // @inject_tag: json:"codec" 
+    string codec = 8;
+    // kafka consumer settings
+    // @inject_tag: json:"consumer_settings" 
+    ConsumerSettings consumer_settings = 9;
+}
+
+message ConsumerSettings {
+    // auto commit position enable
+    // @inject_tag: json:"auto_commit_enable" 
+    string auto_commit_enable = 1;
+}
+
+message KafkaTarget {
+    // kafka tableFields
+    // @inject_tag: json:"tableFields" 
+    repeated Column tableFields = 1;
+    // kafka topic
+    // @inject_tag: json:"topic" 
+    string topic = 2;
+    // kafka consumer settings
+    // @inject_tag: json:"consumer_settings" 
+    ConsumerSettings consumer_settings = 3;
+}

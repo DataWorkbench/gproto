@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBFtp";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/syncjob/column.proto";
+
+
+message FtpSource {
+    // column
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // path
+    // @inject_tag: json:"path" 
+    string path = 2;
+    // private key path
+    // @inject_tag: json:"private_key_path" 
+    string private_key_path = 3;
+    // connect pattern
+    // @inject_tag: json:"connect_pattern" 
+    string connect_pattern = 4;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" 
+    string field_delimiter = 5;
+    // encoding
+    // @inject_tag: json:"encoding" 
+    string encoding = 6;
+    // control encoding
+    // @inject_tag: json:"control_encoding" 
+    string control_encoding = 7;
+    // is first line header
+    // @inject_tag: json:"is_first_line_header" 
+    bool is_first_line_header = 8;
+    // timeout
+    // @inject_tag: json:"timeout" 
+    string timeout = 9;
+    // file type
+    // @inject_tag: json:"file_type" 
+    string file_type = 10;
+    // compress type
+    // @inject_tag: json:"compress_type" 
+    string compress_type = 11;
+    // file_config
+    // @inject_tag: json:"file_config" 
+    string file_config = 12;
+
+}
+
+message FtpTarget {
+    // path
+    // @inject_tag: json:"column" 
+    repeated Column column = 1;
+    // path
+    // @inject_tag: json:"path" 
+    string path = 2;
+    // private key path
+    // @inject_tag: json:"private_key_path" 
+    string private_key_path = 3;
+    // connect pattern
+    // @inject_tag: json:"connect_pattern" 
+    string connect_pattern = 4;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" 
+    string field_delimiter = 5;
+    // encoding
+    // @inject_tag: json:"encoding" 
+    string encoding = 6;
+    // control encoding
+    // @inject_tag: json:"control_encoding" 
+    string control_encoding = 7;
+    // is first line header
+    // @inject_tag: json:"is_first_line_header" 
+    bool is_first_line_header = 8;
+    // ftp_file_name
+    // @inject_tag: json:"ftp_file_name" 
+    string ftp_file_name = 9;
+    // timeout
+    // @inject_tag: json:"timeout" 
+    int32 timeout = 10;
+}
