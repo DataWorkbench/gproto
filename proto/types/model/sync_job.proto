@@ -207,7 +207,7 @@ message SyncJobConf {
     // pgwal source
     // @inject_tag: json:"pgwal_source"
     PgWalSource pg_wal_source = 24;
-    // sqlservercdc source
+    // sqlserver cdc source
     // @inject_tag: json:"sql_server_cdc_source"
     SqlServerCdcSource sql_server_cdc_source = 25;
     // logminer source
