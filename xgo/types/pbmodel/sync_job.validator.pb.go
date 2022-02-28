@@ -451,8 +451,8 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_pg_wal_source() error {
 	return nil
 }
 
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() error {
-	if dt, ok := interface{}(this.SqlserverCdcSource).(interface{ Validate() error }); ok {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_sql_server_cdc_source() error {
+	if dt, ok := interface{}(this.SqlServerCdcSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -561,7 +561,7 @@ func (this *SyncJobConf) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_pg_wal_source(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_sqlserver_cdc_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sql_server_cdc_source(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_log_miner_source(); err != nil {

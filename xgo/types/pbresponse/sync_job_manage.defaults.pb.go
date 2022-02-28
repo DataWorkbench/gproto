@@ -44,8 +44,8 @@ func (this *GetSyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Args != nil {
-		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
+	if this.Conf != nil {
+		if dt, ok := interface{}(this.Conf).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

@@ -61,7 +61,7 @@ func (this *DescribeSyncJob) Validate() error {
 	return nil
 }
 
-func (this *GetSyncJobConf) _xxx_xxx_Validator_Validate_args() error {
+func (this *GetSyncJobConf) _xxx_xxx_Validator_Validate_conf() error {
 	return nil
 }
 
@@ -70,7 +70,7 @@ func (this *GetSyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_conf(); err != nil {
 		return err
 	}
 	return nil

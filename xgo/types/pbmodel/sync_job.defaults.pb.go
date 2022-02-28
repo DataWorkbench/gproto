@@ -138,8 +138,8 @@ func (this *SyncJobConf) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.SqlserverCdcSource != nil {
-		if dt, ok := interface{}(this.SqlserverCdcSource).(interface{ SetDefaults() }); ok {
+	if this.SqlServerCdcSource != nil {
+		if dt, ok := interface{}(this.SqlServerCdcSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
