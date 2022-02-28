@@ -213,7 +213,7 @@ message SyncJobConf {
     // logminer source
     // @inject_tag: json:"logminer_source"
     LogMinerSource log_miner_source = 26;
-    // redis target
+    // redis  target
     // @inject_tag: json:"redis_target"
     RedisTarget redis_target = 27;
     // hive target
