@@ -61,12 +61,12 @@ func (this *DescribeSyncJob) Validate() error {
 	return nil
 }
 
-func (this *GetSyncJobArgs) _xxx_xxx_Validator_Validate_args() error {
+func (this *GetSyncJobConf) _xxx_xxx_Validator_Validate_args() error {
 	return nil
 }
 
-// Set default value for message response.GetSyncJobArgs
-func (this *GetSyncJobArgs) Validate() error {
+// Set default value for message response.GetSyncJobConf
+func (this *GetSyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}

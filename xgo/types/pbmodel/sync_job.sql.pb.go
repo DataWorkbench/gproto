@@ -8,18 +8,19 @@ package pbmodel
 import (
 	driver "database/sql/driver"
 	json "encoding/json"
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *SyncJobArgs) Scan(val interface{}) error {
+func (t *SyncJobConf) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *SyncJobArgs) Value() (driver.Value, error) {
+func (t *SyncJobConf) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

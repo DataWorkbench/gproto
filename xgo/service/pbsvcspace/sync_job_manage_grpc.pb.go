@@ -45,10 +45,10 @@ type SyncJobManageClient interface {
 	UpdateSyncJob(ctx context.Context, in *pbrequest.UpdateSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// DescribeSyncJob to get the info of the specified Sync job.
 	DescribeSyncJob(ctx context.Context, in *pbrequest.DescribeSyncJob, opts ...grpc.CallOption) (*pbresponse.DescribeSyncJob, error)
-	// SetSyncJobArgs to set the run parameters of the specified Sync job.
-	SetSyncJobArgs(ctx context.Context, in *pbrequest.SetSyncJobArgs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// GetSyncJobArgs to get the run parameters of the specified Sync job.
-	GetSyncJobArgs(ctx context.Context, in *pbrequest.GetSyncJobArgs, opts ...grpc.CallOption) (*pbresponse.GetSyncJobArgs, error)
+	// SetSyncJobConf to set the run parameters of the specified Sync job.
+	SetSyncJobConf(ctx context.Context, in *pbrequest.SetSyncJobConf, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// GetSyncJobConf to get the run parameters of the specified Sync job.
+	GetSyncJobConf(ctx context.Context, in *pbrequest.GetSyncJobConf, opts ...grpc.CallOption) (*pbresponse.GetSyncJobConf, error)
 	// SetSyncJobSchedule to set the schedule properties of the specified Sync job.
 	SetSyncJobSchedule(ctx context.Context, in *pbrequest.SetSyncJobSchedule, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// GetSyncJobSchedule to get the schedule properties of the specified Sync job.
@@ -72,7 +72,7 @@ type SyncJobManageClient interface {
 	// DescribeSyncJobVersion for get the info of the job of the specified version.
 	DescribeSyncJobVersion(ctx context.Context, in *pbrequest.DescribeSyncJob, opts ...grpc.CallOption) (*pbresponse.DescribeSyncJob, error)
 	// GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
-	GetSyncJobVersionArgs(ctx context.Context, in *pbrequest.GetSyncJobArgs, opts ...grpc.CallOption) (*pbresponse.GetSyncJobArgs, error)
+	GetSyncJobVersionConf(ctx context.Context, in *pbrequest.GetSyncJobConf, opts ...grpc.CallOption) (*pbresponse.GetSyncJobConf, error)
 	// GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetSyncJobVersionSchedule(ctx context.Context, in *pbrequest.GetSyncJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
@@ -142,18 +142,18 @@ func (c *syncJobManageClient) DescribeSyncJob(ctx context.Context, in *pbrequest
 	return out, nil
 }
 
-func (c *syncJobManageClient) SetSyncJobArgs(ctx context.Context, in *pbrequest.SetSyncJobArgs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *syncJobManageClient) SetSyncJobConf(ctx context.Context, in *pbrequest.SetSyncJobConf, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/SetSyncJobArgs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/SetSyncJobConf", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *syncJobManageClient) GetSyncJobArgs(ctx context.Context, in *pbrequest.GetSyncJobArgs, opts ...grpc.CallOption) (*pbresponse.GetSyncJobArgs, error) {
-	out := new(pbresponse.GetSyncJobArgs)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GetSyncJobArgs", in, out, opts...)
+func (c *syncJobManageClient) GetSyncJobConf(ctx context.Context, in *pbrequest.GetSyncJobConf, opts ...grpc.CallOption) (*pbresponse.GetSyncJobConf, error) {
+	out := new(pbresponse.GetSyncJobConf)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GetSyncJobConf", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -241,9 +241,9 @@ func (c *syncJobManageClient) DescribeSyncJobVersion(ctx context.Context, in *pb
 	return out, nil
 }
 
-func (c *syncJobManageClient) GetSyncJobVersionArgs(ctx context.Context, in *pbrequest.GetSyncJobArgs, opts ...grpc.CallOption) (*pbresponse.GetSyncJobArgs, error) {
-	out := new(pbresponse.GetSyncJobArgs)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GetSyncJobVersionArgs", in, out, opts...)
+func (c *syncJobManageClient) GetSyncJobVersionConf(ctx context.Context, in *pbrequest.GetSyncJobConf, opts ...grpc.CallOption) (*pbresponse.GetSyncJobConf, error) {
+	out := new(pbresponse.GetSyncJobConf)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GetSyncJobVersionConf", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -292,10 +292,10 @@ type SyncJobManageServer interface {
 	UpdateSyncJob(context.Context, *pbrequest.UpdateSyncJob) (*pbmodel.EmptyStruct, error)
 	// DescribeSyncJob to get the info of the specified Sync job.
 	DescribeSyncJob(context.Context, *pbrequest.DescribeSyncJob) (*pbresponse.DescribeSyncJob, error)
-	// SetSyncJobArgs to set the run parameters of the specified Sync job.
-	SetSyncJobArgs(context.Context, *pbrequest.SetSyncJobArgs) (*pbmodel.EmptyStruct, error)
-	// GetSyncJobArgs to get the run parameters of the specified Sync job.
-	GetSyncJobArgs(context.Context, *pbrequest.GetSyncJobArgs) (*pbresponse.GetSyncJobArgs, error)
+	// SetSyncJobConf to set the run parameters of the specified Sync job.
+	SetSyncJobConf(context.Context, *pbrequest.SetSyncJobConf) (*pbmodel.EmptyStruct, error)
+	// GetSyncJobConf to get the run parameters of the specified Sync job.
+	GetSyncJobConf(context.Context, *pbrequest.GetSyncJobConf) (*pbresponse.GetSyncJobConf, error)
 	// SetSyncJobSchedule to set the schedule properties of the specified Sync job.
 	SetSyncJobSchedule(context.Context, *pbrequest.SetSyncJobSchedule) (*pbmodel.EmptyStruct, error)
 	// GetSyncJobSchedule to get the schedule properties of the specified Sync job.
@@ -319,7 +319,7 @@ type SyncJobManageServer interface {
 	// DescribeSyncJobVersion for get the info of the job of the specified version.
 	DescribeSyncJobVersion(context.Context, *pbrequest.DescribeSyncJob) (*pbresponse.DescribeSyncJob, error)
 	// GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
-	GetSyncJobVersionArgs(context.Context, *pbrequest.GetSyncJobArgs) (*pbresponse.GetSyncJobArgs, error)
+	GetSyncJobVersionConf(context.Context, *pbrequest.GetSyncJobConf) (*pbresponse.GetSyncJobConf, error)
 	// GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
@@ -350,11 +350,11 @@ func (UnimplementedSyncJobManageServer) UpdateSyncJob(context.Context, *pbreques
 func (UnimplementedSyncJobManageServer) DescribeSyncJob(context.Context, *pbrequest.DescribeSyncJob) (*pbresponse.DescribeSyncJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncJob not implemented")
 }
-func (UnimplementedSyncJobManageServer) SetSyncJobArgs(context.Context, *pbrequest.SetSyncJobArgs) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetSyncJobArgs not implemented")
+func (UnimplementedSyncJobManageServer) SetSyncJobConf(context.Context, *pbrequest.SetSyncJobConf) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSyncJobConf not implemented")
 }
-func (UnimplementedSyncJobManageServer) GetSyncJobArgs(context.Context, *pbrequest.GetSyncJobArgs) (*pbresponse.GetSyncJobArgs, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobArgs not implemented")
+func (UnimplementedSyncJobManageServer) GetSyncJobConf(context.Context, *pbrequest.GetSyncJobConf) (*pbresponse.GetSyncJobConf, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobConf not implemented")
 }
 func (UnimplementedSyncJobManageServer) SetSyncJobSchedule(context.Context, *pbrequest.SetSyncJobSchedule) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSyncJobSchedule not implemented")
@@ -383,8 +383,8 @@ func (UnimplementedSyncJobManageServer) ListSyncJobVersions(context.Context, *pb
 func (UnimplementedSyncJobManageServer) DescribeSyncJobVersion(context.Context, *pbrequest.DescribeSyncJob) (*pbresponse.DescribeSyncJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncJobVersion not implemented")
 }
-func (UnimplementedSyncJobManageServer) GetSyncJobVersionArgs(context.Context, *pbrequest.GetSyncJobArgs) (*pbresponse.GetSyncJobArgs, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobVersionArgs not implemented")
+func (UnimplementedSyncJobManageServer) GetSyncJobVersionConf(context.Context, *pbrequest.GetSyncJobConf) (*pbresponse.GetSyncJobConf, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobVersionConf not implemented")
 }
 func (UnimplementedSyncJobManageServer) GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobVersionSchedule not implemented")
@@ -513,38 +513,38 @@ func _SyncJobManage_DescribeSyncJob_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_SetSyncJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.SetSyncJobArgs)
+func _SyncJobManage_SetSyncJobConf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SetSyncJobConf)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SyncJobManageServer).SetSyncJobArgs(ctx, in)
+		return srv.(SyncJobManageServer).SetSyncJobConf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/SetSyncJobArgs",
+		FullMethod: "/spacemanager.SyncJobManage/SetSyncJobConf",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).SetSyncJobArgs(ctx, req.(*pbrequest.SetSyncJobArgs))
+		return srv.(SyncJobManageServer).SetSyncJobConf(ctx, req.(*pbrequest.SetSyncJobConf))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_GetSyncJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.GetSyncJobArgs)
+func _SyncJobManage_GetSyncJobConf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GetSyncJobConf)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SyncJobManageServer).GetSyncJobArgs(ctx, in)
+		return srv.(SyncJobManageServer).GetSyncJobConf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/GetSyncJobArgs",
+		FullMethod: "/spacemanager.SyncJobManage/GetSyncJobConf",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).GetSyncJobArgs(ctx, req.(*pbrequest.GetSyncJobArgs))
+		return srv.(SyncJobManageServer).GetSyncJobConf(ctx, req.(*pbrequest.GetSyncJobConf))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -711,20 +711,20 @@ func _SyncJobManage_DescribeSyncJobVersion_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_GetSyncJobVersionArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.GetSyncJobArgs)
+func _SyncJobManage_GetSyncJobVersionConf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GetSyncJobConf)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SyncJobManageServer).GetSyncJobVersionArgs(ctx, in)
+		return srv.(SyncJobManageServer).GetSyncJobVersionConf(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/GetSyncJobVersionArgs",
+		FullMethod: "/spacemanager.SyncJobManage/GetSyncJobVersionConf",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).GetSyncJobVersionArgs(ctx, req.(*pbrequest.GetSyncJobArgs))
+		return srv.(SyncJobManageServer).GetSyncJobVersionConf(ctx, req.(*pbrequest.GetSyncJobConf))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -797,12 +797,12 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SyncJobManage_DescribeSyncJob_Handler,
 		},
 		{
-			MethodName: "SetSyncJobArgs",
-			Handler:    _SyncJobManage_SetSyncJobArgs_Handler,
+			MethodName: "SetSyncJobConf",
+			Handler:    _SyncJobManage_SetSyncJobConf_Handler,
 		},
 		{
-			MethodName: "GetSyncJobArgs",
-			Handler:    _SyncJobManage_GetSyncJobArgs_Handler,
+			MethodName: "GetSyncJobConf",
+			Handler:    _SyncJobManage_GetSyncJobConf_Handler,
 		},
 		{
 			MethodName: "SetSyncJobSchedule",
@@ -841,8 +841,8 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SyncJobManage_DescribeSyncJobVersion_Handler,
 		},
 		{
-			MethodName: "GetSyncJobVersionArgs",
-			Handler:    _SyncJobManage_GetSyncJobVersionArgs_Handler,
+			MethodName: "GetSyncJobVersionConf",
+			Handler:    _SyncJobManage_GetSyncJobVersionConf_Handler,
 		},
 		{
 			MethodName: "GetSyncJobVersionSchedule",

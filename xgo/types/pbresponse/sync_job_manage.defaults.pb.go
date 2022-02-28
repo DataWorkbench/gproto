@@ -39,8 +39,8 @@ func (this *DescribeSyncJob) SetDefaults() {
 	return
 }
 
-// Set default value for message response.GetSyncJobArgs
-func (this *GetSyncJobArgs) SetDefaults() {
+// Set default value for message response.GetSyncJobConf
+func (this *GetSyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}

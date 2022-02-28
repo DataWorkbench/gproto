@@ -75,13 +75,13 @@ func (this *SetSyncJobSchedule) SetDefaults() {
 	return
 }
 
-// Set default value for message request.SetSyncJobArgs
-func (this *SetSyncJobArgs) SetDefaults() {
+// Set default value for message request.SetSyncJobConf
+func (this *SetSyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Args != nil {
-		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
+	if this.Conf != nil {
+		if dt, ok := interface{}(this.Conf).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -96,8 +96,8 @@ func (this *GetSyncJobSchedule) SetDefaults() {
 	return
 }
 
-// Set default value for message request.GetSyncJobArgs
-func (this *GetSyncJobArgs) SetDefaults() {
+// Set default value for message request.GetSyncJobConf
+func (this *GetSyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}

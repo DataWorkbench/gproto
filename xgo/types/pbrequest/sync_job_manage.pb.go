@@ -580,8 +580,8 @@ func (x *SetSyncJobSchedule) GetSchedule() *pbmodel.SyncJobSchedule {
 	return nil
 }
 
-// SetSyncJobArgs used as a request parameters for RPC.
-type SetSyncJobArgs struct {
+// SetSyncJobConf used as a request parameters for RPC.
+type SetSyncJobConf struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -591,11 +591,11 @@ type SetSyncJobArgs struct {
 	// The stream job ID it belongs to.
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// The args set.
-	Args *pbmodel.SyncJobArgs `protobuf:"bytes,3,opt,name=args,proto3" json:"args"`
+	Conf *pbmodel.SyncJobConf `protobuf:"bytes,3,opt,name=conf,proto3" json:"args"`
 }
 
-func (x *SetSyncJobArgs) Reset() {
-	*x = SetSyncJobArgs{}
+func (x *SetSyncJobConf) Reset() {
+	*x = SetSyncJobConf{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -603,13 +603,13 @@ func (x *SetSyncJobArgs) Reset() {
 	}
 }
 
-func (x *SetSyncJobArgs) String() string {
+func (x *SetSyncJobConf) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SetSyncJobArgs) ProtoMessage() {}
+func (*SetSyncJobConf) ProtoMessage() {}
 
-func (x *SetSyncJobArgs) ProtoReflect() protoreflect.Message {
+func (x *SetSyncJobConf) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -621,28 +621,28 @@ func (x *SetSyncJobArgs) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SetSyncJobArgs.ProtoReflect.Descriptor instead.
-func (*SetSyncJobArgs) Descriptor() ([]byte, []int) {
+// Deprecated: Use SetSyncJobConf.ProtoReflect.Descriptor instead.
+func (*SetSyncJobConf) Descriptor() ([]byte, []int) {
 	return file_proto_types_request_sync_job_manage_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *SetSyncJobArgs) GetSpaceId() string {
+func (x *SetSyncJobConf) GetSpaceId() string {
 	if x != nil {
 		return x.SpaceId
 	}
 	return ""
 }
 
-func (x *SetSyncJobArgs) GetJobId() string {
+func (x *SetSyncJobConf) GetJobId() string {
 	if x != nil {
 		return x.JobId
 	}
 	return ""
 }
 
-func (x *SetSyncJobArgs) GetArgs() *pbmodel.SyncJobArgs {
+func (x *SetSyncJobConf) GetConf() *pbmodel.SyncJobConf {
 	if x != nil {
-		return x.Args
+		return x.Conf
 	}
 	return nil
 }
@@ -705,8 +705,8 @@ func (x *GetSyncJobSchedule) GetVersion() string {
 	return ""
 }
 
-// GetSyncJobArgs used as a request parameters for RPC.
-type GetSyncJobArgs struct {
+// GetSyncJobConf used as a request parameters for RPC.
+type GetSyncJobConf struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -717,8 +717,8 @@ type GetSyncJobArgs struct {
 	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version" uri:"ver_id" swaggerignore:"true"`
 }
 
-func (x *GetSyncJobArgs) Reset() {
-	*x = GetSyncJobArgs{}
+func (x *GetSyncJobConf) Reset() {
+	*x = GetSyncJobConf{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -726,13 +726,13 @@ func (x *GetSyncJobArgs) Reset() {
 	}
 }
 
-func (x *GetSyncJobArgs) String() string {
+func (x *GetSyncJobConf) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSyncJobArgs) ProtoMessage() {}
+func (*GetSyncJobConf) ProtoMessage() {}
 
-func (x *GetSyncJobArgs) ProtoReflect() protoreflect.Message {
+func (x *GetSyncJobConf) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -744,19 +744,19 @@ func (x *GetSyncJobArgs) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSyncJobArgs.ProtoReflect.Descriptor instead.
-func (*GetSyncJobArgs) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetSyncJobConf.ProtoReflect.Descriptor instead.
+func (*GetSyncJobConf) Descriptor() ([]byte, []int) {
 	return file_proto_types_request_sync_job_manage_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetSyncJobArgs) GetJobId() string {
+func (x *GetSyncJobConf) GetJobId() string {
 	if x != nil {
 		return x.JobId
 	}
 	return ""
 }
 
-func (x *GetSyncJobArgs) GetVersion() string {
+func (x *GetSyncJobConf) GetVersion() string {
 	if x != nil {
 		return x.Version
 	}
@@ -1392,24 +1392,24 @@ var file_proto_types_request_sync_job_manage_proto_rawDesc = []byte{
 	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x53, 0x63, 0x68, 0x65,
 	0x64, 0x75, 0x6c, 0x65, 0x42, 0x0b, 0xe2, 0xdf, 0x1f, 0x07, 0x12, 0x05, 0xe2, 0x01, 0x02, 0x10,
 	0x01, 0x52, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x22, 0xa1, 0x01, 0x0a, 0x0e,
-	0x53, 0x65, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x41, 0x72, 0x67, 0x73, 0x12, 0x2e,
+	0x53, 0x65, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x66, 0x12, 0x2e,
 	0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
 	0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2a,
 	0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13,
 	0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73,
-	0x74, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x33, 0x0a, 0x04, 0x61, 0x72,
-	0x67, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x41, 0x72, 0x67, 0x73, 0x42, 0x0b, 0xe2, 0xdf,
-	0x1f, 0x07, 0x12, 0x05, 0xe2, 0x01, 0x02, 0x10, 0x01, 0x52, 0x04, 0x61, 0x72, 0x67, 0x73, 0x22,
+	0x74, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x33, 0x0a, 0x04, 0x63, 0x6f,
+	0x6e, 0x66, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x66, 0x42, 0x0b, 0xe2, 0xdf,
+	0x1f, 0x07, 0x12, 0x05, 0xe2, 0x01, 0x02, 0x10, 0x01, 0x52, 0x04, 0x63, 0x6f, 0x6e, 0x66, 0x22,
 	0x60, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x53, 0x63, 0x68,
 	0x65, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a,
 	0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73, 0x74, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49,
 	0x64, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
-	0x6e, 0x22, 0x5c, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x41,
-	0x72, 0x67, 0x73, 0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x6e, 0x22, 0x5c, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43,
+	0x6f, 0x6e, 0x66, 0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01,
 	0x14, 0xca, 0x02, 0x04, 0x73, 0x74, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12,
 	0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
@@ -1526,9 +1526,9 @@ var file_proto_types_request_sync_job_manage_proto_goTypes = []interface{}{
 	(*UpdateSyncJob)(nil),                   // 4: request.UpdateSyncJob
 	(*DescribeSyncJob)(nil),                 // 5: request.DescribeSyncJob
 	(*SetSyncJobSchedule)(nil),              // 6: request.SetSyncJobSchedule
-	(*SetSyncJobArgs)(nil),                  // 7: request.SetSyncJobArgs
+	(*SetSyncJobConf)(nil),                  // 7: request.SetSyncJobConf
 	(*GetSyncJobSchedule)(nil),              // 8: request.GetSyncJobSchedule
-	(*GetSyncJobArgs)(nil),                  // 9: request.GetSyncJobArgs
+	(*GetSyncJobConf)(nil),                  // 9: request.GetSyncJobConf
 	(*ListReleaseSyncJobs)(nil),             // 10: request.ListReleaseSyncJobs
 	(*ReleaseSyncJob)(nil),                  // 11: request.ReleaseSyncJob
 	(*OfflineReleaseSyncJob)(nil),           // 12: request.OfflineReleaseSyncJob
@@ -1538,13 +1538,13 @@ var file_proto_types_request_sync_job_manage_proto_goTypes = []interface{}{
 	(*DescribeSyncFlinkUIByInstanceId)(nil), // 16: request.DescribeSyncFlinkUIByInstanceId
 	(pbmodel.SyncJob_Type)(0),               // 17: model.SyncJob.Type
 	(*pbmodel.SyncJobSchedule)(nil),         // 18: model.SyncJobSchedule
-	(*pbmodel.SyncJobArgs)(nil),             // 19: model.SyncJobArgs
+	(*pbmodel.SyncJobConf)(nil),             // 19: model.SyncJobConf
 	(pbmodel.SyncJobRelease_Status)(0),      // 20: model.SyncJobRelease.Status
 }
 var file_proto_types_request_sync_job_manage_proto_depIdxs = []int32{
 	17, // 0: request.CreateSyncJob.type:type_name -> model.SyncJob.Type
 	18, // 1: request.SetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
-	19, // 2: request.SetSyncJobArgs.args:type_name -> model.SyncJobArgs
+	19, // 2: request.SetSyncJobConf.conf:type_name -> model.SyncJobConf
 	20, // 3: request.ListReleaseSyncJobs.status:type_name -> model.SyncJobRelease.Status
 	4,  // [4:4] is the sub-list for method output_type
 	4,  // [4:4] is the sub-list for method input_type
@@ -1644,7 +1644,7 @@ func file_proto_types_request_sync_job_manage_proto_init() {
 			}
 		}
 		file_proto_types_request_sync_job_manage_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SetSyncJobArgs); i {
+			switch v := v.(*SetSyncJobConf); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1668,7 +1668,7 @@ func file_proto_types_request_sync_job_manage_proto_init() {
 			}
 		}
 		file_proto_types_request_sync_job_manage_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSyncJobArgs); i {
+			switch v := v.(*GetSyncJobConf); i {
 			case 0:
 				return &v.state
 			case 1:

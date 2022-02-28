@@ -413,31 +413,31 @@ func (this *SetSyncJobSchedule) Validate() error {
 	return nil
 }
 
-func (this *SetSyncJobArgs) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *SetSyncJobConf) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("SetSyncJobArgs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("SetSyncJobConf", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("SetSyncJobArgs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("SetSyncJobConf", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *SetSyncJobArgs) _xxx_xxx_Validator_Validate_job_id() error {
+func (this *SetSyncJobConf) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("SetSyncJobArgs", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+		return protovalidator.FieldError1("SetSyncJobConf", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
 	if !(strings.HasPrefix(this.JobId, "stj-")) {
-		return protovalidator.FieldError1("SetSyncJobArgs", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+		return protovalidator.FieldError1("SetSyncJobConf", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
 
-func (this *SetSyncJobArgs) _xxx_xxx_Validator_Validate_args() error {
-	if !(this.Args != nil) {
-		return protovalidator.FieldError2("SetSyncJobArgs", "the value of field 'args' cannot be null")
+func (this *SetSyncJobConf) _xxx_xxx_Validator_Validate_conf() error {
+	if !(this.Conf != nil) {
+		return protovalidator.FieldError2("SetSyncJobConf", "the value of field 'conf' cannot be null")
 	}
-	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
+	if dt, ok := interface{}(this.Conf).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -445,8 +445,8 @@ func (this *SetSyncJobArgs) _xxx_xxx_Validator_Validate_args() error {
 	return nil
 }
 
-// Set default value for message request.SetSyncJobArgs
-func (this *SetSyncJobArgs) Validate() error {
+// Set default value for message request.SetSyncJobConf
+func (this *SetSyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -456,7 +456,7 @@ func (this *SetSyncJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_conf(); err != nil {
 		return err
 	}
 	return nil
@@ -483,18 +483,18 @@ func (this *GetSyncJobSchedule) Validate() error {
 	return nil
 }
 
-func (this *GetSyncJobArgs) _xxx_xxx_Validator_Validate_job_id() error {
+func (this *GetSyncJobConf) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("GetSyncJobArgs", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+		return protovalidator.FieldError1("GetSyncJobConf", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
 	if !(strings.HasPrefix(this.JobId, "stj-")) {
-		return protovalidator.FieldError1("GetSyncJobArgs", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+		return protovalidator.FieldError1("GetSyncJobConf", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
 
-// Set default value for message request.GetSyncJobArgs
-func (this *GetSyncJobArgs) Validate() error {
+// Set default value for message request.GetSyncJobConf
+func (this *GetSyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}

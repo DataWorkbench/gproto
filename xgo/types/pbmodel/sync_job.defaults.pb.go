@@ -6,6 +6,7 @@
 package pbmodel
 
 import (
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
@@ -24,8 +25,8 @@ func (this *SyncJobProperty) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Args != nil {
-		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
+	if this.Conf != nil {
+		if dt, ok := interface{}(this.Conf).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -37,8 +38,8 @@ func (this *SyncJobProperty) SetDefaults() {
 	return
 }
 
-// Set default value for message model.SyncJobArgs
-func (this *SyncJobArgs) SetDefaults() {
+// Set default value for message model.SyncJobConf
+func (this *SyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -170,262 +171,6 @@ func (this *SyncJobSchedule) SetDefaults() {
 
 // Set default value for message model.SyncJobRelease
 func (this *SyncJobRelease) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.Column
-func (this *Column) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.RelationaldbSource
-func (this *RelationaldbSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.RelationaldbTarget
-func (this *RelationaldbTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.MongodbSource
-func (this *MongodbSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.MongodbTarget
-func (this *MongodbTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.ElasticSearchSource
-func (this *ElasticSearchSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.ElasticSearchTarget
-func (this *ElasticSearchTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.LogMinerSource
-func (this *LogMinerSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.PgWalSource
-func (this *PgWalSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.SqlServerCdcSource
-func (this *SqlServerCdcSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.BinlogSource
-func (this *BinlogSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Start != nil {
-		if dt, ok := interface{}(this.Start).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Start
-func (this *Start) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HiveTarget
-func (this *HiveTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HdfsSource
-func (this *HdfsSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HdfsTarget
-func (this *HdfsTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.FtpSource
-func (this *FtpSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.FtpTarget
-func (this *FtpTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HbaseSource
-func (this *HbaseSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.HbaseReadParameter
-func (this *HbaseReadParameter) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Range != nil {
-		if dt, ok := interface{}(this.Range).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Range
-func (this *Range) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HbaseTarget
-func (this *HbaseTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Table
-func (this *Table) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HbaseWriteParameter
-func (this *HbaseWriteParameter) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.KafkaSource
-func (this *KafkaSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.ConsumerSettings != nil {
-		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.ConsumerSettings
-func (this *ConsumerSettings) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.KafkaTarget
-func (this *KafkaTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.ConsumerSettings != nil {
-		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.RedisTarget
-func (this *RedisTarget) SetDefaults() {
 	if this == nil {
 		return
 	}

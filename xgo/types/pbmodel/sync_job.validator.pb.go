@@ -6,6 +6,7 @@
 package pbmodel
 
 import (
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
@@ -201,8 +202,8 @@ func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_version() error {
 	return nil
 }
 
-func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_args() error {
-	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
+func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_conf() error {
+	if dt, ok := interface{}(this.Conf).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -233,7 +234,7 @@ func (this *SyncJobProperty) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_conf(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_schedule(); err != nil {
@@ -242,71 +243,71 @@ func (this *SyncJobProperty) Validate() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_source_id() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("SyncJobArgs", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
 	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_target_id() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_target_id() error {
 	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("SyncJobArgs", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
+		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
 	}
 	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_parallelism() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_parallelism() error {
 	if !(this.Parallelism > 0) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'parallelism' must be greater than '0'", protovalidator.Int32ToString(this.Parallelism))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'parallelism' must be greater than '0'", protovalidator.Int32ToString(this.Parallelism))
 	}
 	if !(this.Parallelism <= 100) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'parallelism' must be less than or equal to '100'", protovalidator.Int32ToString(this.Parallelism))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'parallelism' must be less than or equal to '100'", protovalidator.Int32ToString(this.Parallelism))
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_percentage() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_percentage() error {
 	if !(this.Percentage > 0) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'percentage' must be greater than '0'", protovalidator.Int32ToString(this.Percentage))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'percentage' must be greater than '0'", protovalidator.Int32ToString(this.Percentage))
 	}
 	if !(this.Percentage <= 100) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'percentage' must be less than or equal to '100'", protovalidator.Int32ToString(this.Percentage))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'percentage' must be less than or equal to '100'", protovalidator.Int32ToString(this.Percentage))
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_record_num() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_record_num() error {
 	if !(this.RecordNum > 0) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'record_num' must be greater than '0'", protovalidator.Int32ToString(this.RecordNum))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'record_num' must be greater than '0'", protovalidator.Int32ToString(this.RecordNum))
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_bytes() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_bytes() error {
 	if !(this.Bytes > 0) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'bytes' must be greater than '0'", protovalidator.Int32ToString(this.Bytes))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'bytes' must be greater than '0'", protovalidator.Int32ToString(this.Bytes))
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_job_mode() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
 	if !(this.JobMode >= 0) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(this.JobMode))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(this.JobMode))
 	}
 	if !(this.JobMode <= 1) {
-		return protovalidator.FieldError1("SyncJobArgs", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(this.JobMode))
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(this.JobMode))
 	}
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_relationaldb_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_relationaldb_source() error {
 	if dt, ok := interface{}(this.RelationaldbSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -315,7 +316,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_relationaldb_source() error
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_relationaldb_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_relationaldb_target() error {
 	if dt, ok := interface{}(this.RelationaldbTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -324,7 +325,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_relationaldb_target() error
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_mongodb_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_mongodb_source() error {
 	if dt, ok := interface{}(this.MongodbSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -333,7 +334,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_mongodb_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_mongodb_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_mongodb_target() error {
 	if dt, ok := interface{}(this.MongodbTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -342,7 +343,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_mongodb_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_elastic_search_source() error {
 	if dt, ok := interface{}(this.ElasticSearchSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -351,7 +352,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_source() err
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_elastic_search_target() error {
 	if dt, ok := interface{}(this.ElasticSearchTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -360,7 +361,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_target() err
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hdfs_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_hdfs_source() error {
 	if dt, ok := interface{}(this.HdfsSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -369,7 +370,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hdfs_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hdfs_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_hdfs_target() error {
 	if dt, ok := interface{}(this.HdfsTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -378,7 +379,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hdfs_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_ftp_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_ftp_source() error {
 	if dt, ok := interface{}(this.FtpSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -387,7 +388,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_ftp_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_ftp_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_ftp_target() error {
 	if dt, ok := interface{}(this.FtpTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -396,7 +397,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_ftp_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hbase_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_hbase_source() error {
 	if dt, ok := interface{}(this.HbaseSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -405,7 +406,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hbase_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hbase_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_hbase_target() error {
 	if dt, ok := interface{}(this.HbaseTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -414,7 +415,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hbase_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_kafka_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_kafka_source() error {
 	if dt, ok := interface{}(this.KafkaSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -423,7 +424,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_kafka_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_kafka_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_kafka_target() error {
 	if dt, ok := interface{}(this.KafkaTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -432,7 +433,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_kafka_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_binlog_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_binlog_source() error {
 	if dt, ok := interface{}(this.BinlogSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -441,7 +442,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_binlog_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_pg_wal_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_pg_wal_source() error {
 	if dt, ok := interface{}(this.PgWalSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -450,7 +451,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_pg_wal_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() error {
 	if dt, ok := interface{}(this.SqlserverCdcSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -459,7 +460,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() erro
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_log_miner_source() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_log_miner_source() error {
 	if dt, ok := interface{}(this.LogMinerSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -468,7 +469,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_log_miner_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_redis_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_redis_target() error {
 	if dt, ok := interface{}(this.RedisTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -477,7 +478,7 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_redis_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hive_target() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_hive_target() error {
 	if dt, ok := interface{}(this.HiveTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -486,8 +487,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_hive_target() error {
 	return nil
 }
 
-// Set default value for message model.SyncJobArgs
-func (this *SyncJobArgs) Validate() error {
+// Set default value for message model.SyncJobConf
+func (this *SyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -867,528 +868,6 @@ func (this *SyncJobRelease) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Column
-func (this *Column) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *RelationaldbSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.RelationaldbSource
-func (this *RelationaldbSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *RelationaldbTarget) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.RelationaldbTarget
-func (this *RelationaldbTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *MongodbSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.MongodbSource
-func (this *MongodbSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *MongodbTarget) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.MongodbTarget
-func (this *MongodbTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ElasticSearchSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.ElasticSearchSource
-func (this *ElasticSearchSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ElasticSearchTarget) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.ElasticSearchTarget
-func (this *ElasticSearchTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.LogMinerSource
-func (this *LogMinerSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-// Set default value for message model.PgWalSource
-func (this *PgWalSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-// Set default value for message model.SqlServerCdcSource
-func (this *SqlServerCdcSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *BinlogSource) _xxx_xxx_Validator_Validate_start() error {
-	if dt, ok := interface{}(this.Start).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.BinlogSource
-func (this *BinlogSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_start(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Start
-func (this *Start) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-// Set default value for message model.HiveTarget
-func (this *HiveTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *HdfsSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HdfsSource
-func (this *HdfsSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *HdfsTarget) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HdfsTarget
-func (this *HdfsTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *FtpSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.FtpSource
-func (this *FtpSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *FtpTarget) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.FtpTarget
-func (this *FtpTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *HbaseSource) _xxx_xxx_Validator_Validate_parameter() error {
-	if dt, ok := interface{}(this.Parameter).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *HbaseSource) _xxx_xxx_Validator_Validate_table() error {
-	if dt, ok := interface{}(this.Table).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HbaseSource
-func (this *HbaseSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_parameter(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_table(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_range() error {
-	if dt, ok := interface{}(this.Range).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HbaseReadParameter
-func (this *HbaseReadParameter) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_range(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Range
-func (this *Range) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *HbaseTarget) _xxx_xxx_Validator_Validate_parameter() error {
-	if dt, ok := interface{}(this.Parameter).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *HbaseTarget) _xxx_xxx_Validator_Validate_table() error {
-	if dt, ok := interface{}(this.Table).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HbaseTarget
-func (this *HbaseTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_parameter(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_table(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Table
-func (this *Table) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *HbaseWriteParameter) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.HbaseWriteParameter
-func (this *HbaseWriteParameter) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *KafkaSource) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *KafkaSource) _xxx_xxx_Validator_Validate_consumer_settings() error {
-	if dt, ok := interface{}(this.ConsumerSettings).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.KafkaSource
-func (this *KafkaSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_consumer_settings(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.ConsumerSettings
-func (this *ConsumerSettings) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *KafkaTarget) _xxx_xxx_Validator_Validate_tableFields() error {
-	for _, item := range this.TableFields {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *KafkaTarget) _xxx_xxx_Validator_Validate_consumer_settings() error {
-	if dt, ok := interface{}(this.ConsumerSettings).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message model.KafkaTarget
-func (this *KafkaTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_tableFields(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_consumer_settings(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.RedisTarget
-func (this *RedisTarget) Validate() error {
-	if this == nil {
-		return nil
 	}
 	return nil
 }
