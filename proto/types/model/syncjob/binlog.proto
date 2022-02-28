@@ -15,7 +15,6 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 import "proto/types/model/syncjob/column.proto";
 
-
 message BinlogSource {
     // schema
     // @inject_tag: json:"schema" 
