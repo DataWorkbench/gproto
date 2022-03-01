@@ -14,6 +14,7 @@ import "proto/types/model/empty.proto";
 import "proto/types/request/udf_manage.proto";
 import "proto/types/response/udf_manage.proto";
 
+// TODO: Reserved structure. unused on present.
 service UDFManage {
   rpc ListUDFs(request.ListUDFs)       returns (response.ListUDFs) {}
   rpc DeleteUDFs(request.DeleteUDFs)   returns (model.EmptyStruct) {}

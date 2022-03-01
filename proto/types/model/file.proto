@@ -12,15 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
-
 message File {
-  enum Type {
-    ResourceUnset = 0;
-    Jar = 1;
-    Udf = 2;
-    CONNECTOR = 3;
-  }
-
   enum Status {
     StatusUnset = 0;
     Deleted = 1;
@@ -58,10 +50,6 @@ message File {
   // ETag is MD5 value of file data encoded in hexadecimal.
   // @inject_tag: json:"etag" gorm:"etag;"
   string etag = 8 [ (validator.field).tags.string = { byte_len_eq: 32 } ];
-
-  // File type, 1 => "jar", 2 => "udf" 3 => "connector".
-  // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // File status, 1 => "deleted", 2 => "enabled"
   // @inject_tag: json:"status" gorm:"column:status;"
