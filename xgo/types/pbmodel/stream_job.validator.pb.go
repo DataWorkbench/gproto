@@ -87,7 +87,7 @@ func (this *StreamJob) _xxx_xxx_Validator_CheckIf_type() bool {
 	return true
 }
 
-var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
 
 func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
@@ -97,7 +97,7 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
 		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJob_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -259,14 +259,14 @@ func (this *StreamJobProperty) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_StreamJobCode_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+var _xxx_xxx_Validator_StreamJobCode_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
 
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobCode_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -420,41 +420,11 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_parallelism() error {
 	return nil
 }
 
-func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_udfs() bool {
-	if !(len(this.Udfs) > 0) {
-		return false
-	}
-	return true
-}
-
-func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_udfs() error {
-	if !this._xxx_xxx_Validator_CheckIf_udfs() {
-		return nil
-	}
-	for _, item := range this.Udfs {
-		_ = item // To avoid unused panics.
-		if !(strings.HasPrefix(item, "udf-")) {
-			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'udfs' must start with string 'udf-'", item)
-		}
-	}
-	return nil
-}
-
-func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_connectors() bool {
-	if !(len(this.Connectors) > 0) {
-		return false
-	}
-	return true
-}
-
-func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_connectors() error {
-	if !this._xxx_xxx_Validator_CheckIf_connectors() {
-		return nil
-	}
-	for _, item := range this.Connectors {
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_files() error {
+	for _, item := range this.Files {
 		_ = item // To avoid unused panics.
 		if !(strings.HasPrefix(item, "res-")) {
-			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'connectors' must start with string 'res-'", item)
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'files' must start with string 'res-'", item)
 		}
 	}
 	return nil
@@ -468,10 +438,7 @@ func (this *StreamJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_parallelism(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udfs(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_connectors(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_files(); err != nil {
 		return err
 	}
 	return nil
@@ -708,14 +675,14 @@ func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_StreamJobRelease_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+var _xxx_xxx_Validator_StreamJobRelease_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
 
 func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobRelease_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }

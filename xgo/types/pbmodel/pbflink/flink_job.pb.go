@@ -248,9 +248,8 @@ type FlinkJar struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The id of file type Jar. Is Required.
-	// FIXME: Rename JSON Name
-	FileId string `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"resource_id"`
+	// The if of resource file. Is Required.
+	FileId string `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id"`
 	// JarArgs
 	JarArgs string `protobuf:"bytes,2,opt,name=jar_args,json=jarArgs,proto3" json:"jar_args"`
 	// JarEntry

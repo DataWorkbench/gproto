@@ -165,7 +165,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -175,7 +175,7 @@ public final class PBModelStreamJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -437,10 +437,6 @@ public final class PBModelStreamJob {
        * <code>Python = 4;</code>
        */
       Python(4),
-      /**
-       * <code>Scala = 5;</code>
-       */
-      Scala(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -468,10 +464,6 @@ public final class PBModelStreamJob {
        * <code>Python = 4;</code>
        */
       public static final int Python_VALUE = 4;
-      /**
-       * <code>Scala = 5;</code>
-       */
-      public static final int Scala_VALUE = 5;
 
 
       public final int getNumber() {
@@ -503,7 +495,6 @@ public final class PBModelStreamJob {
           case 2: return SQL;
           case 3: return Jar;
           case 4: return Python;
-          case 5: return Scala;
           default: return null;
         }
       }
@@ -987,7 +978,7 @@ public final class PBModelStreamJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -999,7 +990,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -2275,7 +2266,7 @@ public final class PBModelStreamJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2287,7 +2278,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2303,7 +2294,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2318,7 +2309,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2337,7 +2328,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -4481,7 +4472,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type"
      * </pre>
      *
@@ -4491,7 +4482,7 @@ public final class PBModelStreamJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type"
      * </pre>
      *
@@ -4824,7 +4815,7 @@ public final class PBModelStreamJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type"
      * </pre>
      *
@@ -4836,7 +4827,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type"
      * </pre>
      *
@@ -5560,7 +5551,7 @@ public final class PBModelStreamJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type"
        * </pre>
        *
@@ -5572,7 +5563,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type"
        * </pre>
        *
@@ -5588,7 +5579,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type"
        * </pre>
        *
@@ -5603,7 +5594,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type"
        * </pre>
        *
@@ -5622,7 +5613,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type"
        * </pre>
        *
@@ -6704,137 +6695,92 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the udfs.
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the files.
      */
     java.util.List<java.lang.String>
-        getUdfsList();
+        getFilesList();
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-     * @return The count of udfs.
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+     * @return The count of files.
      */
-    int getUdfsCount();
+    int getFilesCount();
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The udfs at the given index.
+     * @return The files at the given index.
      */
-    java.lang.String getUdfs(int index);
+    java.lang.String getFiles(int index);
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the udfs at the given index.
+     * @return The bytes of the files at the given index.
      */
     com.google.protobuf.ByteString
-        getUdfsBytes(int index);
+        getFilesBytes(int index);
 
     /**
      * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @return A list containing the connectors.
-     */
-    java.util.List<java.lang.String>
-        getConnectorsList();
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @return The count of connectors.
-     */
-    int getConnectorsCount();
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The connectors at the given index.
-     */
-    java.lang.String getConnectors(int index);
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the connectors at the given index.
-     */
-    com.google.protobuf.ByteString
-        getConnectorsBytes(int index);
-
-    /**
-     * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @return A list containing the builtInConnectors.
      */
     java.util.List<java.lang.String>
         getBuiltInConnectorsList();
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @return The count of builtInConnectors.
      */
     int getBuiltInConnectorsCount();
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @param index The index of the element to return.
      * @return The builtInConnectors at the given index.
      */
     java.lang.String getBuiltInConnectors(int index);
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the builtInConnectors at the given index.
      */
@@ -6860,8 +6806,7 @@ public final class PBModelStreamJob {
     }
     private StreamJobArgs() {
       clusterId_ = "";
-      udfs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -6910,26 +6855,17 @@ public final class PBModelStreamJob {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                udfs_ = new com.google.protobuf.LazyStringArrayList();
+                files_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              udfs_.add(s);
+              files_.add(s);
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                connectors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              connectors_.add(s);
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 builtInConnectors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               builtInConnectors_.add(s);
               break;
@@ -6950,12 +6886,9 @@ public final class PBModelStreamJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          udfs_ = udfs_.getUnmodifiableView();
+          files_ = files_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          connectors_ = connectors_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           builtInConnectors_ = builtInConnectors_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -7039,126 +6972,71 @@ public final class PBModelStreamJob {
       return parallelism_;
     }
 
-    public static final int UDFS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList udfs_;
+    public static final int FILES_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList files_;
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the udfs.
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the files.
      */
     public com.google.protobuf.ProtocolStringList
-        getUdfsList() {
-      return udfs_;
+        getFilesList() {
+      return files_;
     }
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-     * @return The count of udfs.
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+     * @return The count of files.
      */
-    public int getUdfsCount() {
-      return udfs_.size();
+    public int getFilesCount() {
+      return files_.size();
     }
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The udfs at the given index.
+     * @return The files at the given index.
      */
-    public java.lang.String getUdfs(int index) {
-      return udfs_.get(index);
+    public java.lang.String getFiles(int index) {
+      return files_.get(index);
     }
     /**
      * <pre>
-     * The list of function(udf). Not required
-     * &#64;inject_tag: json:"udfs"
+     * The list of dependent resources files. Not required.
+     * &#64;inject_tag: json:"files"
      * </pre>
      *
-     * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+     * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the udfs at the given index.
+     * @return The bytes of the files at the given index.
      */
     public com.google.protobuf.ByteString
-        getUdfsBytes(int index) {
-      return udfs_.getByteString(index);
+        getFilesBytes(int index) {
+      return files_.getByteString(index);
     }
 
-    public static final int CONNECTORS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList connectors_;
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @return A list containing the connectors.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getConnectorsList() {
-      return connectors_;
-    }
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @return The count of connectors.
-     */
-    public int getConnectorsCount() {
-      return connectors_.size();
-    }
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The connectors at the given index.
-     */
-    public java.lang.String getConnectors(int index) {
-      return connectors_.get(index);
-    }
-    /**
-     * <pre>
-     * The list of connectors dependency package. Not required.
-     * &#64;inject_tag: json:"connectors"
-     * </pre>
-     *
-     * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the connectors at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getConnectorsBytes(int index) {
-      return connectors_.getByteString(index);
-    }
-
-    public static final int BUILT_IN_CONNECTORS_FIELD_NUMBER = 5;
+    public static final int BUILT_IN_CONNECTORS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList builtInConnectors_;
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @return A list containing the builtInConnectors.
      */
     public com.google.protobuf.ProtocolStringList
@@ -7167,12 +7045,12 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @return The count of builtInConnectors.
      */
     public int getBuiltInConnectorsCount() {
@@ -7180,12 +7058,12 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @param index The index of the element to return.
      * @return The builtInConnectors at the given index.
      */
@@ -7194,12 +7072,12 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of built-in connectors. Not required.
+     * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
-     * <code>repeated string built_in_connectors = 5;</code>
+     * <code>repeated string built_in_connectors = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the builtInConnectors at the given index.
      */
@@ -7228,14 +7106,11 @@ public final class PBModelStreamJob {
       if (parallelism_ != 0) {
         output.writeInt32(2, parallelism_);
       }
-      for (int i = 0; i < udfs_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, udfs_.getRaw(i));
-      }
-      for (int i = 0; i < connectors_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, connectors_.getRaw(i));
+      for (int i = 0; i < files_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, files_.getRaw(i));
       }
       for (int i = 0; i < builtInConnectors_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, builtInConnectors_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, builtInConnectors_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -7255,19 +7130,11 @@ public final class PBModelStreamJob {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < udfs_.size(); i++) {
-          dataSize += computeStringSizeNoTag(udfs_.getRaw(i));
+        for (int i = 0; i < files_.size(); i++) {
+          dataSize += computeStringSizeNoTag(files_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getUdfsList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < connectors_.size(); i++) {
-          dataSize += computeStringSizeNoTag(connectors_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getConnectorsList().size();
+        size += 1 * getFilesList().size();
       }
       {
         int dataSize = 0;
@@ -7296,10 +7163,8 @@ public final class PBModelStreamJob {
           .equals(other.getClusterId())) return false;
       if (getParallelism()
           != other.getParallelism()) return false;
-      if (!getUdfsList()
-          .equals(other.getUdfsList())) return false;
-      if (!getConnectorsList()
-          .equals(other.getConnectorsList())) return false;
+      if (!getFilesList()
+          .equals(other.getFilesList())) return false;
       if (!getBuiltInConnectorsList()
           .equals(other.getBuiltInConnectorsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -7317,13 +7182,9 @@ public final class PBModelStreamJob {
       hash = (53 * hash) + getClusterId().hashCode();
       hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
       hash = (53 * hash) + getParallelism();
-      if (getUdfsCount() > 0) {
-        hash = (37 * hash) + UDFS_FIELD_NUMBER;
-        hash = (53 * hash) + getUdfsList().hashCode();
-      }
-      if (getConnectorsCount() > 0) {
-        hash = (37 * hash) + CONNECTORS_FIELD_NUMBER;
-        hash = (53 * hash) + getConnectorsList().hashCode();
+      if (getFilesCount() > 0) {
+        hash = (37 * hash) + FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getFilesList().hashCode();
       }
       if (getBuiltInConnectorsCount() > 0) {
         hash = (37 * hash) + BUILT_IN_CONNECTORS_FIELD_NUMBER;
@@ -7471,12 +7332,10 @@ public final class PBModelStreamJob {
 
         parallelism_ = 0;
 
-        udfs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
         builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7507,18 +7366,13 @@ public final class PBModelStreamJob {
         result.clusterId_ = clusterId_;
         result.parallelism_ = parallelism_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          udfs_ = udfs_.getUnmodifiableView();
+          files_ = files_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.udfs_ = udfs_;
+        result.files_ = files_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          connectors_ = connectors_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.connectors_ = connectors_;
-        if (((bitField0_ & 0x00000004) != 0)) {
           builtInConnectors_ = builtInConnectors_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.builtInConnectors_ = builtInConnectors_;
         onBuilt();
@@ -7576,30 +7430,20 @@ public final class PBModelStreamJob {
         if (other.getParallelism() != 0) {
           setParallelism(other.getParallelism());
         }
-        if (!other.udfs_.isEmpty()) {
-          if (udfs_.isEmpty()) {
-            udfs_ = other.udfs_;
+        if (!other.files_.isEmpty()) {
+          if (files_.isEmpty()) {
+            files_ = other.files_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureUdfsIsMutable();
-            udfs_.addAll(other.udfs_);
-          }
-          onChanged();
-        }
-        if (!other.connectors_.isEmpty()) {
-          if (connectors_.isEmpty()) {
-            connectors_ = other.connectors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureConnectorsIsMutable();
-            connectors_.addAll(other.connectors_);
+            ensureFilesIsMutable();
+            files_.addAll(other.files_);
           }
           onChanged();
         }
         if (!other.builtInConnectors_.isEmpty()) {
           if (builtInConnectors_.isEmpty()) {
             builtInConnectors_ = other.builtInConnectors_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBuiltInConnectorsIsMutable();
             builtInConnectors_.addAll(other.builtInConnectors_);
@@ -7783,331 +7627,176 @@ public final class PBModelStreamJob {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList udfs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureUdfsIsMutable() {
+      private com.google.protobuf.LazyStringList files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureFilesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          udfs_ = new com.google.protobuf.LazyStringArrayList(udfs_);
+          files_ = new com.google.protobuf.LazyStringArrayList(files_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-       * @return A list containing the udfs.
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+       * @return A list containing the files.
        */
       public com.google.protobuf.ProtocolStringList
-          getUdfsList() {
-        return udfs_.getUnmodifiableView();
+          getFilesList() {
+        return files_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-       * @return The count of udfs.
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+       * @return The count of files.
        */
-      public int getUdfsCount() {
-        return udfs_.size();
+      public int getFilesCount() {
+        return files_.size();
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
-       * @return The udfs at the given index.
+       * @return The files at the given index.
        */
-      public java.lang.String getUdfs(int index) {
-        return udfs_.get(index);
+      public java.lang.String getFiles(int index) {
+        return files_.get(index);
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
-       * @return The bytes of the udfs at the given index.
+       * @return The bytes of the files at the given index.
        */
       public com.google.protobuf.ByteString
-          getUdfsBytes(int index) {
-        return udfs_.getByteString(index);
+          getFilesBytes(int index) {
+        return files_.getByteString(index);
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
-       * @param value The udfs to set.
+       * @param value The files to set.
        * @return This builder for chaining.
        */
-      public Builder setUdfs(
+      public Builder setFiles(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureUdfsIsMutable();
-        udfs_.set(index, value);
+  ensureFilesIsMutable();
+        files_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-       * @param value The udfs to add.
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+       * @param value The files to add.
        * @return This builder for chaining.
        */
-      public Builder addUdfs(
+      public Builder addFiles(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureUdfsIsMutable();
-        udfs_.add(value);
+  ensureFilesIsMutable();
+        files_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-       * @param values The udfs to add.
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+       * @param values The files to add.
        * @return This builder for chaining.
        */
-      public Builder addAllUdfs(
+      public Builder addAllFiles(
           java.lang.Iterable<java.lang.String> values) {
-        ensureUdfsIsMutable();
+        ensureFilesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, udfs_);
+            values, files_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearUdfs() {
-        udfs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearFiles() {
+        files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The list of function(udf). Not required
-       * &#64;inject_tag: json:"udfs"
+       * The list of dependent resources files. Not required.
+       * &#64;inject_tag: json:"files"
        * </pre>
        *
-       * <code>repeated string udfs = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the udfs to add.
+       * <code>repeated string files = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the files to add.
        * @return This builder for chaining.
        */
-      public Builder addUdfsBytes(
+      public Builder addFilesBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureUdfsIsMutable();
-        udfs_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureConnectorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          connectors_ = new com.google.protobuf.LazyStringArrayList(connectors_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @return A list containing the connectors.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getConnectorsList() {
-        return connectors_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @return The count of connectors.
-       */
-      public int getConnectorsCount() {
-        return connectors_.size();
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param index The index of the element to return.
-       * @return The connectors at the given index.
-       */
-      public java.lang.String getConnectors(int index) {
-        return connectors_.get(index);
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the connectors at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getConnectorsBytes(int index) {
-        return connectors_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param index The index to set the value at.
-       * @param value The connectors to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConnectors(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureConnectorsIsMutable();
-        connectors_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param value The connectors to add.
-       * @return This builder for chaining.
-       */
-      public Builder addConnectors(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureConnectorsIsMutable();
-        connectors_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param values The connectors to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllConnectors(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureConnectorsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, connectors_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConnectors() {
-        connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The list of connectors dependency package. Not required.
-       * &#64;inject_tag: json:"connectors"
-       * </pre>
-       *
-       * <code>repeated string connectors = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the connectors to add.
-       * @return This builder for chaining.
-       */
-      public Builder addConnectorsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureConnectorsIsMutable();
-        connectors_.add(value);
+        ensureFilesIsMutable();
+        files_.add(value);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.LazyStringList builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureBuiltInConnectorsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           builtInConnectors_ = new com.google.protobuf.LazyStringArrayList(builtInConnectors_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @return A list containing the builtInConnectors.
        */
       public com.google.protobuf.ProtocolStringList
@@ -8116,12 +7805,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @return The count of builtInConnectors.
        */
       public int getBuiltInConnectorsCount() {
@@ -8129,12 +7818,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param index The index of the element to return.
        * @return The builtInConnectors at the given index.
        */
@@ -8143,12 +7832,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param index The index of the value to return.
        * @return The bytes of the builtInConnectors at the given index.
        */
@@ -8158,12 +7847,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param index The index to set the value at.
        * @param value The builtInConnectors to set.
        * @return This builder for chaining.
@@ -8180,12 +7869,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param value The builtInConnectors to add.
        * @return This builder for chaining.
        */
@@ -8201,12 +7890,12 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param values The builtInConnectors to add.
        * @return This builder for chaining.
        */
@@ -8220,28 +7909,28 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuiltInConnectors() {
         builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The list of built-in connectors. Not required.
+       * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
-       * <code>repeated string built_in_connectors = 5;</code>
+       * <code>repeated string built_in_connectors = 4;</code>
        * @param value The bytes of the builtInConnectors to add.
        * @return This builder for chaining.
        */
@@ -10730,7 +10419,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -10740,7 +10429,7 @@ public final class PBModelStreamJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -11305,7 +10994,7 @@ public final class PBModelStreamJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -11317,7 +11006,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -12353,7 +12042,7 @@ public final class PBModelStreamJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -12365,7 +12054,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -12381,7 +12070,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -12396,7 +12085,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -12415,7 +12104,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -12898,7 +12587,7 @@ public final class PBModelStreamJob {
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\0322github.com/yu" +
       "31/protoc-plugin/proto/defaults.proto\032\'p" +
-      "roto/types/model/flink/flink_job.proto\"\344" +
+      "roto/types/model/flink/flink_job.proto\"\331" +
       "\004\n\tStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
       "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037" +
@@ -12911,70 +12600,68 @@ public final class PBModelStreamJob {
       "Job.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\ncreated_by\030" +
       "\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\013 \001(\003B" +
       "\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\"L\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022" +
-      "\007\n\003SQL\020\002\022\007\n\003Jar\020\003\022\n\n\006Python\020\004\022\t\n\005Scala\020\005" +
-      "\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001" +
-      "\022\013\n\007Enabled\020\002\"\200\002\n\021StreamJobProperty\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id" +
-      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(\0132\024.model" +
-      ".StreamJobCodeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.mod" +
-      "el.StreamJobArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\013" +
-      "2\030.model.StreamJobScheduleB\004\342\337\037\000\"\226\003\n\rStr" +
-      "eamJobCode\0222\n\004type\030\001 \001(\0162\025.model.StreamJ" +
-      "ob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003(" +
-      "\0132\024.flink.FlinkOperatorB\036\342\337\037\017\n\r\n\004type\022\005\332" +
-      "\001\002\030\001\342\337\037\007\022\005\352\001\0020\000\022<\n\003sql\030\003 \001(\0132\017.flink.Fli" +
-      "nkSQLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n" +
-      "\003jar\030\004 \001(\0132\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004typ" +
-      "e\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.fl" +
-      "ink.FlinkPythonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007" +
-      "\022\005\342\001\002\020\001\022@\n\005scala\030\006 \001(\0132\021.flink.FlinkScal" +
-      "aB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n" +
-      "\000\"\366\001\n\rStreamJobArgs\022\030\n\ncluster_id\030\001 \001(\tB" +
-      "\004\342\337\037\000\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t" +
-      "\022\007\262\001\0048d@\000\0226\n\004udfs\030\003 \003(\tB(\342\337\037\017\n\r\n\004udfs\022\005\352" +
-      "\001\0020\000\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004udf-\022B\n\nconnectors\030" +
-      "\004 \003(\tB.\342\337\037\025\n\023\n\nconnectors\022\005\352\001\0020\000\342\337\037\021\022\017\352\001" +
-      "\014Z\n\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\005 \003" +
-      "(\t:\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017sche" +
-      "dule_policy\030\001 \001(\0162\'.model.StreamJobSched" +
-      "ule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010exe" +
-      "cuted\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
-      "\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022c" +
-      "oncurrency_policy\030\006 \001(\0162*.model.StreamJo" +
-      "bSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedul" +
-      "e_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003" +
-      "dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB" +
-      "*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003" +
-      "\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014r" +
-      "etry_policy\030\n \001(\0162$.model.StreamJobSched" +
-      "ule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_" +
-      "limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002" +
-      "\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342" +
-      "\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"" +
-      "\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyUnset" +
-      "\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013" +
-      "Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Co" +
-      "ncurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006For" +
-      "bid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020Ret" +
-      "ryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004" +
-      "\002\n\000\"\257\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001" +
+      "0\000\"A\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022" +
+      "\007\n\003SQL\020\002\022\007\n\003Jar\020\003\022\n\n\006Python\020\004\"3\n\006Status\022" +
+      "\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled" +
+      "\020\002\"\200\002\n\021StreamJobProperty\022%\n\010space_id\030\001 \001" +
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037" +
       "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022" +
-      "2\n\004type\030\005 \001(\0162\025.model.StreamJob.TypeB\r\342\337" +
-      "\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model.Stre" +
-      "amJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n\ncre" +
-      "ated_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007create" +
-      "d\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342" +
-      "\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n" +
-      "\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n" +
-      "\"com.dataomnis.gproto.types.pbmodelB\020PBM" +
-      "odelStreamJobP\000Z1github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodelb\006proto3"
+      "\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(\0132\024.model.StreamJobC" +
+      "odeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model.StreamJo" +
+      "bArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\0132\030.model.St" +
+      "reamJobScheduleB\004\342\337\037\000\"\226\003\n\rStreamJobCode\022" +
+      "2\n\004type\030\001 \001(\0162\025.model.StreamJob.TypeB\r\342\337" +
+      "\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003(\0132\024.flink.F" +
+      "linkOperatorB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352" +
+      "\001\0020\000\022<\n\003sql\030\003 \001(\0132\017.flink.FlinkSQLB\036\342\337\037\017" +
+      "\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132" +
+      "\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037" +
+      "\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink.FlinkPy" +
+      "thonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022@\n\005" +
+      "scala\030\006 \001(\0132\021.flink.FlinkScalaB\036\342\337\037\017\n\r\n\004" +
+      "type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\240\001\n\rStrea" +
+      "mJobArgs\022\030\n\ncluster_id\030\001 \001(\tB\004\342\337\037\000\022*\n\013pa" +
+      "rallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0048d@\000\022$" +
+      "\n\005files\030\003 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004res-\022\033\n\023" +
+      "built_in_connectors\030\004 \003(\t:\006\312\262\004\002\n\000\"\266\007\n\021St" +
+      "reamJobSchedule\022O\n\017schedule_policy\030\001 \001(\016" +
+      "2\'.model.StreamJobSchedule.SchedulePolic" +
+      "yB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032" +
+      "\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017" +
+      "\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030" +
+      "\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022concurrency_policy" +
+      "\030\006 \001(\0162*.model.StreamJobSchedule.Concurr" +
+      "encyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type" +
+      "\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337" +
+      "\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ" +
+      "\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule" +
+      "_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t " +
+      "\001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retry_policy\030\n \001(\016" +
+      "2$.model.StreamJobSchedule.RetryPolicyB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027" +
+      "\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016" +
+      "retry_interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_poli" +
+      "cy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy" +
+      "\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodicity" +
+      "\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S\n\021" +
+      "ConcurrencyPolicy\022\032\n\026ConcurrencyPolicyUn" +
+      "set\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020" +
+      "\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000\022\010" +
+      "\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\257\003\n\020StreamJob" +
+      "Release\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022" +
+      "\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.m" +
+      "odel.StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006st" +
+      "atus\030\006 \001(\0162\036.model.StreamJobRelease.Stat" +
+      "us\022\014\n\004desc\030\007 \001(\t\022#\n\ncreated_by\030\010 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001" +
+      "\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Sta" +
+      "tus\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSusp" +
+      "ended\020\002\022\013\n\007Deleted\020\003Bk\n\"com.dataomnis.gp" +
+      "roto.types.pbmodelB\020PBModelStreamJobP\000Z1" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13007,7 +12694,7 @@ public final class PBModelStreamJob {
     internal_static_model_StreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobArgs_descriptor,
-        new java.lang.String[] { "ClusterId", "Parallelism", "Udfs", "Connectors", "BuiltInConnectors", });
+        new java.lang.String[] { "ClusterId", "Parallelism", "Files", "BuiltInConnectors", });
     internal_static_model_StreamJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_StreamJobSchedule_fieldAccessorTable = new

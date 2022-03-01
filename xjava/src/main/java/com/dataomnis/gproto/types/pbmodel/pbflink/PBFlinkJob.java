@@ -2329,9 +2329,8 @@ public final class PBFlinkJob {
 
     /**
      * <pre>
-     * The id of file type Jar. Is Required.
-     * FIXME: Rename JSON Name
-     * &#64;inject_tag: json:"resource_id"
+     * The if of resource file. Is Required.
+     * &#64;inject_tag: json:"file_id"
      * </pre>
      *
      * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -2340,9 +2339,8 @@ public final class PBFlinkJob {
     java.lang.String getFileId();
     /**
      * <pre>
-     * The id of file type Jar. Is Required.
-     * FIXME: Rename JSON Name
-     * &#64;inject_tag: json:"resource_id"
+     * The if of resource file. Is Required.
+     * &#64;inject_tag: json:"file_id"
      * </pre>
      *
      * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -2501,9 +2499,8 @@ public final class PBFlinkJob {
     private volatile java.lang.Object fileId_;
     /**
      * <pre>
-     * The id of file type Jar. Is Required.
-     * FIXME: Rename JSON Name
-     * &#64;inject_tag: json:"resource_id"
+     * The if of resource file. Is Required.
+     * &#64;inject_tag: json:"file_id"
      * </pre>
      *
      * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -2524,9 +2521,8 @@ public final class PBFlinkJob {
     }
     /**
      * <pre>
-     * The id of file type Jar. Is Required.
-     * FIXME: Rename JSON Name
-     * &#64;inject_tag: json:"resource_id"
+     * The if of resource file. Is Required.
+     * &#64;inject_tag: json:"file_id"
      * </pre>
      *
      * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -2986,9 +2982,8 @@ public final class PBFlinkJob {
       private java.lang.Object fileId_ = "";
       /**
        * <pre>
-       * The id of file type Jar. Is Required.
-       * FIXME: Rename JSON Name
-       * &#64;inject_tag: json:"resource_id"
+       * The if of resource file. Is Required.
+       * &#64;inject_tag: json:"file_id"
        * </pre>
        *
        * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -3008,9 +3003,8 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The id of file type Jar. Is Required.
-       * FIXME: Rename JSON Name
-       * &#64;inject_tag: json:"resource_id"
+       * The if of resource file. Is Required.
+       * &#64;inject_tag: json:"file_id"
        * </pre>
        *
        * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -3031,9 +3025,8 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The id of file type Jar. Is Required.
-       * FIXME: Rename JSON Name
-       * &#64;inject_tag: json:"resource_id"
+       * The if of resource file. Is Required.
+       * &#64;inject_tag: json:"file_id"
        * </pre>
        *
        * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -3052,9 +3045,8 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The id of file type Jar. Is Required.
-       * FIXME: Rename JSON Name
-       * &#64;inject_tag: json:"resource_id"
+       * The if of resource file. Is Required.
+       * &#64;inject_tag: json:"file_id"
        * </pre>
        *
        * <code>string file_id = 1 [(.validator.field) = { ... }</code>
@@ -3068,9 +3060,8 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The id of file type Jar. Is Required.
-       * FIXME: Rename JSON Name
-       * &#64;inject_tag: json:"resource_id"
+       * The if of resource file. Is Required.
+       * &#64;inject_tag: json:"file_id"
        * </pre>
        *
        * <code>string file_id = 1 [(.validator.field) = { ... }</code>
