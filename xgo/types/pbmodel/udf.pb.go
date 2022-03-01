@@ -175,6 +175,7 @@ func (UDF_Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // UDF Schema
+// TODO: Reserved structure. unused on present.
 type UDF struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

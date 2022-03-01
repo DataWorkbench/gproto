@@ -138,27 +138,6 @@ public final class PBRequestFileMetaManage {
      * @return The size.
      */
     long getSize();
-
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
   }
   /**
    * Protobuf type {@code request.CreateFilePrepare}
@@ -178,7 +157,6 @@ public final class PBRequestFileMetaManage {
       spaceOwner_ = "";
       pid_ = "";
       name_ = "";
-      type_ = 0;
     }
 
     @java.lang.Override
@@ -244,12 +222,6 @@ public final class PBRequestFileMetaManage {
             case 48: {
 
               size_ = input.readInt64();
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
               break;
             }
             default: {
@@ -540,35 +512,6 @@ public final class PBRequestFileMetaManage {
       return size_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 7;
-    private int type_;
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -601,9 +544,6 @@ public final class PBRequestFileMetaManage {
       if (size_ != 0L) {
         output.writeInt64(6, size_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(7, type_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -632,10 +572,6 @@ public final class PBRequestFileMetaManage {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, size_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, type_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -663,7 +599,6 @@ public final class PBRequestFileMetaManage {
           .equals(other.getName())) return false;
       if (getSize()
           != other.getSize()) return false;
-      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -688,8 +623,6 @@ public final class PBRequestFileMetaManage {
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -835,8 +768,6 @@ public final class PBRequestFileMetaManage {
 
         size_ = 0L;
 
-        type_ = 0;
-
         return this;
       }
 
@@ -869,7 +800,6 @@ public final class PBRequestFileMetaManage {
         result.pid_ = pid_;
         result.name_ = name_;
         result.size_ = size_;
-        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -940,9 +870,6 @@ public final class PBRequestFileMetaManage {
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1523,85 +1450,6 @@ public final class PBRequestFileMetaManage {
         onChanged();
         return this;
       }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 7 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1824,27 +1672,6 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
-     * The file type. Is required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * The file type. Is required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
-
-    /**
-     * <pre>
      * The file version id, Each upload generates a new ID.
      * &#64;inject_tag: json:"version"
      * </pre>
@@ -1885,7 +1712,6 @@ public final class PBRequestFileMetaManage {
       name_ = "";
       desc_ = "";
       etag_ = "";
-      type_ = 0;
       version_ = "";
     }
 
@@ -1964,12 +1790,6 @@ public final class PBRequestFileMetaManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               etag_ = s;
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
               break;
             }
             case 82: {
@@ -2360,35 +2180,6 @@ public final class PBRequestFileMetaManage {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 9;
-    private int type_;
-    /**
-     * <pre>
-     * The file type. Is required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The file type. Is required.
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-    }
-
     public static final int VERSION_FIELD_NUMBER = 10;
     private volatile java.lang.Object version_;
     /**
@@ -2475,9 +2266,6 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(9, type_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
       }
@@ -2515,10 +2303,6 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, type_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
       }
@@ -2553,7 +2337,6 @@ public final class PBRequestFileMetaManage {
           != other.getSize()) return false;
       if (!getEtag()
           .equals(other.getEtag())) return false;
-      if (type_ != other.type_) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2584,8 +2367,6 @@ public final class PBRequestFileMetaManage {
           getSize());
       hash = (37 * hash) + ETAG_FIELD_NUMBER;
       hash = (53 * hash) + getEtag().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2737,8 +2518,6 @@ public final class PBRequestFileMetaManage {
 
         etag_ = "";
 
-        type_ = 0;
-
         version_ = "";
 
         return this;
@@ -2775,7 +2554,6 @@ public final class PBRequestFileMetaManage {
         result.desc_ = desc_;
         result.size_ = size_;
         result.etag_ = etag_;
-        result.type_ = type_;
         result.version_ = version_;
         onBuilt();
         return result;
@@ -2855,9 +2633,6 @@ public final class PBRequestFileMetaManage {
         if (!other.getEtag().isEmpty()) {
           etag_ = other.etag_;
           onChanged();
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
@@ -3636,85 +3411,6 @@ public final class PBRequestFileMetaManage {
   checkByteStringIsUtf8(value);
         
         etag_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * The file type. Is required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * The file type. Is required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. Is required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The file type. Is required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. Is required.
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
         onChanged();
         return this;
       }
@@ -8100,27 +7796,6 @@ public final class PBRequestFileMetaManage {
 
     /**
      * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
-
-    /**
-     * <pre>
      * The file name. not required.
      * &#64;inject_tag: json:"name" form:"name" binding:"-"
      * </pre>
@@ -8236,7 +7911,6 @@ public final class PBRequestFileMetaManage {
     }
     private ListFileMetas() {
       spaceId_ = "";
-      type_ = 0;
       name_ = "";
       search_ = "";
       sortBy_ = "";
@@ -8287,12 +7961,6 @@ public final class PBRequestFileMetaManage {
             case 24: {
 
               offset_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
               break;
             }
             case 42: {
@@ -8435,35 +8103,6 @@ public final class PBRequestFileMetaManage {
     @java.lang.Override
     public int getOffset() {
       return offset_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 4;
-    private int type_;
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The file type. required.
-     * &#64;inject_tag: json:"type" form:"type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
     }
 
     public static final int NAME_FIELD_NUMBER = 5;
@@ -8701,9 +8340,6 @@ public final class PBRequestFileMetaManage {
       if (offset_ != 0) {
         output.writeInt32(3, offset_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(4, type_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
@@ -8738,10 +8374,6 @@ public final class PBRequestFileMetaManage {
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, offset_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
@@ -8780,7 +8412,6 @@ public final class PBRequestFileMetaManage {
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (type_ != other.type_) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getSearch()
@@ -8808,8 +8439,6 @@ public final class PBRequestFileMetaManage {
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
@@ -8960,8 +8589,6 @@ public final class PBRequestFileMetaManage {
 
         offset_ = 0;
 
-        type_ = 0;
-
         name_ = "";
 
         search_ = "";
@@ -9001,7 +8628,6 @@ public final class PBRequestFileMetaManage {
         result.spaceId_ = spaceId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
-        result.type_ = type_;
         result.name_ = name_;
         result.search_ = search_;
         result.sortBy_ = sortBy_;
@@ -9064,9 +8690,6 @@ public final class PBRequestFileMetaManage {
         }
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
@@ -9308,85 +8931,6 @@ public final class PBRequestFileMetaManage {
       public Builder clearOffset() {
         
         offset_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * &#64;inject_tag: json:"type" form:"type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
         onChanged();
         return this;
       }
@@ -10873,72 +10417,67 @@ public final class PBRequestFileMetaManage {
       "\n*proto/types/request/file_meta_manage.p" +
       "roto\022\007request\0323github.com/yu31/protoc-pl" +
       "ugin/proto/validator.proto\0322github.com/y" +
-      "u31/protoc-plugin/proto/defaults.proto\032\034" +
-      "proto/types/model/file.proto\"\237\002\n\021CreateF" +
-      "ilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000" +
-      "\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002" +
-      "\310\001\200\001\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022-\n\004type\030" +
-      "\007 \001(\0162\020.model.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\370" +
-      "\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337" +
-      "\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\007file_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004res-\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
-      "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
-      "\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030" +
-      "\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022-\n\004type\030\t \001(\0162\020.mode" +
-      "l.File.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\n " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\237\001\n\023ReCreateFilePrepar" +
-      "e\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022 \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022$\n\007fi" +
-      "le_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004size" +
-      "\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\265\001\n\020ReCreateFileMeta" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "$\n\007file_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n" +
-      "\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\360\001\020\"8\n\020DescribeFileMeta\022$\n\007file_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileMeta" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "\035\n\007file_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003" +
-      " \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\"" +
-      "\263\002\n\rListFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003" +
-      "100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005" +
-      "\262\001\002@\000\022+\n\004type\030\004 \001(\0162\020.model.File.TypeB\013\342" +
-      "\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\t" +
-      "B\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'" +
-      "\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022" +
-      "\017\n\007reverse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017DeleteF" +
-      "ileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008d" +
-      "Z\n\302\001\007\312\002\004res-Bv\n$com.dataomnis.gproto.typ" +
-      "es.pbrequestB\027PBRequestFileMetaManageP\000Z" +
-      "3github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbrequestb\006proto3"
+      "u31/protoc-plugin/proto/defaults.proto\"\360" +
+      "\001\n\021CreateFilePrepare\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342" +
+      "\337\037\007\022\005\302\001\002\"\000\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001" +
+      "\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\"\311\002\n\016CreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\007file_id\030\003 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid" +
+      "\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\005 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004et" +
+      "ag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\n \001(\tB" +
+      "\014\342\337\037\010\022\006\302\001\003\360\001\020\"\237\001\n\023ReCreateFilePrepare\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013" +
+      "space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022$\n\007file_i" +
+      "d\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004size\030\004 \001" +
+      "(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\265\001\n\020ReCreateFileMeta\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\007f" +
+      "ile_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004siz" +
+      "e\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"" +
+      "8\n\020DescribeFileMeta\022$\n\007file_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileMeta\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\007f" +
+      "ile_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\"\206\002\n\r" +
+      "ListFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
+      "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
+      "\000\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007\302" +
+      "\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002id" +
+      "J\007createdJ\007updatedJ\004nameJ\004size\022\017\n\007revers" +
+      "e\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017DeleteFileMetas\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022+" +
+      "\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004r" +
+      "es-Bv\n$com.dataomnis.gproto.types.pbrequ" +
+      "estB\027PBRequestFileMetaManageP\000Z3github.c" +
+      "om/DataWorkbench/gproto/xgo/types/pbrequ" +
+      "estb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
-          com.dataomnis.gproto.types.pbmodel.PBModelResource.getDescriptor(),
         });
     internal_static_request_CreateFilePrepare_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_request_CreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Pid", "Name", "Size", "Type", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Pid", "Name", "Size", });
     internal_static_request_CreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "FileId", "Pid", "Name", "Desc", "Size", "Etag", "Type", "Version", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "FileId", "Pid", "Name", "Desc", "Size", "Etag", "Version", });
     internal_static_request_ReCreateFilePrepare_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ReCreateFilePrepare_fieldAccessorTable = new
@@ -10968,7 +10507,7 @@ public final class PBRequestFileMetaManage {
     internal_static_request_ListFileMetas_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListFileMetas_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "Type", "Name", "Search", "SortBy", "Reverse", "Pid", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "Name", "Search", "SortBy", "Reverse", "Pid", });
     internal_static_request_DeleteFileMetas_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_request_DeleteFileMetas_fieldAccessorTable = new
@@ -10983,7 +10522,6 @@ public final class PBRequestFileMetaManage {
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

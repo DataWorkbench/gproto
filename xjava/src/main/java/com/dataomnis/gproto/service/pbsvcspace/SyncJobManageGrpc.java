@@ -204,66 +204,66 @@ public final class SyncJobManageGrpc {
     return getDescribeSyncJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobArgsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobConfMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetSyncJobArgs",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.class,
+      fullMethodName = SERVICE_NAME + '/' + "SetSyncJobConf",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobArgsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobArgsMethod;
-    if ((getSetSyncJobArgsMethod = SyncJobManageGrpc.getSetSyncJobArgsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobConfMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetSyncJobConfMethod;
+    if ((getSetSyncJobConfMethod = SyncJobManageGrpc.getSetSyncJobConfMethod) == null) {
       synchronized (SyncJobManageGrpc.class) {
-        if ((getSetSyncJobArgsMethod = SyncJobManageGrpc.getSetSyncJobArgsMethod) == null) {
-          SyncJobManageGrpc.getSetSyncJobArgsMethod = getSetSyncJobArgsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getSetSyncJobConfMethod = SyncJobManageGrpc.getSetSyncJobConfMethod) == null) {
+          SyncJobManageGrpc.getSetSyncJobConfMethod = getSetSyncJobConfMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetSyncJobArgs"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetSyncJobConf"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("SetSyncJobArgs"))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("SetSyncJobConf"))
               .build();
         }
       }
     }
-    return getSetSyncJobArgsMethod;
+    return getSetSyncJobConfMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobArgsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobConfMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetSyncJobArgs",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetSyncJobConf",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobArgsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobArgsMethod;
-    if ((getGetSyncJobArgsMethod = SyncJobManageGrpc.getGetSyncJobArgsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobConfMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobConfMethod;
+    if ((getGetSyncJobConfMethod = SyncJobManageGrpc.getGetSyncJobConfMethod) == null) {
       synchronized (SyncJobManageGrpc.class) {
-        if ((getGetSyncJobArgsMethod = SyncJobManageGrpc.getGetSyncJobArgsMethod) == null) {
-          SyncJobManageGrpc.getGetSyncJobArgsMethod = getGetSyncJobArgsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>newBuilder()
+        if ((getGetSyncJobConfMethod = SyncJobManageGrpc.getGetSyncJobConfMethod) == null) {
+          SyncJobManageGrpc.getGetSyncJobConfMethod = getGetSyncJobConfMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSyncJobArgs"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSyncJobConf"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("GetSyncJobArgs"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("GetSyncJobConf"))
               .build();
         }
       }
     }
-    return getGetSyncJobArgsMethod;
+    return getGetSyncJobConfMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobSchedule,
@@ -545,35 +545,35 @@ public final class SyncJobManageGrpc {
     return getDescribeSyncJobVersionMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobVersionArgsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobVersionConfMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetSyncJobVersionArgs",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetSyncJobVersionConf",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobVersionArgsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getGetSyncJobVersionArgsMethod;
-    if ((getGetSyncJobVersionArgsMethod = SyncJobManageGrpc.getGetSyncJobVersionArgsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobVersionConfMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getGetSyncJobVersionConfMethod;
+    if ((getGetSyncJobVersionConfMethod = SyncJobManageGrpc.getGetSyncJobVersionConfMethod) == null) {
       synchronized (SyncJobManageGrpc.class) {
-        if ((getGetSyncJobVersionArgsMethod = SyncJobManageGrpc.getGetSyncJobVersionArgsMethod) == null) {
-          SyncJobManageGrpc.getGetSyncJobVersionArgsMethod = getGetSyncJobVersionArgsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>newBuilder()
+        if ((getGetSyncJobVersionConfMethod = SyncJobManageGrpc.getGetSyncJobVersionConfMethod) == null) {
+          SyncJobManageGrpc.getGetSyncJobVersionConfMethod = getGetSyncJobVersionConfMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSyncJobVersionArgs"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSyncJobVersionConf"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("GetSyncJobVersionArgs"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("GetSyncJobVersionConf"))
               .build();
         }
       }
     }
-    return getGetSyncJobVersionArgsMethod;
+    return getGetSyncJobVersionConfMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobSchedule,
@@ -692,6 +692,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job dev.
+     *
      * ListSyncJobs to get a list of Sync job of the workspace.
      * </pre>
      */
@@ -758,22 +759,22 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SetSyncJobArgs to set the run parameters of the specified Sync job.
+     * SetSyncJobConf to set the run parameters of the specified Sync job.
      * </pre>
      */
-    public void setSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs request,
+    public void setSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetSyncJobArgsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetSyncJobConfMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * GetSyncJobArgs to get the run parameters of the specified Sync job.
+     * GetSyncJobConf to get the run parameters of the specified Sync job.
      * </pre>
      */
-    public void getSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSyncJobArgsMethod(), responseObserver);
+    public void getSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSyncJobConfMethod(), responseObserver);
     }
 
     /**
@@ -799,6 +800,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job release.
+     *
      * ReleaseSyncJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -850,6 +852,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job versions.
+     *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
      * </pre>
      */
@@ -873,9 +876,9 @@ public final class SyncJobManageGrpc {
      * GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
      * </pre>
      */
-    public void getSyncJobVersionArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSyncJobVersionArgsMethod(), responseObserver);
+    public void getSyncJobVersionConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSyncJobVersionConfMethod(), responseObserver);
     }
 
     /**
@@ -891,6 +894,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for helper.
+     *
      * </pre>
      */
     public void describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request,
@@ -943,19 +947,19 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncJob>(
                   this, METHODID_DESCRIBE_SYNC_JOB)))
           .addMethod(
-            getSetSyncJobArgsMethod(),
+            getSetSyncJobConfMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_SET_SYNC_JOB_ARGS)))
+                  this, METHODID_SET_SYNC_JOB_CONF)))
           .addMethod(
-            getGetSyncJobArgsMethod(),
+            getGetSyncJobConfMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>(
-                  this, METHODID_GET_SYNC_JOB_ARGS)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>(
+                  this, METHODID_GET_SYNC_JOB_CONF)))
           .addMethod(
             getSetSyncJobScheduleMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1020,12 +1024,12 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncJob>(
                   this, METHODID_DESCRIBE_SYNC_JOB_VERSION)))
           .addMethod(
-            getGetSyncJobVersionArgsMethod(),
+            getGetSyncJobVersionConfMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs,
-                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>(
-                  this, METHODID_GET_SYNC_JOB_VERSION_ARGS)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>(
+                  this, METHODID_GET_SYNC_JOB_VERSION_CONF)))
           .addMethod(
             getGetSyncJobVersionScheduleMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1064,6 +1068,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job dev.
+     *
      * ListSyncJobs to get a list of Sync job of the workspace.
      * </pre>
      */
@@ -1136,24 +1141,24 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SetSyncJobArgs to set the run parameters of the specified Sync job.
+     * SetSyncJobConf to set the run parameters of the specified Sync job.
      * </pre>
      */
-    public void setSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs request,
+    public void setSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetSyncJobArgsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSetSyncJobConfMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * GetSyncJobArgs to get the run parameters of the specified Sync job.
+     * GetSyncJobConf to get the run parameters of the specified Sync job.
      * </pre>
      */
-    public void getSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> responseObserver) {
+    public void getSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetSyncJobArgsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSyncJobConfMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1181,6 +1186,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job release.
+     *
      * ReleaseSyncJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1237,6 +1243,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job versions.
+     *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
      * </pre>
      */
@@ -1262,10 +1269,10 @@ public final class SyncJobManageGrpc {
      * GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
      * </pre>
      */
-    public void getSyncJobVersionArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> responseObserver) {
+    public void getSyncJobVersionConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetSyncJobVersionArgsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetSyncJobVersionConfMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1282,6 +1289,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for helper.
+     *
      * </pre>
      */
     public void describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request,
@@ -1311,6 +1319,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job dev.
+     *
      * ListSyncJobs to get a list of Sync job of the workspace.
      * </pre>
      */
@@ -1377,22 +1386,22 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SetSyncJobArgs to set the run parameters of the specified Sync job.
+     * SetSyncJobConf to set the run parameters of the specified Sync job.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct setSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct setSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetSyncJobArgsMethod(), getCallOptions(), request);
+          getChannel(), getSetSyncJobConfMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * GetSyncJobArgs to get the run parameters of the specified Sync job.
+     * GetSyncJobConf to get the run parameters of the specified Sync job.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs getSyncJobArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf getSyncJobConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSyncJobArgsMethod(), getCallOptions(), request);
+          getChannel(), getGetSyncJobConfMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1418,6 +1427,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job release.
+     *
      * ReleaseSyncJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1469,6 +1479,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job versions.
+     *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
      * </pre>
      */
@@ -1492,9 +1503,9 @@ public final class SyncJobManageGrpc {
      * GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs getSyncJobVersionArgs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf getSyncJobVersionConf(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSyncJobVersionArgsMethod(), getCallOptions(), request);
+          getChannel(), getGetSyncJobVersionConfMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1510,6 +1521,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for helper.
+     *
      * </pre>
      */
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request) {
@@ -1538,6 +1550,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job dev.
+     *
      * ListSyncJobs to get a list of Sync job of the workspace.
      * </pre>
      */
@@ -1610,24 +1623,24 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SetSyncJobArgs to set the run parameters of the specified Sync job.
+     * SetSyncJobConf to set the run parameters of the specified Sync job.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> setSyncJobArgs(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> setSyncJobConf(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetSyncJobArgsMethod(), getCallOptions()), request);
+          getChannel().newCall(getSetSyncJobConfMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * GetSyncJobArgs to get the run parameters of the specified Sync job.
+     * GetSyncJobConf to get the run parameters of the specified Sync job.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getSyncJobArgs(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getSyncJobConf(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetSyncJobArgsMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetSyncJobConfMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1655,6 +1668,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job release.
+     *
      * ReleaseSyncJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1711,6 +1725,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for Sync job versions.
+     *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
      * </pre>
      */
@@ -1736,10 +1751,10 @@ public final class SyncJobManageGrpc {
      * GetSyncJobVersionArgs for get the run parameters of the job of the specified version.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs> getSyncJobVersionArgs(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf> getSyncJobVersionConf(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetSyncJobVersionArgsMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetSyncJobVersionConfMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1756,6 +1771,7 @@ public final class SyncJobManageGrpc {
     /**
      * <pre>
      * Interface for helper.
+     *
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> describeSyncFlinkUIByInstanceId(
@@ -1771,8 +1787,8 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_CREATE_SYNC_JOB = 3;
   private static final int METHODID_UPDATE_SYNC_JOB = 4;
   private static final int METHODID_DESCRIBE_SYNC_JOB = 5;
-  private static final int METHODID_SET_SYNC_JOB_ARGS = 6;
-  private static final int METHODID_GET_SYNC_JOB_ARGS = 7;
+  private static final int METHODID_SET_SYNC_JOB_CONF = 6;
+  private static final int METHODID_GET_SYNC_JOB_CONF = 7;
   private static final int METHODID_SET_SYNC_JOB_SCHEDULE = 8;
   private static final int METHODID_GET_SYNC_JOB_SCHEDULE = 9;
   private static final int METHODID_RELEASE_SYNC_JOB = 10;
@@ -1782,7 +1798,7 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_LIST_RELEASE_SYNC_JOBS = 14;
   private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 15;
   private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 16;
-  private static final int METHODID_GET_SYNC_JOB_VERSION_ARGS = 17;
+  private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 17;
   private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
   private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
 
@@ -1827,13 +1843,13 @@ public final class SyncJobManageGrpc {
           serviceImpl.describeSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncJob>) responseObserver);
           break;
-        case METHODID_SET_SYNC_JOB_ARGS:
-          serviceImpl.setSyncJobArgs((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs) request,
+        case METHODID_SET_SYNC_JOB_CONF:
+          serviceImpl.setSyncJobConf((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_GET_SYNC_JOB_ARGS:
-          serviceImpl.getSyncJobArgs((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>) responseObserver);
+        case METHODID_GET_SYNC_JOB_CONF:
+          serviceImpl.getSyncJobConf((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>) responseObserver);
           break;
         case METHODID_SET_SYNC_JOB_SCHEDULE:
           serviceImpl.setSyncJobSchedule((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobSchedule) request,
@@ -1871,9 +1887,9 @@ public final class SyncJobManageGrpc {
           serviceImpl.describeSyncJobVersion((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncJob>) responseObserver);
           break;
-        case METHODID_GET_SYNC_JOB_VERSION_ARGS:
-          serviceImpl.getSyncJobVersionArgs((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobArgs>) responseObserver);
+        case METHODID_GET_SYNC_JOB_VERSION_CONF:
+          serviceImpl.getSyncJobVersionConf((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobConf>) responseObserver);
           break;
         case METHODID_GET_SYNC_JOB_VERSION_SCHEDULE:
           serviceImpl.getSyncJobVersionSchedule((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobSchedule) request,
@@ -1950,8 +1966,8 @@ public final class SyncJobManageGrpc {
               .addMethod(getCreateSyncJobMethod())
               .addMethod(getUpdateSyncJobMethod())
               .addMethod(getDescribeSyncJobMethod())
-              .addMethod(getSetSyncJobArgsMethod())
-              .addMethod(getGetSyncJobArgsMethod())
+              .addMethod(getSetSyncJobConfMethod())
+              .addMethod(getGetSyncJobConfMethod())
               .addMethod(getSetSyncJobScheduleMethod())
               .addMethod(getGetSyncJobScheduleMethod())
               .addMethod(getReleaseSyncJobMethod())
@@ -1961,7 +1977,7 @@ public final class SyncJobManageGrpc {
               .addMethod(getListReleaseSyncJobsMethod())
               .addMethod(getListSyncJobVersionsMethod())
               .addMethod(getDescribeSyncJobVersionMethod())
-              .addMethod(getGetSyncJobVersionArgsMethod())
+              .addMethod(getGetSyncJobVersionConfMethod())
               .addMethod(getGetSyncJobVersionScheduleMethod())
               .addMethod(getDescribeSyncFlinkUIByInstanceIdMethod())
               .build();

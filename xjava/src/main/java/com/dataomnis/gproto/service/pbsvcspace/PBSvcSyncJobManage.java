@@ -38,10 +38,10 @@ public final class PBSvcSyncJobManage {
       "equest.UpdateSyncJob\032\022.model.EmptyStruct" +
       "\"\000\022H\n\017DescribeSyncJob\022\030.request.Describe" +
       "SyncJob\032\031.response.DescribeSyncJob\"\000\022?\n\016" +
-      "SetSyncJobArgs\022\027.request.SetSyncJobArgs\032" +
-      "\022.model.EmptyStruct\"\000\022E\n\016GetSyncJobArgs\022" +
-      "\027.request.GetSyncJobArgs\032\030.response.GetS" +
-      "yncJobArgs\"\000\022G\n\022SetSyncJobSchedule\022\033.req" +
+      "SetSyncJobConf\022\027.request.SetSyncJobConf\032" +
+      "\022.model.EmptyStruct\"\000\022E\n\016GetSyncJobConf\022" +
+      "\027.request.GetSyncJobConf\032\030.response.GetS" +
+      "yncJobConf\"\000\022G\n\022SetSyncJobSchedule\022\033.req" +
       "uest.SetSyncJobSchedule\032\022.model.EmptyStr" +
       "uct\"\000\022Q\n\022GetSyncJobSchedule\022\033.request.Ge" +
       "tSyncJobSchedule\032\034.response.GetSyncJobSc" +
@@ -59,8 +59,8 @@ public final class PBSvcSyncJobManage {
       "ersions\032\035.response.ListSyncJobVersions\"\000" +
       "\022O\n\026DescribeSyncJobVersion\022\030.request.Des" +
       "cribeSyncJob\032\031.response.DescribeSyncJob\"" +
-      "\000\022L\n\025GetSyncJobVersionArgs\022\027.request.Get" +
-      "SyncJobArgs\032\030.response.GetSyncJobArgs\"\000\022" +
+      "\000\022L\n\025GetSyncJobVersionConf\022\027.request.Get" +
+      "SyncJobConf\032\030.response.GetSyncJobConf\"\000\022" +
       "X\n\031GetSyncJobVersionSchedule\022\033.request.G" +
       "etSyncJobSchedule\032\034.response.GetSyncJobS" +
       "chedule\"\000\022x\n\037DescribeSyncFlinkUIByInstan" +

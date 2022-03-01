@@ -247,7 +247,7 @@ public final class PBModelFlinkTable {
   /**
    * <pre>
    * Table Info
-   * TODO: unused on present.
+   * TODO: Reserved structure. unused on present.
    * </pre>
    *
    * Protobuf type {@code model.FlinkTable}
@@ -1343,7 +1343,7 @@ public final class PBModelFlinkTable {
     /**
      * <pre>
      * Table Info
-     * TODO: unused on present.
+     * TODO: Reserved structure. unused on present.
      * </pre>
      *
      * Protobuf type {@code model.FlinkTable}

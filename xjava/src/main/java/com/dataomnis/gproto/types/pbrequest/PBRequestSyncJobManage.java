@@ -8767,8 +8767,8 @@ public final class PBRequestSyncJobManage {
 
   }
 
-  public interface SetSyncJobArgsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.SetSyncJobArgs)
+  public interface SetSyncJobConfOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.SetSyncJobConf)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8821,47 +8821,47 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the args field is set.
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * @return Whether the conf field is set.
      */
-    boolean hasArgs();
+    boolean hasConf();
     /**
      * <pre>
      * The args set.
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-     * @return The args.
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * @return The conf.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs getArgs();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf();
     /**
      * <pre>
      * The args set.
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder getArgsOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder();
   }
   /**
    * <pre>
-   * SetSyncJobArgs used as a request parameters for RPC.
+   * SetSyncJobConf used as a request parameters for RPC.
    * </pre>
    *
-   * Protobuf type {@code request.SetSyncJobArgs}
+   * Protobuf type {@code request.SetSyncJobConf}
    */
-  public static final class SetSyncJobArgs extends
+  public static final class SetSyncJobConf extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.SetSyncJobArgs)
-      SetSyncJobArgsOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.SetSyncJobConf)
+      SetSyncJobConfOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SetSyncJobArgs.newBuilder() to construct.
-    private SetSyncJobArgs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SetSyncJobConf.newBuilder() to construct.
+    private SetSyncJobConf(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SetSyncJobArgs() {
+    private SetSyncJobConf() {
       spaceId_ = "";
       jobId_ = "";
     }
@@ -8870,7 +8870,7 @@ public final class PBRequestSyncJobManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SetSyncJobArgs();
+      return new SetSyncJobConf();
     }
 
     @java.lang.Override
@@ -8878,7 +8878,7 @@ public final class PBRequestSyncJobManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetSyncJobArgs(
+    private SetSyncJobConf(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8909,14 +8909,14 @@ public final class PBRequestSyncJobManage {
               break;
             }
             case 26: {
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder subBuilder = null;
-              if (args_ != null) {
-                subBuilder = args_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder subBuilder = null;
+              if (conf_ != null) {
+                subBuilder = conf_.toBuilder();
               }
-              args_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.parser(), extensionRegistry);
+              conf_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(args_);
-                args_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(conf_);
+                conf_ = subBuilder.buildPartial();
               }
 
               break;
@@ -8942,15 +8942,15 @@ public final class PBRequestSyncJobManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobArgs_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobConf_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobArgs_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobConf_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -9049,20 +9049,20 @@ public final class PBRequestSyncJobManage {
       }
     }
 
-    public static final int ARGS_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs args_;
+    public static final int CONF_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
     /**
      * <pre>
      * The args set.
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the args field is set.
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * @return Whether the conf field is set.
      */
     @java.lang.Override
-    public boolean hasArgs() {
-      return args_ != null;
+    public boolean hasConf() {
+      return conf_ != null;
     }
     /**
      * <pre>
@@ -9070,12 +9070,12 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-     * @return The args.
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * @return The conf.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs getArgs() {
-      return args_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.getDefaultInstance() : args_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf() {
+      return conf_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
     }
     /**
      * <pre>
@@ -9083,11 +9083,11 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder getArgsOrBuilder() {
-      return getArgs();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
+      return getConf();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9110,8 +9110,8 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (args_ != null) {
-        output.writeMessage(3, getArgs());
+      if (conf_ != null) {
+        output.writeMessage(3, getConf());
       }
       unknownFields.writeTo(output);
     }
@@ -9128,9 +9128,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (args_ != null) {
+      if (conf_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getArgs());
+          .computeMessageSize(3, getConf());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9142,19 +9142,19 @@ public final class PBRequestSyncJobManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
-      if (hasArgs() != other.hasArgs()) return false;
-      if (hasArgs()) {
-        if (!getArgs()
-            .equals(other.getArgs())) return false;
+      if (hasConf() != other.hasConf()) return false;
+      if (hasConf()) {
+        if (!getConf()
+            .equals(other.getConf())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -9171,78 +9171,78 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
-      if (hasArgs()) {
-        hash = (37 * hash) + ARGS_FIELD_NUMBER;
-        hash = (53 * hash) + getArgs().hashCode();
+      if (hasConf()) {
+        hash = (37 * hash) + CONF_FIELD_NUMBER;
+        hash = (53 * hash) + getConf().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9255,7 +9255,7 @@ public final class PBRequestSyncJobManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9272,29 +9272,29 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * SetSyncJobArgs used as a request parameters for RPC.
+     * SetSyncJobConf used as a request parameters for RPC.
      * </pre>
      *
-     * Protobuf type {@code request.SetSyncJobArgs}
+     * Protobuf type {@code request.SetSyncJobConf}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.SetSyncJobArgs)
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.SetSyncJobConf)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConfOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobArgs_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobConf_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobArgs_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobConf_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9316,11 +9316,11 @@ public final class PBRequestSyncJobManage {
 
         jobId_ = "";
 
-        if (argsBuilder_ == null) {
-          args_ = null;
+        if (confBuilder_ == null) {
+          conf_ = null;
         } else {
-          args_ = null;
-          argsBuilder_ = null;
+          conf_ = null;
+          confBuilder_ = null;
         }
         return this;
       }
@@ -9328,17 +9328,17 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobArgs_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_SetSyncJobConf_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9346,14 +9346,14 @@ public final class PBRequestSyncJobManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf(this);
         result.spaceId_ = spaceId_;
         result.jobId_ = jobId_;
-        if (argsBuilder_ == null) {
-          result.args_ = args_;
+        if (confBuilder_ == null) {
+          result.conf_ = conf_;
         } else {
-          result.args_ = argsBuilder_.build();
+          result.conf_ = confBuilder_.build();
         }
         onBuilt();
         return result;
@@ -9393,16 +9393,16 @@ public final class PBRequestSyncJobManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -9411,8 +9411,8 @@ public final class PBRequestSyncJobManage {
           jobId_ = other.jobId_;
           onChanged();
         }
-        if (other.hasArgs()) {
-          mergeArgs(other.getArgs());
+        if (other.hasConf()) {
+          mergeConf(other.getConf());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9429,11 +9429,11 @@ public final class PBRequestSyncJobManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9645,20 +9645,20 @@ public final class PBRequestSyncJobManage {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs args_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder> argsBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> confBuilder_;
       /**
        * <pre>
        * The args set.
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-       * @return Whether the args field is set.
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * @return Whether the conf field is set.
        */
-      public boolean hasArgs() {
-        return argsBuilder_ != null || args_ != null;
+      public boolean hasConf() {
+        return confBuilder_ != null || conf_ != null;
       }
       /**
        * <pre>
@@ -9666,14 +9666,14 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
-       * @return The args.
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * @return The conf.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs getArgs() {
-        if (argsBuilder_ == null) {
-          return args_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.getDefaultInstance() : args_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf() {
+        if (confBuilder_ == null) {
+          return conf_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
         } else {
-          return argsBuilder_.getMessage();
+          return confBuilder_.getMessage();
         }
       }
       /**
@@ -9682,17 +9682,17 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public Builder setArgs(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs value) {
-        if (argsBuilder_ == null) {
+      public Builder setConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
+        if (confBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          args_ = value;
+          conf_ = value;
           onChanged();
         } else {
-          argsBuilder_.setMessage(value);
+          confBuilder_.setMessage(value);
         }
 
         return this;
@@ -9703,15 +9703,15 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public Builder setArgs(
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder builderForValue) {
-        if (argsBuilder_ == null) {
-          args_ = builderForValue.build();
+      public Builder setConf(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder builderForValue) {
+        if (confBuilder_ == null) {
+          conf_ = builderForValue.build();
           onChanged();
         } else {
-          argsBuilder_.setMessage(builderForValue.build());
+          confBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -9722,19 +9722,19 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeArgs(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs value) {
-        if (argsBuilder_ == null) {
-          if (args_ != null) {
-            args_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.newBuilder(args_).mergeFrom(value).buildPartial();
+      public Builder mergeConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
+        if (confBuilder_ == null) {
+          if (conf_ != null) {
+            conf_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.newBuilder(conf_).mergeFrom(value).buildPartial();
           } else {
-            args_ = value;
+            conf_ = value;
           }
           onChanged();
         } else {
-          argsBuilder_.mergeFrom(value);
+          confBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -9745,15 +9745,15 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public Builder clearArgs() {
-        if (argsBuilder_ == null) {
-          args_ = null;
+      public Builder clearConf() {
+        if (confBuilder_ == null) {
+          conf_ = null;
           onChanged();
         } else {
-          args_ = null;
-          argsBuilder_ = null;
+          conf_ = null;
+          confBuilder_ = null;
         }
 
         return this;
@@ -9764,12 +9764,12 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder getArgsBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder getConfBuilder() {
         
         onChanged();
-        return getArgsFieldBuilder().getBuilder();
+        return getConfFieldBuilder().getBuilder();
       }
       /**
        * <pre>
@@ -9777,14 +9777,14 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder getArgsOrBuilder() {
-        if (argsBuilder_ != null) {
-          return argsBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
+        if (confBuilder_ != null) {
+          return confBuilder_.getMessageOrBuilder();
         } else {
-          return args_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.getDefaultInstance() : args_;
+          return conf_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
         }
       }
       /**
@@ -9793,20 +9793,20 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.SyncJobArgs args = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder> 
-          getArgsFieldBuilder() {
-        if (argsBuilder_ == null) {
-          argsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobArgsOrBuilder>(
-                  getArgs(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> 
+          getConfFieldBuilder() {
+        if (confBuilder_ == null) {
+          confBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder>(
+                  getConf(),
                   getParentForChildren(),
                   isClean());
-          args_ = null;
+          conf_ = null;
         }
-        return argsBuilder_;
+        return confBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9821,41 +9821,41 @@ public final class PBRequestSyncJobManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.SetSyncJobArgs)
+      // @@protoc_insertion_point(builder_scope:request.SetSyncJobConf)
     }
 
-    // @@protoc_insertion_point(class_scope:request.SetSyncJobArgs)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.SetSyncJobConf)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SetSyncJobArgs>
-        PARSER = new com.google.protobuf.AbstractParser<SetSyncJobArgs>() {
+    private static final com.google.protobuf.Parser<SetSyncJobConf>
+        PARSER = new com.google.protobuf.AbstractParser<SetSyncJobConf>() {
       @java.lang.Override
-      public SetSyncJobArgs parsePartialFrom(
+      public SetSyncJobConf parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetSyncJobArgs(input, extensionRegistry);
+        return new SetSyncJobConf(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SetSyncJobArgs> parser() {
+    public static com.google.protobuf.Parser<SetSyncJobConf> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SetSyncJobArgs> getParserForType() {
+    public com.google.protobuf.Parser<SetSyncJobConf> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobArgs getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SetSyncJobConf getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10677,8 +10677,8 @@ public final class PBRequestSyncJobManage {
 
   }
 
-  public interface GetSyncJobArgsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.GetSyncJobArgs)
+  public interface GetSyncJobConfOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.GetSyncJobConf)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -10727,21 +10727,21 @@ public final class PBRequestSyncJobManage {
   }
   /**
    * <pre>
-   * GetSyncJobArgs used as a request parameters for RPC.
+   * GetSyncJobConf used as a request parameters for RPC.
    * </pre>
    *
-   * Protobuf type {@code request.GetSyncJobArgs}
+   * Protobuf type {@code request.GetSyncJobConf}
    */
-  public static final class GetSyncJobArgs extends
+  public static final class GetSyncJobConf extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.GetSyncJobArgs)
-      GetSyncJobArgsOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.GetSyncJobConf)
+      GetSyncJobConfOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GetSyncJobArgs.newBuilder() to construct.
-    private GetSyncJobArgs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GetSyncJobConf.newBuilder() to construct.
+    private GetSyncJobConf(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetSyncJobArgs() {
+    private GetSyncJobConf() {
       jobId_ = "";
       version_ = "";
     }
@@ -10750,7 +10750,7 @@ public final class PBRequestSyncJobManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetSyncJobArgs();
+      return new GetSyncJobConf();
     }
 
     @java.lang.Override
@@ -10758,7 +10758,7 @@ public final class PBRequestSyncJobManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetSyncJobArgs(
+    private GetSyncJobConf(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10809,15 +10809,15 @@ public final class PBRequestSyncJobManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobArgs_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobConf_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobArgs_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobConf_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.Builder.class);
     }
 
     public static final int JOB_ID_FIELD_NUMBER = 1;
@@ -10961,10 +10961,10 @@ public final class PBRequestSyncJobManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf) obj;
 
       if (!getJobId()
           .equals(other.getJobId())) return false;
@@ -10990,69 +10990,69 @@ public final class PBRequestSyncJobManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11065,7 +11065,7 @@ public final class PBRequestSyncJobManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11082,29 +11082,29 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * GetSyncJobArgs used as a request parameters for RPC.
+     * GetSyncJobConf used as a request parameters for RPC.
      * </pre>
      *
-     * Protobuf type {@code request.GetSyncJobArgs}
+     * Protobuf type {@code request.GetSyncJobConf}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.GetSyncJobArgs)
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.GetSyncJobConf)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConfOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobArgs_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobConf_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobArgs_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobConf_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11132,17 +11132,17 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobArgs_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GetSyncJobConf_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11150,8 +11150,8 @@ public final class PBRequestSyncJobManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf(this);
         result.jobId_ = jobId_;
         result.version_ = version_;
         onBuilt();
@@ -11192,16 +11192,16 @@ public final class PBRequestSyncJobManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf.getDefaultInstance()) return this;
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
@@ -11225,11 +11225,11 @@ public final class PBRequestSyncJobManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11453,41 +11453,41 @@ public final class PBRequestSyncJobManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.GetSyncJobArgs)
+      // @@protoc_insertion_point(builder_scope:request.GetSyncJobConf)
     }
 
-    // @@protoc_insertion_point(class_scope:request.GetSyncJobArgs)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.GetSyncJobConf)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetSyncJobArgs>
-        PARSER = new com.google.protobuf.AbstractParser<GetSyncJobArgs>() {
+    private static final com.google.protobuf.Parser<GetSyncJobConf>
+        PARSER = new com.google.protobuf.AbstractParser<GetSyncJobConf>() {
       @java.lang.Override
-      public GetSyncJobArgs parsePartialFrom(
+      public GetSyncJobConf parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetSyncJobArgs(input, extensionRegistry);
+        return new GetSyncJobConf(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetSyncJobArgs> parser() {
+    public static com.google.protobuf.Parser<GetSyncJobConf> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetSyncJobArgs> getParserForType() {
+    public com.google.protobuf.Parser<GetSyncJobConf> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobArgs getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobConf getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18706,20 +18706,20 @@ public final class PBRequestSyncJobManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_SetSyncJobSchedule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_SetSyncJobArgs_descriptor;
+    internal_static_request_SetSyncJobConf_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_SetSyncJobArgs_fieldAccessorTable;
+      internal_static_request_SetSyncJobConf_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_GetSyncJobSchedule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_GetSyncJobSchedule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_GetSyncJobArgs_descriptor;
+    internal_static_request_GetSyncJobConf_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_GetSyncJobArgs_fieldAccessorTable;
+      internal_static_request_GetSyncJobConf_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListReleaseSyncJobs_descriptor;
   private static final 
@@ -18800,12 +18800,12 @@ public final class PBRequestSyncJobManage {
       "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017" +
       "\022\r\302\001\n\360\001\024\312\002\004stj-\0225\n\010schedule\030\003 \001(\0132\026.mode" +
       "l.SyncJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\213\001\n\016SetSy" +
-      "ncJobArgs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "ncJobConf\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
       "\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004stj-\022-\n\004args\030\003 \001(\0132\022.model.SyncJobArgsB" +
+      "\004stj-\022-\n\004conf\030\003 \001(\0132\022.model.SyncJobConfB" +
       "\013\342\337\037\007\022\005\342\001\002\020\001\"P\n\022GetSyncJobSchedule\022#\n\006jo" +
       "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007versi" +
-      "on\030\002 \001(\tB\004\342\337\037\000\"L\n\016GetSyncJobArgs\022#\n\006job_" +
+      "on\030\002 \001(\tB\004\342\337\037\000\"L\n\016GetSyncJobConf\022#\n\006job_" +
       "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007version" +
       "\030\002 \001(\tB\004\342\337\037\000\"\247\002\n\023ListReleaseSyncJobs\022&\n\005" +
       "limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006" +
@@ -18887,23 +18887,23 @@ public final class PBRequestSyncJobManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SetSyncJobSchedule_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", "Schedule", });
-    internal_static_request_SetSyncJobArgs_descriptor =
+    internal_static_request_SetSyncJobConf_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_request_SetSyncJobArgs_fieldAccessorTable = new
+    internal_static_request_SetSyncJobConf_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_SetSyncJobArgs_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", "Args", });
+        internal_static_request_SetSyncJobConf_descriptor,
+        new java.lang.String[] { "SpaceId", "JobId", "Conf", });
     internal_static_request_GetSyncJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_request_GetSyncJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetSyncJobSchedule_descriptor,
         new java.lang.String[] { "JobId", "Version", });
-    internal_static_request_GetSyncJobArgs_descriptor =
+    internal_static_request_GetSyncJobConf_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_request_GetSyncJobArgs_fieldAccessorTable = new
+    internal_static_request_GetSyncJobConf_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_GetSyncJobArgs_descriptor,
+        internal_static_request_GetSyncJobConf_descriptor,
         new java.lang.String[] { "JobId", "Version", });
     internal_static_request_ListReleaseSyncJobs_descriptor =
       getDescriptor().getMessageTypes().get(10);

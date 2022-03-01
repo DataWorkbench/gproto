@@ -3,6 +3,9 @@ package com.dataomnis.gproto.service.pbsvcspace;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * TODO: Reserved structure. unused on present.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.43.2)",
@@ -215,6 +218,9 @@ public final class UDFManageGrpc {
   }
 
   /**
+   * <pre>
+   * TODO: Reserved structure. unused on present.
+   * </pre>
    */
   public static abstract class UDFManageImplBase implements io.grpc.BindableService {
 
@@ -295,6 +301,9 @@ public final class UDFManageGrpc {
   }
 
   /**
+   * <pre>
+   * TODO: Reserved structure. unused on present.
+   * </pre>
    */
   public static final class UDFManageStub extends io.grpc.stub.AbstractAsyncStub<UDFManageStub> {
     private UDFManageStub(
@@ -350,6 +359,9 @@ public final class UDFManageGrpc {
   }
 
   /**
+   * <pre>
+   * TODO: Reserved structure. unused on present.
+   * </pre>
    */
   public static final class UDFManageBlockingStub extends io.grpc.stub.AbstractBlockingStub<UDFManageBlockingStub> {
     private UDFManageBlockingStub(
@@ -400,6 +412,9 @@ public final class UDFManageGrpc {
   }
 
   /**
+   * <pre>
+   * TODO: Reserved structure. unused on present.
+   * </pre>
    */
   public static final class UDFManageFutureStub extends io.grpc.stub.AbstractFutureStub<UDFManageFutureStub> {
     private UDFManageFutureStub(

@@ -174,27 +174,6 @@ public final class PBModelResource {
 
     /**
      * <pre>
-     * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
-
-    /**
-     * <pre>
      * File status, 1 =&gt; "deleted", 2 =&gt; "enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
@@ -299,7 +278,6 @@ public final class PBModelResource {
       name_ = "";
       desc_ = "";
       etag_ = "";
-      type_ = 0;
       status_ = 0;
       version_ = "";
       createdBy_ = "";
@@ -381,12 +359,6 @@ public final class PBModelResource {
               etag_ = s;
               break;
             }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
             case 80: {
               int rawValue = input.readEnum();
 
@@ -445,132 +417,6 @@ public final class PBModelResource {
       return com.dataomnis.gproto.types.pbmodel.PBModelResource.internal_static_model_File_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.PBModelResource.File.class, com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code model.File.Type}
-     */
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ResourceUnset = 0;</code>
-       */
-      ResourceUnset(0),
-      /**
-       * <code>Jar = 1;</code>
-       */
-      Jar(1),
-      /**
-       * <code>Udf = 2;</code>
-       */
-      Udf(2),
-      /**
-       * <code>CONNECTOR = 3;</code>
-       */
-      CONNECTOR(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>ResourceUnset = 0;</code>
-       */
-      public static final int ResourceUnset_VALUE = 0;
-      /**
-       * <code>Jar = 1;</code>
-       */
-      public static final int Jar_VALUE = 1;
-      /**
-       * <code>Udf = 2;</code>
-       */
-      public static final int Udf_VALUE = 2;
-      /**
-       * <code>CONNECTOR = 3;</code>
-       */
-      public static final int CONNECTOR_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Type valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Type forNumber(int value) {
-        switch (value) {
-          case 0: return ResourceUnset;
-          case 1: return Jar;
-          case 2: return Udf;
-          case 3: return CONNECTOR;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelResource.File.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Type[] VALUES = values();
-
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Type(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.File.Type)
     }
 
     /**
@@ -664,7 +510,7 @@ public final class PBModelResource {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelResource.File.getDescriptor().getEnumTypes().get(1);
+        return com.dataomnis.gproto.types.pbmodel.PBModelResource.File.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Status[] VALUES = values();
@@ -1010,35 +856,6 @@ public final class PBModelResource {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 9;
-    private int type_;
-    /**
-     * <pre>
-     * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-    }
-
     public static final int STATUS_FIELD_NUMBER = 10;
     private int status_;
     /**
@@ -1234,9 +1051,6 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(9, type_);
-      }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Status.StatusUnset.getNumber()) {
         output.writeEnum(10, status_);
       }
@@ -1287,10 +1101,6 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, type_);
-      }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, status_);
@@ -1340,7 +1150,6 @@ public final class PBModelResource {
           != other.getSize()) return false;
       if (!getEtag()
           .equals(other.getEtag())) return false;
-      if (type_ != other.type_) return false;
       if (status_ != other.status_) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
@@ -1379,8 +1188,6 @@ public final class PBModelResource {
           getSize());
       hash = (37 * hash) + ETAG_FIELD_NUMBER;
       hash = (53 * hash) + getEtag().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -1542,8 +1349,6 @@ public final class PBModelResource {
 
         etag_ = "";
 
-        type_ = 0;
-
         status_ = 0;
 
         version_ = "";
@@ -1588,7 +1393,6 @@ public final class PBModelResource {
         result.desc_ = desc_;
         result.size_ = size_;
         result.etag_ = etag_;
-        result.type_ = type_;
         result.status_ = status_;
         result.version_ = version_;
         result.createdBy_ = createdBy_;
@@ -1671,9 +1475,6 @@ public final class PBModelResource {
         if (!other.getEtag().isEmpty()) {
           etag_ = other.etag_;
           onChanged();
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
@@ -2419,85 +2220,6 @@ public final class PBModelResource {
         return this;
       }
 
-      private int type_ = 0;
-      /**
-       * <pre>
-       * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * File type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 9 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int status_ = 0;
       /**
        * <pre>
@@ -2939,24 +2661,21 @@ public final class PBModelResource {
     java.lang.String[] descriptorData = {
       "\n\034proto/types/model/file.proto\022\005model\0323g" +
       "ithub.com/yu31/protoc-plugin/proto/valid" +
-      "ator.proto\"\270\004\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "ator.proto\"\315\003\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
       "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004res-\022\013\n\003pid\030\003 \001(\t\022\024\n\014is_directory" +
       "\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\033" +
       "\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\031\n\004size\030\007 \001(" +
       "\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\004etag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
-      "\001 \022-\n\004type\030\t \001(\0162\020.model.File.TypeB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\0221\n\006status\030\n \001(\0162\022.model.File.S" +
-      "tatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302" +
-      "\001\006\200\002\000\210\002A\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034" +
-      "\n\007updated\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\":\n\004Type\022\021\n\r" +
-      "ResourceUnset\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCON" +
-      "NECTOR\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007D" +
-      "eleted\020\001\022\013\n\007Enabled\020\002Bj\n\"com.dataomnis.g" +
-      "proto.types.pbmodelB\017PBModelResourceP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "\001 \0221\n\006status\030\n \001(\0162\022.model.File.StatusB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\360\001\020\022#\n\ncreated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002" +
+      "A\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updat" +
+      "ed\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013Statu" +
+      "sUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bj\n\"co" +
+      "m.dataomnis.gproto.types.pbmodelB\017PBMode" +
+      "lResourceP\000Z1github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2968,7 +2687,7 @@ public final class PBModelResource {
     internal_static_model_File_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_File_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Pid", "IsDirectory", "Name", "Desc", "Size", "Etag", "Type", "Status", "Version", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Id", "Pid", "IsDirectory", "Name", "Desc", "Size", "Etag", "Status", "Version", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

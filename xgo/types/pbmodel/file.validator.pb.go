@@ -63,18 +63,6 @@ func (this *File) _xxx_xxx_Validator_Validate_etag() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_File_InEnums_Type = map[File_Type]bool{0: true, 1: true, 2: true, 3: true}
-
-func (this *File) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type > 0) {
-		return protovalidator.FieldError1("File", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	if !(_xxx_xxx_Validator_File_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("File", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_File_InEnums_Status = map[File_Status]bool{0: true, 1: true, 2: true}
 
 func (this *File) _xxx_xxx_Validator_Validate_status() error {
@@ -139,9 +127,6 @@ func (this *File) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_etag(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {

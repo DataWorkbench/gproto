@@ -286,6 +286,7 @@ public final class PBModelUDF {
   /**
    * <pre>
    * UDF Schema
+   * TODO: Reserved structure. unused on present.
    * </pre>
    *
    * Protobuf type {@code model.UDF}
@@ -1608,6 +1609,7 @@ public final class PBModelUDF {
     /**
      * <pre>
      * UDF Schema
+     * TODO: Reserved structure. unused on present.
      * </pre>
      *
      * Protobuf type {@code model.UDF}

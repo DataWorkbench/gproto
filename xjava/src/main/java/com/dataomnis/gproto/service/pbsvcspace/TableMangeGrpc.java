@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  * <pre>
  * TableMange for manage flink table.
- * NOTICE: Unused on present.
+ * TODO: Reserved structure. unused on present.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -221,7 +221,7 @@ public final class TableMangeGrpc {
   /**
    * <pre>
    * TableMange for manage flink table.
-   * NOTICE: Unused on present.
+   * TODO: Reserved structure. unused on present.
    * </pre>
    */
   public static abstract class TableMangeImplBase implements io.grpc.BindableService {
@@ -305,7 +305,7 @@ public final class TableMangeGrpc {
   /**
    * <pre>
    * TableMange for manage flink table.
-   * NOTICE: Unused on present.
+   * TODO: Reserved structure. unused on present.
    * </pre>
    */
   public static final class TableMangeStub extends io.grpc.stub.AbstractAsyncStub<TableMangeStub> {
@@ -364,7 +364,7 @@ public final class TableMangeGrpc {
   /**
    * <pre>
    * TableMange for manage flink table.
-   * NOTICE: Unused on present.
+   * TODO: Reserved structure. unused on present.
    * </pre>
    */
   public static final class TableMangeBlockingStub extends io.grpc.stub.AbstractBlockingStub<TableMangeBlockingStub> {
@@ -418,7 +418,7 @@ public final class TableMangeGrpc {
   /**
    * <pre>
    * TableMange for manage flink table.
-   * NOTICE: Unused on present.
+   * TODO: Reserved structure. unused on present.
    * </pre>
    */
   public static final class TableMangeFutureStub extends io.grpc.stub.AbstractFutureStub<TableMangeFutureStub> {
