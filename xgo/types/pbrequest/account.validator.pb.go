@@ -85,6 +85,35 @@ func (this *CreateUser) _xxx_xxx_Validator_Validate_lang() error {
 	return nil
 }
 
+func (this *CreateUser) _xxx_xxx_Validator_Validate_email() error {
+	if !(len(this.Email) > 1) {
+		return protovalidator.FieldError1("CreateUser", "the byte length of field 'email' must be greater than '1'", protovalidator.StringByteLenToString(this.Email))
+	}
+	if !(len(this.Email) <= 128) {
+		return protovalidator.FieldError1("CreateUser", "the byte length of field 'email' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Email))
+	}
+	return nil
+}
+
+func (this *CreateUser) _xxx_xxx_Validator_Validate_phone() error {
+	if !(len(this.Phone) > 1) {
+		return protovalidator.FieldError1("CreateUser", "the byte length of field 'phone' must be greater than '1'", protovalidator.StringByteLenToString(this.Phone))
+	}
+	if !(len(this.Phone) <= 128) {
+		return protovalidator.FieldError1("CreateUser", "the byte length of field 'phone' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Phone))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_CreateUser_In_Currency = map[string]bool{"": true, "CNY": true, "USD": true}
+
+func (this *CreateUser) _xxx_xxx_Validator_Validate_currency() error {
+	if !(_xxx_xxx_Validator_CreateUser_In_Currency[this.Currency]) {
+		return protovalidator.FieldError1("CreateUser", "the value of field 'currency' must be one of '[ CNY USD]'", this.Currency)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateUser
 func (this *CreateUser) Validate() error {
 	if this == nil {
@@ -97,6 +126,15 @@ func (this *CreateUser) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_lang(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_email(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_phone(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_currency(); err != nil {
 		return err
 	}
 	return nil
