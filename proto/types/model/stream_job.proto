@@ -24,7 +24,6 @@ message StreamJob {
     SQL = 2;
     Jar = 3;
     Python = 4;
-    Scala = 5;
   }
 
   enum Status {
@@ -65,7 +64,7 @@ message StreamJob {
   // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
   bool is_directory = 7;
 
-  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython"
   // @inject_tag: json:"type" gorm:"column:type;"
   Type type = 8 [
     (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
@@ -117,7 +116,7 @@ message StreamJobProperty {
 message StreamJobCode {
   option (gosql.serialize) = {json: {}};
 
-  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython"
   // @inject_tag: json:"type"
   StreamJob.Type type = 1 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
@@ -172,24 +171,14 @@ message StreamJobArgs {
     (validator.field).tags.int = { gte: 0, lte: 100 }
   ];
 
-  // The list of function(udf). Not required
-  // @inject_tag: json:"udfs"
-  repeated string udfs = 3 [
-    (validator.field).check_if = { field: "udfs", tags: { repeated: { len_gt: 0 } } },
-    (validator.field).tags.repeated = { item: { string: { prefix: "udf-" } } }
-  ];
+  // The list of dependent resources files. Not required.
+  // @inject_tag: json:"files"
+  repeated string files = 3 [ (validator.field).tags.repeated = { item: { string: { prefix: "res-" } } }];
 
-  // The list of connectors dependency package. Not required.
-  // @inject_tag: json:"connectors"
-  repeated string connectors = 4 [
-    (validator.field).check_if = { field: "connectors", tags: { repeated: { len_gt: 0 } } },
-    (validator.field).tags.repeated = { item: { string: { prefix: "res-" } } }
-  ];
-
-  // The list of built-in connectors. Not required.
+  // The list of built-in connectors package. Not required.
   // Notice: check build-in connectors in `StreamJobManage Service`
   // @inject_tag: json:"built_in_connectors"
-  repeated string built_in_connectors = 5;
+  repeated string built_in_connectors = 4;
 }
 
 // StreamJobSchedule represents a job schedule info.
@@ -322,7 +311,7 @@ message StreamJobRelease {
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython"
   // @inject_tag: json:"type" gorm:"column:type;"
   StreamJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 

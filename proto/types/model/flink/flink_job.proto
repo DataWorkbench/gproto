@@ -80,9 +80,8 @@ message FlinkOperator {
 
 // FlinkJar
 message FlinkJar {
-  // The id of file type Jar. Is Required.
-  // FIXME: Rename JSON Name
-  // @inject_tag: json:"resource_id"
+  // The if of resource file. Is Required.
+  // @inject_tag: json:"file_id"
   string file_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
 
   // JarArgs
