@@ -342,7 +342,7 @@ message DescribeSyncFlinkUIByInstanceId {
 }
 
 
-// DescribeSyncJob used as a request parameters for RPC.
+// DescribeDBAndTable used as a request parameters for RPC.
 message DescribeDBAndTable {
     // The db database
     // @inject_tag: json:"database" uri:"database"

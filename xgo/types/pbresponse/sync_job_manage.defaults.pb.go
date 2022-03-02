@@ -7,6 +7,7 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -83,6 +84,14 @@ func (this *ListSyncJobVersions) SetDefaults() {
 
 // Set default value for message response.DescribeSyncFlinkUIByInstanceId
 func (this *DescribeSyncFlinkUIByInstanceId) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.DescribeDBAndTable
+func (this *DescribeDBAndTable) SetDefaults() {
 	if this == nil {
 		return
 	}

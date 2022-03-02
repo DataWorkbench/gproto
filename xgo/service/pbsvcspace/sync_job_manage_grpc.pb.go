@@ -78,6 +78,8 @@ type SyncJobManageClient interface {
 	// Interface for helper.
 	//
 	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
+	// DescribeDBAndTable
+	DescribeDBAndTable(ctx context.Context, in *pbrequest.DescribeDBAndTable, opts ...grpc.CallOption) (*pbresponse.DescribeDBAndTable, error)
 }
 
 type syncJobManageClient struct {
@@ -268,6 +270,15 @@ func (c *syncJobManageClient) DescribeSyncFlinkUIByInstanceId(ctx context.Contex
 	return out, nil
 }
 
+func (c *syncJobManageClient) DescribeDBAndTable(ctx context.Context, in *pbrequest.DescribeDBAndTable, opts ...grpc.CallOption) (*pbresponse.DescribeDBAndTable, error) {
+	out := new(pbresponse.DescribeDBAndTable)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/DescribeDBAndTable", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SyncJobManageServer is the server API for SyncJobManage service.
 // All implementations must embed UnimplementedSyncJobManageServer
 // for forward compatibility
@@ -325,6 +336,8 @@ type SyncJobManageServer interface {
 	// Interface for helper.
 	//
 	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
+	// DescribeDBAndTable
+	DescribeDBAndTable(context.Context, *pbrequest.DescribeDBAndTable) (*pbresponse.DescribeDBAndTable, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -391,6 +404,9 @@ func (UnimplementedSyncJobManageServer) GetSyncJobVersionSchedule(context.Contex
 }
 func (UnimplementedSyncJobManageServer) DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncFlinkUIByInstanceId not implemented")
+}
+func (UnimplementedSyncJobManageServer) DescribeDBAndTable(context.Context, *pbrequest.DescribeDBAndTable) (*pbresponse.DescribeDBAndTable, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDBAndTable not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -765,6 +781,24 @@ func _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_DescribeDBAndTable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeDBAndTable)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).DescribeDBAndTable(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/DescribeDBAndTable",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).DescribeDBAndTable(ctx, req.(*pbrequest.DescribeDBAndTable))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SyncJobManage_ServiceDesc is the grpc.ServiceDesc for SyncJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -851,6 +885,10 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeSyncFlinkUIByInstanceId",
 			Handler:    _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler,
+		},
+		{
+			MethodName: "DescribeDBAndTable",
+			Handler:    _SyncJobManage_DescribeDBAndTable_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
