@@ -348,7 +348,7 @@ message DescribeDBAndTable {
     // @inject_tag: json:"database" uri:"database"
     string database = 1;
 
-    // get colum by table
+    // get colums by table
     // @inject_tag: json:"table" uri:"table"
     string table = 2 [(validator.field) = {}];
 }
