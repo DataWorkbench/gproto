@@ -78,10 +78,10 @@ message DescribeSyncFlinkUIByInstanceId {
 
 message DescribeDBAndTable{
     // @inject_tag: json:"database"
-    string database = 1;
+    repeated string database = 1;
 
     // @inject_tag: json:"table"
-    string table = 2;
+    repeated string table = 2;
 
     // column
     // @inject_tag: json:"column"
