@@ -345,7 +345,7 @@ message DescribeSyncFlinkUIByInstanceId {
 // DescribeDBAndTable used as a request parameters for RPC.
 message DescribeDBAndTable {
 
-    // The data source id
+    // data source id
     // @inject_tag: json:"data_source_id" uri:"data_source_id"
     string data_source_id = 1;
 
