@@ -3169,24 +3169,24 @@ public final class PBRequestAccount {
         getLangBytes();
 
     /**
-     * <code>string email = 4;</code>
+     * <code>string email = 4 [(.validator.field) = { ... }</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 4;</code>
+     * <code>string email = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>string phone = 5;</code>
+     * <code>string phone = 5 [(.validator.field) = { ... }</code>
      * @return The phone.
      */
     java.lang.String getPhone();
     /**
-     * <code>string phone = 5;</code>
+     * <code>string phone = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for phone.
      */
     com.google.protobuf.ByteString
@@ -3217,12 +3217,12 @@ public final class PBRequestAccount {
         getRoleBytes();
 
     /**
-     * <code>string currency = 8;</code>
+     * <code>string currency = 8 [(.validator.field) = { ... }</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
-     * <code>string currency = 8;</code>
+     * <code>string currency = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for currency.
      */
     com.google.protobuf.ByteString
@@ -3585,7 +3585,7 @@ public final class PBRequestAccount {
     public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 4;</code>
+     * <code>string email = 4 [(.validator.field) = { ... }</code>
      * @return The email.
      */
     @java.lang.Override
@@ -3602,7 +3602,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string email = 4;</code>
+     * <code>string email = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -3623,7 +3623,7 @@ public final class PBRequestAccount {
     public static final int PHONE_FIELD_NUMBER = 5;
     private volatile java.lang.Object phone_;
     /**
-     * <code>string phone = 5;</code>
+     * <code>string phone = 5 [(.validator.field) = { ... }</code>
      * @return The phone.
      */
     @java.lang.Override
@@ -3640,7 +3640,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string phone = 5;</code>
+     * <code>string phone = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for phone.
      */
     @java.lang.Override
@@ -3737,7 +3737,7 @@ public final class PBRequestAccount {
     public static final int CURRENCY_FIELD_NUMBER = 8;
     private volatile java.lang.Object currency_;
     /**
-     * <code>string currency = 8;</code>
+     * <code>string currency = 8 [(.validator.field) = { ... }</code>
      * @return The currency.
      */
     @java.lang.Override
@@ -3754,7 +3754,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string currency = 8;</code>
+     * <code>string currency = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for currency.
      */
     @java.lang.Override
@@ -4646,7 +4646,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 4;</code>
+       * <code>string email = 4 [(.validator.field) = { ... }</code>
        * @return The email.
        */
       public java.lang.String getEmail() {
@@ -4662,7 +4662,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 4;</code>
+       * <code>string email = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
@@ -4679,7 +4679,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 4;</code>
+       * <code>string email = 4 [(.validator.field) = { ... }</code>
        * @param value The email to set.
        * @return This builder for chaining.
        */
@@ -4694,7 +4694,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 4;</code>
+       * <code>string email = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
@@ -4704,7 +4704,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 4;</code>
+       * <code>string email = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
@@ -4722,7 +4722,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object phone_ = "";
       /**
-       * <code>string phone = 5;</code>
+       * <code>string phone = 5 [(.validator.field) = { ... }</code>
        * @return The phone.
        */
       public java.lang.String getPhone() {
@@ -4738,7 +4738,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string phone = 5;</code>
+       * <code>string phone = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for phone.
        */
       public com.google.protobuf.ByteString
@@ -4755,7 +4755,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string phone = 5;</code>
+       * <code>string phone = 5 [(.validator.field) = { ... }</code>
        * @param value The phone to set.
        * @return This builder for chaining.
        */
@@ -4770,7 +4770,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string phone = 5;</code>
+       * <code>string phone = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPhone() {
@@ -4780,7 +4780,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string phone = 5;</code>
+       * <code>string phone = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for phone to set.
        * @return This builder for chaining.
        */
@@ -4950,7 +4950,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object currency_ = "";
       /**
-       * <code>string currency = 8;</code>
+       * <code>string currency = 8 [(.validator.field) = { ... }</code>
        * @return The currency.
        */
       public java.lang.String getCurrency() {
@@ -4966,7 +4966,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string currency = 8;</code>
+       * <code>string currency = 8 [(.validator.field) = { ... }</code>
        * @return The bytes for currency.
        */
       public com.google.protobuf.ByteString
@@ -4983,7 +4983,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string currency = 8;</code>
+       * <code>string currency = 8 [(.validator.field) = { ... }</code>
        * @param value The currency to set.
        * @return This builder for chaining.
        */
@@ -4998,7 +4998,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string currency = 8;</code>
+       * <code>string currency = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrency() {
@@ -5008,7 +5008,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string currency = 8;</code>
+       * <code>string currency = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.
        */
@@ -9742,28 +9742,29 @@ public final class PBRequestAccount {
       "\n\020req_query_string\030\003 \001(\t\022\020\n\010req_body\030\004 \001" +
       "(\t\022\025\n\rreq_signature\030\005 \001(\t\022\031\n\021req_access_" +
       "key_id\030\006 \001(\t\022\022\n\nreq_source\030\007 \001(\t\022\026\n\016req_" +
-      "user_agent\030\010 \001(\t\"\221\002\n\nCreateUser\022#\n\tuser_" +
+      "user_agent\030\010 \001(\t\"\314\002\n\nCreateUser\022#\n\tuser_" +
       "name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password" +
       "\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022!\n\004lang\030\003 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\nJ\000J\002cnJ\002en\022\r\n\005email\030\004 \001(\t\022\r\n\005ph" +
-      "one\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022" +
-      "\020\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(" +
-      "\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007r" +
-      "egions\030\014 \003(\t\"\376\001\n\nUpdateUser\022$\n\007user_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\021\n\tuser_name\030\002" +
-      " \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005pho" +
-      "ne\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022\020" +
-      "\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(\t" +
-      "\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007re" +
-      "gions\030\014 \003(\t\022\020\n\010password\030\r \001(\t\"2\n\nDeleteU" +
-      "ser\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr" +
-      "-\"\037\n\014CheckSession\022\017\n\007session\030\001 \001(\t\"X\n\rCr" +
-      "eateSession\022#\n\tuser_name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002" +
-      "\310\001\200\001Bo\n$com.dataomnis.gproto.types.pbreq" +
-      "uestB\020PBRequestAccountP\000Z3github.com/Dat" +
-      "aWorkbench/gproto/xgo/types/pbrequestb\006p" +
-      "roto3"
+      "\342\337\037\017\022\r\302\001\nJ\000J\002cnJ\002en\022\037\n\005email\030\004 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\005phone\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
+      "\001\230\002\200\001\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022\'\n\010c" +
+      "urrency\030\010 \001(\tB\025\342\337\037\021\022\017\302\001\014J\000J\003CNYJ\003USD\022\026\n\016" +
+      "gravatar_email\030\t \001(\t\022\021\n\tprivilege\030\n \001(\005\022" +
+      "\r\n\005zones\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\"\376\001\n\nUpda" +
+      "teUser\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "usr-\022\021\n\tuser_name\030\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n" +
+      "\005email\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006status\030\006 " +
+      "\001(\t\022\014\n\004role\030\007 \001(\t\022\020\n\010currency\030\010 \001(\t\022\026\n\016g" +
+      "ravatar_email\030\t \001(\t\022\021\n\tprivilege\030\n \001(\005\022\r" +
+      "\n\005zones\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\022\020\n\010passwo" +
+      "rd\030\r \001(\t\"2\n\nDeleteUser\022$\n\007user_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\"\037\n\014CheckSession\022\017\n\007" +
+      "session\030\001 \001(\t\"X\n\rCreateSession\022#\n\tuser_n" +
+      "ame\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030" +
+      "\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001Bo\n$com.dataomnis" +
+      ".gproto.types.pbrequestB\020PBRequestAccoun" +
+      "tP\000Z3github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

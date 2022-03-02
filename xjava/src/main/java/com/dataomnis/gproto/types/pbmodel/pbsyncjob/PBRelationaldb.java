@@ -2128,21 +2128,20 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 9;</code>
-     * @return The mode.
+     * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+     * @return The enum numeric value on the wire for mode.
      */
-    java.lang.String getMode();
+    int getModeValue();
     /**
      * <pre>
      * mode
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 9;</code>
-     * @return The bytes for mode.
+     * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+     * @return The mode.
      */
-    com.google.protobuf.ByteString
-        getModeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode getMode();
 
     /**
      * <pre>
@@ -2150,21 +2149,20 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"semantic" 
      * </pre>
      *
-     * <code>string semantic = 10;</code>
-     * @return The semantic.
+     * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+     * @return The enum numeric value on the wire for semantic.
      */
-    java.lang.String getSemantic();
+    int getSemanticValue();
     /**
      * <pre>
      * semantic
      * &#64;inject_tag: json:"semantic" 
      * </pre>
      *
-     * <code>string semantic = 10;</code>
-     * @return The bytes for semantic.
+     * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+     * @return The semantic.
      */
-    com.google.protobuf.ByteString
-        getSemanticBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic getSemantic();
 
     /**
      * <pre>
@@ -2208,8 +2206,8 @@ public final class PBRelationaldb {
       postSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       writeMode_ = "";
       updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      mode_ = "";
-      semantic_ = "";
+      mode_ = 0;
+      semantic_ = 0;
       withNoLock_ = "";
     }
 
@@ -2306,16 +2304,16 @@ public final class PBRelationaldb {
               updateKey_.add(s);
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 72: {
+              int rawValue = input.readEnum();
 
-              mode_ = s;
+              mode_ = rawValue;
               break;
             }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 80: {
+              int rawValue = input.readEnum();
 
-              semantic_ = s;
+              semantic_ = rawValue;
               break;
             }
             case 90: {
@@ -2369,6 +2367,231 @@ public final class PBRelationaldb {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.internal_static_model_RelationaldbTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.RelationaldbTarget.Mode}
+     */
+    public enum Mode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>insert = 0;</code>
+       */
+      insert(0),
+      /**
+       * <code>replace = 1;</code>
+       */
+      replace(1),
+      /**
+       * <code>update = 2;</code>
+       */
+      update(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>insert = 0;</code>
+       */
+      public static final int insert_VALUE = 0;
+      /**
+       * <code>replace = 1;</code>
+       */
+      public static final int replace_VALUE = 1;
+      /**
+       * <code>update = 2;</code>
+       */
+      public static final int update_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0: return insert;
+          case 1: return replace;
+          case 2: return update;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Mode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+              public Mode findValueByNumber(int number) {
+                return Mode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.RelationaldbTarget.Mode)
+    }
+
+    /**
+     * Protobuf enum {@code model.RelationaldbTarget.Semantic}
+     */
+    public enum Semantic
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>at_least_once = 0;</code>
+       */
+      at_least_once(0),
+      /**
+       * <code>exactly_once = 1;</code>
+       */
+      exactly_once(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>at_least_once = 0;</code>
+       */
+      public static final int at_least_once_VALUE = 0;
+      /**
+       * <code>exactly_once = 1;</code>
+       */
+      public static final int exactly_once_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Semantic valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Semantic forNumber(int value) {
+        switch (value) {
+          case 0: return at_least_once;
+          case 1: return exactly_once;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Semantic>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Semantic> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Semantic>() {
+              public Semantic findValueByNumber(int number) {
+                return Semantic.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Semantic[] VALUES = values();
+
+      public static Semantic valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Semantic(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.RelationaldbTarget.Semantic)
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
@@ -2769,28 +2992,18 @@ public final class PBRelationaldb {
     }
 
     public static final int MODE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object mode_;
+    private int mode_;
     /**
      * <pre>
      * mode
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 9;</code>
-     * @return The mode.
+     * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+     * @return The enum numeric value on the wire for mode.
      */
-    @java.lang.Override
-    public java.lang.String getMode() {
-      java.lang.Object ref = mode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mode_ = s;
-        return s;
-      }
+    @java.lang.Override public int getModeValue() {
+      return mode_;
     }
     /**
      * <pre>
@@ -2798,47 +3011,28 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 9;</code>
-     * @return The bytes for mode.
+     * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+     * @return The mode.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getModeBytes() {
-      java.lang.Object ref = mode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode getMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.valueOf(mode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.UNRECOGNIZED : result;
     }
 
     public static final int SEMANTIC_FIELD_NUMBER = 10;
-    private volatile java.lang.Object semantic_;
+    private int semantic_;
     /**
      * <pre>
      * semantic
      * &#64;inject_tag: json:"semantic" 
      * </pre>
      *
-     * <code>string semantic = 10;</code>
-     * @return The semantic.
+     * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+     * @return The enum numeric value on the wire for semantic.
      */
-    @java.lang.Override
-    public java.lang.String getSemantic() {
-      java.lang.Object ref = semantic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        semantic_ = s;
-        return s;
-      }
+    @java.lang.Override public int getSemanticValue() {
+      return semantic_;
     }
     /**
      * <pre>
@@ -2846,22 +3040,13 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"semantic" 
      * </pre>
      *
-     * <code>string semantic = 10;</code>
-     * @return The bytes for semantic.
+     * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+     * @return The semantic.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSemanticBytes() {
-      java.lang.Object ref = semantic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        semantic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic getSemantic() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.valueOf(semantic_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.UNRECOGNIZED : result;
     }
 
     public static final int WITH_NO_LOCK_FIELD_NUMBER = 11;
@@ -2950,11 +3135,11 @@ public final class PBRelationaldb {
       for (int i = 0; i < updateKey_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updateKey_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, mode_);
+      if (mode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.insert.getNumber()) {
+        output.writeEnum(9, mode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(semantic_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, semantic_);
+      if (semantic_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.at_least_once.getNumber()) {
+        output.writeEnum(10, semantic_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withNoLock_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, withNoLock_);
@@ -3014,11 +3199,13 @@ public final class PBRelationaldb {
         size += dataSize;
         size += 1 * getUpdateKeyList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, mode_);
+      if (mode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.insert.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, mode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(semantic_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, semantic_);
+      if (semantic_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.at_least_once.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, semantic_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withNoLock_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, withNoLock_);
@@ -3054,10 +3241,8 @@ public final class PBRelationaldb {
           != other.getBatchSize()) return false;
       if (!getUpdateKeyList()
           .equals(other.getUpdateKeyList())) return false;
-      if (!getMode()
-          .equals(other.getMode())) return false;
-      if (!getSemantic()
-          .equals(other.getSemantic())) return false;
+      if (mode_ != other.mode_) return false;
+      if (semantic_ != other.semantic_) return false;
       if (!getWithNoLock()
           .equals(other.getWithNoLock())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3098,9 +3283,9 @@ public final class PBRelationaldb {
         hash = (53 * hash) + getUpdateKeyList().hashCode();
       }
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getMode().hashCode();
+      hash = (53 * hash) + mode_;
       hash = (37 * hash) + SEMANTIC_FIELD_NUMBER;
-      hash = (53 * hash) + getSemantic().hashCode();
+      hash = (53 * hash) + semantic_;
       hash = (37 * hash) + WITH_NO_LOCK_FIELD_NUMBER;
       hash = (53 * hash) + getWithNoLock().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3257,9 +3442,9 @@ public final class PBRelationaldb {
 
         updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
-        mode_ = "";
+        mode_ = 0;
 
-        semantic_ = "";
+        semantic_ = 0;
 
         withNoLock_ = "";
 
@@ -3450,13 +3635,11 @@ public final class PBRelationaldb {
           }
           onChanged();
         }
-        if (!other.getMode().isEmpty()) {
-          mode_ = other.mode_;
-          onChanged();
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
         }
-        if (!other.getSemantic().isEmpty()) {
-          semantic_ = other.semantic_;
-          onChanged();
+        if (other.semantic_ != 0) {
+          setSemanticValue(other.getSemanticValue());
         }
         if (!other.getWithNoLock().isEmpty()) {
           withNoLock_ = other.withNoLock_;
@@ -4690,27 +4873,18 @@ public final class PBRelationaldb {
         return this;
       }
 
-      private java.lang.Object mode_ = "";
+      private int mode_ = 0;
       /**
        * <pre>
        * mode
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 9;</code>
-       * @return The mode.
+       * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+       * @return The enum numeric value on the wire for mode.
        */
-      public java.lang.String getMode() {
-        java.lang.Object ref = mode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getModeValue() {
+        return mode_;
       }
       /**
        * <pre>
@@ -4718,38 +4892,12 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 9;</code>
-       * @return The bytes for mode.
-       */
-      public com.google.protobuf.ByteString
-          getModeBytes() {
-        java.lang.Object ref = mode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * mode
-       * &#64;inject_tag: json:"mode" 
-       * </pre>
-       *
-       * <code>string mode = 9;</code>
-       * @param value The mode to set.
+       * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+       * @param value The enum numeric value on the wire for mode to set.
        * @return This builder for chaining.
        */
-      public Builder setMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setModeValue(int value) {
+        
         mode_ = value;
         onChanged();
         return this;
@@ -4760,58 +4908,62 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 9;</code>
+       * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode getMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.valueOf(mode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * mode
+       * &#64;inject_tag: json:"mode" 
+       * </pre>
+       *
+       * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mode
+       * &#64;inject_tag: json:"mode" 
+       * </pre>
+       *
+       * <code>.model.RelationaldbTarget.Mode mode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearMode() {
         
-        mode_ = getDefaultInstance().getMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * mode
-       * &#64;inject_tag: json:"mode" 
-       * </pre>
-       *
-       * <code>string mode = 9;</code>
-       * @param value The bytes for mode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        mode_ = value;
+        mode_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object semantic_ = "";
+      private int semantic_ = 0;
       /**
        * <pre>
        * semantic
        * &#64;inject_tag: json:"semantic" 
        * </pre>
        *
-       * <code>string semantic = 10;</code>
-       * @return The semantic.
+       * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+       * @return The enum numeric value on the wire for semantic.
        */
-      public java.lang.String getSemantic() {
-        java.lang.Object ref = semantic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          semantic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getSemanticValue() {
+        return semantic_;
       }
       /**
        * <pre>
@@ -4819,38 +4971,12 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"semantic" 
        * </pre>
        *
-       * <code>string semantic = 10;</code>
-       * @return The bytes for semantic.
-       */
-      public com.google.protobuf.ByteString
-          getSemanticBytes() {
-        java.lang.Object ref = semantic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          semantic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * semantic
-       * &#64;inject_tag: json:"semantic" 
-       * </pre>
-       *
-       * <code>string semantic = 10;</code>
-       * @param value The semantic to set.
+       * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+       * @param value The enum numeric value on the wire for semantic to set.
        * @return This builder for chaining.
        */
-      public Builder setSemantic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSemanticValue(int value) {
+        
         semantic_ = value;
         onChanged();
         return this;
@@ -4861,33 +4987,46 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"semantic" 
        * </pre>
        *
-       * <code>string semantic = 10;</code>
+       * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+       * @return The semantic.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic getSemantic() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.valueOf(semantic_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * semantic
+       * &#64;inject_tag: json:"semantic" 
+       * </pre>
+       *
+       * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
+       * @param value The semantic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSemantic(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Semantic value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        semantic_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * semantic
+       * &#64;inject_tag: json:"semantic" 
+       * </pre>
+       *
+       * <code>.model.RelationaldbTarget.Semantic semantic = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearSemantic() {
         
-        semantic_ = getDefaultInstance().getSemantic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * semantic
-       * &#64;inject_tag: json:"semantic" 
-       * </pre>
-       *
-       * <code>string semantic = 10;</code>
-       * @param value The bytes for semantic to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSemanticBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        semantic_ = value;
+        semantic_ = 0;
         onChanged();
         return this;
       }
@@ -5073,16 +5212,20 @@ public final class PBRelationaldb {
       "n.proto\"s\n\022RelationaldbSource\022\035\n\006column\030" +
       "\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006s" +
       "chema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\020\n\010split_pk\030\005" +
-      " \001(\t\"\347\001\n\022RelationaldbTarget\022\035\n\006column\030\001 " +
+      " \001(\t\"\211\003\n\022RelationaldbTarget\022\035\n\006column\030\001 " +
       "\003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006sch" +
       "ema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \003(\t\022\020\n\010post_sql\030\005" +
       " \003(\t\022\022\n\nwrite_mode\030\006 \001(\t\022\022\n\nbatch_size\030\007" +
-      " \001(\005\022\022\n\nupdate_key\030\010 \003(\t\022\014\n\004mode\030\t \001(\t\022\020" +
-      "\n\010semantic\030\n \001(\t\022\024\n\014with_no_lock\030\013 \001(\tB}" +
-      "\n,com.dataomnis.gproto.types.pbmodel.pbs" +
-      "yncjobB\016PBRelationaldbP\000Z;github.com/Dat" +
-      "aWorkbench/gproto/xgo/types/pbmodel/pbsy" +
-      "ncjobb\006proto3"
+      " \001(\005\022\022\n\nupdate_key\030\010 \003(\t\022,\n\004mode\030\t \001(\0162\036" +
+      ".model.RelationaldbTarget.Mode\0224\n\010semant" +
+      "ic\030\n \001(\0162\".model.RelationaldbTarget.Sema" +
+      "ntic\022\024\n\014with_no_lock\030\013 \001(\t\"+\n\004Mode\022\n\n\006in" +
+      "sert\020\000\022\013\n\007replace\020\001\022\n\n\006update\020\002\"/\n\010Seman" +
+      "tic\022\021\n\rat_least_once\020\000\022\020\n\014exactly_once\020\001" +
+      "B}\n,com.dataomnis.gproto.types.pbmodel.p" +
+      "bsyncjobB\016PBRelationaldbP\000Z;github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbmodel/pb" +
+      "syncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -8,9 +8,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/spacemanager/sync_job_manage.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class SyncJobManageGrpc {
 
   private SyncJobManageGrpc() {}
@@ -638,6 +637,37 @@ public final class SyncJobManageGrpc {
     return getDescribeSyncFlinkUIByInstanceIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> getDescribeDBAndTableMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeDBAndTable",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> getDescribeDBAndTableMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> getDescribeDBAndTableMethod;
+    if ((getDescribeDBAndTableMethod = SyncJobManageGrpc.getDescribeDBAndTableMethod) == null) {
+      synchronized (SyncJobManageGrpc.class) {
+        if ((getDescribeDBAndTableMethod = SyncJobManageGrpc.getDescribeDBAndTableMethod) == null) {
+          SyncJobManageGrpc.getDescribeDBAndTableMethod = getDescribeDBAndTableMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDBAndTable"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("DescribeDBAndTable"))
+              .build();
+        }
+      }
+    }
+    return getDescribeDBAndTableMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -902,6 +932,16 @@ public final class SyncJobManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeSyncFlinkUIByInstanceIdMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * DescribeDBAndTable
+     * </pre>
+     */
+    public void describeDBAndTable(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDBAndTableMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -1044,6 +1084,13 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId>(
                   this, METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID)))
+          .addMethod(
+            getDescribeDBAndTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable>(
+                  this, METHODID_DESCRIBE_DBAND_TABLE)))
           .build();
     }
   }
@@ -1297,6 +1344,17 @@ public final class SyncJobManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * DescribeDBAndTable
+     * </pre>
+     */
+    public void describeDBAndTable(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeDBAndTableMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1527,6 +1585,16 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * DescribeDBAndTable
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable describeDBAndTable(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeDBAndTableMethod(), getCallOptions(), request);
     }
   }
 
@@ -1779,6 +1847,17 @@ public final class SyncJobManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * DescribeDBAndTable
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable> describeDBAndTable(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeDBAndTableMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SYNC_JOBS = 0;
@@ -1801,6 +1880,7 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 17;
   private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
   private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
+  private static final int METHODID_DESCRIBE_DBAND_TABLE = 20;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1899,6 +1979,10 @@ public final class SyncJobManageGrpc {
           serviceImpl.describeSyncFlinkUIByInstanceId((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId>) responseObserver);
           break;
+        case METHODID_DESCRIBE_DBAND_TABLE:
+          serviceImpl.describeDBAndTable((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeDBAndTable) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeDBAndTable>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1980,6 +2064,7 @@ public final class SyncJobManageGrpc {
               .addMethod(getGetSyncJobVersionConfMethod())
               .addMethod(getGetSyncJobVersionScheduleMethod())
               .addMethod(getDescribeSyncFlinkUIByInstanceIdMethod())
+              .addMethod(getDescribeDBAndTableMethod())
               .build();
         }
       }

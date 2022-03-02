@@ -27,7 +27,7 @@ public final class PBSvcSyncJobManage {
       "nage.proto\022\014spacemanager\032\035proto/types/mo" +
       "del/empty.proto\032)proto/types/request/syn" +
       "c_job_manage.proto\032*proto/types/response" +
-      "/sync_job_manage.proto2\212\014\n\rSyncJobManage" +
+      "/sync_job_manage.proto2\335\014\n\rSyncJobManage" +
       "\022?\n\014ListSyncJobs\022\025.request.ListSyncJobs\032" +
       "\026.response.ListSyncJobs\"\000\022?\n\016DeleteSyncJ" +
       "obs\022\027.request.DeleteSyncJobs\032\022.model.Emp" +
@@ -66,10 +66,12 @@ public final class PBSvcSyncJobManage {
       "chedule\"\000\022x\n\037DescribeSyncFlinkUIByInstan" +
       "ceId\022(.request.DescribeSyncFlinkUIByInst" +
       "anceId\032).response.DescribeSyncFlinkUIByI" +
-      "nstanceId\"\000Bw\n\'com.dataomnis.gproto.serv" +
-      "ice.pbsvcspaceB\022PBSvcSyncJobManageP\000Z6gi" +
-      "thub.com/DataWorkbench/gproto/xgo/servic" +
-      "e/pbsvcspaceb\006proto3"
+      "nstanceId\"\000\022Q\n\022DescribeDBAndTable\022\033.requ" +
+      "est.DescribeDBAndTable\032\034.response.Descri" +
+      "beDBAndTable\"\000Bw\n\'com.dataomnis.gproto.s" +
+      "ervice.pbsvcspaceB\022PBSvcSyncJobManageP\000Z" +
+      "6github.com/DataWorkbench/gproto/xgo/ser" +
+      "vice/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
