@@ -12,6 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/sync_job.proto";
+import "proto/types/model/syncjob/column.proto";
 
 // ListSyncJobs used as reply parameters in RPC or response body in HTTP.
 message ListSyncJobs {
@@ -74,3 +75,17 @@ message DescribeSyncFlinkUIByInstanceId {
     // @inject_tag: json:"web_ui"
     string web_ui = 1;
 }
+
+message DescribeDBAndTable{
+    // @inject_tag: json:"database"
+    string database = 1;
+
+    // @inject_tag: json:"table"
+    string table = 2;
+
+    // column
+    // @inject_tag: json:"column"
+    repeated model.Column column = 3;
+
+}
+

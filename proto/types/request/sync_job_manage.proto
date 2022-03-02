@@ -340,3 +340,15 @@ message DescribeSyncFlinkUIByInstanceId {
     // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
     string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
 }
+
+
+// DescribeSyncJob used as a request parameters for RPC.
+message DescribeDBAndTable {
+    // The db database
+    // @inject_tag: json:"database" uri:"database"
+    string database = 1;
+
+    // get colums by table
+    // @inject_tag: json:"table" uri:"table"
+    string table = 2 [(validator.field) = {}];
+}

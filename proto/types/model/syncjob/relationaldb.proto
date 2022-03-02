@@ -37,6 +37,18 @@ message RelationaldbSource {
 }
 
 message RelationaldbTarget {
+
+    enum Mode {
+        insert = 0;
+        replace = 1;
+        update = 2;
+    }
+
+    enum Semantic {
+        at_least_once = 0;
+        exactly_once = 1;
+    }
+
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -63,10 +75,10 @@ message RelationaldbTarget {
     repeated string update_key = 8;
     // mode
     // @inject_tag: json:"mode" 
-    string mode = 9;
+    Mode mode = 9;
     // semantic
     // @inject_tag: json:"semantic" 
-    string semantic = 10;
+    Semantic semantic = 10;
     // with no lock
     // @inject_tag: json:"with_no_lock" 
     string with_no_lock = 11;
