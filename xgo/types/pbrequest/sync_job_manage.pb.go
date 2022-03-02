@@ -1290,7 +1290,7 @@ type DescribeDBAndTable struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The db database
+	// data source id
 	DataSourceId string `protobuf:"bytes,1,opt,name=data_source_id,json=dataSourceId,proto3" json:"data_source_id" uri:"data_source_id"`
 	// The db database
 	Database string `protobuf:"bytes,2,opt,name=database,proto3" json:"database" uri:"database"`
