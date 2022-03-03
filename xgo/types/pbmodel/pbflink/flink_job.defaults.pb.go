@@ -9,6 +9,14 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message flink.FlinkJob
+func (this *FlinkJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message flink.FlinkOperator
 func (this *FlinkOperator) SetDefaults() {
 	if this == nil {
@@ -24,14 +32,6 @@ func (this *FlinkOperator) SetDefaults() {
 
 // Set default value for message flink.FlinkJar
 func (this *FlinkJar) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message flink.FlinkScala
-func (this *FlinkScala) SetDefaults() {
 	if this == nil {
 		return
 	}

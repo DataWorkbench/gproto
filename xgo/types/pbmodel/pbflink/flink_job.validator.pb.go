@@ -12,6 +12,14 @@ import (
 	utf8 "unicode/utf8"
 )
 
+// Set default value for message flink.FlinkJob
+func (this *FlinkJob) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_FlinkOperator_InEnums_Type = map[FlinkOperator_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true, 17: true, 18: true}
 
 func (this *FlinkOperator) _xxx_xxx_Validator_Validate_type() error {
@@ -165,27 +173,6 @@ func (this *FlinkJar) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_jar_entry(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *FlinkScala) _xxx_xxx_Validator_Validate_code() error {
-	if !(len(this.Code) <= 40000) {
-		return protovalidator.FieldError1("FlinkScala", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
-	}
-	if !(utf8.ValidString(this.Code)) {
-		return protovalidator.FieldError1("FlinkScala", "the value of field 'code' must be a UTF8 string", this.Code)
-	}
-	return nil
-}
-
-// Set default value for message flink.FlinkScala
-func (this *FlinkScala) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
 		return err
 	}
 	return nil

@@ -4626,36 +4626,6 @@ public final class PBModelStreamJob {
      * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder getPythonOrBuilder();
-
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the scala field is set.
-     */
-    boolean hasScala();
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     * @return The scala.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getScala();
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder getScalaOrBuilder();
   }
   /**
    * <pre>
@@ -4759,19 +4729,6 @@ public final class PBModelStreamJob {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(python_);
                 python_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder subBuilder = null;
-              if (scala_ != null) {
-                subBuilder = scala_.toBuilder();
-              }
-              scala_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scala_);
-                scala_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5025,47 +4982,6 @@ public final class PBModelStreamJob {
       return getPython();
     }
 
-    public static final int SCALA_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala scala_;
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the scala field is set.
-     */
-    @java.lang.Override
-    public boolean hasScala() {
-      return scala_ != null;
-    }
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     * @return The scala.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getScala() {
-      return scala_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.getDefaultInstance() : scala_;
-    }
-    /**
-     * <pre>
-     * Scala
-     * &#64;inject_tag: json:"scala"
-     * </pre>
-     *
-     * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder getScalaOrBuilder() {
-      return getScala();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5095,9 +5011,6 @@ public final class PBModelStreamJob {
       if (python_ != null) {
         output.writeMessage(5, getPython());
       }
-      if (scala_ != null) {
-        output.writeMessage(6, getScala());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5126,10 +5039,6 @@ public final class PBModelStreamJob {
       if (python_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getPython());
-      }
-      if (scala_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getScala());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5164,11 +5073,6 @@ public final class PBModelStreamJob {
         if (!getPython()
             .equals(other.getPython())) return false;
       }
-      if (hasScala() != other.hasScala()) return false;
-      if (hasScala()) {
-        if (!getScala()
-            .equals(other.getScala())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5197,10 +5101,6 @@ public final class PBModelStreamJob {
       if (hasPython()) {
         hash = (37 * hash) + PYTHON_FIELD_NUMBER;
         hash = (53 * hash) + getPython().hashCode();
-      }
-      if (hasScala()) {
-        hash = (37 * hash) + SCALA_FIELD_NUMBER;
-        hash = (53 * hash) + getScala().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5366,12 +5266,6 @@ public final class PBModelStreamJob {
           python_ = null;
           pythonBuilder_ = null;
         }
-        if (scalaBuilder_ == null) {
-          scala_ = null;
-        } else {
-          scala_ = null;
-          scalaBuilder_ = null;
-        }
         return this;
       }
 
@@ -5423,11 +5317,6 @@ public final class PBModelStreamJob {
           result.python_ = python_;
         } else {
           result.python_ = pythonBuilder_.build();
-        }
-        if (scalaBuilder_ == null) {
-          result.scala_ = scala_;
-        } else {
-          result.scala_ = scalaBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5514,9 +5403,6 @@ public final class PBModelStreamJob {
         }
         if (other.hasPython()) {
           mergePython(other.getPython());
-        }
-        if (other.hasScala()) {
-          mergeScala(other.getScala());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6438,170 +6324,6 @@ public final class PBModelStreamJob {
           python_ = null;
         }
         return pythonBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala scala_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder> scalaBuilder_;
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       * @return Whether the scala field is set.
-       */
-      public boolean hasScala() {
-        return scalaBuilder_ != null || scala_ != null;
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       * @return The scala.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getScala() {
-        if (scalaBuilder_ == null) {
-          return scala_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.getDefaultInstance() : scala_;
-        } else {
-          return scalaBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setScala(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala value) {
-        if (scalaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          scala_ = value;
-          onChanged();
-        } else {
-          scalaBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setScala(
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder builderForValue) {
-        if (scalaBuilder_ == null) {
-          scala_ = builderForValue.build();
-          onChanged();
-        } else {
-          scalaBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeScala(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala value) {
-        if (scalaBuilder_ == null) {
-          if (scala_ != null) {
-            scala_ =
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.newBuilder(scala_).mergeFrom(value).buildPartial();
-          } else {
-            scala_ = value;
-          }
-          onChanged();
-        } else {
-          scalaBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearScala() {
-        if (scalaBuilder_ == null) {
-          scala_ = null;
-          onChanged();
-        } else {
-          scala_ = null;
-          scalaBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder getScalaBuilder() {
-        
-        onChanged();
-        return getScalaFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder getScalaOrBuilder() {
-        if (scalaBuilder_ != null) {
-          return scalaBuilder_.getMessageOrBuilder();
-        } else {
-          return scala_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.getDefaultInstance() : scala_;
-        }
-      }
-      /**
-       * <pre>
-       * Scala
-       * &#64;inject_tag: json:"scala"
-       * </pre>
-       *
-       * <code>.flink.FlinkScala scala = 6 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder> 
-          getScalaFieldBuilder() {
-        if (scalaBuilder_ == null) {
-          scalaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder>(
-                  getScala(),
-                  getParentForChildren(),
-                  isClean());
-          scala_ = null;
-        }
-        return scalaBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12609,7 +12331,7 @@ public final class PBModelStreamJob {
       "\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(\0132\024.model.StreamJobC" +
       "odeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model.StreamJo" +
       "bArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\0132\030.model.St" +
-      "reamJobScheduleB\004\342\337\037\000\"\226\003\n\rStreamJobCode\022" +
+      "reamJobScheduleB\004\342\337\037\000\"\324\002\n\rStreamJobCode\022" +
       "2\n\004type\030\001 \001(\0162\025.model.StreamJob.TypeB\r\342\337" +
       "\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003(\0132\024.flink.F" +
       "linkOperatorB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352" +
@@ -12617,51 +12339,49 @@ public final class PBModelStreamJob {
       "\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132" +
       "\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037" +
       "\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink.FlinkPy" +
-      "thonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022@\n\005" +
-      "scala\030\006 \001(\0132\021.flink.FlinkScalaB\036\342\337\037\017\n\r\n\004" +
-      "type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\240\001\n\rStrea" +
-      "mJobArgs\022\030\n\ncluster_id\030\001 \001(\tB\004\342\337\037\000\022*\n\013pa" +
-      "rallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0048d@\000\022$" +
-      "\n\005files\030\003 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004res-\022\033\n\023" +
-      "built_in_connectors\030\004 \003(\t:\006\312\262\004\002\n\000\"\266\007\n\021St" +
-      "reamJobSchedule\022O\n\017schedule_policy\030\001 \001(\016" +
-      "2\'.model.StreamJobSchedule.SchedulePolic" +
-      "yB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032" +
-      "\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017" +
-      "\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030" +
-      "\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022concurrency_policy" +
-      "\030\006 \001(\0162*.model.StreamJobSchedule.Concurr" +
-      "encyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type" +
-      "\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337" +
-      "\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ" +
-      "\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule" +
-      "_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t " +
-      "\001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retry_policy\030\n \001(\016" +
-      "2$.model.StreamJobSchedule.RetryPolicyB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027" +
-      "\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016" +
-      "retry_interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_poli" +
-      "cy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy" +
-      "\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodicity" +
-      "\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S\n\021" +
-      "ConcurrencyPolicy\022\032\n\026ConcurrencyPolicyUn" +
-      "set\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020" +
-      "\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000\022\010" +
-      "\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\257\003\n\020StreamJob" +
-      "Release\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022" +
-      "\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004" +
-      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.m" +
-      "odel.StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006st" +
-      "atus\030\006 \001(\0162\036.model.StreamJobRelease.Stat" +
-      "us\022\014\n\004desc\030\007 \001(\t\022#\n\ncreated_by\030\010 \001(\tB\017\342\337" +
-      "\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001" +
-      "\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Sta" +
-      "tus\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSusp" +
-      "ended\020\002\022\013\n\007Deleted\020\003Bk\n\"com.dataomnis.gp" +
-      "roto.types.pbmodelB\020PBModelStreamJobP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "thonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001:\006\312\262" +
+      "\004\002\n\000\"\240\001\n\rStreamJobArgs\022\030\n\ncluster_id\030\001 \001" +
+      "(\tB\004\342\337\037\000\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342" +
+      "\337\037\t\022\007\262\001\0048d@\000\022$\n\005files\030\003 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n" +
+      "\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\004 \003(\t:" +
+      "\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017schedul" +
+      "e_policy\030\001 \001(\0162\'.model.StreamJobSchedule" +
+      ".SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010execut" +
+      "ed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002" +
+      "\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022conc" +
+      "urrency_policy\030\006 \001(\0162*.model.StreamJobSc" +
+      "hedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_p" +
+      "olicy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003day" +
+      "J\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337" +
+      "\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001" +
+      "\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retr" +
+      "y_policy\030\n \001(\0162$.model.StreamJobSchedule" +
+      ".RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_lim" +
+      "it\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037" +
+      "\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027" +
+      "\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016" +
+      "SchedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022" +
+      "\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Imm" +
+      "ediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concu" +
+      "rrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid" +
+      "\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryP" +
+      "olicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000" +
+      "\"\257\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004" +
+      "type\030\005 \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model.StreamJ" +
+      "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n\ncreate" +
+      "d_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t" +
+      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Ac" +
+      "tive\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n\"co" +
+      "m.dataomnis.gproto.types.pbmodelB\020PBMode" +
+      "lStreamJobP\000Z1github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12688,7 +12408,7 @@ public final class PBModelStreamJob {
     internal_static_model_StreamJobCode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobCode_descriptor,
-        new java.lang.String[] { "Type", "Operators", "Sql", "Jar", "Python", "Scala", });
+        new java.lang.String[] { "Type", "Operators", "Sql", "Jar", "Python", });
     internal_static_model_StreamJobArgs_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_StreamJobArgs_fieldAccessorTable = new

@@ -24,12 +24,32 @@ func (this *SubmitStreamJob) _xxx_xxx_Validator_Validate_property() error {
 	return nil
 }
 
+func (this *SubmitStreamJob) _xxx_xxx_Validator_Validate_flink_url() error {
+	if !(this.FlinkUrl != "") {
+		return protovalidator.FieldError1("SubmitStreamJob", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
+	}
+	return nil
+}
+
+func (this *SubmitStreamJob) _xxx_xxx_Validator_Validate_flink_version() error {
+	if !(this.FlinkVersion != "") {
+		return protovalidator.FieldError1("SubmitStreamJob", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
+	}
+	return nil
+}
+
 // Set default value for message request.SubmitStreamJob
 func (this *SubmitStreamJob) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_property(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
 		return err
 	}
 	return nil

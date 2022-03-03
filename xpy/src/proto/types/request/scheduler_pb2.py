@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\022PBRequestSchedulerP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"f\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"b\n\rSubmitSyncJob\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"u\n\x0bStopSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"G\n\x18\x44\x65leteSyncJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"j\n\x16\x44\x65leteSyncJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"\xaa\x01\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1e\n\tflink_url\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"b\n\rSubmitSyncJob\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"u\n\x0bStopSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"G\n\x18\x44\x65leteSyncJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"j\n\x16\x44\x65leteSyncJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
 
@@ -51,6 +51,20 @@ _SUBMITSTREAMJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_url', full_name='request.SubmitStreamJob.flink_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_version', full_name='request.SubmitStreamJob.flink_version', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -63,8 +77,8 @@ _SUBMITSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=273,
+  serialized_start=172,
+  serialized_end=342,
 )
 
 
@@ -109,8 +123,8 @@ _STOPSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=275,
-  serialized_end=394,
+  serialized_start=344,
+  serialized_end=463,
 )
 
 
@@ -141,8 +155,8 @@ _DELETESTREAMJOBSBYSPACEIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=469,
+  serialized_start=465,
+  serialized_end=538,
 )
 
 
@@ -180,8 +194,8 @@ _DELETESTREAMJOBSBYJOBIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=579,
+  serialized_start=540,
+  serialized_end=648,
 )
 
 
@@ -219,8 +233,8 @@ _SUBMITSYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=581,
-  serialized_end=679,
+  serialized_start=650,
+  serialized_end=748,
 )
 
 
@@ -265,8 +279,8 @@ _STOPSYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=681,
-  serialized_end=798,
+  serialized_start=750,
+  serialized_end=867,
 )
 
 
@@ -297,8 +311,8 @@ _DELETESYNCJOBSBYSPACEIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=800,
-  serialized_end=871,
+  serialized_start=869,
+  serialized_end=940,
 )
 
 
@@ -336,8 +350,8 @@ _DELETESYNCJOBSBYJOBIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=873,
-  serialized_end=979,
+  serialized_start=942,
+  serialized_end=1048,
 )
 
 _SUBMITSTREAMJOB.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBPROPERTY
@@ -412,6 +426,8 @@ _sym_db.RegisterMessage(DeleteSyncJobsByJobIds)
 DESCRIPTOR._options = None
 _SUBMITSTREAMJOB.fields_by_name['property']._options = None
 _SUBMITSTREAMJOB.fields_by_name['stop_running']._options = None
+_SUBMITSTREAMJOB.fields_by_name['flink_url']._options = None
+_SUBMITSTREAMJOB.fields_by_name['flink_version']._options = None
 _STOPSTREAMJOB.fields_by_name['space_id']._options = None
 _STOPSTREAMJOB.fields_by_name['job_id']._options = None
 _STOPSTREAMJOB.fields_by_name['stop_running']._options = None

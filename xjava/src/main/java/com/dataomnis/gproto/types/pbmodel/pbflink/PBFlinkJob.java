@@ -14,6 +14,723 @@ public final class PBFlinkJob {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface FlinkJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flink.FlinkJob)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * FlinkJob for describes information of flink job.
+   * </pre>
+   *
+   * Protobuf type {@code flink.FlinkJob}
+   */
+  public static final class FlinkJob extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flink.FlinkJob)
+      FlinkJobOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlinkJob.newBuilder() to construct.
+    private FlinkJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlinkJob() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FlinkJob();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlinkJob(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkJob_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkJob_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.class, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * reference:
+     *    https://nightlies.apache.org/flink/flink-docs-master/api/java/org/apache/flink/api/common/JobStatus.html
+     * </pre>
+     *
+     * Protobuf enum {@code flink.FlinkJob.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>StateUnset = 0;</code>
+       */
+      StateUnset(0),
+      /**
+       * <pre>
+       * Job has been cancelled.
+       * </pre>
+       *
+       * <code>CANCELED = 1;</code>
+       */
+      CANCELED(1),
+      /**
+       * <pre>
+       * Job is being cancelled.
+       * </pre>
+       *
+       * <code>CANCELLING = 2;</code>
+       */
+      CANCELLING(2),
+      /**
+       * <pre>
+       * Job is newly created, no task has started to run.
+       * </pre>
+       *
+       * <code>CREATED = 3;</code>
+       */
+      CREATED(3),
+      /**
+       * <pre>
+       * The job has failed with a non-recoverable task failure.
+       * </pre>
+       *
+       * <code>FAILED = 4;</code>
+       */
+      FAILED(4),
+      /**
+       * <pre>
+       * The job has failed and is currently waiting for the cleanup to complete.
+       * </pre>
+       *
+       * <code>FAILING = 5;</code>
+       */
+      FAILING(5),
+      /**
+       * <pre>
+       * All of the job's tasks have successfully finished.
+       * </pre>
+       *
+       * <code>FINISHED = 6;</code>
+       */
+      FINISHED(6),
+      /**
+       * <pre>
+       * The job has been received by the Dispatcher, and is waiting for the job manager to receive leadership and to be created.
+       * </pre>
+       *
+       * <code>INITIALIZING = 7;</code>
+       */
+      INITIALIZING(7),
+      /**
+       * <pre>
+       * The job is currently reconciling and waits for task execution report to recover state.
+       * </pre>
+       *
+       * <code>RECONCILING = 8;</code>
+       */
+      RECONCILING(8),
+      /**
+       * <pre>
+       * The job is currently undergoing a reset and total restart.
+       * </pre>
+       *
+       * <code>RESTARTING = 9;</code>
+       */
+      RESTARTING(9),
+      /**
+       * <pre>
+       * Some tasks are scheduled or running, some may be pending, some may be finished.
+       * </pre>
+       *
+       * <code>RUNNING = 10;</code>
+       */
+      RUNNING(10),
+      /**
+       * <pre>
+       * The job has been suspended which means that it has been stopped but not been removed from a potential HA job store.
+       * </pre>
+       *
+       * <code>SUSPENDED = 11;</code>
+       */
+      SUSPENDED(11),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>StateUnset = 0;</code>
+       */
+      public static final int StateUnset_VALUE = 0;
+      /**
+       * <pre>
+       * Job has been cancelled.
+       * </pre>
+       *
+       * <code>CANCELED = 1;</code>
+       */
+      public static final int CANCELED_VALUE = 1;
+      /**
+       * <pre>
+       * Job is being cancelled.
+       * </pre>
+       *
+       * <code>CANCELLING = 2;</code>
+       */
+      public static final int CANCELLING_VALUE = 2;
+      /**
+       * <pre>
+       * Job is newly created, no task has started to run.
+       * </pre>
+       *
+       * <code>CREATED = 3;</code>
+       */
+      public static final int CREATED_VALUE = 3;
+      /**
+       * <pre>
+       * The job has failed with a non-recoverable task failure.
+       * </pre>
+       *
+       * <code>FAILED = 4;</code>
+       */
+      public static final int FAILED_VALUE = 4;
+      /**
+       * <pre>
+       * The job has failed and is currently waiting for the cleanup to complete.
+       * </pre>
+       *
+       * <code>FAILING = 5;</code>
+       */
+      public static final int FAILING_VALUE = 5;
+      /**
+       * <pre>
+       * All of the job's tasks have successfully finished.
+       * </pre>
+       *
+       * <code>FINISHED = 6;</code>
+       */
+      public static final int FINISHED_VALUE = 6;
+      /**
+       * <pre>
+       * The job has been received by the Dispatcher, and is waiting for the job manager to receive leadership and to be created.
+       * </pre>
+       *
+       * <code>INITIALIZING = 7;</code>
+       */
+      public static final int INITIALIZING_VALUE = 7;
+      /**
+       * <pre>
+       * The job is currently reconciling and waits for task execution report to recover state.
+       * </pre>
+       *
+       * <code>RECONCILING = 8;</code>
+       */
+      public static final int RECONCILING_VALUE = 8;
+      /**
+       * <pre>
+       * The job is currently undergoing a reset and total restart.
+       * </pre>
+       *
+       * <code>RESTARTING = 9;</code>
+       */
+      public static final int RESTARTING_VALUE = 9;
+      /**
+       * <pre>
+       * Some tasks are scheduled or running, some may be pending, some may be finished.
+       * </pre>
+       *
+       * <code>RUNNING = 10;</code>
+       */
+      public static final int RUNNING_VALUE = 10;
+      /**
+       * <pre>
+       * The job has been suspended which means that it has been stopped but not been removed from a potential HA job store.
+       * </pre>
+       *
+       * <code>SUSPENDED = 11;</code>
+       */
+      public static final int SUSPENDED_VALUE = 11;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return StateUnset;
+          case 1: return CANCELED;
+          case 2: return CANCELLING;
+          case 3: return CREATED;
+          case 4: return FAILED;
+          case 5: return FAILING;
+          case 6: return FINISHED;
+          case 7: return INITIALIZING;
+          case 8: return RECONCILING;
+          case 9: return RESTARTING;
+          case 10: return RUNNING;
+          case 11: return SUSPENDED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flink.FlinkJob.Status)
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob other = (com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * FlinkJob for describes information of flink job.
+     * </pre>
+     *
+     * Protobuf type {@code flink.FlinkJob}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flink.FlinkJob)
+        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJobOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkJob_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkJob_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.class, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkJob_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob build() {
+        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob result = new com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flink.FlinkJob)
+    }
+
+    // @@protoc_insertion_point(class_scope:flink.FlinkJob)
+    private static final com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlinkJob>
+        PARSER = new com.google.protobuf.AbstractParser<FlinkJob>() {
+      @java.lang.Override
+      public FlinkJob parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlinkJob(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlinkJob> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlinkJob> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJob getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface FlinkOperatorOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flink.FlinkOperator)
       com.google.protobuf.MessageOrBuilder {
@@ -3334,627 +4051,6 @@ public final class PBFlinkJob {
 
   }
 
-  public interface FlinkScalaOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flink.FlinkScala)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * code.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>string code = 1 [(.validator.field) = { ... }</code>
-     * @return The code.
-     */
-    java.lang.String getCode();
-    /**
-     * <pre>
-     * code.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>string code = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for code.
-     */
-    com.google.protobuf.ByteString
-        getCodeBytes();
-  }
-  /**
-   * <pre>
-   * ScalaOperatorProperty
-   * </pre>
-   *
-   * Protobuf type {@code flink.FlinkScala}
-   */
-  public static final class FlinkScala extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flink.FlinkScala)
-      FlinkScalaOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FlinkScala.newBuilder() to construct.
-    private FlinkScala(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FlinkScala() {
-      code_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FlinkScala();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FlinkScala(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              code_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkScala_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkScala_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.class, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder.class);
-    }
-
-    public static final int CODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object code_;
-    /**
-     * <pre>
-     * code.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>string code = 1 [(.validator.field) = { ... }</code>
-     * @return The code.
-     */
-    @java.lang.Override
-    public java.lang.String getCode() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        code_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * code.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>string code = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for code.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCodeBytes() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        code_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala other = (com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala) obj;
-
-      if (!getCode()
-          .equals(other.getCode())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * ScalaOperatorProperty
-     * </pre>
-     *
-     * Protobuf type {@code flink.FlinkScala}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flink.FlinkScala)
-        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScalaOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkScala_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkScala_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.class, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        code_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.internal_static_flink_FlinkScala_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala build() {
-        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala result = new com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala(this);
-        result.code_ = code_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala.getDefaultInstance()) return this;
-        if (!other.getCode().isEmpty()) {
-          code_ = other.code_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object code_ = "";
-      /**
-       * <pre>
-       * code.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>string code = 1 [(.validator.field) = { ... }</code>
-       * @return The code.
-       */
-      public java.lang.String getCode() {
-        java.lang.Object ref = code_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          code_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * code.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>string code = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for code.
-       */
-      public com.google.protobuf.ByteString
-          getCodeBytes() {
-        java.lang.Object ref = code_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          code_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * code.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>string code = 1 [(.validator.field) = { ... }</code>
-       * @param value The code to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        code_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * code.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>string code = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCode() {
-        
-        code_ = getDefaultInstance().getCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * code.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>string code = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for code to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        code_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flink.FlinkScala)
-    }
-
-    // @@protoc_insertion_point(class_scope:flink.FlinkScala)
-    private static final com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FlinkScala>
-        PARSER = new com.google.protobuf.AbstractParser<FlinkScala>() {
-      @java.lang.Override
-      public FlinkScala parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FlinkScala(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FlinkScala> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FlinkScala> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkScala getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface FlinkPythonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flink.FlinkPython)
       com.google.protobuf.MessageOrBuilder {
@@ -5198,6 +5294,11 @@ public final class PBFlinkJob {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flink_FlinkJob_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flink_FlinkJob_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flink_FlinkOperator_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5207,11 +5308,6 @@ public final class PBFlinkJob {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flink_FlinkJar_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flink_FlinkScala_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flink_FlinkScala_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flink_FlinkPython_descriptor;
   private static final 
@@ -5234,31 +5330,35 @@ public final class PBFlinkJob {
       "\n\'proto/types/model/flink/flink_job.prot" +
       "o\022\005flink\0323github.com/yu31/protoc-plugin/" +
       "proto/validator.proto\032,proto/types/model" +
-      "/flink/flink_operator.proto\"\302\004\n\rFlinkOpe" +
-      "rator\0226\n\004type\030\001 \001(\0162\031.flink.FlinkOperato" +
-      "r.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\360\001\024\022\032\n\004name\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\010u" +
-      "pstream\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022$\n\016upstream_" +
-      "right\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013down_stream" +
-      "\030\006 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\025\022\037\n\007point_x\030\007 \001(\005B\016\342" +
-      "\337\037\n\022\010\262\001\0058\310\001@\001\022\037\n\007point_y\030\010 \001(\005B\016\342\337\037\n\022\010\262\001" +
-      "\0058\310\001@\001\022/\n\010property\030\t \001(\0132\027.flink.Operato" +
-      "rPropertyB\004\342\337\037\000\"\346\001\n\004Type\022\t\n\005Empty\020\000\022\n\n\006V" +
-      "alues\020\001\022\t\n\005Const\020\002\022\n\n\006Source\020\003\022\r\n\tDimens" +
-      "ion\020\004\022\010\n\004Dest\020\005\022\013\n\007OrderBy\020\006\022\t\n\005Limit\020\007\022" +
-      "\n\n\006Offset\020\010\022\t\n\005Fetch\020\t\022\n\n\006Filter\020\n\022\t\n\005Un" +
-      "ion\020\013\022\n\n\006Except\020\014\022\r\n\tIntersect\020\r\022\013\n\007Grou" +
-      "pBy\020\016\022\n\n\006Having\020\017\022\010\n\004Join\020\020\022\010\n\004UDTF\020\021\022\t\n" +
-      "\005UDTTF\020\022\"y\n\010FlinkJar\022$\n\007file_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342\337\037\014\022" +
-      "\n\302\001\007\230\002\200\010\210\005\001\"-\n\nFlinkScala\022\037\n\004code\030\001 \001(\tB" +
-      "\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\".\n\013FlinkPython\022\037\n\004cod" +
-      "e\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037" +
-      "\n\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.d" +
-      "ataomnis.gproto.types.pbmodel.pbflinkB\nP" +
-      "BFlinkJobP\000Z9github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodel/pbflinkb\006proto3"
+      "/flink/flink_operator.proto\"\306\001\n\010FlinkJob" +
+      "\"\271\001\n\006Status\022\016\n\nStateUnset\020\000\022\014\n\010CANCELED\020" +
+      "\001\022\016\n\nCANCELLING\020\002\022\013\n\007CREATED\020\003\022\n\n\006FAILED" +
+      "\020\004\022\013\n\007FAILING\020\005\022\014\n\010FINISHED\020\006\022\020\n\014INITIAL" +
+      "IZING\020\007\022\017\n\013RECONCILING\020\010\022\016\n\nRESTARTING\020\t" +
+      "\022\013\n\007RUNNING\020\n\022\r\n\tSUSPENDED\020\013\"\302\004\n\rFlinkOp" +
+      "erator\0226\n\004type\030\001 \001(\0162\031.flink.FlinkOperat" +
+      "or.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\360\001\024\022\032\n\004name\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\010" +
+      "upstream\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022$\n\016upstream" +
+      "_right\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013down_strea" +
+      "m\030\006 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\025\022\037\n\007point_x\030\007 \001(\005B\016" +
+      "\342\337\037\n\022\010\262\001\0058\310\001@\001\022\037\n\007point_y\030\010 \001(\005B\016\342\337\037\n\022\010\262" +
+      "\001\0058\310\001@\001\022/\n\010property\030\t \001(\0132\027.flink.Operat" +
+      "orPropertyB\004\342\337\037\000\"\346\001\n\004Type\022\t\n\005Empty\020\000\022\n\n\006" +
+      "Values\020\001\022\t\n\005Const\020\002\022\n\n\006Source\020\003\022\r\n\tDimen" +
+      "sion\020\004\022\010\n\004Dest\020\005\022\013\n\007OrderBy\020\006\022\t\n\005Limit\020\007" +
+      "\022\n\n\006Offset\020\010\022\t\n\005Fetch\020\t\022\n\n\006Filter\020\n\022\t\n\005U" +
+      "nion\020\013\022\n\n\006Except\020\014\022\r\n\tIntersect\020\r\022\013\n\007Gro" +
+      "upBy\020\016\022\n\n\006Having\020\017\022\010\n\004Join\020\020\022\010\n\004UDTF\020\021\022\t" +
+      "\n\005UDTTF\020\022\"y\n\010FlinkJar\022$\n\007file_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\230\002\200\010\210\005\001\".\n\013FlinkPython\022\037\n\004code\030\001 \001(" +
+      "\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037\n\004code" +
+      "\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.dataomn" +
+      "is.gproto.types.pbmodel.pbflinkB\nPBFlink" +
+      "JobP\000Z9github.com/DataWorkbench/gproto/x" +
+      "go/types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5266,24 +5366,24 @@ public final class PBFlinkJob {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkOperator.getDescriptor(),
         });
-    internal_static_flink_FlinkOperator_descriptor =
+    internal_static_flink_FlinkJob_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flink_FlinkJob_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flink_FlinkJob_descriptor,
+        new java.lang.String[] { });
+    internal_static_flink_FlinkOperator_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flink_FlinkOperator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flink_FlinkOperator_descriptor,
         new java.lang.String[] { "Type", "Id", "Name", "Upstream", "UpstreamRight", "DownStream", "PointX", "PointY", "Property", });
     internal_static_flink_FlinkJar_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flink_FlinkJar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flink_FlinkJar_descriptor,
         new java.lang.String[] { "FileId", "JarArgs", "JarEntry", });
-    internal_static_flink_FlinkScala_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_flink_FlinkScala_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flink_FlinkScala_descriptor,
-        new java.lang.String[] { "Code", });
     internal_static_flink_FlinkPython_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flink_FlinkPython_fieldAccessorTable = new

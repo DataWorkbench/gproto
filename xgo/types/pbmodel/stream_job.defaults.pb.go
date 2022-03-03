@@ -63,11 +63,6 @@ func (this *StreamJobCode) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Scala != nil {
-		if dt, ok := interface{}(this.Scala).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 

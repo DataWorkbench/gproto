@@ -362,28 +362,6 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python() error {
 	return nil
 }
 
-func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_scala() bool {
-	if !(this.Type == 5) {
-		return false
-	}
-	return true
-}
-
-func (this *StreamJobCode) _xxx_xxx_Validator_Validate_scala() error {
-	if !this._xxx_xxx_Validator_CheckIf_scala() {
-		return nil
-	}
-	if !(this.Scala != nil) {
-		return protovalidator.FieldError2("StreamJobCode", "the value of field 'scala' cannot be null")
-	}
-	if dt, ok := interface{}(this.Scala).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message model.StreamJobCode
 func (this *StreamJobCode) Validate() error {
 	if this == nil {
@@ -402,9 +380,6 @@ func (this *StreamJobCode) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_python(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_scala(); err != nil {
 		return err
 	}
 	return nil

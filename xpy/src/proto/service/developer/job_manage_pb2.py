@@ -11,9 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.types.model import empty_pb2 as proto_dot_types_dot_model_dot_empty__pb2
-from proto.types.request import job_manage_pb2 as proto_dot_types_dot_request_dot_job__manage__pb2
-from proto.types.response import job_manage_pb2 as proto_dot_types_dot_response_dot_job__manage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcdeveloperB\016PBSvcJobManageP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/service/developer/job_manage.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a$proto/types/request/job_manage.proto\x1a%proto/types/response/job_manage.proto2\x9c\x03\n\tJobManage\x12;\n\x0c\x46reeFlinkJob\x12\x15.request.FreeFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0cInitFlinkJob\x12\x15.request.InitFlinkJob\x1a\x16.response.InitFlinkJob\"\x00\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12<\n\x0bGetFlinkJob\x12\x14.request.GetFlinkJob\x1a\x15.response.GetFlinkJob\"\x00\x12?\n\x0e\x43\x61ncelFlinkJob\x12\x17.request.CancelFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x42{\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x0ePBSvcJobManageP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
-  ,
-  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_job__manage__pb2.DESCRIPTOR,])
+  serialized_pb=b'\n(proto/service/developer/job_manage.proto\x12\tdeveloperB{\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x0ePBSvcJobManageP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
+)
 
 
 
@@ -32,80 +28,4 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 DESCRIPTOR._options = None
-
-_JOBMANAGE = _descriptor.ServiceDescriptor(
-  name='JobManage',
-  full_name='developer.JobManage',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=164,
-  serialized_end=576,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='FreeFlinkJob',
-    full_name='developer.JobManage.FreeFlinkJob',
-    index=0,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._FREEFLINKJOB,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='InitFlinkJob',
-    full_name='developer.JobManage.InitFlinkJob',
-    index=1,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._INITFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_job__manage__pb2._INITFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SubmitFlinkJob',
-    full_name='developer.JobManage.SubmitFlinkJob',
-    index=2,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._SUBMITFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_job__manage__pb2._SUBMITFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetFlinkJob',
-    full_name='developer.JobManage.GetFlinkJob',
-    index=3,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._GETFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_job__manage__pb2._GETFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CancelFlinkJob',
-    full_name='developer.JobManage.CancelFlinkJob',
-    index=4,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._CANCELFLINKJOB,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ValidateFlinkJob',
-    full_name='developer.JobManage.ValidateFlinkJob',
-    index=5,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_job__manage__pb2._VALIDATEFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_job__manage__pb2._VALIDATEFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_JOBMANAGE)
-
-DESCRIPTOR.services_by_name['JobManage'] = _JOBMANAGE
-
 # @@protoc_insertion_point(module_scope)
