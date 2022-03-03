@@ -92,9 +92,6 @@ message ProjectModule {
     // Module In project.
     AuditManage = 1;
     SpaceManage = 2;
-    UserManage = 3;
-    SessionManage = 4;
-    MessageManage = 5;
     // Module In workspace;
     MemberManage = 101;
     RoleManage = 102;
