@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\036PBResponseStreamInstanceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"=\n\x16\x44\x65scribeStreamInstance\x12#\n\x04info\x18\x01 \x01(\x0b\x32\x15.model.StreamInstanceB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"O\n\x16\x44\x65scribeStreamInstance\x12#\n\x04info\x18\x01 \x01(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08\x66link_id\x18\x02 \x01(\tB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_stream__instance__pb2.DESCRIPTOR,])
 
@@ -88,6 +88,13 @@ _DESCRIBESTREAMINSTANCE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_id', full_name='response.DescribeStreamInstance.flink_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -101,7 +108,7 @@ _DESCRIBESTREAMINSTANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=259,
+  serialized_end=277,
 )
 
 _LISTSTREAMINSTANCES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_stream__instance__pb2._STREAMINSTANCE

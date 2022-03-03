@@ -453,8 +453,10 @@ type DescribeDBAndTable struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// database
 	Database []string `protobuf:"bytes,1,rep,name=database,proto3" json:"database"`
-	Table    []string `protobuf:"bytes,2,rep,name=table,proto3" json:"table"`
+	// table
+	Table []string `protobuf:"bytes,2,rep,name=table,proto3" json:"table"`
 	// column
 	Column []*pbsyncjob.Column `protobuf:"bytes,3,rep,name=column,proto3" json:"column"`
 }
