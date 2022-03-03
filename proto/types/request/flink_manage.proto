@@ -7,7 +7,7 @@ option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbrequest";
 // File name of class.
-option java_outer_classname = "PBRequestClusterManage";
+option java_outer_classname = "PBRequestFlinkManage";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";

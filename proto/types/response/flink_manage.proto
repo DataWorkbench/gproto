@@ -7,7 +7,7 @@ option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbresponse";
 // File name of class.
-option java_outer_classname = "PBResponseClusterManage";
+option java_outer_classname = "PBResponseFlinkManage";
 option java_multiple_files = false;
 
 //import "github.com/yu31/protoc-plugin/proto/validator.proto";

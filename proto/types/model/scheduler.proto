@@ -20,7 +20,6 @@ message StreamJobQueue {
   enum Action {
     ActionUnset = 0;
     Create = 1;
-    Init = 5; // FIXME: removed it.
     Submit = 2;
     Check = 4;
     Retry = 3;
@@ -28,9 +27,15 @@ message StreamJobQueue {
   // The property of stream job.
   StreamJobProperty property = 1 [ (validator.field).tags.message = { not_null: true } ];
 
+  // The internal access address of flink cluster.
+  string flink_url = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The version of flink cluster.
+  string flink_version = 3 [ (validator.field).tags.string = { ne: "" } ];
+
   // The number of times the stream instance was executed.
-  int32 retries = 2 [(validator.field) = {}];
+  int32 retries = 4 [(validator.field) = {}];
 
   // The start execution time of the stream instance.
-  int64 started = 3 [(validator.field) = {}];
+  int64 started = 5 [(validator.field) = {}];
 }

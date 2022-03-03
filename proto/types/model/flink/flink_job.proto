@@ -15,6 +15,48 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/flink/flink_operator.proto";
 
+// FlinkJob for describes information of flink job.
+message FlinkJob {
+  // reference:
+  //    https://nightlies.apache.org/flink/flink-docs-master/api/java/org/apache/flink/api/common/JobStatus.html
+  enum Status {
+    StateUnset = 0;
+
+    // Job has been cancelled.
+    CANCELED = 1;
+
+    // Job is being cancelled.
+    CANCELLING = 2;
+
+    // Job is newly created, no task has started to run.
+    CREATED = 3;
+
+    // The job has failed with a non-recoverable task failure.
+    FAILED = 4;
+
+    // The job has failed and is currently waiting for the cleanup to complete.
+    FAILING = 5;
+
+    // All of the job's tasks have successfully finished.
+    FINISHED = 6;
+
+    // The job has been received by the Dispatcher, and is waiting for the job manager to receive leadership and to be created.
+    INITIALIZING = 7;
+
+    // The job is currently reconciling and waits for task execution report to recover state.
+    RECONCILING = 8;
+
+    // The job is currently undergoing a reset and total restart.
+    RESTARTING = 9;
+
+    // Some tasks are scheduled or running, some may be pending, some may be finished.
+    RUNNING = 10;
+
+    // The job has been suspended which means that it has been stopped but not been removed from a potential HA job store.
+    SUSPENDED = 11;
+  }
+}
+
 // FlinkOperator
 message FlinkOperator {
   enum Type {
@@ -93,13 +135,6 @@ message FlinkJar {
   string jar_entry = 3 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
 }
 
-// ScalaOperatorProperty
-message FlinkScala {
-  // code.
-  // @inject_tag: json:"code"
-  string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
-}
-
 // PythonOperatorProperty
 message FlinkPython {
   // code.
@@ -113,3 +148,11 @@ message FlinkSQL {
   // @inject_tag: json:"code"
   string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
 }
+
+//// ScalaOperatorProperty
+//message FlinkScala {
+//  // code.
+//  // @inject_tag: json:"code"
+//  string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
+//}
+

@@ -10,56 +10,56 @@ option java_package = "com.dataomnis.gproto.types.pbresponse";
 option java_outer_classname = "PBResponseJobManageManage";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
-//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-
-import "proto/types/model/stream_instance.proto";
-
-message InitFlinkJob{
-  // NoteID
-  // @inject_tag: json:"note_id" default:"" binding:"len=9" required:"true"
-  string note_id = 1 [(validator.field).tags.string = {byte_len_eq: 9}];
-
-  // ParagraphID
-  // @inject_tag: json:"paragraph_id" default:"" binding:"-"
-  string paragraph_id = 2 [(validator.field) = {}];
-}
-
-message SubmitFlinkJob{
-  // job info
-  // @inject_tag: json:"state"
-  model.StreamInstance.State State = 1;
-
-  // message
-  // @inject_tag: json:"message"
-  string message = 2 [(validator.field) = {}];
-
-  // flink job id
-  // @inject_tag: json:"flink_id"
-  string flink_id = 3 [(validator.field) = {}];
-}
-
-message GetFlinkJob{
-  // job info
-  // @inject_tag: json:"state"
-  model.StreamInstance.State State = 1 [(validator.field) = {}];
-
-  // job message
-  // @inject_tag: json:"message"
-  string message = 2 [(validator.field) = {}];
-}
-
-// GetStreamJobCode used as reply parameters in RPC.
-message ValidateFlinkJob {
-  enum Result {
-    ResultUnset = 0;
-    Correct = 1;
-    Incorrect = 2;
-  }
-
-  // Result for check syntax of code. 1 => "Correct" 2 => "Incorrect".
-  Result result = 1;
-
-  // Message represents the error message when found syntax Incorrect.
-  string message = 2;
-}
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+////import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+//
+//import "proto/types/model/stream_instance.proto";
+//
+//message InitFlinkJob{
+//  // NoteID
+//  // @inject_tag: json:"note_id" default:"" binding:"len=9" required:"true"
+//  string note_id = 1 [(validator.field).tags.string = {byte_len_eq: 9}];
+//
+//  // ParagraphID
+//  // @inject_tag: json:"paragraph_id" default:"" binding:"-"
+//  string paragraph_id = 2 [(validator.field) = {}];
+//}
+//
+//message SubmitFlinkJob{
+//  // job info
+//  // @inject_tag: json:"state"
+//  model.StreamInstance.State State = 1;
+//
+//  // message
+//  // @inject_tag: json:"message"
+//  string message = 2 [(validator.field) = {}];
+//
+//  // flink job id
+//  // @inject_tag: json:"flink_id"
+//  string flink_id = 3 [(validator.field) = {}];
+//}
+//
+//message GetFlinkJob{
+//  // job info
+//  // @inject_tag: json:"state"
+//  model.StreamInstance.State State = 1 [(validator.field) = {}];
+//
+//  // job message
+//  // @inject_tag: json:"message"
+//  string message = 2 [(validator.field) = {}];
+//}
+//
+//// GetStreamJobCode used as reply parameters in RPC.
+//message ValidateFlinkJob {
+//  enum Result {
+//    ResultUnset = 0;
+//    Correct = 1;
+//    Incorrect = 2;
+//  }
+//
+//  // Result for check syntax of code. 1 => "Correct" 2 => "Incorrect".
+//  Result result = 1;
+//
+//  // Message represents the error message when found syntax Incorrect.
+//  string message = 2;
+//}

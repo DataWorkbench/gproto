@@ -147,12 +147,12 @@ message StreamJobCode {
     (validator.field).tags.message = {not_null: true}
   ];
 
-  // Scala
-  // @inject_tag: json:"scala"
-  flink.FlinkScala scala = 6  [
-    (validator.field).check_if = { field: "type", tags: { enum: { eq: 5 } }},
-    (validator.field).tags.message = {not_null: true}
-  ];
+//  // Scala
+//  // @inject_tag: json:"scala"
+//  flink.FlinkScala scala = 6  [
+//    (validator.field).check_if = { field: "type", tags: { enum: { eq: 5 } }},
+//    (validator.field).tags.message = {not_null: true}
+//  ];
 }
 
 // StreamJobArgs represents a job running parameters.
