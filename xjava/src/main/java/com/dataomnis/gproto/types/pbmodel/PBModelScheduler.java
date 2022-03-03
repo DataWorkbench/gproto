@@ -64,70 +64,6 @@ public final class PBModelScheduler {
      * @return The started.
      */
     long getStarted();
-
-    /**
-     * <pre>
-     * zeppelin notebook id
-     * &#64;inject_tag: json:"note_id"
-     * </pre>
-     *
-     * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-     * @return The noteId.
-     */
-    java.lang.String getNoteId();
-    /**
-     * <pre>
-     * zeppelin notebook id
-     * &#64;inject_tag: json:"note_id"
-     * </pre>
-     *
-     * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for noteId.
-     */
-    com.google.protobuf.ByteString
-        getNoteIdBytes();
-
-    /**
-     * <pre>
-     * zeppelin paragraphID
-     * &#64;inject_tag: json:"paragraph_id"
-     * </pre>
-     *
-     * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-     * @return The paragraphId.
-     */
-    java.lang.String getParagraphId();
-    /**
-     * <pre>
-     * zeppelin paragraphID
-     * &#64;inject_tag: json:"paragraph_id"
-     * </pre>
-     *
-     * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for paragraphId.
-     */
-    com.google.protobuf.ByteString
-        getParagraphIdBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_id"
-     * </pre>
-     *
-     * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-     * @return The flinkId.
-     */
-    java.lang.String getFlinkId();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_id"
-     * </pre>
-     *
-     * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for flinkId.
-     */
-    com.google.protobuf.ByteString
-        getFlinkIdBytes();
   }
   /**
    * <pre>
@@ -146,9 +82,6 @@ public final class PBModelScheduler {
       super(builder);
     }
     private StreamJobQueue() {
-      noteId_ = "";
-      paragraphId_ = "";
-      flinkId_ = "";
     }
 
     @java.lang.Override
@@ -204,24 +137,6 @@ public final class PBModelScheduler {
               started_ = input.readInt64();
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              noteId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              paragraphId_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              flinkId_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -268,6 +183,10 @@ public final class PBModelScheduler {
        */
       Create(1),
       /**
+       * <pre>
+       * FIXME: removed it.
+       * </pre>
+       *
        * <code>Init = 5;</code>
        */
       Init(5),
@@ -295,6 +214,10 @@ public final class PBModelScheduler {
        */
       public static final int Create_VALUE = 1;
       /**
+       * <pre>
+       * FIXME: removed it.
+       * </pre>
+       *
        * <code>Init = 5;</code>
        */
       public static final int Init_VALUE = 5;
@@ -466,148 +389,6 @@ public final class PBModelScheduler {
       return started_;
     }
 
-    public static final int NOTE_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object noteId_;
-    /**
-     * <pre>
-     * zeppelin notebook id
-     * &#64;inject_tag: json:"note_id"
-     * </pre>
-     *
-     * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-     * @return The noteId.
-     */
-    @java.lang.Override
-    public java.lang.String getNoteId() {
-      java.lang.Object ref = noteId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        noteId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * zeppelin notebook id
-     * &#64;inject_tag: json:"note_id"
-     * </pre>
-     *
-     * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for noteId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNoteIdBytes() {
-      java.lang.Object ref = noteId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        noteId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PARAGRAPH_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object paragraphId_;
-    /**
-     * <pre>
-     * zeppelin paragraphID
-     * &#64;inject_tag: json:"paragraph_id"
-     * </pre>
-     *
-     * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-     * @return The paragraphId.
-     */
-    @java.lang.Override
-    public java.lang.String getParagraphId() {
-      java.lang.Object ref = paragraphId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        paragraphId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * zeppelin paragraphID
-     * &#64;inject_tag: json:"paragraph_id"
-     * </pre>
-     *
-     * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for paragraphId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getParagraphIdBytes() {
-      java.lang.Object ref = paragraphId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        paragraphId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FLINK_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object flinkId_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_id"
-     * </pre>
-     *
-     * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-     * @return The flinkId.
-     */
-    @java.lang.Override
-    public java.lang.String getFlinkId() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        flinkId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"flink_id"
-     * </pre>
-     *
-     * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for flinkId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFlinkIdBytes() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        flinkId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -631,15 +412,6 @@ public final class PBModelScheduler {
       if (started_ != 0L) {
         output.writeInt64(3, started_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, noteId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, paragraphId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, flinkId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -660,15 +432,6 @@ public final class PBModelScheduler {
       if (started_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, started_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, noteId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, paragraphId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, flinkId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -694,12 +457,6 @@ public final class PBModelScheduler {
           != other.getRetries()) return false;
       if (getStarted()
           != other.getStarted()) return false;
-      if (!getNoteId()
-          .equals(other.getNoteId())) return false;
-      if (!getParagraphId()
-          .equals(other.getParagraphId())) return false;
-      if (!getFlinkId()
-          .equals(other.getFlinkId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -720,12 +477,6 @@ public final class PBModelScheduler {
       hash = (37 * hash) + STARTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStarted());
-      hash = (37 * hash) + NOTE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNoteId().hashCode();
-      hash = (37 * hash) + PARAGRAPH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParagraphId().hashCode();
-      hash = (37 * hash) + FLINK_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFlinkId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -873,12 +624,6 @@ public final class PBModelScheduler {
 
         started_ = 0L;
 
-        noteId_ = "";
-
-        paragraphId_ = "";
-
-        flinkId_ = "";
-
         return this;
       }
 
@@ -912,9 +657,6 @@ public final class PBModelScheduler {
         }
         result.retries_ = retries_;
         result.started_ = started_;
-        result.noteId_ = noteId_;
-        result.paragraphId_ = paragraphId_;
-        result.flinkId_ = flinkId_;
         onBuilt();
         return result;
       }
@@ -971,18 +713,6 @@ public final class PBModelScheduler {
         }
         if (other.getStarted() != 0L) {
           setStarted(other.getStarted());
-        }
-        if (!other.getNoteId().isEmpty()) {
-          noteId_ = other.noteId_;
-          onChanged();
-        }
-        if (!other.getParagraphId().isEmpty()) {
-          paragraphId_ = other.paragraphId_;
-          onChanged();
-        }
-        if (!other.getFlinkId().isEmpty()) {
-          flinkId_ = other.flinkId_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1253,304 +983,6 @@ public final class PBModelScheduler {
         onChanged();
         return this;
       }
-
-      private java.lang.Object noteId_ = "";
-      /**
-       * <pre>
-       * zeppelin notebook id
-       * &#64;inject_tag: json:"note_id"
-       * </pre>
-       *
-       * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-       * @return The noteId.
-       */
-      public java.lang.String getNoteId() {
-        java.lang.Object ref = noteId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          noteId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * zeppelin notebook id
-       * &#64;inject_tag: json:"note_id"
-       * </pre>
-       *
-       * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for noteId.
-       */
-      public com.google.protobuf.ByteString
-          getNoteIdBytes() {
-        java.lang.Object ref = noteId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          noteId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * zeppelin notebook id
-       * &#64;inject_tag: json:"note_id"
-       * </pre>
-       *
-       * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The noteId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNoteId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        noteId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * zeppelin notebook id
-       * &#64;inject_tag: json:"note_id"
-       * </pre>
-       *
-       * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNoteId() {
-        
-        noteId_ = getDefaultInstance().getNoteId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * zeppelin notebook id
-       * &#64;inject_tag: json:"note_id"
-       * </pre>
-       *
-       * <code>string note_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for noteId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNoteIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        noteId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object paragraphId_ = "";
-      /**
-       * <pre>
-       * zeppelin paragraphID
-       * &#64;inject_tag: json:"paragraph_id"
-       * </pre>
-       *
-       * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-       * @return The paragraphId.
-       */
-      public java.lang.String getParagraphId() {
-        java.lang.Object ref = paragraphId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          paragraphId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * zeppelin paragraphID
-       * &#64;inject_tag: json:"paragraph_id"
-       * </pre>
-       *
-       * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for paragraphId.
-       */
-      public com.google.protobuf.ByteString
-          getParagraphIdBytes() {
-        java.lang.Object ref = paragraphId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          paragraphId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * zeppelin paragraphID
-       * &#64;inject_tag: json:"paragraph_id"
-       * </pre>
-       *
-       * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The paragraphId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParagraphId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        paragraphId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * zeppelin paragraphID
-       * &#64;inject_tag: json:"paragraph_id"
-       * </pre>
-       *
-       * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParagraphId() {
-        
-        paragraphId_ = getDefaultInstance().getParagraphId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * zeppelin paragraphID
-       * &#64;inject_tag: json:"paragraph_id"
-       * </pre>
-       *
-       * <code>string paragraph_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for paragraphId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParagraphIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        paragraphId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object flinkId_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_id"
-       * </pre>
-       *
-       * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-       * @return The flinkId.
-       */
-      public java.lang.String getFlinkId() {
-        java.lang.Object ref = flinkId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          flinkId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_id"
-       * </pre>
-       *
-       * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for flinkId.
-       */
-      public com.google.protobuf.ByteString
-          getFlinkIdBytes() {
-        java.lang.Object ref = flinkId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          flinkId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_id"
-       * </pre>
-       *
-       * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_id"
-       * </pre>
-       *
-       * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFlinkId() {
-        
-        flinkId_ = getDefaultInstance().getFlinkId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"flink_id"
-       * </pre>
-       *
-       * <code>string flink_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1621,12 +1053,10 @@ public final class PBModelScheduler {
       "\n!proto/types/model/scheduler.proto\022\005mod" +
       "el\0323github.com/yu31/protoc-plugin/proto/" +
       "validator.proto\032\"proto/types/model/strea" +
-      "m_job.proto\"\232\002\n\016StreamJobQueue\0227\n\010proper" +
+      "m_job.proto\"\312\001\n\016StreamJobQueue\0227\n\010proper" +
       "ty\030\001 \001(\0132\030.model.StreamJobPropertyB\013\342\337\037\007" +
       "\022\005\342\001\002\020\001\022\025\n\007retries\030\002 \001(\005B\004\342\337\037\000\022\025\n\007starte" +
-      "d\030\003 \001(\003B\004\342\337\037\000\022\025\n\007note_id\030\004 \001(\tB\004\342\337\037\000\022\032\n\014" +
-      "paragraph_id\030\005 \001(\tB\004\342\337\037\000\022\033\n\010flink_id\030\006 \001" +
-      "(\tB\t\342\337\037\005\022\003\302\001\000\"Q\n\006Action\022\017\n\013ActionUnset\020\000" +
+      "d\030\003 \001(\003B\004\342\337\037\000\"Q\n\006Action\022\017\n\013ActionUnset\020\000" +
       "\022\n\n\006Create\020\001\022\010\n\004Init\020\005\022\n\n\006Submit\020\002\022\t\n\005Ch" +
       "eck\020\004\022\t\n\005Retry\020\003Bk\n\"com.dataomnis.gproto" +
       ".types.pbmodelB\020PBModelSchedulerP\000Z1gith" +
@@ -1644,7 +1074,7 @@ public final class PBModelScheduler {
     internal_static_model_StreamJobQueue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobQueue_descriptor,
-        new java.lang.String[] { "Property", "Retries", "Started", "NoteId", "ParagraphId", "FlinkId", });
+        new java.lang.String[] { "Property", "Retries", "Started", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

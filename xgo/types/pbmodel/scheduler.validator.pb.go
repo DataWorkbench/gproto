@@ -22,19 +22,12 @@ func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_property() error {
 	return nil
 }
 
-func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_flink_id() error {
-	return nil
-}
-
 // Set default value for message model.StreamJobQueue
 func (this *StreamJobQueue) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_property(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_id(); err != nil {
 		return err
 	}
 	return nil

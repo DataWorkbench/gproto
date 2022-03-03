@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\020PBModelSchedulerP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/model/scheduler.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"\x9a\x02\n\x0eStreamJobQueue\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x15\n\x07retries\x18\x02 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x03 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07note_id\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1a\n\x0cparagraph_id\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1b\n\x08\x66link_id\x18\x06 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\"Q\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\x08\n\x04Init\x10\x05\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\x12\t\n\x05Retry\x10\x03\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelSchedulerP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n!proto/types/model/scheduler.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"\xca\x01\n\x0eStreamJobQueue\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x15\n\x07retries\x18\x02 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x03 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\"Q\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\x08\n\x04Init\x10\x05\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\x12\t\n\x05Retry\x10\x03\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelSchedulerP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,])
 
@@ -67,8 +67,8 @@ _STREAMJOBQUEUE_ACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=335,
-  serialized_end=416,
+  serialized_start=255,
+  serialized_end=336,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBQUEUE_ACTION)
 
@@ -102,27 +102,6 @@ _STREAMJOBQUEUE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='note_id', full_name='model.StreamJobQueue.note_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='paragraph_id', full_name='model.StreamJobQueue.paragraph_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='flink_id', full_name='model.StreamJobQueue.flink_id', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -137,7 +116,7 @@ _STREAMJOBQUEUE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=134,
-  serialized_end=416,
+  serialized_end=336,
 )
 
 _STREAMJOBQUEUE.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBPROPERTY
@@ -157,7 +136,4 @@ DESCRIPTOR._options = None
 _STREAMJOBQUEUE.fields_by_name['property']._options = None
 _STREAMJOBQUEUE.fields_by_name['retries']._options = None
 _STREAMJOBQUEUE.fields_by_name['started']._options = None
-_STREAMJOBQUEUE.fields_by_name['note_id']._options = None
-_STREAMJOBQUEUE.fields_by_name['paragraph_id']._options = None
-_STREAMJOBQUEUE.fields_by_name['flink_id']._options = None
 # @@protoc_insertion_point(module_scope)
