@@ -31,4 +31,8 @@ message ListStreamInstances {
 
 message DescribeStreamInstance {
   model.StreamInstance info = 1;
+
+  // The flink job id.
+  // It may be a empty string is the flink job not yet submit.
+  string flink_id = 2;
 }
