@@ -340,20 +340,3 @@ message DescribeSyncFlinkUIByInstanceId {
     // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
     string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
 }
-
-
-// DescribeDBAndTable used as a request parameters for RPC.
-message DescribeDBAndTable {
-
-    // data source id
-    // @inject_tag: json:"data_source_id" uri:"data_source_id"
-    string data_source_id = 1;
-
-    // The db database
-    // @inject_tag: json:"database" uri:"database"
-    string database = 2;
-
-    // get colums by table
-    // @inject_tag: json:"table" uri:"table"
-    string table = 3 [(validator.field) = {}];
-}

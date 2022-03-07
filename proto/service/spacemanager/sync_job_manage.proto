@@ -89,6 +89,4 @@ service SyncJobManage {
     //
     rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
 
-    // DescribeDBAndTable
-    rpc DescribeDBAndTable(request.DescribeDBAndTable) returns (response.DescribeDBAndTable) {}
 }

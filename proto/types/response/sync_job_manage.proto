@@ -76,18 +76,3 @@ message DescribeSyncFlinkUIByInstanceId {
     string web_ui = 1;
 }
 
-message DescribeDBAndTable{
-    // database
-    // @inject_tag: json:"database"
-    repeated string database = 1;
-
-    // table
-    // @inject_tag: json:"table"
-    repeated string table = 2;
-
-    // column
-    // @inject_tag: json:"column"
-    repeated model.Column column = 3;
-
-}
-
