@@ -50,7 +50,7 @@ message DataSource {
 
     // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
     // @inject_tag: json:"-"
-    Type type = 10  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+    Type type = 16  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
     // MySQL Source Connection Info.
     // @inject_tag: json:"mysql"
