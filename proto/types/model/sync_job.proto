@@ -123,8 +123,12 @@ message SyncJobProperty {
 // SyncJobConf represents a job running parameters.
 // Not use with gorm.
 message SyncJobConf {
-
     option (gosql.serialize) = {json: {}};
+
+    enum JobMode {
+        GuideMode = 0;
+        ScriptMode = 1;
+    }
 
     // source_id is datasource id
     // @inject_tag: json:"source_id"
@@ -141,16 +145,16 @@ message SyncJobConf {
 
     // Description of the job, Not required, Max length 1024.
     // @inject_tag: json:"desc"
-    int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+    int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0, lte: 100 } ];
     // Description of the job, Not required, Max length 1024.
     // @inject_tag: json:"record_num"
-    int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+    int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
     // bytes
     // @inject_tag: json:"bytes"
-    int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+    int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
     // 0:guide mode,1:shell mode
     // @inject_tag: json:"job_mode"
-    int32 job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0,lte: 1 } ];
+    JobMode job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0,lte: 1 } ];
     // shell mode json
     // @inject_tag: json:"job_content"
     string job_content = 8;
