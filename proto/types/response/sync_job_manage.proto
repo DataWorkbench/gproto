@@ -12,7 +12,6 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/sync_job.proto";
-import "proto/types/model/syncjob/column.proto";
 
 // ListSyncJobs used as reply parameters in RPC or response body in HTTP.
 message ListSyncJobs {
