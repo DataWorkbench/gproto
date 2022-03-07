@@ -86,7 +86,6 @@ service SyncJobManage {
     rpc GetSyncJobVersionSchedule(request.GetSyncJobSchedule) returns (response.GetSyncJobSchedule) {}
 
     // Interface for helper.
-    //
     rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
 
 }
