@@ -113,7 +113,7 @@ message SyncJobProperty {
     // @inject_tag: json:"version" gorm:"column:version;primarykey"
     string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
 
-    // @inject_tag: json:"args" gorm:"column:args;type:json"
+    // @inject_tag: json:"conf" gorm:"column:conf;type:json"
     SyncJobConf conf = 4 [(validator.field) = {}];
 
     // @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
