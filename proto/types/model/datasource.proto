@@ -48,7 +48,7 @@ message DataSource {
   message URL {
     option (gosql.serialize) = { json: {} };
 
-    // Source Type,one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+    // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
     // @inject_tag: json:"-"
     Type type = 16  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
