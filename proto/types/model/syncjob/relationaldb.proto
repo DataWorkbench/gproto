@@ -45,8 +45,8 @@ message RelationaldbTarget {
     }
 
     enum Semantic {
-        at_least_once = 0;
-        exactly_once = 1;
+        AtLeastOnce = 0;
+        ExactlyOnce = 1;
     }
 
     // column
@@ -66,7 +66,7 @@ message RelationaldbTarget {
     repeated string post_sql = 5;
     // write mode
     // @inject_tag: json:"write_mode" 
-    Writemode write_mode = 6;
+    WriteMode write_mode = 6;
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 7;

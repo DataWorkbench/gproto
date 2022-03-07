@@ -91,7 +91,7 @@ type ListDataSources struct {
 	SortBy string `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by"`
 	// Reverse order results. Not required, default: false.
 	Reverse bool `protobuf:"varint,5,opt,name=reverse,proto3" json:"reverse" default:"false" form:"reverse"`
-	// Search with name; Not required.
+	//  Search with name; Not required.
 	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search"`
 	// Filter by data source name; valid if `search` is empty; Not required.
 	Name string `protobuf:"bytes,7,opt,name=name,proto3" json:"name" form:"name"`
