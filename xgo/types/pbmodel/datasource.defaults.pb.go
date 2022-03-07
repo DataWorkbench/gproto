@@ -74,6 +74,41 @@ func (this *DataSource_URL) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.Sqlserver != nil {
+		if dt, ok := interface{}(this.Sqlserver).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Oracle != nil {
+		if dt, ok := interface{}(this.Oracle).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Db2 != nil {
+		if dt, ok := interface{}(this.Db2).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SapHana != nil {
+		if dt, ok := interface{}(this.SapHana).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Hive != nil {
+		if dt, ok := interface{}(this.Hive).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ElasticSearch != nil {
+		if dt, ok := interface{}(this.ElasticSearch).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.MongoDb != nil {
+		if dt, ok := interface{}(this.MongoDb).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 

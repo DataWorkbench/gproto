@@ -115,3 +115,94 @@ func (t *HDFSURL) Value() (driver.Value, error) {
 	}
 	return json.Marshal(t)
 }
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *SqlServerURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *SqlServerURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *OracleURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *OracleURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *DB2URL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *DB2URL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *SapHanaURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *SapHanaURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *HiveURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *HiveURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *ElasticSearchURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *ElasticSearchURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *MongoDbURL) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *MongoDbURL) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}

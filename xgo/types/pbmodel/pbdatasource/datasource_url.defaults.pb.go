@@ -81,3 +81,59 @@ func (this *HDFSURL) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message datasource.SqlServerURL
+func (this *SqlServerURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.OracleURL
+func (this *OracleURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.DB2URL
+func (this *DB2URL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.SapHanaURL
+func (this *SapHanaURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.HiveURL
+func (this *HiveURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.ElasticSearchURL
+func (this *ElasticSearchURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message datasource.MongoDbURL
+func (this *MongoDbURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

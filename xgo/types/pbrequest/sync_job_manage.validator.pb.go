@@ -427,8 +427,8 @@ func (this *SetSyncJobConf) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("SetSyncJobConf", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
-	if !(strings.HasPrefix(this.JobId, "stj-")) {
-		return protovalidator.FieldError1("SetSyncJobConf", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("SetSyncJobConf", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
 	}
 	return nil
 }

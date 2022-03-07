@@ -51,14 +51,14 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_DataSource_InEnums_Type = map[DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+var _xxx_xxx_Validator_DataSource_InEnums_Type = map[DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true}
 
 func (this *DataSource) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("DataSource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_DataSource_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("DataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("DataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -156,14 +156,14 @@ func (this *DataSource) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_DataSource_URL_InEnums_Type = map[DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+var _xxx_xxx_Validator_DataSource_URL_InEnums_Type = map[DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true}
 
 func (this *DataSource_URL) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("DataSource_URL", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_DataSource_URL_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("DataSource_URL", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("DataSource_URL", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -344,6 +344,160 @@ func (this *DataSource_URL) _xxx_xxx_Validator_Validate_hdfs() error {
 	return nil
 }
 
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_sqlserver() bool {
+	if !(this.Type == 9) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_sqlserver() error {
+	if !this._xxx_xxx_Validator_CheckIf_sqlserver() {
+		return nil
+	}
+	if !(this.Sqlserver != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'sqlserver' cannot be null")
+	}
+	if dt, ok := interface{}(this.Sqlserver).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_oracle() bool {
+	if !(this.Type == 10) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_oracle() error {
+	if !this._xxx_xxx_Validator_CheckIf_oracle() {
+		return nil
+	}
+	if !(this.Oracle != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'oracle' cannot be null")
+	}
+	if dt, ok := interface{}(this.Oracle).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_db2() bool {
+	if !(this.Type == 11) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_db2() error {
+	if !this._xxx_xxx_Validator_CheckIf_db2() {
+		return nil
+	}
+	if !(this.Db2 != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'db2' cannot be null")
+	}
+	if dt, ok := interface{}(this.Db2).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_sap_hana() bool {
+	if !(this.Type == 12) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_sap_hana() error {
+	if !this._xxx_xxx_Validator_CheckIf_sap_hana() {
+		return nil
+	}
+	if !(this.SapHana != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'sap_hana' cannot be null")
+	}
+	if dt, ok := interface{}(this.SapHana).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_hive() bool {
+	if !(this.Type == 13) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_hive() error {
+	if !this._xxx_xxx_Validator_CheckIf_hive() {
+		return nil
+	}
+	if !(this.Hive != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'hive' cannot be null")
+	}
+	if dt, ok := interface{}(this.Hive).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_elastic_search() bool {
+	if !(this.Type == 14) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_elastic_search() error {
+	if !this._xxx_xxx_Validator_CheckIf_elastic_search() {
+		return nil
+	}
+	if !(this.ElasticSearch != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'elastic_search' cannot be null")
+	}
+	if dt, ok := interface{}(this.ElasticSearch).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_mongo_db() bool {
+	if !(this.Type == 15) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_mongo_db() error {
+	if !this._xxx_xxx_Validator_CheckIf_mongo_db() {
+		return nil
+	}
+	if !(this.MongoDb != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'mongo_db' cannot be null")
+	}
+	if dt, ok := interface{}(this.MongoDb).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.DataSource.URL
 func (this *DataSource_URL) Validate() error {
 	if this == nil {
@@ -374,6 +528,27 @@ func (this *DataSource_URL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_hdfs(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sqlserver(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_oracle(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_db2(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sap_hana(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_hive(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_elastic_search(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_mongo_db(); err != nil {
 		return err
 	}
 	return nil

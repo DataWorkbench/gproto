@@ -11,14 +11,14 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-var _xxx_xxx_Validator_PingDataSourceConnectionByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+var _xxx_xxx_Validator_PingDataSourceConnectionByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true}
 
 func (this *PingDataSourceConnectionByBroker) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("PingDataSourceConnectionByBroker", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_PingDataSourceConnectionByBroker_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("PingDataSourceConnectionByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("PingDataSourceConnectionByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -44,14 +44,14 @@ func (this *PingDataSourceConnectionByBroker) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_DescribeDataSourceTablesByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+var _xxx_xxx_Validator_DescribeDataSourceTablesByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true}
 
 func (this *DescribeDataSourceTablesByBroker) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("DescribeDataSourceTablesByBroker", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_DescribeDataSourceTablesByBroker_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("DescribeDataSourceTablesByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("DescribeDataSourceTablesByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -77,14 +77,14 @@ func (this *DescribeDataSourceTablesByBroker) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_DescribeDataSourceTableSchemaByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+var _xxx_xxx_Validator_DescribeDataSourceTableSchemaByBroker_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true}
 
 func (this *DescribeDataSourceTableSchemaByBroker) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("DescribeDataSourceTableSchemaByBroker", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_DescribeDataSourceTableSchemaByBroker_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("DescribeDataSourceTableSchemaByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("DescribeDataSourceTableSchemaByBroker", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
