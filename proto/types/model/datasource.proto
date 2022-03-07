@@ -35,13 +35,14 @@ message DataSource {
     ClickHouse = 5;
     HBase = 6;
     Ftp = 7;
-    SqlServer = 8;
-    Oracle = 9;
-    DB2 = 10;
-    SapHana = 11;
-    Hive = 12;
-    ElasticSearch = 13;
-    MongoDb = 14;
+    HDFS = 8;
+    SqlServer = 9;
+    Oracle = 10;
+    DB2 = 11;
+    SapHana = 12;
+    Hive = 13;
+    ElasticSearch = 14;
+    MongoDb = 15;
   }
 
   // URL of datasource settings.
