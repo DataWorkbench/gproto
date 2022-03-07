@@ -180,7 +180,7 @@ message SetSyncJobConf {
 
     // The stream job ID it belongs to.
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // The args set.
     // @inject_tag: json:"args"

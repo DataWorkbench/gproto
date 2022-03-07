@@ -101,6 +101,49 @@ message DataSource {
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 8 } } },
       (validator.field).tags.message = { not_null: true }
     ];
+
+    // SQLSERVER Source Connection Info.
+    // @inject_tag: json:"sqlserver"
+    datasource.SqlServerURL sqlserver = 9 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 9 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // ORACLE Source Connection Info.
+    // @inject_tag: json:"oracle"
+    datasource.OracleURL oracle = 10 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 10 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // DB2 Source Connection Info.
+    // @inject_tag: json:"db2"
+    datasource.DB2URL db2 = 11 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 11 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // SAPHANA Source Connection Info.
+    // @inject_tag: json:"sap_hana"
+    datasource.SapHanaURL sap_hana = 12 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 12 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // HIVE Source Connection Info.
+    // @inject_tag: json:"hive"
+    datasource.HiveURL hive = 13 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 13 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // ElasticSearch Source Connection Info.
+    // @inject_tag: json:"elastic_search"
+    datasource.ElasticSearchURL elastic_search = 14 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 14 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+    // MONGODB Source Connection Info.
+    // @inject_tag: json:"mongo_db"
+    datasource.MongoDbURL mongo_db = 15 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 15 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
   }
 
   // Space ID, workspace ID.

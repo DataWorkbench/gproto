@@ -38,7 +38,7 @@ message RelationaldbSource {
 
 message RelationaldbTarget {
 
-    enum Mode {
+    enum Writemode {
         insert = 0;
         replace = 1;
         update = 2;
@@ -66,20 +66,17 @@ message RelationaldbTarget {
     repeated string post_sql = 5;
     // write mode
     // @inject_tag: json:"write_mode" 
-    string write_mode = 6;
+    Writemode write_mode = 6;
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 7;
     // update key
     // @inject_tag: json:"update_key" 
     repeated string update_key = 8;
-    // mode
-    // @inject_tag: json:"mode" 
-    Mode mode = 9;
     // semantic
     // @inject_tag: json:"semantic" 
-    Semantic semantic = 10;
+    Semantic semantic = 9;
     // with no lock
     // @inject_tag: json:"with_no_lock" 
-    string with_no_lock = 11;
+    string with_no_lock = 10;
 }

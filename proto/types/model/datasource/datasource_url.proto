@@ -224,3 +224,178 @@ message HDFSURL {
     (validator.field).tags.string = { json: true; byte_len_lte: 16384 }
   ];
 }
+
+
+// SqlServerURL used as request parameters for RPC and HTTP(based on Body)
+message SqlServerURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
+
+// OracleURL used as request parameters for RPC and HTTP(based on Body)
+message OracleURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
+
+// DB2URL used as request parameters for RPC and HTTP(based on Body)
+message DB2URL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
+
+// SapHanaURL used as request parameters for RPC and HTTP(based on Body)
+message SapHanaURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
+
+
+
+// HiveURL used as request parameters for RPC and HTTP(based on Body)
+message HiveURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
+
+// ElasticSearchURL used as request parameters for RPC and HTTP(based on Body)
+message ElasticSearchURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+}
+
+// MongoDbURL used as request parameters for RPC and HTTP(based on Body)
+message MongoDbURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+}
