@@ -491,7 +491,7 @@ type SyncJobProperty struct {
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The release version.
 	Version  string           `protobuf:"bytes,3,opt,name=version,proto3" json:"version" gorm:"column:version;primarykey"`
-	Conf     *SyncJobConf     `protobuf:"bytes,4,opt,name=conf,proto3" json:"args" gorm:"column:args;type:json"`
+	Conf     *SyncJobConf     `protobuf:"bytes,4,opt,name=conf,proto3" json:"conf" gorm:"column:conf;type:json"`
 	Schedule *SyncJobSchedule `protobuf:"bytes,5,opt,name=schedule,proto3" json:"schedule" gorm:"column:schedule;type:json"`
 }
 
