@@ -217,7 +217,7 @@ message HDFSURL {
   // @inject_tag: json:"port"
   int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 
-  // The  hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
+  // The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
   // @inject_tag: json:"config"
   string config = 3 [
     (validator.field).check_if = { field: "config"; tags: { string: { ne: "" } } },
