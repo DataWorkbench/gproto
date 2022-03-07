@@ -120,7 +120,7 @@ message DataSource {
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 11 } } },
       (validator.field).tags.message = { not_null: true }
     ];
-    // SAPHANA Source Connection Info.
+    // SAP HANA Source Connection Info.
     // @inject_tag: json:"sap_hana"
     datasource.SapHanaURL sap_hana = 12 [
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 12 } } },
