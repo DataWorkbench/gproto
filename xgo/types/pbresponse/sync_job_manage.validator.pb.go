@@ -7,7 +7,6 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
-	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -142,29 +141,6 @@ func (this *ListSyncJobVersions) Validate() error {
 func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
 	if this == nil {
 		return nil
-	}
-	return nil
-}
-
-func (this *DescribeDBAndTable) _xxx_xxx_Validator_Validate_column() error {
-	for _, item := range this.Column {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.DescribeDBAndTable
-func (this *DescribeDBAndTable) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
 	}
 	return nil
 }

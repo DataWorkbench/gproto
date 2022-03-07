@@ -781,11 +781,3 @@ func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
 	}
 	return nil
 }
-
-// Set default value for message request.DescribeDBAndTable
-func (this *DescribeDBAndTable) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
