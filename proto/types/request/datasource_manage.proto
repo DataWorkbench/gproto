@@ -40,7 +40,7 @@ message ListDataSources {
   // @inject_tag: json:"reverse" default:"false" form:"reverse"
   bool reverse = 5;
 
-  // Search with name; Not required.
+  //  Search with name; Not required.
   // @inject_tag: json:"search" form:"search"
   string search = 6;
 
