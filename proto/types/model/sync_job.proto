@@ -149,7 +149,7 @@ message SyncJobConf {
     // Description of the job, Not required, Max length 1024.
     // @inject_tag: json:"record_num"
     int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
-    //  bytes
+    // bytes
     // @inject_tag: json:"bytes"
     int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
     // 0:guide mode,1:shell mode
