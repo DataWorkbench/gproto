@@ -68,7 +68,7 @@ message TerminateSyncInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "syi-" } } } ];
 }
 
 // SuspendSyncInstances used as a request parameters for RPC.
@@ -80,7 +80,7 @@ message SuspendSyncInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "syi-" } } } ];
 }
 
 // ResumeSyncInstances used as a request parameters for RPC.
@@ -92,9 +92,9 @@ message ResumeSyncInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "syi-" } } } ];
 }
 
 message DescribeSyncInstance {
-  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "sti-" } ];
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "syi-" } ];
 }
