@@ -62,7 +62,7 @@ message ListSyncInstances {
 // TerminateSyncInstances used as a request parameters for RPC.
 // This struct can used for TerminateSyncCycleInst and TerminateSyncTestInst.
 message TerminateSyncInstances {
-  // The workspace id in HTTP Request-URI. Is Required.
+  //  The workspace id in HTTP Request-URI. Is Required.
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
