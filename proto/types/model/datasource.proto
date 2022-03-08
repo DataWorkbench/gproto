@@ -146,7 +146,7 @@ message DataSource {
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 14 } } },
       (validator.field).tags.message = { not_null: true }
     ];
-    // MONGODB Source Connection Info.
+    //  MONGODB Source Connection Info.
     // @inject_tag: json:"mongo_db"
     datasource.MongoDbURL mongo_db = 15 [
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 15 } } },
