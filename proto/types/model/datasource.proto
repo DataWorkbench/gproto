@@ -96,7 +96,7 @@ message DataSource {
       (validator.field).tags.message = { not_null: true }
     ];
 
-    //  Ftp Source Connection Info.
+    // Ftp Source Connection Info.
     // @inject_tag: json:"ftp"
     datasource.FtpURL ftp = 7 [
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 7 } } },
