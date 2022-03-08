@@ -101,8 +101,8 @@ func (this *TerminateSyncInstances) _xxx_xxx_Validator_Validate_instance_ids() e
 	}
 	for _, item := range this.InstanceIds {
 		_ = item // To avoid unused panics.
-		if !(strings.HasPrefix(item, "sti-")) {
-			return protovalidator.FieldError1("TerminateSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		if !(strings.HasPrefix(item, "syi-")) {
+			return protovalidator.FieldError1("TerminateSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'syi-'", item)
 		}
 	}
 	return nil
@@ -141,8 +141,8 @@ func (this *SuspendSyncInstances) _xxx_xxx_Validator_Validate_instance_ids() err
 	}
 	for _, item := range this.InstanceIds {
 		_ = item // To avoid unused panics.
-		if !(strings.HasPrefix(item, "sti-")) {
-			return protovalidator.FieldError1("SuspendSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		if !(strings.HasPrefix(item, "syi-")) {
+			return protovalidator.FieldError1("SuspendSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'syi-'", item)
 		}
 	}
 	return nil
@@ -181,8 +181,8 @@ func (this *ResumeSyncInstances) _xxx_xxx_Validator_Validate_instance_ids() erro
 	}
 	for _, item := range this.InstanceIds {
 		_ = item // To avoid unused panics.
-		if !(strings.HasPrefix(item, "sti-")) {
-			return protovalidator.FieldError1("ResumeSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		if !(strings.HasPrefix(item, "syi-")) {
+			return protovalidator.FieldError1("ResumeSyncInstances", "the value of array item where in field 'instance_ids' must start with string 'syi-'", item)
 		}
 	}
 	return nil
@@ -206,8 +206,8 @@ func (this *DescribeSyncInstance) _xxx_xxx_Validator_Validate_instance_id() erro
 	if !(len(this.InstanceId) == 20) {
 		return protovalidator.FieldError1("DescribeSyncInstance", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
 	}
-	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
-		return protovalidator.FieldError1("DescribeSyncInstance", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	if !(strings.HasPrefix(this.InstanceId, "syi-")) {
+		return protovalidator.FieldError1("DescribeSyncInstance", "the value of field 'instance_id' must start with string 'syi-'", this.InstanceId)
 	}
 	return nil
 }
