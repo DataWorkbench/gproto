@@ -43,6 +43,7 @@ message DataSource {
     Hive = 13;
     ElasticSearch = 14;
     MongoDb = 15;
+    Redis = 16;
   }
 
   // URL of datasource settings.
@@ -51,7 +52,7 @@ message DataSource {
 
     // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
     // @inject_tag: json:"-"
-    Type type = 16  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+    Type type = 17  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
     // MySQL Source Connection Info.
     // @inject_tag: json:"mysql"
@@ -148,6 +149,13 @@ message DataSource {
     // MONGODB Source Connection Info.
     // @inject_tag: json:"mongo_db"
     datasource.MongoDbURL mongo_db = 15 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 15 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // REDIS Source Connection Info.
+    // @inject_tag: json:"redis"
+    datasource.RedisURL redis = 16 [
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 15 } } },
       (validator.field).tags.message = { not_null: true }
     ];
