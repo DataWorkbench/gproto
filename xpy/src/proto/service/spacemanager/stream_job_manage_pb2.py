@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\024PBSvcStreamJobManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2proto/service/spacemanager/stream_job_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a+proto/types/request/stream_job_manage.proto\x1a,proto/types/response/stream_job_manage.proto2\x96\x0f\n\x0fStreamJobManage\x12\x45\n\x0eListStreamJobs\x12\x17.request.ListStreamJobs\x1a\x18.response.ListStreamJobs\"\x00\x12\x43\n\x10\x44\x65leteStreamJobs\x12\x19.request.DeleteStreamJobs\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0eMoveStreamJobs\x12\x17.request.MoveStreamJobs\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateStreamJob\x12\x18.request.CreateStreamJob\x1a\x19.response.CreateStreamJob\"\x00\x12\x41\n\x0fUpdateStreamJob\x12\x18.request.UpdateStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeStreamJob\x12\x1a.request.DescribeStreamJob\x1a\x1b.response.DescribeStreamJob\"\x00\x12\x43\n\x10SetStreamJobCode\x12\x19.request.SetStreamJobCode\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10GetStreamJobCode\x12\x19.request.GetStreamJobCode\x1a\x1a.response.GetStreamJobCode\"\x00\x12\x43\n\x10SetStreamJobArgs\x12\x19.request.SetStreamJobArgs\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10GetStreamJobArgs\x12\x19.request.GetStreamJobArgs\x1a\x1a.response.GetStreamJobArgs\"\x00\x12N\n\x15ListBuiltInConnectors\x12\x12.model.EmptyStruct\x1a\x1f.response.ListBuiltInConnectors\"\x00\x12K\n\x14SetStreamJobSchedule\x12\x1d.request.SetStreamJobSchedule\x1a\x12.model.EmptyStruct\"\x00\x12W\n\x14GetStreamJobSchedule\x12\x1d.request.GetStreamJobSchedule\x1a\x1e.response.GetStreamJobSchedule\"\x00\x12\x43\n\x10ReleaseStreamJob\x12\x19.request.ReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17OfflineReleaseStreamJob\x12 .request.OfflineReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17SuspendReleaseStreamJob\x12 .request.SuspendReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16ResumeReleaseStreamJob\x12\x1f.request.ResumeReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12Z\n\x15ListReleaseStreamJobs\x12\x1e.request.ListReleaseStreamJobs\x1a\x1f.response.ListReleaseStreamJobs\"\x00\x12Z\n\x15ListStreamJobVersions\x12\x1e.request.ListStreamJobVersions\x1a\x1f.response.ListStreamJobVersions\"\x00\x12U\n\x18\x44\x65scribeStreamJobVersion\x12\x1a.request.DescribeStreamJob\x1a\x1b.response.DescribeStreamJob\"\x00\x12R\n\x17GetStreamJobVersionCode\x12\x19.request.GetStreamJobCode\x1a\x1a.response.GetStreamJobCode\"\x00\x12R\n\x17GetStreamJobVersionArgs\x12\x19.request.GetStreamJobArgs\x1a\x1a.response.GetStreamJobArgs\"\x00\x12^\n\x1bGetStreamJobVersionSchedule\x12\x1d.request.GetStreamJobSchedule\x1a\x1e.response.GetStreamJobSchedule\"\x00\x12l\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12$.request.DescribeFlinkUIByInstanceId\x1a%.response.DescribeFlinkUIByInstanceId\"\x00\x42y\n\'com.dataomnis.gproto.service.pbsvcspaceB\x14PBSvcStreamJobManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n2proto/service/spacemanager/stream_job_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a+proto/types/request/stream_job_manage.proto\x1a,proto/types/response/stream_job_manage.proto2\xf3\x0f\n\x0fStreamJobManage\x12\x45\n\x0eListStreamJobs\x12\x17.request.ListStreamJobs\x1a\x18.response.ListStreamJobs\"\x00\x12\x43\n\x10\x44\x65leteStreamJobs\x12\x19.request.DeleteStreamJobs\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0eMoveStreamJobs\x12\x17.request.MoveStreamJobs\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateStreamJob\x12\x18.request.CreateStreamJob\x1a\x19.response.CreateStreamJob\"\x00\x12\x41\n\x0fUpdateStreamJob\x12\x18.request.UpdateStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeStreamJob\x12\x1a.request.DescribeStreamJob\x1a\x1b.response.DescribeStreamJob\"\x00\x12\x43\n\x10SetStreamJobCode\x12\x19.request.SetStreamJobCode\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10GetStreamJobCode\x12\x19.request.GetStreamJobCode\x1a\x1a.response.GetStreamJobCode\"\x00\x12\x43\n\x10SetStreamJobArgs\x12\x19.request.SetStreamJobArgs\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10GetStreamJobArgs\x12\x19.request.GetStreamJobArgs\x1a\x1a.response.GetStreamJobArgs\"\x00\x12N\n\x15ListBuiltInConnectors\x12\x12.model.EmptyStruct\x1a\x1f.response.ListBuiltInConnectors\"\x00\x12K\n\x14SetStreamJobSchedule\x12\x1d.request.SetStreamJobSchedule\x1a\x12.model.EmptyStruct\"\x00\x12W\n\x14GetStreamJobSchedule\x12\x1d.request.GetStreamJobSchedule\x1a\x1e.response.GetStreamJobSchedule\"\x00\x12Z\n\x15ListReleaseStreamJobs\x12\x1e.request.ListReleaseStreamJobs\x1a\x1f.response.ListReleaseStreamJobs\"\x00\x12\x43\n\x10ReleaseStreamJob\x12\x19.request.ReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17OfflineReleaseStreamJob\x12 .request.OfflineReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17SuspendReleaseStreamJob\x12 .request.SuspendReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16ResumeReleaseStreamJob\x12\x1f.request.ResumeReleaseStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12[\n\x1cUpdateReleaseStreamJobStatus\x12%.request.UpdateReleaseStreamJobStatus\x1a\x12.model.EmptyStruct\"\x00\x12Z\n\x15ListStreamJobVersions\x12\x1e.request.ListStreamJobVersions\x1a\x1f.response.ListStreamJobVersions\"\x00\x12U\n\x18\x44\x65scribeStreamJobVersion\x12\x1a.request.DescribeStreamJob\x1a\x1b.response.DescribeStreamJob\"\x00\x12R\n\x17GetStreamJobVersionCode\x12\x19.request.GetStreamJobCode\x1a\x1a.response.GetStreamJobCode\"\x00\x12R\n\x17GetStreamJobVersionArgs\x12\x19.request.GetStreamJobArgs\x1a\x1a.response.GetStreamJobArgs\"\x00\x12^\n\x1bGetStreamJobVersionSchedule\x12\x1d.request.GetStreamJobSchedule\x1a\x1e.response.GetStreamJobSchedule\"\x00\x12l\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12$.request.DescribeFlinkUIByInstanceId\x1a%.response.DescribeFlinkUIByInstanceId\"\x00\x42y\n\'com.dataomnis.gproto.service.pbsvcspaceB\x14PBSvcStreamJobManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_stream__job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_stream__job__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=191,
-  serialized_end=2133,
+  serialized_end=2226,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListStreamJobs',
@@ -174,9 +174,19 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListReleaseStreamJobs',
+    full_name='spacemanager.StreamJobManage.ListReleaseStreamJobs',
+    index=13,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._LISTRELEASESTREAMJOBS,
+    output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._LISTRELEASESTREAMJOBS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ReleaseStreamJob',
     full_name='spacemanager.StreamJobManage.ReleaseStreamJob',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._RELEASESTREAMJOB,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -186,7 +196,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='OfflineReleaseStreamJob',
     full_name='spacemanager.StreamJobManage.OfflineReleaseStreamJob',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._OFFLINERELEASESTREAMJOB,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -196,7 +206,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SuspendReleaseStreamJob',
     full_name='spacemanager.StreamJobManage.SuspendReleaseStreamJob',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._SUSPENDRELEASESTREAMJOB,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -206,7 +216,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ResumeReleaseStreamJob',
     full_name='spacemanager.StreamJobManage.ResumeReleaseStreamJob',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._RESUMERELEASESTREAMJOB,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -214,19 +224,19 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ListReleaseStreamJobs',
-    full_name='spacemanager.StreamJobManage.ListReleaseStreamJobs',
-    index=17,
+    name='UpdateReleaseStreamJobStatus',
+    full_name='spacemanager.StreamJobManage.UpdateReleaseStreamJobStatus',
+    index=18,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._LISTRELEASESTREAMJOBS,
-    output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._LISTRELEASESTREAMJOBS,
+    input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._UPDATERELEASESTREAMJOBSTATUS,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListStreamJobVersions',
     full_name='spacemanager.StreamJobManage.ListStreamJobVersions',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._LISTSTREAMJOBVERSIONS,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._LISTSTREAMJOBVERSIONS,
@@ -236,7 +246,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeStreamJobVersion',
     full_name='spacemanager.StreamJobManage.DescribeStreamJobVersion',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._DESCRIBESTREAMJOB,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._DESCRIBESTREAMJOB,
@@ -246,7 +256,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetStreamJobVersionCode',
     full_name='spacemanager.StreamJobManage.GetStreamJobVersionCode',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._GETSTREAMJOBCODE,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._GETSTREAMJOBCODE,
@@ -256,7 +266,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetStreamJobVersionArgs',
     full_name='spacemanager.StreamJobManage.GetStreamJobVersionArgs',
-    index=21,
+    index=22,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._GETSTREAMJOBARGS,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._GETSTREAMJOBARGS,
@@ -266,7 +276,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetStreamJobVersionSchedule',
     full_name='spacemanager.StreamJobManage.GetStreamJobVersionSchedule',
-    index=22,
+    index=23,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._GETSTREAMJOBSCHEDULE,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._GETSTREAMJOBSCHEDULE,
@@ -276,7 +286,7 @@ _STREAMJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeFlinkUIByInstanceId',
     full_name='spacemanager.StreamJobManage.DescribeFlinkUIByInstanceId',
-    index=23,
+    index=24,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_stream__job__manage__pb2._DESCRIBEFLINKUIBYINSTANCEID,
     output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._DESCRIBEFLINKUIBYINSTANCEID,

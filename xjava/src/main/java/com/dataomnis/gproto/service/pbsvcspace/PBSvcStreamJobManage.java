@@ -27,7 +27,7 @@ public final class PBSvcStreamJobManage {
       "manage.proto\022\014spacemanager\032\035proto/types/" +
       "model/empty.proto\032+proto/types/request/s" +
       "tream_job_manage.proto\032,proto/types/resp" +
-      "onse/stream_job_manage.proto2\226\017\n\017StreamJ" +
+      "onse/stream_job_manage.proto2\363\017\n\017StreamJ" +
       "obManage\022E\n\016ListStreamJobs\022\027.request.Lis" +
       "tStreamJobs\032\030.response.ListStreamJobs\"\000\022" +
       "C\n\020DeleteStreamJobs\022\031.request.DeleteStre" +
@@ -52,34 +52,36 @@ public final class PBSvcStreamJobManage {
       ".SetStreamJobSchedule\032\022.model.EmptyStruc" +
       "t\"\000\022W\n\024GetStreamJobSchedule\022\035.request.Ge" +
       "tStreamJobSchedule\032\036.response.GetStreamJ" +
-      "obSchedule\"\000\022C\n\020ReleaseStreamJob\022\031.reque" +
-      "st.ReleaseStreamJob\032\022.model.EmptyStruct\"" +
-      "\000\022Q\n\027OfflineReleaseStreamJob\022 .request.O" +
-      "fflineReleaseStreamJob\032\022.model.EmptyStru" +
-      "ct\"\000\022Q\n\027SuspendReleaseStreamJob\022 .reques" +
-      "t.SuspendReleaseStreamJob\032\022.model.EmptyS" +
-      "truct\"\000\022O\n\026ResumeReleaseStreamJob\022\037.requ" +
-      "est.ResumeReleaseStreamJob\032\022.model.Empty" +
-      "Struct\"\000\022Z\n\025ListReleaseStreamJobs\022\036.requ" +
-      "est.ListReleaseStreamJobs\032\037.response.Lis" +
-      "tReleaseStreamJobs\"\000\022Z\n\025ListStreamJobVer" +
-      "sions\022\036.request.ListStreamJobVersions\032\037." +
-      "response.ListStreamJobVersions\"\000\022U\n\030Desc" +
-      "ribeStreamJobVersion\022\032.request.DescribeS" +
-      "treamJob\032\033.response.DescribeStreamJob\"\000\022" +
-      "R\n\027GetStreamJobVersionCode\022\031.request.Get" +
-      "StreamJobCode\032\032.response.GetStreamJobCod" +
-      "e\"\000\022R\n\027GetStreamJobVersionArgs\022\031.request" +
-      ".GetStreamJobArgs\032\032.response.GetStreamJo" +
-      "bArgs\"\000\022^\n\033GetStreamJobVersionSchedule\022\035" +
-      ".request.GetStreamJobSchedule\032\036.response" +
-      ".GetStreamJobSchedule\"\000\022l\n\033DescribeFlink" +
-      "UIByInstanceId\022$.request.DescribeFlinkUI" +
-      "ByInstanceId\032%.response.DescribeFlinkUIB" +
-      "yInstanceId\"\000By\n\'com.dataomnis.gproto.se" +
-      "rvice.pbsvcspaceB\024PBSvcStreamJobManageP\000" +
-      "Z6github.com/DataWorkbench/gproto/xgo/se" +
-      "rvice/pbsvcspaceb\006proto3"
+      "obSchedule\"\000\022Z\n\025ListReleaseStreamJobs\022\036." +
+      "request.ListReleaseStreamJobs\032\037.response" +
+      ".ListReleaseStreamJobs\"\000\022C\n\020ReleaseStrea" +
+      "mJob\022\031.request.ReleaseStreamJob\032\022.model." +
+      "EmptyStruct\"\000\022Q\n\027OfflineReleaseStreamJob" +
+      "\022 .request.OfflineReleaseStreamJob\032\022.mod" +
+      "el.EmptyStruct\"\000\022Q\n\027SuspendReleaseStream" +
+      "Job\022 .request.SuspendReleaseStreamJob\032\022." +
+      "model.EmptyStruct\"\000\022O\n\026ResumeReleaseStre" +
+      "amJob\022\037.request.ResumeReleaseStreamJob\032\022" +
+      ".model.EmptyStruct\"\000\022[\n\034UpdateReleaseStr" +
+      "eamJobStatus\022%.request.UpdateReleaseStre" +
+      "amJobStatus\032\022.model.EmptyStruct\"\000\022Z\n\025Lis" +
+      "tStreamJobVersions\022\036.request.ListStreamJ" +
+      "obVersions\032\037.response.ListStreamJobVersi" +
+      "ons\"\000\022U\n\030DescribeStreamJobVersion\022\032.requ" +
+      "est.DescribeStreamJob\032\033.response.Describ" +
+      "eStreamJob\"\000\022R\n\027GetStreamJobVersionCode\022" +
+      "\031.request.GetStreamJobCode\032\032.response.Ge" +
+      "tStreamJobCode\"\000\022R\n\027GetStreamJobVersionA" +
+      "rgs\022\031.request.GetStreamJobArgs\032\032.respons" +
+      "e.GetStreamJobArgs\"\000\022^\n\033GetStreamJobVers" +
+      "ionSchedule\022\035.request.GetStreamJobSchedu" +
+      "le\032\036.response.GetStreamJobSchedule\"\000\022l\n\033" +
+      "DescribeFlinkUIByInstanceId\022$.request.De" +
+      "scribeFlinkUIByInstanceId\032%.response.Des" +
+      "cribeFlinkUIByInstanceId\"\000By\n\'com.dataom" +
+      "nis.gproto.service.pbsvcspaceB\024PBSvcStre" +
+      "amJobManageP\000Z6github.com/DataWorkbench/" +
+      "gproto/xgo/service/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

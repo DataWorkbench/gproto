@@ -168,6 +168,14 @@ func (this *ResumeReleaseStreamJob) SetDefaults() {
 	return
 }
 
+// Set default value for message request.UpdateReleaseStreamJobStatus
+func (this *UpdateReleaseStreamJobStatus) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.ListStreamJobVersions
 func (this *ListStreamJobVersions) SetDefaults() {
 	if this == nil {

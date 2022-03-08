@@ -1129,28 +1129,6 @@ public final class PBResponseStreamInstanceManage {
      * <code>.model.StreamInstance info = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstanceOrBuilder getInfoOrBuilder();
-
-    /**
-     * <pre>
-     * The flink job id.
-     * It may be a empty string is the flink job not yet submit.
-     * </pre>
-     *
-     * <code>string flink_id = 2;</code>
-     * @return The flinkId.
-     */
-    java.lang.String getFlinkId();
-    /**
-     * <pre>
-     * The flink job id.
-     * It may be a empty string is the flink job not yet submit.
-     * </pre>
-     *
-     * <code>string flink_id = 2;</code>
-     * @return The bytes for flinkId.
-     */
-    com.google.protobuf.ByteString
-        getFlinkIdBytes();
   }
   /**
    * Protobuf type {@code response.DescribeStreamInstance}
@@ -1165,7 +1143,6 @@ public final class PBResponseStreamInstanceManage {
       super(builder);
     }
     private DescribeStreamInstance() {
-      flinkId_ = "";
     }
 
     @java.lang.Override
@@ -1209,12 +1186,6 @@ public final class PBResponseStreamInstanceManage {
                 info_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              flinkId_ = s;
               break;
             }
             default: {
@@ -1275,54 +1246,6 @@ public final class PBResponseStreamInstanceManage {
       return getInfo();
     }
 
-    public static final int FLINK_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object flinkId_;
-    /**
-     * <pre>
-     * The flink job id.
-     * It may be a empty string is the flink job not yet submit.
-     * </pre>
-     *
-     * <code>string flink_id = 2;</code>
-     * @return The flinkId.
-     */
-    @java.lang.Override
-    public java.lang.String getFlinkId() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        flinkId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The flink job id.
-     * It may be a empty string is the flink job not yet submit.
-     * </pre>
-     *
-     * <code>string flink_id = 2;</code>
-     * @return The bytes for flinkId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFlinkIdBytes() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        flinkId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1340,9 +1263,6 @@ public final class PBResponseStreamInstanceManage {
       if (info_ != null) {
         output.writeMessage(1, getInfo());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flinkId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1355,9 +1275,6 @@ public final class PBResponseStreamInstanceManage {
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getInfo());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flinkId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1379,8 +1296,6 @@ public final class PBResponseStreamInstanceManage {
         if (!getInfo()
             .equals(other.getInfo())) return false;
       }
-      if (!getFlinkId()
-          .equals(other.getFlinkId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1396,8 +1311,6 @@ public final class PBResponseStreamInstanceManage {
         hash = (37 * hash) + INFO_FIELD_NUMBER;
         hash = (53 * hash) + getInfo().hashCode();
       }
-      hash = (37 * hash) + FLINK_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFlinkId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1537,8 +1450,6 @@ public final class PBResponseStreamInstanceManage {
           info_ = null;
           infoBuilder_ = null;
         }
-        flinkId_ = "";
-
         return this;
       }
 
@@ -1570,7 +1481,6 @@ public final class PBResponseStreamInstanceManage {
         } else {
           result.info_ = infoBuilder_.build();
         }
-        result.flinkId_ = flinkId_;
         onBuilt();
         return result;
       }
@@ -1621,10 +1531,6 @@ public final class PBResponseStreamInstanceManage {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance.getDefaultInstance()) return this;
         if (other.hasInfo()) {
           mergeInfo(other.getInfo());
-        }
-        if (!other.getFlinkId().isEmpty()) {
-          flinkId_ = other.flinkId_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1773,107 +1679,6 @@ public final class PBResponseStreamInstanceManage {
         }
         return infoBuilder_;
       }
-
-      private java.lang.Object flinkId_ = "";
-      /**
-       * <pre>
-       * The flink job id.
-       * It may be a empty string is the flink job not yet submit.
-       * </pre>
-       *
-       * <code>string flink_id = 2;</code>
-       * @return The flinkId.
-       */
-      public java.lang.String getFlinkId() {
-        java.lang.Object ref = flinkId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          flinkId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The flink job id.
-       * It may be a empty string is the flink job not yet submit.
-       * </pre>
-       *
-       * <code>string flink_id = 2;</code>
-       * @return The bytes for flinkId.
-       */
-      public com.google.protobuf.ByteString
-          getFlinkIdBytes() {
-        java.lang.Object ref = flinkId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          flinkId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The flink job id.
-       * It may be a empty string is the flink job not yet submit.
-       * </pre>
-       *
-       * <code>string flink_id = 2;</code>
-       * @param value The flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The flink job id.
-       * It may be a empty string is the flink job not yet submit.
-       * </pre>
-       *
-       * <code>string flink_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFlinkId() {
-        
-        flinkId_ = getDefaultInstance().getFlinkId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The flink job id.
-       * It may be a empty string is the flink job not yet submit.
-       * </pre>
-       *
-       * <code>string flink_id = 2;</code>
-       * @param value The bytes for flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1950,13 +1755,12 @@ public final class PBResponseStreamInstanceManage {
       "anage.proto\022\010response\032\'proto/types/model" +
       "/stream_instance.proto\"\\\n\023ListStreamInst" +
       "ances\022$\n\005infos\030\001 \003(\0132\025.model.StreamInsta" +
-      "nce\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"O\n\026" +
+      "nce\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"=\n\026" +
       "DescribeStreamInstance\022#\n\004info\030\001 \001(\0132\025.m" +
-      "odel.StreamInstance\022\020\n\010flink_id\030\002 \001(\tB\177\n" +
-      "%com.dataomnis.gproto.types.pbresponseB\036" +
-      "PBResponseStreamInstanceManageP\000Z4github" +
-      ".com/DataWorkbench/gproto/xgo/types/pbre" +
-      "sponseb\006proto3"
+      "odel.StreamInstanceB\177\n%com.dataomnis.gpr" +
+      "oto.types.pbresponseB\036PBResponseStreamIn" +
+      "stanceManageP\000Z4github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1974,7 +1778,7 @@ public final class PBResponseStreamInstanceManage {
     internal_static_response_DescribeStreamInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeStreamInstance_descriptor,
-        new java.lang.String[] { "Info", "FlinkId", });
+        new java.lang.String[] { "Info", });
     com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.getDescriptor();
   }
 

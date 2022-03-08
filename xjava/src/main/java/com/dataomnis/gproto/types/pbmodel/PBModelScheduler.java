@@ -14,8 +14,8 @@ public final class PBModelScheduler {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface StreamJobQueueOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.StreamJobQueue)
+  public interface StreamJobEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.StreamJobEvent)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -107,21 +107,21 @@ public final class PBModelScheduler {
   }
   /**
    * <pre>
-   * StreamJobQueue is the message value used in scheduler queue.
+   * StreamJobEvent is the event message used in scheduler queue.
    * </pre>
    *
-   * Protobuf type {@code model.StreamJobQueue}
+   * Protobuf type {@code model.StreamJobEvent}
    */
-  public static final class StreamJobQueue extends
+  public static final class StreamJobEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.StreamJobQueue)
-      StreamJobQueueOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.StreamJobEvent)
+      StreamJobEventOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use StreamJobQueue.newBuilder() to construct.
-    private StreamJobQueue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StreamJobEvent.newBuilder() to construct.
+    private StreamJobEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StreamJobQueue() {
+    private StreamJobEvent() {
       flinkUrl_ = "";
       flinkVersion_ = "";
     }
@@ -130,7 +130,7 @@ public final class PBModelScheduler {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new StreamJobQueue();
+      return new StreamJobEvent();
     }
 
     @java.lang.Override
@@ -138,7 +138,7 @@ public final class PBModelScheduler {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StreamJobQueue(
+    private StreamJobEvent(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -212,19 +212,136 @@ public final class PBModelScheduler {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobQueue_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobEvent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobQueue_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code model.StreamJobQueue.Action}
+     * Protobuf enum {@code model.StreamJobEvent.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>Job = 1;</code>
+       */
+      Job(1),
+      /**
+       * <code>Instance = 2;</code>
+       */
+      Instance(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>Job = 1;</code>
+       */
+      public static final int Job_VALUE = 1;
+      /**
+       * <code>Instance = 2;</code>
+       */
+      public static final int Instance_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return Job;
+          case 2: return Instance;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.StreamJobEvent.Type)
+    }
+
+    /**
+     * Protobuf enum {@code model.StreamJobEvent.Action}
      */
     public enum Action
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -332,7 +449,7 @@ public final class PBModelScheduler {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.getDescriptor().getEnumTypes().get(0);
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final Action[] VALUES = values();
@@ -355,7 +472,7 @@ public final class PBModelScheduler {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:model.StreamJobQueue.Action)
+      // @@protoc_insertion_point(enum_scope:model.StreamJobEvent.Action)
     }
 
     public static final int PROPERTY_FIELD_NUMBER = 1;
@@ -584,10 +701,10 @@ public final class PBModelScheduler {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue other = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent other = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent) obj;
 
       if (hasProperty() != other.hasProperty()) return false;
       if (hasProperty()) {
@@ -631,69 +748,69 @@ public final class PBModelScheduler {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -706,7 +823,7 @@ public final class PBModelScheduler {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -723,29 +840,29 @@ public final class PBModelScheduler {
     }
     /**
      * <pre>
-     * StreamJobQueue is the message value used in scheduler queue.
+     * StreamJobEvent is the event message used in scheduler queue.
      * </pre>
      *
-     * Protobuf type {@code model.StreamJobQueue}
+     * Protobuf type {@code model.StreamJobEvent}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.StreamJobQueue)
-        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueueOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.StreamJobEvent)
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobQueue_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobEvent_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobQueue_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobEvent_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -783,17 +900,17 @@ public final class PBModelScheduler {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobQueue_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_StreamJobEvent_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -801,8 +918,8 @@ public final class PBModelScheduler {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue result = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent result = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent(this);
         if (propertyBuilder_ == null) {
           result.property_ = property_;
         } else {
@@ -850,16 +967,16 @@ public final class PBModelScheduler {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent.getDefaultInstance()) return this;
         if (other.hasProperty()) {
           mergeProperty(other.getProperty());
         }
@@ -892,11 +1009,11 @@ public final class PBModelScheduler {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1351,51 +1468,51 @@ public final class PBModelScheduler {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.StreamJobQueue)
+      // @@protoc_insertion_point(builder_scope:model.StreamJobEvent)
     }
 
-    // @@protoc_insertion_point(class_scope:model.StreamJobQueue)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.StreamJobEvent)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StreamJobQueue>
-        PARSER = new com.google.protobuf.AbstractParser<StreamJobQueue>() {
+    private static final com.google.protobuf.Parser<StreamJobEvent>
+        PARSER = new com.google.protobuf.AbstractParser<StreamJobEvent>() {
       @java.lang.Override
-      public StreamJobQueue parsePartialFrom(
+      public StreamJobEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StreamJobQueue(input, extensionRegistry);
+        return new StreamJobEvent(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<StreamJobQueue> parser() {
+    public static com.google.protobuf.Parser<StreamJobEvent> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<StreamJobQueue> getParserForType() {
+    public com.google.protobuf.Parser<StreamJobEvent> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobQueue getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.StreamJobEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_StreamJobQueue_descriptor;
+    internal_static_model_StreamJobEvent_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_StreamJobQueue_fieldAccessorTable;
+      internal_static_model_StreamJobEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1408,16 +1525,17 @@ public final class PBModelScheduler {
       "\n!proto/types/model/scheduler.proto\022\005mod" +
       "el\0323github.com/yu31/protoc-plugin/proto/" +
       "validator.proto\032\"proto/types/model/strea" +
-      "m_job.proto\"\204\002\n\016StreamJobQueue\0227\n\010proper" +
+      "m_job.proto\"\262\002\n\016StreamJobEvent\0227\n\010proper" +
       "ty\030\001 \001(\0132\030.model.StreamJobPropertyB\013\342\337\037\007" +
       "\022\005\342\001\002\020\001\022\036\n\tflink_url\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022" +
       "\"\n\rflink_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\025\n\007r" +
       "etries\030\004 \001(\005B\004\342\337\037\000\022\025\n\007started\030\005 \001(\003B\004\342\337\037" +
-      "\000\"G\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Create\020\001" +
-      "\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\022\t\n\005Retry\020\003Bk\n\"co" +
-      "m.dataomnis.gproto.types.pbmodelB\020PBMode" +
-      "lSchedulerP\000Z1github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbmodelb\006proto3"
+      "\000\",\n\004Type\022\r\n\tTypeUnset\020\000\022\007\n\003Job\020\001\022\014\n\010Ins" +
+      "tance\020\002\"G\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Cr" +
+      "eate\020\001\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\022\t\n\005Retry\020\003" +
+      "Bk\n\"com.dataomnis.gproto.types.pbmodelB\020" +
+      "PBModelSchedulerP\000Z1github.com/DataWorkb" +
+      "ench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1425,11 +1543,11 @@ public final class PBModelScheduler {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor(),
         });
-    internal_static_model_StreamJobQueue_descriptor =
+    internal_static_model_StreamJobEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_model_StreamJobQueue_fieldAccessorTable = new
+    internal_static_model_StreamJobEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_StreamJobQueue_descriptor,
+        internal_static_model_StreamJobEvent_descriptor,
         new java.lang.String[] { "Property", "FlinkUrl", "FlinkVersion", "Retries", "Started", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

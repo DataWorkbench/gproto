@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,10 +20,116 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\"\xe3\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\tBi\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xe3\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"\xb9\x01\n\x04Role\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04ros-\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"F\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05\x41\x64min\x10\x01\x12\r\n\tDeveloper\x10\x02\x12\x08\n\x04User\x10\x03\x12\x0b\n\x07Visitor\x10\x04\"\x80\x02\n\x0b\x41\x64minModule\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\x08\x63lassify\x18\x02 \x01(\x0e\x32\x1b.model.AdminModule.ClassifyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\tapi_lists\x18\x04 \x03(\x0b\x32\x0f.model.AdminAPI\"S\n\x08\x43lassify\x12\x11\n\rClassifyUnSet\x10\x00\x12\x0e\n\nUserManage\x10\x01\x12\x11\n\rSessionManage\x10\x02\x12\x11\n\rMessageManage\x10\x03\"\x9a\x03\n\x08\x41\x64minAPI\x12\x1d\n\x08\x61pi_name\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12:\n\tperm_type\x18\x03 \x01(\x0e\x32\x18.model.AdminAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\x0bpermissions\x18\x04 \x03(\x0b\x32\x1a.model.AdminAPI.PermissionB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\x36\n\x05roles\x18\x06 \x03(\x0b\x32\x1a.model.AdminAPI.RolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x38\n\nPermission\x12\x19\n\x04role\x18\x01 \x01(\x0b\x32\x0b.model.Role\x12\x0f\n\x07\x61llowed\x18\x02 \x01(\x08\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"2\n\x08PermType\x12\x11\n\rPermTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  ,
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
+
+
+
+_ROLE_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='model.Role.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Admin', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Developer', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='User', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Visitor', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=441,
+  serialized_end=511,
 )
+_sym_db.RegisterEnumDescriptor(_ROLE_TYPE)
 
+_ADMINMODULE_CLASSIFY = _descriptor.EnumDescriptor(
+  name='Classify',
+  full_name='model.AdminModule.Classify',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ClassifyUnSet', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UserManage', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SessionManage', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MessageManage', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=687,
+  serialized_end=770,
+)
+_sym_db.RegisterEnumDescriptor(_ADMINMODULE_CLASSIFY)
 
+_ADMINAPI_PERMTYPE = _descriptor.EnumDescriptor(
+  name='PermType',
+  full_name='model.AdminAPI.PermType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='PermTypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Write', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Read', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1133,
+  serialized_end=1183,
+)
+_sym_db.RegisterEnumDescriptor(_ADMINAPI_PERMTYPE)
 
 
 _USER = _descriptor.Descriptor(
@@ -136,11 +243,264 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=270,
+  serialized_start=96,
+  serialized_end=323,
 )
 
+
+_ROLE = _descriptor.Descriptor(
+  name='Role',
+  full_name='model.Role',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.Role.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ros-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='model.Role.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='model.Role.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ROLE_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=326,
+  serialized_end=511,
+)
+
+
+_ADMINMODULE = _descriptor.Descriptor(
+  name='AdminModule',
+  full_name='model.AdminModule',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.AdminModule.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='classify', full_name='model.AdminModule.classify', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='model.AdminModule.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_lists', full_name='model.AdminModule.api_lists', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ADMINMODULE_CLASSIFY,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=514,
+  serialized_end=770,
+)
+
+
+_ADMINAPI_PERMISSION = _descriptor.Descriptor(
+  name='Permission',
+  full_name='model.AdminAPI.Permission',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='role', full_name='model.AdminAPI.Permission.role', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='allowed', full_name='model.AdminAPI.Permission.allowed', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1029,
+  serialized_end=1085,
+)
+
+_ADMINAPI_ROLESENTRY = _descriptor.Descriptor(
+  name='RolesEntry',
+  full_name='model.AdminAPI.RolesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='model.AdminAPI.RolesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='model.AdminAPI.RolesEntry.value', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1087,
+  serialized_end=1131,
+)
+
+_ADMINAPI = _descriptor.Descriptor(
+  name='AdminAPI',
+  full_name='model.AdminAPI',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api_name', full_name='model.AdminAPI.api_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='display_name', full_name='model.AdminAPI.display_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='perm_type', full_name='model.AdminAPI.perm_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='permissions', full_name='model.AdminAPI.permissions', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\352\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='roles', full_name='model.AdminAPI.roles', index=4,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\362\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ADMINAPI_PERMISSION, _ADMINAPI_ROLESENTRY, ],
+  enum_types=[
+    _ADMINAPI_PERMTYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=773,
+  serialized_end=1183,
+)
+
+_ROLE.fields_by_name['type'].enum_type = _ROLE_TYPE
+_ROLE_TYPE.containing_type = _ROLE
+_ADMINMODULE.fields_by_name['classify'].enum_type = _ADMINMODULE_CLASSIFY
+_ADMINMODULE.fields_by_name['api_lists'].message_type = _ADMINAPI
+_ADMINMODULE_CLASSIFY.containing_type = _ADMINMODULE
+_ADMINAPI_PERMISSION.fields_by_name['role'].message_type = _ROLE
+_ADMINAPI_PERMISSION.containing_type = _ADMINAPI
+_ADMINAPI_ROLESENTRY.containing_type = _ADMINAPI
+_ADMINAPI.fields_by_name['perm_type'].enum_type = _ADMINAPI_PERMTYPE
+_ADMINAPI.fields_by_name['permissions'].message_type = _ADMINAPI_PERMISSION
+_ADMINAPI.fields_by_name['roles'].message_type = _ADMINAPI_ROLESENTRY
+_ADMINAPI_PERMTYPE.containing_type = _ADMINAPI
 DESCRIPTOR.message_types_by_name['User'] = _USER
+DESCRIPTOR.message_types_by_name['Role'] = _ROLE
+DESCRIPTOR.message_types_by_name['AdminModule'] = _ADMINMODULE
+DESCRIPTOR.message_types_by_name['AdminAPI'] = _ADMINAPI
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
@@ -150,6 +510,55 @@ User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
   })
 _sym_db.RegisterMessage(User)
 
+Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
+  'DESCRIPTOR' : _ROLE,
+  '__module__' : 'proto.types.model.account_pb2'
+  # @@protoc_insertion_point(class_scope:model.Role)
+  })
+_sym_db.RegisterMessage(Role)
+
+AdminModule = _reflection.GeneratedProtocolMessageType('AdminModule', (_message.Message,), {
+  'DESCRIPTOR' : _ADMINMODULE,
+  '__module__' : 'proto.types.model.account_pb2'
+  # @@protoc_insertion_point(class_scope:model.AdminModule)
+  })
+_sym_db.RegisterMessage(AdminModule)
+
+AdminAPI = _reflection.GeneratedProtocolMessageType('AdminAPI', (_message.Message,), {
+
+  'Permission' : _reflection.GeneratedProtocolMessageType('Permission', (_message.Message,), {
+    'DESCRIPTOR' : _ADMINAPI_PERMISSION,
+    '__module__' : 'proto.types.model.account_pb2'
+    # @@protoc_insertion_point(class_scope:model.AdminAPI.Permission)
+    })
+  ,
+
+  'RolesEntry' : _reflection.GeneratedProtocolMessageType('RolesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ADMINAPI_ROLESENTRY,
+    '__module__' : 'proto.types.model.account_pb2'
+    # @@protoc_insertion_point(class_scope:model.AdminAPI.RolesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _ADMINAPI,
+  '__module__' : 'proto.types.model.account_pb2'
+  # @@protoc_insertion_point(class_scope:model.AdminAPI)
+  })
+_sym_db.RegisterMessage(AdminAPI)
+_sym_db.RegisterMessage(AdminAPI.Permission)
+_sym_db.RegisterMessage(AdminAPI.RolesEntry)
+
 
 DESCRIPTOR._options = None
+_ROLE.fields_by_name['id']._options = None
+_ROLE.fields_by_name['type']._options = None
+_ROLE.fields_by_name['name']._options = None
+_ADMINMODULE.fields_by_name['id']._options = None
+_ADMINMODULE.fields_by_name['classify']._options = None
+_ADMINMODULE.fields_by_name['name']._options = None
+_ADMINAPI_ROLESENTRY._options = None
+_ADMINAPI.fields_by_name['api_name']._options = None
+_ADMINAPI.fields_by_name['display_name']._options = None
+_ADMINAPI.fields_by_name['perm_type']._options = None
+_ADMINAPI.fields_by_name['permissions']._options = None
+_ADMINAPI.fields_by_name['roles']._options = None
 # @@protoc_insertion_point(module_scope)

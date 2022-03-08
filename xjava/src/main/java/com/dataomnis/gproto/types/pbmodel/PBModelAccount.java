@@ -2439,11 +2439,5560 @@ public final class PBModelAccount {
 
   }
 
+  public interface RoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.Role)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type getType();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * <pre>
+   * Role declares the information of built-in role.
+   * </pre>
+   *
+   * Protobuf type {@code model.Role}
+   */
+  public static final class Role extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.Role)
+      RoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Role.newBuilder() to construct.
+    private Role(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Role() {
+      id_ = "";
+      type_ = 0;
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Role();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Role(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_Role_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_Role_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.Role.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * useless.
+       * </pre>
+       *
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>Admin = 1;</code>
+       */
+      Admin(1),
+      /**
+       * <code>Developer = 2;</code>
+       */
+      Developer(2),
+      /**
+       * <code>User = 3;</code>
+       */
+      User(3),
+      /**
+       * <code>Visitor = 4;</code>
+       */
+      Visitor(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * useless.
+       * </pre>
+       *
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>Admin = 1;</code>
+       */
+      public static final int Admin_VALUE = 1;
+      /**
+       * <code>Developer = 2;</code>
+       */
+      public static final int Developer_VALUE = 2;
+      /**
+       * <code>User = 3;</code>
+       */
+      public static final int User_VALUE = 3;
+      /**
+       * <code>Visitor = 4;</code>
+       */
+      public static final int Visitor_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return Admin;
+          case 2: return Developer;
+          case 3: return User;
+          case 4: return Visitor;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.Role.Type)
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.TypeUnset.getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (type_ != other.type_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Role declares the information of built-in role.
+     * </pre>
+     *
+     * Protobuf type {@code model.Role}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.Role)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_Role_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_Role_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        type_ = 0;
+
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_Role_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role(this);
+        result.id_ = id_;
+        result.type_ = type_;
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Role.Type type = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.Role)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.Role)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Role>
+        PARSER = new com.google.protobuf.AbstractParser<Role>() {
+      @java.lang.Override
+      public Role parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Role(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Role> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Role> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdminModuleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.AdminModule)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The module id.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The module id.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The module classify.
+     * &#64;inject_tag: json:"classify"
+     * </pre>
+     *
+     * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for classify.
+     */
+    int getClassifyValue();
+    /**
+     * <pre>
+     * The module classify.
+     * &#64;inject_tag: json:"classify"
+     * </pre>
+     *
+     * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+     * @return The classify.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify getClassify();
+
+    /**
+     * <pre>
+     * Name is the display name of this Module. Is user readable.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * Name is the display name of this Module. Is user readable.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> 
+        getApiListsList();
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getApiLists(int index);
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    int getApiListsCount();
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder> 
+        getApiListsOrBuilderList();
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder getApiListsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * AdminModule declares the module information in the admin.
+   * </pre>
+   *
+   * Protobuf type {@code model.AdminModule}
+   */
+  public static final class AdminModule extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.AdminModule)
+      AdminModuleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdminModule.newBuilder() to construct.
+    private AdminModule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdminModule() {
+      id_ = "";
+      classify_ = 0;
+      name_ = "";
+      apiLists_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AdminModule();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdminModule(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              classify_ = rawValue;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                apiLists_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              apiLists_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          apiLists_ = java.util.Collections.unmodifiableList(apiLists_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminModule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminModule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.AdminModule.Classify}
+     */
+    public enum Classify
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ClassifyUnSet = 0;</code>
+       */
+      ClassifyUnSet(0),
+      /**
+       * <code>UserManage = 1;</code>
+       */
+      UserManage(1),
+      /**
+       * <code>SessionManage = 2;</code>
+       */
+      SessionManage(2),
+      /**
+       * <code>MessageManage = 3;</code>
+       */
+      MessageManage(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ClassifyUnSet = 0;</code>
+       */
+      public static final int ClassifyUnSet_VALUE = 0;
+      /**
+       * <code>UserManage = 1;</code>
+       */
+      public static final int UserManage_VALUE = 1;
+      /**
+       * <code>SessionManage = 2;</code>
+       */
+      public static final int SessionManage_VALUE = 2;
+      /**
+       * <code>MessageManage = 3;</code>
+       */
+      public static final int MessageManage_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Classify valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Classify forNumber(int value) {
+        switch (value) {
+          case 0: return ClassifyUnSet;
+          case 1: return UserManage;
+          case 2: return SessionManage;
+          case 3: return MessageManage;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Classify>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Classify> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Classify>() {
+              public Classify findValueByNumber(int number) {
+                return Classify.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Classify[] VALUES = values();
+
+      public static Classify valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Classify(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AdminModule.Classify)
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The module id.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The module id.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLASSIFY_FIELD_NUMBER = 2;
+    private int classify_;
+    /**
+     * <pre>
+     * The module classify.
+     * &#64;inject_tag: json:"classify"
+     * </pre>
+     *
+     * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for classify.
+     */
+    @java.lang.Override public int getClassifyValue() {
+      return classify_;
+    }
+    /**
+     * <pre>
+     * The module classify.
+     * &#64;inject_tag: json:"classify"
+     * </pre>
+     *
+     * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+     * @return The classify.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify getClassify() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.valueOf(classify_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.UNRECOGNIZED : result;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * Name is the display name of this Module. Is user readable.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Name is the display name of this Module. Is user readable.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_LISTS_FIELD_NUMBER = 4;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> apiLists_;
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> getApiListsList() {
+      return apiLists_;
+    }
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder> 
+        getApiListsOrBuilderList() {
+      return apiLists_;
+    }
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    @java.lang.Override
+    public int getApiListsCount() {
+      return apiLists_.size();
+    }
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getApiLists(int index) {
+      return apiLists_.get(index);
+    }
+    /**
+     * <pre>
+     * ApiList represents the list of APIs belonging to this module
+     * &#64;inject_tag: json:"api_lists"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI api_lists = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder getApiListsOrBuilder(
+        int index) {
+      return apiLists_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (classify_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.ClassifyUnSet.getNumber()) {
+        output.writeEnum(2, classify_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      for (int i = 0; i < apiLists_.size(); i++) {
+        output.writeMessage(4, apiLists_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (classify_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.ClassifyUnSet.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, classify_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      for (int i = 0; i < apiLists_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, apiLists_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (classify_ != other.classify_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getApiListsList()
+          .equals(other.getApiListsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + CLASSIFY_FIELD_NUMBER;
+      hash = (53 * hash) + classify_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (getApiListsCount() > 0) {
+        hash = (37 * hash) + API_LISTS_FIELD_NUMBER;
+        hash = (53 * hash) + getApiListsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AdminModule declares the module information in the admin.
+     * </pre>
+     *
+     * Protobuf type {@code model.AdminModule}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.AdminModule)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModuleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminModule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminModule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getApiListsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        classify_ = 0;
+
+        name_ = "";
+
+        if (apiListsBuilder_ == null) {
+          apiLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          apiListsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminModule_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule(this);
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.classify_ = classify_;
+        result.name_ = name_;
+        if (apiListsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            apiLists_ = java.util.Collections.unmodifiableList(apiLists_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.apiLists_ = apiLists_;
+        } else {
+          result.apiLists_ = apiListsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.classify_ != 0) {
+          setClassifyValue(other.getClassifyValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (apiListsBuilder_ == null) {
+          if (!other.apiLists_.isEmpty()) {
+            if (apiLists_.isEmpty()) {
+              apiLists_ = other.apiLists_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureApiListsIsMutable();
+              apiLists_.addAll(other.apiLists_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.apiLists_.isEmpty()) {
+            if (apiListsBuilder_.isEmpty()) {
+              apiListsBuilder_.dispose();
+              apiListsBuilder_ = null;
+              apiLists_ = other.apiLists_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              apiListsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getApiListsFieldBuilder() : null;
+            } else {
+              apiListsBuilder_.addAllMessages(other.apiLists_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The module id.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The module id.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The module id.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The module id.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The module id.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int classify_ = 0;
+      /**
+       * <pre>
+       * The module classify.
+       * &#64;inject_tag: json:"classify"
+       * </pre>
+       *
+       * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for classify.
+       */
+      @java.lang.Override public int getClassifyValue() {
+        return classify_;
+      }
+      /**
+       * <pre>
+       * The module classify.
+       * &#64;inject_tag: json:"classify"
+       * </pre>
+       *
+       * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for classify to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClassifyValue(int value) {
+        
+        classify_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The module classify.
+       * &#64;inject_tag: json:"classify"
+       * </pre>
+       *
+       * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+       * @return The classify.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify getClassify() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.valueOf(classify_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The module classify.
+       * &#64;inject_tag: json:"classify"
+       * </pre>
+       *
+       * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+       * @param value The classify to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClassify(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule.Classify value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        classify_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The module classify.
+       * &#64;inject_tag: json:"classify"
+       * </pre>
+       *
+       * <code>.model.AdminModule.Classify classify = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClassify() {
+        
+        classify_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * Name is the display name of this Module. Is user readable.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name is the display name of this Module. Is user readable.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name is the display name of this Module. Is user readable.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name is the display name of this Module. Is user readable.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name is the display name of this Module. Is user readable.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> apiLists_ =
+        java.util.Collections.emptyList();
+      private void ensureApiListsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          apiLists_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI>(apiLists_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder> apiListsBuilder_;
+
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> getApiListsList() {
+        if (apiListsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(apiLists_);
+        } else {
+          return apiListsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public int getApiListsCount() {
+        if (apiListsBuilder_ == null) {
+          return apiLists_.size();
+        } else {
+          return apiListsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getApiLists(int index) {
+        if (apiListsBuilder_ == null) {
+          return apiLists_.get(index);
+        } else {
+          return apiListsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder setApiLists(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI value) {
+        if (apiListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApiListsIsMutable();
+          apiLists_.set(index, value);
+          onChanged();
+        } else {
+          apiListsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder setApiLists(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder builderForValue) {
+        if (apiListsBuilder_ == null) {
+          ensureApiListsIsMutable();
+          apiLists_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          apiListsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder addApiLists(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI value) {
+        if (apiListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApiListsIsMutable();
+          apiLists_.add(value);
+          onChanged();
+        } else {
+          apiListsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder addApiLists(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI value) {
+        if (apiListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApiListsIsMutable();
+          apiLists_.add(index, value);
+          onChanged();
+        } else {
+          apiListsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder addApiLists(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder builderForValue) {
+        if (apiListsBuilder_ == null) {
+          ensureApiListsIsMutable();
+          apiLists_.add(builderForValue.build());
+          onChanged();
+        } else {
+          apiListsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder addApiLists(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder builderForValue) {
+        if (apiListsBuilder_ == null) {
+          ensureApiListsIsMutable();
+          apiLists_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          apiListsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder addAllApiLists(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI> values) {
+        if (apiListsBuilder_ == null) {
+          ensureApiListsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, apiLists_);
+          onChanged();
+        } else {
+          apiListsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder clearApiLists() {
+        if (apiListsBuilder_ == null) {
+          apiLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          apiListsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public Builder removeApiLists(int index) {
+        if (apiListsBuilder_ == null) {
+          ensureApiListsIsMutable();
+          apiLists_.remove(index);
+          onChanged();
+        } else {
+          apiListsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder getApiListsBuilder(
+          int index) {
+        return getApiListsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder getApiListsOrBuilder(
+          int index) {
+        if (apiListsBuilder_ == null) {
+          return apiLists_.get(index);  } else {
+          return apiListsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder> 
+           getApiListsOrBuilderList() {
+        if (apiListsBuilder_ != null) {
+          return apiListsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(apiLists_);
+        }
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder addApiListsBuilder() {
+        return getApiListsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder addApiListsBuilder(
+          int index) {
+        return getApiListsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * ApiList represents the list of APIs belonging to this module
+       * &#64;inject_tag: json:"api_lists"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI api_lists = 4;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder> 
+           getApiListsBuilderList() {
+        return getApiListsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder> 
+          getApiListsFieldBuilder() {
+        if (apiListsBuilder_ == null) {
+          apiListsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder>(
+                  apiLists_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          apiLists_ = null;
+        }
+        return apiListsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.AdminModule)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.AdminModule)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdminModule>
+        PARSER = new com.google.protobuf.AbstractParser<AdminModule>() {
+      @java.lang.Override
+      public AdminModule parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdminModule(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdminModule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdminModule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminModule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdminAPIOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.AdminAPI)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * APIName represents the action of this API. Default is the API Handler Func Name.
+     * It cannot be modified after publishing.
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    java.lang.String getApiName();
+    /**
+     * <pre>
+     * APIName represents the action of this API. Default is the API Handler Func Name.
+     * It cannot be modified after publishing.
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    com.google.protobuf.ByteString
+        getApiNameBytes();
+
+    /**
+     * <pre>
+     * DisplayName is the display of this API. Is user readable.
+     * &#64;inject_tag: json:"display_name"
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <pre>
+     * DisplayName is the display of this API. Is user readable.
+     * &#64;inject_tag: json:"display_name"
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
+
+    /**
+     * <pre>
+     * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+     * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+     * &#64;inject_tag: json:"perm_type"
+     * </pre>
+     *
+     * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
+     */
+    int getPermTypeValue();
+    /**
+     * <pre>
+     * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+     * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+     * &#64;inject_tag: json:"perm_type"
+     * </pre>
+     *
+     * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+     * @return The permType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType getPermType();
+
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> 
+        getPermissionsList();
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getPermissions(int index);
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    int getPermissionsCount();
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder> 
+        getPermissionsOrBuilderList();
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder getPermissionsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    int getRolesCount();
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    boolean containsRoles(
+        java.lang.String key);
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getRoles();
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getRolesMap();
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+
+    boolean getRolesOrDefault(
+        java.lang.String key,
+        boolean defaultValue);
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+
+    boolean getRolesOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * APIDesc is the information of API description.
+   * </pre>
+   *
+   * Protobuf type {@code model.AdminAPI}
+   */
+  public static final class AdminAPI extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.AdminAPI)
+      AdminAPIOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdminAPI.newBuilder() to construct.
+    private AdminAPI(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdminAPI() {
+      apiName_ = "";
+      displayName_ = "";
+      permType_ = 0;
+      permissions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AdminAPI();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdminAPI(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              permType_ = rawValue;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                permissions_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              permissions_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                roles_ = com.google.protobuf.MapField.newMapField(
+                    RolesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+              roles__ = input.readMessage(
+                  RolesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              roles_.getMutableMap().put(
+                  roles__.getKey(), roles__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          permissions_ = java.util.Collections.unmodifiableList(permissions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetRoles();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.AdminAPI.PermType}
+     */
+    public enum PermType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * is useless.
+       * </pre>
+       *
+       * <code>PermTypeUnset = 0;</code>
+       */
+      PermTypeUnset(0),
+      /**
+       * <code>Write = 1;</code>
+       */
+      Write(1),
+      /**
+       * <code>Read = 2;</code>
+       */
+      Read(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * is useless.
+       * </pre>
+       *
+       * <code>PermTypeUnset = 0;</code>
+       */
+      public static final int PermTypeUnset_VALUE = 0;
+      /**
+       * <code>Write = 1;</code>
+       */
+      public static final int Write_VALUE = 1;
+      /**
+       * <code>Read = 2;</code>
+       */
+      public static final int Read_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PermType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PermType forNumber(int value) {
+        switch (value) {
+          case 0: return PermTypeUnset;
+          case 1: return Write;
+          case 2: return Read;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PermType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PermType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PermType>() {
+              public PermType findValueByNumber(int number) {
+                return PermType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PermType[] VALUES = values();
+
+      public static PermType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private PermType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AdminAPI.PermType)
+    }
+
+    public interface PermissionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:model.AdminAPI.Permission)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       * @return Whether the role field is set.
+       */
+      boolean hasRole();
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       * @return The role.
+       */
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getRole();
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder getRoleOrBuilder();
+
+      /**
+       * <pre>
+       * Indicates whether the specified role allows access to this API
+       * &#64;inject_tag: json:"allowed"
+       * </pre>
+       *
+       * <code>bool allowed = 2;</code>
+       * @return The allowed.
+       */
+      boolean getAllowed();
+    }
+    /**
+     * Protobuf type {@code model.AdminAPI.Permission}
+     */
+    public static final class Permission extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:model.AdminAPI.Permission)
+        PermissionOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Permission.newBuilder() to construct.
+      private Permission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Permission() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Permission();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Permission(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder subBuilder = null;
+                if (role_ != null) {
+                  subBuilder = role_.toBuilder();
+                }
+                role_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(role_);
+                  role_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 16: {
+
+                allowed_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_Permission_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_Permission_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder.class);
+      }
+
+      public static final int ROLE_FIELD_NUMBER = 1;
+      private com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role role_;
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       * @return Whether the role field is set.
+       */
+      @java.lang.Override
+      public boolean hasRole() {
+        return role_ != null;
+      }
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       * @return The role.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getRole() {
+        return role_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDefaultInstance() : role_;
+      }
+      /**
+       * <pre>
+       * The adm role info.
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>.model.Role role = 1;</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder getRoleOrBuilder() {
+        return getRole();
+      }
+
+      public static final int ALLOWED_FIELD_NUMBER = 2;
+      private boolean allowed_;
+      /**
+       * <pre>
+       * Indicates whether the specified role allows access to this API
+       * &#64;inject_tag: json:"allowed"
+       * </pre>
+       *
+       * <code>bool allowed = 2;</code>
+       * @return The allowed.
+       */
+      @java.lang.Override
+      public boolean getAllowed() {
+        return allowed_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (role_ != null) {
+          output.writeMessage(1, getRole());
+        }
+        if (allowed_ != false) {
+          output.writeBool(2, allowed_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (role_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getRole());
+        }
+        if (allowed_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(2, allowed_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission)) {
+          return super.equals(obj);
+        }
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission) obj;
+
+        if (hasRole() != other.hasRole()) return false;
+        if (hasRole()) {
+          if (!getRole()
+              .equals(other.getRole())) return false;
+        }
+        if (getAllowed()
+            != other.getAllowed()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasRole()) {
+          hash = (37 * hash) + ROLE_FIELD_NUMBER;
+          hash = (53 * hash) + getRole().hashCode();
+        }
+        hash = (37 * hash) + ALLOWED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAllowed());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code model.AdminAPI.Permission}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:model.AdminAPI.Permission)
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_Permission_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_Permission_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder.class);
+        }
+
+        // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (roleBuilder_ == null) {
+            role_ = null;
+          } else {
+            role_ = null;
+            roleBuilder_ = null;
+          }
+          allowed_ = false;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_Permission_descriptor;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getDefaultInstanceForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission build() {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission buildPartial() {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission(this);
+          if (roleBuilder_ == null) {
+            result.role_ = role_;
+          } else {
+            result.role_ = roleBuilder_.build();
+          }
+          result.allowed_ = allowed_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission) {
+            return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission other) {
+          if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.getDefaultInstance()) return this;
+          if (other.hasRole()) {
+            mergeRole(other.getRole());
+          }
+          if (other.getAllowed() != false) {
+            setAllowed(other.getAllowed());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role role_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder> roleBuilder_;
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         * @return Whether the role field is set.
+         */
+        public boolean hasRole() {
+          return roleBuilder_ != null || role_ != null;
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         * @return The role.
+         */
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role getRole() {
+          if (roleBuilder_ == null) {
+            return role_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDefaultInstance() : role_;
+          } else {
+            return roleBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public Builder setRole(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role value) {
+          if (roleBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            role_ = value;
+            onChanged();
+          } else {
+            roleBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public Builder setRole(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder builderForValue) {
+          if (roleBuilder_ == null) {
+            role_ = builderForValue.build();
+            onChanged();
+          } else {
+            roleBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public Builder mergeRole(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role value) {
+          if (roleBuilder_ == null) {
+            if (role_ != null) {
+              role_ =
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.newBuilder(role_).mergeFrom(value).buildPartial();
+            } else {
+              role_ = value;
+            }
+            onChanged();
+          } else {
+            roleBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public Builder clearRole() {
+          if (roleBuilder_ == null) {
+            role_ = null;
+            onChanged();
+          } else {
+            role_ = null;
+            roleBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder getRoleBuilder() {
+          
+          onChanged();
+          return getRoleFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder getRoleOrBuilder() {
+          if (roleBuilder_ != null) {
+            return roleBuilder_.getMessageOrBuilder();
+          } else {
+            return role_ == null ?
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.getDefaultInstance() : role_;
+          }
+        }
+        /**
+         * <pre>
+         * The adm role info.
+         * &#64;inject_tag: json:"role"
+         * </pre>
+         *
+         * <code>.model.Role role = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder> 
+            getRoleFieldBuilder() {
+          if (roleBuilder_ == null) {
+            roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.RoleOrBuilder>(
+                    getRole(),
+                    getParentForChildren(),
+                    isClean());
+            role_ = null;
+          }
+          return roleBuilder_;
+        }
+
+        private boolean allowed_ ;
+        /**
+         * <pre>
+         * Indicates whether the specified role allows access to this API
+         * &#64;inject_tag: json:"allowed"
+         * </pre>
+         *
+         * <code>bool allowed = 2;</code>
+         * @return The allowed.
+         */
+        @java.lang.Override
+        public boolean getAllowed() {
+          return allowed_;
+        }
+        /**
+         * <pre>
+         * Indicates whether the specified role allows access to this API
+         * &#64;inject_tag: json:"allowed"
+         * </pre>
+         *
+         * <code>bool allowed = 2;</code>
+         * @param value The allowed to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAllowed(boolean value) {
+          
+          allowed_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Indicates whether the specified role allows access to this API
+         * &#64;inject_tag: json:"allowed"
+         * </pre>
+         *
+         * <code>bool allowed = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAllowed() {
+          
+          allowed_ = false;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:model.AdminAPI.Permission)
+      }
+
+      // @@protoc_insertion_point(class_scope:model.AdminAPI.Permission)
+      private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission();
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Permission>
+          PARSER = new com.google.protobuf.AbstractParser<Permission>() {
+        @java.lang.Override
+        public Permission parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Permission(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Permission> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Permission> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int API_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object apiName_;
+    /**
+     * <pre>
+     * APIName represents the action of this API. Default is the API Handler Func Name.
+     * It cannot be modified after publishing.
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    @java.lang.Override
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * APIName represents the action of this API. Default is the API Handler Func Name.
+     * It cannot be modified after publishing.
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object displayName_;
+    /**
+     * <pre>
+     * DisplayName is the display of this API. Is user readable.
+     * &#64;inject_tag: json:"display_name"
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * DisplayName is the display of this API. Is user readable.
+     * &#64;inject_tag: json:"display_name"
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PERM_TYPE_FIELD_NUMBER = 3;
+    private int permType_;
+    /**
+     * <pre>
+     * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+     * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+     * &#64;inject_tag: json:"perm_type"
+     * </pre>
+     *
+     * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for permType.
+     */
+    @java.lang.Override public int getPermTypeValue() {
+      return permType_;
+    }
+    /**
+     * <pre>
+     * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+     * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+     * &#64;inject_tag: json:"perm_type"
+     * </pre>
+     *
+     * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+     * @return The permType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType getPermType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.valueOf(permType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.UNRECOGNIZED : result;
+    }
+
+    public static final int PERMISSIONS_FIELD_NUMBER = 4;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> permissions_;
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> getPermissionsList() {
+      return permissions_;
+    }
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder> 
+        getPermissionsOrBuilderList() {
+      return permissions_;
+    }
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getPermissionsCount() {
+      return permissions_.size();
+    }
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getPermissions(int index) {
+      return permissions_.get(index);
+    }
+    /**
+     * <pre>
+     * Permissions for defines permission of this API.
+     * &#64;inject_tag: json:"permissions"
+     * </pre>
+     *
+     * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder getPermissionsOrBuilder(
+        int index) {
+      return permissions_.get(index);
+    }
+
+    public static final int ROLES_FIELD_NUMBER = 6;
+    private static final class RolesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Boolean> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Boolean>newDefaultInstance(
+                  com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_RolesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BOOL,
+                  false);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Boolean> roles_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+    internalGetRoles() {
+      if (roles_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RolesDefaultEntryHolder.defaultEntry);
+      }
+      return roles_;
+    }
+
+    public int getRolesCount() {
+      return internalGetRoles().getMap().size();
+    }
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+
+    @java.lang.Override
+    public boolean containsRoles(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetRoles().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Boolean> getRoles() {
+      return getRolesMap();
+    }
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Boolean> getRolesMap() {
+      return internalGetRoles().getMap();
+    }
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+
+    public boolean getRolesOrDefault(
+        java.lang.String key,
+        boolean defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetRoles().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Roles is a map to defines the permissions of this API.
+     * It set by func registerHandler. Only used to check permission.
+     * &#64;inject_tag: json:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+
+    public boolean getRolesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetRoles().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
+      }
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.PermTypeUnset.getNumber()) {
+        output.writeEnum(3, permType_);
+      }
+      for (int i = 0; i < permissions_.size(); i++) {
+        output.writeMessage(4, permissions_.get(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetRoles(),
+          RolesDefaultEntryHolder.defaultEntry,
+          6);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
+      }
+      if (permType_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.PermTypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, permType_);
+      }
+      for (int i = 0; i < permissions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, permissions_.get(i));
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Boolean> entry
+           : internalGetRoles().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+        roles__ = RolesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, roles__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI) obj;
+
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
+      if (!getDisplayName()
+          .equals(other.getDisplayName())) return false;
+      if (permType_ != other.permType_) return false;
+      if (!getPermissionsList()
+          .equals(other.getPermissionsList())) return false;
+      if (!internalGetRoles().equals(
+          other.internalGetRoles())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (37 * hash) + PERM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + permType_;
+      if (getPermissionsCount() > 0) {
+        hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getPermissionsList().hashCode();
+      }
+      if (!internalGetRoles().getMap().isEmpty()) {
+        hash = (37 * hash) + ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetRoles().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * APIDesc is the information of API description.
+     * </pre>
+     *
+     * Protobuf type {@code model.AdminAPI}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.AdminAPI)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPIOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetMutableRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPermissionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        apiName_ = "";
+
+        displayName_ = "";
+
+        permType_ = 0;
+
+        if (permissionsBuilder_ == null) {
+          permissions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          permissionsBuilder_.clear();
+        }
+        internalGetMutableRoles().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AdminAPI_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI(this);
+        int from_bitField0_ = bitField0_;
+        result.apiName_ = apiName_;
+        result.displayName_ = displayName_;
+        result.permType_ = permType_;
+        if (permissionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            permissions_ = java.util.Collections.unmodifiableList(permissions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.permissions_ = permissions_;
+        } else {
+          result.permissions_ = permissionsBuilder_.build();
+        }
+        result.roles_ = internalGetRoles();
+        result.roles_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.getDefaultInstance()) return this;
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          onChanged();
+        }
+        if (other.permType_ != 0) {
+          setPermTypeValue(other.getPermTypeValue());
+        }
+        if (permissionsBuilder_ == null) {
+          if (!other.permissions_.isEmpty()) {
+            if (permissions_.isEmpty()) {
+              permissions_ = other.permissions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePermissionsIsMutable();
+              permissions_.addAll(other.permissions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.permissions_.isEmpty()) {
+            if (permissionsBuilder_.isEmpty()) {
+              permissionsBuilder_.dispose();
+              permissionsBuilder_ = null;
+              permissions_ = other.permissions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              permissionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPermissionsFieldBuilder() : null;
+            } else {
+              permissionsBuilder_.addAllMessages(other.permissions_);
+            }
+          }
+        }
+        internalGetMutableRoles().mergeFrom(
+            other.internalGetRoles());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object apiName_ = "";
+      /**
+       * <pre>
+       * APIName represents the action of this API. Default is the API Handler Func Name.
+       * It cannot be modified after publishing.
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return The apiName.
+       */
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * APIName represents the action of this API. Default is the API Handler Func Name.
+       * It cannot be modified after publishing.
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiName.
+       */
+      public com.google.protobuf.ByteString
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * APIName represents the action of this API. Default is the API Handler Func Name.
+       * It cannot be modified after publishing.
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @param value The apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * APIName represents the action of this API. Default is the API Handler Func Name.
+       * It cannot be modified after publishing.
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiName() {
+        
+        apiName_ = getDefaultInstance().getApiName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * APIName represents the action of this API. Default is the API Handler Func Name.
+       * It cannot be modified after publishing.
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <pre>
+       * DisplayName is the display of this API. Is user readable.
+       * &#64;inject_tag: json:"display_name"
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DisplayName is the display of this API. Is user readable.
+       * &#64;inject_tag: json:"display_name"
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DisplayName is the display of this API. Is user readable.
+       * &#64;inject_tag: json:"display_name"
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DisplayName is the display of this API. Is user readable.
+       * &#64;inject_tag: json:"display_name"
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DisplayName is the display of this API. Is user readable.
+       * &#64;inject_tag: json:"display_name"
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int permType_ = 0;
+      /**
+       * <pre>
+       * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+       * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+       * &#64;inject_tag: json:"perm_type"
+       * </pre>
+       *
+       * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for permType.
+       */
+      @java.lang.Override public int getPermTypeValue() {
+        return permType_;
+      }
+      /**
+       * <pre>
+       * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+       * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+       * &#64;inject_tag: json:"perm_type"
+       * </pre>
+       *
+       * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for permType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermTypeValue(int value) {
+        
+        permType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+       * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+       * &#64;inject_tag: json:"perm_type"
+       * </pre>
+       *
+       * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+       * @return The permType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType getPermType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.valueOf(permType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+       * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+       * &#64;inject_tag: json:"perm_type"
+       * </pre>
+       *
+       * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The permType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermType(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        permType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PermType is the api permission type. 1 =&gt; "Write" 2 =&gt; "Read"
+       * Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+       * &#64;inject_tag: json:"perm_type"
+       * </pre>
+       *
+       * <code>.model.AdminAPI.PermType perm_type = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPermType() {
+        
+        permType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> permissions_ =
+        java.util.Collections.emptyList();
+      private void ensurePermissionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          permissions_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission>(permissions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder> permissionsBuilder_;
+
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> getPermissionsList() {
+        if (permissionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(permissions_);
+        } else {
+          return permissionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public int getPermissionsCount() {
+        if (permissionsBuilder_ == null) {
+          return permissions_.size();
+        } else {
+          return permissionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission getPermissions(int index) {
+        if (permissionsBuilder_ == null) {
+          return permissions_.get(index);
+        } else {
+          return permissionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder setPermissions(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission value) {
+        if (permissionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePermissionsIsMutable();
+          permissions_.set(index, value);
+          onChanged();
+        } else {
+          permissionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder setPermissions(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder builderForValue) {
+        if (permissionsBuilder_ == null) {
+          ensurePermissionsIsMutable();
+          permissions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          permissionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder addPermissions(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission value) {
+        if (permissionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePermissionsIsMutable();
+          permissions_.add(value);
+          onChanged();
+        } else {
+          permissionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder addPermissions(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission value) {
+        if (permissionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePermissionsIsMutable();
+          permissions_.add(index, value);
+          onChanged();
+        } else {
+          permissionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder addPermissions(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder builderForValue) {
+        if (permissionsBuilder_ == null) {
+          ensurePermissionsIsMutable();
+          permissions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          permissionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder addPermissions(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder builderForValue) {
+        if (permissionsBuilder_ == null) {
+          ensurePermissionsIsMutable();
+          permissions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          permissionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllPermissions(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission> values) {
+        if (permissionsBuilder_ == null) {
+          ensurePermissionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, permissions_);
+          onChanged();
+        } else {
+          permissionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearPermissions() {
+        if (permissionsBuilder_ == null) {
+          permissions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          permissionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public Builder removePermissions(int index) {
+        if (permissionsBuilder_ == null) {
+          ensurePermissionsIsMutable();
+          permissions_.remove(index);
+          onChanged();
+        } else {
+          permissionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder getPermissionsBuilder(
+          int index) {
+        return getPermissionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder getPermissionsOrBuilder(
+          int index) {
+        if (permissionsBuilder_ == null) {
+          return permissions_.get(index);  } else {
+          return permissionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder> 
+           getPermissionsOrBuilderList() {
+        if (permissionsBuilder_ != null) {
+          return permissionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(permissions_);
+        }
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder addPermissionsBuilder() {
+        return getPermissionsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder addPermissionsBuilder(
+          int index) {
+        return getPermissionsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Permissions for defines permission of this API.
+       * &#64;inject_tag: json:"permissions"
+       * </pre>
+       *
+       * <code>repeated .model.AdminAPI.Permission permissions = 4 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder> 
+           getPermissionsBuilderList() {
+        return getPermissionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder> 
+          getPermissionsFieldBuilder() {
+        if (permissionsBuilder_ == null) {
+          permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.Permission.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI.PermissionOrBuilder>(
+                  permissions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          permissions_ = null;
+        }
+        return permissionsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Boolean> roles_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+      internalGetRoles() {
+        if (roles_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        return roles_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+      internalGetMutableRoles() {
+        onChanged();;
+        if (roles_ == null) {
+          roles_ = com.google.protobuf.MapField.newMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        if (!roles_.isMutable()) {
+          roles_ = roles_.copy();
+        }
+        return roles_;
+      }
+
+      public int getRolesCount() {
+        return internalGetRoles().getMap().size();
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRoles(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRoles().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRolesMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean> getRoles() {
+        return getRolesMap();
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Boolean> getRolesMap() {
+        return internalGetRoles().getMap();
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+
+      public boolean getRolesOrDefault(
+          java.lang.String key,
+          boolean defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetRoles().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+
+      public boolean getRolesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetRoles().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearRoles() {
+        internalGetMutableRoles().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+
+      public Builder removeRoles(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableRoles().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean>
+      getMutableRoles() {
+        return internalGetMutableRoles().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder putRoles(
+          java.lang.String key,
+          boolean value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        
+        internalGetMutableRoles().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Roles is a map to defines the permissions of this API.
+       * It set by func registerHandler. Only used to check permission.
+       * &#64;inject_tag: json:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       */
+
+      public Builder putAllRoles(
+          java.util.Map<java.lang.String, java.lang.Boolean> values) {
+        internalGetMutableRoles().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.AdminAPI)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.AdminAPI)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdminAPI>
+        PARSER = new com.google.protobuf.AbstractParser<AdminAPI>() {
+      @java.lang.Override
+      public AdminAPI parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdminAPI(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdminAPI> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdminAPI> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AdminAPI getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_User_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_User_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_Role_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_Role_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AdminModule_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AdminModule_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AdminAPI_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AdminAPI_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AdminAPI_Permission_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AdminAPI_Permission_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AdminAPI_RolesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AdminAPI_RolesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2454,19 +8003,43 @@ public final class PBModelAccount {
   static {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/account.proto\022\005model" +
-      "\"\343\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022\021\n\tuser_name\030" +
-      "\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005ph" +
-      "one\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022" +
-      "\020\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(" +
-      "\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007r" +
-      "egions\030\014 \003(\t\022\020\n\010password\030\r \001(\tBi\n\"com.da" +
-      "taomnis.gproto.types.pbmodelB\016PBModelAcc" +
-      "ountP\000Z1github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbmodelb\006proto3"
+      "\0323github.com/yu31/protoc-plugin/proto/va" +
+      "lidator.proto\"\343\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022" +
+      "\021\n\tuser_name\030\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005emai" +
+      "l\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014" +
+      "\n\004role\030\007 \001(\t\022\020\n\010currency\030\010 \001(\t\022\026\n\016gravat" +
+      "ar_email\030\t \001(\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zon" +
+      "es\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\022\020\n\010password\030\r " +
+      "\001(\t\"\271\001\n\004Role\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004ros-\022-\n\004type\030\002 \001(\0162\020.model.Role.TypeB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
+      "F\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Admin\020\001\022\r\n\tDev" +
+      "eloper\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\"\200\002\n\013Admi" +
+      "nModule\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-" +
+      "\022<\n\010classify\030\002 \001(\0162\033.model.AdminModule.C" +
+      "lassifyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000\022\"\n\tapi_lists\030\004 \003(\0132\017.model.Adm" +
+      "inAPI\"S\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\016\n\n" +
+      "UserManage\020\001\022\021\n\rSessionManage\020\002\022\021\n\rMessa" +
+      "geManage\020\003\"\232\003\n\010AdminAPI\022\035\n\010api_name\030\001 \001(" +
+      "\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014display_name\030\002 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000\022:\n\tperm_type\030\003 \001(\0162\030.model.Adm" +
+      "inAPI.PermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\013permiss" +
+      "ions\030\004 \003(\0132\032.model.AdminAPI.PermissionB\013" +
+      "\342\337\037\007\022\005\352\001\0020\000\0226\n\005roles\030\006 \003(\0132\032.model.Admin" +
+      "API.RolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\0328\n\nPermissio" +
+      "n\022\031\n\004role\030\001 \001(\0132\013.model.Role\022\017\n\007allowed\030" +
+      "\002 \001(\010\032,\n\nRolesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\010:\0028\001\"2\n\010PermType\022\021\n\rPermTypeUnset" +
+      "\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002Bi\n\"com.dataomnis" +
+      ".gproto.types.pbmodelB\016PBModelAccountP\000Z" +
+      "1github.com/DataWorkbench/gproto/xgo/typ" +
+      "es/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
         });
     internal_static_model_User_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2474,6 +8047,42 @@ public final class PBModelAccount {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_User_descriptor,
         new java.lang.String[] { "UserId", "UserName", "Lang", "Email", "Phone", "Status", "Role", "Currency", "GravatarEmail", "Privilege", "Zones", "Regions", "Password", });
+    internal_static_model_Role_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_model_Role_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_Role_descriptor,
+        new java.lang.String[] { "Id", "Type", "Name", });
+    internal_static_model_AdminModule_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_model_AdminModule_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AdminModule_descriptor,
+        new java.lang.String[] { "Id", "Classify", "Name", "ApiLists", });
+    internal_static_model_AdminAPI_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_model_AdminAPI_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AdminAPI_descriptor,
+        new java.lang.String[] { "ApiName", "DisplayName", "PermType", "Permissions", "Roles", });
+    internal_static_model_AdminAPI_Permission_descriptor =
+      internal_static_model_AdminAPI_descriptor.getNestedTypes().get(0);
+    internal_static_model_AdminAPI_Permission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AdminAPI_Permission_descriptor,
+        new java.lang.String[] { "Role", "Allowed", });
+    internal_static_model_AdminAPI_RolesEntry_descriptor =
+      internal_static_model_AdminAPI_descriptor.getNestedTypes().get(1);
+    internal_static_model_AdminAPI_RolesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AdminAPI_RolesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

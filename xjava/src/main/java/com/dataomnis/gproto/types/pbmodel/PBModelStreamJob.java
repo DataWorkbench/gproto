@@ -10162,7 +10162,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -10172,7 +10172,7 @@ public final class PBModelStreamJob {
     int getStatusValue();
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -10415,6 +10415,17 @@ public final class PBModelStreamJob {
        * <code>Deleted = 3;</code>
        */
       Deleted(3),
+      /**
+       * <pre>
+       * The stream job has been executed finished.
+       * cases of finished:
+       *     1. Scheduler Policy AppointTime or Immediately.
+       *     2. Scheduler Policy Periodicity end of validity.
+       * </pre>
+       *
+       * <code>Finished = 4;</code>
+       */
+      Finished(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -10434,6 +10445,17 @@ public final class PBModelStreamJob {
        * <code>Deleted = 3;</code>
        */
       public static final int Deleted_VALUE = 3;
+      /**
+       * <pre>
+       * The stream job has been executed finished.
+       * cases of finished:
+       *     1. Scheduler Policy AppointTime or Immediately.
+       *     2. Scheduler Policy Periodicity end of validity.
+       * </pre>
+       *
+       * <code>Finished = 4;</code>
+       */
+      public static final int Finished_VALUE = 4;
 
 
       public final int getNumber() {
@@ -10464,6 +10486,7 @@ public final class PBModelStreamJob {
           case 1: return Active;
           case 2: return Suspended;
           case 3: return Deleted;
+          case 4: return Finished;
           default: return null;
         }
       }
@@ -10745,7 +10768,7 @@ public final class PBModelStreamJob {
     private int status_;
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -10757,7 +10780,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -11843,7 +11866,7 @@ public final class PBModelStreamJob {
       private int status_ = 0;
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -11855,7 +11878,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -11871,7 +11894,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -11886,7 +11909,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -11905,7 +11928,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted",
+       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -12368,7 +12391,7 @@ public final class PBModelStreamJob {
       "rrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid" +
       "\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryP" +
       "olicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000" +
-      "\"\257\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001(\tB" +
+      "\"\275\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001(\tB" +
       "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r" +
       "\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001" +
       "\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004" +
@@ -12377,11 +12400,12 @@ public final class PBModelStreamJob {
       "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n\ncreate" +
       "d_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t" +
       " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Ac" +
-      "tive\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n\"co" +
-      "m.dataomnis.gproto.types.pbmodelB\020PBMode" +
-      "lStreamJobP\000Z1github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbmodelb\006proto3"
+      "\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Ac" +
+      "tive\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003\022\014\n\010Fi" +
+      "nished\020\004Bk\n\"com.dataomnis.gproto.types.p" +
+      "bmodelB\020PBModelStreamJobP\000Z1github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbmodelb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

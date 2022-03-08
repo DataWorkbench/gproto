@@ -421,6 +421,37 @@ public final class StreamJobManageGrpc {
     return getGetStreamJobScheduleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReleaseStreamJobs",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod;
+    if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
+          StreamJobManageGrpc.getListReleaseStreamJobsMethod = getListReleaseStreamJobsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReleaseStreamJobs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListReleaseStreamJobs"))
+              .build();
+        }
+      }
+    }
+    return getListReleaseStreamJobsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReleaseStreamJob,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReleaseStreamJobMethod;
 
@@ -545,35 +576,35 @@ public final class StreamJobManageGrpc {
     return getResumeReleaseStreamJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseStreamJobStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListReleaseStreamJobs",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReleaseStreamJobStatus",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> getListReleaseStreamJobsMethod;
-    if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseStreamJobStatusMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseStreamJobStatusMethod;
+    if ((getUpdateReleaseStreamJobStatusMethod = StreamJobManageGrpc.getUpdateReleaseStreamJobStatusMethod) == null) {
       synchronized (StreamJobManageGrpc.class) {
-        if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
-          StreamJobManageGrpc.getListReleaseStreamJobsMethod = getListReleaseStreamJobsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>newBuilder()
+        if ((getUpdateReleaseStreamJobStatusMethod = StreamJobManageGrpc.getUpdateReleaseStreamJobStatusMethod) == null) {
+          StreamJobManageGrpc.getUpdateReleaseStreamJobStatusMethod = getUpdateReleaseStreamJobStatusMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReleaseStreamJobs"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateReleaseStreamJobStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs.getDefaultInstance()))
-              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListReleaseStreamJobs"))
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("UpdateReleaseStreamJobStatus"))
               .build();
         }
       }
     }
-    return getListReleaseStreamJobsMethod;
+    return getUpdateReleaseStreamJobStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions,
@@ -950,6 +981,16 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * Interface for stream job release.
+     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * </pre>
+     */
+    public void listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListReleaseStreamJobsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * ReleaseStreamJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -990,12 +1031,12 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
-     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
      * </pre>
      */
-    public void listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListReleaseStreamJobsMethod(), responseObserver);
+    public void updateReleaseStreamJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateReleaseStreamJobStatusMethod(), responseObserver);
     }
 
     /**
@@ -1153,6 +1194,13 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule>(
                   this, METHODID_GET_STREAM_JOB_SCHEDULE)))
           .addMethod(
+            getListReleaseStreamJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
+                com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>(
+                  this, METHODID_LIST_RELEASE_STREAM_JOBS)))
+          .addMethod(
             getReleaseStreamJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1181,12 +1229,12 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_RESUME_RELEASE_STREAM_JOB)))
           .addMethod(
-            getListReleaseStreamJobsMethod(),
+            getUpdateReleaseStreamJobStatusMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs,
-                com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>(
-                  this, METHODID_LIST_RELEASE_STREAM_JOBS)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_RELEASE_STREAM_JOB_STATUS)))
           .addMethod(
             getListStreamJobVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1400,6 +1448,17 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * Interface for stream job release.
+     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * </pre>
+     */
+    public void listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReleaseStreamJobsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * ReleaseStreamJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1444,13 +1503,13 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
-     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
      * </pre>
      */
-    public void listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> responseObserver) {
+    public void updateReleaseStreamJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListReleaseStreamJobsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateReleaseStreamJobStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1675,6 +1734,16 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * Interface for stream job release.
+     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReleaseStreamJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * ReleaseStreamJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1715,12 +1784,12 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
-     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs listReleaseStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateReleaseStreamJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListReleaseStreamJobsMethod(), getCallOptions(), request);
+          getChannel(), getUpdateReleaseStreamJobStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1952,6 +2021,17 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * Interface for stream job release.
+     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> listReleaseStreamJobs(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReleaseStreamJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * ReleaseStreamJob to publish the specified job to schedule system with a new version.
      * </pre>
      */
@@ -1996,13 +2076,13 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
-     * ListReleaseStreamJobs for gets a list of all published job in the workspace.
+     * UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs> listReleaseStreamJobs(
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateReleaseStreamJobStatus(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListReleaseStreamJobsMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateReleaseStreamJobStatusMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2086,17 +2166,18 @@ public final class StreamJobManageGrpc {
   private static final int METHODID_LIST_BUILT_IN_CONNECTORS = 10;
   private static final int METHODID_SET_STREAM_JOB_SCHEDULE = 11;
   private static final int METHODID_GET_STREAM_JOB_SCHEDULE = 12;
-  private static final int METHODID_RELEASE_STREAM_JOB = 13;
-  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 14;
-  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 15;
-  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 16;
-  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 17;
-  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 18;
-  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 19;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 20;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 21;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 22;
-  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 23;
+  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 13;
+  private static final int METHODID_RELEASE_STREAM_JOB = 14;
+  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 15;
+  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 16;
+  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 17;
+  private static final int METHODID_UPDATE_RELEASE_STREAM_JOB_STATUS = 18;
+  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 19;
+  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 20;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 21;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 22;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 23;
+  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 24;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2167,6 +2248,10 @@ public final class StreamJobManageGrpc {
           serviceImpl.getStreamJobSchedule((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobSchedule) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule>) responseObserver);
           break;
+        case METHODID_LIST_RELEASE_STREAM_JOBS:
+          serviceImpl.listReleaseStreamJobs((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>) responseObserver);
+          break;
         case METHODID_RELEASE_STREAM_JOB:
           serviceImpl.releaseStreamJob((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReleaseStreamJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
@@ -2183,9 +2268,9 @@ public final class StreamJobManageGrpc {
           serviceImpl.resumeReleaseStreamJob((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ResumeReleaseStreamJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_LIST_RELEASE_STREAM_JOBS:
-          serviceImpl.listReleaseStreamJobs((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListReleaseStreamJobs) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.ListReleaseStreamJobs>) responseObserver);
+        case METHODID_UPDATE_RELEASE_STREAM_JOB_STATUS:
+          serviceImpl.updateReleaseStreamJobStatus((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.UpdateReleaseStreamJobStatus) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_LIST_STREAM_JOB_VERSIONS:
           serviceImpl.listStreamJobVersions((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions) request,
@@ -2285,11 +2370,12 @@ public final class StreamJobManageGrpc {
               .addMethod(getListBuiltInConnectorsMethod())
               .addMethod(getSetStreamJobScheduleMethod())
               .addMethod(getGetStreamJobScheduleMethod())
+              .addMethod(getListReleaseStreamJobsMethod())
               .addMethod(getReleaseStreamJobMethod())
               .addMethod(getOfflineReleaseStreamJobMethod())
               .addMethod(getSuspendReleaseStreamJobMethod())
               .addMethod(getResumeReleaseStreamJobMethod())
-              .addMethod(getListReleaseStreamJobsMethod())
+              .addMethod(getUpdateReleaseStreamJobStatusMethod())
               .addMethod(getListStreamJobVersionsMethod())
               .addMethod(getDescribeStreamJobVersionMethod())
               .addMethod(getGetStreamJobVersionCodeMethod())

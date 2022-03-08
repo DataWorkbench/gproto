@@ -60,6 +60,8 @@ type StreamJobManageClient interface {
 	GetStreamJobSchedule(ctx context.Context, in *pbrequest.GetStreamJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetStreamJobSchedule, error)
 	// Interface for stream job release.
 	//
+	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
+	ListReleaseStreamJobs(ctx context.Context, in *pbrequest.ListReleaseStreamJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseStreamJobs, error)
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
 	ReleaseStreamJob(ctx context.Context, in *pbrequest.ReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
@@ -68,8 +70,8 @@ type StreamJobManageClient interface {
 	SuspendReleaseStreamJob(ctx context.Context, in *pbrequest.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
 	ResumeReleaseStreamJob(ctx context.Context, in *pbrequest.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
-	ListReleaseStreamJobs(ctx context.Context, in *pbrequest.ListReleaseStreamJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseStreamJobs, error)
+	// UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
+	UpdateReleaseStreamJobStatus(ctx context.Context, in *pbrequest.UpdateReleaseStreamJobStatus, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// Interface for stream job versions.
 	//
 	// ListStreamJobVersions for gets a list of all versions of the specified job.
@@ -212,6 +214,15 @@ func (c *streamJobManageClient) GetStreamJobSchedule(ctx context.Context, in *pb
 	return out, nil
 }
 
+func (c *streamJobManageClient) ListReleaseStreamJobs(ctx context.Context, in *pbrequest.ListReleaseStreamJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseStreamJobs, error) {
+	out := new(pbresponse.ListReleaseStreamJobs)
+	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/ListReleaseStreamJobs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *streamJobManageClient) ReleaseStreamJob(ctx context.Context, in *pbrequest.ReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/ReleaseStreamJob", in, out, opts...)
@@ -248,9 +259,9 @@ func (c *streamJobManageClient) ResumeReleaseStreamJob(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *streamJobManageClient) ListReleaseStreamJobs(ctx context.Context, in *pbrequest.ListReleaseStreamJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseStreamJobs, error) {
-	out := new(pbresponse.ListReleaseStreamJobs)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/ListReleaseStreamJobs", in, out, opts...)
+func (c *streamJobManageClient) UpdateReleaseStreamJobStatus(ctx context.Context, in *pbrequest.UpdateReleaseStreamJobStatus, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/UpdateReleaseStreamJobStatus", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -350,6 +361,8 @@ type StreamJobManageServer interface {
 	GetStreamJobSchedule(context.Context, *pbrequest.GetStreamJobSchedule) (*pbresponse.GetStreamJobSchedule, error)
 	// Interface for stream job release.
 	//
+	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
+	ListReleaseStreamJobs(context.Context, *pbrequest.ListReleaseStreamJobs) (*pbresponse.ListReleaseStreamJobs, error)
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
 	ReleaseStreamJob(context.Context, *pbrequest.ReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
@@ -358,8 +371,8 @@ type StreamJobManageServer interface {
 	SuspendReleaseStreamJob(context.Context, *pbrequest.SuspendReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
 	ResumeReleaseStreamJob(context.Context, *pbrequest.ResumeReleaseStreamJob) (*pbmodel.EmptyStruct, error)
-	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
-	ListReleaseStreamJobs(context.Context, *pbrequest.ListReleaseStreamJobs) (*pbresponse.ListReleaseStreamJobs, error)
+	// UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
+	UpdateReleaseStreamJobStatus(context.Context, *pbrequest.UpdateReleaseStreamJobStatus) (*pbmodel.EmptyStruct, error)
 	// Interface for stream job versions.
 	//
 	// ListStreamJobVersions for gets a list of all versions of the specified job.
@@ -421,6 +434,9 @@ func (UnimplementedStreamJobManageServer) SetStreamJobSchedule(context.Context, 
 func (UnimplementedStreamJobManageServer) GetStreamJobSchedule(context.Context, *pbrequest.GetStreamJobSchedule) (*pbresponse.GetStreamJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobSchedule not implemented")
 }
+func (UnimplementedStreamJobManageServer) ListReleaseStreamJobs(context.Context, *pbrequest.ListReleaseStreamJobs) (*pbresponse.ListReleaseStreamJobs, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseStreamJobs not implemented")
+}
 func (UnimplementedStreamJobManageServer) ReleaseStreamJob(context.Context, *pbrequest.ReleaseStreamJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReleaseStreamJob not implemented")
 }
@@ -433,8 +449,8 @@ func (UnimplementedStreamJobManageServer) SuspendReleaseStreamJob(context.Contex
 func (UnimplementedStreamJobManageServer) ResumeReleaseStreamJob(context.Context, *pbrequest.ResumeReleaseStreamJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamJob not implemented")
 }
-func (UnimplementedStreamJobManageServer) ListReleaseStreamJobs(context.Context, *pbrequest.ListReleaseStreamJobs) (*pbresponse.ListReleaseStreamJobs, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseStreamJobs not implemented")
+func (UnimplementedStreamJobManageServer) UpdateReleaseStreamJobStatus(context.Context, *pbrequest.UpdateReleaseStreamJobStatus) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateReleaseStreamJobStatus not implemented")
 }
 func (UnimplementedStreamJobManageServer) ListStreamJobVersions(context.Context, *pbrequest.ListStreamJobVersions) (*pbresponse.ListStreamJobVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStreamJobVersions not implemented")
@@ -701,6 +717,24 @@ func _StreamJobManage_GetStreamJobSchedule_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StreamJobManage_ListReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListReleaseStreamJobs)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.StreamJobManage/ListReleaseStreamJobs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, req.(*pbrequest.ListReleaseStreamJobs))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _StreamJobManage_ReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ReleaseStreamJob)
 	if err := dec(in); err != nil {
@@ -773,20 +807,20 @@ func _StreamJobManage_ResumeReleaseStreamJob_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StreamJobManage_ListReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListReleaseStreamJobs)
+func _StreamJobManage_UpdateReleaseStreamJobStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateReleaseStreamJobStatus)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, in)
+		return srv.(StreamJobManageServer).UpdateReleaseStreamJobStatus(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamJobManage/ListReleaseStreamJobs",
+		FullMethod: "/spacemanager.StreamJobManage/UpdateReleaseStreamJobStatus",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, req.(*pbrequest.ListReleaseStreamJobs))
+		return srv.(StreamJobManageServer).UpdateReleaseStreamJobStatus(ctx, req.(*pbrequest.UpdateReleaseStreamJobStatus))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -959,6 +993,10 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StreamJobManage_GetStreamJobSchedule_Handler,
 		},
 		{
+			MethodName: "ListReleaseStreamJobs",
+			Handler:    _StreamJobManage_ListReleaseStreamJobs_Handler,
+		},
+		{
 			MethodName: "ReleaseStreamJob",
 			Handler:    _StreamJobManage_ReleaseStreamJob_Handler,
 		},
@@ -975,8 +1013,8 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StreamJobManage_ResumeReleaseStreamJob_Handler,
 		},
 		{
-			MethodName: "ListReleaseStreamJobs",
-			Handler:    _StreamJobManage_ListReleaseStreamJobs_Handler,
+			MethodName: "UpdateReleaseStreamJobStatus",
+			Handler:    _StreamJobManage_UpdateReleaseStreamJobStatus_Handler,
 		},
 		{
 			MethodName: "ListStreamJobVersions",

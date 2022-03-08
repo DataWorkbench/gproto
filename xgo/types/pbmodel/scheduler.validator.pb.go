@@ -10,9 +10,9 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_property() error {
+func (this *StreamJobEvent) _xxx_xxx_Validator_Validate_property() error {
 	if !(this.Property != nil) {
-		return protovalidator.FieldError2("StreamJobQueue", "the value of field 'property' cannot be null")
+		return protovalidator.FieldError2("StreamJobEvent", "the value of field 'property' cannot be null")
 	}
 	if dt, ok := interface{}(this.Property).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -22,22 +22,22 @@ func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_property() error {
 	return nil
 }
 
-func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_flink_url() error {
+func (this *StreamJobEvent) _xxx_xxx_Validator_Validate_flink_url() error {
 	if !(this.FlinkUrl != "") {
-		return protovalidator.FieldError1("StreamJobQueue", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
+		return protovalidator.FieldError1("StreamJobEvent", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
 	}
 	return nil
 }
 
-func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_flink_version() error {
+func (this *StreamJobEvent) _xxx_xxx_Validator_Validate_flink_version() error {
 	if !(this.FlinkVersion != "") {
-		return protovalidator.FieldError1("StreamJobQueue", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
+		return protovalidator.FieldError1("StreamJobEvent", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
 	}
 	return nil
 }
 
-// Set default value for message model.StreamJobQueue
-func (this *StreamJobQueue) Validate() error {
+// Set default value for message model.StreamJobEvent
+func (this *StreamJobEvent) Validate() error {
 	if this == nil {
 		return nil
 	}

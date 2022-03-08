@@ -613,11 +613,11 @@ func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status = map[pbmodel.StreamJobRelease_Status]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status = map[pbmodel.StreamJobRelease_Status]bool{0: true, 1: true, 2: true, 3: true, 4: true}
 
 func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_status() error {
 	if !(_xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
+		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'status' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	return nil
 }
@@ -781,6 +781,62 @@ func (this *ResumeReleaseStreamJob) Validate() error {
 	return nil
 }
 
+func (this *UpdateReleaseStreamJobStatus) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *UpdateReleaseStreamJobStatus) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *UpdateReleaseStreamJobStatus) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_UpdateReleaseStreamJobStatus_In_Status = map[pbmodel.StreamJobRelease_Status]bool{4: true}
+
+func (this *UpdateReleaseStreamJobStatus) _xxx_xxx_Validator_Validate_status() error {
+	if !(_xxx_xxx_Validator_UpdateReleaseStreamJobStatus_In_Status[this.Status]) {
+		return protovalidator.FieldError1("UpdateReleaseStreamJobStatus", "the value of field 'status' must be one of '[4]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateReleaseStreamJobStatus
+func (this *UpdateReleaseStreamJobStatus) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("ListStreamJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
@@ -837,6 +893,16 @@ func (this *ListStreamJobVersions) Validate() error {
 	return nil
 }
 
+func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id() error {
 	if !(len(this.InstanceId) == 20) {
 		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
@@ -851,6 +917,9 @@ func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id
 func (this *DescribeFlinkUIByInstanceId) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
 		return err
