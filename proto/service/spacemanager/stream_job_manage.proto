@@ -68,6 +68,9 @@ service StreamJobManage {
 
   // Interface for stream job release.
   //
+  // ListReleaseStreamJobs for gets a list of all published job in the workspace.
+  rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
+
   // ReleaseStreamJob to publish the specified job to schedule system with a new version.
   rpc ReleaseStreamJob(request.ReleaseStreamJob) returns (model.EmptyStruct) {}
 
@@ -80,8 +83,8 @@ service StreamJobManage {
   // ResumeReleaseStreamJob to resume the suspended job list in schedule system.
   rpc ResumeReleaseStreamJob(request.ResumeReleaseStreamJob) returns (model.EmptyStruct) {}
 
-  // ListReleaseStreamJobs for gets a list of all published job in the workspace.
-  rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
+  // UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
+  rpc UpdateReleaseStreamJobStatus(request.UpdateReleaseStreamJobStatus) returns (model.EmptyStruct) {}
 
   // Interface for stream job versions.
   //

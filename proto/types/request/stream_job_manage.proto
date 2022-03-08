@@ -333,6 +333,21 @@ message ResumeReleaseStreamJob {
   string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 }
 
+// UpdateReleaseStreamJobStatus used as a request parameters for RPC.
+message UpdateReleaseStreamJobStatus {
+  // The workspace id.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The stream job id
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+  // The stream job version
+  string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16  } ];
+
+  // The status of will be changed.
+  model.StreamJobRelease.Status status = 4 [ (validator.field).tags.enum = { in: [4]  } ];
+}
+
 // ListStreamJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListStreamJobVersions {
   // The stream job id in HTTP Request-URI
@@ -362,7 +377,11 @@ message ListStreamJobVersions {
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.
 message DescribeFlinkUIByInstanceId {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
   // The instance id in HTTP Request-URI. Is Required.
   // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
-  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
+  string instance_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
 }

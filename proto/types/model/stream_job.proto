@@ -293,6 +293,12 @@ message StreamJobRelease {
     Active = 1;
     Suspended = 2;
     Deleted = 3;
+
+    // The stream job has been executed finished.
+    // cases of finished:
+    //     1. Scheduler Policy AppointTime or Immediately.
+    //     2. Scheduler Policy Periodicity end of validity.
+    Finished = 4;
   }
 
   // Workspace ID it belongs to.
@@ -315,7 +321,7 @@ message StreamJobRelease {
   // @inject_tag: json:"type" gorm:"column:type;"
   StreamJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
+  // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted", 4 => "Finished"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 ;
 

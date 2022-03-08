@@ -15,8 +15,14 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/stream_job.proto";
 
-// StreamJobQueue is the message value used in scheduler queue.
-message StreamJobQueue {
+// StreamJobEvent is the event message used in scheduler queue.
+message StreamJobEvent {
+  enum Type {
+    TypeUnset = 0;
+    Job = 1;
+    Instance = 2;
+  }
+
   enum Action {
     ActionUnset = 0;
     Create = 1;
@@ -24,6 +30,7 @@ message StreamJobQueue {
     Check = 4;
     Retry = 3;
   }
+
   // The property of stream job.
   StreamJobProperty property = 1 [ (validator.field).tags.message = { not_null: true } ];
 
