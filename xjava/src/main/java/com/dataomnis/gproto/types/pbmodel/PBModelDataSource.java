@@ -588,6 +588,34 @@ public final class PBModelDataSource {
        * <code>HDFS = 8;</code>
        */
       HDFS(8),
+      /**
+       * <code>SqlServer = 9;</code>
+       */
+      SqlServer(9),
+      /**
+       * <code>Oracle = 10;</code>
+       */
+      Oracle(10),
+      /**
+       * <code>DB2 = 11;</code>
+       */
+      DB2(11),
+      /**
+       * <code>SapHana = 12;</code>
+       */
+      SapHana(12),
+      /**
+       * <code>Hive = 13;</code>
+       */
+      Hive(13),
+      /**
+       * <code>ElasticSearch = 14;</code>
+       */
+      ElasticSearch(14),
+      /**
+       * <code>MongoDb = 15;</code>
+       */
+      MongoDb(15),
       UNRECOGNIZED(-1),
       ;
 
@@ -627,6 +655,34 @@ public final class PBModelDataSource {
        * <code>HDFS = 8;</code>
        */
       public static final int HDFS_VALUE = 8;
+      /**
+       * <code>SqlServer = 9;</code>
+       */
+      public static final int SqlServer_VALUE = 9;
+      /**
+       * <code>Oracle = 10;</code>
+       */
+      public static final int Oracle_VALUE = 10;
+      /**
+       * <code>DB2 = 11;</code>
+       */
+      public static final int DB2_VALUE = 11;
+      /**
+       * <code>SapHana = 12;</code>
+       */
+      public static final int SapHana_VALUE = 12;
+      /**
+       * <code>Hive = 13;</code>
+       */
+      public static final int Hive_VALUE = 13;
+      /**
+       * <code>ElasticSearch = 14;</code>
+       */
+      public static final int ElasticSearch_VALUE = 14;
+      /**
+       * <code>MongoDb = 15;</code>
+       */
+      public static final int MongoDb_VALUE = 15;
 
 
       public final int getNumber() {
@@ -662,6 +718,13 @@ public final class PBModelDataSource {
           case 6: return HBase;
           case 7: return Ftp;
           case 8: return HDFS;
+          case 9: return SqlServer;
+          case 10: return Oracle;
+          case 11: return DB2;
+          case 12: return SapHana;
+          case 13: return Hive;
+          case 14: return ElasticSearch;
+          case 15: return MongoDb;
           default: return null;
         }
       }
@@ -728,7 +791,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       int getTypeValue();
@@ -738,7 +801,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType();
@@ -982,6 +1045,216 @@ public final class PBModelDataSource {
        * <code>.datasource.HDFSURL hdfs = 8 [(.validator.field) = { ... }</code>
        */
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURLOrBuilder getHdfsOrBuilder();
+
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       * @return Whether the sqlserver field is set.
+       */
+      boolean hasSqlserver();
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       * @return The sqlserver.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL getSqlserver();
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder getSqlserverOrBuilder();
+
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       * @return Whether the oracle field is set.
+       */
+      boolean hasOracle();
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       * @return The oracle.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL getOracle();
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder getOracleOrBuilder();
+
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       * @return Whether the db2 field is set.
+       */
+      boolean hasDb2();
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       * @return The db2.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL getDb2();
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder getDb2OrBuilder();
+
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       * @return Whether the sapHana field is set.
+       */
+      boolean hasSapHana();
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       * @return The sapHana.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL getSapHana();
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder getSapHanaOrBuilder();
+
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       * @return Whether the hive field is set.
+       */
+      boolean hasHive();
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       * @return The hive.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL getHive();
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder getHiveOrBuilder();
+
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       * @return Whether the elasticSearch field is set.
+       */
+      boolean hasElasticSearch();
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       * @return The elasticSearch.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL getElasticSearch();
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder getElasticSearchOrBuilder();
+
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       * @return Whether the mongoDb field is set.
+       */
+      boolean hasMongoDb();
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       * @return The mongoDb.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL getMongoDb();
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder getMongoDbOrBuilder();
     }
     /**
      * <pre>
@@ -1137,7 +1410,98 @@ public final class PBModelDataSource {
 
                 break;
               }
-              case 80: {
+              case 74: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder subBuilder = null;
+                if (sqlserver_ != null) {
+                  subBuilder = sqlserver_.toBuilder();
+                }
+                sqlserver_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(sqlserver_);
+                  sqlserver_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 82: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder subBuilder = null;
+                if (oracle_ != null) {
+                  subBuilder = oracle_.toBuilder();
+                }
+                oracle_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(oracle_);
+                  oracle_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 90: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder subBuilder = null;
+                if (db2_ != null) {
+                  subBuilder = db2_.toBuilder();
+                }
+                db2_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(db2_);
+                  db2_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 98: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder subBuilder = null;
+                if (sapHana_ != null) {
+                  subBuilder = sapHana_.toBuilder();
+                }
+                sapHana_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(sapHana_);
+                  sapHana_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 106: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder subBuilder = null;
+                if (hive_ != null) {
+                  subBuilder = hive_.toBuilder();
+                }
+                hive_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(hive_);
+                  hive_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 114: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder subBuilder = null;
+                if (elasticSearch_ != null) {
+                  subBuilder = elasticSearch_.toBuilder();
+                }
+                elasticSearch_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(elasticSearch_);
+                  elasticSearch_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 122: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder subBuilder = null;
+                if (mongoDb_ != null) {
+                  subBuilder = mongoDb_.toBuilder();
+                }
+                mongoDb_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(mongoDb_);
+                  mongoDb_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 128: {
                 int rawValue = input.readEnum();
 
                 type_ = rawValue;
@@ -1175,7 +1539,7 @@ public final class PBModelDataSource {
                 com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.class, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder.class);
       }
 
-      public static final int TYPE_FIELD_NUMBER = 10;
+      public static final int TYPE_FIELD_NUMBER = 16;
       private int type_;
       /**
        * <pre>
@@ -1183,7 +1547,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -1195,7 +1559,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
@@ -1532,6 +1896,293 @@ public final class PBModelDataSource {
         return getHdfs();
       }
 
+      public static final int SQLSERVER_FIELD_NUMBER = 9;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL sqlserver_;
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       * @return Whether the sqlserver field is set.
+       */
+      @java.lang.Override
+      public boolean hasSqlserver() {
+        return sqlserver_ != null;
+      }
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       * @return The sqlserver.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL getSqlserver() {
+        return sqlserver_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.getDefaultInstance() : sqlserver_;
+      }
+      /**
+       * <pre>
+       * SQLSERVER Source Connection Info.
+       * &#64;inject_tag: json:"sqlserver"
+       * </pre>
+       *
+       * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder getSqlserverOrBuilder() {
+        return getSqlserver();
+      }
+
+      public static final int ORACLE_FIELD_NUMBER = 10;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL oracle_;
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       * @return Whether the oracle field is set.
+       */
+      @java.lang.Override
+      public boolean hasOracle() {
+        return oracle_ != null;
+      }
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       * @return The oracle.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL getOracle() {
+        return oracle_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.getDefaultInstance() : oracle_;
+      }
+      /**
+       * <pre>
+       * ORACLE Source Connection Info.
+       * &#64;inject_tag: json:"oracle"
+       * </pre>
+       *
+       * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder getOracleOrBuilder() {
+        return getOracle();
+      }
+
+      public static final int DB2_FIELD_NUMBER = 11;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL db2_;
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       * @return Whether the db2 field is set.
+       */
+      @java.lang.Override
+      public boolean hasDb2() {
+        return db2_ != null;
+      }
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       * @return The db2.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL getDb2() {
+        return db2_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.getDefaultInstance() : db2_;
+      }
+      /**
+       * <pre>
+       * DB2 Source Connection Info.
+       * &#64;inject_tag: json:"db2"
+       * </pre>
+       *
+       * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder getDb2OrBuilder() {
+        return getDb2();
+      }
+
+      public static final int SAP_HANA_FIELD_NUMBER = 12;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL sapHana_;
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       * @return Whether the sapHana field is set.
+       */
+      @java.lang.Override
+      public boolean hasSapHana() {
+        return sapHana_ != null;
+      }
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       * @return The sapHana.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL getSapHana() {
+        return sapHana_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.getDefaultInstance() : sapHana_;
+      }
+      /**
+       * <pre>
+       * SAP HANA Source Connection Info.
+       * &#64;inject_tag: json:"sap_hana"
+       * </pre>
+       *
+       * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder getSapHanaOrBuilder() {
+        return getSapHana();
+      }
+
+      public static final int HIVE_FIELD_NUMBER = 13;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL hive_;
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       * @return Whether the hive field is set.
+       */
+      @java.lang.Override
+      public boolean hasHive() {
+        return hive_ != null;
+      }
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       * @return The hive.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL getHive() {
+        return hive_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.getDefaultInstance() : hive_;
+      }
+      /**
+       * <pre>
+       * HIVE Source Connection Info.
+       * &#64;inject_tag: json:"hive"
+       * </pre>
+       *
+       * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder getHiveOrBuilder() {
+        return getHive();
+      }
+
+      public static final int ELASTIC_SEARCH_FIELD_NUMBER = 14;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL elasticSearch_;
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       * @return Whether the elasticSearch field is set.
+       */
+      @java.lang.Override
+      public boolean hasElasticSearch() {
+        return elasticSearch_ != null;
+      }
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       * @return The elasticSearch.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL getElasticSearch() {
+        return elasticSearch_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.getDefaultInstance() : elasticSearch_;
+      }
+      /**
+       * <pre>
+       * ElasticSearch Source Connection Info.
+       * &#64;inject_tag: json:"elastic_search"
+       * </pre>
+       *
+       * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder getElasticSearchOrBuilder() {
+        return getElasticSearch();
+      }
+
+      public static final int MONGO_DB_FIELD_NUMBER = 15;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL mongoDb_;
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       * @return Whether the mongoDb field is set.
+       */
+      @java.lang.Override
+      public boolean hasMongoDb() {
+        return mongoDb_ != null;
+      }
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       * @return The mongoDb.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL getMongoDb() {
+        return mongoDb_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.getDefaultInstance() : mongoDb_;
+      }
+      /**
+       * <pre>
+       * MONGODB Source Connection Info.
+       * &#64;inject_tag: json:"mongo_db"
+       * </pre>
+       *
+       * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder getMongoDbOrBuilder() {
+        return getMongoDb();
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -1570,8 +2221,29 @@ public final class PBModelDataSource {
         if (hdfs_ != null) {
           output.writeMessage(8, getHdfs());
         }
+        if (sqlserver_ != null) {
+          output.writeMessage(9, getSqlserver());
+        }
+        if (oracle_ != null) {
+          output.writeMessage(10, getOracle());
+        }
+        if (db2_ != null) {
+          output.writeMessage(11, getDb2());
+        }
+        if (sapHana_ != null) {
+          output.writeMessage(12, getSapHana());
+        }
+        if (hive_ != null) {
+          output.writeMessage(13, getHive());
+        }
+        if (elasticSearch_ != null) {
+          output.writeMessage(14, getElasticSearch());
+        }
+        if (mongoDb_ != null) {
+          output.writeMessage(15, getMongoDb());
+        }
         if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-          output.writeEnum(10, type_);
+          output.writeEnum(16, type_);
         }
         unknownFields.writeTo(output);
       }
@@ -1614,9 +2286,37 @@ public final class PBModelDataSource {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(8, getHdfs());
         }
+        if (sqlserver_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, getSqlserver());
+        }
+        if (oracle_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(10, getOracle());
+        }
+        if (db2_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(11, getDb2());
+        }
+        if (sapHana_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(12, getSapHana());
+        }
+        if (hive_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(13, getHive());
+        }
+        if (elasticSearch_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(14, getElasticSearch());
+        }
+        if (mongoDb_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(15, getMongoDb());
+        }
         if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(10, type_);
+            .computeEnumSize(16, type_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1674,6 +2374,41 @@ public final class PBModelDataSource {
           if (!getHdfs()
               .equals(other.getHdfs())) return false;
         }
+        if (hasSqlserver() != other.hasSqlserver()) return false;
+        if (hasSqlserver()) {
+          if (!getSqlserver()
+              .equals(other.getSqlserver())) return false;
+        }
+        if (hasOracle() != other.hasOracle()) return false;
+        if (hasOracle()) {
+          if (!getOracle()
+              .equals(other.getOracle())) return false;
+        }
+        if (hasDb2() != other.hasDb2()) return false;
+        if (hasDb2()) {
+          if (!getDb2()
+              .equals(other.getDb2())) return false;
+        }
+        if (hasSapHana() != other.hasSapHana()) return false;
+        if (hasSapHana()) {
+          if (!getSapHana()
+              .equals(other.getSapHana())) return false;
+        }
+        if (hasHive() != other.hasHive()) return false;
+        if (hasHive()) {
+          if (!getHive()
+              .equals(other.getHive())) return false;
+        }
+        if (hasElasticSearch() != other.hasElasticSearch()) return false;
+        if (hasElasticSearch()) {
+          if (!getElasticSearch()
+              .equals(other.getElasticSearch())) return false;
+        }
+        if (hasMongoDb() != other.hasMongoDb()) return false;
+        if (hasMongoDb()) {
+          if (!getMongoDb()
+              .equals(other.getMongoDb())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1718,6 +2453,34 @@ public final class PBModelDataSource {
         if (hasHdfs()) {
           hash = (37 * hash) + HDFS_FIELD_NUMBER;
           hash = (53 * hash) + getHdfs().hashCode();
+        }
+        if (hasSqlserver()) {
+          hash = (37 * hash) + SQLSERVER_FIELD_NUMBER;
+          hash = (53 * hash) + getSqlserver().hashCode();
+        }
+        if (hasOracle()) {
+          hash = (37 * hash) + ORACLE_FIELD_NUMBER;
+          hash = (53 * hash) + getOracle().hashCode();
+        }
+        if (hasDb2()) {
+          hash = (37 * hash) + DB2_FIELD_NUMBER;
+          hash = (53 * hash) + getDb2().hashCode();
+        }
+        if (hasSapHana()) {
+          hash = (37 * hash) + SAP_HANA_FIELD_NUMBER;
+          hash = (53 * hash) + getSapHana().hashCode();
+        }
+        if (hasHive()) {
+          hash = (37 * hash) + HIVE_FIELD_NUMBER;
+          hash = (53 * hash) + getHive().hashCode();
+        }
+        if (hasElasticSearch()) {
+          hash = (37 * hash) + ELASTIC_SEARCH_FIELD_NUMBER;
+          hash = (53 * hash) + getElasticSearch().hashCode();
+        }
+        if (hasMongoDb()) {
+          hash = (37 * hash) + MONGO_DB_FIELD_NUMBER;
+          hash = (53 * hash) + getMongoDb().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -1906,6 +2669,48 @@ public final class PBModelDataSource {
             hdfs_ = null;
             hdfsBuilder_ = null;
           }
+          if (sqlserverBuilder_ == null) {
+            sqlserver_ = null;
+          } else {
+            sqlserver_ = null;
+            sqlserverBuilder_ = null;
+          }
+          if (oracleBuilder_ == null) {
+            oracle_ = null;
+          } else {
+            oracle_ = null;
+            oracleBuilder_ = null;
+          }
+          if (db2Builder_ == null) {
+            db2_ = null;
+          } else {
+            db2_ = null;
+            db2Builder_ = null;
+          }
+          if (sapHanaBuilder_ == null) {
+            sapHana_ = null;
+          } else {
+            sapHana_ = null;
+            sapHanaBuilder_ = null;
+          }
+          if (hiveBuilder_ == null) {
+            hive_ = null;
+          } else {
+            hive_ = null;
+            hiveBuilder_ = null;
+          }
+          if (elasticSearchBuilder_ == null) {
+            elasticSearch_ = null;
+          } else {
+            elasticSearch_ = null;
+            elasticSearchBuilder_ = null;
+          }
+          if (mongoDbBuilder_ == null) {
+            mongoDb_ = null;
+          } else {
+            mongoDb_ = null;
+            mongoDbBuilder_ = null;
+          }
           return this;
         }
 
@@ -1972,6 +2777,41 @@ public final class PBModelDataSource {
             result.hdfs_ = hdfs_;
           } else {
             result.hdfs_ = hdfsBuilder_.build();
+          }
+          if (sqlserverBuilder_ == null) {
+            result.sqlserver_ = sqlserver_;
+          } else {
+            result.sqlserver_ = sqlserverBuilder_.build();
+          }
+          if (oracleBuilder_ == null) {
+            result.oracle_ = oracle_;
+          } else {
+            result.oracle_ = oracleBuilder_.build();
+          }
+          if (db2Builder_ == null) {
+            result.db2_ = db2_;
+          } else {
+            result.db2_ = db2Builder_.build();
+          }
+          if (sapHanaBuilder_ == null) {
+            result.sapHana_ = sapHana_;
+          } else {
+            result.sapHana_ = sapHanaBuilder_.build();
+          }
+          if (hiveBuilder_ == null) {
+            result.hive_ = hive_;
+          } else {
+            result.hive_ = hiveBuilder_.build();
+          }
+          if (elasticSearchBuilder_ == null) {
+            result.elasticSearch_ = elasticSearch_;
+          } else {
+            result.elasticSearch_ = elasticSearchBuilder_.build();
+          }
+          if (mongoDbBuilder_ == null) {
+            result.mongoDb_ = mongoDb_;
+          } else {
+            result.mongoDb_ = mongoDbBuilder_.build();
           }
           onBuilt();
           return result;
@@ -2048,6 +2888,27 @@ public final class PBModelDataSource {
           if (other.hasHdfs()) {
             mergeHdfs(other.getHdfs());
           }
+          if (other.hasSqlserver()) {
+            mergeSqlserver(other.getSqlserver());
+          }
+          if (other.hasOracle()) {
+            mergeOracle(other.getOracle());
+          }
+          if (other.hasDb2()) {
+            mergeDb2(other.getDb2());
+          }
+          if (other.hasSapHana()) {
+            mergeSapHana(other.getSapHana());
+          }
+          if (other.hasHive()) {
+            mergeHive(other.getHive());
+          }
+          if (other.hasElasticSearch()) {
+            mergeElasticSearch(other.getElasticSearch());
+          }
+          if (other.hasMongoDb()) {
+            mergeMongoDb(other.getMongoDb());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -2084,7 +2945,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
          * @return The enum numeric value on the wire for type.
          */
         @java.lang.Override public int getTypeValue() {
@@ -2096,7 +2957,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
          * @param value The enum numeric value on the wire for type to set.
          * @return This builder for chaining.
          */
@@ -2112,7 +2973,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
          * @return The type.
          */
         @java.lang.Override
@@ -2127,7 +2988,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
          * @param value The type to set.
          * @return This builder for chaining.
          */
@@ -2146,7 +3007,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 10 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
          * @return This builder for chaining.
          */
         public Builder clearType() {
@@ -3466,6 +4327,1154 @@ public final class PBModelDataSource {
             hdfs_ = null;
           }
           return hdfsBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL sqlserver_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder> sqlserverBuilder_;
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         * @return Whether the sqlserver field is set.
+         */
+        public boolean hasSqlserver() {
+          return sqlserverBuilder_ != null || sqlserver_ != null;
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         * @return The sqlserver.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL getSqlserver() {
+          if (sqlserverBuilder_ == null) {
+            return sqlserver_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.getDefaultInstance() : sqlserver_;
+          } else {
+            return sqlserverBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public Builder setSqlserver(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL value) {
+          if (sqlserverBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            sqlserver_ = value;
+            onChanged();
+          } else {
+            sqlserverBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public Builder setSqlserver(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder builderForValue) {
+          if (sqlserverBuilder_ == null) {
+            sqlserver_ = builderForValue.build();
+            onChanged();
+          } else {
+            sqlserverBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeSqlserver(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL value) {
+          if (sqlserverBuilder_ == null) {
+            if (sqlserver_ != null) {
+              sqlserver_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.newBuilder(sqlserver_).mergeFrom(value).buildPartial();
+            } else {
+              sqlserver_ = value;
+            }
+            onChanged();
+          } else {
+            sqlserverBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearSqlserver() {
+          if (sqlserverBuilder_ == null) {
+            sqlserver_ = null;
+            onChanged();
+          } else {
+            sqlserver_ = null;
+            sqlserverBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder getSqlserverBuilder() {
+          
+          onChanged();
+          return getSqlserverFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder getSqlserverOrBuilder() {
+          if (sqlserverBuilder_ != null) {
+            return sqlserverBuilder_.getMessageOrBuilder();
+          } else {
+            return sqlserver_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.getDefaultInstance() : sqlserver_;
+          }
+        }
+        /**
+         * <pre>
+         * SQLSERVER Source Connection Info.
+         * &#64;inject_tag: json:"sqlserver"
+         * </pre>
+         *
+         * <code>.datasource.SqlServerURL sqlserver = 9 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder> 
+            getSqlserverFieldBuilder() {
+          if (sqlserverBuilder_ == null) {
+            sqlserverBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SqlServerURLOrBuilder>(
+                    getSqlserver(),
+                    getParentForChildren(),
+                    isClean());
+            sqlserver_ = null;
+          }
+          return sqlserverBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL oracle_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder> oracleBuilder_;
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         * @return Whether the oracle field is set.
+         */
+        public boolean hasOracle() {
+          return oracleBuilder_ != null || oracle_ != null;
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         * @return The oracle.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL getOracle() {
+          if (oracleBuilder_ == null) {
+            return oracle_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.getDefaultInstance() : oracle_;
+          } else {
+            return oracleBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public Builder setOracle(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL value) {
+          if (oracleBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            oracle_ = value;
+            onChanged();
+          } else {
+            oracleBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public Builder setOracle(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder builderForValue) {
+          if (oracleBuilder_ == null) {
+            oracle_ = builderForValue.build();
+            onChanged();
+          } else {
+            oracleBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeOracle(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL value) {
+          if (oracleBuilder_ == null) {
+            if (oracle_ != null) {
+              oracle_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.newBuilder(oracle_).mergeFrom(value).buildPartial();
+            } else {
+              oracle_ = value;
+            }
+            onChanged();
+          } else {
+            oracleBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearOracle() {
+          if (oracleBuilder_ == null) {
+            oracle_ = null;
+            onChanged();
+          } else {
+            oracle_ = null;
+            oracleBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder getOracleBuilder() {
+          
+          onChanged();
+          return getOracleFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder getOracleOrBuilder() {
+          if (oracleBuilder_ != null) {
+            return oracleBuilder_.getMessageOrBuilder();
+          } else {
+            return oracle_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.getDefaultInstance() : oracle_;
+          }
+        }
+        /**
+         * <pre>
+         * ORACLE Source Connection Info.
+         * &#64;inject_tag: json:"oracle"
+         * </pre>
+         *
+         * <code>.datasource.OracleURL oracle = 10 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder> 
+            getOracleFieldBuilder() {
+          if (oracleBuilder_ == null) {
+            oracleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.OracleURLOrBuilder>(
+                    getOracle(),
+                    getParentForChildren(),
+                    isClean());
+            oracle_ = null;
+          }
+          return oracleBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL db2_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder> db2Builder_;
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         * @return Whether the db2 field is set.
+         */
+        public boolean hasDb2() {
+          return db2Builder_ != null || db2_ != null;
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         * @return The db2.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL getDb2() {
+          if (db2Builder_ == null) {
+            return db2_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.getDefaultInstance() : db2_;
+          } else {
+            return db2Builder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public Builder setDb2(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL value) {
+          if (db2Builder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            db2_ = value;
+            onChanged();
+          } else {
+            db2Builder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public Builder setDb2(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder builderForValue) {
+          if (db2Builder_ == null) {
+            db2_ = builderForValue.build();
+            onChanged();
+          } else {
+            db2Builder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeDb2(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL value) {
+          if (db2Builder_ == null) {
+            if (db2_ != null) {
+              db2_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.newBuilder(db2_).mergeFrom(value).buildPartial();
+            } else {
+              db2_ = value;
+            }
+            onChanged();
+          } else {
+            db2Builder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearDb2() {
+          if (db2Builder_ == null) {
+            db2_ = null;
+            onChanged();
+          } else {
+            db2_ = null;
+            db2Builder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder getDb2Builder() {
+          
+          onChanged();
+          return getDb2FieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder getDb2OrBuilder() {
+          if (db2Builder_ != null) {
+            return db2Builder_.getMessageOrBuilder();
+          } else {
+            return db2_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.getDefaultInstance() : db2_;
+          }
+        }
+        /**
+         * <pre>
+         * DB2 Source Connection Info.
+         * &#64;inject_tag: json:"db2"
+         * </pre>
+         *
+         * <code>.datasource.DB2URL db2 = 11 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder> 
+            getDb2FieldBuilder() {
+          if (db2Builder_ == null) {
+            db2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.DB2URLOrBuilder>(
+                    getDb2(),
+                    getParentForChildren(),
+                    isClean());
+            db2_ = null;
+          }
+          return db2Builder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL sapHana_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder> sapHanaBuilder_;
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         * @return Whether the sapHana field is set.
+         */
+        public boolean hasSapHana() {
+          return sapHanaBuilder_ != null || sapHana_ != null;
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         * @return The sapHana.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL getSapHana() {
+          if (sapHanaBuilder_ == null) {
+            return sapHana_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.getDefaultInstance() : sapHana_;
+          } else {
+            return sapHanaBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public Builder setSapHana(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL value) {
+          if (sapHanaBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            sapHana_ = value;
+            onChanged();
+          } else {
+            sapHanaBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public Builder setSapHana(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder builderForValue) {
+          if (sapHanaBuilder_ == null) {
+            sapHana_ = builderForValue.build();
+            onChanged();
+          } else {
+            sapHanaBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeSapHana(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL value) {
+          if (sapHanaBuilder_ == null) {
+            if (sapHana_ != null) {
+              sapHana_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.newBuilder(sapHana_).mergeFrom(value).buildPartial();
+            } else {
+              sapHana_ = value;
+            }
+            onChanged();
+          } else {
+            sapHanaBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearSapHana() {
+          if (sapHanaBuilder_ == null) {
+            sapHana_ = null;
+            onChanged();
+          } else {
+            sapHana_ = null;
+            sapHanaBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder getSapHanaBuilder() {
+          
+          onChanged();
+          return getSapHanaFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder getSapHanaOrBuilder() {
+          if (sapHanaBuilder_ != null) {
+            return sapHanaBuilder_.getMessageOrBuilder();
+          } else {
+            return sapHana_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.getDefaultInstance() : sapHana_;
+          }
+        }
+        /**
+         * <pre>
+         * SAP HANA Source Connection Info.
+         * &#64;inject_tag: json:"sap_hana"
+         * </pre>
+         *
+         * <code>.datasource.SapHanaURL sap_hana = 12 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder> 
+            getSapHanaFieldBuilder() {
+          if (sapHanaBuilder_ == null) {
+            sapHanaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.SapHanaURLOrBuilder>(
+                    getSapHana(),
+                    getParentForChildren(),
+                    isClean());
+            sapHana_ = null;
+          }
+          return sapHanaBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL hive_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder> hiveBuilder_;
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         * @return Whether the hive field is set.
+         */
+        public boolean hasHive() {
+          return hiveBuilder_ != null || hive_ != null;
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         * @return The hive.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL getHive() {
+          if (hiveBuilder_ == null) {
+            return hive_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.getDefaultInstance() : hive_;
+          } else {
+            return hiveBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public Builder setHive(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL value) {
+          if (hiveBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            hive_ = value;
+            onChanged();
+          } else {
+            hiveBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public Builder setHive(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder builderForValue) {
+          if (hiveBuilder_ == null) {
+            hive_ = builderForValue.build();
+            onChanged();
+          } else {
+            hiveBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeHive(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL value) {
+          if (hiveBuilder_ == null) {
+            if (hive_ != null) {
+              hive_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.newBuilder(hive_).mergeFrom(value).buildPartial();
+            } else {
+              hive_ = value;
+            }
+            onChanged();
+          } else {
+            hiveBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearHive() {
+          if (hiveBuilder_ == null) {
+            hive_ = null;
+            onChanged();
+          } else {
+            hive_ = null;
+            hiveBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder getHiveBuilder() {
+          
+          onChanged();
+          return getHiveFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder getHiveOrBuilder() {
+          if (hiveBuilder_ != null) {
+            return hiveBuilder_.getMessageOrBuilder();
+          } else {
+            return hive_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.getDefaultInstance() : hive_;
+          }
+        }
+        /**
+         * <pre>
+         * HIVE Source Connection Info.
+         * &#64;inject_tag: json:"hive"
+         * </pre>
+         *
+         * <code>.datasource.HiveURL hive = 13 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder> 
+            getHiveFieldBuilder() {
+          if (hiveBuilder_ == null) {
+            hiveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HiveURLOrBuilder>(
+                    getHive(),
+                    getParentForChildren(),
+                    isClean());
+            hive_ = null;
+          }
+          return hiveBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL elasticSearch_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder> elasticSearchBuilder_;
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         * @return Whether the elasticSearch field is set.
+         */
+        public boolean hasElasticSearch() {
+          return elasticSearchBuilder_ != null || elasticSearch_ != null;
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         * @return The elasticSearch.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL getElasticSearch() {
+          if (elasticSearchBuilder_ == null) {
+            return elasticSearch_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.getDefaultInstance() : elasticSearch_;
+          } else {
+            return elasticSearchBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public Builder setElasticSearch(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL value) {
+          if (elasticSearchBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            elasticSearch_ = value;
+            onChanged();
+          } else {
+            elasticSearchBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public Builder setElasticSearch(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder builderForValue) {
+          if (elasticSearchBuilder_ == null) {
+            elasticSearch_ = builderForValue.build();
+            onChanged();
+          } else {
+            elasticSearchBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeElasticSearch(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL value) {
+          if (elasticSearchBuilder_ == null) {
+            if (elasticSearch_ != null) {
+              elasticSearch_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.newBuilder(elasticSearch_).mergeFrom(value).buildPartial();
+            } else {
+              elasticSearch_ = value;
+            }
+            onChanged();
+          } else {
+            elasticSearchBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearElasticSearch() {
+          if (elasticSearchBuilder_ == null) {
+            elasticSearch_ = null;
+            onChanged();
+          } else {
+            elasticSearch_ = null;
+            elasticSearchBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder getElasticSearchBuilder() {
+          
+          onChanged();
+          return getElasticSearchFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder getElasticSearchOrBuilder() {
+          if (elasticSearchBuilder_ != null) {
+            return elasticSearchBuilder_.getMessageOrBuilder();
+          } else {
+            return elasticSearch_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.getDefaultInstance() : elasticSearch_;
+          }
+        }
+        /**
+         * <pre>
+         * ElasticSearch Source Connection Info.
+         * &#64;inject_tag: json:"elastic_search"
+         * </pre>
+         *
+         * <code>.datasource.ElasticSearchURL elastic_search = 14 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder> 
+            getElasticSearchFieldBuilder() {
+          if (elasticSearchBuilder_ == null) {
+            elasticSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.ElasticSearchURLOrBuilder>(
+                    getElasticSearch(),
+                    getParentForChildren(),
+                    isClean());
+            elasticSearch_ = null;
+          }
+          return elasticSearchBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL mongoDb_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder> mongoDbBuilder_;
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         * @return Whether the mongoDb field is set.
+         */
+        public boolean hasMongoDb() {
+          return mongoDbBuilder_ != null || mongoDb_ != null;
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         * @return The mongoDb.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL getMongoDb() {
+          if (mongoDbBuilder_ == null) {
+            return mongoDb_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.getDefaultInstance() : mongoDb_;
+          } else {
+            return mongoDbBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public Builder setMongoDb(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL value) {
+          if (mongoDbBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mongoDb_ = value;
+            onChanged();
+          } else {
+            mongoDbBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public Builder setMongoDb(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder builderForValue) {
+          if (mongoDbBuilder_ == null) {
+            mongoDb_ = builderForValue.build();
+            onChanged();
+          } else {
+            mongoDbBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeMongoDb(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL value) {
+          if (mongoDbBuilder_ == null) {
+            if (mongoDb_ != null) {
+              mongoDb_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.newBuilder(mongoDb_).mergeFrom(value).buildPartial();
+            } else {
+              mongoDb_ = value;
+            }
+            onChanged();
+          } else {
+            mongoDbBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearMongoDb() {
+          if (mongoDbBuilder_ == null) {
+            mongoDb_ = null;
+            onChanged();
+          } else {
+            mongoDb_ = null;
+            mongoDbBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder getMongoDbBuilder() {
+          
+          onChanged();
+          return getMongoDbFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder getMongoDbOrBuilder() {
+          if (mongoDbBuilder_ != null) {
+            return mongoDbBuilder_.getMessageOrBuilder();
+          } else {
+            return mongoDb_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.getDefaultInstance() : mongoDb_;
+          }
+        }
+        /**
+         * <pre>
+         * MONGODB Source Connection Info.
+         * &#64;inject_tag: json:"mongo_db"
+         * </pre>
+         *
+         * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder> 
+            getMongoDbFieldBuilder() {
+          if (mongoDbBuilder_ == null) {
+            mongoDbBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder>(
+                    getMongoDb(),
+                    getParentForChildren(),
+                    isClean());
+            mongoDb_ = null;
+          }
+          return mongoDbBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -8439,7 +10448,7 @@ public final class PBModelDataSource {
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\032\037proto/types/m" +
       "odel/network.proto\0321proto/types/model/da" +
-      "tasource/datasource_url.proto\"\363\t\n\nDataSo" +
+      "tasource/datasource_url.proto\"\321\016\n\nDataSo" +
       "urce\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004" +
       "name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033\n\004desc\030\004 \001(" +
@@ -8451,7 +10460,7 @@ public final class PBModelDataSource {
       "\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262" +
       "\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\017la" +
       "st_connection\030\013 \001(\0132\033.model.DataSourceCo" +
-      "nnection\032\362\004\n\003URL\0223\n\004type\030\n \001(\0162\026.model.D" +
+      "nnection\032\364\010\n\003URL\0223\n\004type\030\020 \001(\0162\026.model.D" +
       "ataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\005mysql\030\001" +
       " \001(\0132\024.datasource.MySQLURLB\036\342\337\037\017\n\r\n\004type" +
       "\022\005\332\001\002\030\001\342\337\037\007\022\005\342\001\002\020\001\022M\n\npostgresql\030\002 \001(\0132\031" +
@@ -8466,28 +10475,43 @@ public final class PBModelDataSource {
       "\005\332\001\002\030\006\342\337\037\007\022\005\342\001\002\020\001\022?\n\003ftp\030\007 \001(\0132\022.datasou" +
       "rce.FtpURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\007\342\337\037\007\022\005\342\001\002" +
       "\020\001\022A\n\004hdfs\030\010 \001(\0132\023.datasource.HDFSURLB\036\342" +
-      "\337\037\017\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n" +
-      "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n" +
-      "\007Enabled\020\002\022\014\n\010Disabled\020\003\"q\n\004Type\022\r\n\tType" +
-      "Unset\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Ka" +
-      "fka\020\003\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006" +
-      "\022\007\n\003Ftp\020\007\022\010\n\004HDFS\020\010\"\341\003\n\024DataSourceConnec" +
-      "tion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004s" +
-      "om-\022\'\n\nnetwork_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "net-\022A\n\006status\030\004 \001(\0162\".model.DataSourceC" +
-      "onnection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n\006resul" +
-      "t\030\005 \001(\0162\".model.DataSourceConnection.Res" +
-      "ultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\006 \001(\t\022\034\n\007c" +
-      "reated\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(" +
-      "\003\022$\n\014network_info\030\t \001(\0132\016.model.Network\"" +
-      "3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022" +
-      "\013\n\007Enabled\020\002\"1\n\006Result\022\016\n\nStateUnset\020\000\022\013" +
-      "\n\007Success\020\001\022\n\n\006Failed\020\002\"\036\n\016DataSourceKin" +
-      "d\022\014\n\004Name\030\001 \001(\tBl\n\"com.dataomnis.gproto." +
-      "types.pbmodelB\021PBModelDataSourceP\000Z1gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "modelb\006proto3"
+      "\337\037\017\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001\022K\n\tsqlserv" +
+      "er\030\t \001(\0132\030.datasource.SqlServerURLB\036\342\337\037\017" +
+      "\n\r\n\004type\022\005\332\001\002\030\t\342\337\037\007\022\005\342\001\002\020\001\022E\n\006oracle\030\n \001" +
+      "(\0132\025.datasource.OracleURLB\036\342\337\037\017\n\r\n\004type\022" +
+      "\005\332\001\002\030\n\342\337\037\007\022\005\342\001\002\020\001\022?\n\003db2\030\013 \001(\0132\022.datasou" +
+      "rce.DB2URLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\013\342\337\037\007\022\005\342\001\002" +
+      "\020\001\022H\n\010sap_hana\030\014 \001(\0132\026.datasource.SapHan" +
+      "aURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\014\342\337\037\007\022\005\342\001\002\020\001\022A\n\004" +
+      "hive\030\r \001(\0132\023.datasource.HiveURLB\036\342\337\037\017\n\r\n" +
+      "\004type\022\005\332\001\002\030\r\342\337\037\007\022\005\342\001\002\020\001\022T\n\016elastic_searc" +
+      "h\030\016 \001(\0132\034.datasource.ElasticSearchURLB\036\342" +
+      "\337\037\017\n\r\n\004type\022\005\332\001\002\030\016\342\337\037\007\022\005\342\001\002\020\001\022H\n\010mongo_d" +
+      "b\030\017 \001(\0132\026.datasource.MongoDbURLB\036\342\337\037\017\n\r\n" +
+      "\004type\022\005\332\001\002\030\017\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006Statu" +
+      "s\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabl" +
+      "ed\020\002\022\014\n\010Disabled\020\003\"\314\001\n\004Type\022\r\n\tTypeUnset" +
+      "\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003" +
+      "\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003F" +
+      "tp\020\007\022\010\n\004HDFS\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020" +
+      "\n\022\007\n\003DB2\020\013\022\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rEla" +
+      "sticSearch\020\016\022\013\n\007MongoDb\020\017\"\341\003\n\024DataSource" +
+      "Connection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004som-\022\'\n\nnetwork_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004net-\022A\n\006status\030\004 \001(\0162\".model.DataS" +
+      "ourceConnection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n" +
+      "\006result\030\005 \001(\0162\".model.DataSourceConnecti" +
+      "on.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\006 \001(" +
+      "\t\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elaps" +
+      "e\030\010 \001(\003\022$\n\014network_info\030\t \001(\0132\016.model.Ne" +
+      "twork\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
+      "ted\020\001\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n\nStateUns" +
+      "et\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002\"\036\n\016DataSou" +
+      "rceKind\022\014\n\004Name\030\001 \001(\tBl\n\"com.dataomnis.g" +
+      "proto.types.pbmodelB\021PBModelDataSourceP\000" +
+      "Z1github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8508,7 +10532,7 @@ public final class PBModelDataSource {
     internal_static_model_DataSource_URL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_DataSource_URL_descriptor,
-        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Kafka", "S3", "Clickhouse", "Hbase", "Ftp", "Hdfs", });
+        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Kafka", "S3", "Clickhouse", "Hbase", "Ftp", "Hdfs", "Sqlserver", "Oracle", "Db2", "SapHana", "Hive", "ElasticSearch", "MongoDb", });
     internal_static_model_DataSourceConnection_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_DataSourceConnection_fieldAccessorTable = new

@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\021PBModelDataSourceP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/model/datasource.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/network.proto\x1a\x31proto/types/model/datasource/datasource_url.proto\"\xf3\t\n\nDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x02\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\x12\x37\n\x06status\x18\x07 \x01(\x0e\x32\x18.model.DataSource.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12#\n\ncreated_by\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x34\n\x0flast_connection\x18\x0b \x01(\x0b\x32\x1b.model.DataSourceConnection\x1a\xf2\x04\n\x03URL\x12\x33\n\x04type\x18\n \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\x05mysql\x18\x01 \x01(\x0b\x32\x14.datasource.MySQLURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12M\n\npostgresql\x18\x02 \x01(\x0b\x32\x19.datasource.PostgreSQLURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x05kafka\x18\x03 \x01(\x0b\x32\x14.datasource.KafkaURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x03\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12=\n\x02s3\x18\x04 \x01(\x0b\x32\x11.datasource.S3URLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x04\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12M\n\nclickhouse\x18\x05 \x01(\x0b\x32\x19.datasource.ClickHouseURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x05\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x05hbase\x18\x06 \x01(\x0b\x32\x14.datasource.HBaseURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x06\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12?\n\x03\x66tp\x18\x07 \x01(\x0b\x32\x12.datasource.FtpURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x07\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x41\n\x04hdfs\x18\x08 \x01(\x0b\x32\x13.datasource.HDFSURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x08\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01:\x06\xca\xb2\x04\x02\n\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x12\x0c\n\x08\x44isabled\x10\x03\"q\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05MySQL\x10\x01\x12\x0e\n\nPostgreSQL\x10\x02\x12\t\n\x05Kafka\x10\x03\x12\x06\n\x02S3\x10\x04\x12\x0e\n\nClickHouse\x10\x05\x12\t\n\x05HBase\x10\x06\x12\x07\n\x03\x46tp\x10\x07\x12\x08\n\x04HDFS\x10\x08\"\xe1\x03\n\x14\x44\x61taSourceConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tsource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\'\n\nnetwork_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x41\n\x06status\x18\x04 \x01(\x0e\x32\".model.DataSourceConnection.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12\x41\n\x06result\x18\x05 \x01(\x0e\x32\".model.DataSourceConnection.ResultB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x06 \x01(\t\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06\x65lapse\x18\x08 \x01(\x03\x12$\n\x0cnetwork_info\x18\t \x01(\x0b\x32\x0e.model.Network\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"1\n\x06Result\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"\x1e\n\x0e\x44\x61taSourceKind\x12\x0c\n\x04Name\x18\x01 \x01(\tBl\n\"com.dataomnis.gproto.types.pbmodelB\x11PBModelDataSourceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\"proto/types/model/datasource.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/network.proto\x1a\x31proto/types/model/datasource/datasource_url.proto\"\xd1\x0e\n\nDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x02\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\x12\x37\n\x06status\x18\x07 \x01(\x0e\x32\x18.model.DataSource.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12#\n\ncreated_by\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x34\n\x0flast_connection\x18\x0b \x01(\x0b\x32\x1b.model.DataSourceConnection\x1a\xf4\x08\n\x03URL\x12\x33\n\x04type\x18\x10 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\x05mysql\x18\x01 \x01(\x0b\x32\x14.datasource.MySQLURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12M\n\npostgresql\x18\x02 \x01(\x0b\x32\x19.datasource.PostgreSQLURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x05kafka\x18\x03 \x01(\x0b\x32\x14.datasource.KafkaURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x03\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12=\n\x02s3\x18\x04 \x01(\x0b\x32\x11.datasource.S3URLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x04\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12M\n\nclickhouse\x18\x05 \x01(\x0b\x32\x19.datasource.ClickHouseURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x05\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x05hbase\x18\x06 \x01(\x0b\x32\x14.datasource.HBaseURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x06\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12?\n\x03\x66tp\x18\x07 \x01(\x0b\x32\x12.datasource.FtpURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x07\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x41\n\x04hdfs\x18\x08 \x01(\x0b\x32\x13.datasource.HDFSURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x08\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\tsqlserver\x18\t \x01(\x0b\x32\x18.datasource.SqlServerURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\t\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x45\n\x06oracle\x18\n \x01(\x0b\x32\x15.datasource.OracleURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\n\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12?\n\x03\x64\x62\x32\x18\x0b \x01(\x0b\x32\x12.datasource.DB2URLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12H\n\x08sap_hana\x18\x0c \x01(\x0b\x32\x16.datasource.SapHanaURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x0c\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x41\n\x04hive\x18\r \x01(\x0b\x32\x13.datasource.HiveURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\r\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12T\n\x0e\x65lastic_search\x18\x0e \x01(\x0b\x32\x1c.datasource.ElasticSearchURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x0e\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12H\n\x08mongo_db\x18\x0f \x01(\x0b\x32\x16.datasource.MongoDbURLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x0f\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01:\x06\xca\xb2\x04\x02\n\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x12\x0c\n\x08\x44isabled\x10\x03\"\xcc\x01\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05MySQL\x10\x01\x12\x0e\n\nPostgreSQL\x10\x02\x12\t\n\x05Kafka\x10\x03\x12\x06\n\x02S3\x10\x04\x12\x0e\n\nClickHouse\x10\x05\x12\t\n\x05HBase\x10\x06\x12\x07\n\x03\x46tp\x10\x07\x12\x08\n\x04HDFS\x10\x08\x12\r\n\tSqlServer\x10\t\x12\n\n\x06Oracle\x10\n\x12\x07\n\x03\x44\x42\x32\x10\x0b\x12\x0b\n\x07SapHana\x10\x0c\x12\x08\n\x04Hive\x10\r\x12\x11\n\rElasticSearch\x10\x0e\x12\x0b\n\x07MongoDb\x10\x0f\"\xe1\x03\n\x14\x44\x61taSourceConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tsource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\'\n\nnetwork_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x41\n\x06status\x18\x04 \x01(\x0e\x32\".model.DataSourceConnection.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12\x41\n\x06result\x18\x05 \x01(\x0e\x32\".model.DataSourceConnection.ResultB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x06 \x01(\t\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06\x65lapse\x18\x08 \x01(\x03\x12$\n\x0cnetwork_info\x18\t \x01(\x0b\x32\x0e.model.Network\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"1\n\x06Result\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"\x1e\n\x0e\x44\x61taSourceKind\x12\x0c\n\x04Name\x18\x01 \x01(\tBl\n\"com.dataomnis.gproto.types.pbmodelB\x11PBModelDataSourceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_network__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2.DESCRIPTOR,])
 
@@ -59,8 +59,8 @@ _DATASOURCE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1319,
-  serialized_end=1384,
+  serialized_start=1833,
+  serialized_end=1898,
 )
 _sym_db.RegisterEnumDescriptor(_DATASOURCE_STATUS)
 
@@ -116,11 +116,46 @@ _DATASOURCE_TYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SqlServer', index=9, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Oracle', index=10, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DB2', index=11, number=11,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SapHana', index=12, number=12,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Hive', index=13, number=13,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ElasticSearch', index=14, number=14,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MongoDb', index=15, number=15,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1386,
-  serialized_end=1499,
+  serialized_start=1901,
+  serialized_end=2105,
 )
 _sym_db.RegisterEnumDescriptor(_DATASOURCE_TYPE)
 
@@ -149,8 +184,8 @@ _DATASOURCECONNECTION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1319,
-  serialized_end=1370,
+  serialized_start=1833,
+  serialized_end=1884,
 )
 _sym_db.RegisterEnumDescriptor(_DATASOURCECONNECTION_STATUS)
 
@@ -179,8 +214,8 @@ _DATASOURCECONNECTION_RESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1934,
-  serialized_end=1983,
+  serialized_start=2540,
+  serialized_end=2589,
 )
 _sym_db.RegisterEnumDescriptor(_DATASOURCECONNECTION_RESULT)
 
@@ -195,7 +230,7 @@ _DATASOURCE_URL = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='model.DataSource.URL.type', index=0,
-      number=10, type=14, cpp_type=8, label=1,
+      number=16, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -256,6 +291,55 @@ _DATASOURCE_URL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sqlserver', full_name='model.DataSource.URL.sqlserver', index=9,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\t\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oracle', full_name='model.DataSource.URL.oracle', index=10,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\n\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='db2', full_name='model.DataSource.URL.db2', index=11,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\013\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sap_hana', full_name='model.DataSource.URL.sap_hana', index=12,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\014\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hive', full_name='model.DataSource.URL.hive', index=13,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\r\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='elastic_search', full_name='model.DataSource.URL.elastic_search', index=14,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\016\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongo_db', full_name='model.DataSource.URL.mongo_db', index=15,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\017\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -269,7 +353,7 @@ _DATASOURCE_URL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=691,
-  serialized_end=1317,
+  serialized_end=1831,
 )
 
 _DATASOURCE = _descriptor.Descriptor(
@@ -372,7 +456,7 @@ _DATASOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=232,
-  serialized_end=1499,
+  serialized_end=2105,
 )
 
 
@@ -461,8 +545,8 @@ _DATASOURCECONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1502,
-  serialized_end=1983,
+  serialized_start=2108,
+  serialized_end=2589,
 )
 
 
@@ -493,8 +577,8 @@ _DATASOURCEKIND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1985,
-  serialized_end=2015,
+  serialized_start=2591,
+  serialized_end=2621,
 )
 
 _DATASOURCE_URL.fields_by_name['type'].enum_type = _DATASOURCE_TYPE
@@ -506,6 +590,13 @@ _DATASOURCE_URL.fields_by_name['clickhouse'].message_type = proto_dot_types_dot_
 _DATASOURCE_URL.fields_by_name['hbase'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._HBASEURL
 _DATASOURCE_URL.fields_by_name['ftp'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._FTPURL
 _DATASOURCE_URL.fields_by_name['hdfs'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._HDFSURL
+_DATASOURCE_URL.fields_by_name['sqlserver'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._SQLSERVERURL
+_DATASOURCE_URL.fields_by_name['oracle'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._ORACLEURL
+_DATASOURCE_URL.fields_by_name['db2'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._DB2URL
+_DATASOURCE_URL.fields_by_name['sap_hana'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._SAPHANAURL
+_DATASOURCE_URL.fields_by_name['hive'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._HIVEURL
+_DATASOURCE_URL.fields_by_name['elastic_search'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._ELASTICSEARCHURL
+_DATASOURCE_URL.fields_by_name['mongo_db'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__url__pb2._MONGODBURL
 _DATASOURCE_URL.containing_type = _DATASOURCE
 _DATASOURCE.fields_by_name['type'].enum_type = _DATASOURCE_TYPE
 _DATASOURCE.fields_by_name['url'].message_type = _DATASOURCE_URL
@@ -563,6 +654,13 @@ _DATASOURCE_URL.fields_by_name['clickhouse']._options = None
 _DATASOURCE_URL.fields_by_name['hbase']._options = None
 _DATASOURCE_URL.fields_by_name['ftp']._options = None
 _DATASOURCE_URL.fields_by_name['hdfs']._options = None
+_DATASOURCE_URL.fields_by_name['sqlserver']._options = None
+_DATASOURCE_URL.fields_by_name['oracle']._options = None
+_DATASOURCE_URL.fields_by_name['db2']._options = None
+_DATASOURCE_URL.fields_by_name['sap_hana']._options = None
+_DATASOURCE_URL.fields_by_name['hive']._options = None
+_DATASOURCE_URL.fields_by_name['elastic_search']._options = None
+_DATASOURCE_URL.fields_by_name['mongo_db']._options = None
 _DATASOURCE_URL._options = None
 _DATASOURCE.fields_by_name['space_id']._options = None
 _DATASOURCE.fields_by_name['id']._options = None

@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
-from proto.types.model.syncjob import column_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_column__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\027PBResponseSyncJobManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/response/sync_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/sync_job.proto\x1a&proto/types/model/syncjob/column.proto\"N\n\x0cListSyncJobs\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1b\n\rCreateSyncJob\x12\n\n\x02id\x18\x01 \x01(\t\"/\n\x0f\x44\x65scribeSyncJob\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.SyncJob\"?\n\x0eGetSyncJobConf\x12-\n\x04\x63onf\x18\x01 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"K\n\x12GetSyncJobSchedule\x12\x35\n\x08schedule\x18\x01 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"\\\n\x13ListReleaseSyncJobs\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.SyncJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"F\n\x13ListSyncJobVersions\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"1\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\t\"T\n\x12\x44\x65scribeDBAndTable\x12\x10\n\x08\x64\x61tabase\x18\x01 \x03(\t\x12\r\n\x05table\x18\x02 \x03(\t\x12\x1d\n\x06\x63olumn\x18\x03 \x03(\x0b\x32\r.model.ColumnBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseSyncJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n*proto/types/response/sync_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/sync_job.proto\"N\n\x0cListSyncJobs\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1b\n\rCreateSyncJob\x12\n\n\x02id\x18\x01 \x01(\t\"/\n\x0f\x44\x65scribeSyncJob\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.SyncJob\"?\n\x0eGetSyncJobConf\x12-\n\x04\x63onf\x18\x01 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"K\n\x12GetSyncJobSchedule\x12\x35\n\x08schedule\x18\x01 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"\\\n\x13ListReleaseSyncJobs\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.SyncJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"F\n\x13ListSyncJobVersions\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"1\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseSyncJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
 
 
 
@@ -70,8 +69,8 @@ _LISTSYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=183,
-  serialized_end=261,
+  serialized_start=143,
+  serialized_end=221,
 )
 
 
@@ -102,8 +101,8 @@ _CREATESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=263,
-  serialized_end=290,
+  serialized_start=223,
+  serialized_end=250,
 )
 
 
@@ -134,8 +133,8 @@ _DESCRIBESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=292,
-  serialized_end=339,
+  serialized_start=252,
+  serialized_end=299,
 )
 
 
@@ -166,8 +165,8 @@ _GETSYNCJOBCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=341,
-  serialized_end=404,
+  serialized_start=301,
+  serialized_end=364,
 )
 
 
@@ -198,8 +197,8 @@ _GETSYNCJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=406,
-  serialized_end=481,
+  serialized_start=366,
+  serialized_end=441,
 )
 
 
@@ -244,8 +243,8 @@ _LISTRELEASESYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=483,
-  serialized_end=575,
+  serialized_start=443,
+  serialized_end=535,
 )
 
 
@@ -283,8 +282,8 @@ _LISTSYNCJOBVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=577,
-  serialized_end=647,
+  serialized_start=537,
+  serialized_end=607,
 )
 
 
@@ -315,54 +314,8 @@ _DESCRIBESYNCFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=649,
-  serialized_end=698,
-)
-
-
-_DESCRIBEDBANDTABLE = _descriptor.Descriptor(
-  name='DescribeDBAndTable',
-  full_name='response.DescribeDBAndTable',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='database', full_name='response.DescribeDBAndTable.database', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='table', full_name='response.DescribeDBAndTable.table', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='column', full_name='response.DescribeDBAndTable.column', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=700,
-  serialized_end=784,
+  serialized_start=609,
+  serialized_end=658,
 )
 
 _LISTSYNCJOBS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
@@ -371,7 +324,6 @@ _GETSYNCJOBCONF.fields_by_name['conf'].message_type = proto_dot_types_dot_model_
 _GETSYNCJOBSCHEDULE.fields_by_name['schedule'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBSCHEDULE
 _LISTRELEASESYNCJOBS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBRELEASE
 _LISTSYNCJOBVERSIONS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
-_DESCRIBEDBANDTABLE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 DESCRIPTOR.message_types_by_name['ListSyncJobs'] = _LISTSYNCJOBS
 DESCRIPTOR.message_types_by_name['CreateSyncJob'] = _CREATESYNCJOB
 DESCRIPTOR.message_types_by_name['DescribeSyncJob'] = _DESCRIBESYNCJOB
@@ -380,7 +332,6 @@ DESCRIPTOR.message_types_by_name['GetSyncJobSchedule'] = _GETSYNCJOBSCHEDULE
 DESCRIPTOR.message_types_by_name['ListReleaseSyncJobs'] = _LISTRELEASESYNCJOBS
 DESCRIPTOR.message_types_by_name['ListSyncJobVersions'] = _LISTSYNCJOBVERSIONS
 DESCRIPTOR.message_types_by_name['DescribeSyncFlinkUIByInstanceId'] = _DESCRIBESYNCFLINKUIBYINSTANCEID
-DESCRIPTOR.message_types_by_name['DescribeDBAndTable'] = _DESCRIBEDBANDTABLE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListSyncJobs = _reflection.GeneratedProtocolMessageType('ListSyncJobs', (_message.Message,), {
@@ -438,13 +389,6 @@ DescribeSyncFlinkUIByInstanceId = _reflection.GeneratedProtocolMessageType('Desc
   # @@protoc_insertion_point(class_scope:response.DescribeSyncFlinkUIByInstanceId)
   })
 _sym_db.RegisterMessage(DescribeSyncFlinkUIByInstanceId)
-
-DescribeDBAndTable = _reflection.GeneratedProtocolMessageType('DescribeDBAndTable', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEDBANDTABLE,
-  '__module__' : 'proto.types.response.sync_job_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.DescribeDBAndTable)
-  })
-_sym_db.RegisterMessage(DescribeDBAndTable)
 
 
 DESCRIPTOR._options = None

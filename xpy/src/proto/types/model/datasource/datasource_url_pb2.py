@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\017PBDataSourceURLP\000Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1proto/types/model/datasource/datasource_url.proto\x12\ndatasource\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"D\n\x04Host\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06(\xff\xff\x03\x30\x00\"\xb5\x01\n\x08MySQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rPostgreSQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rClickHouseURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xe7\x03\n\x06\x46tpURL\x12<\n\x08protocol\x18\x01 \x01(\x0e\x32\x1b.datasource.FtpURL.ProtocolB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12`\n\x0f\x63onnection_mode\x18\x02 \x01(\x0e\x32!.datasource.FtpURL.ConnectionModeB$\xe2\xdf\x1f\x13\n\x11\n\x08protocol\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12?\n\x0bprivate_key\x18\x03 \x01(\tB*\xe2\xdf\x1f\x13\n\x11\n\x08protocol\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\x80\x02\x01\x98\x02\x80\x10\x88\x05\x01\x12\x1d\n\x04host\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x05 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\"0\n\x08Protocol\x12\x11\n\rProtocolUnset\x10\x00\x12\x07\n\x03\x46TP\x10\x01\x12\x08\n\x04SFTP\x10\x02\"B\n\x0e\x43onnectionMode\x12\x17\n\x13\x43onnectionModeUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\x0b\n\x07Passive\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x0f\n\x05S3URL:\x06\xca\xb2\x04\x02\n\x00\"K\n\x08KafkaURL\x12\x37\n\rkafka_brokers\x18\x01 \x03(\x0b\x32\x10.datasource.HostB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\x80\x01@\x01:\x06\xca\xb2\x04\x02\n\x00\"8\n\x08HBaseURL\x12$\n\x06\x63onfig\x18\x01 \x01(\tB\x14\xe2\xdf\x1f\x10\x12\x0e\xc2\x01\x0b\x90\x02\x01\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\"\x8c\x01\n\x07HDFSURL\x12\"\n\tname_node\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x36\n\x06\x63onfig\x18\x03 \x01(\tB&\xe2\xdf\x1f\x11\n\x0f\n\x06\x63onfig\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\x42\x84\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x0fPBDataSourceURLP\x00Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasourceb\x06proto3'
+  serialized_pb=b'\n1proto/types/model/datasource/datasource_url.proto\x12\ndatasource\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"D\n\x04Host\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06(\xff\xff\x03\x30\x00\"\xb5\x01\n\x08MySQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rPostgreSQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rClickHouseURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xe7\x03\n\x06\x46tpURL\x12<\n\x08protocol\x18\x01 \x01(\x0e\x32\x1b.datasource.FtpURL.ProtocolB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12`\n\x0f\x63onnection_mode\x18\x02 \x01(\x0e\x32!.datasource.FtpURL.ConnectionModeB$\xe2\xdf\x1f\x13\n\x11\n\x08protocol\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12?\n\x0bprivate_key\x18\x03 \x01(\tB*\xe2\xdf\x1f\x13\n\x11\n\x08protocol\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\x80\x02\x01\x98\x02\x80\x10\x88\x05\x01\x12\x1d\n\x04host\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x05 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\"0\n\x08Protocol\x12\x11\n\rProtocolUnset\x10\x00\x12\x07\n\x03\x46TP\x10\x01\x12\x08\n\x04SFTP\x10\x02\"B\n\x0e\x43onnectionMode\x12\x17\n\x13\x43onnectionModeUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\x0b\n\x07Passive\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x0f\n\x05S3URL:\x06\xca\xb2\x04\x02\n\x00\"K\n\x08KafkaURL\x12\x37\n\rkafka_brokers\x18\x01 \x03(\x0b\x32\x10.datasource.HostB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\x80\x01@\x01:\x06\xca\xb2\x04\x02\n\x00\"8\n\x08HBaseURL\x12$\n\x06\x63onfig\x18\x01 \x01(\tB\x14\xe2\xdf\x1f\x10\x12\x0e\xc2\x01\x0b\x90\x02\x01\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\"\x8c\x01\n\x07HDFSURL\x12\"\n\tname_node\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x36\n\x06\x63onfig\x18\x03 \x01(\tB&\xe2\xdf\x1f\x11\n\x0f\n\x06\x63onfig\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\"\xb9\x01\n\x0cSqlServerURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xb6\x01\n\tOracleURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xb3\x01\n\x06\x44\x42\x32URL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xb7\x01\n\nSapHanaURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xb4\x01\n\x07HiveURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\x9a\x01\n\x10\x45lasticSearchURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xb7\x01\n\nMongoDbURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\x42\x84\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x0fPBDataSourceURLP\x00Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasourceb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
@@ -517,6 +517,419 @@ _HDFSURL = _descriptor.Descriptor(
   serialized_end=1582,
 )
 
+
+_SQLSERVERURL = _descriptor.Descriptor(
+  name='SqlServerURL',
+  full_name='datasource.SqlServerURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.SqlServerURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.SqlServerURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.SqlServerURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.SqlServerURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.SqlServerURL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1585,
+  serialized_end=1770,
+)
+
+
+_ORACLEURL = _descriptor.Descriptor(
+  name='OracleURL',
+  full_name='datasource.OracleURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.OracleURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.OracleURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.OracleURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.OracleURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.OracleURL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1773,
+  serialized_end=1955,
+)
+
+
+_DB2URL = _descriptor.Descriptor(
+  name='DB2URL',
+  full_name='datasource.DB2URL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.DB2URL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.DB2URL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.DB2URL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.DB2URL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.DB2URL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1958,
+  serialized_end=2137,
+)
+
+
+_SAPHANAURL = _descriptor.Descriptor(
+  name='SapHanaURL',
+  full_name='datasource.SapHanaURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.SapHanaURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.SapHanaURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.SapHanaURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.SapHanaURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.SapHanaURL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2140,
+  serialized_end=2323,
+)
+
+
+_HIVEURL = _descriptor.Descriptor(
+  name='HiveURL',
+  full_name='datasource.HiveURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.HiveURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.HiveURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.HiveURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.HiveURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.HiveURL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2326,
+  serialized_end=2506,
+)
+
+
+_ELASTICSEARCHURL = _descriptor.Descriptor(
+  name='ElasticSearchURL',
+  full_name='datasource.ElasticSearchURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.ElasticSearchURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.ElasticSearchURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.ElasticSearchURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.ElasticSearchURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2509,
+  serialized_end=2663,
+)
+
+
+_MONGODBURL = _descriptor.Descriptor(
+  name='MongoDbURL',
+  full_name='datasource.MongoDbURL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.MongoDbURL.host', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='datasource.MongoDbURL.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='datasource.MongoDbURL.user', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='datasource.MongoDbURL.password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='datasource.MongoDbURL.database', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2666,
+  serialized_end=2849,
+)
+
 _FTPURL.fields_by_name['protocol'].enum_type = _FTPURL_PROTOCOL
 _FTPURL.fields_by_name['connection_mode'].enum_type = _FTPURL_CONNECTIONMODE
 _FTPURL_PROTOCOL.containing_type = _FTPURL
@@ -531,6 +944,13 @@ DESCRIPTOR.message_types_by_name['S3URL'] = _S3URL
 DESCRIPTOR.message_types_by_name['KafkaURL'] = _KAFKAURL
 DESCRIPTOR.message_types_by_name['HBaseURL'] = _HBASEURL
 DESCRIPTOR.message_types_by_name['HDFSURL'] = _HDFSURL
+DESCRIPTOR.message_types_by_name['SqlServerURL'] = _SQLSERVERURL
+DESCRIPTOR.message_types_by_name['OracleURL'] = _ORACLEURL
+DESCRIPTOR.message_types_by_name['DB2URL'] = _DB2URL
+DESCRIPTOR.message_types_by_name['SapHanaURL'] = _SAPHANAURL
+DESCRIPTOR.message_types_by_name['HiveURL'] = _HIVEURL
+DESCRIPTOR.message_types_by_name['ElasticSearchURL'] = _ELASTICSEARCHURL
+DESCRIPTOR.message_types_by_name['MongoDbURL'] = _MONGODBURL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Host = _reflection.GeneratedProtocolMessageType('Host', (_message.Message,), {
@@ -596,6 +1016,55 @@ HDFSURL = _reflection.GeneratedProtocolMessageType('HDFSURL', (_message.Message,
   })
 _sym_db.RegisterMessage(HDFSURL)
 
+SqlServerURL = _reflection.GeneratedProtocolMessageType('SqlServerURL', (_message.Message,), {
+  'DESCRIPTOR' : _SQLSERVERURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.SqlServerURL)
+  })
+_sym_db.RegisterMessage(SqlServerURL)
+
+OracleURL = _reflection.GeneratedProtocolMessageType('OracleURL', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLEURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.OracleURL)
+  })
+_sym_db.RegisterMessage(OracleURL)
+
+DB2URL = _reflection.GeneratedProtocolMessageType('DB2URL', (_message.Message,), {
+  'DESCRIPTOR' : _DB2URL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.DB2URL)
+  })
+_sym_db.RegisterMessage(DB2URL)
+
+SapHanaURL = _reflection.GeneratedProtocolMessageType('SapHanaURL', (_message.Message,), {
+  'DESCRIPTOR' : _SAPHANAURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.SapHanaURL)
+  })
+_sym_db.RegisterMessage(SapHanaURL)
+
+HiveURL = _reflection.GeneratedProtocolMessageType('HiveURL', (_message.Message,), {
+  'DESCRIPTOR' : _HIVEURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.HiveURL)
+  })
+_sym_db.RegisterMessage(HiveURL)
+
+ElasticSearchURL = _reflection.GeneratedProtocolMessageType('ElasticSearchURL', (_message.Message,), {
+  'DESCRIPTOR' : _ELASTICSEARCHURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.ElasticSearchURL)
+  })
+_sym_db.RegisterMessage(ElasticSearchURL)
+
+MongoDbURL = _reflection.GeneratedProtocolMessageType('MongoDbURL', (_message.Message,), {
+  'DESCRIPTOR' : _MONGODBURL,
+  '__module__' : 'proto.types.model.datasource.datasource_url_pb2'
+  # @@protoc_insertion_point(class_scope:datasource.MongoDbURL)
+  })
+_sym_db.RegisterMessage(MongoDbURL)
+
 
 DESCRIPTOR._options = None
 _HOST.fields_by_name['host']._options = None
@@ -635,4 +1104,45 @@ _HDFSURL.fields_by_name['name_node']._options = None
 _HDFSURL.fields_by_name['port']._options = None
 _HDFSURL.fields_by_name['config']._options = None
 _HDFSURL._options = None
+_SQLSERVERURL.fields_by_name['host']._options = None
+_SQLSERVERURL.fields_by_name['port']._options = None
+_SQLSERVERURL.fields_by_name['user']._options = None
+_SQLSERVERURL.fields_by_name['password']._options = None
+_SQLSERVERURL.fields_by_name['database']._options = None
+_SQLSERVERURL._options = None
+_ORACLEURL.fields_by_name['host']._options = None
+_ORACLEURL.fields_by_name['port']._options = None
+_ORACLEURL.fields_by_name['user']._options = None
+_ORACLEURL.fields_by_name['password']._options = None
+_ORACLEURL.fields_by_name['database']._options = None
+_ORACLEURL._options = None
+_DB2URL.fields_by_name['host']._options = None
+_DB2URL.fields_by_name['port']._options = None
+_DB2URL.fields_by_name['user']._options = None
+_DB2URL.fields_by_name['password']._options = None
+_DB2URL.fields_by_name['database']._options = None
+_DB2URL._options = None
+_SAPHANAURL.fields_by_name['host']._options = None
+_SAPHANAURL.fields_by_name['port']._options = None
+_SAPHANAURL.fields_by_name['user']._options = None
+_SAPHANAURL.fields_by_name['password']._options = None
+_SAPHANAURL.fields_by_name['database']._options = None
+_SAPHANAURL._options = None
+_HIVEURL.fields_by_name['host']._options = None
+_HIVEURL.fields_by_name['port']._options = None
+_HIVEURL.fields_by_name['user']._options = None
+_HIVEURL.fields_by_name['password']._options = None
+_HIVEURL.fields_by_name['database']._options = None
+_HIVEURL._options = None
+_ELASTICSEARCHURL.fields_by_name['host']._options = None
+_ELASTICSEARCHURL.fields_by_name['port']._options = None
+_ELASTICSEARCHURL.fields_by_name['user']._options = None
+_ELASTICSEARCHURL.fields_by_name['password']._options = None
+_ELASTICSEARCHURL._options = None
+_MONGODBURL.fields_by_name['host']._options = None
+_MONGODBURL.fields_by_name['port']._options = None
+_MONGODBURL.fields_by_name['user']._options = None
+_MONGODBURL.fields_by_name['password']._options = None
+_MONGODBURL.fields_by_name['database']._options = None
+_MONGODBURL._options = None
 # @@protoc_insertion_point(module_scope)

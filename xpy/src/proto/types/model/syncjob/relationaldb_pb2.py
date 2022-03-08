@@ -23,15 +23,15 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\016PBRelationaldbP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/model/syncjob/relationaldb.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a&proto/types/model/syncjob/column.proto\"s\n\x12RelationaldbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\r\n\x05where\x18\x04 \x01(\t\x12\x10\n\x08split_pk\x18\x05 \x01(\t\"\x89\x03\n\x12RelationaldbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x0f\n\x07pre_sql\x18\x04 \x03(\t\x12\x10\n\x08post_sql\x18\x05 \x03(\t\x12\x12\n\nwrite_mode\x18\x06 \x01(\t\x12\x12\n\nbatch_size\x18\x07 \x01(\x05\x12\x12\n\nupdate_key\x18\x08 \x03(\t\x12,\n\x04mode\x18\t \x01(\x0e\x32\x1e.model.RelationaldbTarget.Mode\x12\x34\n\x08semantic\x18\n \x01(\x0e\x32\".model.RelationaldbTarget.Semantic\x12\x14\n\x0cwith_no_lock\x18\x0b \x01(\t\"+\n\x04Mode\x12\n\n\x06insert\x10\x00\x12\x0b\n\x07replace\x10\x01\x12\n\n\x06update\x10\x02\"/\n\x08Semantic\x12\x11\n\rat_least_once\x10\x00\x12\x10\n\x0c\x65xactly_once\x10\x01\x42}\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x0ePBRelationaldbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n,proto/types/model/syncjob/relationaldb.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a&proto/types/model/syncjob/column.proto\"s\n\x12RelationaldbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\r\n\x05where\x18\x04 \x01(\t\x12\x10\n\x08split_pk\x18\x05 \x01(\t\"\x82\x03\n\x12RelationaldbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x0f\n\x07pre_sql\x18\x04 \x03(\t\x12\x10\n\x08post_sql\x18\x05 \x03(\t\x12\x37\n\nwrite_mode\x18\x06 \x01(\x0e\x32#.model.RelationaldbTarget.WriteMode\x12\x12\n\nbatch_size\x18\x07 \x01(\x05\x12\x12\n\nupdate_key\x18\x08 \x03(\t\x12\x34\n\x08semantic\x18\t \x01(\x0e\x32\".model.RelationaldbTarget.Semantic\x12\x14\n\x0cwith_no_lock\x18\n \x01(\t\"0\n\tWriteMode\x12\n\n\x06insert\x10\x00\x12\x0b\n\x07replace\x10\x01\x12\n\n\x06update\x10\x02\",\n\x08Semantic\x12\x0f\n\x0b\x41tLeastOnce\x10\x00\x12\x0f\n\x0b\x45xactlyOnce\x10\x01\x42}\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x0ePBRelationaldbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,])
 
 
 
-_RELATIONALDBTARGET_MODE = _descriptor.EnumDescriptor(
-  name='Mode',
-  full_name='model.RelationaldbTarget.Mode',
+_RELATIONALDBTARGET_WRITEMODE = _descriptor.EnumDescriptor(
+  name='WriteMode',
+  full_name='model.RelationaldbTarget.WriteMode',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -54,10 +54,10 @@ _RELATIONALDBTARGET_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=668,
-  serialized_end=711,
+  serialized_start=659,
+  serialized_end=707,
 )
-_sym_db.RegisterEnumDescriptor(_RELATIONALDBTARGET_MODE)
+_sym_db.RegisterEnumDescriptor(_RELATIONALDBTARGET_WRITEMODE)
 
 _RELATIONALDBTARGET_SEMANTIC = _descriptor.EnumDescriptor(
   name='Semantic',
@@ -67,20 +67,20 @@ _RELATIONALDBTARGET_SEMANTIC = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='at_least_once', index=0, number=0,
+      name='AtLeastOnce', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='exactly_once', index=1, number=1,
+      name='ExactlyOnce', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=713,
-  serialized_end=760,
+  serialized_start=709,
+  serialized_end=753,
 )
 _sym_db.RegisterEnumDescriptor(_RELATIONALDBTARGET_SEMANTIC)
 
@@ -190,8 +190,8 @@ _RELATIONALDBTARGET = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='write_mode', full_name='model.RelationaldbTarget.write_mode', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -210,22 +210,15 @@ _RELATIONALDBTARGET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mode', full_name='model.RelationaldbTarget.mode', index=8,
+      name='semantic', full_name='model.RelationaldbTarget.semantic', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='semantic', full_name='model.RelationaldbTarget.semantic', index=9,
-      number=10, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='with_no_lock', full_name='model.RelationaldbTarget.with_no_lock', index=10,
-      number=11, type=9, cpp_type=9, label=1,
+      name='with_no_lock', full_name='model.RelationaldbTarget.with_no_lock', index=9,
+      number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -235,7 +228,7 @@ _RELATIONALDBTARGET = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _RELATIONALDBTARGET_MODE,
+    _RELATIONALDBTARGET_WRITEMODE,
     _RELATIONALDBTARGET_SEMANTIC,
   ],
   serialized_options=None,
@@ -245,14 +238,14 @@ _RELATIONALDBTARGET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=367,
-  serialized_end=760,
+  serialized_end=753,
 )
 
 _RELATIONALDBSOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 _RELATIONALDBTARGET.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
-_RELATIONALDBTARGET.fields_by_name['mode'].enum_type = _RELATIONALDBTARGET_MODE
+_RELATIONALDBTARGET.fields_by_name['write_mode'].enum_type = _RELATIONALDBTARGET_WRITEMODE
 _RELATIONALDBTARGET.fields_by_name['semantic'].enum_type = _RELATIONALDBTARGET_SEMANTIC
-_RELATIONALDBTARGET_MODE.containing_type = _RELATIONALDBTARGET
+_RELATIONALDBTARGET_WRITEMODE.containing_type = _RELATIONALDBTARGET
 _RELATIONALDBTARGET_SEMANTIC.containing_type = _RELATIONALDBTARGET
 DESCRIPTOR.message_types_by_name['RelationaldbSource'] = _RELATIONALDBSOURCE
 DESCRIPTOR.message_types_by_name['RelationaldbTarget'] = _RELATIONALDBTARGET

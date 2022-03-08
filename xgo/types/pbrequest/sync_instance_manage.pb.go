@@ -155,7 +155,7 @@ type TerminateSyncInstances struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The workspace id in HTTP Request-URI. Is Required.
+	//  The workspace id in HTTP Request-URI. Is Required.
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	InstanceIds []string `protobuf:"bytes,2,rep,name=instance_ids,json=instanceIds,proto3" json:"instance_ids"`

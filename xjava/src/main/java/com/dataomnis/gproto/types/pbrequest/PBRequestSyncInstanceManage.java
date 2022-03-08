@@ -1884,7 +1884,7 @@ public final class PBRequestSyncInstanceManage {
 
     /**
      * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
+     *  The workspace id in HTTP Request-URI. Is Required.
      * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
@@ -1894,7 +1894,7 @@ public final class PBRequestSyncInstanceManage {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
+     *  The workspace id in HTTP Request-URI. Is Required.
      * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
@@ -2056,7 +2056,7 @@ public final class PBRequestSyncInstanceManage {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
+     *  The workspace id in HTTP Request-URI. Is Required.
      * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
@@ -2078,7 +2078,7 @@ public final class PBRequestSyncInstanceManage {
     }
     /**
      * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
+     *  The workspace id in HTTP Request-URI. Is Required.
      * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
@@ -2501,7 +2501,7 @@ public final class PBRequestSyncInstanceManage {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
+       *  The workspace id in HTTP Request-URI. Is Required.
        * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
@@ -2522,7 +2522,7 @@ public final class PBRequestSyncInstanceManage {
       }
       /**
        * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
+       *  The workspace id in HTTP Request-URI. Is Required.
        * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
@@ -2544,7 +2544,7 @@ public final class PBRequestSyncInstanceManage {
       }
       /**
        * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
+       *  The workspace id in HTTP Request-URI. Is Required.
        * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
@@ -2564,7 +2564,7 @@ public final class PBRequestSyncInstanceManage {
       }
       /**
        * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
+       *  The workspace id in HTTP Request-URI. Is Required.
        * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
@@ -2579,7 +2579,7 @@ public final class PBRequestSyncInstanceManage {
       }
       /**
        * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
+       *  The workspace id in HTTP Request-URI. Is Required.
        * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
@@ -5279,14 +5279,14 @@ public final class PBRequestSyncInstanceManage {
       "\017\n\007reverse\030\010 \001(\010\022\023\n\013instance_id\030\t \001(\t\"p\n" +
       "\026TerminateSyncInstances\022%\n\010space_id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_ids\030\002" +
-      " \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004sti-\"n\n\024Suspe" +
+      " \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-\"n\n\024Suspe" +
       "ndSyncInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
       "\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_ids\030\002 \003(\tB\031\342\337" +
-      "\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004sti-\"m\n\023ResumeSyncIns" +
+      "\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-\"m\n\023ResumeSyncIns" +
       "tances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
       "\004wks-\022/\n\014instance_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000" +
-      "8dZ\n\302\001\007\312\002\004sti-\"@\n\024DescribeSyncInstance\022(" +
-      "\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-" +
+      "8dZ\n\302\001\007\312\002\004syi-\"@\n\024DescribeSyncInstance\022(" +
+      "\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-" +
       "Bz\n$com.dataomnis.gproto.types.pbrequest" +
       "B\033PBRequestSyncInstanceManageP\000Z3github." +
       "com/DataWorkbench/gproto/xgo/types/pbreq" +

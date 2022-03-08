@@ -2721,7 +2721,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -2730,7 +2730,7 @@ public final class PBSyncManageSyncJob {
     boolean hasConf();
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -2739,7 +2739,7 @@ public final class PBSyncManageSyncJob {
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf();
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3049,7 +3049,7 @@ public final class PBSyncManageSyncJob {
     private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3061,7 +3061,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3073,7 +3073,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+     * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3829,7 +3829,7 @@ public final class PBSyncManageSyncJob {
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> confBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3840,7 +3840,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3855,7 +3855,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3875,7 +3875,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3893,7 +3893,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3915,7 +3915,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3933,7 +3933,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3945,7 +3945,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -3960,7 +3960,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"args" gorm:"column:args;type:json"
+       * &#64;inject_tag: json:"conf" gorm:"column:conf;type:json"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 4 [(.validator.field) = { ... }</code>
@@ -4285,10 +4285,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>int32 job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * @return The enum numeric value on the wire for jobMode.
+     */
+    int getJobModeValue();
+    /**
+     * <pre>
+     * 0:guide mode,1:shell mode
+     * &#64;inject_tag: json:"job_mode"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
      * @return The jobMode.
      */
-    int getJobMode();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode getJobMode();
 
     /**
      * <pre>
@@ -4954,6 +4964,7 @@ public final class PBSyncManageSyncJob {
     private SyncJobConf() {
       sourceId_ = "";
       targetId_ = "";
+      jobMode_ = 0;
       jobContent_ = "";
       clusterId_ = "";
     }
@@ -5021,8 +5032,9 @@ public final class PBSyncManageSyncJob {
               break;
             }
             case 56: {
+              int rawValue = input.readEnum();
 
-              jobMode_ = input.readInt32();
+              jobMode_ = rawValue;
               break;
             }
             case 66: {
@@ -5329,6 +5341,114 @@ public final class PBSyncManageSyncJob {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code model.SyncJobConf.JobMode}
+     */
+    public enum JobMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GuideMode = 0;</code>
+       */
+      GuideMode(0),
+      /**
+       * <code>ScriptMode = 1;</code>
+       */
+      ScriptMode(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>GuideMode = 0;</code>
+       */
+      public static final int GuideMode_VALUE = 0;
+      /**
+       * <code>ScriptMode = 1;</code>
+       */
+      public static final int ScriptMode_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static JobMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static JobMode forNumber(int value) {
+        switch (value) {
+          case 0: return GuideMode;
+          case 1: return ScriptMode;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<JobMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          JobMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<JobMode>() {
+              public JobMode findValueByNumber(int number) {
+                return JobMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final JobMode[] VALUES = values();
+
+      public static JobMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private JobMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.SyncJobConf.JobMode)
+    }
+
     public static final int SOURCE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object sourceId_;
     /**
@@ -5498,12 +5618,25 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>int32 job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * @return The enum numeric value on the wire for jobMode.
+     */
+    @java.lang.Override public int getJobModeValue() {
+      return jobMode_;
+    }
+    /**
+     * <pre>
+     * 0:guide mode,1:shell mode
+     * &#64;inject_tag: json:"job_mode"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
      * @return The jobMode.
      */
-    @java.lang.Override
-    public int getJobMode() {
-      return jobMode_;
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode getJobMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.valueOf(jobMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.UNRECOGNIZED : result;
     }
 
     public static final int JOB_CONTENT_FIELD_NUMBER = 8;
@@ -6454,8 +6587,8 @@ public final class PBSyncManageSyncJob {
       if (bytes_ != 0) {
         output.writeInt32(6, bytes_);
       }
-      if (jobMode_ != 0) {
-        output.writeInt32(7, jobMode_);
+      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.GuideMode.getNumber()) {
+        output.writeEnum(7, jobMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobContent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, jobContent_);
@@ -6554,9 +6687,9 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, bytes_);
       }
-      if (jobMode_ != 0) {
+      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.GuideMode.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, jobMode_);
+          .computeEnumSize(7, jobMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobContent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, jobContent_);
@@ -6671,8 +6804,7 @@ public final class PBSyncManageSyncJob {
           != other.getRecordNum()) return false;
       if (getBytes()
           != other.getBytes()) return false;
-      if (getJobMode()
-          != other.getJobMode()) return false;
+      if (jobMode_ != other.jobMode_) return false;
       if (!getJobContent()
           .equals(other.getJobContent())) return false;
       if (hasRelationaldbSource() != other.hasRelationaldbSource()) return false;
@@ -6801,7 +6933,7 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + BYTES_FIELD_NUMBER;
       hash = (53 * hash) + getBytes();
       hash = (37 * hash) + JOB_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getJobMode();
+      hash = (53 * hash) + jobMode_;
       hash = (37 * hash) + JOB_CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getJobContent().hashCode();
       if (hasRelationaldbSource()) {
@@ -7365,8 +7497,8 @@ public final class PBSyncManageSyncJob {
         if (other.getBytes() != 0) {
           setBytes(other.getBytes());
         }
-        if (other.getJobMode() != 0) {
-          setJobMode(other.getJobMode());
+        if (other.jobMode_ != 0) {
+          setJobModeValue(other.getJobModeValue());
         }
         if (!other.getJobContent().isEmpty()) {
           jobContent_ = other.jobContent_;
@@ -7854,18 +7986,17 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private int jobMode_ ;
+      private int jobMode_ = 0;
       /**
        * <pre>
        * 0:guide mode,1:shell mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>int32 job_mode = 7 [(.defaults.field) = { ... }</code>
-       * @return The jobMode.
+       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * @return The enum numeric value on the wire for jobMode.
        */
-      @java.lang.Override
-      public int getJobMode() {
+      @java.lang.Override public int getJobModeValue() {
         return jobMode_;
       }
       /**
@@ -7874,11 +8005,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>int32 job_mode = 7 [(.defaults.field) = { ... }</code>
-       * @param value The jobMode to set.
+       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for jobMode to set.
        * @return This builder for chaining.
        */
-      public Builder setJobMode(int value) {
+      public Builder setJobModeValue(int value) {
         
         jobMode_ = value;
         onChanged();
@@ -7890,7 +8021,41 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>int32 job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * @return The jobMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode getJobMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.valueOf(jobMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 0:guide mode,1:shell mode
+       * &#64;inject_tag: json:"job_mode"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * @param value The jobMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobMode(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        jobMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0:guide mode,1:shell mode
+       * &#64;inject_tag: json:"job_mode"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearJobMode() {
@@ -16061,77 +16226,78 @@ public final class PBSyncManageSyncJob {
       "-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007ve" +
       "rsion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004conf\030\004 \001(\0132" +
       "\022.model.SyncJobConfB\004\342\337\037\000\022.\n\010schedule\030\005 " +
-      "\001(\0132\026.model.SyncJobScheduleB\004\342\337\037\000\"\373\t\n\013Sy" +
+      "\001(\0132\026.model.SyncJobScheduleB\004\342\337\037\000\"\301\n\n\013Sy" +
       "ncJobConf\022&\n\tsource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004som-\022&\n\ttarget_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004som-\022*\n\013parallelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011" +
       "\342\337\037\t\022\007\262\001\0040\0008d\022)\n\npercentage\030\004 \001(\005B\025\242\241\037\004\252" +
-      "\006\0010\342\337\037\t\022\007\262\001\0040\0008d\022\'\n\nrecord_num\030\005 \001(\005B\023\242\241" +
-      "\037\004\252\006\0010\342\337\037\007\022\005\262\001\0020\000\022\"\n\005bytes\030\006 \001(\005B\023\242\241\037\004\252\006" +
-      "\0010\342\337\037\007\022\005\262\001\0020\000\022\'\n\010job_mode\030\007 \001(\005B\025\242\241\037\004\252\006\001" +
-      "0\342\337\037\t\022\007\262\001\0048\001@\000\022\023\n\013job_content\030\010 \001(\t\0226\n\023r" +
-      "elationaldb_source\030\t \001(\0132\031.model.Relatio" +
-      "naldbSource\0226\n\023relationaldb_target\030\n \001(\013" +
-      "2\031.model.RelationaldbTarget\022,\n\016mongodb_s" +
-      "ource\030\013 \001(\0132\024.model.MongodbSource\022,\n\016mon" +
-      "godb_target\030\014 \001(\0132\024.model.MongodbTarget\022" +
-      "9\n\025elastic_search_source\030\r \001(\0132\032.model.E" +
-      "lasticSearchSource\0229\n\025elastic_search_tar" +
-      "get\030\016 \001(\0132\032.model.ElasticSearchTarget\022&\n" +
-      "\013hdfs_source\030\017 \001(\0132\021.model.HdfsSource\022&\n" +
-      "\013hdfs_target\030\020 \001(\0132\021.model.HdfsTarget\022$\n" +
-      "\nftp_source\030\021 \001(\0132\020.model.FtpSource\022$\n\nf" +
-      "tp_target\030\022 \001(\0132\020.model.FtpTarget\022(\n\014hba" +
-      "se_source\030\023 \001(\0132\022.model.HbaseSource\022(\n\014h" +
-      "base_target\030\024 \001(\0132\022.model.HbaseTarget\022(\n" +
-      "\014kafka_source\030\025 \001(\0132\022.model.KafkaSource\022" +
-      "(\n\014kafka_target\030\026 \001(\0132\022.model.KafkaTarge" +
-      "t\022*\n\rbinlog_source\030\027 \001(\0132\023.model.BinlogS" +
-      "ource\022)\n\rpg_wal_source\030\030 \001(\0132\022.model.PgW" +
-      "alSource\0228\n\025sql_server_cdc_source\030\031 \001(\0132" +
-      "\031.model.SqlServerCdcSource\022/\n\020log_miner_" +
-      "source\030\032 \001(\0132\025.model.LogMinerSource\022(\n\014r" +
-      "edis_target\030\033 \001(\0132\022.model.RedisTarget\022&\n" +
-      "\013hive_target\030\034 \001(\0132\021.model.HiveTarget\022\030\n" +
-      "\ncluster_id\030\035 \001(\tB\004\342\337\037\000:\006\312\262\004\002\n\000\"\256\007\n\017Sync" +
-      "JobSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.m" +
-      "odel.SyncJobSchedule.SchedulePolicyB\r\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sc" +
-      "hedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007st" +
-      "arted\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\016" +
-      "2(.model.SyncJobSchedule.ConcurrencyPoli" +
-      "cyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM" +
-      "\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J" +
-      "\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n" +
-      "\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022" +
-      "\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037" +
-      "\t\022\007\262\001\0048d@\000\022G\n\014retry_policy\030\n \001(\0162\".model" +
-      ".SyncJobSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_" +
-      "policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_inte" +
-      "rval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342" +
-      "\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023Schedu" +
-      "lePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appo" +
-      "intTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concurrenc" +
-      "yPolicy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005A" +
-      "llow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013Retry" +
-      "Policy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010" +
-      "\n\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id" +
-      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n" +
-      "\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob" +
-      ".TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022,\n\006status\030\006 \001(\0162\034.m" +
-      "odel.SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t" +
-      "\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007cr" +
-      "eated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(" +
-      "\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020" +
-      "\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020" +
-      "\003Bn\n\"com.dataomnis.gproto.types.pbmodelB" +
-      "\023PBSyncManageSyncJobP\000Z1github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbmodelb\006proto" +
-      "3"
+      "\006\0010\342\337\037\t\022\007\262\001\0048d@\000\022\'\n\nrecord_num\030\005 \001(\005B\023\242\241" +
+      "\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000\022\"\n\005bytes\030\006 \001(\005B\023\242\241\037\004\252\006" +
+      "\0010\342\337\037\007\022\005\262\001\002@\000\022C\n\010job_mode\030\007 \001(\0162\032.model." +
+      "SyncJobConf.JobModeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\262\001\0048\001" +
+      "@\000\022\023\n\013job_content\030\010 \001(\t\0226\n\023relationaldb_" +
+      "source\030\t \001(\0132\031.model.RelationaldbSource\022" +
+      "6\n\023relationaldb_target\030\n \001(\0132\031.model.Rel" +
+      "ationaldbTarget\022,\n\016mongodb_source\030\013 \001(\0132" +
+      "\024.model.MongodbSource\022,\n\016mongodb_target\030" +
+      "\014 \001(\0132\024.model.MongodbTarget\0229\n\025elastic_s" +
+      "earch_source\030\r \001(\0132\032.model.ElasticSearch" +
+      "Source\0229\n\025elastic_search_target\030\016 \001(\0132\032." +
+      "model.ElasticSearchTarget\022&\n\013hdfs_source" +
+      "\030\017 \001(\0132\021.model.HdfsSource\022&\n\013hdfs_target" +
+      "\030\020 \001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030" +
+      "\021 \001(\0132\020.model.FtpSource\022$\n\nftp_target\030\022 " +
+      "\001(\0132\020.model.FtpTarget\022(\n\014hbase_source\030\023 " +
+      "\001(\0132\022.model.HbaseSource\022(\n\014hbase_target\030" +
+      "\024 \001(\0132\022.model.HbaseTarget\022(\n\014kafka_sourc" +
+      "e\030\025 \001(\0132\022.model.KafkaSource\022(\n\014kafka_tar" +
+      "get\030\026 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_" +
+      "source\030\027 \001(\0132\023.model.BinlogSource\022)\n\rpg_" +
+      "wal_source\030\030 \001(\0132\022.model.PgWalSource\0228\n\025" +
+      "sql_server_cdc_source\030\031 \001(\0132\031.model.SqlS" +
+      "erverCdcSource\022/\n\020log_miner_source\030\032 \001(\013" +
+      "2\025.model.LogMinerSource\022(\n\014redis_target\030" +
+      "\033 \001(\0132\022.model.RedisTarget\022&\n\013hive_target" +
+      "\030\034 \001(\0132\021.model.HiveTarget\022\030\n\ncluster_id\030" +
+      "\035 \001(\tB\004\342\337\037\000\"(\n\007JobMode\022\r\n\tGuideMode\020\000\022\016\n" +
+      "\nScriptMode\020\001:\006\312\262\004\002\n\000\"\256\007\n\017SyncJobSchedul" +
+      "e\022M\n\017schedule_policy\030\001 \001(\0162%.model.SyncJ" +
+      "obSchedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_pol" +
+      "icy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "@\000\022S\n\022concurrency_policy\030\006 \001(\0162(.model.S" +
+      "yncJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017sc" +
+      "hedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004h" +
+      "ourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010" +
+      " \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010" +
+      "\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000" +
+      "\022G\n\014retry_policy\030\n \001(\0162\".model.SyncJobSc" +
+      "hedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013ret" +
+      "ry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001" +
+      "\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005" +
+      "B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036" +
+      "@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyUn" +
+      "set\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022" +
+      "\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n" +
+      "\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006" +
+      "Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020" +
+      "RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006" +
+      "\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001" +
+      "\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037" +
+      "\t\022\007\332\001\0040\000X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJ" +
+      "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreate" +
+      "d_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Activ" +
+      "e\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bn\n\"com.d" +
+      "ataomnis.gproto.types.pbmodelB\023PBSyncMan" +
+      "ageSyncJobP\000Z1github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
