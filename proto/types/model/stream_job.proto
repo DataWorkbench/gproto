@@ -162,7 +162,10 @@ message StreamJobArgs {
 
   // The flink cluster id. Is required.
   // @inject_tag: json:"cluster_id"
-  string cluster_id = 1 [(validator.field) = {}];
+  string cluster_id = 1 [
+    (validator.field).check_if = { field: "cluster_id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq:20, prefix: "cfi-" }
+  ];
 
   // Flink parallelism. Is required, Min 0, Max 100. default is 1.
   // @inject_tag: json:"parallelism"
@@ -171,14 +174,27 @@ message StreamJobArgs {
     (validator.field).tags.int = { gte: 0, lte: 100 }
   ];
 
-  // The list of dependent resources files. Not required.
+  // The list of dependent resources files. Not required. Max 100.
   // @inject_tag: json:"files"
-  repeated string files = 3 [ (validator.field).tags.repeated = { item: { string: { prefix: "res-" } } }];
+  repeated string files = 3 [ (validator.field).tags.repeated = { len_lte: 100, item: { string: { prefix: "res-" } } }];
 
   // The list of built-in connectors package. Not required.
   // Notice: check build-in connectors in `StreamJobManage Service`
   // @inject_tag: json:"built_in_connectors"
   repeated string built_in_connectors = 4;
+
+  // The list of resources files that has been deleted.
+  // Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+  // @inject_tag: json:"delete_files"
+  repeated string delete_files = 5 [ (validator.field).tags.repeated = { item: { string: { prefix: "res-" } } }];
+
+  // The flink cluster if that has been deleted.
+  // Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+  // @inject_tag: json:"delete_cluster_id"
+  string delete_cluster_id = 6 [
+    (validator.field).check_if = { field: "delete_cluster_id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq:20, prefix: "cfi-" }
+  ];
 }
 
 // StreamJobSchedule represents a job schedule info.
