@@ -6417,7 +6417,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6428,7 +6428,7 @@ public final class PBModelStreamJob {
         getFilesList();
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6438,7 +6438,7 @@ public final class PBModelStreamJob {
     int getFilesCount();
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6449,7 +6449,7 @@ public final class PBModelStreamJob {
     java.lang.String getFiles(int index);
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6508,6 +6508,79 @@ public final class PBModelStreamJob {
      */
     com.google.protobuf.ByteString
         getBuiltInConnectorsBytes(int index);
+
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @return A list containing the deleteFiles.
+     */
+    java.util.List<java.lang.String>
+        getDeleteFilesList();
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @return The count of deleteFiles.
+     */
+    int getDeleteFilesCount();
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The deleteFiles at the given index.
+     */
+    java.lang.String getDeleteFiles(int index);
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the deleteFiles at the given index.
+     */
+    com.google.protobuf.ByteString
+        getDeleteFilesBytes(int index);
+
+    /**
+     * <pre>
+     * The flink cluster if that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_cluster_id"
+     * </pre>
+     *
+     * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+     * @return The deleteClusterId.
+     */
+    java.lang.String getDeleteClusterId();
+    /**
+     * <pre>
+     * The flink cluster if that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_cluster_id"
+     * </pre>
+     *
+     * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for deleteClusterId.
+     */
+    com.google.protobuf.ByteString
+        getDeleteClusterIdBytes();
   }
   /**
    * <pre>
@@ -6530,6 +6603,8 @@ public final class PBModelStreamJob {
       clusterId_ = "";
       files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deleteFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deleteClusterId_ = "";
     }
 
     @java.lang.Override
@@ -6592,6 +6667,21 @@ public final class PBModelStreamJob {
               builtInConnectors_.add(s);
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                deleteFiles_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              deleteFiles_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deleteClusterId_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6612,6 +6702,9 @@ public final class PBModelStreamJob {
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           builtInConnectors_ = builtInConnectors_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          deleteFiles_ = deleteFiles_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6698,7 +6791,7 @@ public final class PBModelStreamJob {
     private com.google.protobuf.LazyStringList files_;
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6711,7 +6804,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6723,7 +6816,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6736,7 +6829,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * The list of dependent resources files. Not required.
+     * The list of dependent resources files. Not required. Max 100.
      * &#64;inject_tag: json:"files"
      * </pre>
      *
@@ -6808,6 +6901,115 @@ public final class PBModelStreamJob {
       return builtInConnectors_.getByteString(index);
     }
 
+    public static final int DELETE_FILES_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList deleteFiles_;
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @return A list containing the deleteFiles.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDeleteFilesList() {
+      return deleteFiles_;
+    }
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @return The count of deleteFiles.
+     */
+    public int getDeleteFilesCount() {
+      return deleteFiles_.size();
+    }
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The deleteFiles at the given index.
+     */
+    public java.lang.String getDeleteFiles(int index) {
+      return deleteFiles_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of resources files that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_files"
+     * </pre>
+     *
+     * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the deleteFiles at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDeleteFilesBytes(int index) {
+      return deleteFiles_.getByteString(index);
+    }
+
+    public static final int DELETE_CLUSTER_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object deleteClusterId_;
+    /**
+     * <pre>
+     * The flink cluster if that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_cluster_id"
+     * </pre>
+     *
+     * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+     * @return The deleteClusterId.
+     */
+    @java.lang.Override
+    public java.lang.String getDeleteClusterId() {
+      java.lang.Object ref = deleteClusterId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deleteClusterId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The flink cluster if that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_cluster_id"
+     * </pre>
+     *
+     * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for deleteClusterId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeleteClusterIdBytes() {
+      java.lang.Object ref = deleteClusterId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deleteClusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6833,6 +7035,12 @@ public final class PBModelStreamJob {
       }
       for (int i = 0; i < builtInConnectors_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, builtInConnectors_.getRaw(i));
+      }
+      for (int i = 0; i < deleteFiles_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deleteFiles_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteClusterId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deleteClusterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -6866,6 +7074,17 @@ public final class PBModelStreamJob {
         size += dataSize;
         size += 1 * getBuiltInConnectorsList().size();
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deleteFiles_.size(); i++) {
+          dataSize += computeStringSizeNoTag(deleteFiles_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDeleteFilesList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteClusterId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deleteClusterId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6889,6 +7108,10 @@ public final class PBModelStreamJob {
           .equals(other.getFilesList())) return false;
       if (!getBuiltInConnectorsList()
           .equals(other.getBuiltInConnectorsList())) return false;
+      if (!getDeleteFilesList()
+          .equals(other.getDeleteFilesList())) return false;
+      if (!getDeleteClusterId()
+          .equals(other.getDeleteClusterId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6912,6 +7135,12 @@ public final class PBModelStreamJob {
         hash = (37 * hash) + BUILT_IN_CONNECTORS_FIELD_NUMBER;
         hash = (53 * hash) + getBuiltInConnectorsList().hashCode();
       }
+      if (getDeleteFilesCount() > 0) {
+        hash = (37 * hash) + DELETE_FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteFilesList().hashCode();
+      }
+      hash = (37 * hash) + DELETE_CLUSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteClusterId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7058,6 +7287,10 @@ public final class PBModelStreamJob {
         bitField0_ = (bitField0_ & ~0x00000001);
         builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        deleteFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deleteClusterId_ = "";
+
         return this;
       }
 
@@ -7097,6 +7330,12 @@ public final class PBModelStreamJob {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.builtInConnectors_ = builtInConnectors_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          deleteFiles_ = deleteFiles_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.deleteFiles_ = deleteFiles_;
+        result.deleteClusterId_ = deleteClusterId_;
         onBuilt();
         return result;
       }
@@ -7170,6 +7409,20 @@ public final class PBModelStreamJob {
             ensureBuiltInConnectorsIsMutable();
             builtInConnectors_.addAll(other.builtInConnectors_);
           }
+          onChanged();
+        }
+        if (!other.deleteFiles_.isEmpty()) {
+          if (deleteFiles_.isEmpty()) {
+            deleteFiles_ = other.deleteFiles_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureDeleteFilesIsMutable();
+            deleteFiles_.addAll(other.deleteFiles_);
+          }
+          onChanged();
+        }
+        if (!other.getDeleteClusterId().isEmpty()) {
+          deleteClusterId_ = other.deleteClusterId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7358,7 +7611,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7371,7 +7624,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7383,7 +7636,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7396,7 +7649,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7410,7 +7663,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7431,7 +7684,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7451,7 +7704,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7469,7 +7722,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7484,7 +7737,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * The list of dependent resources files. Not required.
+       * The list of dependent resources files. Not required. Max 100.
        * &#64;inject_tag: json:"files"
        * </pre>
        *
@@ -7664,6 +7917,276 @@ public final class PBModelStreamJob {
   checkByteStringIsUtf8(value);
         ensureBuiltInConnectorsIsMutable();
         builtInConnectors_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList deleteFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDeleteFilesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          deleteFiles_ = new com.google.protobuf.LazyStringArrayList(deleteFiles_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @return A list containing the deleteFiles.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDeleteFilesList() {
+        return deleteFiles_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @return The count of deleteFiles.
+       */
+      public int getDeleteFilesCount() {
+        return deleteFiles_.size();
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The deleteFiles at the given index.
+       */
+      public java.lang.String getDeleteFiles(int index) {
+        return deleteFiles_.get(index);
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the deleteFiles at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getDeleteFilesBytes(int index) {
+        return deleteFiles_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The deleteFiles to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteFiles(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeleteFilesIsMutable();
+        deleteFiles_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param value The deleteFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDeleteFiles(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeleteFilesIsMutable();
+        deleteFiles_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param values The deleteFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDeleteFiles(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDeleteFilesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deleteFiles_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeleteFiles() {
+        deleteFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of resources files that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_files"
+       * </pre>
+       *
+       * <code>repeated string delete_files = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the deleteFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDeleteFilesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDeleteFilesIsMutable();
+        deleteFiles_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deleteClusterId_ = "";
+      /**
+       * <pre>
+       * The flink cluster if that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_cluster_id"
+       * </pre>
+       *
+       * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+       * @return The deleteClusterId.
+       */
+      public java.lang.String getDeleteClusterId() {
+        java.lang.Object ref = deleteClusterId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deleteClusterId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The flink cluster if that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_cluster_id"
+       * </pre>
+       *
+       * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for deleteClusterId.
+       */
+      public com.google.protobuf.ByteString
+          getDeleteClusterIdBytes() {
+        java.lang.Object ref = deleteClusterId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deleteClusterId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The flink cluster if that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_cluster_id"
+       * </pre>
+       *
+       * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The deleteClusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteClusterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deleteClusterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The flink cluster if that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_cluster_id"
+       * </pre>
+       *
+       * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeleteClusterId() {
+        
+        deleteClusterId_ = getDefaultInstance().getDeleteClusterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The flink cluster if that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_cluster_id"
+       * </pre>
+       *
+       * <code>string delete_cluster_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for deleteClusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteClusterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deleteClusterId_ = value;
         onChanged();
         return this;
       }
@@ -12363,49 +12886,53 @@ public final class PBModelStreamJob {
       "\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037" +
       "\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink.FlinkPy" +
       "thonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001:\006\312\262" +
-      "\004\002\n\000\"\240\001\n\rStreamJobArgs\022\030\n\ncluster_id\030\001 \001" +
-      "(\tB\004\342\337\037\000\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342" +
-      "\337\037\t\022\007\262\001\0048d@\000\022$\n\005files\030\003 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n" +
-      "\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\004 \003(\t:" +
-      "\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017schedul" +
-      "e_policy\030\001 \001(\0162\'.model.StreamJobSchedule" +
-      ".SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010execut" +
-      "ed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002" +
-      "\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262" +
-      "\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022conc" +
-      "urrency_policy\030\006 \001(\0162*.model.StreamJobSc" +
-      "hedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_p" +
-      "olicy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003day" +
-      "J\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337" +
-      "\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001" +
-      "\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retr" +
-      "y_policy\030\n \001(\0162$.model.StreamJobSchedule" +
-      ".RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_lim" +
-      "it\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037" +
-      "\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027" +
-      "\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016" +
-      "SchedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022" +
-      "\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Imm" +
-      "ediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concu" +
-      "rrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid" +
-      "\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryP" +
-      "olicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000" +
-      "\"\275\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004" +
-      "type\030\005 \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model.StreamJ" +
-      "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n\ncreate" +
-      "d_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Ac" +
-      "tive\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003\022\014\n\010Fi" +
-      "nished\020\004Bk\n\"com.dataomnis.gproto.types.p" +
-      "bmodelB\020PBModelStreamJobP\000Z1github.com/D" +
-      "ataWorkbench/gproto/xgo/types/pbmodelb\006p" +
-      "roto3"
+      "\004\002\n\000\"\307\002\n\rStreamJobArgs\022@\n\ncluster_id\030\001 \001" +
+      "(\tB,\342\337\037\025\n\023\n\ncluster_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004cfi-\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342" +
+      "\337\037\t\022\007\262\001\0048d@\000\022&\n\005files\030\003 \003(\tB\027\342\337\037\023\022\021\352\001\0168d" +
+      "Z\n\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\004 \003(" +
+      "\t\022+\n\014delete_files\030\005 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312" +
+      "\002\004res-\022N\n\021delete_cluster_id\030\006 \001(\tB3\342\337\037\034\n" +
+      "\032\n\021delete_cluster_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004cfi-:\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017" +
+      "schedule_policy\030\001 \001(\0162\'.model.StreamJobS" +
+      "chedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n" +
+      "\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy" +
+      "\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013" +
+      "\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022" +
+      "U\n\022concurrency_policy\030\006 \001(\0162*.model.Stre" +
+      "amJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332" +
+      "\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017sch" +
+      "edule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004ho" +
+      "urJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 " +
+      "\001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022" +
+      "\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022" +
+      "I\n\014retry_policy\030\n \001(\0162$.model.StreamJobS" +
+      "chedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013re" +
+      "try_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332" +
+      "\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(" +
+      "\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048" +
+      "\036@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyU" +
+      "nset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002" +
+      "\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032" +
+      "\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n" +
+      "\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n" +
+      "\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:" +
+      "\006\312\262\004\002\n\000\"\275\003\n\020StreamJobRelease\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342" +
+      "\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230" +
+      "\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.StreamJob.Type" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model." +
+      "StreamJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n" +
+      "\ncreated_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007cr" +
+      "eated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUnset\020" +
+      "\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020" +
+      "\003\022\014\n\010Finished\020\004Bk\n\"com.dataomnis.gproto." +
+      "types.pbmodelB\020PBModelStreamJobP\000Z1githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
+      "odelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12438,7 +12965,7 @@ public final class PBModelStreamJob {
     internal_static_model_StreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobArgs_descriptor,
-        new java.lang.String[] { "ClusterId", "Parallelism", "Files", "BuiltInConnectors", });
+        new java.lang.String[] { "ClusterId", "Parallelism", "Files", "BuiltInConnectors", "DeleteFiles", "DeleteClusterId", });
     internal_static_model_StreamJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_StreamJobSchedule_fieldAccessorTable = new

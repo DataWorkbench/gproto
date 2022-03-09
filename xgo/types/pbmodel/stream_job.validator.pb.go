@@ -385,6 +385,26 @@ func (this *StreamJobCode) Validate() error {
 	return nil
 }
 
+func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_cluster_id() bool {
+	if !(this.ClusterId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_cluster_id() {
+		return nil
+	}
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("StreamJobArgs", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("StreamJobArgs", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
 func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_parallelism() error {
 	if !(this.Parallelism >= 0) {
 		return protovalidator.FieldError1("StreamJobArgs", "the value of field 'parallelism' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Parallelism))
@@ -396,6 +416,9 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_parallelism() error {
 }
 
 func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_files() error {
+	if !(len(this.Files) <= 100) {
+		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'files' must be less than or equal to '100'", strconv.Itoa(len(this.Files)))
+	}
 	for _, item := range this.Files {
 		_ = item // To avoid unused panics.
 		if !(strings.HasPrefix(item, "res-")) {
@@ -405,15 +428,54 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_files() error {
 	return nil
 }
 
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_delete_files() error {
+	for _, item := range this.DeleteFiles {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'delete_files' must start with string 'res-'", item)
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_delete_cluster_id() bool {
+	if !(this.DeleteClusterId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_delete_cluster_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_delete_cluster_id() {
+		return nil
+	}
+	if !(len(this.DeleteClusterId) == 20) {
+		return protovalidator.FieldError1("StreamJobArgs", "the byte length of field 'delete_cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DeleteClusterId))
+	}
+	if !(strings.HasPrefix(this.DeleteClusterId, "cfi-")) {
+		return protovalidator.FieldError1("StreamJobArgs", "the value of field 'delete_cluster_id' must start with string 'cfi-'", this.DeleteClusterId)
+	}
+	return nil
+}
+
 // Set default value for message model.StreamJobArgs
 func (this *StreamJobArgs) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_parallelism(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_files(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_delete_files(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_delete_cluster_id(); err != nil {
 		return err
 	}
 	return nil

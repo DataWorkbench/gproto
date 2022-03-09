@@ -161,6 +161,26 @@ func (this *FlinkJar) _xxx_xxx_Validator_Validate_jar_entry() error {
 	return nil
 }
 
+func (this *FlinkJar) _xxx_xxx_Validator_CheckIf_delete_file_id() bool {
+	if !(this.DeleteFileId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *FlinkJar) _xxx_xxx_Validator_Validate_delete_file_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_delete_file_id() {
+		return nil
+	}
+	if !(len(this.DeleteFileId) == 20) {
+		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'delete_file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DeleteFileId))
+	}
+	if !(strings.HasPrefix(this.DeleteFileId, "res-")) {
+		return protovalidator.FieldError1("FlinkJar", "the value of field 'delete_file_id' must start with string 'res-'", this.DeleteFileId)
+	}
+	return nil
+}
+
 // Set default value for message flink.FlinkJar
 func (this *FlinkJar) Validate() error {
 	if this == nil {
@@ -173,6 +193,9 @@ func (this *FlinkJar) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_jar_entry(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_delete_file_id(); err != nil {
 		return err
 	}
 	return nil

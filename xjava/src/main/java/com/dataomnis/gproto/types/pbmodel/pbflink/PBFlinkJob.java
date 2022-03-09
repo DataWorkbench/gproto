@@ -3046,7 +3046,7 @@ public final class PBFlinkJob {
 
     /**
      * <pre>
-     * The if of resource file. Is Required.
+     * The id of resource file. Is Required.
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
@@ -3056,7 +3056,7 @@ public final class PBFlinkJob {
     java.lang.String getFileId();
     /**
      * <pre>
-     * The if of resource file. Is Required.
+     * The id of resource file. Is Required.
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
@@ -3109,6 +3109,30 @@ public final class PBFlinkJob {
      */
     com.google.protobuf.ByteString
         getJarEntryBytes();
+
+    /**
+     * <pre>
+     * The resource file id that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_file_id"
+     * </pre>
+     *
+     * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+     * @return The deleteFileId.
+     */
+    java.lang.String getDeleteFileId();
+    /**
+     * <pre>
+     * The resource file id that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_file_id"
+     * </pre>
+     *
+     * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for deleteFileId.
+     */
+    com.google.protobuf.ByteString
+        getDeleteFileIdBytes();
   }
   /**
    * <pre>
@@ -3130,6 +3154,7 @@ public final class PBFlinkJob {
       fileId_ = "";
       jarArgs_ = "";
       jarEntry_ = "";
+      deleteFileId_ = "";
     }
 
     @java.lang.Override
@@ -3180,6 +3205,12 @@ public final class PBFlinkJob {
               jarEntry_ = s;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deleteFileId_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3216,7 +3247,7 @@ public final class PBFlinkJob {
     private volatile java.lang.Object fileId_;
     /**
      * <pre>
-     * The if of resource file. Is Required.
+     * The id of resource file. Is Required.
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
@@ -3238,7 +3269,7 @@ public final class PBFlinkJob {
     }
     /**
      * <pre>
-     * The if of resource file. Is Required.
+     * The id of resource file. Is Required.
      * &#64;inject_tag: json:"file_id"
      * </pre>
      *
@@ -3356,6 +3387,56 @@ public final class PBFlinkJob {
       }
     }
 
+    public static final int DELETE_FILE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object deleteFileId_;
+    /**
+     * <pre>
+     * The resource file id that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_file_id"
+     * </pre>
+     *
+     * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+     * @return The deleteFileId.
+     */
+    @java.lang.Override
+    public java.lang.String getDeleteFileId() {
+      java.lang.Object ref = deleteFileId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deleteFileId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The resource file id that has been deleted.
+     * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+     * &#64;inject_tag: json:"delete_file_id"
+     * </pre>
+     *
+     * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for deleteFileId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeleteFileIdBytes() {
+      java.lang.Object ref = deleteFileId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deleteFileId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3379,6 +3460,9 @@ public final class PBFlinkJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jarEntry_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteFileId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deleteFileId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3396,6 +3480,9 @@ public final class PBFlinkJob {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jarEntry_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteFileId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deleteFileId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3418,6 +3505,8 @@ public final class PBFlinkJob {
           .equals(other.getJarArgs())) return false;
       if (!getJarEntry()
           .equals(other.getJarEntry())) return false;
+      if (!getDeleteFileId()
+          .equals(other.getDeleteFileId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3435,6 +3524,8 @@ public final class PBFlinkJob {
       hash = (53 * hash) + getJarArgs().hashCode();
       hash = (37 * hash) + JAR_ENTRY_FIELD_NUMBER;
       hash = (53 * hash) + getJarEntry().hashCode();
+      hash = (37 * hash) + DELETE_FILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteFileId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3578,6 +3669,8 @@ public final class PBFlinkJob {
 
         jarEntry_ = "";
 
+        deleteFileId_ = "";
+
         return this;
       }
 
@@ -3607,6 +3700,7 @@ public final class PBFlinkJob {
         result.fileId_ = fileId_;
         result.jarArgs_ = jarArgs_;
         result.jarEntry_ = jarEntry_;
+        result.deleteFileId_ = deleteFileId_;
         onBuilt();
         return result;
       }
@@ -3667,6 +3761,10 @@ public final class PBFlinkJob {
           jarEntry_ = other.jarEntry_;
           onChanged();
         }
+        if (!other.getDeleteFileId().isEmpty()) {
+          deleteFileId_ = other.deleteFileId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3699,7 +3797,7 @@ public final class PBFlinkJob {
       private java.lang.Object fileId_ = "";
       /**
        * <pre>
-       * The if of resource file. Is Required.
+       * The id of resource file. Is Required.
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
@@ -3720,7 +3818,7 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The if of resource file. Is Required.
+       * The id of resource file. Is Required.
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
@@ -3742,7 +3840,7 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The if of resource file. Is Required.
+       * The id of resource file. Is Required.
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
@@ -3762,7 +3860,7 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The if of resource file. Is Required.
+       * The id of resource file. Is Required.
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
@@ -3777,7 +3875,7 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * The if of resource file. Is Required.
+       * The id of resource file. Is Required.
        * &#64;inject_tag: json:"file_id"
        * </pre>
        *
@@ -3995,6 +4093,112 @@ public final class PBFlinkJob {
   checkByteStringIsUtf8(value);
         
         jarEntry_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deleteFileId_ = "";
+      /**
+       * <pre>
+       * The resource file id that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_file_id"
+       * </pre>
+       *
+       * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+       * @return The deleteFileId.
+       */
+      public java.lang.String getDeleteFileId() {
+        java.lang.Object ref = deleteFileId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deleteFileId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The resource file id that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_file_id"
+       * </pre>
+       *
+       * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for deleteFileId.
+       */
+      public com.google.protobuf.ByteString
+          getDeleteFileIdBytes() {
+        java.lang.Object ref = deleteFileId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deleteFileId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The resource file id that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_file_id"
+       * </pre>
+       *
+       * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The deleteFileId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteFileId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deleteFileId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The resource file id that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_file_id"
+       * </pre>
+       *
+       * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeleteFileId() {
+        
+        deleteFileId_ = getDefaultInstance().getDeleteFileId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The resource file id that has been deleted.
+       * Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+       * &#64;inject_tag: json:"delete_file_id"
+       * </pre>
+       *
+       * <code>string delete_file_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for deleteFileId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteFileIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deleteFileId_ = value;
         onChanged();
         return this;
       }
@@ -5350,15 +5554,17 @@ public final class PBFlinkJob {
       "\022\n\n\006Offset\020\010\022\t\n\005Fetch\020\t\022\n\n\006Filter\020\n\022\t\n\005U" +
       "nion\020\013\022\n\n\006Except\020\014\022\r\n\tIntersect\020\r\022\013\n\007Gro" +
       "upBy\020\016\022\n\n\006Having\020\017\022\010\n\004Join\020\020\022\010\n\004UDTF\020\021\022\t" +
-      "\n\005UDTTF\020\022\"y\n\010FlinkJar\022$\n\007file_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342\337\037\014" +
-      "\022\n\302\001\007\230\002\200\010\210\005\001\".\n\013FlinkPython\022\037\n\004code\030\001 \001(" +
-      "\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037\n\004code" +
-      "\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.dataomn" +
-      "is.gproto.types.pbmodel.pbflinkB\nPBFlink" +
-      "JobP\000Z9github.com/DataWorkbench/gproto/x" +
-      "go/types/pbmodel/pbflinkb\006proto3"
+      "\n\005UDTTF\020\022\"\303\001\n\010FlinkJar\022$\n\007file_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\tB\020" +
+      "\342\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342\337\037" +
+      "\014\022\n\302\001\007\230\002\200\010\210\005\001\022H\n\016delete_file_id\030\004 \001(\tB0\342" +
+      "\337\037\031\n\027\n\016delete_file_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004res-\".\n\013FlinkPython\022\037\n\004code\030\001 \001(\tB\021\342\337" +
+      "\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037\n\004code\030\001 \001(" +
+      "\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.dataomnis.gp" +
+      "roto.types.pbmodel.pbflinkB\nPBFlinkJobP\000" +
+      "Z9github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5383,7 +5589,7 @@ public final class PBFlinkJob {
     internal_static_flink_FlinkJar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flink_FlinkJar_descriptor,
-        new java.lang.String[] { "FileId", "JarArgs", "JarEntry", });
+        new java.lang.String[] { "FileId", "JarArgs", "JarEntry", "DeleteFileId", });
     internal_static_flink_FlinkPython_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flink_FlinkPython_fieldAccessorTable = new
