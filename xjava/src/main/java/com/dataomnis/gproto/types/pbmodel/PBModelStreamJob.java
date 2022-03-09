@@ -6464,6 +6464,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6476,6 +6477,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6487,6 +6489,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6499,6 +6502,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6848,6 +6852,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6862,6 +6867,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6875,6 +6881,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -6889,6 +6896,7 @@ public final class PBModelStreamJob {
      * <pre>
      * The list of built-in connectors package. Not required.
      * Notice: check build-in connectors in `StreamJobManage Service`
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"built_in_connectors"
      * </pre>
      *
@@ -7768,6 +7776,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7782,6 +7791,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7795,6 +7805,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7809,6 +7820,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7824,6 +7836,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7846,6 +7859,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7867,6 +7881,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7886,6 +7901,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -7902,6 +7918,7 @@ public final class PBModelStreamJob {
        * <pre>
        * The list of built-in connectors package. Not required.
        * Notice: check build-in connectors in `StreamJobManage Service`
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"built_in_connectors"
        * </pre>
        *
@@ -8394,8 +8411,8 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
+     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_policy"
      * </pre>
      *
@@ -8405,8 +8422,8 @@ public final class PBModelStreamJob {
     int getRetryPolicyValue();
     /**
      * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
+     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_policy"
      * </pre>
      *
@@ -8418,6 +8435,7 @@ public final class PBModelStreamJob {
     /**
      * <pre>
      * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_limit"
      * </pre>
      *
@@ -8429,6 +8447,7 @@ public final class PBModelStreamJob {
     /**
      * <pre>
      * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_interval"
      * </pre>
      *
@@ -9222,8 +9241,8 @@ public final class PBModelStreamJob {
     private int retryPolicy_;
     /**
      * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
+     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_policy"
      * </pre>
      *
@@ -9235,8 +9254,8 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
+     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_policy"
      * </pre>
      *
@@ -9254,6 +9273,7 @@ public final class PBModelStreamJob {
     /**
      * <pre>
      * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_limit"
      * </pre>
      *
@@ -9270,6 +9290,7 @@ public final class PBModelStreamJob {
     /**
      * <pre>
      * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+     * TODO: this field is unused. removed it.
      * &#64;inject_tag: json:"retry_interval"
      * </pre>
      *
@@ -10345,8 +10366,8 @@ public final class PBModelStreamJob {
       private int retryPolicy_ = 0;
       /**
        * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
+       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_policy"
        * </pre>
        *
@@ -10358,8 +10379,8 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
+       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_policy"
        * </pre>
        *
@@ -10375,8 +10396,8 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
+       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_policy"
        * </pre>
        *
@@ -10391,8 +10412,8 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
+       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_policy"
        * </pre>
        *
@@ -10411,8 +10432,8 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
+       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry". Is required.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_policy"
        * </pre>
        *
@@ -10430,6 +10451,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_limit"
        * </pre>
        *
@@ -10443,6 +10465,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_limit"
        * </pre>
        *
@@ -10459,6 +10482,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_limit"
        * </pre>
        *
@@ -10476,6 +10500,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_interval"
        * </pre>
        *
@@ -10489,6 +10514,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_interval"
        * </pre>
        *
@@ -10505,6 +10531,7 @@ public final class PBModelStreamJob {
       /**
        * <pre>
        * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+       * TODO: this field is unused. removed it.
        * &#64;inject_tag: json:"retry_interval"
        * </pre>
        *

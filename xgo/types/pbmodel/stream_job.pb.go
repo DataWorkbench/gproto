@@ -679,6 +679,7 @@ type StreamJobArgs struct {
 	Files []string `protobuf:"bytes,3,rep,name=files,proto3" json:"files"`
 	// The list of built-in connectors package. Not required.
 	// Notice: check build-in connectors in `StreamJobManage Service`
+	// TODO: this field is unused. removed it.
 	BuiltInConnectors []string `protobuf:"bytes,4,rep,name=built_in_connectors,json=builtInConnectors,proto3" json:"built_in_connectors"`
 	// The list of resources files that has been deleted.
 	// Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
@@ -797,12 +798,14 @@ type StreamJobSchedule struct {
 	//
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 100 min.
 	Timeout int32 `protobuf:"varint,9,opt,name=timeout,proto3" json:"timeout"`
-	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
-	// Is required.
+	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry". Is required.
+	// TODO: this field is unused. removed it.
 	RetryPolicy StreamJobSchedule_RetryPolicy `protobuf:"varint,10,opt,name=retry_policy,json=retryPolicy,proto3,enum=model.StreamJobSchedule_RetryPolicy" json:"retry_policy"`
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+	// TODO: this field is unused. removed it.
 	RetryLimit int32 `protobuf:"varint,11,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit"`
 	// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+	// TODO: this field is unused. removed it.
 	RetryInterval int32 `protobuf:"varint,12,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval"`
 }
 

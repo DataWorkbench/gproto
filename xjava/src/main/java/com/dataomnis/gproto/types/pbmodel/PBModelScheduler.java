@@ -361,10 +361,6 @@ public final class PBModelScheduler {
        * <code>Check = 4;</code>
        */
       Check(4),
-      /**
-       * <code>Retry = 3;</code>
-       */
-      Retry(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -384,10 +380,6 @@ public final class PBModelScheduler {
        * <code>Check = 4;</code>
        */
       public static final int Check_VALUE = 4;
-      /**
-       * <code>Retry = 3;</code>
-       */
-      public static final int Retry_VALUE = 3;
 
 
       public final int getNumber() {
@@ -418,7 +410,6 @@ public final class PBModelScheduler {
           case 1: return Create;
           case 2: return Submit;
           case 4: return Check;
-          case 3: return Retry;
           default: return null;
         }
       }
@@ -1525,17 +1516,17 @@ public final class PBModelScheduler {
       "\n!proto/types/model/scheduler.proto\022\005mod" +
       "el\0323github.com/yu31/protoc-plugin/proto/" +
       "validator.proto\032\"proto/types/model/strea" +
-      "m_job.proto\"\262\002\n\016StreamJobEvent\0227\n\010proper" +
+      "m_job.proto\"\247\002\n\016StreamJobEvent\0227\n\010proper" +
       "ty\030\001 \001(\0132\030.model.StreamJobPropertyB\013\342\337\037\007" +
       "\022\005\342\001\002\020\001\022\036\n\tflink_url\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022" +
       "\"\n\rflink_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\025\n\007r" +
       "etries\030\004 \001(\005B\004\342\337\037\000\022\025\n\007started\030\005 \001(\003B\004\342\337\037" +
       "\000\",\n\004Type\022\r\n\tTypeUnset\020\000\022\007\n\003Job\020\001\022\014\n\010Ins" +
-      "tance\020\002\"G\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Cr" +
-      "eate\020\001\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\022\t\n\005Retry\020\003" +
-      "Bk\n\"com.dataomnis.gproto.types.pbmodelB\020" +
-      "PBModelSchedulerP\000Z1github.com/DataWorkb" +
-      "ench/gproto/xgo/types/pbmodelb\006proto3"
+      "tance\020\002\"<\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Cr" +
+      "eate\020\001\022\n\n\006Submit\020\002\022\t\n\005Check\020\004Bk\n\"com.dat" +
+      "aomnis.gproto.types.pbmodelB\020PBModelSche" +
+      "dulerP\000Z1github.com/DataWorkbench/gproto" +
+      "/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
