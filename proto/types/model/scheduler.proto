@@ -28,7 +28,6 @@ message StreamJobEvent {
     Create = 1;
     Submit = 2;
     Check = 4;
-    Retry = 3;
   }
 
   // The property of stream job.

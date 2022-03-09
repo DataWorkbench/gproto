@@ -180,6 +180,7 @@ message StreamJobArgs {
 
   // The list of built-in connectors package. Not required.
   // Notice: check build-in connectors in `StreamJobManage Service`
+  // TODO: this field is unused. removed it.
   // @inject_tag: json:"built_in_connectors"
   repeated string built_in_connectors = 4;
 
@@ -280,14 +281,15 @@ message StreamJobSchedule {
   // @inject_tag: json:"timeout"
   int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
 
-  // Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
-  // Is required.
+  // Retry policy when task failed. 1 => "not retry" 2 => "auto retry". Is required.
+  // TODO: this field is unused. removed it.
   // @inject_tag: json:"retry_policy"
   RetryPolicy retry_policy = 10 [
     (validator.field).tags.enum = { gt: 0; in_enums: true  }
   ];
 
   // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+  // TODO: this field is unused. removed it.
   // @inject_tag: json:"retry_limit"
   int32 retry_limit = 11 [
     (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
@@ -295,6 +297,7 @@ message StreamJobSchedule {
   ];
 
   // Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+  // TODO: this field is unused. removed it.
   // @inject_tag: json:"retry_interval"
   int32 retry_interval = 12 [
     (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
