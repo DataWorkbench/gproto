@@ -137,3 +137,11 @@ func (this *MongoDbURL) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message datasource.RedisURL
+func (this *RedisURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

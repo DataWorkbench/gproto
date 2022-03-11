@@ -616,6 +616,10 @@ public final class PBModelDataSource {
        * <code>MongoDb = 15;</code>
        */
       MongoDb(15),
+      /**
+       * <code>Redis = 16;</code>
+       */
+      Redis(16),
       UNRECOGNIZED(-1),
       ;
 
@@ -683,6 +687,10 @@ public final class PBModelDataSource {
        * <code>MongoDb = 15;</code>
        */
       public static final int MongoDb_VALUE = 15;
+      /**
+       * <code>Redis = 16;</code>
+       */
+      public static final int Redis_VALUE = 16;
 
 
       public final int getNumber() {
@@ -725,6 +733,7 @@ public final class PBModelDataSource {
           case 13: return Hive;
           case 14: return ElasticSearch;
           case 15: return MongoDb;
+          case 16: return Redis;
           default: return null;
         }
       }
@@ -791,7 +800,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       int getTypeValue();
@@ -801,7 +810,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType();
@@ -1255,6 +1264,36 @@ public final class PBModelDataSource {
        * <code>.datasource.MongoDbURL mongo_db = 15 [(.validator.field) = { ... }</code>
        */
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.MongoDbURLOrBuilder getMongoDbOrBuilder();
+
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       * @return Whether the redis field is set.
+       */
+      boolean hasRedis();
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       * @return The redis.
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getRedis();
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder getRedisOrBuilder();
     }
     /**
      * <pre>
@@ -1501,7 +1540,20 @@ public final class PBModelDataSource {
 
                 break;
               }
-              case 128: {
+              case 130: {
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder subBuilder = null;
+                if (redis_ != null) {
+                  subBuilder = redis_.toBuilder();
+                }
+                redis_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(redis_);
+                  redis_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 136: {
                 int rawValue = input.readEnum();
 
                 type_ = rawValue;
@@ -1539,7 +1591,7 @@ public final class PBModelDataSource {
                 com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.class, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URL.Builder.class);
       }
 
-      public static final int TYPE_FIELD_NUMBER = 16;
+      public static final int TYPE_FIELD_NUMBER = 17;
       private int type_;
       /**
        * <pre>
@@ -1547,7 +1599,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -1559,7 +1611,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"-"
        * </pre>
        *
-       * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
@@ -2183,6 +2235,47 @@ public final class PBModelDataSource {
         return getMongoDb();
       }
 
+      public static final int REDIS_FIELD_NUMBER = 16;
+      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL redis_;
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       * @return Whether the redis field is set.
+       */
+      @java.lang.Override
+      public boolean hasRedis() {
+        return redis_ != null;
+      }
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       * @return The redis.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getRedis() {
+        return redis_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance() : redis_;
+      }
+      /**
+       * <pre>
+       *  REDIS Source Connection Info.
+       * &#64;inject_tag: json:"redis"
+       * </pre>
+       *
+       * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder getRedisOrBuilder() {
+        return getRedis();
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -2242,8 +2335,11 @@ public final class PBModelDataSource {
         if (mongoDb_ != null) {
           output.writeMessage(15, getMongoDb());
         }
+        if (redis_ != null) {
+          output.writeMessage(16, getRedis());
+        }
         if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-          output.writeEnum(16, type_);
+          output.writeEnum(17, type_);
         }
         unknownFields.writeTo(output);
       }
@@ -2314,9 +2410,13 @@ public final class PBModelDataSource {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(15, getMongoDb());
         }
+        if (redis_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(16, getRedis());
+        }
         if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(16, type_);
+            .computeEnumSize(17, type_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2409,6 +2509,11 @@ public final class PBModelDataSource {
           if (!getMongoDb()
               .equals(other.getMongoDb())) return false;
         }
+        if (hasRedis() != other.hasRedis()) return false;
+        if (hasRedis()) {
+          if (!getRedis()
+              .equals(other.getRedis())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -2481,6 +2586,10 @@ public final class PBModelDataSource {
         if (hasMongoDb()) {
           hash = (37 * hash) + MONGO_DB_FIELD_NUMBER;
           hash = (53 * hash) + getMongoDb().hashCode();
+        }
+        if (hasRedis()) {
+          hash = (37 * hash) + REDIS_FIELD_NUMBER;
+          hash = (53 * hash) + getRedis().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -2711,6 +2820,12 @@ public final class PBModelDataSource {
             mongoDb_ = null;
             mongoDbBuilder_ = null;
           }
+          if (redisBuilder_ == null) {
+            redis_ = null;
+          } else {
+            redis_ = null;
+            redisBuilder_ = null;
+          }
           return this;
         }
 
@@ -2813,6 +2928,11 @@ public final class PBModelDataSource {
           } else {
             result.mongoDb_ = mongoDbBuilder_.build();
           }
+          if (redisBuilder_ == null) {
+            result.redis_ = redis_;
+          } else {
+            result.redis_ = redisBuilder_.build();
+          }
           onBuilt();
           return result;
         }
@@ -2909,6 +3029,9 @@ public final class PBModelDataSource {
           if (other.hasMongoDb()) {
             mergeMongoDb(other.getMongoDb());
           }
+          if (other.hasRedis()) {
+            mergeRedis(other.getRedis());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -2945,7 +3068,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
          * @return The enum numeric value on the wire for type.
          */
         @java.lang.Override public int getTypeValue() {
@@ -2957,7 +3080,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
          * @param value The enum numeric value on the wire for type to set.
          * @return This builder for chaining.
          */
@@ -2973,7 +3096,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
          * @return The type.
          */
         @java.lang.Override
@@ -2988,7 +3111,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
          * @param value The type to set.
          * @return This builder for chaining.
          */
@@ -3007,7 +3130,7 @@ public final class PBModelDataSource {
          * &#64;inject_tag: json:"-"
          * </pre>
          *
-         * <code>.model.DataSource.Type type = 16 [(.validator.field) = { ... }</code>
+         * <code>.model.DataSource.Type type = 17 [(.validator.field) = { ... }</code>
          * @return This builder for chaining.
          */
         public Builder clearType() {
@@ -5475,6 +5598,170 @@ public final class PBModelDataSource {
             mongoDb_ = null;
           }
           return mongoDbBuilder_;
+        }
+
+        private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL redis_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder> redisBuilder_;
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         * @return Whether the redis field is set.
+         */
+        public boolean hasRedis() {
+          return redisBuilder_ != null || redis_ != null;
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         * @return The redis.
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getRedis() {
+          if (redisBuilder_ == null) {
+            return redis_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance() : redis_;
+          } else {
+            return redisBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public Builder setRedis(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL value) {
+          if (redisBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            redis_ = value;
+            onChanged();
+          } else {
+            redisBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public Builder setRedis(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder builderForValue) {
+          if (redisBuilder_ == null) {
+            redis_ = builderForValue.build();
+            onChanged();
+          } else {
+            redisBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeRedis(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL value) {
+          if (redisBuilder_ == null) {
+            if (redis_ != null) {
+              redis_ =
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.newBuilder(redis_).mergeFrom(value).buildPartial();
+            } else {
+              redis_ = value;
+            }
+            onChanged();
+          } else {
+            redisBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearRedis() {
+          if (redisBuilder_ == null) {
+            redis_ = null;
+            onChanged();
+          } else {
+            redis_ = null;
+            redisBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder getRedisBuilder() {
+          
+          onChanged();
+          return getRedisFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder getRedisOrBuilder() {
+          if (redisBuilder_ != null) {
+            return redisBuilder_.getMessageOrBuilder();
+          } else {
+            return redis_ == null ?
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance() : redis_;
+          }
+        }
+        /**
+         * <pre>
+         *  REDIS Source Connection Info.
+         * &#64;inject_tag: json:"redis"
+         * </pre>
+         *
+         * <code>.datasource.RedisURL redis = 16 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder> 
+            getRedisFieldBuilder() {
+          if (redisBuilder_ == null) {
+            redisBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder>(
+                    getRedis(),
+                    getParentForChildren(),
+                    isClean());
+            redis_ = null;
+          }
+          return redisBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -10448,7 +10735,7 @@ public final class PBModelDataSource {
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\032\037proto/types/m" +
       "odel/network.proto\0321proto/types/model/da" +
-      "tasource/datasource_url.proto\"\321\016\n\nDataSo" +
+      "tasource/datasource_url.proto\"\241\017\n\nDataSo" +
       "urce\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004" +
       "name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033\n\004desc\030\004 \001(" +
@@ -10460,7 +10747,7 @@ public final class PBModelDataSource {
       "\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262" +
       "\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\017la" +
       "st_connection\030\013 \001(\0132\033.model.DataSourceCo" +
-      "nnection\032\364\010\n\003URL\0223\n\004type\030\020 \001(\0162\026.model.D" +
+      "nnection\032\271\t\n\003URL\0223\n\004type\030\021 \001(\0162\026.model.D" +
       "ataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\005mysql\030\001" +
       " \001(\0132\024.datasource.MySQLURLB\036\342\337\037\017\n\r\n\004type" +
       "\022\005\332\001\002\030\001\342\337\037\007\022\005\342\001\002\020\001\022M\n\npostgresql\030\002 \001(\0132\031" +
@@ -10488,14 +10775,16 @@ public final class PBModelDataSource {
       "h\030\016 \001(\0132\034.datasource.ElasticSearchURLB\036\342" +
       "\337\037\017\n\r\n\004type\022\005\332\001\002\030\016\342\337\037\007\022\005\342\001\002\020\001\022H\n\010mongo_d" +
       "b\030\017 \001(\0132\026.datasource.MongoDbURLB\036\342\337\037\017\n\r\n" +
-      "\004type\022\005\332\001\002\030\017\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006Statu" +
-      "s\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabl" +
-      "ed\020\002\022\014\n\010Disabled\020\003\"\314\001\n\004Type\022\r\n\tTypeUnset" +
-      "\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003" +
-      "\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003F" +
-      "tp\020\007\022\010\n\004HDFS\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020" +
-      "\n\022\007\n\003DB2\020\013\022\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rEla" +
-      "sticSearch\020\016\022\013\n\007MongoDb\020\017\"\341\003\n\024DataSource" +
+      "\004type\022\005\332\001\002\030\017\342\337\037\007\022\005\342\001\002\020\001\022C\n\005redis\030\020 \001(\0132\024" +
+      ".datasource.RedisURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030" +
+      "\017\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006Status\022\017\n\013Status" +
+      "Unset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\022\014\n\010Dis" +
+      "abled\020\003\"\327\001\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005MySQL" +
+      "\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003\022\006\n\002S3\020\004\022\016\n" +
+      "\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020\007\022\010\n\004HDF" +
+      "S\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020\n\022\007\n\003DB2\020\013\022" +
+      "\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rElasticSearch\020" +
+      "\016\022\013\n\007MongoDb\020\017\022\t\n\005Redis\020\020\"\341\003\n\024DataSource" +
       "Connection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004som-\022\'\n\nnetwork_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
@@ -10532,7 +10821,7 @@ public final class PBModelDataSource {
     internal_static_model_DataSource_URL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_DataSource_URL_descriptor,
-        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Kafka", "S3", "Clickhouse", "Hbase", "Ftp", "Hdfs", "Sqlserver", "Oracle", "Db2", "SapHana", "Hive", "ElasticSearch", "MongoDb", });
+        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Kafka", "S3", "Clickhouse", "Hbase", "Ftp", "Hdfs", "Sqlserver", "Oracle", "Db2", "SapHana", "Hive", "ElasticSearch", "MongoDb", "Redis", });
     internal_static_model_DataSourceConnection_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_DataSourceConnection_fieldAccessorTable = new

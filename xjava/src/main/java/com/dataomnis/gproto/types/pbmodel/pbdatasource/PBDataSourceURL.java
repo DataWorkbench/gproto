@@ -18330,6 +18330,1207 @@ public final class PBDataSourceURL {
 
   }
 
+  public interface RedisURLOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.RedisURL)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <pre>
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
+     */
+    int getPort();
+
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <pre>
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
+     * </pre>
+     *
+     * <code>int32 database = 5 [(.validator.field) = { ... }</code>
+     * @return The database.
+     */
+    int getDatabase();
+  }
+  /**
+   * <pre>
+   * MongoDbURL used as request parameters for RPC and HTTP(based on Body)
+   * </pre>
+   *
+   * Protobuf type {@code datasource.RedisURL}
+   */
+  public static final class RedisURL extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.RedisURL)
+      RedisURLOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RedisURL.newBuilder() to construct.
+    private RedisURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RedisURL() {
+      host_ = "";
+      user_ = "";
+      password_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RedisURL();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RedisURL(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
+            case 16: {
+
+              port_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              user_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            case 40: {
+
+              database_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_RedisURL_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_RedisURL_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder.class);
+    }
+
+    public static final int HOST_FIELD_NUMBER = 1;
+    private volatile java.lang.Object host_;
+    /**
+     * <pre>
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    public static final int USER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object user_;
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object password_;
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATABASE_FIELD_NUMBER = 5;
+    private int database_;
+    /**
+     * <pre>
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
+     * </pre>
+     *
+     * <code>int32 database = 5 [(.validator.field) = { ... }</code>
+     * @return The database.
+     */
+    @java.lang.Override
+    public int getDatabase() {
+      return database_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
+      }
+      if (database_ != 0) {
+        output.writeInt32(5, database_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
+      }
+      if (database_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, database_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL) obj;
+
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (getPort()
+          != other.getPort()) return false;
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (getDatabase()
+          != other.getDatabase()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MongoDbURL used as request parameters for RPC and HTTP(based on Body)
+     * </pre>
+     *
+     * Protobuf type {@code datasource.RedisURL}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.RedisURL)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_RedisURL_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_RedisURL_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        host_ = "";
+
+        port_ = 0;
+
+        user_ = "";
+
+        password_ = "";
+
+        database_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_RedisURL_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL(this);
+        result.host_ = host_;
+        result.port_ = port_;
+        result.user_ = user_;
+        result.password_ = password_;
+        result.database_ = database_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        if (!other.getUser().isEmpty()) {
+          user_ = other.user_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        if (other.getDatabase() != 0) {
+          setDatabase(other.getDatabase());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       * <pre>
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        host_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        
+        host_ = getDefaultInstance().getHost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        host_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int port_ ;
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        user_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int database_ ;
+      /**
+       * <pre>
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
+       * </pre>
+       *
+       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
+       * @return The database.
+       */
+      @java.lang.Override
+      public int getDatabase() {
+        return database_;
+      }
+      /**
+       * <pre>
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
+       * </pre>
+       *
+       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
+       * @param value The database to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDatabase(int value) {
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
+       * </pre>
+       *
+       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDatabase() {
+        
+        database_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.RedisURL)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.RedisURL)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RedisURL>
+        PARSER = new com.google.protobuf.AbstractParser<RedisURL>() {
+      @java.lang.Override
+      public RedisURL parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RedisURL(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RedisURL> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RedisURL> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_Host_descriptor;
   private static final 
@@ -18410,6 +19611,11 @@ public final class PBDataSourceURL {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_MongoDbURL_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_datasource_RedisURL_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_datasource_RedisURL_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18490,10 +19696,15 @@ public final class PBDataSourceURL {
       "\001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013" +
       "\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
       "\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002" +
-      "@:\006\312\262\004\002\n\000B\204\001\n/com.dataomnis.gproto.types" +
-      ".pbmodel.pbdatasourceB\017PBDataSourceURLP\000" +
-      "Z>github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbmodel/pbdatasourceb\006proto3"
+      "@:\006\312\262\004\002\n\000\"\265\001\n\010RedisURL\022\035\n\004host\030\001 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200" +
+      "\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010p" +
+      "assword\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010databa" +
+      "se\030\005 \001(\005B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000B\204\001\n/co" +
+      "m.dataomnis.gproto.types.pbmodel.pbdatas" +
+      "ourceB\017PBDataSourceURLP\000Z>github.com/Dat" +
+      "aWorkbench/gproto/xgo/types/pbmodel/pbda" +
+      "tasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18596,6 +19807,12 @@ public final class PBDataSourceURL {
     internal_static_datasource_MongoDbURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_MongoDbURL_descriptor,
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
+    internal_static_datasource_RedisURL_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_datasource_RedisURL_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_RedisURL_descriptor,
         new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

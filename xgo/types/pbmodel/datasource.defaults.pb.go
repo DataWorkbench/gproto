@@ -109,6 +109,11 @@ func (this *DataSource_URL) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.Redis != nil {
+		if dt, ok := interface{}(this.Redis).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 

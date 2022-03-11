@@ -115,14 +115,14 @@ func (this *CreateDataSource) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateDataSource_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true}
+var _xxx_xxx_Validator_CreateDataSource_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
 
 func (this *CreateDataSource) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("CreateDataSource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_CreateDataSource_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("CreateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -212,14 +212,14 @@ func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateDataSource_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true}
+var _xxx_xxx_Validator_UpdateDataSource_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
 
 func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_UpdateDataSource_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -517,7 +517,7 @@ func (this *PingDataSourceConnection) _xxx_xxx_Validator_CheckIf_type() bool {
 	return true
 }
 
-var _xxx_xxx_Validator_PingDataSourceConnection_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true}
+var _xxx_xxx_Validator_PingDataSourceConnection_InEnums_Type = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
 
 func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
@@ -527,7 +527,7 @@ func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_type() error {
 		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_PingDataSourceConnection_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }

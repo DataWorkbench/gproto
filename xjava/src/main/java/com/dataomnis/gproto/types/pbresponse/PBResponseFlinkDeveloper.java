@@ -171,10 +171,6 @@ public final class PBResponseFlinkDeveloper {
        * <code>Failed = 2;</code>
        */
       Failed(2),
-      /**
-       * <code>Retry = 3;</code>
-       */
-      Retry(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -194,10 +190,6 @@ public final class PBResponseFlinkDeveloper {
        * <code>Failed = 2;</code>
        */
       public static final int Failed_VALUE = 2;
-      /**
-       * <code>Retry = 3;</code>
-       */
-      public static final int Retry_VALUE = 3;
 
 
       public final int getNumber() {
@@ -227,7 +219,6 @@ public final class PBResponseFlinkDeveloper {
           case 0: return CodeUnset;
           case 1: return Success;
           case 2: return Failed;
-          case 3: return Retry;
           default: return null;
         }
       }
@@ -2664,20 +2655,20 @@ public final class PBResponseFlinkDeveloper {
       "\n*proto/types/response/flink_developer.p" +
       "roto\022\010response\0323github.com/yu31/protoc-p" +
       "lugin/proto/validator.proto\032\'proto/types" +
-      "/model/flink/flink_job.proto\"\217\001\n\016SubmitF" +
+      "/model/flink/flink_job.proto\"\204\001\n\016SubmitF" +
       "linkJob\022+\n\004code\030\001 \001(\0162\035.response.SubmitF" +
-      "linkJob.Code\022\025\n\007message\030\002 \001(\tB\004\342\337\037\000\"9\n\004C" +
+      "linkJob.Code\022\025\n\007message\030\002 \001(\tB\004\342\337\037\000\".\n\004C" +
       "ode\022\r\n\tCodeUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Faile" +
-      "d\020\002\022\t\n\005Retry\020\003\"k\n\021GetFlinkJobStatus\022\021\n\ti" +
-      "s_exists\030\001 \001(\010\022,\n\006status\030\002 \001(\0162\026.flink.F" +
-      "linkJob.StatusB\004\342\337\037\000\022\025\n\007message\030\003 \001(\tB\004\342" +
-      "\337\037\000\"\215\001\n\020ValidateFlinkJob\0221\n\006result\030\001 \001(\016" +
-      "2!.response.ValidateFlinkJob.Result\022\017\n\007m" +
-      "essage\030\002 \001(\t\"5\n\006Result\022\017\n\013ResultUnset\020\000\022" +
-      "\013\n\007Correct\020\001\022\r\n\tIncorrect\020\002By\n%com.datao" +
-      "mnis.gproto.types.pbresponseB\030PBResponse" +
-      "FlinkDeveloperP\000Z4github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbresponseb\006proto3"
+      "d\020\002\"k\n\021GetFlinkJobStatus\022\021\n\tis_exists\030\001 " +
+      "\001(\010\022,\n\006status\030\002 \001(\0162\026.flink.FlinkJob.Sta" +
+      "tusB\004\342\337\037\000\022\025\n\007message\030\003 \001(\tB\004\342\337\037\000\"\215\001\n\020Val" +
+      "idateFlinkJob\0221\n\006result\030\001 \001(\0162!.response" +
+      ".ValidateFlinkJob.Result\022\017\n\007message\030\002 \001(" +
+      "\t\"5\n\006Result\022\017\n\013ResultUnset\020\000\022\013\n\007Correct\020" +
+      "\001\022\r\n\tIncorrect\020\002By\n%com.dataomnis.gproto" +
+      ".types.pbresponseB\030PBResponseFlinkDevelo" +
+      "perP\000Z4github.com/DataWorkbench/gproto/x" +
+      "go/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
