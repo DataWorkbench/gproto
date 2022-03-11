@@ -20,7 +20,6 @@ message SubmitFlinkJob {
     CodeUnset = 0;
     Success = 1; // next to get flink job status.
     Failed = 2;
-    Retry = 3;
   }
 
   // @inject_tag: json:"code"
