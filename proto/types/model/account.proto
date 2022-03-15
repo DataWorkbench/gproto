@@ -62,6 +62,7 @@ message AdminModule {
     UserManage = 1;
     SessionManage = 2;
     MessageManage = 3;
+    AuthManage = 4;
   }
 
   // The module id.

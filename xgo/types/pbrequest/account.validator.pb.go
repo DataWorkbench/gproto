@@ -201,8 +201,8 @@ func (this *CreateSession) _xxx_xxx_Validator_Validate_user_name() error {
 }
 
 func (this *CreateSession) _xxx_xxx_Validator_Validate_password() error {
-	if !(utf8.RuneCountInString(this.Password) >= 2) {
-		return protovalidator.FieldError1("CreateSession", "the character length of field 'password' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.Password))
+	if !(utf8.RuneCountInString(this.Password) >= 0) {
+		return protovalidator.FieldError1("CreateSession", "the character length of field 'password' must be greater than or equal to '0'", protovalidator.StringCharsetLenToString(this.Password))
 	}
 	if !(utf8.RuneCountInString(this.Password) <= 128) {
 		return protovalidator.FieldError1("CreateSession", "the character length of field 'password' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.Password))

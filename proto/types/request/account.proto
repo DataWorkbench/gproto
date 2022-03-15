@@ -75,6 +75,7 @@ message CheckSession{
 
 message CreateSession{
   string user_name = 1 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
-  string password = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+  string password = 2 [ (validator.field).tags.string = { char_len_gte: 0, char_len_lte: 128  } ];
+  bool ignore_password = 3;
 }
 
