@@ -12,35 +12,45 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
+import "proto/types/model/stream_job.proto";
+import "proto/types/model/sync_job.proto";
+import "proto/types/model/cluster.proto";
 
-// ModuleSource declares module info.
-// used to query from db.
-message BindingModule {
-  // ModuleId represents which other modules(AttachId) are bound to this module.
-  // @inject_tag: json:"module_id" gorm:"column:module_id;<-:false"
-  string module_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // ModuleVersion is the version of module.
-  // This filed maybe empty.
-  // @inject_tag: json:"module_version" gorm:"column:module_version;<-:false"
-  string module_version = 2 [
-    (validator.field).check_if = { field: "module_version", tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { byte_len_eq: 16 }
-  ];
+// BindingModuleSpec declares the resource info of binding to module.
+message BindingModuleSpec {
+  // The id of resource.
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // @inject_tag: json:"stream_job"
+  repeated model.StreamJob stream_job = 2;
+
+  // @inject_tag: json:"stream_job_version"
+  repeated model.StreamJob stream_job_version = 3;
+
+  // @inject_tag: json:"sync_job"
+  repeated model.SyncJob sync_job = 4;
+
+  // @inject_tag: json:"sync_job_version"
+  repeated model.SyncJob sync_job_version = 5;
+
+  // @inject_tag: json:"flink_cluster"
+  repeated model.FlinkCluster flink_cluster = 6;
 }
 
-// BindingResource declares the resource info that be bound.
+// BindingModule declares the module info.
 // used to query from db.
-message BindingResource {
-  // AttachId represents this module are bound by which other modules(ModuleId).
-  // @inject_tag: json:"resource_id" gorm:"column:resource_id;<-:false"
-  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+message BindingModule {
+  // Id represents which other modules(AttachId) are bound to this module.
+  // @inject_tag: json:"id" gorm:"column:id;<-:false"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // AttachVersion is the version of attach module.
-  // Notice: Reserved field, unused on present.
-  // @inject_tag: json:"resource_version" gorm:"column:resource_version;<-:false"
-  string resource_version = 2 [
-    (validator.field).check_if = { field: "resource_version", tags: { string: { ne: "" } } },
+  // Version is the version of module.
+  // This filed maybe empty.
+  // @inject_tag: json:"version" gorm:"column:version;<-:false"
+  string version = 2 [
+    (validator.field).check_if = { field: "version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 }

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestBindingManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+message DescribeResourceBinding {
+  // SpaceId, required.
+  // @inject_tag: json:"space_id" swaggerignore:"true"
+  string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The id lists of resource query.
+  // @inject_tag: json:"ids" form:"ids"
+  repeated string ids  = 2 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
+}
