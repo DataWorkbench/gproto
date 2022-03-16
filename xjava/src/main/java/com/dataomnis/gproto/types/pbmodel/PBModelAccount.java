@@ -3778,6 +3778,10 @@ public final class PBModelAccount {
        * <code>MessageManage = 3;</code>
        */
       MessageManage(3),
+      /**
+       * <code>AuthManage = 4;</code>
+       */
+      AuthManage(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -3797,6 +3801,10 @@ public final class PBModelAccount {
        * <code>MessageManage = 3;</code>
        */
       public static final int MessageManage_VALUE = 3;
+      /**
+       * <code>AuthManage = 4;</code>
+       */
+      public static final int AuthManage_VALUE = 4;
 
 
       public final int getNumber() {
@@ -3827,6 +3835,7 @@ public final class PBModelAccount {
           case 1: return UserManage;
           case 2: return SessionManage;
           case 3: return MessageManage;
+          case 4: return AuthManage;
           default: return null;
         }
       }
@@ -8014,27 +8023,27 @@ public final class PBModelAccount {
       "\004ros-\022-\n\004type\030\002 \001(\0162\020.model.Role.TypeB\r\342" +
       "\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
       "F\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Admin\020\001\022\r\n\tDev" +
-      "eloper\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\"\200\002\n\013Admi" +
+      "eloper\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\"\220\002\n\013Admi" +
       "nModule\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-" +
       "\022<\n\010classify\030\002 \001(\0162\033.model.AdminModule.C" +
       "lassifyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337" +
       "\037\007\022\005\302\001\002\"\000\022\"\n\tapi_lists\030\004 \003(\0132\017.model.Adm" +
-      "inAPI\"S\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\016\n\n" +
+      "inAPI\"c\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\016\n\n" +
       "UserManage\020\001\022\021\n\rSessionManage\020\002\022\021\n\rMessa" +
-      "geManage\020\003\"\232\003\n\010AdminAPI\022\035\n\010api_name\030\001 \001(" +
-      "\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014display_name\030\002 \001(\tB\013\342\337" +
-      "\037\007\022\005\302\001\002\"\000\022:\n\tperm_type\030\003 \001(\0162\030.model.Adm" +
-      "inAPI.PermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\013permiss" +
-      "ions\030\004 \003(\0132\032.model.AdminAPI.PermissionB\013" +
-      "\342\337\037\007\022\005\352\001\0020\000\0226\n\005roles\030\006 \003(\0132\032.model.Admin" +
-      "API.RolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\0328\n\nPermissio" +
-      "n\022\031\n\004role\030\001 \001(\0132\013.model.Role\022\017\n\007allowed\030" +
-      "\002 \001(\010\032,\n\nRolesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\010:\0028\001\"2\n\010PermType\022\021\n\rPermTypeUnset" +
-      "\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002Bi\n\"com.dataomnis" +
-      ".gproto.types.pbmodelB\016PBModelAccountP\000Z" +
-      "1github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbmodelb\006proto3"
+      "geManage\020\003\022\016\n\nAuthManage\020\004\"\232\003\n\010AdminAPI\022" +
+      "\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014displa" +
+      "y_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022:\n\tperm_type\030\003" +
+      " \001(\0162\030.model.AdminAPI.PermTypeB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022<\n\013permissions\030\004 \003(\0132\032.model.Admin" +
+      "API.PermissionB\013\342\337\037\007\022\005\352\001\0020\000\0226\n\005roles\030\006 \003" +
+      "(\0132\032.model.AdminAPI.RolesEntryB\013\342\337\037\007\022\005\362\001" +
+      "\0020\000\0328\n\nPermission\022\031\n\004role\030\001 \001(\0132\013.model." +
+      "Role\022\017\n\007allowed\030\002 \001(\010\032,\n\nRolesEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010PermType\022" +
+      "\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002B" +
+      "i\n\"com.dataomnis.gproto.types.pbmodelB\016P" +
+      "BModelAccountP\000Z1github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

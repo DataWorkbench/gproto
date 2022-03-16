@@ -8991,6 +8991,12 @@ public final class PBRequestAccount {
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
+
+    /**
+     * <code>bool ignore_password = 3;</code>
+     * @return The ignorePassword.
+     */
+    boolean getIgnorePassword();
   }
   /**
    * Protobuf type {@code request.CreateSession}
@@ -9049,6 +9055,11 @@ public final class PBRequestAccount {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
+              break;
+            }
+            case 24: {
+
+              ignorePassword_ = input.readBool();
               break;
             }
             default: {
@@ -9159,6 +9170,17 @@ public final class PBRequestAccount {
       }
     }
 
+    public static final int IGNORE_PASSWORD_FIELD_NUMBER = 3;
+    private boolean ignorePassword_;
+    /**
+     * <code>bool ignore_password = 3;</code>
+     * @return The ignorePassword.
+     */
+    @java.lang.Override
+    public boolean getIgnorePassword() {
+      return ignorePassword_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9179,6 +9201,9 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
       }
+      if (ignorePassword_ != false) {
+        output.writeBool(3, ignorePassword_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9193,6 +9218,10 @@ public final class PBRequestAccount {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+      }
+      if (ignorePassword_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, ignorePassword_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9213,6 +9242,8 @@ public final class PBRequestAccount {
           .equals(other.getUserName())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
+      if (getIgnorePassword()
+          != other.getIgnorePassword()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9228,6 +9259,9 @@ public final class PBRequestAccount {
       hash = (53 * hash) + getUserName().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + IGNORE_PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIgnorePassword());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9365,6 +9399,8 @@ public final class PBRequestAccount {
 
         password_ = "";
 
+        ignorePassword_ = false;
+
         return this;
       }
 
@@ -9393,6 +9429,7 @@ public final class PBRequestAccount {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession(this);
         result.userName_ = userName_;
         result.password_ = password_;
+        result.ignorePassword_ = ignorePassword_;
         onBuilt();
         return result;
       }
@@ -9448,6 +9485,9 @@ public final class PBRequestAccount {
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
           onChanged();
+        }
+        if (other.getIgnorePassword() != false) {
+          setIgnorePassword(other.getIgnorePassword());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9629,6 +9669,37 @@ public final class PBRequestAccount {
         onChanged();
         return this;
       }
+
+      private boolean ignorePassword_ ;
+      /**
+       * <code>bool ignore_password = 3;</code>
+       * @return The ignorePassword.
+       */
+      @java.lang.Override
+      public boolean getIgnorePassword() {
+        return ignorePassword_;
+      }
+      /**
+       * <code>bool ignore_password = 3;</code>
+       * @param value The ignorePassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnorePassword(boolean value) {
+        
+        ignorePassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ignore_password = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnorePassword() {
+        
+        ignorePassword_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9759,12 +9830,13 @@ public final class PBRequestAccount {
       "\n\005zones\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\022\020\n\010passwo" +
       "rd\030\r \001(\t\"2\n\nDeleteUser\022$\n\007user_id\030\001 \001(\tB" +
       "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\"\037\n\014CheckSession\022\017\n\007" +
-      "session\030\001 \001(\t\"X\n\rCreateSession\022#\n\tuser_n" +
+      "session\030\001 \001(\t\"q\n\rCreateSession\022#\n\tuser_n" +
       "ame\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030" +
-      "\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001Bo\n$com.dataomnis" +
-      ".gproto.types.pbrequestB\020PBRequestAccoun" +
-      "tP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n\017ignore_passwo" +
+      "rd\030\003 \001(\010Bo\n$com.dataomnis.gproto.types.p" +
+      "brequestB\020PBRequestAccountP\000Z3github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbreques" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9818,7 +9890,7 @@ public final class PBRequestAccount {
     internal_static_request_CreateSession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateSession_descriptor,
-        new java.lang.String[] { "UserName", "Password", });
+        new java.lang.String[] { "UserName", "Password", "IgnorePassword", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
