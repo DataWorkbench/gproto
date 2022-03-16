@@ -14,59 +14,3103 @@ public final class PBModelBinding {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface BindingModuleSpecOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.BindingModuleSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The id of resource.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The id of resource.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> 
+        getStreamJobList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJob(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    int getStreamJobCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+        getStreamJobOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> 
+        getStreamJobVersionList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobVersion(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    int getStreamJobVersionCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+        getStreamJobVersionOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobVersionOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> 
+        getSyncJobList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    int getSyncJobCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+        getSyncJobOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> 
+        getSyncJobVersionList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobVersion(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    int getSyncJobVersionCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+        getSyncJobVersionOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobVersionOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> 
+        getFlinkClusterList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster getFlinkCluster(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    int getFlinkClusterCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder> 
+        getFlinkClusterOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder getFlinkClusterOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * BindingModuleSpec declares the resource info of binding to module.
+   * </pre>
+   *
+   * Protobuf type {@code model.BindingModuleSpec}
+   */
+  public static final class BindingModuleSpec extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.BindingModuleSpec)
+      BindingModuleSpecOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BindingModuleSpec.newBuilder() to construct.
+    private BindingModuleSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BindingModuleSpec() {
+      id_ = "";
+      streamJob_ = java.util.Collections.emptyList();
+      streamJobVersion_ = java.util.Collections.emptyList();
+      syncJob_ = java.util.Collections.emptyList();
+      syncJobVersion_ = java.util.Collections.emptyList();
+      flinkCluster_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BindingModuleSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BindingModuleSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                streamJob_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              streamJob_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                streamJobVersion_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              streamJobVersion_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                syncJob_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              syncJob_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                syncJobVersion_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              syncJobVersion_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                flinkCluster_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              flinkCluster_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          streamJob_ = java.util.Collections.unmodifiableList(streamJob_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          streamJobVersion_ = java.util.Collections.unmodifiableList(streamJobVersion_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          syncJob_ = java.util.Collections.unmodifiableList(syncJob_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          syncJobVersion_ = java.util.Collections.unmodifiableList(syncJobVersion_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          flinkCluster_ = java.util.Collections.unmodifiableList(flinkCluster_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingModuleSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingModuleSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The id of resource.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of resource.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STREAM_JOB_FIELD_NUMBER = 2;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJob_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobList() {
+      return streamJob_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+        getStreamJobOrBuilderList() {
+      return streamJob_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    @java.lang.Override
+    public int getStreamJobCount() {
+      return streamJob_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJob(int index) {
+      return streamJob_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobOrBuilder(
+        int index) {
+      return streamJob_.get(index);
+    }
+
+    public static final int STREAM_JOB_VERSION_FIELD_NUMBER = 3;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJobVersion_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobVersionList() {
+      return streamJobVersion_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+        getStreamJobVersionOrBuilderList() {
+      return streamJobVersion_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    @java.lang.Override
+    public int getStreamJobVersionCount() {
+      return streamJobVersion_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobVersion(int index) {
+      return streamJobVersion_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"stream_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobVersionOrBuilder(
+        int index) {
+      return streamJobVersion_.get(index);
+    }
+
+    public static final int SYNC_JOB_FIELD_NUMBER = 4;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJob_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobList() {
+      return syncJob_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+        getSyncJobOrBuilderList() {
+      return syncJob_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    @java.lang.Override
+    public int getSyncJobCount() {
+      return syncJob_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob(int index) {
+      return syncJob_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder(
+        int index) {
+      return syncJob_.get(index);
+    }
+
+    public static final int SYNC_JOB_VERSION_FIELD_NUMBER = 5;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJobVersion_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobVersionList() {
+      return syncJobVersion_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+        getSyncJobVersionOrBuilderList() {
+      return syncJobVersion_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    @java.lang.Override
+    public int getSyncJobVersionCount() {
+      return syncJobVersion_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobVersion(int index) {
+      return syncJobVersion_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"sync_job_version"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobVersionOrBuilder(
+        int index) {
+      return syncJobVersion_.get(index);
+    }
+
+    public static final int FLINK_CLUSTER_FIELD_NUMBER = 6;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> flinkCluster_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> getFlinkClusterList() {
+      return flinkCluster_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder> 
+        getFlinkClusterOrBuilderList() {
+      return flinkCluster_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    @java.lang.Override
+    public int getFlinkClusterCount() {
+      return flinkCluster_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster getFlinkCluster(int index) {
+      return flinkCluster_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"flink_cluster"
+     * </pre>
+     *
+     * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder getFlinkClusterOrBuilder(
+        int index) {
+      return flinkCluster_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      for (int i = 0; i < streamJob_.size(); i++) {
+        output.writeMessage(2, streamJob_.get(i));
+      }
+      for (int i = 0; i < streamJobVersion_.size(); i++) {
+        output.writeMessage(3, streamJobVersion_.get(i));
+      }
+      for (int i = 0; i < syncJob_.size(); i++) {
+        output.writeMessage(4, syncJob_.get(i));
+      }
+      for (int i = 0; i < syncJobVersion_.size(); i++) {
+        output.writeMessage(5, syncJobVersion_.get(i));
+      }
+      for (int i = 0; i < flinkCluster_.size(); i++) {
+        output.writeMessage(6, flinkCluster_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      for (int i = 0; i < streamJob_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, streamJob_.get(i));
+      }
+      for (int i = 0; i < streamJobVersion_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, streamJobVersion_.get(i));
+      }
+      for (int i = 0; i < syncJob_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, syncJob_.get(i));
+      }
+      for (int i = 0; i < syncJobVersion_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, syncJobVersion_.get(i));
+      }
+      for (int i = 0; i < flinkCluster_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, flinkCluster_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getStreamJobList()
+          .equals(other.getStreamJobList())) return false;
+      if (!getStreamJobVersionList()
+          .equals(other.getStreamJobVersionList())) return false;
+      if (!getSyncJobList()
+          .equals(other.getSyncJobList())) return false;
+      if (!getSyncJobVersionList()
+          .equals(other.getSyncJobVersionList())) return false;
+      if (!getFlinkClusterList()
+          .equals(other.getFlinkClusterList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      if (getStreamJobCount() > 0) {
+        hash = (37 * hash) + STREAM_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getStreamJobList().hashCode();
+      }
+      if (getStreamJobVersionCount() > 0) {
+        hash = (37 * hash) + STREAM_JOB_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getStreamJobVersionList().hashCode();
+      }
+      if (getSyncJobCount() > 0) {
+        hash = (37 * hash) + SYNC_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJobList().hashCode();
+      }
+      if (getSyncJobVersionCount() > 0) {
+        hash = (37 * hash) + SYNC_JOB_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJobVersionList().hashCode();
+      }
+      if (getFlinkClusterCount() > 0) {
+        hash = (37 * hash) + FLINK_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFlinkClusterList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * BindingModuleSpec declares the resource info of binding to module.
+     * </pre>
+     *
+     * Protobuf type {@code model.BindingModuleSpec}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.BindingModuleSpec)
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingModuleSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingModuleSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStreamJobFieldBuilder();
+          getStreamJobVersionFieldBuilder();
+          getSyncJobFieldBuilder();
+          getSyncJobVersionFieldBuilder();
+          getFlinkClusterFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        if (streamJobBuilder_ == null) {
+          streamJob_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          streamJobBuilder_.clear();
+        }
+        if (streamJobVersionBuilder_ == null) {
+          streamJobVersion_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          streamJobVersionBuilder_.clear();
+        }
+        if (syncJobBuilder_ == null) {
+          syncJob_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          syncJobBuilder_.clear();
+        }
+        if (syncJobVersionBuilder_ == null) {
+          syncJobVersion_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          syncJobVersionBuilder_.clear();
+        }
+        if (flinkClusterBuilder_ == null) {
+          flinkCluster_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          flinkClusterBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingModuleSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec(this);
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        if (streamJobBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            streamJob_ = java.util.Collections.unmodifiableList(streamJob_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.streamJob_ = streamJob_;
+        } else {
+          result.streamJob_ = streamJobBuilder_.build();
+        }
+        if (streamJobVersionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            streamJobVersion_ = java.util.Collections.unmodifiableList(streamJobVersion_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.streamJobVersion_ = streamJobVersion_;
+        } else {
+          result.streamJobVersion_ = streamJobVersionBuilder_.build();
+        }
+        if (syncJobBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            syncJob_ = java.util.Collections.unmodifiableList(syncJob_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.syncJob_ = syncJob_;
+        } else {
+          result.syncJob_ = syncJobBuilder_.build();
+        }
+        if (syncJobVersionBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            syncJobVersion_ = java.util.Collections.unmodifiableList(syncJobVersion_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.syncJobVersion_ = syncJobVersion_;
+        } else {
+          result.syncJobVersion_ = syncJobVersionBuilder_.build();
+        }
+        if (flinkClusterBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            flinkCluster_ = java.util.Collections.unmodifiableList(flinkCluster_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.flinkCluster_ = flinkCluster_;
+        } else {
+          result.flinkCluster_ = flinkClusterBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (streamJobBuilder_ == null) {
+          if (!other.streamJob_.isEmpty()) {
+            if (streamJob_.isEmpty()) {
+              streamJob_ = other.streamJob_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureStreamJobIsMutable();
+              streamJob_.addAll(other.streamJob_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.streamJob_.isEmpty()) {
+            if (streamJobBuilder_.isEmpty()) {
+              streamJobBuilder_.dispose();
+              streamJobBuilder_ = null;
+              streamJob_ = other.streamJob_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              streamJobBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStreamJobFieldBuilder() : null;
+            } else {
+              streamJobBuilder_.addAllMessages(other.streamJob_);
+            }
+          }
+        }
+        if (streamJobVersionBuilder_ == null) {
+          if (!other.streamJobVersion_.isEmpty()) {
+            if (streamJobVersion_.isEmpty()) {
+              streamJobVersion_ = other.streamJobVersion_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureStreamJobVersionIsMutable();
+              streamJobVersion_.addAll(other.streamJobVersion_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.streamJobVersion_.isEmpty()) {
+            if (streamJobVersionBuilder_.isEmpty()) {
+              streamJobVersionBuilder_.dispose();
+              streamJobVersionBuilder_ = null;
+              streamJobVersion_ = other.streamJobVersion_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              streamJobVersionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStreamJobVersionFieldBuilder() : null;
+            } else {
+              streamJobVersionBuilder_.addAllMessages(other.streamJobVersion_);
+            }
+          }
+        }
+        if (syncJobBuilder_ == null) {
+          if (!other.syncJob_.isEmpty()) {
+            if (syncJob_.isEmpty()) {
+              syncJob_ = other.syncJob_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureSyncJobIsMutable();
+              syncJob_.addAll(other.syncJob_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.syncJob_.isEmpty()) {
+            if (syncJobBuilder_.isEmpty()) {
+              syncJobBuilder_.dispose();
+              syncJobBuilder_ = null;
+              syncJob_ = other.syncJob_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              syncJobBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSyncJobFieldBuilder() : null;
+            } else {
+              syncJobBuilder_.addAllMessages(other.syncJob_);
+            }
+          }
+        }
+        if (syncJobVersionBuilder_ == null) {
+          if (!other.syncJobVersion_.isEmpty()) {
+            if (syncJobVersion_.isEmpty()) {
+              syncJobVersion_ = other.syncJobVersion_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureSyncJobVersionIsMutable();
+              syncJobVersion_.addAll(other.syncJobVersion_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.syncJobVersion_.isEmpty()) {
+            if (syncJobVersionBuilder_.isEmpty()) {
+              syncJobVersionBuilder_.dispose();
+              syncJobVersionBuilder_ = null;
+              syncJobVersion_ = other.syncJobVersion_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              syncJobVersionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSyncJobVersionFieldBuilder() : null;
+            } else {
+              syncJobVersionBuilder_.addAllMessages(other.syncJobVersion_);
+            }
+          }
+        }
+        if (flinkClusterBuilder_ == null) {
+          if (!other.flinkCluster_.isEmpty()) {
+            if (flinkCluster_.isEmpty()) {
+              flinkCluster_ = other.flinkCluster_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureFlinkClusterIsMutable();
+              flinkCluster_.addAll(other.flinkCluster_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.flinkCluster_.isEmpty()) {
+            if (flinkClusterBuilder_.isEmpty()) {
+              flinkClusterBuilder_.dispose();
+              flinkClusterBuilder_ = null;
+              flinkCluster_ = other.flinkCluster_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              flinkClusterBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFlinkClusterFieldBuilder() : null;
+            } else {
+              flinkClusterBuilder_.addAllMessages(other.flinkCluster_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The id of resource.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of resource.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of resource.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of resource.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of resource.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJob_ =
+        java.util.Collections.emptyList();
+      private void ensureStreamJobIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          streamJob_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>(streamJob_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> streamJobBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobList() {
+        if (streamJobBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(streamJob_);
+        } else {
+          return streamJobBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public int getStreamJobCount() {
+        if (streamJobBuilder_ == null) {
+          return streamJob_.size();
+        } else {
+          return streamJobBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJob(int index) {
+        if (streamJobBuilder_ == null) {
+          return streamJob_.get(index);
+        } else {
+          return streamJobBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder setStreamJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobIsMutable();
+          streamJob_.set(index, value);
+          onChanged();
+        } else {
+          streamJobBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder setStreamJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobBuilder_ == null) {
+          ensureStreamJobIsMutable();
+          streamJob_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          streamJobBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder addStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobIsMutable();
+          streamJob_.add(value);
+          onChanged();
+        } else {
+          streamJobBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder addStreamJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobIsMutable();
+          streamJob_.add(index, value);
+          onChanged();
+        } else {
+          streamJobBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder addStreamJob(
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobBuilder_ == null) {
+          ensureStreamJobIsMutable();
+          streamJob_.add(builderForValue.build());
+          onChanged();
+        } else {
+          streamJobBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder addStreamJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobBuilder_ == null) {
+          ensureStreamJobIsMutable();
+          streamJob_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          streamJobBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder addAllStreamJob(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> values) {
+        if (streamJobBuilder_ == null) {
+          ensureStreamJobIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, streamJob_);
+          onChanged();
+        } else {
+          streamJobBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder clearStreamJob() {
+        if (streamJobBuilder_ == null) {
+          streamJob_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          streamJobBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public Builder removeStreamJob(int index) {
+        if (streamJobBuilder_ == null) {
+          ensureStreamJobIsMutable();
+          streamJob_.remove(index);
+          onChanged();
+        } else {
+          streamJobBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder getStreamJobBuilder(
+          int index) {
+        return getStreamJobFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobOrBuilder(
+          int index) {
+        if (streamJobBuilder_ == null) {
+          return streamJob_.get(index);  } else {
+          return streamJobBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+           getStreamJobOrBuilderList() {
+        if (streamJobBuilder_ != null) {
+          return streamJobBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(streamJob_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobBuilder() {
+        return getStreamJobFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobBuilder(
+          int index) {
+        return getStreamJobFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder> 
+           getStreamJobBuilderList() {
+        return getStreamJobFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+          getStreamJobFieldBuilder() {
+        if (streamJobBuilder_ == null) {
+          streamJobBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder>(
+                  streamJob_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          streamJob_ = null;
+        }
+        return streamJobBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJobVersion_ =
+        java.util.Collections.emptyList();
+      private void ensureStreamJobVersionIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          streamJobVersion_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>(streamJobVersion_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> streamJobVersionBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobVersionList() {
+        if (streamJobVersionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(streamJobVersion_);
+        } else {
+          return streamJobVersionBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public int getStreamJobVersionCount() {
+        if (streamJobVersionBuilder_ == null) {
+          return streamJobVersion_.size();
+        } else {
+          return streamJobVersionBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobVersion(int index) {
+        if (streamJobVersionBuilder_ == null) {
+          return streamJobVersion_.get(index);
+        } else {
+          return streamJobVersionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder setStreamJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.set(index, value);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder setStreamJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobVersionBuilder_ == null) {
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder addStreamJobVersion(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.add(value);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder addStreamJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+        if (streamJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.add(index, value);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder addStreamJobVersion(
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobVersionBuilder_ == null) {
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.add(builderForValue.build());
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder addStreamJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+        if (streamJobVersionBuilder_ == null) {
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder addAllStreamJobVersion(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> values) {
+        if (streamJobVersionBuilder_ == null) {
+          ensureStreamJobVersionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, streamJobVersion_);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder clearStreamJobVersion() {
+        if (streamJobVersionBuilder_ == null) {
+          streamJobVersion_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public Builder removeStreamJobVersion(int index) {
+        if (streamJobVersionBuilder_ == null) {
+          ensureStreamJobVersionIsMutable();
+          streamJobVersion_.remove(index);
+          onChanged();
+        } else {
+          streamJobVersionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder getStreamJobVersionBuilder(
+          int index) {
+        return getStreamJobVersionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobVersionOrBuilder(
+          int index) {
+        if (streamJobVersionBuilder_ == null) {
+          return streamJobVersion_.get(index);  } else {
+          return streamJobVersionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+           getStreamJobVersionOrBuilderList() {
+        if (streamJobVersionBuilder_ != null) {
+          return streamJobVersionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(streamJobVersion_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobVersionBuilder() {
+        return getStreamJobVersionFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobVersionBuilder(
+          int index) {
+        return getStreamJobVersionFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"stream_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.StreamJob stream_job_version = 3;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder> 
+           getStreamJobVersionBuilderList() {
+        return getStreamJobVersionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+          getStreamJobVersionFieldBuilder() {
+        if (streamJobVersionBuilder_ == null) {
+          streamJobVersionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder>(
+                  streamJobVersion_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          streamJobVersion_ = null;
+        }
+        return streamJobVersionBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJob_ =
+        java.util.Collections.emptyList();
+      private void ensureSyncJobIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          syncJob_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>(syncJob_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> syncJobBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobList() {
+        if (syncJobBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(syncJob_);
+        } else {
+          return syncJobBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public int getSyncJobCount() {
+        if (syncJobBuilder_ == null) {
+          return syncJob_.size();
+        } else {
+          return syncJobBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob(int index) {
+        if (syncJobBuilder_ == null) {
+          return syncJob_.get(index);
+        } else {
+          return syncJobBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder setSyncJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobIsMutable();
+          syncJob_.set(index, value);
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder setSyncJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobBuilder_ == null) {
+          ensureSyncJobIsMutable();
+          syncJob_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder addSyncJob(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobIsMutable();
+          syncJob_.add(value);
+          onChanged();
+        } else {
+          syncJobBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder addSyncJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobIsMutable();
+          syncJob_.add(index, value);
+          onChanged();
+        } else {
+          syncJobBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder addSyncJob(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobBuilder_ == null) {
+          ensureSyncJobIsMutable();
+          syncJob_.add(builderForValue.build());
+          onChanged();
+        } else {
+          syncJobBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder addSyncJob(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobBuilder_ == null) {
+          ensureSyncJobIsMutable();
+          syncJob_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          syncJobBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder addAllSyncJob(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> values) {
+        if (syncJobBuilder_ == null) {
+          ensureSyncJobIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, syncJob_);
+          onChanged();
+        } else {
+          syncJobBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder clearSyncJob() {
+        if (syncJobBuilder_ == null) {
+          syncJob_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          syncJobBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public Builder removeSyncJob(int index) {
+        if (syncJobBuilder_ == null) {
+          ensureSyncJobIsMutable();
+          syncJob_.remove(index);
+          onChanged();
+        } else {
+          syncJobBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder getSyncJobBuilder(
+          int index) {
+        return getSyncJobFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder(
+          int index) {
+        if (syncJobBuilder_ == null) {
+          return syncJob_.get(index);  } else {
+          return syncJobBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+           getSyncJobOrBuilderList() {
+        if (syncJobBuilder_ != null) {
+          return syncJobBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(syncJob_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobBuilder() {
+        return getSyncJobFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobBuilder(
+          int index) {
+        return getSyncJobFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job = 4;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder> 
+           getSyncJobBuilderList() {
+        return getSyncJobFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+          getSyncJobFieldBuilder() {
+        if (syncJobBuilder_ == null) {
+          syncJobBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder>(
+                  syncJob_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          syncJob_ = null;
+        }
+        return syncJobBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJobVersion_ =
+        java.util.Collections.emptyList();
+      private void ensureSyncJobVersionIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          syncJobVersion_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>(syncJobVersion_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> syncJobVersionBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobVersionList() {
+        if (syncJobVersionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(syncJobVersion_);
+        } else {
+          return syncJobVersionBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public int getSyncJobVersionCount() {
+        if (syncJobVersionBuilder_ == null) {
+          return syncJobVersion_.size();
+        } else {
+          return syncJobVersionBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobVersion(int index) {
+        if (syncJobVersionBuilder_ == null) {
+          return syncJobVersion_.get(index);
+        } else {
+          return syncJobVersionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder setSyncJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.set(index, value);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder setSyncJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobVersionBuilder_ == null) {
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder addSyncJobVersion(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.add(value);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder addSyncJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobVersionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.add(index, value);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder addSyncJobVersion(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobVersionBuilder_ == null) {
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.add(builderForValue.build());
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder addSyncJobVersion(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobVersionBuilder_ == null) {
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder addAllSyncJobVersion(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> values) {
+        if (syncJobVersionBuilder_ == null) {
+          ensureSyncJobVersionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, syncJobVersion_);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder clearSyncJobVersion() {
+        if (syncJobVersionBuilder_ == null) {
+          syncJobVersion_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public Builder removeSyncJobVersion(int index) {
+        if (syncJobVersionBuilder_ == null) {
+          ensureSyncJobVersionIsMutable();
+          syncJobVersion_.remove(index);
+          onChanged();
+        } else {
+          syncJobVersionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder getSyncJobVersionBuilder(
+          int index) {
+        return getSyncJobVersionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobVersionOrBuilder(
+          int index) {
+        if (syncJobVersionBuilder_ == null) {
+          return syncJobVersion_.get(index);  } else {
+          return syncJobVersionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+           getSyncJobVersionOrBuilderList() {
+        if (syncJobVersionBuilder_ != null) {
+          return syncJobVersionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(syncJobVersion_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobVersionBuilder() {
+        return getSyncJobVersionFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobVersionBuilder(
+          int index) {
+        return getSyncJobVersionFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"sync_job_version"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJob sync_job_version = 5;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder> 
+           getSyncJobVersionBuilderList() {
+        return getSyncJobVersionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+          getSyncJobVersionFieldBuilder() {
+        if (syncJobVersionBuilder_ == null) {
+          syncJobVersionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder>(
+                  syncJobVersion_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          syncJobVersion_ = null;
+        }
+        return syncJobVersionBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> flinkCluster_ =
+        java.util.Collections.emptyList();
+      private void ensureFlinkClusterIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          flinkCluster_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster>(flinkCluster_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder> flinkClusterBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> getFlinkClusterList() {
+        if (flinkClusterBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(flinkCluster_);
+        } else {
+          return flinkClusterBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public int getFlinkClusterCount() {
+        if (flinkClusterBuilder_ == null) {
+          return flinkCluster_.size();
+        } else {
+          return flinkClusterBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster getFlinkCluster(int index) {
+        if (flinkClusterBuilder_ == null) {
+          return flinkCluster_.get(index);
+        } else {
+          return flinkClusterBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder setFlinkCluster(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster value) {
+        if (flinkClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.set(index, value);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder setFlinkCluster(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder builderForValue) {
+        if (flinkClusterBuilder_ == null) {
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          flinkClusterBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder addFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster value) {
+        if (flinkClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.add(value);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder addFlinkCluster(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster value) {
+        if (flinkClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.add(index, value);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder addFlinkCluster(
+          com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder builderForValue) {
+        if (flinkClusterBuilder_ == null) {
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.add(builderForValue.build());
+          onChanged();
+        } else {
+          flinkClusterBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder addFlinkCluster(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder builderForValue) {
+        if (flinkClusterBuilder_ == null) {
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          flinkClusterBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder addAllFlinkCluster(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster> values) {
+        if (flinkClusterBuilder_ == null) {
+          ensureFlinkClusterIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, flinkCluster_);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder clearFlinkCluster() {
+        if (flinkClusterBuilder_ == null) {
+          flinkCluster_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public Builder removeFlinkCluster(int index) {
+        if (flinkClusterBuilder_ == null) {
+          ensureFlinkClusterIsMutable();
+          flinkCluster_.remove(index);
+          onChanged();
+        } else {
+          flinkClusterBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder getFlinkClusterBuilder(
+          int index) {
+        return getFlinkClusterFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder getFlinkClusterOrBuilder(
+          int index) {
+        if (flinkClusterBuilder_ == null) {
+          return flinkCluster_.get(index);  } else {
+          return flinkClusterBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder> 
+           getFlinkClusterOrBuilderList() {
+        if (flinkClusterBuilder_ != null) {
+          return flinkClusterBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(flinkCluster_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder addFlinkClusterBuilder() {
+        return getFlinkClusterFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder addFlinkClusterBuilder(
+          int index) {
+        return getFlinkClusterFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"flink_cluster"
+       * </pre>
+       *
+       * <code>repeated .model.FlinkCluster flink_cluster = 6;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder> 
+           getFlinkClusterBuilderList() {
+        return getFlinkClusterFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder> 
+          getFlinkClusterFieldBuilder() {
+        if (flinkClusterBuilder_ == null) {
+          flinkClusterBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder>(
+                  flinkCluster_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          flinkCluster_ = null;
+        }
+        return flinkClusterBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.BindingModuleSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.BindingModuleSpec)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BindingModuleSpec>
+        PARSER = new com.google.protobuf.AbstractParser<BindingModuleSpec>() {
+      @java.lang.Override
+      public BindingModuleSpec parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BindingModuleSpec(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BindingModuleSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BindingModuleSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModuleSpec getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BindingModuleOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.BindingModule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * ModuleId represents which other modules(AttachId) are bound to this module.
-     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+     * Id represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
      * </pre>
      *
-     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-     * @return The moduleId.
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
      */
-    java.lang.String getModuleId();
+    java.lang.String getId();
     /**
      * <pre>
-     * ModuleId represents which other modules(AttachId) are bound to this module.
-     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+     * Id represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
      * </pre>
      *
-     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleId.
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getModuleIdBytes();
+        getIdBytes();
 
     /**
      * <pre>
-     * ModuleVersion is the version of module.
+     * Version is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+     * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
      * </pre>
      *
-     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-     * @return The moduleVersion.
+     * <code>string version = 2 [(.validator.field) = { ... }</code>
+     * @return The version.
      */
-    java.lang.String getModuleVersion();
+    java.lang.String getVersion();
     /**
      * <pre>
-     * ModuleVersion is the version of module.
+     * Version is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+     * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
      * </pre>
      *
-     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleVersion.
+     * <code>string version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
      */
     com.google.protobuf.ByteString
-        getModuleVersionBytes();
+        getVersionBytes();
   }
   /**
    * <pre>
-   * ModuleSource declares module info.
+   * BindingModule declares the module info.
    * used to query from db.
    * </pre>
    *
@@ -82,8 +3126,8 @@ public final class PBModelBinding {
       super(builder);
     }
     private BindingModule() {
-      moduleId_ = "";
-      moduleVersion_ = "";
+      id_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -119,13 +3163,13 @@ public final class PBModelBinding {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              moduleId_ = s;
+              id_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              moduleVersion_ = s;
+              version_ = s;
               break;
             }
             default: {
@@ -160,98 +3204,98 @@ public final class PBModelBinding {
               com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.Builder.class);
     }
 
-    public static final int MODULE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object moduleId_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
     /**
      * <pre>
-     * ModuleId represents which other modules(AttachId) are bound to this module.
-     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+     * Id represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
      * </pre>
      *
-     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-     * @return The moduleId.
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getModuleId() {
-      java.lang.Object ref = moduleId_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        moduleId_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * ModuleId represents which other modules(AttachId) are bound to this module.
-     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+     * Id represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
      * </pre>
      *
-     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleId.
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getModuleIdBytes() {
-      java.lang.Object ref = moduleId_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        moduleId_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int MODULE_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object moduleVersion_;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object version_;
     /**
      * <pre>
-     * ModuleVersion is the version of module.
+     * Version is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+     * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
      * </pre>
      *
-     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-     * @return The moduleVersion.
+     * <code>string version = 2 [(.validator.field) = { ... }</code>
+     * @return The version.
      */
     @java.lang.Override
-    public java.lang.String getModuleVersion() {
-      java.lang.Object ref = moduleVersion_;
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        moduleVersion_ = s;
+        version_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * ModuleVersion is the version of module.
+     * Version is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+     * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
      * </pre>
      *
-     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for moduleVersion.
+     * <code>string version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getModuleVersionBytes() {
-      java.lang.Object ref = moduleVersion_;
+        getVersionBytes() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        moduleVersion_ = b;
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -272,11 +3316,11 @@ public final class PBModelBinding {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, moduleId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, moduleVersion_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
       unknownFields.writeTo(output);
     }
@@ -287,11 +3331,11 @@ public final class PBModelBinding {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, moduleId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, moduleVersion_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -308,10 +3352,10 @@ public final class PBModelBinding {
       }
       com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule) obj;
 
-      if (!getModuleId()
-          .equals(other.getModuleId())) return false;
-      if (!getModuleVersion()
-          .equals(other.getModuleVersion())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -323,10 +3367,10 @@ public final class PBModelBinding {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getModuleId().hashCode();
-      hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getModuleVersion().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -424,7 +3468,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * ModuleSource declares module info.
+     * BindingModule declares the module info.
      * used to query from db.
      * </pre>
      *
@@ -465,9 +3509,9 @@ public final class PBModelBinding {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        moduleId_ = "";
+        id_ = "";
 
-        moduleVersion_ = "";
+        version_ = "";
 
         return this;
       }
@@ -495,8 +3539,8 @@ public final class PBModelBinding {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule(this);
-        result.moduleId_ = moduleId_;
-        result.moduleVersion_ = moduleVersion_;
+        result.id_ = id_;
+        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -545,12 +3589,12 @@ public final class PBModelBinding {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.getDefaultInstance()) return this;
-        if (!other.getModuleId().isEmpty()) {
-          moduleId_ = other.moduleId_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
-        if (!other.getModuleVersion().isEmpty()) {
-          moduleVersion_ = other.moduleVersion_;
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -582,23 +3626,23 @@ public final class PBModelBinding {
         return this;
       }
 
-      private java.lang.Object moduleId_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <pre>
-       * ModuleId represents which other modules(AttachId) are bound to this module.
-       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+       * Id represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
        * </pre>
        *
-       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-       * @return The moduleId.
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
        */
-      public java.lang.String getModuleId() {
-        java.lang.Object ref = moduleId_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          moduleId_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -606,21 +3650,21 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * ModuleId represents which other modules(AttachId) are bound to this module.
-       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+       * Id represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
        * </pre>
        *
-       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for moduleId.
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getModuleIdBytes() {
-        java.lang.Object ref = moduleId_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          moduleId_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -628,79 +3672,79 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * ModuleId represents which other modules(AttachId) are bound to this module.
-       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+       * Id represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
        * </pre>
        *
-       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The moduleId to set.
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleId(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        moduleId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * ModuleId represents which other modules(AttachId) are bound to this module.
-       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+       * Id represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
        * </pre>
        *
-       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearModuleId() {
+      public Builder clearId() {
         
-        moduleId_ = getDefaultInstance().getModuleId();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * ModuleId represents which other modules(AttachId) are bound to this module.
-       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;&lt;-:false"
+       * Id represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"id" gorm:"column:id;&lt;-:false"
        * </pre>
        *
-       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for moduleId to set.
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleIdBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        moduleId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object moduleVersion_ = "";
+      private java.lang.Object version_ = "";
       /**
        * <pre>
-       * ModuleVersion is the version of module.
+       * Version is the version of module.
        * This filed maybe empty.
-       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+       * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
        * </pre>
        *
-       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-       * @return The moduleVersion.
+       * <code>string version = 2 [(.validator.field) = { ... }</code>
+       * @return The version.
        */
-      public java.lang.String getModuleVersion() {
-        java.lang.Object ref = moduleVersion_;
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          moduleVersion_ = s;
+          version_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -708,22 +3752,22 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * ModuleVersion is the version of module.
+       * Version is the version of module.
        * This filed maybe empty.
-       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+       * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
        * </pre>
        *
-       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for moduleVersion.
+       * <code>string version = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
-          getModuleVersionBytes() {
-        java.lang.Object ref = moduleVersion_;
+          getVersionBytes() {
+        java.lang.Object ref = version_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          moduleVersion_ = b;
+          version_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -731,60 +3775,60 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * ModuleVersion is the version of module.
+       * Version is the version of module.
        * This filed maybe empty.
-       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+       * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
        * </pre>
        *
-       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The moduleVersion to set.
+       * <code>string version = 2 [(.validator.field) = { ... }</code>
+       * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleVersion(
+      public Builder setVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        moduleVersion_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * ModuleVersion is the version of module.
+       * Version is the version of module.
        * This filed maybe empty.
-       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+       * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
        * </pre>
        *
-       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * <code>string version = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearModuleVersion() {
+      public Builder clearVersion() {
         
-        moduleVersion_ = getDefaultInstance().getModuleVersion();
+        version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * ModuleVersion is the version of module.
+       * Version is the version of module.
        * This filed maybe empty.
-       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;&lt;-:false"
+       * &#64;inject_tag: json:"version" gorm:"column:version;&lt;-:false"
        * </pre>
        *
-       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for moduleVersion to set.
+       * <code>string version = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleVersionBytes(
+      public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        moduleVersion_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
@@ -836,833 +3880,6 @@ public final class PBModelBinding {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface BindingResourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.BindingResource)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * AttachId represents this module are bound by which other modules(ModuleId).
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
-     */
-    java.lang.String getResourceId();
-    /**
-     * <pre>
-     * AttachId represents this module are bound by which other modules(ModuleId).
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
-     */
-    com.google.protobuf.ByteString
-        getResourceIdBytes();
-
-    /**
-     * <pre>
-     * AttachVersion is the version of attach module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-     * @return The resourceVersion.
-     */
-    java.lang.String getResourceVersion();
-    /**
-     * <pre>
-     * AttachVersion is the version of attach module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceVersion.
-     */
-    com.google.protobuf.ByteString
-        getResourceVersionBytes();
-  }
-  /**
-   * <pre>
-   * BindingResource declares the resource info that be bound.
-   * used to query from db.
-   * </pre>
-   *
-   * Protobuf type {@code model.BindingResource}
-   */
-  public static final class BindingResource extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.BindingResource)
-      BindingResourceOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use BindingResource.newBuilder() to construct.
-    private BindingResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private BindingResource() {
-      resourceId_ = "";
-      resourceVersion_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new BindingResource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private BindingResource(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceVersion_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingResource_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingResource_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.Builder.class);
-    }
-
-    public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object resourceId_;
-    /**
-     * <pre>
-     * AttachId represents this module are bound by which other modules(ModuleId).
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
-     */
-    @java.lang.Override
-    public java.lang.String getResourceId() {
-      java.lang.Object ref = resourceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resourceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * AttachId represents this module are bound by which other modules(ModuleId).
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getResourceIdBytes() {
-      java.lang.Object ref = resourceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        resourceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RESOURCE_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object resourceVersion_;
-    /**
-     * <pre>
-     * AttachVersion is the version of attach module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-     * @return The resourceVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getResourceVersion() {
-      java.lang.Object ref = resourceVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resourceVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * AttachVersion is the version of attach module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-     * </pre>
-     *
-     * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getResourceVersionBytes() {
-      java.lang.Object ref = resourceVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        resourceVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceVersion_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceVersion_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource) obj;
-
-      if (!getResourceId()
-          .equals(other.getResourceId())) return false;
-      if (!getResourceVersion()
-          .equals(other.getResourceVersion())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceId().hashCode();
-      hash = (37 * hash) + RESOURCE_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceVersion().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * BindingResource declares the resource info that be bound.
-     * used to query from db.
-     * </pre>
-     *
-     * Protobuf type {@code model.BindingResource}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.BindingResource)
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResourceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingResource_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingResource_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        resourceId_ = "";
-
-        resourceVersion_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingResource_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource(this);
-        result.resourceId_ = resourceId_;
-        result.resourceVersion_ = resourceVersion_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource.getDefaultInstance()) return this;
-        if (!other.getResourceId().isEmpty()) {
-          resourceId_ = other.resourceId_;
-          onChanged();
-        }
-        if (!other.getResourceVersion().isEmpty()) {
-          resourceVersion_ = other.resourceVersion_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object resourceId_ = "";
-      /**
-       * <pre>
-       * AttachId represents this module are bound by which other modules(ModuleId).
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @return The resourceId.
-       */
-      public java.lang.String getResourceId() {
-        java.lang.Object ref = resourceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          resourceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * AttachId represents this module are bound by which other modules(ModuleId).
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceId.
-       */
-      public com.google.protobuf.ByteString
-          getResourceIdBytes() {
-        java.lang.Object ref = resourceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          resourceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * AttachId represents this module are bound by which other modules(ModuleId).
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The resourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        resourceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * AttachId represents this module are bound by which other modules(ModuleId).
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResourceId() {
-        
-        resourceId_ = getDefaultInstance().getResourceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * AttachId represents this module are bound by which other modules(ModuleId).
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        resourceId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resourceVersion_ = "";
-      /**
-       * <pre>
-       * AttachVersion is the version of attach module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-       * @return The resourceVersion.
-       */
-      public java.lang.String getResourceVersion() {
-        java.lang.Object ref = resourceVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          resourceVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * AttachVersion is the version of attach module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceVersion.
-       */
-      public com.google.protobuf.ByteString
-          getResourceVersionBytes() {
-        java.lang.Object ref = resourceVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          resourceVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * AttachVersion is the version of attach module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The resourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        resourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * AttachVersion is the version of attach module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResourceVersion() {
-        
-        resourceVersion_ = getDefaultInstance().getResourceVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * AttachVersion is the version of attach module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"resource_version" gorm:"column:resource_version;&lt;-:false"
-       * </pre>
-       *
-       * <code>string resource_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        resourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.BindingResource)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.BindingResource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BindingResource>
-        PARSER = new com.google.protobuf.AbstractParser<BindingResource>() {
-      @java.lang.Override
-      public BindingResource parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BindingResource(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BindingResource> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<BindingResource> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingResource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3184,15 +5401,15 @@ public final class PBModelBinding {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_BindingModuleSpec_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_BindingModuleSpec_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_BindingModule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_BindingModule_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_BindingResource_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_BindingResource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_Binding_descriptor;
   private static final 
@@ -3209,41 +5426,49 @@ public final class PBModelBinding {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/binding.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"s\n\rBindingModule\022\037\n\tmodule" +
-      "_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_versio" +
-      "n\030\002 \001(\tB)\342\337\037\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337" +
-      "\037\010\022\006\302\001\003\360\001\020\"{\n\017BindingResource\022!\n\013resourc" +
-      "e_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n\020resource_ver" +
-      "sion\030\002 \001(\tB+\342\337\037\033\n\031\n\020resource_version\022\005\302\001" +
-      "\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\"\234\002\n\007Binding\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tmodule_id\030" +
-      "\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_version\030\003 " +
-      "\001(\tB)\342\337\037\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337\037\010\022\006" +
-      "\302\001\003\360\001\020\022!\n\013resource_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
-      "\024\022E\n\020resource_version\030\005 \001(\tB+\342\337\037\033\n\031\n\020res" +
-      "ource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022\034\n\007crea" +
-      "ted\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.dataomnis." +
-      "gproto.types.pbmodelB\016PBModelBindingP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "lidator.proto\032\"proto/types/model/stream_" +
+      "job.proto\032 proto/types/model/sync_job.pr" +
+      "oto\032\037proto/types/model/cluster.proto\"\371\001\n" +
+      "\021BindingModuleSpec\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\360\001\024\022$\n\nstream_job\030\002 \003(\0132\020.model.StreamJ" +
+      "ob\022,\n\022stream_job_version\030\003 \003(\0132\020.model.S" +
+      "treamJob\022 \n\010sync_job\030\004 \003(\0132\016.model.SyncJ" +
+      "ob\022(\n\020sync_job_version\030\005 \003(\0132\016.model.Syn" +
+      "cJob\022*\n\rflink_cluster\030\006 \003(\0132\023.model.Flin" +
+      "kCluster\"^\n\rBindingModule\022\030\n\002id\030\001 \001(\tB\014\342" +
+      "\337\037\010\022\006\302\001\003\360\001\024\0223\n\007version\030\002 \001(\tB\"\342\337\037\022\n\020\n\007ve" +
+      "rsion\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\"\234\002\n\007Binding\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tm" +
+      "odule_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_v" +
+      "ersion\030\003 \001(\tB)\342\337\037\031\n\027\n\016module_version\022\005\302\001" +
+      "\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022!\n\013resource_id\030\004 \001(\tB\014\342\337" +
+      "\037\010\022\006\302\001\003\360\001\024\022E\n\020resource_version\030\005 \001(\tB+\342\337" +
+      "\037\033\n\031\n\020resource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001" +
+      "\020\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.d" +
+      "ataomnis.gproto.types.pbmodelB\016PBModelBi" +
+      "ndingP\000Z1github.com/DataWorkbench/gproto" +
+      "/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelCluster.getDescriptor(),
         });
-    internal_static_model_BindingModule_descriptor =
+    internal_static_model_BindingModuleSpec_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_model_BindingModuleSpec_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_BindingModuleSpec_descriptor,
+        new java.lang.String[] { "Id", "StreamJob", "StreamJobVersion", "SyncJob", "SyncJobVersion", "FlinkCluster", });
+    internal_static_model_BindingModule_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_model_BindingModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_BindingModule_descriptor,
-        new java.lang.String[] { "ModuleId", "ModuleVersion", });
-    internal_static_model_BindingResource_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_model_BindingResource_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_BindingResource_descriptor,
-        new java.lang.String[] { "ResourceId", "ResourceVersion", });
+        new java.lang.String[] { "Id", "Version", });
     internal_static_model_Binding_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_Binding_fieldAccessorTable = new
@@ -3256,6 +5481,9 @@ public final class PBModelBinding {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelCluster.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

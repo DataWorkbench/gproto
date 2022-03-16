@@ -12,6 +12,9 @@ _sym_db = _symbol_database.Default()
 
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
+from proto.types.model import stream_job_pb2 as proto_dot_types_dot_model_dot_stream__job__pb2
+from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
+from proto.types.model import cluster_pb2 as proto_dot_types_dot_model_dot_cluster__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,11 +23,78 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelBindingP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"s\n\rBindingModule\x12\x1f\n\tmodule_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x02 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"{\n\x0f\x42indingResource\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x02 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x9c\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12!\n\x0bresource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x05 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\x1a\x1fproto/types/model/cluster.proto\"\xf9\x01\n\x11\x42indingModuleSpec\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12$\n\nstream_job\x18\x02 \x03(\x0b\x32\x10.model.StreamJob\x12,\n\x12stream_job_version\x18\x03 \x03(\x0b\x32\x10.model.StreamJob\x12 \n\x08sync_job\x18\x04 \x03(\x0b\x32\x0e.model.SyncJob\x12(\n\x10sync_job_version\x18\x05 \x03(\x0b\x32\x0e.model.SyncJob\x12*\n\rflink_cluster\x18\x06 \x03(\x0b\x32\x13.model.FlinkCluster\"^\n\rBindingModule\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x33\n\x07version\x18\x02 \x01(\tB\"\xe2\xdf\x1f\x12\n\x10\n\x07version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x9c\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12!\n\x0bresource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x05 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,])
 
 
+
+
+_BINDINGMODULESPEC = _descriptor.Descriptor(
+  name='BindingModuleSpec',
+  full_name='model.BindingModuleSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.BindingModuleSpec.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_job', full_name='model.BindingModuleSpec.stream_job', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_job_version', full_name='model.BindingModuleSpec.stream_job_version', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_job', full_name='model.BindingModuleSpec.sync_job', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_job_version', full_name='model.BindingModuleSpec.sync_job_version', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_cluster', full_name='model.BindingModuleSpec.flink_cluster', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=199,
+  serialized_end=448,
+)
 
 
 _BINDINGMODULE = _descriptor.Descriptor(
@@ -36,19 +106,19 @@ _BINDINGMODULE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='module_id', full_name='model.BindingModule.module_id', index=0,
+      name='id', full_name='model.BindingModule.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='module_version', full_name='model.BindingModule.module_version', index=1,
+      name='version', full_name='model.BindingModule.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\022\n\020\n\007version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -61,47 +131,8 @@ _BINDINGMODULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=95,
-  serialized_end=210,
-)
-
-
-_BINDINGRESOURCE = _descriptor.Descriptor(
-  name='BindingResource',
-  full_name='model.BindingResource',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='resource_id', full_name='model.BindingResource.resource_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource_version', full_name='model.BindingResource.resource_version', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\033\n\031\n\020resource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=212,
-  serialized_end=335,
+  serialized_start=450,
+  serialized_end=544,
 )
 
 
@@ -167,14 +198,26 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=338,
-  serialized_end=622,
+  serialized_start=547,
+  serialized_end=831,
 )
 
+_BINDINGMODULESPEC.fields_by_name['stream_job'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
+_BINDINGMODULESPEC.fields_by_name['stream_job_version'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
+_BINDINGMODULESPEC.fields_by_name['sync_job'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
+_BINDINGMODULESPEC.fields_by_name['sync_job_version'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
+_BINDINGMODULESPEC.fields_by_name['flink_cluster'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
+DESCRIPTOR.message_types_by_name['BindingModuleSpec'] = _BINDINGMODULESPEC
 DESCRIPTOR.message_types_by_name['BindingModule'] = _BINDINGMODULE
-DESCRIPTOR.message_types_by_name['BindingResource'] = _BINDINGRESOURCE
 DESCRIPTOR.message_types_by_name['Binding'] = _BINDING
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+BindingModuleSpec = _reflection.GeneratedProtocolMessageType('BindingModuleSpec', (_message.Message,), {
+  'DESCRIPTOR' : _BINDINGMODULESPEC,
+  '__module__' : 'proto.types.model.binding_pb2'
+  # @@protoc_insertion_point(class_scope:model.BindingModuleSpec)
+  })
+_sym_db.RegisterMessage(BindingModuleSpec)
 
 BindingModule = _reflection.GeneratedProtocolMessageType('BindingModule', (_message.Message,), {
   'DESCRIPTOR' : _BINDINGMODULE,
@@ -182,13 +225,6 @@ BindingModule = _reflection.GeneratedProtocolMessageType('BindingModule', (_mess
   # @@protoc_insertion_point(class_scope:model.BindingModule)
   })
 _sym_db.RegisterMessage(BindingModule)
-
-BindingResource = _reflection.GeneratedProtocolMessageType('BindingResource', (_message.Message,), {
-  'DESCRIPTOR' : _BINDINGRESOURCE,
-  '__module__' : 'proto.types.model.binding_pb2'
-  # @@protoc_insertion_point(class_scope:model.BindingResource)
-  })
-_sym_db.RegisterMessage(BindingResource)
 
 Binding = _reflection.GeneratedProtocolMessageType('Binding', (_message.Message,), {
   'DESCRIPTOR' : _BINDING,
@@ -199,10 +235,9 @@ _sym_db.RegisterMessage(Binding)
 
 
 DESCRIPTOR._options = None
-_BINDINGMODULE.fields_by_name['module_id']._options = None
-_BINDINGMODULE.fields_by_name['module_version']._options = None
-_BINDINGRESOURCE.fields_by_name['resource_id']._options = None
-_BINDINGRESOURCE.fields_by_name['resource_version']._options = None
+_BINDINGMODULESPEC.fields_by_name['id']._options = None
+_BINDINGMODULE.fields_by_name['id']._options = None
+_BINDINGMODULE.fields_by_name['version']._options = None
 _BINDING.fields_by_name['space_id']._options = None
 _BINDING.fields_by_name['module_id']._options = None
 _BINDING.fields_by_name['module_version']._options = None

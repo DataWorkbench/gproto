@@ -11,26 +11,119 @@ import (
 	strings "strings"
 )
 
-func (this *BindingModule) _xxx_xxx_Validator_Validate_module_id() error {
-	if !(len(this.ModuleId) == 20) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("BindingModuleSpec", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
 
-func (this *BindingModule) _xxx_xxx_Validator_CheckIf_module_version() bool {
-	if !(this.ModuleVersion != "") {
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_stream_job() error {
+	for _, item := range this.StreamJob {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_stream_job_version() error {
+	for _, item := range this.StreamJobVersion {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_sync_job() error {
+	for _, item := range this.SyncJob {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_sync_job_version() error {
+	for _, item := range this.SyncJobVersion {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_flink_cluster() error {
+	for _, item := range this.FlinkCluster {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.BindingModuleSpec
+func (this *BindingModuleSpec) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_stream_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_stream_job_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_cluster(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *BindingModule) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("BindingModule", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
+	}
+	return nil
+}
+
+func (this *BindingModule) _xxx_xxx_Validator_CheckIf_version() bool {
+	if !(this.Version != "") {
 		return false
 	}
 	return true
 }
 
-func (this *BindingModule) _xxx_xxx_Validator_Validate_module_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_module_version() {
+func (this *BindingModule) _xxx_xxx_Validator_Validate_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_version() {
 		return nil
 	}
-	if !(len(this.ModuleVersion) == 16) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'module_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ModuleVersion))
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("BindingModule", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
 	}
 	return nil
 }
@@ -40,48 +133,10 @@ func (this *BindingModule) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_module_version(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *BindingResource) _xxx_xxx_Validator_Validate_resource_id() error {
-	if !(len(this.ResourceId) == 20) {
-		return protovalidator.FieldError1("BindingResource", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
-	}
-	return nil
-}
-
-func (this *BindingResource) _xxx_xxx_Validator_CheckIf_resource_version() bool {
-	if !(this.ResourceVersion != "") {
-		return false
-	}
-	return true
-}
-
-func (this *BindingResource) _xxx_xxx_Validator_Validate_resource_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_resource_version() {
-		return nil
-	}
-	if !(len(this.ResourceVersion) == 16) {
-		return protovalidator.FieldError1("BindingResource", "the byte length of field 'resource_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ResourceVersion))
-	}
-	return nil
-}
-
-// Set default value for message model.BindingResource
-func (this *BindingResource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_resource_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
 		return err
 	}
 	return nil
