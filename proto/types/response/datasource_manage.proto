@@ -67,6 +67,7 @@ message PingDataSourceConnection {
 }
 
 message DescribeDataSourceTables {
+  // The lists of tables or topics
   // @inject_tag: json:"items"
   repeated string items = 1;
 }

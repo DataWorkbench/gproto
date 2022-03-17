@@ -29,13 +29,13 @@ message TableColumn {
   // @inject_tag: json:"type" gorm:"column:type;"
   string type = 2;
 
-  // type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-  // @inject_tag: json:"length" gorm:"column:length;"
-  string length = 3;
-
   // primary key, one of true/false
   // @inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
-  string is_primary_key = 4;
+  bool is_primary_key = 3;
+
+//  // type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
+//  // @inject_tag: json:"length" gorm:"column:length;"
+//  string length = 4;
 
   //	// @inject_tag: json:"default" gorm:"column:default;"
   //	string default = 5;
