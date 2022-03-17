@@ -997,47 +997,14 @@ public final class PBDataSourceTable {
 
     /**
      * <pre>
-     * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-     * &#64;inject_tag: json:"length" gorm:"column:length;"
-     * </pre>
-     *
-     * <code>string length = 3;</code>
-     * @return The length.
-     */
-    java.lang.String getLength();
-    /**
-     * <pre>
-     * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-     * &#64;inject_tag: json:"length" gorm:"column:length;"
-     * </pre>
-     *
-     * <code>string length = 3;</code>
-     * @return The bytes for length.
-     */
-    com.google.protobuf.ByteString
-        getLengthBytes();
-
-    /**
-     * <pre>
      * primary key, one of true/false
      * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
      * </pre>
      *
-     * <code>string is_primary_key = 4;</code>
+     * <code>bool is_primary_key = 3;</code>
      * @return The isPrimaryKey.
      */
-    java.lang.String getIsPrimaryKey();
-    /**
-     * <pre>
-     * primary key, one of true/false
-     * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
-     * </pre>
-     *
-     * <code>string is_primary_key = 4;</code>
-     * @return The bytes for isPrimaryKey.
-     */
-    com.google.protobuf.ByteString
-        getIsPrimaryKeyBytes();
+    boolean getIsPrimaryKey();
   }
   /**
    * <pre>
@@ -1058,8 +1025,6 @@ public final class PBDataSourceTable {
     private TableColumn() {
       name_ = "";
       type_ = "";
-      length_ = "";
-      isPrimaryKey_ = "";
     }
 
     @java.lang.Override
@@ -1104,16 +1069,9 @@ public final class PBDataSourceTable {
               type_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              length_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              isPrimaryKey_ = s;
+              isPrimaryKey_ = input.readBool();
               break;
             }
             default: {
@@ -1244,100 +1202,20 @@ public final class PBDataSourceTable {
       }
     }
 
-    public static final int LENGTH_FIELD_NUMBER = 3;
-    private volatile java.lang.Object length_;
-    /**
-     * <pre>
-     * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-     * &#64;inject_tag: json:"length" gorm:"column:length;"
-     * </pre>
-     *
-     * <code>string length = 3;</code>
-     * @return The length.
-     */
-    @java.lang.Override
-    public java.lang.String getLength() {
-      java.lang.Object ref = length_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        length_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-     * &#64;inject_tag: json:"length" gorm:"column:length;"
-     * </pre>
-     *
-     * <code>string length = 3;</code>
-     * @return The bytes for length.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLengthBytes() {
-      java.lang.Object ref = length_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        length_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_PRIMARY_KEY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object isPrimaryKey_;
+    public static final int IS_PRIMARY_KEY_FIELD_NUMBER = 3;
+    private boolean isPrimaryKey_;
     /**
      * <pre>
      * primary key, one of true/false
      * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
      * </pre>
      *
-     * <code>string is_primary_key = 4;</code>
+     * <code>bool is_primary_key = 3;</code>
      * @return The isPrimaryKey.
      */
     @java.lang.Override
-    public java.lang.String getIsPrimaryKey() {
-      java.lang.Object ref = isPrimaryKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        isPrimaryKey_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * primary key, one of true/false
-     * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
-     * </pre>
-     *
-     * <code>string is_primary_key = 4;</code>
-     * @return The bytes for isPrimaryKey.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIsPrimaryKeyBytes() {
-      java.lang.Object ref = isPrimaryKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        isPrimaryKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getIsPrimaryKey() {
+      return isPrimaryKey_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1360,11 +1238,8 @@ public final class PBDataSourceTable {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, length_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isPrimaryKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, isPrimaryKey_);
+      if (isPrimaryKey_ != false) {
+        output.writeBool(3, isPrimaryKey_);
       }
       unknownFields.writeTo(output);
     }
@@ -1381,11 +1256,9 @@ public final class PBDataSourceTable {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, length_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isPrimaryKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, isPrimaryKey_);
+      if (isPrimaryKey_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isPrimaryKey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1406,10 +1279,8 @@ public final class PBDataSourceTable {
           .equals(other.getName())) return false;
       if (!getType()
           .equals(other.getType())) return false;
-      if (!getLength()
-          .equals(other.getLength())) return false;
-      if (!getIsPrimaryKey()
-          .equals(other.getIsPrimaryKey())) return false;
+      if (getIsPrimaryKey()
+          != other.getIsPrimaryKey()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1425,10 +1296,9 @@ public final class PBDataSourceTable {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + LENGTH_FIELD_NUMBER;
-      hash = (53 * hash) + getLength().hashCode();
       hash = (37 * hash) + IS_PRIMARY_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getIsPrimaryKey().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPrimaryKey());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1570,9 +1440,7 @@ public final class PBDataSourceTable {
 
         type_ = "";
 
-        length_ = "";
-
-        isPrimaryKey_ = "";
+        isPrimaryKey_ = false;
 
         return this;
       }
@@ -1602,7 +1470,6 @@ public final class PBDataSourceTable {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumn result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumn(this);
         result.name_ = name_;
         result.type_ = type_;
-        result.length_ = length_;
         result.isPrimaryKey_ = isPrimaryKey_;
         onBuilt();
         return result;
@@ -1660,13 +1527,8 @@ public final class PBDataSourceTable {
           type_ = other.type_;
           onChanged();
         }
-        if (!other.getLength().isEmpty()) {
-          length_ = other.length_;
-          onChanged();
-        }
-        if (!other.getIsPrimaryKey().isEmpty()) {
-          isPrimaryKey_ = other.isPrimaryKey_;
-          onChanged();
+        if (other.getIsPrimaryKey() != false) {
+          setIsPrimaryKey(other.getIsPrimaryKey());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1899,128 +1761,19 @@ public final class PBDataSourceTable {
         return this;
       }
 
-      private java.lang.Object length_ = "";
-      /**
-       * <pre>
-       * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-       * &#64;inject_tag: json:"length" gorm:"column:length;"
-       * </pre>
-       *
-       * <code>string length = 3;</code>
-       * @return The length.
-       */
-      public java.lang.String getLength() {
-        java.lang.Object ref = length_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          length_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-       * &#64;inject_tag: json:"length" gorm:"column:length;"
-       * </pre>
-       *
-       * <code>string length = 3;</code>
-       * @return The bytes for length.
-       */
-      public com.google.protobuf.ByteString
-          getLengthBytes() {
-        java.lang.Object ref = length_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          length_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-       * &#64;inject_tag: json:"length" gorm:"column:length;"
-       * </pre>
-       *
-       * <code>string length = 3;</code>
-       * @param value The length to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLength(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        length_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-       * &#64;inject_tag: json:"length" gorm:"column:length;"
-       * </pre>
-       *
-       * <code>string length = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLength() {
-        
-        length_ = getDefaultInstance().getLength();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
-       * &#64;inject_tag: json:"length" gorm:"column:length;"
-       * </pre>
-       *
-       * <code>string length = 3;</code>
-       * @param value The bytes for length to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLengthBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        length_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object isPrimaryKey_ = "";
+      private boolean isPrimaryKey_ ;
       /**
        * <pre>
        * primary key, one of true/false
        * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
        * </pre>
        *
-       * <code>string is_primary_key = 4;</code>
+       * <code>bool is_primary_key = 3;</code>
        * @return The isPrimaryKey.
        */
-      public java.lang.String getIsPrimaryKey() {
-        java.lang.Object ref = isPrimaryKey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          isPrimaryKey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getIsPrimaryKey() {
+        return isPrimaryKey_;
       }
       /**
        * <pre>
@@ -2028,38 +1781,12 @@ public final class PBDataSourceTable {
        * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
        * </pre>
        *
-       * <code>string is_primary_key = 4;</code>
-       * @return The bytes for isPrimaryKey.
-       */
-      public com.google.protobuf.ByteString
-          getIsPrimaryKeyBytes() {
-        java.lang.Object ref = isPrimaryKey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          isPrimaryKey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * primary key, one of true/false
-       * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
-       * </pre>
-       *
-       * <code>string is_primary_key = 4;</code>
+       * <code>bool is_primary_key = 3;</code>
        * @param value The isPrimaryKey to set.
        * @return This builder for chaining.
        */
-      public Builder setIsPrimaryKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setIsPrimaryKey(boolean value) {
+        
         isPrimaryKey_ = value;
         onChanged();
         return this;
@@ -2070,33 +1797,12 @@ public final class PBDataSourceTable {
        * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
        * </pre>
        *
-       * <code>string is_primary_key = 4;</code>
+       * <code>bool is_primary_key = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsPrimaryKey() {
         
-        isPrimaryKey_ = getDefaultInstance().getIsPrimaryKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * primary key, one of true/false
-       * &#64;inject_tag: json:"is_primary_key" gorm:"column:is_primary_key;"
-       * </pre>
-       *
-       * <code>string is_primary_key = 4;</code>
-       * @param value The bytes for isPrimaryKey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsPrimaryKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        isPrimaryKey_ = value;
+        isPrimaryKey_ = false;
         onChanged();
         return this;
       }
@@ -2175,12 +1881,12 @@ public final class PBDataSourceTable {
       "\n3proto/types/model/datasource/datasourc" +
       "e_table.proto\022\ndatasource\"7\n\013TableSchema" +
       "\022(\n\007columns\030\001 \003(\0132\027.datasource.TableColu" +
-      "mn\"Q\n\013TableColumn\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030" +
-      "\002 \001(\t\022\016\n\006length\030\003 \001(\t\022\026\n\016is_primary_key\030" +
-      "\004 \001(\tB\206\001\n/com.dataomnis.gproto.types.pbm" +
-      "odel.pbdatasourceB\021PBDataSourceTableP\000Z>" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodel/pbdatasourceb\006proto3"
+      "mn\"A\n\013TableColumn\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030" +
+      "\002 \001(\t\022\026\n\016is_primary_key\030\003 \001(\010B\206\001\n/com.da" +
+      "taomnis.gproto.types.pbmodel.pbdatasourc" +
+      "eB\021PBDataSourceTableP\000Z>github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbmodel/pbdata" +
+      "sourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2197,7 +1903,7 @@ public final class PBDataSourceTable {
     internal_static_datasource_TableColumn_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_TableColumn_descriptor,
-        new java.lang.String[] { "Name", "Type", "Length", "IsPrimaryKey", });
+        new java.lang.String[] { "Name", "Type", "IsPrimaryKey", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

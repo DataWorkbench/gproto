@@ -5136,6 +5136,7 @@ public final class PBResponseDataSourceManage {
 
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5146,6 +5147,7 @@ public final class PBResponseDataSourceManage {
         getItemsList();
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5155,6 +5157,7 @@ public final class PBResponseDataSourceManage {
     int getItemsCount();
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5165,6 +5168,7 @@ public final class PBResponseDataSourceManage {
     java.lang.String getItems(int index);
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5270,6 +5274,7 @@ public final class PBResponseDataSourceManage {
     private com.google.protobuf.LazyStringList items_;
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5282,6 +5287,7 @@ public final class PBResponseDataSourceManage {
     }
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5293,6 +5299,7 @@ public final class PBResponseDataSourceManage {
     }
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5305,6 +5312,7 @@ public final class PBResponseDataSourceManage {
     }
     /**
      * <pre>
+     * The lists of tables or topics
      * &#64;inject_tag: json:"items"
      * </pre>
      *
@@ -5647,6 +5655,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5659,6 +5668,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5670,6 +5680,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5682,6 +5693,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5695,6 +5707,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5715,6 +5728,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5734,6 +5748,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5751,6 +5766,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *
@@ -5765,6 +5781,7 @@ public final class PBResponseDataSourceManage {
       }
       /**
        * <pre>
+       * The lists of tables or topics
        * &#64;inject_tag: json:"items"
        * </pre>
        *

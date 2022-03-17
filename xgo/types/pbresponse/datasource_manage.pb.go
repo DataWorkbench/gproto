@@ -349,6 +349,7 @@ type DescribeDataSourceTables struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// The lists of tables or topics
 	Items []string `protobuf:"bytes,1,rep,name=items,proto3" json:"items"`
 }
 
