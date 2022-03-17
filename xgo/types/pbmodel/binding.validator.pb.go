@@ -30,8 +30,8 @@ func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_stream_job() error {
 	return nil
 }
 
-func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_stream_job_version() error {
-	for _, item := range this.StreamJobVersion {
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_stream_job_release() error {
+	for _, item := range this.StreamJobRelease {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -54,8 +54,8 @@ func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_sync_job() error {
 	return nil
 }
 
-func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_sync_job_version() error {
-	for _, item := range this.SyncJobVersion {
+func (this *BindingModuleSpec) _xxx_xxx_Validator_Validate_sync_job_release() error {
+	for _, item := range this.SyncJobRelease {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -89,13 +89,13 @@ func (this *BindingModuleSpec) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_stream_job(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_stream_job_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_stream_job_release(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_sync_job_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sync_job_release(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_flink_cluster(); err != nil {
