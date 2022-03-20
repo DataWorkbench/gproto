@@ -22,8 +22,8 @@ cd "${current_path}"/.. || exit 1
 GOPATH=$(go env GOPATH)
 
 # check java version.
-if ! java -version 2>&1 |grep 'java version "11.' >/dev/null ; then
-  echo "Error: the java not install or version not 11"
+if ! java -version 2>&1 |grep 'java version "1.8' >/dev/null ; then
+  echo "Error: the java not install or version not 8"
   exit 1
 fi
 
