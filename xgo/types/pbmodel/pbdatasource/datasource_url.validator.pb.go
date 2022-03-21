@@ -1052,8 +1052,8 @@ func (this *RedisURL) _xxx_xxx_Validator_Validate_database() error {
 	if !(this.Database >= 0) {
 		return protovalidator.FieldError1("RedisURL", "the value of field 'database' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Database))
 	}
-	if !(this.Database <= 64) {
-		return protovalidator.FieldError1("RedisURL", "the value of field 'database' must be less than or equal to '64'", protovalidator.Int32ToString(this.Database))
+	if !(this.Database <= 15) {
+		return protovalidator.FieldError1("RedisURL", "the value of field 'database' must be less than or equal to '15'", protovalidator.Int32ToString(this.Database))
 	}
 	return nil
 }
