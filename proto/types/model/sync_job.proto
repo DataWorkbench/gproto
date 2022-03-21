@@ -37,25 +37,7 @@ message SyncJob {
         RealTimeIncrement = 3;
     }
 
-    enum SyncSource {
-        SyncSourceUnset = 0;
-        MySQL = 1;
-        PostgreSQL = 2;
-        Kafka = 3;
-        S3 = 4;
-        ClickHouse = 5;
-        HBase = 6;
-        Ftp = 7;
-        HDFS = 8;
-        SqlServer = 9;
-        Oracle = 10;
-        DB2 = 11;
-        SapHana = 12;
-        ElasticSearch = 14;
-        MongoDb = 15;
-    }
-
-    enum SyncTarget{
+    enum Resource {
         SyncTargetUnset = 0;
         MySQL = 1;
         PostgreSQL = 2;
@@ -138,11 +120,11 @@ message SyncJob {
 
     // The sync task target type.
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
-    SyncSource source_type = 13 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    Resource source_type = 13 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 
     // The sync task target type.
     // @inject_tag: json:"target_type" gorm:"column:target_type;"
-    SyncTarget target_type = 14 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    Resource target_type = 14 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 }
 
 // SyncJobProperty represents property of job.
