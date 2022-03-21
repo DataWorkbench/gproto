@@ -38,7 +38,7 @@ message SyncJob {
     }
 
     enum Resource {
-        SyncTargetUnset = 0;
+        ResourceUnset = 0;
         MySQL = 1;
         PostgreSQL = 2;
         Kafka = 3;
