@@ -38,7 +38,7 @@ message SyncJob {
     }
 
     enum SyncSource {
-        TypeUnset = 0;
+        SyncSourceUnset = 0;
         MySQL = 1;
         PostgreSQL = 2;
         Kafka = 3;
@@ -56,7 +56,7 @@ message SyncJob {
     }
 
     enum SyncTarget{
-        TypeUnset = 0;
+        SyncTargetUnset = 0;
         MySQL = 1;
         PostgreSQL = 2;
         Kafka = 3;
