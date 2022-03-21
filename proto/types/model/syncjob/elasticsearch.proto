@@ -29,6 +29,7 @@ message ElasticSearchSource {
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 4;
+
 }
 
 

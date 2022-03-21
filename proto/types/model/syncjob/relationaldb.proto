@@ -34,6 +34,10 @@ message RelationaldbSource {
     // split_pk
     // @inject_tag: json:"split_pk" 
     string split_pk = 5;
+
+    // mapping type
+    // @inject_tag: json:"mapping_type"
+    Column.ColumnMapping mapping_type = 6;
 }
 
 message RelationaldbTarget {

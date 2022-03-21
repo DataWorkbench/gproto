@@ -16,10 +16,20 @@ import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 
 message Column{
+
+    enum ColumnMapping {
+        Name = 0;
+        Row = 1;
+        Auto = 2;
+    }
+
     // column name
     // @inject_tag: json:"name" 
     string name = 1;
     // column type
     // @inject_tag: json:"type" 
     string type = 2;
+    // column index
+    // @inject_tag: json:"index"
+    int32 index=3;
 }
