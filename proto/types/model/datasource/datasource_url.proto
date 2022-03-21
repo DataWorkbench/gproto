@@ -420,7 +420,7 @@ message RedisURL {
   // @inject_tag: json:"password"
   string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
-  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // Database specifies the database name of db. Is Required. Min: 1, Max: 64.
   // @inject_tag: json:"database"
   int32 database = 5 [ (validator.field).tags.string = { gte: 0, lte: 15 } ];
 }
