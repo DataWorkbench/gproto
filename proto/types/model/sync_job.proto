@@ -122,7 +122,7 @@ message SyncJob {
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
     Resource source_type = 13 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 
-    // The sync task  target type.
+    // The sync task target type.
     // @inject_tag: json:"target_type" gorm:"column:target_type;"
     Resource target_type = 14 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 }
