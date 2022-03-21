@@ -422,5 +422,5 @@ message RedisURL {
 
   // Database specifies the database name of db. Is Required. Min: 1,Max:64.
   // @inject_tag: json:"database"
-  int32 database = 5 [ (validator.field).tags.string = { gte: 0, lte: 15 } ];
+  int32 database = 5 [ (validator.field).tags.int = { gte: 0, lte: 15 } ];
 }
