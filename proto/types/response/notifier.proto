@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseNotifier";
+option java_multiple_files = false;
+
+import "proto/types/model/notifier.proto";
+
+message DescNotificationListResponse {
+  int32 total_count = 1;
+  repeated model.NotificationList notification_lists = 2;
+}

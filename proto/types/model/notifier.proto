@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelNotifier";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+message NotificationList {
+  string create_time = 1;
+  repeated NotificationListItem items = 2;
+  string notification_list_id = 3;
+  string notification_list_name = 4;
+  string owner = 5;
+}
+
+message NotificationListItem {
+  string content = 1;
+  string create_time = 2;
+  string notification_item_id = 3;
+  string notification_item_type = 4;
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestNotifier";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+message SendNotification {
+  // @inject_tag: json:"owner"
+  string owner = 1 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+  // @inject_tag: json:"nf_list_ids"
+  repeated string nf_list_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  // @inject_tag: json:"title"
+  string title = 3 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+  // @inject_tag: json:"short_content"
+  string short_content = 4 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+  // @inject_tag: json:"content"
+  string content = 5 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+}
+
+message DescNotificationListRequest {
+  // @inject_tag: json:"limit"
+  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  // @inject_tag: json:"offset"
+  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+  // @inject_tag: json:"owner" uri:"user_id" swaggerignore:"true"
+  string owner = 3;
+  repeated string nf_list_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+}
