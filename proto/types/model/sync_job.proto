@@ -75,7 +75,7 @@ message SyncJob {
     // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
     bool is_directory = 7;
 
-    // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+    // Job type. 1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull" 4 => "RealTimeIncrement"
     // @inject_tag: json:"type" gorm:"column:type;"
     Type type = 8 [
     (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
@@ -97,6 +97,14 @@ message SyncJob {
     // Timestamp of update time.
     // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
     int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
+
+    // The sync task target type.
+    // @inject_tag: json:"source_type" gorm:"column:source_type;"
+    string source_type = 13 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+
+    // The sync task target type.
+    // @inject_tag: json:"target_type" gorm:"column:target_type;"
+    string target_type = 14 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 }
 
 // SyncJobProperty represents property of job.
