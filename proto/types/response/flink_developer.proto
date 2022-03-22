@@ -71,7 +71,3 @@ message ValidateFlinkJob {
   // Message represents the error message when found syntax Incorrect.
   string message = 2;
 }
-
-message ParseFlinkJobToGraph{
-  string message = 1;
-}
