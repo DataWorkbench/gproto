@@ -61,7 +61,7 @@ message SubmitSyncJob {
 message StopSyncJob {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "stj-" } ];
+  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "syj-" } ];
 
   bool stop_running = 3 [(validator.field) = {}];
 }
@@ -75,5 +75,5 @@ message DeleteSyncJobsByJobIds {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // The list of stream job id.
-  repeated string job_ids = 2 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "stj-" } } } ];
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "syj-" } } } ];
 }

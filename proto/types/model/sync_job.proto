@@ -71,12 +71,12 @@ message SyncJob {
     // @inject_tag: json:"pid" gorm:"column:pid;"
     string pid = 2 [
     (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "syj-" }
     ];
 
     // Job ID, unique within a region.
     // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-    string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // The job version id, only used for Published job.
     // Only used in published job.
@@ -376,7 +376,7 @@ message SyncJobRelease {
 
     // Job ID, unique within a region.
     // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // The release version.
     // @inject_tag: json:"version" gorm:"column:version;"

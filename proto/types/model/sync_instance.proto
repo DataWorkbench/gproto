@@ -39,7 +39,7 @@ message SyncInstance {
 
   // Job ID it belongs to.
   // @inject_tag: json:"job_id" gorm:"column:job_id;"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;
@@ -47,7 +47,7 @@ message SyncInstance {
 
   // Job instance ID, unique.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
+  string id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
 
   // The instance state.
   // @inject_tag: json:"state" gorm:"column:state;"
