@@ -85,7 +85,7 @@ string desc = 6 [ (validator.field).tags.string = { char_len_lte: 1020 } ];
 // @inject_tag: json:"type"
 model.SyncJob.Type type = 7  [
 (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
-(validator.field).tags.enum = { gt: 0; in_enums: true  }
+(validator.field).tags.enum = { gte: 0; in_enums: true  }
 ];
 
 // The flink compute cluster id. Is required.
