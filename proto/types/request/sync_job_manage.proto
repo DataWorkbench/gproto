@@ -103,7 +103,7 @@ message DeleteSyncJobs {
     // The workspace id in HTTP Request-URI
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-// The list of stream job id. Is required, Min 1, Max 100.
+// The list of sync job id. Is required, Min 1, Max 100.
 // @inject_tag: json:"job_ids"
 repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "syj-" } } } ];
 }
@@ -114,7 +114,7 @@ message MoveSyncJobs {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The list of stream job id. Is required, Min 1, Max 100.
+// The list of sync job id. Is required, Min 1, Max 100.
 // @inject_tag: json:"job_ids"
 repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "syj-" } } } ];
 
@@ -132,11 +132,11 @@ message UpdateSyncJob {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The stream job id in HTTP Request-URI
+// The sync job id in HTTP Request-URI
 // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
 string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
-// The stream job name in each workspace is unique. Is required, Max Length 128.
+// The sync job name in each workspace is unique. Is required, Max Length 128.
 // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 // @inject_tag: json:"name"
 string name = 3  [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
@@ -148,11 +148,11 @@ string desc = 4  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 
 // DescribeSyncJob used as a request parameters for RPC.
 message DescribeSyncJob {
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
-    // The stream job version id in HTTP Request-URI
+    // The sync job version id in HTTP Request-URI
     // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
     string version = 2 [(validator.field) = {}];
 }
@@ -163,7 +163,7 @@ message SetSyncJobSchedule {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The stream job id it belongs to.
+// The sync job id it belongs to.
 // @inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
 string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
@@ -178,7 +178,7 @@ message SetSyncJobConf {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-    // The stream job ID it belongs to.
+    // The sync job ID it belongs to.
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
@@ -190,22 +190,22 @@ message SetSyncJobConf {
 
 // GetSyncJobSchedule used as a request parameters for RPC.
 message GetSyncJobSchedule {
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
-    // The stream job version id in HTTP Request-URI
+    // The sync job version id in HTTP Request-URI
     // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
     string version = 2 [(validator.field) = {}];
 }
 
 // GetSyncJobConf used as a request parameters for RPC.
 message GetSyncJobConf {
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
-    // The stream job version id in HTTP Request-URI
+    // The sync job version id in HTTP Request-URI
     // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
     string version = 2 [(validator.field) = {}];
 }
@@ -236,7 +236,7 @@ string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "c
 // @inject_tag: json:"reverse" form:"reverse"
 bool reverse = 4;
 
-// Search with stream job name; Not required.
+// Search with sync job name; Not required.
 // @inject_tag: json:"search" form:"search"
 string search = 6;
 
@@ -245,14 +245,14 @@ string search = 6;
 // @inject_tag: json:"status" form:"status"
 model.SyncJobRelease.Status status = 7 [(validator.field).tags.enum = { in_enums: true }];
 
-// The stream job id.
+// The sync job id.
 // @inject_tag: json:"job_id" form:"job_id"
 string job_id = 8;
 }
 
 // ReleaseSyncJob used as a request parameters for RPC and HTTP(based on Body.)
 message ReleaseSyncJob {
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
@@ -274,7 +274,7 @@ message OfflineReleaseSyncJob {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // StopRunning indicates whether stop the sync job instance that state running.
@@ -288,7 +288,7 @@ message SuspendReleaseSyncJob {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The stream job id in HTTP Request-URI
+// The sync job id in HTTP Request-URI
 // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
 string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
@@ -302,14 +302,14 @@ message ResumeReleaseSyncJob {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
 // ListSyncJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSyncJobVersions {
-    // The stream job id in HTTP Request-URI
+    // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
@@ -338,5 +338,5 @@ message ListSyncJobVersions {
 message DescribeSyncFlinkUIByInstanceId {
     // The instance id in HTTP Request-URI. Is Required.
     // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
-    string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
+    string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
 }

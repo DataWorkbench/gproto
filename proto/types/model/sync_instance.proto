@@ -13,7 +13,7 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-// The instance info of stream job.
+// The instance info of sync job.
 message SyncInstance {
   enum Status {
     StatusUnset = 0;

@@ -28,7 +28,7 @@ import "proto/types/model/syncjob/redis.proto";
 import "proto/types/model/syncjob/relationaldb.proto";
 import "proto/types/model/syncjob/sqlservercdc.proto";
 
-// The stream job info
+// The sync job info
 message SyncJob {
     enum Type {
         OfflineFull = 0;
@@ -361,7 +361,7 @@ message SyncJobSchedule {
     ];
     }
 
-// The release stream job info.
+// The release sync job info.
 message SyncJobRelease {
     enum Status {
         StatusUnset = 0;
