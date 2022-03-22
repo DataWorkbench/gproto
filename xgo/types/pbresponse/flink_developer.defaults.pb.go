@@ -49,11 +49,3 @@ func (this *ValidateFlinkJob) SetDefaults() {
 	}
 	return
 }
-
-// Set default value for message response.ParseFlinkJobToGraph
-func (this *ParseFlinkJobToGraph) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}

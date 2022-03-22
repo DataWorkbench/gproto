@@ -30,7 +30,7 @@ type FlinkDeveloperClient interface {
 	CancelFlinkJob(ctx context.Context, in *pbrequest.CancelFlinkJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
 	ValidateFlinkJobContext(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
-	ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ParseFlinkJobToGraph, error)
+	ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
 	GetFlinkJobsByUrl(ctx context.Context, in *pbrequest.GetFlinkJobsByUrl, opts ...grpc.CallOption) (*pbresponse.GetFlinkJobsByUrl, error)
 }
 
@@ -87,8 +87,8 @@ func (c *flinkDeveloperClient) ValidateFlinkJobContext(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *flinkDeveloperClient) ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ParseFlinkJobToGraph, error) {
-	out := new(pbresponse.ParseFlinkJobToGraph)
+func (c *flinkDeveloperClient) ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error) {
+	out := new(pbresponse.ValidateFlinkJob)
 	err := c.cc.Invoke(ctx, "/developer.FlinkDeveloper/ParseFlinkJobToGraph", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -114,7 +114,7 @@ type FlinkDeveloperServer interface {
 	CancelFlinkJob(context.Context, *pbrequest.CancelFlinkJob) (*pbmodel.EmptyStruct, error)
 	ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error)
 	ValidateFlinkJobContext(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error)
-	ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ParseFlinkJobToGraph, error)
+	ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error)
 	GetFlinkJobsByUrl(context.Context, *pbrequest.GetFlinkJobsByUrl) (*pbresponse.GetFlinkJobsByUrl, error)
 	mustEmbedUnimplementedFlinkDeveloperServer()
 }
@@ -138,7 +138,7 @@ func (UnimplementedFlinkDeveloperServer) ValidateFlinkJob(context.Context, *pbre
 func (UnimplementedFlinkDeveloperServer) ValidateFlinkJobContext(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJobContext not implemented")
 }
-func (UnimplementedFlinkDeveloperServer) ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ParseFlinkJobToGraph, error) {
+func (UnimplementedFlinkDeveloperServer) ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ParseFlinkJobToGraph not implemented")
 }
 func (UnimplementedFlinkDeveloperServer) GetFlinkJobsByUrl(context.Context, *pbrequest.GetFlinkJobsByUrl) (*pbresponse.GetFlinkJobsByUrl, error) {

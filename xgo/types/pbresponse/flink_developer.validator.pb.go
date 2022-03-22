@@ -64,11 +64,3 @@ func (this *ValidateFlinkJob) Validate() error {
 	}
 	return nil
 }
-
-// Set default value for message response.ParseFlinkJobToGraph
-func (this *ParseFlinkJobToGraph) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}

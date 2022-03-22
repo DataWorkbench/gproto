@@ -27,7 +27,7 @@ public final class PBSvcFlinkDeveloper {
       "r.proto\022\tdeveloper\032\035proto/types/model/em" +
       "pty.proto\032)proto/types/request/flink_dev" +
       "eloper.proto\032*proto/types/response/flink" +
-      "_developer.proto2\252\004\n\016FlinkDeveloper\022E\n\016S" +
+      "_developer.proto2\246\004\n\016FlinkDeveloper\022E\n\016S" +
       "ubmitFlinkJob\022\027.request.SubmitFlinkJob\032\030" +
       ".response.SubmitFlinkJob\"\000\022N\n\021GetFlinkJo" +
       "bStatus\022\032.request.GetFlinkJobStatus\032\033.re" +
@@ -37,14 +37,14 @@ public final class PBSvcFlinkDeveloper {
       "t.ValidateFlinkJob\032\032.response.ValidateFl" +
       "inkJob\"\000\022P\n\027ValidateFlinkJobContext\022\027.re" +
       "quest.SubmitFlinkJob\032\032.response.Validate" +
-      "FlinkJob\"\000\022Q\n\024ParseFlinkJobToGraph\022\027.req" +
-      "uest.SubmitFlinkJob\032\036.response.ParseFlin" +
-      "kJobToGraph\"\000\022N\n\021GetFlinkJobsByUrl\022\032.req" +
-      "uest.GetFlinkJobsByUrl\032\033.response.GetFli" +
-      "nkJobsByUrl\"\000B\200\001\n+com.dataomnis.gproto.s" +
-      "ervice.pbsvcdeveloperB\023PBSvcFlinkDevelop" +
-      "erP\000Z:github.com/DataWorkbench/gproto/xg" +
-      "o/service/pbsvcdeveloperb\006proto3"
+      "FlinkJob\"\000\022M\n\024ParseFlinkJobToGraph\022\027.req" +
+      "uest.SubmitFlinkJob\032\032.response.ValidateF" +
+      "linkJob\"\000\022N\n\021GetFlinkJobsByUrl\022\032.request" +
+      ".GetFlinkJobsByUrl\032\033.response.GetFlinkJo" +
+      "bsByUrl\"\000B\200\001\n+com.dataomnis.gproto.servi" +
+      "ce.pbsvcdeveloperB\023PBSvcFlinkDeveloperP\000" +
+      "Z:github.com/DataWorkbench/gproto/xgo/se" +
+      "rvice/pbsvcdeveloperb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
