@@ -57,7 +57,7 @@ message SyncInstance {
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // Message is the error message when task execute failed.
+  //Message is the error message when task execute failed.
   // @inject_tag: json:"message" gorm:"column:message;"
   string message = 7;
 
