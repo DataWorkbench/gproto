@@ -25,7 +25,7 @@ service FlinkDeveloper {
 
   rpc ValidateFlinkJobContext(request.SubmitFlinkJob) returns(response.ValidateFlinkJob){}
 
-  rpc ParseFlinkJobToGraph(request.SubmitFlinkJob) returns (response.ParseFlinkJobToGraph){}
+  rpc ParseFlinkJobToGraph(request.SubmitFlinkJob) returns (response.ValidateFlinkJob){}
 
   rpc GetFlinkJobsByUrl(request.GetFlinkJobsByUrl) returns (response.GetFlinkJobsByUrl) {}
 }
