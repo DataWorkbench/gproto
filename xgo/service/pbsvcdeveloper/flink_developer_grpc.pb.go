@@ -29,6 +29,9 @@ type FlinkDeveloperClient interface {
 	GetFlinkJobStatus(ctx context.Context, in *pbrequest.GetFlinkJobStatus, opts ...grpc.CallOption) (*pbresponse.GetFlinkJobStatus, error)
 	CancelFlinkJob(ctx context.Context, in *pbrequest.CancelFlinkJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
+	ValidateFlinkJobContext(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
+	ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ParseFlinkJobToGraph, error)
+	GetFlinkJobsByUrl(ctx context.Context, in *pbrequest.GetFlinkJobsByUrl, opts ...grpc.CallOption) (*pbresponse.GetFlinkJobsByUrl, error)
 }
 
 type flinkDeveloperClient struct {
@@ -75,6 +78,33 @@ func (c *flinkDeveloperClient) ValidateFlinkJob(ctx context.Context, in *pbreque
 	return out, nil
 }
 
+func (c *flinkDeveloperClient) ValidateFlinkJobContext(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error) {
+	out := new(pbresponse.ValidateFlinkJob)
+	err := c.cc.Invoke(ctx, "/developer.FlinkDeveloper/ValidateFlinkJobContext", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *flinkDeveloperClient) ParseFlinkJobToGraph(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.ParseFlinkJobToGraph, error) {
+	out := new(pbresponse.ParseFlinkJobToGraph)
+	err := c.cc.Invoke(ctx, "/developer.FlinkDeveloper/ParseFlinkJobToGraph", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *flinkDeveloperClient) GetFlinkJobsByUrl(ctx context.Context, in *pbrequest.GetFlinkJobsByUrl, opts ...grpc.CallOption) (*pbresponse.GetFlinkJobsByUrl, error) {
+	out := new(pbresponse.GetFlinkJobsByUrl)
+	err := c.cc.Invoke(ctx, "/developer.FlinkDeveloper/GetFlinkJobsByUrl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FlinkDeveloperServer is the server API for FlinkDeveloper service.
 // All implementations must embed UnimplementedFlinkDeveloperServer
 // for forward compatibility
@@ -83,6 +113,9 @@ type FlinkDeveloperServer interface {
 	GetFlinkJobStatus(context.Context, *pbrequest.GetFlinkJobStatus) (*pbresponse.GetFlinkJobStatus, error)
 	CancelFlinkJob(context.Context, *pbrequest.CancelFlinkJob) (*pbmodel.EmptyStruct, error)
 	ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error)
+	ValidateFlinkJobContext(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error)
+	ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ParseFlinkJobToGraph, error)
+	GetFlinkJobsByUrl(context.Context, *pbrequest.GetFlinkJobsByUrl) (*pbresponse.GetFlinkJobsByUrl, error)
 	mustEmbedUnimplementedFlinkDeveloperServer()
 }
 
@@ -101,6 +134,15 @@ func (UnimplementedFlinkDeveloperServer) CancelFlinkJob(context.Context, *pbrequ
 }
 func (UnimplementedFlinkDeveloperServer) ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJob not implemented")
+}
+func (UnimplementedFlinkDeveloperServer) ValidateFlinkJobContext(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJobContext not implemented")
+}
+func (UnimplementedFlinkDeveloperServer) ParseFlinkJobToGraph(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.ParseFlinkJobToGraph, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ParseFlinkJobToGraph not implemented")
+}
+func (UnimplementedFlinkDeveloperServer) GetFlinkJobsByUrl(context.Context, *pbrequest.GetFlinkJobsByUrl) (*pbresponse.GetFlinkJobsByUrl, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFlinkJobsByUrl not implemented")
 }
 func (UnimplementedFlinkDeveloperServer) mustEmbedUnimplementedFlinkDeveloperServer() {}
 
@@ -187,6 +229,60 @@ func _FlinkDeveloper_ValidateFlinkJob_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FlinkDeveloper_ValidateFlinkJobContext_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SubmitFlinkJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FlinkDeveloperServer).ValidateFlinkJobContext(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/developer.FlinkDeveloper/ValidateFlinkJobContext",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FlinkDeveloperServer).ValidateFlinkJobContext(ctx, req.(*pbrequest.SubmitFlinkJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FlinkDeveloper_ParseFlinkJobToGraph_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SubmitFlinkJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FlinkDeveloperServer).ParseFlinkJobToGraph(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/developer.FlinkDeveloper/ParseFlinkJobToGraph",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FlinkDeveloperServer).ParseFlinkJobToGraph(ctx, req.(*pbrequest.SubmitFlinkJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FlinkDeveloper_GetFlinkJobsByUrl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GetFlinkJobsByUrl)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FlinkDeveloperServer).GetFlinkJobsByUrl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/developer.FlinkDeveloper/GetFlinkJobsByUrl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FlinkDeveloperServer).GetFlinkJobsByUrl(ctx, req.(*pbrequest.GetFlinkJobsByUrl))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FlinkDeveloper_ServiceDesc is the grpc.ServiceDesc for FlinkDeveloper service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -209,6 +305,18 @@ var FlinkDeveloper_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ValidateFlinkJob",
 			Handler:    _FlinkDeveloper_ValidateFlinkJob_Handler,
+		},
+		{
+			MethodName: "ValidateFlinkJobContext",
+			Handler:    _FlinkDeveloper_ValidateFlinkJobContext_Handler,
+		},
+		{
+			MethodName: "ParseFlinkJobToGraph",
+			Handler:    _FlinkDeveloper_ParseFlinkJobToGraph_Handler,
+		},
+		{
+			MethodName: "GetFlinkJobsByUrl",
+			Handler:    _FlinkDeveloper_GetFlinkJobsByUrl_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

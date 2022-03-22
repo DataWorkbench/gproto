@@ -56,3 +56,11 @@ func (this *ValidateFlinkJob) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.GetFlinkJobsByUrl
+func (this *GetFlinkJobsByUrl) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

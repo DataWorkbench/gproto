@@ -155,7 +155,7 @@ type SyncInstance struct {
 	State SyncInstance_State `protobuf:"varint,5,opt,name=state,proto3,enum=model.SyncInstance_State" json:"state" gorm:"column:state;"`
 	// Release status, 1 => "Deleted", 2 => "Enabled "
 	Status SyncInstance_Status `protobuf:"varint,6,opt,name=status,proto3,enum=model.SyncInstance_Status" json:"status" gorm:"column:status;"`
-	// Message is the error message when task execute failed.
+	//Message is the error message when task execute failed.
 	Message string `protobuf:"bytes,7,opt,name=message,proto3" json:"message" gorm:"column:message;"`
 	// NoteId is the zeppelin notebook id
 	NoteId string `protobuf:"bytes,10,opt,name=note_id,json=noteId,proto3" json:"note_id" gorm:"column:note_id;"`
