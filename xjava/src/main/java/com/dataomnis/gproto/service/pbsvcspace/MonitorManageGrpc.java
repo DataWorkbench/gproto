@@ -8,9 +8,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/spacemanager/monitor_manage.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class MonitorManageGrpc {
 
   private MonitorManageGrpc() {}

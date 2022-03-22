@@ -18413,7 +18413,7 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * Database specifies the database name of db. Is Required. Min: 1,Max:64.
      * &#64;inject_tag: json:"database"
      * </pre>
      *
@@ -18698,7 +18698,7 @@ public final class PBDataSourceURL {
     private int database_;
     /**
      * <pre>
-     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * Database specifies the database name of db. Is Required. Min: 1,Max:64.
      * &#64;inject_tag: json:"database"
      * </pre>
      *
@@ -19436,7 +19436,7 @@ public final class PBDataSourceURL {
       private int database_ ;
       /**
        * <pre>
-       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
        * &#64;inject_tag: json:"database"
        * </pre>
        *
@@ -19449,7 +19449,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
        * &#64;inject_tag: json:"database"
        * </pre>
        *
@@ -19465,7 +19465,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
        * &#64;inject_tag: json:"database"
        * </pre>
        *
@@ -19700,7 +19700,7 @@ public final class PBDataSourceURL {
       "\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200" +
       "\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010p" +
       "assword\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\037\n\010databa" +
-      "se\030\005 \001(\005B\r\342\337\037\t\022\007\262\001\0048@@\000:\006\312\262\004\002\n\000B\204\001\n/com." +
+      "se\030\005 \001(\005B\r\342\337\037\t\022\007\262\001\0048\017@\000:\006\312\262\004\002\n\000B\204\001\n/com." +
       "dataomnis.gproto.types.pbmodel.pbdatasou" +
       "rceB\017PBDataSourceURLP\000Z>github.com/DataW" +
       "orkbench/gproto/xgo/types/pbmodel/pbdata" +

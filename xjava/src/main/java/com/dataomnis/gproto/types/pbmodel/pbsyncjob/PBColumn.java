@@ -61,6 +61,17 @@ public final class PBColumn {
      */
     com.google.protobuf.ByteString
         getTypeBytes();
+
+    /**
+     * <pre>
+     * column index
+     * &#64;inject_tag: json:"index"
+     * </pre>
+     *
+     * <code>int32 index = 3;</code>
+     * @return The index.
+     */
+    int getIndex();
   }
   /**
    * Protobuf type {@code model.Column}
@@ -121,6 +132,11 @@ public final class PBColumn {
               type_ = s;
               break;
             }
+            case 24: {
+
+              index_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -151,6 +167,123 @@ public final class PBColumn {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.internal_static_model_Column_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.Column.ColumnMapping}
+     */
+    public enum ColumnMapping
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>Name = 0;</code>
+       */
+      Name(0),
+      /**
+       * <code>Row = 1;</code>
+       */
+      Row(1),
+      /**
+       * <code>Auto = 2;</code>
+       */
+      Auto(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>Name = 0;</code>
+       */
+      public static final int Name_VALUE = 0;
+      /**
+       * <code>Row = 1;</code>
+       */
+      public static final int Row_VALUE = 1;
+      /**
+       * <code>Auto = 2;</code>
+       */
+      public static final int Auto_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ColumnMapping valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ColumnMapping forNumber(int value) {
+        switch (value) {
+          case 0: return Name;
+          case 1: return Row;
+          case 2: return Auto;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ColumnMapping>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ColumnMapping> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ColumnMapping>() {
+              public ColumnMapping findValueByNumber(int number) {
+                return ColumnMapping.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ColumnMapping[] VALUES = values();
+
+      public static ColumnMapping valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ColumnMapping(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.Column.ColumnMapping)
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -249,6 +382,22 @@ public final class PBColumn {
       }
     }
 
+    public static final int INDEX_FIELD_NUMBER = 3;
+    private int index_;
+    /**
+     * <pre>
+     * column index
+     * &#64;inject_tag: json:"index"
+     * </pre>
+     *
+     * <code>int32 index = 3;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public int getIndex() {
+      return index_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -269,6 +418,9 @@ public final class PBColumn {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
+      if (index_ != 0) {
+        output.writeInt32(3, index_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -283,6 +435,10 @@ public final class PBColumn {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+      }
+      if (index_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, index_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -303,6 +459,8 @@ public final class PBColumn {
           .equals(other.getName())) return false;
       if (!getType()
           .equals(other.getType())) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -318,6 +476,8 @@ public final class PBColumn {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -455,6 +615,8 @@ public final class PBColumn {
 
         type_ = "";
 
+        index_ = 0;
+
         return this;
       }
 
@@ -483,6 +645,7 @@ public final class PBColumn {
         com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column result = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column(this);
         result.name_ = name_;
         result.type_ = type_;
+        result.index_ = index_;
         onBuilt();
         return result;
       }
@@ -538,6 +701,9 @@ public final class PBColumn {
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
           onChanged();
+        }
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -769,6 +935,52 @@ public final class PBColumn {
         onChanged();
         return this;
       }
+
+      private int index_ ;
+      /**
+       * <pre>
+       * column index
+       * &#64;inject_tag: json:"index"
+       * </pre>
+       *
+       * <code>int32 index = 3;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public int getIndex() {
+        return index_;
+      }
+      /**
+       * <pre>
+       * column index
+       * &#64;inject_tag: json:"index"
+       * </pre>
+       *
+       * <code>int32 index = 3;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(int value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column index
+       * &#64;inject_tag: json:"index"
+       * </pre>
+       *
+       * <code>int32 index = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -841,11 +1053,12 @@ public final class PBColumn {
       "roto/validator.proto\032/github.com/yu31/pr" +
       "otoc-plugin/proto/gosql.proto\0322github.co" +
       "m/yu31/protoc-plugin/proto/defaults.prot" +
-      "o\"$\n\006Column\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\tB" +
-      "w\n,com.dataomnis.gproto.types.pbmodel.pb" +
-      "syncjobB\010PBColumnP\000Z;github.com/DataWork" +
-      "bench/gproto/xgo/types/pbmodel/pbsyncjob" +
-      "b\006proto3"
+      "o\"a\n\006Column\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022" +
+      "\r\n\005index\030\003 \001(\005\",\n\rColumnMapping\022\010\n\004Name\020" +
+      "\000\022\007\n\003Row\020\001\022\010\n\004Auto\020\002Bw\n,com.dataomnis.gp" +
+      "roto.types.pbmodel.pbsyncjobB\010PBColumnP\000" +
+      "Z;github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -859,7 +1072,7 @@ public final class PBColumn {
     internal_static_model_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Column_descriptor,
-        new java.lang.String[] { "Name", "Type", });
+        new java.lang.String[] { "Name", "Type", "Index", });
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();

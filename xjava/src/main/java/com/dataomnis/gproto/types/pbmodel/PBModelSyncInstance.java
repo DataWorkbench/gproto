@@ -150,7 +150,7 @@ public final class PBModelSyncInstance {
 
     /**
      * <pre>
-     * Message is the error message when task execute failed.
+     *Message is the error message when task execute failed.
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
@@ -160,7 +160,7 @@ public final class PBModelSyncInstance {
     java.lang.String getMessage();
     /**
      * <pre>
-     * Message is the error message when task execute failed.
+     *Message is the error message when task execute failed.
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
@@ -960,7 +960,7 @@ public final class PBModelSyncInstance {
     private volatile java.lang.Object message_;
     /**
      * <pre>
-     * Message is the error message when task execute failed.
+     *Message is the error message when task execute failed.
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
@@ -982,7 +982,7 @@ public final class PBModelSyncInstance {
     }
     /**
      * <pre>
-     * Message is the error message when task execute failed.
+     *Message is the error message when task execute failed.
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
@@ -2237,7 +2237,7 @@ public final class PBModelSyncInstance {
       private java.lang.Object message_ = "";
       /**
        * <pre>
-       * Message is the error message when task execute failed.
+       *Message is the error message when task execute failed.
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
@@ -2258,7 +2258,7 @@ public final class PBModelSyncInstance {
       }
       /**
        * <pre>
-       * Message is the error message when task execute failed.
+       *Message is the error message when task execute failed.
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
@@ -2280,7 +2280,7 @@ public final class PBModelSyncInstance {
       }
       /**
        * <pre>
-       * Message is the error message when task execute failed.
+       *Message is the error message when task execute failed.
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
@@ -2300,7 +2300,7 @@ public final class PBModelSyncInstance {
       }
       /**
        * <pre>
-       * Message is the error message when task execute failed.
+       *Message is the error message when task execute failed.
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
@@ -2315,7 +2315,7 @@ public final class PBModelSyncInstance {
       }
       /**
        * <pre>
-       * Message is the error message when task execute failed.
+       *Message is the error message when task execute failed.
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
@@ -2797,9 +2797,9 @@ public final class PBModelSyncInstance {
       "\005model\0323github.com/yu31/protoc-plugin/pr" +
       "oto/validator.proto\"\320\004\n\014SyncInstance\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
-      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007vers" +
+      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007vers" +
       "ion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\037\n\002id\030\004 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004sti-\0227\n\005state\030\005 \001(\0162\031.model." +
+      "\017\022\r\302\001\n\360\001\024\312\002\004syi-\0227\n\005state\030\005 \001(\0162\031.model." +
       "SyncInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\006sta" +
       "tus\030\006 \001(\0162\032.model.SyncInstance.StatusB\r\342" +
       "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id" +

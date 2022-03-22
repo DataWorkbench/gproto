@@ -6573,13 +6573,13 @@ public final class PBRequestScheduler {
       "\001(\0132\026.model.SyncJobPropertyB\013\342\337\037\007\022\005\342\001\002\020\001" +
       "\022\032\n\014stop_running\030\002 \001(\010B\004\342\337\037\000\"u\n\013StopSync" +
       "Job\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022" +
+      "s-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
       "\032\n\014stop_running\030\003 \001(\010B\004\342\337\037\000\"G\n\030DeleteSyn" +
       "cJobsBySpaceIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024" +
       "\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004wks-\"j\n\026DeleteSyncJobsBy" +
       "JobIds\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
       "\004wks-\022)\n\007job_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001" +
-      "\024\312\002\004stj-Bq\n$com.dataomnis.gproto.types.p" +
+      "\024\312\002\004syj-Bq\n$com.dataomnis.gproto.types.p" +
       "brequestB\022PBRequestSchedulerP\000Z3github.c" +
       "om/DataWorkbench/gproto/xgo/types/pbrequ" +
       "estb\006proto3"

@@ -165,7 +165,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -175,7 +175,7 @@ public final class PBSyncManageSyncJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -248,6 +248,48 @@ public final class PBSyncManageSyncJob {
      * @return The updated.
      */
     long getUpdated();
+
+    /**
+     * <pre>
+     * The  sync task source type.
+     * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    int getSourceTypeValue();
+    /**
+     * <pre>
+     * The  sync task source type.
+     * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType();
+
+    /**
+     * <pre>
+     * The sync task target type.
+     * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    int getTargetTypeValue();
+    /**
+     * <pre>
+     * The sync task target type.
+     * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType();
   }
   /**
    * <pre>
@@ -275,6 +317,8 @@ public final class PBSyncManageSyncJob {
       type_ = 0;
       status_ = 0;
       createdBy_ = "";
+      sourceType_ = 0;
+      targetType_ = 0;
     }
 
     @java.lang.Override
@@ -374,6 +418,18 @@ public final class PBSyncManageSyncJob {
             case 96: {
 
               updated_ = input.readInt64();
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+
+              sourceType_ = rawValue;
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              targetType_ = rawValue;
               break;
             }
             default: {
@@ -535,6 +591,249 @@ public final class PBSyncManageSyncJob {
     }
 
     /**
+     * Protobuf enum {@code model.SyncJob.Resource}
+     */
+    public enum Resource
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ResourceUnset = 0;</code>
+       */
+      ResourceUnset(0),
+      /**
+       * <code>MySQL = 1;</code>
+       */
+      MySQL(1),
+      /**
+       * <code>PostgreSQL = 2;</code>
+       */
+      PostgreSQL(2),
+      /**
+       * <code>Kafka = 3;</code>
+       */
+      Kafka(3),
+      /**
+       * <code>S3 = 4;</code>
+       */
+      S3(4),
+      /**
+       * <code>ClickHouse = 5;</code>
+       */
+      ClickHouse(5),
+      /**
+       * <code>HBase = 6;</code>
+       */
+      HBase(6),
+      /**
+       * <code>Ftp = 7;</code>
+       */
+      Ftp(7),
+      /**
+       * <code>HDFS = 8;</code>
+       */
+      HDFS(8),
+      /**
+       * <code>SqlServer = 9;</code>
+       */
+      SqlServer(9),
+      /**
+       * <code>Oracle = 10;</code>
+       */
+      Oracle(10),
+      /**
+       * <code>DB2 = 11;</code>
+       */
+      DB2(11),
+      /**
+       * <code>SapHana = 12;</code>
+       */
+      SapHana(12),
+      /**
+       * <code>Hive = 13;</code>
+       */
+      Hive(13),
+      /**
+       * <code>ElasticSearch = 14;</code>
+       */
+      ElasticSearch(14),
+      /**
+       * <code>MongoDb = 15;</code>
+       */
+      MongoDb(15),
+      /**
+       * <code>Redis = 16;</code>
+       */
+      Redis(16),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ResourceUnset = 0;</code>
+       */
+      public static final int ResourceUnset_VALUE = 0;
+      /**
+       * <code>MySQL = 1;</code>
+       */
+      public static final int MySQL_VALUE = 1;
+      /**
+       * <code>PostgreSQL = 2;</code>
+       */
+      public static final int PostgreSQL_VALUE = 2;
+      /**
+       * <code>Kafka = 3;</code>
+       */
+      public static final int Kafka_VALUE = 3;
+      /**
+       * <code>S3 = 4;</code>
+       */
+      public static final int S3_VALUE = 4;
+      /**
+       * <code>ClickHouse = 5;</code>
+       */
+      public static final int ClickHouse_VALUE = 5;
+      /**
+       * <code>HBase = 6;</code>
+       */
+      public static final int HBase_VALUE = 6;
+      /**
+       * <code>Ftp = 7;</code>
+       */
+      public static final int Ftp_VALUE = 7;
+      /**
+       * <code>HDFS = 8;</code>
+       */
+      public static final int HDFS_VALUE = 8;
+      /**
+       * <code>SqlServer = 9;</code>
+       */
+      public static final int SqlServer_VALUE = 9;
+      /**
+       * <code>Oracle = 10;</code>
+       */
+      public static final int Oracle_VALUE = 10;
+      /**
+       * <code>DB2 = 11;</code>
+       */
+      public static final int DB2_VALUE = 11;
+      /**
+       * <code>SapHana = 12;</code>
+       */
+      public static final int SapHana_VALUE = 12;
+      /**
+       * <code>Hive = 13;</code>
+       */
+      public static final int Hive_VALUE = 13;
+      /**
+       * <code>ElasticSearch = 14;</code>
+       */
+      public static final int ElasticSearch_VALUE = 14;
+      /**
+       * <code>MongoDb = 15;</code>
+       */
+      public static final int MongoDb_VALUE = 15;
+      /**
+       * <code>Redis = 16;</code>
+       */
+      public static final int Redis_VALUE = 16;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Resource valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Resource forNumber(int value) {
+        switch (value) {
+          case 0: return ResourceUnset;
+          case 1: return MySQL;
+          case 2: return PostgreSQL;
+          case 3: return Kafka;
+          case 4: return S3;
+          case 5: return ClickHouse;
+          case 6: return HBase;
+          case 7: return Ftp;
+          case 8: return HDFS;
+          case 9: return SqlServer;
+          case 10: return Oracle;
+          case 11: return DB2;
+          case 12: return SapHana;
+          case 13: return Hive;
+          case 14: return ElasticSearch;
+          case 15: return MongoDb;
+          case 16: return Redis;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Resource>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Resource> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Resource>() {
+              public Resource findValueByNumber(int number) {
+                return Resource.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Resource[] VALUES = values();
+
+      public static Resource valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Resource(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.SyncJob.Resource)
+    }
+
+    /**
      * Protobuf enum {@code model.SyncJob.Status}
      */
     public enum Status
@@ -625,7 +924,7 @@ public final class PBSyncManageSyncJob {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(1);
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(2);
       }
 
       private static final Status[] VALUES = values();
@@ -961,7 +1260,7 @@ public final class PBSyncManageSyncJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -973,7 +1272,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -1095,6 +1394,64 @@ public final class PBSyncManageSyncJob {
       return updated_;
     }
 
+    public static final int SOURCE_TYPE_FIELD_NUMBER = 13;
+    private int sourceType_;
+    /**
+     * <pre>
+     * The  sync task source type.
+     * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    @java.lang.Override public int getSourceTypeValue() {
+      return sourceType_;
+    }
+    /**
+     * <pre>
+     * The  sync task source type.
+     * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(sourceType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+    }
+
+    public static final int TARGET_TYPE_FIELD_NUMBER = 14;
+    private int targetType_;
+    /**
+     * <pre>
+     * The sync task target type.
+     * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    @java.lang.Override public int getTargetTypeValue() {
+      return targetType_;
+    }
+    /**
+     * <pre>
+     * The sync task target type.
+     * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(targetType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1144,6 +1501,12 @@ public final class PBSyncManageSyncJob {
       }
       if (updated_ != 0L) {
         output.writeInt64(12, updated_);
+      }
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+        output.writeEnum(13, sourceType_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+        output.writeEnum(14, targetType_);
       }
       unknownFields.writeTo(output);
     }
@@ -1195,6 +1558,14 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, updated_);
       }
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, sourceType_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(14, targetType_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1232,6 +1603,8 @@ public final class PBSyncManageSyncJob {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (sourceType_ != other.sourceType_) return false;
+      if (targetType_ != other.targetType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1270,6 +1643,10 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + sourceType_;
+      hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + targetType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1431,6 +1808,10 @@ public final class PBSyncManageSyncJob {
 
         updated_ = 0L;
 
+        sourceType_ = 0;
+
+        targetType_ = 0;
+
         return this;
       }
 
@@ -1469,6 +1850,8 @@ public final class PBSyncManageSyncJob {
         result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
+        result.sourceType_ = sourceType_;
+        result.targetType_ = targetType_;
         onBuilt();
         return result;
       }
@@ -1559,6 +1942,12 @@ public final class PBSyncManageSyncJob {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
+        }
+        if (other.sourceType_ != 0) {
+          setSourceTypeValue(other.getSourceTypeValue());
+        }
+        if (other.targetType_ != 0) {
+          setTargetTypeValue(other.getTargetTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2249,7 +2638,7 @@ public final class PBSyncManageSyncJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2261,7 +2650,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2277,7 +2666,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2292,7 +2681,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2311,7 +2700,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2593,6 +2982,164 @@ public final class PBSyncManageSyncJob {
       public Builder clearUpdated() {
         
         updated_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int sourceType_ = 0;
+      /**
+       * <pre>
+       * The  sync task source type.
+       * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for sourceType.
+       */
+      @java.lang.Override public int getSourceTypeValue() {
+        return sourceType_;
+      }
+      /**
+       * <pre>
+       * The  sync task source type.
+       * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceTypeValue(int value) {
+        
+        sourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The  sync task source type.
+       * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * @return The sourceType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(sourceType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The  sync task source type.
+       * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * @param value The sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        sourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The  sync task source type.
+       * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceType() {
+        
+        sourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int targetType_ = 0;
+      /**
+       * <pre>
+       * The sync task target type.
+       * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for targetType.
+       */
+      @java.lang.Override public int getTargetTypeValue() {
+        return targetType_;
+      }
+      /**
+       * <pre>
+       * The sync task target type.
+       * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetTypeValue(int value) {
+        
+        targetType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync task target type.
+       * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * @return The targetType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(targetType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The sync task target type.
+       * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * @param value The targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        targetType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync task target type.
+       * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetType() {
+        
+        targetType_ = 0;
         onChanged();
         return this;
       }
@@ -14030,7 +14577,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -14040,7 +14587,7 @@ public final class PBSyncManageSyncJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -14605,7 +15152,7 @@ public final class PBSyncManageSyncJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -14617,7 +15164,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -15653,7 +16200,7 @@ public final class PBSyncManageSyncJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -15665,7 +16212,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -15681,7 +16228,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -15696,7 +16243,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -15715,7 +16262,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16206,98 +16753,107 @@ public final class PBSyncManageSyncJob {
       "to/types/model/syncjob/redis.proto\032,prot" +
       "o/types/model/syncjob/relationaldb.proto" +
       "\032,proto/types/model/syncjob/sqlservercdc" +
-      ".proto\"\345\004\n\007SyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      ".proto\"\275\007\n\007SyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003" +
-      "pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\037\n\002id\030\003 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\004 \001(\tB" +
+      "pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\037\n\002id\030\003 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\004 \001(\tB" +
       "\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
       "\001\230\002\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\024\n\014is" +
       "_directory\030\007 \001(\010\022K\n\004type\030\010 \001(\0162\023.model.S" +
       "yncJob.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\0224\n\006status\030\t \001(\0162\025.model.Sy" +
+      "\342\337\037\t\022\007\332\001\004@\000X\001\0224\n\006status\030\t \001(\0162\025.model.Sy" +
       "ncJob.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_b" +
       "y\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\013 \001(\003B\013" +
       "\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\"V\n\004Type\022\017\n\013OfflineFull\020\000\022\024\n\020OfflineInc" +
-      "rement\020\001\022\020\n\014RealTimeFull\020\002\022\025\n\021RealTimeIn" +
-      "crement\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007" +
-      "Deleted\020\001\022\013\n\007Enabled\020\002\"\320\001\n\017SyncJobProper" +
-      "ty\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007ve" +
-      "rsion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004conf\030\004 \001(\0132" +
-      "\022.model.SyncJobConfB\004\342\337\037\000\022.\n\010schedule\030\005 " +
-      "\001(\0132\026.model.SyncJobScheduleB\004\342\337\037\000\"\301\n\n\013Sy" +
-      "ncJobConf\022&\n\tsource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022&\n\ttarget_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022*\n\013parallelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011" +
-      "\342\337\037\t\022\007\262\001\0040\0008d\022)\n\npercentage\030\004 \001(\005B\025\242\241\037\004\252" +
-      "\006\0010\342\337\037\t\022\007\262\001\0048d@\000\022\'\n\nrecord_num\030\005 \001(\005B\023\242\241" +
-      "\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000\022\"\n\005bytes\030\006 \001(\005B\023\242\241\037\004\252\006" +
-      "\0010\342\337\037\007\022\005\262\001\002@\000\022C\n\010job_mode\030\007 \001(\0162\032.model." +
-      "SyncJobConf.JobModeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001" +
-      "@\000\022\023\n\013job_content\030\010 \001(\t\0226\n\023relationaldb_" +
-      "source\030\t \001(\0132\031.model.RelationaldbSource\022" +
-      "6\n\023relationaldb_target\030\n \001(\0132\031.model.Rel" +
-      "ationaldbTarget\022,\n\016mongodb_source\030\013 \001(\0132" +
-      "\024.model.MongodbSource\022,\n\016mongodb_target\030" +
-      "\014 \001(\0132\024.model.MongodbTarget\0229\n\025elastic_s" +
-      "earch_source\030\r \001(\0132\032.model.ElasticSearch" +
-      "Source\0229\n\025elastic_search_target\030\016 \001(\0132\032." +
-      "model.ElasticSearchTarget\022&\n\013hdfs_source" +
-      "\030\017 \001(\0132\021.model.HdfsSource\022&\n\013hdfs_target" +
-      "\030\020 \001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030" +
-      "\021 \001(\0132\020.model.FtpSource\022$\n\nftp_target\030\022 " +
-      "\001(\0132\020.model.FtpTarget\022(\n\014hbase_source\030\023 " +
-      "\001(\0132\022.model.HbaseSource\022(\n\014hbase_target\030" +
-      "\024 \001(\0132\022.model.HbaseTarget\022(\n\014kafka_sourc" +
-      "e\030\025 \001(\0132\022.model.KafkaSource\022(\n\014kafka_tar" +
-      "get\030\026 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_" +
-      "source\030\027 \001(\0132\023.model.BinlogSource\022)\n\rpg_" +
-      "wal_source\030\030 \001(\0132\022.model.PgWalSource\0228\n\025" +
-      "sql_server_cdc_source\030\031 \001(\0132\031.model.SqlS" +
-      "erverCdcSource\022/\n\020log_miner_source\030\032 \001(\013" +
-      "2\025.model.LogMinerSource\022(\n\014redis_target\030" +
-      "\033 \001(\0132\022.model.RedisTarget\022&\n\013hive_target" +
-      "\030\034 \001(\0132\021.model.HiveTarget\022\030\n\ncluster_id\030" +
-      "\035 \001(\tB\004\342\337\037\000\"(\n\007JobMode\022\r\n\tGuideMode\020\000\022\016\n" +
-      "\nScriptMode\020\001:\006\312\262\004\002\n\000\"\256\007\n\017SyncJobSchedul" +
-      "e\022M\n\017schedule_policy\030\001 \001(\0162%.model.SyncJ" +
-      "obSchedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_pol" +
-      "icy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(" +
-      "\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "@\000\022S\n\022concurrency_policy\030\006 \001(\0162(.model.S" +
-      "yncJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017sc" +
-      "hedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004h" +
-      "ourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010" +
-      " \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010" +
-      "\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000" +
-      "\022G\n\014retry_policy\030\n \001(\0162\".model.SyncJobSc" +
-      "hedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013ret" +
-      "ry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001" +
-      "\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005" +
-      "B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036" +
-      "@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyUn" +
-      "set\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022" +
-      "\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n" +
-      "\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006" +
-      "Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020" +
-      "RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006" +
-      "\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001" +
-      "\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJ" +
-      "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreate" +
-      "d_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(" +
-      "\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262" +
-      "\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Activ" +
-      "e\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bn\n\"com.d" +
-      "ataomnis.gproto.types.pbmodelB\023PBSyncMan" +
-      "ageSyncJobP\000Z1github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbmodelb\006proto3"
+      "\000\0229\n\013source_type\030\r \001(\0162\027.model.SyncJob.R" +
+      "esourceB\013\342\337\037\007\022\005\262\001\0020\000\0229\n\013target_type\030\016 \001(" +
+      "\0162\027.model.SyncJob.ResourceB\013\342\337\037\007\022\005\262\001\0020\000\"" +
+      "V\n\004Type\022\017\n\013OfflineFull\020\000\022\024\n\020OfflineIncre" +
+      "ment\020\001\022\020\n\014RealTimeFull\020\002\022\025\n\021RealTimeIncr" +
+      "ement\020\003\"\337\001\n\010Resource\022\021\n\rResourceUnset\020\000\022" +
+      "\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003\022\006\n" +
+      "\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020" +
+      "\007\022\010\n\004HDFS\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020\n\022\007" +
+      "\n\003DB2\020\013\022\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rElasti" +
+      "cSearch\020\016\022\013\n\007MongoDb\020\017\022\t\n\005Redis\020\020\"3\n\006Sta" +
+      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ena" +
+      "bled\020\002\"\320\001\n\017SyncJobProperty\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\360\001\020\022&\n\004conf\030\004 \001(\0132\022.model.SyncJobC" +
+      "onfB\004\342\337\037\000\022.\n\010schedule\030\005 \001(\0132\026.model.Sync" +
+      "JobScheduleB\004\342\337\037\000\"\301\n\n\013SyncJobConf\022&\n\tsou" +
+      "rce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttar" +
+      "get_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022*\n\013par" +
+      "allelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d\022)\n" +
+      "\npercentage\030\004 \001(\005B\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\262\001\0048d@\000" +
+      "\022\'\n\nrecord_num\030\005 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@" +
+      "\000\022\"\n\005bytes\030\006 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000\022C\n" +
+      "\010job_mode\030\007 \001(\0162\032.model.SyncJobConf.JobM" +
+      "odeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\022\023\n\013job_conten" +
+      "t\030\010 \001(\t\0226\n\023relationaldb_source\030\t \001(\0132\031.m" +
+      "odel.RelationaldbSource\0226\n\023relationaldb_" +
+      "target\030\n \001(\0132\031.model.RelationaldbTarget\022" +
+      ",\n\016mongodb_source\030\013 \001(\0132\024.model.MongodbS" +
+      "ource\022,\n\016mongodb_target\030\014 \001(\0132\024.model.Mo" +
+      "ngodbTarget\0229\n\025elastic_search_source\030\r \001" +
+      "(\0132\032.model.ElasticSearchSource\0229\n\025elasti" +
+      "c_search_target\030\016 \001(\0132\032.model.ElasticSea" +
+      "rchTarget\022&\n\013hdfs_source\030\017 \001(\0132\021.model.H" +
+      "dfsSource\022&\n\013hdfs_target\030\020 \001(\0132\021.model.H" +
+      "dfsTarget\022$\n\nftp_source\030\021 \001(\0132\020.model.Ft" +
+      "pSource\022$\n\nftp_target\030\022 \001(\0132\020.model.FtpT" +
+      "arget\022(\n\014hbase_source\030\023 \001(\0132\022.model.Hbas" +
+      "eSource\022(\n\014hbase_target\030\024 \001(\0132\022.model.Hb" +
+      "aseTarget\022(\n\014kafka_source\030\025 \001(\0132\022.model." +
+      "KafkaSource\022(\n\014kafka_target\030\026 \001(\0132\022.mode" +
+      "l.KafkaTarget\022*\n\rbinlog_source\030\027 \001(\0132\023.m" +
+      "odel.BinlogSource\022)\n\rpg_wal_source\030\030 \001(\013" +
+      "2\022.model.PgWalSource\0228\n\025sql_server_cdc_s" +
+      "ource\030\031 \001(\0132\031.model.SqlServerCdcSource\022/" +
+      "\n\020log_miner_source\030\032 \001(\0132\025.model.LogMine" +
+      "rSource\022(\n\014redis_target\030\033 \001(\0132\022.model.Re" +
+      "disTarget\022&\n\013hive_target\030\034 \001(\0132\021.model.H" +
+      "iveTarget\022\030\n\ncluster_id\030\035 \001(\tB\004\342\337\037\000\"(\n\007J" +
+      "obMode\022\r\n\tGuideMode\020\000\022\016\n\nScriptMode\020\001:\006\312" +
+      "\262\004\002\n\000\"\256\007\n\017SyncJobSchedule\022M\n\017schedule_po" +
+      "licy\030\001 \001(\0162%.model.SyncJobSchedule.Sched" +
+      "ulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001" +
+      "(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010" +
+      "\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032" +
+      "\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrenc" +
+      "y_policy\030\006 \001(\0162(.model.SyncJobSchedule.C" +
+      "oncurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013perio" +
+      "d_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332" +
+      "\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005" +
+      "monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sc" +
+      "hedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007time" +
+      "out\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022G\n\014retry_policy" +
+      "\030\n \001(\0162\".model.SyncJobSchedule.RetryPoli" +
+      "cyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(" +
+      "\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000" +
+      "\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_" +
+      "policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePo" +
+      "licy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodi" +
+      "city\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003" +
+      "\"S\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPoli" +
+      "cyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Repl" +
+      "ace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset" +
+      "\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJ" +
+      "obRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj" +
+      "-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name" +
+      "\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023" +
+      ".model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006st" +
+      "atus\030\006 \001(\0162\034.model.SyncJobRelease.Status" +
+      "\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034" +
+      "\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017" +
+      "\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended" +
+      "\020\002\022\013\n\007Deleted\020\003Bn\n\"com.dataomnis.gproto." +
+      "types.pbmodelB\023PBSyncManageSyncJobP\000Z1gi" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
+      "pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16324,7 +16880,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJob_descriptor,
-        new java.lang.String[] { "SpaceId", "Pid", "Id", "Version", "Name", "Desc", "IsDirectory", "Type", "Status", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Pid", "Id", "Version", "Name", "Desc", "IsDirectory", "Type", "Status", "CreatedBy", "Created", "Updated", "SourceType", "TargetType", });
     internal_static_model_SyncJobProperty_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_SyncJobProperty_fieldAccessorTable = new

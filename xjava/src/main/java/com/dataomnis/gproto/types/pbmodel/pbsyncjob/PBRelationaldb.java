@@ -177,6 +177,27 @@ public final class PBRelationaldb {
      */
     com.google.protobuf.ByteString
         getSplitPkBytes();
+
+    /**
+     * <pre>
+     * mapping type
+     * &#64;inject_tag: json:"mapping_type"
+     * </pre>
+     *
+     * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+     * @return The enum numeric value on the wire for mappingType.
+     */
+    int getMappingTypeValue();
+    /**
+     * <pre>
+     * mapping type
+     * &#64;inject_tag: json:"mapping_type"
+     * </pre>
+     *
+     * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+     * @return The mappingType.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping getMappingType();
   }
   /**
    * Protobuf type {@code model.RelationaldbSource}
@@ -196,6 +217,7 @@ public final class PBRelationaldb {
       schema_ = "";
       where_ = "";
       splitPk_ = "";
+      mappingType_ = 0;
     }
 
     @java.lang.Override
@@ -263,6 +285,12 @@ public final class PBRelationaldb {
               java.lang.String s = input.readStringRequireUtf8();
 
               splitPk_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              mappingType_ = rawValue;
               break;
             }
             default: {
@@ -567,6 +595,35 @@ public final class PBRelationaldb {
       }
     }
 
+    public static final int MAPPING_TYPE_FIELD_NUMBER = 6;
+    private int mappingType_;
+    /**
+     * <pre>
+     * mapping type
+     * &#64;inject_tag: json:"mapping_type"
+     * </pre>
+     *
+     * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+     * @return The enum numeric value on the wire for mappingType.
+     */
+    @java.lang.Override public int getMappingTypeValue() {
+      return mappingType_;
+    }
+    /**
+     * <pre>
+     * mapping type
+     * &#64;inject_tag: json:"mapping_type"
+     * </pre>
+     *
+     * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+     * @return The mappingType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping getMappingType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.valueOf(mappingType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -595,6 +652,9 @@ public final class PBRelationaldb {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitPk_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, splitPk_);
+      }
+      if (mappingType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.Name.getNumber()) {
+        output.writeEnum(6, mappingType_);
       }
       unknownFields.writeTo(output);
     }
@@ -626,6 +686,10 @@ public final class PBRelationaldb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitPk_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, splitPk_);
       }
+      if (mappingType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.Name.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, mappingType_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -651,6 +715,7 @@ public final class PBRelationaldb {
           .equals(other.getWhere())) return false;
       if (!getSplitPk()
           .equals(other.getSplitPk())) return false;
+      if (mappingType_ != other.mappingType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -676,6 +741,8 @@ public final class PBRelationaldb {
       hash = (53 * hash) + getWhere().hashCode();
       hash = (37 * hash) + SPLIT_PK_FIELD_NUMBER;
       hash = (53 * hash) + getSplitPk().hashCode();
+      hash = (37 * hash) + MAPPING_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + mappingType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -824,6 +891,8 @@ public final class PBRelationaldb {
 
         splitPk_ = "";
 
+        mappingType_ = 0;
+
         return this;
       }
 
@@ -868,6 +937,7 @@ public final class PBRelationaldb {
         result.schema_ = schema_;
         result.where_ = where_;
         result.splitPk_ = splitPk_;
+        result.mappingType_ = mappingType_;
         onBuilt();
         return result;
       }
@@ -963,6 +1033,9 @@ public final class PBRelationaldb {
         if (!other.getSplitPk().isEmpty()) {
           splitPk_ = other.splitPk_;
           onChanged();
+        }
+        if (other.mappingType_ != 0) {
+          setMappingTypeValue(other.getMappingTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1778,6 +1851,85 @@ public final class PBRelationaldb {
   checkByteStringIsUtf8(value);
         
         splitPk_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int mappingType_ = 0;
+      /**
+       * <pre>
+       * mapping type
+       * &#64;inject_tag: json:"mapping_type"
+       * </pre>
+       *
+       * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+       * @return The enum numeric value on the wire for mappingType.
+       */
+      @java.lang.Override public int getMappingTypeValue() {
+        return mappingType_;
+      }
+      /**
+       * <pre>
+       * mapping type
+       * &#64;inject_tag: json:"mapping_type"
+       * </pre>
+       *
+       * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+       * @param value The enum numeric value on the wire for mappingType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMappingTypeValue(int value) {
+        
+        mappingType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mapping type
+       * &#64;inject_tag: json:"mapping_type"
+       * </pre>
+       *
+       * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+       * @return The mappingType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping getMappingType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.valueOf(mappingType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * mapping type
+       * &#64;inject_tag: json:"mapping_type"
+       * </pre>
+       *
+       * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+       * @param value The mappingType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMappingType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.ColumnMapping value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        mappingType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mapping type
+       * &#64;inject_tag: json:"mapping_type"
+       * </pre>
+       *
+       * <code>.model.Column.ColumnMapping mapping_type = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMappingType() {
+        
+        mappingType_ = 0;
         onChanged();
         return this;
       }
@@ -5014,23 +5166,24 @@ public final class PBRelationaldb {
       "u31/protoc-plugin/proto/gosql.proto\0322git" +
       "hub.com/yu31/protoc-plugin/proto/default" +
       "s.proto\032&proto/types/model/syncjob/colum" +
-      "n.proto\"s\n\022RelationaldbSource\022\035\n\006column\030" +
-      "\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006s" +
-      "chema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\020\n\010split_pk\030\005" +
-      " \001(\t\"\202\003\n\022RelationaldbTarget\022\035\n\006column\030\001 " +
-      "\003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006sch" +
-      "ema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \003(\t\022\020\n\010post_sql\030\005" +
-      " \003(\t\0227\n\nwrite_mode\030\006 \001(\0162#.model.Relatio" +
-      "naldbTarget.WriteMode\022\022\n\nbatch_size\030\007 \001(" +
-      "\005\022\022\n\nupdate_key\030\010 \003(\t\0224\n\010semantic\030\t \001(\0162" +
-      "\".model.RelationaldbTarget.Semantic\022\024\n\014w" +
-      "ith_no_lock\030\n \001(\t\"0\n\tWriteMode\022\n\n\006insert" +
-      "\020\000\022\013\n\007replace\020\001\022\n\n\006update\020\002\",\n\010Semantic\022" +
-      "\017\n\013AtLeastOnce\020\000\022\017\n\013ExactlyOnce\020\001B}\n,com" +
-      ".dataomnis.gproto.types.pbmodel.pbsyncjo" +
-      "bB\016PBRelationaldbP\000Z;github.com/DataWork" +
-      "bench/gproto/xgo/types/pbmodel/pbsyncjob" +
-      "b\006proto3"
+      "n.proto\"\246\001\n\022RelationaldbSource\022\035\n\006column" +
+      "\030\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006" +
+      "schema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\020\n\010split_pk\030" +
+      "\005 \001(\t\0221\n\014mapping_type\030\006 \001(\0162\033.model.Colu" +
+      "mn.ColumnMapping\"\202\003\n\022RelationaldbTarget\022" +
+      "\035\n\006column\030\001 \003(\0132\r.model.Column\022\r\n\005table\030" +
+      "\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \003(\t\022\020" +
+      "\n\010post_sql\030\005 \003(\t\0227\n\nwrite_mode\030\006 \001(\0162#.m" +
+      "odel.RelationaldbTarget.WriteMode\022\022\n\nbat" +
+      "ch_size\030\007 \001(\005\022\022\n\nupdate_key\030\010 \003(\t\0224\n\010sem" +
+      "antic\030\t \001(\0162\".model.RelationaldbTarget.S" +
+      "emantic\022\024\n\014with_no_lock\030\n \001(\t\"0\n\tWriteMo" +
+      "de\022\n\n\006insert\020\000\022\013\n\007replace\020\001\022\n\n\006update\020\002\"" +
+      ",\n\010Semantic\022\017\n\013AtLeastOnce\020\000\022\017\n\013ExactlyO" +
+      "nce\020\001B}\n,com.dataomnis.gproto.types.pbmo" +
+      "del.pbsyncjobB\016PBRelationaldbP\000Z;github." +
+      "com/DataWorkbench/gproto/xgo/types/pbmod" +
+      "el/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5045,7 +5198,7 @@ public final class PBRelationaldb {
     internal_static_model_RelationaldbSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RelationaldbSource_descriptor,
-        new java.lang.String[] { "Column", "Table", "Schema", "Where", "SplitPk", });
+        new java.lang.String[] { "Column", "Table", "Schema", "Where", "SplitPk", "MappingType", });
     internal_static_model_RelationaldbTarget_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_RelationaldbTarget_fieldAccessorTable = new
