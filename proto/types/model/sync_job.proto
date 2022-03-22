@@ -99,7 +99,7 @@ message SyncJob {
     // @inject_tag: json:"type" gorm:"column:type;"
     Type type = 8 [
     (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
-    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+    (validator.field).tags.enum = { gte: 0; in_enums: true  }
     ];
 
     // Job status, 1 => "Deleted", 2 => "Enabled".
@@ -118,13 +118,13 @@ message SyncJob {
     // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
     int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
 
-    // The sync task target type.
+    // The sync task source type.
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
-    Resource source_type = 13 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    Resource source_type = 13 [(validator.field).tags.int = { gt: 0 }];
 
     // The sync task target type.
     // @inject_tag: json:"target_type" gorm:"column:target_type;"
-    Resource target_type = 14 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    Resource target_type = 14 [(validator.field).tags.int = { gt: 0 }];
 }
 
 // SyncJobProperty represents property of job.
@@ -386,9 +386,9 @@ message SyncJobRelease {
     // @inject_tag: json:"name" gorm:"column:name;"
     string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-    // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+    // Job type. 0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
     // @inject_tag: json:"type" gorm:"column:type;"
-    SyncJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+    SyncJob.Type type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
     // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
     // @inject_tag: json:"status" gorm:"column:status;"
