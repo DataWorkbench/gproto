@@ -138,8 +138,8 @@ func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
 		return nil
 	}
-	if !(this.Type > 0) {
-		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type >= 0) {
+		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_CreateSyncJob_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
