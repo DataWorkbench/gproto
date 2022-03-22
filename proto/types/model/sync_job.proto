@@ -185,7 +185,10 @@ message SyncJobConf {
     JobMode job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // shell mode json
     // @inject_tag: json:"job_content"
-    string job_content = 8;
+    string job_content = 8 [
+    (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
+    (validator.field).tags.string = { byte_len_gt: 20  }
+    ];
     // Relationaldb source
     // @inject_tag: json:"relationaldb_source"
     RelationaldbSource relationaldb_source = 9;
