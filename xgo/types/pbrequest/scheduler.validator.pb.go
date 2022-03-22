@@ -187,8 +187,8 @@ func (this *StopSyncJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("StopSyncJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
-	if !(strings.HasPrefix(this.JobId, "stj-")) {
-		return protovalidator.FieldError1("StopSyncJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("StopSyncJob", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
 	}
 	return nil
 }
@@ -247,8 +247,8 @@ func (this *DeleteSyncJobsByJobIds) _xxx_xxx_Validator_Validate_job_ids() error 
 		if !(len(item) == 20) {
 			return protovalidator.FieldError1("DeleteSyncJobsByJobIds", "the byte length of array item where in field 'job_ids' must be equal to '20'", protovalidator.StringByteLenToString(item))
 		}
-		if !(strings.HasPrefix(item, "stj-")) {
-			return protovalidator.FieldError1("DeleteSyncJobsByJobIds", "the value of array item where in field 'job_ids' must start with string 'stj-'", item)
+		if !(strings.HasPrefix(item, "syj-")) {
+			return protovalidator.FieldError1("DeleteSyncJobsByJobIds", "the value of array item where in field 'job_ids' must start with string 'syj-'", item)
 		}
 	}
 	return nil
