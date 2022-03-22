@@ -22,4 +22,10 @@ service FlinkDeveloper {
   rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct) {}
 
   rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
+
+  rpc ValidateFlinkJobContext(request.SubmitFlinkJob) returns(response.ValidateFlinkJob){}
+
+  rpc ParseFlinkJobToGraph(request.SubmitFlinkJob) returns (response.ParseFlinkJobToGraph){}
+
+  rpc GetFlinkJobsByUrl(request.GetFlinkJobsByUrl) returns (response.GetFlinkJobsByUrl) {}
 }

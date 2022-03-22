@@ -18,15 +18,15 @@ import "proto/types/model/stream_job.proto";
 message SubmitFlinkJob {
   // JobID
   // @inject_tag: json:"flink_id"
-  string flink_id = 1  [(validator.field).tags.string = { byte_len_eq: 32 } ];
+  string flink_id = 1  [(validator.field).tags.string = {byte_len_eq: 32}];
 
   // The internal access address of flink cluster.
   // @inject_tag: json:"flink_url"
-  string flink_url = 2 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
 
   // The version of flink cluster.
   // @inject_tag: json:"flink_version"
-  string flink_version = 3 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
 
   // Savepoint Path
   // @inject_tag: json:"savepoint_path"
@@ -48,29 +48,36 @@ message GetFlinkJobStatus {
 
   // The internal access address of flink cluster.
   // @inject_tag: json:"flink_url"
-  string flink_url = 2 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
 
   // The version of flink cluster.
   // @inject_tag: json:"flink_version"
-  string flink_version = 3 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
 }
 
 message CancelFlinkJob {
   // flink job id
   // @inject_tag: json:"flink_id"
-  string flink_id = 1 [ (validator.field).tags.string = {byte_len_eq: 32} ];
+  string flink_id = 1 [(validator.field).tags.string = {byte_len_eq: 32}];
 
   // The internal access address of flink cluster.
   // @inject_tag: json:"flink_url"
-  string flink_url = 2 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
 
   // The version of flink cluster.
   // @inject_tag: json:"flink_version"
-  string flink_version = 3 [ (validator.field).tags.string = { ne: "" } ];
+  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
 }
 
 message ValidateFlinkJob {
   // code
   // @inject_tag: json:"code"
   model.StreamJobCode code = 1;
+}
+
+message GetFlinkJobsByUrl {
+
+  // The internal access address of flink cluster.
+  // @inject_tag: json:"flink_url"
+  string flink_url = 1 [(validator.field).tags.string = {ne: ""}];
 }
