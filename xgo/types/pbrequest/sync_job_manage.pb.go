@@ -261,7 +261,7 @@ type DeleteSyncJobs struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The list of stream job id. Is required, Min 1, Max 100.
+	// The list of sync job id. Is required, Min 1, Max 100.
 	JobIds []string `protobuf:"bytes,2,rep,name=job_ids,json=jobIds,proto3" json:"job_ids"`
 }
 
@@ -319,7 +319,7 @@ type MoveSyncJobs struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The list of stream job id. Is required, Min 1, Max 100.
+	// The list of sync job id. Is required, Min 1, Max 100.
 	JobIds []string `protobuf:"bytes,2,rep,name=job_ids,json=jobIds,proto3" json:"job_ids"`
 	// Target represents the target directory. `target` is "" means move to root(`/`)
 	Target string `protobuf:"bytes,3,opt,name=target,proto3" json:"target"`
@@ -386,9 +386,9 @@ type UpdateSyncJob struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
-	// The stream job name in each workspace is unique. Is required, Max Length 128.
+	// The sync job name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
 	// Description of the workspace, Not required, Max length 1024.
@@ -461,9 +461,9 @@ type DescribeSyncJob struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
-	// The stream job version id in HTTP Request-URI
+	// The sync job version id in HTTP Request-URI
 	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version" uri:"ver_id" swaggerignore:"true"`
 }
 
@@ -521,7 +521,7 @@ type SetSyncJobSchedule struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job id it belongs to.
+	// The sync job id it belongs to.
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// The schedule set.
 	Schedule *pbmodel.SyncJobSchedule `protobuf:"bytes,3,opt,name=schedule,proto3" json:"schedule"`
@@ -588,7 +588,7 @@ type SetSyncJobConf struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job ID it belongs to.
+	// The sync job ID it belongs to.
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// The args set.
 	Conf *pbmodel.SyncJobConf `protobuf:"bytes,3,opt,name=conf,proto3" json:"args"`
@@ -653,9 +653,9 @@ type GetSyncJobSchedule struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
-	// The stream job version id in HTTP Request-URI
+	// The sync job version id in HTTP Request-URI
 	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version" uri:"ver_id" swaggerignore:"true"`
 }
 
@@ -711,9 +711,9 @@ type GetSyncJobConf struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
-	// The stream job version id in HTTP Request-URI
+	// The sync job version id in HTTP Request-URI
 	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version" uri:"ver_id" swaggerignore:"true"`
 }
 
@@ -783,12 +783,12 @@ type ListReleaseSyncJobs struct {
 	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by"`
 	// Reverse order results. Not required, default: false.
 	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse"`
-	// Search with stream job name; Not required.
+	// Search with sync job name; Not required.
 	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search"`
 	// Filter by release status;  Not required.
 	// Valid optional: 1 => "enabled", 2 => "disabled".
 	Status pbmodel.SyncJobRelease_Status `protobuf:"varint,7,opt,name=status,proto3,enum=model.SyncJobRelease_Status" json:"status" form:"status"`
-	// The stream job id.
+	// The sync job id.
 	JobId string `protobuf:"bytes,8,opt,name=job_id,json=jobId,proto3" json:"job_id" form:"job_id"`
 }
 
@@ -886,7 +886,7 @@ type ReleaseSyncJob struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// The user-id of release this job. Fixed to the request user id.
 	CreatedBy string `protobuf:"bytes,2,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
@@ -963,7 +963,7 @@ type OfflineReleaseSyncJob struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// StopRunning indicates whether stop the sync job instance that state running.
 	StopRunning bool `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running"`
@@ -1030,7 +1030,7 @@ type SuspendReleaseSyncJob struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId       string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	StopRunning bool   `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running"`
 }
@@ -1096,7 +1096,7 @@ type ResumeReleaseSyncJob struct {
 
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 }
 
@@ -1152,7 +1152,7 @@ type ListSyncJobVersions struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The stream job id in HTTP Request-URI
+	// The sync job id in HTTP Request-URI
 	JobId string `protobuf:"bytes,5,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
@@ -1493,7 +1493,7 @@ var file_proto_types_request_sync_job_manage_proto_rawDesc = []byte{
 	0x55, 0x49, 0x42, 0x79, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x49, 0x64, 0x12, 0x34,
 	0x0a, 0x0b, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01,
-	0x14, 0xca, 0x02, 0x04, 0x73, 0x74, 0x69, 0x2d, 0x52, 0x0a, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e,
+	0x14, 0xca, 0x02, 0x04, 0x73, 0x79, 0x69, 0x2d, 0x52, 0x0a, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e,
 	0x63, 0x65, 0x49, 0x64, 0x42, 0x75, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61,
 	0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70,
 	0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42, 0x16, 0x50, 0x42,

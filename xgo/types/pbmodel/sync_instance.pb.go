@@ -137,7 +137,7 @@ func (SyncInstance_State) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_sync_instance_proto_rawDescGZIP(), []int{0, 1}
 }
 
-// The instance info of stream job.
+// The instance info of sync job.
 type SyncInstance struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

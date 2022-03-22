@@ -765,8 +765,8 @@ func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instanc
 	if !(len(this.InstanceId) == 20) {
 		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
 	}
-	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	if !(strings.HasPrefix(this.InstanceId, "syi-")) {
+		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'instance_id' must start with string 'syi-'", this.InstanceId)
 	}
 	return nil
 }

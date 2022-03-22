@@ -467,7 +467,7 @@ func (SyncJobRelease_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_sync_job_proto_rawDescGZIP(), []int{4, 0}
 }
 
-// The stream job info
+// The sync job info
 type SyncJob struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1173,7 +1173,7 @@ func (x *SyncJobSchedule) GetRetryInterval() int32 {
 	return 0
 }
 
-// The release stream job info.
+// The release sync job info.
 type SyncJobRelease struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
