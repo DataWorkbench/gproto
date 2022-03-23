@@ -32,4 +32,14 @@ message Column{
     // column index
     // @inject_tag: json:"index"
     int32 index=3;
+    // column is_part
+    // @inject_tag: json:"is_part"
+    bool is_part=4;
+    // column format
+    // @inject_tag: json:"format"
+    string format=5;
+    // column index
+    // @inject_tag: json:"value"
+    string value=6;
+
 }
