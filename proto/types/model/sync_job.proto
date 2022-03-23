@@ -118,7 +118,7 @@ message SyncJob {
     // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
     int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
 
-    // The  sync task source type.
+    // The sync task source type.
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
     Resource source_type = 13 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
