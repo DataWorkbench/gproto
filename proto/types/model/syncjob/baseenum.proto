@@ -1,0 +1,39 @@
+syntax = "proto3";
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
+// File name of class.
+option java_outer_classname = "PBBaseEnum";
+option java_multiple_files = false;
+
+message BaseEnum {
+	enum PartitionType {
+		DAY = 0;
+		HOUR = 1;
+		MINUTE = 2;
+	}
+	enum WriteMode {
+		append = 0;
+		overwrite = 1;
+	}
+	enum FileType {
+		text = 0;
+		orc = 1;
+		parquet = 2;
+	}
+	enum CompressType {
+		GZIP = 0;
+		BZIP2 = 1;
+		SNAPPY = 2;
+		BZIP = 3;
+		LZ4 = 4;
+		LZO = 5;
+	}
+	enum Encoding {
+		UTF8 = 0;
+		GBK = 1;
+	}
+}

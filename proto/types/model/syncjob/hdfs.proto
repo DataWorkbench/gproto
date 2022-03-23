@@ -14,8 +14,10 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 import "proto/types/model/syncjob/column.proto";
+import "proto/types/model/syncjob/baseenum.proto";
 
 message HdfsSource {
+
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -23,23 +25,21 @@ message HdfsSource {
     // @inject_tag: json:"path" 
     string path = 2;
     // file type
-    // @inject_tag: json:"file_type" 
-    string file_type = 3;
-    // default_fs
-    // @inject_tag: json:"default_fs" 
-    string default_fs = 4;
+    // @inject_tag: json:"file_type"
+    BaseEnum.FileType file_type = 3 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // filter regex
-    // @inject_tag: json:"filter_regex" 
-    string filter_regex = 5;
-    // field delimiter
-    // @inject_tag: json:"field_delimiter" 
-    string field_delimiter = 6;
+    // @inject_tag: json:"filter_regex"
+    string filter_regex = 4;
+    // field_delimiter
+    // @inject_tag: json:"field_delimiter"
+    string field_delimiter = 5 [
+    (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
+    (validator.field).tags.string = { byte_len_gte: 1 }
+    ];
     // encoding
-    // @inject_tag: json:"encoding" 
-    string encoding = 7;
-    // hadoop config
-    // @inject_tag: json:"dfs_nameservices" 
-    string hadoop_config = 8;
+    // @inject_tag: json:"encoding"
+    BaseEnum.Encoding encoding = 6 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+
 }
 
 message HdfsTarget {
@@ -53,43 +53,21 @@ message HdfsTarget {
     // @inject_tag: json:"file_name" 
     string file_name = 3;
     // file type
-    // @inject_tag: json:"file_type" 
-    string file_type = 4;
+    // @inject_tag: json:"file_type"
+    BaseEnum.FileType file_type = 4 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // write mode
-    // @inject_tag: json:"write_mode" 
-    string write_mode = 5;
-    // default_fs
-    // @inject_tag: json:"default_fs" 
-    string default_fs = 6;
+    // @inject_tag: json:"write_mode"
+    BaseEnum.WriteMode write_mode = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    // field_delimiter
+    // @inject_tag: json:"field_delimiter"
+    string field_delimiter = 6 [
+    (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
+    (validator.field).tags.string = { byte_len_gte: 1 }
+    ];
     // encoding
-    // @inject_tag: json:"encoding" 
-    string encoding = 7;
-    // field delimiter
-    // @inject_tag: json:"field_delimiter" 
-    string field_delimiter = 8;
-    // full column name
-    // @inject_tag: json:"full_column_name" 
-    repeated string full_column_name = 9;
-    // full column type
-    // @inject_tag: json:"full_column_type" 
-    repeated string full_column_type = 10;
-    // compress
-    // @inject_tag: json:"compress" 
-    string compress = 11;
-    // max file size
-    // @inject_tag: json:"max_file_size" 
-    int32 max_file_size = 12;
-    // next check rows
-    // @inject_tag: json:"next_check_rows" 
-    int64 next_check_rows = 13;
-    // row group size
-    // @inject_tag: json:"row_group_size" 
-    int32 row_group_size = 14;
-    // enable dictionary
-    // @inject_tag: json:"enable_dictionary" 
-    bool enable_dictionary = 15;
-    // hadoop config
-    // @inject_tag: json:"hadoop_config" 
-    string hadoop_config = 16;
-
+    // @inject_tag: json:"encoding"
+    BaseEnum.Encoding encoding = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    // compress type
+    // @inject_tag: json:"compress"
+    BaseEnum.CompressType compress = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 }

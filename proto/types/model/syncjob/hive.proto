@@ -14,39 +14,12 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
-
+import "proto/types/model/syncjob/baseenum.proto";
 
 message HiveTarget {
 
-    enum PartitionType {
-        DAY = 0;
-        HOUR = 1;
-        MINUTE = 2;
-    }
-    enum WriteMode {
-        append = 0;
-        overwrite = 1;
-    }
-    enum FileType {
-        text = 0;
-        orc = 1;
-        parquet = 2;
-    }
-    enum CompressType {
-        GZIP = 0;
-        BZIP2 = 1;
-        SNAPPY = 2;
-        BZIP = 3;
-        LZ4 = 4;
-        LZO = 5;
-    }
-    enum Encoding {
-        UTF8 = 0;
-        GBK = 1;
-    }
-
-    // partition
-    // @inject_tag: json:"partition"
+    // table
+    // @inject_tag: json:"table"
     string table = 1;
     // use partition
     // @inject_tag: json:"use_partition"
@@ -56,20 +29,20 @@ message HiveTarget {
     string partition = 3;
     // partition_type
     // @inject_tag: json:"partition_type" 
-    PartitionType partition_type = 4 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.PartitionType partition_type = 4 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
     // tables column
     // @inject_tag: json:"tables_column" 
     string tables_column = 5;
     // write mode
     // @inject_tag: json:"write_mode" 
-    WriteMode write_mode = 6 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.WriteMode write_mode = 6 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // file type
     // @inject_tag: json:"file_type" 
-    FileType file_type = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.FileType file_type = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // compress type
     // @inject_tag: json:"compress"
-    CompressType compress = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.CompressType compress = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // field_delimiter
     // @inject_tag: json:"field_delimiter"
     string field_delimiter = 9[
@@ -78,5 +51,5 @@ message HiveTarget {
     ];
     // encoding
     // @inject_tag: json:"encoding"
-    Encoding encoding = 10 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.Encoding encoding = 10 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 }
