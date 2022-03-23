@@ -9,6 +9,7 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
 func (this *HdfsSource) _xxx_xxx_Validator_Validate_column() error {
@@ -23,12 +24,62 @@ func (this *HdfsSource) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_HdfsSource_InEnums_FileType = map[BaseEnum_FileType]bool{0: true, 1: true, 2: true}
+
+func (this *HdfsSource) _xxx_xxx_Validator_Validate_file_type() error {
+	if !(this.FileType >= 0) {
+		return protovalidator.FieldError1("HdfsSource", "the value of field 'file_type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.FileType)))
+	}
+	if !(_xxx_xxx_Validator_HdfsSource_InEnums_FileType[this.FileType]) {
+		return protovalidator.FieldError1("HdfsSource", "the value of field 'file_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.FileType)))
+	}
+	return nil
+}
+
+func (this *HdfsSource) _xxx_xxx_Validator_CheckIf_field_delimiter() bool {
+	if !(this.FileType == 0) {
+		return false
+	}
+	return true
+}
+
+func (this *HdfsSource) _xxx_xxx_Validator_Validate_field_delimiter() error {
+	if !this._xxx_xxx_Validator_CheckIf_field_delimiter() {
+		return nil
+	}
+	if !(len(this.FieldDelimiter) >= 1) {
+		return protovalidator.FieldError1("HdfsSource", "the byte length of field 'field_delimiter' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.FieldDelimiter))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_HdfsSource_InEnums_Encoding = map[BaseEnum_Encoding]bool{0: true, 1: true}
+
+func (this *HdfsSource) _xxx_xxx_Validator_Validate_encoding() error {
+	if !(this.Encoding >= 0) {
+		return protovalidator.FieldError1("HdfsSource", "the value of field 'encoding' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Encoding)))
+	}
+	if !(_xxx_xxx_Validator_HdfsSource_InEnums_Encoding[this.Encoding]) {
+		return protovalidator.FieldError1("HdfsSource", "the value of field 'encoding' must in enums of '[0 1]'", protovalidator.Int32ToString(int32(this.Encoding)))
+	}
+	return nil
+}
+
 // Set default value for message model.HdfsSource
 func (this *HdfsSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_file_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_field_delimiter(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_encoding(); err != nil {
 		return err
 	}
 	return nil
@@ -46,12 +97,92 @@ func (this *HdfsTarget) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_HdfsTarget_InEnums_FileType = map[BaseEnum_FileType]bool{0: true, 1: true, 2: true}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_file_type() error {
+	if !(this.FileType >= 0) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'file_type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.FileType)))
+	}
+	if !(_xxx_xxx_Validator_HdfsTarget_InEnums_FileType[this.FileType]) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'file_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.FileType)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_HdfsTarget_InEnums_WriteMode = map[BaseEnum_WriteMode]bool{0: true, 1: true}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_write_mode() error {
+	if !(this.WriteMode >= 0) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'write_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.WriteMode)))
+	}
+	if !(_xxx_xxx_Validator_HdfsTarget_InEnums_WriteMode[this.WriteMode]) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'write_mode' must in enums of '[0 1]'", protovalidator.Int32ToString(int32(this.WriteMode)))
+	}
+	return nil
+}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_CheckIf_field_delimiter() bool {
+	if !(this.FileType == 0) {
+		return false
+	}
+	return true
+}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_field_delimiter() error {
+	if !this._xxx_xxx_Validator_CheckIf_field_delimiter() {
+		return nil
+	}
+	if !(len(this.FieldDelimiter) >= 1) {
+		return protovalidator.FieldError1("HdfsTarget", "the byte length of field 'field_delimiter' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.FieldDelimiter))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_HdfsTarget_InEnums_Encoding = map[BaseEnum_Encoding]bool{0: true, 1: true}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_encoding() error {
+	if !(this.Encoding >= 0) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'encoding' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Encoding)))
+	}
+	if !(_xxx_xxx_Validator_HdfsTarget_InEnums_Encoding[this.Encoding]) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'encoding' must in enums of '[0 1]'", protovalidator.Int32ToString(int32(this.Encoding)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_HdfsTarget_InEnums_Compress = map[BaseEnum_CompressType]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_compress() error {
+	if !(this.Compress >= 0) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'compress' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Compress)))
+	}
+	if !(_xxx_xxx_Validator_HdfsTarget_InEnums_Compress[this.Compress]) {
+		return protovalidator.FieldError1("HdfsTarget", "the value of field 'compress' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Compress)))
+	}
+	return nil
+}
+
 // Set default value for message model.HdfsTarget
 func (this *HdfsTarget) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_file_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_write_mode(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_field_delimiter(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_encoding(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_compress(); err != nil {
 		return err
 	}
 	return nil

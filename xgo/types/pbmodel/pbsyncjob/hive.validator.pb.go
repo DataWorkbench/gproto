@@ -12,7 +12,7 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-var _xxx_xxx_Validator_HiveTarget_InEnums_PartitionType = map[HiveTarget_PartitionType]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_HiveTarget_InEnums_PartitionType = map[BaseEnum_PartitionType]bool{0: true, 1: true, 2: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_partition_type() error {
 	if !(this.PartitionType >= 0) {
@@ -24,7 +24,7 @@ func (this *HiveTarget) _xxx_xxx_Validator_Validate_partition_type() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_HiveTarget_InEnums_WriteMode = map[HiveTarget_WriteMode]bool{0: true, 1: true}
+var _xxx_xxx_Validator_HiveTarget_InEnums_WriteMode = map[BaseEnum_WriteMode]bool{0: true, 1: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_write_mode() error {
 	if !(this.WriteMode >= 0) {
@@ -36,7 +36,7 @@ func (this *HiveTarget) _xxx_xxx_Validator_Validate_write_mode() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_HiveTarget_InEnums_FileType = map[HiveTarget_FileType]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_HiveTarget_InEnums_FileType = map[BaseEnum_FileType]bool{0: true, 1: true, 2: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_file_type() error {
 	if !(this.FileType >= 0) {
@@ -48,7 +48,7 @@ func (this *HiveTarget) _xxx_xxx_Validator_Validate_file_type() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_HiveTarget_InEnums_Compress = map[HiveTarget_CompressType]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+var _xxx_xxx_Validator_HiveTarget_InEnums_Compress = map[BaseEnum_CompressType]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_compress() error {
 	if !(this.Compress >= 0) {
@@ -77,7 +77,7 @@ func (this *HiveTarget) _xxx_xxx_Validator_Validate_field_delimiter() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_HiveTarget_InEnums_Encoding = map[HiveTarget_Encoding]bool{0: true, 1: true}
+var _xxx_xxx_Validator_HiveTarget_InEnums_Encoding = map[BaseEnum_Encoding]bool{0: true, 1: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_encoding() error {
 	if !(this.Encoding >= 0) {

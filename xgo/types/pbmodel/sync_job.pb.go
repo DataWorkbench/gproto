@@ -498,7 +498,7 @@ type SyncJob struct {
 	Created int64 `protobuf:"varint,11,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
 	Updated int64 `protobuf:"varint,12,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
-	// The  sync task source type.
+	// The sync task source type.
 	SourceType SyncJob_Resource `protobuf:"varint,13,opt,name=source_type,json=sourceType,proto3,enum=model.SyncJob_Resource" json:"source_type" gorm:"column:source_type;"`
 	// The sync task target type.
 	TargetType SyncJob_Resource `protobuf:"varint,14,opt,name=target_type,json=targetType,proto3,enum=model.SyncJob_Resource" json:"target_type" gorm:"column:target_type;"`
