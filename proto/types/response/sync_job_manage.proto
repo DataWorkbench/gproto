@@ -75,3 +75,9 @@ message DescribeSyncFlinkUIByInstanceId {
     string web_ui = 1;
 }
 
+// GenerateJobJson
+message GenerateJobJson {
+    // @inject_tag: json:"job"
+    string job = 1;
+}
+

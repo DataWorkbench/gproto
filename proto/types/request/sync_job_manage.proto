@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/sync_job.proto";
+import "proto/types/model/datasource.proto";
 
 // ListSyncJobs used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSyncJobs {
@@ -339,4 +340,21 @@ message DescribeSyncFlinkUIByInstanceId {
     // The instance id in HTTP Request-URI. Is Required.
     // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
     string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
+}
+
+// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+message GenerateJobJson {
+    // source_type
+    // @inject_tag: json:"source_type" uri:"source_type"
+    model.DataSource.Type source_type = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+    // The instance id in HTTP Request-URI. Is Required.
+    // @inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+    string source_version = 2;
+    // target type
+    // @inject_tag: json:"target_type" uri:"target_type"
+    model.DataSource.Type target_type = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+    // target version
+    // @inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+    string target_version = 4;
+
 }
