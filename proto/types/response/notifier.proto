@@ -12,7 +12,7 @@ option java_multiple_files = false;
 
 import "proto/types/model/notifier.proto";
 
-message DescNotificationListResponse {
+message DescNotificationList {
   int32 total_count = 1;
   repeated model.NotificationList notification_lists = 2;
 }

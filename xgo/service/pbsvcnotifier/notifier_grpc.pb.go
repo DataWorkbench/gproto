@@ -26,7 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NotifierClient interface {
 	SendNotification(ctx context.Context, in *pbrequest.SendNotification, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	DescribeNotificationList(ctx context.Context, in *pbrequest.DescNotificationListRequest, opts ...grpc.CallOption) (*pbresponse.DescNotificationListResponse, error)
+	DescribeNotificationList(ctx context.Context, in *pbrequest.DescNotificationList, opts ...grpc.CallOption) (*pbresponse.DescNotificationList, error)
 }
 
 type notifierClient struct {
@@ -46,8 +46,8 @@ func (c *notifierClient) SendNotification(ctx context.Context, in *pbrequest.Sen
 	return out, nil
 }
 
-func (c *notifierClient) DescribeNotificationList(ctx context.Context, in *pbrequest.DescNotificationListRequest, opts ...grpc.CallOption) (*pbresponse.DescNotificationListResponse, error) {
-	out := new(pbresponse.DescNotificationListResponse)
+func (c *notifierClient) DescribeNotificationList(ctx context.Context, in *pbrequest.DescNotificationList, opts ...grpc.CallOption) (*pbresponse.DescNotificationList, error) {
+	out := new(pbresponse.DescNotificationList)
 	err := c.cc.Invoke(ctx, "/notifier.Notifier/DescribeNotificationList", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -60,7 +60,7 @@ func (c *notifierClient) DescribeNotificationList(ctx context.Context, in *pbreq
 // for forward compatibility
 type NotifierServer interface {
 	SendNotification(context.Context, *pbrequest.SendNotification) (*pbmodel.EmptyStruct, error)
-	DescribeNotificationList(context.Context, *pbrequest.DescNotificationListRequest) (*pbresponse.DescNotificationListResponse, error)
+	DescribeNotificationList(context.Context, *pbrequest.DescNotificationList) (*pbresponse.DescNotificationList, error)
 	mustEmbedUnimplementedNotifierServer()
 }
 
@@ -71,7 +71,7 @@ type UnimplementedNotifierServer struct {
 func (UnimplementedNotifierServer) SendNotification(context.Context, *pbrequest.SendNotification) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendNotification not implemented")
 }
-func (UnimplementedNotifierServer) DescribeNotificationList(context.Context, *pbrequest.DescNotificationListRequest) (*pbresponse.DescNotificationListResponse, error) {
+func (UnimplementedNotifierServer) DescribeNotificationList(context.Context, *pbrequest.DescNotificationList) (*pbresponse.DescNotificationList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeNotificationList not implemented")
 }
 func (UnimplementedNotifierServer) mustEmbedUnimplementedNotifierServer() {}
@@ -106,7 +106,7 @@ func _Notifier_SendNotification_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _Notifier_DescribeNotificationList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DescNotificationListRequest)
+	in := new(pbrequest.DescNotificationList)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -118,7 +118,7 @@ func _Notifier_DescribeNotificationList_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/notifier.Notifier/DescribeNotificationList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NotifierServer).DescribeNotificationList(ctx, req.(*pbrequest.DescNotificationListRequest))
+		return srv.(NotifierServer).DescribeNotificationList(ctx, req.(*pbrequest.DescNotificationList))
 	}
 	return interceptor(ctx, in, info, handler)
 }

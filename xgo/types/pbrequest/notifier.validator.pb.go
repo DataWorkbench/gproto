@@ -73,35 +73,35 @@ func (this *SendNotification) Validate() error {
 	return nil
 }
 
-func (this *DescNotificationListRequest) _xxx_xxx_Validator_Validate_limit() error {
+func (this *DescNotificationList) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("DescNotificationListRequest", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("DescNotificationList", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
 	}
 	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("DescNotificationListRequest", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("DescNotificationList", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
 	}
 	return nil
 }
 
-func (this *DescNotificationListRequest) _xxx_xxx_Validator_Validate_offset() error {
+func (this *DescNotificationList) _xxx_xxx_Validator_Validate_offset() error {
 	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("DescNotificationListRequest", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+		return protovalidator.FieldError1("DescNotificationList", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
 	}
 	return nil
 }
 
-func (this *DescNotificationListRequest) _xxx_xxx_Validator_Validate_nf_list_ids() error {
+func (this *DescNotificationList) _xxx_xxx_Validator_Validate_nf_list_ids() error {
 	if !(len(this.NfListIds) >= 0) {
-		return protovalidator.FieldError1("DescNotificationListRequest", "the length of field 'nf_list_ids' must be greater than or equal to '0'", strconv.Itoa(len(this.NfListIds)))
+		return protovalidator.FieldError1("DescNotificationList", "the length of field 'nf_list_ids' must be greater than or equal to '0'", strconv.Itoa(len(this.NfListIds)))
 	}
 	if !(len(this.NfListIds) <= 100) {
-		return protovalidator.FieldError1("DescNotificationListRequest", "the length of field 'nf_list_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NfListIds)))
+		return protovalidator.FieldError1("DescNotificationList", "the length of field 'nf_list_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NfListIds)))
 	}
 	return nil
 }
 
-// Set default value for message request.DescNotificationListRequest
-func (this *DescNotificationListRequest) Validate() error {
+// Set default value for message request.DescNotificationList
+func (this *DescNotificationList) Validate() error {
 	if this == nil {
 		return nil
 	}

@@ -26,7 +26,7 @@ message SendNotification {
   string content = 5 [ (validator.field).tags.string = { byte_len_gt:0 } ];
 }
 
-message DescNotificationListRequest {
+message DescNotificationList {
   // @inject_tag: json:"limit"
   int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // @inject_tag: json:"offset"

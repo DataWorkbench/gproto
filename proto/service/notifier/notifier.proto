@@ -16,5 +16,5 @@ import "proto/types/model/empty.proto";
 
 service Notifier {
   rpc SendNotification(request.SendNotification) returns (model.EmptyStruct) {}
-  rpc DescribeNotificationList(request.DescNotificationListRequest) returns (response.DescNotificationListResponse) {}
+  rpc DescribeNotificationList(request.DescNotificationList) returns (response.DescNotificationList) {}
 }
