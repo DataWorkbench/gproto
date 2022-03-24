@@ -11,6 +11,14 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message model.HiveColumn
+func (this *HiveColumn) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.HiveTarget
 func (this *HiveTarget) SetDefaults() {
 	if this == nil {

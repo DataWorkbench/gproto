@@ -12,6 +12,26 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
+// Set default value for message model.HiveColumn
+func (this *HiveColumn) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+func (this *HiveTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_HiveTarget_InEnums_PartitionType = map[BaseEnum_PartitionType]bool{0: true, 1: true, 2: true}
 
 func (this *HiveTarget) _xxx_xxx_Validator_Validate_partition_type() error {
@@ -93,6 +113,9 @@ func (this *HiveTarget) _xxx_xxx_Validator_Validate_encoding() error {
 func (this *HiveTarget) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_partition_type(); err != nil {
 		return err
