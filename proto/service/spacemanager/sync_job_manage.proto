@@ -88,7 +88,7 @@ service SyncJobManage {
     // Interface for helper.
     rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
 
-    // Interface for helper.
+    // Generate Job Json
     rpc GenerateJobJson(request.GenerateJobJson)  returns (response.GenerateJobJson) {}
 
 }
