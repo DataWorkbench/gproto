@@ -223,6 +223,10 @@ message HDFSURL {
     (validator.field).check_if = { field: "config"; tags: { string: { ne: "" } } },
     (validator.field).tags.string = { json: true; byte_len_lte: 16384 }
   ];
+  // Default FS
+  // @inject_tag: json:"default_fs"
+  string default_fs = 4 [ (validator.field).tags.string = { byte_len_gte: 1 } ];
+
 }
 
 
