@@ -88,3 +88,11 @@ func (this *DescribeSyncFlinkUIByInstanceId) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.GenerateJobJson
+func (this *GenerateJobJson) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

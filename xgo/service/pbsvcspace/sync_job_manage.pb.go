@@ -36,7 +36,7 @@ var file_proto_service_spacemanager_sync_job_manage_proto_rawDesc = []byte{
 	0x6e, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2a, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x2f, 0x73, 0x79, 0x6e, 0x63, 0x5f, 0x6a, 0x6f, 0x62, 0x5f, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0x8a, 0x0c, 0x0a, 0x0d, 0x53, 0x79, 0x6e, 0x63, 0x4a,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xd4, 0x0c, 0x0a, 0x0d, 0x53, 0x79, 0x6e, 0x63, 0x4a,
 	0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x12, 0x3f, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74,
 	0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x73, 0x12, 0x15, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x73, 0x1a,
@@ -133,15 +133,19 @@ var file_proto_service_spacemanager_sync_job_manage_proto_rawDesc = []byte{
 	0x61, 0x6e, 0x63, 0x65, 0x49, 0x64, 0x1a, 0x29, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x46, 0x6c,
 	0x69, 0x6e, 0x6b, 0x55, 0x49, 0x42, 0x79, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x49,
-	0x64, 0x22, 0x00, 0x42, 0x77, 0x0a, 0x27, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f,
-	0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x2e, 0x70, 0x62, 0x73, 0x76, 0x63, 0x73, 0x70, 0x61, 0x63, 0x65, 0x42, 0x12,
-	0x50, 0x42, 0x53, 0x76, 0x63, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x50, 0x00, 0x5a, 0x36, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x2f, 0x70, 0x62, 0x73, 0x76, 0x63, 0x73, 0x70, 0x61, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x64, 0x22, 0x00, 0x12, 0x48, 0x0a, 0x0f, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4a,
+	0x6f, 0x62, 0x4a, 0x73, 0x6f, 0x6e, 0x12, 0x18, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4a, 0x6f, 0x62, 0x4a, 0x73, 0x6f, 0x6e,
+	0x1a, 0x19, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x47, 0x65, 0x6e, 0x65,
+	0x72, 0x61, 0x74, 0x65, 0x4a, 0x6f, 0x62, 0x4a, 0x73, 0x6f, 0x6e, 0x22, 0x00, 0x42, 0x77, 0x0a,
+	0x27, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x62,
+	0x73, 0x76, 0x63, 0x73, 0x70, 0x61, 0x63, 0x65, 0x42, 0x12, 0x50, 0x42, 0x53, 0x76, 0x63, 0x53,
+	0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x36,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57,
+	0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
+	0x78, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x62, 0x73, 0x76,
+	0x63, 0x73, 0x70, 0x61, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var file_proto_service_spacemanager_sync_job_manage_proto_goTypes = []interface{}{
@@ -162,15 +166,17 @@ var file_proto_service_spacemanager_sync_job_manage_proto_goTypes = []interface{
 	(*pbrequest.ListReleaseSyncJobs)(nil),              // 14: request.ListReleaseSyncJobs
 	(*pbrequest.ListSyncJobVersions)(nil),              // 15: request.ListSyncJobVersions
 	(*pbrequest.DescribeSyncFlinkUIByInstanceId)(nil),  // 16: request.DescribeSyncFlinkUIByInstanceId
-	(*pbresponse.ListSyncJobs)(nil),                    // 17: response.ListSyncJobs
-	(*pbmodel.EmptyStruct)(nil),                        // 18: model.EmptyStruct
-	(*pbresponse.CreateSyncJob)(nil),                   // 19: response.CreateSyncJob
-	(*pbresponse.DescribeSyncJob)(nil),                 // 20: response.DescribeSyncJob
-	(*pbresponse.GetSyncJobConf)(nil),                  // 21: response.GetSyncJobConf
-	(*pbresponse.GetSyncJobSchedule)(nil),              // 22: response.GetSyncJobSchedule
-	(*pbresponse.ListReleaseSyncJobs)(nil),             // 23: response.ListReleaseSyncJobs
-	(*pbresponse.ListSyncJobVersions)(nil),             // 24: response.ListSyncJobVersions
-	(*pbresponse.DescribeSyncFlinkUIByInstanceId)(nil), // 25: response.DescribeSyncFlinkUIByInstanceId
+	(*pbrequest.GenerateJobJson)(nil),                  // 17: request.GenerateJobJson
+	(*pbresponse.ListSyncJobs)(nil),                    // 18: response.ListSyncJobs
+	(*pbmodel.EmptyStruct)(nil),                        // 19: model.EmptyStruct
+	(*pbresponse.CreateSyncJob)(nil),                   // 20: response.CreateSyncJob
+	(*pbresponse.DescribeSyncJob)(nil),                 // 21: response.DescribeSyncJob
+	(*pbresponse.GetSyncJobConf)(nil),                  // 22: response.GetSyncJobConf
+	(*pbresponse.GetSyncJobSchedule)(nil),              // 23: response.GetSyncJobSchedule
+	(*pbresponse.ListReleaseSyncJobs)(nil),             // 24: response.ListReleaseSyncJobs
+	(*pbresponse.ListSyncJobVersions)(nil),             // 25: response.ListSyncJobVersions
+	(*pbresponse.DescribeSyncFlinkUIByInstanceId)(nil), // 26: response.DescribeSyncFlinkUIByInstanceId
+	(*pbresponse.GenerateJobJson)(nil),                 // 27: response.GenerateJobJson
 }
 var file_proto_service_spacemanager_sync_job_manage_proto_depIdxs = []int32{
 	0,  // 0: spacemanager.SyncJobManage.ListSyncJobs:input_type -> request.ListSyncJobs
@@ -193,28 +199,30 @@ var file_proto_service_spacemanager_sync_job_manage_proto_depIdxs = []int32{
 	7,  // 17: spacemanager.SyncJobManage.GetSyncJobVersionConf:input_type -> request.GetSyncJobConf
 	9,  // 18: spacemanager.SyncJobManage.GetSyncJobVersionSchedule:input_type -> request.GetSyncJobSchedule
 	16, // 19: spacemanager.SyncJobManage.DescribeSyncFlinkUIByInstanceId:input_type -> request.DescribeSyncFlinkUIByInstanceId
-	17, // 20: spacemanager.SyncJobManage.ListSyncJobs:output_type -> response.ListSyncJobs
-	18, // 21: spacemanager.SyncJobManage.DeleteSyncJobs:output_type -> model.EmptyStruct
-	18, // 22: spacemanager.SyncJobManage.MoveSyncJobs:output_type -> model.EmptyStruct
-	19, // 23: spacemanager.SyncJobManage.CreateSyncJob:output_type -> response.CreateSyncJob
-	18, // 24: spacemanager.SyncJobManage.UpdateSyncJob:output_type -> model.EmptyStruct
-	20, // 25: spacemanager.SyncJobManage.DescribeSyncJob:output_type -> response.DescribeSyncJob
-	18, // 26: spacemanager.SyncJobManage.SetSyncJobConf:output_type -> model.EmptyStruct
-	21, // 27: spacemanager.SyncJobManage.GetSyncJobConf:output_type -> response.GetSyncJobConf
-	18, // 28: spacemanager.SyncJobManage.SetSyncJobSchedule:output_type -> model.EmptyStruct
-	22, // 29: spacemanager.SyncJobManage.GetSyncJobSchedule:output_type -> response.GetSyncJobSchedule
-	18, // 30: spacemanager.SyncJobManage.ReleaseSyncJob:output_type -> model.EmptyStruct
-	18, // 31: spacemanager.SyncJobManage.OfflineReleaseSyncJob:output_type -> model.EmptyStruct
-	18, // 32: spacemanager.SyncJobManage.SuspendReleaseSyncJob:output_type -> model.EmptyStruct
-	18, // 33: spacemanager.SyncJobManage.ResumeReleaseSyncJob:output_type -> model.EmptyStruct
-	23, // 34: spacemanager.SyncJobManage.ListReleaseSyncJobs:output_type -> response.ListReleaseSyncJobs
-	24, // 35: spacemanager.SyncJobManage.ListSyncJobVersions:output_type -> response.ListSyncJobVersions
-	20, // 36: spacemanager.SyncJobManage.DescribeSyncJobVersion:output_type -> response.DescribeSyncJob
-	21, // 37: spacemanager.SyncJobManage.GetSyncJobVersionConf:output_type -> response.GetSyncJobConf
-	22, // 38: spacemanager.SyncJobManage.GetSyncJobVersionSchedule:output_type -> response.GetSyncJobSchedule
-	25, // 39: spacemanager.SyncJobManage.DescribeSyncFlinkUIByInstanceId:output_type -> response.DescribeSyncFlinkUIByInstanceId
-	20, // [20:40] is the sub-list for method output_type
-	0,  // [0:20] is the sub-list for method input_type
+	17, // 20: spacemanager.SyncJobManage.GenerateJobJson:input_type -> request.GenerateJobJson
+	18, // 21: spacemanager.SyncJobManage.ListSyncJobs:output_type -> response.ListSyncJobs
+	19, // 22: spacemanager.SyncJobManage.DeleteSyncJobs:output_type -> model.EmptyStruct
+	19, // 23: spacemanager.SyncJobManage.MoveSyncJobs:output_type -> model.EmptyStruct
+	20, // 24: spacemanager.SyncJobManage.CreateSyncJob:output_type -> response.CreateSyncJob
+	19, // 25: spacemanager.SyncJobManage.UpdateSyncJob:output_type -> model.EmptyStruct
+	21, // 26: spacemanager.SyncJobManage.DescribeSyncJob:output_type -> response.DescribeSyncJob
+	19, // 27: spacemanager.SyncJobManage.SetSyncJobConf:output_type -> model.EmptyStruct
+	22, // 28: spacemanager.SyncJobManage.GetSyncJobConf:output_type -> response.GetSyncJobConf
+	19, // 29: spacemanager.SyncJobManage.SetSyncJobSchedule:output_type -> model.EmptyStruct
+	23, // 30: spacemanager.SyncJobManage.GetSyncJobSchedule:output_type -> response.GetSyncJobSchedule
+	19, // 31: spacemanager.SyncJobManage.ReleaseSyncJob:output_type -> model.EmptyStruct
+	19, // 32: spacemanager.SyncJobManage.OfflineReleaseSyncJob:output_type -> model.EmptyStruct
+	19, // 33: spacemanager.SyncJobManage.SuspendReleaseSyncJob:output_type -> model.EmptyStruct
+	19, // 34: spacemanager.SyncJobManage.ResumeReleaseSyncJob:output_type -> model.EmptyStruct
+	24, // 35: spacemanager.SyncJobManage.ListReleaseSyncJobs:output_type -> response.ListReleaseSyncJobs
+	25, // 36: spacemanager.SyncJobManage.ListSyncJobVersions:output_type -> response.ListSyncJobVersions
+	21, // 37: spacemanager.SyncJobManage.DescribeSyncJobVersion:output_type -> response.DescribeSyncJob
+	22, // 38: spacemanager.SyncJobManage.GetSyncJobVersionConf:output_type -> response.GetSyncJobConf
+	23, // 39: spacemanager.SyncJobManage.GetSyncJobVersionSchedule:output_type -> response.GetSyncJobSchedule
+	26, // 40: spacemanager.SyncJobManage.DescribeSyncFlinkUIByInstanceId:output_type -> response.DescribeSyncFlinkUIByInstanceId
+	27, // 41: spacemanager.SyncJobManage.GenerateJobJson:output_type -> response.GenerateJobJson
+	21, // [21:42] is the sub-list for method output_type
+	0,  // [0:21] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

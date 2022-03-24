@@ -77,6 +77,8 @@ type SyncJobManageClient interface {
 	GetSyncJobVersionSchedule(ctx context.Context, in *pbrequest.GetSyncJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
 	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
+	// Interface for helper.
+	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
 }
 
 type syncJobManageClient struct {
@@ -267,6 +269,15 @@ func (c *syncJobManageClient) DescribeSyncFlinkUIByInstanceId(ctx context.Contex
 	return out, nil
 }
 
+func (c *syncJobManageClient) GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error) {
+	out := new(pbresponse.GenerateJobJson)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GenerateJobJson", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SyncJobManageServer is the server API for SyncJobManage service.
 // All implementations must embed UnimplementedSyncJobManageServer
 // for forward compatibility
@@ -323,6 +334,8 @@ type SyncJobManageServer interface {
 	GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
 	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
+	// Interface for helper.
+	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -389,6 +402,9 @@ func (UnimplementedSyncJobManageServer) GetSyncJobVersionSchedule(context.Contex
 }
 func (UnimplementedSyncJobManageServer) DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncFlinkUIByInstanceId not implemented")
+}
+func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateJobJson not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -763,6 +779,24 @@ func _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_GenerateJobJson_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GenerateJobJson)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).GenerateJobJson(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/GenerateJobJson",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).GenerateJobJson(ctx, req.(*pbrequest.GenerateJobJson))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SyncJobManage_ServiceDesc is the grpc.ServiceDesc for SyncJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -849,6 +883,10 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeSyncFlinkUIByInstanceId",
 			Handler:    _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler,
+		},
+		{
+			MethodName: "GenerateJobJson",
+			Handler:    _SyncJobManage_GenerateJobJson_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
