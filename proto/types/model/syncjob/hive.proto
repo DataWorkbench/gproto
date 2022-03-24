@@ -13,43 +13,54 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-
 import "proto/types/model/syncjob/baseenum.proto";
 
-message HiveTarget {
 
+message HiveColumn{
+    // column name
+    // @inject_tag: json:"name"
+    string key = 1;
+    // column type
+    // @inject_tag: json:"type"
+    string type = 2;
+}
+
+message HiveTarget {
+    // column
+    // @inject_tag: json:"column"
+    repeated HiveColumn column = 1;
     // table
     // @inject_tag: json:"table"
-    string table = 1;
+    string table = 2;
     // use partition
     // @inject_tag: json:"use_partition"
-    bool use_partition = 2;
+    bool use_partition = 3;
     // partition
     // @inject_tag: json:"partition" 
-    string partition = 3;
+    string partition = 4;
     // partition_type
     // @inject_tag: json:"partition_type" 
-    BaseEnum.PartitionType partition_type = 4 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.PartitionType partition_type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
     // tables column
     // @inject_tag: json:"tables_column" 
-    string tables_column = 5;
+    string tables_column = 6;
     // write mode
     // @inject_tag: json:"write_mode" 
-    BaseEnum.WriteMode write_mode = 6 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.WriteMode write_mode = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // file type
     // @inject_tag: json:"file_type" 
-    BaseEnum.FileType file_type = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.FileType file_type = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // compress type
     // @inject_tag: json:"compress"
-    BaseEnum.CompressType compress = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.CompressType compress = 9 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
     // field_delimiter
     // @inject_tag: json:"field_delimiter"
-    string field_delimiter = 9[
+    string field_delimiter = 10 [
     (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
     (validator.field).tags.string = { byte_len_gte: 1 }
     ];
     // encoding
     // @inject_tag: json:"encoding"
-    BaseEnum.Encoding encoding = 10 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.Encoding encoding = 11 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 }
