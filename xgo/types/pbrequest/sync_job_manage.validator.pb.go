@@ -132,7 +132,7 @@ func (this *CreateSyncJob) _xxx_xxx_Validator_CheckIf_type() bool {
 	return true
 }
 
-var _xxx_xxx_Validator_CreateSyncJob_InEnums_Type = map[pbmodel.SyncJob_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_CreateSyncJob_InEnums_Type = map[pbmodel.SyncJob_Type]bool{0: true, 1: true, 2: true}
 
 func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
@@ -142,7 +142,7 @@ func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_type() error {
 		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_CreateSyncJob_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }

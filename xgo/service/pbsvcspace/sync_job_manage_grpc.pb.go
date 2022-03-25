@@ -77,7 +77,7 @@ type SyncJobManageClient interface {
 	GetSyncJobVersionSchedule(ctx context.Context, in *pbrequest.GetSyncJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
 	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
-	// Interface for helper.
+	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
 }
 
@@ -334,7 +334,7 @@ type SyncJobManageServer interface {
 	GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error)
 	// Interface for helper.
 	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
-	// Interface for helper.
+	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }

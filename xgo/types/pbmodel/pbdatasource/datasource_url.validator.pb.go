@@ -493,13 +493,6 @@ func (this *HDFSURL) _xxx_xxx_Validator_Validate_config() error {
 	return nil
 }
 
-func (this *HDFSURL) _xxx_xxx_Validator_Validate_default_fs() error {
-	if !(len(this.DefaultFs) >= 1) {
-		return protovalidator.FieldError1("HDFSURL", "the byte length of field 'default_fs' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.DefaultFs))
-	}
-	return nil
-}
-
 // Set default value for message datasource.HDFSURL
 func (this *HDFSURL) Validate() error {
 	if this == nil {
@@ -512,9 +505,6 @@ func (this *HDFSURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_config(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_default_fs(); err != nil {
 		return err
 	}
 	return nil

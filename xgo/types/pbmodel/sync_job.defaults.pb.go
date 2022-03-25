@@ -17,6 +17,12 @@ func (this *SyncJob) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.SourceType == 0 {
+		this.SourceType = 0
+	}
+	if this.TargetType == 0 {
+		this.TargetType = 0
+	}
 	return
 }
 
@@ -43,28 +49,109 @@ func (this *SyncJobConf) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.JobMode == 0 {
+		this.JobMode = 0
+	}
+	if this.SyncResource != nil {
+		if dt, ok := interface{}(this.SyncResource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message model.ChannelControl
+func (this *ChannelControl) SetDefaults() {
+	if this == nil {
+		return
+	}
 	if this.Parallelism == 0 {
 		this.Parallelism = 1
 	}
 	if this.Percentage == 0 {
-		this.Percentage = 0
+		this.Percentage = 0.0
 	}
-	if this.RecordNum == 0 {
-		this.RecordNum = 0
+	if this.Rate == 0 {
+		this.Rate = 0
 	}
 	if this.Bytes == 0 {
 		this.Bytes = 0
 	}
-	if this.JobMode == 0 {
-		this.JobMode = 0
+	return
+}
+
+// Set default value for message model.SyncResource
+func (this *SyncResource) SetDefaults() {
+	if this == nil {
+		return
 	}
-	if this.RelationaldbSource != nil {
-		if dt, ok := interface{}(this.RelationaldbSource).(interface{ SetDefaults() }); ok {
+	if this.MysqlSource != nil {
+		if dt, ok := interface{}(this.MysqlSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
-	if this.RelationaldbTarget != nil {
-		if dt, ok := interface{}(this.RelationaldbTarget).(interface{ SetDefaults() }); ok {
+	if this.MysqlTarget != nil {
+		if dt, ok := interface{}(this.MysqlTarget).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.OracleSource != nil {
+		if dt, ok := interface{}(this.OracleSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.OracleTarget != nil {
+		if dt, ok := interface{}(this.OracleTarget).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Db2Source != nil {
+		if dt, ok := interface{}(this.Db2Source).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Db2Target != nil {
+		if dt, ok := interface{}(this.Db2Target).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.PostgresqlSource != nil {
+		if dt, ok := interface{}(this.PostgresqlSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.PostgresqlTarget != nil {
+		if dt, ok := interface{}(this.PostgresqlTarget).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SqlserverSource != nil {
+		if dt, ok := interface{}(this.SqlserverSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SqlserverTarget != nil {
+		if dt, ok := interface{}(this.SqlserverTarget).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ClickHouseSource != nil {
+		if dt, ok := interface{}(this.ClickHouseSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ClickHouseTarget != nil {
+		if dt, ok := interface{}(this.ClickHouseTarget).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SapHanaSource != nil {
+		if dt, ok := interface{}(this.SapHanaSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SapHanaTarget != nil {
+		if dt, ok := interface{}(this.SapHanaTarget).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
