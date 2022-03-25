@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
+import "proto/types/model/datasource.proto";
 import "proto/types/model/syncjob/binlog.proto";
 import "proto/types/model/syncjob/elasticsearch.proto";
 import "proto/types/model/syncjob/ftp.proto";
@@ -25,36 +26,15 @@ import "proto/types/model/syncjob/logminer.proto";
 import "proto/types/model/syncjob/mongodb.proto";
 import "proto/types/model/syncjob/pgwal.proto";
 import "proto/types/model/syncjob/redis.proto";
-import "proto/types/model/syncjob/relationaldb.proto";
+import "proto/types/model/syncjob/db.proto";
 import "proto/types/model/syncjob/sqlservercdc.proto";
 
 // The sync job info
 message SyncJob {
     enum Type {
-        OfflineFull = 0;
-        OfflineIncrement = 1;
-        RealTimeFull = 2;
-        RealTimeIncrement = 3;
-    }
-
-    enum Resource {
-        ResourceUnset = 0;
-        MySQL = 1;
-        PostgreSQL = 2;
-        Kafka = 3;
-        S3 = 4;
-        ClickHouse = 5;
-        HBase = 6;
-        Ftp = 7;
-        HDFS = 8;
-        SqlServer = 9;
-        Oracle = 10;
-        DB2 = 11;
-        SapHana = 12;
-        Hive = 13;
-        ElasticSearch = 14;
-        MongoDb = 15;
-        Redis = 16;
+        TypeUnset = 0;
+        OfflineFull = 1;
+        OfflineIncrement = 2;
     }
 
     enum Status {
@@ -62,6 +42,8 @@ message SyncJob {
         Deleted = 1;
         Enabled = 2;
     }
+
+
 
     // Workspace ID it belongs to.
     // @inject_tag: json:"space_id" gorm:"column:space_id;"
@@ -120,11 +102,10 @@ message SyncJob {
 
     // The sync task source type.
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
-    Resource source_type = 13 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
-
+    DataSource.Type source_type = 13 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gte: 0,lte: 16; in_enums: true  } ];
     // The sync task target type.
     // @inject_tag: json:"target_type" gorm:"column:target_type;"
-    Resource target_type = 14 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    DataSource.Type target_type = 14 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gte: 0,lte: 16; in_enums: true  } ];
 }
 
 // SyncJobProperty represents property of job.
@@ -154,8 +135,9 @@ message SyncJobConf {
     option (gosql.serialize) = {json: {}};
 
     enum JobMode {
-        GuideMode = 0;
-        ScriptMode = 1;
+        GuideModeUnset = 0;
+        GuideMode = 1;
+        ScriptMode = 2;
     }
 
     // source_id is datasource id
@@ -166,98 +148,156 @@ message SyncJobConf {
     // @inject_tag: json:"target_id"
     string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
 
-    // The job name in each workspace is unique. Is required, Max Length 128.
-    // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-    // @inject_tag: json:"name"
-    int32 parallelism = 3 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
-    // Description of the job, Not required, Max length 1024.
-    // @inject_tag: json:"desc"
-    int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0, lte: 100 } ];
-    // Description of the job, Not required, Max length 1024.
-    // @inject_tag: json:"record_num"
-    int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
-    // bytes
-    // @inject_tag: json:"bytes"
-    int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0 } ];
     // 0:guide mode,1:shell mode
     // @inject_tag: json:"job_mode"
-    JobMode job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
+    JobMode job_mode = 3 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // shell mode json
     // @inject_tag: json:"job_content"
-    string job_content = 8 [
+    string job_content = 4 [
     (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
     (validator.field).tags.string = { byte_len_gt: 20  }
     ];
+    // sync Resource
+    // @inject_tag: json:"sync_resource"
+    SyncResource syncResource = 5;
+    // The flink cluster id. Is required.
+    // @inject_tag: json:"cluster_id"
+    string cluster_id = 6;
+}
+
+message ChannelControl{
+    option (gosql.serialize) = {json: {}};
+    enum RatePolicy {
+        RatePolicyUnset = 0;
+        Limit = 1;
+        UnLimit = 2;
+    }
+
+    // The job name in each workspace is unique. Is required, Max Length 128.
+    // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+    // @inject_tag: json:"name"
+    int32 parallelism = 1 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+    // Description of the job, Not required, Max length 1024.
+    // @inject_tag: json:"record_num"
+    string record_num = 2 ;
+    // Description of the job, Not required, Max length 1024.
+    // @inject_tag: json:"desc"
+    double percentage = 3 [ (defaults.field).basic = "0.0", (validator.field).tags.float = { gte: 0.0, lte: 100.0 } ];
+    // sync rate
+    // @inject_tag: json:"rate"
+    RatePolicy rate = 4 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
+    // bytes
+    // @inject_tag: json:"bytes"
+    int32 bytes = 5 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 1 } ];
+}
+
+
+message SyncResource {
+    option (gosql.serialize) = {json: {}};
+    // Relationaldb source
+    // @inject_tag: json:"mysql_source"
+    DBSource mysql_source = 1;
+    // Relationaldb target
+    // @inject_tag: json:"mysql_target"
+    DBTarget mysql_target = 2;
+    // Relationaldb source
+    // @inject_tag: json:"oracle_source"
+    DBSource oracle_source = 3;
+    // Relationaldb target
+    // @inject_tag: json:"oracle_target"
+    DBTarget oracle_target = 4;
+    // Relationaldb source
+    // @inject_tag: json:"db2_source"
+    DBSource db2_source = 5;
+    // Relationaldb target
+    // @inject_tag: json:"db2_target"
+    DBTarget db2_target = 6;
+    // Relationaldb source
+    // @inject_tag: json:"postgresql_source"
+    DBSource postgresql_source = 7;
+    // Relationaldb target
+    // @inject_tag: json:"postgresql_target"
+    DBTarget postgresql_target = 8;
     // Relationaldb source
     // @inject_tag: json:"relationaldb_source"
-    RelationaldbSource relationaldb_source = 9;
+    DBSource sqlserver_source = 9;
     // Relationaldb target
     // @inject_tag: json:"relationaldb_target"
-    RelationaldbTarget relationaldb_target = 10;
+    DBTarget sqlserver_target = 10;
+    // Relationaldb source
+    // @inject_tag: json:"click_house_source"
+    DBSource click_house_source = 11;
+    // Relationaldb target
+    // @inject_tag: json:"click_house_target"
+    DBTarget click_house_target = 12;
+    // Relationaldb source
+    // @inject_tag: json:"sap_hana_source"
+    DBSource sap_hana_source = 13;
+    // Relationaldb target
+    // @inject_tag: json:"sap_hana_target"
+    DBTarget sap_hana_target = 14;
+
     // mongodb target
     // @inject_tag: json:"mongodb_source"
-    MongodbSource mongodb_source = 11;
+    MongodbSource mongodb_source = 15;
     // mongodb target
     // @inject_tag: json:"mongodb_target"
-    MongodbTarget mongodb_target = 12;
+    MongodbTarget mongodb_target = 16;
 
     // elasticsearch source
     // @inject_tag: json:"elastic_search_source"
-    ElasticSearchSource elastic_search_source = 13;
+    ElasticSearchSource elastic_search_source = 17;
     // elasticsearch target
     // @inject_tag: json:"elastic_search_target"
-    ElasticSearchTarget elastic_search_target = 14;
+    ElasticSearchTarget elastic_search_target = 18;
 
     // hdfs source
     // @inject_tag: json:"hdfs_source"
-    HdfsSource hdfs_source = 15;
+    HdfsSource hdfs_source = 19;
     // hdfs source
     // @inject_tag: json:"hdfs_target"
-    HdfsTarget hdfs_target = 16;
+    HdfsTarget hdfs_target = 20;
     // ftp source
     // @inject_tag: json:"ftp_source"
-    FtpSource ftp_source = 17;
+    FtpSource ftp_source = 21;
     // ftp target
     // @inject_tag: json:"ftp_target"
-    FtpTarget ftp_target = 18;
+    FtpTarget ftp_target = 22;
 
     // hbase source
     // @inject_tag: json:"hbase_source"
-    HbaseSource hbase_source = 19;
+    HbaseSource hbase_source = 23;
     // hbase target
     // @inject_tag: json:"hbase_target"
-    HbaseTarget hbase_target = 20;
+    HbaseTarget hbase_target = 24;
 
     // kafka target
     // @inject_tag: json:"kafka_source"
-    KafkaSource kafka_source = 21;
+    KafkaSource kafka_source = 25;
     // kafka target
     // @inject_tag: json:"kafka_target"
-    KafkaTarget kafka_target = 22;
+    KafkaTarget kafka_target = 26;
 
     // binlog source
     // @inject_tag: json:"binlog_source"
-    BinlogSource binlog_source = 23;
+    BinlogSource binlog_source = 27;
     // pgwal source
     // @inject_tag: json:"pgwal_source"
-    PgWalSource pg_wal_source = 24;
+    PgWalSource pg_wal_source = 28;
     // sqlserver cdc source
     // @inject_tag: json:"sql_server_cdc_source"
-    SqlServerCdcSource sql_server_cdc_source = 25;
+    SqlServerCdcSource sql_server_cdc_source = 29;
     // logminer source
     // @inject_tag: json:"logminer_source"
-    LogMinerSource log_miner_source = 26;
+    LogMinerSource log_miner_source = 30;
     // redis target
     // @inject_tag: json:"redis_target"
-    RedisTarget redis_target = 27;
+    RedisTarget redis_target = 31;
     // hive target
     // @inject_tag: json:"hive_target"
-    HiveTarget hive_target = 28;
-    // The flink cluster id. Is required.
-    // @inject_tag: json:"cluster_id"
-    string cluster_id = 29 [(validator.field) = {}];
+    HiveTarget hive_target = 32;
 }
+
 
 // SyncJobSchedule represents a job schedule info.
 // Not use with gorm.
@@ -362,7 +402,7 @@ message SyncJobSchedule {
     (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
     (validator.field).tags.int = { gte: 1, lte: 30 }
     ];
-    }
+}
 
 // The release sync job info.
 message SyncJobRelease {
@@ -448,10 +488,4 @@ message SyncJobRelease {
     // @inject_tag: json:"org_apache_hadoop_hive_distributed_filesystem" swaggerignore:"true"
     string org_apache_hadoop_hive_distributed_filesystem = 9;
 }*/
-
-
-
-
-
-
 

@@ -15,10 +15,11 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/syncjob/column.proto";
+import "proto/types/model/syncjob/baseenum.proto";
 
 
 
-message RelationaldbSource {
+message DBSource {
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -37,10 +38,10 @@ message RelationaldbSource {
 
     // mapping type
     // @inject_tag: json:"mapping_type"
-    Column.ColumnMapping mapping_type = 6;
+    BaseEnum.ColumnMapping mapping_type = 6;
 }
 
-message RelationaldbTarget {
+message DBTarget {
 
     enum WriteMode {
         insert = 0;

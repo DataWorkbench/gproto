@@ -36,4 +36,12 @@ message BaseEnum {
 		UTF8 = 0;
 		GBK = 1;
 	}
+
+	enum ColumnMapping {
+		ColumnUnset = 0;
+		Name = 1;
+		Row = 2;
+		Auto = 3;
+	}
+
 }
