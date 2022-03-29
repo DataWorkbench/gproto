@@ -156,7 +156,7 @@ message DataSource {
     //  REDIS Source Connection Info.
     // @inject_tag: json:"redis"
     datasource.RedisURL redis = 16 [
-      (validator.field).check_if = {field: "type", tags: { enum: { eq: 15 } } },
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 16 } } },
       (validator.field).tags.message = { not_null: true }
     ];
   }
