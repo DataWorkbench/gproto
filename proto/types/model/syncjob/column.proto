@@ -9,7 +9,7 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 // File name of class.
 option java_outer_classname = "PBColumn";
 option java_multiple_files = false;
-
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 message Column{
 
