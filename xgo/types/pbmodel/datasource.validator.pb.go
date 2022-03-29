@@ -499,7 +499,7 @@ func (this *DataSource_URL) _xxx_xxx_Validator_Validate_mongo_db() error {
 }
 
 func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_redis() bool {
-	if !(this.Type == 15) {
+	if !(this.Type == 16) {
 		return false
 	}
 	return true

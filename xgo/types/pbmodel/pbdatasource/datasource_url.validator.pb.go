@@ -889,6 +889,16 @@ func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_password() error {
 	return nil
 }
 
+func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) >= 1) {
+		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'version' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Version))
+	}
+	if !(len(this.Version) <= 64) {
+		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'version' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Version))
+	}
+	return nil
+}
+
 // Set default value for message datasource.ElasticSearchURL
 func (this *ElasticSearchURL) Validate() error {
 	if this == nil {
@@ -904,6 +914,9 @@ func (this *ElasticSearchURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
 		return err
 	}
 	return nil
