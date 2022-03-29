@@ -343,19 +343,19 @@ message HiveURL {
 
   // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"user"
-  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string user = 3;
 
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"password"
-  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+  string password = 4;
 
   // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"database"
   string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // hadoop config
-  // @inject_tag: json:"hadoop_config"
-  string hadoop_config = 6;
+  // @inject_tag: json:"config"
+  string config = 6;
   // defaultFS
   // @inject_tag: json:"defaultFS"
   string defaultFS = 7;

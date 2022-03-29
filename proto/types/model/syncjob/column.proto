@@ -10,10 +10,6 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBColumn";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
-import "github.com/yu31/protoc-plugin/proto/gosql.proto";
-import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-
 
 message Column{
 
