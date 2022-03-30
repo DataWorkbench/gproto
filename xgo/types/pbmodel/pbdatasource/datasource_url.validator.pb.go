@@ -869,26 +869,6 @@ func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_port() error {
 	return nil
 }
 
-func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_user() error {
-	if !(len(this.User) >= 1) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'user' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.User))
-	}
-	if !(len(this.User) <= 64) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'user' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.User))
-	}
-	return nil
-}
-
-func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_password() error {
-	if !(len(this.Password) >= 1) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
-	}
-	if !(len(this.Password) <= 64) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'password' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Password))
-	}
-	return nil
-}
-
 func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_version() error {
 	if !(len(this.Version) >= 1) {
 		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'version' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Version))
@@ -908,12 +888,6 @@ func (this *ElasticSearchURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
