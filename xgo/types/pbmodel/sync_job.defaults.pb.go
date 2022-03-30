@@ -57,6 +57,11 @@ func (this *SyncJobConf) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.ChannelControl != nil {
+		if dt, ok := interface{}(this.ChannelControl).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 

@@ -694,6 +694,8 @@ type SyncJobConf struct {
 	SyncResource *SyncResource `protobuf:"bytes,5,opt,name=syncResource,proto3" json:"sync_resource"`
 	// The flink cluster id. Is required.
 	ClusterId string `protobuf:"bytes,6,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id"`
+	// The channel control. Is required.
+	ChannelControl *ChannelControl `protobuf:"bytes,7,opt,name=channel_control,json=channelControl,proto3" json:"channel_control"`
 }
 
 func (x *SyncJobConf) Reset() {
@@ -768,6 +770,13 @@ func (x *SyncJobConf) GetClusterId() string {
 		return x.ClusterId
 	}
 	return ""
+}
+
+func (x *SyncJobConf) GetChannelControl() *ChannelControl {
+	if x != nil {
+		return x.ChannelControl
+	}
+	return nil
 }
 
 type ChannelControl struct {
@@ -1583,7 +1592,7 @@ var file_proto_types_model_sync_job_proto_rawDesc = []byte{
 	0x12, 0x38, 0x0a, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a,
 	0x6f, 0x62, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
-	0x52, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x22, 0xa3, 0x03, 0x0a, 0x0b, 0x53,
+	0x52, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x22, 0xe3, 0x03, 0x0a, 0x0b, 0x53,
 	0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x66, 0x12, 0x30, 0x0a, 0x09, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2,
 	0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73, 0x6f,
@@ -1605,7 +1614,11 @@ var file_proto_types_model_sync_job_proto_rawDesc = []byte{
 	0x2e, 0x53, 0x79, 0x6e, 0x63, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x0c, 0x73,
 	0x79, 0x6e, 0x63, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x63,
 	0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x22, 0x3c, 0x0a, 0x07, 0x4a, 0x6f,
+	0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x3e, 0x0a, 0x0f, 0x63, 0x68,
+	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x18, 0x07, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x43, 0x68, 0x61, 0x6e,
+	0x6e, 0x65, 0x6c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x0e, 0x63, 0x68, 0x61, 0x6e,
+	0x6e, 0x65, 0x6c, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x22, 0x3c, 0x0a, 0x07, 0x4a, 0x6f,
 	0x62, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x12, 0x0a, 0x0e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x4d, 0x6f,
 	0x64, 0x65, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x47, 0x75, 0x69,
 	0x64, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x10, 0x01, 0x12, 0x0e, 0x0a, 0x0a, 0x53, 0x63, 0x72, 0x69,
@@ -1920,49 +1933,50 @@ var file_proto_types_model_sync_job_proto_depIdxs = []int32{
 	13, // 5: model.SyncJobProperty.schedule:type_name -> model.SyncJobSchedule
 	2,  // 6: model.SyncJobConf.job_mode:type_name -> model.SyncJobConf.JobMode
 	12, // 7: model.SyncJobConf.syncResource:type_name -> model.SyncResource
-	3,  // 8: model.ChannelControl.rate:type_name -> model.ChannelControl.RatePolicy
-	16, // 9: model.SyncResource.mysql_source:type_name -> model.DBSource
-	17, // 10: model.SyncResource.mysql_target:type_name -> model.DBTarget
-	16, // 11: model.SyncResource.oracle_source:type_name -> model.DBSource
-	17, // 12: model.SyncResource.oracle_target:type_name -> model.DBTarget
-	16, // 13: model.SyncResource.db2_source:type_name -> model.DBSource
-	17, // 14: model.SyncResource.db2_target:type_name -> model.DBTarget
-	16, // 15: model.SyncResource.postgresql_source:type_name -> model.DBSource
-	17, // 16: model.SyncResource.postgresql_target:type_name -> model.DBTarget
-	16, // 17: model.SyncResource.sqlserver_source:type_name -> model.DBSource
-	17, // 18: model.SyncResource.sqlserver_target:type_name -> model.DBTarget
-	16, // 19: model.SyncResource.click_house_source:type_name -> model.DBSource
-	17, // 20: model.SyncResource.click_house_target:type_name -> model.DBTarget
-	16, // 21: model.SyncResource.sap_hana_source:type_name -> model.DBSource
-	17, // 22: model.SyncResource.sap_hana_target:type_name -> model.DBTarget
-	18, // 23: model.SyncResource.mongodb_source:type_name -> model.MongodbSource
-	19, // 24: model.SyncResource.mongodb_target:type_name -> model.MongodbTarget
-	20, // 25: model.SyncResource.elastic_search_source:type_name -> model.ElasticSearchSource
-	21, // 26: model.SyncResource.elastic_search_target:type_name -> model.ElasticSearchTarget
-	22, // 27: model.SyncResource.hdfs_source:type_name -> model.HdfsSource
-	23, // 28: model.SyncResource.hdfs_target:type_name -> model.HdfsTarget
-	24, // 29: model.SyncResource.ftp_source:type_name -> model.FtpSource
-	25, // 30: model.SyncResource.ftp_target:type_name -> model.FtpTarget
-	26, // 31: model.SyncResource.hbase_source:type_name -> model.HbaseSource
-	27, // 32: model.SyncResource.hbase_target:type_name -> model.HbaseTarget
-	28, // 33: model.SyncResource.kafka_source:type_name -> model.KafkaSource
-	29, // 34: model.SyncResource.kafka_target:type_name -> model.KafkaTarget
-	30, // 35: model.SyncResource.binlog_source:type_name -> model.BinlogSource
-	31, // 36: model.SyncResource.pg_wal_source:type_name -> model.PgWalSource
-	32, // 37: model.SyncResource.sql_server_cdc_source:type_name -> model.SqlServerCdcSource
-	33, // 38: model.SyncResource.log_miner_source:type_name -> model.LogMinerSource
-	34, // 39: model.SyncResource.redis_target:type_name -> model.RedisTarget
-	35, // 40: model.SyncResource.hive_target:type_name -> model.HiveTarget
-	4,  // 41: model.SyncJobSchedule.schedule_policy:type_name -> model.SyncJobSchedule.SchedulePolicy
-	5,  // 42: model.SyncJobSchedule.concurrency_policy:type_name -> model.SyncJobSchedule.ConcurrencyPolicy
-	6,  // 43: model.SyncJobSchedule.retry_policy:type_name -> model.SyncJobSchedule.RetryPolicy
-	0,  // 44: model.SyncJobRelease.type:type_name -> model.SyncJob.Type
-	7,  // 45: model.SyncJobRelease.status:type_name -> model.SyncJobRelease.Status
-	46, // [46:46] is the sub-list for method output_type
-	46, // [46:46] is the sub-list for method input_type
-	46, // [46:46] is the sub-list for extension type_name
-	46, // [46:46] is the sub-list for extension extendee
-	0,  // [0:46] is the sub-list for field type_name
+	11, // 8: model.SyncJobConf.channel_control:type_name -> model.ChannelControl
+	3,  // 9: model.ChannelControl.rate:type_name -> model.ChannelControl.RatePolicy
+	16, // 10: model.SyncResource.mysql_source:type_name -> model.DBSource
+	17, // 11: model.SyncResource.mysql_target:type_name -> model.DBTarget
+	16, // 12: model.SyncResource.oracle_source:type_name -> model.DBSource
+	17, // 13: model.SyncResource.oracle_target:type_name -> model.DBTarget
+	16, // 14: model.SyncResource.db2_source:type_name -> model.DBSource
+	17, // 15: model.SyncResource.db2_target:type_name -> model.DBTarget
+	16, // 16: model.SyncResource.postgresql_source:type_name -> model.DBSource
+	17, // 17: model.SyncResource.postgresql_target:type_name -> model.DBTarget
+	16, // 18: model.SyncResource.sqlserver_source:type_name -> model.DBSource
+	17, // 19: model.SyncResource.sqlserver_target:type_name -> model.DBTarget
+	16, // 20: model.SyncResource.click_house_source:type_name -> model.DBSource
+	17, // 21: model.SyncResource.click_house_target:type_name -> model.DBTarget
+	16, // 22: model.SyncResource.sap_hana_source:type_name -> model.DBSource
+	17, // 23: model.SyncResource.sap_hana_target:type_name -> model.DBTarget
+	18, // 24: model.SyncResource.mongodb_source:type_name -> model.MongodbSource
+	19, // 25: model.SyncResource.mongodb_target:type_name -> model.MongodbTarget
+	20, // 26: model.SyncResource.elastic_search_source:type_name -> model.ElasticSearchSource
+	21, // 27: model.SyncResource.elastic_search_target:type_name -> model.ElasticSearchTarget
+	22, // 28: model.SyncResource.hdfs_source:type_name -> model.HdfsSource
+	23, // 29: model.SyncResource.hdfs_target:type_name -> model.HdfsTarget
+	24, // 30: model.SyncResource.ftp_source:type_name -> model.FtpSource
+	25, // 31: model.SyncResource.ftp_target:type_name -> model.FtpTarget
+	26, // 32: model.SyncResource.hbase_source:type_name -> model.HbaseSource
+	27, // 33: model.SyncResource.hbase_target:type_name -> model.HbaseTarget
+	28, // 34: model.SyncResource.kafka_source:type_name -> model.KafkaSource
+	29, // 35: model.SyncResource.kafka_target:type_name -> model.KafkaTarget
+	30, // 36: model.SyncResource.binlog_source:type_name -> model.BinlogSource
+	31, // 37: model.SyncResource.pg_wal_source:type_name -> model.PgWalSource
+	32, // 38: model.SyncResource.sql_server_cdc_source:type_name -> model.SqlServerCdcSource
+	33, // 39: model.SyncResource.log_miner_source:type_name -> model.LogMinerSource
+	34, // 40: model.SyncResource.redis_target:type_name -> model.RedisTarget
+	35, // 41: model.SyncResource.hive_target:type_name -> model.HiveTarget
+	4,  // 42: model.SyncJobSchedule.schedule_policy:type_name -> model.SyncJobSchedule.SchedulePolicy
+	5,  // 43: model.SyncJobSchedule.concurrency_policy:type_name -> model.SyncJobSchedule.ConcurrencyPolicy
+	6,  // 44: model.SyncJobSchedule.retry_policy:type_name -> model.SyncJobSchedule.RetryPolicy
+	0,  // 45: model.SyncJobRelease.type:type_name -> model.SyncJob.Type
+	7,  // 46: model.SyncJobRelease.status:type_name -> model.SyncJobRelease.Status
+	47, // [47:47] is the sub-list for method output_type
+	47, // [47:47] is the sub-list for method input_type
+	47, // [47:47] is the sub-list for extension type_name
+	47, // [47:47] is the sub-list for extension extendee
+	0,  // [0:47] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_sync_job_proto_init() }
