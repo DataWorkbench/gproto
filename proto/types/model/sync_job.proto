@@ -163,6 +163,10 @@ message SyncJobConf {
     // The flink cluster id. Is required.
     // @inject_tag: json:"cluster_id"
     string cluster_id = 6;
+    // The channel control. Is required.
+    // @inject_tag: json:"channel_control"
+    ChannelControl channel_control = 7;
+
 }
 
 message ChannelControl{
