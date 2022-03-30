@@ -373,13 +373,13 @@ message ElasticSearchURL {
   // @inject_tag: json:"port"
   int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 
-  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // User specifies the username of db
   // @inject_tag: json:"user"
-  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string user = 3;
 
-  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // Password specifies the password of db
   // @inject_tag: json:"password"
-  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+  string password = 4;
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"version"
   string version = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
