@@ -192,7 +192,7 @@ message ChannelControl{
     RatePolicy rate = 4 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // bytes
     // @inject_tag: json:"bytes"
-    int32 bytes = 5 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 1 } ];
+    int32 bytes = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 1 } ];
 }
 
 
