@@ -147,10 +147,23 @@ func (this *ResumeReleaseSyncJob) SetDefaults() {
 	return
 }
 
-// Set default value for message request.CommitReleaseSyncJob
-func (this *CommitReleaseSyncJob) SetDefaults() {
+// Set default value for message request.CommitSyncJob
+func (this *CommitSyncJob) SetDefaults() {
 	if this == nil {
 		return
+	}
+	return
+}
+
+// Set default value for message request.ConvertSyncJobMode
+func (this *ConvertSyncJobMode) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Conf != nil {
+		if dt, ok := interface{}(this.Conf).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }
