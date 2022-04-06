@@ -80,8 +80,15 @@ message GenerateJobJson {
     // @inject_tag: json:"job"
     string job = 1;
 }
-// CommitReleaseSyncJob
-message CommitReleaseSyncJob {
+
+// CommitSyncJob
+message CommitSyncJob {
+    // @inject_tag: json:"job"
+    string job = 1;
+}
+
+// ConvertSyncJobMode
+message ConvertSyncJobMode {
     // @inject_tag: json:"job"
     string job = 1;
 }
