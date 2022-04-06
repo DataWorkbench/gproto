@@ -79,6 +79,7 @@ type SyncJobManageClient interface {
 	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
+	CommitSyncJob(ctx context.Context, in *pbrequest.CommitReleaseSyncJob, opts ...grpc.CallOption) (*pbresponse.CommitReleaseSyncJob, error)
 }
 
 type syncJobManageClient struct {
@@ -278,6 +279,15 @@ func (c *syncJobManageClient) GenerateJobJson(ctx context.Context, in *pbrequest
 	return out, nil
 }
 
+func (c *syncJobManageClient) CommitSyncJob(ctx context.Context, in *pbrequest.CommitReleaseSyncJob, opts ...grpc.CallOption) (*pbresponse.CommitReleaseSyncJob, error) {
+	out := new(pbresponse.CommitReleaseSyncJob)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/CommitSyncJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SyncJobManageServer is the server API for SyncJobManage service.
 // All implementations must embed UnimplementedSyncJobManageServer
 // for forward compatibility
@@ -336,6 +346,7 @@ type SyncJobManageServer interface {
 	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
+	CommitSyncJob(context.Context, *pbrequest.CommitReleaseSyncJob) (*pbresponse.CommitReleaseSyncJob, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -405,6 +416,9 @@ func (UnimplementedSyncJobManageServer) DescribeSyncFlinkUIByInstanceId(context.
 }
 func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateJobJson not implemented")
+}
+func (UnimplementedSyncJobManageServer) CommitSyncJob(context.Context, *pbrequest.CommitReleaseSyncJob) (*pbresponse.CommitReleaseSyncJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CommitSyncJob not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -797,6 +811,24 @@ func _SyncJobManage_GenerateJobJson_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_CommitSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CommitReleaseSyncJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).CommitSyncJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/CommitSyncJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).CommitSyncJob(ctx, req.(*pbrequest.CommitReleaseSyncJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SyncJobManage_ServiceDesc is the grpc.ServiceDesc for SyncJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -887,6 +919,10 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateJobJson",
 			Handler:    _SyncJobManage_GenerateJobJson_Handler,
+		},
+		{
+			MethodName: "CommitSyncJob",
+			Handler:    _SyncJobManage_CommitSyncJob_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

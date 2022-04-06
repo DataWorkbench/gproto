@@ -152,3 +152,11 @@ func (this *GenerateJobJson) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message response.CommitReleaseSyncJob
+func (this *CommitReleaseSyncJob) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

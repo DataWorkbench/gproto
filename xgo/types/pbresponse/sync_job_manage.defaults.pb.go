@@ -96,3 +96,11 @@ func (this *GenerateJobJson) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.CommitReleaseSyncJob
+func (this *CommitReleaseSyncJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
