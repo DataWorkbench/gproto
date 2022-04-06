@@ -6,7 +6,7 @@
 
     <groupId>com.dataomnis.gproto</groupId>
     <artifactId>dataomnis-gproto</artifactId>
-    <version>0.8.4</version>
+    <version>0.8.5</version>
 <!--    <packaging>pom</packaging>-->
 
     <properties>
@@ -19,11 +19,11 @@
     <distributionManagement>
         <repository>
             <id>dataomnis-nexus-releases</id>
-            <url>http://nexus.data.qingcloud.link/repository/maven-releases/</url>
+            <url>https://nexus.dev.data.qingcloud.link/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>dataomnis-nexus-snapshots</id>
-            <url>http://nexus.data.qingcloud.link/repository/maven-snapshots/</url>
+            <url>https://nexus.dev.data.qingcloud.link/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
