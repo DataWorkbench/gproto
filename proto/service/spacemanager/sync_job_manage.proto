@@ -91,4 +91,5 @@ service SyncJobManage {
     // Generate Job Json
     rpc GenerateJobJson(request.GenerateJobJson)  returns (response.GenerateJobJson) {}
 
+    rpc CommitSyncJob(request.CommitReleaseSyncJob) returns (response.CommitReleaseSyncJob) {}
 }
