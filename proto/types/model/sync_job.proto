@@ -166,6 +166,9 @@ message SyncJobConf {
     // The channel control. Is required.
     // @inject_tag: json:"channel_control"
     ChannelControl channel_control = 7;
+    // type
+    // @inject_tag: json:"type"
+    model.SyncJob.Type type = 8;
 
 }
 
