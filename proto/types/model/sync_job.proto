@@ -287,8 +287,8 @@ message SyncResource {
     // @inject_tag: json:"binlog_source"
     BinlogSource binlog_source = 27;
     // pgwal source
-    // @inject_tag: json:"pgwal_source"
-    PgWalSource pgwal_source = 28;
+    // @inject_tag: json:"pg_wal_source"
+    PgWalSource pg_wal_source = 28;
     // sqlserver cdc source
     // @inject_tag: json:"sql_server_cdc_source"
     SqlServerCdcSource sql_server_cdc_source = 29;
