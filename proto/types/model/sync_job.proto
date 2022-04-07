@@ -166,9 +166,7 @@ message SyncJobConf {
     // The channel control. Is required.
     // @inject_tag: json:"channel_control"
     ChannelControl channel_control = 7;
-    // type
-    // @inject_tag: json:"type"
-    model.SyncJob.Type type = 8;
+
 
 }
 
@@ -201,50 +199,50 @@ message ChannelControl{
 
 message SyncResource {
     option (gosql.serialize) = {json: {}};
-    // Relationaldb source
+    // mysql source
     // @inject_tag: json:"mysql_source"
     DBSource mysql_source = 1;
-    // Relationaldb target
+    // mysql target
     // @inject_tag: json:"mysql_target"
     DBTarget mysql_target = 2;
-    // Relationaldb source
+    // oracle source
     // @inject_tag: json:"oracle_source"
     DBSource oracle_source = 3;
-    // Relationaldb target
+    // oracle target
     // @inject_tag: json:"oracle_target"
     DBTarget oracle_target = 4;
-    // Relationaldb source
+    // db2 source
     // @inject_tag: json:"db2_source"
     DBSource db2_source = 5;
-    // Relationaldb target
+    // db2 target
     // @inject_tag: json:"db2_target"
     DBTarget db2_target = 6;
-    // Relationaldb source
+    // postgresql source
     // @inject_tag: json:"postgresql_source"
     DBSource postgresql_source = 7;
-    // Relationaldb target
+    // postgresql target
     // @inject_tag: json:"postgresql_target"
     DBTarget postgresql_target = 8;
-    // Relationaldb source
-    // @inject_tag: json:"relationaldb_source"
+    // sqlserver source
+    // @inject_tag: json:"sqlserver_source"
     DBSource sqlserver_source = 9;
-    // Relationaldb target
-    // @inject_tag: json:"relationaldb_target"
+    // sqlserver target
+    // @inject_tag: json:"sqlserver_target"
     DBTarget sqlserver_target = 10;
-    // Relationaldb source
+    // click house source
     // @inject_tag: json:"click_house_source"
     DBSource click_house_source = 11;
-    // Relationaldb target
+    // click house target
     // @inject_tag: json:"click_house_target"
     DBTarget click_house_target = 12;
-    // Relationaldb source
+    // sap hana source
     // @inject_tag: json:"sap_hana_source"
     DBSource sap_hana_source = 13;
-    // Relationaldb target
+    // sap hana target
     // @inject_tag: json:"sap_hana_target"
     DBTarget sap_hana_target = 14;
 
-    // mongodb target
+    // mongodb source
     // @inject_tag: json:"mongodb_source"
     MongodbSource mongodb_source = 15;
     // mongodb target
@@ -261,7 +259,7 @@ message SyncResource {
     // hdfs source
     // @inject_tag: json:"hdfs_source"
     HdfsSource hdfs_source = 19;
-    // hdfs source
+    // hdfs target
     // @inject_tag: json:"hdfs_target"
     HdfsTarget hdfs_target = 20;
     // ftp source
@@ -278,7 +276,7 @@ message SyncResource {
     // @inject_tag: json:"hbase_target"
     HbaseTarget hbase_target = 24;
 
-    // kafka target
+    // kafka source
     // @inject_tag: json:"kafka_source"
     KafkaSource kafka_source = 25;
     // kafka target
@@ -290,7 +288,7 @@ message SyncResource {
     BinlogSource binlog_source = 27;
     // pgwal source
     // @inject_tag: json:"pgwal_source"
-    PgWalSource pg_wal_source = 28;
+    PgWalSource pgwal_source = 28;
     // sqlserver cdc source
     // @inject_tag: json:"sql_server_cdc_source"
     SqlServerCdcSource sql_server_cdc_source = 29;
