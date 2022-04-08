@@ -739,12 +739,14 @@ func (this *CommitSyncJob) Validate() error {
 	return nil
 }
 
-func (this *ConvertSyncJobMode) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ConvertSyncJobMode", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+var _xxx_xxx_Validator_ConvertSyncJobMode_InEnums_Type = map[pbmodel.SyncJob_Type]bool{0: true, 1: true, 2: true}
+
+func (this *ConvertSyncJobMode) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type >= 0) {
+		return protovalidator.FieldError1("ConvertSyncJobMode", "the value of field 'type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ConvertSyncJobMode", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	if !(_xxx_xxx_Validator_ConvertSyncJobMode_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("ConvertSyncJobMode", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -763,7 +765,7 @@ func (this *ConvertSyncJobMode) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_conf(); err != nil {
@@ -873,6 +875,18 @@ func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_target_type() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_GenerateJobJson_InEnums_Type = map[pbmodel.SyncJob_Type]bool{0: true, 1: true, 2: true}
+
+func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type >= 0) {
+		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'type' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	if !(_xxx_xxx_Validator_GenerateJobJson_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	return nil
+}
+
 // Set default value for message request.GenerateJobJson
 func (this *GenerateJobJson) Validate() error {
 	if this == nil {
@@ -882,6 +896,9 @@ func (this *GenerateJobJson) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_target_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	return nil

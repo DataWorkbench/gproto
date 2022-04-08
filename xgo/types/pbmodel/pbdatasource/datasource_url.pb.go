@@ -1200,7 +1200,7 @@ type ElasticSearchURL struct {
 	User string `protobuf:"bytes,3,opt,name=user,proto3" json:"user"`
 	// Password specifies the password of db
 	Password string `protobuf:"bytes,4,opt,name=password,proto3" json:"password"`
-	// Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+	// version Is Required. Length Min: 1, Length Max: 64.
 	Version string `protobuf:"bytes,5,opt,name=version,proto3" json:"version"`
 }
 
