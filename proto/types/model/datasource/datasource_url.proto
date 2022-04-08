@@ -381,7 +381,7 @@ message ElasticSearchURL {
   // @inject_tag: json:"password"
   string password = 4;
 
-  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // version Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"version"
   string version = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 }

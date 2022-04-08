@@ -869,14 +869,12 @@ func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_port() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ElasticSearchURL_InEnums_Version = map[ElasticSearchURL_Version]bool{0: true, 1: true, 2: true}
-
 func (this *ElasticSearchURL) _xxx_xxx_Validator_Validate_version() error {
-	if !(this.Version > 0) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the value of field 'version' must be greater than '0'", protovalidator.Int32ToString(int32(this.Version)))
+	if !(len(this.Version) >= 1) {
+		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'version' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Version))
 	}
-	if !(_xxx_xxx_Validator_ElasticSearchURL_InEnums_Version[this.Version]) {
-		return protovalidator.FieldError1("ElasticSearchURL", "the value of field 'version' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Version)))
+	if !(len(this.Version) <= 64) {
+		return protovalidator.FieldError1("ElasticSearchURL", "the byte length of field 'version' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Version))
 	}
 	return nil
 }
