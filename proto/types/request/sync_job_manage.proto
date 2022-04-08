@@ -320,10 +320,13 @@ message CommitSyncJob {
 }
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
-    // The workspace id in HTTP Request-URI
-    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
+    // The job Type. Is Required when not directory,
+    // Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+    // Desc: Cannot be modified after creation.
+    // @inject_tag: json:"type"
+    model.SyncJob.Type type = 1  [
+    (validator.field).tags.enum = { gte: 0; in_enums: true  }
+    ];
     // conf
     // @inject_tag: json:"conf" uri:"conf"
     model.SyncJobConf conf = 2;
