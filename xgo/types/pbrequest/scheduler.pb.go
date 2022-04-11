@@ -438,7 +438,7 @@ type DeleteSyncJobsByJobIds struct {
 	unknownFields protoimpl.UnknownFields
 
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty"`
-	// The list of stream job id.
+	// The list of sync job id.
 	JobIds []string `protobuf:"bytes,2,rep,name=job_ids,json=jobIds,proto3" json:"job_ids,omitempty"`
 }
 
