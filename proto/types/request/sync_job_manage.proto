@@ -48,6 +48,9 @@ string search = 6;
 // The parent id.
 // @inject_tag: json:"pid" form:"pid"
 string pid = 7;
+// IsDirectory represents this job whether a directory.
+// @inject_tag: json:"is_directory"
+bool is_directory = 8;
 }
 
 // CreateSyncJob used as a request parameters for RPC and HTTP(based on Body)
@@ -99,11 +102,15 @@ string space_owner = 9 [(validator.field).tags.string = { ne: "" } ];
 
 // source_type
 // @inject_tag: json:"source_type" uri:"source_type"
-model.DataSource.Type source_type = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+model.DataSource.Type source_type = 10 [
+(validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+(validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
 // target type
 // @inject_tag: json:"target_type" uri:"target_type"
-model.DataSource.Type target_type = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+model.DataSource.Type target_type = 11 [
+(validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+(validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 // DeleteSyncJobs used as a request parameters for RPC and HTTP(based on Body)
