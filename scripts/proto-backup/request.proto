@@ -840,7 +840,7 @@ message UpdateDataSource {
 	model.DataSource.Type type = 5  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
 	// this source connection info
-	// @inject_tag: json:"url"
+	// @inject_tag:json:"url"
 	model.DataSource.URL url = 6 [ (validator.field).tags.message = { not_null: true, skip: true } ];
 }
 
