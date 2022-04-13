@@ -84,7 +84,7 @@ string name = 5 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lt
 string desc = 6 [ (validator.field).tags.string = { char_len_lte: 1020 } ];
 
 // The job Type. Is Required when not directory,
-// Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+// Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull"
 // Desc: Cannot be modified after creation.
 // @inject_tag: json:"type"
 model.SyncJob.Type type = 7  [

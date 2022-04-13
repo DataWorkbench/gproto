@@ -158,7 +158,7 @@ type CreateSyncJob struct {
 	// Description of the job, Not required, Max length 1024.
 	Desc string `protobuf:"bytes,6,opt,name=desc,proto3" json:"desc"`
 	// The job Type. Is Required when not directory,
-	// Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+	// Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull"
 	// Desc: Cannot be modified after creation.
 	Type pbmodel.SyncJob_Type `protobuf:"varint,7,opt,name=type,proto3,enum=model.SyncJob_Type" json:"type"`
 	// The flink compute cluster id. Is required.
