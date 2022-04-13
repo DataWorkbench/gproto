@@ -154,9 +154,19 @@ func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_space_owner() error {
 	return nil
 }
 
+func (this *CreateSyncJob) _xxx_xxx_Validator_CheckIf_source_type() bool {
+	if !(this.IsDirectory == false) {
+		return false
+	}
+	return true
+}
+
 var _xxx_xxx_Validator_CreateSyncJob_InEnums_SourceType = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
 
 func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_source_type() error {
+	if !this._xxx_xxx_Validator_CheckIf_source_type() {
+		return nil
+	}
 	if !(this.SourceType > 0) {
 		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
 	}
@@ -166,9 +176,19 @@ func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_source_type() error {
 	return nil
 }
 
+func (this *CreateSyncJob) _xxx_xxx_Validator_CheckIf_target_type() bool {
+	if !(this.IsDirectory == false) {
+		return false
+	}
+	return true
+}
+
 var _xxx_xxx_Validator_CreateSyncJob_InEnums_TargetType = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
 
 func (this *CreateSyncJob) _xxx_xxx_Validator_Validate_target_type() error {
+	if !this._xxx_xxx_Validator_CheckIf_target_type() {
+		return nil
+	}
 	if !(this.TargetType > 0) {
 		return protovalidator.FieldError1("CreateSyncJob", "the value of field 'target_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.TargetType)))
 	}
