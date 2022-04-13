@@ -102,10 +102,10 @@ message SyncJob {
 
     // The sync task source type.
     // @inject_tag: json:"source_type" gorm:"column:source_type;"
-    DataSource.Type source_type = 13 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gte: 0,lte: 16; in_enums: true  } ];
+    DataSource.Type source_type = 13 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gt: 0,lte: 16; in_enums: true  } ];
     // The sync task target type.
     // @inject_tag: json:"target_type" gorm:"column:target_type;"
-    DataSource.Type target_type = 14 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gte: 0,lte: 16; in_enums: true  } ];
+    DataSource.Type target_type = 14 [ (defaults.field).basic = "0",(validator.field).tags.enum = { gt: 0,lte: 16; in_enums: true  } ];
 }
 
 // SyncJobProperty represents property of job.
