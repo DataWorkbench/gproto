@@ -6,11 +6,24 @@
 package pbsyncjob
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 )
 
 // Set default value for message model.DBSource
 func (this *DBSource) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Visualization != nil {
+		if dt, ok := interface{}(this.Visualization).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message model.Condition
+func (this *Condition) SetDefaults() {
 	if this == nil {
 		return
 	}

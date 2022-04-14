@@ -6,7 +6,7 @@
 package pbsyncjob
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 )
 
 func (this *FtpSource) _xxx_xxx_Validator_Validate_column() error {

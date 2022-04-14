@@ -6,7 +6,7 @@
 package pbsyncjob
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 )
 
 // Set default value for message model.BinlogSource

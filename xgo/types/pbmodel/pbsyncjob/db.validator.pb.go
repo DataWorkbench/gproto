@@ -6,7 +6,7 @@
 package pbsyncjob
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 )
 
 func (this *DBSource) _xxx_xxx_Validator_Validate_column() error {
@@ -21,6 +21,15 @@ func (this *DBSource) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
+func (this *DBSource) _xxx_xxx_Validator_Validate_visualization() error {
+	if dt, ok := interface{}(this.Visualization).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.DBSource
 func (this *DBSource) Validate() error {
 	if this == nil {
@@ -28,6 +37,17 @@ func (this *DBSource) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
 		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_visualization(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message model.Condition
+func (this *Condition) Validate() error {
+	if this == nil {
+		return nil
 	}
 	return nil
 }
