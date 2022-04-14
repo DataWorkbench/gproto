@@ -139,7 +139,7 @@ public final class PBBinlog {
 
     /**
      * <pre>
-     * split update
+     * split  update
      * &#64;inject_tag: json:"split_update" 
      * </pre>
      *
@@ -560,7 +560,7 @@ public final class PBBinlog {
     private boolean splitUpdate_;
     /**
      * <pre>
-     * split update
+     * split  update
      * &#64;inject_tag: json:"split_update" 
      * </pre>
      *
@@ -1698,7 +1698,7 @@ public final class PBBinlog {
       private boolean splitUpdate_ ;
       /**
        * <pre>
-       * split update
+       * split  update
        * &#64;inject_tag: json:"split_update" 
        * </pre>
        *
@@ -1711,7 +1711,7 @@ public final class PBBinlog {
       }
       /**
        * <pre>
-       * split update
+       * split  update
        * &#64;inject_tag: json:"split_update" 
        * </pre>
        *
@@ -1727,7 +1727,7 @@ public final class PBBinlog {
       }
       /**
        * <pre>
-       * split update
+       * split  update
        * &#64;inject_tag: json:"split_update" 
        * </pre>
        *
@@ -2903,30 +2903,23 @@ public final class PBBinlog {
   static {
     java.lang.String[] descriptorData = {
       "\n&proto/types/model/syncjob/binlog.proto" +
-      "\022\005model\0323github.com/yu31/protoc-plugin/p" +
-      "roto/validator.proto\032/github.com/yu31/pr" +
-      "otoc-plugin/proto/gosql.proto\0322github.co" +
-      "m/yu31/protoc-plugin/proto/defaults.prot" +
-      "o\032&proto/types/model/syncjob/column.prot" +
-      "o\"\330\001\n\014BinlogSource\022\016\n\006schema\030\001 \001(\t\022\013\n\003ca" +
-      "t\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014.model.Start\022\r\n\005" +
-      "table\030\004 \003(\t\022\024\n\014split_update\030\005 \001(\010\022\023\n\013pav" +
-      "ing_data\030\006 \001(\010\022\016\n\006filter\030\007 \001(\t\022\024\n\014is_gti" +
-      "d_mode\030\010 \001(\010\022\025\n\rquery_timeout\030\t \001(\005\022\027\n\017c" +
-      "onnect_timeout\030\n \001(\005\"B\n\005Start\022\021\n\ttimesta" +
-      "mp\030\001 \001(\003\022\024\n\014journal_name\030\002 \001(\t\022\020\n\010positi" +
-      "on\030\003 \001(\003Bw\n,com.dataomnis.gproto.types.p" +
-      "bmodel.pbsyncjobB\010PBBinlogP\000Z;github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbmodel/" +
-      "pbsyncjobb\006proto3"
+      "\022\005model\032/github.com/yu31/protoc-plugin/p" +
+      "roto/gosql.proto\"\340\001\n\014BinlogSource\022\016\n\006sch" +
+      "ema\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014." +
+      "model.Start\022\r\n\005table\030\004 \003(\t\022\024\n\014split_upda" +
+      "te\030\005 \001(\010\022\023\n\013paving_data\030\006 \001(\010\022\016\n\006filter\030" +
+      "\007 \001(\t\022\024\n\014is_gtid_mode\030\010 \001(\010\022\025\n\rquery_tim" +
+      "eout\030\t \001(\005\022\027\n\017connect_timeout\030\n \001(\005:\006\312\262\004" +
+      "\002\n\000\"B\n\005Start\022\021\n\ttimestamp\030\001 \001(\003\022\024\n\014journ" +
+      "al_name\030\002 \001(\t\022\020\n\010position\030\003 \001(\003Bw\n,com.d" +
+      "ataomnis.gproto.types.pbmodel.pbsyncjobB" +
+      "\010PBBinlogP\000Z;github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
         });
     internal_static_model_BinlogSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2940,10 +2933,12 @@ public final class PBBinlog {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Start_descriptor,
         new java.lang.String[] { "Timestamp", "JournalName", "Position", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -24,7 +24,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"name" 
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -34,7 +34,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"name" 
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -46,7 +46,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     java.lang.String getType();
@@ -56,7 +56,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for type.
      */
     com.google.protobuf.ByteString
@@ -72,6 +72,61 @@ public final class PBColumn {
      * @return The index.
      */
     int getIndex();
+
+    /**
+     * <pre>
+     * column is_part
+     * &#64;inject_tag: json:"is_part"
+     * </pre>
+     *
+     * <code>bool is_part = 4;</code>
+     * @return The isPart.
+     */
+    boolean getIsPart();
+
+    /**
+     * <pre>
+     * column format
+     * &#64;inject_tag: json:"format"
+     * </pre>
+     *
+     * <code>string format = 5;</code>
+     * @return The format.
+     */
+    java.lang.String getFormat();
+    /**
+     * <pre>
+     * column format
+     * &#64;inject_tag: json:"format"
+     * </pre>
+     *
+     * <code>string format = 5;</code>
+     * @return The bytes for format.
+     */
+    com.google.protobuf.ByteString
+        getFormatBytes();
+
+    /**
+     * <pre>
+     * column value
+     * &#64;inject_tag: json:"value"
+     * </pre>
+     *
+     * <code>string value = 6;</code>
+     * @return The value.
+     */
+    java.lang.String getValue();
+    /**
+     * <pre>
+     * column value
+     * &#64;inject_tag: json:"value"
+     * </pre>
+     *
+     * <code>string value = 6;</code>
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
   }
   /**
    * Protobuf type {@code model.Column}
@@ -88,6 +143,8 @@ public final class PBColumn {
     private Column() {
       name_ = "";
       type_ = "";
+      format_ = "";
+      value_ = "";
     }
 
     @java.lang.Override
@@ -137,6 +194,23 @@ public final class PBColumn {
               index_ = input.readInt32();
               break;
             }
+            case 32: {
+
+              isPart_ = input.readBool();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              format_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -169,123 +243,6 @@ public final class PBColumn {
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code model.Column.ColumnMapping}
-     */
-    public enum ColumnMapping
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>Name = 0;</code>
-       */
-      Name(0),
-      /**
-       * <code>Row = 1;</code>
-       */
-      Row(1),
-      /**
-       * <code>Auto = 2;</code>
-       */
-      Auto(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>Name = 0;</code>
-       */
-      public static final int Name_VALUE = 0;
-      /**
-       * <code>Row = 1;</code>
-       */
-      public static final int Row_VALUE = 1;
-      /**
-       * <code>Auto = 2;</code>
-       */
-      public static final int Auto_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ColumnMapping valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ColumnMapping forNumber(int value) {
-        switch (value) {
-          case 0: return Name;
-          case 1: return Row;
-          case 2: return Auto;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ColumnMapping>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ColumnMapping> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ColumnMapping>() {
-              public ColumnMapping findValueByNumber(int number) {
-                return ColumnMapping.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ColumnMapping[] VALUES = values();
-
-      public static ColumnMapping valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ColumnMapping(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.Column.ColumnMapping)
-    }
-
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
@@ -294,7 +251,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"name" 
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -316,7 +273,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"name" 
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -342,7 +299,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     @java.lang.Override
@@ -364,7 +321,7 @@ public final class PBColumn {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for type.
      */
     @java.lang.Override
@@ -398,6 +355,118 @@ public final class PBColumn {
       return index_;
     }
 
+    public static final int IS_PART_FIELD_NUMBER = 4;
+    private boolean isPart_;
+    /**
+     * <pre>
+     * column is_part
+     * &#64;inject_tag: json:"is_part"
+     * </pre>
+     *
+     * <code>bool is_part = 4;</code>
+     * @return The isPart.
+     */
+    @java.lang.Override
+    public boolean getIsPart() {
+      return isPart_;
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object format_;
+    /**
+     * <pre>
+     * column format
+     * &#64;inject_tag: json:"format"
+     * </pre>
+     *
+     * <code>string format = 5;</code>
+     * @return The format.
+     */
+    @java.lang.Override
+    public java.lang.String getFormat() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        format_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * column format
+     * &#64;inject_tag: json:"format"
+     * </pre>
+     *
+     * <code>string format = 5;</code>
+     * @return The bytes for format.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFormatBytes() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        format_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object value_;
+    /**
+     * <pre>
+     * column value
+     * &#64;inject_tag: json:"value"
+     * </pre>
+     *
+     * <code>string value = 6;</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * column value
+     * &#64;inject_tag: json:"value"
+     * </pre>
+     *
+     * <code>string value = 6;</code>
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -421,6 +490,15 @@ public final class PBColumn {
       if (index_ != 0) {
         output.writeInt32(3, index_);
       }
+      if (isPart_ != false) {
+        output.writeBool(4, isPart_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, value_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -439,6 +517,16 @@ public final class PBColumn {
       if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, index_);
+      }
+      if (isPart_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isPart_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, format_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -461,6 +549,12 @@ public final class PBColumn {
           .equals(other.getType())) return false;
       if (getIndex()
           != other.getIndex()) return false;
+      if (getIsPart()
+          != other.getIsPart()) return false;
+      if (!getFormat()
+          .equals(other.getFormat())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -478,6 +572,13 @@ public final class PBColumn {
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
+      hash = (37 * hash) + IS_PART_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPart());
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + getFormat().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -617,6 +718,12 @@ public final class PBColumn {
 
         index_ = 0;
 
+        isPart_ = false;
+
+        format_ = "";
+
+        value_ = "";
+
         return this;
       }
 
@@ -646,6 +753,9 @@ public final class PBColumn {
         result.name_ = name_;
         result.type_ = type_;
         result.index_ = index_;
+        result.isPart_ = isPart_;
+        result.format_ = format_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -705,6 +815,17 @@ public final class PBColumn {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
+        if (other.getIsPart() != false) {
+          setIsPart(other.getIsPart());
+        }
+        if (!other.getFormat().isEmpty()) {
+          format_ = other.format_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -741,7 +862,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"name" 
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -762,7 +883,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"name" 
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -784,7 +905,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"name" 
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -804,7 +925,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"name" 
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -819,7 +940,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"name" 
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -842,7 +963,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       public java.lang.String getType() {
@@ -863,7 +984,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
@@ -885,7 +1006,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -905,7 +1026,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -920,7 +1041,7 @@ public final class PBColumn {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for type to set.
        * @return This builder for chaining.
        */
@@ -978,6 +1099,254 @@ public final class PBColumn {
       public Builder clearIndex() {
         
         index_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isPart_ ;
+      /**
+       * <pre>
+       * column is_part
+       * &#64;inject_tag: json:"is_part"
+       * </pre>
+       *
+       * <code>bool is_part = 4;</code>
+       * @return The isPart.
+       */
+      @java.lang.Override
+      public boolean getIsPart() {
+        return isPart_;
+      }
+      /**
+       * <pre>
+       * column is_part
+       * &#64;inject_tag: json:"is_part"
+       * </pre>
+       *
+       * <code>bool is_part = 4;</code>
+       * @param value The isPart to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPart(boolean value) {
+        
+        isPart_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column is_part
+       * &#64;inject_tag: json:"is_part"
+       * </pre>
+       *
+       * <code>bool is_part = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPart() {
+        
+        isPart_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object format_ = "";
+      /**
+       * <pre>
+       * column format
+       * &#64;inject_tag: json:"format"
+       * </pre>
+       *
+       * <code>string format = 5;</code>
+       * @return The format.
+       */
+      public java.lang.String getFormat() {
+        java.lang.Object ref = format_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          format_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column format
+       * &#64;inject_tag: json:"format"
+       * </pre>
+       *
+       * <code>string format = 5;</code>
+       * @return The bytes for format.
+       */
+      public com.google.protobuf.ByteString
+          getFormatBytes() {
+        java.lang.Object ref = format_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          format_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column format
+       * &#64;inject_tag: json:"format"
+       * </pre>
+       *
+       * <code>string format = 5;</code>
+       * @param value The format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        format_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column format
+       * &#64;inject_tag: json:"format"
+       * </pre>
+       *
+       * <code>string format = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFormat() {
+        
+        format_ = getDefaultInstance().getFormat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column format
+       * &#64;inject_tag: json:"format"
+       * </pre>
+       *
+       * <code>string format = 5;</code>
+       * @param value The bytes for format to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFormatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        format_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <pre>
+       * column value
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 6;</code>
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column value
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 6;</code>
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column value
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 6;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column value
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column value
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 6;</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
         onChanged();
         return this;
       }
@@ -1050,32 +1419,32 @@ public final class PBColumn {
     java.lang.String[] descriptorData = {
       "\n&proto/types/model/syncjob/column.proto" +
       "\022\005model\0323github.com/yu31/protoc-plugin/p" +
-      "roto/validator.proto\032/github.com/yu31/pr" +
-      "otoc-plugin/proto/gosql.proto\0322github.co" +
-      "m/yu31/protoc-plugin/proto/defaults.prot" +
-      "o\"a\n\006Column\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022" +
-      "\r\n\005index\030\003 \001(\005\",\n\rColumnMapping\022\010\n\004Name\020" +
-      "\000\022\007\n\003Row\020\001\022\010\n\004Auto\020\002Bw\n,com.dataomnis.gp" +
-      "roto.types.pbmodel.pbsyncjobB\010PBColumnP\000" +
-      "Z;github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbmodel/pbsyncjobb\006proto3"
+      "roto/validator.proto\"\207\001\n\006Column\022\036\n\004name\030" +
+      "\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\036\n\004type\030\002 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\r\n\005index\030\003 \001(\005\022\017\n\007is_par" +
+      "t\030\004 \001(\010\022\016\n\006format\030\005 \001(\t\022\r\n\005value\030\006 \001(\tBw" +
+      "\n,com.dataomnis.gproto.types.pbmodel.pbs" +
+      "yncjobB\010PBColumnP\000Z;github.com/DataWorkb" +
+      "ench/gproto/xgo/types/pbmodel/pbsyncjobb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
     internal_static_model_Column_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Column_descriptor,
-        new java.lang.String[] { "Name", "Type", "Index", });
+        new java.lang.String[] { "Name", "Type", "Index", "IsPart", "Format", "Value", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

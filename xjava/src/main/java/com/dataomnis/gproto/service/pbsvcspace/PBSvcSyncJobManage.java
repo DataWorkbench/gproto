@@ -27,7 +27,7 @@ public final class PBSvcSyncJobManage {
       "nage.proto\022\014spacemanager\032\035proto/types/mo" +
       "del/empty.proto\032)proto/types/request/syn" +
       "c_job_manage.proto\032*proto/types/response" +
-      "/sync_job_manage.proto2\212\014\n\rSyncJobManage" +
+      "/sync_job_manage.proto2\353\r\n\rSyncJobManage" +
       "\022?\n\014ListSyncJobs\022\025.request.ListSyncJobs\032" +
       "\026.response.ListSyncJobs\"\000\022?\n\016DeleteSyncJ" +
       "obs\022\027.request.DeleteSyncJobs\032\022.model.Emp" +
@@ -66,10 +66,16 @@ public final class PBSvcSyncJobManage {
       "chedule\"\000\022x\n\037DescribeSyncFlinkUIByInstan" +
       "ceId\022(.request.DescribeSyncFlinkUIByInst" +
       "anceId\032).response.DescribeSyncFlinkUIByI" +
-      "nstanceId\"\000Bw\n\'com.dataomnis.gproto.serv" +
-      "ice.pbsvcspaceB\022PBSvcSyncJobManageP\000Z6gi" +
-      "thub.com/DataWorkbench/gproto/xgo/servic" +
-      "e/pbsvcspaceb\006proto3"
+      "nstanceId\"\000\022H\n\017GenerateJobJson\022\030.request" +
+      ".GenerateJobJson\032\031.response.GenerateJobJ" +
+      "son\"\000\022B\n\rCommitSyncJob\022\026.request.CommitS" +
+      "yncJob\032\027.response.CommitSyncJob\"\000\022Q\n\022Con" +
+      "vertSyncJobMode\022\033.request.ConvertSyncJob" +
+      "Mode\032\034.response.ConvertSyncJobMode\"\000Bw\n\'" +
+      "com.dataomnis.gproto.service.pbsvcspaceB" +
+      "\022PBSvcSyncJobManageP\000Z6github.com/DataWo" +
+      "rkbench/gproto/xgo/service/pbsvcspaceb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

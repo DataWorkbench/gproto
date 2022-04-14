@@ -165,7 +165,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -175,7 +175,7 @@ public final class PBSyncManageSyncJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -251,24 +251,24 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * The  sync task source type.
+     * The sync task source type.
      * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for sourceType.
      */
     int getSourceTypeValue();
     /**
      * <pre>
-     * The  sync task source type.
+     * The sync task source type.
      * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
      * @return The sourceType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType();
 
     /**
      * <pre>
@@ -276,7 +276,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for targetType.
      */
     int getTargetTypeValue();
@@ -286,14 +286,14 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
      * @return The targetType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType();
   }
   /**
    * <pre>
-   * The stream job info
+   * The sync job info
    * </pre>
    *
    * Protobuf type {@code model.SyncJob}
@@ -470,40 +470,40 @@ public final class PBSyncManageSyncJob {
     public enum Type
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>OfflineFull = 0;</code>
+       * <code>TypeUnset = 0;</code>
        */
-      OfflineFull(0),
+      TypeUnset(0),
       /**
-       * <code>OfflineIncrement = 1;</code>
+       * <code>OfflineFull = 1;</code>
        */
-      OfflineIncrement(1),
+      OfflineFull(1),
       /**
-       * <code>RealTimeFull = 2;</code>
+       * <code>OfflineIncrement = 2;</code>
        */
-      RealTimeFull(2),
+      OfflineIncrement(2),
       /**
-       * <code>RealTimeIncrement = 3;</code>
+       * <code>RealTime = 3;</code>
        */
-      RealTimeIncrement(3),
+      RealTime(3),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>OfflineFull = 0;</code>
+       * <code>TypeUnset = 0;</code>
        */
-      public static final int OfflineFull_VALUE = 0;
+      public static final int TypeUnset_VALUE = 0;
       /**
-       * <code>OfflineIncrement = 1;</code>
+       * <code>OfflineFull = 1;</code>
        */
-      public static final int OfflineIncrement_VALUE = 1;
+      public static final int OfflineFull_VALUE = 1;
       /**
-       * <code>RealTimeFull = 2;</code>
+       * <code>OfflineIncrement = 2;</code>
        */
-      public static final int RealTimeFull_VALUE = 2;
+      public static final int OfflineIncrement_VALUE = 2;
       /**
-       * <code>RealTimeIncrement = 3;</code>
+       * <code>RealTime = 3;</code>
        */
-      public static final int RealTimeIncrement_VALUE = 3;
+      public static final int RealTime_VALUE = 3;
 
 
       public final int getNumber() {
@@ -530,10 +530,10 @@ public final class PBSyncManageSyncJob {
        */
       public static Type forNumber(int value) {
         switch (value) {
-          case 0: return OfflineFull;
-          case 1: return OfflineIncrement;
-          case 2: return RealTimeFull;
-          case 3: return RealTimeIncrement;
+          case 0: return TypeUnset;
+          case 1: return OfflineFull;
+          case 2: return OfflineIncrement;
+          case 3: return RealTime;
           default: return null;
         }
       }
@@ -588,249 +588,6 @@ public final class PBSyncManageSyncJob {
       }
 
       // @@protoc_insertion_point(enum_scope:model.SyncJob.Type)
-    }
-
-    /**
-     * Protobuf enum {@code model.SyncJob.Resource}
-     */
-    public enum Resource
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ResourceUnset = 0;</code>
-       */
-      ResourceUnset(0),
-      /**
-       * <code>MySQL = 1;</code>
-       */
-      MySQL(1),
-      /**
-       * <code>PostgreSQL = 2;</code>
-       */
-      PostgreSQL(2),
-      /**
-       * <code>Kafka = 3;</code>
-       */
-      Kafka(3),
-      /**
-       * <code>S3 = 4;</code>
-       */
-      S3(4),
-      /**
-       * <code>ClickHouse = 5;</code>
-       */
-      ClickHouse(5),
-      /**
-       * <code>HBase = 6;</code>
-       */
-      HBase(6),
-      /**
-       * <code>Ftp = 7;</code>
-       */
-      Ftp(7),
-      /**
-       * <code>HDFS = 8;</code>
-       */
-      HDFS(8),
-      /**
-       * <code>SqlServer = 9;</code>
-       */
-      SqlServer(9),
-      /**
-       * <code>Oracle = 10;</code>
-       */
-      Oracle(10),
-      /**
-       * <code>DB2 = 11;</code>
-       */
-      DB2(11),
-      /**
-       * <code>SapHana = 12;</code>
-       */
-      SapHana(12),
-      /**
-       * <code>Hive = 13;</code>
-       */
-      Hive(13),
-      /**
-       * <code>ElasticSearch = 14;</code>
-       */
-      ElasticSearch(14),
-      /**
-       * <code>MongoDb = 15;</code>
-       */
-      MongoDb(15),
-      /**
-       * <code>Redis = 16;</code>
-       */
-      Redis(16),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>ResourceUnset = 0;</code>
-       */
-      public static final int ResourceUnset_VALUE = 0;
-      /**
-       * <code>MySQL = 1;</code>
-       */
-      public static final int MySQL_VALUE = 1;
-      /**
-       * <code>PostgreSQL = 2;</code>
-       */
-      public static final int PostgreSQL_VALUE = 2;
-      /**
-       * <code>Kafka = 3;</code>
-       */
-      public static final int Kafka_VALUE = 3;
-      /**
-       * <code>S3 = 4;</code>
-       */
-      public static final int S3_VALUE = 4;
-      /**
-       * <code>ClickHouse = 5;</code>
-       */
-      public static final int ClickHouse_VALUE = 5;
-      /**
-       * <code>HBase = 6;</code>
-       */
-      public static final int HBase_VALUE = 6;
-      /**
-       * <code>Ftp = 7;</code>
-       */
-      public static final int Ftp_VALUE = 7;
-      /**
-       * <code>HDFS = 8;</code>
-       */
-      public static final int HDFS_VALUE = 8;
-      /**
-       * <code>SqlServer = 9;</code>
-       */
-      public static final int SqlServer_VALUE = 9;
-      /**
-       * <code>Oracle = 10;</code>
-       */
-      public static final int Oracle_VALUE = 10;
-      /**
-       * <code>DB2 = 11;</code>
-       */
-      public static final int DB2_VALUE = 11;
-      /**
-       * <code>SapHana = 12;</code>
-       */
-      public static final int SapHana_VALUE = 12;
-      /**
-       * <code>Hive = 13;</code>
-       */
-      public static final int Hive_VALUE = 13;
-      /**
-       * <code>ElasticSearch = 14;</code>
-       */
-      public static final int ElasticSearch_VALUE = 14;
-      /**
-       * <code>MongoDb = 15;</code>
-       */
-      public static final int MongoDb_VALUE = 15;
-      /**
-       * <code>Redis = 16;</code>
-       */
-      public static final int Redis_VALUE = 16;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Resource valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Resource forNumber(int value) {
-        switch (value) {
-          case 0: return ResourceUnset;
-          case 1: return MySQL;
-          case 2: return PostgreSQL;
-          case 3: return Kafka;
-          case 4: return S3;
-          case 5: return ClickHouse;
-          case 6: return HBase;
-          case 7: return Ftp;
-          case 8: return HDFS;
-          case 9: return SqlServer;
-          case 10: return Oracle;
-          case 11: return DB2;
-          case 12: return SapHana;
-          case 13: return Hive;
-          case 14: return ElasticSearch;
-          case 15: return MongoDb;
-          case 16: return Redis;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Resource>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Resource> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Resource>() {
-              public Resource findValueByNumber(int number) {
-                return Resource.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final Resource[] VALUES = values();
-
-      public static Resource valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Resource(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.SyncJob.Resource)
     }
 
     /**
@@ -924,7 +681,7 @@ public final class PBSyncManageSyncJob {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(2);
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final Status[] VALUES = values();
@@ -1260,7 +1017,7 @@ public final class PBSyncManageSyncJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -1272,7 +1029,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -1398,11 +1155,11 @@ public final class PBSyncManageSyncJob {
     private int sourceType_;
     /**
      * <pre>
-     * The  sync task source type.
+     * The sync task source type.
      * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for sourceType.
      */
     @java.lang.Override public int getSourceTypeValue() {
@@ -1410,17 +1167,17 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * The  sync task source type.
+     * The sync task source type.
      * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
      * @return The sourceType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(sourceType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
     }
 
     public static final int TARGET_TYPE_FIELD_NUMBER = 14;
@@ -1431,7 +1188,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for targetType.
      */
     @java.lang.Override public int getTargetTypeValue() {
@@ -1443,13 +1200,13 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
      * </pre>
      *
-     * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+     * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
      * @return The targetType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(targetType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1487,7 +1244,7 @@ public final class PBSyncManageSyncJob {
       if (isDirectory_ != false) {
         output.writeBool(7, isDirectory_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         output.writeEnum(8, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Status.StatusUnset.getNumber()) {
@@ -1502,10 +1259,10 @@ public final class PBSyncManageSyncJob {
       if (updated_ != 0L) {
         output.writeInt64(12, updated_);
       }
-      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         output.writeEnum(13, sourceType_);
       }
-      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         output.writeEnum(14, targetType_);
       }
       unknownFields.writeTo(output);
@@ -1539,7 +1296,7 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isDirectory_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, type_);
       }
@@ -1558,11 +1315,11 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, updated_);
       }
-      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, sourceType_);
       }
-      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.ResourceUnset.getNumber()) {
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, targetType_);
       }
@@ -1744,7 +1501,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * The stream job info
+     * The sync job info
      * </pre>
      *
      * Protobuf type {@code model.SyncJob}
@@ -2638,7 +2395,7 @@ public final class PBSyncManageSyncJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2650,7 +2407,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2666,7 +2423,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2681,7 +2438,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2700,7 +2457,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2989,11 +2746,11 @@ public final class PBSyncManageSyncJob {
       private int sourceType_ = 0;
       /**
        * <pre>
-       * The  sync task source type.
+       * The sync task source type.
        * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
        * @return The enum numeric value on the wire for sourceType.
        */
       @java.lang.Override public int getSourceTypeValue() {
@@ -3001,11 +2758,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * The  sync task source type.
+       * The sync task source type.
        * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
        * @param value The enum numeric value on the wire for sourceType to set.
        * @return This builder for chaining.
        */
@@ -3017,30 +2774,30 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * The  sync task source type.
+       * The sync task source type.
        * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
        * @return The sourceType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getSourceType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(sourceType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * The  sync task source type.
+       * The sync task source type.
        * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
        * @param value The sourceType to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource value) {
+      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3051,11 +2808,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * The  sync task source type.
+       * The sync task source type.
        * &#64;inject_tag: json:"source_type" gorm:"column:source_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource source_type = 13 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type source_type = 13 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceType() {
@@ -3072,7 +2829,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
        * @return The enum numeric value on the wire for targetType.
        */
       @java.lang.Override public int getTargetTypeValue() {
@@ -3084,7 +2841,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
        * @param value The enum numeric value on the wire for targetType to set.
        * @return This builder for chaining.
        */
@@ -3100,14 +2857,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
        * @return The targetType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource getTargetType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.valueOf(targetType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -3115,11 +2872,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
        * @param value The targetType to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Resource value) {
+      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3134,7 +2891,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"target_type" gorm:"column:target_type;"
        * </pre>
        *
-       * <code>.model.SyncJob.Resource target_type = 14 [(.validator.field) = { ... }</code>
+       * <code>.model.DataSource.Type target_type = 14 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetType() {
@@ -4783,56 +4540,11 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * The job name in each workspace is unique. Is required, Max Length 128.
-     * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>int32 parallelism = 3 [(.defaults.field) = { ... }</code>
-     * @return The parallelism.
-     */
-    int getParallelism();
-
-    /**
-     * <pre>
-     * Description of the job, Not required, Max length 1024.
-     * &#64;inject_tag: json:"desc"
-     * </pre>
-     *
-     * <code>int32 percentage = 4 [(.defaults.field) = { ... }</code>
-     * @return The percentage.
-     */
-    int getPercentage();
-
-    /**
-     * <pre>
-     * Description of the job, Not required, Max length 1024.
-     * &#64;inject_tag: json:"record_num"
-     * </pre>
-     *
-     * <code>int32 record_num = 5 [(.defaults.field) = { ... }</code>
-     * @return The recordNum.
-     */
-    int getRecordNum();
-
-    /**
-     * <pre>
-     * bytes
-     * &#64;inject_tag: json:"bytes"
-     * </pre>
-     *
-     * <code>int32 bytes = 6 [(.defaults.field) = { ... }</code>
-     * @return The bytes.
-     */
-    int getBytes();
-
-    /**
-     * <pre>
      * 0:guide mode,1:shell mode
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for jobMode.
      */
     int getJobModeValue();
@@ -4842,7 +4554,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
      * @return The jobMode.
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode getJobMode();
@@ -4853,7 +4565,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_content"
      * </pre>
      *
-     * <code>string job_content = 8;</code>
+     * <code>string job_content = 4 [(.validator.field) = { ... }</code>
      * @return The jobContent.
      */
     java.lang.String getJobContent();
@@ -4863,7 +4575,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_content"
      * </pre>
      *
-     * <code>string job_content = 8;</code>
+     * <code>string job_content = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for jobContent.
      */
     com.google.protobuf.ByteString
@@ -4871,603 +4583,33 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-     * @return Whether the relationaldbSource field is set.
+     * <code>.model.SyncResource syncResource = 5;</code>
+     * @return Whether the syncResource field is set.
      */
-    boolean hasRelationaldbSource();
+    boolean hasSyncResource();
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-     * @return The relationaldbSource.
+     * <code>.model.SyncResource syncResource = 5;</code>
+     * @return The syncResource.
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource getRelationaldbSource();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getSyncResource();
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+     * <code>.model.SyncResource syncResource = 5;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder getRelationaldbSourceOrBuilder();
-
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     * @return Whether the relationaldbTarget field is set.
-     */
-    boolean hasRelationaldbTarget();
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     * @return The relationaldbTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget getRelationaldbTarget();
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder getRelationaldbTargetOrBuilder();
-
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     * @return Whether the mongodbSource field is set.
-     */
-    boolean hasMongodbSource();
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     * @return The mongodbSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource();
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder();
-
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     * @return Whether the mongodbTarget field is set.
-     */
-    boolean hasMongodbTarget();
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     * @return The mongodbTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget();
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder();
-
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     * @return Whether the elasticSearchSource field is set.
-     */
-    boolean hasElasticSearchSource();
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     * @return The elasticSearchSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource();
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder();
-
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     * @return Whether the elasticSearchTarget field is set.
-     */
-    boolean hasElasticSearchTarget();
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     * @return The elasticSearchTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget();
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder();
-
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     * @return Whether the hdfsSource field is set.
-     */
-    boolean hasHdfsSource();
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     * @return The hdfsSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource();
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder();
-
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     * @return Whether the hdfsTarget field is set.
-     */
-    boolean hasHdfsTarget();
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     * @return The hdfsTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget();
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder();
-
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     * @return Whether the ftpSource field is set.
-     */
-    boolean hasFtpSource();
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     * @return The ftpSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource();
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder();
-
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     * @return Whether the ftpTarget field is set.
-     */
-    boolean hasFtpTarget();
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     * @return The ftpTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget();
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder();
-
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     * @return Whether the hbaseSource field is set.
-     */
-    boolean hasHbaseSource();
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     * @return The hbaseSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource();
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder();
-
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     * @return Whether the hbaseTarget field is set.
-     */
-    boolean hasHbaseTarget();
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     * @return The hbaseTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget();
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder();
-
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     * @return Whether the kafkaSource field is set.
-     */
-    boolean hasKafkaSource();
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     * @return The kafkaSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource();
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder();
-
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     * @return Whether the kafkaTarget field is set.
-     */
-    boolean hasKafkaTarget();
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     * @return The kafkaTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget();
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder();
-
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     * @return Whether the binlogSource field is set.
-     */
-    boolean hasBinlogSource();
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     * @return The binlogSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource();
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder();
-
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     * @return Whether the pgWalSource field is set.
-     */
-    boolean hasPgWalSource();
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     * @return The pgWalSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource();
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder();
-
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     * @return Whether the sqlServerCdcSource field is set.
-     */
-    boolean hasSqlServerCdcSource();
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     * @return The sqlServerCdcSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource();
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder();
-
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     * @return Whether the logMinerSource field is set.
-     */
-    boolean hasLogMinerSource();
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     * @return The logMinerSource.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource();
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder();
-
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     * @return Whether the redisTarget field is set.
-     */
-    boolean hasRedisTarget();
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     * @return The redisTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget();
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder();
-
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     * @return Whether the hiveTarget field is set.
-     */
-    boolean hasHiveTarget();
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     * @return The hiveTarget.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget();
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder getSyncResourceOrBuilder();
 
     /**
      * <pre>
@@ -5475,7 +4617,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 6;</code>
      * @return The clusterId.
      */
     java.lang.String getClusterId();
@@ -5485,11 +4627,41 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 6;</code>
      * @return The bytes for clusterId.
      */
     com.google.protobuf.ByteString
         getClusterIdBytes();
+
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     * @return Whether the channelControl field is set.
+     */
+    boolean hasChannelControl();
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     * @return The channelControl.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getChannelControl();
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder getChannelControlOrBuilder();
   }
   /**
    * <pre>
@@ -5559,301 +4731,47 @@ public final class PBSyncManageSyncJob {
               break;
             }
             case 24: {
-
-              parallelism_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              percentage_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              recordNum_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              bytes_ = input.readInt32();
-              break;
-            }
-            case 56: {
               int rawValue = input.readEnum();
 
               jobMode_ = rawValue;
               break;
             }
-            case 66: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobContent_ = s;
               break;
             }
-            case 74: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder subBuilder = null;
-              if (relationaldbSource_ != null) {
-                subBuilder = relationaldbSource_.toBuilder();
+            case 42: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder subBuilder = null;
+              if (syncResource_ != null) {
+                subBuilder = syncResource_.toBuilder();
               }
-              relationaldbSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.parser(), extensionRegistry);
+              syncResource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(relationaldbSource_);
-                relationaldbSource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(syncResource_);
+                syncResource_ = subBuilder.buildPartial();
               }
 
               break;
             }
-            case 82: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder subBuilder = null;
-              if (relationaldbTarget_ != null) {
-                subBuilder = relationaldbTarget_.toBuilder();
-              }
-              relationaldbTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(relationaldbTarget_);
-                relationaldbTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder subBuilder = null;
-              if (mongodbSource_ != null) {
-                subBuilder = mongodbSource_.toBuilder();
-              }
-              mongodbSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mongodbSource_);
-                mongodbSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder subBuilder = null;
-              if (mongodbTarget_ != null) {
-                subBuilder = mongodbTarget_.toBuilder();
-              }
-              mongodbTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mongodbTarget_);
-                mongodbTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder subBuilder = null;
-              if (elasticSearchSource_ != null) {
-                subBuilder = elasticSearchSource_.toBuilder();
-              }
-              elasticSearchSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(elasticSearchSource_);
-                elasticSearchSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder subBuilder = null;
-              if (elasticSearchTarget_ != null) {
-                subBuilder = elasticSearchTarget_.toBuilder();
-              }
-              elasticSearchTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(elasticSearchTarget_);
-                elasticSearchTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 122: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder subBuilder = null;
-              if (hdfsSource_ != null) {
-                subBuilder = hdfsSource_.toBuilder();
-              }
-              hdfsSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hdfsSource_);
-                hdfsSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 130: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder subBuilder = null;
-              if (hdfsTarget_ != null) {
-                subBuilder = hdfsTarget_.toBuilder();
-              }
-              hdfsTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hdfsTarget_);
-                hdfsTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 138: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder subBuilder = null;
-              if (ftpSource_ != null) {
-                subBuilder = ftpSource_.toBuilder();
-              }
-              ftpSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ftpSource_);
-                ftpSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 146: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder subBuilder = null;
-              if (ftpTarget_ != null) {
-                subBuilder = ftpTarget_.toBuilder();
-              }
-              ftpTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ftpTarget_);
-                ftpTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 154: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder subBuilder = null;
-              if (hbaseSource_ != null) {
-                subBuilder = hbaseSource_.toBuilder();
-              }
-              hbaseSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hbaseSource_);
-                hbaseSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 162: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder subBuilder = null;
-              if (hbaseTarget_ != null) {
-                subBuilder = hbaseTarget_.toBuilder();
-              }
-              hbaseTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hbaseTarget_);
-                hbaseTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 170: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder subBuilder = null;
-              if (kafkaSource_ != null) {
-                subBuilder = kafkaSource_.toBuilder();
-              }
-              kafkaSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kafkaSource_);
-                kafkaSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 178: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder subBuilder = null;
-              if (kafkaTarget_ != null) {
-                subBuilder = kafkaTarget_.toBuilder();
-              }
-              kafkaTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kafkaTarget_);
-                kafkaTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 186: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder subBuilder = null;
-              if (binlogSource_ != null) {
-                subBuilder = binlogSource_.toBuilder();
-              }
-              binlogSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(binlogSource_);
-                binlogSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 194: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder subBuilder = null;
-              if (pgWalSource_ != null) {
-                subBuilder = pgWalSource_.toBuilder();
-              }
-              pgWalSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pgWalSource_);
-                pgWalSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 202: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder subBuilder = null;
-              if (sqlServerCdcSource_ != null) {
-                subBuilder = sqlServerCdcSource_.toBuilder();
-              }
-              sqlServerCdcSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sqlServerCdcSource_);
-                sqlServerCdcSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 210: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder subBuilder = null;
-              if (logMinerSource_ != null) {
-                subBuilder = logMinerSource_.toBuilder();
-              }
-              logMinerSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logMinerSource_);
-                logMinerSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 218: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder subBuilder = null;
-              if (redisTarget_ != null) {
-                subBuilder = redisTarget_.toBuilder();
-              }
-              redisTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(redisTarget_);
-                redisTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 226: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder subBuilder = null;
-              if (hiveTarget_ != null) {
-                subBuilder = hiveTarget_.toBuilder();
-              }
-              hiveTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hiveTarget_);
-                hiveTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 234: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               clusterId_ = s;
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder subBuilder = null;
+              if (channelControl_ != null) {
+                subBuilder = channelControl_.toBuilder();
+              }
+              channelControl_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(channelControl_);
+                channelControl_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -5894,24 +4812,32 @@ public final class PBSyncManageSyncJob {
     public enum JobMode
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>GuideMode = 0;</code>
+       * <code>JobModeUnset = 0;</code>
        */
-      GuideMode(0),
+      JobModeUnset(0),
       /**
-       * <code>ScriptMode = 1;</code>
+       * <code>GuideMode = 1;</code>
        */
-      ScriptMode(1),
+      GuideMode(1),
+      /**
+       * <code>ScriptMode = 2;</code>
+       */
+      ScriptMode(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>GuideMode = 0;</code>
+       * <code>JobModeUnset = 0;</code>
        */
-      public static final int GuideMode_VALUE = 0;
+      public static final int JobModeUnset_VALUE = 0;
       /**
-       * <code>ScriptMode = 1;</code>
+       * <code>GuideMode = 1;</code>
        */
-      public static final int ScriptMode_VALUE = 1;
+      public static final int GuideMode_VALUE = 1;
+      /**
+       * <code>ScriptMode = 2;</code>
+       */
+      public static final int ScriptMode_VALUE = 2;
 
 
       public final int getNumber() {
@@ -5938,8 +4864,9 @@ public final class PBSyncManageSyncJob {
        */
       public static JobMode forNumber(int value) {
         switch (value) {
-          case 0: return GuideMode;
-          case 1: return ScriptMode;
+          case 0: return JobModeUnset;
+          case 1: return GuideMode;
+          case 2: return ScriptMode;
           default: return null;
         }
       }
@@ -6092,72 +5019,7 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int PARALLELISM_FIELD_NUMBER = 3;
-    private int parallelism_;
-    /**
-     * <pre>
-     * The job name in each workspace is unique. Is required, Max Length 128.
-     * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-     * &#64;inject_tag: json:"name"
-     * </pre>
-     *
-     * <code>int32 parallelism = 3 [(.defaults.field) = { ... }</code>
-     * @return The parallelism.
-     */
-    @java.lang.Override
-    public int getParallelism() {
-      return parallelism_;
-    }
-
-    public static final int PERCENTAGE_FIELD_NUMBER = 4;
-    private int percentage_;
-    /**
-     * <pre>
-     * Description of the job, Not required, Max length 1024.
-     * &#64;inject_tag: json:"desc"
-     * </pre>
-     *
-     * <code>int32 percentage = 4 [(.defaults.field) = { ... }</code>
-     * @return The percentage.
-     */
-    @java.lang.Override
-    public int getPercentage() {
-      return percentage_;
-    }
-
-    public static final int RECORD_NUM_FIELD_NUMBER = 5;
-    private int recordNum_;
-    /**
-     * <pre>
-     * Description of the job, Not required, Max length 1024.
-     * &#64;inject_tag: json:"record_num"
-     * </pre>
-     *
-     * <code>int32 record_num = 5 [(.defaults.field) = { ... }</code>
-     * @return The recordNum.
-     */
-    @java.lang.Override
-    public int getRecordNum() {
-      return recordNum_;
-    }
-
-    public static final int BYTES_FIELD_NUMBER = 6;
-    private int bytes_;
-    /**
-     * <pre>
-     * bytes
-     * &#64;inject_tag: json:"bytes"
-     * </pre>
-     *
-     * <code>int32 bytes = 6 [(.defaults.field) = { ... }</code>
-     * @return The bytes.
-     */
-    @java.lang.Override
-    public int getBytes() {
-      return bytes_;
-    }
-
-    public static final int JOB_MODE_FIELD_NUMBER = 7;
+    public static final int JOB_MODE_FIELD_NUMBER = 3;
     private int jobMode_;
     /**
      * <pre>
@@ -6165,7 +5027,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
      * @return The enum numeric value on the wire for jobMode.
      */
     @java.lang.Override public int getJobModeValue() {
@@ -6177,7 +5039,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
-     * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+     * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
      * @return The jobMode.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode getJobMode() {
@@ -6186,7 +5048,7 @@ public final class PBSyncManageSyncJob {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.UNRECOGNIZED : result;
     }
 
-    public static final int JOB_CONTENT_FIELD_NUMBER = 8;
+    public static final int JOB_CONTENT_FIELD_NUMBER = 4;
     private volatile java.lang.Object jobContent_;
     /**
      * <pre>
@@ -6194,7 +5056,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_content"
      * </pre>
      *
-     * <code>string job_content = 8;</code>
+     * <code>string job_content = 4 [(.validator.field) = { ... }</code>
      * @return The jobContent.
      */
     @java.lang.Override
@@ -6216,7 +5078,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"job_content"
      * </pre>
      *
-     * <code>string job_content = 8;</code>
+     * <code>string job_content = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for jobContent.
      */
     @java.lang.Override
@@ -6234,827 +5096,48 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int RELATIONALDB_SOURCE_FIELD_NUMBER = 9;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource relationaldbSource_;
+    public static final int SYNCRESOURCE_FIELD_NUMBER = 5;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource syncResource_;
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-     * @return Whether the relationaldbSource field is set.
+     * <code>.model.SyncResource syncResource = 5;</code>
+     * @return Whether the syncResource field is set.
      */
     @java.lang.Override
-    public boolean hasRelationaldbSource() {
-      return relationaldbSource_ != null;
+    public boolean hasSyncResource() {
+      return syncResource_ != null;
     }
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-     * @return The relationaldbSource.
+     * <code>.model.SyncResource syncResource = 5;</code>
+     * @return The syncResource.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource getRelationaldbSource() {
-      return relationaldbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.getDefaultInstance() : relationaldbSource_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getSyncResource() {
+      return syncResource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.getDefaultInstance() : syncResource_;
     }
     /**
      * <pre>
-     * Relationaldb source
-     * &#64;inject_tag: json:"relationaldb_source"
+     * sync Resource
+     * &#64;inject_tag: json:"sync_resource"
      * </pre>
      *
-     * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+     * <code>.model.SyncResource syncResource = 5;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder getRelationaldbSourceOrBuilder() {
-      return getRelationaldbSource();
-    }
-
-    public static final int RELATIONALDB_TARGET_FIELD_NUMBER = 10;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget relationaldbTarget_;
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     * @return Whether the relationaldbTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasRelationaldbTarget() {
-      return relationaldbTarget_ != null;
-    }
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     * @return The relationaldbTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget getRelationaldbTarget() {
-      return relationaldbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.getDefaultInstance() : relationaldbTarget_;
-    }
-    /**
-     * <pre>
-     * Relationaldb target
-     * &#64;inject_tag: json:"relationaldb_target"
-     * </pre>
-     *
-     * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder getRelationaldbTargetOrBuilder() {
-      return getRelationaldbTarget();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder getSyncResourceOrBuilder() {
+      return getSyncResource();
     }
 
-    public static final int MONGODB_SOURCE_FIELD_NUMBER = 11;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource mongodbSource_;
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     * @return Whether the mongodbSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasMongodbSource() {
-      return mongodbSource_ != null;
-    }
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     * @return The mongodbSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource() {
-      return mongodbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
-    }
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_source"
-     * </pre>
-     *
-     * <code>.model.MongodbSource mongodb_source = 11;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder() {
-      return getMongodbSource();
-    }
-
-    public static final int MONGODB_TARGET_FIELD_NUMBER = 12;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget mongodbTarget_;
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     * @return Whether the mongodbTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasMongodbTarget() {
-      return mongodbTarget_ != null;
-    }
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     * @return The mongodbTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget() {
-      return mongodbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
-    }
-    /**
-     * <pre>
-     * mongodb target
-     * &#64;inject_tag: json:"mongodb_target"
-     * </pre>
-     *
-     * <code>.model.MongodbTarget mongodb_target = 12;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder() {
-      return getMongodbTarget();
-    }
-
-    public static final int ELASTIC_SEARCH_SOURCE_FIELD_NUMBER = 13;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource elasticSearchSource_;
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     * @return Whether the elasticSearchSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasElasticSearchSource() {
-      return elasticSearchSource_ != null;
-    }
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     * @return The elasticSearchSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource() {
-      return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
-    }
-    /**
-     * <pre>
-     * elasticsearch source
-     * &#64;inject_tag: json:"elastic_search_source"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
-      return getElasticSearchSource();
-    }
-
-    public static final int ELASTIC_SEARCH_TARGET_FIELD_NUMBER = 14;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget elasticSearchTarget_;
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     * @return Whether the elasticSearchTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasElasticSearchTarget() {
-      return elasticSearchTarget_ != null;
-    }
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     * @return The elasticSearchTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget() {
-      return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
-    }
-    /**
-     * <pre>
-     * elasticsearch target
-     * &#64;inject_tag: json:"elastic_search_target"
-     * </pre>
-     *
-     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
-      return getElasticSearchTarget();
-    }
-
-    public static final int HDFS_SOURCE_FIELD_NUMBER = 15;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource hdfsSource_;
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     * @return Whether the hdfsSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasHdfsSource() {
-      return hdfsSource_ != null;
-    }
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     * @return The hdfsSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource() {
-      return hdfsSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
-    }
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_source"
-     * </pre>
-     *
-     * <code>.model.HdfsSource hdfs_source = 15;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder() {
-      return getHdfsSource();
-    }
-
-    public static final int HDFS_TARGET_FIELD_NUMBER = 16;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget hdfsTarget_;
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     * @return Whether the hdfsTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasHdfsTarget() {
-      return hdfsTarget_ != null;
-    }
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     * @return The hdfsTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget() {
-      return hdfsTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
-    }
-    /**
-     * <pre>
-     * hdfs source
-     * &#64;inject_tag: json:"hdfs_target"
-     * </pre>
-     *
-     * <code>.model.HdfsTarget hdfs_target = 16;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder() {
-      return getHdfsTarget();
-    }
-
-    public static final int FTP_SOURCE_FIELD_NUMBER = 17;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource ftpSource_;
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     * @return Whether the ftpSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasFtpSource() {
-      return ftpSource_ != null;
-    }
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     * @return The ftpSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource() {
-      return ftpSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
-    }
-    /**
-     * <pre>
-     * ftp source
-     * &#64;inject_tag: json:"ftp_source"
-     * </pre>
-     *
-     * <code>.model.FtpSource ftp_source = 17;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder() {
-      return getFtpSource();
-    }
-
-    public static final int FTP_TARGET_FIELD_NUMBER = 18;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget ftpTarget_;
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     * @return Whether the ftpTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasFtpTarget() {
-      return ftpTarget_ != null;
-    }
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     * @return The ftpTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget() {
-      return ftpTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
-    }
-    /**
-     * <pre>
-     * ftp target
-     * &#64;inject_tag: json:"ftp_target"
-     * </pre>
-     *
-     * <code>.model.FtpTarget ftp_target = 18;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder() {
-      return getFtpTarget();
-    }
-
-    public static final int HBASE_SOURCE_FIELD_NUMBER = 19;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource hbaseSource_;
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     * @return Whether the hbaseSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasHbaseSource() {
-      return hbaseSource_ != null;
-    }
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     * @return The hbaseSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource() {
-      return hbaseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
-    }
-    /**
-     * <pre>
-     * hbase source
-     * &#64;inject_tag: json:"hbase_source"
-     * </pre>
-     *
-     * <code>.model.HbaseSource hbase_source = 19;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder() {
-      return getHbaseSource();
-    }
-
-    public static final int HBASE_TARGET_FIELD_NUMBER = 20;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget hbaseTarget_;
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     * @return Whether the hbaseTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasHbaseTarget() {
-      return hbaseTarget_ != null;
-    }
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     * @return The hbaseTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget() {
-      return hbaseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
-    }
-    /**
-     * <pre>
-     * hbase target
-     * &#64;inject_tag: json:"hbase_target"
-     * </pre>
-     *
-     * <code>.model.HbaseTarget hbase_target = 20;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder() {
-      return getHbaseTarget();
-    }
-
-    public static final int KAFKA_SOURCE_FIELD_NUMBER = 21;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource kafkaSource_;
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     * @return Whether the kafkaSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasKafkaSource() {
-      return kafkaSource_ != null;
-    }
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     * @return The kafkaSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource() {
-      return kafkaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
-    }
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_source"
-     * </pre>
-     *
-     * <code>.model.KafkaSource kafka_source = 21;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder() {
-      return getKafkaSource();
-    }
-
-    public static final int KAFKA_TARGET_FIELD_NUMBER = 22;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget kafkaTarget_;
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     * @return Whether the kafkaTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasKafkaTarget() {
-      return kafkaTarget_ != null;
-    }
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     * @return The kafkaTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget() {
-      return kafkaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
-    }
-    /**
-     * <pre>
-     * kafka target
-     * &#64;inject_tag: json:"kafka_target"
-     * </pre>
-     *
-     * <code>.model.KafkaTarget kafka_target = 22;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder() {
-      return getKafkaTarget();
-    }
-
-    public static final int BINLOG_SOURCE_FIELD_NUMBER = 23;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource binlogSource_;
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     * @return Whether the binlogSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasBinlogSource() {
-      return binlogSource_ != null;
-    }
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     * @return The binlogSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource() {
-      return binlogSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
-    }
-    /**
-     * <pre>
-     * binlog source
-     * &#64;inject_tag: json:"binlog_source"
-     * </pre>
-     *
-     * <code>.model.BinlogSource binlog_source = 23;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder() {
-      return getBinlogSource();
-    }
-
-    public static final int PG_WAL_SOURCE_FIELD_NUMBER = 24;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource pgWalSource_;
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     * @return Whether the pgWalSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasPgWalSource() {
-      return pgWalSource_ != null;
-    }
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     * @return The pgWalSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource() {
-      return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
-    }
-    /**
-     * <pre>
-     * pgwal source
-     * &#64;inject_tag: json:"pgwal_source"
-     * </pre>
-     *
-     * <code>.model.PgWalSource pg_wal_source = 24;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
-      return getPgWalSource();
-    }
-
-    public static final int SQL_SERVER_CDC_SOURCE_FIELD_NUMBER = 25;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource sqlServerCdcSource_;
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     * @return Whether the sqlServerCdcSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasSqlServerCdcSource() {
-      return sqlServerCdcSource_ != null;
-    }
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     * @return The sqlServerCdcSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource() {
-      return sqlServerCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
-    }
-    /**
-     * <pre>
-     * sqlserver cdc source
-     * &#64;inject_tag: json:"sql_server_cdc_source"
-     * </pre>
-     *
-     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder() {
-      return getSqlServerCdcSource();
-    }
-
-    public static final int LOG_MINER_SOURCE_FIELD_NUMBER = 26;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource logMinerSource_;
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     * @return Whether the logMinerSource field is set.
-     */
-    @java.lang.Override
-    public boolean hasLogMinerSource() {
-      return logMinerSource_ != null;
-    }
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     * @return The logMinerSource.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource() {
-      return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
-    }
-    /**
-     * <pre>
-     * logminer source
-     * &#64;inject_tag: json:"logminer_source"
-     * </pre>
-     *
-     * <code>.model.LogMinerSource log_miner_source = 26;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
-      return getLogMinerSource();
-    }
-
-    public static final int REDIS_TARGET_FIELD_NUMBER = 27;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget redisTarget_;
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     * @return Whether the redisTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasRedisTarget() {
-      return redisTarget_ != null;
-    }
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     * @return The redisTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget() {
-      return redisTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
-    }
-    /**
-     * <pre>
-     * redis target
-     * &#64;inject_tag: json:"redis_target"
-     * </pre>
-     *
-     * <code>.model.RedisTarget redis_target = 27;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder() {
-      return getRedisTarget();
-    }
-
-    public static final int HIVE_TARGET_FIELD_NUMBER = 28;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget hiveTarget_;
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     * @return Whether the hiveTarget field is set.
-     */
-    @java.lang.Override
-    public boolean hasHiveTarget() {
-      return hiveTarget_ != null;
-    }
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     * @return The hiveTarget.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget() {
-      return hiveTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
-    }
-    /**
-     * <pre>
-     * hive target
-     * &#64;inject_tag: json:"hive_target"
-     * </pre>
-     *
-     * <code>.model.HiveTarget hive_target = 28;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder() {
-      return getHiveTarget();
-    }
-
-    public static final int CLUSTER_ID_FIELD_NUMBER = 29;
+    public static final int CLUSTER_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object clusterId_;
     /**
      * <pre>
@@ -7062,7 +5145,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 6;</code>
      * @return The clusterId.
      */
     @java.lang.Override
@@ -7084,7 +5167,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
-     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * <code>string cluster_id = 6;</code>
      * @return The bytes for clusterId.
      */
     @java.lang.Override
@@ -7100,6 +5183,47 @@ public final class PBSyncManageSyncJob {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CHANNEL_CONTROL_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl channelControl_;
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     * @return Whether the channelControl field is set.
+     */
+    @java.lang.Override
+    public boolean hasChannelControl() {
+      return channelControl_ != null;
+    }
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     * @return The channelControl.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getChannelControl() {
+      return channelControl_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDefaultInstance() : channelControl_;
+    }
+    /**
+     * <pre>
+     * The channel control. Is required.
+     * &#64;inject_tag: json:"channel_control"
+     * </pre>
+     *
+     * <code>.model.ChannelControl channel_control = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder getChannelControlOrBuilder() {
+      return getChannelControl();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7122,86 +5246,20 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetId_);
       }
-      if (parallelism_ != 0) {
-        output.writeInt32(3, parallelism_);
-      }
-      if (percentage_ != 0) {
-        output.writeInt32(4, percentage_);
-      }
-      if (recordNum_ != 0) {
-        output.writeInt32(5, recordNum_);
-      }
-      if (bytes_ != 0) {
-        output.writeInt32(6, bytes_);
-      }
-      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.GuideMode.getNumber()) {
-        output.writeEnum(7, jobMode_);
+      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.JobModeUnset.getNumber()) {
+        output.writeEnum(3, jobMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobContent_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, jobContent_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobContent_);
       }
-      if (relationaldbSource_ != null) {
-        output.writeMessage(9, getRelationaldbSource());
-      }
-      if (relationaldbTarget_ != null) {
-        output.writeMessage(10, getRelationaldbTarget());
-      }
-      if (mongodbSource_ != null) {
-        output.writeMessage(11, getMongodbSource());
-      }
-      if (mongodbTarget_ != null) {
-        output.writeMessage(12, getMongodbTarget());
-      }
-      if (elasticSearchSource_ != null) {
-        output.writeMessage(13, getElasticSearchSource());
-      }
-      if (elasticSearchTarget_ != null) {
-        output.writeMessage(14, getElasticSearchTarget());
-      }
-      if (hdfsSource_ != null) {
-        output.writeMessage(15, getHdfsSource());
-      }
-      if (hdfsTarget_ != null) {
-        output.writeMessage(16, getHdfsTarget());
-      }
-      if (ftpSource_ != null) {
-        output.writeMessage(17, getFtpSource());
-      }
-      if (ftpTarget_ != null) {
-        output.writeMessage(18, getFtpTarget());
-      }
-      if (hbaseSource_ != null) {
-        output.writeMessage(19, getHbaseSource());
-      }
-      if (hbaseTarget_ != null) {
-        output.writeMessage(20, getHbaseTarget());
-      }
-      if (kafkaSource_ != null) {
-        output.writeMessage(21, getKafkaSource());
-      }
-      if (kafkaTarget_ != null) {
-        output.writeMessage(22, getKafkaTarget());
-      }
-      if (binlogSource_ != null) {
-        output.writeMessage(23, getBinlogSource());
-      }
-      if (pgWalSource_ != null) {
-        output.writeMessage(24, getPgWalSource());
-      }
-      if (sqlServerCdcSource_ != null) {
-        output.writeMessage(25, getSqlServerCdcSource());
-      }
-      if (logMinerSource_ != null) {
-        output.writeMessage(26, getLogMinerSource());
-      }
-      if (redisTarget_ != null) {
-        output.writeMessage(27, getRedisTarget());
-      }
-      if (hiveTarget_ != null) {
-        output.writeMessage(28, getHiveTarget());
+      if (syncResource_ != null) {
+        output.writeMessage(5, getSyncResource());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 29, clusterId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clusterId_);
+      }
+      if (channelControl_ != null) {
+        output.writeMessage(7, getChannelControl());
       }
       unknownFields.writeTo(output);
     }
@@ -7218,111 +5276,23 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetId_);
       }
-      if (parallelism_ != 0) {
+      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.JobModeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, parallelism_);
-      }
-      if (percentage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, percentage_);
-      }
-      if (recordNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, recordNum_);
-      }
-      if (bytes_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, bytes_);
-      }
-      if (jobMode_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.JobMode.GuideMode.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, jobMode_);
+          .computeEnumSize(3, jobMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobContent_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, jobContent_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobContent_);
       }
-      if (relationaldbSource_ != null) {
+      if (syncResource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getRelationaldbSource());
-      }
-      if (relationaldbTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getRelationaldbTarget());
-      }
-      if (mongodbSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getMongodbSource());
-      }
-      if (mongodbTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getMongodbTarget());
-      }
-      if (elasticSearchSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getElasticSearchSource());
-      }
-      if (elasticSearchTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getElasticSearchTarget());
-      }
-      if (hdfsSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getHdfsSource());
-      }
-      if (hdfsTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, getHdfsTarget());
-      }
-      if (ftpSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getFtpSource());
-      }
-      if (ftpTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, getFtpTarget());
-      }
-      if (hbaseSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getHbaseSource());
-      }
-      if (hbaseTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20, getHbaseTarget());
-      }
-      if (kafkaSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(21, getKafkaSource());
-      }
-      if (kafkaTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(22, getKafkaTarget());
-      }
-      if (binlogSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(23, getBinlogSource());
-      }
-      if (pgWalSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(24, getPgWalSource());
-      }
-      if (sqlServerCdcSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, getSqlServerCdcSource());
-      }
-      if (logMinerSource_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, getLogMinerSource());
-      }
-      if (redisTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27, getRedisTarget());
-      }
-      if (hiveTarget_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(28, getHiveTarget());
+          .computeMessageSize(5, getSyncResource());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, clusterId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clusterId_);
+      }
+      if (channelControl_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getChannelControl());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7343,119 +5313,21 @@ public final class PBSyncManageSyncJob {
           .equals(other.getSourceId())) return false;
       if (!getTargetId()
           .equals(other.getTargetId())) return false;
-      if (getParallelism()
-          != other.getParallelism()) return false;
-      if (getPercentage()
-          != other.getPercentage()) return false;
-      if (getRecordNum()
-          != other.getRecordNum()) return false;
-      if (getBytes()
-          != other.getBytes()) return false;
       if (jobMode_ != other.jobMode_) return false;
       if (!getJobContent()
           .equals(other.getJobContent())) return false;
-      if (hasRelationaldbSource() != other.hasRelationaldbSource()) return false;
-      if (hasRelationaldbSource()) {
-        if (!getRelationaldbSource()
-            .equals(other.getRelationaldbSource())) return false;
-      }
-      if (hasRelationaldbTarget() != other.hasRelationaldbTarget()) return false;
-      if (hasRelationaldbTarget()) {
-        if (!getRelationaldbTarget()
-            .equals(other.getRelationaldbTarget())) return false;
-      }
-      if (hasMongodbSource() != other.hasMongodbSource()) return false;
-      if (hasMongodbSource()) {
-        if (!getMongodbSource()
-            .equals(other.getMongodbSource())) return false;
-      }
-      if (hasMongodbTarget() != other.hasMongodbTarget()) return false;
-      if (hasMongodbTarget()) {
-        if (!getMongodbTarget()
-            .equals(other.getMongodbTarget())) return false;
-      }
-      if (hasElasticSearchSource() != other.hasElasticSearchSource()) return false;
-      if (hasElasticSearchSource()) {
-        if (!getElasticSearchSource()
-            .equals(other.getElasticSearchSource())) return false;
-      }
-      if (hasElasticSearchTarget() != other.hasElasticSearchTarget()) return false;
-      if (hasElasticSearchTarget()) {
-        if (!getElasticSearchTarget()
-            .equals(other.getElasticSearchTarget())) return false;
-      }
-      if (hasHdfsSource() != other.hasHdfsSource()) return false;
-      if (hasHdfsSource()) {
-        if (!getHdfsSource()
-            .equals(other.getHdfsSource())) return false;
-      }
-      if (hasHdfsTarget() != other.hasHdfsTarget()) return false;
-      if (hasHdfsTarget()) {
-        if (!getHdfsTarget()
-            .equals(other.getHdfsTarget())) return false;
-      }
-      if (hasFtpSource() != other.hasFtpSource()) return false;
-      if (hasFtpSource()) {
-        if (!getFtpSource()
-            .equals(other.getFtpSource())) return false;
-      }
-      if (hasFtpTarget() != other.hasFtpTarget()) return false;
-      if (hasFtpTarget()) {
-        if (!getFtpTarget()
-            .equals(other.getFtpTarget())) return false;
-      }
-      if (hasHbaseSource() != other.hasHbaseSource()) return false;
-      if (hasHbaseSource()) {
-        if (!getHbaseSource()
-            .equals(other.getHbaseSource())) return false;
-      }
-      if (hasHbaseTarget() != other.hasHbaseTarget()) return false;
-      if (hasHbaseTarget()) {
-        if (!getHbaseTarget()
-            .equals(other.getHbaseTarget())) return false;
-      }
-      if (hasKafkaSource() != other.hasKafkaSource()) return false;
-      if (hasKafkaSource()) {
-        if (!getKafkaSource()
-            .equals(other.getKafkaSource())) return false;
-      }
-      if (hasKafkaTarget() != other.hasKafkaTarget()) return false;
-      if (hasKafkaTarget()) {
-        if (!getKafkaTarget()
-            .equals(other.getKafkaTarget())) return false;
-      }
-      if (hasBinlogSource() != other.hasBinlogSource()) return false;
-      if (hasBinlogSource()) {
-        if (!getBinlogSource()
-            .equals(other.getBinlogSource())) return false;
-      }
-      if (hasPgWalSource() != other.hasPgWalSource()) return false;
-      if (hasPgWalSource()) {
-        if (!getPgWalSource()
-            .equals(other.getPgWalSource())) return false;
-      }
-      if (hasSqlServerCdcSource() != other.hasSqlServerCdcSource()) return false;
-      if (hasSqlServerCdcSource()) {
-        if (!getSqlServerCdcSource()
-            .equals(other.getSqlServerCdcSource())) return false;
-      }
-      if (hasLogMinerSource() != other.hasLogMinerSource()) return false;
-      if (hasLogMinerSource()) {
-        if (!getLogMinerSource()
-            .equals(other.getLogMinerSource())) return false;
-      }
-      if (hasRedisTarget() != other.hasRedisTarget()) return false;
-      if (hasRedisTarget()) {
-        if (!getRedisTarget()
-            .equals(other.getRedisTarget())) return false;
-      }
-      if (hasHiveTarget() != other.hasHiveTarget()) return false;
-      if (hasHiveTarget()) {
-        if (!getHiveTarget()
-            .equals(other.getHiveTarget())) return false;
+      if (hasSyncResource() != other.hasSyncResource()) return false;
+      if (hasSyncResource()) {
+        if (!getSyncResource()
+            .equals(other.getSyncResource())) return false;
       }
       if (!getClusterId()
           .equals(other.getClusterId())) return false;
+      if (hasChannelControl() != other.hasChannelControl()) return false;
+      if (hasChannelControl()) {
+        if (!getChannelControl()
+            .equals(other.getChannelControl())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7471,100 +5343,20 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getSourceId().hashCode();
       hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetId().hashCode();
-      hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
-      hash = (53 * hash) + getParallelism();
-      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPercentage();
-      hash = (37 * hash) + RECORD_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getRecordNum();
-      hash = (37 * hash) + BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getBytes();
       hash = (37 * hash) + JOB_MODE_FIELD_NUMBER;
       hash = (53 * hash) + jobMode_;
       hash = (37 * hash) + JOB_CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getJobContent().hashCode();
-      if (hasRelationaldbSource()) {
-        hash = (37 * hash) + RELATIONALDB_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getRelationaldbSource().hashCode();
-      }
-      if (hasRelationaldbTarget()) {
-        hash = (37 * hash) + RELATIONALDB_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getRelationaldbTarget().hashCode();
-      }
-      if (hasMongodbSource()) {
-        hash = (37 * hash) + MONGODB_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getMongodbSource().hashCode();
-      }
-      if (hasMongodbTarget()) {
-        hash = (37 * hash) + MONGODB_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getMongodbTarget().hashCode();
-      }
-      if (hasElasticSearchSource()) {
-        hash = (37 * hash) + ELASTIC_SEARCH_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getElasticSearchSource().hashCode();
-      }
-      if (hasElasticSearchTarget()) {
-        hash = (37 * hash) + ELASTIC_SEARCH_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getElasticSearchTarget().hashCode();
-      }
-      if (hasHdfsSource()) {
-        hash = (37 * hash) + HDFS_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getHdfsSource().hashCode();
-      }
-      if (hasHdfsTarget()) {
-        hash = (37 * hash) + HDFS_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getHdfsTarget().hashCode();
-      }
-      if (hasFtpSource()) {
-        hash = (37 * hash) + FTP_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getFtpSource().hashCode();
-      }
-      if (hasFtpTarget()) {
-        hash = (37 * hash) + FTP_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getFtpTarget().hashCode();
-      }
-      if (hasHbaseSource()) {
-        hash = (37 * hash) + HBASE_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getHbaseSource().hashCode();
-      }
-      if (hasHbaseTarget()) {
-        hash = (37 * hash) + HBASE_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getHbaseTarget().hashCode();
-      }
-      if (hasKafkaSource()) {
-        hash = (37 * hash) + KAFKA_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getKafkaSource().hashCode();
-      }
-      if (hasKafkaTarget()) {
-        hash = (37 * hash) + KAFKA_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getKafkaTarget().hashCode();
-      }
-      if (hasBinlogSource()) {
-        hash = (37 * hash) + BINLOG_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getBinlogSource().hashCode();
-      }
-      if (hasPgWalSource()) {
-        hash = (37 * hash) + PG_WAL_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getPgWalSource().hashCode();
-      }
-      if (hasSqlServerCdcSource()) {
-        hash = (37 * hash) + SQL_SERVER_CDC_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getSqlServerCdcSource().hashCode();
-      }
-      if (hasLogMinerSource()) {
-        hash = (37 * hash) + LOG_MINER_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getLogMinerSource().hashCode();
-      }
-      if (hasRedisTarget()) {
-        hash = (37 * hash) + REDIS_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getRedisTarget().hashCode();
-      }
-      if (hasHiveTarget()) {
-        hash = (37 * hash) + HIVE_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getHiveTarget().hashCode();
+      if (hasSyncResource()) {
+        hash = (37 * hash) + SYNCRESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncResource().hashCode();
       }
       hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClusterId().hashCode();
+      if (hasChannelControl()) {
+        hash = (37 * hash) + CHANNEL_CONTROL_FIELD_NUMBER;
+        hash = (53 * hash) + getChannelControl().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7707,140 +5499,24 @@ public final class PBSyncManageSyncJob {
 
         targetId_ = "";
 
-        parallelism_ = 0;
-
-        percentage_ = 0;
-
-        recordNum_ = 0;
-
-        bytes_ = 0;
-
         jobMode_ = 0;
 
         jobContent_ = "";
 
-        if (relationaldbSourceBuilder_ == null) {
-          relationaldbSource_ = null;
+        if (syncResourceBuilder_ == null) {
+          syncResource_ = null;
         } else {
-          relationaldbSource_ = null;
-          relationaldbSourceBuilder_ = null;
-        }
-        if (relationaldbTargetBuilder_ == null) {
-          relationaldbTarget_ = null;
-        } else {
-          relationaldbTarget_ = null;
-          relationaldbTargetBuilder_ = null;
-        }
-        if (mongodbSourceBuilder_ == null) {
-          mongodbSource_ = null;
-        } else {
-          mongodbSource_ = null;
-          mongodbSourceBuilder_ = null;
-        }
-        if (mongodbTargetBuilder_ == null) {
-          mongodbTarget_ = null;
-        } else {
-          mongodbTarget_ = null;
-          mongodbTargetBuilder_ = null;
-        }
-        if (elasticSearchSourceBuilder_ == null) {
-          elasticSearchSource_ = null;
-        } else {
-          elasticSearchSource_ = null;
-          elasticSearchSourceBuilder_ = null;
-        }
-        if (elasticSearchTargetBuilder_ == null) {
-          elasticSearchTarget_ = null;
-        } else {
-          elasticSearchTarget_ = null;
-          elasticSearchTargetBuilder_ = null;
-        }
-        if (hdfsSourceBuilder_ == null) {
-          hdfsSource_ = null;
-        } else {
-          hdfsSource_ = null;
-          hdfsSourceBuilder_ = null;
-        }
-        if (hdfsTargetBuilder_ == null) {
-          hdfsTarget_ = null;
-        } else {
-          hdfsTarget_ = null;
-          hdfsTargetBuilder_ = null;
-        }
-        if (ftpSourceBuilder_ == null) {
-          ftpSource_ = null;
-        } else {
-          ftpSource_ = null;
-          ftpSourceBuilder_ = null;
-        }
-        if (ftpTargetBuilder_ == null) {
-          ftpTarget_ = null;
-        } else {
-          ftpTarget_ = null;
-          ftpTargetBuilder_ = null;
-        }
-        if (hbaseSourceBuilder_ == null) {
-          hbaseSource_ = null;
-        } else {
-          hbaseSource_ = null;
-          hbaseSourceBuilder_ = null;
-        }
-        if (hbaseTargetBuilder_ == null) {
-          hbaseTarget_ = null;
-        } else {
-          hbaseTarget_ = null;
-          hbaseTargetBuilder_ = null;
-        }
-        if (kafkaSourceBuilder_ == null) {
-          kafkaSource_ = null;
-        } else {
-          kafkaSource_ = null;
-          kafkaSourceBuilder_ = null;
-        }
-        if (kafkaTargetBuilder_ == null) {
-          kafkaTarget_ = null;
-        } else {
-          kafkaTarget_ = null;
-          kafkaTargetBuilder_ = null;
-        }
-        if (binlogSourceBuilder_ == null) {
-          binlogSource_ = null;
-        } else {
-          binlogSource_ = null;
-          binlogSourceBuilder_ = null;
-        }
-        if (pgWalSourceBuilder_ == null) {
-          pgWalSource_ = null;
-        } else {
-          pgWalSource_ = null;
-          pgWalSourceBuilder_ = null;
-        }
-        if (sqlServerCdcSourceBuilder_ == null) {
-          sqlServerCdcSource_ = null;
-        } else {
-          sqlServerCdcSource_ = null;
-          sqlServerCdcSourceBuilder_ = null;
-        }
-        if (logMinerSourceBuilder_ == null) {
-          logMinerSource_ = null;
-        } else {
-          logMinerSource_ = null;
-          logMinerSourceBuilder_ = null;
-        }
-        if (redisTargetBuilder_ == null) {
-          redisTarget_ = null;
-        } else {
-          redisTarget_ = null;
-          redisTargetBuilder_ = null;
-        }
-        if (hiveTargetBuilder_ == null) {
-          hiveTarget_ = null;
-        } else {
-          hiveTarget_ = null;
-          hiveTargetBuilder_ = null;
+          syncResource_ = null;
+          syncResourceBuilder_ = null;
         }
         clusterId_ = "";
 
+        if (channelControlBuilder_ == null) {
+          channelControl_ = null;
+        } else {
+          channelControl_ = null;
+          channelControlBuilder_ = null;
+        }
         return this;
       }
 
@@ -7869,113 +5545,19 @@ public final class PBSyncManageSyncJob {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf(this);
         result.sourceId_ = sourceId_;
         result.targetId_ = targetId_;
-        result.parallelism_ = parallelism_;
-        result.percentage_ = percentage_;
-        result.recordNum_ = recordNum_;
-        result.bytes_ = bytes_;
         result.jobMode_ = jobMode_;
         result.jobContent_ = jobContent_;
-        if (relationaldbSourceBuilder_ == null) {
-          result.relationaldbSource_ = relationaldbSource_;
+        if (syncResourceBuilder_ == null) {
+          result.syncResource_ = syncResource_;
         } else {
-          result.relationaldbSource_ = relationaldbSourceBuilder_.build();
-        }
-        if (relationaldbTargetBuilder_ == null) {
-          result.relationaldbTarget_ = relationaldbTarget_;
-        } else {
-          result.relationaldbTarget_ = relationaldbTargetBuilder_.build();
-        }
-        if (mongodbSourceBuilder_ == null) {
-          result.mongodbSource_ = mongodbSource_;
-        } else {
-          result.mongodbSource_ = mongodbSourceBuilder_.build();
-        }
-        if (mongodbTargetBuilder_ == null) {
-          result.mongodbTarget_ = mongodbTarget_;
-        } else {
-          result.mongodbTarget_ = mongodbTargetBuilder_.build();
-        }
-        if (elasticSearchSourceBuilder_ == null) {
-          result.elasticSearchSource_ = elasticSearchSource_;
-        } else {
-          result.elasticSearchSource_ = elasticSearchSourceBuilder_.build();
-        }
-        if (elasticSearchTargetBuilder_ == null) {
-          result.elasticSearchTarget_ = elasticSearchTarget_;
-        } else {
-          result.elasticSearchTarget_ = elasticSearchTargetBuilder_.build();
-        }
-        if (hdfsSourceBuilder_ == null) {
-          result.hdfsSource_ = hdfsSource_;
-        } else {
-          result.hdfsSource_ = hdfsSourceBuilder_.build();
-        }
-        if (hdfsTargetBuilder_ == null) {
-          result.hdfsTarget_ = hdfsTarget_;
-        } else {
-          result.hdfsTarget_ = hdfsTargetBuilder_.build();
-        }
-        if (ftpSourceBuilder_ == null) {
-          result.ftpSource_ = ftpSource_;
-        } else {
-          result.ftpSource_ = ftpSourceBuilder_.build();
-        }
-        if (ftpTargetBuilder_ == null) {
-          result.ftpTarget_ = ftpTarget_;
-        } else {
-          result.ftpTarget_ = ftpTargetBuilder_.build();
-        }
-        if (hbaseSourceBuilder_ == null) {
-          result.hbaseSource_ = hbaseSource_;
-        } else {
-          result.hbaseSource_ = hbaseSourceBuilder_.build();
-        }
-        if (hbaseTargetBuilder_ == null) {
-          result.hbaseTarget_ = hbaseTarget_;
-        } else {
-          result.hbaseTarget_ = hbaseTargetBuilder_.build();
-        }
-        if (kafkaSourceBuilder_ == null) {
-          result.kafkaSource_ = kafkaSource_;
-        } else {
-          result.kafkaSource_ = kafkaSourceBuilder_.build();
-        }
-        if (kafkaTargetBuilder_ == null) {
-          result.kafkaTarget_ = kafkaTarget_;
-        } else {
-          result.kafkaTarget_ = kafkaTargetBuilder_.build();
-        }
-        if (binlogSourceBuilder_ == null) {
-          result.binlogSource_ = binlogSource_;
-        } else {
-          result.binlogSource_ = binlogSourceBuilder_.build();
-        }
-        if (pgWalSourceBuilder_ == null) {
-          result.pgWalSource_ = pgWalSource_;
-        } else {
-          result.pgWalSource_ = pgWalSourceBuilder_.build();
-        }
-        if (sqlServerCdcSourceBuilder_ == null) {
-          result.sqlServerCdcSource_ = sqlServerCdcSource_;
-        } else {
-          result.sqlServerCdcSource_ = sqlServerCdcSourceBuilder_.build();
-        }
-        if (logMinerSourceBuilder_ == null) {
-          result.logMinerSource_ = logMinerSource_;
-        } else {
-          result.logMinerSource_ = logMinerSourceBuilder_.build();
-        }
-        if (redisTargetBuilder_ == null) {
-          result.redisTarget_ = redisTarget_;
-        } else {
-          result.redisTarget_ = redisTargetBuilder_.build();
-        }
-        if (hiveTargetBuilder_ == null) {
-          result.hiveTarget_ = hiveTarget_;
-        } else {
-          result.hiveTarget_ = hiveTargetBuilder_.build();
+          result.syncResource_ = syncResourceBuilder_.build();
         }
         result.clusterId_ = clusterId_;
+        if (channelControlBuilder_ == null) {
+          result.channelControl_ = channelControl_;
+        } else {
+          result.channelControl_ = channelControlBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -8032,18 +5614,6 @@ public final class PBSyncManageSyncJob {
           targetId_ = other.targetId_;
           onChanged();
         }
-        if (other.getParallelism() != 0) {
-          setParallelism(other.getParallelism());
-        }
-        if (other.getPercentage() != 0) {
-          setPercentage(other.getPercentage());
-        }
-        if (other.getRecordNum() != 0) {
-          setRecordNum(other.getRecordNum());
-        }
-        if (other.getBytes() != 0) {
-          setBytes(other.getBytes());
-        }
         if (other.jobMode_ != 0) {
           setJobModeValue(other.getJobModeValue());
         }
@@ -8051,69 +5621,15 @@ public final class PBSyncManageSyncJob {
           jobContent_ = other.jobContent_;
           onChanged();
         }
-        if (other.hasRelationaldbSource()) {
-          mergeRelationaldbSource(other.getRelationaldbSource());
-        }
-        if (other.hasRelationaldbTarget()) {
-          mergeRelationaldbTarget(other.getRelationaldbTarget());
-        }
-        if (other.hasMongodbSource()) {
-          mergeMongodbSource(other.getMongodbSource());
-        }
-        if (other.hasMongodbTarget()) {
-          mergeMongodbTarget(other.getMongodbTarget());
-        }
-        if (other.hasElasticSearchSource()) {
-          mergeElasticSearchSource(other.getElasticSearchSource());
-        }
-        if (other.hasElasticSearchTarget()) {
-          mergeElasticSearchTarget(other.getElasticSearchTarget());
-        }
-        if (other.hasHdfsSource()) {
-          mergeHdfsSource(other.getHdfsSource());
-        }
-        if (other.hasHdfsTarget()) {
-          mergeHdfsTarget(other.getHdfsTarget());
-        }
-        if (other.hasFtpSource()) {
-          mergeFtpSource(other.getFtpSource());
-        }
-        if (other.hasFtpTarget()) {
-          mergeFtpTarget(other.getFtpTarget());
-        }
-        if (other.hasHbaseSource()) {
-          mergeHbaseSource(other.getHbaseSource());
-        }
-        if (other.hasHbaseTarget()) {
-          mergeHbaseTarget(other.getHbaseTarget());
-        }
-        if (other.hasKafkaSource()) {
-          mergeKafkaSource(other.getKafkaSource());
-        }
-        if (other.hasKafkaTarget()) {
-          mergeKafkaTarget(other.getKafkaTarget());
-        }
-        if (other.hasBinlogSource()) {
-          mergeBinlogSource(other.getBinlogSource());
-        }
-        if (other.hasPgWalSource()) {
-          mergePgWalSource(other.getPgWalSource());
-        }
-        if (other.hasSqlServerCdcSource()) {
-          mergeSqlServerCdcSource(other.getSqlServerCdcSource());
-        }
-        if (other.hasLogMinerSource()) {
-          mergeLogMinerSource(other.getLogMinerSource());
-        }
-        if (other.hasRedisTarget()) {
-          mergeRedisTarget(other.getRedisTarget());
-        }
-        if (other.hasHiveTarget()) {
-          mergeHiveTarget(other.getHiveTarget());
+        if (other.hasSyncResource()) {
+          mergeSyncResource(other.getSyncResource());
         }
         if (!other.getClusterId().isEmpty()) {
           clusterId_ = other.clusterId_;
           onChanged();
+        }
+        if (other.hasChannelControl()) {
+          mergeChannelControl(other.getChannelControl());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8346,193 +5862,6 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private int parallelism_ ;
-      /**
-       * <pre>
-       * The job name in each workspace is unique. Is required, Max Length 128.
-       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-       * &#64;inject_tag: json:"name"
-       * </pre>
-       *
-       * <code>int32 parallelism = 3 [(.defaults.field) = { ... }</code>
-       * @return The parallelism.
-       */
-      @java.lang.Override
-      public int getParallelism() {
-        return parallelism_;
-      }
-      /**
-       * <pre>
-       * The job name in each workspace is unique. Is required, Max Length 128.
-       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-       * &#64;inject_tag: json:"name"
-       * </pre>
-       *
-       * <code>int32 parallelism = 3 [(.defaults.field) = { ... }</code>
-       * @param value The parallelism to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParallelism(int value) {
-        
-        parallelism_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The job name in each workspace is unique. Is required, Max Length 128.
-       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-       * &#64;inject_tag: json:"name"
-       * </pre>
-       *
-       * <code>int32 parallelism = 3 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParallelism() {
-        
-        parallelism_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int percentage_ ;
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"desc"
-       * </pre>
-       *
-       * <code>int32 percentage = 4 [(.defaults.field) = { ... }</code>
-       * @return The percentage.
-       */
-      @java.lang.Override
-      public int getPercentage() {
-        return percentage_;
-      }
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"desc"
-       * </pre>
-       *
-       * <code>int32 percentage = 4 [(.defaults.field) = { ... }</code>
-       * @param value The percentage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPercentage(int value) {
-        
-        percentage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"desc"
-       * </pre>
-       *
-       * <code>int32 percentage = 4 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPercentage() {
-        
-        percentage_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int recordNum_ ;
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"record_num"
-       * </pre>
-       *
-       * <code>int32 record_num = 5 [(.defaults.field) = { ... }</code>
-       * @return The recordNum.
-       */
-      @java.lang.Override
-      public int getRecordNum() {
-        return recordNum_;
-      }
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"record_num"
-       * </pre>
-       *
-       * <code>int32 record_num = 5 [(.defaults.field) = { ... }</code>
-       * @param value The recordNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecordNum(int value) {
-        
-        recordNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Description of the job, Not required, Max length 1024.
-       * &#64;inject_tag: json:"record_num"
-       * </pre>
-       *
-       * <code>int32 record_num = 5 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecordNum() {
-        
-        recordNum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int bytes_ ;
-      /**
-       * <pre>
-       * bytes
-       * &#64;inject_tag: json:"bytes"
-       * </pre>
-       *
-       * <code>int32 bytes = 6 [(.defaults.field) = { ... }</code>
-       * @return The bytes.
-       */
-      @java.lang.Override
-      public int getBytes() {
-        return bytes_;
-      }
-      /**
-       * <pre>
-       * bytes
-       * &#64;inject_tag: json:"bytes"
-       * </pre>
-       *
-       * <code>int32 bytes = 6 [(.defaults.field) = { ... }</code>
-       * @param value The bytes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBytes(int value) {
-        
-        bytes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * bytes
-       * &#64;inject_tag: json:"bytes"
-       * </pre>
-       *
-       * <code>int32 bytes = 6 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBytes() {
-        
-        bytes_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int jobMode_ = 0;
       /**
        * <pre>
@@ -8540,7 +5869,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
        * @return The enum numeric value on the wire for jobMode.
        */
       @java.lang.Override public int getJobModeValue() {
@@ -8552,7 +5881,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
        * @param value The enum numeric value on the wire for jobMode to set.
        * @return This builder for chaining.
        */
@@ -8568,7 +5897,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
        * @return The jobMode.
        */
       @java.lang.Override
@@ -8583,7 +5912,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
        * @param value The jobMode to set.
        * @return This builder for chaining.
        */
@@ -8602,7 +5931,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
-       * <code>.model.SyncJobConf.JobMode job_mode = 7 [(.defaults.field) = { ... }</code>
+       * <code>.model.SyncJobConf.JobMode job_mode = 3 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearJobMode() {
@@ -8619,7 +5948,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_content"
        * </pre>
        *
-       * <code>string job_content = 8;</code>
+       * <code>string job_content = 4 [(.validator.field) = { ... }</code>
        * @return The jobContent.
        */
       public java.lang.String getJobContent() {
@@ -8640,7 +5969,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_content"
        * </pre>
        *
-       * <code>string job_content = 8;</code>
+       * <code>string job_content = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for jobContent.
        */
       public com.google.protobuf.ByteString
@@ -8662,7 +5991,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_content"
        * </pre>
        *
-       * <code>string job_content = 8;</code>
+       * <code>string job_content = 4 [(.validator.field) = { ... }</code>
        * @param value The jobContent to set.
        * @return This builder for chaining.
        */
@@ -8682,7 +6011,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_content"
        * </pre>
        *
-       * <code>string job_content = 8;</code>
+       * <code>string job_content = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearJobContent() {
@@ -8697,7 +6026,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"job_content"
        * </pre>
        *
-       * <code>string job_content = 8;</code>
+       * <code>string job_content = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for jobContent to set.
        * @return This builder for chaining.
        */
@@ -8713,3284 +6042,168 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource relationaldbSource_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource syncResource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder> relationaldbSourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder> syncResourceBuilder_;
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-       * @return Whether the relationaldbSource field is set.
+       * <code>.model.SyncResource syncResource = 5;</code>
+       * @return Whether the syncResource field is set.
        */
-      public boolean hasRelationaldbSource() {
-        return relationaldbSourceBuilder_ != null || relationaldbSource_ != null;
+      public boolean hasSyncResource() {
+        return syncResourceBuilder_ != null || syncResource_ != null;
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
-       * @return The relationaldbSource.
+       * <code>.model.SyncResource syncResource = 5;</code>
+       * @return The syncResource.
        */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource getRelationaldbSource() {
-        if (relationaldbSourceBuilder_ == null) {
-          return relationaldbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.getDefaultInstance() : relationaldbSource_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getSyncResource() {
+        if (syncResourceBuilder_ == null) {
+          return syncResource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.getDefaultInstance() : syncResource_;
         } else {
-          return relationaldbSourceBuilder_.getMessage();
+          return syncResourceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public Builder setRelationaldbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource value) {
-        if (relationaldbSourceBuilder_ == null) {
+      public Builder setSyncResource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource value) {
+        if (syncResourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          relationaldbSource_ = value;
+          syncResource_ = value;
           onChanged();
         } else {
-          relationaldbSourceBuilder_.setMessage(value);
+          syncResourceBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public Builder setRelationaldbSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder builderForValue) {
-        if (relationaldbSourceBuilder_ == null) {
-          relationaldbSource_ = builderForValue.build();
+      public Builder setSyncResource(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder builderForValue) {
+        if (syncResourceBuilder_ == null) {
+          syncResource_ = builderForValue.build();
           onChanged();
         } else {
-          relationaldbSourceBuilder_.setMessage(builderForValue.build());
+          syncResourceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public Builder mergeRelationaldbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource value) {
-        if (relationaldbSourceBuilder_ == null) {
-          if (relationaldbSource_ != null) {
-            relationaldbSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.newBuilder(relationaldbSource_).mergeFrom(value).buildPartial();
+      public Builder mergeSyncResource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource value) {
+        if (syncResourceBuilder_ == null) {
+          if (syncResource_ != null) {
+            syncResource_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.newBuilder(syncResource_).mergeFrom(value).buildPartial();
           } else {
-            relationaldbSource_ = value;
+            syncResource_ = value;
           }
           onChanged();
         } else {
-          relationaldbSourceBuilder_.mergeFrom(value);
+          syncResourceBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public Builder clearRelationaldbSource() {
-        if (relationaldbSourceBuilder_ == null) {
-          relationaldbSource_ = null;
+      public Builder clearSyncResource() {
+        if (syncResourceBuilder_ == null) {
+          syncResource_ = null;
           onChanged();
         } else {
-          relationaldbSource_ = null;
-          relationaldbSourceBuilder_ = null;
+          syncResource_ = null;
+          syncResourceBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder getRelationaldbSourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder getSyncResourceBuilder() {
         
         onChanged();
-        return getRelationaldbSourceFieldBuilder().getBuilder();
+        return getSyncResourceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder getRelationaldbSourceOrBuilder() {
-        if (relationaldbSourceBuilder_ != null) {
-          return relationaldbSourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder getSyncResourceOrBuilder() {
+        if (syncResourceBuilder_ != null) {
+          return syncResourceBuilder_.getMessageOrBuilder();
         } else {
-          return relationaldbSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.getDefaultInstance() : relationaldbSource_;
+          return syncResource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.getDefaultInstance() : syncResource_;
         }
       }
       /**
        * <pre>
-       * Relationaldb source
-       * &#64;inject_tag: json:"relationaldb_source"
+       * sync Resource
+       * &#64;inject_tag: json:"sync_resource"
        * </pre>
        *
-       * <code>.model.RelationaldbSource relationaldb_source = 9;</code>
+       * <code>.model.SyncResource syncResource = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder> 
-          getRelationaldbSourceFieldBuilder() {
-        if (relationaldbSourceBuilder_ == null) {
-          relationaldbSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbSourceOrBuilder>(
-                  getRelationaldbSource(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder> 
+          getSyncResourceFieldBuilder() {
+        if (syncResourceBuilder_ == null) {
+          syncResourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder>(
+                  getSyncResource(),
                   getParentForChildren(),
                   isClean());
-          relationaldbSource_ = null;
+          syncResource_ = null;
         }
-        return relationaldbSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget relationaldbTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder> relationaldbTargetBuilder_;
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       * @return Whether the relationaldbTarget field is set.
-       */
-      public boolean hasRelationaldbTarget() {
-        return relationaldbTargetBuilder_ != null || relationaldbTarget_ != null;
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       * @return The relationaldbTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget getRelationaldbTarget() {
-        if (relationaldbTargetBuilder_ == null) {
-          return relationaldbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.getDefaultInstance() : relationaldbTarget_;
-        } else {
-          return relationaldbTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public Builder setRelationaldbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget value) {
-        if (relationaldbTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          relationaldbTarget_ = value;
-          onChanged();
-        } else {
-          relationaldbTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public Builder setRelationaldbTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder builderForValue) {
-        if (relationaldbTargetBuilder_ == null) {
-          relationaldbTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          relationaldbTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public Builder mergeRelationaldbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget value) {
-        if (relationaldbTargetBuilder_ == null) {
-          if (relationaldbTarget_ != null) {
-            relationaldbTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.newBuilder(relationaldbTarget_).mergeFrom(value).buildPartial();
-          } else {
-            relationaldbTarget_ = value;
-          }
-          onChanged();
-        } else {
-          relationaldbTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public Builder clearRelationaldbTarget() {
-        if (relationaldbTargetBuilder_ == null) {
-          relationaldbTarget_ = null;
-          onChanged();
-        } else {
-          relationaldbTarget_ = null;
-          relationaldbTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder getRelationaldbTargetBuilder() {
-        
-        onChanged();
-        return getRelationaldbTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder getRelationaldbTargetOrBuilder() {
-        if (relationaldbTargetBuilder_ != null) {
-          return relationaldbTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return relationaldbTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.getDefaultInstance() : relationaldbTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * Relationaldb target
-       * &#64;inject_tag: json:"relationaldb_target"
-       * </pre>
-       *
-       * <code>.model.RelationaldbTarget relationaldb_target = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder> 
-          getRelationaldbTargetFieldBuilder() {
-        if (relationaldbTargetBuilder_ == null) {
-          relationaldbTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.RelationaldbTargetOrBuilder>(
-                  getRelationaldbTarget(),
-                  getParentForChildren(),
-                  isClean());
-          relationaldbTarget_ = null;
-        }
-        return relationaldbTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource mongodbSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder> mongodbSourceBuilder_;
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       * @return Whether the mongodbSource field is set.
-       */
-      public boolean hasMongodbSource() {
-        return mongodbSourceBuilder_ != null || mongodbSource_ != null;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       * @return The mongodbSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource() {
-        if (mongodbSourceBuilder_ == null) {
-          return mongodbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
-        } else {
-          return mongodbSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public Builder setMongodbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource value) {
-        if (mongodbSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mongodbSource_ = value;
-          onChanged();
-        } else {
-          mongodbSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public Builder setMongodbSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder builderForValue) {
-        if (mongodbSourceBuilder_ == null) {
-          mongodbSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          mongodbSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public Builder mergeMongodbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource value) {
-        if (mongodbSourceBuilder_ == null) {
-          if (mongodbSource_ != null) {
-            mongodbSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.newBuilder(mongodbSource_).mergeFrom(value).buildPartial();
-          } else {
-            mongodbSource_ = value;
-          }
-          onChanged();
-        } else {
-          mongodbSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public Builder clearMongodbSource() {
-        if (mongodbSourceBuilder_ == null) {
-          mongodbSource_ = null;
-          onChanged();
-        } else {
-          mongodbSource_ = null;
-          mongodbSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder getMongodbSourceBuilder() {
-        
-        onChanged();
-        return getMongodbSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder() {
-        if (mongodbSourceBuilder_ != null) {
-          return mongodbSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return mongodbSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
-        }
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_source"
-       * </pre>
-       *
-       * <code>.model.MongodbSource mongodb_source = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder> 
-          getMongodbSourceFieldBuilder() {
-        if (mongodbSourceBuilder_ == null) {
-          mongodbSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder>(
-                  getMongodbSource(),
-                  getParentForChildren(),
-                  isClean());
-          mongodbSource_ = null;
-        }
-        return mongodbSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget mongodbTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder> mongodbTargetBuilder_;
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       * @return Whether the mongodbTarget field is set.
-       */
-      public boolean hasMongodbTarget() {
-        return mongodbTargetBuilder_ != null || mongodbTarget_ != null;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       * @return The mongodbTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget() {
-        if (mongodbTargetBuilder_ == null) {
-          return mongodbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
-        } else {
-          return mongodbTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public Builder setMongodbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget value) {
-        if (mongodbTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mongodbTarget_ = value;
-          onChanged();
-        } else {
-          mongodbTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public Builder setMongodbTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder builderForValue) {
-        if (mongodbTargetBuilder_ == null) {
-          mongodbTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          mongodbTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public Builder mergeMongodbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget value) {
-        if (mongodbTargetBuilder_ == null) {
-          if (mongodbTarget_ != null) {
-            mongodbTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.newBuilder(mongodbTarget_).mergeFrom(value).buildPartial();
-          } else {
-            mongodbTarget_ = value;
-          }
-          onChanged();
-        } else {
-          mongodbTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public Builder clearMongodbTarget() {
-        if (mongodbTargetBuilder_ == null) {
-          mongodbTarget_ = null;
-          onChanged();
-        } else {
-          mongodbTarget_ = null;
-          mongodbTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder getMongodbTargetBuilder() {
-        
-        onChanged();
-        return getMongodbTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder() {
-        if (mongodbTargetBuilder_ != null) {
-          return mongodbTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return mongodbTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * mongodb target
-       * &#64;inject_tag: json:"mongodb_target"
-       * </pre>
-       *
-       * <code>.model.MongodbTarget mongodb_target = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder> 
-          getMongodbTargetFieldBuilder() {
-        if (mongodbTargetBuilder_ == null) {
-          mongodbTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder>(
-                  getMongodbTarget(),
-                  getParentForChildren(),
-                  isClean());
-          mongodbTarget_ = null;
-        }
-        return mongodbTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource elasticSearchSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder> elasticSearchSourceBuilder_;
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       * @return Whether the elasticSearchSource field is set.
-       */
-      public boolean hasElasticSearchSource() {
-        return elasticSearchSourceBuilder_ != null || elasticSearchSource_ != null;
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       * @return The elasticSearchSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource() {
-        if (elasticSearchSourceBuilder_ == null) {
-          return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
-        } else {
-          return elasticSearchSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public Builder setElasticSearchSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource value) {
-        if (elasticSearchSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          elasticSearchSource_ = value;
-          onChanged();
-        } else {
-          elasticSearchSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public Builder setElasticSearchSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder builderForValue) {
-        if (elasticSearchSourceBuilder_ == null) {
-          elasticSearchSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          elasticSearchSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public Builder mergeElasticSearchSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource value) {
-        if (elasticSearchSourceBuilder_ == null) {
-          if (elasticSearchSource_ != null) {
-            elasticSearchSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.newBuilder(elasticSearchSource_).mergeFrom(value).buildPartial();
-          } else {
-            elasticSearchSource_ = value;
-          }
-          onChanged();
-        } else {
-          elasticSearchSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public Builder clearElasticSearchSource() {
-        if (elasticSearchSourceBuilder_ == null) {
-          elasticSearchSource_ = null;
-          onChanged();
-        } else {
-          elasticSearchSource_ = null;
-          elasticSearchSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder getElasticSearchSourceBuilder() {
-        
-        onChanged();
-        return getElasticSearchSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
-        if (elasticSearchSourceBuilder_ != null) {
-          return elasticSearchSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return elasticSearchSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
-        }
-      }
-      /**
-       * <pre>
-       * elasticsearch source
-       * &#64;inject_tag: json:"elastic_search_source"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder> 
-          getElasticSearchSourceFieldBuilder() {
-        if (elasticSearchSourceBuilder_ == null) {
-          elasticSearchSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder>(
-                  getElasticSearchSource(),
-                  getParentForChildren(),
-                  isClean());
-          elasticSearchSource_ = null;
-        }
-        return elasticSearchSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget elasticSearchTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder> elasticSearchTargetBuilder_;
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       * @return Whether the elasticSearchTarget field is set.
-       */
-      public boolean hasElasticSearchTarget() {
-        return elasticSearchTargetBuilder_ != null || elasticSearchTarget_ != null;
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       * @return The elasticSearchTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget() {
-        if (elasticSearchTargetBuilder_ == null) {
-          return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
-        } else {
-          return elasticSearchTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public Builder setElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget value) {
-        if (elasticSearchTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          elasticSearchTarget_ = value;
-          onChanged();
-        } else {
-          elasticSearchTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public Builder setElasticSearchTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder builderForValue) {
-        if (elasticSearchTargetBuilder_ == null) {
-          elasticSearchTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          elasticSearchTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public Builder mergeElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget value) {
-        if (elasticSearchTargetBuilder_ == null) {
-          if (elasticSearchTarget_ != null) {
-            elasticSearchTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.newBuilder(elasticSearchTarget_).mergeFrom(value).buildPartial();
-          } else {
-            elasticSearchTarget_ = value;
-          }
-          onChanged();
-        } else {
-          elasticSearchTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public Builder clearElasticSearchTarget() {
-        if (elasticSearchTargetBuilder_ == null) {
-          elasticSearchTarget_ = null;
-          onChanged();
-        } else {
-          elasticSearchTarget_ = null;
-          elasticSearchTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder getElasticSearchTargetBuilder() {
-        
-        onChanged();
-        return getElasticSearchTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
-        if (elasticSearchTargetBuilder_ != null) {
-          return elasticSearchTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return elasticSearchTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * elasticsearch target
-       * &#64;inject_tag: json:"elastic_search_target"
-       * </pre>
-       *
-       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder> 
-          getElasticSearchTargetFieldBuilder() {
-        if (elasticSearchTargetBuilder_ == null) {
-          elasticSearchTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder>(
-                  getElasticSearchTarget(),
-                  getParentForChildren(),
-                  isClean());
-          elasticSearchTarget_ = null;
-        }
-        return elasticSearchTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource hdfsSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder> hdfsSourceBuilder_;
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       * @return Whether the hdfsSource field is set.
-       */
-      public boolean hasHdfsSource() {
-        return hdfsSourceBuilder_ != null || hdfsSource_ != null;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       * @return The hdfsSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource() {
-        if (hdfsSourceBuilder_ == null) {
-          return hdfsSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
-        } else {
-          return hdfsSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public Builder setHdfsSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource value) {
-        if (hdfsSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hdfsSource_ = value;
-          onChanged();
-        } else {
-          hdfsSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public Builder setHdfsSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder builderForValue) {
-        if (hdfsSourceBuilder_ == null) {
-          hdfsSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          hdfsSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public Builder mergeHdfsSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource value) {
-        if (hdfsSourceBuilder_ == null) {
-          if (hdfsSource_ != null) {
-            hdfsSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.newBuilder(hdfsSource_).mergeFrom(value).buildPartial();
-          } else {
-            hdfsSource_ = value;
-          }
-          onChanged();
-        } else {
-          hdfsSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public Builder clearHdfsSource() {
-        if (hdfsSourceBuilder_ == null) {
-          hdfsSource_ = null;
-          onChanged();
-        } else {
-          hdfsSource_ = null;
-          hdfsSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder getHdfsSourceBuilder() {
-        
-        onChanged();
-        return getHdfsSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder() {
-        if (hdfsSourceBuilder_ != null) {
-          return hdfsSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return hdfsSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
-        }
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_source"
-       * </pre>
-       *
-       * <code>.model.HdfsSource hdfs_source = 15;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder> 
-          getHdfsSourceFieldBuilder() {
-        if (hdfsSourceBuilder_ == null) {
-          hdfsSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder>(
-                  getHdfsSource(),
-                  getParentForChildren(),
-                  isClean());
-          hdfsSource_ = null;
-        }
-        return hdfsSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget hdfsTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder> hdfsTargetBuilder_;
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       * @return Whether the hdfsTarget field is set.
-       */
-      public boolean hasHdfsTarget() {
-        return hdfsTargetBuilder_ != null || hdfsTarget_ != null;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       * @return The hdfsTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget() {
-        if (hdfsTargetBuilder_ == null) {
-          return hdfsTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
-        } else {
-          return hdfsTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public Builder setHdfsTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget value) {
-        if (hdfsTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hdfsTarget_ = value;
-          onChanged();
-        } else {
-          hdfsTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public Builder setHdfsTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder builderForValue) {
-        if (hdfsTargetBuilder_ == null) {
-          hdfsTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          hdfsTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public Builder mergeHdfsTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget value) {
-        if (hdfsTargetBuilder_ == null) {
-          if (hdfsTarget_ != null) {
-            hdfsTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.newBuilder(hdfsTarget_).mergeFrom(value).buildPartial();
-          } else {
-            hdfsTarget_ = value;
-          }
-          onChanged();
-        } else {
-          hdfsTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public Builder clearHdfsTarget() {
-        if (hdfsTargetBuilder_ == null) {
-          hdfsTarget_ = null;
-          onChanged();
-        } else {
-          hdfsTarget_ = null;
-          hdfsTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder getHdfsTargetBuilder() {
-        
-        onChanged();
-        return getHdfsTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder() {
-        if (hdfsTargetBuilder_ != null) {
-          return hdfsTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return hdfsTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * hdfs source
-       * &#64;inject_tag: json:"hdfs_target"
-       * </pre>
-       *
-       * <code>.model.HdfsTarget hdfs_target = 16;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder> 
-          getHdfsTargetFieldBuilder() {
-        if (hdfsTargetBuilder_ == null) {
-          hdfsTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder>(
-                  getHdfsTarget(),
-                  getParentForChildren(),
-                  isClean());
-          hdfsTarget_ = null;
-        }
-        return hdfsTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource ftpSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder> ftpSourceBuilder_;
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       * @return Whether the ftpSource field is set.
-       */
-      public boolean hasFtpSource() {
-        return ftpSourceBuilder_ != null || ftpSource_ != null;
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       * @return The ftpSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource() {
-        if (ftpSourceBuilder_ == null) {
-          return ftpSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
-        } else {
-          return ftpSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public Builder setFtpSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource value) {
-        if (ftpSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ftpSource_ = value;
-          onChanged();
-        } else {
-          ftpSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public Builder setFtpSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder builderForValue) {
-        if (ftpSourceBuilder_ == null) {
-          ftpSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          ftpSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public Builder mergeFtpSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource value) {
-        if (ftpSourceBuilder_ == null) {
-          if (ftpSource_ != null) {
-            ftpSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.newBuilder(ftpSource_).mergeFrom(value).buildPartial();
-          } else {
-            ftpSource_ = value;
-          }
-          onChanged();
-        } else {
-          ftpSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public Builder clearFtpSource() {
-        if (ftpSourceBuilder_ == null) {
-          ftpSource_ = null;
-          onChanged();
-        } else {
-          ftpSource_ = null;
-          ftpSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder getFtpSourceBuilder() {
-        
-        onChanged();
-        return getFtpSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder() {
-        if (ftpSourceBuilder_ != null) {
-          return ftpSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return ftpSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
-        }
-      }
-      /**
-       * <pre>
-       * ftp source
-       * &#64;inject_tag: json:"ftp_source"
-       * </pre>
-       *
-       * <code>.model.FtpSource ftp_source = 17;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder> 
-          getFtpSourceFieldBuilder() {
-        if (ftpSourceBuilder_ == null) {
-          ftpSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder>(
-                  getFtpSource(),
-                  getParentForChildren(),
-                  isClean());
-          ftpSource_ = null;
-        }
-        return ftpSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget ftpTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder> ftpTargetBuilder_;
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       * @return Whether the ftpTarget field is set.
-       */
-      public boolean hasFtpTarget() {
-        return ftpTargetBuilder_ != null || ftpTarget_ != null;
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       * @return The ftpTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget() {
-        if (ftpTargetBuilder_ == null) {
-          return ftpTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
-        } else {
-          return ftpTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public Builder setFtpTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget value) {
-        if (ftpTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ftpTarget_ = value;
-          onChanged();
-        } else {
-          ftpTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public Builder setFtpTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder builderForValue) {
-        if (ftpTargetBuilder_ == null) {
-          ftpTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          ftpTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public Builder mergeFtpTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget value) {
-        if (ftpTargetBuilder_ == null) {
-          if (ftpTarget_ != null) {
-            ftpTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.newBuilder(ftpTarget_).mergeFrom(value).buildPartial();
-          } else {
-            ftpTarget_ = value;
-          }
-          onChanged();
-        } else {
-          ftpTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public Builder clearFtpTarget() {
-        if (ftpTargetBuilder_ == null) {
-          ftpTarget_ = null;
-          onChanged();
-        } else {
-          ftpTarget_ = null;
-          ftpTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder getFtpTargetBuilder() {
-        
-        onChanged();
-        return getFtpTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder() {
-        if (ftpTargetBuilder_ != null) {
-          return ftpTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return ftpTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * ftp target
-       * &#64;inject_tag: json:"ftp_target"
-       * </pre>
-       *
-       * <code>.model.FtpTarget ftp_target = 18;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder> 
-          getFtpTargetFieldBuilder() {
-        if (ftpTargetBuilder_ == null) {
-          ftpTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder>(
-                  getFtpTarget(),
-                  getParentForChildren(),
-                  isClean());
-          ftpTarget_ = null;
-        }
-        return ftpTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource hbaseSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder> hbaseSourceBuilder_;
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       * @return Whether the hbaseSource field is set.
-       */
-      public boolean hasHbaseSource() {
-        return hbaseSourceBuilder_ != null || hbaseSource_ != null;
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       * @return The hbaseSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource() {
-        if (hbaseSourceBuilder_ == null) {
-          return hbaseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
-        } else {
-          return hbaseSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public Builder setHbaseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource value) {
-        if (hbaseSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hbaseSource_ = value;
-          onChanged();
-        } else {
-          hbaseSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public Builder setHbaseSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder builderForValue) {
-        if (hbaseSourceBuilder_ == null) {
-          hbaseSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          hbaseSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public Builder mergeHbaseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource value) {
-        if (hbaseSourceBuilder_ == null) {
-          if (hbaseSource_ != null) {
-            hbaseSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.newBuilder(hbaseSource_).mergeFrom(value).buildPartial();
-          } else {
-            hbaseSource_ = value;
-          }
-          onChanged();
-        } else {
-          hbaseSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public Builder clearHbaseSource() {
-        if (hbaseSourceBuilder_ == null) {
-          hbaseSource_ = null;
-          onChanged();
-        } else {
-          hbaseSource_ = null;
-          hbaseSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder getHbaseSourceBuilder() {
-        
-        onChanged();
-        return getHbaseSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder() {
-        if (hbaseSourceBuilder_ != null) {
-          return hbaseSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return hbaseSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
-        }
-      }
-      /**
-       * <pre>
-       * hbase source
-       * &#64;inject_tag: json:"hbase_source"
-       * </pre>
-       *
-       * <code>.model.HbaseSource hbase_source = 19;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder> 
-          getHbaseSourceFieldBuilder() {
-        if (hbaseSourceBuilder_ == null) {
-          hbaseSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder>(
-                  getHbaseSource(),
-                  getParentForChildren(),
-                  isClean());
-          hbaseSource_ = null;
-        }
-        return hbaseSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget hbaseTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder> hbaseTargetBuilder_;
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       * @return Whether the hbaseTarget field is set.
-       */
-      public boolean hasHbaseTarget() {
-        return hbaseTargetBuilder_ != null || hbaseTarget_ != null;
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       * @return The hbaseTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget() {
-        if (hbaseTargetBuilder_ == null) {
-          return hbaseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
-        } else {
-          return hbaseTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public Builder setHbaseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget value) {
-        if (hbaseTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hbaseTarget_ = value;
-          onChanged();
-        } else {
-          hbaseTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public Builder setHbaseTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder builderForValue) {
-        if (hbaseTargetBuilder_ == null) {
-          hbaseTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          hbaseTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public Builder mergeHbaseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget value) {
-        if (hbaseTargetBuilder_ == null) {
-          if (hbaseTarget_ != null) {
-            hbaseTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.newBuilder(hbaseTarget_).mergeFrom(value).buildPartial();
-          } else {
-            hbaseTarget_ = value;
-          }
-          onChanged();
-        } else {
-          hbaseTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public Builder clearHbaseTarget() {
-        if (hbaseTargetBuilder_ == null) {
-          hbaseTarget_ = null;
-          onChanged();
-        } else {
-          hbaseTarget_ = null;
-          hbaseTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder getHbaseTargetBuilder() {
-        
-        onChanged();
-        return getHbaseTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder() {
-        if (hbaseTargetBuilder_ != null) {
-          return hbaseTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return hbaseTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * hbase target
-       * &#64;inject_tag: json:"hbase_target"
-       * </pre>
-       *
-       * <code>.model.HbaseTarget hbase_target = 20;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder> 
-          getHbaseTargetFieldBuilder() {
-        if (hbaseTargetBuilder_ == null) {
-          hbaseTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder>(
-                  getHbaseTarget(),
-                  getParentForChildren(),
-                  isClean());
-          hbaseTarget_ = null;
-        }
-        return hbaseTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource kafkaSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder> kafkaSourceBuilder_;
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       * @return Whether the kafkaSource field is set.
-       */
-      public boolean hasKafkaSource() {
-        return kafkaSourceBuilder_ != null || kafkaSource_ != null;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       * @return The kafkaSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource() {
-        if (kafkaSourceBuilder_ == null) {
-          return kafkaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
-        } else {
-          return kafkaSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public Builder setKafkaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource value) {
-        if (kafkaSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          kafkaSource_ = value;
-          onChanged();
-        } else {
-          kafkaSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public Builder setKafkaSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder builderForValue) {
-        if (kafkaSourceBuilder_ == null) {
-          kafkaSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          kafkaSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public Builder mergeKafkaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource value) {
-        if (kafkaSourceBuilder_ == null) {
-          if (kafkaSource_ != null) {
-            kafkaSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.newBuilder(kafkaSource_).mergeFrom(value).buildPartial();
-          } else {
-            kafkaSource_ = value;
-          }
-          onChanged();
-        } else {
-          kafkaSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public Builder clearKafkaSource() {
-        if (kafkaSourceBuilder_ == null) {
-          kafkaSource_ = null;
-          onChanged();
-        } else {
-          kafkaSource_ = null;
-          kafkaSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder getKafkaSourceBuilder() {
-        
-        onChanged();
-        return getKafkaSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder() {
-        if (kafkaSourceBuilder_ != null) {
-          return kafkaSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return kafkaSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
-        }
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_source"
-       * </pre>
-       *
-       * <code>.model.KafkaSource kafka_source = 21;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder> 
-          getKafkaSourceFieldBuilder() {
-        if (kafkaSourceBuilder_ == null) {
-          kafkaSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder>(
-                  getKafkaSource(),
-                  getParentForChildren(),
-                  isClean());
-          kafkaSource_ = null;
-        }
-        return kafkaSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget kafkaTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder> kafkaTargetBuilder_;
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       * @return Whether the kafkaTarget field is set.
-       */
-      public boolean hasKafkaTarget() {
-        return kafkaTargetBuilder_ != null || kafkaTarget_ != null;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       * @return The kafkaTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget() {
-        if (kafkaTargetBuilder_ == null) {
-          return kafkaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
-        } else {
-          return kafkaTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public Builder setKafkaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget value) {
-        if (kafkaTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          kafkaTarget_ = value;
-          onChanged();
-        } else {
-          kafkaTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public Builder setKafkaTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder builderForValue) {
-        if (kafkaTargetBuilder_ == null) {
-          kafkaTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          kafkaTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public Builder mergeKafkaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget value) {
-        if (kafkaTargetBuilder_ == null) {
-          if (kafkaTarget_ != null) {
-            kafkaTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.newBuilder(kafkaTarget_).mergeFrom(value).buildPartial();
-          } else {
-            kafkaTarget_ = value;
-          }
-          onChanged();
-        } else {
-          kafkaTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public Builder clearKafkaTarget() {
-        if (kafkaTargetBuilder_ == null) {
-          kafkaTarget_ = null;
-          onChanged();
-        } else {
-          kafkaTarget_ = null;
-          kafkaTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder getKafkaTargetBuilder() {
-        
-        onChanged();
-        return getKafkaTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder() {
-        if (kafkaTargetBuilder_ != null) {
-          return kafkaTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return kafkaTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * kafka target
-       * &#64;inject_tag: json:"kafka_target"
-       * </pre>
-       *
-       * <code>.model.KafkaTarget kafka_target = 22;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder> 
-          getKafkaTargetFieldBuilder() {
-        if (kafkaTargetBuilder_ == null) {
-          kafkaTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder>(
-                  getKafkaTarget(),
-                  getParentForChildren(),
-                  isClean());
-          kafkaTarget_ = null;
-        }
-        return kafkaTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource binlogSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder> binlogSourceBuilder_;
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       * @return Whether the binlogSource field is set.
-       */
-      public boolean hasBinlogSource() {
-        return binlogSourceBuilder_ != null || binlogSource_ != null;
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       * @return The binlogSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource() {
-        if (binlogSourceBuilder_ == null) {
-          return binlogSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
-        } else {
-          return binlogSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public Builder setBinlogSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource value) {
-        if (binlogSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          binlogSource_ = value;
-          onChanged();
-        } else {
-          binlogSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public Builder setBinlogSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder builderForValue) {
-        if (binlogSourceBuilder_ == null) {
-          binlogSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          binlogSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public Builder mergeBinlogSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource value) {
-        if (binlogSourceBuilder_ == null) {
-          if (binlogSource_ != null) {
-            binlogSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.newBuilder(binlogSource_).mergeFrom(value).buildPartial();
-          } else {
-            binlogSource_ = value;
-          }
-          onChanged();
-        } else {
-          binlogSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public Builder clearBinlogSource() {
-        if (binlogSourceBuilder_ == null) {
-          binlogSource_ = null;
-          onChanged();
-        } else {
-          binlogSource_ = null;
-          binlogSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder getBinlogSourceBuilder() {
-        
-        onChanged();
-        return getBinlogSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder() {
-        if (binlogSourceBuilder_ != null) {
-          return binlogSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return binlogSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
-        }
-      }
-      /**
-       * <pre>
-       * binlog source
-       * &#64;inject_tag: json:"binlog_source"
-       * </pre>
-       *
-       * <code>.model.BinlogSource binlog_source = 23;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder> 
-          getBinlogSourceFieldBuilder() {
-        if (binlogSourceBuilder_ == null) {
-          binlogSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder>(
-                  getBinlogSource(),
-                  getParentForChildren(),
-                  isClean());
-          binlogSource_ = null;
-        }
-        return binlogSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource pgWalSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder> pgWalSourceBuilder_;
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       * @return Whether the pgWalSource field is set.
-       */
-      public boolean hasPgWalSource() {
-        return pgWalSourceBuilder_ != null || pgWalSource_ != null;
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       * @return The pgWalSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource() {
-        if (pgWalSourceBuilder_ == null) {
-          return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
-        } else {
-          return pgWalSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public Builder setPgWalSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource value) {
-        if (pgWalSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          pgWalSource_ = value;
-          onChanged();
-        } else {
-          pgWalSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public Builder setPgWalSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder builderForValue) {
-        if (pgWalSourceBuilder_ == null) {
-          pgWalSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          pgWalSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public Builder mergePgWalSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource value) {
-        if (pgWalSourceBuilder_ == null) {
-          if (pgWalSource_ != null) {
-            pgWalSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.newBuilder(pgWalSource_).mergeFrom(value).buildPartial();
-          } else {
-            pgWalSource_ = value;
-          }
-          onChanged();
-        } else {
-          pgWalSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public Builder clearPgWalSource() {
-        if (pgWalSourceBuilder_ == null) {
-          pgWalSource_ = null;
-          onChanged();
-        } else {
-          pgWalSource_ = null;
-          pgWalSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder getPgWalSourceBuilder() {
-        
-        onChanged();
-        return getPgWalSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
-        if (pgWalSourceBuilder_ != null) {
-          return pgWalSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return pgWalSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
-        }
-      }
-      /**
-       * <pre>
-       * pgwal source
-       * &#64;inject_tag: json:"pgwal_source"
-       * </pre>
-       *
-       * <code>.model.PgWalSource pg_wal_source = 24;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder> 
-          getPgWalSourceFieldBuilder() {
-        if (pgWalSourceBuilder_ == null) {
-          pgWalSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder>(
-                  getPgWalSource(),
-                  getParentForChildren(),
-                  isClean());
-          pgWalSource_ = null;
-        }
-        return pgWalSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource sqlServerCdcSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder> sqlServerCdcSourceBuilder_;
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       * @return Whether the sqlServerCdcSource field is set.
-       */
-      public boolean hasSqlServerCdcSource() {
-        return sqlServerCdcSourceBuilder_ != null || sqlServerCdcSource_ != null;
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       * @return The sqlServerCdcSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource() {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          return sqlServerCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
-        } else {
-          return sqlServerCdcSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public Builder setSqlServerCdcSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource value) {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sqlServerCdcSource_ = value;
-          onChanged();
-        } else {
-          sqlServerCdcSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public Builder setSqlServerCdcSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder builderForValue) {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          sqlServerCdcSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          sqlServerCdcSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public Builder mergeSqlServerCdcSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource value) {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          if (sqlServerCdcSource_ != null) {
-            sqlServerCdcSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.newBuilder(sqlServerCdcSource_).mergeFrom(value).buildPartial();
-          } else {
-            sqlServerCdcSource_ = value;
-          }
-          onChanged();
-        } else {
-          sqlServerCdcSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public Builder clearSqlServerCdcSource() {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          sqlServerCdcSource_ = null;
-          onChanged();
-        } else {
-          sqlServerCdcSource_ = null;
-          sqlServerCdcSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder getSqlServerCdcSourceBuilder() {
-        
-        onChanged();
-        return getSqlServerCdcSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder() {
-        if (sqlServerCdcSourceBuilder_ != null) {
-          return sqlServerCdcSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return sqlServerCdcSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
-        }
-      }
-      /**
-       * <pre>
-       * sqlserver cdc source
-       * &#64;inject_tag: json:"sql_server_cdc_source"
-       * </pre>
-       *
-       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 25;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder> 
-          getSqlServerCdcSourceFieldBuilder() {
-        if (sqlServerCdcSourceBuilder_ == null) {
-          sqlServerCdcSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder>(
-                  getSqlServerCdcSource(),
-                  getParentForChildren(),
-                  isClean());
-          sqlServerCdcSource_ = null;
-        }
-        return sqlServerCdcSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource logMinerSource_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder> logMinerSourceBuilder_;
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       * @return Whether the logMinerSource field is set.
-       */
-      public boolean hasLogMinerSource() {
-        return logMinerSourceBuilder_ != null || logMinerSource_ != null;
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       * @return The logMinerSource.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource() {
-        if (logMinerSourceBuilder_ == null) {
-          return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
-        } else {
-          return logMinerSourceBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public Builder setLogMinerSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource value) {
-        if (logMinerSourceBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          logMinerSource_ = value;
-          onChanged();
-        } else {
-          logMinerSourceBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public Builder setLogMinerSource(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder builderForValue) {
-        if (logMinerSourceBuilder_ == null) {
-          logMinerSource_ = builderForValue.build();
-          onChanged();
-        } else {
-          logMinerSourceBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public Builder mergeLogMinerSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource value) {
-        if (logMinerSourceBuilder_ == null) {
-          if (logMinerSource_ != null) {
-            logMinerSource_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.newBuilder(logMinerSource_).mergeFrom(value).buildPartial();
-          } else {
-            logMinerSource_ = value;
-          }
-          onChanged();
-        } else {
-          logMinerSourceBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public Builder clearLogMinerSource() {
-        if (logMinerSourceBuilder_ == null) {
-          logMinerSource_ = null;
-          onChanged();
-        } else {
-          logMinerSource_ = null;
-          logMinerSourceBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder getLogMinerSourceBuilder() {
-        
-        onChanged();
-        return getLogMinerSourceFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
-        if (logMinerSourceBuilder_ != null) {
-          return logMinerSourceBuilder_.getMessageOrBuilder();
-        } else {
-          return logMinerSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
-        }
-      }
-      /**
-       * <pre>
-       * logminer source
-       * &#64;inject_tag: json:"logminer_source"
-       * </pre>
-       *
-       * <code>.model.LogMinerSource log_miner_source = 26;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder> 
-          getLogMinerSourceFieldBuilder() {
-        if (logMinerSourceBuilder_ == null) {
-          logMinerSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder>(
-                  getLogMinerSource(),
-                  getParentForChildren(),
-                  isClean());
-          logMinerSource_ = null;
-        }
-        return logMinerSourceBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget redisTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder> redisTargetBuilder_;
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       * @return Whether the redisTarget field is set.
-       */
-      public boolean hasRedisTarget() {
-        return redisTargetBuilder_ != null || redisTarget_ != null;
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       * @return The redisTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget() {
-        if (redisTargetBuilder_ == null) {
-          return redisTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
-        } else {
-          return redisTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public Builder setRedisTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget value) {
-        if (redisTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          redisTarget_ = value;
-          onChanged();
-        } else {
-          redisTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public Builder setRedisTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder builderForValue) {
-        if (redisTargetBuilder_ == null) {
-          redisTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          redisTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public Builder mergeRedisTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget value) {
-        if (redisTargetBuilder_ == null) {
-          if (redisTarget_ != null) {
-            redisTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.newBuilder(redisTarget_).mergeFrom(value).buildPartial();
-          } else {
-            redisTarget_ = value;
-          }
-          onChanged();
-        } else {
-          redisTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public Builder clearRedisTarget() {
-        if (redisTargetBuilder_ == null) {
-          redisTarget_ = null;
-          onChanged();
-        } else {
-          redisTarget_ = null;
-          redisTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder getRedisTargetBuilder() {
-        
-        onChanged();
-        return getRedisTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder() {
-        if (redisTargetBuilder_ != null) {
-          return redisTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return redisTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * redis target
-       * &#64;inject_tag: json:"redis_target"
-       * </pre>
-       *
-       * <code>.model.RedisTarget redis_target = 27;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder> 
-          getRedisTargetFieldBuilder() {
-        if (redisTargetBuilder_ == null) {
-          redisTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder>(
-                  getRedisTarget(),
-                  getParentForChildren(),
-                  isClean());
-          redisTarget_ = null;
-        }
-        return redisTargetBuilder_;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget hiveTarget_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder> hiveTargetBuilder_;
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       * @return Whether the hiveTarget field is set.
-       */
-      public boolean hasHiveTarget() {
-        return hiveTargetBuilder_ != null || hiveTarget_ != null;
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       * @return The hiveTarget.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget() {
-        if (hiveTargetBuilder_ == null) {
-          return hiveTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
-        } else {
-          return hiveTargetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public Builder setHiveTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget value) {
-        if (hiveTargetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hiveTarget_ = value;
-          onChanged();
-        } else {
-          hiveTargetBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public Builder setHiveTarget(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder builderForValue) {
-        if (hiveTargetBuilder_ == null) {
-          hiveTarget_ = builderForValue.build();
-          onChanged();
-        } else {
-          hiveTargetBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public Builder mergeHiveTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget value) {
-        if (hiveTargetBuilder_ == null) {
-          if (hiveTarget_ != null) {
-            hiveTarget_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.newBuilder(hiveTarget_).mergeFrom(value).buildPartial();
-          } else {
-            hiveTarget_ = value;
-          }
-          onChanged();
-        } else {
-          hiveTargetBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public Builder clearHiveTarget() {
-        if (hiveTargetBuilder_ == null) {
-          hiveTarget_ = null;
-          onChanged();
-        } else {
-          hiveTarget_ = null;
-          hiveTargetBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder getHiveTargetBuilder() {
-        
-        onChanged();
-        return getHiveTargetFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder() {
-        if (hiveTargetBuilder_ != null) {
-          return hiveTargetBuilder_.getMessageOrBuilder();
-        } else {
-          return hiveTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
-        }
-      }
-      /**
-       * <pre>
-       * hive target
-       * &#64;inject_tag: json:"hive_target"
-       * </pre>
-       *
-       * <code>.model.HiveTarget hive_target = 28;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder> 
-          getHiveTargetFieldBuilder() {
-        if (hiveTargetBuilder_ == null) {
-          hiveTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder>(
-                  getHiveTarget(),
-                  getParentForChildren(),
-                  isClean());
-          hiveTarget_ = null;
-        }
-        return hiveTargetBuilder_;
+        return syncResourceBuilder_;
       }
 
       private java.lang.Object clusterId_ = "";
@@ -12000,7 +6213,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 6;</code>
        * @return The clusterId.
        */
       public java.lang.String getClusterId() {
@@ -12021,7 +6234,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 6;</code>
        * @return The bytes for clusterId.
        */
       public com.google.protobuf.ByteString
@@ -12043,7 +6256,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 6;</code>
        * @param value The clusterId to set.
        * @return This builder for chaining.
        */
@@ -12063,7 +6276,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearClusterId() {
@@ -12078,7 +6291,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
-       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * <code>string cluster_id = 6;</code>
        * @param value The bytes for clusterId to set.
        * @return This builder for chaining.
        */
@@ -12092,6 +6305,170 @@ public final class PBSyncManageSyncJob {
         clusterId_ = value;
         onChanged();
         return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl channelControl_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder> channelControlBuilder_;
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       * @return Whether the channelControl field is set.
+       */
+      public boolean hasChannelControl() {
+        return channelControlBuilder_ != null || channelControl_ != null;
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       * @return The channelControl.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getChannelControl() {
+        if (channelControlBuilder_ == null) {
+          return channelControl_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDefaultInstance() : channelControl_;
+        } else {
+          return channelControlBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public Builder setChannelControl(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl value) {
+        if (channelControlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          channelControl_ = value;
+          onChanged();
+        } else {
+          channelControlBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public Builder setChannelControl(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder builderForValue) {
+        if (channelControlBuilder_ == null) {
+          channelControl_ = builderForValue.build();
+          onChanged();
+        } else {
+          channelControlBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public Builder mergeChannelControl(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl value) {
+        if (channelControlBuilder_ == null) {
+          if (channelControl_ != null) {
+            channelControl_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.newBuilder(channelControl_).mergeFrom(value).buildPartial();
+          } else {
+            channelControl_ = value;
+          }
+          onChanged();
+        } else {
+          channelControlBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public Builder clearChannelControl() {
+        if (channelControlBuilder_ == null) {
+          channelControl_ = null;
+          onChanged();
+        } else {
+          channelControl_ = null;
+          channelControlBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder getChannelControlBuilder() {
+        
+        onChanged();
+        return getChannelControlFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder getChannelControlOrBuilder() {
+        if (channelControlBuilder_ != null) {
+          return channelControlBuilder_.getMessageOrBuilder();
+        } else {
+          return channelControl_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDefaultInstance() : channelControl_;
+        }
+      }
+      /**
+       * <pre>
+       * The channel control. Is required.
+       * &#64;inject_tag: json:"channel_control"
+       * </pre>
+       *
+       * <code>.model.ChannelControl channel_control = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder> 
+          getChannelControlFieldBuilder() {
+        if (channelControlBuilder_ == null) {
+          channelControlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder>(
+                  getChannelControl(),
+                  getParentForChildren(),
+                  isClean());
+          channelControl_ = null;
+        }
+        return channelControlBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12141,6 +6518,10494 @@ public final class PBSyncManageSyncJob {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChannelControlOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.ChannelControl)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The job name in each workspace is unique. Is required, Max Length 128.
+     * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>int32 parallelism = 1 [(.defaults.field) = { ... }</code>
+     * @return The parallelism.
+     */
+    int getParallelism();
+
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"record_num"
+     * </pre>
+     *
+     * <code>string record_num = 2;</code>
+     * @return The recordNum.
+     */
+    java.lang.String getRecordNum();
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"record_num"
+     * </pre>
+     *
+     * <code>string record_num = 2;</code>
+     * @return The bytes for recordNum.
+     */
+    com.google.protobuf.ByteString
+        getRecordNumBytes();
+
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>double percentage = 3 [(.defaults.field) = { ... }</code>
+     * @return The percentage.
+     */
+    double getPercentage();
+
+    /**
+     * <pre>
+     * sync rate
+     * &#64;inject_tag:  json:"rate"
+     * </pre>
+     *
+     * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+     * @return The enum numeric value on the wire for rate.
+     */
+    int getRateValue();
+    /**
+     * <pre>
+     * sync rate
+     * &#64;inject_tag:  json:"rate"
+     * </pre>
+     *
+     * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+     * @return The rate.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy getRate();
+
+    /**
+     * <pre>
+     * bytes
+     * &#64;inject_tag: json:"bytes"
+     * </pre>
+     *
+     * <code>int32 bytes = 5 [(.defaults.field) = { ... }</code>
+     * @return The bytes.
+     */
+    int getBytes();
+  }
+  /**
+   * Protobuf type {@code model.ChannelControl}
+   */
+  public static final class ChannelControl extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.ChannelControl)
+      ChannelControlOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChannelControl.newBuilder() to construct.
+    private ChannelControl(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChannelControl() {
+      recordNum_ = "";
+      rate_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChannelControl();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChannelControl(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              parallelism_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              recordNum_ = s;
+              break;
+            }
+            case 25: {
+
+              percentage_ = input.readDouble();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              rate_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              bytes_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_ChannelControl_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_ChannelControl_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.ChannelControl.RatePolicy}
+     */
+    public enum RatePolicy
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>RatePolicyUnset = 0;</code>
+       */
+      RatePolicyUnset(0),
+      /**
+       * <code>Limit = 1;</code>
+       */
+      Limit(1),
+      /**
+       * <code>UnLimit = 2;</code>
+       */
+      UnLimit(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>RatePolicyUnset = 0;</code>
+       */
+      public static final int RatePolicyUnset_VALUE = 0;
+      /**
+       * <code>Limit = 1;</code>
+       */
+      public static final int Limit_VALUE = 1;
+      /**
+       * <code>UnLimit = 2;</code>
+       */
+      public static final int UnLimit_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RatePolicy valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RatePolicy forNumber(int value) {
+        switch (value) {
+          case 0: return RatePolicyUnset;
+          case 1: return Limit;
+          case 2: return UnLimit;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RatePolicy>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          RatePolicy> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RatePolicy>() {
+              public RatePolicy findValueByNumber(int number) {
+                return RatePolicy.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final RatePolicy[] VALUES = values();
+
+      public static RatePolicy valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RatePolicy(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.ChannelControl.RatePolicy)
+    }
+
+    public static final int PARALLELISM_FIELD_NUMBER = 1;
+    private int parallelism_;
+    /**
+     * <pre>
+     * The job name in each workspace is unique. Is required, Max Length 128.
+     * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>int32 parallelism = 1 [(.defaults.field) = { ... }</code>
+     * @return The parallelism.
+     */
+    @java.lang.Override
+    public int getParallelism() {
+      return parallelism_;
+    }
+
+    public static final int RECORD_NUM_FIELD_NUMBER = 2;
+    private volatile java.lang.Object recordNum_;
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"record_num"
+     * </pre>
+     *
+     * <code>string record_num = 2;</code>
+     * @return The recordNum.
+     */
+    @java.lang.Override
+    public java.lang.String getRecordNum() {
+      java.lang.Object ref = recordNum_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        recordNum_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"record_num"
+     * </pre>
+     *
+     * <code>string record_num = 2;</code>
+     * @return The bytes for recordNum.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRecordNumBytes() {
+      java.lang.Object ref = recordNum_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        recordNum_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PERCENTAGE_FIELD_NUMBER = 3;
+    private double percentage_;
+    /**
+     * <pre>
+     * Description of the job, Not required, Max length 1024.
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>double percentage = 3 [(.defaults.field) = { ... }</code>
+     * @return The percentage.
+     */
+    @java.lang.Override
+    public double getPercentage() {
+      return percentage_;
+    }
+
+    public static final int RATE_FIELD_NUMBER = 4;
+    private int rate_;
+    /**
+     * <pre>
+     * sync rate
+     * &#64;inject_tag:  json:"rate"
+     * </pre>
+     *
+     * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+     * @return The enum numeric value on the wire for rate.
+     */
+    @java.lang.Override public int getRateValue() {
+      return rate_;
+    }
+    /**
+     * <pre>
+     * sync rate
+     * &#64;inject_tag:  json:"rate"
+     * </pre>
+     *
+     * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+     * @return The rate.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy getRate() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.valueOf(rate_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.UNRECOGNIZED : result;
+    }
+
+    public static final int BYTES_FIELD_NUMBER = 5;
+    private int bytes_;
+    /**
+     * <pre>
+     * bytes
+     * &#64;inject_tag: json:"bytes"
+     * </pre>
+     *
+     * <code>int32 bytes = 5 [(.defaults.field) = { ... }</code>
+     * @return The bytes.
+     */
+    @java.lang.Override
+    public int getBytes() {
+      return bytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (parallelism_ != 0) {
+        output.writeInt32(1, parallelism_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recordNum_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, recordNum_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(percentage_) != 0) {
+        output.writeDouble(3, percentage_);
+      }
+      if (rate_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.RatePolicyUnset.getNumber()) {
+        output.writeEnum(4, rate_);
+      }
+      if (bytes_ != 0) {
+        output.writeInt32(5, bytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (parallelism_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, parallelism_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recordNum_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, recordNum_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(percentage_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, percentage_);
+      }
+      if (rate_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.RatePolicyUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, rate_);
+      }
+      if (bytes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, bytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl) obj;
+
+      if (getParallelism()
+          != other.getParallelism()) return false;
+      if (!getRecordNum()
+          .equals(other.getRecordNum())) return false;
+      if (java.lang.Double.doubleToLongBits(getPercentage())
+          != java.lang.Double.doubleToLongBits(
+              other.getPercentage())) return false;
+      if (rate_ != other.rate_) return false;
+      if (getBytes()
+          != other.getBytes()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
+      hash = (53 * hash) + getParallelism();
+      hash = (37 * hash) + RECORD_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getRecordNum().hashCode();
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPercentage()));
+      hash = (37 * hash) + RATE_FIELD_NUMBER;
+      hash = (53 * hash) + rate_;
+      hash = (37 * hash) + BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getBytes();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.ChannelControl}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.ChannelControl)
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControlOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_ChannelControl_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_ChannelControl_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        parallelism_ = 0;
+
+        recordNum_ = "";
+
+        percentage_ = 0D;
+
+        rate_ = 0;
+
+        bytes_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_ChannelControl_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl build() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl(this);
+        result.parallelism_ = parallelism_;
+        result.recordNum_ = recordNum_;
+        result.percentage_ = percentage_;
+        result.rate_ = rate_;
+        result.bytes_ = bytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.getDefaultInstance()) return this;
+        if (other.getParallelism() != 0) {
+          setParallelism(other.getParallelism());
+        }
+        if (!other.getRecordNum().isEmpty()) {
+          recordNum_ = other.recordNum_;
+          onChanged();
+        }
+        if (other.getPercentage() != 0D) {
+          setPercentage(other.getPercentage());
+        }
+        if (other.rate_ != 0) {
+          setRateValue(other.getRateValue());
+        }
+        if (other.getBytes() != 0) {
+          setBytes(other.getBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int parallelism_ ;
+      /**
+       * <pre>
+       * The job name in each workspace is unique. Is required, Max Length 128.
+       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>int32 parallelism = 1 [(.defaults.field) = { ... }</code>
+       * @return The parallelism.
+       */
+      @java.lang.Override
+      public int getParallelism() {
+        return parallelism_;
+      }
+      /**
+       * <pre>
+       * The job name in each workspace is unique. Is required, Max Length 128.
+       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>int32 parallelism = 1 [(.defaults.field) = { ... }</code>
+       * @param value The parallelism to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParallelism(int value) {
+        
+        parallelism_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job name in each workspace is unique. Is required, Max Length 128.
+       * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>int32 parallelism = 1 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParallelism() {
+        
+        parallelism_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object recordNum_ = "";
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"record_num"
+       * </pre>
+       *
+       * <code>string record_num = 2;</code>
+       * @return The recordNum.
+       */
+      public java.lang.String getRecordNum() {
+        java.lang.Object ref = recordNum_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          recordNum_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"record_num"
+       * </pre>
+       *
+       * <code>string record_num = 2;</code>
+       * @return The bytes for recordNum.
+       */
+      public com.google.protobuf.ByteString
+          getRecordNumBytes() {
+        java.lang.Object ref = recordNum_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          recordNum_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"record_num"
+       * </pre>
+       *
+       * <code>string record_num = 2;</code>
+       * @param value The recordNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordNum(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        recordNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"record_num"
+       * </pre>
+       *
+       * <code>string record_num = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordNum() {
+        
+        recordNum_ = getDefaultInstance().getRecordNum();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"record_num"
+       * </pre>
+       *
+       * <code>string record_num = 2;</code>
+       * @param value The bytes for recordNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordNumBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        recordNum_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double percentage_ ;
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>double percentage = 3 [(.defaults.field) = { ... }</code>
+       * @return The percentage.
+       */
+      @java.lang.Override
+      public double getPercentage() {
+        return percentage_;
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>double percentage = 3 [(.defaults.field) = { ... }</code>
+       * @param value The percentage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPercentage(double value) {
+        
+        percentage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Description of the job, Not required, Max length 1024.
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>double percentage = 3 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPercentage() {
+        
+        percentage_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int rate_ = 0;
+      /**
+       * <pre>
+       * sync rate
+       * &#64;inject_tag:  json:"rate"
+       * </pre>
+       *
+       * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+       * @return The enum numeric value on the wire for rate.
+       */
+      @java.lang.Override public int getRateValue() {
+        return rate_;
+      }
+      /**
+       * <pre>
+       * sync rate
+       * &#64;inject_tag:  json:"rate"
+       * </pre>
+       *
+       * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for rate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRateValue(int value) {
+        
+        rate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sync rate
+       * &#64;inject_tag:  json:"rate"
+       * </pre>
+       *
+       * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+       * @return The rate.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy getRate() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.valueOf(rate_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * sync rate
+       * &#64;inject_tag:  json:"rate"
+       * </pre>
+       *
+       * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+       * @param value The rate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRate(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        rate_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sync rate
+       * &#64;inject_tag:  json:"rate"
+       * </pre>
+       *
+       * <code>.model.ChannelControl.RatePolicy rate = 4 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRate() {
+        
+        rate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bytes_ ;
+      /**
+       * <pre>
+       * bytes
+       * &#64;inject_tag: json:"bytes"
+       * </pre>
+       *
+       * <code>int32 bytes = 5 [(.defaults.field) = { ... }</code>
+       * @return The bytes.
+       */
+      @java.lang.Override
+      public int getBytes() {
+        return bytes_;
+      }
+      /**
+       * <pre>
+       * bytes
+       * &#64;inject_tag: json:"bytes"
+       * </pre>
+       *
+       * <code>int32 bytes = 5 [(.defaults.field) = { ... }</code>
+       * @param value The bytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBytes(int value) {
+        
+        bytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * bytes
+       * &#64;inject_tag: json:"bytes"
+       * </pre>
+       *
+       * <code>int32 bytes = 5 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBytes() {
+        
+        bytes_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.ChannelControl)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.ChannelControl)
+    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChannelControl>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelControl>() {
+      @java.lang.Override
+      public ChannelControl parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChannelControl(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChannelControl> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelControl> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SyncResourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.SyncResource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     * @return Whether the mysqlSource field is set.
+     */
+    boolean hasMysqlSource();
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     * @return The mysqlSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getMysqlSource();
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getMysqlSourceOrBuilder();
+
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     * @return Whether the mysqlTarget field is set.
+     */
+    boolean hasMysqlTarget();
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     * @return The mysqlTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getMysqlTarget();
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getMysqlTargetOrBuilder();
+
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     * @return Whether the oracleSource field is set.
+     */
+    boolean hasOracleSource();
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     * @return The oracleSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getOracleSource();
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getOracleSourceOrBuilder();
+
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     * @return Whether the oracleTarget field is set.
+     */
+    boolean hasOracleTarget();
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     * @return The oracleTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getOracleTarget();
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getOracleTargetOrBuilder();
+
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     * @return Whether the db2Source field is set.
+     */
+    boolean hasDb2Source();
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     * @return The db2Source.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getDb2Source();
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getDb2SourceOrBuilder();
+
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     * @return Whether the db2Target field is set.
+     */
+    boolean hasDb2Target();
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     * @return The db2Target.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getDb2Target();
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getDb2TargetOrBuilder();
+
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     * @return Whether the postgresqlSource field is set.
+     */
+    boolean hasPostgresqlSource();
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     * @return The postgresqlSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getPostgresqlSource();
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getPostgresqlSourceOrBuilder();
+
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     * @return Whether the postgresqlTarget field is set.
+     */
+    boolean hasPostgresqlTarget();
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     * @return The postgresqlTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getPostgresqlTarget();
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getPostgresqlTargetOrBuilder();
+
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     * @return Whether the sqlserverSource field is set.
+     */
+    boolean hasSqlserverSource();
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     * @return The sqlserverSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSqlserverSource();
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSqlserverSourceOrBuilder();
+
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     * @return Whether the sqlserverTarget field is set.
+     */
+    boolean hasSqlserverTarget();
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     * @return The sqlserverTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSqlserverTarget();
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSqlserverTargetOrBuilder();
+
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     * @return Whether the clickHouseSource field is set.
+     */
+    boolean hasClickHouseSource();
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     * @return The clickHouseSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getClickHouseSource();
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getClickHouseSourceOrBuilder();
+
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     * @return Whether the clickHouseTarget field is set.
+     */
+    boolean hasClickHouseTarget();
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     * @return The clickHouseTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getClickHouseTarget();
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getClickHouseTargetOrBuilder();
+
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     * @return Whether the sapHanaSource field is set.
+     */
+    boolean hasSapHanaSource();
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     * @return The sapHanaSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSapHanaSource();
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSapHanaSourceOrBuilder();
+
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     * @return Whether the sapHanaTarget field is set.
+     */
+    boolean hasSapHanaTarget();
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     * @return The sapHanaTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSapHanaTarget();
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSapHanaTargetOrBuilder();
+
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     * @return Whether the mongodbSource field is set.
+     */
+    boolean hasMongodbSource();
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     * @return The mongodbSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource();
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder();
+
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     * @return Whether the mongodbTarget field is set.
+     */
+    boolean hasMongodbTarget();
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     * @return The mongodbTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget();
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder();
+
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     * @return Whether the elasticSearchSource field is set.
+     */
+    boolean hasElasticSearchSource();
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     * @return The elasticSearchSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource();
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder();
+
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     * @return Whether the elasticSearchTarget field is set.
+     */
+    boolean hasElasticSearchTarget();
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     * @return The elasticSearchTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget();
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder();
+
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     * @return Whether the hdfsSource field is set.
+     */
+    boolean hasHdfsSource();
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     * @return The hdfsSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource();
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder();
+
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     * @return Whether the hdfsTarget field is set.
+     */
+    boolean hasHdfsTarget();
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     * @return The hdfsTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget();
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder();
+
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     * @return Whether the ftpSource field is set.
+     */
+    boolean hasFtpSource();
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     * @return The ftpSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource();
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder();
+
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     * @return Whether the ftpTarget field is set.
+     */
+    boolean hasFtpTarget();
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     * @return The ftpTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget();
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder();
+
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     * @return Whether the hbaseSource field is set.
+     */
+    boolean hasHbaseSource();
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     * @return The hbaseSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource();
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder();
+
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     * @return Whether the hbaseTarget field is set.
+     */
+    boolean hasHbaseTarget();
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     * @return The hbaseTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget();
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder();
+
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     * @return Whether the kafkaSource field is set.
+     */
+    boolean hasKafkaSource();
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     * @return The kafkaSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource();
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder();
+
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     * @return Whether the kafkaTarget field is set.
+     */
+    boolean hasKafkaTarget();
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     * @return The kafkaTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget();
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder();
+
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     * @return Whether the binlogSource field is set.
+     */
+    boolean hasBinlogSource();
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     * @return The binlogSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource();
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder();
+
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     * @return Whether the pgWalSource field is set.
+     */
+    boolean hasPgWalSource();
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     * @return The pgWalSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource();
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder();
+
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     * @return Whether the sqlServerCdcSource field is set.
+     */
+    boolean hasSqlServerCdcSource();
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     * @return The sqlServerCdcSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource();
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder();
+
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     * @return Whether the logMinerSource field is set.
+     */
+    boolean hasLogMinerSource();
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     * @return The logMinerSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource();
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder();
+
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     * @return Whether the redisTarget field is set.
+     */
+    boolean hasRedisTarget();
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     * @return The redisTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget();
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder();
+
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     * @return Whether the hiveTarget field is set.
+     */
+    boolean hasHiveTarget();
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     * @return The hiveTarget.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget();
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder();
+  }
+  /**
+   * Protobuf type {@code model.SyncResource}
+   */
+  public static final class SyncResource extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.SyncResource)
+      SyncResourceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SyncResource.newBuilder() to construct.
+    private SyncResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SyncResource() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SyncResource();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SyncResource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (mysqlSource_ != null) {
+                subBuilder = mysqlSource_.toBuilder();
+              }
+              mysqlSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mysqlSource_);
+                mysqlSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (mysqlTarget_ != null) {
+                subBuilder = mysqlTarget_.toBuilder();
+              }
+              mysqlTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mysqlTarget_);
+                mysqlTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (oracleSource_ != null) {
+                subBuilder = oracleSource_.toBuilder();
+              }
+              oracleSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(oracleSource_);
+                oracleSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (oracleTarget_ != null) {
+                subBuilder = oracleTarget_.toBuilder();
+              }
+              oracleTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(oracleTarget_);
+                oracleTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (db2Source_ != null) {
+                subBuilder = db2Source_.toBuilder();
+              }
+              db2Source_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(db2Source_);
+                db2Source_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (db2Target_ != null) {
+                subBuilder = db2Target_.toBuilder();
+              }
+              db2Target_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(db2Target_);
+                db2Target_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (postgresqlSource_ != null) {
+                subBuilder = postgresqlSource_.toBuilder();
+              }
+              postgresqlSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postgresqlSource_);
+                postgresqlSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (postgresqlTarget_ != null) {
+                subBuilder = postgresqlTarget_.toBuilder();
+              }
+              postgresqlTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postgresqlTarget_);
+                postgresqlTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (sqlserverSource_ != null) {
+                subBuilder = sqlserverSource_.toBuilder();
+              }
+              sqlserverSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sqlserverSource_);
+                sqlserverSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (sqlserverTarget_ != null) {
+                subBuilder = sqlserverTarget_.toBuilder();
+              }
+              sqlserverTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sqlserverTarget_);
+                sqlserverTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (clickHouseSource_ != null) {
+                subBuilder = clickHouseSource_.toBuilder();
+              }
+              clickHouseSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clickHouseSource_);
+                clickHouseSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (clickHouseTarget_ != null) {
+                subBuilder = clickHouseTarget_.toBuilder();
+              }
+              clickHouseTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clickHouseTarget_);
+                clickHouseTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 106: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder subBuilder = null;
+              if (sapHanaSource_ != null) {
+                subBuilder = sapHanaSource_.toBuilder();
+              }
+              sapHanaSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sapHanaSource_);
+                sapHanaSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder subBuilder = null;
+              if (sapHanaTarget_ != null) {
+                subBuilder = sapHanaTarget_.toBuilder();
+              }
+              sapHanaTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sapHanaTarget_);
+                sapHanaTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 122: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder subBuilder = null;
+              if (mongodbSource_ != null) {
+                subBuilder = mongodbSource_.toBuilder();
+              }
+              mongodbSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mongodbSource_);
+                mongodbSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 130: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder subBuilder = null;
+              if (mongodbTarget_ != null) {
+                subBuilder = mongodbTarget_.toBuilder();
+              }
+              mongodbTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mongodbTarget_);
+                mongodbTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 138: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder subBuilder = null;
+              if (elasticSearchSource_ != null) {
+                subBuilder = elasticSearchSource_.toBuilder();
+              }
+              elasticSearchSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(elasticSearchSource_);
+                elasticSearchSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 146: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder subBuilder = null;
+              if (elasticSearchTarget_ != null) {
+                subBuilder = elasticSearchTarget_.toBuilder();
+              }
+              elasticSearchTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(elasticSearchTarget_);
+                elasticSearchTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 154: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder subBuilder = null;
+              if (hdfsSource_ != null) {
+                subBuilder = hdfsSource_.toBuilder();
+              }
+              hdfsSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hdfsSource_);
+                hdfsSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 162: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder subBuilder = null;
+              if (hdfsTarget_ != null) {
+                subBuilder = hdfsTarget_.toBuilder();
+              }
+              hdfsTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hdfsTarget_);
+                hdfsTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 170: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder subBuilder = null;
+              if (ftpSource_ != null) {
+                subBuilder = ftpSource_.toBuilder();
+              }
+              ftpSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ftpSource_);
+                ftpSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 178: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder subBuilder = null;
+              if (ftpTarget_ != null) {
+                subBuilder = ftpTarget_.toBuilder();
+              }
+              ftpTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ftpTarget_);
+                ftpTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 186: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder subBuilder = null;
+              if (hbaseSource_ != null) {
+                subBuilder = hbaseSource_.toBuilder();
+              }
+              hbaseSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hbaseSource_);
+                hbaseSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 194: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder subBuilder = null;
+              if (hbaseTarget_ != null) {
+                subBuilder = hbaseTarget_.toBuilder();
+              }
+              hbaseTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hbaseTarget_);
+                hbaseTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 202: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder subBuilder = null;
+              if (kafkaSource_ != null) {
+                subBuilder = kafkaSource_.toBuilder();
+              }
+              kafkaSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kafkaSource_);
+                kafkaSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 210: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder subBuilder = null;
+              if (kafkaTarget_ != null) {
+                subBuilder = kafkaTarget_.toBuilder();
+              }
+              kafkaTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kafkaTarget_);
+                kafkaTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 218: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder subBuilder = null;
+              if (binlogSource_ != null) {
+                subBuilder = binlogSource_.toBuilder();
+              }
+              binlogSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(binlogSource_);
+                binlogSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 226: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder subBuilder = null;
+              if (pgWalSource_ != null) {
+                subBuilder = pgWalSource_.toBuilder();
+              }
+              pgWalSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pgWalSource_);
+                pgWalSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 234: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder subBuilder = null;
+              if (sqlServerCdcSource_ != null) {
+                subBuilder = sqlServerCdcSource_.toBuilder();
+              }
+              sqlServerCdcSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sqlServerCdcSource_);
+                sqlServerCdcSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 242: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder subBuilder = null;
+              if (logMinerSource_ != null) {
+                subBuilder = logMinerSource_.toBuilder();
+              }
+              logMinerSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logMinerSource_);
+                logMinerSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 250: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder subBuilder = null;
+              if (redisTarget_ != null) {
+                subBuilder = redisTarget_.toBuilder();
+              }
+              redisTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(redisTarget_);
+                redisTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 258: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder subBuilder = null;
+              if (hiveTarget_ != null) {
+                subBuilder = hiveTarget_.toBuilder();
+              }
+              hiveTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hiveTarget_);
+                hiveTarget_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncResource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncResource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder.class);
+    }
+
+    public static final int MYSQL_SOURCE_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource mysqlSource_;
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     * @return Whether the mysqlSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasMysqlSource() {
+      return mysqlSource_ != null;
+    }
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     * @return The mysqlSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getMysqlSource() {
+      return mysqlSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : mysqlSource_;
+    }
+    /**
+     * <pre>
+     * mysql source
+     * &#64;inject_tag: json:"mysql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource mysql_source = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getMysqlSourceOrBuilder() {
+      return getMysqlSource();
+    }
+
+    public static final int MYSQL_TARGET_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget mysqlTarget_;
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     * @return Whether the mysqlTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasMysqlTarget() {
+      return mysqlTarget_ != null;
+    }
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     * @return The mysqlTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getMysqlTarget() {
+      return mysqlTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : mysqlTarget_;
+    }
+    /**
+     * <pre>
+     * mysql target
+     * &#64;inject_tag: json:"mysql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget mysql_target = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getMysqlTargetOrBuilder() {
+      return getMysqlTarget();
+    }
+
+    public static final int ORACLE_SOURCE_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource oracleSource_;
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     * @return Whether the oracleSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracleSource() {
+      return oracleSource_ != null;
+    }
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     * @return The oracleSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getOracleSource() {
+      return oracleSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : oracleSource_;
+    }
+    /**
+     * <pre>
+     * oracle source
+     * &#64;inject_tag: json:"oracle_source"
+     * </pre>
+     *
+     * <code>.model.DBSource oracle_source = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getOracleSourceOrBuilder() {
+      return getOracleSource();
+    }
+
+    public static final int ORACLE_TARGET_FIELD_NUMBER = 4;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget oracleTarget_;
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     * @return Whether the oracleTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracleTarget() {
+      return oracleTarget_ != null;
+    }
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     * @return The oracleTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getOracleTarget() {
+      return oracleTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : oracleTarget_;
+    }
+    /**
+     * <pre>
+     * oracle target
+     * &#64;inject_tag: json:"oracle_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget oracle_target = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getOracleTargetOrBuilder() {
+      return getOracleTarget();
+    }
+
+    public static final int DB2_SOURCE_FIELD_NUMBER = 5;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource db2Source_;
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     * @return Whether the db2Source field is set.
+     */
+    @java.lang.Override
+    public boolean hasDb2Source() {
+      return db2Source_ != null;
+    }
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     * @return The db2Source.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getDb2Source() {
+      return db2Source_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : db2Source_;
+    }
+    /**
+     * <pre>
+     * db2 source
+     * &#64;inject_tag: json:"db2_source"
+     * </pre>
+     *
+     * <code>.model.DBSource db2_source = 5;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getDb2SourceOrBuilder() {
+      return getDb2Source();
+    }
+
+    public static final int DB2_TARGET_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget db2Target_;
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     * @return Whether the db2Target field is set.
+     */
+    @java.lang.Override
+    public boolean hasDb2Target() {
+      return db2Target_ != null;
+    }
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     * @return The db2Target.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getDb2Target() {
+      return db2Target_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : db2Target_;
+    }
+    /**
+     * <pre>
+     * db2 target
+     * &#64;inject_tag: json:"db2_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget db2_target = 6;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getDb2TargetOrBuilder() {
+      return getDb2Target();
+    }
+
+    public static final int POSTGRESQL_SOURCE_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource postgresqlSource_;
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     * @return Whether the postgresqlSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlSource() {
+      return postgresqlSource_ != null;
+    }
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     * @return The postgresqlSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getPostgresqlSource() {
+      return postgresqlSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : postgresqlSource_;
+    }
+    /**
+     * <pre>
+     * postgresql source
+     * &#64;inject_tag: json:"postgresql_source"
+     * </pre>
+     *
+     * <code>.model.DBSource postgresql_source = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getPostgresqlSourceOrBuilder() {
+      return getPostgresqlSource();
+    }
+
+    public static final int POSTGRESQL_TARGET_FIELD_NUMBER = 8;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget postgresqlTarget_;
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     * @return Whether the postgresqlTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlTarget() {
+      return postgresqlTarget_ != null;
+    }
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     * @return The postgresqlTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getPostgresqlTarget() {
+      return postgresqlTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : postgresqlTarget_;
+    }
+    /**
+     * <pre>
+     * postgresql target
+     * &#64;inject_tag: json:"postgresql_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget postgresql_target = 8;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getPostgresqlTargetOrBuilder() {
+      return getPostgresqlTarget();
+    }
+
+    public static final int SQLSERVER_SOURCE_FIELD_NUMBER = 9;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource sqlserverSource_;
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     * @return Whether the sqlserverSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlserverSource() {
+      return sqlserverSource_ != null;
+    }
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     * @return The sqlserverSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSqlserverSource() {
+      return sqlserverSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sqlserverSource_;
+    }
+    /**
+     * <pre>
+     * sqlserver source
+     * &#64;inject_tag: json:"sqlserver_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sqlserver_source = 9;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSqlserverSourceOrBuilder() {
+      return getSqlserverSource();
+    }
+
+    public static final int SQLSERVER_TARGET_FIELD_NUMBER = 10;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget sqlserverTarget_;
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     * @return Whether the sqlserverTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlserverTarget() {
+      return sqlserverTarget_ != null;
+    }
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     * @return The sqlserverTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSqlserverTarget() {
+      return sqlserverTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sqlserverTarget_;
+    }
+    /**
+     * <pre>
+     * sqlserver target
+     * &#64;inject_tag: json:"sqlserver_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sqlserver_target = 10;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSqlserverTargetOrBuilder() {
+      return getSqlserverTarget();
+    }
+
+    public static final int CLICK_HOUSE_SOURCE_FIELD_NUMBER = 11;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource clickHouseSource_;
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     * @return Whether the clickHouseSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasClickHouseSource() {
+      return clickHouseSource_ != null;
+    }
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     * @return The clickHouseSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getClickHouseSource() {
+      return clickHouseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : clickHouseSource_;
+    }
+    /**
+     * <pre>
+     * click house source
+     * &#64;inject_tag: json:"click_house_source"
+     * </pre>
+     *
+     * <code>.model.DBSource click_house_source = 11;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getClickHouseSourceOrBuilder() {
+      return getClickHouseSource();
+    }
+
+    public static final int CLICK_HOUSE_TARGET_FIELD_NUMBER = 12;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget clickHouseTarget_;
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     * @return Whether the clickHouseTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasClickHouseTarget() {
+      return clickHouseTarget_ != null;
+    }
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     * @return The clickHouseTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getClickHouseTarget() {
+      return clickHouseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : clickHouseTarget_;
+    }
+    /**
+     * <pre>
+     * click house target
+     * &#64;inject_tag: json:"click_house_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget click_house_target = 12;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getClickHouseTargetOrBuilder() {
+      return getClickHouseTarget();
+    }
+
+    public static final int SAP_HANA_SOURCE_FIELD_NUMBER = 13;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource sapHanaSource_;
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     * @return Whether the sapHanaSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSapHanaSource() {
+      return sapHanaSource_ != null;
+    }
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     * @return The sapHanaSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSapHanaSource() {
+      return sapHanaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sapHanaSource_;
+    }
+    /**
+     * <pre>
+     * sap hana source
+     * &#64;inject_tag: json:"sap_hana_source"
+     * </pre>
+     *
+     * <code>.model.DBSource sap_hana_source = 13;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSapHanaSourceOrBuilder() {
+      return getSapHanaSource();
+    }
+
+    public static final int SAP_HANA_TARGET_FIELD_NUMBER = 14;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget sapHanaTarget_;
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     * @return Whether the sapHanaTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasSapHanaTarget() {
+      return sapHanaTarget_ != null;
+    }
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     * @return The sapHanaTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSapHanaTarget() {
+      return sapHanaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sapHanaTarget_;
+    }
+    /**
+     * <pre>
+     * sap hana target
+     * &#64;inject_tag: json:"sap_hana_target"
+     * </pre>
+     *
+     * <code>.model.DBTarget sap_hana_target = 14;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSapHanaTargetOrBuilder() {
+      return getSapHanaTarget();
+    }
+
+    public static final int MONGODB_SOURCE_FIELD_NUMBER = 15;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource mongodbSource_;
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     * @return Whether the mongodbSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbSource() {
+      return mongodbSource_ != null;
+    }
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     * @return The mongodbSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource() {
+      return mongodbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
+    }
+    /**
+     * <pre>
+     * mongodb source
+     * &#64;inject_tag: json:"mongodb_source"
+     * </pre>
+     *
+     * <code>.model.MongodbSource mongodb_source = 15;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder() {
+      return getMongodbSource();
+    }
+
+    public static final int MONGODB_TARGET_FIELD_NUMBER = 16;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget mongodbTarget_;
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     * @return Whether the mongodbTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbTarget() {
+      return mongodbTarget_ != null;
+    }
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     * @return The mongodbTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget() {
+      return mongodbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
+    }
+    /**
+     * <pre>
+     * mongodb target
+     * &#64;inject_tag: json:"mongodb_target"
+     * </pre>
+     *
+     * <code>.model.MongodbTarget mongodb_target = 16;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder() {
+      return getMongodbTarget();
+    }
+
+    public static final int ELASTIC_SEARCH_SOURCE_FIELD_NUMBER = 17;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource elasticSearchSource_;
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     * @return Whether the elasticSearchSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasElasticSearchSource() {
+      return elasticSearchSource_ != null;
+    }
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     * @return The elasticSearchSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource() {
+      return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
+    }
+    /**
+     * <pre>
+     * elasticsearch source
+     * &#64;inject_tag: json:"elastic_search_source"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
+      return getElasticSearchSource();
+    }
+
+    public static final int ELASTIC_SEARCH_TARGET_FIELD_NUMBER = 18;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget elasticSearchTarget_;
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     * @return Whether the elasticSearchTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasElasticSearchTarget() {
+      return elasticSearchTarget_ != null;
+    }
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     * @return The elasticSearchTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget() {
+      return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
+    }
+    /**
+     * <pre>
+     * elasticsearch target
+     * &#64;inject_tag: json:"elastic_search_target"
+     * </pre>
+     *
+     * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
+      return getElasticSearchTarget();
+    }
+
+    public static final int HDFS_SOURCE_FIELD_NUMBER = 19;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource hdfsSource_;
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     * @return Whether the hdfsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasHdfsSource() {
+      return hdfsSource_ != null;
+    }
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     * @return The hdfsSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource() {
+      return hdfsSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
+    }
+    /**
+     * <pre>
+     * hdfs source
+     * &#64;inject_tag: json:"hdfs_source"
+     * </pre>
+     *
+     * <code>.model.HdfsSource hdfs_source = 19;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder() {
+      return getHdfsSource();
+    }
+
+    public static final int HDFS_TARGET_FIELD_NUMBER = 20;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget hdfsTarget_;
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     * @return Whether the hdfsTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasHdfsTarget() {
+      return hdfsTarget_ != null;
+    }
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     * @return The hdfsTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget() {
+      return hdfsTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
+    }
+    /**
+     * <pre>
+     * hdfs target
+     * &#64;inject_tag: json:"hdfs_target"
+     * </pre>
+     *
+     * <code>.model.HdfsTarget hdfs_target = 20;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder() {
+      return getHdfsTarget();
+    }
+
+    public static final int FTP_SOURCE_FIELD_NUMBER = 21;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource ftpSource_;
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     * @return Whether the ftpSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasFtpSource() {
+      return ftpSource_ != null;
+    }
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     * @return The ftpSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource() {
+      return ftpSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
+    }
+    /**
+     * <pre>
+     * ftp source
+     * &#64;inject_tag: json:"ftp_source"
+     * </pre>
+     *
+     * <code>.model.FtpSource ftp_source = 21;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder() {
+      return getFtpSource();
+    }
+
+    public static final int FTP_TARGET_FIELD_NUMBER = 22;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget ftpTarget_;
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     * @return Whether the ftpTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasFtpTarget() {
+      return ftpTarget_ != null;
+    }
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     * @return The ftpTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget() {
+      return ftpTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
+    }
+    /**
+     * <pre>
+     * ftp target
+     * &#64;inject_tag: json:"ftp_target"
+     * </pre>
+     *
+     * <code>.model.FtpTarget ftp_target = 22;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder() {
+      return getFtpTarget();
+    }
+
+    public static final int HBASE_SOURCE_FIELD_NUMBER = 23;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource hbaseSource_;
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     * @return Whether the hbaseSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasHbaseSource() {
+      return hbaseSource_ != null;
+    }
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     * @return The hbaseSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource() {
+      return hbaseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
+    }
+    /**
+     * <pre>
+     * hbase source
+     * &#64;inject_tag: json:"hbase_source"
+     * </pre>
+     *
+     * <code>.model.HbaseSource hbase_source = 23;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder() {
+      return getHbaseSource();
+    }
+
+    public static final int HBASE_TARGET_FIELD_NUMBER = 24;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget hbaseTarget_;
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     * @return Whether the hbaseTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasHbaseTarget() {
+      return hbaseTarget_ != null;
+    }
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     * @return The hbaseTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget() {
+      return hbaseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
+    }
+    /**
+     * <pre>
+     * hbase target
+     * &#64;inject_tag: json:"hbase_target"
+     * </pre>
+     *
+     * <code>.model.HbaseTarget hbase_target = 24;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder() {
+      return getHbaseTarget();
+    }
+
+    public static final int KAFKA_SOURCE_FIELD_NUMBER = 25;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource kafkaSource_;
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     * @return Whether the kafkaSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasKafkaSource() {
+      return kafkaSource_ != null;
+    }
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     * @return The kafkaSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource() {
+      return kafkaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
+    }
+    /**
+     * <pre>
+     * kafka source
+     * &#64;inject_tag: json:"kafka_source"
+     * </pre>
+     *
+     * <code>.model.KafkaSource kafka_source = 25;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder() {
+      return getKafkaSource();
+    }
+
+    public static final int KAFKA_TARGET_FIELD_NUMBER = 26;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget kafkaTarget_;
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     * @return Whether the kafkaTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasKafkaTarget() {
+      return kafkaTarget_ != null;
+    }
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     * @return The kafkaTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget() {
+      return kafkaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
+    }
+    /**
+     * <pre>
+     * kafka target
+     * &#64;inject_tag: json:"kafka_target"
+     * </pre>
+     *
+     * <code>.model.KafkaTarget kafka_target = 26;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder() {
+      return getKafkaTarget();
+    }
+
+    public static final int BINLOG_SOURCE_FIELD_NUMBER = 27;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource binlogSource_;
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     * @return Whether the binlogSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasBinlogSource() {
+      return binlogSource_ != null;
+    }
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     * @return The binlogSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource() {
+      return binlogSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
+    }
+    /**
+     * <pre>
+     * binlog source
+     * &#64;inject_tag: json:"binlog_source"
+     * </pre>
+     *
+     * <code>.model.BinlogSource binlog_source = 27;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder() {
+      return getBinlogSource();
+    }
+
+    public static final int PG_WAL_SOURCE_FIELD_NUMBER = 28;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource pgWalSource_;
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     * @return Whether the pgWalSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasPgWalSource() {
+      return pgWalSource_ != null;
+    }
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     * @return The pgWalSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource() {
+      return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
+    }
+    /**
+     * <pre>
+     * pgwal source
+     * &#64;inject_tag: json:"pg_wal_source"
+     * </pre>
+     *
+     * <code>.model.PgWalSource pg_wal_source = 28;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
+      return getPgWalSource();
+    }
+
+    public static final int SQL_SERVER_CDC_SOURCE_FIELD_NUMBER = 29;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource sqlServerCdcSource_;
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     * @return Whether the sqlServerCdcSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerCdcSource() {
+      return sqlServerCdcSource_ != null;
+    }
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     * @return The sqlServerCdcSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource() {
+      return sqlServerCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
+    }
+    /**
+     * <pre>
+     * sqlserver cdc source
+     * &#64;inject_tag: json:"sql_server_cdc_source"
+     * </pre>
+     *
+     * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder() {
+      return getSqlServerCdcSource();
+    }
+
+    public static final int LOG_MINER_SOURCE_FIELD_NUMBER = 30;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource logMinerSource_;
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     * @return Whether the logMinerSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogMinerSource() {
+      return logMinerSource_ != null;
+    }
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     * @return The logMinerSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource() {
+      return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
+    }
+    /**
+     * <pre>
+     * logminer source
+     * &#64;inject_tag: json:"logminer_source"
+     * </pre>
+     *
+     * <code>.model.LogMinerSource log_miner_source = 30;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
+      return getLogMinerSource();
+    }
+
+    public static final int REDIS_TARGET_FIELD_NUMBER = 31;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget redisTarget_;
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     * @return Whether the redisTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedisTarget() {
+      return redisTarget_ != null;
+    }
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     * @return The redisTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget() {
+      return redisTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
+    }
+    /**
+     * <pre>
+     * redis target
+     * &#64;inject_tag: json:"redis_target"
+     * </pre>
+     *
+     * <code>.model.RedisTarget redis_target = 31;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder() {
+      return getRedisTarget();
+    }
+
+    public static final int HIVE_TARGET_FIELD_NUMBER = 32;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget hiveTarget_;
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     * @return Whether the hiveTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasHiveTarget() {
+      return hiveTarget_ != null;
+    }
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     * @return The hiveTarget.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget() {
+      return hiveTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
+    }
+    /**
+     * <pre>
+     * hive target
+     * &#64;inject_tag: json:"hive_target"
+     * </pre>
+     *
+     * <code>.model.HiveTarget hive_target = 32;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder() {
+      return getHiveTarget();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (mysqlSource_ != null) {
+        output.writeMessage(1, getMysqlSource());
+      }
+      if (mysqlTarget_ != null) {
+        output.writeMessage(2, getMysqlTarget());
+      }
+      if (oracleSource_ != null) {
+        output.writeMessage(3, getOracleSource());
+      }
+      if (oracleTarget_ != null) {
+        output.writeMessage(4, getOracleTarget());
+      }
+      if (db2Source_ != null) {
+        output.writeMessage(5, getDb2Source());
+      }
+      if (db2Target_ != null) {
+        output.writeMessage(6, getDb2Target());
+      }
+      if (postgresqlSource_ != null) {
+        output.writeMessage(7, getPostgresqlSource());
+      }
+      if (postgresqlTarget_ != null) {
+        output.writeMessage(8, getPostgresqlTarget());
+      }
+      if (sqlserverSource_ != null) {
+        output.writeMessage(9, getSqlserverSource());
+      }
+      if (sqlserverTarget_ != null) {
+        output.writeMessage(10, getSqlserverTarget());
+      }
+      if (clickHouseSource_ != null) {
+        output.writeMessage(11, getClickHouseSource());
+      }
+      if (clickHouseTarget_ != null) {
+        output.writeMessage(12, getClickHouseTarget());
+      }
+      if (sapHanaSource_ != null) {
+        output.writeMessage(13, getSapHanaSource());
+      }
+      if (sapHanaTarget_ != null) {
+        output.writeMessage(14, getSapHanaTarget());
+      }
+      if (mongodbSource_ != null) {
+        output.writeMessage(15, getMongodbSource());
+      }
+      if (mongodbTarget_ != null) {
+        output.writeMessage(16, getMongodbTarget());
+      }
+      if (elasticSearchSource_ != null) {
+        output.writeMessage(17, getElasticSearchSource());
+      }
+      if (elasticSearchTarget_ != null) {
+        output.writeMessage(18, getElasticSearchTarget());
+      }
+      if (hdfsSource_ != null) {
+        output.writeMessage(19, getHdfsSource());
+      }
+      if (hdfsTarget_ != null) {
+        output.writeMessage(20, getHdfsTarget());
+      }
+      if (ftpSource_ != null) {
+        output.writeMessage(21, getFtpSource());
+      }
+      if (ftpTarget_ != null) {
+        output.writeMessage(22, getFtpTarget());
+      }
+      if (hbaseSource_ != null) {
+        output.writeMessage(23, getHbaseSource());
+      }
+      if (hbaseTarget_ != null) {
+        output.writeMessage(24, getHbaseTarget());
+      }
+      if (kafkaSource_ != null) {
+        output.writeMessage(25, getKafkaSource());
+      }
+      if (kafkaTarget_ != null) {
+        output.writeMessage(26, getKafkaTarget());
+      }
+      if (binlogSource_ != null) {
+        output.writeMessage(27, getBinlogSource());
+      }
+      if (pgWalSource_ != null) {
+        output.writeMessage(28, getPgWalSource());
+      }
+      if (sqlServerCdcSource_ != null) {
+        output.writeMessage(29, getSqlServerCdcSource());
+      }
+      if (logMinerSource_ != null) {
+        output.writeMessage(30, getLogMinerSource());
+      }
+      if (redisTarget_ != null) {
+        output.writeMessage(31, getRedisTarget());
+      }
+      if (hiveTarget_ != null) {
+        output.writeMessage(32, getHiveTarget());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mysqlSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMysqlSource());
+      }
+      if (mysqlTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getMysqlTarget());
+      }
+      if (oracleSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getOracleSource());
+      }
+      if (oracleTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getOracleTarget());
+      }
+      if (db2Source_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getDb2Source());
+      }
+      if (db2Target_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getDb2Target());
+      }
+      if (postgresqlSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getPostgresqlSource());
+      }
+      if (postgresqlTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getPostgresqlTarget());
+      }
+      if (sqlserverSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getSqlserverSource());
+      }
+      if (sqlserverTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getSqlserverTarget());
+      }
+      if (clickHouseSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getClickHouseSource());
+      }
+      if (clickHouseTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getClickHouseTarget());
+      }
+      if (sapHanaSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getSapHanaSource());
+      }
+      if (sapHanaTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getSapHanaTarget());
+      }
+      if (mongodbSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getMongodbSource());
+      }
+      if (mongodbTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getMongodbTarget());
+      }
+      if (elasticSearchSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getElasticSearchSource());
+      }
+      if (elasticSearchTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, getElasticSearchTarget());
+      }
+      if (hdfsSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, getHdfsSource());
+      }
+      if (hdfsTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getHdfsTarget());
+      }
+      if (ftpSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, getFtpSource());
+      }
+      if (ftpTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, getFtpTarget());
+      }
+      if (hbaseSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, getHbaseSource());
+      }
+      if (hbaseTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(24, getHbaseTarget());
+      }
+      if (kafkaSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(25, getKafkaSource());
+      }
+      if (kafkaTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(26, getKafkaTarget());
+      }
+      if (binlogSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(27, getBinlogSource());
+      }
+      if (pgWalSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(28, getPgWalSource());
+      }
+      if (sqlServerCdcSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(29, getSqlServerCdcSource());
+      }
+      if (logMinerSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(30, getLogMinerSource());
+      }
+      if (redisTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(31, getRedisTarget());
+      }
+      if (hiveTarget_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(32, getHiveTarget());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource) obj;
+
+      if (hasMysqlSource() != other.hasMysqlSource()) return false;
+      if (hasMysqlSource()) {
+        if (!getMysqlSource()
+            .equals(other.getMysqlSource())) return false;
+      }
+      if (hasMysqlTarget() != other.hasMysqlTarget()) return false;
+      if (hasMysqlTarget()) {
+        if (!getMysqlTarget()
+            .equals(other.getMysqlTarget())) return false;
+      }
+      if (hasOracleSource() != other.hasOracleSource()) return false;
+      if (hasOracleSource()) {
+        if (!getOracleSource()
+            .equals(other.getOracleSource())) return false;
+      }
+      if (hasOracleTarget() != other.hasOracleTarget()) return false;
+      if (hasOracleTarget()) {
+        if (!getOracleTarget()
+            .equals(other.getOracleTarget())) return false;
+      }
+      if (hasDb2Source() != other.hasDb2Source()) return false;
+      if (hasDb2Source()) {
+        if (!getDb2Source()
+            .equals(other.getDb2Source())) return false;
+      }
+      if (hasDb2Target() != other.hasDb2Target()) return false;
+      if (hasDb2Target()) {
+        if (!getDb2Target()
+            .equals(other.getDb2Target())) return false;
+      }
+      if (hasPostgresqlSource() != other.hasPostgresqlSource()) return false;
+      if (hasPostgresqlSource()) {
+        if (!getPostgresqlSource()
+            .equals(other.getPostgresqlSource())) return false;
+      }
+      if (hasPostgresqlTarget() != other.hasPostgresqlTarget()) return false;
+      if (hasPostgresqlTarget()) {
+        if (!getPostgresqlTarget()
+            .equals(other.getPostgresqlTarget())) return false;
+      }
+      if (hasSqlserverSource() != other.hasSqlserverSource()) return false;
+      if (hasSqlserverSource()) {
+        if (!getSqlserverSource()
+            .equals(other.getSqlserverSource())) return false;
+      }
+      if (hasSqlserverTarget() != other.hasSqlserverTarget()) return false;
+      if (hasSqlserverTarget()) {
+        if (!getSqlserverTarget()
+            .equals(other.getSqlserverTarget())) return false;
+      }
+      if (hasClickHouseSource() != other.hasClickHouseSource()) return false;
+      if (hasClickHouseSource()) {
+        if (!getClickHouseSource()
+            .equals(other.getClickHouseSource())) return false;
+      }
+      if (hasClickHouseTarget() != other.hasClickHouseTarget()) return false;
+      if (hasClickHouseTarget()) {
+        if (!getClickHouseTarget()
+            .equals(other.getClickHouseTarget())) return false;
+      }
+      if (hasSapHanaSource() != other.hasSapHanaSource()) return false;
+      if (hasSapHanaSource()) {
+        if (!getSapHanaSource()
+            .equals(other.getSapHanaSource())) return false;
+      }
+      if (hasSapHanaTarget() != other.hasSapHanaTarget()) return false;
+      if (hasSapHanaTarget()) {
+        if (!getSapHanaTarget()
+            .equals(other.getSapHanaTarget())) return false;
+      }
+      if (hasMongodbSource() != other.hasMongodbSource()) return false;
+      if (hasMongodbSource()) {
+        if (!getMongodbSource()
+            .equals(other.getMongodbSource())) return false;
+      }
+      if (hasMongodbTarget() != other.hasMongodbTarget()) return false;
+      if (hasMongodbTarget()) {
+        if (!getMongodbTarget()
+            .equals(other.getMongodbTarget())) return false;
+      }
+      if (hasElasticSearchSource() != other.hasElasticSearchSource()) return false;
+      if (hasElasticSearchSource()) {
+        if (!getElasticSearchSource()
+            .equals(other.getElasticSearchSource())) return false;
+      }
+      if (hasElasticSearchTarget() != other.hasElasticSearchTarget()) return false;
+      if (hasElasticSearchTarget()) {
+        if (!getElasticSearchTarget()
+            .equals(other.getElasticSearchTarget())) return false;
+      }
+      if (hasHdfsSource() != other.hasHdfsSource()) return false;
+      if (hasHdfsSource()) {
+        if (!getHdfsSource()
+            .equals(other.getHdfsSource())) return false;
+      }
+      if (hasHdfsTarget() != other.hasHdfsTarget()) return false;
+      if (hasHdfsTarget()) {
+        if (!getHdfsTarget()
+            .equals(other.getHdfsTarget())) return false;
+      }
+      if (hasFtpSource() != other.hasFtpSource()) return false;
+      if (hasFtpSource()) {
+        if (!getFtpSource()
+            .equals(other.getFtpSource())) return false;
+      }
+      if (hasFtpTarget() != other.hasFtpTarget()) return false;
+      if (hasFtpTarget()) {
+        if (!getFtpTarget()
+            .equals(other.getFtpTarget())) return false;
+      }
+      if (hasHbaseSource() != other.hasHbaseSource()) return false;
+      if (hasHbaseSource()) {
+        if (!getHbaseSource()
+            .equals(other.getHbaseSource())) return false;
+      }
+      if (hasHbaseTarget() != other.hasHbaseTarget()) return false;
+      if (hasHbaseTarget()) {
+        if (!getHbaseTarget()
+            .equals(other.getHbaseTarget())) return false;
+      }
+      if (hasKafkaSource() != other.hasKafkaSource()) return false;
+      if (hasKafkaSource()) {
+        if (!getKafkaSource()
+            .equals(other.getKafkaSource())) return false;
+      }
+      if (hasKafkaTarget() != other.hasKafkaTarget()) return false;
+      if (hasKafkaTarget()) {
+        if (!getKafkaTarget()
+            .equals(other.getKafkaTarget())) return false;
+      }
+      if (hasBinlogSource() != other.hasBinlogSource()) return false;
+      if (hasBinlogSource()) {
+        if (!getBinlogSource()
+            .equals(other.getBinlogSource())) return false;
+      }
+      if (hasPgWalSource() != other.hasPgWalSource()) return false;
+      if (hasPgWalSource()) {
+        if (!getPgWalSource()
+            .equals(other.getPgWalSource())) return false;
+      }
+      if (hasSqlServerCdcSource() != other.hasSqlServerCdcSource()) return false;
+      if (hasSqlServerCdcSource()) {
+        if (!getSqlServerCdcSource()
+            .equals(other.getSqlServerCdcSource())) return false;
+      }
+      if (hasLogMinerSource() != other.hasLogMinerSource()) return false;
+      if (hasLogMinerSource()) {
+        if (!getLogMinerSource()
+            .equals(other.getLogMinerSource())) return false;
+      }
+      if (hasRedisTarget() != other.hasRedisTarget()) return false;
+      if (hasRedisTarget()) {
+        if (!getRedisTarget()
+            .equals(other.getRedisTarget())) return false;
+      }
+      if (hasHiveTarget() != other.hasHiveTarget()) return false;
+      if (hasHiveTarget()) {
+        if (!getHiveTarget()
+            .equals(other.getHiveTarget())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMysqlSource()) {
+        hash = (37 * hash) + MYSQL_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getMysqlSource().hashCode();
+      }
+      if (hasMysqlTarget()) {
+        hash = (37 * hash) + MYSQL_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getMysqlTarget().hashCode();
+      }
+      if (hasOracleSource()) {
+        hash = (37 * hash) + ORACLE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSource().hashCode();
+      }
+      if (hasOracleTarget()) {
+        hash = (37 * hash) + ORACLE_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleTarget().hashCode();
+      }
+      if (hasDb2Source()) {
+        hash = (37 * hash) + DB2_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDb2Source().hashCode();
+      }
+      if (hasDb2Target()) {
+        hash = (37 * hash) + DB2_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getDb2Target().hashCode();
+      }
+      if (hasPostgresqlSource()) {
+        hash = (37 * hash) + POSTGRESQL_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlSource().hashCode();
+      }
+      if (hasPostgresqlTarget()) {
+        hash = (37 * hash) + POSTGRESQL_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlTarget().hashCode();
+      }
+      if (hasSqlserverSource()) {
+        hash = (37 * hash) + SQLSERVER_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlserverSource().hashCode();
+      }
+      if (hasSqlserverTarget()) {
+        hash = (37 * hash) + SQLSERVER_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlserverTarget().hashCode();
+      }
+      if (hasClickHouseSource()) {
+        hash = (37 * hash) + CLICK_HOUSE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getClickHouseSource().hashCode();
+      }
+      if (hasClickHouseTarget()) {
+        hash = (37 * hash) + CLICK_HOUSE_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getClickHouseTarget().hashCode();
+      }
+      if (hasSapHanaSource()) {
+        hash = (37 * hash) + SAP_HANA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSapHanaSource().hashCode();
+      }
+      if (hasSapHanaTarget()) {
+        hash = (37 * hash) + SAP_HANA_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getSapHanaTarget().hashCode();
+      }
+      if (hasMongodbSource()) {
+        hash = (37 * hash) + MONGODB_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbSource().hashCode();
+      }
+      if (hasMongodbTarget()) {
+        hash = (37 * hash) + MONGODB_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbTarget().hashCode();
+      }
+      if (hasElasticSearchSource()) {
+        hash = (37 * hash) + ELASTIC_SEARCH_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getElasticSearchSource().hashCode();
+      }
+      if (hasElasticSearchTarget()) {
+        hash = (37 * hash) + ELASTIC_SEARCH_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getElasticSearchTarget().hashCode();
+      }
+      if (hasHdfsSource()) {
+        hash = (37 * hash) + HDFS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getHdfsSource().hashCode();
+      }
+      if (hasHdfsTarget()) {
+        hash = (37 * hash) + HDFS_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getHdfsTarget().hashCode();
+      }
+      if (hasFtpSource()) {
+        hash = (37 * hash) + FTP_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getFtpSource().hashCode();
+      }
+      if (hasFtpTarget()) {
+        hash = (37 * hash) + FTP_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getFtpTarget().hashCode();
+      }
+      if (hasHbaseSource()) {
+        hash = (37 * hash) + HBASE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getHbaseSource().hashCode();
+      }
+      if (hasHbaseTarget()) {
+        hash = (37 * hash) + HBASE_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getHbaseTarget().hashCode();
+      }
+      if (hasKafkaSource()) {
+        hash = (37 * hash) + KAFKA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getKafkaSource().hashCode();
+      }
+      if (hasKafkaTarget()) {
+        hash = (37 * hash) + KAFKA_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getKafkaTarget().hashCode();
+      }
+      if (hasBinlogSource()) {
+        hash = (37 * hash) + BINLOG_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBinlogSource().hashCode();
+      }
+      if (hasPgWalSource()) {
+        hash = (37 * hash) + PG_WAL_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getPgWalSource().hashCode();
+      }
+      if (hasSqlServerCdcSource()) {
+        hash = (37 * hash) + SQL_SERVER_CDC_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlServerCdcSource().hashCode();
+      }
+      if (hasLogMinerSource()) {
+        hash = (37 * hash) + LOG_MINER_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getLogMinerSource().hashCode();
+      }
+      if (hasRedisTarget()) {
+        hash = (37 * hash) + REDIS_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getRedisTarget().hashCode();
+      }
+      if (hasHiveTarget()) {
+        hash = (37 * hash) + HIVE_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getHiveTarget().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.SyncResource}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.SyncResource)
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncResource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncResource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (mysqlSourceBuilder_ == null) {
+          mysqlSource_ = null;
+        } else {
+          mysqlSource_ = null;
+          mysqlSourceBuilder_ = null;
+        }
+        if (mysqlTargetBuilder_ == null) {
+          mysqlTarget_ = null;
+        } else {
+          mysqlTarget_ = null;
+          mysqlTargetBuilder_ = null;
+        }
+        if (oracleSourceBuilder_ == null) {
+          oracleSource_ = null;
+        } else {
+          oracleSource_ = null;
+          oracleSourceBuilder_ = null;
+        }
+        if (oracleTargetBuilder_ == null) {
+          oracleTarget_ = null;
+        } else {
+          oracleTarget_ = null;
+          oracleTargetBuilder_ = null;
+        }
+        if (db2SourceBuilder_ == null) {
+          db2Source_ = null;
+        } else {
+          db2Source_ = null;
+          db2SourceBuilder_ = null;
+        }
+        if (db2TargetBuilder_ == null) {
+          db2Target_ = null;
+        } else {
+          db2Target_ = null;
+          db2TargetBuilder_ = null;
+        }
+        if (postgresqlSourceBuilder_ == null) {
+          postgresqlSource_ = null;
+        } else {
+          postgresqlSource_ = null;
+          postgresqlSourceBuilder_ = null;
+        }
+        if (postgresqlTargetBuilder_ == null) {
+          postgresqlTarget_ = null;
+        } else {
+          postgresqlTarget_ = null;
+          postgresqlTargetBuilder_ = null;
+        }
+        if (sqlserverSourceBuilder_ == null) {
+          sqlserverSource_ = null;
+        } else {
+          sqlserverSource_ = null;
+          sqlserverSourceBuilder_ = null;
+        }
+        if (sqlserverTargetBuilder_ == null) {
+          sqlserverTarget_ = null;
+        } else {
+          sqlserverTarget_ = null;
+          sqlserverTargetBuilder_ = null;
+        }
+        if (clickHouseSourceBuilder_ == null) {
+          clickHouseSource_ = null;
+        } else {
+          clickHouseSource_ = null;
+          clickHouseSourceBuilder_ = null;
+        }
+        if (clickHouseTargetBuilder_ == null) {
+          clickHouseTarget_ = null;
+        } else {
+          clickHouseTarget_ = null;
+          clickHouseTargetBuilder_ = null;
+        }
+        if (sapHanaSourceBuilder_ == null) {
+          sapHanaSource_ = null;
+        } else {
+          sapHanaSource_ = null;
+          sapHanaSourceBuilder_ = null;
+        }
+        if (sapHanaTargetBuilder_ == null) {
+          sapHanaTarget_ = null;
+        } else {
+          sapHanaTarget_ = null;
+          sapHanaTargetBuilder_ = null;
+        }
+        if (mongodbSourceBuilder_ == null) {
+          mongodbSource_ = null;
+        } else {
+          mongodbSource_ = null;
+          mongodbSourceBuilder_ = null;
+        }
+        if (mongodbTargetBuilder_ == null) {
+          mongodbTarget_ = null;
+        } else {
+          mongodbTarget_ = null;
+          mongodbTargetBuilder_ = null;
+        }
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = null;
+        } else {
+          elasticSearchSource_ = null;
+          elasticSearchSourceBuilder_ = null;
+        }
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = null;
+        } else {
+          elasticSearchTarget_ = null;
+          elasticSearchTargetBuilder_ = null;
+        }
+        if (hdfsSourceBuilder_ == null) {
+          hdfsSource_ = null;
+        } else {
+          hdfsSource_ = null;
+          hdfsSourceBuilder_ = null;
+        }
+        if (hdfsTargetBuilder_ == null) {
+          hdfsTarget_ = null;
+        } else {
+          hdfsTarget_ = null;
+          hdfsTargetBuilder_ = null;
+        }
+        if (ftpSourceBuilder_ == null) {
+          ftpSource_ = null;
+        } else {
+          ftpSource_ = null;
+          ftpSourceBuilder_ = null;
+        }
+        if (ftpTargetBuilder_ == null) {
+          ftpTarget_ = null;
+        } else {
+          ftpTarget_ = null;
+          ftpTargetBuilder_ = null;
+        }
+        if (hbaseSourceBuilder_ == null) {
+          hbaseSource_ = null;
+        } else {
+          hbaseSource_ = null;
+          hbaseSourceBuilder_ = null;
+        }
+        if (hbaseTargetBuilder_ == null) {
+          hbaseTarget_ = null;
+        } else {
+          hbaseTarget_ = null;
+          hbaseTargetBuilder_ = null;
+        }
+        if (kafkaSourceBuilder_ == null) {
+          kafkaSource_ = null;
+        } else {
+          kafkaSource_ = null;
+          kafkaSourceBuilder_ = null;
+        }
+        if (kafkaTargetBuilder_ == null) {
+          kafkaTarget_ = null;
+        } else {
+          kafkaTarget_ = null;
+          kafkaTargetBuilder_ = null;
+        }
+        if (binlogSourceBuilder_ == null) {
+          binlogSource_ = null;
+        } else {
+          binlogSource_ = null;
+          binlogSourceBuilder_ = null;
+        }
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = null;
+        } else {
+          pgWalSource_ = null;
+          pgWalSourceBuilder_ = null;
+        }
+        if (sqlServerCdcSourceBuilder_ == null) {
+          sqlServerCdcSource_ = null;
+        } else {
+          sqlServerCdcSource_ = null;
+          sqlServerCdcSourceBuilder_ = null;
+        }
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = null;
+        } else {
+          logMinerSource_ = null;
+          logMinerSourceBuilder_ = null;
+        }
+        if (redisTargetBuilder_ == null) {
+          redisTarget_ = null;
+        } else {
+          redisTarget_ = null;
+          redisTargetBuilder_ = null;
+        }
+        if (hiveTargetBuilder_ == null) {
+          hiveTarget_ = null;
+        } else {
+          hiveTarget_ = null;
+          hiveTargetBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncResource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource build() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource(this);
+        if (mysqlSourceBuilder_ == null) {
+          result.mysqlSource_ = mysqlSource_;
+        } else {
+          result.mysqlSource_ = mysqlSourceBuilder_.build();
+        }
+        if (mysqlTargetBuilder_ == null) {
+          result.mysqlTarget_ = mysqlTarget_;
+        } else {
+          result.mysqlTarget_ = mysqlTargetBuilder_.build();
+        }
+        if (oracleSourceBuilder_ == null) {
+          result.oracleSource_ = oracleSource_;
+        } else {
+          result.oracleSource_ = oracleSourceBuilder_.build();
+        }
+        if (oracleTargetBuilder_ == null) {
+          result.oracleTarget_ = oracleTarget_;
+        } else {
+          result.oracleTarget_ = oracleTargetBuilder_.build();
+        }
+        if (db2SourceBuilder_ == null) {
+          result.db2Source_ = db2Source_;
+        } else {
+          result.db2Source_ = db2SourceBuilder_.build();
+        }
+        if (db2TargetBuilder_ == null) {
+          result.db2Target_ = db2Target_;
+        } else {
+          result.db2Target_ = db2TargetBuilder_.build();
+        }
+        if (postgresqlSourceBuilder_ == null) {
+          result.postgresqlSource_ = postgresqlSource_;
+        } else {
+          result.postgresqlSource_ = postgresqlSourceBuilder_.build();
+        }
+        if (postgresqlTargetBuilder_ == null) {
+          result.postgresqlTarget_ = postgresqlTarget_;
+        } else {
+          result.postgresqlTarget_ = postgresqlTargetBuilder_.build();
+        }
+        if (sqlserverSourceBuilder_ == null) {
+          result.sqlserverSource_ = sqlserverSource_;
+        } else {
+          result.sqlserverSource_ = sqlserverSourceBuilder_.build();
+        }
+        if (sqlserverTargetBuilder_ == null) {
+          result.sqlserverTarget_ = sqlserverTarget_;
+        } else {
+          result.sqlserverTarget_ = sqlserverTargetBuilder_.build();
+        }
+        if (clickHouseSourceBuilder_ == null) {
+          result.clickHouseSource_ = clickHouseSource_;
+        } else {
+          result.clickHouseSource_ = clickHouseSourceBuilder_.build();
+        }
+        if (clickHouseTargetBuilder_ == null) {
+          result.clickHouseTarget_ = clickHouseTarget_;
+        } else {
+          result.clickHouseTarget_ = clickHouseTargetBuilder_.build();
+        }
+        if (sapHanaSourceBuilder_ == null) {
+          result.sapHanaSource_ = sapHanaSource_;
+        } else {
+          result.sapHanaSource_ = sapHanaSourceBuilder_.build();
+        }
+        if (sapHanaTargetBuilder_ == null) {
+          result.sapHanaTarget_ = sapHanaTarget_;
+        } else {
+          result.sapHanaTarget_ = sapHanaTargetBuilder_.build();
+        }
+        if (mongodbSourceBuilder_ == null) {
+          result.mongodbSource_ = mongodbSource_;
+        } else {
+          result.mongodbSource_ = mongodbSourceBuilder_.build();
+        }
+        if (mongodbTargetBuilder_ == null) {
+          result.mongodbTarget_ = mongodbTarget_;
+        } else {
+          result.mongodbTarget_ = mongodbTargetBuilder_.build();
+        }
+        if (elasticSearchSourceBuilder_ == null) {
+          result.elasticSearchSource_ = elasticSearchSource_;
+        } else {
+          result.elasticSearchSource_ = elasticSearchSourceBuilder_.build();
+        }
+        if (elasticSearchTargetBuilder_ == null) {
+          result.elasticSearchTarget_ = elasticSearchTarget_;
+        } else {
+          result.elasticSearchTarget_ = elasticSearchTargetBuilder_.build();
+        }
+        if (hdfsSourceBuilder_ == null) {
+          result.hdfsSource_ = hdfsSource_;
+        } else {
+          result.hdfsSource_ = hdfsSourceBuilder_.build();
+        }
+        if (hdfsTargetBuilder_ == null) {
+          result.hdfsTarget_ = hdfsTarget_;
+        } else {
+          result.hdfsTarget_ = hdfsTargetBuilder_.build();
+        }
+        if (ftpSourceBuilder_ == null) {
+          result.ftpSource_ = ftpSource_;
+        } else {
+          result.ftpSource_ = ftpSourceBuilder_.build();
+        }
+        if (ftpTargetBuilder_ == null) {
+          result.ftpTarget_ = ftpTarget_;
+        } else {
+          result.ftpTarget_ = ftpTargetBuilder_.build();
+        }
+        if (hbaseSourceBuilder_ == null) {
+          result.hbaseSource_ = hbaseSource_;
+        } else {
+          result.hbaseSource_ = hbaseSourceBuilder_.build();
+        }
+        if (hbaseTargetBuilder_ == null) {
+          result.hbaseTarget_ = hbaseTarget_;
+        } else {
+          result.hbaseTarget_ = hbaseTargetBuilder_.build();
+        }
+        if (kafkaSourceBuilder_ == null) {
+          result.kafkaSource_ = kafkaSource_;
+        } else {
+          result.kafkaSource_ = kafkaSourceBuilder_.build();
+        }
+        if (kafkaTargetBuilder_ == null) {
+          result.kafkaTarget_ = kafkaTarget_;
+        } else {
+          result.kafkaTarget_ = kafkaTargetBuilder_.build();
+        }
+        if (binlogSourceBuilder_ == null) {
+          result.binlogSource_ = binlogSource_;
+        } else {
+          result.binlogSource_ = binlogSourceBuilder_.build();
+        }
+        if (pgWalSourceBuilder_ == null) {
+          result.pgWalSource_ = pgWalSource_;
+        } else {
+          result.pgWalSource_ = pgWalSourceBuilder_.build();
+        }
+        if (sqlServerCdcSourceBuilder_ == null) {
+          result.sqlServerCdcSource_ = sqlServerCdcSource_;
+        } else {
+          result.sqlServerCdcSource_ = sqlServerCdcSourceBuilder_.build();
+        }
+        if (logMinerSourceBuilder_ == null) {
+          result.logMinerSource_ = logMinerSource_;
+        } else {
+          result.logMinerSource_ = logMinerSourceBuilder_.build();
+        }
+        if (redisTargetBuilder_ == null) {
+          result.redisTarget_ = redisTarget_;
+        } else {
+          result.redisTarget_ = redisTargetBuilder_.build();
+        }
+        if (hiveTargetBuilder_ == null) {
+          result.hiveTarget_ = hiveTarget_;
+        } else {
+          result.hiveTarget_ = hiveTargetBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource.getDefaultInstance()) return this;
+        if (other.hasMysqlSource()) {
+          mergeMysqlSource(other.getMysqlSource());
+        }
+        if (other.hasMysqlTarget()) {
+          mergeMysqlTarget(other.getMysqlTarget());
+        }
+        if (other.hasOracleSource()) {
+          mergeOracleSource(other.getOracleSource());
+        }
+        if (other.hasOracleTarget()) {
+          mergeOracleTarget(other.getOracleTarget());
+        }
+        if (other.hasDb2Source()) {
+          mergeDb2Source(other.getDb2Source());
+        }
+        if (other.hasDb2Target()) {
+          mergeDb2Target(other.getDb2Target());
+        }
+        if (other.hasPostgresqlSource()) {
+          mergePostgresqlSource(other.getPostgresqlSource());
+        }
+        if (other.hasPostgresqlTarget()) {
+          mergePostgresqlTarget(other.getPostgresqlTarget());
+        }
+        if (other.hasSqlserverSource()) {
+          mergeSqlserverSource(other.getSqlserverSource());
+        }
+        if (other.hasSqlserverTarget()) {
+          mergeSqlserverTarget(other.getSqlserverTarget());
+        }
+        if (other.hasClickHouseSource()) {
+          mergeClickHouseSource(other.getClickHouseSource());
+        }
+        if (other.hasClickHouseTarget()) {
+          mergeClickHouseTarget(other.getClickHouseTarget());
+        }
+        if (other.hasSapHanaSource()) {
+          mergeSapHanaSource(other.getSapHanaSource());
+        }
+        if (other.hasSapHanaTarget()) {
+          mergeSapHanaTarget(other.getSapHanaTarget());
+        }
+        if (other.hasMongodbSource()) {
+          mergeMongodbSource(other.getMongodbSource());
+        }
+        if (other.hasMongodbTarget()) {
+          mergeMongodbTarget(other.getMongodbTarget());
+        }
+        if (other.hasElasticSearchSource()) {
+          mergeElasticSearchSource(other.getElasticSearchSource());
+        }
+        if (other.hasElasticSearchTarget()) {
+          mergeElasticSearchTarget(other.getElasticSearchTarget());
+        }
+        if (other.hasHdfsSource()) {
+          mergeHdfsSource(other.getHdfsSource());
+        }
+        if (other.hasHdfsTarget()) {
+          mergeHdfsTarget(other.getHdfsTarget());
+        }
+        if (other.hasFtpSource()) {
+          mergeFtpSource(other.getFtpSource());
+        }
+        if (other.hasFtpTarget()) {
+          mergeFtpTarget(other.getFtpTarget());
+        }
+        if (other.hasHbaseSource()) {
+          mergeHbaseSource(other.getHbaseSource());
+        }
+        if (other.hasHbaseTarget()) {
+          mergeHbaseTarget(other.getHbaseTarget());
+        }
+        if (other.hasKafkaSource()) {
+          mergeKafkaSource(other.getKafkaSource());
+        }
+        if (other.hasKafkaTarget()) {
+          mergeKafkaTarget(other.getKafkaTarget());
+        }
+        if (other.hasBinlogSource()) {
+          mergeBinlogSource(other.getBinlogSource());
+        }
+        if (other.hasPgWalSource()) {
+          mergePgWalSource(other.getPgWalSource());
+        }
+        if (other.hasSqlServerCdcSource()) {
+          mergeSqlServerCdcSource(other.getSqlServerCdcSource());
+        }
+        if (other.hasLogMinerSource()) {
+          mergeLogMinerSource(other.getLogMinerSource());
+        }
+        if (other.hasRedisTarget()) {
+          mergeRedisTarget(other.getRedisTarget());
+        }
+        if (other.hasHiveTarget()) {
+          mergeHiveTarget(other.getHiveTarget());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource mysqlSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> mysqlSourceBuilder_;
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       * @return Whether the mysqlSource field is set.
+       */
+      public boolean hasMysqlSource() {
+        return mysqlSourceBuilder_ != null || mysqlSource_ != null;
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       * @return The mysqlSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getMysqlSource() {
+        if (mysqlSourceBuilder_ == null) {
+          return mysqlSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : mysqlSource_;
+        } else {
+          return mysqlSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public Builder setMysqlSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (mysqlSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mysqlSource_ = value;
+          onChanged();
+        } else {
+          mysqlSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public Builder setMysqlSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (mysqlSourceBuilder_ == null) {
+          mysqlSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          mysqlSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public Builder mergeMysqlSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (mysqlSourceBuilder_ == null) {
+          if (mysqlSource_ != null) {
+            mysqlSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(mysqlSource_).mergeFrom(value).buildPartial();
+          } else {
+            mysqlSource_ = value;
+          }
+          onChanged();
+        } else {
+          mysqlSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public Builder clearMysqlSource() {
+        if (mysqlSourceBuilder_ == null) {
+          mysqlSource_ = null;
+          onChanged();
+        } else {
+          mysqlSource_ = null;
+          mysqlSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getMysqlSourceBuilder() {
+        
+        onChanged();
+        return getMysqlSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getMysqlSourceOrBuilder() {
+        if (mysqlSourceBuilder_ != null) {
+          return mysqlSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return mysqlSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : mysqlSource_;
+        }
+      }
+      /**
+       * <pre>
+       * mysql source
+       * &#64;inject_tag: json:"mysql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource mysql_source = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getMysqlSourceFieldBuilder() {
+        if (mysqlSourceBuilder_ == null) {
+          mysqlSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getMysqlSource(),
+                  getParentForChildren(),
+                  isClean());
+          mysqlSource_ = null;
+        }
+        return mysqlSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget mysqlTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> mysqlTargetBuilder_;
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       * @return Whether the mysqlTarget field is set.
+       */
+      public boolean hasMysqlTarget() {
+        return mysqlTargetBuilder_ != null || mysqlTarget_ != null;
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       * @return The mysqlTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getMysqlTarget() {
+        if (mysqlTargetBuilder_ == null) {
+          return mysqlTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : mysqlTarget_;
+        } else {
+          return mysqlTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public Builder setMysqlTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (mysqlTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mysqlTarget_ = value;
+          onChanged();
+        } else {
+          mysqlTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public Builder setMysqlTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (mysqlTargetBuilder_ == null) {
+          mysqlTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          mysqlTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public Builder mergeMysqlTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (mysqlTargetBuilder_ == null) {
+          if (mysqlTarget_ != null) {
+            mysqlTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(mysqlTarget_).mergeFrom(value).buildPartial();
+          } else {
+            mysqlTarget_ = value;
+          }
+          onChanged();
+        } else {
+          mysqlTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public Builder clearMysqlTarget() {
+        if (mysqlTargetBuilder_ == null) {
+          mysqlTarget_ = null;
+          onChanged();
+        } else {
+          mysqlTarget_ = null;
+          mysqlTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getMysqlTargetBuilder() {
+        
+        onChanged();
+        return getMysqlTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getMysqlTargetOrBuilder() {
+        if (mysqlTargetBuilder_ != null) {
+          return mysqlTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return mysqlTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : mysqlTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * mysql target
+       * &#64;inject_tag: json:"mysql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget mysql_target = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getMysqlTargetFieldBuilder() {
+        if (mysqlTargetBuilder_ == null) {
+          mysqlTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getMysqlTarget(),
+                  getParentForChildren(),
+                  isClean());
+          mysqlTarget_ = null;
+        }
+        return mysqlTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource oracleSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> oracleSourceBuilder_;
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       * @return Whether the oracleSource field is set.
+       */
+      public boolean hasOracleSource() {
+        return oracleSourceBuilder_ != null || oracleSource_ != null;
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       * @return The oracleSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getOracleSource() {
+        if (oracleSourceBuilder_ == null) {
+          return oracleSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : oracleSource_;
+        } else {
+          return oracleSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public Builder setOracleSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (oracleSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oracleSource_ = value;
+          onChanged();
+        } else {
+          oracleSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public Builder setOracleSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (oracleSourceBuilder_ == null) {
+          oracleSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          oracleSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public Builder mergeOracleSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (oracleSourceBuilder_ == null) {
+          if (oracleSource_ != null) {
+            oracleSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(oracleSource_).mergeFrom(value).buildPartial();
+          } else {
+            oracleSource_ = value;
+          }
+          onChanged();
+        } else {
+          oracleSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public Builder clearOracleSource() {
+        if (oracleSourceBuilder_ == null) {
+          oracleSource_ = null;
+          onChanged();
+        } else {
+          oracleSource_ = null;
+          oracleSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getOracleSourceBuilder() {
+        
+        onChanged();
+        return getOracleSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getOracleSourceOrBuilder() {
+        if (oracleSourceBuilder_ != null) {
+          return oracleSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return oracleSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : oracleSource_;
+        }
+      }
+      /**
+       * <pre>
+       * oracle source
+       * &#64;inject_tag: json:"oracle_source"
+       * </pre>
+       *
+       * <code>.model.DBSource oracle_source = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getOracleSourceFieldBuilder() {
+        if (oracleSourceBuilder_ == null) {
+          oracleSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getOracleSource(),
+                  getParentForChildren(),
+                  isClean());
+          oracleSource_ = null;
+        }
+        return oracleSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget oracleTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> oracleTargetBuilder_;
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       * @return Whether the oracleTarget field is set.
+       */
+      public boolean hasOracleTarget() {
+        return oracleTargetBuilder_ != null || oracleTarget_ != null;
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       * @return The oracleTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getOracleTarget() {
+        if (oracleTargetBuilder_ == null) {
+          return oracleTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : oracleTarget_;
+        } else {
+          return oracleTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public Builder setOracleTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (oracleTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oracleTarget_ = value;
+          onChanged();
+        } else {
+          oracleTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public Builder setOracleTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (oracleTargetBuilder_ == null) {
+          oracleTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          oracleTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public Builder mergeOracleTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (oracleTargetBuilder_ == null) {
+          if (oracleTarget_ != null) {
+            oracleTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(oracleTarget_).mergeFrom(value).buildPartial();
+          } else {
+            oracleTarget_ = value;
+          }
+          onChanged();
+        } else {
+          oracleTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public Builder clearOracleTarget() {
+        if (oracleTargetBuilder_ == null) {
+          oracleTarget_ = null;
+          onChanged();
+        } else {
+          oracleTarget_ = null;
+          oracleTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getOracleTargetBuilder() {
+        
+        onChanged();
+        return getOracleTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getOracleTargetOrBuilder() {
+        if (oracleTargetBuilder_ != null) {
+          return oracleTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return oracleTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : oracleTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * oracle target
+       * &#64;inject_tag: json:"oracle_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget oracle_target = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getOracleTargetFieldBuilder() {
+        if (oracleTargetBuilder_ == null) {
+          oracleTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getOracleTarget(),
+                  getParentForChildren(),
+                  isClean());
+          oracleTarget_ = null;
+        }
+        return oracleTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource db2Source_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> db2SourceBuilder_;
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       * @return Whether the db2Source field is set.
+       */
+      public boolean hasDb2Source() {
+        return db2SourceBuilder_ != null || db2Source_ != null;
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       * @return The db2Source.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getDb2Source() {
+        if (db2SourceBuilder_ == null) {
+          return db2Source_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : db2Source_;
+        } else {
+          return db2SourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public Builder setDb2Source(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (db2SourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          db2Source_ = value;
+          onChanged();
+        } else {
+          db2SourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public Builder setDb2Source(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (db2SourceBuilder_ == null) {
+          db2Source_ = builderForValue.build();
+          onChanged();
+        } else {
+          db2SourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public Builder mergeDb2Source(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (db2SourceBuilder_ == null) {
+          if (db2Source_ != null) {
+            db2Source_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(db2Source_).mergeFrom(value).buildPartial();
+          } else {
+            db2Source_ = value;
+          }
+          onChanged();
+        } else {
+          db2SourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public Builder clearDb2Source() {
+        if (db2SourceBuilder_ == null) {
+          db2Source_ = null;
+          onChanged();
+        } else {
+          db2Source_ = null;
+          db2SourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getDb2SourceBuilder() {
+        
+        onChanged();
+        return getDb2SourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getDb2SourceOrBuilder() {
+        if (db2SourceBuilder_ != null) {
+          return db2SourceBuilder_.getMessageOrBuilder();
+        } else {
+          return db2Source_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : db2Source_;
+        }
+      }
+      /**
+       * <pre>
+       * db2 source
+       * &#64;inject_tag: json:"db2_source"
+       * </pre>
+       *
+       * <code>.model.DBSource db2_source = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getDb2SourceFieldBuilder() {
+        if (db2SourceBuilder_ == null) {
+          db2SourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getDb2Source(),
+                  getParentForChildren(),
+                  isClean());
+          db2Source_ = null;
+        }
+        return db2SourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget db2Target_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> db2TargetBuilder_;
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       * @return Whether the db2Target field is set.
+       */
+      public boolean hasDb2Target() {
+        return db2TargetBuilder_ != null || db2Target_ != null;
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       * @return The db2Target.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getDb2Target() {
+        if (db2TargetBuilder_ == null) {
+          return db2Target_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : db2Target_;
+        } else {
+          return db2TargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public Builder setDb2Target(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (db2TargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          db2Target_ = value;
+          onChanged();
+        } else {
+          db2TargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public Builder setDb2Target(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (db2TargetBuilder_ == null) {
+          db2Target_ = builderForValue.build();
+          onChanged();
+        } else {
+          db2TargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public Builder mergeDb2Target(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (db2TargetBuilder_ == null) {
+          if (db2Target_ != null) {
+            db2Target_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(db2Target_).mergeFrom(value).buildPartial();
+          } else {
+            db2Target_ = value;
+          }
+          onChanged();
+        } else {
+          db2TargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public Builder clearDb2Target() {
+        if (db2TargetBuilder_ == null) {
+          db2Target_ = null;
+          onChanged();
+        } else {
+          db2Target_ = null;
+          db2TargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getDb2TargetBuilder() {
+        
+        onChanged();
+        return getDb2TargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getDb2TargetOrBuilder() {
+        if (db2TargetBuilder_ != null) {
+          return db2TargetBuilder_.getMessageOrBuilder();
+        } else {
+          return db2Target_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : db2Target_;
+        }
+      }
+      /**
+       * <pre>
+       * db2 target
+       * &#64;inject_tag: json:"db2_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget db2_target = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getDb2TargetFieldBuilder() {
+        if (db2TargetBuilder_ == null) {
+          db2TargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getDb2Target(),
+                  getParentForChildren(),
+                  isClean());
+          db2Target_ = null;
+        }
+        return db2TargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource postgresqlSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> postgresqlSourceBuilder_;
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       * @return Whether the postgresqlSource field is set.
+       */
+      public boolean hasPostgresqlSource() {
+        return postgresqlSourceBuilder_ != null || postgresqlSource_ != null;
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       * @return The postgresqlSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getPostgresqlSource() {
+        if (postgresqlSourceBuilder_ == null) {
+          return postgresqlSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : postgresqlSource_;
+        } else {
+          return postgresqlSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public Builder setPostgresqlSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (postgresqlSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postgresqlSource_ = value;
+          onChanged();
+        } else {
+          postgresqlSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public Builder setPostgresqlSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (postgresqlSourceBuilder_ == null) {
+          postgresqlSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          postgresqlSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public Builder mergePostgresqlSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (postgresqlSourceBuilder_ == null) {
+          if (postgresqlSource_ != null) {
+            postgresqlSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(postgresqlSource_).mergeFrom(value).buildPartial();
+          } else {
+            postgresqlSource_ = value;
+          }
+          onChanged();
+        } else {
+          postgresqlSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public Builder clearPostgresqlSource() {
+        if (postgresqlSourceBuilder_ == null) {
+          postgresqlSource_ = null;
+          onChanged();
+        } else {
+          postgresqlSource_ = null;
+          postgresqlSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getPostgresqlSourceBuilder() {
+        
+        onChanged();
+        return getPostgresqlSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getPostgresqlSourceOrBuilder() {
+        if (postgresqlSourceBuilder_ != null) {
+          return postgresqlSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return postgresqlSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : postgresqlSource_;
+        }
+      }
+      /**
+       * <pre>
+       * postgresql source
+       * &#64;inject_tag: json:"postgresql_source"
+       * </pre>
+       *
+       * <code>.model.DBSource postgresql_source = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getPostgresqlSourceFieldBuilder() {
+        if (postgresqlSourceBuilder_ == null) {
+          postgresqlSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getPostgresqlSource(),
+                  getParentForChildren(),
+                  isClean());
+          postgresqlSource_ = null;
+        }
+        return postgresqlSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget postgresqlTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> postgresqlTargetBuilder_;
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       * @return Whether the postgresqlTarget field is set.
+       */
+      public boolean hasPostgresqlTarget() {
+        return postgresqlTargetBuilder_ != null || postgresqlTarget_ != null;
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       * @return The postgresqlTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getPostgresqlTarget() {
+        if (postgresqlTargetBuilder_ == null) {
+          return postgresqlTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : postgresqlTarget_;
+        } else {
+          return postgresqlTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public Builder setPostgresqlTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (postgresqlTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postgresqlTarget_ = value;
+          onChanged();
+        } else {
+          postgresqlTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public Builder setPostgresqlTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (postgresqlTargetBuilder_ == null) {
+          postgresqlTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          postgresqlTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public Builder mergePostgresqlTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (postgresqlTargetBuilder_ == null) {
+          if (postgresqlTarget_ != null) {
+            postgresqlTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(postgresqlTarget_).mergeFrom(value).buildPartial();
+          } else {
+            postgresqlTarget_ = value;
+          }
+          onChanged();
+        } else {
+          postgresqlTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public Builder clearPostgresqlTarget() {
+        if (postgresqlTargetBuilder_ == null) {
+          postgresqlTarget_ = null;
+          onChanged();
+        } else {
+          postgresqlTarget_ = null;
+          postgresqlTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getPostgresqlTargetBuilder() {
+        
+        onChanged();
+        return getPostgresqlTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getPostgresqlTargetOrBuilder() {
+        if (postgresqlTargetBuilder_ != null) {
+          return postgresqlTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return postgresqlTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : postgresqlTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * postgresql target
+       * &#64;inject_tag: json:"postgresql_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget postgresql_target = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getPostgresqlTargetFieldBuilder() {
+        if (postgresqlTargetBuilder_ == null) {
+          postgresqlTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getPostgresqlTarget(),
+                  getParentForChildren(),
+                  isClean());
+          postgresqlTarget_ = null;
+        }
+        return postgresqlTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource sqlserverSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> sqlserverSourceBuilder_;
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       * @return Whether the sqlserverSource field is set.
+       */
+      public boolean hasSqlserverSource() {
+        return sqlserverSourceBuilder_ != null || sqlserverSource_ != null;
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       * @return The sqlserverSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSqlserverSource() {
+        if (sqlserverSourceBuilder_ == null) {
+          return sqlserverSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sqlserverSource_;
+        } else {
+          return sqlserverSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public Builder setSqlserverSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (sqlserverSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sqlserverSource_ = value;
+          onChanged();
+        } else {
+          sqlserverSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public Builder setSqlserverSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (sqlserverSourceBuilder_ == null) {
+          sqlserverSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          sqlserverSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public Builder mergeSqlserverSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (sqlserverSourceBuilder_ == null) {
+          if (sqlserverSource_ != null) {
+            sqlserverSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(sqlserverSource_).mergeFrom(value).buildPartial();
+          } else {
+            sqlserverSource_ = value;
+          }
+          onChanged();
+        } else {
+          sqlserverSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public Builder clearSqlserverSource() {
+        if (sqlserverSourceBuilder_ == null) {
+          sqlserverSource_ = null;
+          onChanged();
+        } else {
+          sqlserverSource_ = null;
+          sqlserverSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getSqlserverSourceBuilder() {
+        
+        onChanged();
+        return getSqlserverSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSqlserverSourceOrBuilder() {
+        if (sqlserverSourceBuilder_ != null) {
+          return sqlserverSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return sqlserverSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sqlserverSource_;
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver source
+       * &#64;inject_tag: json:"sqlserver_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sqlserver_source = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getSqlserverSourceFieldBuilder() {
+        if (sqlserverSourceBuilder_ == null) {
+          sqlserverSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getSqlserverSource(),
+                  getParentForChildren(),
+                  isClean());
+          sqlserverSource_ = null;
+        }
+        return sqlserverSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget sqlserverTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> sqlserverTargetBuilder_;
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       * @return Whether the sqlserverTarget field is set.
+       */
+      public boolean hasSqlserverTarget() {
+        return sqlserverTargetBuilder_ != null || sqlserverTarget_ != null;
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       * @return The sqlserverTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSqlserverTarget() {
+        if (sqlserverTargetBuilder_ == null) {
+          return sqlserverTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sqlserverTarget_;
+        } else {
+          return sqlserverTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public Builder setSqlserverTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (sqlserverTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sqlserverTarget_ = value;
+          onChanged();
+        } else {
+          sqlserverTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public Builder setSqlserverTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (sqlserverTargetBuilder_ == null) {
+          sqlserverTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          sqlserverTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public Builder mergeSqlserverTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (sqlserverTargetBuilder_ == null) {
+          if (sqlserverTarget_ != null) {
+            sqlserverTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(sqlserverTarget_).mergeFrom(value).buildPartial();
+          } else {
+            sqlserverTarget_ = value;
+          }
+          onChanged();
+        } else {
+          sqlserverTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public Builder clearSqlserverTarget() {
+        if (sqlserverTargetBuilder_ == null) {
+          sqlserverTarget_ = null;
+          onChanged();
+        } else {
+          sqlserverTarget_ = null;
+          sqlserverTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getSqlserverTargetBuilder() {
+        
+        onChanged();
+        return getSqlserverTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSqlserverTargetOrBuilder() {
+        if (sqlserverTargetBuilder_ != null) {
+          return sqlserverTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return sqlserverTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sqlserverTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver target
+       * &#64;inject_tag: json:"sqlserver_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sqlserver_target = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getSqlserverTargetFieldBuilder() {
+        if (sqlserverTargetBuilder_ == null) {
+          sqlserverTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getSqlserverTarget(),
+                  getParentForChildren(),
+                  isClean());
+          sqlserverTarget_ = null;
+        }
+        return sqlserverTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource clickHouseSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> clickHouseSourceBuilder_;
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       * @return Whether the clickHouseSource field is set.
+       */
+      public boolean hasClickHouseSource() {
+        return clickHouseSourceBuilder_ != null || clickHouseSource_ != null;
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       * @return The clickHouseSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getClickHouseSource() {
+        if (clickHouseSourceBuilder_ == null) {
+          return clickHouseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : clickHouseSource_;
+        } else {
+          return clickHouseSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public Builder setClickHouseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (clickHouseSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clickHouseSource_ = value;
+          onChanged();
+        } else {
+          clickHouseSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public Builder setClickHouseSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (clickHouseSourceBuilder_ == null) {
+          clickHouseSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          clickHouseSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public Builder mergeClickHouseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (clickHouseSourceBuilder_ == null) {
+          if (clickHouseSource_ != null) {
+            clickHouseSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(clickHouseSource_).mergeFrom(value).buildPartial();
+          } else {
+            clickHouseSource_ = value;
+          }
+          onChanged();
+        } else {
+          clickHouseSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public Builder clearClickHouseSource() {
+        if (clickHouseSourceBuilder_ == null) {
+          clickHouseSource_ = null;
+          onChanged();
+        } else {
+          clickHouseSource_ = null;
+          clickHouseSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getClickHouseSourceBuilder() {
+        
+        onChanged();
+        return getClickHouseSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getClickHouseSourceOrBuilder() {
+        if (clickHouseSourceBuilder_ != null) {
+          return clickHouseSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return clickHouseSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : clickHouseSource_;
+        }
+      }
+      /**
+       * <pre>
+       * click house source
+       * &#64;inject_tag: json:"click_house_source"
+       * </pre>
+       *
+       * <code>.model.DBSource click_house_source = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getClickHouseSourceFieldBuilder() {
+        if (clickHouseSourceBuilder_ == null) {
+          clickHouseSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getClickHouseSource(),
+                  getParentForChildren(),
+                  isClean());
+          clickHouseSource_ = null;
+        }
+        return clickHouseSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget clickHouseTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> clickHouseTargetBuilder_;
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       * @return Whether the clickHouseTarget field is set.
+       */
+      public boolean hasClickHouseTarget() {
+        return clickHouseTargetBuilder_ != null || clickHouseTarget_ != null;
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       * @return The clickHouseTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getClickHouseTarget() {
+        if (clickHouseTargetBuilder_ == null) {
+          return clickHouseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : clickHouseTarget_;
+        } else {
+          return clickHouseTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public Builder setClickHouseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (clickHouseTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clickHouseTarget_ = value;
+          onChanged();
+        } else {
+          clickHouseTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public Builder setClickHouseTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (clickHouseTargetBuilder_ == null) {
+          clickHouseTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          clickHouseTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public Builder mergeClickHouseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (clickHouseTargetBuilder_ == null) {
+          if (clickHouseTarget_ != null) {
+            clickHouseTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(clickHouseTarget_).mergeFrom(value).buildPartial();
+          } else {
+            clickHouseTarget_ = value;
+          }
+          onChanged();
+        } else {
+          clickHouseTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public Builder clearClickHouseTarget() {
+        if (clickHouseTargetBuilder_ == null) {
+          clickHouseTarget_ = null;
+          onChanged();
+        } else {
+          clickHouseTarget_ = null;
+          clickHouseTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getClickHouseTargetBuilder() {
+        
+        onChanged();
+        return getClickHouseTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getClickHouseTargetOrBuilder() {
+        if (clickHouseTargetBuilder_ != null) {
+          return clickHouseTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return clickHouseTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : clickHouseTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * click house target
+       * &#64;inject_tag: json:"click_house_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget click_house_target = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getClickHouseTargetFieldBuilder() {
+        if (clickHouseTargetBuilder_ == null) {
+          clickHouseTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getClickHouseTarget(),
+                  getParentForChildren(),
+                  isClean());
+          clickHouseTarget_ = null;
+        }
+        return clickHouseTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource sapHanaSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> sapHanaSourceBuilder_;
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       * @return Whether the sapHanaSource field is set.
+       */
+      public boolean hasSapHanaSource() {
+        return sapHanaSourceBuilder_ != null || sapHanaSource_ != null;
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       * @return The sapHanaSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource getSapHanaSource() {
+        if (sapHanaSourceBuilder_ == null) {
+          return sapHanaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sapHanaSource_;
+        } else {
+          return sapHanaSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public Builder setSapHanaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (sapHanaSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sapHanaSource_ = value;
+          onChanged();
+        } else {
+          sapHanaSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public Builder setSapHanaSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder builderForValue) {
+        if (sapHanaSourceBuilder_ == null) {
+          sapHanaSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          sapHanaSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public Builder mergeSapHanaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource value) {
+        if (sapHanaSourceBuilder_ == null) {
+          if (sapHanaSource_ != null) {
+            sapHanaSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.newBuilder(sapHanaSource_).mergeFrom(value).buildPartial();
+          } else {
+            sapHanaSource_ = value;
+          }
+          onChanged();
+        } else {
+          sapHanaSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public Builder clearSapHanaSource() {
+        if (sapHanaSourceBuilder_ == null) {
+          sapHanaSource_ = null;
+          onChanged();
+        } else {
+          sapHanaSource_ = null;
+          sapHanaSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder getSapHanaSourceBuilder() {
+        
+        onChanged();
+        return getSapHanaSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder getSapHanaSourceOrBuilder() {
+        if (sapHanaSourceBuilder_ != null) {
+          return sapHanaSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return sapHanaSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDefaultInstance() : sapHanaSource_;
+        }
+      }
+      /**
+       * <pre>
+       * sap hana source
+       * &#64;inject_tag: json:"sap_hana_source"
+       * </pre>
+       *
+       * <code>.model.DBSource sap_hana_source = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder> 
+          getSapHanaSourceFieldBuilder() {
+        if (sapHanaSourceBuilder_ == null) {
+          sapHanaSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSourceOrBuilder>(
+                  getSapHanaSource(),
+                  getParentForChildren(),
+                  isClean());
+          sapHanaSource_ = null;
+        }
+        return sapHanaSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget sapHanaTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> sapHanaTargetBuilder_;
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       * @return Whether the sapHanaTarget field is set.
+       */
+      public boolean hasSapHanaTarget() {
+        return sapHanaTargetBuilder_ != null || sapHanaTarget_ != null;
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       * @return The sapHanaTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget getSapHanaTarget() {
+        if (sapHanaTargetBuilder_ == null) {
+          return sapHanaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sapHanaTarget_;
+        } else {
+          return sapHanaTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public Builder setSapHanaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (sapHanaTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sapHanaTarget_ = value;
+          onChanged();
+        } else {
+          sapHanaTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public Builder setSapHanaTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder builderForValue) {
+        if (sapHanaTargetBuilder_ == null) {
+          sapHanaTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          sapHanaTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public Builder mergeSapHanaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget value) {
+        if (sapHanaTargetBuilder_ == null) {
+          if (sapHanaTarget_ != null) {
+            sapHanaTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.newBuilder(sapHanaTarget_).mergeFrom(value).buildPartial();
+          } else {
+            sapHanaTarget_ = value;
+          }
+          onChanged();
+        } else {
+          sapHanaTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public Builder clearSapHanaTarget() {
+        if (sapHanaTargetBuilder_ == null) {
+          sapHanaTarget_ = null;
+          onChanged();
+        } else {
+          sapHanaTarget_ = null;
+          sapHanaTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder getSapHanaTargetBuilder() {
+        
+        onChanged();
+        return getSapHanaTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder getSapHanaTargetOrBuilder() {
+        if (sapHanaTargetBuilder_ != null) {
+          return sapHanaTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return sapHanaTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.getDefaultInstance() : sapHanaTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * sap hana target
+       * &#64;inject_tag: json:"sap_hana_target"
+       * </pre>
+       *
+       * <code>.model.DBTarget sap_hana_target = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder> 
+          getSapHanaTargetFieldBuilder() {
+        if (sapHanaTargetBuilder_ == null) {
+          sapHanaTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBTargetOrBuilder>(
+                  getSapHanaTarget(),
+                  getParentForChildren(),
+                  isClean());
+          sapHanaTarget_ = null;
+        }
+        return sapHanaTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource mongodbSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder> mongodbSourceBuilder_;
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       * @return Whether the mongodbSource field is set.
+       */
+      public boolean hasMongodbSource() {
+        return mongodbSourceBuilder_ != null || mongodbSource_ != null;
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       * @return The mongodbSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource getMongodbSource() {
+        if (mongodbSourceBuilder_ == null) {
+          return mongodbSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
+        } else {
+          return mongodbSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public Builder setMongodbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource value) {
+        if (mongodbSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mongodbSource_ = value;
+          onChanged();
+        } else {
+          mongodbSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public Builder setMongodbSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder builderForValue) {
+        if (mongodbSourceBuilder_ == null) {
+          mongodbSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          mongodbSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public Builder mergeMongodbSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource value) {
+        if (mongodbSourceBuilder_ == null) {
+          if (mongodbSource_ != null) {
+            mongodbSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.newBuilder(mongodbSource_).mergeFrom(value).buildPartial();
+          } else {
+            mongodbSource_ = value;
+          }
+          onChanged();
+        } else {
+          mongodbSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public Builder clearMongodbSource() {
+        if (mongodbSourceBuilder_ == null) {
+          mongodbSource_ = null;
+          onChanged();
+        } else {
+          mongodbSource_ = null;
+          mongodbSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder getMongodbSourceBuilder() {
+        
+        onChanged();
+        return getMongodbSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder getMongodbSourceOrBuilder() {
+        if (mongodbSourceBuilder_ != null) {
+          return mongodbSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return mongodbSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.getDefaultInstance() : mongodbSource_;
+        }
+      }
+      /**
+       * <pre>
+       * mongodb source
+       * &#64;inject_tag: json:"mongodb_source"
+       * </pre>
+       *
+       * <code>.model.MongodbSource mongodb_source = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder> 
+          getMongodbSourceFieldBuilder() {
+        if (mongodbSourceBuilder_ == null) {
+          mongodbSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbSourceOrBuilder>(
+                  getMongodbSource(),
+                  getParentForChildren(),
+                  isClean());
+          mongodbSource_ = null;
+        }
+        return mongodbSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget mongodbTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder> mongodbTargetBuilder_;
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       * @return Whether the mongodbTarget field is set.
+       */
+      public boolean hasMongodbTarget() {
+        return mongodbTargetBuilder_ != null || mongodbTarget_ != null;
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       * @return The mongodbTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget getMongodbTarget() {
+        if (mongodbTargetBuilder_ == null) {
+          return mongodbTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
+        } else {
+          return mongodbTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public Builder setMongodbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget value) {
+        if (mongodbTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mongodbTarget_ = value;
+          onChanged();
+        } else {
+          mongodbTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public Builder setMongodbTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder builderForValue) {
+        if (mongodbTargetBuilder_ == null) {
+          mongodbTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          mongodbTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public Builder mergeMongodbTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget value) {
+        if (mongodbTargetBuilder_ == null) {
+          if (mongodbTarget_ != null) {
+            mongodbTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.newBuilder(mongodbTarget_).mergeFrom(value).buildPartial();
+          } else {
+            mongodbTarget_ = value;
+          }
+          onChanged();
+        } else {
+          mongodbTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public Builder clearMongodbTarget() {
+        if (mongodbTargetBuilder_ == null) {
+          mongodbTarget_ = null;
+          onChanged();
+        } else {
+          mongodbTarget_ = null;
+          mongodbTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder getMongodbTargetBuilder() {
+        
+        onChanged();
+        return getMongodbTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder getMongodbTargetOrBuilder() {
+        if (mongodbTargetBuilder_ != null) {
+          return mongodbTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return mongodbTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDefaultInstance() : mongodbTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * mongodb target
+       * &#64;inject_tag: json:"mongodb_target"
+       * </pre>
+       *
+       * <code>.model.MongodbTarget mongodb_target = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder> 
+          getMongodbTargetFieldBuilder() {
+        if (mongodbTargetBuilder_ == null) {
+          mongodbTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTargetOrBuilder>(
+                  getMongodbTarget(),
+                  getParentForChildren(),
+                  isClean());
+          mongodbTarget_ = null;
+        }
+        return mongodbTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource elasticSearchSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder> elasticSearchSourceBuilder_;
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       * @return Whether the elasticSearchSource field is set.
+       */
+      public boolean hasElasticSearchSource() {
+        return elasticSearchSourceBuilder_ != null || elasticSearchSource_ != null;
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       * @return The elasticSearchSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource getElasticSearchSource() {
+        if (elasticSearchSourceBuilder_ == null) {
+          return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
+        } else {
+          return elasticSearchSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public Builder setElasticSearchSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource value) {
+        if (elasticSearchSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          elasticSearchSource_ = value;
+          onChanged();
+        } else {
+          elasticSearchSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public Builder setElasticSearchSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder builderForValue) {
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          elasticSearchSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public Builder mergeElasticSearchSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource value) {
+        if (elasticSearchSourceBuilder_ == null) {
+          if (elasticSearchSource_ != null) {
+            elasticSearchSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.newBuilder(elasticSearchSource_).mergeFrom(value).buildPartial();
+          } else {
+            elasticSearchSource_ = value;
+          }
+          onChanged();
+        } else {
+          elasticSearchSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public Builder clearElasticSearchSource() {
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = null;
+          onChanged();
+        } else {
+          elasticSearchSource_ = null;
+          elasticSearchSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder getElasticSearchSourceBuilder() {
+        
+        onChanged();
+        return getElasticSearchSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
+        if (elasticSearchSourceBuilder_ != null) {
+          return elasticSearchSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return elasticSearchSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
+        }
+      }
+      /**
+       * <pre>
+       * elasticsearch source
+       * &#64;inject_tag: json:"elastic_search_source"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchSource elastic_search_source = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder> 
+          getElasticSearchSourceFieldBuilder() {
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchSourceOrBuilder>(
+                  getElasticSearchSource(),
+                  getParentForChildren(),
+                  isClean());
+          elasticSearchSource_ = null;
+        }
+        return elasticSearchSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget elasticSearchTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder> elasticSearchTargetBuilder_;
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       * @return Whether the elasticSearchTarget field is set.
+       */
+      public boolean hasElasticSearchTarget() {
+        return elasticSearchTargetBuilder_ != null || elasticSearchTarget_ != null;
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       * @return The elasticSearchTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget getElasticSearchTarget() {
+        if (elasticSearchTargetBuilder_ == null) {
+          return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
+        } else {
+          return elasticSearchTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public Builder setElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget value) {
+        if (elasticSearchTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          elasticSearchTarget_ = value;
+          onChanged();
+        } else {
+          elasticSearchTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public Builder setElasticSearchTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder builderForValue) {
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          elasticSearchTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public Builder mergeElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget value) {
+        if (elasticSearchTargetBuilder_ == null) {
+          if (elasticSearchTarget_ != null) {
+            elasticSearchTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.newBuilder(elasticSearchTarget_).mergeFrom(value).buildPartial();
+          } else {
+            elasticSearchTarget_ = value;
+          }
+          onChanged();
+        } else {
+          elasticSearchTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public Builder clearElasticSearchTarget() {
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = null;
+          onChanged();
+        } else {
+          elasticSearchTarget_ = null;
+          elasticSearchTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder getElasticSearchTargetBuilder() {
+        
+        onChanged();
+        return getElasticSearchTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
+        if (elasticSearchTargetBuilder_ != null) {
+          return elasticSearchTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return elasticSearchTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * elasticsearch target
+       * &#64;inject_tag: json:"elastic_search_target"
+       * </pre>
+       *
+       * <code>.model.ElasticSearchTarget elastic_search_target = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder> 
+          getElasticSearchTargetFieldBuilder() {
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.ElasticSearchTargetOrBuilder>(
+                  getElasticSearchTarget(),
+                  getParentForChildren(),
+                  isClean());
+          elasticSearchTarget_ = null;
+        }
+        return elasticSearchTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource hdfsSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder> hdfsSourceBuilder_;
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       * @return Whether the hdfsSource field is set.
+       */
+      public boolean hasHdfsSource() {
+        return hdfsSourceBuilder_ != null || hdfsSource_ != null;
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       * @return The hdfsSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource getHdfsSource() {
+        if (hdfsSourceBuilder_ == null) {
+          return hdfsSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
+        } else {
+          return hdfsSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public Builder setHdfsSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource value) {
+        if (hdfsSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hdfsSource_ = value;
+          onChanged();
+        } else {
+          hdfsSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public Builder setHdfsSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder builderForValue) {
+        if (hdfsSourceBuilder_ == null) {
+          hdfsSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          hdfsSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public Builder mergeHdfsSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource value) {
+        if (hdfsSourceBuilder_ == null) {
+          if (hdfsSource_ != null) {
+            hdfsSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.newBuilder(hdfsSource_).mergeFrom(value).buildPartial();
+          } else {
+            hdfsSource_ = value;
+          }
+          onChanged();
+        } else {
+          hdfsSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public Builder clearHdfsSource() {
+        if (hdfsSourceBuilder_ == null) {
+          hdfsSource_ = null;
+          onChanged();
+        } else {
+          hdfsSource_ = null;
+          hdfsSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder getHdfsSourceBuilder() {
+        
+        onChanged();
+        return getHdfsSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder getHdfsSourceOrBuilder() {
+        if (hdfsSourceBuilder_ != null) {
+          return hdfsSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return hdfsSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.getDefaultInstance() : hdfsSource_;
+        }
+      }
+      /**
+       * <pre>
+       * hdfs source
+       * &#64;inject_tag: json:"hdfs_source"
+       * </pre>
+       *
+       * <code>.model.HdfsSource hdfs_source = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder> 
+          getHdfsSourceFieldBuilder() {
+        if (hdfsSourceBuilder_ == null) {
+          hdfsSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsSourceOrBuilder>(
+                  getHdfsSource(),
+                  getParentForChildren(),
+                  isClean());
+          hdfsSource_ = null;
+        }
+        return hdfsSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget hdfsTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder> hdfsTargetBuilder_;
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       * @return Whether the hdfsTarget field is set.
+       */
+      public boolean hasHdfsTarget() {
+        return hdfsTargetBuilder_ != null || hdfsTarget_ != null;
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       * @return The hdfsTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget getHdfsTarget() {
+        if (hdfsTargetBuilder_ == null) {
+          return hdfsTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
+        } else {
+          return hdfsTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public Builder setHdfsTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget value) {
+        if (hdfsTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hdfsTarget_ = value;
+          onChanged();
+        } else {
+          hdfsTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public Builder setHdfsTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder builderForValue) {
+        if (hdfsTargetBuilder_ == null) {
+          hdfsTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          hdfsTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public Builder mergeHdfsTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget value) {
+        if (hdfsTargetBuilder_ == null) {
+          if (hdfsTarget_ != null) {
+            hdfsTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.newBuilder(hdfsTarget_).mergeFrom(value).buildPartial();
+          } else {
+            hdfsTarget_ = value;
+          }
+          onChanged();
+        } else {
+          hdfsTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public Builder clearHdfsTarget() {
+        if (hdfsTargetBuilder_ == null) {
+          hdfsTarget_ = null;
+          onChanged();
+        } else {
+          hdfsTarget_ = null;
+          hdfsTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder getHdfsTargetBuilder() {
+        
+        onChanged();
+        return getHdfsTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder getHdfsTargetOrBuilder() {
+        if (hdfsTargetBuilder_ != null) {
+          return hdfsTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return hdfsTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.getDefaultInstance() : hdfsTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * hdfs target
+       * &#64;inject_tag: json:"hdfs_target"
+       * </pre>
+       *
+       * <code>.model.HdfsTarget hdfs_target = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder> 
+          getHdfsTargetFieldBuilder() {
+        if (hdfsTargetBuilder_ == null) {
+          hdfsTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHdfs.HdfsTargetOrBuilder>(
+                  getHdfsTarget(),
+                  getParentForChildren(),
+                  isClean());
+          hdfsTarget_ = null;
+        }
+        return hdfsTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource ftpSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder> ftpSourceBuilder_;
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       * @return Whether the ftpSource field is set.
+       */
+      public boolean hasFtpSource() {
+        return ftpSourceBuilder_ != null || ftpSource_ != null;
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       * @return The ftpSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource getFtpSource() {
+        if (ftpSourceBuilder_ == null) {
+          return ftpSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
+        } else {
+          return ftpSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public Builder setFtpSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource value) {
+        if (ftpSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ftpSource_ = value;
+          onChanged();
+        } else {
+          ftpSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public Builder setFtpSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder builderForValue) {
+        if (ftpSourceBuilder_ == null) {
+          ftpSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          ftpSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public Builder mergeFtpSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource value) {
+        if (ftpSourceBuilder_ == null) {
+          if (ftpSource_ != null) {
+            ftpSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.newBuilder(ftpSource_).mergeFrom(value).buildPartial();
+          } else {
+            ftpSource_ = value;
+          }
+          onChanged();
+        } else {
+          ftpSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public Builder clearFtpSource() {
+        if (ftpSourceBuilder_ == null) {
+          ftpSource_ = null;
+          onChanged();
+        } else {
+          ftpSource_ = null;
+          ftpSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder getFtpSourceBuilder() {
+        
+        onChanged();
+        return getFtpSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder getFtpSourceOrBuilder() {
+        if (ftpSourceBuilder_ != null) {
+          return ftpSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return ftpSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.getDefaultInstance() : ftpSource_;
+        }
+      }
+      /**
+       * <pre>
+       * ftp source
+       * &#64;inject_tag: json:"ftp_source"
+       * </pre>
+       *
+       * <code>.model.FtpSource ftp_source = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder> 
+          getFtpSourceFieldBuilder() {
+        if (ftpSourceBuilder_ == null) {
+          ftpSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpSourceOrBuilder>(
+                  getFtpSource(),
+                  getParentForChildren(),
+                  isClean());
+          ftpSource_ = null;
+        }
+        return ftpSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget ftpTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder> ftpTargetBuilder_;
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       * @return Whether the ftpTarget field is set.
+       */
+      public boolean hasFtpTarget() {
+        return ftpTargetBuilder_ != null || ftpTarget_ != null;
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       * @return The ftpTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget getFtpTarget() {
+        if (ftpTargetBuilder_ == null) {
+          return ftpTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
+        } else {
+          return ftpTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public Builder setFtpTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget value) {
+        if (ftpTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ftpTarget_ = value;
+          onChanged();
+        } else {
+          ftpTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public Builder setFtpTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder builderForValue) {
+        if (ftpTargetBuilder_ == null) {
+          ftpTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          ftpTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public Builder mergeFtpTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget value) {
+        if (ftpTargetBuilder_ == null) {
+          if (ftpTarget_ != null) {
+            ftpTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.newBuilder(ftpTarget_).mergeFrom(value).buildPartial();
+          } else {
+            ftpTarget_ = value;
+          }
+          onChanged();
+        } else {
+          ftpTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public Builder clearFtpTarget() {
+        if (ftpTargetBuilder_ == null) {
+          ftpTarget_ = null;
+          onChanged();
+        } else {
+          ftpTarget_ = null;
+          ftpTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder getFtpTargetBuilder() {
+        
+        onChanged();
+        return getFtpTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder getFtpTargetOrBuilder() {
+        if (ftpTargetBuilder_ != null) {
+          return ftpTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return ftpTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.getDefaultInstance() : ftpTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * ftp target
+       * &#64;inject_tag: json:"ftp_target"
+       * </pre>
+       *
+       * <code>.model.FtpTarget ftp_target = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder> 
+          getFtpTargetFieldBuilder() {
+        if (ftpTargetBuilder_ == null) {
+          ftpTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.FtpTargetOrBuilder>(
+                  getFtpTarget(),
+                  getParentForChildren(),
+                  isClean());
+          ftpTarget_ = null;
+        }
+        return ftpTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource hbaseSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder> hbaseSourceBuilder_;
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       * @return Whether the hbaseSource field is set.
+       */
+      public boolean hasHbaseSource() {
+        return hbaseSourceBuilder_ != null || hbaseSource_ != null;
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       * @return The hbaseSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource getHbaseSource() {
+        if (hbaseSourceBuilder_ == null) {
+          return hbaseSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
+        } else {
+          return hbaseSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public Builder setHbaseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource value) {
+        if (hbaseSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hbaseSource_ = value;
+          onChanged();
+        } else {
+          hbaseSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public Builder setHbaseSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder builderForValue) {
+        if (hbaseSourceBuilder_ == null) {
+          hbaseSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          hbaseSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public Builder mergeHbaseSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource value) {
+        if (hbaseSourceBuilder_ == null) {
+          if (hbaseSource_ != null) {
+            hbaseSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.newBuilder(hbaseSource_).mergeFrom(value).buildPartial();
+          } else {
+            hbaseSource_ = value;
+          }
+          onChanged();
+        } else {
+          hbaseSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public Builder clearHbaseSource() {
+        if (hbaseSourceBuilder_ == null) {
+          hbaseSource_ = null;
+          onChanged();
+        } else {
+          hbaseSource_ = null;
+          hbaseSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder getHbaseSourceBuilder() {
+        
+        onChanged();
+        return getHbaseSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder getHbaseSourceOrBuilder() {
+        if (hbaseSourceBuilder_ != null) {
+          return hbaseSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return hbaseSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.getDefaultInstance() : hbaseSource_;
+        }
+      }
+      /**
+       * <pre>
+       * hbase source
+       * &#64;inject_tag: json:"hbase_source"
+       * </pre>
+       *
+       * <code>.model.HbaseSource hbase_source = 23;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder> 
+          getHbaseSourceFieldBuilder() {
+        if (hbaseSourceBuilder_ == null) {
+          hbaseSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseSourceOrBuilder>(
+                  getHbaseSource(),
+                  getParentForChildren(),
+                  isClean());
+          hbaseSource_ = null;
+        }
+        return hbaseSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget hbaseTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder> hbaseTargetBuilder_;
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       * @return Whether the hbaseTarget field is set.
+       */
+      public boolean hasHbaseTarget() {
+        return hbaseTargetBuilder_ != null || hbaseTarget_ != null;
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       * @return The hbaseTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget getHbaseTarget() {
+        if (hbaseTargetBuilder_ == null) {
+          return hbaseTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
+        } else {
+          return hbaseTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public Builder setHbaseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget value) {
+        if (hbaseTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hbaseTarget_ = value;
+          onChanged();
+        } else {
+          hbaseTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public Builder setHbaseTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder builderForValue) {
+        if (hbaseTargetBuilder_ == null) {
+          hbaseTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          hbaseTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public Builder mergeHbaseTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget value) {
+        if (hbaseTargetBuilder_ == null) {
+          if (hbaseTarget_ != null) {
+            hbaseTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.newBuilder(hbaseTarget_).mergeFrom(value).buildPartial();
+          } else {
+            hbaseTarget_ = value;
+          }
+          onChanged();
+        } else {
+          hbaseTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public Builder clearHbaseTarget() {
+        if (hbaseTargetBuilder_ == null) {
+          hbaseTarget_ = null;
+          onChanged();
+        } else {
+          hbaseTarget_ = null;
+          hbaseTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder getHbaseTargetBuilder() {
+        
+        onChanged();
+        return getHbaseTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder getHbaseTargetOrBuilder() {
+        if (hbaseTargetBuilder_ != null) {
+          return hbaseTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return hbaseTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.getDefaultInstance() : hbaseTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * hbase target
+       * &#64;inject_tag: json:"hbase_target"
+       * </pre>
+       *
+       * <code>.model.HbaseTarget hbase_target = 24;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder> 
+          getHbaseTargetFieldBuilder() {
+        if (hbaseTargetBuilder_ == null) {
+          hbaseTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHbase.HbaseTargetOrBuilder>(
+                  getHbaseTarget(),
+                  getParentForChildren(),
+                  isClean());
+          hbaseTarget_ = null;
+        }
+        return hbaseTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource kafkaSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder> kafkaSourceBuilder_;
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       * @return Whether the kafkaSource field is set.
+       */
+      public boolean hasKafkaSource() {
+        return kafkaSourceBuilder_ != null || kafkaSource_ != null;
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       * @return The kafkaSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getKafkaSource() {
+        if (kafkaSourceBuilder_ == null) {
+          return kafkaSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
+        } else {
+          return kafkaSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public Builder setKafkaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource value) {
+        if (kafkaSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kafkaSource_ = value;
+          onChanged();
+        } else {
+          kafkaSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public Builder setKafkaSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder builderForValue) {
+        if (kafkaSourceBuilder_ == null) {
+          kafkaSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          kafkaSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public Builder mergeKafkaSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource value) {
+        if (kafkaSourceBuilder_ == null) {
+          if (kafkaSource_ != null) {
+            kafkaSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.newBuilder(kafkaSource_).mergeFrom(value).buildPartial();
+          } else {
+            kafkaSource_ = value;
+          }
+          onChanged();
+        } else {
+          kafkaSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public Builder clearKafkaSource() {
+        if (kafkaSourceBuilder_ == null) {
+          kafkaSource_ = null;
+          onChanged();
+        } else {
+          kafkaSource_ = null;
+          kafkaSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder getKafkaSourceBuilder() {
+        
+        onChanged();
+        return getKafkaSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder getKafkaSourceOrBuilder() {
+        if (kafkaSourceBuilder_ != null) {
+          return kafkaSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return kafkaSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.getDefaultInstance() : kafkaSource_;
+        }
+      }
+      /**
+       * <pre>
+       * kafka source
+       * &#64;inject_tag: json:"kafka_source"
+       * </pre>
+       *
+       * <code>.model.KafkaSource kafka_source = 25;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder> 
+          getKafkaSourceFieldBuilder() {
+        if (kafkaSourceBuilder_ == null) {
+          kafkaSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSourceOrBuilder>(
+                  getKafkaSource(),
+                  getParentForChildren(),
+                  isClean());
+          kafkaSource_ = null;
+        }
+        return kafkaSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget kafkaTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder> kafkaTargetBuilder_;
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       * @return Whether the kafkaTarget field is set.
+       */
+      public boolean hasKafkaTarget() {
+        return kafkaTargetBuilder_ != null || kafkaTarget_ != null;
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       * @return The kafkaTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget getKafkaTarget() {
+        if (kafkaTargetBuilder_ == null) {
+          return kafkaTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
+        } else {
+          return kafkaTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public Builder setKafkaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget value) {
+        if (kafkaTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kafkaTarget_ = value;
+          onChanged();
+        } else {
+          kafkaTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public Builder setKafkaTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder builderForValue) {
+        if (kafkaTargetBuilder_ == null) {
+          kafkaTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          kafkaTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public Builder mergeKafkaTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget value) {
+        if (kafkaTargetBuilder_ == null) {
+          if (kafkaTarget_ != null) {
+            kafkaTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.newBuilder(kafkaTarget_).mergeFrom(value).buildPartial();
+          } else {
+            kafkaTarget_ = value;
+          }
+          onChanged();
+        } else {
+          kafkaTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public Builder clearKafkaTarget() {
+        if (kafkaTargetBuilder_ == null) {
+          kafkaTarget_ = null;
+          onChanged();
+        } else {
+          kafkaTarget_ = null;
+          kafkaTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder getKafkaTargetBuilder() {
+        
+        onChanged();
+        return getKafkaTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder getKafkaTargetOrBuilder() {
+        if (kafkaTargetBuilder_ != null) {
+          return kafkaTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return kafkaTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.getDefaultInstance() : kafkaTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * kafka target
+       * &#64;inject_tag: json:"kafka_target"
+       * </pre>
+       *
+       * <code>.model.KafkaTarget kafka_target = 26;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder> 
+          getKafkaTargetFieldBuilder() {
+        if (kafkaTargetBuilder_ == null) {
+          kafkaTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaTargetOrBuilder>(
+                  getKafkaTarget(),
+                  getParentForChildren(),
+                  isClean());
+          kafkaTarget_ = null;
+        }
+        return kafkaTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource binlogSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder> binlogSourceBuilder_;
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       * @return Whether the binlogSource field is set.
+       */
+      public boolean hasBinlogSource() {
+        return binlogSourceBuilder_ != null || binlogSource_ != null;
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       * @return The binlogSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource getBinlogSource() {
+        if (binlogSourceBuilder_ == null) {
+          return binlogSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
+        } else {
+          return binlogSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public Builder setBinlogSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource value) {
+        if (binlogSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          binlogSource_ = value;
+          onChanged();
+        } else {
+          binlogSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public Builder setBinlogSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder builderForValue) {
+        if (binlogSourceBuilder_ == null) {
+          binlogSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          binlogSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public Builder mergeBinlogSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource value) {
+        if (binlogSourceBuilder_ == null) {
+          if (binlogSource_ != null) {
+            binlogSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.newBuilder(binlogSource_).mergeFrom(value).buildPartial();
+          } else {
+            binlogSource_ = value;
+          }
+          onChanged();
+        } else {
+          binlogSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public Builder clearBinlogSource() {
+        if (binlogSourceBuilder_ == null) {
+          binlogSource_ = null;
+          onChanged();
+        } else {
+          binlogSource_ = null;
+          binlogSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder getBinlogSourceBuilder() {
+        
+        onChanged();
+        return getBinlogSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder getBinlogSourceOrBuilder() {
+        if (binlogSourceBuilder_ != null) {
+          return binlogSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return binlogSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance() : binlogSource_;
+        }
+      }
+      /**
+       * <pre>
+       * binlog source
+       * &#64;inject_tag: json:"binlog_source"
+       * </pre>
+       *
+       * <code>.model.BinlogSource binlog_source = 27;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder> 
+          getBinlogSourceFieldBuilder() {
+        if (binlogSourceBuilder_ == null) {
+          binlogSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSourceOrBuilder>(
+                  getBinlogSource(),
+                  getParentForChildren(),
+                  isClean());
+          binlogSource_ = null;
+        }
+        return binlogSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource pgWalSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder> pgWalSourceBuilder_;
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       * @return Whether the pgWalSource field is set.
+       */
+      public boolean hasPgWalSource() {
+        return pgWalSourceBuilder_ != null || pgWalSource_ != null;
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       * @return The pgWalSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource getPgWalSource() {
+        if (pgWalSourceBuilder_ == null) {
+          return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
+        } else {
+          return pgWalSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public Builder setPgWalSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource value) {
+        if (pgWalSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pgWalSource_ = value;
+          onChanged();
+        } else {
+          pgWalSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public Builder setPgWalSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder builderForValue) {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          pgWalSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public Builder mergePgWalSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource value) {
+        if (pgWalSourceBuilder_ == null) {
+          if (pgWalSource_ != null) {
+            pgWalSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.newBuilder(pgWalSource_).mergeFrom(value).buildPartial();
+          } else {
+            pgWalSource_ = value;
+          }
+          onChanged();
+        } else {
+          pgWalSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public Builder clearPgWalSource() {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = null;
+          onChanged();
+        } else {
+          pgWalSource_ = null;
+          pgWalSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder getPgWalSourceBuilder() {
+        
+        onChanged();
+        return getPgWalSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
+        if (pgWalSourceBuilder_ != null) {
+          return pgWalSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return pgWalSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.getDefaultInstance() : pgWalSource_;
+        }
+      }
+      /**
+       * <pre>
+       * pgwal source
+       * &#64;inject_tag: json:"pg_wal_source"
+       * </pre>
+       *
+       * <code>.model.PgWalSource pg_wal_source = 28;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder> 
+          getPgWalSourceFieldBuilder() {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBPgwal.PgWalSourceOrBuilder>(
+                  getPgWalSource(),
+                  getParentForChildren(),
+                  isClean());
+          pgWalSource_ = null;
+        }
+        return pgWalSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource sqlServerCdcSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder> sqlServerCdcSourceBuilder_;
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       * @return Whether the sqlServerCdcSource field is set.
+       */
+      public boolean hasSqlServerCdcSource() {
+        return sqlServerCdcSourceBuilder_ != null || sqlServerCdcSource_ != null;
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       * @return The sqlServerCdcSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource getSqlServerCdcSource() {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          return sqlServerCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
+        } else {
+          return sqlServerCdcSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public Builder setSqlServerCdcSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource value) {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sqlServerCdcSource_ = value;
+          onChanged();
+        } else {
+          sqlServerCdcSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public Builder setSqlServerCdcSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder builderForValue) {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          sqlServerCdcSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          sqlServerCdcSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public Builder mergeSqlServerCdcSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource value) {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          if (sqlServerCdcSource_ != null) {
+            sqlServerCdcSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.newBuilder(sqlServerCdcSource_).mergeFrom(value).buildPartial();
+          } else {
+            sqlServerCdcSource_ = value;
+          }
+          onChanged();
+        } else {
+          sqlServerCdcSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public Builder clearSqlServerCdcSource() {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          sqlServerCdcSource_ = null;
+          onChanged();
+        } else {
+          sqlServerCdcSource_ = null;
+          sqlServerCdcSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder getSqlServerCdcSourceBuilder() {
+        
+        onChanged();
+        return getSqlServerCdcSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder getSqlServerCdcSourceOrBuilder() {
+        if (sqlServerCdcSourceBuilder_ != null) {
+          return sqlServerCdcSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return sqlServerCdcSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.getDefaultInstance() : sqlServerCdcSource_;
+        }
+      }
+      /**
+       * <pre>
+       * sqlserver cdc source
+       * &#64;inject_tag: json:"sql_server_cdc_source"
+       * </pre>
+       *
+       * <code>.model.SqlServerCdcSource sql_server_cdc_source = 29;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder> 
+          getSqlServerCdcSourceFieldBuilder() {
+        if (sqlServerCdcSourceBuilder_ == null) {
+          sqlServerCdcSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBSqlservercdc.SqlServerCdcSourceOrBuilder>(
+                  getSqlServerCdcSource(),
+                  getParentForChildren(),
+                  isClean());
+          sqlServerCdcSource_ = null;
+        }
+        return sqlServerCdcSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource logMinerSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder> logMinerSourceBuilder_;
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       * @return Whether the logMinerSource field is set.
+       */
+      public boolean hasLogMinerSource() {
+        return logMinerSourceBuilder_ != null || logMinerSource_ != null;
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       * @return The logMinerSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource getLogMinerSource() {
+        if (logMinerSourceBuilder_ == null) {
+          return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
+        } else {
+          return logMinerSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public Builder setLogMinerSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource value) {
+        if (logMinerSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logMinerSource_ = value;
+          onChanged();
+        } else {
+          logMinerSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public Builder setLogMinerSource(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder builderForValue) {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          logMinerSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public Builder mergeLogMinerSource(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource value) {
+        if (logMinerSourceBuilder_ == null) {
+          if (logMinerSource_ != null) {
+            logMinerSource_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.newBuilder(logMinerSource_).mergeFrom(value).buildPartial();
+          } else {
+            logMinerSource_ = value;
+          }
+          onChanged();
+        } else {
+          logMinerSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public Builder clearLogMinerSource() {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = null;
+          onChanged();
+        } else {
+          logMinerSource_ = null;
+          logMinerSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder getLogMinerSourceBuilder() {
+        
+        onChanged();
+        return getLogMinerSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
+        if (logMinerSourceBuilder_ != null) {
+          return logMinerSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return logMinerSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.getDefaultInstance() : logMinerSource_;
+        }
+      }
+      /**
+       * <pre>
+       * logminer source
+       * &#64;inject_tag: json:"logminer_source"
+       * </pre>
+       *
+       * <code>.model.LogMinerSource log_miner_source = 30;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder> 
+          getLogMinerSourceFieldBuilder() {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBLogminer.LogMinerSourceOrBuilder>(
+                  getLogMinerSource(),
+                  getParentForChildren(),
+                  isClean());
+          logMinerSource_ = null;
+        }
+        return logMinerSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget redisTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder> redisTargetBuilder_;
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       * @return Whether the redisTarget field is set.
+       */
+      public boolean hasRedisTarget() {
+        return redisTargetBuilder_ != null || redisTarget_ != null;
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       * @return The redisTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget getRedisTarget() {
+        if (redisTargetBuilder_ == null) {
+          return redisTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
+        } else {
+          return redisTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public Builder setRedisTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget value) {
+        if (redisTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          redisTarget_ = value;
+          onChanged();
+        } else {
+          redisTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public Builder setRedisTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder builderForValue) {
+        if (redisTargetBuilder_ == null) {
+          redisTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          redisTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public Builder mergeRedisTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget value) {
+        if (redisTargetBuilder_ == null) {
+          if (redisTarget_ != null) {
+            redisTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.newBuilder(redisTarget_).mergeFrom(value).buildPartial();
+          } else {
+            redisTarget_ = value;
+          }
+          onChanged();
+        } else {
+          redisTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public Builder clearRedisTarget() {
+        if (redisTargetBuilder_ == null) {
+          redisTarget_ = null;
+          onChanged();
+        } else {
+          redisTarget_ = null;
+          redisTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder getRedisTargetBuilder() {
+        
+        onChanged();
+        return getRedisTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder getRedisTargetOrBuilder() {
+        if (redisTargetBuilder_ != null) {
+          return redisTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return redisTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDefaultInstance() : redisTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * redis target
+       * &#64;inject_tag: json:"redis_target"
+       * </pre>
+       *
+       * <code>.model.RedisTarget redis_target = 31;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder> 
+          getRedisTargetFieldBuilder() {
+        if (redisTargetBuilder_ == null) {
+          redisTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTargetOrBuilder>(
+                  getRedisTarget(),
+                  getParentForChildren(),
+                  isClean());
+          redisTarget_ = null;
+        }
+        return redisTargetBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget hiveTarget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder> hiveTargetBuilder_;
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       * @return Whether the hiveTarget field is set.
+       */
+      public boolean hasHiveTarget() {
+        return hiveTargetBuilder_ != null || hiveTarget_ != null;
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       * @return The hiveTarget.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget getHiveTarget() {
+        if (hiveTargetBuilder_ == null) {
+          return hiveTarget_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
+        } else {
+          return hiveTargetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public Builder setHiveTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget value) {
+        if (hiveTargetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hiveTarget_ = value;
+          onChanged();
+        } else {
+          hiveTargetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public Builder setHiveTarget(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder builderForValue) {
+        if (hiveTargetBuilder_ == null) {
+          hiveTarget_ = builderForValue.build();
+          onChanged();
+        } else {
+          hiveTargetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public Builder mergeHiveTarget(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget value) {
+        if (hiveTargetBuilder_ == null) {
+          if (hiveTarget_ != null) {
+            hiveTarget_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.newBuilder(hiveTarget_).mergeFrom(value).buildPartial();
+          } else {
+            hiveTarget_ = value;
+          }
+          onChanged();
+        } else {
+          hiveTargetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public Builder clearHiveTarget() {
+        if (hiveTargetBuilder_ == null) {
+          hiveTarget_ = null;
+          onChanged();
+        } else {
+          hiveTarget_ = null;
+          hiveTargetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder getHiveTargetBuilder() {
+        
+        onChanged();
+        return getHiveTargetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder getHiveTargetOrBuilder() {
+        if (hiveTargetBuilder_ != null) {
+          return hiveTargetBuilder_.getMessageOrBuilder();
+        } else {
+          return hiveTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance() : hiveTarget_;
+        }
+      }
+      /**
+       * <pre>
+       * hive target
+       * &#64;inject_tag: json:"hive_target"
+       * </pre>
+       *
+       * <code>.model.HiveTarget hive_target = 32;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder> 
+          getHiveTargetFieldBuilder() {
+        if (hiveTargetBuilder_ == null) {
+          hiveTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTargetOrBuilder>(
+                  getHiveTarget(),
+                  getParentForChildren(),
+                  isClean());
+          hiveTarget_ = null;
+        }
+        return hiveTargetBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.SyncResource)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.SyncResource)
+    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SyncResource>
+        PARSER = new com.google.protobuf.AbstractParser<SyncResource>() {
+      @java.lang.Override
+      public SyncResource parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SyncResource(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SyncResource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SyncResource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncResource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14577,7 +19442,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -14587,7 +19452,7 @@ public final class PBSyncManageSyncJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -14685,7 +19550,7 @@ public final class PBSyncManageSyncJob {
   }
   /**
    * <pre>
-   * The release stream job info.
+   * The release sync job info.
    * </pre>
    *
    * Protobuf type {@code model.SyncJobRelease}
@@ -15152,7 +20017,7 @@ public final class PBSyncManageSyncJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -15164,7 +20029,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -15360,7 +20225,7 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         output.writeEnum(5, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Status.StatusUnset.getNumber()) {
@@ -15399,7 +20264,7 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
       }
@@ -15584,7 +20449,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * The release stream job info.
+     * The release sync job info.
      * </pre>
      *
      * Protobuf type {@code model.SyncJobRelease}
@@ -16200,7 +21065,7 @@ public final class PBSyncManageSyncJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16212,7 +21077,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16228,7 +21093,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16243,7 +21108,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16262,7 +21127,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 0 =&gt; "OfflineFull" 1 =&gt; "OfflineIncrement" 2 =&gt; "RealTimeFull" 3 =&gt; "RealTimeIncrement"
+       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -16717,6 +21582,16 @@ public final class PBSyncManageSyncJob {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_SyncJobConf_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_ChannelControl_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_ChannelControl_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_SyncResource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_SyncResource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_SyncJobSchedule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -16739,121 +21614,137 @@ public final class PBSyncManageSyncJob {
       "l\0323github.com/yu31/protoc-plugin/proto/v" +
       "alidator.proto\032/github.com/yu31/protoc-p" +
       "lugin/proto/gosql.proto\0322github.com/yu31" +
-      "/protoc-plugin/proto/defaults.proto\032&pro" +
-      "to/types/model/syncjob/binlog.proto\032-pro" +
-      "to/types/model/syncjob/elasticsearch.pro" +
-      "to\032#proto/types/model/syncjob/ftp.proto\032" +
-      "%proto/types/model/syncjob/hbase.proto\032$" +
-      "proto/types/model/syncjob/hdfs.proto\032$pr" +
-      "oto/types/model/syncjob/hive.proto\032%prot" +
-      "o/types/model/syncjob/kafka.proto\032(proto" +
-      "/types/model/syncjob/logminer.proto\032\'pro" +
-      "to/types/model/syncjob/mongodb.proto\032%pr" +
-      "oto/types/model/syncjob/pgwal.proto\032%pro" +
-      "to/types/model/syncjob/redis.proto\032,prot" +
-      "o/types/model/syncjob/relationaldb.proto" +
-      "\032,proto/types/model/syncjob/sqlservercdc" +
-      ".proto\"\275\007\n\007SyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003" +
-      "pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\037\n\002id\030\003 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\004 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
-      "\001\230\002\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\024\n\014is" +
-      "_directory\030\007 \001(\010\022K\n\004type\030\010 \001(\0162\023.model.S" +
-      "yncJob.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000" +
-      "\342\337\037\t\022\007\332\001\004@\000X\001\0224\n\006status\030\t \001(\0162\025.model.Sy" +
-      "ncJob.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_b" +
-      "y\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\013 \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\0229\n\013source_type\030\r \001(\0162\027.model.SyncJob.R" +
-      "esourceB\013\342\337\037\007\022\005\262\001\0020\000\0229\n\013target_type\030\016 \001(" +
-      "\0162\027.model.SyncJob.ResourceB\013\342\337\037\007\022\005\262\001\0020\000\"" +
-      "V\n\004Type\022\017\n\013OfflineFull\020\000\022\024\n\020OfflineIncre" +
-      "ment\020\001\022\020\n\014RealTimeFull\020\002\022\025\n\021RealTimeIncr" +
-      "ement\020\003\"\337\001\n\010Resource\022\021\n\rResourceUnset\020\000\022" +
-      "\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003\022\006\n" +
-      "\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020" +
-      "\007\022\010\n\004HDFS\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020\n\022\007" +
-      "\n\003DB2\020\013\022\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rElasti" +
-      "cSearch\020\016\022\013\n\007MongoDb\020\017\022\t\n\005Redis\020\020\"3\n\006Sta" +
-      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ena" +
-      "bled\020\002\"\320\001\n\017SyncJobProperty\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\360\001\020\022&\n\004conf\030\004 \001(\0132\022.model.SyncJobC" +
-      "onfB\004\342\337\037\000\022.\n\010schedule\030\005 \001(\0132\026.model.Sync" +
-      "JobScheduleB\004\342\337\037\000\"\301\n\n\013SyncJobConf\022&\n\tsou" +
+      "/protoc-plugin/proto/defaults.proto\032\"pro" +
+      "to/types/model/datasource.proto\032&proto/t" +
+      "ypes/model/syncjob/binlog.proto\032-proto/t" +
+      "ypes/model/syncjob/elasticsearch.proto\032#" +
+      "proto/types/model/syncjob/ftp.proto\032%pro" +
+      "to/types/model/syncjob/hbase.proto\032$prot" +
+      "o/types/model/syncjob/hdfs.proto\032$proto/" +
+      "types/model/syncjob/hive.proto\032%proto/ty" +
+      "pes/model/syncjob/kafka.proto\032(proto/typ" +
+      "es/model/syncjob/logminer.proto\032\'proto/t" +
+      "ypes/model/syncjob/mongodb.proto\032%proto/" +
+      "types/model/syncjob/pgwal.proto\032%proto/t" +
+      "ypes/model/syncjob/redis.proto\032\"proto/ty" +
+      "pes/model/syncjob/db.proto\032,proto/types/" +
+      "model/syncjob/sqlservercdc.proto\"\243\006\n\007Syn" +
+      "cJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004syj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004syj-\022\035\n\007version\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022" +
+      "\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\033\n\004desc\030" +
+      "\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\024\n\014is_directory\030\007 \001" +
+      "(\010\022K\n\004type\030\010 \001(\0162\023.model.SyncJob.TypeB(\342" +
+      "\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\004@\000X\001\022" +
+      "4\n\006status\030\t \001(\0162\025.model.SyncJob.StatusB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030\n \001(\tB\014\342\337\037\010\022" +
+      "\006\302\001\003\230\002@\022\034\n\007created\030\013 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
+      "\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022_\n\013source_ty" +
+      "pe\030\r \001(\0162\026.model.DataSource.TypeB2\342\337\037\027\n\025" +
+      "\n\014is_directory\022\005\322\001\002\030\000\242\241\037\004\252\006\0010\342\337\037\013\022\t\332\001\0060\000" +
+      "8\020X\001\022_\n\013target_type\030\016 \001(\0162\026.model.DataSo" +
+      "urce.TypeB2\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\242\241" +
+      "\037\004\252\006\0010\342\337\037\013\022\t\332\001\0060\0008\020X\001\"J\n\004Type\022\r\n\tTypeUns" +
+      "et\020\000\022\017\n\013OfflineFull\020\001\022\024\n\020OfflineIncremen" +
+      "t\020\002\022\014\n\010RealTime\020\003\"3\n\006Status\022\017\n\013StatusUns" +
+      "et\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002:\006\312\262\004\002\n\000\"\330" +
+      "\001\n\017SyncJobProperty\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
+      "\020\022&\n\004conf\030\004 \001(\0132\022.model.SyncJobConfB\004\342\337\037" +
+      "\000\022.\n\010schedule\030\005 \001(\0132\026.model.SyncJobSched" +
+      "uleB\004\342\337\037\000:\006\312\262\004\002\n\000\"\217\003\n\013SyncJobConf\022&\n\tsou" +
       "rce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttar" +
-      "get_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022*\n\013par" +
-      "allelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d\022)\n" +
-      "\npercentage\030\004 \001(\005B\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\262\001\0048d@\000" +
-      "\022\'\n\nrecord_num\030\005 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@" +
-      "\000\022\"\n\005bytes\030\006 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000\022C\n" +
-      "\010job_mode\030\007 \001(\0162\032.model.SyncJobConf.JobM" +
-      "odeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\022\023\n\013job_conten" +
-      "t\030\010 \001(\t\0226\n\023relationaldb_source\030\t \001(\0132\031.m" +
-      "odel.RelationaldbSource\0226\n\023relationaldb_" +
-      "target\030\n \001(\0132\031.model.RelationaldbTarget\022" +
-      ",\n\016mongodb_source\030\013 \001(\0132\024.model.MongodbS" +
-      "ource\022,\n\016mongodb_target\030\014 \001(\0132\024.model.Mo" +
-      "ngodbTarget\0229\n\025elastic_search_source\030\r \001" +
-      "(\0132\032.model.ElasticSearchSource\0229\n\025elasti" +
-      "c_search_target\030\016 \001(\0132\032.model.ElasticSea" +
-      "rchTarget\022&\n\013hdfs_source\030\017 \001(\0132\021.model.H" +
-      "dfsSource\022&\n\013hdfs_target\030\020 \001(\0132\021.model.H" +
-      "dfsTarget\022$\n\nftp_source\030\021 \001(\0132\020.model.Ft" +
-      "pSource\022$\n\nftp_target\030\022 \001(\0132\020.model.FtpT" +
-      "arget\022(\n\014hbase_source\030\023 \001(\0132\022.model.Hbas" +
-      "eSource\022(\n\014hbase_target\030\024 \001(\0132\022.model.Hb" +
-      "aseTarget\022(\n\014kafka_source\030\025 \001(\0132\022.model." +
-      "KafkaSource\022(\n\014kafka_target\030\026 \001(\0132\022.mode" +
-      "l.KafkaTarget\022*\n\rbinlog_source\030\027 \001(\0132\023.m" +
-      "odel.BinlogSource\022)\n\rpg_wal_source\030\030 \001(\013" +
-      "2\022.model.PgWalSource\0228\n\025sql_server_cdc_s" +
-      "ource\030\031 \001(\0132\031.model.SqlServerCdcSource\022/" +
-      "\n\020log_miner_source\030\032 \001(\0132\025.model.LogMine" +
-      "rSource\022(\n\014redis_target\030\033 \001(\0132\022.model.Re" +
-      "disTarget\022&\n\013hive_target\030\034 \001(\0132\021.model.H" +
-      "iveTarget\022\030\n\ncluster_id\030\035 \001(\tB\004\342\337\037\000\"(\n\007J" +
-      "obMode\022\r\n\tGuideMode\020\000\022\016\n\nScriptMode\020\001:\006\312" +
-      "\262\004\002\n\000\"\256\007\n\017SyncJobSchedule\022M\n\017schedule_po" +
-      "licy\030\001 \001(\0162%.model.SyncJobSchedule.Sched" +
-      "ulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001" +
-      "(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010" +
-      "\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032" +
-      "\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrenc" +
-      "y_policy\030\006 \001(\0162(.model.SyncJobSchedule.C" +
-      "oncurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013perio" +
-      "d_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332" +
-      "\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005" +
-      "monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sc" +
-      "hedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007time" +
-      "out\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022G\n\014retry_policy" +
-      "\030\n \001(\0162\".model.SyncJobSchedule.RetryPoli" +
-      "cyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(" +
-      "\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000" +
-      "\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_" +
-      "policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePo" +
-      "licy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodi" +
-      "city\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003" +
-      "\"S\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPoli" +
-      "cyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Repl" +
-      "ace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset" +
-      "\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJ" +
-      "obRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj" +
-      "-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name" +
-      "\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023" +
-      ".model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006st" +
-      "atus\030\006 \001(\0162\034.model.SyncJobRelease.Status" +
-      "\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034" +
-      "\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017" +
-      "\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended" +
-      "\020\002\022\013\n\007Deleted\020\003Bn\n\"com.dataomnis.gproto." +
-      "types.pbmodelB\023PBSyncManageSyncJobP\000Z1gi" +
-      "thub.com/DataWorkbench/gproto/xgo/types/" +
-      "pbmodelb\006proto3"
+      "get_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022C\n\010job" +
+      "_mode\030\003 \001(\0162\032.model.SyncJobConf.JobModeB" +
+      "\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\0228\n\013job_content\030\004 " +
+      "\001(\tB#\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\002\024" +
+      "\022)\n\014syncResource\030\005 \001(\0132\023.model.SyncResou" +
+      "rce\022\022\n\ncluster_id\030\006 \001(\t\022.\n\017channel_contr" +
+      "ol\030\007 \001(\0132\025.model.ChannelControl\":\n\007JobMo" +
+      "de\022\020\n\014JobModeUnset\020\000\022\r\n\tGuideMode\020\001\022\016\n\nS" +
+      "criptMode\020\002:\006\312\262\004\002\n\000\"\271\002\n\016ChannelControl\022*" +
+      "\n\013parallelism\030\001 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\000" +
+      "8d\022\022\n\nrecord_num\030\002 \001(\t\0229\n\npercentage\030\003 \001" +
+      "(\001B%\242\241\037\006\252\006\0030.0\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000Y@A\000\000\000\000\000\000\000" +
+      "\000\022E\n\004rate\030\004 \001(\0162 .model.ChannelControl.R" +
+      "atePolicyB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\022\"\n\005byte" +
+      "s\030\005 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\001\"9\n\nRatePoli" +
+      "cy\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Limit\020\001\022\013\n\007Un" +
+      "Limit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResource\022%\n\014mysq" +
+      "l_source\030\001 \001(\0132\017.model.DBSource\022%\n\014mysql" +
+      "_target\030\002 \001(\0132\017.model.DBTarget\022&\n\roracle" +
+      "_source\030\003 \001(\0132\017.model.DBSource\022&\n\roracle" +
+      "_target\030\004 \001(\0132\017.model.DBTarget\022#\n\ndb2_so" +
+      "urce\030\005 \001(\0132\017.model.DBSource\022#\n\ndb2_targe" +
+      "t\030\006 \001(\0132\017.model.DBTarget\022*\n\021postgresql_s" +
+      "ource\030\007 \001(\0132\017.model.DBSource\022*\n\021postgres" +
+      "ql_target\030\010 \001(\0132\017.model.DBTarget\022)\n\020sqls" +
+      "erver_source\030\t \001(\0132\017.model.DBSource\022)\n\020s" +
+      "qlserver_target\030\n \001(\0132\017.model.DBTarget\022+" +
+      "\n\022click_house_source\030\013 \001(\0132\017.model.DBSou" +
+      "rce\022+\n\022click_house_target\030\014 \001(\0132\017.model." +
+      "DBTarget\022(\n\017sap_hana_source\030\r \001(\0132\017.mode" +
+      "l.DBSource\022(\n\017sap_hana_target\030\016 \001(\0132\017.mo" +
+      "del.DBTarget\022,\n\016mongodb_source\030\017 \001(\0132\024.m" +
+      "odel.MongodbSource\022,\n\016mongodb_target\030\020 \001" +
+      "(\0132\024.model.MongodbTarget\0229\n\025elastic_sear" +
+      "ch_source\030\021 \001(\0132\032.model.ElasticSearchSou" +
+      "rce\0229\n\025elastic_search_target\030\022 \001(\0132\032.mod" +
+      "el.ElasticSearchTarget\022&\n\013hdfs_source\030\023 " +
+      "\001(\0132\021.model.HdfsSource\022&\n\013hdfs_target\030\024 " +
+      "\001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030\025 \001" +
+      "(\0132\020.model.FtpSource\022$\n\nftp_target\030\026 \001(\013" +
+      "2\020.model.FtpTarget\022(\n\014hbase_source\030\027 \001(\013" +
+      "2\022.model.HbaseSource\022(\n\014hbase_target\030\030 \001" +
+      "(\0132\022.model.HbaseTarget\022(\n\014kafka_source\030\031" +
+      " \001(\0132\022.model.KafkaSource\022(\n\014kafka_target" +
+      "\030\032 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_sou" +
+      "rce\030\033 \001(\0132\023.model.BinlogSource\022)\n\rpg_wal" +
+      "_source\030\034 \001(\0132\022.model.PgWalSource\0228\n\025sql" +
+      "_server_cdc_source\030\035 \001(\0132\031.model.SqlServ" +
+      "erCdcSource\022/\n\020log_miner_source\030\036 \001(\0132\025." +
+      "model.LogMinerSource\022(\n\014redis_target\030\037 \001" +
+      "(\0132\022.model.RedisTarget\022&\n\013hive_target\030  " +
+      "\001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\256\007\n\017SyncJ" +
+      "obSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.mo" +
+      "del.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sch" +
+      "edule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007sta" +
+      "rted\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013" +
+      "\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\0162" +
+      "(.model.SyncJobSchedule.ConcurrencyPolic" +
+      "yB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342" +
+      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006" +
+      "minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007" +
+      "express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005" +
+      "\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t" +
+      "\022\007\262\001\0048d@\000\022G\n\014retry_policy\030\n \001(\0162\".model." +
+      "SyncJobSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_p" +
+      "olicy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_inter" +
+      "val\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337" +
+      "\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023Schedul" +
+      "ePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appoi" +
+      "ntTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concurrency" +
+      "Policy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Al" +
+      "low\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryP" +
+      "olicy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n" +
+      "\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302" +
+      "\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob." +
+      "TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006status\030\006 \001(\0162\034.mo" +
+      "del.SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022" +
+      " \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007cre" +
+      "ated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003" +
+      "B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000" +
+      "\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003" +
+      "Bn\n\"com.dataomnis.gproto.types.pbmodelB\023" +
+      "PBSyncManageSyncJobP\000Z1github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16861,6 +21752,7 @@ public final class PBSyncManageSyncJob {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.getDescriptor(),
@@ -16892,15 +21784,27 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJobConf_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobConf_descriptor,
-        new java.lang.String[] { "SourceId", "TargetId", "Parallelism", "Percentage", "RecordNum", "Bytes", "JobMode", "JobContent", "RelationaldbSource", "RelationaldbTarget", "MongodbSource", "MongodbTarget", "ElasticSearchSource", "ElasticSearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgWalSource", "SqlServerCdcSource", "LogMinerSource", "RedisTarget", "HiveTarget", "ClusterId", });
-    internal_static_model_SyncJobSchedule_descriptor =
+        new java.lang.String[] { "SourceId", "TargetId", "JobMode", "JobContent", "SyncResource", "ClusterId", "ChannelControl", });
+    internal_static_model_ChannelControl_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_model_ChannelControl_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_ChannelControl_descriptor,
+        new java.lang.String[] { "Parallelism", "RecordNum", "Percentage", "Rate", "Bytes", });
+    internal_static_model_SyncResource_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_model_SyncResource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_SyncResource_descriptor,
+        new java.lang.String[] { "MysqlSource", "MysqlTarget", "OracleSource", "OracleTarget", "Db2Source", "Db2Target", "PostgresqlSource", "PostgresqlTarget", "SqlserverSource", "SqlserverTarget", "ClickHouseSource", "ClickHouseTarget", "SapHanaSource", "SapHanaTarget", "MongodbSource", "MongodbTarget", "ElasticSearchSource", "ElasticSearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgWalSource", "SqlServerCdcSource", "LogMinerSource", "RedisTarget", "HiveTarget", });
+    internal_static_model_SyncJobSchedule_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_model_SyncJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobSchedule_descriptor,
         new java.lang.String[] { "SchedulePolicy", "Executed", "Started", "Ended", "ConcurrencyPolicy", "PeriodType", "Express", "Timeout", "RetryPolicy", "RetryLimit", "RetryInterval", });
     internal_static_model_SyncJobRelease_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_model_SyncJobRelease_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobRelease_descriptor,
@@ -16915,6 +21819,7 @@ public final class PBSyncManageSyncJob {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBElasticSearch.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBFtp.getDescriptor();

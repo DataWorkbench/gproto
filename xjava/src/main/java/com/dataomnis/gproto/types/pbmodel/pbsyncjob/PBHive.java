@@ -14,396 +14,76 @@ public final class PBHive {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface HiveTargetOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.HiveTarget)
+  public interface HiveColumnOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.HiveColumn)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * partition
-     * &#64;inject_tag: json:"partition" 
+     * column name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string partition = 1;</code>
-     * @return The partition.
+     * <code>string key = 1;</code>
+     * @return The key.
      */
-    java.lang.String getPartition();
+    java.lang.String getKey();
     /**
      * <pre>
-     * partition
-     * &#64;inject_tag: json:"partition" 
+     * column name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string partition = 1;</code>
-     * @return The bytes for partition.
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
-        getPartitionBytes();
+        getKeyBytes();
 
     /**
      * <pre>
-     * partition_type
-     * &#64;inject_tag: json:"partition_type" 
+     * column type
+     * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>string partition_type = 2;</code>
-     * @return The partitionType.
+     * <code>string type = 2;</code>
+     * @return The type.
      */
-    java.lang.String getPartitionType();
+    java.lang.String getType();
     /**
      * <pre>
-     * partition_type
-     * &#64;inject_tag: json:"partition_type" 
+     * column type
+     * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>string partition_type = 2;</code>
-     * @return The bytes for partitionType.
+     * <code>string type = 2;</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
-        getPartitionTypeBytes();
-
-    /**
-     * <pre>
-     * tables column
-     * &#64;inject_tag: json:"tables_column" 
-     * </pre>
-     *
-     * <code>string tables_column = 3;</code>
-     * @return The tablesColumn.
-     */
-    java.lang.String getTablesColumn();
-    /**
-     * <pre>
-     * tables column
-     * &#64;inject_tag: json:"tables_column" 
-     * </pre>
-     *
-     * <code>string tables_column = 3;</code>
-     * @return The bytes for tablesColumn.
-     */
-    com.google.protobuf.ByteString
-        getTablesColumnBytes();
-
-    /**
-     * <pre>
-     * analytical rules
-     * &#64;inject_tag: json:"analytical_rules" 
-     * </pre>
-     *
-     * <code>string analytical_rules = 4;</code>
-     * @return The analyticalRules.
-     */
-    java.lang.String getAnalyticalRules();
-    /**
-     * <pre>
-     * analytical rules
-     * &#64;inject_tag: json:"analytical_rules" 
-     * </pre>
-     *
-     * <code>string analytical_rules = 4;</code>
-     * @return The bytes for analyticalRules.
-     */
-    com.google.protobuf.ByteString
-        getAnalyticalRulesBytes();
-
-    /**
-     * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
-     * </pre>
-     *
-     * <code>string schema = 5;</code>
-     * @return The schema.
-     */
-    java.lang.String getSchema();
-    /**
-     * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
-     * </pre>
-     *
-     * <code>string schema = 5;</code>
-     * @return The bytes for schema.
-     */
-    com.google.protobuf.ByteString
-        getSchemaBytes();
-
-    /**
-     * <pre>
-     * distribute table
-     * &#64;inject_tag: json:"distribute_table" 
-     * </pre>
-     *
-     * <code>string distribute_table = 6;</code>
-     * @return The distributeTable.
-     */
-    java.lang.String getDistributeTable();
-    /**
-     * <pre>
-     * distribute table
-     * &#64;inject_tag: json:"distribute_table" 
-     * </pre>
-     *
-     * <code>string distribute_table = 6;</code>
-     * @return The bytes for distributeTable.
-     */
-    com.google.protobuf.ByteString
-        getDistributeTableBytes();
-
-    /**
-     * <pre>
-     * write mode
-     * &#64;inject_tag: json:"write_mode" 
-     * </pre>
-     *
-     * <code>string write_mode = 7;</code>
-     * @return The writeMode.
-     */
-    java.lang.String getWriteMode();
-    /**
-     * <pre>
-     * write mode
-     * &#64;inject_tag: json:"write_mode" 
-     * </pre>
-     *
-     * <code>string write_mode = 7;</code>
-     * @return The bytes for writeMode.
-     */
-    com.google.protobuf.ByteString
-        getWriteModeBytes();
-
-    /**
-     * <pre>
-     * Relationaldb column
-     * &#64;inject_tag: json:"file_type" 
-     * </pre>
-     *
-     * <code>string file_type = 8;</code>
-     * @return The fileType.
-     */
-    java.lang.String getFileType();
-    /**
-     * <pre>
-     * Relationaldb column
-     * &#64;inject_tag: json:"file_type" 
-     * </pre>
-     *
-     * <code>string file_type = 8;</code>
-     * @return The bytes for fileType.
-     */
-    com.google.protobuf.ByteString
-        getFileTypeBytes();
-
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 9;</code>
-     * @return The defaultFs.
-     */
-    java.lang.String getDefaultFs();
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 9;</code>
-     * @return The bytes for defaultFs.
-     */
-    com.google.protobuf.ByteString
-        getDefaultFsBytes();
-
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" 
-     * </pre>
-     *
-     * <code>int64 max_file_size = 10;</code>
-     * @return The maxFileSize.
-     */
-    long getMaxFileSize();
-
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" 
-     * </pre>
-     *
-     * <code>int64 next_check_rows = 11;</code>
-     * @return The nextCheckRows.
-     */
-    long getNextCheckRows();
-
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" 
-     * </pre>
-     *
-     * <code>int64 row_group_size = 12;</code>
-     * @return The rowGroupSize.
-     */
-    long getRowGroupSize();
-
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" 
-     * </pre>
-     *
-     * <code>bool enable_dictionary = 13;</code>
-     * @return The enableDictionary.
-     */
-    boolean getEnableDictionary();
-
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 14;</code>
-     * @return The encoding.
-     */
-    java.lang.String getEncoding();
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 14;</code>
-     * @return The bytes for encoding.
-     */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
-
-    /**
-     * <pre>
-     * field_delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
-     * </pre>
-     *
-     * <code>string field_delimiter = 15;</code>
-     * @return The fieldDelimiter.
-     */
-    java.lang.String getFieldDelimiter();
-    /**
-     * <pre>
-     * field_delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
-     * </pre>
-     *
-     * <code>string field_delimiter = 15;</code>
-     * @return The bytes for fieldDelimiter.
-     */
-    com.google.protobuf.ByteString
-        getFieldDelimiterBytes();
-
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 16;</code>
-     * @return The compress.
-     */
-    java.lang.String getCompress();
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 16;</code>
-     * @return The bytes for compress.
-     */
-    com.google.protobuf.ByteString
-        getCompressBytes();
-
-    /**
-     * <pre>
-     * charset_name
-     * &#64;inject_tag: json:"charset_name" 
-     * </pre>
-     *
-     * <code>string charset_name = 17;</code>
-     * @return The charsetName.
-     */
-    java.lang.String getCharsetName();
-    /**
-     * <pre>
-     * charset_name
-     * &#64;inject_tag: json:"charset_name" 
-     * </pre>
-     *
-     * <code>string charset_name = 17;</code>
-     * @return The bytes for charsetName.
-     */
-    com.google.protobuf.ByteString
-        getCharsetNameBytes();
-
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 18;</code>
-     * @return The hadoopConfig.
-     */
-    java.lang.String getHadoopConfig();
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 18;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    com.google.protobuf.ByteString
-        getHadoopConfigBytes();
+        getTypeBytes();
   }
   /**
-   * Protobuf type {@code model.HiveTarget}
+   * Protobuf type {@code model.HiveColumn}
    */
-  public static final class HiveTarget extends
+  public static final class HiveColumn extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.HiveTarget)
-      HiveTargetOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.HiveColumn)
+      HiveColumnOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HiveTarget.newBuilder() to construct.
-    private HiveTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use HiveColumn.newBuilder() to construct.
+    private HiveColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HiveTarget() {
-      partition_ = "";
-      partitionType_ = "";
-      tablesColumn_ = "";
-      analyticalRules_ = "";
-      schema_ = "";
-      distributeTable_ = "";
-      writeMode_ = "";
-      fileType_ = "";
-      defaultFs_ = "";
-      encoding_ = "";
-      fieldDelimiter_ = "";
-      compress_ = "";
-      charsetName_ = "";
-      hadoopConfig_ = "";
+    private HiveColumn() {
+      key_ = "";
+      type_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new HiveTarget();
+      return new HiveColumn();
     }
 
     @java.lang.Override
@@ -411,7 +91,7 @@ public final class PBHive {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HiveTarget(
+    private HiveColumn(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -432,105 +112,13 @@ public final class PBHive {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partition_ = s;
+              key_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partitionType_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tablesColumn_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              analyticalRules_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              schema_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              distributeTable_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              writeMode_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fileType_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultFs_ = s;
-              break;
-            }
-            case 80: {
-
-              maxFileSize_ = input.readInt64();
-              break;
-            }
-            case 88: {
-
-              nextCheckRows_ = input.readInt64();
-              break;
-            }
-            case 96: {
-
-              rowGroupSize_ = input.readInt64();
-              break;
-            }
-            case 104: {
-
-              enableDictionary_ = input.readBool();
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              encoding_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fieldDelimiter_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              compress_ = s;
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              charsetName_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              hadoopConfig_ = s;
+              type_ = s;
               break;
             }
             default: {
@@ -554,6 +142,1091 @@ public final class PBHive {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveColumn_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveColumn_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string key = 1;</code>
+     * @return The key.
+     */
+    @java.lang.Override
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * column type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * column type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn other = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn) obj;
+
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.HiveColumn}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.HiveColumn)
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveColumn_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveColumn_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+
+        type_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveColumn_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn build() {
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn result = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn(this);
+        result.key_ = key_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string key = 1;</code>
+       * @return The key.
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string key = 1;</code>
+       * @return The bytes for key.
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string key = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * column type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.HiveColumn)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.HiveColumn)
+    private static final com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HiveColumn>
+        PARSER = new com.google.protobuf.AbstractParser<HiveColumn>() {
+      @java.lang.Override
+      public HiveColumn parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HiveColumn(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HiveColumn> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HiveColumn> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HiveTargetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.HiveTarget)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> 
+        getColumnList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    int getColumnCount();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder> 
+        getColumnOrBuilderList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder getColumnOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>string table = 2;</code>
+     * @return The table.
+     */
+    java.lang.String getTable();
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
+     */
+    com.google.protobuf.ByteString
+        getTableBytes();
+
+    /**
+     * <pre>
+     * use partition
+     * &#64;inject_tag: json:"use_partition"
+     * </pre>
+     *
+     * <code>bool use_partition = 3;</code>
+     * @return The usePartition.
+     */
+    boolean getUsePartition();
+
+    /**
+     * <pre>
+     * partition
+     * &#64;inject_tag: json:"partition" 
+     * </pre>
+     *
+     * <code>string partition = 4;</code>
+     * @return The partition.
+     */
+    java.lang.String getPartition();
+    /**
+     * <pre>
+     * partition
+     * &#64;inject_tag: json:"partition" 
+     * </pre>
+     *
+     * <code>string partition = 4;</code>
+     * @return The bytes for partition.
+     */
+    com.google.protobuf.ByteString
+        getPartitionBytes();
+
+    /**
+     * <pre>
+     * partition_type
+     * &#64;inject_tag: json:"partition_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for partitionType.
+     */
+    int getPartitionTypeValue();
+    /**
+     * <pre>
+     * partition_type
+     * &#64;inject_tag: json:"partition_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * @return The partitionType.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType getPartitionType();
+
+    /**
+     * <pre>
+     * tables column
+     * &#64;inject_tag: json:"tables_column" 
+     * </pre>
+     *
+     * <code>string tables_column = 6;</code>
+     * @return The tablesColumn.
+     */
+    java.lang.String getTablesColumn();
+    /**
+     * <pre>
+     * tables column
+     * &#64;inject_tag: json:"tables_column" 
+     * </pre>
+     *
+     * <code>string tables_column = 6;</code>
+     * @return The bytes for tablesColumn.
+     */
+    com.google.protobuf.ByteString
+        getTablesColumnBytes();
+
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for writeMode.
+     */
+    int getWriteModeValue();
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * @return The writeMode.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode();
+
+    /**
+     * <pre>
+     * file type
+     * &#64;inject_tag: json:"file_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
+     */
+    int getFileTypeValue();
+    /**
+     * <pre>
+     * file type
+     * &#64;inject_tag: json:"file_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * @return The fileType.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType();
+
+    /**
+     * <pre>
+     * compress type
+     * &#64;inject_tag: json:"compress"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for compress.
+     */
+    int getCompressValue();
+    /**
+     * <pre>
+     * compress type
+     * &#64;inject_tag: json:"compress"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * @return The compress.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress();
+
+    /**
+     * <pre>
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
+     * </pre>
+     *
+     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * @return The fieldDelimiter.
+     */
+    java.lang.String getFieldDelimiter();
+    /**
+     * <pre>
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
+     * </pre>
+     *
+     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for fieldDelimiter.
+     */
+    com.google.protobuf.ByteString
+        getFieldDelimiterBytes();
+
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
+     */
+    int getEncodingValue();
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * @return The encoding.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
+  }
+  /**
+   * Protobuf type {@code model.HiveTarget}
+   */
+  public static final class HiveTarget extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.HiveTarget)
+      HiveTargetOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HiveTarget.newBuilder() to construct.
+    private HiveTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HiveTarget() {
+      column_ = java.util.Collections.emptyList();
+      table_ = "";
+      partition_ = "";
+      partitionType_ = 0;
+      tablesColumn_ = "";
+      writeMode_ = 0;
+      fileType_ = 0;
+      compress_ = 0;
+      fieldDelimiter_ = "";
+      encoding_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HiveTarget();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HiveTarget(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              table_ = s;
+              break;
+            }
+            case 24: {
+
+              usePartition_ = input.readBool();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partition_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              partitionType_ = rawValue;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tablesColumn_ = s;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              writeMode_ = rawValue;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              fileType_ = rawValue;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              compress_ = rawValue;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fieldDelimiter_ = s;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              encoding_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          column_ = java.util.Collections.unmodifiableList(column_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.internal_static_model_HiveTarget_descriptor;
     }
 
@@ -565,7 +1238,136 @@ public final class PBHive {
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.Builder.class);
     }
 
-    public static final int PARTITION_FIELD_NUMBER = 1;
+    public static final int COLUMN_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> column_;
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> getColumnList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    @java.lang.Override
+    public int getColumnCount() {
+      return column_.size();
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getColumn(int index) {
+      return column_.get(index);
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.HiveColumn column = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>string table = 2;</code>
+     * @return The table.
+     */
+    @java.lang.Override
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USE_PARTITION_FIELD_NUMBER = 3;
+    private boolean usePartition_;
+    /**
+     * <pre>
+     * use partition
+     * &#64;inject_tag: json:"use_partition"
+     * </pre>
+     *
+     * <code>bool use_partition = 3;</code>
+     * @return The usePartition.
+     */
+    @java.lang.Override
+    public boolean getUsePartition() {
+      return usePartition_;
+    }
+
+    public static final int PARTITION_FIELD_NUMBER = 4;
     private volatile java.lang.Object partition_;
     /**
      * <pre>
@@ -573,7 +1375,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition" 
      * </pre>
      *
-     * <code>string partition = 1;</code>
+     * <code>string partition = 4;</code>
      * @return The partition.
      */
     @java.lang.Override
@@ -595,7 +1397,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition" 
      * </pre>
      *
-     * <code>string partition = 1;</code>
+     * <code>string partition = 4;</code>
      * @return The bytes for partition.
      */
     @java.lang.Override
@@ -613,55 +1415,36 @@ public final class PBHive {
       }
     }
 
-    public static final int PARTITION_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partitionType_;
+    public static final int PARTITION_TYPE_FIELD_NUMBER = 5;
+    private int partitionType_;
     /**
      * <pre>
      * partition_type
      * &#64;inject_tag: json:"partition_type" 
      * </pre>
      *
-     * <code>string partition_type = 2;</code>
+     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for partitionType.
+     */
+    @java.lang.Override public int getPartitionTypeValue() {
+      return partitionType_;
+    }
+    /**
+     * <pre>
+     * partition_type
+     * &#64;inject_tag: json:"partition_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
      * @return The partitionType.
      */
-    @java.lang.Override
-    public java.lang.String getPartitionType() {
-      java.lang.Object ref = partitionType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partitionType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * partition_type
-     * &#64;inject_tag: json:"partition_type" 
-     * </pre>
-     *
-     * <code>string partition_type = 2;</code>
-     * @return The bytes for partitionType.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPartitionTypeBytes() {
-      java.lang.Object ref = partitionType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        partitionType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType getPartitionType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.valueOf(partitionType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.UNRECOGNIZED : result;
     }
 
-    public static final int TABLES_COLUMN_FIELD_NUMBER = 3;
+    public static final int TABLES_COLUMN_FIELD_NUMBER = 6;
     private volatile java.lang.Object tablesColumn_;
     /**
      * <pre>
@@ -669,7 +1452,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"tables_column" 
      * </pre>
      *
-     * <code>string tables_column = 3;</code>
+     * <code>string tables_column = 6;</code>
      * @return The tablesColumn.
      */
     @java.lang.Override
@@ -691,7 +1474,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"tables_column" 
      * </pre>
      *
-     * <code>string tables_column = 3;</code>
+     * <code>string tables_column = 6;</code>
      * @return The bytes for tablesColumn.
      */
     @java.lang.Override
@@ -709,415 +1492,102 @@ public final class PBHive {
       }
     }
 
-    public static final int ANALYTICAL_RULES_FIELD_NUMBER = 4;
-    private volatile java.lang.Object analyticalRules_;
-    /**
-     * <pre>
-     * analytical rules
-     * &#64;inject_tag: json:"analytical_rules" 
-     * </pre>
-     *
-     * <code>string analytical_rules = 4;</code>
-     * @return The analyticalRules.
-     */
-    @java.lang.Override
-    public java.lang.String getAnalyticalRules() {
-      java.lang.Object ref = analyticalRules_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        analyticalRules_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * analytical rules
-     * &#64;inject_tag: json:"analytical_rules" 
-     * </pre>
-     *
-     * <code>string analytical_rules = 4;</code>
-     * @return The bytes for analyticalRules.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAnalyticalRulesBytes() {
-      java.lang.Object ref = analyticalRules_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        analyticalRules_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCHEMA_FIELD_NUMBER = 5;
-    private volatile java.lang.Object schema_;
-    /**
-     * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
-     * </pre>
-     *
-     * <code>string schema = 5;</code>
-     * @return The schema.
-     */
-    @java.lang.Override
-    public java.lang.String getSchema() {
-      java.lang.Object ref = schema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        schema_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
-     * </pre>
-     *
-     * <code>string schema = 5;</code>
-     * @return The bytes for schema.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSchemaBytes() {
-      java.lang.Object ref = schema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        schema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DISTRIBUTE_TABLE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object distributeTable_;
-    /**
-     * <pre>
-     * distribute table
-     * &#64;inject_tag: json:"distribute_table" 
-     * </pre>
-     *
-     * <code>string distribute_table = 6;</code>
-     * @return The distributeTable.
-     */
-    @java.lang.Override
-    public java.lang.String getDistributeTable() {
-      java.lang.Object ref = distributeTable_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        distributeTable_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * distribute table
-     * &#64;inject_tag: json:"distribute_table" 
-     * </pre>
-     *
-     * <code>string distribute_table = 6;</code>
-     * @return The bytes for distributeTable.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDistributeTableBytes() {
-      java.lang.Object ref = distributeTable_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        distributeTable_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int WRITE_MODE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object writeMode_;
+    private int writeMode_;
     /**
      * <pre>
      * write mode
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>string write_mode = 7;</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for writeMode.
+     */
+    @java.lang.Override public int getWriteModeValue() {
+      return writeMode_;
+    }
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
      * @return The writeMode.
      */
-    @java.lang.Override
-    public java.lang.String getWriteMode() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        writeMode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * write mode
-     * &#64;inject_tag: json:"write_mode" 
-     * </pre>
-     *
-     * <code>string write_mode = 7;</code>
-     * @return The bytes for writeMode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWriteModeBytes() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        writeMode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.valueOf(writeMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.UNRECOGNIZED : result;
     }
 
     public static final int FILE_TYPE_FIELD_NUMBER = 8;
-    private volatile java.lang.Object fileType_;
+    private int fileType_;
     /**
      * <pre>
-     * Relationaldb column
+     * file type
      * &#64;inject_tag: json:"file_type" 
      * </pre>
      *
-     * <code>string file_type = 8;</code>
+     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
+     */
+    @java.lang.Override public int getFileTypeValue() {
+      return fileType_;
+    }
+    /**
+     * <pre>
+     * file type
+     * &#64;inject_tag: json:"file_type" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
      * @return The fileType.
      */
-    @java.lang.Override
-    public java.lang.String getFileType() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fileType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Relationaldb column
-     * &#64;inject_tag: json:"file_type" 
-     * </pre>
-     *
-     * <code>string file_type = 8;</code>
-     * @return The bytes for fileType.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFileTypeBytes() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fileType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
     }
 
-    public static final int DEFAULT_FS_FIELD_NUMBER = 9;
-    private volatile java.lang.Object defaultFs_;
+    public static final int COMPRESS_FIELD_NUMBER = 9;
+    private int compress_;
     /**
      * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>string default_fs = 9;</code>
-     * @return The defaultFs.
+     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for compress.
      */
-    @java.lang.Override
-    public java.lang.String getDefaultFs() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultFs_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCompressValue() {
+      return compress_;
     }
     /**
      * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>string default_fs = 9;</code>
-     * @return The bytes for defaultFs.
+     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * @return The compress.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDefaultFsBytes() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        defaultFs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.valueOf(compress_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.UNRECOGNIZED : result;
     }
 
-    public static final int MAX_FILE_SIZE_FIELD_NUMBER = 10;
-    private long maxFileSize_;
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" 
-     * </pre>
-     *
-     * <code>int64 max_file_size = 10;</code>
-     * @return The maxFileSize.
-     */
-    @java.lang.Override
-    public long getMaxFileSize() {
-      return maxFileSize_;
-    }
-
-    public static final int NEXT_CHECK_ROWS_FIELD_NUMBER = 11;
-    private long nextCheckRows_;
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" 
-     * </pre>
-     *
-     * <code>int64 next_check_rows = 11;</code>
-     * @return The nextCheckRows.
-     */
-    @java.lang.Override
-    public long getNextCheckRows() {
-      return nextCheckRows_;
-    }
-
-    public static final int ROW_GROUP_SIZE_FIELD_NUMBER = 12;
-    private long rowGroupSize_;
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" 
-     * </pre>
-     *
-     * <code>int64 row_group_size = 12;</code>
-     * @return The rowGroupSize.
-     */
-    @java.lang.Override
-    public long getRowGroupSize() {
-      return rowGroupSize_;
-    }
-
-    public static final int ENABLE_DICTIONARY_FIELD_NUMBER = 13;
-    private boolean enableDictionary_;
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" 
-     * </pre>
-     *
-     * <code>bool enable_dictionary = 13;</code>
-     * @return The enableDictionary.
-     */
-    @java.lang.Override
-    public boolean getEnableDictionary() {
-      return enableDictionary_;
-    }
-
-    public static final int ENCODING_FIELD_NUMBER = 14;
-    private volatile java.lang.Object encoding_;
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 14;</code>
-     * @return The encoding.
-     */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 14;</code>
-     * @return The bytes for encoding.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FIELD_DELIMITER_FIELD_NUMBER = 15;
+    public static final int FIELD_DELIMITER_FIELD_NUMBER = 10;
     private volatile java.lang.Object fieldDelimiter_;
     /**
      * <pre>
      * field_delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 15;</code>
+     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
      * @return The fieldDelimiter.
      */
     @java.lang.Override
@@ -1136,10 +1606,10 @@ public final class PBHive {
     /**
      * <pre>
      * field_delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 15;</code>
+     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for fieldDelimiter.
      */
     @java.lang.Override
@@ -1157,148 +1627,33 @@ public final class PBHive {
       }
     }
 
-    public static final int COMPRESS_FIELD_NUMBER = 16;
-    private volatile java.lang.Object compress_;
+    public static final int ENCODING_FIELD_NUMBER = 11;
+    private int encoding_;
     /**
      * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string compress = 16;</code>
-     * @return The compress.
+     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    @java.lang.Override
-    public java.lang.String getCompress() {
-      java.lang.Object ref = compress_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        compress_ = s;
-        return s;
-      }
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
     }
     /**
      * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string compress = 16;</code>
-     * @return The bytes for compress.
+     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * @return The encoding.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCompressBytes() {
-      java.lang.Object ref = compress_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        compress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHARSET_NAME_FIELD_NUMBER = 17;
-    private volatile java.lang.Object charsetName_;
-    /**
-     * <pre>
-     * charset_name
-     * &#64;inject_tag: json:"charset_name" 
-     * </pre>
-     *
-     * <code>string charset_name = 17;</code>
-     * @return The charsetName.
-     */
-    @java.lang.Override
-    public java.lang.String getCharsetName() {
-      java.lang.Object ref = charsetName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        charsetName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * charset_name
-     * &#64;inject_tag: json:"charset_name" 
-     * </pre>
-     *
-     * <code>string charset_name = 17;</code>
-     * @return The bytes for charsetName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCharsetNameBytes() {
-      java.lang.Object ref = charsetName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        charsetName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HADOOP_CONFIG_FIELD_NUMBER = 18;
-    private volatile java.lang.Object hadoopConfig_;
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 18;</code>
-     * @return The hadoopConfig.
-     */
-    @java.lang.Override
-    public java.lang.String getHadoopConfig() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hadoopConfig_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 18;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHadoopConfigBytes() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hadoopConfig_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1315,59 +1670,38 @@ public final class PBHive {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partition_);
+      for (int i = 0; i < column_.size(); i++) {
+        output.writeMessage(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partitionType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
+      if (usePartition_ != false) {
+        output.writeBool(3, usePartition_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, partition_);
+      }
+      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.DAY.getNumber()) {
+        output.writeEnum(5, partitionType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablesColumn_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tablesColumn_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tablesColumn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analyticalRules_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, analyticalRules_);
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+        output.writeEnum(7, writeMode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, schema_);
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+        output.writeEnum(8, fileType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributeTable_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, distributeTable_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, writeMode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fileType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, defaultFs_);
-      }
-      if (maxFileSize_ != 0L) {
-        output.writeInt64(10, maxFileSize_);
-      }
-      if (nextCheckRows_ != 0L) {
-        output.writeInt64(11, nextCheckRows_);
-      }
-      if (rowGroupSize_ != 0L) {
-        output.writeInt64(12, rowGroupSize_);
-      }
-      if (enableDictionary_ != false) {
-        output.writeBool(13, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, encoding_);
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+        output.writeEnum(9, compress_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, fieldDelimiter_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, compress_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(charsetName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, charsetName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, hadoopConfig_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+        output.writeEnum(11, encoding_);
       }
       unknownFields.writeTo(output);
     }
@@ -1378,63 +1712,45 @@ public final class PBHive {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partition_);
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partitionType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
+      if (usePartition_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, usePartition_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, partition_);
+      }
+      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.DAY.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, partitionType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablesColumn_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tablesColumn_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tablesColumn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analyticalRules_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, analyticalRules_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, schema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributeTable_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, distributeTable_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, writeMode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fileType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, defaultFs_);
-      }
-      if (maxFileSize_ != 0L) {
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, maxFileSize_);
+          .computeEnumSize(7, writeMode_);
       }
-      if (nextCheckRows_ != 0L) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, nextCheckRows_);
+          .computeEnumSize(8, fileType_);
       }
-      if (rowGroupSize_ != 0L) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, rowGroupSize_);
-      }
-      if (enableDictionary_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, encoding_);
+          .computeEnumSize(9, compress_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, fieldDelimiter_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, compress_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(charsetName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, charsetName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, hadoopConfig_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, encoding_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1451,42 +1767,23 @@ public final class PBHive {
       }
       com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget other = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget) obj;
 
+      if (!getColumnList()
+          .equals(other.getColumnList())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
+      if (getUsePartition()
+          != other.getUsePartition()) return false;
       if (!getPartition()
           .equals(other.getPartition())) return false;
-      if (!getPartitionType()
-          .equals(other.getPartitionType())) return false;
+      if (partitionType_ != other.partitionType_) return false;
       if (!getTablesColumn()
           .equals(other.getTablesColumn())) return false;
-      if (!getAnalyticalRules()
-          .equals(other.getAnalyticalRules())) return false;
-      if (!getSchema()
-          .equals(other.getSchema())) return false;
-      if (!getDistributeTable()
-          .equals(other.getDistributeTable())) return false;
-      if (!getWriteMode()
-          .equals(other.getWriteMode())) return false;
-      if (!getFileType()
-          .equals(other.getFileType())) return false;
-      if (!getDefaultFs()
-          .equals(other.getDefaultFs())) return false;
-      if (getMaxFileSize()
-          != other.getMaxFileSize()) return false;
-      if (getNextCheckRows()
-          != other.getNextCheckRows()) return false;
-      if (getRowGroupSize()
-          != other.getRowGroupSize()) return false;
-      if (getEnableDictionary()
-          != other.getEnableDictionary()) return false;
-      if (!getEncoding()
-          .equals(other.getEncoding())) return false;
+      if (writeMode_ != other.writeMode_) return false;
+      if (fileType_ != other.fileType_) return false;
+      if (compress_ != other.compress_) return false;
       if (!getFieldDelimiter()
           .equals(other.getFieldDelimiter())) return false;
-      if (!getCompress()
-          .equals(other.getCompress())) return false;
-      if (!getCharsetName()
-          .equals(other.getCharsetName())) return false;
-      if (!getHadoopConfig()
-          .equals(other.getHadoopConfig())) return false;
+      if (encoding_ != other.encoding_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1498,46 +1795,31 @@ public final class PBHive {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getColumnCount() > 0) {
+        hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnList().hashCode();
+      }
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
+      hash = (37 * hash) + USE_PARTITION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUsePartition());
       hash = (37 * hash) + PARTITION_FIELD_NUMBER;
       hash = (53 * hash) + getPartition().hashCode();
       hash = (37 * hash) + PARTITION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPartitionType().hashCode();
+      hash = (53 * hash) + partitionType_;
       hash = (37 * hash) + TABLES_COLUMN_FIELD_NUMBER;
       hash = (53 * hash) + getTablesColumn().hashCode();
-      hash = (37 * hash) + ANALYTICAL_RULES_FIELD_NUMBER;
-      hash = (53 * hash) + getAnalyticalRules().hashCode();
-      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
-      hash = (53 * hash) + getSchema().hashCode();
-      hash = (37 * hash) + DISTRIBUTE_TABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getDistributeTable().hashCode();
       hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getWriteMode().hashCode();
+      hash = (53 * hash) + writeMode_;
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFileType().hashCode();
-      hash = (37 * hash) + DEFAULT_FS_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultFs().hashCode();
-      hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxFileSize());
-      hash = (37 * hash) + NEXT_CHECK_ROWS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNextCheckRows());
-      hash = (37 * hash) + ROW_GROUP_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRowGroupSize());
-      hash = (37 * hash) + ENABLE_DICTIONARY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnableDictionary());
-      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
+      hash = (53 * hash) + fileType_;
+      hash = (37 * hash) + COMPRESS_FIELD_NUMBER;
+      hash = (53 * hash) + compress_;
       hash = (37 * hash) + FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getFieldDelimiter().hashCode();
-      hash = (37 * hash) + COMPRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getCompress().hashCode();
-      hash = (37 * hash) + CHARSET_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getCharsetName().hashCode();
-      hash = (37 * hash) + HADOOP_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHadoopConfig().hashCode();
+      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+      hash = (53 * hash) + encoding_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1666,46 +1948,37 @@ public final class PBHive {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
+        table_ = "";
+
+        usePartition_ = false;
+
         partition_ = "";
 
-        partitionType_ = "";
+        partitionType_ = 0;
 
         tablesColumn_ = "";
 
-        analyticalRules_ = "";
+        writeMode_ = 0;
 
-        schema_ = "";
+        fileType_ = 0;
 
-        distributeTable_ = "";
-
-        writeMode_ = "";
-
-        fileType_ = "";
-
-        defaultFs_ = "";
-
-        maxFileSize_ = 0L;
-
-        nextCheckRows_ = 0L;
-
-        rowGroupSize_ = 0L;
-
-        enableDictionary_ = false;
-
-        encoding_ = "";
+        compress_ = 0;
 
         fieldDelimiter_ = "";
 
-        compress_ = "";
-
-        charsetName_ = "";
-
-        hadoopConfig_ = "";
+        encoding_ = 0;
 
         return this;
       }
@@ -1733,24 +2006,26 @@ public final class PBHive {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget result = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget(this);
+        int from_bitField0_ = bitField0_;
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
+        }
+        result.table_ = table_;
+        result.usePartition_ = usePartition_;
         result.partition_ = partition_;
         result.partitionType_ = partitionType_;
         result.tablesColumn_ = tablesColumn_;
-        result.analyticalRules_ = analyticalRules_;
-        result.schema_ = schema_;
-        result.distributeTable_ = distributeTable_;
         result.writeMode_ = writeMode_;
         result.fileType_ = fileType_;
-        result.defaultFs_ = defaultFs_;
-        result.maxFileSize_ = maxFileSize_;
-        result.nextCheckRows_ = nextCheckRows_;
-        result.rowGroupSize_ = rowGroupSize_;
-        result.enableDictionary_ = enableDictionary_;
-        result.encoding_ = encoding_;
-        result.fieldDelimiter_ = fieldDelimiter_;
         result.compress_ = compress_;
-        result.charsetName_ = charsetName_;
-        result.hadoopConfig_ = hadoopConfig_;
+        result.fieldDelimiter_ = fieldDelimiter_;
+        result.encoding_ = encoding_;
         onBuilt();
         return result;
       }
@@ -1799,73 +2074,65 @@ public final class PBHive {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveTarget.getDefaultInstance()) return this;
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
+        if (other.getUsePartition() != false) {
+          setUsePartition(other.getUsePartition());
+        }
         if (!other.getPartition().isEmpty()) {
           partition_ = other.partition_;
           onChanged();
         }
-        if (!other.getPartitionType().isEmpty()) {
-          partitionType_ = other.partitionType_;
-          onChanged();
+        if (other.partitionType_ != 0) {
+          setPartitionTypeValue(other.getPartitionTypeValue());
         }
         if (!other.getTablesColumn().isEmpty()) {
           tablesColumn_ = other.tablesColumn_;
           onChanged();
         }
-        if (!other.getAnalyticalRules().isEmpty()) {
-          analyticalRules_ = other.analyticalRules_;
-          onChanged();
+        if (other.writeMode_ != 0) {
+          setWriteModeValue(other.getWriteModeValue());
         }
-        if (!other.getSchema().isEmpty()) {
-          schema_ = other.schema_;
-          onChanged();
+        if (other.fileType_ != 0) {
+          setFileTypeValue(other.getFileTypeValue());
         }
-        if (!other.getDistributeTable().isEmpty()) {
-          distributeTable_ = other.distributeTable_;
-          onChanged();
-        }
-        if (!other.getWriteMode().isEmpty()) {
-          writeMode_ = other.writeMode_;
-          onChanged();
-        }
-        if (!other.getFileType().isEmpty()) {
-          fileType_ = other.fileType_;
-          onChanged();
-        }
-        if (!other.getDefaultFs().isEmpty()) {
-          defaultFs_ = other.defaultFs_;
-          onChanged();
-        }
-        if (other.getMaxFileSize() != 0L) {
-          setMaxFileSize(other.getMaxFileSize());
-        }
-        if (other.getNextCheckRows() != 0L) {
-          setNextCheckRows(other.getNextCheckRows());
-        }
-        if (other.getRowGroupSize() != 0L) {
-          setRowGroupSize(other.getRowGroupSize());
-        }
-        if (other.getEnableDictionary() != false) {
-          setEnableDictionary(other.getEnableDictionary());
-        }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
+        if (other.compress_ != 0) {
+          setCompressValue(other.getCompressValue());
         }
         if (!other.getFieldDelimiter().isEmpty()) {
           fieldDelimiter_ = other.fieldDelimiter_;
           onChanged();
         }
-        if (!other.getCompress().isEmpty()) {
-          compress_ = other.compress_;
-          onChanged();
-        }
-        if (!other.getCharsetName().isEmpty()) {
-          charsetName_ = other.charsetName_;
-          onChanged();
-        }
-        if (!other.getHadoopConfig().isEmpty()) {
-          hadoopConfig_ = other.hadoopConfig_;
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1895,6 +2162,484 @@ public final class PBHive {
         }
         return this;
       }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> column_ =
+        java.util.Collections.emptyList();
+      private void ensureColumnIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn>(column_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder> columnBuilder_;
+
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public int getColumnCount() {
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder addAllColumn(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder clearColumn() {
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.HiveColumn column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumn.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBHive.HiveColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>string table = 2;</code>
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>string table = 2;</code>
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>string table = 2;</code>
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>string table = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+        
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>string table = 2;</code>
+       * @param value The bytes for table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        table_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean usePartition_ ;
+      /**
+       * <pre>
+       * use partition
+       * &#64;inject_tag: json:"use_partition"
+       * </pre>
+       *
+       * <code>bool use_partition = 3;</code>
+       * @return The usePartition.
+       */
+      @java.lang.Override
+      public boolean getUsePartition() {
+        return usePartition_;
+      }
+      /**
+       * <pre>
+       * use partition
+       * &#64;inject_tag: json:"use_partition"
+       * </pre>
+       *
+       * <code>bool use_partition = 3;</code>
+       * @param value The usePartition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsePartition(boolean value) {
+        
+        usePartition_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * use partition
+       * &#64;inject_tag: json:"use_partition"
+       * </pre>
+       *
+       * <code>bool use_partition = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsePartition() {
+        
+        usePartition_ = false;
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object partition_ = "";
       /**
@@ -1903,7 +2648,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition" 
        * </pre>
        *
-       * <code>string partition = 1;</code>
+       * <code>string partition = 4;</code>
        * @return The partition.
        */
       public java.lang.String getPartition() {
@@ -1924,7 +2669,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition" 
        * </pre>
        *
-       * <code>string partition = 1;</code>
+       * <code>string partition = 4;</code>
        * @return The bytes for partition.
        */
       public com.google.protobuf.ByteString
@@ -1946,7 +2691,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition" 
        * </pre>
        *
-       * <code>string partition = 1;</code>
+       * <code>string partition = 4;</code>
        * @param value The partition to set.
        * @return This builder for chaining.
        */
@@ -1966,7 +2711,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition" 
        * </pre>
        *
-       * <code>string partition = 1;</code>
+       * <code>string partition = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPartition() {
@@ -1981,7 +2726,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition" 
        * </pre>
        *
-       * <code>string partition = 1;</code>
+       * <code>string partition = 4;</code>
        * @param value The bytes for partition to set.
        * @return This builder for chaining.
        */
@@ -1997,27 +2742,18 @@ public final class PBHive {
         return this;
       }
 
-      private java.lang.Object partitionType_ = "";
+      private int partitionType_ = 0;
       /**
        * <pre>
        * partition_type
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>string partition_type = 2;</code>
-       * @return The partitionType.
+       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for partitionType.
        */
-      public java.lang.String getPartitionType() {
-        java.lang.Object ref = partitionType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          partitionType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getPartitionTypeValue() {
+        return partitionType_;
       }
       /**
        * <pre>
@@ -2025,38 +2761,12 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>string partition_type = 2;</code>
-       * @return The bytes for partitionType.
-       */
-      public com.google.protobuf.ByteString
-          getPartitionTypeBytes() {
-        java.lang.Object ref = partitionType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          partitionType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * partition_type
-       * &#64;inject_tag: json:"partition_type" 
-       * </pre>
-       *
-       * <code>string partition_type = 2;</code>
-       * @param value The partitionType to set.
+       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for partitionType to set.
        * @return This builder for chaining.
        */
-      public Builder setPartitionType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPartitionTypeValue(int value) {
+        
         partitionType_ = value;
         onChanged();
         return this;
@@ -2067,33 +2777,46 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>string partition_type = 2;</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * @return The partitionType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType getPartitionType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.valueOf(partitionType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * partition_type
+       * &#64;inject_tag: json:"partition_type" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * @param value The partitionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        partitionType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * partition_type
+       * &#64;inject_tag: json:"partition_type" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPartitionType() {
         
-        partitionType_ = getDefaultInstance().getPartitionType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * partition_type
-       * &#64;inject_tag: json:"partition_type" 
-       * </pre>
-       *
-       * <code>string partition_type = 2;</code>
-       * @param value The bytes for partitionType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPartitionTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        partitionType_ = value;
+        partitionType_ = 0;
         onChanged();
         return this;
       }
@@ -2105,7 +2828,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"tables_column" 
        * </pre>
        *
-       * <code>string tables_column = 3;</code>
+       * <code>string tables_column = 6;</code>
        * @return The tablesColumn.
        */
       public java.lang.String getTablesColumn() {
@@ -2126,7 +2849,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"tables_column" 
        * </pre>
        *
-       * <code>string tables_column = 3;</code>
+       * <code>string tables_column = 6;</code>
        * @return The bytes for tablesColumn.
        */
       public com.google.protobuf.ByteString
@@ -2148,7 +2871,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"tables_column" 
        * </pre>
        *
-       * <code>string tables_column = 3;</code>
+       * <code>string tables_column = 6;</code>
        * @param value The tablesColumn to set.
        * @return This builder for chaining.
        */
@@ -2168,7 +2891,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"tables_column" 
        * </pre>
        *
-       * <code>string tables_column = 3;</code>
+       * <code>string tables_column = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTablesColumn() {
@@ -2183,7 +2906,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"tables_column" 
        * </pre>
        *
-       * <code>string tables_column = 3;</code>
+       * <code>string tables_column = 6;</code>
        * @param value The bytes for tablesColumn to set.
        * @return This builder for chaining.
        */
@@ -2199,330 +2922,18 @@ public final class PBHive {
         return this;
       }
 
-      private java.lang.Object analyticalRules_ = "";
-      /**
-       * <pre>
-       * analytical rules
-       * &#64;inject_tag: json:"analytical_rules" 
-       * </pre>
-       *
-       * <code>string analytical_rules = 4;</code>
-       * @return The analyticalRules.
-       */
-      public java.lang.String getAnalyticalRules() {
-        java.lang.Object ref = analyticalRules_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          analyticalRules_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * analytical rules
-       * &#64;inject_tag: json:"analytical_rules" 
-       * </pre>
-       *
-       * <code>string analytical_rules = 4;</code>
-       * @return The bytes for analyticalRules.
-       */
-      public com.google.protobuf.ByteString
-          getAnalyticalRulesBytes() {
-        java.lang.Object ref = analyticalRules_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          analyticalRules_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * analytical rules
-       * &#64;inject_tag: json:"analytical_rules" 
-       * </pre>
-       *
-       * <code>string analytical_rules = 4;</code>
-       * @param value The analyticalRules to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAnalyticalRules(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        analyticalRules_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * analytical rules
-       * &#64;inject_tag: json:"analytical_rules" 
-       * </pre>
-       *
-       * <code>string analytical_rules = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAnalyticalRules() {
-        
-        analyticalRules_ = getDefaultInstance().getAnalyticalRules();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * analytical rules
-       * &#64;inject_tag: json:"analytical_rules" 
-       * </pre>
-       *
-       * <code>string analytical_rules = 4;</code>
-       * @param value The bytes for analyticalRules to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAnalyticalRulesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        analyticalRules_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object schema_ = "";
-      /**
-       * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
-       * </pre>
-       *
-       * <code>string schema = 5;</code>
-       * @return The schema.
-       */
-      public java.lang.String getSchema() {
-        java.lang.Object ref = schema_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          schema_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
-       * </pre>
-       *
-       * <code>string schema = 5;</code>
-       * @return The bytes for schema.
-       */
-      public com.google.protobuf.ByteString
-          getSchemaBytes() {
-        java.lang.Object ref = schema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          schema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
-       * </pre>
-       *
-       * <code>string schema = 5;</code>
-       * @param value The schema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchema(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        schema_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
-       * </pre>
-       *
-       * <code>string schema = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchema() {
-        
-        schema_ = getDefaultInstance().getSchema();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
-       * </pre>
-       *
-       * <code>string schema = 5;</code>
-       * @param value The bytes for schema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        schema_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object distributeTable_ = "";
-      /**
-       * <pre>
-       * distribute table
-       * &#64;inject_tag: json:"distribute_table" 
-       * </pre>
-       *
-       * <code>string distribute_table = 6;</code>
-       * @return The distributeTable.
-       */
-      public java.lang.String getDistributeTable() {
-        java.lang.Object ref = distributeTable_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          distributeTable_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * distribute table
-       * &#64;inject_tag: json:"distribute_table" 
-       * </pre>
-       *
-       * <code>string distribute_table = 6;</code>
-       * @return The bytes for distributeTable.
-       */
-      public com.google.protobuf.ByteString
-          getDistributeTableBytes() {
-        java.lang.Object ref = distributeTable_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          distributeTable_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * distribute table
-       * &#64;inject_tag: json:"distribute_table" 
-       * </pre>
-       *
-       * <code>string distribute_table = 6;</code>
-       * @param value The distributeTable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDistributeTable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        distributeTable_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * distribute table
-       * &#64;inject_tag: json:"distribute_table" 
-       * </pre>
-       *
-       * <code>string distribute_table = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDistributeTable() {
-        
-        distributeTable_ = getDefaultInstance().getDistributeTable();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * distribute table
-       * &#64;inject_tag: json:"distribute_table" 
-       * </pre>
-       *
-       * <code>string distribute_table = 6;</code>
-       * @param value The bytes for distributeTable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDistributeTableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        distributeTable_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object writeMode_ = "";
+      private int writeMode_ = 0;
       /**
        * <pre>
        * write mode
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 7;</code>
-       * @return The writeMode.
+       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for writeMode.
        */
-      public java.lang.String getWriteMode() {
-        java.lang.Object ref = writeMode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          writeMode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getWriteModeValue() {
+        return writeMode_;
       }
       /**
        * <pre>
@@ -2530,38 +2941,12 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 7;</code>
-       * @return The bytes for writeMode.
-       */
-      public com.google.protobuf.ByteString
-          getWriteModeBytes() {
-        java.lang.Object ref = writeMode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          writeMode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 7;</code>
-       * @param value The writeMode to set.
+       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for writeMode to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setWriteModeValue(int value) {
+        
         writeMode_ = value;
         onChanged();
         return this;
@@ -2572,520 +2957,204 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 7;</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * @return The writeMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.valueOf(writeMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * @param value The writeMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        writeMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteMode() {
         
-        writeMode_ = getDefaultInstance().getWriteMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 7;</code>
-       * @param value The bytes for writeMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWriteModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        writeMode_ = value;
+        writeMode_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object fileType_ = "";
+      private int fileType_ = 0;
       /**
        * <pre>
-       * Relationaldb column
+       * file type
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>string file_type = 8;</code>
-       * @return The fileType.
+       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for fileType.
        */
-      public java.lang.String getFileType() {
-        java.lang.Object ref = fileType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fileType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getFileTypeValue() {
+        return fileType_;
       }
       /**
        * <pre>
-       * Relationaldb column
+       * file type
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>string file_type = 8;</code>
-       * @return The bytes for fileType.
-       */
-      public com.google.protobuf.ByteString
-          getFileTypeBytes() {
-        java.lang.Object ref = fileType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fileType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Relationaldb column
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 8;</code>
-       * @param value The fileType to set.
+       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for fileType to set.
        * @return This builder for chaining.
        */
-      public Builder setFileType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setFileTypeValue(int value) {
+        
         fileType_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Relationaldb column
+       * file type
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>string file_type = 8;</code>
+       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * @return The fileType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * @param value The fileType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        fileType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFileType() {
         
-        fileType_ = getDefaultInstance().getFileType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Relationaldb column
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 8;</code>
-       * @param value The bytes for fileType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFileTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fileType_ = value;
+        fileType_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object defaultFs_ = "";
+      private int compress_ = 0;
       /**
        * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>string default_fs = 9;</code>
-       * @return The defaultFs.
+       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for compress.
        */
-      public java.lang.String getDefaultFs() {
-        java.lang.Object ref = defaultFs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultFs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCompressValue() {
+        return compress_;
       }
       /**
        * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>string default_fs = 9;</code>
-       * @return The bytes for defaultFs.
-       */
-      public com.google.protobuf.ByteString
-          getDefaultFsBytes() {
-        java.lang.Object ref = defaultFs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          defaultFs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 9;</code>
-       * @param value The defaultFs to set.
+       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for compress to set.
        * @return This builder for chaining.
        */
-      public Builder setDefaultFs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        defaultFs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultFs() {
+      public Builder setCompressValue(int value) {
         
-        defaultFs_ = getDefaultInstance().getDefaultFs();
+        compress_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>string default_fs = 9;</code>
-       * @param value The bytes for defaultFs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultFsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        defaultFs_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long maxFileSize_ ;
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
-       * </pre>
-       *
-       * <code>int64 max_file_size = 10;</code>
-       * @return The maxFileSize.
+       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * @return The compress.
        */
       @java.lang.Override
-      public long getMaxFileSize() {
-        return maxFileSize_;
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.valueOf(compress_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>int64 max_file_size = 10;</code>
-       * @param value The maxFileSize to set.
+       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * @param value The compress to set.
        * @return This builder for chaining.
        */
-      public Builder setMaxFileSize(long value) {
-        
-        maxFileSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
-       * </pre>
-       *
-       * <code>int64 max_file_size = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxFileSize() {
-        
-        maxFileSize_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long nextCheckRows_ ;
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 11;</code>
-       * @return The nextCheckRows.
-       */
-      @java.lang.Override
-      public long getNextCheckRows() {
-        return nextCheckRows_;
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 11;</code>
-       * @param value The nextCheckRows to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextCheckRows(long value) {
-        
-        nextCheckRows_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextCheckRows() {
-        
-        nextCheckRows_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long rowGroupSize_ ;
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int64 row_group_size = 12;</code>
-       * @return The rowGroupSize.
-       */
-      @java.lang.Override
-      public long getRowGroupSize() {
-        return rowGroupSize_;
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int64 row_group_size = 12;</code>
-       * @param value The rowGroupSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRowGroupSize(long value) {
-        
-        rowGroupSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int64 row_group_size = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRowGroupSize() {
-        
-        rowGroupSize_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableDictionary_ ;
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 13;</code>
-       * @return The enableDictionary.
-       */
-      @java.lang.Override
-      public boolean getEnableDictionary() {
-        return enableDictionary_;
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 13;</code>
-       * @param value The enableDictionary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableDictionary(boolean value) {
-        
-        enableDictionary_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableDictionary() {
-        
-        enableDictionary_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object encoding_ = "";
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 14;</code>
-       * @return The encoding.
-       */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 14;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 14;</code>
-       * @param value The encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncoding(
-          java.lang.String value) {
+      public Builder setCompress(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        encoding_ = value;
+          throw new NullPointerException();
+        }
+        
+        compress_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>string encoding = 14;</code>
+       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearEncoding() {
+      public Builder clearCompress() {
         
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 14;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
+        compress_ = 0;
         onChanged();
         return this;
       }
@@ -3094,10 +3163,10 @@ public final class PBHive {
       /**
        * <pre>
        * field_delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 15;</code>
+       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
        * @return The fieldDelimiter.
        */
       public java.lang.String getFieldDelimiter() {
@@ -3115,10 +3184,10 @@ public final class PBHive {
       /**
        * <pre>
        * field_delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 15;</code>
+       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
        * @return The bytes for fieldDelimiter.
        */
       public com.google.protobuf.ByteString
@@ -3137,10 +3206,10 @@ public final class PBHive {
       /**
        * <pre>
        * field_delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 15;</code>
+       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
        * @param value The fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -3157,10 +3226,10 @@ public final class PBHive {
       /**
        * <pre>
        * field_delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 15;</code>
+       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldDelimiter() {
@@ -3172,10 +3241,10 @@ public final class PBHive {
       /**
        * <pre>
        * field_delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 15;</code>
+       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
        * @param value The bytes for fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -3191,305 +3260,81 @@ public final class PBHive {
         return this;
       }
 
-      private java.lang.Object compress_ = "";
+      private int encoding_ = 0;
       /**
        * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string compress = 16;</code>
-       * @return The compress.
+       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public java.lang.String getCompress() {
-        java.lang.Object ref = compress_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          compress_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string compress = 16;</code>
-       * @return The bytes for compress.
-       */
-      public com.google.protobuf.ByteString
-          getCompressBytes() {
-        java.lang.Object ref = compress_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          compress_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 16;</code>
-       * @param value The compress to set.
+       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setCompress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        compress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCompress() {
+      public Builder setEncodingValue(int value) {
         
-        compress_ = getDefaultInstance().getCompress();
+        encoding_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string compress = 16;</code>
-       * @param value The bytes for compress to set.
+       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * @param value The encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setCompressBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        compress_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object charsetName_ = "";
-      /**
-       * <pre>
-       * charset_name
-       * &#64;inject_tag: json:"charset_name" 
-       * </pre>
-       *
-       * <code>string charset_name = 17;</code>
-       * @return The charsetName.
-       */
-      public java.lang.String getCharsetName() {
-        java.lang.Object ref = charsetName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          charsetName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+          throw new NullPointerException();
         }
-      }
-      /**
-       * <pre>
-       * charset_name
-       * &#64;inject_tag: json:"charset_name" 
-       * </pre>
-       *
-       * <code>string charset_name = 17;</code>
-       * @return The bytes for charsetName.
-       */
-      public com.google.protobuf.ByteString
-          getCharsetNameBytes() {
-        java.lang.Object ref = charsetName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          charsetName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * charset_name
-       * &#64;inject_tag: json:"charset_name" 
-       * </pre>
-       *
-       * <code>string charset_name = 17;</code>
-       * @param value The charsetName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCharsetName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        charsetName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * charset_name
-       * &#64;inject_tag: json:"charset_name" 
-       * </pre>
-       *
-       * <code>string charset_name = 17;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCharsetName() {
         
-        charsetName_ = getDefaultInstance().getCharsetName();
+        encoding_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * charset_name
-       * &#64;inject_tag: json:"charset_name" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string charset_name = 17;</code>
-       * @param value The bytes for charsetName to set.
+       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder setCharsetNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearEncoding() {
         
-        charsetName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object hadoopConfig_ = "";
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 18;</code>
-       * @return The hadoopConfig.
-       */
-      public java.lang.String getHadoopConfig() {
-        java.lang.Object ref = hadoopConfig_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hadoopConfig_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 18;</code>
-       * @return The bytes for hadoopConfig.
-       */
-      public com.google.protobuf.ByteString
-          getHadoopConfigBytes() {
-        java.lang.Object ref = hadoopConfig_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hadoopConfig_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 18;</code>
-       * @param value The hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfig(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        hadoopConfig_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 18;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHadoopConfig() {
-        
-        hadoopConfig_ = getDefaultInstance().getHadoopConfig();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 18;</code>
-       * @param value The bytes for hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfigBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        hadoopConfig_ = value;
+        encoding_ = 0;
         onChanged();
         return this;
       }
@@ -3547,6 +3392,11 @@ public final class PBHive {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_HiveColumn_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_HiveColumn_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_HiveTarget_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3562,40 +3412,55 @@ public final class PBHive {
     java.lang.String[] descriptorData = {
       "\n$proto/types/model/syncjob/hive.proto\022\005" +
       "model\0323github.com/yu31/protoc-plugin/pro" +
-      "to/validator.proto\032/github.com/yu31/prot" +
-      "oc-plugin/proto/gosql.proto\0322github.com/" +
-      "yu31/protoc-plugin/proto/defaults.proto\"" +
-      "\232\003\n\nHiveTarget\022\021\n\tpartition\030\001 \001(\t\022\026\n\016par" +
-      "tition_type\030\002 \001(\t\022\025\n\rtables_column\030\003 \001(\t" +
-      "\022\030\n\020analytical_rules\030\004 \001(\t\022\016\n\006schema\030\005 \001" +
-      "(\t\022\030\n\020distribute_table\030\006 \001(\t\022\022\n\nwrite_mo" +
-      "de\030\007 \001(\t\022\021\n\tfile_type\030\010 \001(\t\022\022\n\ndefault_f" +
-      "s\030\t \001(\t\022\025\n\rmax_file_size\030\n \001(\003\022\027\n\017next_c" +
-      "heck_rows\030\013 \001(\003\022\026\n\016row_group_size\030\014 \001(\003\022" +
-      "\031\n\021enable_dictionary\030\r \001(\010\022\020\n\010encoding\030\016" +
-      " \001(\t\022\027\n\017field_delimiter\030\017 \001(\t\022\020\n\010compres" +
-      "s\030\020 \001(\t\022\024\n\014charset_name\030\021 \001(\t\022\025\n\rhadoop_" +
-      "config\030\022 \001(\tBu\n,com.dataomnis.gproto.typ" +
-      "es.pbmodel.pbsyncjobB\006PBHiveP\000Z;github.c" +
-      "om/DataWorkbench/gproto/xgo/types/pbmode" +
-      "l/pbsyncjobb\006proto3"
+      "to/validator.proto\032(proto/types/model/sy" +
+      "ncjob/baseenum.proto\032/github.com/yu31/pr" +
+      "otoc-plugin/proto/gosql.proto\"/\n\nHiveCol" +
+      "umn\022\013\n\003key\030\001 \001(\t\022\014\n\004type\030\002 \001(\t:\006\312\262\004\002\n\000\"\200" +
+      "\004\n\nHiveTarget\022!\n\006column\030\001 \003(\0132\021.model.Hi" +
+      "veColumn\022\r\n\005table\030\002 \001(\t\022\025\n\ruse_partition" +
+      "\030\003 \001(\010\022\021\n\tpartition\030\004 \001(\t\022D\n\016partition_t" +
+      "ype\030\005 \001(\0162\035.model.BaseEnum.PartitionType" +
+      "B\r\342\337\037\t\022\007\332\001\004@\000X\001\022\025\n\rtables_column\030\006 \001(\t\022<" +
+      "\n\nwrite_mode\030\007 \001(\0162\031.model.BaseEnum.Writ" +
+      "eModeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022:\n\tfile_type\030\010 \001(\0162" +
+      "\030.model.BaseEnum.FileTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001" +
+      "\022=\n\010compress\030\t \001(\0162\034.model.BaseEnum.Comp" +
+      "ressTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022=\n\017field_delimit" +
+      "er\030\n \001(\tB$\342\337\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006" +
+      "\302\001\003\220\002\001\0229\n\010encoding\030\013 \001(\0162\030.model.BaseEnu" +
+      "m.EncodingB\r\342\337\037\t\022\007\332\001\004@\000X\001:\006\312\262\004\002\n\000Bu\n,com" +
+      ".dataomnis.gproto.types.pbmodel.pbsyncjo" +
+      "bB\006PBHiveP\000Z;github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
-    internal_static_model_HiveTarget_descriptor =
+    internal_static_model_HiveColumn_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_model_HiveColumn_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_HiveColumn_descriptor,
+        new java.lang.String[] { "Key", "Type", });
+    internal_static_model_HiveTarget_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_model_HiveTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HiveTarget_descriptor,
-        new java.lang.String[] { "Partition", "PartitionType", "TablesColumn", "AnalyticalRules", "Schema", "DistributeTable", "WriteMode", "FileType", "DefaultFs", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "Encoding", "FieldDelimiter", "Compress", "CharsetName", "HadoopConfig", });
+        new java.lang.String[] { "Column", "Table", "UsePartition", "Partition", "PartitionType", "TablesColumn", "WriteMode", "FileType", "Compress", "FieldDelimiter", "Encoding", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

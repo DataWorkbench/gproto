@@ -259,7 +259,7 @@ public final class PBModelSyncInstance {
   }
   /**
    * <pre>
-   * The instance info of stream job.
+   * The instance info of sync job.
    * </pre>
    *
    * Protobuf type {@code model.SyncInstance}
@@ -1449,7 +1449,7 @@ public final class PBModelSyncInstance {
     }
     /**
      * <pre>
-     * The instance info of stream job.
+     * The instance info of sync job.
      * </pre>
      *
      * Protobuf type {@code model.SyncInstance}

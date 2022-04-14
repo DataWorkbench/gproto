@@ -9,7 +9,6 @@ import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
-	strings "strings"
 )
 
 func (this *CreateFlinkClusterInK8S) _xxx_xxx_Validator_Validate_info() error {
@@ -35,9 +34,9 @@ func (this *CreateFlinkClusterInK8S) Validate() error {
 	return nil
 }
 
-func (this *StartFlinkClusterInK8S) _xxx_xxx_Validator_Validate_info() error {
+func (this *DeleteFlinkClusterInK8S) _xxx_xxx_Validator_Validate_info() error {
 	if !(this.Info != nil) {
-		return protovalidator.FieldError2("StartFlinkClusterInK8S", "the value of field 'info' cannot be null")
+		return protovalidator.FieldError2("DeleteFlinkClusterInK8S", "the value of field 'info' cannot be null")
 	}
 	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -47,46 +46,12 @@ func (this *StartFlinkClusterInK8S) _xxx_xxx_Validator_Validate_info() error {
 	return nil
 }
 
-// Set default value for message request.StartFlinkClusterInK8s
-func (this *StartFlinkClusterInK8S) Validate() error {
+// Set default value for message request.DeleteFlinkClusterInK8s
+func (this *DeleteFlinkClusterInK8S) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *StopFlinkClusterInK8S) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("StopFlinkClusterInK8S", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("StopFlinkClusterInK8S", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *StopFlinkClusterInK8S) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("StopFlinkClusterInK8S", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
-		return protovalidator.FieldError1("StopFlinkClusterInK8S", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
-	}
-	return nil
-}
-
-// Set default value for message request.StopFlinkClusterInK8s
-func (this *StopFlinkClusterInK8S) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
 		return err
 	}
 	return nil
@@ -115,22 +80,14 @@ func (this *CreateNetworkBrokerInK8S) Validate() error {
 	return nil
 }
 
-func (this *DeleteNetworkBrokerInK8S) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("DeleteNetworkBrokerInK8S", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+func (this *DeleteNetworkBrokerInK8S) _xxx_xxx_Validator_Validate_info() error {
+	if !(this.Info != nil) {
+		return protovalidator.FieldError2("DeleteNetworkBrokerInK8S", "the value of field 'info' cannot be null")
 	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("DeleteNetworkBrokerInK8S", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *DeleteNetworkBrokerInK8S) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("DeleteNetworkBrokerInK8S", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	if !(strings.HasPrefix(this.NetworkId, "cfi-")) {
-		return protovalidator.FieldError1("DeleteNetworkBrokerInK8S", "the value of field 'network_id' must start with string 'cfi-'", this.NetworkId)
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
 	}
 	return nil
 }
@@ -140,10 +97,7 @@ func (this *DeleteNetworkBrokerInK8S) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
 		return err
 	}
 	return nil

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(com.dataomnis.gproto.service.pbsvcengineB\021PBSvcEngineManageP\000Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengine',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/proto/service/enginemanager/engine_manage.proto\x12\x0c\x65nginecenter\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/engine_manage.proto2\xaa\x03\n\x0c\x45ngineManage\x12Q\n\x17\x43reateFlinkClusterInK8s\x12 .request.CreateFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16StartFlinkClusterInK8s\x12\x1f.request.StartFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12M\n\x15StopFlinkClusterInK8s\x12\x1e.request.StopFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12R\n\x18\x43reateNetworkBrokerInK8s\x12 .request.CreateFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteNetworkBrokerInK8s\x12!.request.DeleteNetworkBrokerInK8s\x1a\x12.model.EmptyStruct\"\x00\x42x\n(com.dataomnis.gproto.service.pbsvcengineB\x11PBSvcEngineManageP\x00Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengineb\x06proto3'
+  serialized_pb=b'\n/proto/service/enginemanager/engine_manage.proto\x12\x0c\x65nginecenter\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/engine_manage.proto2\xde\x02\n\x0c\x45ngineManage\x12Q\n\x17\x43reateFlinkClusterInK8s\x12 .request.CreateFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17\x44\x65leteFlinkClusterInK8s\x12 .request.DeleteFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x43reateNetworkBrokerInK8s\x12!.request.CreateNetworkBrokerInK8s\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteNetworkBrokerInK8s\x12!.request.DeleteNetworkBrokerInK8s\x1a\x12.model.EmptyStruct\"\x00\x42x\n(com.dataomnis.gproto.service.pbsvcengineB\x11PBSvcEngineManageP\x00Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengineb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_engine__manage__pb2.DESCRIPTOR,])
 
@@ -40,7 +40,7 @@ _ENGINEMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=138,
-  serialized_end=564,
+  serialized_end=488,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateFlinkClusterInK8s',
@@ -53,21 +53,11 @@ _ENGINEMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='StartFlinkClusterInK8s',
-    full_name='enginecenter.EngineManage.StartFlinkClusterInK8s',
+    name='DeleteFlinkClusterInK8s',
+    full_name='enginecenter.EngineManage.DeleteFlinkClusterInK8s',
     index=1,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._STARTFLINKCLUSTERINK8S,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='StopFlinkClusterInK8s',
-    full_name='enginecenter.EngineManage.StopFlinkClusterInK8s',
-    index=2,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._STOPFLINKCLUSTERINK8S,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._DELETEFLINKCLUSTERINK8S,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -75,9 +65,9 @@ _ENGINEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateNetworkBrokerInK8s',
     full_name='enginecenter.EngineManage.CreateNetworkBrokerInK8s',
-    index=3,
+    index=2,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._CREATEFLINKCLUSTERINK8S,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._CREATENETWORKBROKERINK8S,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -85,7 +75,7 @@ _ENGINEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteNetworkBrokerInK8s',
     full_name='enginecenter.EngineManage.DeleteNetworkBrokerInK8s',
-    index=4,
+    index=3,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._DELETENETWORKBROKERINK8S,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,

@@ -4507,32 +4507,28 @@ public final class PBKafka {
   static {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/syncjob/kafka.proto\022" +
-      "\005model\0323github.com/yu31/protoc-plugin/pr" +
-      "oto/validator.proto\032/github.com/yu31/pro" +
-      "toc-plugin/proto/gosql.proto\0322github.com" +
-      "/yu31/protoc-plugin/proto/defaults.proto" +
-      "\032&proto/types/model/syncjob/column.proto" +
-      "\"\323\001\n\013KafkaSource\022\035\n\006column\030\001 \003(\0132\r.model" +
-      ".Column\022\r\n\005topic\030\002 \001(\t\022\014\n\004mode\030\003 \001(\t\022\021\n\t" +
-      "timestamp\030\004 \001(\003\022\016\n\006offset\030\005 \001(\t\022\020\n\010group" +
-      "_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\r\n\005codec\030\010 \001" +
-      "(\t\0222\n\021consumer_settings\030\t \001(\0132\027.model.Co" +
-      "nsumerSettings\".\n\020ConsumerSettings\022\032\n\022au" +
-      "to_commit_enable\030\001 \001(\t\"t\n\013KafkaTarget\022\"\n" +
-      "\013tableFields\030\001 \003(\0132\r.model.Column\022\r\n\005top" +
-      "ic\030\002 \001(\t\0222\n\021consumer_settings\030\003 \001(\0132\027.mo" +
-      "del.ConsumerSettingsBv\n,com.dataomnis.gp" +
-      "roto.types.pbmodel.pbsyncjobB\007PBKafkaP\000Z" +
-      ";github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbmodel/pbsyncjobb\006proto3"
+      "\005model\032&proto/types/model/syncjob/column" +
+      ".proto\032/github.com/yu31/protoc-plugin/pr" +
+      "oto/gosql.proto\"\333\001\n\013KafkaSource\022\035\n\006colum" +
+      "n\030\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022\014\n" +
+      "\004mode\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\016\n\006offset" +
+      "\030\005 \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001" +
+      "(\t\022\r\n\005codec\030\010 \001(\t\0222\n\021consumer_settings\030\t" +
+      " \001(\0132\027.model.ConsumerSettings:\006\312\262\004\002\n\000\"6\n" +
+      "\020ConsumerSettings\022\032\n\022auto_commit_enable\030" +
+      "\001 \001(\t:\006\312\262\004\002\n\000\"|\n\013KafkaTarget\022\"\n\013tableFie" +
+      "lds\030\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022" +
+      "2\n\021consumer_settings\030\003 \001(\0132\027.model.Consu" +
+      "merSettings:\006\312\262\004\002\n\000Bv\n,com.dataomnis.gpr" +
+      "oto.types.pbmodel.pbsyncjobB\007PBKafkaP\000Z;" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_KafkaSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4552,10 +4548,13 @@ public final class PBKafka {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaTarget_descriptor,
         new java.lang.String[] { "TableFields", "Topic", "ConsumerSettings", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

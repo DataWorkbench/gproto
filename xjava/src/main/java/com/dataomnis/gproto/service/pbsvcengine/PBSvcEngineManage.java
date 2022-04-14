@@ -26,21 +26,19 @@ public final class PBSvcEngineManage {
       "\n/proto/service/enginemanager/engine_man" +
       "age.proto\022\014enginecenter\032\035proto/types/mod" +
       "el/empty.proto\032\'proto/types/request/engi" +
-      "ne_manage.proto2\252\003\n\014EngineManage\022Q\n\027Crea" +
+      "ne_manage.proto2\336\002\n\014EngineManage\022Q\n\027Crea" +
       "teFlinkClusterInK8s\022 .request.CreateFlin" +
-      "kClusterInK8s\032\022.model.EmptyStruct\"\000\022O\n\026S" +
-      "tartFlinkClusterInK8s\022\037.request.StartFli" +
-      "nkClusterInK8s\032\022.model.EmptyStruct\"\000\022M\n\025" +
-      "StopFlinkClusterInK8s\022\036.request.StopFlin" +
-      "kClusterInK8s\032\022.model.EmptyStruct\"\000\022R\n\030C" +
-      "reateNetworkBrokerInK8s\022 .request.Create" +
-      "FlinkClusterInK8s\032\022.model.EmptyStruct\"\000\022" +
-      "S\n\030DeleteNetworkBrokerInK8s\022!.request.De" +
-      "leteNetworkBrokerInK8s\032\022.model.EmptyStru" +
-      "ct\"\000Bx\n(com.dataomnis.gproto.service.pbs" +
-      "vcengineB\021PBSvcEngineManageP\000Z7github.co" +
-      "m/DataWorkbench/gproto/xgo/service/pbsvc" +
-      "engineb\006proto3"
+      "kClusterInK8s\032\022.model.EmptyStruct\"\000\022Q\n\027D" +
+      "eleteFlinkClusterInK8s\022 .request.DeleteF" +
+      "linkClusterInK8s\032\022.model.EmptyStruct\"\000\022S" +
+      "\n\030CreateNetworkBrokerInK8s\022!.request.Cre" +
+      "ateNetworkBrokerInK8s\032\022.model.EmptyStruc" +
+      "t\"\000\022S\n\030DeleteNetworkBrokerInK8s\022!.reques" +
+      "t.DeleteNetworkBrokerInK8s\032\022.model.Empty" +
+      "Struct\"\000Bx\n(com.dataomnis.gproto.service" +
+      ".pbsvcengineB\021PBSvcEngineManageP\000Z7githu" +
+      "b.com/DataWorkbench/gproto/xgo/service/p" +
+      "bsvcengineb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -11,9 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
-from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBLogminerP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/model/syncjob/logminer.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xde\x01\n\x0eLogMinerSource\x12\r\n\x05table\x18\x01 \x03(\t\x12\x14\n\x0csplit_update\x18\x02 \x01(\x08\x12\x13\n\x0bpaving_data\x18\x03 \x01(\x08\x12\x0b\n\x03\x63\x61t\x18\x04 \x01(\t\x12\x15\n\rread_position\x18\x05 \x01(\t\x12\x12\n\nstart_time\x18\x06 \x01(\x03\x12\x11\n\tstart_scn\x18\x07 \x01(\t\x12\x12\n\nfetch_size\x18\x08 \x01(\x05\x12\x1c\n\x14support_auto_add_log\x18\t \x01(\x08\x12\x15\n\rquery_timeout\x18\n \x01(\x05\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBLogminerP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n(proto/types/model/syncjob/logminer.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\xe6\x01\n\x0eLogMinerSource\x12\r\n\x05table\x18\x01 \x03(\t\x12\x14\n\x0csplit_update\x18\x02 \x01(\x08\x12\x13\n\x0bpaving_data\x18\x03 \x01(\x08\x12\x0b\n\x03\x63\x61t\x18\x04 \x01(\t\x12\x15\n\rread_position\x18\x05 \x01(\t\x12\x12\n\nstart_time\x18\x06 \x01(\x03\x12\x11\n\tstart_scn\x18\x07 \x01(\t\x12\x12\n\nfetch_size\x18\x08 \x01(\x05\x12\x1c\n\x14support_auto_add_log\x18\t \x01(\x08\x12\x15\n\rquery_timeout\x18\n \x01(\x05:\x06\xca\xb2\x04\x02\n\x00\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBLogminerP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
@@ -113,14 +111,14 @@ _LOGMINERSOURCE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=206,
-  serialized_end=428,
+  serialized_start=101,
+  serialized_end=331,
 )
 
 DESCRIPTOR.message_types_by_name['LogMinerSource'] = _LOGMINERSOURCE
@@ -135,4 +133,5 @@ _sym_db.RegisterMessage(LogMinerSource)
 
 
 DESCRIPTOR._options = None
+_LOGMINERSOURCE._options = None
 # @@protoc_insertion_point(module_scope)

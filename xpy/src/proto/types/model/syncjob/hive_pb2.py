@@ -12,8 +12,8 @@ _sym_db = _symbol_database.Default()
 
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
+from proto.types.model.syncjob import baseenum_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
-from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,11 +22,50 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\006PBHiveP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$proto/types/model/syncjob/hive.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\x9a\x03\n\nHiveTarget\x12\x11\n\tpartition\x18\x01 \x01(\t\x12\x16\n\x0epartition_type\x18\x02 \x01(\t\x12\x15\n\rtables_column\x18\x03 \x01(\t\x12\x18\n\x10\x61nalytical_rules\x18\x04 \x01(\t\x12\x0e\n\x06schema\x18\x05 \x01(\t\x12\x18\n\x10\x64istribute_table\x18\x06 \x01(\t\x12\x12\n\nwrite_mode\x18\x07 \x01(\t\x12\x11\n\tfile_type\x18\x08 \x01(\t\x12\x12\n\ndefault_fs\x18\t \x01(\t\x12\x15\n\rmax_file_size\x18\n \x01(\x03\x12\x17\n\x0fnext_check_rows\x18\x0b \x01(\x03\x12\x16\n\x0erow_group_size\x18\x0c \x01(\x03\x12\x19\n\x11\x65nable_dictionary\x18\r \x01(\x08\x12\x10\n\x08\x65ncoding\x18\x0e \x01(\t\x12\x17\n\x0f\x66ield_delimiter\x18\x0f \x01(\t\x12\x10\n\x08\x63ompress\x18\x10 \x01(\t\x12\x14\n\x0c\x63harset_name\x18\x11 \x01(\t\x12\x15\n\rhadoop_config\x18\x12 \x01(\tBu\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x06PBHiveP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n$proto/types/model/syncjob/hive.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a(proto/types/model/syncjob/baseenum.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"/\n\nHiveColumn\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\x80\x04\n\nHiveTarget\x12!\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\x11.model.HiveColumn\x12\r\n\x05table\x18\x02 \x01(\t\x12\x15\n\ruse_partition\x18\x03 \x01(\x08\x12\x11\n\tpartition\x18\x04 \x01(\t\x12\x44\n\x0epartition_type\x18\x05 \x01(\x0e\x32\x1d.model.BaseEnum.PartitionTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x15\n\rtables_column\x18\x06 \x01(\t\x12<\n\nwrite_mode\x18\x07 \x01(\x0e\x32\x19.model.BaseEnum.WriteModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12:\n\tfile_type\x18\x08 \x01(\x0e\x32\x18.model.BaseEnum.FileTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12=\n\x08\x63ompress\x18\t \x01(\x0e\x32\x1c.model.BaseEnum.CompressTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12=\n\x0f\x66ield_delimiter\x18\n \x01(\tB$\xe2\xdf\x1f\x14\n\x12\n\tfile_type\x12\x05\xda\x01\x02\x18\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x90\x02\x01\x12\x39\n\x08\x65ncoding\x18\x0b \x01(\x0e\x32\x18.model.BaseEnum.EncodingB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01:\x06\xca\xb2\x04\x02\n\x00\x42u\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x06PBHiveP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
+
+
+_HIVECOLUMN = _descriptor.Descriptor(
+  name='HiveColumn',
+  full_name='model.HiveColumn',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='model.HiveColumn.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='model.HiveColumn.type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=191,
+  serialized_end=238,
+)
 
 
 _HIVETARGET = _descriptor.Descriptor(
@@ -38,42 +77,42 @@ _HIVETARGET = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partition', full_name='model.HiveTarget.partition', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='column', full_name='model.HiveTarget.column', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partition_type', full_name='model.HiveTarget.partition_type', index=1,
+      name='table', full_name='model.HiveTarget.table', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tables_column', full_name='model.HiveTarget.tables_column', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='use_partition', full_name='model.HiveTarget.use_partition', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='analytical_rules', full_name='model.HiveTarget.analytical_rules', index=3,
+      name='partition', full_name='model.HiveTarget.partition', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='schema', full_name='model.HiveTarget.schema', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='partition_type', full_name='model.HiveTarget.partition_type', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='distribute_table', full_name='model.HiveTarget.distribute_table', index=5,
+      name='tables_column', full_name='model.HiveTarget.tables_column', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -81,106 +120,71 @@ _HIVETARGET = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='write_mode', full_name='model.HiveTarget.write_mode', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='file_type', full_name='model.HiveTarget.file_type', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='default_fs', full_name='model.HiveTarget.default_fs', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='max_file_size', full_name='model.HiveTarget.max_file_size', index=9,
-      number=10, type=3, cpp_type=2, label=1,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='next_check_rows', full_name='model.HiveTarget.next_check_rows', index=10,
-      number=11, type=3, cpp_type=2, label=1,
+      name='compress', full_name='model.HiveTarget.compress', index=8,
+      number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='row_group_size', full_name='model.HiveTarget.row_group_size', index=11,
-      number=12, type=3, cpp_type=2, label=1,
+      name='field_delimiter', full_name='model.HiveTarget.field_delimiter', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006\302\001\003\220\002\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='encoding', full_name='model.HiveTarget.encoding', index=10,
+      number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='enable_dictionary', full_name='model.HiveTarget.enable_dictionary', index=12,
-      number=13, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='encoding', full_name='model.HiveTarget.encoding', index=13,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_delimiter', full_name='model.HiveTarget.field_delimiter', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='compress', full_name='model.HiveTarget.compress', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='charset_name', full_name='model.HiveTarget.charset_name', index=16,
-      number=17, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hadoop_config', full_name='model.HiveTarget.hadoop_config', index=17,
-      number=18, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=202,
-  serialized_end=612,
+  serialized_start=241,
+  serialized_end=753,
 )
 
+_HIVETARGET.fields_by_name['column'].message_type = _HIVECOLUMN
+_HIVETARGET.fields_by_name['partition_type'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_PARTITIONTYPE
+_HIVETARGET.fields_by_name['write_mode'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_WRITEMODE
+_HIVETARGET.fields_by_name['file_type'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_FILETYPE
+_HIVETARGET.fields_by_name['compress'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_COMPRESSTYPE
+_HIVETARGET.fields_by_name['encoding'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_ENCODING
+DESCRIPTOR.message_types_by_name['HiveColumn'] = _HIVECOLUMN
 DESCRIPTOR.message_types_by_name['HiveTarget'] = _HIVETARGET
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+HiveColumn = _reflection.GeneratedProtocolMessageType('HiveColumn', (_message.Message,), {
+  'DESCRIPTOR' : _HIVECOLUMN,
+  '__module__' : 'proto.types.model.syncjob.hive_pb2'
+  # @@protoc_insertion_point(class_scope:model.HiveColumn)
+  })
+_sym_db.RegisterMessage(HiveColumn)
 
 HiveTarget = _reflection.GeneratedProtocolMessageType('HiveTarget', (_message.Message,), {
   'DESCRIPTOR' : _HIVETARGET,
@@ -191,4 +195,12 @@ _sym_db.RegisterMessage(HiveTarget)
 
 
 DESCRIPTOR._options = None
+_HIVECOLUMN._options = None
+_HIVETARGET.fields_by_name['partition_type']._options = None
+_HIVETARGET.fields_by_name['write_mode']._options = None
+_HIVETARGET.fields_by_name['file_type']._options = None
+_HIVETARGET.fields_by_name['compress']._options = None
+_HIVETARGET.fields_by_name['field_delimiter']._options = None
+_HIVETARGET.fields_by_name['encoding']._options = None
+_HIVETARGET._options = None
 # @@protoc_insertion_point(module_scope)

@@ -3550,31 +3550,26 @@ public final class PBMongodb {
   static {
     java.lang.String[] descriptorData = {
       "\n\'proto/types/model/syncjob/mongodb.prot" +
-      "o\022\005model\0323github.com/yu31/protoc-plugin/" +
-      "proto/validator.proto\032/github.com/yu31/p" +
-      "rotoc-plugin/proto/gosql.proto\0322github.c" +
-      "om/yu31/protoc-plugin/proto/defaults.pro" +
-      "to\032&proto/types/model/syncjob/column.pro" +
-      "to\"}\n\rMongodbSource\022\035\n\006column\030\001 \003(\0132\r.mo" +
-      "del.Column\022\020\n\010database\030\002 \001(\t\022\027\n\017collecti" +
-      "on_name\030\003 \001(\t\022\022\n\nfetch_size\030\004 \001(\005\022\016\n\006fil" +
-      "ter\030\005 \001(\t\"\264\001\n\rMongodbTarget\022\035\n\006column\030\001 " +
-      "\003(\0132\r.model.Column\022\020\n\010database\030\002 \001(\t\022\027\n\017" +
-      "collection_name\030\003 \001(\t\022\023\n\013replace_key\030\004 \001" +
-      "(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\nbatch_size\030\006 \001" +
-      "(\005\022\034\n\024flush_interval_mills\030\007 \001(\005Bx\n,com." +
-      "dataomnis.gproto.types.pbmodel.pbsyncjob" +
-      "B\tPBMongodbP\000Z;github.com/DataWorkbench/" +
-      "gproto/xgo/types/pbmodel/pbsyncjobb\006prot" +
-      "o3"
+      "o\022\005model\032&proto/types/model/syncjob/colu" +
+      "mn.proto\032/github.com/yu31/protoc-plugin/" +
+      "proto/gosql.proto\"\205\001\n\rMongodbSource\022\035\n\006c" +
+      "olumn\030\001 \003(\0132\r.model.Column\022\020\n\010database\030\002" +
+      " \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_s" +
+      "ize\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t:\006\312\262\004\002\n\000\"\264\001\n\rMo" +
+      "ngodbTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
+      "mn\022\020\n\010database\030\002 \001(\t\022\027\n\017collection_name\030" +
+      "\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\022\022\n\nwrite_mode" +
+      "\030\005 \001(\t\022\022\n\nbatch_size\030\006 \001(\005\022\034\n\024flush_inte" +
+      "rval_mills\030\007 \001(\005Bx\n,com.dataomnis.gproto" +
+      ".types.pbmodel.pbsyncjobB\tPBMongodbP\000Z;g" +
+      "ithub.com/DataWorkbench/gproto/xgo/types" +
+      "/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_MongodbSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3588,10 +3583,13 @@ public final class PBMongodb {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_MongodbTarget_descriptor,
         new java.lang.String[] { "Column", "Database", "CollectionName", "ReplaceKey", "WriteMode", "BatchSize", "FlushIntervalMills", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

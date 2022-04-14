@@ -143,6 +143,17 @@ public final class PBRequestStreamJobManage {
      */
     com.google.protobuf.ByteString
         getPidBytes();
+
+    /**
+     * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory"
+     * </pre>
+     *
+     * <code>bool is_directory = 8;</code>
+     * @return The isDirectory.
+     */
+    boolean getIsDirectory();
   }
   /**
    * <pre>
@@ -234,6 +245,11 @@ public final class PBRequestStreamJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               pid_ = s;
+              break;
+            }
+            case 64: {
+
+              isDirectory_ = input.readBool();
               break;
             }
             default: {
@@ -513,6 +529,22 @@ public final class PBRequestStreamJobManage {
       }
     }
 
+    public static final int IS_DIRECTORY_FIELD_NUMBER = 8;
+    private boolean isDirectory_;
+    /**
+     * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory"
+     * </pre>
+     *
+     * <code>bool is_directory = 8;</code>
+     * @return The isDirectory.
+     */
+    @java.lang.Override
+    public boolean getIsDirectory() {
+      return isDirectory_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -548,6 +580,9 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pid_);
       }
+      if (isDirectory_ != false) {
+        output.writeBool(8, isDirectory_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -581,6 +616,10 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pid_);
       }
+      if (isDirectory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isDirectory_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -610,6 +649,8 @@ public final class PBRequestStreamJobManage {
           .equals(other.getSearch())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
+      if (getIsDirectory()
+          != other.getIsDirectory()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -636,6 +677,9 @@ public final class PBRequestStreamJobManage {
       hash = (53 * hash) + getSearch().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
+      hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDirectory());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -787,6 +831,8 @@ public final class PBRequestStreamJobManage {
 
         pid_ = "";
 
+        isDirectory_ = false;
+
         return this;
       }
 
@@ -820,6 +866,7 @@ public final class PBRequestStreamJobManage {
         result.reverse_ = reverse_;
         result.search_ = search_;
         result.pid_ = pid_;
+        result.isDirectory_ = isDirectory_;
         onBuilt();
         return result;
       }
@@ -892,6 +939,9 @@ public final class PBRequestStreamJobManage {
         if (!other.getPid().isEmpty()) {
           pid_ = other.pid_;
           onChanged();
+        }
+        if (other.getIsDirectory() != false) {
+          setIsDirectory(other.getIsDirectory());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1473,6 +1523,52 @@ public final class PBRequestStreamJobManage {
   checkByteStringIsUtf8(value);
         
         pid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isDirectory_ ;
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @return The isDirectory.
+       */
+      @java.lang.Override
+      public boolean getIsDirectory() {
+        return isDirectory_;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @param value The isDirectory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDirectory(boolean value) {
+        
+        isDirectory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDirectory() {
+        
+        isDirectory_ = false;
         onChanged();
         return this;
       }
@@ -22020,88 +22116,89 @@ public final class PBRequestStreamJobManage {
       "proto\022\007request\0323github.com/yu31/protoc-p" +
       "lugin/proto/validator.proto\0322github.com/" +
       "yu31/protoc-plugin/proto/defaults.proto\032" +
-      "\"proto/types/model/stream_job.proto\"\344\001\n\016" +
+      "\"proto/types/model/stream_job.proto\"\372\001\n\016" +
       "ListStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
       "\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
       "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
       "@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004na" +
       "meJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n" +
-      "\006search\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\"\357\002\n\017CreateStr" +
-      "eamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210" +
-      "\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0222\n\003" +
-      "pid\030\004 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\022\024\n\014is_directory\030\005 \001(\010\022\036\n\004name\030\006" +
-      " \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\007 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\310\001\374\007\022M\n\004type\030\010 \001(\0162\025.model.Stream" +
-      "Job.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\022\030\n\ncluster_id\030\t \001(\tB\004\342\337\037\000\"e\n\020" +
-      "DeleteStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023" +
-      "\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-\"\235\001\n\016MoveStreamJobs\022%" +
+      "\006search\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\022\024\n\014is_directo" +
+      "ry\030\010 \001(\010\"\357\002\n\017CreateStreamJob\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_b" +
+      "y\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030" +
+      "\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0222\n\003pid\030\004 \001(\tB%\342\337\037\016\n\014\n" +
+      "\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\024\n\014is_dir" +
+      "ectory\030\005 \001(\010\022\036\n\004name\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002" +
+      "\310\001\200\001\022\033\n\004desc\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\374\007\022M\n\004typ" +
+      "e\030\010 \001(\0162\025.model.StreamJob.TypeB(\342\337\037\027\n\025\n\014" +
+      "is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\nclus" +
+      "ter_id\030\t \001(\tB\004\342\337\037\000\"e\n\020DeleteStreamJobs\022%" +
       "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n" +
       "\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj" +
-      "-\0228\n\006target\030\003 \001(\tB(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\232\001\n\017UpdateStreamJob\022" +
+      "-\"\235\001\n\016MoveStreamJobs\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337" +
+      "\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-\0228\n\006target\030\003 \001(\tB" +
+      "(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj" +
+      "-\"\232\001\n\017UpdateStreamJob\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302" +
+      "\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"O" +
+      "\n\021DescribeStreamJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"" +
+      "\217\001\n\020SetStreamJobCode\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004code\030\003 \001(\0132\024.model.S" +
+      "treamJobCodeB\013\342\337\037\007\022\005\342\001\002\020\001\"\233\001\n\024SetStreamJ" +
+      "obSchedule\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004stj-\0227\n\010schedule\030\003 \001(\0132\030.model.StreamJ" +
+      "obScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\217\001\n\020SetStreamJob" +
+      "Args\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-" +
+      "\022/\n\004args\030\003 \001(\0132\024.model.StreamJobArgsB\013\342\337" +
+      "\037\007\022\005\342\001\002\020\001\"N\n\020GetStreamJobCode\022#\n\006job_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007version\030\002 " +
+      "\001(\tB\004\342\337\037\000\"R\n\024GetStreamJobSchedule\022#\n\006job" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007versio" +
+      "n\030\002 \001(\tB\004\342\337\037\000\"N\n\020GetStreamJobArgs\022#\n\006job" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007versio" +
+      "n\030\002 \001(\tB\004\342\337\037\000\"\253\002\n\025ListReleaseStreamJobs\022" +
+      "&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
+      "\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id" +
+      "\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228\n\007sort_by\030\003" +
+      " \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007up" +
+      "dated\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\006 \001(\t\022;" +
+      "\n\006status\030\007 \001(\0162\036.model.StreamJobRelease." +
+      "StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_id\030\010 \001(\t\"\200\001\n\020" +
+      "ReleaseStreamJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004stj-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\200\002\000\210\002A\022\014\n\004desc\030\003 \001(\t\022\024\n\014stop_running" +
+      "\030\004 \001(\010\"{\n\027OfflineReleaseStreamJob\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_" +
+      "id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\024\n\014stop_ru" +
+      "nning\030\004 \001(\010\"\201\001\n\027SuspendReleaseStreamJob\022" +
       "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#" +
-      "\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\036\n\004n" +
-      "ame\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(" +
-      "\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"O\n\021DescribeStreamJob\022#\n" +
-      "\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007ve" +
-      "rsion\030\002 \001(\tB\004\342\337\037\000\"\217\001\n\020SetStreamJobCode\022%" +
+      "\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014s" +
+      "top_running\030\003 \001(\010B\004\342\337\037\000\"d\n\026ResumeRelease" +
+      "StreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004stj-\"\307\001\n\034UpdateReleaseStreamJobStatus\022%" +
       "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n" +
-      "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004co" +
-      "de\030\003 \001(\0132\024.model.StreamJobCodeB\013\342\337\037\007\022\005\342\001" +
-      "\002\020\001\"\233\001\n\024SetStreamJobSchedule\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\0227\n\010schedule\030\003 \001" +
-      "(\0132\030.model.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020" +
-      "\001\"\217\001\n\020SetStreamJobArgs\022%\n\010space_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004args\030\003 \001(\0132\024.model" +
-      ".StreamJobArgsB\013\342\337\037\007\022\005\342\001\002\020\001\"N\n\020GetStream" +
-      "JobCode\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"R\n\024GetStream" +
-      "JobSchedule\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"N\n\020GetSt" +
-      "reamJobArgs\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\253\002\n\025List" +
-      "ReleaseStreamJobs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
-      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022" +
-      "\005\262\001\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ" +
-      "\004nameJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010" +
-      "\022\016\n\006search\030\006 \001(\t\022;\n\006status\030\007 \001(\0162\036.model" +
-      ".StreamJobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n" +
-      "\006job_id\030\010 \001(\t\"\200\001\n\020ReleaseStreamJob\022#\n\006jo" +
-      "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022#\n\ncreat" +
-      "ed_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\014\n\004desc\030\003 \001" +
-      "(\t\022\024\n\014stop_running\030\004 \001(\010\"{\n\027OfflineRelea" +
-      "seStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004stj-\022\024\n\014stop_running\030\004 \001(\010\"\201\001\n\027Suspen" +
-      "dReleaseStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_running\030\003 \001(\010B\004\342\337\037" +
-      "\000\"d\n\026ResumeReleaseStreamJob\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\307\001\n\034UpdateReleas" +
-      "eStreamJobStatus\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\360\001\020\022<\n\006status\030\004 \001(\0162\036.model.StreamJobRel" +
-      "ease.StatusB\014\342\337\037\010\022\006\332\001\003J\001\004\"\313\001\n\025ListStream" +
-      "JobVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
-      "\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n" +
-      "\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007cr" +
-      "eatedJ\007updated\022\017\n\007reverse\030\004 \001(\010\"n\n\033Descr" +
-      "ibeFlinkUIByInstanceId\022%\n\010space_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013instance_id\030\002 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dataomnis" +
-      ".gproto.types.pbrequestB\030PBRequestStream" +
-      "JobManageP\000Z3github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbrequestb\006proto3"
+      "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007ve" +
+      "rsion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022<\n\006status\030\004 \001(" +
+      "\0162\036.model.StreamJobRelease.StatusB\014\342\337\037\010\022" +
+      "\006\332\001\003J\001\004\"\313\001\n\025ListStreamJobVersions\022#\n\006job" +
+      "_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022&\n\005limit\030" +
+      "\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset" +
+      "\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337" +
+      "\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007updated\022\017\n\007" +
+      "reverse\030\004 \001(\010\"n\n\033DescribeFlinkUIByInstan" +
+      "ceId\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022(\n\013instance_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004sti-Bw\n$com.dataomnis.gproto.types.pbre" +
+      "questB\030PBRequestStreamJobManageP\000Z3githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "equestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -22115,7 +22212,7 @@ public final class PBRequestStreamJobManage {
     internal_static_request_ListStreamJobs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListStreamJobs_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Pid", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Pid", "IsDirectory", });
     internal_static_request_CreateStreamJob_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateStreamJob_fieldAccessorTable = new

@@ -143,6 +143,17 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getPidBytes();
+
+    /**
+     * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory"
+     * </pre>
+     *
+     * <code>bool is_directory = 8;</code>
+     * @return The isDirectory.
+     */
+    boolean getIsDirectory();
   }
   /**
    * <pre>
@@ -234,6 +245,11 @@ public final class PBRequestSyncJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               pid_ = s;
+              break;
+            }
+            case 64: {
+
+              isDirectory_ = input.readBool();
               break;
             }
             default: {
@@ -513,6 +529,22 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int IS_DIRECTORY_FIELD_NUMBER = 8;
+    private boolean isDirectory_;
+    /**
+     * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory"
+     * </pre>
+     *
+     * <code>bool is_directory = 8;</code>
+     * @return The isDirectory.
+     */
+    @java.lang.Override
+    public boolean getIsDirectory() {
+      return isDirectory_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -548,6 +580,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pid_);
       }
+      if (isDirectory_ != false) {
+        output.writeBool(8, isDirectory_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -581,6 +616,10 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pid_);
       }
+      if (isDirectory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isDirectory_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -610,6 +649,8 @@ public final class PBRequestSyncJobManage {
           .equals(other.getSearch())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
+      if (getIsDirectory()
+          != other.getIsDirectory()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -636,6 +677,9 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getSearch().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
+      hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDirectory());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -787,6 +831,8 @@ public final class PBRequestSyncJobManage {
 
         pid_ = "";
 
+        isDirectory_ = false;
+
         return this;
       }
 
@@ -820,6 +866,7 @@ public final class PBRequestSyncJobManage {
         result.reverse_ = reverse_;
         result.search_ = search_;
         result.pid_ = pid_;
+        result.isDirectory_ = isDirectory_;
         onBuilt();
         return result;
       }
@@ -892,6 +939,9 @@ public final class PBRequestSyncJobManage {
         if (!other.getPid().isEmpty()) {
           pid_ = other.pid_;
           onChanged();
+        }
+        if (other.getIsDirectory() != false) {
+          setIsDirectory(other.getIsDirectory());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1476,6 +1526,52 @@ public final class PBRequestSyncJobManage {
         onChanged();
         return this;
       }
+
+      private boolean isDirectory_ ;
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @return The isDirectory.
+       */
+      @java.lang.Override
+      public boolean getIsDirectory() {
+        return isDirectory_;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @param value The isDirectory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDirectory(boolean value) {
+        
+        isDirectory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory"
+       * </pre>
+       *
+       * <code>bool is_directory = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDirectory() {
+        
+        isDirectory_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1659,7 +1755,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The job Type. Is Required when not directory,
-     * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
      * Desc: Cannot be modified after creation.
      * &#64;inject_tag: json:"type"
      * </pre>
@@ -1671,7 +1767,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The job Type. Is Required when not directory,
-     * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
      * Desc: Cannot be modified after creation.
      * &#64;inject_tag: json:"type"
      * </pre>
@@ -1724,6 +1820,48 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getSpaceOwnerBytes();
+
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    int getSourceTypeValue();
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType();
+
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    int getTargetTypeValue();
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType();
   }
   /**
    * <pre>
@@ -1750,6 +1888,8 @@ public final class PBRequestSyncJobManage {
       type_ = 0;
       clusterId_ = "";
       spaceOwner_ = "";
+      sourceType_ = 0;
+      targetType_ = 0;
     }
 
     @java.lang.Override
@@ -1833,6 +1973,18 @@ public final class PBRequestSyncJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               spaceOwner_ = s;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              sourceType_ = rawValue;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              targetType_ = rawValue;
               break;
             }
             default: {
@@ -2130,7 +2282,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The job Type. Is Required when not directory,
-     * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
      * Desc: Cannot be modified after creation.
      * &#64;inject_tag: json:"type"
      * </pre>
@@ -2144,7 +2296,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The job Type. Is Required when not directory,
-     * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
      * Desc: Cannot be modified after creation.
      * &#64;inject_tag: json:"type"
      * </pre>
@@ -2254,6 +2406,64 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int SOURCE_TYPE_FIELD_NUMBER = 10;
+    private int sourceType_;
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    @java.lang.Override public int getSourceTypeValue() {
+      return sourceType_;
+    }
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int TARGET_TYPE_FIELD_NUMBER = 11;
+    private int targetType_;
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    @java.lang.Override public int getTargetTypeValue() {
+      return targetType_;
+    }
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2286,7 +2496,7 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         output.writeEnum(7, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
@@ -2294,6 +2504,12 @@ public final class PBRequestSyncJobManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, spaceOwner_);
+      }
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(10, sourceType_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(11, targetType_);
       }
       unknownFields.writeTo(output);
     }
@@ -2323,7 +2539,7 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.OfflineFull.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, type_);
       }
@@ -2332,6 +2548,14 @@ public final class PBRequestSyncJobManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, spaceOwner_);
+      }
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, sourceType_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, targetType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2365,6 +2589,8 @@ public final class PBRequestSyncJobManage {
           .equals(other.getClusterId())) return false;
       if (!getSpaceOwner()
           .equals(other.getSpaceOwner())) return false;
+      if (sourceType_ != other.sourceType_) return false;
+      if (targetType_ != other.targetType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2395,6 +2621,10 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getClusterId().hashCode();
       hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceOwner().hashCode();
+      hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + sourceType_;
+      hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + targetType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2550,6 +2780,10 @@ public final class PBRequestSyncJobManage {
 
         spaceOwner_ = "";
 
+        sourceType_ = 0;
+
+        targetType_ = 0;
+
         return this;
       }
 
@@ -2585,6 +2819,8 @@ public final class PBRequestSyncJobManage {
         result.type_ = type_;
         result.clusterId_ = clusterId_;
         result.spaceOwner_ = spaceOwner_;
+        result.sourceType_ = sourceType_;
+        result.targetType_ = targetType_;
         onBuilt();
         return result;
       }
@@ -2666,6 +2902,12 @@ public final class PBRequestSyncJobManage {
         if (!other.getSpaceOwner().isEmpty()) {
           spaceOwner_ = other.spaceOwner_;
           onChanged();
+        }
+        if (other.sourceType_ != 0) {
+          setSourceTypeValue(other.getSourceTypeValue());
+        }
+        if (other.targetType_ != 0) {
+          setTargetTypeValue(other.getTargetTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3256,7 +3498,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The job Type. Is Required when not directory,
-       * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
        * Desc: Cannot be modified after creation.
        * &#64;inject_tag: json:"type"
        * </pre>
@@ -3270,7 +3512,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The job Type. Is Required when not directory,
-       * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
        * Desc: Cannot be modified after creation.
        * &#64;inject_tag: json:"type"
        * </pre>
@@ -3288,7 +3530,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The job Type. Is Required when not directory,
-       * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
        * Desc: Cannot be modified after creation.
        * &#64;inject_tag: json:"type"
        * </pre>
@@ -3305,7 +3547,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The job Type. Is Required when not directory,
-       * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
        * Desc: Cannot be modified after creation.
        * &#64;inject_tag: json:"type"
        * </pre>
@@ -3326,7 +3568,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The job Type. Is Required when not directory,
-       * Optional Value: 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
        * Desc: Cannot be modified after creation.
        * &#64;inject_tag: json:"type"
        * </pre>
@@ -3542,6 +3784,164 @@ public final class PBRequestSyncJobManage {
         onChanged();
         return this;
       }
+
+      private int sourceType_ = 0;
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for sourceType.
+       */
+      @java.lang.Override public int getSourceTypeValue() {
+        return sourceType_;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceTypeValue(int value) {
+        
+        sourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+       * @return The sourceType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+       * @param value The sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        sourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceType() {
+        
+        sourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int targetType_ = 0;
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for targetType.
+       */
+      @java.lang.Override public int getTargetTypeValue() {
+        return targetType_;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetTypeValue(int value) {
+        
+        targetType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+       * @return The targetType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+       * @param value The targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        targetType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetType() {
+        
+        targetType_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3623,7 +4023,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3634,7 +4034,7 @@ public final class PBRequestSyncJobManage {
         getJobIdsList();
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3644,7 +4044,7 @@ public final class PBRequestSyncJobManage {
     int getJobIdsCount();
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3655,7 +4055,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobIds(int index);
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3820,7 +4220,7 @@ public final class PBRequestSyncJobManage {
     private com.google.protobuf.LazyStringList jobIds_;
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3833,7 +4233,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3845,7 +4245,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -3858,7 +4258,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4323,7 +4723,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4336,7 +4736,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4348,7 +4748,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4361,7 +4761,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4375,7 +4775,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4396,7 +4796,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4416,7 +4816,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4434,7 +4834,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4449,7 +4849,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -4549,7 +4949,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4560,7 +4960,7 @@ public final class PBRequestSyncJobManage {
         getJobIdsList();
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4570,7 +4970,7 @@ public final class PBRequestSyncJobManage {
     int getJobIdsCount();
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4581,7 +4981,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobIds(int index);
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4775,7 +5175,7 @@ public final class PBRequestSyncJobManage {
     private com.google.protobuf.LazyStringList jobIds_;
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4788,7 +5188,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4800,7 +5200,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -4813,7 +5213,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The list of stream job id. Is required, Min 1, Max 100.
+     * The list of sync job id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"job_ids"
      * </pre>
      *
@@ -5343,7 +5743,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5356,7 +5756,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5368,7 +5768,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5381,7 +5781,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5395,7 +5795,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5416,7 +5816,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5436,7 +5836,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5454,7 +5854,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5469,7 +5869,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The list of stream job id. Is required, Min 1, Max 100.
+       * The list of sync job id. Is required, Min 1, Max 100.
        * &#64;inject_tag: json:"job_ids"
        * </pre>
        *
@@ -5670,7 +6070,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -5680,7 +6080,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -5692,7 +6092,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job name in each workspace is unique. Is required, Max Length 128.
+     * The sync job name in each workspace is unique. Is required, Max Length 128.
      * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
      * &#64;inject_tag: json:"name"
      * </pre>
@@ -5703,7 +6103,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getName();
     /**
      * <pre>
-     * The stream job name in each workspace is unique. Is required, Max Length 128.
+     * The sync job name in each workspace is unique. Is required, Max Length 128.
      * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
      * &#64;inject_tag: json:"name"
      * </pre>
@@ -5897,7 +6297,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -5919,7 +6319,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -5945,7 +6345,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * The stream job name in each workspace is unique. Is required, Max Length 128.
+     * The sync job name in each workspace is unique. Is required, Max Length 128.
      * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
      * &#64;inject_tag: json:"name"
      * </pre>
@@ -5968,7 +6368,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job name in each workspace is unique. Is required, Max Length 128.
+     * The sync job name in each workspace is unique. Is required, Max Length 128.
      * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
      * &#64;inject_tag: json:"name"
      * </pre>
@@ -6500,7 +6900,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -6521,7 +6921,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -6543,7 +6943,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -6563,7 +6963,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -6578,7 +6978,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -6601,7 +7001,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * The stream job name in each workspace is unique. Is required, Max Length 128.
+       * The sync job name in each workspace is unique. Is required, Max Length 128.
        * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
        * &#64;inject_tag: json:"name"
        * </pre>
@@ -6623,7 +7023,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job name in each workspace is unique. Is required, Max Length 128.
+       * The sync job name in each workspace is unique. Is required, Max Length 128.
        * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
        * &#64;inject_tag: json:"name"
        * </pre>
@@ -6646,7 +7046,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job name in each workspace is unique. Is required, Max Length 128.
+       * The sync job name in each workspace is unique. Is required, Max Length 128.
        * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
        * &#64;inject_tag: json:"name"
        * </pre>
@@ -6667,7 +7067,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job name in each workspace is unique. Is required, Max Length 128.
+       * The sync job name in each workspace is unique. Is required, Max Length 128.
        * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
        * &#64;inject_tag: json:"name"
        * </pre>
@@ -6683,7 +7083,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job name in each workspace is unique. Is required, Max Length 128.
+       * The sync job name in each workspace is unique. Is required, Max Length 128.
        * And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
        * &#64;inject_tag: json:"name"
        * </pre>
@@ -6863,7 +7263,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -6873,7 +7273,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -6885,7 +7285,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -6895,7 +7295,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getVersion();
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -7004,7 +7404,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -7026,7 +7426,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -7052,7 +7452,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object version_;
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -7074,7 +7474,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -7422,7 +7822,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -7443,7 +7843,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -7465,7 +7865,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -7485,7 +7885,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -7500,7 +7900,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -7523,7 +7923,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object version_ = "";
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -7544,7 +7944,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -7566,7 +7966,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -7586,7 +7986,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -7601,7 +8001,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -7701,7 +8101,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id it belongs to.
+     * The sync job id it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
      * </pre>
      *
@@ -7711,7 +8111,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id it belongs to.
+     * The sync job id it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
      * </pre>
      *
@@ -7911,7 +8311,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id it belongs to.
+     * The sync job id it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
      * </pre>
      *
@@ -7933,7 +8333,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id it belongs to.
+     * The sync job id it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
      * </pre>
      *
@@ -8453,7 +8853,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id it belongs to.
+       * The sync job id it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
        * </pre>
        *
@@ -8474,7 +8874,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id it belongs to.
+       * The sync job id it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
        * </pre>
        *
@@ -8496,7 +8896,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id it belongs to.
+       * The sync job id it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
        * </pre>
        *
@@ -8516,7 +8916,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id it belongs to.
+       * The sync job id it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
        * </pre>
        *
@@ -8531,7 +8931,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id it belongs to.
+       * The sync job id it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
        * </pre>
        *
@@ -8795,7 +9195,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job ID it belongs to.
+     * The sync job ID it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -8805,7 +9205,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job ID it belongs to.
+     * The sync job ID it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -9005,7 +9405,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job ID it belongs to.
+     * The sync job ID it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -9027,7 +9427,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job ID it belongs to.
+     * The sync job ID it belongs to.
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -9547,7 +9947,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job ID it belongs to.
+       * The sync job ID it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -9568,7 +9968,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job ID it belongs to.
+       * The sync job ID it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -9590,7 +9990,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job ID it belongs to.
+       * The sync job ID it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -9610,7 +10010,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job ID it belongs to.
+       * The sync job ID it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -9625,7 +10025,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job ID it belongs to.
+       * The sync job ID it belongs to.
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -9867,7 +10267,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -9877,7 +10277,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -9889,7 +10289,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -9899,7 +10299,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getVersion();
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10008,7 +10408,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10030,7 +10430,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10056,7 +10456,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object version_;
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10078,7 +10478,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10426,7 +10826,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -10447,7 +10847,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -10469,7 +10869,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -10489,7 +10889,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -10504,7 +10904,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -10527,7 +10927,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object version_ = "";
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -10548,7 +10948,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -10570,7 +10970,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -10590,7 +10990,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -10605,7 +11005,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -10683,7 +11083,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10693,7 +11093,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10705,7 +11105,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10715,7 +11115,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getVersion();
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10824,7 +11224,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10846,7 +11246,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -10872,7 +11272,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object version_;
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -10894,7 +11294,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job version id in HTTP Request-URI
+     * The sync job version id in HTTP Request-URI
      * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
@@ -11242,7 +11642,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -11263,7 +11663,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -11285,7 +11685,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -11305,7 +11705,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -11320,7 +11720,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -11343,7 +11743,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object version_ = "";
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -11364,7 +11764,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -11386,7 +11786,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -11406,7 +11806,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -11421,7 +11821,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job version id in HTTP Request-URI
+       * The sync job version id in HTTP Request-URI
        * &#64;inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
@@ -11583,7 +11983,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * Search with stream job name; Not required.
+     * Search with sync job name; Not required.
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
@@ -11593,7 +11993,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getSearch();
     /**
      * <pre>
-     * Search with stream job name; Not required.
+     * Search with sync job name; Not required.
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
@@ -11628,7 +12028,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id.
+     * The sync job id.
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
@@ -11638,7 +12038,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id.
+     * The sync job id.
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
@@ -11934,7 +12334,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object search_;
     /**
      * <pre>
-     * Search with stream job name; Not required.
+     * Search with sync job name; Not required.
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
@@ -11956,7 +12356,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * Search with stream job name; Not required.
+     * Search with sync job name; Not required.
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
@@ -12013,7 +12413,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id.
+     * The sync job id.
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
@@ -12035,7 +12435,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id.
+     * The sync job id.
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
@@ -12843,7 +13243,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object search_ = "";
       /**
        * <pre>
-       * Search with stream job name; Not required.
+       * Search with sync job name; Not required.
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
@@ -12864,7 +13264,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * Search with stream job name; Not required.
+       * Search with sync job name; Not required.
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
@@ -12886,7 +13286,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * Search with stream job name; Not required.
+       * Search with sync job name; Not required.
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
@@ -12906,7 +13306,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * Search with stream job name; Not required.
+       * Search with sync job name; Not required.
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
@@ -12921,7 +13321,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * Search with stream job name; Not required.
+       * Search with sync job name; Not required.
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
@@ -13028,7 +13428,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id.
+       * The sync job id.
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
@@ -13049,7 +13449,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id.
+       * The sync job id.
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
@@ -13071,7 +13471,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id.
+       * The sync job id.
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
@@ -13091,7 +13491,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id.
+       * The sync job id.
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
@@ -13106,7 +13506,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id.
+       * The sync job id.
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
@@ -13184,7 +13584,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -13194,7 +13594,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -13369,7 +13769,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -13391,7 +13791,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -13885,7 +14285,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -13906,7 +14306,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -13928,7 +14328,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -13948,7 +14348,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -13963,7 +14363,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -14308,7 +14708,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -14318,7 +14718,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -14491,7 +14891,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -14513,7 +14913,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -14996,7 +15396,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15017,7 +15417,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15039,7 +15439,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15059,7 +15459,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15074,7 +15474,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15220,7 +15620,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -15230,7 +15630,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -15402,7 +15802,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -15424,7 +15824,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -15906,7 +16306,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15927,7 +16327,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15949,7 +16349,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15969,7 +16369,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -15984,7 +16384,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16127,7 +16527,7 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -16137,7 +16537,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -16294,7 +16694,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -16316,7 +16716,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -16765,7 +17165,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16786,7 +17186,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16808,7 +17208,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16828,7 +17228,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16843,7 +17243,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -16915,13 +17315,1703 @@ public final class PBRequestSyncJobManage {
 
   }
 
+  public interface CommitSyncJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CommitSyncJob)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+  }
+  /**
+   * <pre>
+   * CommitReleaseSyncJob used as a request parameters for RPC.
+   * </pre>
+   *
+   * Protobuf type {@code request.CommitSyncJob}
+   */
+  public static final class CommitSyncJob extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.CommitSyncJob)
+      CommitSyncJobOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CommitSyncJob.newBuilder() to construct.
+    private CommitSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CommitSyncJob() {
+      spaceId_ = "";
+      jobId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CommitSyncJob();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CommitSyncJob(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_CommitSyncJob_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_CommitSyncJob_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CommitReleaseSyncJob used as a request parameters for RPC.
+     * </pre>
+     *
+     * Protobuf type {@code request.CommitSyncJob}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.CommitSyncJob)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJobOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_CommitSyncJob_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_CommitSyncJob_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        jobId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_CommitSyncJob_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob(this);
+        result.spaceId_ = spaceId_;
+        result.jobId_ = jobId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.CommitSyncJob)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.CommitSyncJob)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CommitSyncJob>
+        PARSER = new com.google.protobuf.AbstractParser<CommitSyncJob>() {
+      @java.lang.Override
+      public CommitSyncJob parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CommitSyncJob(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CommitSyncJob> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CommitSyncJob> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConvertSyncJobModeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ConvertSyncJobMode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType();
+
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     * @return Whether the conf field is set.
+     */
+    boolean hasConf();
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     * @return The conf.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf();
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder();
+  }
+  /**
+   * <pre>
+   * ConvertSyncJobMode used as a request parameters for RPC.
+   * </pre>
+   *
+   * Protobuf type {@code request.ConvertSyncJobMode}
+   */
+  public static final class ConvertSyncJobMode extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.ConvertSyncJobMode)
+      ConvertSyncJobModeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConvertSyncJobMode.newBuilder() to construct.
+    private ConvertSyncJobMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConvertSyncJobMode() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConvertSyncJobMode();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ConvertSyncJobMode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder subBuilder = null;
+              if (conf_ != null) {
+                subBuilder = conf_.toBuilder();
+              }
+              conf_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(conf_);
+                conf_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ConvertSyncJobMode_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ConvertSyncJobMode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int CONF_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     * @return Whether the conf field is set.
+     */
+    @java.lang.Override
+    public boolean hasConf() {
+      return conf_ != null;
+    }
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     * @return The conf.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf() {
+      return conf_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
+    }
+    /**
+     * <pre>
+     * conf
+     * &#64;inject_tag: json:"conf" uri:"conf"
+     * </pre>
+     *
+     * <code>.model.SyncJobConf conf = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
+      return getConf();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (conf_ != null) {
+        output.writeMessage(2, getConf());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (conf_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getConf());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) obj;
+
+      if (type_ != other.type_) return false;
+      if (hasConf() != other.hasConf()) return false;
+      if (hasConf()) {
+        if (!getConf()
+            .equals(other.getConf())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      if (hasConf()) {
+        hash = (37 * hash) + CONF_FIELD_NUMBER;
+        hash = (53 * hash) + getConf().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ConvertSyncJobMode used as a request parameters for RPC.
+     * </pre>
+     *
+     * Protobuf type {@code request.ConvertSyncJobMode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.ConvertSyncJobMode)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobModeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ConvertSyncJobMode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ConvertSyncJobMode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        if (confBuilder_ == null) {
+          conf_ = null;
+        } else {
+          conf_ = null;
+          confBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ConvertSyncJobMode_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode(this);
+        result.type_ = type_;
+        if (confBuilder_ == null) {
+          result.conf_ = conf_;
+        } else {
+          result.conf_ = confBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.hasConf()) {
+          mergeConf(other.getConf());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> confBuilder_;
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       * @return Whether the conf field is set.
+       */
+      public boolean hasConf() {
+        return confBuilder_ != null || conf_ != null;
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       * @return The conf.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf() {
+        if (confBuilder_ == null) {
+          return conf_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
+        } else {
+          return confBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public Builder setConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
+        if (confBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          conf_ = value;
+          onChanged();
+        } else {
+          confBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public Builder setConf(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder builderForValue) {
+        if (confBuilder_ == null) {
+          conf_ = builderForValue.build();
+          onChanged();
+        } else {
+          confBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public Builder mergeConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
+        if (confBuilder_ == null) {
+          if (conf_ != null) {
+            conf_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.newBuilder(conf_).mergeFrom(value).buildPartial();
+          } else {
+            conf_ = value;
+          }
+          onChanged();
+        } else {
+          confBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public Builder clearConf() {
+        if (confBuilder_ == null) {
+          conf_ = null;
+          onChanged();
+        } else {
+          conf_ = null;
+          confBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder getConfBuilder() {
+        
+        onChanged();
+        return getConfFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
+        if (confBuilder_ != null) {
+          return confBuilder_.getMessageOrBuilder();
+        } else {
+          return conf_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.getDefaultInstance() : conf_;
+        }
+      }
+      /**
+       * <pre>
+       * conf
+       * &#64;inject_tag: json:"conf" uri:"conf"
+       * </pre>
+       *
+       * <code>.model.SyncJobConf conf = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> 
+          getConfFieldBuilder() {
+        if (confBuilder_ == null) {
+          confBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder>(
+                  getConf(),
+                  getParentForChildren(),
+                  isClean());
+          conf_ = null;
+        }
+        return confBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.ConvertSyncJobMode)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.ConvertSyncJobMode)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConvertSyncJobMode>
+        PARSER = new com.google.protobuf.AbstractParser<ConvertSyncJobMode>() {
+      @java.lang.Override
+      public ConvertSyncJobMode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConvertSyncJobMode(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConvertSyncJobMode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConvertSyncJobMode> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListSyncJobVersionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.ListSyncJobVersions)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -16931,7 +19021,7 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -17117,7 +19207,7 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -17139,7 +19229,7 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The stream job id in HTTP Request-URI
+     * The sync job id in HTTP Request-URI
      * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
@@ -17642,7 +19732,7 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -17663,7 +19753,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -17685,7 +19775,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -17705,7 +19795,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -17720,7 +19810,7 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The stream job id in HTTP Request-URI
+       * The sync job id in HTTP Request-URI
        * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
@@ -18670,6 +20760,1296 @@ public final class PBRequestSyncJobManage {
 
   }
 
+  public interface GenerateJobJsonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.GenerateJobJson)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    int getSourceTypeValue();
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType();
+
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string source_version = 2;</code>
+     * @return The sourceVersion.
+     */
+    java.lang.String getSourceVersion();
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string source_version = 2;</code>
+     * @return The bytes for sourceVersion.
+     */
+    com.google.protobuf.ByteString
+        getSourceVersionBytes();
+
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    int getTargetTypeValue();
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType();
+
+    /**
+     * <pre>
+     * target version
+     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string target_version = 4;</code>
+     * @return The targetVersion.
+     */
+    java.lang.String getTargetVersion();
+    /**
+     * <pre>
+     * target version
+     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string target_version = 4;</code>
+     * @return The bytes for targetVersion.
+     */
+    com.google.protobuf.ByteString
+        getTargetVersionBytes();
+
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType();
+  }
+  /**
+   * <pre>
+   * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+   * </pre>
+   *
+   * Protobuf type {@code request.GenerateJobJson}
+   */
+  public static final class GenerateJobJson extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.GenerateJobJson)
+      GenerateJobJsonOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GenerateJobJson.newBuilder() to construct.
+    private GenerateJobJson(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GenerateJobJson() {
+      sourceType_ = 0;
+      sourceVersion_ = "";
+      targetType_ = 0;
+      targetVersion_ = "";
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GenerateJobJson();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GenerateJobJson(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              sourceType_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceVersion_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              targetType_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetVersion_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GenerateJobJson_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GenerateJobJson_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.Builder.class);
+    }
+
+    public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
+    private int sourceType_;
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    @java.lang.Override public int getSourceTypeValue() {
+      return sourceType_;
+    }
+    /**
+     * <pre>
+     * source_type
+     * &#64;inject_tag: json:"source_type" uri:"source_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+     * @return The sourceType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int SOURCE_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sourceVersion_;
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string source_version = 2;</code>
+     * @return The sourceVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceVersion() {
+      java.lang.Object ref = sourceVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string source_version = 2;</code>
+     * @return The bytes for sourceVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSourceVersionBytes() {
+      java.lang.Object ref = sourceVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TARGET_TYPE_FIELD_NUMBER = 3;
+    private int targetType_;
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for targetType.
+     */
+    @java.lang.Override public int getTargetTypeValue() {
+      return targetType_;
+    }
+    /**
+     * <pre>
+     * target type
+     * &#64;inject_tag: json:"target_type" uri:"target_type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+     * @return The targetType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int TARGET_VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object targetVersion_;
+    /**
+     * <pre>
+     * target version
+     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string target_version = 4;</code>
+     * @return The targetVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getTargetVersion() {
+      java.lang.Object ref = targetVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * target version
+     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string target_version = 4;</code>
+     * @return The bytes for targetVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTargetVersionBytes() {
+      java.lang.Object ref = targetVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private int type_;
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The job Type. Is Required when not directory,
+     * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+     * Desc: Cannot be modified after creation.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(1, sourceType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceVersion_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(3, targetType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, targetVersion_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
+        output.writeEnum(5, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, sourceType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceVersion_);
+      }
+      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, targetType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, targetVersion_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) obj;
+
+      if (sourceType_ != other.sourceType_) return false;
+      if (!getSourceVersion()
+          .equals(other.getSourceVersion())) return false;
+      if (targetType_ != other.targetType_) return false;
+      if (!getTargetVersion()
+          .equals(other.getTargetVersion())) return false;
+      if (type_ != other.type_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + sourceType_;
+      hash = (37 * hash) + SOURCE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceVersion().hashCode();
+      hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + targetType_;
+      hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetVersion().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+     * </pre>
+     *
+     * Protobuf type {@code request.GenerateJobJson}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.GenerateJobJson)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJsonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GenerateJobJson_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GenerateJobJson_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        sourceType_ = 0;
+
+        sourceVersion_ = "";
+
+        targetType_ = 0;
+
+        targetVersion_ = "";
+
+        type_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_GenerateJobJson_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson(this);
+        result.sourceType_ = sourceType_;
+        result.sourceVersion_ = sourceVersion_;
+        result.targetType_ = targetType_;
+        result.targetVersion_ = targetVersion_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.getDefaultInstance()) return this;
+        if (other.sourceType_ != 0) {
+          setSourceTypeValue(other.getSourceTypeValue());
+        }
+        if (!other.getSourceVersion().isEmpty()) {
+          sourceVersion_ = other.sourceVersion_;
+          onChanged();
+        }
+        if (other.targetType_ != 0) {
+          setTargetTypeValue(other.getTargetTypeValue());
+        }
+        if (!other.getTargetVersion().isEmpty()) {
+          targetVersion_ = other.targetVersion_;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int sourceType_ = 0;
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for sourceType.
+       */
+      @java.lang.Override public int getSourceTypeValue() {
+        return sourceType_;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceTypeValue(int value) {
+        
+        sourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+       * @return The sourceType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+       * @param value The sourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        sourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * source_type
+       * &#64;inject_tag: json:"source_type" uri:"source_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceType() {
+        
+        sourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourceVersion_ = "";
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string source_version = 2;</code>
+       * @return The sourceVersion.
+       */
+      public java.lang.String getSourceVersion() {
+        java.lang.Object ref = sourceVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string source_version = 2;</code>
+       * @return The bytes for sourceVersion.
+       */
+      public com.google.protobuf.ByteString
+          getSourceVersionBytes() {
+        java.lang.Object ref = sourceVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sourceVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string source_version = 2;</code>
+       * @param value The sourceVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sourceVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string source_version = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceVersion() {
+        
+        sourceVersion_ = getDefaultInstance().getSourceVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string source_version = 2;</code>
+       * @param value The bytes for sourceVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sourceVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int targetType_ = 0;
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for targetType.
+       */
+      @java.lang.Override public int getTargetTypeValue() {
+        return targetType_;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetTypeValue(int value) {
+        
+        targetType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+       * @return The targetType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The targetType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        targetType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target type
+       * &#64;inject_tag: json:"target_type" uri:"target_type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetType() {
+        
+        targetType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object targetVersion_ = "";
+      /**
+       * <pre>
+       * target version
+       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string target_version = 4;</code>
+       * @return The targetVersion.
+       */
+      public java.lang.String getTargetVersion() {
+        java.lang.Object ref = targetVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          targetVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * target version
+       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string target_version = 4;</code>
+       * @return The bytes for targetVersion.
+       */
+      public com.google.protobuf.ByteString
+          getTargetVersionBytes() {
+        java.lang.Object ref = targetVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          targetVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * target version
+       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string target_version = 4;</code>
+       * @param value The targetVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        targetVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target version
+       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string target_version = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetVersion() {
+        
+        targetVersion_ = getDefaultInstance().getTargetVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * target version
+       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string target_version = 4;</code>
+       * @param value The bytes for targetVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        targetVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job Type. Is Required when not directory,
+       * Optional Value:1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTimeFull"
+       * Desc: Cannot be modified after creation.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.SyncJob.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.GenerateJobJson)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.GenerateJobJson)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GenerateJobJson>
+        PARSER = new com.google.protobuf.AbstractParser<GenerateJobJson>() {
+      @java.lang.Override
+      public GenerateJobJson parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GenerateJobJson(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GenerateJobJson> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GenerateJobJson> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListSyncJobs_descriptor;
   private static final 
@@ -18746,6 +22126,16 @@ public final class PBRequestSyncJobManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ResumeReleaseSyncJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_CommitSyncJob_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_CommitSyncJob_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_ConvertSyncJobMode_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_ConvertSyncJobMode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListSyncJobVersions_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18755,6 +22145,11 @@ public final class PBRequestSyncJobManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DescribeSyncFlinkUIByInstanceId_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_GenerateJobJson_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_GenerateJobJson_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18768,75 +22163,92 @@ public final class PBRequestSyncJobManage {
       "oto\022\007request\0323github.com/yu31/protoc-plu" +
       "gin/proto/validator.proto\0322github.com/yu" +
       "31/protoc-plugin/proto/defaults.proto\032 p" +
-      "roto/types/model/sync_job.proto\"\342\001\n\014List" +
-      "SyncJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007" +
-      "\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007" +
-      "sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007cr" +
-      "eatedJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n\006searc" +
-      "h\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\"\350\002\n\rCreateSyncJob\022%" +
-      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n" +
-      "\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\0222\n\003pid\030\003" +
-      " \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004s" +
-      "yj-\022\024\n\014is_directory\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302" +
-      "\001\004\310\001\374\007\022K\n\004type\030\007 \001(\0162\023.model.SyncJob.Typ" +
-      "eB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022\030\n\ncluster_id\030\010 \001(\tB\004\342\337\037\000\022 \n\013space_o" +
-      "wner\030\t \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"c\n\016DeleteSyncJob" +
-      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004" +
-      "syj-\"\233\001\n\014MoveSyncJobs\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342" +
-      "\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syj-\0228\n\006target\030\003 \001(\t" +
-      "B(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sy" +
-      "j-\"\230\001\n\rUpdateSyncJob\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"M\n" +
-      "\017DescribeSyncJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\227\001\n" +
-      "\022SetSyncJobSchedule\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004syj-\0225\n\010schedule\030\003 \001(\0132\026.mode" +
-      "l.SyncJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\213\001\n\016SetSy" +
-      "ncJobConf\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004syj-\022-\n\004conf\030\003 \001(\0132\022.model.SyncJobConfB" +
-      "\013\342\337\037\007\022\005\342\001\002\020\001\"P\n\022GetSyncJobSchedule\022#\n\006jo" +
-      "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007versi" +
-      "on\030\002 \001(\tB\004\342\337\037\000\"L\n\016GetSyncJobConf\022#\n\006job_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version" +
-      "\030\002 \001(\tB\004\342\337\037\000\"\247\002\n\023ListReleaseSyncJobs\022&\n\005" +
-      "limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006" +
-      "offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\005 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228\n\007sort_by\030\003 \001(" +
-      "\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updat" +
-      "ed\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\006 \001(\t\0229\n\006s" +
-      "tatus\030\007 \001(\0162\034.model.SyncJobRelease.Statu" +
-      "sB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_id\030\010 \001(\t\"{\n\016Releas" +
+      "roto/types/model/sync_job.proto\032\"proto/t" +
+      "ypes/model/datasource.proto\"\370\001\n\014ListSync" +
+      "Jobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040" +
+      "\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort" +
+      "_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007create" +
+      "dJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 " +
+      "\001(\t\022\013\n\003pid\030\007 \001(\t\022\024\n\014is_directory\030\010 \001(\010\"\226" +
+      "\004\n\rCreateSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\210\002A\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002" +
+      "\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\024\n\014is_directory\030\004 " +
+      "\001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004d" +
+      "esc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\374\007\022K\n\004type\030\007 \001(\0162\023" +
+      ".model.SyncJob.TypeB(\342\337\037\027\n\025\n\014is_director" +
+      "y\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\004@\000X\001\022\030\n\ncluster_id\030\010 \001(" +
+      "\tB\004\342\337\037\000\022 \n\013space_owner\030\t \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
+      "\000\022U\n\013source_type\030\n \001(\0162\026.model.DataSourc" +
+      "e.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022U\n\013target_type\030\013 \001(\0162\026.model.Da" +
+      "taSource.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002" +
+      "\030\000\342\337\037\t\022\007\332\001\0040\000X\001\"c\n\016DeleteSyncJobs\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007job_" +
+      "ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syj-\"\233\001\n" +
+      "\014MoveSyncJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\020" +
+      "0\0008dZ\n\302\001\007\312\002\004syj-\0228\n\006target\030\003 \001(\tB(\342\337\037\021\n\017" +
+      "\n\006target\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\230\001\n\rU" +
+      "pdateSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004syj-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001" +
+      "\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"M\n\017Describ" +
       "eSyncJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004syj-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022" +
-      "\014\n\004desc\030\003 \001(\t\022\024\n\014stop_running\030\004 \001(\010\"y\n\025O" +
-      "fflineReleaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"\177" +
-      "\n\025SuspendReleaseSyncJob\022%\n\010space_id\030\001 \001(" +
+      "\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\227\001\n\022SetSync" +
+      "JobSchedule\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004syj-\0225\n\010schedule\030\003 \001(\0132\026.model.SyncJo" +
+      "bScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\213\001\n\016SetSyncJobCon" +
+      "f\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022-\n" +
+      "\004conf\030\003 \001(\0132\022.model.SyncJobConfB\013\342\337\037\007\022\005\342" +
+      "\001\002\020\001\"P\n\022GetSyncJobSchedule\022#\n\006job_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\t" +
+      "B\004\342\337\037\000\"L\n\016GetSyncJobConf\022#\n\006job_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004" +
+      "\342\337\037\000\"\247\002\n\023ListReleaseSyncJobs\022&\n\005limit\030\001 " +
+      "\001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002" +
+      " \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022" +
+      "!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updated\022\017\n\007re" +
+      "verse\030\004 \001(\010\022\016\n\006search\030\006 \001(\t\0229\n\006status\030\007 " +
+      "\001(\0162\034.model.SyncJobRelease.StatusB\013\342\337\037\007\022" +
+      "\005\332\001\002X\001\022\016\n\006job_id\030\010 \001(\t\"{\n\016ReleaseSyncJob" +
+      "\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n" +
+      "\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030" +
+      "\003 \001(\t\022\024\n\014stop_running\030\004 \001(\010\"y\n\025OfflineRe" +
+      "leaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"\177\n\025Suspen" +
+      "dReleaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004syj-\022\032\n\014stop_running\030\003 \001(\010B\004\342\337\037\000\"" +
+      "b\n\024ResumeReleaseSyncJob\022%\n\010space_id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\032\n\014stop_running\030\003 \001(" +
-      "\010B\004\342\337\037\000\"b\n\024ResumeReleaseSyncJob\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id" +
-      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\311\001\n\023ListSync" +
-      "JobVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004syj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
-      "\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n" +
-      "\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007cr" +
-      "eatedJ\007updated\022\017\n\007reverse\030\004 \001(\010\"K\n\037Descr" +
-      "ibeSyncFlinkUIByInstanceId\022(\n\013instance_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bu\n$com.data" +
-      "omnis.gproto.types.pbrequestB\026PBRequestS" +
-      "yncJobManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"[\n\rCommitSyncJob\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
+      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"h\n\022Conv" +
+      "ertSyncJobMode\0220\n\004type\030\001 \001(\0162\023.model.Syn" +
+      "cJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022 \n\004conf\030\002 \001(\0132\022" +
+      ".model.SyncJobConf\"\311\001\n\023ListSyncJobVersio" +
+      "ns\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
+      "&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
+      "\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030" +
+      "\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007up" +
+      "dated\022\017\n\007reverse\030\004 \001(\010\"K\n\037DescribeSyncFl" +
+      "inkUIByInstanceId\022(\n\013instance_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-\"\353\001\n\017GenerateJobJson\022" +
+      ":\n\013source_type\030\001 \001(\0162\026.model.DataSource." +
+      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\026\n\016source_version\030\002 " +
+      "\001(\t\022:\n\013target_type\030\003 \001(\0162\026.model.DataSou" +
+      "rce.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\026\n\016target_versio" +
+      "n\030\004 \001(\t\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.Ty" +
+      "peB\r\342\337\037\t\022\007\332\001\004@\000X\001Bu\n$com.dataomnis.gprot" +
+      "o.types.pbrequestB\026PBRequestSyncJobManag" +
+      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18844,19 +22256,20 @@ public final class PBRequestSyncJobManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor(),
         });
     internal_static_request_ListSyncJobs_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_request_ListSyncJobs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSyncJobs_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Pid", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Pid", "IsDirectory", });
     internal_static_request_CreateSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateSyncJob_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "Pid", "IsDirectory", "Name", "Desc", "Type", "ClusterId", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "Pid", "IsDirectory", "Name", "Desc", "Type", "ClusterId", "SpaceOwner", "SourceType", "TargetType", });
     internal_static_request_DeleteSyncJobs_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_DeleteSyncJobs_fieldAccessorTable = new
@@ -18935,18 +22348,36 @@ public final class PBRequestSyncJobManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ResumeReleaseSyncJob_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", });
-    internal_static_request_ListSyncJobVersions_descriptor =
+    internal_static_request_CommitSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_request_CommitSyncJob_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_CommitSyncJob_descriptor,
+        new java.lang.String[] { "SpaceId", "JobId", });
+    internal_static_request_ConvertSyncJobMode_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_request_ConvertSyncJobMode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_ConvertSyncJobMode_descriptor,
+        new java.lang.String[] { "Type", "Conf", });
+    internal_static_request_ListSyncJobVersions_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_ListSyncJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSyncJobVersions_descriptor,
         new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", });
     internal_static_request_DescribeSyncFlinkUIByInstanceId_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_DescribeSyncFlinkUIByInstanceId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeSyncFlinkUIByInstanceId_descriptor,
         new java.lang.String[] { "InstanceId", });
+    internal_static_request_GenerateJobJson_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_request_GenerateJobJson_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_GenerateJobJson_descriptor,
+        new java.lang.String[] { "SourceType", "SourceVersion", "TargetType", "TargetVersion", "Type", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);
@@ -18956,6 +22387,7 @@ public final class PBRequestSyncJobManage {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

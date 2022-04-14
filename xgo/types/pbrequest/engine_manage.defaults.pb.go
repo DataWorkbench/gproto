@@ -23,8 +23,8 @@ func (this *CreateFlinkClusterInK8S) SetDefaults() {
 	return
 }
 
-// Set default value for message request.StartFlinkClusterInK8s
-func (this *StartFlinkClusterInK8S) SetDefaults() {
+// Set default value for message request.DeleteFlinkClusterInK8s
+func (this *DeleteFlinkClusterInK8S) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -32,14 +32,6 @@ func (this *StartFlinkClusterInK8S) SetDefaults() {
 		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
-	}
-	return
-}
-
-// Set default value for message request.StopFlinkClusterInK8s
-func (this *StopFlinkClusterInK8S) SetDefaults() {
-	if this == nil {
-		return
 	}
 	return
 }
@@ -61,6 +53,11 @@ func (this *CreateNetworkBrokerInK8S) SetDefaults() {
 func (this *DeleteNetworkBrokerInK8S) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }

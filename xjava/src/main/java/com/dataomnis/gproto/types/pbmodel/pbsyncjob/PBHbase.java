@@ -8446,43 +8446,40 @@ public final class PBHbase {
   static {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/syncjob/hbase.proto\022" +
-      "\005model\0323github.com/yu31/protoc-plugin/pr" +
-      "oto/validator.proto\032/github.com/yu31/pro" +
-      "toc-plugin/proto/gosql.proto\0322github.com" +
-      "/yu31/protoc-plugin/proto/defaults.proto" +
-      "\032&proto/types/model/syncjob/column.proto" +
-      "\"f\n\013HbaseSource\022,\n\tparameter\030\001 \001(\0132\031.mod" +
-      "el.HbaseReadParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005t" +
-      "able\030\003 \001(\0132\014.model.Table\"\323\001\n\022HbaseReadPa" +
-      "rameter\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\023" +
-      "\n\013hbaseConfig\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014.mod" +
-      "el.Range\022\022\n\nchange_log\030\004 \001(\t\022\020\n\010encoding" +
-      "\030\005 \001(\t\022\027\n\017scan_cache_size\030\006 \001(\005\022\027\n\017scan_" +
-      "batch_size\030\007 \001(\005\022\024\n\014hadoopConfig\030\010 \001(\t\"M" +
-      "\n\005Range\022\025\n\rstart_row_key\030\001 \001(\t\022\023\n\013end_ro" +
-      "w_key\030\002 \001(\t\022\030\n\020is_binary_rowkey\030\003 \001(\010\"g\n" +
-      "\013HbaseTarget\022-\n\tparameter\030\001 \001(\0132\032.model." +
-      "HbaseWriteParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005tab" +
-      "le\030\003 \001(\0132\014.model.Table\"\033\n\005Table\022\022\n\ntable" +
-      "_name\030\001 \001(\t\"\244\002\n\023HbaseWriteParameter\022\035\n\006c" +
-      "olumn\030\001 \003(\0132\r.model.Column\022\024\n\014hbase_conf" +
-      "ig\030\002 \001(\t\022\021\n\tnull_mode\030\003 \001(\t\022\020\n\010wal_flag\030" +
-      "\004 \001(\010\022\031\n\021write_buffer_size\030\005 \001(\005\022\022\n\nchan" +
-      "ge_log\030\006 \001(\t\022\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024" +
-      "version_column_index\030\010 \001(\005\022\034\n\024version_co" +
-      "lumn_value\030\t \001(\t\022\027\n\017scan_cache_size\030\n \001(" +
-      "\005\022\027\n\017scan_batch_size\030\013 \001(\005Bv\n,com.dataom" +
-      "nis.gproto.types.pbmodel.pbsyncjobB\007PBHb" +
-      "aseP\000Z;github.com/DataWorkbench/gproto/x" +
-      "go/types/pbmodel/pbsyncjobb\006proto3"
+      "\005model\032&proto/types/model/syncjob/column" +
+      ".proto\032/github.com/yu31/protoc-plugin/pr" +
+      "oto/gosql.proto\"n\n\013HbaseSource\022,\n\tparame" +
+      "ter\030\001 \001(\0132\031.model.HbaseReadParameter\022\014\n\004" +
+      "name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014.model.Table:" +
+      "\006\312\262\004\002\n\000\"\333\001\n\022HbaseReadParameter\022\035\n\006column" +
+      "\030\001 \003(\0132\r.model.Column\022\023\n\013hbaseConfig\030\002 \001" +
+      "(\t\022\033\n\005range\030\003 \001(\0132\014.model.Range\022\022\n\nchang" +
+      "e_log\030\004 \001(\t\022\020\n\010encoding\030\005 \001(\t\022\027\n\017scan_ca" +
+      "che_size\030\006 \001(\005\022\027\n\017scan_batch_size\030\007 \001(\005\022" +
+      "\024\n\014hadoopConfig\030\010 \001(\t:\006\312\262\004\002\n\000\"U\n\005Range\022\025" +
+      "\n\rstart_row_key\030\001 \001(\t\022\023\n\013end_row_key\030\002 \001" +
+      "(\t\022\030\n\020is_binary_rowkey\030\003 \001(\010:\006\312\262\004\002\n\000\"o\n\013" +
+      "HbaseTarget\022-\n\tparameter\030\001 \001(\0132\032.model.H" +
+      "baseWriteParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005tabl" +
+      "e\030\003 \001(\0132\014.model.Table:\006\312\262\004\002\n\000\"#\n\005Table\022\022" +
+      "\n\ntable_name\030\001 \001(\t:\006\312\262\004\002\n\000\"\254\002\n\023HbaseWrit" +
+      "eParameter\022\035\n\006column\030\001 \003(\0132\r.model.Colum" +
+      "n\022\024\n\014hbase_config\030\002 \001(\t\022\021\n\tnull_mode\030\003 \001" +
+      "(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_siz" +
+      "e\030\005 \001(\005\022\022\n\nchange_log\030\006 \001(\t\022\026\n\016rowkey_ex" +
+      "press\030\007 \001(\t\022\034\n\024version_column_index\030\010 \001(" +
+      "\005\022\034\n\024version_column_value\030\t \001(\t\022\027\n\017scan_" +
+      "cache_size\030\n \001(\005\022\027\n\017scan_batch_size\030\013 \001(" +
+      "\005:\006\312\262\004\002\n\000Bv\n,com.dataomnis.gproto.types." +
+      "pbmodel.pbsyncjobB\007PBHbaseP\000Z;github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbmodel/" +
+      "pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_HbaseSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -8520,10 +8517,13 @@ public final class PBHbase {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseWriteParameter_descriptor,
         new java.lang.String[] { "Column", "HbaseConfig", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "ScanCacheSize", "ScanBatchSize", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

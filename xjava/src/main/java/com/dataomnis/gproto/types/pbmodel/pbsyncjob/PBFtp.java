@@ -5502,36 +5502,32 @@ public final class PBFtp {
   static {
     java.lang.String[] descriptorData = {
       "\n#proto/types/model/syncjob/ftp.proto\022\005m" +
-      "odel\0323github.com/yu31/protoc-plugin/prot" +
-      "o/validator.proto\032/github.com/yu31/proto" +
-      "c-plugin/proto/gosql.proto\0322github.com/y" +
-      "u31/protoc-plugin/proto/defaults.proto\032&" +
-      "proto/types/model/syncjob/column.proto\"\236" +
-      "\002\n\tFtpSource\022\035\n\006column\030\001 \003(\0132\r.model.Col" +
-      "umn\022\014\n\004path\030\002 \001(\t\022\030\n\020private_key_path\030\003 " +
-      "\001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022\027\n\017field_de" +
-      "limiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020contr" +
-      "ol_encoding\030\007 \001(\t\022\034\n\024is_first_line_heade" +
-      "r\030\010 \001(\010\022\017\n\007timeout\030\t \001(\t\022\021\n\tfile_type\030\n " +
-      "\001(\t\022\025\n\rcompress_type\030\013 \001(\t\022\023\n\013file_confi" +
-      "g\030\014 \001(\t\"\366\001\n\tFtpTarget\022\035\n\006column\030\001 \003(\0132\r." +
-      "model.Column\022\014\n\004path\030\002 \001(\t\022\030\n\020private_ke" +
-      "y_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022\027\n" +
-      "\017field_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(\t" +
-      "\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_first_l" +
-      "ine_header\030\010 \001(\010\022\025\n\rftp_file_name\030\t \001(\t\022" +
-      "\017\n\007timeout\030\n \001(\005Bt\n,com.dataomnis.gproto" +
-      ".types.pbmodel.pbsyncjobB\005PBFtpP\000Z;githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
-      "odel/pbsyncjobb\006proto3"
+      "odel\032&proto/types/model/syncjob/column.p" +
+      "roto\032/github.com/yu31/protoc-plugin/prot" +
+      "o/gosql.proto\"\246\002\n\tFtpSource\022\035\n\006column\030\001 " +
+      "\003(\0132\r.model.Column\022\014\n\004path\030\002 \001(\t\022\030\n\020priv" +
+      "ate_key_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 " +
+      "\001(\t\022\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010encoding" +
+      "\030\006 \001(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_f" +
+      "irst_line_header\030\010 \001(\010\022\017\n\007timeout\030\t \001(\t\022" +
+      "\021\n\tfile_type\030\n \001(\t\022\025\n\rcompress_type\030\013 \001(" +
+      "\t\022\023\n\013file_config\030\014 \001(\t:\006\312\262\004\002\n\000\"\376\001\n\tFtpTa" +
+      "rget\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\014\n\004p" +
+      "ath\030\002 \001(\t\022\030\n\020private_key_path\030\003 \001(\t\022\027\n\017c" +
+      "onnect_pattern\030\004 \001(\t\022\027\n\017field_delimiter\030" +
+      "\005 \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020control_encod" +
+      "ing\030\007 \001(\t\022\034\n\024is_first_line_header\030\010 \001(\010\022" +
+      "\025\n\rftp_file_name\030\t \001(\t\022\017\n\007timeout\030\n \001(\005:" +
+      "\006\312\262\004\002\n\000Bt\n,com.dataomnis.gproto.types.pb" +
+      "model.pbsyncjobB\005PBFtpP\000Z;github.com/Dat" +
+      "aWorkbench/gproto/xgo/types/pbmodel/pbsy" +
+      "ncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_FtpSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5545,10 +5541,13 @@ public final class PBFtp {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FtpTarget_descriptor,
         new java.lang.String[] { "Column", "Path", "PrivateKeyPath", "ConnectPattern", "FieldDelimiter", "Encoding", "ControlEncoding", "IsFirstLineHeader", "FtpFileName", "Timeout", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

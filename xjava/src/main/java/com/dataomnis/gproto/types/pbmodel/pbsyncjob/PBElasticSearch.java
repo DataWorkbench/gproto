@@ -3065,29 +3065,25 @@ public final class PBElasticSearch {
   static {
     java.lang.String[] descriptorData = {
       "\n-proto/types/model/syncjob/elasticsearc" +
-      "h.proto\022\005model\0323github.com/yu31/protoc-p" +
-      "lugin/proto/validator.proto\032/github.com/" +
-      "yu31/protoc-plugin/proto/gosql.proto\0322gi" +
-      "thub.com/yu31/protoc-plugin/proto/defaul" +
-      "ts.proto\032&proto/types/model/syncjob/colu" +
-      "mn.proto\"h\n\023ElasticSearchSource\022\035\n\006colum" +
-      "n\030\001 \003(\0132\r.model.Column\022\017\n\007version\030\002 \001(\t\022" +
-      "\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\005\"\177\n\023El" +
-      "asticSearchTarget\022\035\n\006column\030\001 \003(\0132\r.mode" +
-      "l.Column\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t" +
-      "\022\022\n\nbatch_size\030\004 \001(\005\022\025\n\rkey_delimiter\030\005 " +
-      "\001(\tB~\n,com.dataomnis.gproto.types.pbmode" +
-      "l.pbsyncjobB\017PBElasticSearchP\000Z;github.c" +
-      "om/DataWorkbench/gproto/xgo/types/pbmode" +
-      "l/pbsyncjobb\006proto3"
+      "h.proto\022\005model\032&proto/types/model/syncjo" +
+      "b/column.proto\032/github.com/yu31/protoc-p" +
+      "lugin/proto/gosql.proto\"p\n\023ElasticSearch" +
+      "Source\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\017\n" +
+      "\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_s" +
+      "ize\030\004 \001(\005:\006\312\262\004\002\n\000\"\207\001\n\023ElasticSearchTarge" +
+      "t\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\017\n\007vers" +
+      "ion\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size\030\004" +
+      " \001(\005\022\025\n\rkey_delimiter\030\005 \001(\t:\006\312\262\004\002\n\000B~\n,c" +
+      "om.dataomnis.gproto.types.pbmodel.pbsync" +
+      "jobB\017PBElasticSearchP\000Z;github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbmodel/pbsync" +
+      "jobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_ElasticSearchSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3101,10 +3097,13 @@ public final class PBElasticSearch {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ElasticSearchTarget_descriptor,
         new java.lang.String[] { "Column", "Version", "Index", "BatchSize", "KeyDelimiter", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

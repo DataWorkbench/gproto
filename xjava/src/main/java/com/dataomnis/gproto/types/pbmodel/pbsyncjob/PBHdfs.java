@@ -92,64 +92,41 @@ public final class PBHdfs {
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 3;</code>
-     * @return The fileType.
+     * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
      */
-    java.lang.String getFileType();
+    int getFileTypeValue();
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 3;</code>
-     * @return The bytes for fileType.
+     * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+     * @return The fileType.
      */
-    com.google.protobuf.ByteString
-        getFileTypeBytes();
-
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 4;</code>
-     * @return The defaultFs.
-     */
-    java.lang.String getDefaultFs();
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 4;</code>
-     * @return The bytes for defaultFs.
-     */
-    com.google.protobuf.ByteString
-        getDefaultFsBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType();
 
     /**
      * <pre>
      * filter regex
-     * &#64;inject_tag: json:"filter_regex" 
+     * &#64;inject_tag: json:"filter_regex"
      * </pre>
      *
-     * <code>string filter_regex = 5;</code>
+     * <code>string filter_regex = 4;</code>
      * @return The filterRegex.
      */
     java.lang.String getFilterRegex();
     /**
      * <pre>
      * filter regex
-     * &#64;inject_tag: json:"filter_regex" 
+     * &#64;inject_tag: json:"filter_regex"
      * </pre>
      *
-     * <code>string filter_regex = 5;</code>
+     * <code>string filter_regex = 4;</code>
      * @return The bytes for filterRegex.
      */
     com.google.protobuf.ByteString
@@ -157,21 +134,21 @@ public final class PBHdfs {
 
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 6;</code>
+     * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
      * @return The fieldDelimiter.
      */
     java.lang.String getFieldDelimiter();
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 6;</code>
+     * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for fieldDelimiter.
      */
     com.google.protobuf.ByteString
@@ -180,46 +157,23 @@ public final class PBHdfs {
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    java.lang.String getEncoding();
+    int getEncodingValue();
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+     * @return The encoding.
      */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
-
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"dfs_nameservices" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 8;</code>
-     * @return The hadoopConfig.
-     */
-    java.lang.String getHadoopConfig();
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"dfs_nameservices" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 8;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    com.google.protobuf.ByteString
-        getHadoopConfigBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
   }
   /**
    * Protobuf type {@code model.HdfsSource}
@@ -236,12 +190,10 @@ public final class PBHdfs {
     private HdfsSource() {
       column_ = java.util.Collections.emptyList();
       path_ = "";
-      fileType_ = "";
-      defaultFs_ = "";
+      fileType_ = 0;
       filterRegex_ = "";
       fieldDelimiter_ = "";
-      encoding_ = "";
-      hadoopConfig_ = "";
+      encoding_ = 0;
     }
 
     @java.lang.Override
@@ -290,40 +242,28 @@ public final class PBHdfs {
               path_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              fileType_ = s;
+              fileType_ = rawValue;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              defaultFs_ = s;
+              filterRegex_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              filterRegex_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               fieldDelimiter_ = s;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
+              int rawValue = input.readEnum();
 
-              encoding_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              hadoopConfig_ = s;
+              encoding_ = rawValue;
               break;
             }
             default: {
@@ -475,110 +415,43 @@ public final class PBHdfs {
     }
 
     public static final int FILE_TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fileType_;
+    private int fileType_;
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 3;</code>
+     * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
+     */
+    @java.lang.Override public int getFileTypeValue() {
+      return fileType_;
+    }
+    /**
+     * <pre>
+     * file type
+     * &#64;inject_tag: json:"file_type"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
      * @return The fileType.
      */
-    @java.lang.Override
-    public java.lang.String getFileType() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fileType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * file type
-     * &#64;inject_tag: json:"file_type" 
-     * </pre>
-     *
-     * <code>string file_type = 3;</code>
-     * @return The bytes for fileType.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFileTypeBytes() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fileType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
     }
 
-    public static final int DEFAULT_FS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object defaultFs_;
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 4;</code>
-     * @return The defaultFs.
-     */
-    @java.lang.Override
-    public java.lang.String getDefaultFs() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultFs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 4;</code>
-     * @return The bytes for defaultFs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDefaultFsBytes() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        defaultFs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FILTER_REGEX_FIELD_NUMBER = 5;
+    public static final int FILTER_REGEX_FIELD_NUMBER = 4;
     private volatile java.lang.Object filterRegex_;
     /**
      * <pre>
      * filter regex
-     * &#64;inject_tag: json:"filter_regex" 
+     * &#64;inject_tag: json:"filter_regex"
      * </pre>
      *
-     * <code>string filter_regex = 5;</code>
+     * <code>string filter_regex = 4;</code>
      * @return The filterRegex.
      */
     @java.lang.Override
@@ -597,10 +470,10 @@ public final class PBHdfs {
     /**
      * <pre>
      * filter regex
-     * &#64;inject_tag: json:"filter_regex" 
+     * &#64;inject_tag: json:"filter_regex"
      * </pre>
      *
-     * <code>string filter_regex = 5;</code>
+     * <code>string filter_regex = 4;</code>
      * @return The bytes for filterRegex.
      */
     @java.lang.Override
@@ -618,15 +491,15 @@ public final class PBHdfs {
       }
     }
 
-    public static final int FIELD_DELIMITER_FIELD_NUMBER = 6;
+    public static final int FIELD_DELIMITER_FIELD_NUMBER = 5;
     private volatile java.lang.Object fieldDelimiter_;
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 6;</code>
+     * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
      * @return The fieldDelimiter.
      */
     @java.lang.Override
@@ -644,11 +517,11 @@ public final class PBHdfs {
     }
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 6;</code>
+     * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for fieldDelimiter.
      */
     @java.lang.Override
@@ -666,100 +539,33 @@ public final class PBHdfs {
       }
     }
 
-    public static final int ENCODING_FIELD_NUMBER = 7;
-    private volatile java.lang.Object encoding_;
+    public static final int ENCODING_FIELD_NUMBER = 6;
+    private int encoding_;
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
+     */
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
+    }
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
      * @return The encoding.
      */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HADOOP_CONFIG_FIELD_NUMBER = 8;
-    private volatile java.lang.Object hadoopConfig_;
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"dfs_nameservices" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 8;</code>
-     * @return The hadoopConfig.
-     */
-    @java.lang.Override
-    public java.lang.String getHadoopConfig() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hadoopConfig_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"dfs_nameservices" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 8;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHadoopConfigBytes() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hadoopConfig_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -782,23 +588,17 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, defaultFs_);
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+        output.writeEnum(3, fileType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filterRegex_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filterRegex_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filterRegex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fieldDelimiter_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encoding_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hadoopConfig_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+        output.writeEnum(6, encoding_);
       }
       unknownFields.writeTo(output);
     }
@@ -816,23 +616,19 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, defaultFs_);
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, fileType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filterRegex_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filterRegex_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filterRegex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fieldDelimiter_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encoding_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hadoopConfig_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, encoding_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -853,18 +649,12 @@ public final class PBHdfs {
           .equals(other.getColumnList())) return false;
       if (!getPath()
           .equals(other.getPath())) return false;
-      if (!getFileType()
-          .equals(other.getFileType())) return false;
-      if (!getDefaultFs()
-          .equals(other.getDefaultFs())) return false;
+      if (fileType_ != other.fileType_) return false;
       if (!getFilterRegex()
           .equals(other.getFilterRegex())) return false;
       if (!getFieldDelimiter()
           .equals(other.getFieldDelimiter())) return false;
-      if (!getEncoding()
-          .equals(other.getEncoding())) return false;
-      if (!getHadoopConfig()
-          .equals(other.getHadoopConfig())) return false;
+      if (encoding_ != other.encoding_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -883,17 +673,13 @@ public final class PBHdfs {
       hash = (37 * hash) + PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFileType().hashCode();
-      hash = (37 * hash) + DEFAULT_FS_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultFs().hashCode();
+      hash = (53 * hash) + fileType_;
       hash = (37 * hash) + FILTER_REGEX_FIELD_NUMBER;
       hash = (53 * hash) + getFilterRegex().hashCode();
       hash = (37 * hash) + FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getFieldDelimiter().hashCode();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
-      hash = (37 * hash) + HADOOP_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHadoopConfig().hashCode();
+      hash = (53 * hash) + encoding_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1036,17 +822,13 @@ public final class PBHdfs {
         }
         path_ = "";
 
-        fileType_ = "";
-
-        defaultFs_ = "";
+        fileType_ = 0;
 
         filterRegex_ = "";
 
         fieldDelimiter_ = "";
 
-        encoding_ = "";
-
-        hadoopConfig_ = "";
+        encoding_ = 0;
 
         return this;
       }
@@ -1086,11 +868,9 @@ public final class PBHdfs {
         }
         result.path_ = path_;
         result.fileType_ = fileType_;
-        result.defaultFs_ = defaultFs_;
         result.filterRegex_ = filterRegex_;
         result.fieldDelimiter_ = fieldDelimiter_;
         result.encoding_ = encoding_;
-        result.hadoopConfig_ = hadoopConfig_;
         onBuilt();
         return result;
       }
@@ -1169,13 +949,8 @@ public final class PBHdfs {
           path_ = other.path_;
           onChanged();
         }
-        if (!other.getFileType().isEmpty()) {
-          fileType_ = other.fileType_;
-          onChanged();
-        }
-        if (!other.getDefaultFs().isEmpty()) {
-          defaultFs_ = other.defaultFs_;
-          onChanged();
+        if (other.fileType_ != 0) {
+          setFileTypeValue(other.getFileTypeValue());
         }
         if (!other.getFilterRegex().isEmpty()) {
           filterRegex_ = other.filterRegex_;
@@ -1185,13 +960,8 @@ public final class PBHdfs {
           fieldDelimiter_ = other.fieldDelimiter_;
           onChanged();
         }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
-        }
-        if (!other.getHadoopConfig().isEmpty()) {
-          hadoopConfig_ = other.hadoopConfig_;
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1654,66 +1424,31 @@ public final class PBHdfs {
         return this;
       }
 
-      private java.lang.Object fileType_ = "";
+      private int fileType_ = 0;
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 3;</code>
-       * @return The fileType.
+       * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for fileType.
        */
-      public java.lang.String getFileType() {
-        java.lang.Object ref = fileType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fileType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getFileTypeValue() {
+        return fileType_;
       }
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 3;</code>
-       * @return The bytes for fileType.
-       */
-      public com.google.protobuf.ByteString
-          getFileTypeBytes() {
-        java.lang.Object ref = fileType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fileType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * file type
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 3;</code>
-       * @param value The fileType to set.
+       * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for fileType to set.
        * @return This builder for chaining.
        */
-      public Builder setFileType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setFileTypeValue(int value) {
+        
         fileType_ = value;
         onChanged();
         return this;
@@ -1721,137 +1456,49 @@ public final class PBHdfs {
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 3;</code>
+       * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+       * @return The fileType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
+       * @param value The fileType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        fileType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFileType() {
         
-        fileType_ = getDefaultInstance().getFileType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * file type
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 3;</code>
-       * @param value The bytes for fileType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFileTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fileType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object defaultFs_ = "";
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 4;</code>
-       * @return The defaultFs.
-       */
-      public java.lang.String getDefaultFs() {
-        java.lang.Object ref = defaultFs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultFs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 4;</code>
-       * @return The bytes for defaultFs.
-       */
-      public com.google.protobuf.ByteString
-          getDefaultFsBytes() {
-        java.lang.Object ref = defaultFs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          defaultFs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 4;</code>
-       * @param value The defaultFs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultFs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        defaultFs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultFs() {
-        
-        defaultFs_ = getDefaultInstance().getDefaultFs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 4;</code>
-       * @param value The bytes for defaultFs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultFsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        defaultFs_ = value;
+        fileType_ = 0;
         onChanged();
         return this;
       }
@@ -1860,10 +1507,10 @@ public final class PBHdfs {
       /**
        * <pre>
        * filter regex
-       * &#64;inject_tag: json:"filter_regex" 
+       * &#64;inject_tag: json:"filter_regex"
        * </pre>
        *
-       * <code>string filter_regex = 5;</code>
+       * <code>string filter_regex = 4;</code>
        * @return The filterRegex.
        */
       public java.lang.String getFilterRegex() {
@@ -1881,10 +1528,10 @@ public final class PBHdfs {
       /**
        * <pre>
        * filter regex
-       * &#64;inject_tag: json:"filter_regex" 
+       * &#64;inject_tag: json:"filter_regex"
        * </pre>
        *
-       * <code>string filter_regex = 5;</code>
+       * <code>string filter_regex = 4;</code>
        * @return The bytes for filterRegex.
        */
       public com.google.protobuf.ByteString
@@ -1903,10 +1550,10 @@ public final class PBHdfs {
       /**
        * <pre>
        * filter regex
-       * &#64;inject_tag: json:"filter_regex" 
+       * &#64;inject_tag: json:"filter_regex"
        * </pre>
        *
-       * <code>string filter_regex = 5;</code>
+       * <code>string filter_regex = 4;</code>
        * @param value The filterRegex to set.
        * @return This builder for chaining.
        */
@@ -1923,10 +1570,10 @@ public final class PBHdfs {
       /**
        * <pre>
        * filter regex
-       * &#64;inject_tag: json:"filter_regex" 
+       * &#64;inject_tag: json:"filter_regex"
        * </pre>
        *
-       * <code>string filter_regex = 5;</code>
+       * <code>string filter_regex = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearFilterRegex() {
@@ -1938,10 +1585,10 @@ public final class PBHdfs {
       /**
        * <pre>
        * filter regex
-       * &#64;inject_tag: json:"filter_regex" 
+       * &#64;inject_tag: json:"filter_regex"
        * </pre>
        *
-       * <code>string filter_regex = 5;</code>
+       * <code>string filter_regex = 4;</code>
        * @param value The bytes for filterRegex to set.
        * @return This builder for chaining.
        */
@@ -1960,11 +1607,11 @@ public final class PBHdfs {
       private java.lang.Object fieldDelimiter_ = "";
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 6;</code>
+       * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
        * @return The fieldDelimiter.
        */
       public java.lang.String getFieldDelimiter() {
@@ -1981,11 +1628,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 6;</code>
+       * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for fieldDelimiter.
        */
       public com.google.protobuf.ByteString
@@ -2003,11 +1650,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 6;</code>
+       * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
        * @param value The fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -2023,11 +1670,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 6;</code>
+       * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldDelimiter() {
@@ -2038,11 +1685,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 6;</code>
+       * <code>string field_delimiter = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -2058,66 +1705,31 @@ public final class PBHdfs {
         return this;
       }
 
-      private java.lang.Object encoding_ = "";
+      private int encoding_ = 0;
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
-       * @return The encoding.
+       * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The encoding to set.
+       * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setEncoding(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setEncodingValue(int value) {
+        
         encoding_ = value;
         onChanged();
         return this;
@@ -2125,137 +1737,49 @@ public final class PBHdfs {
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
+       * @param value The encoding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        encoding_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
         
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object hadoopConfig_ = "";
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"dfs_nameservices" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 8;</code>
-       * @return The hadoopConfig.
-       */
-      public java.lang.String getHadoopConfig() {
-        java.lang.Object ref = hadoopConfig_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hadoopConfig_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"dfs_nameservices" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 8;</code>
-       * @return The bytes for hadoopConfig.
-       */
-      public com.google.protobuf.ByteString
-          getHadoopConfigBytes() {
-        java.lang.Object ref = hadoopConfig_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hadoopConfig_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"dfs_nameservices" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 8;</code>
-       * @param value The hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfig(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        hadoopConfig_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"dfs_nameservices" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHadoopConfig() {
-        
-        hadoopConfig_ = getDefaultInstance().getHadoopConfig();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"dfs_nameservices" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 8;</code>
-       * @param value The bytes for hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfigBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        hadoopConfig_ = value;
+        encoding_ = 0;
         onChanged();
         return this;
       }
@@ -2412,108 +1936,62 @@ public final class PBHdfs {
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 4;</code>
-     * @return The fileType.
+     * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
      */
-    java.lang.String getFileType();
+    int getFileTypeValue();
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 4;</code>
-     * @return The bytes for fileType.
+     * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+     * @return The fileType.
      */
-    com.google.protobuf.ByteString
-        getFileTypeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType();
 
     /**
      * <pre>
      * write mode
-     * &#64;inject_tag: json:"write_mode" 
+     * &#64;inject_tag: json:"write_mode"
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for writeMode.
+     */
+    int getWriteModeValue();
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
      * @return The writeMode.
      */
-    java.lang.String getWriteMode();
-    /**
-     * <pre>
-     * write mode
-     * &#64;inject_tag: json:"write_mode" 
-     * </pre>
-     *
-     * <code>string write_mode = 5;</code>
-     * @return The bytes for writeMode.
-     */
-    com.google.protobuf.ByteString
-        getWriteModeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode();
 
     /**
      * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string default_fs = 6;</code>
-     * @return The defaultFs.
-     */
-    java.lang.String getDefaultFs();
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 6;</code>
-     * @return The bytes for defaultFs.
-     */
-    com.google.protobuf.ByteString
-        getDefaultFsBytes();
-
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 7;</code>
-     * @return The encoding.
-     */
-    java.lang.String getEncoding();
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
-     */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
-
-    /**
-     * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
-     * </pre>
-     *
-     * <code>string field_delimiter = 8;</code>
+     * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
      * @return The fieldDelimiter.
      */
     java.lang.String getFieldDelimiter();
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 8;</code>
+     * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for fieldDelimiter.
      */
     com.google.protobuf.ByteString
@@ -2521,181 +1999,45 @@ public final class PBHdfs {
 
     /**
      * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>repeated string full_column_name = 9;</code>
-     * @return A list containing the fullColumnName.
+     * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    java.util.List<java.lang.String>
-        getFullColumnNameList();
+    int getEncodingValue();
     /**
      * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>repeated string full_column_name = 9;</code>
-     * @return The count of fullColumnName.
+     * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+     * @return The encoding.
      */
-    int getFullColumnNameCount();
-    /**
-     * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
-     * </pre>
-     *
-     * <code>repeated string full_column_name = 9;</code>
-     * @param index The index of the element to return.
-     * @return The fullColumnName at the given index.
-     */
-    java.lang.String getFullColumnName(int index);
-    /**
-     * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
-     * </pre>
-     *
-     * <code>repeated string full_column_name = 9;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the fullColumnName at the given index.
-     */
-    com.google.protobuf.ByteString
-        getFullColumnNameBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
 
     /**
      * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>repeated string full_column_type = 10;</code>
-     * @return A list containing the fullColumnType.
+     * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for compress.
      */
-    java.util.List<java.lang.String>
-        getFullColumnTypeList();
+    int getCompressValue();
     /**
      * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>repeated string full_column_type = 10;</code>
-     * @return The count of fullColumnType.
-     */
-    int getFullColumnTypeCount();
-    /**
-     * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
-     * </pre>
-     *
-     * <code>repeated string full_column_type = 10;</code>
-     * @param index The index of the element to return.
-     * @return The fullColumnType at the given index.
-     */
-    java.lang.String getFullColumnType(int index);
-    /**
-     * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
-     * </pre>
-     *
-     * <code>repeated string full_column_type = 10;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the fullColumnType at the given index.
-     */
-    com.google.protobuf.ByteString
-        getFullColumnTypeBytes(int index);
-
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 11;</code>
+     * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
      * @return The compress.
      */
-    java.lang.String getCompress();
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 11;</code>
-     * @return The bytes for compress.
-     */
-    com.google.protobuf.ByteString
-        getCompressBytes();
-
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" 
-     * </pre>
-     *
-     * <code>int32 max_file_size = 12;</code>
-     * @return The maxFileSize.
-     */
-    int getMaxFileSize();
-
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" 
-     * </pre>
-     *
-     * <code>int64 next_check_rows = 13;</code>
-     * @return The nextCheckRows.
-     */
-    long getNextCheckRows();
-
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" 
-     * </pre>
-     *
-     * <code>int32 row_group_size = 14;</code>
-     * @return The rowGroupSize.
-     */
-    int getRowGroupSize();
-
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" 
-     * </pre>
-     *
-     * <code>bool enable_dictionary = 15;</code>
-     * @return The enableDictionary.
-     */
-    boolean getEnableDictionary();
-
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 16;</code>
-     * @return The hadoopConfig.
-     */
-    java.lang.String getHadoopConfig();
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 16;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    com.google.protobuf.ByteString
-        getHadoopConfigBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress();
   }
   /**
    * Protobuf type {@code model.HdfsTarget}
@@ -2713,15 +2055,11 @@ public final class PBHdfs {
       column_ = java.util.Collections.emptyList();
       path_ = "";
       fileName_ = "";
-      fileType_ = "";
-      writeMode_ = "";
-      defaultFs_ = "";
-      encoding_ = "";
+      fileType_ = 0;
+      writeMode_ = 0;
       fieldDelimiter_ = "";
-      fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      compress_ = "";
-      hadoopConfig_ = "";
+      encoding_ = 0;
+      compress_ = 0;
     }
 
     @java.lang.Override
@@ -2776,84 +2114,34 @@ public final class PBHdfs {
               fileName_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
+              int rawValue = input.readEnum();
 
-              fileType_ = s;
+              fileType_ = rawValue;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
+              int rawValue = input.readEnum();
 
-              writeMode_ = s;
+              writeMode_ = rawValue;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              defaultFs_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              encoding_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               fieldDelimiter_ = s;
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                fullColumnName_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              fullColumnName_.add(s);
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                fullColumnType_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              fullColumnType_.add(s);
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
+              int rawValue = input.readEnum();
 
-              compress_ = s;
+              encoding_ = rawValue;
               break;
             }
-            case 96: {
+            case 64: {
+              int rawValue = input.readEnum();
 
-              maxFileSize_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              nextCheckRows_ = input.readInt64();
-              break;
-            }
-            case 112: {
-
-              rowGroupSize_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              enableDictionary_ = input.readBool();
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              hadoopConfig_ = s;
+              compress_ = rawValue;
               break;
             }
             default: {
@@ -2873,12 +2161,6 @@ public final class PBHdfs {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           column_ = java.util.Collections.unmodifiableList(column_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          fullColumnName_ = fullColumnName_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          fullColumnType_ = fullColumnType_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3059,206 +2341,72 @@ public final class PBHdfs {
     }
 
     public static final int FILE_TYPE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fileType_;
+    private int fileType_;
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 4;</code>
-     * @return The fileType.
+     * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fileType.
      */
-    @java.lang.Override
-    public java.lang.String getFileType() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fileType_ = s;
-        return s;
-      }
+    @java.lang.Override public int getFileTypeValue() {
+      return fileType_;
     }
     /**
      * <pre>
      * file type
-     * &#64;inject_tag: json:"file_type" 
+     * &#64;inject_tag: json:"file_type"
      * </pre>
      *
-     * <code>string file_type = 4;</code>
-     * @return The bytes for fileType.
+     * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+     * @return The fileType.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFileTypeBytes() {
-      java.lang.Object ref = fileType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fileType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
     }
 
     public static final int WRITE_MODE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object writeMode_;
+    private int writeMode_;
     /**
      * <pre>
      * write mode
-     * &#64;inject_tag: json:"write_mode" 
+     * &#64;inject_tag: json:"write_mode"
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for writeMode.
+     */
+    @java.lang.Override public int getWriteModeValue() {
+      return writeMode_;
+    }
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
      * @return The writeMode.
      */
-    @java.lang.Override
-    public java.lang.String getWriteMode() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        writeMode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * write mode
-     * &#64;inject_tag: json:"write_mode" 
-     * </pre>
-     *
-     * <code>string write_mode = 5;</code>
-     * @return The bytes for writeMode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWriteModeBytes() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        writeMode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.valueOf(writeMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.UNRECOGNIZED : result;
     }
 
-    public static final int DEFAULT_FS_FIELD_NUMBER = 6;
-    private volatile java.lang.Object defaultFs_;
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 6;</code>
-     * @return The defaultFs.
-     */
-    @java.lang.Override
-    public java.lang.String getDefaultFs() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultFs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * default_fs
-     * &#64;inject_tag: json:"default_fs" 
-     * </pre>
-     *
-     * <code>string default_fs = 6;</code>
-     * @return The bytes for defaultFs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDefaultFsBytes() {
-      java.lang.Object ref = defaultFs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        defaultFs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENCODING_FIELD_NUMBER = 7;
-    private volatile java.lang.Object encoding_;
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 7;</code>
-     * @return The encoding.
-     */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" 
-     * </pre>
-     *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FIELD_DELIMITER_FIELD_NUMBER = 8;
+    public static final int FIELD_DELIMITER_FIELD_NUMBER = 6;
     private volatile java.lang.Object fieldDelimiter_;
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 8;</code>
+     * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
      * @return The fieldDelimiter.
      */
     @java.lang.Override
@@ -3276,11 +2424,11 @@ public final class PBHdfs {
     }
     /**
      * <pre>
-     * field delimiter
-     * &#64;inject_tag: json:"field_delimiter" 
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 8;</code>
+     * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for fieldDelimiter.
      */
     @java.lang.Override
@@ -3298,274 +2446,62 @@ public final class PBHdfs {
       }
     }
 
-    public static final int FULL_COLUMN_NAME_FIELD_NUMBER = 9;
-    private com.google.protobuf.LazyStringList fullColumnName_;
+    public static final int ENCODING_FIELD_NUMBER = 7;
+    private int encoding_;
     /**
      * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>repeated string full_column_name = 9;</code>
-     * @return A list containing the fullColumnName.
+     * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    public com.google.protobuf.ProtocolStringList
-        getFullColumnNameList() {
-      return fullColumnName_;
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
     }
     /**
      * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>repeated string full_column_name = 9;</code>
-     * @return The count of fullColumnName.
+     * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+     * @return The encoding.
      */
-    public int getFullColumnNameCount() {
-      return fullColumnName_.size();
-    }
-    /**
-     * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
-     * </pre>
-     *
-     * <code>repeated string full_column_name = 9;</code>
-     * @param index The index of the element to return.
-     * @return The fullColumnName at the given index.
-     */
-    public java.lang.String getFullColumnName(int index) {
-      return fullColumnName_.get(index);
-    }
-    /**
-     * <pre>
-     * full column name
-     * &#64;inject_tag: json:"full_column_name" 
-     * </pre>
-     *
-     * <code>repeated string full_column_name = 9;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the fullColumnName at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getFullColumnNameBytes(int index) {
-      return fullColumnName_.getByteString(index);
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
-    public static final int FULL_COLUMN_TYPE_FIELD_NUMBER = 10;
-    private com.google.protobuf.LazyStringList fullColumnType_;
+    public static final int COMPRESS_FIELD_NUMBER = 8;
+    private int compress_;
     /**
      * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>repeated string full_column_type = 10;</code>
-     * @return A list containing the fullColumnType.
+     * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for compress.
      */
-    public com.google.protobuf.ProtocolStringList
-        getFullColumnTypeList() {
-      return fullColumnType_;
+    @java.lang.Override public int getCompressValue() {
+      return compress_;
     }
     /**
      * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
+     * compress type
+     * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>repeated string full_column_type = 10;</code>
-     * @return The count of fullColumnType.
-     */
-    public int getFullColumnTypeCount() {
-      return fullColumnType_.size();
-    }
-    /**
-     * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
-     * </pre>
-     *
-     * <code>repeated string full_column_type = 10;</code>
-     * @param index The index of the element to return.
-     * @return The fullColumnType at the given index.
-     */
-    public java.lang.String getFullColumnType(int index) {
-      return fullColumnType_.get(index);
-    }
-    /**
-     * <pre>
-     * full column type
-     * &#64;inject_tag: json:"full_column_type" 
-     * </pre>
-     *
-     * <code>repeated string full_column_type = 10;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the fullColumnType at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getFullColumnTypeBytes(int index) {
-      return fullColumnType_.getByteString(index);
-    }
-
-    public static final int COMPRESS_FIELD_NUMBER = 11;
-    private volatile java.lang.Object compress_;
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 11;</code>
+     * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
      * @return The compress.
      */
-    @java.lang.Override
-    public java.lang.String getCompress() {
-      java.lang.Object ref = compress_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        compress_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * compress
-     * &#64;inject_tag: json:"compress" 
-     * </pre>
-     *
-     * <code>string compress = 11;</code>
-     * @return The bytes for compress.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCompressBytes() {
-      java.lang.Object ref = compress_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        compress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MAX_FILE_SIZE_FIELD_NUMBER = 12;
-    private int maxFileSize_;
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" 
-     * </pre>
-     *
-     * <code>int32 max_file_size = 12;</code>
-     * @return The maxFileSize.
-     */
-    @java.lang.Override
-    public int getMaxFileSize() {
-      return maxFileSize_;
-    }
-
-    public static final int NEXT_CHECK_ROWS_FIELD_NUMBER = 13;
-    private long nextCheckRows_;
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" 
-     * </pre>
-     *
-     * <code>int64 next_check_rows = 13;</code>
-     * @return The nextCheckRows.
-     */
-    @java.lang.Override
-    public long getNextCheckRows() {
-      return nextCheckRows_;
-    }
-
-    public static final int ROW_GROUP_SIZE_FIELD_NUMBER = 14;
-    private int rowGroupSize_;
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" 
-     * </pre>
-     *
-     * <code>int32 row_group_size = 14;</code>
-     * @return The rowGroupSize.
-     */
-    @java.lang.Override
-    public int getRowGroupSize() {
-      return rowGroupSize_;
-    }
-
-    public static final int ENABLE_DICTIONARY_FIELD_NUMBER = 15;
-    private boolean enableDictionary_;
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" 
-     * </pre>
-     *
-     * <code>bool enable_dictionary = 15;</code>
-     * @return The enableDictionary.
-     */
-    @java.lang.Override
-    public boolean getEnableDictionary() {
-      return enableDictionary_;
-    }
-
-    public static final int HADOOP_CONFIG_FIELD_NUMBER = 16;
-    private volatile java.lang.Object hadoopConfig_;
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 16;</code>
-     * @return The hadoopConfig.
-     */
-    @java.lang.Override
-    public java.lang.String getHadoopConfig() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hadoopConfig_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * hadoop config
-     * &#64;inject_tag: json:"hadoop_config" 
-     * </pre>
-     *
-     * <code>string hadoop_config = 16;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHadoopConfigBytes() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hadoopConfig_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.valueOf(compress_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3591,44 +2527,20 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileType_);
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+        output.writeEnum(4, fileType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, writeMode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, defaultFs_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encoding_);
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+        output.writeEnum(5, writeMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fieldDelimiter_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fieldDelimiter_);
       }
-      for (int i = 0; i < fullColumnName_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, fullColumnName_.getRaw(i));
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+        output.writeEnum(7, encoding_);
       }
-      for (int i = 0; i < fullColumnType_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fullColumnType_.getRaw(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, compress_);
-      }
-      if (maxFileSize_ != 0) {
-        output.writeInt32(12, maxFileSize_);
-      }
-      if (nextCheckRows_ != 0L) {
-        output.writeInt64(13, nextCheckRows_);
-      }
-      if (rowGroupSize_ != 0) {
-        output.writeInt32(14, rowGroupSize_);
-      }
-      if (enableDictionary_ != false) {
-        output.writeBool(15, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, hadoopConfig_);
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+        output.writeEnum(8, compress_);
       }
       unknownFields.writeTo(output);
     }
@@ -3649,58 +2561,24 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileType_);
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, fileType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, writeMode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, defaultFs_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encoding_);
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, writeMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fieldDelimiter_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fieldDelimiter_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < fullColumnName_.size(); i++) {
-          dataSize += computeStringSizeNoTag(fullColumnName_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getFullColumnNameList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < fullColumnType_.size(); i++) {
-          dataSize += computeStringSizeNoTag(fullColumnType_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getFullColumnTypeList().size();
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, compress_);
-      }
-      if (maxFileSize_ != 0) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, maxFileSize_);
+          .computeEnumSize(7, encoding_);
       }
-      if (nextCheckRows_ != 0L) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, nextCheckRows_);
-      }
-      if (rowGroupSize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, rowGroupSize_);
-      }
-      if (enableDictionary_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, hadoopConfig_);
+          .computeEnumSize(8, compress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3723,32 +2601,12 @@ public final class PBHdfs {
           .equals(other.getPath())) return false;
       if (!getFileName()
           .equals(other.getFileName())) return false;
-      if (!getFileType()
-          .equals(other.getFileType())) return false;
-      if (!getWriteMode()
-          .equals(other.getWriteMode())) return false;
-      if (!getDefaultFs()
-          .equals(other.getDefaultFs())) return false;
-      if (!getEncoding()
-          .equals(other.getEncoding())) return false;
+      if (fileType_ != other.fileType_) return false;
+      if (writeMode_ != other.writeMode_) return false;
       if (!getFieldDelimiter()
           .equals(other.getFieldDelimiter())) return false;
-      if (!getFullColumnNameList()
-          .equals(other.getFullColumnNameList())) return false;
-      if (!getFullColumnTypeList()
-          .equals(other.getFullColumnTypeList())) return false;
-      if (!getCompress()
-          .equals(other.getCompress())) return false;
-      if (getMaxFileSize()
-          != other.getMaxFileSize()) return false;
-      if (getNextCheckRows()
-          != other.getNextCheckRows()) return false;
-      if (getRowGroupSize()
-          != other.getRowGroupSize()) return false;
-      if (getEnableDictionary()
-          != other.getEnableDictionary()) return false;
-      if (!getHadoopConfig()
-          .equals(other.getHadoopConfig())) return false;
+      if (encoding_ != other.encoding_) return false;
+      if (compress_ != other.compress_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3769,37 +2627,15 @@ public final class PBHdfs {
       hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getFileName().hashCode();
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFileType().hashCode();
+      hash = (53 * hash) + fileType_;
       hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getWriteMode().hashCode();
-      hash = (37 * hash) + DEFAULT_FS_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultFs().hashCode();
-      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
+      hash = (53 * hash) + writeMode_;
       hash = (37 * hash) + FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getFieldDelimiter().hashCode();
-      if (getFullColumnNameCount() > 0) {
-        hash = (37 * hash) + FULL_COLUMN_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getFullColumnNameList().hashCode();
-      }
-      if (getFullColumnTypeCount() > 0) {
-        hash = (37 * hash) + FULL_COLUMN_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getFullColumnTypeList().hashCode();
-      }
+      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+      hash = (53 * hash) + encoding_;
       hash = (37 * hash) + COMPRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getCompress().hashCode();
-      hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxFileSize();
-      hash = (37 * hash) + NEXT_CHECK_ROWS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNextCheckRows());
-      hash = (37 * hash) + ROW_GROUP_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getRowGroupSize();
-      hash = (37 * hash) + ENABLE_DICTIONARY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnableDictionary());
-      hash = (37 * hash) + HADOOP_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHadoopConfig().hashCode();
+      hash = (53 * hash) + compress_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3944,31 +2780,15 @@ public final class PBHdfs {
 
         fileName_ = "";
 
-        fileType_ = "";
+        fileType_ = 0;
 
-        writeMode_ = "";
-
-        defaultFs_ = "";
-
-        encoding_ = "";
+        writeMode_ = 0;
 
         fieldDelimiter_ = "";
 
-        fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        compress_ = "";
+        encoding_ = 0;
 
-        maxFileSize_ = 0;
-
-        nextCheckRows_ = 0L;
-
-        rowGroupSize_ = 0;
-
-        enableDictionary_ = false;
-
-        hadoopConfig_ = "";
+        compress_ = 0;
 
         return this;
       }
@@ -4010,25 +2830,9 @@ public final class PBHdfs {
         result.fileName_ = fileName_;
         result.fileType_ = fileType_;
         result.writeMode_ = writeMode_;
-        result.defaultFs_ = defaultFs_;
-        result.encoding_ = encoding_;
         result.fieldDelimiter_ = fieldDelimiter_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          fullColumnName_ = fullColumnName_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.fullColumnName_ = fullColumnName_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          fullColumnType_ = fullColumnType_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.fullColumnType_ = fullColumnType_;
+        result.encoding_ = encoding_;
         result.compress_ = compress_;
-        result.maxFileSize_ = maxFileSize_;
-        result.nextCheckRows_ = nextCheckRows_;
-        result.rowGroupSize_ = rowGroupSize_;
-        result.enableDictionary_ = enableDictionary_;
-        result.hadoopConfig_ = hadoopConfig_;
         onBuilt();
         return result;
       }
@@ -4111,65 +2915,21 @@ public final class PBHdfs {
           fileName_ = other.fileName_;
           onChanged();
         }
-        if (!other.getFileType().isEmpty()) {
-          fileType_ = other.fileType_;
-          onChanged();
+        if (other.fileType_ != 0) {
+          setFileTypeValue(other.getFileTypeValue());
         }
-        if (!other.getWriteMode().isEmpty()) {
-          writeMode_ = other.writeMode_;
-          onChanged();
-        }
-        if (!other.getDefaultFs().isEmpty()) {
-          defaultFs_ = other.defaultFs_;
-          onChanged();
-        }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
+        if (other.writeMode_ != 0) {
+          setWriteModeValue(other.getWriteModeValue());
         }
         if (!other.getFieldDelimiter().isEmpty()) {
           fieldDelimiter_ = other.fieldDelimiter_;
           onChanged();
         }
-        if (!other.fullColumnName_.isEmpty()) {
-          if (fullColumnName_.isEmpty()) {
-            fullColumnName_ = other.fullColumnName_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureFullColumnNameIsMutable();
-            fullColumnName_.addAll(other.fullColumnName_);
-          }
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
-        if (!other.fullColumnType_.isEmpty()) {
-          if (fullColumnType_.isEmpty()) {
-            fullColumnType_ = other.fullColumnType_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureFullColumnTypeIsMutable();
-            fullColumnType_.addAll(other.fullColumnType_);
-          }
-          onChanged();
-        }
-        if (!other.getCompress().isEmpty()) {
-          compress_ = other.compress_;
-          onChanged();
-        }
-        if (other.getMaxFileSize() != 0) {
-          setMaxFileSize(other.getMaxFileSize());
-        }
-        if (other.getNextCheckRows() != 0L) {
-          setNextCheckRows(other.getNextCheckRows());
-        }
-        if (other.getRowGroupSize() != 0) {
-          setRowGroupSize(other.getRowGroupSize());
-        }
-        if (other.getEnableDictionary() != false) {
-          setEnableDictionary(other.getEnableDictionary());
-        }
-        if (!other.getHadoopConfig().isEmpty()) {
-          hadoopConfig_ = other.hadoopConfig_;
-          onChanged();
+        if (other.compress_ != 0) {
+          setCompressValue(other.getCompressValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4733,66 +3493,31 @@ public final class PBHdfs {
         return this;
       }
 
-      private java.lang.Object fileType_ = "";
+      private int fileType_ = 0;
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 4;</code>
-       * @return The fileType.
+       * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for fileType.
        */
-      public java.lang.String getFileType() {
-        java.lang.Object ref = fileType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fileType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getFileTypeValue() {
+        return fileType_;
       }
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 4;</code>
-       * @return The bytes for fileType.
-       */
-      public com.google.protobuf.ByteString
-          getFileTypeBytes() {
-        java.lang.Object ref = fileType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fileType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * file type
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 4;</code>
-       * @param value The fileType to set.
+       * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for fileType to set.
        * @return This builder for chaining.
        */
-      public Builder setFileType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setFileTypeValue(int value) {
+        
         fileType_ = value;
         onChanged();
         return this;
@@ -4800,100 +3525,78 @@ public final class PBHdfs {
       /**
        * <pre>
        * file type
-       * &#64;inject_tag: json:"file_type" 
+       * &#64;inject_tag: json:"file_type"
        * </pre>
        *
-       * <code>string file_type = 4;</code>
+       * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+       * @return The fileType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.valueOf(fileType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
+       * @param value The fileType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        fileType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * file type
+       * &#64;inject_tag: json:"file_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.FileType file_type = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFileType() {
         
-        fileType_ = getDefaultInstance().getFileType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * file type
-       * &#64;inject_tag: json:"file_type" 
-       * </pre>
-       *
-       * <code>string file_type = 4;</code>
-       * @param value The bytes for fileType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFileTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fileType_ = value;
+        fileType_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object writeMode_ = "";
+      private int writeMode_ = 0;
       /**
        * <pre>
        * write mode
-       * &#64;inject_tag: json:"write_mode" 
+       * &#64;inject_tag: json:"write_mode"
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
-       * @return The writeMode.
+       * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for writeMode.
        */
-      public java.lang.String getWriteMode() {
-        java.lang.Object ref = writeMode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          writeMode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getWriteModeValue() {
+        return writeMode_;
       }
       /**
        * <pre>
        * write mode
-       * &#64;inject_tag: json:"write_mode" 
+       * &#64;inject_tag: json:"write_mode"
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
-       * @return The bytes for writeMode.
-       */
-      public com.google.protobuf.ByteString
-          getWriteModeBytes() {
-        java.lang.Object ref = writeMode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          writeMode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 5;</code>
-       * @param value The writeMode to set.
+       * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for writeMode to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setWriteModeValue(int value) {
+        
         writeMode_ = value;
         onChanged();
         return this;
@@ -4901,238 +3604,49 @@ public final class PBHdfs {
       /**
        * <pre>
        * write mode
-       * &#64;inject_tag: json:"write_mode" 
+       * &#64;inject_tag: json:"write_mode"
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+       * @return The writeMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.valueOf(writeMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
+       * @param value The writeMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        writeMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.WriteMode write_mode = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteMode() {
         
-        writeMode_ = getDefaultInstance().getWriteMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 5;</code>
-       * @param value The bytes for writeMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWriteModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        writeMode_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object defaultFs_ = "";
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 6;</code>
-       * @return The defaultFs.
-       */
-      public java.lang.String getDefaultFs() {
-        java.lang.Object ref = defaultFs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultFs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 6;</code>
-       * @return The bytes for defaultFs.
-       */
-      public com.google.protobuf.ByteString
-          getDefaultFsBytes() {
-        java.lang.Object ref = defaultFs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          defaultFs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 6;</code>
-       * @param value The defaultFs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultFs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        defaultFs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultFs() {
-        
-        defaultFs_ = getDefaultInstance().getDefaultFs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default_fs
-       * &#64;inject_tag: json:"default_fs" 
-       * </pre>
-       *
-       * <code>string default_fs = 6;</code>
-       * @param value The bytes for defaultFs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultFsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        defaultFs_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object encoding_ = "";
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @return The encoding.
-       */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncoding(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        encoding_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEncoding() {
-        
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
+        writeMode_ = 0;
         onChanged();
         return this;
       }
@@ -5140,11 +3654,11 @@ public final class PBHdfs {
       private java.lang.Object fieldDelimiter_ = "";
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 8;</code>
+       * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
        * @return The fieldDelimiter.
        */
       public java.lang.String getFieldDelimiter() {
@@ -5161,11 +3675,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 8;</code>
+       * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for fieldDelimiter.
        */
       public com.google.protobuf.ByteString
@@ -5183,11 +3697,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 8;</code>
+       * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
        * @param value The fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -5203,11 +3717,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 8;</code>
+       * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldDelimiter() {
@@ -5218,11 +3732,11 @@ public final class PBHdfs {
       }
       /**
        * <pre>
-       * field delimiter
-       * &#64;inject_tag: json:"field_delimiter" 
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 8;</code>
+       * <code>string field_delimiter = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -5238,698 +3752,160 @@ public final class PBHdfs {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureFullColumnNameIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          fullColumnName_ = new com.google.protobuf.LazyStringArrayList(fullColumnName_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private int encoding_ = 0;
       /**
        * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>repeated string full_column_name = 9;</code>
-       * @return A list containing the fullColumnName.
+       * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public com.google.protobuf.ProtocolStringList
-          getFullColumnNameList() {
-        return fullColumnName_.getUnmodifiableView();
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>repeated string full_column_name = 9;</code>
-       * @return The count of fullColumnName.
-       */
-      public int getFullColumnNameCount() {
-        return fullColumnName_.size();
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param index The index of the element to return.
-       * @return The fullColumnName at the given index.
-       */
-      public java.lang.String getFullColumnName(int index) {
-        return fullColumnName_.get(index);
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the fullColumnName at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getFullColumnNameBytes(int index) {
-        return fullColumnName_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param index The index to set the value at.
-       * @param value The fullColumnName to set.
+       * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setFullColumnName(
-          int index, java.lang.String value) {
+      public Builder setEncodingValue(int value) {
+        
+        encoding_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
+       * @param value The encoding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFullColumnNameIsMutable();
-        fullColumnName_.set(index, value);
+          throw new NullPointerException();
+        }
+        
+        encoding_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param value The fullColumnName to add.
+       * <code>.model.BaseEnum.Encoding encoding = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder addFullColumnName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFullColumnNameIsMutable();
-        fullColumnName_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param values The fullColumnName to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFullColumnName(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureFullColumnNameIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fullColumnName_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFullColumnName() {
-        fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" 
-       * </pre>
-       *
-       * <code>repeated string full_column_name = 9;</code>
-       * @param value The bytes of the fullColumnName to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFullColumnNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureFullColumnNameIsMutable();
-        fullColumnName_.add(value);
+      public Builder clearEncoding() {
+        
+        encoding_ = 0;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureFullColumnTypeIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          fullColumnType_ = new com.google.protobuf.LazyStringArrayList(fullColumnType_);
-          bitField0_ |= 0x00000004;
-         }
-      }
+      private int compress_ = 0;
       /**
        * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>repeated string full_column_type = 10;</code>
-       * @return A list containing the fullColumnType.
+       * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for compress.
        */
-      public com.google.protobuf.ProtocolStringList
-          getFullColumnTypeList() {
-        return fullColumnType_.getUnmodifiableView();
+      @java.lang.Override public int getCompressValue() {
+        return compress_;
       }
       /**
        * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>repeated string full_column_type = 10;</code>
-       * @return The count of fullColumnType.
-       */
-      public int getFullColumnTypeCount() {
-        return fullColumnType_.size();
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param index The index of the element to return.
-       * @return The fullColumnType at the given index.
-       */
-      public java.lang.String getFullColumnType(int index) {
-        return fullColumnType_.get(index);
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the fullColumnType at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getFullColumnTypeBytes(int index) {
-        return fullColumnType_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param index The index to set the value at.
-       * @param value The fullColumnType to set.
+       * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for compress to set.
        * @return This builder for chaining.
        */
-      public Builder setFullColumnType(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFullColumnTypeIsMutable();
-        fullColumnType_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param value The fullColumnType to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFullColumnType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFullColumnTypeIsMutable();
-        fullColumnType_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param values The fullColumnType to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFullColumnType(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureFullColumnTypeIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fullColumnType_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFullColumnType() {
-        fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" 
-       * </pre>
-       *
-       * <code>repeated string full_column_type = 10;</code>
-       * @param value The bytes of the fullColumnType to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFullColumnTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureFullColumnTypeIsMutable();
-        fullColumnType_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object compress_ = "";
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 11;</code>
-       * @return The compress.
-       */
-      public java.lang.String getCompress() {
-        java.lang.Object ref = compress_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          compress_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 11;</code>
-       * @return The bytes for compress.
-       */
-      public com.google.protobuf.ByteString
-          getCompressBytes() {
-        java.lang.Object ref = compress_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          compress_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 11;</code>
-       * @param value The compress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCompress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setCompressValue(int value) {
+        
         compress_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
+       * compress type
+       * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>string compress = 11;</code>
+       * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+       * @return The compress.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.valueOf(compress_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * compress type
+       * &#64;inject_tag: json:"compress"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
+       * @param value The compress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompress(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        compress_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * compress type
+       * &#64;inject_tag: json:"compress"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.CompressType compress = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCompress() {
         
-        compress_ = getDefaultInstance().getCompress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * compress
-       * &#64;inject_tag: json:"compress" 
-       * </pre>
-       *
-       * <code>string compress = 11;</code>
-       * @param value The bytes for compress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCompressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        compress_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int maxFileSize_ ;
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
-       * </pre>
-       *
-       * <code>int32 max_file_size = 12;</code>
-       * @return The maxFileSize.
-       */
-      @java.lang.Override
-      public int getMaxFileSize() {
-        return maxFileSize_;
-      }
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
-       * </pre>
-       *
-       * <code>int32 max_file_size = 12;</code>
-       * @param value The maxFileSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxFileSize(int value) {
-        
-        maxFileSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" 
-       * </pre>
-       *
-       * <code>int32 max_file_size = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxFileSize() {
-        
-        maxFileSize_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long nextCheckRows_ ;
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 13;</code>
-       * @return The nextCheckRows.
-       */
-      @java.lang.Override
-      public long getNextCheckRows() {
-        return nextCheckRows_;
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 13;</code>
-       * @param value The nextCheckRows to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextCheckRows(long value) {
-        
-        nextCheckRows_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" 
-       * </pre>
-       *
-       * <code>int64 next_check_rows = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextCheckRows() {
-        
-        nextCheckRows_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int rowGroupSize_ ;
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int32 row_group_size = 14;</code>
-       * @return The rowGroupSize.
-       */
-      @java.lang.Override
-      public int getRowGroupSize() {
-        return rowGroupSize_;
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int32 row_group_size = 14;</code>
-       * @param value The rowGroupSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRowGroupSize(int value) {
-        
-        rowGroupSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" 
-       * </pre>
-       *
-       * <code>int32 row_group_size = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRowGroupSize() {
-        
-        rowGroupSize_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableDictionary_ ;
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 15;</code>
-       * @return The enableDictionary.
-       */
-      @java.lang.Override
-      public boolean getEnableDictionary() {
-        return enableDictionary_;
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 15;</code>
-       * @param value The enableDictionary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableDictionary(boolean value) {
-        
-        enableDictionary_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" 
-       * </pre>
-       *
-       * <code>bool enable_dictionary = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableDictionary() {
-        
-        enableDictionary_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object hadoopConfig_ = "";
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 16;</code>
-       * @return The hadoopConfig.
-       */
-      public java.lang.String getHadoopConfig() {
-        java.lang.Object ref = hadoopConfig_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hadoopConfig_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 16;</code>
-       * @return The bytes for hadoopConfig.
-       */
-      public com.google.protobuf.ByteString
-          getHadoopConfigBytes() {
-        java.lang.Object ref = hadoopConfig_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hadoopConfig_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 16;</code>
-       * @param value The hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfig(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        hadoopConfig_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHadoopConfig() {
-        
-        hadoopConfig_ = getDefaultInstance().getHadoopConfig();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hadoop config
-       * &#64;inject_tag: json:"hadoop_config" 
-       * </pre>
-       *
-       * <code>string hadoop_config = 16;</code>
-       * @param value The bytes for hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfigBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        hadoopConfig_ = value;
+        compress_ = 0;
         onChanged();
         return this;
       }
@@ -6007,53 +3983,61 @@ public final class PBHdfs {
     java.lang.String[] descriptorData = {
       "\n$proto/types/model/syncjob/hdfs.proto\022\005" +
       "model\0323github.com/yu31/protoc-plugin/pro" +
-      "to/validator.proto\032/github.com/yu31/prot" +
-      "oc-plugin/proto/gosql.proto\0322github.com/" +
-      "yu31/protoc-plugin/proto/defaults.proto\032" +
-      "&proto/types/model/syncjob/column.proto\"" +
-      "\270\001\n\nHdfsSource\022\035\n\006column\030\001 \003(\0132\r.model.C" +
-      "olumn\022\014\n\004path\030\002 \001(\t\022\021\n\tfile_type\030\003 \001(\t\022\022" +
-      "\n\ndefault_fs\030\004 \001(\t\022\024\n\014filter_regex\030\005 \001(\t" +
-      "\022\027\n\017field_delimiter\030\006 \001(\t\022\020\n\010encoding\030\007 " +
-      "\001(\t\022\025\n\rhadoop_config\030\010 \001(\t\"\362\002\n\nHdfsTarge" +
-      "t\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\014\n\004path" +
-      "\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\021\n\tfile_type\030\004" +
-      " \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\ndefault_fs\030\006" +
-      " \001(\t\022\020\n\010encoding\030\007 \001(\t\022\027\n\017field_delimite" +
-      "r\030\010 \001(\t\022\030\n\020full_column_name\030\t \003(\t\022\030\n\020ful" +
-      "l_column_type\030\n \003(\t\022\020\n\010compress\030\013 \001(\t\022\025\n" +
-      "\rmax_file_size\030\014 \001(\005\022\027\n\017next_check_rows\030" +
-      "\r \001(\003\022\026\n\016row_group_size\030\016 \001(\005\022\031\n\021enable_" +
-      "dictionary\030\017 \001(\010\022\025\n\rhadoop_config\030\020 \001(\tB" +
-      "u\n,com.dataomnis.gproto.types.pbmodel.pb" +
-      "syncjobB\006PBHdfsP\000Z;github.com/DataWorkbe" +
-      "nch/gproto/xgo/types/pbmodel/pbsyncjobb\006" +
-      "proto3"
+      "to/validator.proto\032&proto/types/model/sy" +
+      "ncjob/column.proto\032(proto/types/model/sy" +
+      "ncjob/baseenum.proto\032/github.com/yu31/pr" +
+      "otoc-plugin/proto/gosql.proto\"\215\002\n\nHdfsSo" +
+      "urce\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\014\n\004p" +
+      "ath\030\002 \001(\t\022:\n\tfile_type\030\003 \001(\0162\030.model.Bas" +
+      "eEnum.FileTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022\024\n\014filter_" +
+      "regex\030\004 \001(\t\022=\n\017field_delimiter\030\005 \001(\tB$\342\337" +
+      "\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006\302\001\003\220\002\001\0229\n\010en" +
+      "coding\030\006 \001(\0162\030.model.BaseEnum.EncodingB\r" +
+      "\342\337\037\t\022\007\332\001\004@\000X\001:\006\312\262\004\002\n\000\"\207\003\n\nHdfsTarget\022\035\n\006" +
+      "column\030\001 \003(\0132\r.model.Column\022\014\n\004path\030\002 \001(" +
+      "\t\022\021\n\tfile_name\030\003 \001(\t\022:\n\tfile_type\030\004 \001(\0162" +
+      "\030.model.BaseEnum.FileTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001" +
+      "\022<\n\nwrite_mode\030\005 \001(\0162\031.model.BaseEnum.Wr" +
+      "iteModeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022=\n\017field_delimite" +
+      "r\030\006 \001(\tB$\342\337\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006\302" +
+      "\001\003\220\002\001\0229\n\010encoding\030\007 \001(\0162\030.model.BaseEnum" +
+      ".EncodingB\r\342\337\037\t\022\007\332\001\004@\000X\001\022=\n\010compress\030\010 \001" +
+      "(\0162\034.model.BaseEnum.CompressTypeB\r\342\337\037\t\022\007" +
+      "\332\001\004@\000X\001:\006\312\262\004\002\n\000Bu\n,com.dataomnis.gproto." +
+      "types.pbmodel.pbsyncjobB\006PBHdfsP\000Z;githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
+      "odel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_HdfsSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_HdfsSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HdfsSource_descriptor,
-        new java.lang.String[] { "Column", "Path", "FileType", "DefaultFs", "FilterRegex", "FieldDelimiter", "Encoding", "HadoopConfig", });
+        new java.lang.String[] { "Column", "Path", "FileType", "FilterRegex", "FieldDelimiter", "Encoding", });
     internal_static_model_HdfsTarget_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_HdfsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HdfsTarget_descriptor,
-        new java.lang.String[] { "Column", "Path", "FileName", "FileType", "WriteMode", "DefaultFs", "Encoding", "FieldDelimiter", "FullColumnName", "FullColumnType", "Compress", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "HadoopConfig", });
+        new java.lang.String[] { "Column", "Path", "FileName", "FileType", "WriteMode", "FieldDelimiter", "Encoding", "Compress", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

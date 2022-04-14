@@ -14665,7 +14665,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The user.
      */
     java.lang.String getUser();
@@ -14675,7 +14675,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The bytes for user.
      */
     com.google.protobuf.ByteString
@@ -14687,7 +14687,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The password.
      */
     java.lang.String getPassword();
@@ -14697,7 +14697,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
@@ -14724,6 +14724,50 @@ public final class PBDataSourceURL {
      */
     com.google.protobuf.ByteString
         getDatabaseBytes();
+
+    /**
+     * <pre>
+     * hadoop config
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 6;</code>
+     * @return The config.
+     */
+    java.lang.String getConfig();
+    /**
+     * <pre>
+     * hadoop config
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 6;</code>
+     * @return The bytes for config.
+     */
+    com.google.protobuf.ByteString
+        getConfigBytes();
+
+    /**
+     * <pre>
+     * defaultFS
+     * &#64;inject_tag: json:"defaultFS"
+     * </pre>
+     *
+     * <code>string defaultFS = 7;</code>
+     * @return The defaultFS.
+     */
+    java.lang.String getDefaultFS();
+    /**
+     * <pre>
+     * defaultFS
+     * &#64;inject_tag: json:"defaultFS"
+     * </pre>
+     *
+     * <code>string defaultFS = 7;</code>
+     * @return The bytes for defaultFS.
+     */
+    com.google.protobuf.ByteString
+        getDefaultFSBytes();
   }
   /**
    * <pre>
@@ -14746,6 +14790,8 @@ public final class PBDataSourceURL {
       user_ = "";
       password_ = "";
       database_ = "";
+      config_ = "";
+      defaultFS_ = "";
     }
 
     @java.lang.Override
@@ -14805,6 +14851,18 @@ public final class PBDataSourceURL {
               java.lang.String s = input.readStringRequireUtf8();
 
               database_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              config_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultFS_ = s;
               break;
             }
             default: {
@@ -14911,7 +14969,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The user.
      */
     @java.lang.Override
@@ -14933,7 +14991,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The bytes for user.
      */
     @java.lang.Override
@@ -14959,7 +15017,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -14981,7 +15039,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -15047,6 +15105,102 @@ public final class PBDataSourceURL {
       }
     }
 
+    public static final int CONFIG_FIELD_NUMBER = 6;
+    private volatile java.lang.Object config_;
+    /**
+     * <pre>
+     * hadoop config
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 6;</code>
+     * @return The config.
+     */
+    @java.lang.Override
+    public java.lang.String getConfig() {
+      java.lang.Object ref = config_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        config_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * hadoop config
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 6;</code>
+     * @return The bytes for config.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConfigBytes() {
+      java.lang.Object ref = config_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        config_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEFAULTFS_FIELD_NUMBER = 7;
+    private volatile java.lang.Object defaultFS_;
+    /**
+     * <pre>
+     * defaultFS
+     * &#64;inject_tag: json:"defaultFS"
+     * </pre>
+     *
+     * <code>string defaultFS = 7;</code>
+     * @return The defaultFS.
+     */
+    @java.lang.Override
+    public java.lang.String getDefaultFS() {
+      java.lang.Object ref = defaultFS_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultFS_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * defaultFS
+     * &#64;inject_tag: json:"defaultFS"
+     * </pre>
+     *
+     * <code>string defaultFS = 7;</code>
+     * @return The bytes for defaultFS.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDefaultFSBytes() {
+      java.lang.Object ref = defaultFS_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultFS_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15076,6 +15230,12 @@ public final class PBDataSourceURL {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, database_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, config_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFS_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultFS_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -15100,6 +15260,12 @@ public final class PBDataSourceURL {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, database_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, config_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFS_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultFS_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15126,6 +15292,10 @@ public final class PBDataSourceURL {
           .equals(other.getPassword())) return false;
       if (!getDatabase()
           .equals(other.getDatabase())) return false;
+      if (!getConfig()
+          .equals(other.getConfig())) return false;
+      if (!getDefaultFS()
+          .equals(other.getDefaultFS())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15147,6 +15317,10 @@ public final class PBDataSourceURL {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
+      hash = (37 * hash) + DEFAULTFS_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultFS().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15294,6 +15468,10 @@ public final class PBDataSourceURL {
 
         database_ = "";
 
+        config_ = "";
+
+        defaultFS_ = "";
+
         return this;
       }
 
@@ -15325,6 +15503,8 @@ public final class PBDataSourceURL {
         result.user_ = user_;
         result.password_ = password_;
         result.database_ = database_;
+        result.config_ = config_;
+        result.defaultFS_ = defaultFS_;
         onBuilt();
         return result;
       }
@@ -15390,6 +15570,14 @@ public final class PBDataSourceURL {
         }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
+          onChanged();
+        }
+        if (!other.getConfig().isEmpty()) {
+          config_ = other.config_;
+          onChanged();
+        }
+        if (!other.getDefaultFS().isEmpty()) {
+          defaultFS_ = other.defaultFS_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -15575,7 +15763,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return The user.
        */
       public java.lang.String getUser() {
@@ -15596,7 +15784,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return The bytes for user.
        */
       public com.google.protobuf.ByteString
@@ -15618,7 +15806,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @param value The user to set.
        * @return This builder for chaining.
        */
@@ -15638,7 +15826,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUser() {
@@ -15653,7 +15841,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @param value The bytes for user to set.
        * @return This builder for chaining.
        */
@@ -15676,7 +15864,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -15697,7 +15885,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -15719,7 +15907,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -15739,7 +15927,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -15754,7 +15942,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -15870,6 +16058,208 @@ public final class PBDataSourceURL {
         onChanged();
         return this;
       }
+
+      private java.lang.Object config_ = "";
+      /**
+       * <pre>
+       * hadoop config
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 6;</code>
+       * @return The config.
+       */
+      public java.lang.String getConfig() {
+        java.lang.Object ref = config_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          config_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * hadoop config
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 6;</code>
+       * @return The bytes for config.
+       */
+      public com.google.protobuf.ByteString
+          getConfigBytes() {
+        java.lang.Object ref = config_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          config_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * hadoop config
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 6;</code>
+       * @param value The config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfig(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        config_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hadoop config
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfig() {
+        
+        config_ = getDefaultInstance().getConfig();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hadoop config
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 6;</code>
+       * @param value The bytes for config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        config_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object defaultFS_ = "";
+      /**
+       * <pre>
+       * defaultFS
+       * &#64;inject_tag: json:"defaultFS"
+       * </pre>
+       *
+       * <code>string defaultFS = 7;</code>
+       * @return The defaultFS.
+       */
+      public java.lang.String getDefaultFS() {
+        java.lang.Object ref = defaultFS_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultFS_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * defaultFS
+       * &#64;inject_tag: json:"defaultFS"
+       * </pre>
+       *
+       * <code>string defaultFS = 7;</code>
+       * @return The bytes for defaultFS.
+       */
+      public com.google.protobuf.ByteString
+          getDefaultFSBytes() {
+        java.lang.Object ref = defaultFS_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          defaultFS_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * defaultFS
+       * &#64;inject_tag: json:"defaultFS"
+       * </pre>
+       *
+       * <code>string defaultFS = 7;</code>
+       * @param value The defaultFS to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultFS(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        defaultFS_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * defaultFS
+       * &#64;inject_tag: json:"defaultFS"
+       * </pre>
+       *
+       * <code>string defaultFS = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultFS() {
+        
+        defaultFS_ = getDefaultInstance().getDefaultFS();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * defaultFS
+       * &#64;inject_tag: json:"defaultFS"
+       * </pre>
+       *
+       * <code>string defaultFS = 7;</code>
+       * @param value The bytes for defaultFS to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultFSBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        defaultFS_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15962,21 +16352,21 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * User specifies the username of db
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The user.
      */
     java.lang.String getUser();
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * User specifies the username of db
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The bytes for user.
      */
     com.google.protobuf.ByteString
@@ -15984,25 +16374,47 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * Password specifies the password of db
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
      * <pre>
-     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * Password specifies the password of db
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
+
+    /**
+     * <pre>
+     * version Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * version Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
   }
   /**
    * <pre>
@@ -16024,6 +16436,7 @@ public final class PBDataSourceURL {
       host_ = "";
       user_ = "";
       password_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -16077,6 +16490,12 @@ public final class PBDataSourceURL {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
             default: {
@@ -16179,11 +16598,11 @@ public final class PBDataSourceURL {
     private volatile java.lang.Object user_;
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * User specifies the username of db
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The user.
      */
     @java.lang.Override
@@ -16201,11 +16620,11 @@ public final class PBDataSourceURL {
     }
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * User specifies the username of db
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * <code>string user = 3;</code>
      * @return The bytes for user.
      */
     @java.lang.Override
@@ -16227,11 +16646,11 @@ public final class PBDataSourceURL {
     private volatile java.lang.Object password_;
     /**
      * <pre>
-     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * Password specifies the password of db
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -16249,11 +16668,11 @@ public final class PBDataSourceURL {
     }
     /**
      * <pre>
-     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * Password specifies the password of db
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 4;</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -16265,6 +16684,54 @@ public final class PBDataSourceURL {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * version Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * version Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -16297,6 +16764,9 @@ public final class PBDataSourceURL {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16318,6 +16788,9 @@ public final class PBDataSourceURL {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16342,6 +16815,8 @@ public final class PBDataSourceURL {
           .equals(other.getUser())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16361,6 +16836,8 @@ public final class PBDataSourceURL {
       hash = (53 * hash) + getUser().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16506,6 +16983,8 @@ public final class PBDataSourceURL {
 
         password_ = "";
 
+        version_ = "";
+
         return this;
       }
 
@@ -16536,6 +17015,7 @@ public final class PBDataSourceURL {
         result.port_ = port_;
         result.user_ = user_;
         result.password_ = password_;
+        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -16597,6 +17077,10 @@ public final class PBDataSourceURL {
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -16778,11 +17262,11 @@ public final class PBDataSourceURL {
       private java.lang.Object user_ = "";
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * User specifies the username of db
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return The user.
        */
       public java.lang.String getUser() {
@@ -16799,11 +17283,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * User specifies the username of db
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return The bytes for user.
        */
       public com.google.protobuf.ByteString
@@ -16821,11 +17305,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * User specifies the username of db
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @param value The user to set.
        * @return This builder for chaining.
        */
@@ -16841,11 +17325,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * User specifies the username of db
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUser() {
@@ -16856,11 +17340,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * User specifies the username of db
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * <code>string user = 3;</code>
        * @param value The bytes for user to set.
        * @return This builder for chaining.
        */
@@ -16879,11 +17363,11 @@ public final class PBDataSourceURL {
       private java.lang.Object password_ = "";
       /**
        * <pre>
-       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * Password specifies the password of db
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -16900,11 +17384,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * Password specifies the password of db
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -16922,11 +17406,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * Password specifies the password of db
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -16942,11 +17426,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * Password specifies the password of db
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -16957,11 +17441,11 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * Password specifies the password of db
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 4;</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -16973,6 +17457,107 @@ public final class PBDataSourceURL {
   checkByteStringIsUtf8(value);
         
         password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * version Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * version Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * version Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * version Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * version Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
         onChanged();
         return this;
       }
@@ -18336,58 +18921,52 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"host"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>string host = 1 [(.validator.field) = { ... }</code>
-     * @return The host.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
-    java.lang.String getHost();
-    /**
-     * <pre>
-     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for host.
-     */
-    com.google.protobuf.ByteString
-        getHostBytes();
-
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> 
+        getRedisHostsList();
     /**
      * <pre>
      * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
      * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-     * @return The port.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
-    int getPort();
-
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getRedisHosts(int index);
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"user"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
-     * @return The user.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
-    java.lang.String getUser();
+    int getRedisHostsCount();
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"user"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
-    com.google.protobuf.ByteString
-        getUserBytes();
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getRedisHostsOrBuilderList();
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getRedisHostsOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -18395,7 +18974,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 2;</code>
      * @return The password.
      */
     java.lang.String getPassword();
@@ -18405,22 +18984,11 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 2;</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
-
-    /**
-     * <pre>
-     * Database specifies the database name of db. Is Required. Min: 1,Max:64.
-     * &#64;inject_tag: json:"database"
-     * </pre>
-     *
-     * <code>int32 database = 5 [(.validator.field) = { ... }</code>
-     * @return The database.
-     */
-    int getDatabase();
   }
   /**
    * <pre>
@@ -18439,8 +19007,7 @@ public final class PBDataSourceURL {
       super(builder);
     }
     private RedisURL() {
-      host_ = "";
-      user_ = "";
+      redisHosts_ = java.util.Collections.emptyList();
       password_ = "";
     }
 
@@ -18464,6 +19031,7 @@ public final class PBDataSourceURL {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -18475,31 +19043,18 @@ public final class PBDataSourceURL {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              host_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                redisHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              redisHosts_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.parser(), extensionRegistry));
               break;
             }
-            case 16: {
-
-              port_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              user_ = s;
-              break;
-            }
-            case 34: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
-              break;
-            }
-            case 40: {
-
-              database_ = input.readInt32();
               break;
             }
             default: {
@@ -18517,6 +19072,9 @@ public final class PBDataSourceURL {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          redisHosts_ = java.util.Collections.unmodifiableList(redisHosts_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -18534,119 +19092,72 @@ public final class PBDataSourceURL {
               com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.Builder.class);
     }
 
-    public static final int HOST_FIELD_NUMBER = 1;
-    private volatile java.lang.Object host_;
-    /**
-     * <pre>
-     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 1 [(.validator.field) = { ... }</code>
-     * @return The host.
-     */
-    @java.lang.Override
-    public java.lang.String getHost() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        host_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for host.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHostBytes() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        host_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PORT_FIELD_NUMBER = 2;
-    private int port_;
+    public static final int REDIS_HOSTS_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> redisHosts_;
     /**
      * <pre>
      * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
      * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-     * @return The port.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public int getPort() {
-      return port_;
-    }
-
-    public static final int USER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object user_;
-    /**
-     * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"user"
-     * </pre>
-     *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    @java.lang.Override
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getRedisHostsList() {
+      return redisHosts_;
     }
     /**
      * <pre>
-     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-     * &#64;inject_tag: json:"user"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>string user = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getRedisHostsOrBuilderList() {
+      return redisHosts_;
+    }
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getRedisHostsCount() {
+      return redisHosts_.size();
+    }
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getRedisHosts(int index) {
+      return redisHosts_.get(index);
+    }
+    /**
+     * <pre>
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getRedisHostsOrBuilder(
+        int index) {
+      return redisHosts_.get(index);
     }
 
-    public static final int PASSWORD_FIELD_NUMBER = 4;
+    public static final int PASSWORD_FIELD_NUMBER = 2;
     private volatile java.lang.Object password_;
     /**
      * <pre>
@@ -18654,7 +19165,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 2;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -18676,7 +19187,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * <code>string password = 2;</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -18694,22 +19205,6 @@ public final class PBDataSourceURL {
       }
     }
 
-    public static final int DATABASE_FIELD_NUMBER = 5;
-    private int database_;
-    /**
-     * <pre>
-     * Database specifies the database name of db. Is Required. Min: 1,Max:64.
-     * &#64;inject_tag: json:"database"
-     * </pre>
-     *
-     * <code>int32 database = 5 [(.validator.field) = { ... }</code>
-     * @return The database.
-     */
-    @java.lang.Override
-    public int getDatabase() {
-      return database_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18724,20 +19219,11 @@ public final class PBDataSourceURL {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
-      }
-      if (port_ != 0) {
-        output.writeInt32(2, port_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
+      for (int i = 0; i < redisHosts_.size(); i++) {
+        output.writeMessage(1, redisHosts_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
-      }
-      if (database_ != 0) {
-        output.writeInt32(5, database_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
       }
       unknownFields.writeTo(output);
     }
@@ -18748,22 +19234,12 @@ public final class PBDataSourceURL {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
-      }
-      if (port_ != 0) {
+      for (int i = 0; i < redisHosts_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, port_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
+          .computeMessageSize(1, redisHosts_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
-      }
-      if (database_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, database_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18780,16 +19256,10 @@ public final class PBDataSourceURL {
       }
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL) obj;
 
-      if (!getHost()
-          .equals(other.getHost())) return false;
-      if (getPort()
-          != other.getPort()) return false;
-      if (!getUser()
-          .equals(other.getUser())) return false;
+      if (!getRedisHostsList()
+          .equals(other.getRedisHostsList())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
-      if (getDatabase()
-          != other.getDatabase()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -18801,16 +19271,12 @@ public final class PBDataSourceURL {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HOST_FIELD_NUMBER;
-      hash = (53 * hash) + getHost().hashCode();
-      hash = (37 * hash) + PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getPort();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
+      if (getRedisHostsCount() > 0) {
+        hash = (37 * hash) + REDIS_HOSTS_FIELD_NUMBER;
+        hash = (53 * hash) + getRedisHostsList().hashCode();
+      }
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
-      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
-      hash = (53 * hash) + getDatabase();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18943,20 +19409,19 @@ public final class PBDataSourceURL {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getRedisHostsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        host_ = "";
-
-        port_ = 0;
-
-        user_ = "";
-
+        if (redisHostsBuilder_ == null) {
+          redisHosts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          redisHostsBuilder_.clear();
+        }
         password_ = "";
-
-        database_ = 0;
 
         return this;
       }
@@ -18984,11 +19449,17 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL(this);
-        result.host_ = host_;
-        result.port_ = port_;
-        result.user_ = user_;
+        int from_bitField0_ = bitField0_;
+        if (redisHostsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            redisHosts_ = java.util.Collections.unmodifiableList(redisHosts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.redisHosts_ = redisHosts_;
+        } else {
+          result.redisHosts_ = redisHostsBuilder_.build();
+        }
         result.password_ = password_;
-        result.database_ = database_;
         onBuilt();
         return result;
       }
@@ -19037,23 +19508,35 @@ public final class PBDataSourceURL {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.RedisURL.getDefaultInstance()) return this;
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.getPort() != 0) {
-          setPort(other.getPort());
-        }
-        if (!other.getUser().isEmpty()) {
-          user_ = other.user_;
-          onChanged();
+        if (redisHostsBuilder_ == null) {
+          if (!other.redisHosts_.isEmpty()) {
+            if (redisHosts_.isEmpty()) {
+              redisHosts_ = other.redisHosts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRedisHostsIsMutable();
+              redisHosts_.addAll(other.redisHosts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.redisHosts_.isEmpty()) {
+            if (redisHostsBuilder_.isEmpty()) {
+              redisHostsBuilder_.dispose();
+              redisHostsBuilder_ = null;
+              redisHosts_ = other.redisHosts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              redisHostsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRedisHostsFieldBuilder() : null;
+            } else {
+              redisHostsBuilder_.addAllMessages(other.redisHosts_);
+            }
+          }
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
           onChanged();
-        }
-        if (other.getDatabase() != 0) {
-          setDatabase(other.getDatabase());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19083,121 +19566,34 @@ public final class PBDataSourceURL {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object host_ = "";
-      /**
-       * <pre>
-       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 1 [(.validator.field) = { ... }</code>
-       * @return The host.
-       */
-      public java.lang.String getHost() {
-        java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          host_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for host.
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 1 [(.validator.field) = { ... }</code>
-       * @param value The host to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        host_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHost() {
-        
-        host_ = getDefaultInstance().getHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for host to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        host_ = value;
-        onChanged();
-        return this;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> redisHosts_ =
+        java.util.Collections.emptyList();
+      private void ensureRedisHostsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          redisHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>(redisHosts_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
-      private int port_ ;
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> redisHostsBuilder_;
+
       /**
        * <pre>
        * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-       * @return The port.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      @java.lang.Override
-      public int getPort() {
-        return port_;
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getRedisHostsList() {
+        if (redisHostsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(redisHosts_);
+        } else {
+          return redisHostsBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -19205,14 +19601,50 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-       * @param value The port to set.
-       * @return This builder for chaining.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setPort(int value) {
-        
-        port_ = value;
-        onChanged();
+      public int getRedisHostsCount() {
+        if (redisHostsBuilder_ == null) {
+          return redisHosts_.size();
+        } else {
+          return redisHostsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getRedisHosts(int index) {
+        if (redisHostsBuilder_ == null) {
+          return redisHosts_.get(index);
+        } else {
+          return redisHostsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setRedisHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (redisHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRedisHostsIsMutable();
+          redisHosts_.set(index, value);
+          onChanged();
+        } else {
+          redisHostsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -19221,115 +19653,249 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder clearPort() {
-        
-        port_ = 0;
-        onChanged();
+      public Builder setRedisHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (redisHostsBuilder_ == null) {
+          ensureRedisHostsIsMutable();
+          redisHosts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          redisHostsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
-
-      private java.lang.Object user_ = "";
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"user"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
-       * @return The user.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
+      public Builder addRedisHosts(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (redisHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRedisHostsIsMutable();
+          redisHosts_.add(value);
+          onChanged();
         } else {
-          return (java.lang.String) ref;
+          redisHostsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addRedisHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (redisHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRedisHostsIsMutable();
+          redisHosts_.add(index, value);
+          onChanged();
+        } else {
+          redisHostsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addRedisHosts(
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (redisHostsBuilder_ == null) {
+          ensureRedisHostsIsMutable();
+          redisHosts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          redisHostsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addRedisHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (redisHostsBuilder_ == null) {
+          ensureRedisHostsIsMutable();
+          redisHosts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          redisHostsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllRedisHosts(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> values) {
+        if (redisHostsBuilder_ == null) {
+          ensureRedisHostsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, redisHosts_);
+          onChanged();
+        } else {
+          redisHostsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearRedisHosts() {
+        if (redisHostsBuilder_ == null) {
+          redisHosts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          redisHostsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder removeRedisHosts(int index) {
+        if (redisHostsBuilder_ == null) {
+          ensureRedisHostsIsMutable();
+          redisHosts_.remove(index);
+          onChanged();
+        } else {
+          redisHostsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder getRedisHostsBuilder(
+          int index) {
+        return getRedisHostsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getRedisHostsOrBuilder(
+          int index) {
+        if (redisHostsBuilder_ == null) {
+          return redisHosts_.get(index);  } else {
+          return redisHostsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"user"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for user.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+           getRedisHostsOrBuilderList() {
+        if (redisHostsBuilder_ != null) {
+          return redisHostsBuilder_.getMessageOrBuilderList();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return java.util.Collections.unmodifiableList(redisHosts_);
         }
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"user"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
-       * @param value The user to set.
-       * @return This builder for chaining.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addRedisHostsBuilder() {
+        return getRedisHostsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"user"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addRedisHostsBuilder(
+          int index) {
+        return getRedisHostsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
       }
       /**
        * <pre>
-       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
-       * &#64;inject_tag: json:"user"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>string user = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for user to set.
-       * @return This builder for chaining.
+       * <code>repeated .datasource.Host redis_hosts = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder> 
+           getRedisHostsBuilderList() {
+        return getRedisHostsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+          getRedisHostsFieldBuilder() {
+        if (redisHostsBuilder_ == null) {
+          redisHostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder>(
+                  redisHosts_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          redisHosts_ = null;
+        }
+        return redisHostsBuilder_;
       }
 
       private java.lang.Object password_ = "";
@@ -19339,7 +19905,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 2;</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -19360,7 +19926,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 2;</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -19382,7 +19948,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 2;</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -19402,7 +19968,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -19417,7 +19983,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * <code>string password = 2;</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -19429,52 +19995,6 @@ public final class PBDataSourceURL {
   checkByteStringIsUtf8(value);
         
         password_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int database_ ;
-      /**
-       * <pre>
-       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
-       * &#64;inject_tag: json:"database"
-       * </pre>
-       *
-       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
-       * @return The database.
-       */
-      @java.lang.Override
-      public int getDatabase() {
-        return database_;
-      }
-      /**
-       * <pre>
-       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
-       * &#64;inject_tag: json:"database"
-       * </pre>
-       *
-       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
-       * @param value The database to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDatabase(int value) {
-        
-        database_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Database specifies the database name of db. Is Required. Min: 1,Max:64.
-       * &#64;inject_tag: json:"database"
-       * </pre>
-       *
-       * <code>int32 database = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDatabase() {
-        
-        database_ = 0;
         onChanged();
         return this;
       }
@@ -19683,28 +20203,26 @@ public final class PBDataSourceURL {
       "\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220" +
       "\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
       "\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004" +
-      "\002\n\000\"\264\001\n\007HiveURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n" +
-      "\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password" +
-      "\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(" +
-      "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\232\001\n\020ElasticSe" +
-      "archURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035" +
-      "\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\267\001\n\nMongoDbURL\022\035" +
-      "\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 " +
-      "\001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002" +
-      "@:\006\312\262\004\002\n\000\"\263\001\n\010RedisURL\022\035\n\004host\030\001 \001(\tB\017\342\337" +
-      "\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200" +
-      "\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010p" +
-      "assword\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\037\n\010databa" +
-      "se\030\005 \001(\005B\r\342\337\037\t\022\007\262\001\0048\017@\000:\006\312\262\004\002\n\000B\204\001\n/com." +
-      "dataomnis.gproto.types.pbmodel.pbdatasou" +
-      "rceB\017PBDataSourceURLP\000Z>github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbmodel/pbdata" +
-      "sourceb\006proto3"
+      "\002\n\000\"\265\001\n\007HiveURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\014\n" +
+      "\004user\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\022!\n\010databas" +
+      "e\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\016\n\006config\030\006 \001(\t" +
+      "\022\021\n\tdefaultFS\030\007 \001(\t:\006\312\262\004\002\n\000\"\232\001\n\020ElasticS" +
+      "earchURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
+      "\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\014\n\004user\030\003" +
+      " \001(\t\022\020\n\010password\030\004 \001(\t\022 \n\007version\030\005 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\267\001\n\nMongoDbURL\022" +
+      "\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002" +
+      " \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230" +
+      "\002@:\006\312\262\004\002\n\000\"[\n\010RedisURL\0225\n\013redis_hosts\030\001 " +
+      "\003(\0132\020.datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\020\n" +
+      "\010password\030\002 \001(\t:\006\312\262\004\002\n\000B\204\001\n/com.dataomni" +
+      "s.gproto.types.pbmodel.pbdatasourceB\017PBD" +
+      "ataSourceURLP\000Z>github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbmodel/pbdatasourceb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19795,13 +20313,13 @@ public final class PBDataSourceURL {
     internal_static_datasource_HiveURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HiveURL_descriptor,
-        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", "Config", "DefaultFS", });
     internal_static_datasource_ElasticSearchURL_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_datasource_ElasticSearchURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_ElasticSearchURL_descriptor,
-        new java.lang.String[] { "Host", "Port", "User", "Password", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Version", });
     internal_static_datasource_MongoDbURL_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_datasource_MongoDbURL_fieldAccessorTable = new
@@ -19813,7 +20331,7 @@ public final class PBDataSourceURL {
     internal_static_datasource_RedisURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_RedisURL_descriptor,
-        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
+        new java.lang.String[] { "RedisHosts", "Password", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

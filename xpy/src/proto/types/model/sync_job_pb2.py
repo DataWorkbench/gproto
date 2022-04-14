@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
+from proto.types.model import datasource_pb2 as proto_dot_types_dot_model_dot_datasource__pb2
 from proto.types.model.syncjob import binlog_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2
 from proto.types.model.syncjob import elasticsearch_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2
 from proto.types.model.syncjob import ftp_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2
@@ -25,7 +26,7 @@ from proto.types.model.syncjob import logminer_pb2 as proto_dot_types_dot_model_
 from proto.types.model.syncjob import mongodb_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2
 from proto.types.model.syncjob import pgwal_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2
 from proto.types.model.syncjob import redis_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2
-from proto.types.model.syncjob import relationaldb_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_relationaldb__pb2
+from proto.types.model.syncjob import db_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_db__pb2
 from proto.types.model.syncjob import sqlservercdc_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2
 
 
@@ -35,9 +36,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\023PBSyncManageSyncJobP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n proto/types/model/sync_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a&proto/types/model/syncjob/binlog.proto\x1a-proto/types/model/syncjob/elasticsearch.proto\x1a#proto/types/model/syncjob/ftp.proto\x1a%proto/types/model/syncjob/hbase.proto\x1a$proto/types/model/syncjob/hdfs.proto\x1a$proto/types/model/syncjob/hive.proto\x1a%proto/types/model/syncjob/kafka.proto\x1a(proto/types/model/syncjob/logminer.proto\x1a\'proto/types/model/syncjob/mongodb.proto\x1a%proto/types/model/syncjob/pgwal.proto\x1a%proto/types/model/syncjob/redis.proto\x1a,proto/types/model/syncjob/relationaldb.proto\x1a,proto/types/model/syncjob/sqlservercdc.proto\"\xe5\x04\n\x07SyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1f\n\x02id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1d\n\x07version\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x14\n\x0cis_directory\x18\x07 \x01(\x08\x12K\n\x04type\x18\x08 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x34\n\x06status\x18\t \x01(\x0e\x32\x15.model.SyncJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"V\n\x04Type\x12\x0f\n\x0bOfflineFull\x10\x00\x12\x14\n\x10OfflineIncrement\x10\x01\x12\x10\n\x0cRealTimeFull\x10\x02\x12\x15\n\x11RealTimeIncrement\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\xd0\x01\n\x0fSyncJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12&\n\x04\x63onf\x18\x04 \x01(\x0b\x32\x12.model.SyncJobConfB\x04\xe2\xdf\x1f\x00\x12.\n\x08schedule\x18\x05 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x04\xe2\xdf\x1f\x00\"\xc1\n\n\x0bSyncJobConf\x12&\n\tsource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12*\n\x0bparallelism\x18\x03 \x01(\x05\x42\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12)\n\npercentage\x18\x04 \x01(\x05\x42\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12\'\n\nrecord_num\x18\x05 \x01(\x05\x42\x13\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\"\n\x05\x62ytes\x18\x06 \x01(\x05\x42\x13\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x43\n\x08job_mode\x18\x07 \x01(\x0e\x32\x1a.model.SyncJobConf.JobModeB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x38\x01@\x00\x12\x13\n\x0bjob_content\x18\x08 \x01(\t\x12\x36\n\x13relationaldb_source\x18\t \x01(\x0b\x32\x19.model.RelationaldbSource\x12\x36\n\x13relationaldb_target\x18\n \x01(\x0b\x32\x19.model.RelationaldbTarget\x12,\n\x0emongodb_source\x18\x0b \x01(\x0b\x32\x14.model.MongodbSource\x12,\n\x0emongodb_target\x18\x0c \x01(\x0b\x32\x14.model.MongodbTarget\x12\x39\n\x15\x65lastic_search_source\x18\r \x01(\x0b\x32\x1a.model.ElasticSearchSource\x12\x39\n\x15\x65lastic_search_target\x18\x0e \x01(\x0b\x32\x1a.model.ElasticSearchTarget\x12&\n\x0bhdfs_source\x18\x0f \x01(\x0b\x32\x11.model.HdfsSource\x12&\n\x0bhdfs_target\x18\x10 \x01(\x0b\x32\x11.model.HdfsTarget\x12$\n\nftp_source\x18\x11 \x01(\x0b\x32\x10.model.FtpSource\x12$\n\nftp_target\x18\x12 \x01(\x0b\x32\x10.model.FtpTarget\x12(\n\x0chbase_source\x18\x13 \x01(\x0b\x32\x12.model.HbaseSource\x12(\n\x0chbase_target\x18\x14 \x01(\x0b\x32\x12.model.HbaseTarget\x12(\n\x0ckafka_source\x18\x15 \x01(\x0b\x32\x12.model.KafkaSource\x12(\n\x0ckafka_target\x18\x16 \x01(\x0b\x32\x12.model.KafkaTarget\x12*\n\rbinlog_source\x18\x17 \x01(\x0b\x32\x13.model.BinlogSource\x12)\n\rpg_wal_source\x18\x18 \x01(\x0b\x32\x12.model.PgWalSource\x12\x38\n\x15sql_server_cdc_source\x18\x19 \x01(\x0b\x32\x19.model.SqlServerCdcSource\x12/\n\x10log_miner_source\x18\x1a \x01(\x0b\x32\x15.model.LogMinerSource\x12(\n\x0credis_target\x18\x1b \x01(\x0b\x32\x12.model.RedisTarget\x12&\n\x0bhive_target\x18\x1c \x01(\x0b\x32\x11.model.HiveTarget\x12\x18\n\ncluster_id\x18\x1d \x01(\tB\x04\xe2\xdf\x1f\x00\"(\n\x07JobMode\x12\r\n\tGuideMode\x10\x00\x12\x0e\n\nScriptMode\x10\x01:\x06\xca\xb2\x04\x02\n\x00\"\xae\x07\n\x0fSyncJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32%.model.SyncJobSchedule.SchedulePolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12S\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32(.model.SyncJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12G\n\x0cretry_policy\x18\n \x01(\x0e\x32\".model.SyncJobSchedule.RetryPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12=\n\x0bretry_limit\x18\x0b \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12@\n\x0eretry_interval\x18\x0c \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x1e@\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xa6\x03\n\x0eSyncJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x30\n\x04type\x18\x05 \x01(\x0e\x32\x13.model.SyncJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12,\n\x06status\x18\x06 \x01(\x0e\x32\x1c.model.SyncJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\r\n\tSuspended\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBSyncManageSyncJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n proto/types/model/sync_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/datasource.proto\x1a&proto/types/model/syncjob/binlog.proto\x1a-proto/types/model/syncjob/elasticsearch.proto\x1a#proto/types/model/syncjob/ftp.proto\x1a%proto/types/model/syncjob/hbase.proto\x1a$proto/types/model/syncjob/hdfs.proto\x1a$proto/types/model/syncjob/hive.proto\x1a%proto/types/model/syncjob/kafka.proto\x1a(proto/types/model/syncjob/logminer.proto\x1a\'proto/types/model/syncjob/mongodb.proto\x1a%proto/types/model/syncjob/pgwal.proto\x1a%proto/types/model/syncjob/redis.proto\x1a\"proto/types/model/syncjob/db.proto\x1a,proto/types/model/syncjob/sqlservercdc.proto\"\xa3\x06\n\x07SyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1f\n\x02id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x14\n\x0cis_directory\x18\x07 \x01(\x08\x12K\n\x04type\x18\x08 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x34\n\x06status\x18\t \x01(\x0e\x32\x15.model.SyncJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12_\n\x0bsource_type\x18\r \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\x12_\n\x0btarget_type\x18\x0e \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\"J\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0f\n\x0bOfflineFull\x10\x01\x12\x14\n\x10OfflineIncrement\x10\x02\x12\x0c\n\x08RealTime\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xd8\x01\n\x0fSyncJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12&\n\x04\x63onf\x18\x04 \x01(\x0b\x32\x12.model.SyncJobConfB\x04\xe2\xdf\x1f\x00\x12.\n\x08schedule\x18\x05 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\x8f\x03\n\x0bSyncJobConf\x12&\n\tsource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x43\n\x08job_mode\x18\x03 \x01(\x0e\x32\x1a.model.SyncJobConf.JobModeB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x38\x01@\x00\x12\x38\n\x0bjob_content\x18\x04 \x01(\tB#\xe2\xdf\x1f\x13\n\x11\n\x08job_mode\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x14\x12)\n\x0csyncResource\x18\x05 \x01(\x0b\x32\x13.model.SyncResource\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12.\n\x0f\x63hannel_control\x18\x07 \x01(\x0b\x32\x15.model.ChannelControl\":\n\x07JobMode\x12\x10\n\x0cJobModeUnset\x10\x00\x12\r\n\tGuideMode\x10\x01\x12\x0e\n\nScriptMode\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xb9\x02\n\x0e\x43hannelControl\x12*\n\x0bparallelism\x18\x01 \x01(\x05\x42\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x12\n\nrecord_num\x18\x02 \x01(\t\x12\x39\n\npercentage\x18\x03 \x01(\x01\x42%\xa2\xa1\x1f\x06\xaa\x06\x03\x30.0\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00Y@A\x00\x00\x00\x00\x00\x00\x00\x00\x12\x45\n\x04rate\x18\x04 \x01(\x0e\x32 .model.ChannelControl.RatePolicyB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x38\x01@\x00\x12\"\n\x05\x62ytes\x18\x05 \x01(\x05\x42\x13\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x01\"9\n\nRatePolicy\x12\x13\n\x0fRatePolicyUnset\x10\x00\x12\t\n\x05Limit\x10\x01\x12\x0b\n\x07UnLimit\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x84\x0b\n\x0cSyncResource\x12%\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x0f.model.DBSource\x12%\n\x0cmysql_target\x18\x02 \x01(\x0b\x32\x0f.model.DBTarget\x12&\n\roracle_source\x18\x03 \x01(\x0b\x32\x0f.model.DBSource\x12&\n\roracle_target\x18\x04 \x01(\x0b\x32\x0f.model.DBTarget\x12#\n\ndb2_source\x18\x05 \x01(\x0b\x32\x0f.model.DBSource\x12#\n\ndb2_target\x18\x06 \x01(\x0b\x32\x0f.model.DBTarget\x12*\n\x11postgresql_source\x18\x07 \x01(\x0b\x32\x0f.model.DBSource\x12*\n\x11postgresql_target\x18\x08 \x01(\x0b\x32\x0f.model.DBTarget\x12)\n\x10sqlserver_source\x18\t \x01(\x0b\x32\x0f.model.DBSource\x12)\n\x10sqlserver_target\x18\n \x01(\x0b\x32\x0f.model.DBTarget\x12+\n\x12\x63lick_house_source\x18\x0b \x01(\x0b\x32\x0f.model.DBSource\x12+\n\x12\x63lick_house_target\x18\x0c \x01(\x0b\x32\x0f.model.DBTarget\x12(\n\x0fsap_hana_source\x18\r \x01(\x0b\x32\x0f.model.DBSource\x12(\n\x0fsap_hana_target\x18\x0e \x01(\x0b\x32\x0f.model.DBTarget\x12,\n\x0emongodb_source\x18\x0f \x01(\x0b\x32\x14.model.MongodbSource\x12,\n\x0emongodb_target\x18\x10 \x01(\x0b\x32\x14.model.MongodbTarget\x12\x39\n\x15\x65lastic_search_source\x18\x11 \x01(\x0b\x32\x1a.model.ElasticSearchSource\x12\x39\n\x15\x65lastic_search_target\x18\x12 \x01(\x0b\x32\x1a.model.ElasticSearchTarget\x12&\n\x0bhdfs_source\x18\x13 \x01(\x0b\x32\x11.model.HdfsSource\x12&\n\x0bhdfs_target\x18\x14 \x01(\x0b\x32\x11.model.HdfsTarget\x12$\n\nftp_source\x18\x15 \x01(\x0b\x32\x10.model.FtpSource\x12$\n\nftp_target\x18\x16 \x01(\x0b\x32\x10.model.FtpTarget\x12(\n\x0chbase_source\x18\x17 \x01(\x0b\x32\x12.model.HbaseSource\x12(\n\x0chbase_target\x18\x18 \x01(\x0b\x32\x12.model.HbaseTarget\x12(\n\x0ckafka_source\x18\x19 \x01(\x0b\x32\x12.model.KafkaSource\x12(\n\x0ckafka_target\x18\x1a \x01(\x0b\x32\x12.model.KafkaTarget\x12*\n\rbinlog_source\x18\x1b \x01(\x0b\x32\x13.model.BinlogSource\x12)\n\rpg_wal_source\x18\x1c \x01(\x0b\x32\x12.model.PgWalSource\x12\x38\n\x15sql_server_cdc_source\x18\x1d \x01(\x0b\x32\x19.model.SqlServerCdcSource\x12/\n\x10log_miner_source\x18\x1e \x01(\x0b\x32\x15.model.LogMinerSource\x12(\n\x0credis_target\x18\x1f \x01(\x0b\x32\x12.model.RedisTarget\x12&\n\x0bhive_target\x18  \x01(\x0b\x32\x11.model.HiveTarget:\x06\xca\xb2\x04\x02\n\x00\"\xae\x07\n\x0fSyncJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32%.model.SyncJobSchedule.SchedulePolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12S\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32(.model.SyncJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12G\n\x0cretry_policy\x18\n \x01(\x0e\x32\".model.SyncJobSchedule.RetryPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12=\n\x0bretry_limit\x18\x0b \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12@\n\x0eretry_interval\x18\x0c \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x1e@\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xa6\x03\n\x0eSyncJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x30\n\x04type\x18\x05 \x01(\x0e\x32\x13.model.SyncJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12,\n\x06status\x18\x06 \x01(\x0e\x32\x1c.model.SyncJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\r\n\tSuspended\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBSyncManageSyncJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_relationaldb__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_db__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2.DESCRIPTOR,])
 
 
 
@@ -49,30 +50,30 @@ _SYNCJOB_TYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='OfflineFull', index=0, number=0,
+      name='TypeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='OfflineIncrement', index=1, number=1,
+      name='OfflineFull', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='RealTimeFull', index=2, number=2,
+      name='OfflineIncrement', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='RealTimeIncrement', index=3, number=3,
+      name='RealTime', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1203,
-  serialized_end=1289,
+  serialized_start=1423,
+  serialized_end=1497,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOB_TYPE)
 
@@ -101,8 +102,8 @@ _SYNCJOB_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1291,
-  serialized_end=1342,
+  serialized_start=1499,
+  serialized_end=1550,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOB_STATUS)
 
@@ -114,22 +115,57 @@ _SYNCJOBCONF_JOBMODE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='GuideMode', index=0, number=0,
+      name='JobModeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ScriptMode', index=1, number=1,
+      name='GuideMode', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ScriptMode', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2853,
-  serialized_end=2893,
+  serialized_start=2113,
+  serialized_end=2171,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBCONF_JOBMODE)
+
+_CHANNELCONTROL_RATEPOLICY = _descriptor.EnumDescriptor(
+  name='RatePolicy',
+  full_name='model.ChannelControl.RatePolicy',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RatePolicyUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Limit', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UnLimit', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2430,
+  serialized_end=2487,
+)
+_sym_db.RegisterEnumDescriptor(_CHANNELCONTROL_RATEPOLICY)
 
 _SYNCJOBSCHEDULE_SCHEDULEPOLICY = _descriptor.EnumDescriptor(
   name='SchedulePolicy',
@@ -161,8 +197,8 @@ _SYNCJOBSCHEDULE_SCHEDULEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3604,
-  serialized_end=3696,
+  serialized_start=4613,
+  serialized_end=4705,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_SCHEDULEPOLICY)
 
@@ -196,8 +232,8 @@ _SYNCJOBSCHEDULE_CONCURRENCYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3698,
-  serialized_end=3781,
+  serialized_start=4707,
+  serialized_end=4790,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_CONCURRENCYPOLICY)
 
@@ -226,8 +262,8 @@ _SYNCJOBSCHEDULE_RETRYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3783,
-  serialized_end=3838,
+  serialized_start=4792,
+  serialized_end=4847,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_RETRYPOLICY)
 
@@ -261,8 +297,8 @@ _SYNCJOBRELEASE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4206,
-  serialized_end=4271,
+  serialized_start=5215,
+  serialized_end=5280,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBRELEASE_STATUS)
 
@@ -288,14 +324,14 @@ _SYNCJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='id', full_name='model.SyncJob.id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='model.SyncJob.version', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -330,7 +366,7 @@ _SYNCJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='model.SyncJob.status', index=8,
       number=9, type=14, cpp_type=8, label=1,
@@ -359,6 +395,20 @@ _SYNCJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='source_type', full_name='model.SyncJob.source_type', index=12,
+      number=13, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\242\241\037\004\252\006\0010\342\337\037\013\022\t\332\001\0060\0008\020X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='target_type', full_name='model.SyncJob.target_type', index=13,
+      number=14, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\242\241\037\004\252\006\0010\342\337\037\013\022\t\332\001\0060\0008\020X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -367,14 +417,14 @@ _SYNCJOB = _descriptor.Descriptor(
     _SYNCJOB_TYPE,
     _SYNCJOB_STATUS,
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=729,
-  serialized_end=1342,
+  serialized_start=755,
+  serialized_end=1558,
 )
 
 
@@ -427,14 +477,14 @@ _SYNCJOBPROPERTY = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1345,
-  serialized_end=1553,
+  serialized_start=1561,
+  serialized_end=1777,
 )
 
 
@@ -461,194 +511,40 @@ _SYNCJOBCONF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='parallelism', full_name='model.SyncJobConf.parallelism', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='percentage', full_name='model.SyncJobConf.percentage', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\t\022\007\262\001\0048d@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='record_num', full_name='model.SyncJobConf.record_num', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bytes', full_name='model.SyncJobConf.bytes', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_mode', full_name='model.SyncJobConf.job_mode', index=6,
-      number=7, type=14, cpp_type=8, label=1,
+      name='job_mode', full_name='model.SyncJobConf.job_mode', index=2,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_content', full_name='model.SyncJobConf.job_content', index=7,
-      number=8, type=9, cpp_type=9, label=1,
+      name='job_content', full_name='model.SyncJobConf.job_content', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='syncResource', full_name='model.SyncJobConf.syncResource', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='model.SyncJobConf.cluster_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='relationaldb_source', full_name='model.SyncJobConf.relationaldb_source', index=8,
-      number=9, type=11, cpp_type=10, label=1,
+      name='channel_control', full_name='model.SyncJobConf.channel_control', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='relationaldb_target', full_name='model.SyncJobConf.relationaldb_target', index=9,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='mongodb_source', full_name='model.SyncJobConf.mongodb_source', index=10,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='mongodb_target', full_name='model.SyncJobConf.mongodb_target', index=11,
-      number=12, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='elastic_search_source', full_name='model.SyncJobConf.elastic_search_source', index=12,
-      number=13, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='elastic_search_target', full_name='model.SyncJobConf.elastic_search_target', index=13,
-      number=14, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hdfs_source', full_name='model.SyncJobConf.hdfs_source', index=14,
-      number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hdfs_target', full_name='model.SyncJobConf.hdfs_target', index=15,
-      number=16, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ftp_source', full_name='model.SyncJobConf.ftp_source', index=16,
-      number=17, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ftp_target', full_name='model.SyncJobConf.ftp_target', index=17,
-      number=18, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hbase_source', full_name='model.SyncJobConf.hbase_source', index=18,
-      number=19, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hbase_target', full_name='model.SyncJobConf.hbase_target', index=19,
-      number=20, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kafka_source', full_name='model.SyncJobConf.kafka_source', index=20,
-      number=21, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kafka_target', full_name='model.SyncJobConf.kafka_target', index=21,
-      number=22, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='binlog_source', full_name='model.SyncJobConf.binlog_source', index=22,
-      number=23, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='pg_wal_source', full_name='model.SyncJobConf.pg_wal_source', index=23,
-      number=24, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sql_server_cdc_source', full_name='model.SyncJobConf.sql_server_cdc_source', index=24,
-      number=25, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='log_miner_source', full_name='model.SyncJobConf.log_miner_source', index=25,
-      number=26, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='redis_target', full_name='model.SyncJobConf.redis_target', index=26,
-      number=27, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='hive_target', full_name='model.SyncJobConf.hive_target', index=27,
-      number=28, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='model.SyncJobConf.cluster_id', index=28,
-      number=29, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -662,8 +558,318 @@ _SYNCJOBCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1556,
-  serialized_end=2901,
+  serialized_start=1780,
+  serialized_end=2179,
+)
+
+
+_CHANNELCONTROL = _descriptor.Descriptor(
+  name='ChannelControl',
+  full_name='model.ChannelControl',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='parallelism', full_name='model.ChannelControl.parallelism', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='record_num', full_name='model.ChannelControl.record_num', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='percentage', full_name='model.ChannelControl.percentage', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\006\252\006\0030.0\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000Y@A\000\000\000\000\000\000\000\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rate', full_name='model.ChannelControl.rate', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bytes', full_name='model.ChannelControl.bytes', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\002@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _CHANNELCONTROL_RATEPOLICY,
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2182,
+  serialized_end=2495,
+)
+
+
+_SYNCRESOURCE = _descriptor.Descriptor(
+  name='SyncResource',
+  full_name='model.SyncResource',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mysql_source', full_name='model.SyncResource.mysql_source', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mysql_target', full_name='model.SyncResource.mysql_target', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oracle_source', full_name='model.SyncResource.oracle_source', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oracle_target', full_name='model.SyncResource.oracle_target', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='db2_source', full_name='model.SyncResource.db2_source', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='db2_target', full_name='model.SyncResource.db2_target', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='postgresql_source', full_name='model.SyncResource.postgresql_source', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='postgresql_target', full_name='model.SyncResource.postgresql_target', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sqlserver_source', full_name='model.SyncResource.sqlserver_source', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sqlserver_target', full_name='model.SyncResource.sqlserver_target', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='click_house_source', full_name='model.SyncResource.click_house_source', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='click_house_target', full_name='model.SyncResource.click_house_target', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sap_hana_source', full_name='model.SyncResource.sap_hana_source', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sap_hana_target', full_name='model.SyncResource.sap_hana_target', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongodb_source', full_name='model.SyncResource.mongodb_source', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongodb_target', full_name='model.SyncResource.mongodb_target', index=15,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='elastic_search_source', full_name='model.SyncResource.elastic_search_source', index=16,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='elastic_search_target', full_name='model.SyncResource.elastic_search_target', index=17,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hdfs_source', full_name='model.SyncResource.hdfs_source', index=18,
+      number=19, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hdfs_target', full_name='model.SyncResource.hdfs_target', index=19,
+      number=20, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ftp_source', full_name='model.SyncResource.ftp_source', index=20,
+      number=21, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ftp_target', full_name='model.SyncResource.ftp_target', index=21,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hbase_source', full_name='model.SyncResource.hbase_source', index=22,
+      number=23, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hbase_target', full_name='model.SyncResource.hbase_target', index=23,
+      number=24, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kafka_source', full_name='model.SyncResource.kafka_source', index=24,
+      number=25, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kafka_target', full_name='model.SyncResource.kafka_target', index=25,
+      number=26, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='binlog_source', full_name='model.SyncResource.binlog_source', index=26,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pg_wal_source', full_name='model.SyncResource.pg_wal_source', index=27,
+      number=28, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sql_server_cdc_source', full_name='model.SyncResource.sql_server_cdc_source', index=28,
+      number=29, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_miner_source', full_name='model.SyncResource.log_miner_source', index=29,
+      number=30, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='redis_target', full_name='model.SyncResource.redis_target', index=30,
+      number=31, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='hive_target', full_name='model.SyncResource.hive_target', index=31,
+      number=32, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\312\262\004\002\n\000',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2498,
+  serialized_end=3910,
 )
 
 
@@ -767,8 +973,8 @@ _SYNCJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2904,
-  serialized_end=3846,
+  serialized_start=3913,
+  serialized_end=4855,
 )
 
 
@@ -793,7 +999,7 @@ _SYNCJOBRELEASE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='model.SyncJobRelease.version', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -814,7 +1020,7 @@ _SYNCJOBRELEASE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='model.SyncJobRelease.status', index=5,
       number=6, type=14, cpp_type=8, label=1,
@@ -863,38 +1069,56 @@ _SYNCJOBRELEASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3849,
-  serialized_end=4271,
+  serialized_start=4858,
+  serialized_end=5280,
 )
 
 _SYNCJOB.fields_by_name['type'].enum_type = _SYNCJOB_TYPE
 _SYNCJOB.fields_by_name['status'].enum_type = _SYNCJOB_STATUS
+_SYNCJOB.fields_by_name['source_type'].enum_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCE_TYPE
+_SYNCJOB.fields_by_name['target_type'].enum_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCE_TYPE
 _SYNCJOB_TYPE.containing_type = _SYNCJOB
 _SYNCJOB_STATUS.containing_type = _SYNCJOB
 _SYNCJOBPROPERTY.fields_by_name['conf'].message_type = _SYNCJOBCONF
 _SYNCJOBPROPERTY.fields_by_name['schedule'].message_type = _SYNCJOBSCHEDULE
 _SYNCJOBCONF.fields_by_name['job_mode'].enum_type = _SYNCJOBCONF_JOBMODE
-_SYNCJOBCONF.fields_by_name['relationaldb_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_relationaldb__pb2._RELATIONALDBSOURCE
-_SYNCJOBCONF.fields_by_name['relationaldb_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_relationaldb__pb2._RELATIONALDBTARGET
-_SYNCJOBCONF.fields_by_name['mongodb_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2._MONGODBSOURCE
-_SYNCJOBCONF.fields_by_name['mongodb_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2._MONGODBTARGET
-_SYNCJOBCONF.fields_by_name['elastic_search_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2._ELASTICSEARCHSOURCE
-_SYNCJOBCONF.fields_by_name['elastic_search_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2._ELASTICSEARCHTARGET
-_SYNCJOBCONF.fields_by_name['hdfs_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2._HDFSSOURCE
-_SYNCJOBCONF.fields_by_name['hdfs_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2._HDFSTARGET
-_SYNCJOBCONF.fields_by_name['ftp_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2._FTPSOURCE
-_SYNCJOBCONF.fields_by_name['ftp_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2._FTPTARGET
-_SYNCJOBCONF.fields_by_name['hbase_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2._HBASESOURCE
-_SYNCJOBCONF.fields_by_name['hbase_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2._HBASETARGET
-_SYNCJOBCONF.fields_by_name['kafka_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2._KAFKASOURCE
-_SYNCJOBCONF.fields_by_name['kafka_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2._KAFKATARGET
-_SYNCJOBCONF.fields_by_name['binlog_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2._BINLOGSOURCE
-_SYNCJOBCONF.fields_by_name['pg_wal_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2._PGWALSOURCE
-_SYNCJOBCONF.fields_by_name['sql_server_cdc_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2._SQLSERVERCDCSOURCE
-_SYNCJOBCONF.fields_by_name['log_miner_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2._LOGMINERSOURCE
-_SYNCJOBCONF.fields_by_name['redis_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2._REDISTARGET
-_SYNCJOBCONF.fields_by_name['hive_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2._HIVETARGET
+_SYNCJOBCONF.fields_by_name['syncResource'].message_type = _SYNCRESOURCE
+_SYNCJOBCONF.fields_by_name['channel_control'].message_type = _CHANNELCONTROL
 _SYNCJOBCONF_JOBMODE.containing_type = _SYNCJOBCONF
+_CHANNELCONTROL.fields_by_name['rate'].enum_type = _CHANNELCONTROL_RATEPOLICY
+_CHANNELCONTROL_RATEPOLICY.containing_type = _CHANNELCONTROL
+_SYNCRESOURCE.fields_by_name['mysql_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['mysql_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['oracle_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['oracle_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['db2_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['db2_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['postgresql_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['postgresql_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['sqlserver_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['sqlserver_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['click_house_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['click_house_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['sap_hana_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBSOURCE
+_SYNCRESOURCE.fields_by_name['sap_hana_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._DBTARGET
+_SYNCRESOURCE.fields_by_name['mongodb_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2._MONGODBSOURCE
+_SYNCRESOURCE.fields_by_name['mongodb_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2._MONGODBTARGET
+_SYNCRESOURCE.fields_by_name['elastic_search_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2._ELASTICSEARCHSOURCE
+_SYNCRESOURCE.fields_by_name['elastic_search_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2._ELASTICSEARCHTARGET
+_SYNCRESOURCE.fields_by_name['hdfs_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2._HDFSSOURCE
+_SYNCRESOURCE.fields_by_name['hdfs_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2._HDFSTARGET
+_SYNCRESOURCE.fields_by_name['ftp_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2._FTPSOURCE
+_SYNCRESOURCE.fields_by_name['ftp_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2._FTPTARGET
+_SYNCRESOURCE.fields_by_name['hbase_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2._HBASESOURCE
+_SYNCRESOURCE.fields_by_name['hbase_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2._HBASETARGET
+_SYNCRESOURCE.fields_by_name['kafka_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2._KAFKASOURCE
+_SYNCRESOURCE.fields_by_name['kafka_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2._KAFKATARGET
+_SYNCRESOURCE.fields_by_name['binlog_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2._BINLOGSOURCE
+_SYNCRESOURCE.fields_by_name['pg_wal_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2._PGWALSOURCE
+_SYNCRESOURCE.fields_by_name['sql_server_cdc_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2._SQLSERVERCDCSOURCE
+_SYNCRESOURCE.fields_by_name['log_miner_source'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2._LOGMINERSOURCE
+_SYNCRESOURCE.fields_by_name['redis_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2._REDISTARGET
+_SYNCRESOURCE.fields_by_name['hive_target'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2._HIVETARGET
 _SYNCJOBSCHEDULE.fields_by_name['schedule_policy'].enum_type = _SYNCJOBSCHEDULE_SCHEDULEPOLICY
 _SYNCJOBSCHEDULE.fields_by_name['concurrency_policy'].enum_type = _SYNCJOBSCHEDULE_CONCURRENCYPOLICY
 _SYNCJOBSCHEDULE.fields_by_name['retry_policy'].enum_type = _SYNCJOBSCHEDULE_RETRYPOLICY
@@ -907,6 +1131,8 @@ _SYNCJOBRELEASE_STATUS.containing_type = _SYNCJOBRELEASE
 DESCRIPTOR.message_types_by_name['SyncJob'] = _SYNCJOB
 DESCRIPTOR.message_types_by_name['SyncJobProperty'] = _SYNCJOBPROPERTY
 DESCRIPTOR.message_types_by_name['SyncJobConf'] = _SYNCJOBCONF
+DESCRIPTOR.message_types_by_name['ChannelControl'] = _CHANNELCONTROL
+DESCRIPTOR.message_types_by_name['SyncResource'] = _SYNCRESOURCE
 DESCRIPTOR.message_types_by_name['SyncJobSchedule'] = _SYNCJOBSCHEDULE
 DESCRIPTOR.message_types_by_name['SyncJobRelease'] = _SYNCJOBRELEASE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -931,6 +1157,20 @@ SyncJobConf = _reflection.GeneratedProtocolMessageType('SyncJobConf', (_message.
   # @@protoc_insertion_point(class_scope:model.SyncJobConf)
   })
 _sym_db.RegisterMessage(SyncJobConf)
+
+ChannelControl = _reflection.GeneratedProtocolMessageType('ChannelControl', (_message.Message,), {
+  'DESCRIPTOR' : _CHANNELCONTROL,
+  '__module__' : 'proto.types.model.sync_job_pb2'
+  # @@protoc_insertion_point(class_scope:model.ChannelControl)
+  })
+_sym_db.RegisterMessage(ChannelControl)
+
+SyncResource = _reflection.GeneratedProtocolMessageType('SyncResource', (_message.Message,), {
+  'DESCRIPTOR' : _SYNCRESOURCE,
+  '__module__' : 'proto.types.model.sync_job_pb2'
+  # @@protoc_insertion_point(class_scope:model.SyncResource)
+  })
+_sym_db.RegisterMessage(SyncResource)
 
 SyncJobSchedule = _reflection.GeneratedProtocolMessageType('SyncJobSchedule', (_message.Message,), {
   'DESCRIPTOR' : _SYNCJOBSCHEDULE,
@@ -959,20 +1199,26 @@ _SYNCJOB.fields_by_name['status']._options = None
 _SYNCJOB.fields_by_name['created_by']._options = None
 _SYNCJOB.fields_by_name['created']._options = None
 _SYNCJOB.fields_by_name['updated']._options = None
+_SYNCJOB.fields_by_name['source_type']._options = None
+_SYNCJOB.fields_by_name['target_type']._options = None
+_SYNCJOB._options = None
 _SYNCJOBPROPERTY.fields_by_name['space_id']._options = None
 _SYNCJOBPROPERTY.fields_by_name['id']._options = None
 _SYNCJOBPROPERTY.fields_by_name['version']._options = None
 _SYNCJOBPROPERTY.fields_by_name['conf']._options = None
 _SYNCJOBPROPERTY.fields_by_name['schedule']._options = None
+_SYNCJOBPROPERTY._options = None
 _SYNCJOBCONF.fields_by_name['source_id']._options = None
 _SYNCJOBCONF.fields_by_name['target_id']._options = None
-_SYNCJOBCONF.fields_by_name['parallelism']._options = None
-_SYNCJOBCONF.fields_by_name['percentage']._options = None
-_SYNCJOBCONF.fields_by_name['record_num']._options = None
-_SYNCJOBCONF.fields_by_name['bytes']._options = None
 _SYNCJOBCONF.fields_by_name['job_mode']._options = None
-_SYNCJOBCONF.fields_by_name['cluster_id']._options = None
+_SYNCJOBCONF.fields_by_name['job_content']._options = None
 _SYNCJOBCONF._options = None
+_CHANNELCONTROL.fields_by_name['parallelism']._options = None
+_CHANNELCONTROL.fields_by_name['percentage']._options = None
+_CHANNELCONTROL.fields_by_name['rate']._options = None
+_CHANNELCONTROL.fields_by_name['bytes']._options = None
+_CHANNELCONTROL._options = None
+_SYNCRESOURCE._options = None
 _SYNCJOBSCHEDULE.fields_by_name['schedule_policy']._options = None
 _SYNCJOBSCHEDULE.fields_by_name['executed']._options = None
 _SYNCJOBSCHEDULE.fields_by_name['started']._options = None

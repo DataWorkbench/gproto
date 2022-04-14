@@ -1911,26 +1911,22 @@ public final class PBLogminer {
   static {
     java.lang.String[] descriptorData = {
       "\n(proto/types/model/syncjob/logminer.pro" +
-      "to\022\005model\0323github.com/yu31/protoc-plugin" +
-      "/proto/validator.proto\032/github.com/yu31/" +
-      "protoc-plugin/proto/gosql.proto\0322github." +
-      "com/yu31/protoc-plugin/proto/defaults.pr" +
-      "oto\"\336\001\n\016LogMinerSource\022\r\n\005table\030\001 \003(\t\022\024\n" +
-      "\014split_update\030\002 \001(\010\022\023\n\013paving_data\030\003 \001(\010" +
-      "\022\013\n\003cat\030\004 \001(\t\022\025\n\rread_position\030\005 \001(\t\022\022\n\n" +
-      "start_time\030\006 \001(\003\022\021\n\tstart_scn\030\007 \001(\t\022\022\n\nf" +
-      "etch_size\030\010 \001(\005\022\034\n\024support_auto_add_log\030" +
-      "\t \001(\010\022\025\n\rquery_timeout\030\n \001(\005By\n,com.data" +
-      "omnis.gproto.types.pbmodel.pbsyncjobB\nPB" +
-      "LogminerP\000Z;github.com/DataWorkbench/gpr" +
-      "oto/xgo/types/pbmodel/pbsyncjobb\006proto3"
+      "to\022\005model\032/github.com/yu31/protoc-plugin" +
+      "/proto/gosql.proto\"\346\001\n\016LogMinerSource\022\r\n" +
+      "\005table\030\001 \003(\t\022\024\n\014split_update\030\002 \001(\010\022\023\n\013pa" +
+      "ving_data\030\003 \001(\010\022\013\n\003cat\030\004 \001(\t\022\025\n\rread_pos" +
+      "ition\030\005 \001(\t\022\022\n\nstart_time\030\006 \001(\003\022\021\n\tstart" +
+      "_scn\030\007 \001(\t\022\022\n\nfetch_size\030\010 \001(\005\022\034\n\024suppor" +
+      "t_auto_add_log\030\t \001(\010\022\025\n\rquery_timeout\030\n " +
+      "\001(\005:\006\312\262\004\002\n\000By\n,com.dataomnis.gproto.type" +
+      "s.pbmodel.pbsyncjobB\nPBLogminerP\000Z;githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
+      "odel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
     internal_static_model_LogMinerSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1938,9 +1934,12 @@ public final class PBLogminer {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_LogMinerSource_descriptor,
         new java.lang.String[] { "Table", "SplitUpdate", "PavingData", "Cat", "ReadPosition", "StartTime", "StartScn", "FetchSize", "SupportAutoAddLog", "QueryTimeout", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

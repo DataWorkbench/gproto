@@ -1970,26 +1970,21 @@ public final class PBRedis {
   static {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/syncjob/redis.proto\022" +
-      "\005model\0323github.com/yu31/protoc-plugin/pr" +
-      "oto/validator.proto\032/github.com/yu31/pro" +
-      "toc-plugin/proto/gosql.proto\0322github.com" +
-      "/yu31/protoc-plugin/proto/defaults.proto" +
-      "\"\306\001\n\013RedisTarget\022\020\n\010database\030\001 \001(\005\022\022\n\nke" +
-      "yIndexes\030\002 \003(\005\022\023\n\013date_format\030\003 \001(\t\022\023\n\013e" +
-      "xpire_time\030\004 \001(\003\022\014\n\004type\030\005 \001(\t\022\014\n\004mode\030\006" +
-      " \001(\t\022\033\n\023key_field_delimiter\030\007 \001(\t\022\035\n\025val" +
-      "ue_field_delimiter\030\010 \001(\t\022\017\n\007timeout\030\t \001(" +
-      "\005Bv\n,com.dataomnis.gproto.types.pbmodel." +
-      "pbsyncjobB\007PBRedisP\000Z;github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbmodel/pbsyncjo" +
-      "bb\006proto3"
+      "\005model\032/github.com/yu31/protoc-plugin/pr" +
+      "oto/gosql.proto\"\316\001\n\013RedisTarget\022\020\n\010datab" +
+      "ase\030\001 \001(\005\022\022\n\nkeyIndexes\030\002 \003(\005\022\023\n\013date_fo" +
+      "rmat\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\003\022\014\n\004type\030" +
+      "\005 \001(\t\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_field_delimit" +
+      "er\030\007 \001(\t\022\035\n\025value_field_delimiter\030\010 \001(\t\022" +
+      "\017\n\007timeout\030\t \001(\005:\006\312\262\004\002\n\000Bv\n,com.dataomni" +
+      "s.gproto.types.pbmodel.pbsyncjobB\007PBRedi" +
+      "sP\000Z;github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
     internal_static_model_RedisTarget_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1997,9 +1992,12 @@ public final class PBRedis {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RedisTarget_descriptor,
         new java.lang.String[] { "Database", "KeyIndexes", "DateFormat", "ExpireTime", "Type", "Mode", "KeyFieldDelimiter", "ValueFieldDelimiter", "Timeout", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

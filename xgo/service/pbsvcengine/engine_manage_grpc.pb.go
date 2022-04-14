@@ -25,10 +25,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EngineManageClient interface {
 	CreateFlinkClusterInK8S(ctx context.Context, in *pbrequest.CreateFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	//  rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
-	StartFlinkClusterInK8S(ctx context.Context, in *pbrequest.StartFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	StopFlinkClusterInK8S(ctx context.Context, in *pbrequest.StopFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	CreateNetworkBrokerInK8S(ctx context.Context, in *pbrequest.CreateFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteFlinkClusterInK8S(ctx context.Context, in *pbrequest.DeleteFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateNetworkBrokerInK8S(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8S(ctx context.Context, in *pbrequest.DeleteNetworkBrokerInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
@@ -49,25 +47,16 @@ func (c *engineManageClient) CreateFlinkClusterInK8S(ctx context.Context, in *pb
 	return out, nil
 }
 
-func (c *engineManageClient) StartFlinkClusterInK8S(ctx context.Context, in *pbrequest.StartFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *engineManageClient) DeleteFlinkClusterInK8S(ctx context.Context, in *pbrequest.DeleteFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/StartFlinkClusterInK8s", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/DeleteFlinkClusterInK8s", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *engineManageClient) StopFlinkClusterInK8S(ctx context.Context, in *pbrequest.StopFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/StopFlinkClusterInK8s", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *engineManageClient) CreateNetworkBrokerInK8S(ctx context.Context, in *pbrequest.CreateFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *engineManageClient) CreateNetworkBrokerInK8S(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/CreateNetworkBrokerInK8s", in, out, opts...)
 	if err != nil {
@@ -90,10 +79,8 @@ func (c *engineManageClient) DeleteNetworkBrokerInK8S(ctx context.Context, in *p
 // for forward compatibility
 type EngineManageServer interface {
 	CreateFlinkClusterInK8S(context.Context, *pbrequest.CreateFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
-	//  rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
-	StartFlinkClusterInK8S(context.Context, *pbrequest.StartFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
-	StopFlinkClusterInK8S(context.Context, *pbrequest.StopFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
-	CreateNetworkBrokerInK8S(context.Context, *pbrequest.CreateFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
+	DeleteFlinkClusterInK8S(context.Context, *pbrequest.DeleteFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
+	CreateNetworkBrokerInK8S(context.Context, *pbrequest.CreateNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8S(context.Context, *pbrequest.DeleteNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedEngineManageServer()
 }
@@ -105,13 +92,10 @@ type UnimplementedEngineManageServer struct {
 func (UnimplementedEngineManageServer) CreateFlinkClusterInK8S(context.Context, *pbrequest.CreateFlinkClusterInK8S) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFlinkClusterInK8S not implemented")
 }
-func (UnimplementedEngineManageServer) StartFlinkClusterInK8S(context.Context, *pbrequest.StartFlinkClusterInK8S) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StartFlinkClusterInK8S not implemented")
+func (UnimplementedEngineManageServer) DeleteFlinkClusterInK8S(context.Context, *pbrequest.DeleteFlinkClusterInK8S) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFlinkClusterInK8S not implemented")
 }
-func (UnimplementedEngineManageServer) StopFlinkClusterInK8S(context.Context, *pbrequest.StopFlinkClusterInK8S) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StopFlinkClusterInK8S not implemented")
-}
-func (UnimplementedEngineManageServer) CreateNetworkBrokerInK8S(context.Context, *pbrequest.CreateFlinkClusterInK8S) (*pbmodel.EmptyStruct, error) {
+func (UnimplementedEngineManageServer) CreateNetworkBrokerInK8S(context.Context, *pbrequest.CreateNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNetworkBrokerInK8S not implemented")
 }
 func (UnimplementedEngineManageServer) DeleteNetworkBrokerInK8S(context.Context, *pbrequest.DeleteNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error) {
@@ -148,44 +132,26 @@ func _EngineManage_CreateFlinkClusterInK8S_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EngineManage_StartFlinkClusterInK8S_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.StartFlinkClusterInK8S)
+func _EngineManage_DeleteFlinkClusterInK8S_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteFlinkClusterInK8S)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EngineManageServer).StartFlinkClusterInK8S(ctx, in)
+		return srv.(EngineManageServer).DeleteFlinkClusterInK8S(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/enginecenter.EngineManage/StartFlinkClusterInK8s",
+		FullMethod: "/enginecenter.EngineManage/DeleteFlinkClusterInK8s",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineManageServer).StartFlinkClusterInK8S(ctx, req.(*pbrequest.StartFlinkClusterInK8S))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _EngineManage_StopFlinkClusterInK8S_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.StopFlinkClusterInK8S)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(EngineManageServer).StopFlinkClusterInK8S(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/enginecenter.EngineManage/StopFlinkClusterInK8s",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineManageServer).StopFlinkClusterInK8S(ctx, req.(*pbrequest.StopFlinkClusterInK8S))
+		return srv.(EngineManageServer).DeleteFlinkClusterInK8S(ctx, req.(*pbrequest.DeleteFlinkClusterInK8S))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _EngineManage_CreateNetworkBrokerInK8S_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.CreateFlinkClusterInK8S)
+	in := new(pbrequest.CreateNetworkBrokerInK8S)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -197,7 +163,7 @@ func _EngineManage_CreateNetworkBrokerInK8S_Handler(srv interface{}, ctx context
 		FullMethod: "/enginecenter.EngineManage/CreateNetworkBrokerInK8s",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineManageServer).CreateNetworkBrokerInK8S(ctx, req.(*pbrequest.CreateFlinkClusterInK8S))
+		return srv.(EngineManageServer).CreateNetworkBrokerInK8S(ctx, req.(*pbrequest.CreateNetworkBrokerInK8S))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -232,12 +198,8 @@ var EngineManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _EngineManage_CreateFlinkClusterInK8S_Handler,
 		},
 		{
-			MethodName: "StartFlinkClusterInK8s",
-			Handler:    _EngineManage_StartFlinkClusterInK8S_Handler,
-		},
-		{
-			MethodName: "StopFlinkClusterInK8s",
-			Handler:    _EngineManage_StopFlinkClusterInK8S_Handler,
+			MethodName: "DeleteFlinkClusterInK8s",
+			Handler:    _EngineManage_DeleteFlinkClusterInK8S_Handler,
 		},
 		{
 			MethodName: "CreateNetworkBrokerInK8s",

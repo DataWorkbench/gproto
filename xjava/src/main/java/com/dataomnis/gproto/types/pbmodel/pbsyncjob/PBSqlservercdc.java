@@ -1625,25 +1625,21 @@ public final class PBSqlservercdc {
   static {
     java.lang.String[] descriptorData = {
       "\n,proto/types/model/syncjob/sqlservercdc" +
-      ".proto\022\005model\0323github.com/yu31/protoc-pl" +
-      "ugin/proto/validator.proto\032/github.com/y" +
-      "u31/protoc-plugin/proto/gosql.proto\0322git" +
-      "hub.com/yu31/protoc-plugin/proto/default" +
-      "s.proto\"\233\001\n\022SqlServerCdcSource\022\022\n\ntable_" +
-      "list\030\001 \003(\t\022\024\n\014split_update\030\002 \001(\010\022\023\n\013pavi" +
-      "ng_data\030\003 \001(\010\022\013\n\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022" +
-      "\025\n\rpoll_interval\030\006 \001(\003\022\025\n\rdatabase_name\030" +
-      "\007 \001(\tB}\n,com.dataomnis.gproto.types.pbmo" +
-      "del.pbsyncjobB\016PBSqlservercdcP\000Z;github." +
-      "com/DataWorkbench/gproto/xgo/types/pbmod" +
-      "el/pbsyncjobb\006proto3"
+      ".proto\022\005model\032/github.com/yu31/protoc-pl" +
+      "ugin/proto/gosql.proto\"\243\001\n\022SqlServerCdcS" +
+      "ource\022\022\n\ntable_list\030\001 \003(\t\022\024\n\014split_updat" +
+      "e\030\002 \001(\010\022\023\n\013paving_data\030\003 \001(\010\022\013\n\003cat\030\004 \001(" +
+      "\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_interval\030\006 \001(\003\022\025\n" +
+      "\rdatabase_name\030\007 \001(\t:\006\312\262\004\002\n\000B}\n,com.data" +
+      "omnis.gproto.types.pbmodel.pbsyncjobB\016PB" +
+      "SqlservercdcP\000Z;github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbmodel/pbsyncjobb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
     internal_static_model_SqlServerCdcSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1651,9 +1647,12 @@ public final class PBSqlservercdc {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SqlServerCdcSource_descriptor,
         new java.lang.String[] { "TableList", "SplitUpdate", "PavingData", "Cat", "Lsn", "PollInterval", "DatabaseName", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

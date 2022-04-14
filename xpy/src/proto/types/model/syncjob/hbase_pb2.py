@@ -11,10 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
-from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
-from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 from proto.types.model.syncjob import column_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_column__pb2
+from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\007PBHbaseP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%proto/types/model/syncjob/hbase.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a&proto/types/model/syncjob/column.proto\"f\n\x0bHbaseSource\x12,\n\tparameter\x18\x01 \x01(\x0b\x32\x19.model.HbaseReadParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table\"\xd3\x01\n\x12HbaseReadParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x13\n\x0bhbaseConfig\x18\x02 \x01(\t\x12\x1b\n\x05range\x18\x03 \x01(\x0b\x32\x0c.model.Range\x12\x12\n\nchange_log\x18\x04 \x01(\t\x12\x10\n\x08\x65ncoding\x18\x05 \x01(\t\x12\x17\n\x0fscan_cache_size\x18\x06 \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x07 \x01(\x05\x12\x14\n\x0chadoopConfig\x18\x08 \x01(\t\"M\n\x05Range\x12\x15\n\rstart_row_key\x18\x01 \x01(\t\x12\x13\n\x0b\x65nd_row_key\x18\x02 \x01(\t\x12\x18\n\x10is_binary_rowkey\x18\x03 \x01(\x08\"g\n\x0bHbaseTarget\x12-\n\tparameter\x18\x01 \x01(\x0b\x32\x1a.model.HbaseWriteParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table\"\x1b\n\x05Table\x12\x12\n\ntable_name\x18\x01 \x01(\t\"\xa4\x02\n\x13HbaseWriteParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x14\n\x0chbase_config\x18\x02 \x01(\t\x12\x11\n\tnull_mode\x18\x03 \x01(\t\x12\x10\n\x08wal_flag\x18\x04 \x01(\x08\x12\x19\n\x11write_buffer_size\x18\x05 \x01(\x05\x12\x12\n\nchange_log\x18\x06 \x01(\t\x12\x16\n\x0erowkey_express\x18\x07 \x01(\t\x12\x1c\n\x14version_column_index\x18\x08 \x01(\x05\x12\x1c\n\x14version_column_value\x18\t \x01(\t\x12\x17\n\x0fscan_cache_size\x18\n \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x0b \x01(\x05\x42v\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x07PBHbaseP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n%proto/types/model/syncjob/hbase.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"n\n\x0bHbaseSource\x12,\n\tparameter\x18\x01 \x01(\x0b\x32\x19.model.HbaseReadParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table:\x06\xca\xb2\x04\x02\n\x00\"\xdb\x01\n\x12HbaseReadParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x13\n\x0bhbaseConfig\x18\x02 \x01(\t\x12\x1b\n\x05range\x18\x03 \x01(\x0b\x32\x0c.model.Range\x12\x12\n\nchange_log\x18\x04 \x01(\t\x12\x10\n\x08\x65ncoding\x18\x05 \x01(\t\x12\x17\n\x0fscan_cache_size\x18\x06 \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x07 \x01(\x05\x12\x14\n\x0chadoopConfig\x18\x08 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"U\n\x05Range\x12\x15\n\rstart_row_key\x18\x01 \x01(\t\x12\x13\n\x0b\x65nd_row_key\x18\x02 \x01(\t\x12\x18\n\x10is_binary_rowkey\x18\x03 \x01(\x08:\x06\xca\xb2\x04\x02\n\x00\"o\n\x0bHbaseTarget\x12-\n\tparameter\x18\x01 \x01(\x0b\x32\x1a.model.HbaseWriteParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table:\x06\xca\xb2\x04\x02\n\x00\"#\n\x05Table\x12\x12\n\ntable_name\x18\x01 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xac\x02\n\x13HbaseWriteParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x14\n\x0chbase_config\x18\x02 \x01(\t\x12\x11\n\tnull_mode\x18\x03 \x01(\t\x12\x10\n\x08wal_flag\x18\x04 \x01(\x08\x12\x19\n\x11write_buffer_size\x18\x05 \x01(\x05\x12\x12\n\nchange_log\x18\x06 \x01(\t\x12\x16\n\x0erowkey_express\x18\x07 \x01(\t\x12\x1c\n\x14version_column_index\x18\x08 \x01(\x05\x12\x1c\n\x14version_column_value\x18\t \x01(\t\x12\x17\n\x0fscan_cache_size\x18\n \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x0b \x01(\x05:\x06\xca\xb2\x04\x02\n\x00\x42v\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x07PBHbaseP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
@@ -65,14 +63,14 @@ _HBASESOURCE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=242,
-  serialized_end=344,
+  serialized_start=137,
+  serialized_end=247,
 )
 
 
@@ -146,14 +144,14 @@ _HBASEREADPARAMETER = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=347,
-  serialized_end=558,
+  serialized_start=250,
+  serialized_end=469,
 )
 
 
@@ -192,14 +190,14 @@ _RANGE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=560,
-  serialized_end=637,
+  serialized_start=471,
+  serialized_end=556,
 )
 
 
@@ -238,14 +236,14 @@ _HBASETARGET = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=639,
-  serialized_end=742,
+  serialized_start=558,
+  serialized_end=669,
 )
 
 
@@ -270,14 +268,14 @@ _TABLE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=744,
-  serialized_end=771,
+  serialized_start=671,
+  serialized_end=706,
 )
 
 
@@ -372,14 +370,14 @@ _HBASEWRITEPARAMETER = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=1066,
+  serialized_start=709,
+  serialized_end=1009,
 )
 
 _HBASESOURCE.fields_by_name['parameter'].message_type = _HBASEREADPARAMETER
@@ -441,4 +439,10 @@ _sym_db.RegisterMessage(HbaseWriteParameter)
 
 
 DESCRIPTOR._options = None
+_HBASESOURCE._options = None
+_HBASEREADPARAMETER._options = None
+_RANGE._options = None
+_HBASETARGET._options = None
+_TABLE._options = None
+_HBASEWRITEPARAMETER._options = None
 # @@protoc_insertion_point(module_scope)

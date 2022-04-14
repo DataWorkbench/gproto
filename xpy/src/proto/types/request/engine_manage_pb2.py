@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestEngineManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/cluster.proto\x1a\x1fproto/types/model/network.proto\"I\n\x17\x43reateFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"H\n\x16StartFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"g\n\x15StopFlinkClusterInK8s\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\"E\n\x18\x43reateNetworkBrokerInK8s\x12)\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"j\n\x18\x44\x65leteNetworkBrokerInK8s\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\nnetwork_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-Bt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/cluster.proto\x1a\x1fproto/types/model/network.proto\"I\n\x17\x43reateFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"I\n\x17\x44\x65leteFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x43reateNetworkBrokerInK8s\x12)\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x44\x65leteNetworkBrokerInK8s\x12)\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_network__pb2.DESCRIPTOR,])
 
@@ -61,16 +61,16 @@ _CREATEFLINKCLUSTERINK8S = _descriptor.Descriptor(
 )
 
 
-_STARTFLINKCLUSTERINK8S = _descriptor.Descriptor(
-  name='StartFlinkClusterInK8s',
-  full_name='request.StartFlinkClusterInK8s',
+_DELETEFLINKCLUSTERINK8S = _descriptor.Descriptor(
+  name='DeleteFlinkClusterInK8s',
+  full_name='request.DeleteFlinkClusterInK8s',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='info', full_name='request.StartFlinkClusterInK8s.info', index=0,
+      name='info', full_name='request.DeleteFlinkClusterInK8s.info', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -89,46 +89,7 @@ _STARTFLINKCLUSTERINK8S = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=246,
-  serialized_end=318,
-)
-
-
-_STOPFLINKCLUSTERINK8S = _descriptor.Descriptor(
-  name='StopFlinkClusterInK8s',
-  full_name='request.StopFlinkClusterInK8s',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.StopFlinkClusterInK8s.space_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='request.StopFlinkClusterInK8s.cluster_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=320,
-  serialized_end=423,
+  serialized_end=319,
 )
 
 
@@ -159,8 +120,8 @@ _CREATENETWORKBROKERINK8S = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=425,
-  serialized_end=494,
+  serialized_start=321,
+  serialized_end=390,
 )
 
 
@@ -173,19 +134,12 @@ _DELETENETWORKBROKERINK8S = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.DeleteNetworkBrokerInK8s.space_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='info', full_name='request.DeleteNetworkBrokerInK8s.info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='network_id', full_name='request.DeleteNetworkBrokerInK8s.network_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -198,16 +152,16 @@ _DELETENETWORKBROKERINK8S = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=496,
-  serialized_end=602,
+  serialized_start=392,
+  serialized_end=461,
 )
 
 _CREATEFLINKCLUSTERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
-_STARTFLINKCLUSTERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
+_DELETEFLINKCLUSTERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 _CREATENETWORKBROKERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_network__pb2._NETWORK
+_DELETENETWORKBROKERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_network__pb2._NETWORK
 DESCRIPTOR.message_types_by_name['CreateFlinkClusterInK8s'] = _CREATEFLINKCLUSTERINK8S
-DESCRIPTOR.message_types_by_name['StartFlinkClusterInK8s'] = _STARTFLINKCLUSTERINK8S
-DESCRIPTOR.message_types_by_name['StopFlinkClusterInK8s'] = _STOPFLINKCLUSTERINK8S
+DESCRIPTOR.message_types_by_name['DeleteFlinkClusterInK8s'] = _DELETEFLINKCLUSTERINK8S
 DESCRIPTOR.message_types_by_name['CreateNetworkBrokerInK8s'] = _CREATENETWORKBROKERINK8S
 DESCRIPTOR.message_types_by_name['DeleteNetworkBrokerInK8s'] = _DELETENETWORKBROKERINK8S
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -219,19 +173,12 @@ CreateFlinkClusterInK8s = _reflection.GeneratedProtocolMessageType('CreateFlinkC
   })
 _sym_db.RegisterMessage(CreateFlinkClusterInK8s)
 
-StartFlinkClusterInK8s = _reflection.GeneratedProtocolMessageType('StartFlinkClusterInK8s', (_message.Message,), {
-  'DESCRIPTOR' : _STARTFLINKCLUSTERINK8S,
+DeleteFlinkClusterInK8s = _reflection.GeneratedProtocolMessageType('DeleteFlinkClusterInK8s', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEFLINKCLUSTERINK8S,
   '__module__' : 'proto.types.request.engine_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.StartFlinkClusterInK8s)
+  # @@protoc_insertion_point(class_scope:request.DeleteFlinkClusterInK8s)
   })
-_sym_db.RegisterMessage(StartFlinkClusterInK8s)
-
-StopFlinkClusterInK8s = _reflection.GeneratedProtocolMessageType('StopFlinkClusterInK8s', (_message.Message,), {
-  'DESCRIPTOR' : _STOPFLINKCLUSTERINK8S,
-  '__module__' : 'proto.types.request.engine_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.StopFlinkClusterInK8s)
-  })
-_sym_db.RegisterMessage(StopFlinkClusterInK8s)
+_sym_db.RegisterMessage(DeleteFlinkClusterInK8s)
 
 CreateNetworkBrokerInK8s = _reflection.GeneratedProtocolMessageType('CreateNetworkBrokerInK8s', (_message.Message,), {
   'DESCRIPTOR' : _CREATENETWORKBROKERINK8S,
@@ -250,10 +197,7 @@ _sym_db.RegisterMessage(DeleteNetworkBrokerInK8s)
 
 DESCRIPTOR._options = None
 _CREATEFLINKCLUSTERINK8S.fields_by_name['info']._options = None
-_STARTFLINKCLUSTERINK8S.fields_by_name['info']._options = None
-_STOPFLINKCLUSTERINK8S.fields_by_name['space_id']._options = None
-_STOPFLINKCLUSTERINK8S.fields_by_name['cluster_id']._options = None
+_DELETEFLINKCLUSTERINK8S.fields_by_name['info']._options = None
 _CREATENETWORKBROKERINK8S.fields_by_name['info']._options = None
-_DELETENETWORKBROKERINK8S.fields_by_name['space_id']._options = None
-_DELETENETWORKBROKERINK8S.fields_by_name['network_id']._options = None
+_DELETENETWORKBROKERINK8S.fields_by_name['info']._options = None
 # @@protoc_insertion_point(module_scope)

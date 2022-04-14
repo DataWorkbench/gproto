@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\027PBResponseSyncJobManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/response/sync_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/sync_job.proto\"N\n\x0cListSyncJobs\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1b\n\rCreateSyncJob\x12\n\n\x02id\x18\x01 \x01(\t\"/\n\x0f\x44\x65scribeSyncJob\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.SyncJob\"?\n\x0eGetSyncJobConf\x12-\n\x04\x63onf\x18\x01 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"K\n\x12GetSyncJobSchedule\x12\x35\n\x08schedule\x18\x01 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"\\\n\x13ListReleaseSyncJobs\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.SyncJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"F\n\x13ListSyncJobVersions\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"1\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseSyncJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n*proto/types/response/sync_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/sync_job.proto\"N\n\x0cListSyncJobs\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1b\n\rCreateSyncJob\x12\n\n\x02id\x18\x01 \x01(\t\"/\n\x0f\x44\x65scribeSyncJob\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.SyncJob\"?\n\x0eGetSyncJobConf\x12-\n\x04\x63onf\x18\x01 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"K\n\x12GetSyncJobSchedule\x12\x35\n\x08schedule\x18\x01 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"\\\n\x13ListReleaseSyncJobs\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.SyncJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"F\n\x13ListSyncJobVersions\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"1\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\t\"\x1e\n\x0fGenerateJobJson\x12\x0b\n\x03job\x18\x01 \x01(\t\"\x1c\n\rCommitSyncJob\x12\x0b\n\x03job\x18\x01 \x01(\t\"!\n\x12\x43onvertSyncJobMode\x12\x0b\n\x03job\x18\x01 \x01(\tBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseSyncJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
 
@@ -318,6 +318,102 @@ _DESCRIBESYNCFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   serialized_end=658,
 )
 
+
+_GENERATEJOBJSON = _descriptor.Descriptor(
+  name='GenerateJobJson',
+  full_name='response.GenerateJobJson',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='job', full_name='response.GenerateJobJson.job', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=660,
+  serialized_end=690,
+)
+
+
+_COMMITSYNCJOB = _descriptor.Descriptor(
+  name='CommitSyncJob',
+  full_name='response.CommitSyncJob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='job', full_name='response.CommitSyncJob.job', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=692,
+  serialized_end=720,
+)
+
+
+_CONVERTSYNCJOBMODE = _descriptor.Descriptor(
+  name='ConvertSyncJobMode',
+  full_name='response.ConvertSyncJobMode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='job', full_name='response.ConvertSyncJobMode.job', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=722,
+  serialized_end=755,
+)
+
 _LISTSYNCJOBS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
 _DESCRIBESYNCJOB.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
 _GETSYNCJOBCONF.fields_by_name['conf'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBCONF
@@ -332,6 +428,9 @@ DESCRIPTOR.message_types_by_name['GetSyncJobSchedule'] = _GETSYNCJOBSCHEDULE
 DESCRIPTOR.message_types_by_name['ListReleaseSyncJobs'] = _LISTRELEASESYNCJOBS
 DESCRIPTOR.message_types_by_name['ListSyncJobVersions'] = _LISTSYNCJOBVERSIONS
 DESCRIPTOR.message_types_by_name['DescribeSyncFlinkUIByInstanceId'] = _DESCRIBESYNCFLINKUIBYINSTANCEID
+DESCRIPTOR.message_types_by_name['GenerateJobJson'] = _GENERATEJOBJSON
+DESCRIPTOR.message_types_by_name['CommitSyncJob'] = _COMMITSYNCJOB
+DESCRIPTOR.message_types_by_name['ConvertSyncJobMode'] = _CONVERTSYNCJOBMODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListSyncJobs = _reflection.GeneratedProtocolMessageType('ListSyncJobs', (_message.Message,), {
@@ -389,6 +488,27 @@ DescribeSyncFlinkUIByInstanceId = _reflection.GeneratedProtocolMessageType('Desc
   # @@protoc_insertion_point(class_scope:response.DescribeSyncFlinkUIByInstanceId)
   })
 _sym_db.RegisterMessage(DescribeSyncFlinkUIByInstanceId)
+
+GenerateJobJson = _reflection.GeneratedProtocolMessageType('GenerateJobJson', (_message.Message,), {
+  'DESCRIPTOR' : _GENERATEJOBJSON,
+  '__module__' : 'proto.types.response.sync_job_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.GenerateJobJson)
+  })
+_sym_db.RegisterMessage(GenerateJobJson)
+
+CommitSyncJob = _reflection.GeneratedProtocolMessageType('CommitSyncJob', (_message.Message,), {
+  'DESCRIPTOR' : _COMMITSYNCJOB,
+  '__module__' : 'proto.types.response.sync_job_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.CommitSyncJob)
+  })
+_sym_db.RegisterMessage(CommitSyncJob)
+
+ConvertSyncJobMode = _reflection.GeneratedProtocolMessageType('ConvertSyncJobMode', (_message.Message,), {
+  'DESCRIPTOR' : _CONVERTSYNCJOBMODE,
+  '__module__' : 'proto.types.response.sync_job_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.ConvertSyncJobMode)
+  })
+_sym_db.RegisterMessage(ConvertSyncJobMode)
 
 
 DESCRIPTOR._options = None

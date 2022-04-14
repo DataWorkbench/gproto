@@ -5666,7 +5666,7 @@ public final class PBRequestScheduler {
 
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5676,7 +5676,7 @@ public final class PBRequestScheduler {
         getJobIdsList();
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5685,7 +5685,7 @@ public final class PBRequestScheduler {
     int getJobIdsCount();
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5695,7 +5695,7 @@ public final class PBRequestScheduler {
     java.lang.String getJobIds(int index);
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5845,7 +5845,7 @@ public final class PBRequestScheduler {
     private com.google.protobuf.LazyStringList jobIds_;
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5857,7 +5857,7 @@ public final class PBRequestScheduler {
     }
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5868,7 +5868,7 @@ public final class PBRequestScheduler {
     }
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -5880,7 +5880,7 @@ public final class PBRequestScheduler {
     }
     /**
      * <pre>
-     * The list of stream job id.
+     * The list of sync job id.
      * </pre>
      *
      * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6315,7 +6315,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6327,7 +6327,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6338,7 +6338,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6350,7 +6350,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6363,7 +6363,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6383,7 +6383,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6402,7 +6402,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6419,7 +6419,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>
@@ -6433,7 +6433,7 @@ public final class PBRequestScheduler {
       }
       /**
        * <pre>
-       * The list of stream job id.
+       * The list of sync job id.
        * </pre>
        *
        * <code>repeated string job_ids = 2 [(.validator.field) = { ... }</code>

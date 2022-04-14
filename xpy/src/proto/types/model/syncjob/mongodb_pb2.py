@@ -11,10 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
-from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
-from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 from proto.types.model.syncjob import column_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_column__pb2
+from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/model/syncjob/mongodb.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a&proto/types/model/syncjob/column.proto\"}\n\rMongodbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x12\n\nfetch_size\x18\x04 \x01(\x05\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\t\"\xb4\x01\n\rMongodbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x13\n\x0breplace_key\x18\x04 \x01(\t\x12\x12\n\nwrite_mode\x18\x05 \x01(\t\x12\x12\n\nbatch_size\x18\x06 \x01(\x05\x12\x1c\n\x14\x66lush_interval_mills\x18\x07 \x01(\x05\x42x\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n\'proto/types/model/syncjob/mongodb.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\x85\x01\n\rMongodbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x12\n\nfetch_size\x18\x04 \x01(\x05\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xb4\x01\n\rMongodbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x13\n\x0breplace_key\x18\x04 \x01(\t\x12\x12\n\nwrite_mode\x18\x05 \x01(\t\x12\x12\n\nbatch_size\x18\x06 \x01(\x05\x12\x1c\n\x14\x66lush_interval_mills\x18\x07 \x01(\x05\x42x\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
@@ -79,14 +77,14 @@ _MONGODBSOURCE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=369,
+  serialized_start=140,
+  serialized_end=273,
 )
 
 
@@ -159,8 +157,8 @@ _MONGODBTARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=552,
+  serialized_start=276,
+  serialized_end=456,
 )
 
 _MONGODBSOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
@@ -185,4 +183,5 @@ _sym_db.RegisterMessage(MongodbTarget)
 
 
 DESCRIPTOR._options = None
+_MONGODBSOURCE._options = None
 # @@protoc_insertion_point(module_scope)
