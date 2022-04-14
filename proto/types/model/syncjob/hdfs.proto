@@ -13,9 +13,10 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/column.proto";
 import "proto/types/model/syncjob/baseenum.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message HdfsSource {
-
+    option (gosql.serialize) = {json: {}};
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -41,6 +42,7 @@ message HdfsSource {
 }
 
 message HdfsTarget {
+    option (gosql.serialize) = {json: {}};
     // file column
     // @inject_tag: json:"column" 
     repeated Column column = 1;

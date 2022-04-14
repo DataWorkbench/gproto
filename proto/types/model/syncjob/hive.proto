@@ -12,9 +12,10 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/baseenum.proto";
-
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message HiveColumn{
+    option (gosql.serialize) = {json: {}};
     // column name
     // @inject_tag: json:"name"
     string key = 1;
@@ -24,6 +25,7 @@ message HiveColumn{
 }
 
 message HiveTarget {
+    option (gosql.serialize) = {json: {}};
     // column
     // @inject_tag: json:"column"
     repeated HiveColumn column = 1;

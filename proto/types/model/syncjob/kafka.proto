@@ -10,11 +10,11 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBKafka";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/column.proto";
-
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message KafkaSource {
+    option (gosql.serialize) = {json: {}};
     // @inject_tag: json:"column" 
     repeated Column column = 1;
     // topic
@@ -44,12 +44,14 @@ message KafkaSource {
 }
 
 message ConsumerSettings {
+    option (gosql.serialize) = {json: {}};
     // auto commit position enable
     // @inject_tag: json:"auto_commit_enable" 
     string auto_commit_enable = 1;
 }
 
 message KafkaTarget {
+    option (gosql.serialize) = {json: {}};
     // kafka tableFields
     // @inject_tag: json:"tableFields" 
     repeated Column tableFields = 1;

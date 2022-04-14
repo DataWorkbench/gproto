@@ -31,6 +31,7 @@ import "proto/types/model/syncjob/sqlservercdc.proto";
 
 // The sync job info
 message SyncJob {
+    option (gosql.serialize) = {json: {}};
     enum Type {
         TypeUnset = 0;
         OfflineFull = 1;
@@ -42,9 +43,6 @@ message SyncJob {
         Deleted = 1;
         Enabled = 2;
     }
-
-
-
     // Workspace ID it belongs to.
     // @inject_tag: json:"space_id" gorm:"column:space_id;"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
@@ -114,6 +112,7 @@ message SyncJob {
 
 // SyncJobProperty represents property of job.
 message SyncJobProperty {
+    option (gosql.serialize) = {json: {}};
     // Workspace ID it belongs to.
     // @inject_tag: json:"space_id" gorm:"column:space_id;"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
@@ -139,7 +138,7 @@ message SyncJobConf {
     option (gosql.serialize) = {json: {}};
 
     enum JobMode {
-        GuideModeUnset = 0;
+        JobModeUnset = 0;
         GuideMode = 1;
         ScriptMode = 2;
     }

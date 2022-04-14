@@ -10,15 +10,16 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBColumn";
 option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message Column{
-
+    option (gosql.serialize) = {json: {}};
     // column name
     // @inject_tag: json:"name" 
-    string name = 1;
+    string name = 1 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
     // column type
     // @inject_tag: json:"type" 
-    string type = 2;
+    string type = 2 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
     // column index
     // @inject_tag: json:"index"
     int32 index=3;
@@ -28,7 +29,7 @@ message Column{
     // column format
     // @inject_tag: json:"format"
     string format=5;
-    // column index
+    // column value
     // @inject_tag: json:"value"
     string value=6;
 

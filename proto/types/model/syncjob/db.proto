@@ -10,18 +10,19 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBRelationaldb";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/column.proto";
 import "proto/types/model/syncjob/baseenum.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 
 message DBSource {
+    option (gosql.serialize) = {json: {}};
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
     // table
     // @inject_tag: json:"table" 
-    repeated string table = 2;
+    repeated string table = 2 ;
     // schema
     // @inject_tag: json:"schema" 
     string schema = 3;
@@ -31,23 +32,50 @@ message DBSource {
     // split_pk
     // @inject_tag: json:"split_pk" 
     string split_pk = 5;
-
     // mapping type
     // @inject_tag: json:"mapping_type"
     BaseEnum.ColumnMapping mapping_type = 6;
+    // visualization condition
+    // @inject_tag: json:"visualization"
+    Condition visualization = 7;
+    // express condition
+    // @inject_tag: json:"express"
+    string express = 8;
+
+}
+
+message Condition {
+    option (gosql.serialize) = {json: {}};
+    // column
+    // @inject_tag: json:"column"
+    string column = 1;
+    // start condition
+    // @inject_tag: json:"start_condition"
+    string start_condition = 2;
+    // start condition
+    // @inject_tag: json:"start_condition"
+    string start_value = 3;
+    // end condition
+    // @inject_tag: json:"end_condition"
+    string end_condition = 4;
+    // end value
+    // @inject_tag: json:"end_value"
+    string end_value = 5;
 }
 
 message DBTarget {
-
+    option (gosql.serialize) = {json: {}};
     enum WriteMode {
-        insert = 0;
-        replace = 1;
-        update = 2;
+        WriteModeUnset=0;
+        insert = 1;
+        replace = 2;
+        update = 3;
     }
 
     enum Semantic {
-        AtLeastOnce = 0;
-        ExactlyOnce = 1;
+        SemanticUnset = 0;
+        AtLeastOnce = 1;
+        ExactlyOnce = 2;
     }
 
     // column
