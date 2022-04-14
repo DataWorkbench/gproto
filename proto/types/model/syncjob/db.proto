@@ -60,8 +60,8 @@ message Condition {
     // start condition
     // @inject_tag: json:"start_condition"
     string start_condition = 2;
-    // start condition
-    // @inject_tag: json:"start_condition"
+    // start value
+    // @inject_tag: json:"start_value"
     string start_value = 3;
     // end condition
     // @inject_tag: json:"end_condition"
