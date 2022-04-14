@@ -1238,7 +1238,7 @@ type ConvertSyncJobMode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The job Type. Is Required when not directory,
-	// Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+	// Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
 	// Desc: Cannot be modified after creation.
 	Type pbmodel.SyncJob_Type `protobuf:"varint,1,opt,name=type,proto3,enum=model.SyncJob_Type" json:"type"`
 	// conf
@@ -1444,7 +1444,7 @@ type GenerateJobJson struct {
 	// target version
 	TargetVersion string `protobuf:"bytes,4,opt,name=target_version,json=targetVersion,proto3" json:"target_version" uri:"target_version" swaggerignore:"true"`
 	// The job Type. Is Required when not directory,
-	// Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+	// Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull"
 	// Desc: Cannot be modified after creation.
 	Type pbmodel.SyncJob_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.SyncJob_Type" json:"type"`
 }

@@ -34,7 +34,7 @@ type BinlogSource struct {
 	Start *Start `protobuf:"bytes,3,opt,name=start,proto3" json:"start"`
 	// table
 	Table []string `protobuf:"bytes,4,rep,name=table,proto3" json:"table"`
-	// split update
+	// split  update
 	SplitUpdate bool `protobuf:"varint,5,opt,name=split_update,json=splitUpdate,proto3" json:"split_update"`
 	// paving data
 	PavingData bool `protobuf:"varint,6,opt,name=paving_data,json=pavingData,proto3" json:"paving_data"`
