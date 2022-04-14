@@ -17,10 +17,8 @@ import "proto/types/request/engine_manage.proto";
 
 service EngineManage {
   rpc CreateFlinkClusterInK8s(request.CreateFlinkClusterInK8s) returns (model.EmptyStruct) {}
-//  rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
-  rpc StartFlinkClusterInK8s(request.StartFlinkClusterInK8s)   returns (model.EmptyStruct) {}
-  rpc StopFlinkClusterInK8s(request.StopFlinkClusterInK8s)     returns (model.EmptyStruct) {}
+  rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
 
-  rpc CreateNetworkBrokerInK8s(request.CreateFlinkClusterInK8s) returns (model.EmptyStruct) {}
+  rpc CreateNetworkBrokerInK8s(request.CreateNetworkBrokerInK8s) returns (model.EmptyStruct) {}
   rpc DeleteNetworkBrokerInK8s(request.DeleteNetworkBrokerInK8s) returns (model.EmptyStruct) {}
 }
