@@ -192,7 +192,7 @@ type DBSource struct {
 	ConditionType DBSource_ConditionType `protobuf:"varint,7,opt,name=condition_type,json=conditionType,proto3,enum=model.DBSource_ConditionType" json:"condition_type"`
 	// visualization condition
 	Visualization *Condition `protobuf:"bytes,8,opt,name=visualization,proto3" json:"visualization"`
-	// express condition
+	// express
 	Express string `protobuf:"bytes,9,opt,name=express,proto3" json:"express"`
 }
 
@@ -300,8 +300,8 @@ type Condition struct {
 	Column string `protobuf:"bytes,1,opt,name=column,proto3" json:"column"`
 	// start condition
 	StartCondition string `protobuf:"bytes,2,opt,name=start_condition,json=startCondition,proto3" json:"start_condition"`
-	// start condition
-	StartValue string `protobuf:"bytes,3,opt,name=start_value,json=startValue,proto3" json:"start_condition"`
+	// start value
+	StartValue string `protobuf:"bytes,3,opt,name=start_value,json=startValue,proto3" json:"start_value"`
 	// end condition
 	EndCondition string `protobuf:"bytes,4,opt,name=end_condition,json=endCondition,proto3" json:"end_condition"`
 	// end value
