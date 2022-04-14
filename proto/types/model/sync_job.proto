@@ -36,6 +36,7 @@ message SyncJob {
         TypeUnset = 0;
         OfflineFull = 1;
         OfflineIncrement = 2;
+        RealTime = 3;
     }
 
     enum Status {
@@ -75,7 +76,7 @@ message SyncJob {
     // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
     bool is_directory = 7;
 
-    // Job type. 0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+    // Job type. 1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
     // @inject_tag: json:"type" gorm:"column:type;"
     Type type = 8 [
     (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
@@ -437,7 +438,7 @@ message SyncJobRelease {
     // @inject_tag: json:"name" gorm:"column:name;"
     string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-    // Job type. 0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+    // Job type. 1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
     // @inject_tag: json:"type" gorm:"column:type;"
     SyncJob.Type type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 

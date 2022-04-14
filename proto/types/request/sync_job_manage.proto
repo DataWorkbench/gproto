@@ -335,7 +335,7 @@ message CommitSyncJob {
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
     // The job Type. Is Required when not directory,
-    // Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+    // Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
     // Desc: Cannot be modified after creation.
     // @inject_tag: json:"type"
     model.SyncJob.Type type = 1  [
@@ -397,7 +397,7 @@ message GenerateJobJson {
     string target_version = 4;
 
     // The job Type. Is Required when not directory,
-    // Optional Value:0 => "OfflineFull" 1 => "OfflineIncrement" 2 => "RealTimeFull" 3 => "RealTimeIncrement"
+    // Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull"
     // Desc: Cannot be modified after creation.
     // @inject_tag: json:"type"
     model.SyncJob.Type type = 5  [
