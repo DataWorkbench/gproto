@@ -192,7 +192,7 @@ type DBSource struct {
 	ConditionType DBSource_ConditionType `protobuf:"varint,7,opt,name=condition_type,json=conditionType,proto3,enum=model.DBSource_ConditionType" json:"condition_type"`
 	// visualization condition
 	Visualization *Condition `protobuf:"bytes,8,opt,name=visualization,proto3" json:"visualization"`
-	// express
+	// express condition
 	Express string `protobuf:"bytes,9,opt,name=express,proto3" json:"express"`
 }
 
