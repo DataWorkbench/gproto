@@ -46,7 +46,7 @@ message DBSource {
     // visualization condition
     // @inject_tag: json:"visualization"
     Condition visualization = 8;
-    // express
+    // express condition
     // @inject_tag: json:"express"
     string express = 9;
 
