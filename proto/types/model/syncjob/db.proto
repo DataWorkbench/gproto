@@ -17,6 +17,11 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message DBSource {
     option (gosql.serialize) = {json: {}};
+    enum ConditionType {
+        ConditionTypeUnset=0;
+        Visualization = 1;
+        Express = 2;
+    }
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -35,12 +40,15 @@ message DBSource {
     // mapping type
     // @inject_tag: json:"mapping_type"
     BaseEnum.ColumnMapping mapping_type = 6;
+    // condition type
+    // @inject_tag: json:"condition_type"
+    ConditionType condition_type = 7;
     // visualization condition
     // @inject_tag: json:"visualization"
-    Condition visualization = 7;
+    Condition visualization = 8;
     // express condition
     // @inject_tag: json:"express"
-    string express = 8;
+    string express = 9;
 
 }
 
