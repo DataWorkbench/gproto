@@ -190,13 +190,13 @@ message ChannelControl{
     string record_num = 2 ;
     // The allow percentage where the job is error
     // @inject_tag: json:"percentage"
-    double percentage = 3 [ (defaults.field).basic = "0.0", (validator.field).tags.float = { gte: 0.0, lte: 100.0 } ];
+    double percentage = 3 ;
     // sync rate
     // @inject_tag: json:"rate"
-    RatePolicy rate = 4 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gt: 0,lte: 2 } ];
+    RatePolicy rate = 4 ;
     // bytes
     // @inject_tag: json:"bytes"
-    int32 bytes = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 1 } ];
+    int32 bytes = 5 ;
 }
 
 
