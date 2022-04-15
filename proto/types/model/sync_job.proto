@@ -182,18 +182,17 @@ message ChannelControl{
         UnLimit = 2;
     }
 
-    // The job name in each workspace is unique. Is required, Max Length 128.
-    // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-    // @inject_tag: json:"name"
+    // The job parallelism
+    // @inject_tag: json:"parallelism"
     int32 parallelism = 1 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-    // Description of the job, Not required, Max length 1024.
+    // The allow record num where the job is error
     // @inject_tag: json:"record_num"
     string record_num = 2 ;
-    // Description of the job, Not required, Max length 1024.
-    // @inject_tag: json:"desc"
+    // The allow percentage where the job is error
+    // @inject_tag: json:"percentage"
     double percentage = 3 [ (defaults.field).basic = "0.0", (validator.field).tags.float = { gte: 0.0, lte: 100.0 } ];
     // sync rate
-    // @inject_tag:  json:"rate"
+    // @inject_tag: json:"rate"
     RatePolicy rate = 4 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // bytes
     // @inject_tag: json:"bytes"
