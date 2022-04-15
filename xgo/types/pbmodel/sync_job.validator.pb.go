@@ -400,48 +400,12 @@ func (this *ChannelControl) _xxx_xxx_Validator_Validate_parallelism() error {
 	return nil
 }
 
-func (this *ChannelControl) _xxx_xxx_Validator_Validate_percentage() error {
-	if !(this.Percentage >= 0.000000) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'percentage' must be greater than or equal to '0'", protovalidator.Float64ToString(this.Percentage))
-	}
-	if !(this.Percentage <= 100.000000) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'percentage' must be less than or equal to '100'", protovalidator.Float64ToString(this.Percentage))
-	}
-	return nil
-}
-
-func (this *ChannelControl) _xxx_xxx_Validator_Validate_rate() error {
-	if !(this.Rate > 0) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be greater than '0'", protovalidator.Int32ToString(int32(this.Rate)))
-	}
-	if !(this.Rate <= 2) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be less than or equal to '2'", protovalidator.Int32ToString(int32(this.Rate)))
-	}
-	return nil
-}
-
-func (this *ChannelControl) _xxx_xxx_Validator_Validate_bytes() error {
-	if !(this.Bytes >= 1) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'bytes' must be greater than or equal to '1'", protovalidator.Int32ToString(this.Bytes))
-	}
-	return nil
-}
-
 // Set default value for message model.ChannelControl
 func (this *ChannelControl) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_parallelism(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_percentage(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_rate(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_bytes(); err != nil {
 		return err
 	}
 	return nil

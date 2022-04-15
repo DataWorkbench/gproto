@@ -73,15 +73,6 @@ func (this *ChannelControl) SetDefaults() {
 	if this.Parallelism == 0 {
 		this.Parallelism = 1
 	}
-	if this.Percentage == 0 {
-		this.Percentage = 0.0
-	}
-	if this.Rate == 0 {
-		this.Rate = 0
-	}
-	if this.Bytes == 0 {
-		this.Bytes = 0
-	}
 	return
 }
 
