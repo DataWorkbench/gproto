@@ -312,6 +312,15 @@ message SyncResource {
 message SyncJobSchedule {
     option (gosql.serialize) = {json: {}};
 
+    message Parameter {
+        // The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+        // @inject_tag: json:"key"
+        string key = 1 [ (validator.field).tags.string = { utf8: true, char_len_gte:1, char_len_lte: 64 } ];
+        // The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+        // @inject_tag: json:"value"
+        string value = 2 [ (validator.field).tags.string = { utf8: true, char_len_gte:1, char_len_lte: 64 } ];
+    }
+
     enum SchedulePolicy {
         SchedulePolicyUnset = 0;
         Periodicity = 1;
@@ -345,10 +354,9 @@ message SyncJobSchedule {
     (validator.field).tags.int = { gte: 31507200 }
     ];
 
-    //  // Whether execute immediately the job after release.
-    //  // Not required, default False. If immediately is True, the field executed will be ignore.
-    //  // @inject_tag: json:"immediately" binding:"-"
-    //  bool immediately = 3;
+    // The parameters for scheduler. Not required. The key must be unique.
+    // @inject_tag: json:"parameters"
+    repeated Parameter parameters = 3;
 
     // ------ Period Options ------
     //
@@ -390,26 +398,26 @@ message SyncJobSchedule {
     // @inject_tag: json:"timeout"
     int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
 
-    // Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
-    // Is required.
-    // @inject_tag: json:"retry_policy"
-    RetryPolicy retry_policy = 10 [
-    (validator.field).tags.enum = { gt: 0; in_enums: true  }
-    ];
-
-    // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-    // @inject_tag: json:"retry_limit"
-    int32 retry_limit = 11 [
-    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
-    (validator.field).tags.int = { gte: 0, lte: 100}
-    ];
-
-    // Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-    // @inject_tag: json:"retry_interval"
-    int32 retry_interval = 12 [
-    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
-    (validator.field).tags.int = { gte: 1, lte: 30 }
-    ];
+//    // Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
+//    // Is required.
+//    // @inject_tag: json:"retry_policy"
+//    RetryPolicy retry_policy = 10 [
+//    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+//    ];
+//
+//    // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+//    // @inject_tag: json:"retry_limit"
+//    int32 retry_limit = 11 [
+//    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
+//    (validator.field).tags.int = { gte: 0, lte: 100}
+//    ];
+//
+//    // Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+//    // @inject_tag: json:"retry_interval"
+//    int32 retry_interval = 12 [
+//    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
+//    (validator.field).tags.int = { gte: 1, lte: 30 }
+//    ];
 }
 
 // The release sync job info.
