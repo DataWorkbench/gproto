@@ -787,13 +787,12 @@ type ChannelControl struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The job name in each workspace is unique. Is required, Max Length 128.
-	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Parallelism int32 `protobuf:"varint,1,opt,name=parallelism,proto3" json:"name"`
-	// Description of the job, Not required, Max length 1024.
+	// The job parallelism
+	Parallelism int32 `protobuf:"varint,1,opt,name=parallelism,proto3" json:"parallelism"`
+	// The allow record num where the job is error
 	RecordNum string `protobuf:"bytes,2,opt,name=record_num,json=recordNum,proto3" json:"record_num"`
-	// Description of the job, Not required, Max length 1024.
-	Percentage float64 `protobuf:"fixed64,3,opt,name=percentage,proto3" json:"desc"`
+	// The allow percentage where the job is error
+	Percentage float64 `protobuf:"fixed64,3,opt,name=percentage,proto3" json:"percentage"`
 	// sync rate
 	Rate ChannelControl_RatePolicy `protobuf:"varint,4,opt,name=rate,proto3,enum=model.ChannelControl_RatePolicy" json:"rate"`
 	// bytes
