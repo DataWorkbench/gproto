@@ -411,11 +411,11 @@ func (this *ChannelControl) _xxx_xxx_Validator_Validate_percentage() error {
 }
 
 func (this *ChannelControl) _xxx_xxx_Validator_Validate_rate() error {
-	if !(this.Rate >= 0) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.Rate)))
+	if !(this.Rate > 0) {
+		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be greater than '0'", protovalidator.Int32ToString(int32(this.Rate)))
 	}
-	if !(this.Rate <= 1) {
-		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be less than or equal to '1'", protovalidator.Int32ToString(int32(this.Rate)))
+	if !(this.Rate <= 2) {
+		return protovalidator.FieldError1("ChannelControl", "the value of field 'rate' must be less than or equal to '2'", protovalidator.Int32ToString(int32(this.Rate)))
 	}
 	return nil
 }
