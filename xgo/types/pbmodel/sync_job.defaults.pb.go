@@ -261,6 +261,14 @@ func (this *SyncJobSchedule) SetDefaults() {
 	return
 }
 
+// Set default value for message model.SyncJobSchedule.Parameter
+func (this *SyncJobSchedule_Parameter) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.SyncJobRelease
 func (this *SyncJobRelease) SetDefaults() {
 	if this == nil {

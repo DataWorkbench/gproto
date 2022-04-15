@@ -17052,6 +17052,55 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> 
+        getParametersList();
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getParameters(int index);
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    int getParametersCount();
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder> 
+        getParametersOrBuilderList();
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder getParametersOrBuilder(
+        int index);
+
+    /**
+     * <pre>
      * ------ Period Options ------
      *
      * Timestamp of start time of the validity period, unit in seconds.
@@ -17161,51 +17210,6 @@ public final class PBSyncManageSyncJob {
      * @return The timeout.
      */
     int getTimeout();
-
-    /**
-     * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
-     * &#64;inject_tag: json:"retry_policy"
-     * </pre>
-     *
-     * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for retryPolicy.
-     */
-    int getRetryPolicyValue();
-    /**
-     * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
-     * &#64;inject_tag: json:"retry_policy"
-     * </pre>
-     *
-     * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-     * @return The retryPolicy.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy getRetryPolicy();
-
-    /**
-     * <pre>
-     * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-     * &#64;inject_tag: json:"retry_limit"
-     * </pre>
-     *
-     * <code>int32 retry_limit = 11 [(.validator.field) = { ... }</code>
-     * @return The retryLimit.
-     */
-    int getRetryLimit();
-
-    /**
-     * <pre>
-     * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-     * &#64;inject_tag: json:"retry_interval"
-     * </pre>
-     *
-     * <code>int32 retry_interval = 12 [(.validator.field) = { ... }</code>
-     * @return The retryInterval.
-     */
-    int getRetryInterval();
   }
   /**
    * <pre>
@@ -17226,10 +17230,10 @@ public final class PBSyncManageSyncJob {
     }
     private SyncJobSchedule() {
       schedulePolicy_ = 0;
+      parameters_ = java.util.Collections.emptyList();
       concurrencyPolicy_ = 0;
       periodType_ = "";
       express_ = "";
-      retryPolicy_ = 0;
     }
 
     @java.lang.Override
@@ -17252,6 +17256,7 @@ public final class PBSyncManageSyncJob {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -17271,6 +17276,15 @@ public final class PBSyncManageSyncJob {
             case 16: {
 
               executed_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                parameters_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              parameters_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.parser(), extensionRegistry));
               break;
             }
             case 32: {
@@ -17306,22 +17320,6 @@ public final class PBSyncManageSyncJob {
               timeout_ = input.readInt32();
               break;
             }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              retryPolicy_ = rawValue;
-              break;
-            }
-            case 88: {
-
-              retryLimit_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              retryInterval_ = input.readInt32();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -17337,6 +17335,9 @@ public final class PBSyncManageSyncJob {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -17755,6 +17756,814 @@ public final class PBSyncManageSyncJob {
       // @@protoc_insertion_point(enum_scope:model.SyncJobSchedule.RetryPolicy)
     }
 
+    public interface ParameterOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:model.SyncJobSchedule.Parameter)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 1 [(.validator.field) = { ... }</code>
+       * @return The key.
+       */
+      java.lang.String getKey();
+      /**
+       * <pre>
+       * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for key.
+       */
+      com.google.protobuf.ByteString
+          getKeyBytes();
+
+      /**
+       * <pre>
+       * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 2 [(.validator.field) = { ... }</code>
+       * @return The value.
+       */
+      java.lang.String getValue();
+      /**
+       * <pre>
+       * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for value.
+       */
+      com.google.protobuf.ByteString
+          getValueBytes();
+    }
+    /**
+     * Protobuf type {@code model.SyncJobSchedule.Parameter}
+     */
+    public static final class Parameter extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:model.SyncJobSchedule.Parameter)
+        ParameterOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Parameter.newBuilder() to construct.
+      private Parameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Parameter() {
+        key_ = "";
+        value_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Parameter();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Parameter(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                key_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                value_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncJobSchedule_Parameter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncJobSchedule_Parameter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder.class);
+      }
+
+      public static final int KEY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object key_;
+      /**
+       * <pre>
+       * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 1 [(.validator.field) = { ... }</code>
+       * @return The key.
+       */
+      @java.lang.Override
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for key.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 2;
+      private volatile java.lang.Object value_;
+      /**
+       * <pre>
+       * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 2 [(.validator.field) = { ... }</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+       * &#64;inject_tag: json:"value"
+       * </pre>
+       *
+       * <code>string value = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter)) {
+          return super.equals(obj);
+        }
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter) obj;
+
+        if (!getKey()
+            .equals(other.getKey())) return false;
+        if (!getValue()
+            .equals(other.getValue())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getKey().hashCode();
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code model.SyncJobSchedule.Parameter}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:model.SyncJobSchedule.Parameter)
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncJobSchedule_Parameter_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncJobSchedule_Parameter_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder.class);
+        }
+
+        // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          key_ = "";
+
+          value_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_SyncJobSchedule_Parameter_descriptor;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getDefaultInstanceForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter build() {
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter buildPartial() {
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter(this);
+          result.key_ = key_;
+          result.value_ = value_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter) {
+            return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter other) {
+          if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.getDefaultInstance()) return this;
+          if (!other.getKey().isEmpty()) {
+            key_ = other.key_;
+            onChanged();
+          }
+          if (!other.getValue().isEmpty()) {
+            value_ = other.value_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object key_ = "";
+        /**
+         * <pre>
+         * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"key"
+         * </pre>
+         *
+         * <code>string key = 1 [(.validator.field) = { ... }</code>
+         * @return The key.
+         */
+        public java.lang.String getKey() {
+          java.lang.Object ref = key_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            key_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"key"
+         * </pre>
+         *
+         * <code>string key = 1 [(.validator.field) = { ... }</code>
+         * @return The bytes for key.
+         */
+        public com.google.protobuf.ByteString
+            getKeyBytes() {
+          java.lang.Object ref = key_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            key_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"key"
+         * </pre>
+         *
+         * <code>string key = 1 [(.validator.field) = { ... }</code>
+         * @param value The key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKey(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          key_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"key"
+         * </pre>
+         *
+         * <code>string key = 1 [(.validator.field) = { ... }</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearKey() {
+          
+          key_ = getDefaultInstance().getKey();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The key of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"key"
+         * </pre>
+         *
+         * <code>string key = 1 [(.validator.field) = { ... }</code>
+         * @param value The bytes for key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKeyBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          key_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object value_ = "";
+        /**
+         * <pre>
+         * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"value"
+         * </pre>
+         *
+         * <code>string value = 2 [(.validator.field) = { ... }</code>
+         * @return The value.
+         */
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"value"
+         * </pre>
+         *
+         * <code>string value = 2 [(.validator.field) = { ... }</code>
+         * @return The bytes for value.
+         */
+        public com.google.protobuf.ByteString
+            getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"value"
+         * </pre>
+         *
+         * <code>string value = 2 [(.validator.field) = { ... }</code>
+         * @param value The value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValue(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"value"
+         * </pre>
+         *
+         * <code>string value = 2 [(.validator.field) = { ... }</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearValue() {
+          
+          value_ = getDefaultInstance().getValue();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The value of parameter, required, Must be UDF-8 codec, Min Length: 1, Max Length: 64.
+         * &#64;inject_tag: json:"value"
+         * </pre>
+         *
+         * <code>string value = 2 [(.validator.field) = { ... }</code>
+         * @param value The bytes for value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValueBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:model.SyncJobSchedule.Parameter)
+      }
+
+      // @@protoc_insertion_point(class_scope:model.SyncJobSchedule.Parameter)
+      private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter();
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Parameter>
+          PARSER = new com.google.protobuf.AbstractParser<Parameter>() {
+        @java.lang.Override
+        public Parameter parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Parameter(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Parameter> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Parameter> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int SCHEDULE_POLICY_FIELD_NUMBER = 1;
     private int schedulePolicy_;
     /**
@@ -17801,6 +18610,71 @@ public final class PBSyncManageSyncJob {
     @java.lang.Override
     public long getExecuted() {
       return executed_;
+    }
+
+    public static final int PARAMETERS_FIELD_NUMBER = 3;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> parameters_;
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> getParametersList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    @java.lang.Override
+    public int getParametersCount() {
+      return parameters_.size();
+    }
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getParameters(int index) {
+      return parameters_.get(index);
+    }
+    /**
+     * <pre>
+     * The parameters for scheduler. Not required. The key must be unique.
+     * &#64;inject_tag: json:"parameters"
+     * </pre>
+     *
+     * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
     }
 
     public static final int STARTED_FIELD_NUMBER = 4;
@@ -17990,69 +18864,6 @@ public final class PBSyncManageSyncJob {
       return timeout_;
     }
 
-    public static final int RETRY_POLICY_FIELD_NUMBER = 10;
-    private int retryPolicy_;
-    /**
-     * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
-     * &#64;inject_tag: json:"retry_policy"
-     * </pre>
-     *
-     * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for retryPolicy.
-     */
-    @java.lang.Override public int getRetryPolicyValue() {
-      return retryPolicy_;
-    }
-    /**
-     * <pre>
-     * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-     * Is required.
-     * &#64;inject_tag: json:"retry_policy"
-     * </pre>
-     *
-     * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-     * @return The retryPolicy.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy getRetryPolicy() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.valueOf(retryPolicy_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.UNRECOGNIZED : result;
-    }
-
-    public static final int RETRY_LIMIT_FIELD_NUMBER = 11;
-    private int retryLimit_;
-    /**
-     * <pre>
-     * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-     * &#64;inject_tag: json:"retry_limit"
-     * </pre>
-     *
-     * <code>int32 retry_limit = 11 [(.validator.field) = { ... }</code>
-     * @return The retryLimit.
-     */
-    @java.lang.Override
-    public int getRetryLimit() {
-      return retryLimit_;
-    }
-
-    public static final int RETRY_INTERVAL_FIELD_NUMBER = 12;
-    private int retryInterval_;
-    /**
-     * <pre>
-     * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-     * &#64;inject_tag: json:"retry_interval"
-     * </pre>
-     *
-     * <code>int32 retry_interval = 12 [(.validator.field) = { ... }</code>
-     * @return The retryInterval.
-     */
-    @java.lang.Override
-    public int getRetryInterval() {
-      return retryInterval_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18073,6 +18884,9 @@ public final class PBSyncManageSyncJob {
       if (executed_ != 0L) {
         output.writeInt64(2, executed_);
       }
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(3, parameters_.get(i));
+      }
       if (started_ != 0L) {
         output.writeInt64(4, started_);
       }
@@ -18091,15 +18905,6 @@ public final class PBSyncManageSyncJob {
       if (timeout_ != 0) {
         output.writeInt32(9, timeout_);
       }
-      if (retryPolicy_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.RetryPolicyUnset.getNumber()) {
-        output.writeEnum(10, retryPolicy_);
-      }
-      if (retryLimit_ != 0) {
-        output.writeInt32(11, retryLimit_);
-      }
-      if (retryInterval_ != 0) {
-        output.writeInt32(12, retryInterval_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -18116,6 +18921,10 @@ public final class PBSyncManageSyncJob {
       if (executed_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, executed_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, parameters_.get(i));
       }
       if (started_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -18139,18 +18948,6 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, timeout_);
       }
-      if (retryPolicy_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.RetryPolicyUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, retryPolicy_);
-      }
-      if (retryLimit_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retryLimit_);
-      }
-      if (retryInterval_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retryInterval_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -18169,6 +18966,8 @@ public final class PBSyncManageSyncJob {
       if (schedulePolicy_ != other.schedulePolicy_) return false;
       if (getExecuted()
           != other.getExecuted()) return false;
+      if (!getParametersList()
+          .equals(other.getParametersList())) return false;
       if (getStarted()
           != other.getStarted()) return false;
       if (getEnded()
@@ -18180,11 +18979,6 @@ public final class PBSyncManageSyncJob {
           .equals(other.getExpress())) return false;
       if (getTimeout()
           != other.getTimeout()) return false;
-      if (retryPolicy_ != other.retryPolicy_) return false;
-      if (getRetryLimit()
-          != other.getRetryLimit()) return false;
-      if (getRetryInterval()
-          != other.getRetryInterval()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -18201,6 +18995,10 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + EXECUTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExecuted());
+      if (getParametersCount() > 0) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParametersList().hashCode();
+      }
       hash = (37 * hash) + STARTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStarted());
@@ -18215,12 +19013,6 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getExpress().hashCode();
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getTimeout();
-      hash = (37 * hash) + RETRY_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + retryPolicy_;
-      hash = (37 * hash) + RETRY_LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getRetryLimit();
-      hash = (37 * hash) + RETRY_INTERVAL_FIELD_NUMBER;
-      hash = (53 * hash) + getRetryInterval();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18354,6 +19146,7 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getParametersFieldBuilder();
         }
       }
       @java.lang.Override
@@ -18363,6 +19156,12 @@ public final class PBSyncManageSyncJob {
 
         executed_ = 0L;
 
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          parametersBuilder_.clear();
+        }
         started_ = 0L;
 
         ended_ = 0L;
@@ -18374,12 +19173,6 @@ public final class PBSyncManageSyncJob {
         express_ = "";
 
         timeout_ = 0;
-
-        retryPolicy_ = 0;
-
-        retryLimit_ = 0;
-
-        retryInterval_ = 0;
 
         return this;
       }
@@ -18407,17 +19200,24 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule(this);
+        int from_bitField0_ = bitField0_;
         result.schedulePolicy_ = schedulePolicy_;
         result.executed_ = executed_;
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
         result.started_ = started_;
         result.ended_ = ended_;
         result.concurrencyPolicy_ = concurrencyPolicy_;
         result.periodType_ = periodType_;
         result.express_ = express_;
         result.timeout_ = timeout_;
-        result.retryPolicy_ = retryPolicy_;
-        result.retryLimit_ = retryLimit_;
-        result.retryInterval_ = retryInterval_;
         onBuilt();
         return result;
       }
@@ -18472,6 +19272,32 @@ public final class PBSyncManageSyncJob {
         if (other.getExecuted() != 0L) {
           setExecuted(other.getExecuted());
         }
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
+        }
         if (other.getStarted() != 0L) {
           setStarted(other.getStarted());
         }
@@ -18491,15 +19317,6 @@ public final class PBSyncManageSyncJob {
         }
         if (other.getTimeout() != 0) {
           setTimeout(other.getTimeout());
-        }
-        if (other.retryPolicy_ != 0) {
-          setRetryPolicyValue(other.getRetryPolicyValue());
-        }
-        if (other.getRetryLimit() != 0) {
-          setRetryLimit(other.getRetryLimit());
-        }
-        if (other.getRetryInterval() != 0) {
-          setRetryInterval(other.getRetryInterval());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18529,6 +19346,7 @@ public final class PBSyncManageSyncJob {
         }
         return this;
       }
+      private int bitField0_;
 
       private int schedulePolicy_ = 0;
       /**
@@ -18661,6 +19479,336 @@ public final class PBSyncManageSyncJob {
         executed_ = 0L;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          parameters_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter>(parameters_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder> parametersBuilder_;
+
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public int getParametersCount() {
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder setParameters(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder setParameters(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder addParameters(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder addParameters(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder addParameters(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder addParameters(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The parameters for scheduler. Not required. The key must be unique.
+       * &#64;inject_tag: json:"parameters"
+       * </pre>
+       *
+       * <code>repeated .model.SyncJobSchedule.Parameter parameters = 3;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.Parameter.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.ParameterOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
       }
 
       private long started_ ;
@@ -19116,182 +20264,6 @@ public final class PBSyncManageSyncJob {
       public Builder clearTimeout() {
         
         timeout_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retryPolicy_ = 0;
-      /**
-       * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
-       * &#64;inject_tag: json:"retry_policy"
-       * </pre>
-       *
-       * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for retryPolicy.
-       */
-      @java.lang.Override public int getRetryPolicyValue() {
-        return retryPolicy_;
-      }
-      /**
-       * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
-       * &#64;inject_tag: json:"retry_policy"
-       * </pre>
-       *
-       * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for retryPolicy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetryPolicyValue(int value) {
-        
-        retryPolicy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
-       * &#64;inject_tag: json:"retry_policy"
-       * </pre>
-       *
-       * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-       * @return The retryPolicy.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy getRetryPolicy() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy result = com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.valueOf(retryPolicy_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
-       * &#64;inject_tag: json:"retry_policy"
-       * </pre>
-       *
-       * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-       * @param value The retryPolicy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetryPolicy(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobSchedule.RetryPolicy value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        retryPolicy_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Retry policy when task failed. 1 =&gt; "not retry" 2 =&gt; "auto retry".
-       * Is required.
-       * &#64;inject_tag: json:"retry_policy"
-       * </pre>
-       *
-       * <code>.model.SyncJobSchedule.RetryPolicy retry_policy = 10 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetryPolicy() {
-        
-        retryPolicy_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retryLimit_ ;
-      /**
-       * <pre>
-       * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-       * &#64;inject_tag: json:"retry_limit"
-       * </pre>
-       *
-       * <code>int32 retry_limit = 11 [(.validator.field) = { ... }</code>
-       * @return The retryLimit.
-       */
-      @java.lang.Override
-      public int getRetryLimit() {
-        return retryLimit_;
-      }
-      /**
-       * <pre>
-       * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-       * &#64;inject_tag: json:"retry_limit"
-       * </pre>
-       *
-       * <code>int32 retry_limit = 11 [(.validator.field) = { ... }</code>
-       * @param value The retryLimit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetryLimit(int value) {
-        
-        retryLimit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-       * &#64;inject_tag: json:"retry_limit"
-       * </pre>
-       *
-       * <code>int32 retry_limit = 11 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetryLimit() {
-        
-        retryLimit_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retryInterval_ ;
-      /**
-       * <pre>
-       * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-       * &#64;inject_tag: json:"retry_interval"
-       * </pre>
-       *
-       * <code>int32 retry_interval = 12 [(.validator.field) = { ... }</code>
-       * @return The retryInterval.
-       */
-      @java.lang.Override
-      public int getRetryInterval() {
-        return retryInterval_;
-      }
-      /**
-       * <pre>
-       * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-       * &#64;inject_tag: json:"retry_interval"
-       * </pre>
-       *
-       * <code>int32 retry_interval = 12 [(.validator.field) = { ... }</code>
-       * @param value The retryInterval to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetryInterval(int value) {
-        
-        retryInterval_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-       * &#64;inject_tag: json:"retry_interval"
-       * </pre>
-       *
-       * <code>int32 retry_interval = 12 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetryInterval() {
-        
-        retryInterval_ = 0;
         onChanged();
         return this;
       }
@@ -21597,6 +22569,11 @@ public final class PBSyncManageSyncJob {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_SyncJobSchedule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_SyncJobSchedule_Parameter_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_SyncJobSchedule_Parameter_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_SyncJobRelease_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21707,44 +22684,43 @@ public final class PBSyncManageSyncJob {
       "erCdcSource\022/\n\020log_miner_source\030\036 \001(\0132\025." +
       "model.LogMinerSource\022(\n\014redis_target\030\037 \001" +
       "(\0132\022.model.RedisTarget\022&\n\013hive_target\030  " +
-      "\001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\256\007\n\017SyncJ" +
+      "\001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJ" +
       "obSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.mo" +
       "del.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t" +
       "\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sch" +
-      "edule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007sta" +
-      "rted\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\0162" +
-      "(.model.SyncJobSchedule.ConcurrencyPolic" +
-      "yB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342" +
-      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006" +
-      "minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007" +
-      "express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005" +
-      "\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t" +
-      "\022\007\262\001\0048d@\000\022G\n\014retry_policy\030\n \001(\0162\".model." +
-      "SyncJobSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_p" +
-      "olicy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_inter" +
-      "val\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337" +
-      "\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023Schedul" +
-      "ePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appoi" +
-      "ntTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concurrency" +
-      "Policy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Al" +
-      "low\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryP" +
-      "olicy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n" +
-      "\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030" +
-      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302" +
-      "\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob." +
-      "TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006status\030\006 \001(\0162\034.mo" +
-      "del.SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022" +
-      " \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007cre" +
-      "ated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003" +
-      "B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000" +
-      "\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003" +
-      "Bn\n\"com.dataomnis.gproto.types.pbmodelB\023" +
-      "PBSyncManageSyncJobP\000Z1github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
+      "edule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\npar" +
+      "ameters\030\003 \003(\0132 .model.SyncJobSchedule.Pa" +
+      "rameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n" +
+      "\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency" +
+      "_policy\030\006 \001(\0162(.model.SyncJobSchedule.Co" +
+      "ncurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period" +
+      "_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
+      "\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005m" +
+      "onthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sch" +
+      "edule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeo" +
+      "ut\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022\037\n\003" +
+      "key\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002" +
+      " \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016SchedulePoli" +
+      "cy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodici" +
+      "ty\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S" +
+      "\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPolicy" +
+      "Unset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replac" +
+      "e\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000" +
+      "\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJob" +
+      "Release\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
+      "\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.m" +
+      "odel.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006stat" +
+      "us\030\006 \001(\0162\034.model.SyncJobRelease.Status\022\014" +
+      "\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
+      "updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002" +
+      "\022\013\n\007Deleted\020\003Bn\n\"com.dataomnis.gproto.ty" +
+      "pes.pbmodelB\023PBSyncManageSyncJobP\000Z1gith" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
+      "modelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21802,7 +22778,13 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobSchedule_descriptor,
-        new java.lang.String[] { "SchedulePolicy", "Executed", "Started", "Ended", "ConcurrencyPolicy", "PeriodType", "Express", "Timeout", "RetryPolicy", "RetryLimit", "RetryInterval", });
+        new java.lang.String[] { "SchedulePolicy", "Executed", "Parameters", "Started", "Ended", "ConcurrencyPolicy", "PeriodType", "Express", "Timeout", });
+    internal_static_model_SyncJobSchedule_Parameter_descriptor =
+      internal_static_model_SyncJobSchedule_descriptor.getNestedTypes().get(0);
+    internal_static_model_SyncJobSchedule_Parameter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_SyncJobSchedule_Parameter_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_model_SyncJobRelease_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_model_SyncJobRelease_fieldAccessorTable = new

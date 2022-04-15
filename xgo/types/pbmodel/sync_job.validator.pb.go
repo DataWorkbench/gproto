@@ -868,6 +868,18 @@ func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_executed() error {
 	return nil
 }
 
+func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_parameters() error {
+	for _, item := range this.Parameters {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_started() error {
 	if !(this.Started >= 0) {
 		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'started' must be greater than or equal to '0'", protovalidator.Int64ToString(this.Started))
@@ -940,58 +952,6 @@ func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_timeout() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_SyncJobSchedule_InEnums_RetryPolicy = map[SyncJobSchedule_RetryPolicy]bool{0: true, 1: true, 2: true}
-
-func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_retry_policy() error {
-	if !(this.RetryPolicy > 0) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
-	}
-	if !(_xxx_xxx_Validator_SyncJobSchedule_InEnums_RetryPolicy[this.RetryPolicy]) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
-	}
-	return nil
-}
-
-func (this *SyncJobSchedule) _xxx_xxx_Validator_CheckIf_retry_limit() bool {
-	if !(this.RetryPolicy == 2) {
-		return false
-	}
-	return true
-}
-
-func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_retry_limit() error {
-	if !this._xxx_xxx_Validator_CheckIf_retry_limit() {
-		return nil
-	}
-	if !(this.RetryLimit >= 0) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_limit' must be greater than or equal to '0'", protovalidator.Int32ToString(this.RetryLimit))
-	}
-	if !(this.RetryLimit <= 100) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.RetryLimit))
-	}
-	return nil
-}
-
-func (this *SyncJobSchedule) _xxx_xxx_Validator_CheckIf_retry_interval() bool {
-	if !(this.RetryPolicy == 2) {
-		return false
-	}
-	return true
-}
-
-func (this *SyncJobSchedule) _xxx_xxx_Validator_Validate_retry_interval() error {
-	if !this._xxx_xxx_Validator_CheckIf_retry_interval() {
-		return nil
-	}
-	if !(this.RetryInterval >= 1) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_interval' must be greater than or equal to '1'", protovalidator.Int32ToString(this.RetryInterval))
-	}
-	if !(this.RetryInterval <= 30) {
-		return protovalidator.FieldError1("SyncJobSchedule", "the value of field 'retry_interval' must be less than or equal to '30'", protovalidator.Int32ToString(this.RetryInterval))
-	}
-	return nil
-}
-
 // Set default value for message model.SyncJobSchedule
 func (this *SyncJobSchedule) Validate() error {
 	if this == nil {
@@ -1001,6 +961,9 @@ func (this *SyncJobSchedule) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_executed(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_parameters(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_started(); err != nil {
@@ -1021,13 +984,44 @@ func (this *SyncJobSchedule) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_retry_policy(); err != nil {
+	return nil
+}
+
+func (this *SyncJobSchedule_Parameter) _xxx_xxx_Validator_Validate_key() error {
+	if !(utf8.RuneCountInString(this.Key) >= 1) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the character length of field 'key' must be greater than or equal to '1'", protovalidator.StringCharsetLenToString(this.Key))
+	}
+	if !(utf8.RuneCountInString(this.Key) <= 64) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the character length of field 'key' must be less than or equal to '64'", protovalidator.StringCharsetLenToString(this.Key))
+	}
+	if !(utf8.ValidString(this.Key)) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the value of field 'key' must be a UTF8 string", this.Key)
+	}
+	return nil
+}
+
+func (this *SyncJobSchedule_Parameter) _xxx_xxx_Validator_Validate_value() error {
+	if !(utf8.RuneCountInString(this.Value) >= 1) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the character length of field 'value' must be greater than or equal to '1'", protovalidator.StringCharsetLenToString(this.Value))
+	}
+	if !(utf8.RuneCountInString(this.Value) <= 64) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the character length of field 'value' must be less than or equal to '64'", protovalidator.StringCharsetLenToString(this.Value))
+	}
+	if !(utf8.ValidString(this.Value)) {
+		return protovalidator.FieldError1("SyncJobSchedule_Parameter", "the value of field 'value' must be a UTF8 string", this.Value)
+	}
+	return nil
+}
+
+// Set default value for message model.SyncJobSchedule.Parameter
+func (this *SyncJobSchedule_Parameter) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_key(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_retry_limit(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_retry_interval(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_value(); err != nil {
 		return err
 	}
 	return nil
