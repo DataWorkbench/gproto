@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseAlertManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/alert.proto";
+import "proto/types/model/stream_job.proto";
+import "proto/types/model/sync_job.proto";
+
+// ListAlertPolicies used as reply parameters in RPC or response body in HTTP.
+message ListAlertPolicies {
+  // @inject_tag: json:"infos"
+  repeated model.AlertPolicy infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3;
+}
+
+message CreateAlertPolicy {
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+}
+
+// DescribeAlertPolicy used as reply parameters in RPC.
+message DescribeAlertPolicy {
+  // @inject_tag: json:"info"
+  model.AlertPolicy info = 1;
+}
+
+message ListJobAlertPolicies {
+  // @inject_tag: json:"infos"
+  repeated model.AlertPolicy infos = 1;
+}
+
+message ListAlertPolicyJobs {
+  // @inject_tag: json:"stream_jobs"
+  repeated model.StreamJob stream_jobs = 1;
+
+  // @inject_tag: json:"sync_jobs"
+  repeated model.SyncJob sync_jobs =  2;
+}

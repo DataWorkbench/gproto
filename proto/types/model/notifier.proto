@@ -10,7 +10,7 @@ option java_package = "com.dataomnis.gproto.types.pbmodel";
 option java_outer_classname = "PBModelNotifier";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 message NotificationList {
   string create_time = 1;

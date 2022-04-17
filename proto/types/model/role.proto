@@ -109,6 +109,7 @@ message ProjectModule {
     SyncJobReleaseManage = 113;
     SyncJobVersionManage = 114;
     SyncJobInstanceManage = 115;
+    AlertManage = 116;
   }
 
   // The module id.
