@@ -793,7 +793,7 @@ type ChannelControl struct {
 	RecordNum string `protobuf:"bytes,2,opt,name=record_num,json=recordNum,proto3" json:"record_num"`
 	// The allow percentage where the job is error
 	Percentage float64 `protobuf:"fixed64,3,opt,name=percentage,proto3" json:"percentage"`
-	// sync rate
+	//sync rate
 	Rate ChannelControl_RatePolicy `protobuf:"varint,4,opt,name=rate,proto3,enum=model.ChannelControl_RatePolicy" json:"rate"`
 	// bytes
 	Bytes int32 `protobuf:"varint,5,opt,name=bytes,proto3" json:"bytes"`

@@ -5,10 +5,6 @@
 
 package pbmodel
 
-import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
-)
-
 func (this *NotificationList) _xxx_xxx_Validator_Validate_items() error {
 	for _, item := range this.Items {
 		_ = item // To avoid unused panics.
