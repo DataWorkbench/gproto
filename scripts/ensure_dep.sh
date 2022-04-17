@@ -21,7 +21,7 @@ if ! type protoc-gen-godefaults > /dev/null 2>&1; then
   go install github.com/yu31/protoc-plugin/cmd/protoc-gen-godefaults
 fi
 # check plugin godefaults version.
-if [[ $(protoc-gen-godefaults version | cut -f2 -d' ') != "0.0.1" ]]; then
+if [[ $(protoc-gen-godefaults version | cut -f2 -d' ') != "0.0.2" ]]; then
   go install github.com/yu31/protoc-plugin/cmd/protoc-gen-godefaults
 fi
 
