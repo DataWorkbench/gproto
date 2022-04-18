@@ -370,7 +370,7 @@ message DescribeSyncFlinkUIByInstanceId {
     string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
 }
 
-// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+// GenerateJobJson used as a request parameters for RPC.
 message GenerateJobJson {
     // source_type
     // @inject_tag: json:"source_type" uri:"source_type"
