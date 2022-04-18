@@ -3615,9 +3615,9 @@ public final class PBModelRole {
        */
       StreamJobInstanceManage(111),
       /**
-       * <code>SyncJobDevMange = 112;</code>
+       * <code>SyncJobDevManage = 112;</code>
        */
-      SyncJobDevMange(112),
+      SyncJobDevManage(112),
       /**
        * <code>SyncJobReleaseManage = 113;</code>
        */
@@ -3706,9 +3706,9 @@ public final class PBModelRole {
        */
       public static final int StreamJobInstanceManage_VALUE = 111;
       /**
-       * <code>SyncJobDevMange = 112;</code>
+       * <code>SyncJobDevManage = 112;</code>
        */
-      public static final int SyncJobDevMange_VALUE = 112;
+      public static final int SyncJobDevManage_VALUE = 112;
       /**
        * <code>SyncJobReleaseManage = 113;</code>
        */
@@ -3766,7 +3766,7 @@ public final class PBModelRole {
           case 109: return StreamJobReleaseManage;
           case 110: return StreamJobVersionManage;
           case 111: return StreamJobInstanceManage;
-          case 112: return SyncJobDevMange;
+          case 112: return SyncJobDevManage;
           case 113: return SyncJobReleaseManage;
           case 114: return SyncJobVersionManage;
           case 115: return SyncJobInstanceManage;
@@ -7964,36 +7964,36 @@ public final class PBModelRole {
       "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302" +
       "\001\002\"\000\"^\n\004Type\022\r\n\tTypeUnset\020\000\022\016\n\nSpaceAdmi" +
       "n\020\001\022\022\n\016SpaceDeveloper\020\002\022\021\n\rSpaceOperator" +
-      "\020\003\022\020\n\014SpaceVisitor\020\004\"\343\004\n\rProjectModule\022\037" +
+      "\020\003\022\020\n\014SpaceVisitor\020\004\"\344\004\n\rProjectModule\022\037" +
       "\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-\022>\n\010class" +
       "ify\030\002 \001(\0162\035.model.ProjectModule.Classify" +
       "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
       "\"\000\022$\n\tapi_lists\030\004 \003(\0132\021.model.ProjectAPI" +
-      "\"\257\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
+      "\"\260\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
       "tManage\020\001\022\017\n\013SpaceManage\020\002\022\023\n\017NotifierMa" +
       "nager\020\003\022\020\n\014MemberManage\020e\022\016\n\nRoleManage\020" +
       "f\022\023\n\017DataSourceMange\020g\022\r\n\tUDFManage\020h\022\016\n" +
       "\nFileManage\020i\022\020\n\014NetworkMange\020j\022\020\n\014Clust" +
       "erMange\020k\022\025\n\021StreamJobDevMange\020l\022\032\n\026Stre" +
       "amJobReleaseManage\020m\022\032\n\026StreamJobVersion" +
-      "Manage\020n\022\033\n\027StreamJobInstanceManage\020o\022\023\n" +
-      "\017SyncJobDevMange\020p\022\030\n\024SyncJobReleaseMana" +
-      "ge\020q\022\030\n\024SyncJobVersionManage\020r\022\031\n\025SyncJo" +
-      "bInstanceManage\020s\022\017\n\013AlertManage\020t\"\302\003\n\nP" +
-      "rojectAPI\022\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000" +
-      "\022!\n\014display_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\tp" +
-      "erm_type\030\003 \001(\0162\032.model.ProjectAPI.PermTy" +
-      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\013permissions\030\004 \003(\0132\034" +
-      ".model.ProjectAPI.PermissionB\013\342\337\037\007\022\005\352\001\0020" +
-      "\000\022E\n\014system_roles\030\006 \003(\0132\".model.ProjectA" +
-      "PI.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPerm" +
-      "ission\022&\n\013system_role\030\001 \001(\0132\021.model.Syst" +
-      "emRole\022\017\n\007allowed\030\002 \001(\010\0322\n\020SystemRolesEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010P" +
-      "ermType\022\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n" +
-      "\004Read\020\002Bf\n\"com.dataomnis.gproto.types.pb" +
-      "modelB\013PBModelRoleP\000Z1github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbmodelb\006proto3"
+      "Manage\020n\022\033\n\027StreamJobInstanceManage\020o\022\024\n" +
+      "\020SyncJobDevManage\020p\022\030\n\024SyncJobReleaseMan" +
+      "age\020q\022\030\n\024SyncJobVersionManage\020r\022\031\n\025SyncJ" +
+      "obInstanceManage\020s\022\017\n\013AlertManage\020t\"\302\003\n\n" +
+      "ProjectAPI\022\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
+      "\000\022!\n\014display_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\t" +
+      "perm_type\030\003 \001(\0162\032.model.ProjectAPI.PermT" +
+      "ypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\013permissions\030\004 \003(\0132" +
+      "\034.model.ProjectAPI.PermissionB\013\342\337\037\007\022\005\352\001\002" +
+      "0\000\022E\n\014system_roles\030\006 \003(\0132\".model.Project" +
+      "API.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPer" +
+      "mission\022&\n\013system_role\030\001 \001(\0132\021.model.Sys" +
+      "temRole\022\017\n\007allowed\030\002 \001(\010\0322\n\020SystemRolesE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010" +
+      "PermType\022\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010" +
+      "\n\004Read\020\002Bf\n\"com.dataomnis.gproto.types.p" +
+      "bmodelB\013PBModelRoleP\000Z1github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
