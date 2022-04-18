@@ -447,7 +447,7 @@ func (x *DescribeSyncFlinkUIByInstanceId) GetWebUi() string {
 	return ""
 }
 
-// Generate script JobJson
+// Generate script sync job json
 type GenerateJobJson struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
