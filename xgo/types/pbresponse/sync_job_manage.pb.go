@@ -543,6 +543,100 @@ func (x *ConvertSyncJobMode) GetJob() string {
 	return ""
 }
 
+type PingSyncJobConnection struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *pbmodel.SyncJobConnection `protobuf:"bytes,1,opt,name=info,proto3" json:"info"`
+}
+
+func (x *PingSyncJobConnection) Reset() {
+	*x = PingSyncJobConnection{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PingSyncJobConnection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingSyncJobConnection) ProtoMessage() {}
+
+func (x *PingSyncJobConnection) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingSyncJobConnection.ProtoReflect.Descriptor instead.
+func (*PingSyncJobConnection) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_sync_job_manage_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *PingSyncJobConnection) GetInfo() *pbmodel.SyncJobConnection {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type DescribeSyncConnection struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *pbmodel.SyncJobConnection `protobuf:"bytes,1,opt,name=info,proto3" json:"info"`
+}
+
+func (x *DescribeSyncConnection) Reset() {
+	*x = DescribeSyncConnection{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeSyncConnection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeSyncConnection) ProtoMessage() {}
+
+func (x *DescribeSyncConnection) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeSyncConnection.ProtoReflect.Descriptor instead.
+func (*DescribeSyncConnection) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_sync_job_manage_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DescribeSyncConnection) GetInfo() *pbmodel.SyncJobConnection {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
 var File_proto_types_response_sync_job_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_response_sync_job_manage_proto_rawDesc = []byte{
@@ -599,15 +693,24 @@ var file_proto_types_response_sync_job_manage_proto_rawDesc = []byte{
 	0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x22, 0x26, 0x0a, 0x12,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x6f,
 	0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6a, 0x6f, 0x62, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x03, 0x6a, 0x6f, 0x62, 0x42, 0x78, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61,
-	0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70,
-	0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x17, 0x50,
-	0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62,
-	0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
-	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
-	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x03, 0x6a, 0x6f, 0x62, 0x22, 0x45, 0x0a, 0x15, 0x50, 0x69, 0x6e, 0x67, 0x53, 0x79, 0x6e, 0x63,
+	0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x0a,
+	0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x46, 0x0a, 0x16, 0x44,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x43, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63,
+	0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04, 0x69,
+	0x6e, 0x66, 0x6f, 0x42, 0x78, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f,
+	0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65,
+	0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x17, 0x50, 0x42,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63,
+	0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70,
+	0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -622,7 +725,7 @@ func file_proto_types_response_sync_job_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_response_sync_job_manage_proto_rawDescData
 }
 
-var file_proto_types_response_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_proto_types_response_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_proto_types_response_sync_job_manage_proto_goTypes = []interface{}{
 	(*ListSyncJobs)(nil),                    // 0: response.ListSyncJobs
 	(*CreateSyncJob)(nil),                   // 1: response.CreateSyncJob
@@ -634,23 +737,28 @@ var file_proto_types_response_sync_job_manage_proto_goTypes = []interface{}{
 	(*DescribeSyncFlinkUIByInstanceId)(nil), // 7: response.DescribeSyncFlinkUIByInstanceId
 	(*GenerateJobJson)(nil),                 // 8: response.GenerateJobJson
 	(*ConvertSyncJobMode)(nil),              // 9: response.ConvertSyncJobMode
-	(*pbmodel.SyncJob)(nil),                 // 10: model.SyncJob
-	(*pbmodel.SyncJobConf)(nil),             // 11: model.SyncJobConf
-	(*pbmodel.SyncJobSchedule)(nil),         // 12: model.SyncJobSchedule
-	(*pbmodel.SyncJobRelease)(nil),          // 13: model.SyncJobRelease
+	(*PingSyncJobConnection)(nil),           // 10: response.PingSyncJobConnection
+	(*DescribeSyncConnection)(nil),          // 11: response.DescribeSyncConnection
+	(*pbmodel.SyncJob)(nil),                 // 12: model.SyncJob
+	(*pbmodel.SyncJobConf)(nil),             // 13: model.SyncJobConf
+	(*pbmodel.SyncJobSchedule)(nil),         // 14: model.SyncJobSchedule
+	(*pbmodel.SyncJobRelease)(nil),          // 15: model.SyncJobRelease
+	(*pbmodel.SyncJobConnection)(nil),       // 16: model.SyncJobConnection
 }
 var file_proto_types_response_sync_job_manage_proto_depIdxs = []int32{
-	10, // 0: response.ListSyncJobs.infos:type_name -> model.SyncJob
-	10, // 1: response.DescribeSyncJob.info:type_name -> model.SyncJob
-	11, // 2: response.GetSyncJobConf.conf:type_name -> model.SyncJobConf
-	12, // 3: response.GetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
-	13, // 4: response.ListReleaseSyncJobs.infos:type_name -> model.SyncJobRelease
-	10, // 5: response.ListSyncJobVersions.infos:type_name -> model.SyncJob
-	6,  // [6:6] is the sub-list for method output_type
-	6,  // [6:6] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	12, // 0: response.ListSyncJobs.infos:type_name -> model.SyncJob
+	12, // 1: response.DescribeSyncJob.info:type_name -> model.SyncJob
+	13, // 2: response.GetSyncJobConf.conf:type_name -> model.SyncJobConf
+	14, // 3: response.GetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
+	15, // 4: response.ListReleaseSyncJobs.infos:type_name -> model.SyncJobRelease
+	12, // 5: response.ListSyncJobVersions.infos:type_name -> model.SyncJob
+	16, // 6: response.PingSyncJobConnection.info:type_name -> model.SyncJobConnection
+	16, // 7: response.DescribeSyncConnection.info:type_name -> model.SyncJobConnection
+	8,  // [8:8] is the sub-list for method output_type
+	8,  // [8:8] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_response_sync_job_manage_proto_init() }
@@ -779,6 +887,30 @@ func file_proto_types_response_sync_job_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_response_sync_job_manage_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PingSyncJobConnection); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_response_sync_job_manage_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeSyncConnection); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -786,7 +918,7 @@ func file_proto_types_response_sync_job_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_response_sync_job_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

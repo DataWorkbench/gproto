@@ -131,14 +131,6 @@ func (this *OfflineReleaseSyncJob) SetDefaults() {
 	return
 }
 
-// Set default value for message request.SuspendReleaseSyncJob
-func (this *SuspendReleaseSyncJob) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.ResumeReleaseSyncJob
 func (this *ResumeReleaseSyncJob) SetDefaults() {
 	if this == nil {
@@ -181,6 +173,22 @@ func (this *DescribeSyncFlinkUIByInstanceId) SetDefaults() {
 
 // Set default value for message request.GenerateJobJson
 func (this *GenerateJobJson) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.PingSyncJobConnection
+func (this *PingSyncJobConnection) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DescribeSyncConnection
+func (this *DescribeSyncConnection) SetDefaults() {
 	if this == nil {
 		return
 	}

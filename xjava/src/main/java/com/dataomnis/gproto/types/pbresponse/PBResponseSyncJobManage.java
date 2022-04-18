@@ -6334,27 +6334,27 @@ public final class PBResponseSyncJobManage {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"job"
+     * &#64;inject_tag: json:"sync_job_script"
      * </pre>
      *
-     * <code>string job = 1;</code>
-     * @return The job.
+     * <code>string sync_job_script = 1;</code>
+     * @return The syncJobScript.
      */
-    java.lang.String getJob();
+    java.lang.String getSyncJobScript();
     /**
      * <pre>
-     * &#64;inject_tag: json:"job"
+     * &#64;inject_tag: json:"sync_job_script"
      * </pre>
      *
-     * <code>string job = 1;</code>
-     * @return The bytes for job.
+     * <code>string sync_job_script = 1;</code>
+     * @return The bytes for syncJobScript.
      */
     com.google.protobuf.ByteString
-        getJobBytes();
+        getSyncJobScriptBytes();
   }
   /**
    * <pre>
-   * GenerateJobJson
+   * Generate script sync job json
    * </pre>
    *
    * Protobuf type {@code response.GenerateJobJson}
@@ -6369,7 +6369,7 @@ public final class PBResponseSyncJobManage {
       super(builder);
     }
     private GenerateJobJson() {
-      job_ = "";
+      syncJobScript_ = "";
     }
 
     @java.lang.Override
@@ -6405,7 +6405,7 @@ public final class PBResponseSyncJobManage {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              job_ = s;
+              syncJobScript_ = s;
               break;
             }
             default: {
@@ -6440,46 +6440,46 @@ public final class PBResponseSyncJobManage {
               com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson.class, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson.Builder.class);
     }
 
-    public static final int JOB_FIELD_NUMBER = 1;
-    private volatile java.lang.Object job_;
+    public static final int SYNC_JOB_SCRIPT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object syncJobScript_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"job"
+     * &#64;inject_tag: json:"sync_job_script"
      * </pre>
      *
-     * <code>string job = 1;</code>
-     * @return The job.
+     * <code>string sync_job_script = 1;</code>
+     * @return The syncJobScript.
      */
     @java.lang.Override
-    public java.lang.String getJob() {
-      java.lang.Object ref = job_;
+    public java.lang.String getSyncJobScript() {
+      java.lang.Object ref = syncJobScript_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        job_ = s;
+        syncJobScript_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"job"
+     * &#64;inject_tag: json:"sync_job_script"
      * </pre>
      *
-     * <code>string job = 1;</code>
-     * @return The bytes for job.
+     * <code>string sync_job_script = 1;</code>
+     * @return The bytes for syncJobScript.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getJobBytes() {
-      java.lang.Object ref = job_;
+        getSyncJobScriptBytes() {
+      java.lang.Object ref = syncJobScript_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        job_ = b;
+        syncJobScript_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6500,8 +6500,8 @@ public final class PBResponseSyncJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, job_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncJobScript_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, syncJobScript_);
       }
       unknownFields.writeTo(output);
     }
@@ -6512,8 +6512,8 @@ public final class PBResponseSyncJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, job_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncJobScript_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, syncJobScript_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6530,8 +6530,8 @@ public final class PBResponseSyncJobManage {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson other = (com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson) obj;
 
-      if (!getJob()
-          .equals(other.getJob())) return false;
+      if (!getSyncJobScript()
+          .equals(other.getSyncJobScript())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6543,8 +6543,8 @@ public final class PBResponseSyncJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JOB_FIELD_NUMBER;
-      hash = (53 * hash) + getJob().hashCode();
+      hash = (37 * hash) + SYNC_JOB_SCRIPT_FIELD_NUMBER;
+      hash = (53 * hash) + getSyncJobScript().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6642,7 +6642,7 @@ public final class PBResponseSyncJobManage {
     }
     /**
      * <pre>
-     * GenerateJobJson
+     * Generate script sync job json
      * </pre>
      *
      * Protobuf type {@code response.GenerateJobJson}
@@ -6682,7 +6682,7 @@ public final class PBResponseSyncJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        job_ = "";
+        syncJobScript_ = "";
 
         return this;
       }
@@ -6710,7 +6710,7 @@ public final class PBResponseSyncJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson result = new com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson(this);
-        result.job_ = job_;
+        result.syncJobScript_ = syncJobScript_;
         onBuilt();
         return result;
       }
@@ -6759,8 +6759,8 @@ public final class PBResponseSyncJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson.getDefaultInstance()) return this;
-        if (!other.getJob().isEmpty()) {
-          job_ = other.job_;
+        if (!other.getSyncJobScript().isEmpty()) {
+          syncJobScript_ = other.syncJobScript_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6792,22 +6792,22 @@ public final class PBResponseSyncJobManage {
         return this;
       }
 
-      private java.lang.Object job_ = "";
+      private java.lang.Object syncJobScript_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"job"
+       * &#64;inject_tag: json:"sync_job_script"
        * </pre>
        *
-       * <code>string job = 1;</code>
-       * @return The job.
+       * <code>string sync_job_script = 1;</code>
+       * @return The syncJobScript.
        */
-      public java.lang.String getJob() {
-        java.lang.Object ref = job_;
+      public java.lang.String getSyncJobScript() {
+        java.lang.Object ref = syncJobScript_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          job_ = s;
+          syncJobScript_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6815,20 +6815,20 @@ public final class PBResponseSyncJobManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"job"
+       * &#64;inject_tag: json:"sync_job_script"
        * </pre>
        *
-       * <code>string job = 1;</code>
-       * @return The bytes for job.
+       * <code>string sync_job_script = 1;</code>
+       * @return The bytes for syncJobScript.
        */
       public com.google.protobuf.ByteString
-          getJobBytes() {
-        java.lang.Object ref = job_;
+          getSyncJobScriptBytes() {
+        java.lang.Object ref = syncJobScript_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          job_ = b;
+          syncJobScript_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -6836,54 +6836,54 @@ public final class PBResponseSyncJobManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"job"
+       * &#64;inject_tag: json:"sync_job_script"
        * </pre>
        *
-       * <code>string job = 1;</code>
-       * @param value The job to set.
+       * <code>string sync_job_script = 1;</code>
+       * @param value The syncJobScript to set.
        * @return This builder for chaining.
        */
-      public Builder setJob(
+      public Builder setSyncJobScript(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        job_ = value;
+        syncJobScript_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"job"
+       * &#64;inject_tag: json:"sync_job_script"
        * </pre>
        *
-       * <code>string job = 1;</code>
+       * <code>string sync_job_script = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJob() {
+      public Builder clearSyncJobScript() {
         
-        job_ = getDefaultInstance().getJob();
+        syncJobScript_ = getDefaultInstance().getSyncJobScript();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"job"
+       * &#64;inject_tag: json:"sync_job_script"
        * </pre>
        *
-       * <code>string job = 1;</code>
-       * @param value The bytes for job to set.
+       * <code>string sync_job_script = 1;</code>
+       * @param value The bytes for syncJobScript to set.
        * @return This builder for chaining.
        */
-      public Builder setJobBytes(
+      public Builder setSyncJobScriptBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        job_ = value;
+        syncJobScript_ = value;
         onChanged();
         return this;
       }
@@ -7552,6 +7552,1368 @@ public final class PBResponseSyncJobManage {
 
   }
 
+  public interface PingSyncJobConnectionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.PingSyncJobConnection)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    boolean hasInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return The info.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code response.PingSyncJobConnection}
+   */
+  public static final class PingSyncJobConnection extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.PingSyncJobConnection)
+      PingSyncJobConnectionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PingSyncJobConnection.newBuilder() to construct.
+    private PingSyncJobConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PingSyncJobConnection() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PingSyncJobConnection();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PingSyncJobConnection(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_PingSyncJobConnection_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_PingSyncJobConnection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.class, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.Builder.class);
+    }
+
+    public static final int INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection info_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfo() {
+      return info_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo() {
+      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder() {
+      return getInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (info_ != null) {
+        output.writeMessage(1, getInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (info_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection other = (com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection) obj;
+
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.PingSyncJobConnection}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.PingSyncJobConnection)
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnectionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_PingSyncJobConnection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_PingSyncJobConnection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.class, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_PingSyncJobConnection_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection result = new com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection(this);
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.getDefaultInstance()) return this;
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder> infoBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       * @return Whether the info field is set.
+       */
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       * @return The info.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder setInfo(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.PingSyncJobConnection)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.PingSyncJobConnection)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PingSyncJobConnection>
+        PARSER = new com.google.protobuf.AbstractParser<PingSyncJobConnection>() {
+      @java.lang.Override
+      public PingSyncJobConnection parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PingSyncJobConnection(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PingSyncJobConnection> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PingSyncJobConnection> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DescribeSyncConnectionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.DescribeSyncConnection)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    boolean hasInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return The info.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code response.DescribeSyncConnection}
+   */
+  public static final class DescribeSyncConnection extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.DescribeSyncConnection)
+      DescribeSyncConnectionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeSyncConnection.newBuilder() to construct.
+    private DescribeSyncConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeSyncConnection() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeSyncConnection();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeSyncConnection(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_DescribeSyncConnection_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_DescribeSyncConnection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.class, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.Builder.class);
+    }
+
+    public static final int INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection info_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfo() {
+      return info_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo() {
+      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
+     * <code>.model.SyncJobConnection info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder() {
+      return getInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (info_ != null) {
+        output.writeMessage(1, getInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (info_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection other = (com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection) obj;
+
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.DescribeSyncConnection}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.DescribeSyncConnection)
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnectionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_DescribeSyncConnection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_DescribeSyncConnection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.class, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.internal_static_response_DescribeSyncConnection_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection result = new com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection(this);
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.getDefaultInstance()) return this;
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder> infoBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       * @return Whether the info field is set.
+       */
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       * @return The info.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder setInfo(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.SyncJobConnection info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConnectionOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.DescribeSyncConnection)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.DescribeSyncConnection)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeSyncConnection>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeSyncConnection>() {
+      @java.lang.Override
+      public DescribeSyncConnection parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeSyncConnection(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeSyncConnection> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeSyncConnection> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_ListSyncJobs_descriptor;
   private static final 
@@ -7602,6 +8964,16 @@ public final class PBResponseSyncJobManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_ConvertSyncJobMode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_PingSyncJobConnection_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_PingSyncJobConnection_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_DescribeSyncConnection_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_DescribeSyncConnection_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7627,12 +8999,15 @@ public final class PBResponseSyncJobManage {
       "\022\r\n\005total\030\003 \001(\003\"F\n\023ListSyncJobVersions\022\035" +
       "\n\005infos\030\001 \003(\0132\016.model.SyncJob\022\020\n\010has_mor" +
       "e\030\002 \001(\010\"1\n\037DescribeSyncFlinkUIByInstance" +
-      "Id\022\016\n\006web_ui\030\001 \001(\t\"\036\n\017GenerateJobJson\022\013\n" +
-      "\003job\030\001 \001(\t\"!\n\022ConvertSyncJobMode\022\013\n\003job\030" +
-      "\001 \001(\tBx\n%com.dataomnis.gproto.types.pbre" +
-      "sponseB\027PBResponseSyncJobManageP\000Z4githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
-      "esponseb\006proto3"
+      "Id\022\016\n\006web_ui\030\001 \001(\t\"*\n\017GenerateJobJson\022\027\n" +
+      "\017sync_job_script\030\001 \001(\t\"!\n\022ConvertSyncJob" +
+      "Mode\022\013\n\003job\030\001 \001(\t\"?\n\025PingSyncJobConnecti" +
+      "on\022&\n\004info\030\001 \001(\0132\030.model.SyncJobConnecti" +
+      "on\"@\n\026DescribeSyncConnection\022&\n\004info\030\001 \001" +
+      "(\0132\030.model.SyncJobConnectionBx\n%com.data" +
+      "omnis.gproto.types.pbresponseB\027PBRespons" +
+      "eSyncJobManageP\000Z4github.com/DataWorkben" +
+      "ch/gproto/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7693,13 +9068,25 @@ public final class PBResponseSyncJobManage {
     internal_static_response_GenerateJobJson_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_GenerateJobJson_descriptor,
-        new java.lang.String[] { "Job", });
+        new java.lang.String[] { "SyncJobScript", });
     internal_static_response_ConvertSyncJobMode_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_response_ConvertSyncJobMode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ConvertSyncJobMode_descriptor,
         new java.lang.String[] { "Job", });
+    internal_static_response_PingSyncJobConnection_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_response_PingSyncJobConnection_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_PingSyncJobConnection_descriptor,
+        new java.lang.String[] { "Info", });
+    internal_static_response_DescribeSyncConnection_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_response_DescribeSyncConnection_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_DescribeSyncConnection_descriptor,
+        new java.lang.String[] { "Info", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

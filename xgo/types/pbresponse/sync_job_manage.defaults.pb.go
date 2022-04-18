@@ -104,3 +104,29 @@ func (this *ConvertSyncJobMode) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.PingSyncJobConnection
+func (this *PingSyncJobConnection) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DescribeSyncConnection
+func (this *DescribeSyncConnection) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}

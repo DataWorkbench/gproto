@@ -59,8 +59,6 @@ type SyncJobManageClient interface {
 	ReleaseSyncJob(ctx context.Context, in *pbrequest.ReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseSyncJobs to suspend the specified job list in schedule system.
 	OfflineReleaseSyncJob(ctx context.Context, in *pbrequest.OfflineReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-	SuspendReleaseSyncJob(ctx context.Context, in *pbrequest.SuspendReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseSyncJob to resume the suspended job list in schedule system.
 	ResumeReleaseSyncJob(ctx context.Context, in *pbrequest.ResumeReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
@@ -80,6 +78,10 @@ type SyncJobManageClient interface {
 	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error)
+	// PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+	PingSyncJobConnection(ctx context.Context, in *pbrequest.PingSyncJobConnection, opts ...grpc.CallOption) (*pbresponse.PingSyncJobConnection, error)
+	// DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+	DescribeSyncConnection(ctx context.Context, in *pbrequest.DescribeSyncConnection, opts ...grpc.CallOption) (*pbresponse.DescribeSyncConnection, error)
 }
 
 type syncJobManageClient struct {
@@ -198,15 +200,6 @@ func (c *syncJobManageClient) OfflineReleaseSyncJob(ctx context.Context, in *pbr
 	return out, nil
 }
 
-func (c *syncJobManageClient) SuspendReleaseSyncJob(ctx context.Context, in *pbrequest.SuspendReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/SuspendReleaseSyncJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *syncJobManageClient) ResumeReleaseSyncJob(ctx context.Context, in *pbrequest.ResumeReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ResumeReleaseSyncJob", in, out, opts...)
@@ -288,6 +281,24 @@ func (c *syncJobManageClient) ConvertSyncJobMode(ctx context.Context, in *pbrequ
 	return out, nil
 }
 
+func (c *syncJobManageClient) PingSyncJobConnection(ctx context.Context, in *pbrequest.PingSyncJobConnection, opts ...grpc.CallOption) (*pbresponse.PingSyncJobConnection, error) {
+	out := new(pbresponse.PingSyncJobConnection)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/PingSyncJobConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *syncJobManageClient) DescribeSyncConnection(ctx context.Context, in *pbrequest.DescribeSyncConnection, opts ...grpc.CallOption) (*pbresponse.DescribeSyncConnection, error) {
+	out := new(pbresponse.DescribeSyncConnection)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/DescribeSyncConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SyncJobManageServer is the server API for SyncJobManage service.
 // All implementations must embed UnimplementedSyncJobManageServer
 // for forward compatibility
@@ -326,8 +337,6 @@ type SyncJobManageServer interface {
 	ReleaseSyncJob(context.Context, *pbrequest.ReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseSyncJobs to suspend the specified job list in schedule system.
 	OfflineReleaseSyncJob(context.Context, *pbrequest.OfflineReleaseSyncJob) (*pbmodel.EmptyStruct, error)
-	// SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-	SuspendReleaseSyncJob(context.Context, *pbrequest.SuspendReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseSyncJob to resume the suspended job list in schedule system.
 	ResumeReleaseSyncJob(context.Context, *pbrequest.ResumeReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
@@ -347,6 +356,10 @@ type SyncJobManageServer interface {
 	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error)
+	// PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+	PingSyncJobConnection(context.Context, *pbrequest.PingSyncJobConnection) (*pbresponse.PingSyncJobConnection, error)
+	// DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+	DescribeSyncConnection(context.Context, *pbrequest.DescribeSyncConnection) (*pbresponse.DescribeSyncConnection, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -390,9 +403,6 @@ func (UnimplementedSyncJobManageServer) ReleaseSyncJob(context.Context, *pbreque
 func (UnimplementedSyncJobManageServer) OfflineReleaseSyncJob(context.Context, *pbrequest.OfflineReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OfflineReleaseSyncJob not implemented")
 }
-func (UnimplementedSyncJobManageServer) SuspendReleaseSyncJob(context.Context, *pbrequest.SuspendReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseSyncJob not implemented")
-}
 func (UnimplementedSyncJobManageServer) ResumeReleaseSyncJob(context.Context, *pbrequest.ResumeReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseSyncJob not implemented")
 }
@@ -419,6 +429,12 @@ func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequ
 }
 func (UnimplementedSyncJobManageServer) ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvertSyncJobMode not implemented")
+}
+func (UnimplementedSyncJobManageServer) PingSyncJobConnection(context.Context, *pbrequest.PingSyncJobConnection) (*pbresponse.PingSyncJobConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PingSyncJobConnection not implemented")
+}
+func (UnimplementedSyncJobManageServer) DescribeSyncConnection(context.Context, *pbrequest.DescribeSyncConnection) (*pbresponse.DescribeSyncConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncConnection not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -649,24 +665,6 @@ func _SyncJobManage_OfflineReleaseSyncJob_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_SuspendReleaseSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.SuspendReleaseSyncJob)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SyncJobManageServer).SuspendReleaseSyncJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/SuspendReleaseSyncJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).SuspendReleaseSyncJob(ctx, req.(*pbrequest.SuspendReleaseSyncJob))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SyncJobManage_ResumeReleaseSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ResumeReleaseSyncJob)
 	if err := dec(in); err != nil {
@@ -829,6 +827,42 @@ func _SyncJobManage_ConvertSyncJobMode_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_PingSyncJobConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.PingSyncJobConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).PingSyncJobConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/PingSyncJobConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).PingSyncJobConnection(ctx, req.(*pbrequest.PingSyncJobConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SyncJobManage_DescribeSyncConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeSyncConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).DescribeSyncConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/DescribeSyncConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).DescribeSyncConnection(ctx, req.(*pbrequest.DescribeSyncConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SyncJobManage_ServiceDesc is the grpc.ServiceDesc for SyncJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -885,10 +919,6 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SyncJobManage_OfflineReleaseSyncJob_Handler,
 		},
 		{
-			MethodName: "SuspendReleaseSyncJob",
-			Handler:    _SyncJobManage_SuspendReleaseSyncJob_Handler,
-		},
-		{
 			MethodName: "ResumeReleaseSyncJob",
 			Handler:    _SyncJobManage_ResumeReleaseSyncJob_Handler,
 		},
@@ -923,6 +953,14 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConvertSyncJobMode",
 			Handler:    _SyncJobManage_ConvertSyncJobMode_Handler,
+		},
+		{
+			MethodName: "PingSyncJobConnection",
+			Handler:    _SyncJobManage_PingSyncJobConnection_Handler,
+		},
+		{
+			MethodName: "DescribeSyncConnection",
+			Handler:    _SyncJobManage_DescribeSyncConnection_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

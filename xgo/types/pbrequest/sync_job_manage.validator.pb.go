@@ -687,40 +687,6 @@ func (this *OfflineReleaseSyncJob) Validate() error {
 	return nil
 }
 
-func (this *SuspendReleaseSyncJob) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("SuspendReleaseSyncJob", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("SuspendReleaseSyncJob", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *SuspendReleaseSyncJob) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("SuspendReleaseSyncJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("SuspendReleaseSyncJob", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-// Set default value for message request.SuspendReleaseSyncJob
-func (this *SuspendReleaseSyncJob) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *ResumeReleaseSyncJob) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("ResumeReleaseSyncJob", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -911,6 +877,152 @@ func (this *GenerateJobJson) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
+	return nil
+}
+
+func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_target_id() error {
+	if !(len(this.TargetId) == 20) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
+	}
+	if !(strings.HasPrefix(this.TargetId, "som-")) {
+		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
+	}
+	return nil
+}
+
+// Set default value for message request.PingSyncJobConnection
+func (this *PingSyncJobConnection) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
+	return nil
+}
+
+func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_target_id() error {
+	if !(len(this.TargetId) == 20) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
+	}
+	if !(strings.HasPrefix(this.TargetId, "som-")) {
+		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
+	}
+	return nil
+}
+
+// Set default value for message request.DescribeSyncConnection
+func (this *DescribeSyncConnection) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
 		return err
 	}
 	return nil

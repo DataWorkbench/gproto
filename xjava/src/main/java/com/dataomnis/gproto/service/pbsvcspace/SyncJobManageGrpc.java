@@ -390,37 +390,6 @@ public final class SyncJobManageGrpc {
     return getOfflineReleaseSyncJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSuspendReleaseSyncJobMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SuspendReleaseSyncJob",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSuspendReleaseSyncJobMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSuspendReleaseSyncJobMethod;
-    if ((getSuspendReleaseSyncJobMethod = SyncJobManageGrpc.getSuspendReleaseSyncJobMethod) == null) {
-      synchronized (SyncJobManageGrpc.class) {
-        if ((getSuspendReleaseSyncJobMethod = SyncJobManageGrpc.getSuspendReleaseSyncJobMethod) == null) {
-          SyncJobManageGrpc.getSuspendReleaseSyncJobMethod = getSuspendReleaseSyncJobMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SuspendReleaseSyncJob"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("SuspendReleaseSyncJob"))
-              .build();
-        }
-      }
-    }
-    return getSuspendReleaseSyncJobMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getResumeReleaseSyncJobMethod;
 
@@ -700,6 +669,68 @@ public final class SyncJobManageGrpc {
     return getConvertSyncJobModeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> getPingSyncJobConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PingSyncJobConnection",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> getPingSyncJobConnectionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> getPingSyncJobConnectionMethod;
+    if ((getPingSyncJobConnectionMethod = SyncJobManageGrpc.getPingSyncJobConnectionMethod) == null) {
+      synchronized (SyncJobManageGrpc.class) {
+        if ((getPingSyncJobConnectionMethod = SyncJobManageGrpc.getPingSyncJobConnectionMethod) == null) {
+          SyncJobManageGrpc.getPingSyncJobConnectionMethod = getPingSyncJobConnectionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PingSyncJobConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("PingSyncJobConnection"))
+              .build();
+        }
+      }
+    }
+    return getPingSyncJobConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> getDescribeSyncConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeSyncConnection",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> getDescribeSyncConnectionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> getDescribeSyncConnectionMethod;
+    if ((getDescribeSyncConnectionMethod = SyncJobManageGrpc.getDescribeSyncConnectionMethod) == null) {
+      synchronized (SyncJobManageGrpc.class) {
+        if ((getDescribeSyncConnectionMethod = SyncJobManageGrpc.getDescribeSyncConnectionMethod) == null) {
+          SyncJobManageGrpc.getDescribeSyncConnectionMethod = getDescribeSyncConnectionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeSyncConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("DescribeSyncConnection"))
+              .build();
+        }
+      }
+    }
+    return getDescribeSyncConnectionMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -883,16 +914,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-     * </pre>
-     */
-    public void suspendReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSuspendReleaseSyncJobMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
      * </pre>
      */
@@ -978,6 +999,26 @@ public final class SyncJobManageGrpc {
     public void convertSyncJobMode(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConvertSyncJobModeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+     * </pre>
+     */
+    public void pingSyncJobConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingSyncJobConnectionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+     * </pre>
+     */
+    public void describeSyncConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeSyncConnectionMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -1067,13 +1108,6 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_OFFLINE_RELEASE_SYNC_JOB)))
           .addMethod(
-            getSuspendReleaseSyncJobMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob,
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_SUSPEND_RELEASE_SYNC_JOB)))
-          .addMethod(
             getResumeReleaseSyncJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1136,6 +1170,20 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode>(
                   this, METHODID_CONVERT_SYNC_JOB_MODE)))
+          .addMethod(
+            getPingSyncJobConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection>(
+                  this, METHODID_PING_SYNC_JOB_CONNECTION)))
+          .addMethod(
+            getDescribeSyncConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection>(
+                  this, METHODID_DESCRIBE_SYNC_CONNECTION)))
           .build();
     }
   }
@@ -1301,17 +1349,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-     * </pre>
-     */
-    public void suspendReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSuspendReleaseSyncJobMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
      * </pre>
      */
@@ -1406,6 +1443,28 @@ public final class SyncJobManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConvertSyncJobModeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+     * </pre>
+     */
+    public void pingSyncJobConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPingSyncJobConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+     * </pre>
+     */
+    public void describeSyncConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeSyncConnectionMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1558,16 +1617,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-     * </pre>
-     */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct suspendReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSuspendReleaseSyncJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
      * </pre>
      */
@@ -1653,6 +1702,26 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode convertSyncJobMode(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConvertSyncJobModeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection pingSyncJobConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPingSyncJobConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection describeSyncConnection(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeSyncConnectionMethod(), getCallOptions(), request);
     }
   }
 
@@ -1817,17 +1886,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> suspendReleaseSyncJob(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSuspendReleaseSyncJobMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
      * </pre>
      */
@@ -1923,6 +1981,28 @@ public final class SyncJobManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConvertSyncJobModeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection> pingSyncJobConnection(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPingSyncJobConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection> describeSyncConnection(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeSyncConnectionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SYNC_JOBS = 0;
@@ -1937,16 +2017,17 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_GET_SYNC_JOB_SCHEDULE = 9;
   private static final int METHODID_RELEASE_SYNC_JOB = 10;
   private static final int METHODID_OFFLINE_RELEASE_SYNC_JOB = 11;
-  private static final int METHODID_SUSPEND_RELEASE_SYNC_JOB = 12;
-  private static final int METHODID_RESUME_RELEASE_SYNC_JOB = 13;
-  private static final int METHODID_LIST_RELEASE_SYNC_JOBS = 14;
-  private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 15;
-  private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 16;
-  private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 17;
-  private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
-  private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
-  private static final int METHODID_GENERATE_JOB_JSON = 20;
-  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 21;
+  private static final int METHODID_RESUME_RELEASE_SYNC_JOB = 12;
+  private static final int METHODID_LIST_RELEASE_SYNC_JOBS = 13;
+  private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 14;
+  private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 15;
+  private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 16;
+  private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 17;
+  private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 18;
+  private static final int METHODID_GENERATE_JOB_JSON = 19;
+  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 20;
+  private static final int METHODID_PING_SYNC_JOB_CONNECTION = 21;
+  private static final int METHODID_DESCRIBE_SYNC_CONNECTION = 22;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2013,10 +2094,6 @@ public final class SyncJobManageGrpc {
           serviceImpl.offlineReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.OfflineReleaseSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_SUSPEND_RELEASE_SYNC_JOB:
-          serviceImpl.suspendReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.SuspendReleaseSyncJob) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
-          break;
         case METHODID_RESUME_RELEASE_SYNC_JOB:
           serviceImpl.resumeReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
@@ -2052,6 +2129,14 @@ public final class SyncJobManageGrpc {
         case METHODID_CONVERT_SYNC_JOB_MODE:
           serviceImpl.convertSyncJobMode((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode>) responseObserver);
+          break;
+        case METHODID_PING_SYNC_JOB_CONNECTION:
+          serviceImpl.pingSyncJobConnection((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.PingSyncJobConnection) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.PingSyncJobConnection>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_SYNC_CONNECTION:
+          serviceImpl.describeSyncConnection((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncConnection) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncConnection>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2126,7 +2211,6 @@ public final class SyncJobManageGrpc {
               .addMethod(getGetSyncJobScheduleMethod())
               .addMethod(getReleaseSyncJobMethod())
               .addMethod(getOfflineReleaseSyncJobMethod())
-              .addMethod(getSuspendReleaseSyncJobMethod())
               .addMethod(getResumeReleaseSyncJobMethod())
               .addMethod(getListReleaseSyncJobsMethod())
               .addMethod(getListSyncJobVersionsMethod())
@@ -2136,6 +2220,8 @@ public final class SyncJobManageGrpc {
               .addMethod(getDescribeSyncFlinkUIByInstanceIdMethod())
               .addMethod(getGenerateJobJsonMethod())
               .addMethod(getConvertSyncJobModeMethod())
+              .addMethod(getPingSyncJobConnectionMethod())
+              .addMethod(getDescribeSyncConnectionMethod())
               .build();
         }
       }
