@@ -1371,7 +1371,7 @@ func (x *DescribeSyncFlinkUIByInstanceId) GetInstanceId() string {
 	return ""
 }
 
-// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+// GenerateJobJson used as a request parameters for RPC.
 type GenerateJobJson struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
