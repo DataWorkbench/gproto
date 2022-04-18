@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 import "proto/types/model/stream_job.proto";
+import "proto/types/model/sync_job.proto";
 
 // StreamJobEvent is the event message used in scheduler queue.
 message StreamJobEvent {
@@ -45,3 +46,37 @@ message StreamJobEvent {
   // The start execution time of the stream instance.
   int64 started = 5 [(validator.field) = {}];
 }
+
+// SyncJobEvent is the event message used in scheduler queue.
+message SyncJobEvent {
+  enum Type {
+    TypeUnset = 0;
+    Job = 1;
+    Instance = 2;
+  }
+
+  enum Action {
+    ActionUnset = 0;
+    Create = 1;
+    Submit = 2;
+    Check = 4;
+  }
+
+  // The property of stream job.
+  SyncJobProperty property = 1 [ (validator.field).tags.message = { not_null: true } ];
+
+  // The internal access address of flink cluster.
+  string flink_url = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The version of flink cluster.
+  string flink_version = 3 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The number of times the stream instance was executed.
+  int32 retries = 4 [(validator.field) = {}];
+
+  // The start execution time of the stream instance.
+  int64 started = 5 [(validator.field) = {}];
+}
+
+
+
