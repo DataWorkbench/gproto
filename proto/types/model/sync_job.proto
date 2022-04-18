@@ -424,9 +424,9 @@ message SyncJobSchedule {
 message SyncJobRelease {
     enum Status {
         StatusUnset = 0;
-        Active = 1;
-        Suspended = 2;
-        Deleted = 3;
+        Deleted = 1;
+        Inline = 2;
+        Offline = 3;
     }
 
     // Workspace ID it belongs to.
@@ -449,7 +449,7 @@ message SyncJobRelease {
     // @inject_tag: json:"type" gorm:"column:type;"
     SyncJob.Type type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
-    // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
+    // Release status, 2 => "Inline", 3 => "Offline"
     // @inject_tag: json:"status" gorm:"column:status;"
     Status status = 6 ;
 
@@ -470,10 +470,61 @@ message SyncJobRelease {
     int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
+// SyncJobConnection represents the network connection between flink cluster and data source that used in sync job..
+message SyncJobConnection {
+    enum Status {
+        StatusUnset = 0;
+        Deleted = 1;
+        Enabled = 2;
+    }
 
+    // Result connectivity test results
+    enum Result {
+        StateUnset = 0;
+        Success = 1;
+        Failed = 2;
+    }
 
+    // Space ID, workspace ID.
+    // @inject_tag: json:"space_id" gorm:"column:space_id;"
+    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
+    // The id of sync jod.
+    // @inject_tag: json:"job_id" gorm:"column:job_id;primaryKey;"
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
+    // The if of flink cluster.
+    // @inject_tag: json:"cluster_id" gorm:"column:cluster_id;primaryKey;"
+    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+
+    // The datasource id that as a sync source.
+    // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+
+    // The datasource id that as a sync target.
+    // @inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+
+    // Status, 1 => "Deleted", 2 => "Enabled".
+    // @inject_tag: json:"status" gorm:"column:status;"
+    Status status = 6 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+
+    // Connection state  1 => success 2 => failed
+    // @inject_tag: json:"result" gorm:"column:result;"
+    Result result = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+    // Message is the reason when connection failure.
+    // @inject_tag: json:"message" gorm:"column:message;"
+    string message = 8;
+
+    // Create Time, When start tested for usability..
+    // @inject_tag: json:"created" gorm:"column:created;"
+    int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+    // Elapse is Used time of tested for usability. unit in ms.
+    // @inject_tag: json:"elapse" gorm:"column:elapse;"
+    int64 elapse = 10;
+}
 
 
 /*message HadoopConfig {

@@ -62,8 +62,8 @@ service SyncJobManage {
     // SuspendReleaseSyncJobs to suspend the specified job list in schedule system.
     rpc OfflineReleaseSyncJob(request.OfflineReleaseSyncJob) returns (model.EmptyStruct) {}
 
-    // SuspendReleaseSyncJob to suspend the specified job list in schedule system.
-    rpc SuspendReleaseSyncJob(request.SuspendReleaseSyncJob) returns (model.EmptyStruct) {}
+//    // SuspendReleaseSyncJob to suspend the specified job list in schedule system.
+//    rpc SuspendReleaseSyncJob(request.SuspendReleaseSyncJob) returns (model.EmptyStruct) {}
 
     // ResumeReleaseSyncJob to resume the suspended job list in schedule system.
     rpc ResumeReleaseSyncJob(request.ResumeReleaseSyncJob) returns (model.EmptyStruct) {}
@@ -92,4 +92,9 @@ service SyncJobManage {
     rpc GenerateJobJson(request.GenerateJobJson)  returns (response.GenerateJobJson) {}
 
     rpc ConvertSyncJobMode(request.ConvertSyncJobMode) returns (response.ConvertSyncJobMode) {}
+
+    // PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
+    rpc PingSyncJobConnection(request.PingSyncJobConnection)   returns (response.PingSyncJobConnection) {}
+    // DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
+    rpc DescribeSyncConnection(request.DescribeSyncConnection) returns (response.DescribeSyncConnection) {}
 }
