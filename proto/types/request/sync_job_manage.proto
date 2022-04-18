@@ -324,13 +324,9 @@ message ResumeReleaseSyncJob {
 
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
-    // The job Type. Is Required when not directory,
-    // Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
-    // Desc: Cannot be modified after creation.
-    // @inject_tag: json:"type"
-    model.SyncJob.Type type = 1  [
-    (validator.field).tags.enum = { gte: 0; in_enums: true  }
-    ];
+    // The sync job id in HTTP Request-URI
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // conf
     // @inject_tag: json:"conf" uri:"conf"
     model.SyncJobConf conf = 2;
@@ -338,9 +334,6 @@ message ConvertSyncJobMode {
 
 // ListSyncJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSyncJobVersions {
-    // The sync job id in HTTP Request-URI
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // Limit the maximum number of entries returned this time.
     // Not required, Max 100, default 100.
@@ -361,6 +354,10 @@ message ListSyncJobVersions {
     // Reverse order results. Not required, default: false.
     // @inject_tag: json:"reverse" form:"reverse"
     bool reverse = 4;
+
+    // The sync job id in HTTP Request-URI
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.
