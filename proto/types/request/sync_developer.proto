@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestSyncDeveloper";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+// SubmitSyncJobToFlink used as a request parameters for RPC.
+message SubmitSyncJobToFlink {
+  // The Flink's job id.
+  // @inject_tag: json:"flink_id"
+  string flink_id = 1  [(validator.field).tags.string = {byte_len_eq: 32}];
+
+  // The internal access address of flink cluster.
+  // @inject_tag: json:"flink_url"
+  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
+
+  // The version of flink cluster.
+  // @inject_tag: json:"flink_version"
+  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
+
+  // The content of sync job that format by JSON.
+  // @inject_tag: json:"json_content"
+  string json_content = 4 [(validator.field).tags.string = {ne: ""}];
+}
+

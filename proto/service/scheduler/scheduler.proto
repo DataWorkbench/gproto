@@ -32,7 +32,7 @@ service Scheduler {
   rpc DeleteStreamJobsByJobIds(request.DeleteStreamJobsByJobIds) returns (model.EmptyStruct) {}
   
   
-  // SubmitSyncJob used when release new stream job or resume stream job.
+  // SubmitSyncJob used when release new sync job or resume sync job.
   rpc SubmitSyncJob(request.SubmitSyncJob) returns (model.EmptyStruct) {}
 
   // StopSyncJob used when offline stream job.

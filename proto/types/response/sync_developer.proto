@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseSyncDeveloper";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+// SubmitSyncJob used as a request parameters for RPC.
+message SubmitSyncJobToFlink {
+  enum Code {
+    CodeUnset = 0;
+    Success = 1; // next to get flink job status.
+    Failed = 2;
+  }
+
+  // @inject_tag: json:"code"
+  Code code = 1;
+
+  // message
+  // @inject_tag: json:"message"
+  string message = 2 [(validator.field) = {}];
+}

@@ -55,6 +55,12 @@ message SubmitSyncJob {
   model.SyncJobProperty property = 1 [(validator.field).tags.message = { not_null: true }];
 
   bool stop_running = 2 [(validator.field) = {}];
+
+  // The internal access address of flink cluster.
+  string flink_url = 3 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The version of flink cluster.
+  string flink_version = 4 [ (validator.field).tags.string = { ne: "" } ];
 }
 
 // SubmitSyncJobs used as a request parameters for RPC.

@@ -322,16 +322,6 @@ message ResumeReleaseSyncJob {
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
-// CommitReleaseSyncJob used as a request parameters for RPC.
-message CommitSyncJob {
-    // The workspace id in HTTP Request-URI
-    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-    // The sync job id in HTTP Request-URI
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-}
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
     // The job Type. Is Required when not directory,
