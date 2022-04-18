@@ -385,15 +385,9 @@ message GenerateJobJson {
     // target version
     // @inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
     string target_version = 4;
-
-    // The job Type. Is Required when not directory,
-    // Optional Value:1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTimeFull"
-    // Desc: Cannot be modified after creation.
-    // @inject_tag: json:"type"
-    model.SyncJob.Type type = 5  [(validator.field).tags.enum = { gte: 0; in_enums: true  }];
     // job_id
     // @inject_tag: json:"job_id" uri:"job_id"
-    string job_id = 6 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
+    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
 
 
 }
