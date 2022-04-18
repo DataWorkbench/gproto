@@ -1499,11 +1499,1501 @@ public final class PBModelScheduler {
 
   }
 
+  public interface SyncJobEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.SyncJobEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the property field is set.
+     */
+    boolean hasProperty();
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     * @return The property.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getProperty();
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getPropertyOrBuilder();
+
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    java.lang.String getFlinkUrl();
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    com.google.protobuf.ByteString
+        getFlinkUrlBytes();
+
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    java.lang.String getFlinkVersion();
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    com.google.protobuf.ByteString
+        getFlinkVersionBytes();
+
+    /**
+     * <pre>
+     * The number of times the stream instance was executed.
+     * </pre>
+     *
+     * <code>int32 retries = 4 [(.validator.field) = { ... }</code>
+     * @return The retries.
+     */
+    int getRetries();
+
+    /**
+     * <pre>
+     * The start execution time of the stream instance.
+     * </pre>
+     *
+     * <code>int64 started = 5 [(.validator.field) = { ... }</code>
+     * @return The started.
+     */
+    long getStarted();
+  }
+  /**
+   * <pre>
+   * SyncJobEvent is the event message used in scheduler queue.
+   * </pre>
+   *
+   * Protobuf type {@code model.SyncJobEvent}
+   */
+  public static final class SyncJobEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.SyncJobEvent)
+      SyncJobEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SyncJobEvent.newBuilder() to construct.
+    private SyncJobEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SyncJobEvent() {
+      flinkUrl_ = "";
+      flinkVersion_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SyncJobEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SyncJobEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder subBuilder = null;
+              if (property_ != null) {
+                subBuilder = property_.toBuilder();
+              }
+              property_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(property_);
+                property_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkUrl_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkVersion_ = s;
+              break;
+            }
+            case 32: {
+
+              retries_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              started_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_SyncJobEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_SyncJobEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.SyncJobEvent.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>Job = 1;</code>
+       */
+      Job(1),
+      /**
+       * <code>Instance = 2;</code>
+       */
+      Instance(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>Job = 1;</code>
+       */
+      public static final int Job_VALUE = 1;
+      /**
+       * <code>Instance = 2;</code>
+       */
+      public static final int Instance_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return Job;
+          case 2: return Instance;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.SyncJobEvent.Type)
+    }
+
+    /**
+     * Protobuf enum {@code model.SyncJobEvent.Action}
+     */
+    public enum Action
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ActionUnset = 0;</code>
+       */
+      ActionUnset(0),
+      /**
+       * <code>Create = 1;</code>
+       */
+      Create(1),
+      /**
+       * <code>Submit = 2;</code>
+       */
+      Submit(2),
+      /**
+       * <code>Check = 4;</code>
+       */
+      Check(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ActionUnset = 0;</code>
+       */
+      public static final int ActionUnset_VALUE = 0;
+      /**
+       * <code>Create = 1;</code>
+       */
+      public static final int Create_VALUE = 1;
+      /**
+       * <code>Submit = 2;</code>
+       */
+      public static final int Submit_VALUE = 2;
+      /**
+       * <code>Check = 4;</code>
+       */
+      public static final int Check_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Action valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Action forNumber(int value) {
+        switch (value) {
+          case 0: return ActionUnset;
+          case 1: return Create;
+          case 2: return Submit;
+          case 4: return Check;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Action>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Action> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Action>() {
+              public Action findValueByNumber(int number) {
+                return Action.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Action[] VALUES = values();
+
+      public static Action valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Action(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.SyncJobEvent.Action)
+    }
+
+    public static final int PROPERTY_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty property_;
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the property field is set.
+     */
+    @java.lang.Override
+    public boolean hasProperty() {
+      return property_ != null;
+    }
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     * @return The property.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getProperty() {
+      return property_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : property_;
+    }
+    /**
+     * <pre>
+     * The property of stream job.
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getPropertyOrBuilder() {
+      return getProperty();
+    }
+
+    public static final int FLINK_URL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object flinkUrl_;
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkUrl() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkUrlBytes() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLINK_VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object flinkVersion_;
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkVersion() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkVersionBytes() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RETRIES_FIELD_NUMBER = 4;
+    private int retries_;
+    /**
+     * <pre>
+     * The number of times the stream instance was executed.
+     * </pre>
+     *
+     * <code>int32 retries = 4 [(.validator.field) = { ... }</code>
+     * @return The retries.
+     */
+    @java.lang.Override
+    public int getRetries() {
+      return retries_;
+    }
+
+    public static final int STARTED_FIELD_NUMBER = 5;
+    private long started_;
+    /**
+     * <pre>
+     * The start execution time of the stream instance.
+     * </pre>
+     *
+     * <code>int64 started = 5 [(.validator.field) = { ... }</code>
+     * @return The started.
+     */
+    @java.lang.Override
+    public long getStarted() {
+      return started_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (property_ != null) {
+        output.writeMessage(1, getProperty());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, flinkVersion_);
+      }
+      if (retries_ != 0) {
+        output.writeInt32(4, retries_);
+      }
+      if (started_ != 0L) {
+        output.writeInt64(5, started_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (property_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getProperty());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, flinkVersion_);
+      }
+      if (retries_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, retries_);
+      }
+      if (started_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, started_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent other = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent) obj;
+
+      if (hasProperty() != other.hasProperty()) return false;
+      if (hasProperty()) {
+        if (!getProperty()
+            .equals(other.getProperty())) return false;
+      }
+      if (!getFlinkUrl()
+          .equals(other.getFlinkUrl())) return false;
+      if (!getFlinkVersion()
+          .equals(other.getFlinkVersion())) return false;
+      if (getRetries()
+          != other.getRetries()) return false;
+      if (getStarted()
+          != other.getStarted()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasProperty()) {
+        hash = (37 * hash) + PROPERTY_FIELD_NUMBER;
+        hash = (53 * hash) + getProperty().hashCode();
+      }
+      hash = (37 * hash) + FLINK_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkUrl().hashCode();
+      hash = (37 * hash) + FLINK_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkVersion().hashCode();
+      hash = (37 * hash) + RETRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getRetries();
+      hash = (37 * hash) + STARTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStarted());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * SyncJobEvent is the event message used in scheduler queue.
+     * </pre>
+     *
+     * Protobuf type {@code model.SyncJobEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.SyncJobEvent)
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_SyncJobEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_SyncJobEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.class, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (propertyBuilder_ == null) {
+          property_ = null;
+        } else {
+          property_ = null;
+          propertyBuilder_ = null;
+        }
+        flinkUrl_ = "";
+
+        flinkVersion_ = "";
+
+        retries_ = 0;
+
+        started_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.internal_static_model_SyncJobEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent result = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent(this);
+        if (propertyBuilder_ == null) {
+          result.property_ = property_;
+        } else {
+          result.property_ = propertyBuilder_.build();
+        }
+        result.flinkUrl_ = flinkUrl_;
+        result.flinkVersion_ = flinkVersion_;
+        result.retries_ = retries_;
+        result.started_ = started_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent.getDefaultInstance()) return this;
+        if (other.hasProperty()) {
+          mergeProperty(other.getProperty());
+        }
+        if (!other.getFlinkUrl().isEmpty()) {
+          flinkUrl_ = other.flinkUrl_;
+          onChanged();
+        }
+        if (!other.getFlinkVersion().isEmpty()) {
+          flinkVersion_ = other.flinkVersion_;
+          onChanged();
+        }
+        if (other.getRetries() != 0) {
+          setRetries(other.getRetries());
+        }
+        if (other.getStarted() != 0L) {
+          setStarted(other.getStarted());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty property_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> propertyBuilder_;
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the property field is set.
+       */
+      public boolean hasProperty() {
+        return propertyBuilder_ != null || property_ != null;
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       * @return The property.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getProperty() {
+        if (propertyBuilder_ == null) {
+          return property_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : property_;
+        } else {
+          return propertyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (propertyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          property_ = value;
+          onChanged();
+        } else {
+          propertyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setProperty(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder builderForValue) {
+        if (propertyBuilder_ == null) {
+          property_ = builderForValue.build();
+          onChanged();
+        } else {
+          propertyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (propertyBuilder_ == null) {
+          if (property_ != null) {
+            property_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.newBuilder(property_).mergeFrom(value).buildPartial();
+          } else {
+            property_ = value;
+          }
+          onChanged();
+        } else {
+          propertyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearProperty() {
+        if (propertyBuilder_ == null) {
+          property_ = null;
+          onChanged();
+        } else {
+          property_ = null;
+          propertyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder getPropertyBuilder() {
+        
+        onChanged();
+        return getPropertyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getPropertyOrBuilder() {
+        if (propertyBuilder_ != null) {
+          return propertyBuilder_.getMessageOrBuilder();
+        } else {
+          return property_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : property_;
+        }
+      }
+      /**
+       * <pre>
+       * The property of stream job.
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty property = 1 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> 
+          getPropertyFieldBuilder() {
+        if (propertyBuilder_ == null) {
+          propertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder>(
+                  getProperty(),
+                  getParentForChildren(),
+                  isClean());
+          property_ = null;
+        }
+        return propertyBuilder_;
+      }
+
+      private java.lang.Object flinkUrl_ = "";
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+       * @return The flinkUrl.
+       */
+      public java.lang.String getFlinkUrl() {
+        java.lang.Object ref = flinkUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkUrl.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkUrlBytes() {
+        java.lang.Object ref = flinkUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+       * @param value The flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkUrl() {
+        
+        flinkUrl_ = getDefaultInstance().getFlinkUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object flinkVersion_ = "";
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+       * @return The flinkVersion.
+       */
+      public java.lang.String getFlinkVersion() {
+        java.lang.Object ref = flinkVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkVersion.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkVersionBytes() {
+        java.lang.Object ref = flinkVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+       * @param value The flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkVersion() {
+        
+        flinkVersion_ = getDefaultInstance().getFlinkVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int retries_ ;
+      /**
+       * <pre>
+       * The number of times the stream instance was executed.
+       * </pre>
+       *
+       * <code>int32 retries = 4 [(.validator.field) = { ... }</code>
+       * @return The retries.
+       */
+      @java.lang.Override
+      public int getRetries() {
+        return retries_;
+      }
+      /**
+       * <pre>
+       * The number of times the stream instance was executed.
+       * </pre>
+       *
+       * <code>int32 retries = 4 [(.validator.field) = { ... }</code>
+       * @param value The retries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetries(int value) {
+        
+        retries_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The number of times the stream instance was executed.
+       * </pre>
+       *
+       * <code>int32 retries = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetries() {
+        
+        retries_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long started_ ;
+      /**
+       * <pre>
+       * The start execution time of the stream instance.
+       * </pre>
+       *
+       * <code>int64 started = 5 [(.validator.field) = { ... }</code>
+       * @return The started.
+       */
+      @java.lang.Override
+      public long getStarted() {
+        return started_;
+      }
+      /**
+       * <pre>
+       * The start execution time of the stream instance.
+       * </pre>
+       *
+       * <code>int64 started = 5 [(.validator.field) = { ... }</code>
+       * @param value The started to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarted(long value) {
+        
+        started_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The start execution time of the stream instance.
+       * </pre>
+       *
+       * <code>int64 started = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStarted() {
+        
+        started_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.SyncJobEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.SyncJobEvent)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SyncJobEvent>
+        PARSER = new com.google.protobuf.AbstractParser<SyncJobEvent>() {
+      @java.lang.Override
+      public SyncJobEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SyncJobEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SyncJobEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SyncJobEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.SyncJobEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_StreamJobEvent_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_StreamJobEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_SyncJobEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_SyncJobEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1516,29 +3006,44 @@ public final class PBModelScheduler {
       "\n!proto/types/model/scheduler.proto\022\005mod" +
       "el\0323github.com/yu31/protoc-plugin/proto/" +
       "validator.proto\032\"proto/types/model/strea" +
-      "m_job.proto\"\247\002\n\016StreamJobEvent\0227\n\010proper" +
-      "ty\030\001 \001(\0132\030.model.StreamJobPropertyB\013\342\337\037\007" +
-      "\022\005\342\001\002\020\001\022\036\n\tflink_url\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022" +
-      "\"\n\rflink_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\025\n\007r" +
-      "etries\030\004 \001(\005B\004\342\337\037\000\022\025\n\007started\030\005 \001(\003B\004\342\337\037" +
-      "\000\",\n\004Type\022\r\n\tTypeUnset\020\000\022\007\n\003Job\020\001\022\014\n\010Ins" +
-      "tance\020\002\"<\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Cr" +
-      "eate\020\001\022\n\n\006Submit\020\002\022\t\n\005Check\020\004Bk\n\"com.dat" +
-      "aomnis.gproto.types.pbmodelB\020PBModelSche" +
-      "dulerP\000Z1github.com/DataWorkbench/gproto" +
-      "/xgo/types/pbmodelb\006proto3"
+      "m_job.proto\032 proto/types/model/sync_job." +
+      "proto\"\247\002\n\016StreamJobEvent\0227\n\010property\030\001 \001" +
+      "(\0132\030.model.StreamJobPropertyB\013\342\337\037\007\022\005\342\001\002\020" +
+      "\001\022\036\n\tflink_url\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rfli" +
+      "nk_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\025\n\007retries" +
+      "\030\004 \001(\005B\004\342\337\037\000\022\025\n\007started\030\005 \001(\003B\004\342\337\037\000\",\n\004T" +
+      "ype\022\r\n\tTypeUnset\020\000\022\007\n\003Job\020\001\022\014\n\010Instance\020" +
+      "\002\"<\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Create\020\001" +
+      "\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\"\243\002\n\014SyncJobEvent" +
+      "\0225\n\010property\030\001 \001(\0132\026.model.SyncJobProper" +
+      "tyB\013\342\337\037\007\022\005\342\001\002\020\001\022\036\n\tflink_url\030\002 \001(\tB\013\342\337\037\007" +
+      "\022\005\302\001\002\"\000\022\"\n\rflink_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022\025\n\007retries\030\004 \001(\005B\004\342\337\037\000\022\025\n\007started\030\005 " +
+      "\001(\003B\004\342\337\037\000\",\n\004Type\022\r\n\tTypeUnset\020\000\022\007\n\003Job\020" +
+      "\001\022\014\n\010Instance\020\002\"<\n\006Action\022\017\n\013ActionUnset" +
+      "\020\000\022\n\n\006Create\020\001\022\n\n\006Submit\020\002\022\t\n\005Check\020\004Bk\n" +
+      "\"com.dataomnis.gproto.types.pbmodelB\020PBM" +
+      "odelSchedulerP\000Z1github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor(),
         });
     internal_static_model_StreamJobEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_StreamJobEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobEvent_descriptor,
+        new java.lang.String[] { "Property", "FlinkUrl", "FlinkVersion", "Retries", "Started", });
+    internal_static_model_SyncJobEvent_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_model_SyncJobEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_SyncJobEvent_descriptor,
         new java.lang.String[] { "Property", "FlinkUrl", "FlinkVersion", "Retries", "Started", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -1547,6 +3052,7 @@ public final class PBModelScheduler {
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

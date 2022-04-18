@@ -172,72 +172,6 @@ public final class PBModelSyncInstance {
 
     /**
      * <pre>
-     * NoteId is the zeppelin notebook id
-     * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-     * </pre>
-     *
-     * <code>string note_id = 10;</code>
-     * @return The noteId.
-     */
-    java.lang.String getNoteId();
-    /**
-     * <pre>
-     * NoteId is the zeppelin notebook id
-     * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-     * </pre>
-     *
-     * <code>string note_id = 10;</code>
-     * @return The bytes for noteId.
-     */
-    com.google.protobuf.ByteString
-        getNoteIdBytes();
-
-    /**
-     * <pre>
-     * ParagraphId is the zeppelin paragraph id where in notebook.
-     * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-     * </pre>
-     *
-     * <code>string paragraph_id = 11;</code>
-     * @return The paragraphId.
-     */
-    java.lang.String getParagraphId();
-    /**
-     * <pre>
-     * ParagraphId is the zeppelin paragraph id where in notebook.
-     * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-     * </pre>
-     *
-     * <code>string paragraph_id = 11;</code>
-     * @return The bytes for paragraphId.
-     */
-    com.google.protobuf.ByteString
-        getParagraphIdBytes();
-
-    /**
-     * <pre>
-     * FlinkId is the job id in flink.
-     * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-     * </pre>
-     *
-     * <code>string flink_id = 12;</code>
-     * @return The flinkId.
-     */
-    java.lang.String getFlinkId();
-    /**
-     * <pre>
-     * FlinkId is the job id in flink.
-     * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-     * </pre>
-     *
-     * <code>string flink_id = 12;</code>
-     * @return The bytes for flinkId.
-     */
-    com.google.protobuf.ByteString
-        getFlinkIdBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
@@ -281,9 +215,6 @@ public final class PBModelSyncInstance {
       state_ = 0;
       status_ = 0;
       message_ = "";
-      noteId_ = "";
-      paragraphId_ = "";
-      flinkId_ = "";
     }
 
     @java.lang.Override
@@ -366,24 +297,6 @@ public final class PBModelSyncInstance {
             case 72: {
 
               updated_ = input.readInt64();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              noteId_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              paragraphId_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              flinkId_ = s;
               break;
             }
             default: {
@@ -1004,150 +917,6 @@ public final class PBModelSyncInstance {
       }
     }
 
-    public static final int NOTE_ID_FIELD_NUMBER = 10;
-    private volatile java.lang.Object noteId_;
-    /**
-     * <pre>
-     * NoteId is the zeppelin notebook id
-     * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-     * </pre>
-     *
-     * <code>string note_id = 10;</code>
-     * @return The noteId.
-     */
-    @java.lang.Override
-    public java.lang.String getNoteId() {
-      java.lang.Object ref = noteId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        noteId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * NoteId is the zeppelin notebook id
-     * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-     * </pre>
-     *
-     * <code>string note_id = 10;</code>
-     * @return The bytes for noteId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNoteIdBytes() {
-      java.lang.Object ref = noteId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        noteId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PARAGRAPH_ID_FIELD_NUMBER = 11;
-    private volatile java.lang.Object paragraphId_;
-    /**
-     * <pre>
-     * ParagraphId is the zeppelin paragraph id where in notebook.
-     * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-     * </pre>
-     *
-     * <code>string paragraph_id = 11;</code>
-     * @return The paragraphId.
-     */
-    @java.lang.Override
-    public java.lang.String getParagraphId() {
-      java.lang.Object ref = paragraphId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        paragraphId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * ParagraphId is the zeppelin paragraph id where in notebook.
-     * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-     * </pre>
-     *
-     * <code>string paragraph_id = 11;</code>
-     * @return The bytes for paragraphId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getParagraphIdBytes() {
-      java.lang.Object ref = paragraphId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        paragraphId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FLINK_ID_FIELD_NUMBER = 12;
-    private volatile java.lang.Object flinkId_;
-    /**
-     * <pre>
-     * FlinkId is the job id in flink.
-     * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-     * </pre>
-     *
-     * <code>string flink_id = 12;</code>
-     * @return The flinkId.
-     */
-    @java.lang.Override
-    public java.lang.String getFlinkId() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        flinkId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * FlinkId is the job id in flink.
-     * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-     * </pre>
-     *
-     * <code>string flink_id = 12;</code>
-     * @return The bytes for flinkId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFlinkIdBytes() {
-      java.lang.Object ref = flinkId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        flinkId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int CREATED_FIELD_NUMBER = 8;
     private long created_;
     /**
@@ -1220,15 +989,6 @@ public final class PBModelSyncInstance {
       if (updated_ != 0L) {
         output.writeInt64(9, updated_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, noteId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, paragraphId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, flinkId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1269,15 +1029,6 @@ public final class PBModelSyncInstance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, updated_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, noteId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, paragraphId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, flinkId_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1305,12 +1056,6 @@ public final class PBModelSyncInstance {
       if (status_ != other.status_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
-      if (!getNoteId()
-          .equals(other.getNoteId())) return false;
-      if (!getParagraphId()
-          .equals(other.getParagraphId())) return false;
-      if (!getFlinkId()
-          .equals(other.getFlinkId())) return false;
       if (getCreated()
           != other.getCreated()) return false;
       if (getUpdated()
@@ -1340,12 +1085,6 @@ public final class PBModelSyncInstance {
       hash = (53 * hash) + status_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
-      hash = (37 * hash) + NOTE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNoteId().hashCode();
-      hash = (37 * hash) + PARAGRAPH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParagraphId().hashCode();
-      hash = (37 * hash) + FLINK_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFlinkId().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
@@ -1503,12 +1242,6 @@ public final class PBModelSyncInstance {
 
         message_ = "";
 
-        noteId_ = "";
-
-        paragraphId_ = "";
-
-        flinkId_ = "";
-
         created_ = 0L;
 
         updated_ = 0L;
@@ -1546,9 +1279,6 @@ public final class PBModelSyncInstance {
         result.state_ = state_;
         result.status_ = status_;
         result.message_ = message_;
-        result.noteId_ = noteId_;
-        result.paragraphId_ = paragraphId_;
-        result.flinkId_ = flinkId_;
         result.created_ = created_;
         result.updated_ = updated_;
         onBuilt();
@@ -1623,18 +1353,6 @@ public final class PBModelSyncInstance {
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
-          onChanged();
-        }
-        if (!other.getNoteId().isEmpty()) {
-          noteId_ = other.noteId_;
-          onChanged();
-        }
-        if (!other.getParagraphId().isEmpty()) {
-          paragraphId_ = other.paragraphId_;
-          onChanged();
-        }
-        if (!other.getFlinkId().isEmpty()) {
-          flinkId_ = other.flinkId_;
           onChanged();
         }
         if (other.getCreated() != 0L) {
@@ -2335,309 +2053,6 @@ public final class PBModelSyncInstance {
         return this;
       }
 
-      private java.lang.Object noteId_ = "";
-      /**
-       * <pre>
-       * NoteId is the zeppelin notebook id
-       * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-       * </pre>
-       *
-       * <code>string note_id = 10;</code>
-       * @return The noteId.
-       */
-      public java.lang.String getNoteId() {
-        java.lang.Object ref = noteId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          noteId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * NoteId is the zeppelin notebook id
-       * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-       * </pre>
-       *
-       * <code>string note_id = 10;</code>
-       * @return The bytes for noteId.
-       */
-      public com.google.protobuf.ByteString
-          getNoteIdBytes() {
-        java.lang.Object ref = noteId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          noteId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * NoteId is the zeppelin notebook id
-       * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-       * </pre>
-       *
-       * <code>string note_id = 10;</code>
-       * @param value The noteId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNoteId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        noteId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * NoteId is the zeppelin notebook id
-       * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-       * </pre>
-       *
-       * <code>string note_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNoteId() {
-        
-        noteId_ = getDefaultInstance().getNoteId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * NoteId is the zeppelin notebook id
-       * &#64;inject_tag: json:"note_id" gorm:"column:note_id;"
-       * </pre>
-       *
-       * <code>string note_id = 10;</code>
-       * @param value The bytes for noteId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNoteIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        noteId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object paragraphId_ = "";
-      /**
-       * <pre>
-       * ParagraphId is the zeppelin paragraph id where in notebook.
-       * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-       * </pre>
-       *
-       * <code>string paragraph_id = 11;</code>
-       * @return The paragraphId.
-       */
-      public java.lang.String getParagraphId() {
-        java.lang.Object ref = paragraphId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          paragraphId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * ParagraphId is the zeppelin paragraph id where in notebook.
-       * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-       * </pre>
-       *
-       * <code>string paragraph_id = 11;</code>
-       * @return The bytes for paragraphId.
-       */
-      public com.google.protobuf.ByteString
-          getParagraphIdBytes() {
-        java.lang.Object ref = paragraphId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          paragraphId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * ParagraphId is the zeppelin paragraph id where in notebook.
-       * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-       * </pre>
-       *
-       * <code>string paragraph_id = 11;</code>
-       * @param value The paragraphId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParagraphId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        paragraphId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * ParagraphId is the zeppelin paragraph id where in notebook.
-       * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-       * </pre>
-       *
-       * <code>string paragraph_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParagraphId() {
-        
-        paragraphId_ = getDefaultInstance().getParagraphId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * ParagraphId is the zeppelin paragraph id where in notebook.
-       * &#64;inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
-       * </pre>
-       *
-       * <code>string paragraph_id = 11;</code>
-       * @param value The bytes for paragraphId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParagraphIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        paragraphId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object flinkId_ = "";
-      /**
-       * <pre>
-       * FlinkId is the job id in flink.
-       * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-       * </pre>
-       *
-       * <code>string flink_id = 12;</code>
-       * @return The flinkId.
-       */
-      public java.lang.String getFlinkId() {
-        java.lang.Object ref = flinkId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          flinkId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * FlinkId is the job id in flink.
-       * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-       * </pre>
-       *
-       * <code>string flink_id = 12;</code>
-       * @return The bytes for flinkId.
-       */
-      public com.google.protobuf.ByteString
-          getFlinkIdBytes() {
-        java.lang.Object ref = flinkId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          flinkId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * FlinkId is the job id in flink.
-       * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-       * </pre>
-       *
-       * <code>string flink_id = 12;</code>
-       * @param value The flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * FlinkId is the job id in flink.
-       * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-       * </pre>
-       *
-       * <code>string flink_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFlinkId() {
-        
-        flinkId_ = getDefaultInstance().getFlinkId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * FlinkId is the job id in flink.
-       * &#64;inject_tag: json:"flink_id" gorm:"column:flink_id;"
-       * </pre>
-       *
-       * <code>string flink_id = 12;</code>
-       * @param value The bytes for flinkId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFlinkIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        flinkId_ = value;
-        onChanged();
-        return this;
-      }
-
       private long created_ ;
       /**
        * <pre>
@@ -2795,25 +2210,23 @@ public final class PBModelSyncInstance {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/sync_instance.proto\022" +
       "\005model\0323github.com/yu31/protoc-plugin/pr" +
-      "oto/validator.proto\"\320\004\n\014SyncInstance\022%\n\010" +
+      "oto/validator.proto\"\227\004\n\014SyncInstance\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
       "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007vers" +
       "ion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\037\n\002id\030\004 \001(\tB\023\342\337\037" +
       "\017\022\r\302\001\n\360\001\024\312\002\004syi-\0227\n\005state\030\005 \001(\0162\031.model." +
       "SyncInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\006sta" +
       "tus\030\006 \001(\0162\032.model.SyncInstance.StatusB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id" +
-      "\030\n \001(\t\022\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010flink_id" +
-      "\030\014 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
-      "updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
-      "\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013" +
-      "\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004" +
-      "\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout" +
-      "\020\007\022\n\n\006Failed\020\010Bn\n\"com.dataomnis.gproto.t" +
-      "ypes.pbmodelB\023PBModelSyncInstanceP\000Z1git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodelb\006proto3"
+      "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\034\n\007created" +
+      "\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007" +
+      "Deleted\020\001\022\013\n\007Enabled\020\002\"\204\001\n\005State\022\016\n\nStat" +
+      "eUnset\020\000\022\013\n\007Pending\020\001\022\013\n\007Running\020\002\022\014\n\010Re" +
+      "trying\020\003\022\r\n\tSuspended\020\004\022\016\n\nTerminated\020\005\022" +
+      "\013\n\007Succeed\020\006\022\013\n\007Timeout\020\007\022\n\n\006Failed\020\010Bn\n" +
+      "\"com.dataomnis.gproto.types.pbmodelB\023PBM" +
+      "odelSyncInstanceP\000Z1github.com/DataWorkb" +
+      "ench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2825,7 +2238,7 @@ public final class PBModelSyncInstance {
     internal_static_model_SyncInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncInstance_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", "Version", "Id", "State", "Status", "Message", "NoteId", "ParagraphId", "FlinkId", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "JobId", "Version", "Id", "State", "Status", "Message", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

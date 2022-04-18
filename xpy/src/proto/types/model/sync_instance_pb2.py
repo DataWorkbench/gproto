@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\023PBModelSyncInstanceP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%proto/types/model/sync_instance.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xd0\x04\n\x0cSyncInstance\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1f\n\x02id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syi-\x12\x37\n\x05state\x18\x05 \x01(\x0e\x32\x19.model.SyncInstance.StateB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x39\n\x06status\x18\x06 \x01(\x0e\x32\x1a.model.SyncInstance.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x07 \x01(\t\x12\x0f\n\x07note_id\x18\n \x01(\t\x12\x14\n\x0cparagraph_id\x18\x0b \x01(\t\x12\x10\n\x08\x66link_id\x18\x0c \x01(\t\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\x84\x01\n\x05State\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Pending\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0c\n\x08Retrying\x10\x03\x12\r\n\tSuspended\x10\x04\x12\x0e\n\nTerminated\x10\x05\x12\x0b\n\x07Succeed\x10\x06\x12\x0b\n\x07Timeout\x10\x07\x12\n\n\x06\x46\x61iled\x10\x08\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBModelSyncInstanceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n%proto/types/model/sync_instance.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\x97\x04\n\x0cSyncInstance\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1f\n\x02id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syi-\x12\x37\n\x05state\x18\x05 \x01(\x0e\x32\x19.model.SyncInstance.StateB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x39\n\x06status\x18\x06 \x01(\x0e\x32\x1a.model.SyncInstance.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x07 \x01(\t\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\x84\x01\n\x05State\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Pending\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0c\n\x08Retrying\x10\x03\x12\r\n\tSuspended\x10\x04\x12\x0e\n\nTerminated\x10\x05\x12\x0b\n\x07Succeed\x10\x06\x12\x0b\n\x07Timeout\x10\x07\x12\n\n\x06\x46\x61iled\x10\x08\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBModelSyncInstanceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _SYNCINSTANCE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=508,
-  serialized_end=559,
+  serialized_start=451,
+  serialized_end=502,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCINSTANCE_STATUS)
 
@@ -111,8 +111,8 @@ _SYNCINSTANCE_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=562,
-  serialized_end=694,
+  serialized_start=505,
+  serialized_end=637,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCINSTANCE_STATE)
 
@@ -175,35 +175,14 @@ _SYNCINSTANCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='note_id', full_name='model.SyncInstance.note_id', index=7,
-      number=10, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='paragraph_id', full_name='model.SyncInstance.paragraph_id', index=8,
-      number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='flink_id', full_name='model.SyncInstance.flink_id', index=9,
-      number=12, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created', full_name='model.SyncInstance.created', index=10,
+      name='created', full_name='model.SyncInstance.created', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated', full_name='model.SyncInstance.updated', index=11,
+      name='updated', full_name='model.SyncInstance.updated', index=8,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -224,7 +203,7 @@ _SYNCINSTANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=102,
-  serialized_end=694,
+  serialized_end=637,
 )
 
 _SYNCINSTANCE.fields_by_name['state'].enum_type = _SYNCINSTANCE_STATE

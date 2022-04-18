@@ -21,3 +21,16 @@ func (this *StreamJobEvent) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.SyncJobEvent
+func (this *SyncJobEvent) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Property != nil {
+		if dt, ok := interface{}(this.Property).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
