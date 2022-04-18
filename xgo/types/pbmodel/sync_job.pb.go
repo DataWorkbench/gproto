@@ -789,9 +789,9 @@ type ChannelControl struct {
 
 	// The job parallelism
 	Parallelism int32 `protobuf:"varint,1,opt,name=parallelism,proto3" json:"parallelism"`
-	// The allow record num where the job is error
+	// The allowed record num where the job is error
 	RecordNum int32 `protobuf:"varint,2,opt,name=record_num,json=recordNum,proto3" json:"record_num"`
-	// The allow percentage where the job is error
+	// The allowed percentage where the job is error
 	Percentage int32 `protobuf:"varint,3,opt,name=percentage,proto3" json:"percentage"`
 	//sync rate
 	Rate ChannelControl_RatePolicy `protobuf:"varint,4,opt,name=rate,proto3,enum=model.ChannelControl_RatePolicy" json:"rate"`
