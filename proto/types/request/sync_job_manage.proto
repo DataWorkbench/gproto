@@ -327,7 +327,7 @@ message ConvertSyncJobMode {
     // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-    // sync job conf
+    // conf
     // @inject_tag: json:"conf" uri:"conf"
     model.SyncJobConf conf = 2;
 }
