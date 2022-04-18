@@ -2445,23 +2445,21 @@ public final class PBModelNotifier {
   static {
     java.lang.String[] descriptorData = {
       "\n proto/types/model/notifier.proto\022\005mode" +
-      "l\0323github.com/yu31/protoc-plugin/proto/v" +
-      "alidator.proto\"\240\001\n\020NotificationList\022\023\n\013c" +
-      "reate_time\030\001 \001(\t\022*\n\005items\030\002 \003(\0132\033.model." +
-      "NotificationListItem\022\034\n\024notification_lis" +
-      "t_id\030\003 \001(\t\022\036\n\026notification_list_name\030\004 \001" +
-      "(\t\022\r\n\005owner\030\005 \001(\t\"z\n\024NotificationListIte" +
-      "m\022\017\n\007content\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\t\022" +
-      "\034\n\024notification_item_id\030\003 \001(\t\022\036\n\026notific" +
-      "ation_item_type\030\004 \001(\tBj\n\"com.dataomnis.g" +
-      "proto.types.pbmodelB\017PBModelNotifierP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "l\"\240\001\n\020NotificationList\022\023\n\013create_time\030\001 " +
+      "\001(\t\022*\n\005items\030\002 \003(\0132\033.model.NotificationL" +
+      "istItem\022\034\n\024notification_list_id\030\003 \001(\t\022\036\n" +
+      "\026notification_list_name\030\004 \001(\t\022\r\n\005owner\030\005" +
+      " \001(\t\"z\n\024NotificationListItem\022\017\n\007content\030" +
+      "\001 \001(\t\022\023\n\013create_time\030\002 \001(\t\022\034\n\024notificati" +
+      "on_item_id\030\003 \001(\t\022\036\n\026notification_item_ty" +
+      "pe\030\004 \001(\tBj\n\"com.dataomnis.gproto.types.p" +
+      "bmodelB\017PBModelNotifierP\000Z1github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbmodelb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
         });
     internal_static_model_NotificationList_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2475,7 +2473,6 @@ public final class PBModelNotifier {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_NotificationListItem_descriptor,
         new java.lang.String[] { "Content", "CreateTime", "NotificationItemId", "NotificationItemType", });
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

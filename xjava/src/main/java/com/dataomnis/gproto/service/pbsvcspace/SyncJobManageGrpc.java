@@ -669,37 +669,6 @@ public final class SyncJobManageGrpc {
     return getGenerateJobJsonMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> getCommitSyncJobMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CommitSyncJob",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> getCommitSyncJobMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> getCommitSyncJobMethod;
-    if ((getCommitSyncJobMethod = SyncJobManageGrpc.getCommitSyncJobMethod) == null) {
-      synchronized (SyncJobManageGrpc.class) {
-        if ((getCommitSyncJobMethod = SyncJobManageGrpc.getCommitSyncJobMethod) == null) {
-          SyncJobManageGrpc.getCommitSyncJobMethod = getCommitSyncJobMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CommitSyncJob"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("CommitSyncJob"))
-              .build();
-        }
-      }
-    }
-    return getCommitSyncJobMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode,
       com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> getConvertSyncJobModeMethod;
 
@@ -1006,13 +975,6 @@ public final class SyncJobManageGrpc {
 
     /**
      */
-    public void commitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCommitSyncJobMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void convertSyncJobMode(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConvertSyncJobModeMethod(), responseObserver);
@@ -1167,13 +1129,6 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson>(
                   this, METHODID_GENERATE_JOB_JSON)))
-          .addMethod(
-            getCommitSyncJobMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob,
-                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob>(
-                  this, METHODID_COMMIT_SYNC_JOB)))
           .addMethod(
             getConvertSyncJobModeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1447,14 +1402,6 @@ public final class SyncJobManageGrpc {
 
     /**
      */
-    public void commitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCommitSyncJobMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void convertSyncJobMode(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1699,13 +1646,6 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson generateJobJson(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateJobJsonMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob commitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCommitSyncJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1978,14 +1918,6 @@ public final class SyncJobManageGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob> commitSyncJob(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCommitSyncJobMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode> convertSyncJobMode(
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2014,8 +1946,7 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
   private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
   private static final int METHODID_GENERATE_JOB_JSON = 20;
-  private static final int METHODID_COMMIT_SYNC_JOB = 21;
-  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 22;
+  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2118,10 +2049,6 @@ public final class SyncJobManageGrpc {
           serviceImpl.generateJobJson((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson>) responseObserver);
           break;
-        case METHODID_COMMIT_SYNC_JOB:
-          serviceImpl.commitSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.CommitSyncJob) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.CommitSyncJob>) responseObserver);
-          break;
         case METHODID_CONVERT_SYNC_JOB_MODE:
           serviceImpl.convertSyncJobMode((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode>) responseObserver);
@@ -2208,7 +2135,6 @@ public final class SyncJobManageGrpc {
               .addMethod(getGetSyncJobVersionScheduleMethod())
               .addMethod(getDescribeSyncFlinkUIByInstanceIdMethod())
               .addMethod(getGenerateJobJsonMethod())
-              .addMethod(getCommitSyncJobMethod())
               .addMethod(getConvertSyncJobModeMethod())
               .build();
         }

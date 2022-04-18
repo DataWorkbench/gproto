@@ -147,14 +147,6 @@ func (this *ResumeReleaseSyncJob) SetDefaults() {
 	return
 }
 
-// Set default value for message request.CommitSyncJob
-func (this *CommitSyncJob) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.ConvertSyncJobMode
 func (this *ConvertSyncJobMode) SetDefaults() {
 	if this == nil {

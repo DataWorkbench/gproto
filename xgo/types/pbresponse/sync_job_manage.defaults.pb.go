@@ -97,14 +97,6 @@ func (this *GenerateJobJson) SetDefaults() {
 	return
 }
 
-// Set default value for message response.CommitSyncJob
-func (this *CommitSyncJob) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message response.ConvertSyncJobMode
 func (this *ConvertSyncJobMode) SetDefaults() {
 	if this == nil {

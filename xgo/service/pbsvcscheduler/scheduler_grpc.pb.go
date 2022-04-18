@@ -36,7 +36,7 @@ type SchedulerClient interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteStreamJobsByJobIds(ctx context.Context, in *pbrequest.DeleteStreamJobsByJobIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// SubmitSyncJob used when release new stream job or resume stream job.
+	// SubmitSyncJob used when release new sync job or resume sync job.
 	SubmitSyncJob(ctx context.Context, in *pbrequest.SubmitSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// StopSyncJob used when offline stream job.
 	StopSyncJob(ctx context.Context, in *pbrequest.StopSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -146,7 +146,7 @@ type SchedulerServer interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteStreamJobsByJobIds(context.Context, *pbrequest.DeleteStreamJobsByJobIds) (*pbmodel.EmptyStruct, error)
-	// SubmitSyncJob used when release new stream job or resume stream job.
+	// SubmitSyncJob used when release new sync job or resume sync job.
 	SubmitSyncJob(context.Context, *pbrequest.SubmitSyncJob) (*pbmodel.EmptyStruct, error)
 	// StopSyncJob used when offline stream job.
 	StopSyncJob(context.Context, *pbrequest.StopSyncJob) (*pbmodel.EmptyStruct, error)

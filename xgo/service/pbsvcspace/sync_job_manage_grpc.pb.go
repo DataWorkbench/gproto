@@ -79,7 +79,6 @@ type SyncJobManageClient interface {
 	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
-	CommitSyncJob(ctx context.Context, in *pbrequest.CommitSyncJob, opts ...grpc.CallOption) (*pbresponse.CommitSyncJob, error)
 	ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error)
 }
 
@@ -280,15 +279,6 @@ func (c *syncJobManageClient) GenerateJobJson(ctx context.Context, in *pbrequest
 	return out, nil
 }
 
-func (c *syncJobManageClient) CommitSyncJob(ctx context.Context, in *pbrequest.CommitSyncJob, opts ...grpc.CallOption) (*pbresponse.CommitSyncJob, error) {
-	out := new(pbresponse.CommitSyncJob)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/CommitSyncJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *syncJobManageClient) ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error) {
 	out := new(pbresponse.ConvertSyncJobMode)
 	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ConvertSyncJobMode", in, out, opts...)
@@ -356,7 +346,6 @@ type SyncJobManageServer interface {
 	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
-	CommitSyncJob(context.Context, *pbrequest.CommitSyncJob) (*pbresponse.CommitSyncJob, error)
 	ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
@@ -427,9 +416,6 @@ func (UnimplementedSyncJobManageServer) DescribeSyncFlinkUIByInstanceId(context.
 }
 func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateJobJson not implemented")
-}
-func (UnimplementedSyncJobManageServer) CommitSyncJob(context.Context, *pbrequest.CommitSyncJob) (*pbresponse.CommitSyncJob, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CommitSyncJob not implemented")
 }
 func (UnimplementedSyncJobManageServer) ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvertSyncJobMode not implemented")
@@ -825,24 +811,6 @@ func _SyncJobManage_GenerateJobJson_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_CommitSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.CommitSyncJob)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SyncJobManageServer).CommitSyncJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/CommitSyncJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).CommitSyncJob(ctx, req.(*pbrequest.CommitSyncJob))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SyncJobManage_ConvertSyncJobMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ConvertSyncJobMode)
 	if err := dec(in); err != nil {
@@ -951,10 +919,6 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateJobJson",
 			Handler:    _SyncJobManage_GenerateJobJson_Handler,
-		},
-		{
-			MethodName: "CommitSyncJob",
-			Handler:    _SyncJobManage_CommitSyncJob_Handler,
 		},
 		{
 			MethodName: "ConvertSyncJobMode",

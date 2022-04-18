@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\017PBModelNotifierP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n proto/types/model/notifier.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xa0\x01\n\x10NotificationList\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\t\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.model.NotificationListItem\x12\x1c\n\x14notification_list_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_list_name\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\"z\n\x14NotificationListItem\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\t\x12\x1c\n\x14notification_item_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_item_type\x18\x04 \x01(\tBj\n\"com.dataomnis.gproto.types.pbmodelB\x0fPBModelNotifierP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
-  ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
+  serialized_pb=b'\n proto/types/model/notifier.proto\x12\x05model\"\xa0\x01\n\x10NotificationList\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\t\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.model.NotificationListItem\x12\x1c\n\x14notification_list_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_list_name\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\"z\n\x14NotificationListItem\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\t\x12\x1c\n\x14notification_item_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_item_type\x18\x04 \x01(\tBj\n\"com.dataomnis.gproto.types.pbmodelB\x0fPBModelNotifierP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+)
 
 
 
@@ -82,8 +80,8 @@ _NOTIFICATIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=97,
-  serialized_end=257,
+  serialized_start=44,
+  serialized_end=204,
 )
 
 
@@ -135,8 +133,8 @@ _NOTIFICATIONLISTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=259,
-  serialized_end=381,
+  serialized_start=206,
+  serialized_end=328,
 )
 
 _NOTIFICATIONLIST.fields_by_name['items'].message_type = _NOTIFICATIONLISTITEM

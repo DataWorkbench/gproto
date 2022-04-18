@@ -3469,6 +3469,46 @@ public final class PBRequestScheduler {
      * @return The stopRunning.
      */
     boolean getStopRunning();
+
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    java.lang.String getFlinkUrl();
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    com.google.protobuf.ByteString
+        getFlinkUrlBytes();
+
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    java.lang.String getFlinkVersion();
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    com.google.protobuf.ByteString
+        getFlinkVersionBytes();
   }
   /**
    * <pre>
@@ -3487,6 +3527,8 @@ public final class PBRequestScheduler {
       super(builder);
     }
     private SubmitSyncJob() {
+      flinkUrl_ = "";
+      flinkVersion_ = "";
     }
 
     @java.lang.Override
@@ -3535,6 +3577,18 @@ public final class PBRequestScheduler {
             case 16: {
 
               stopRunning_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkVersion_ = s;
               break;
             }
             default: {
@@ -3606,6 +3660,98 @@ public final class PBRequestScheduler {
       return stopRunning_;
     }
 
+    public static final int FLINK_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object flinkUrl_;
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkUrl() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkUrlBytes() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLINK_VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object flinkVersion_;
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkVersion() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * </pre>
+     *
+     * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkVersionBytes() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3626,6 +3772,12 @@ public final class PBRequestScheduler {
       if (stopRunning_ != false) {
         output.writeBool(2, stopRunning_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, flinkVersion_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3642,6 +3794,12 @@ public final class PBRequestScheduler {
       if (stopRunning_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, stopRunning_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, flinkVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3665,6 +3823,10 @@ public final class PBRequestScheduler {
       }
       if (getStopRunning()
           != other.getStopRunning()) return false;
+      if (!getFlinkUrl()
+          .equals(other.getFlinkUrl())) return false;
+      if (!getFlinkVersion()
+          .equals(other.getFlinkVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3683,6 +3845,10 @@ public final class PBRequestScheduler {
       hash = (37 * hash) + STOP_RUNNING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getStopRunning());
+      hash = (37 * hash) + FLINK_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkUrl().hashCode();
+      hash = (37 * hash) + FLINK_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3828,6 +3994,10 @@ public final class PBRequestScheduler {
         }
         stopRunning_ = false;
 
+        flinkUrl_ = "";
+
+        flinkVersion_ = "";
+
         return this;
       }
 
@@ -3860,6 +4030,8 @@ public final class PBRequestScheduler {
           result.property_ = propertyBuilder_.build();
         }
         result.stopRunning_ = stopRunning_;
+        result.flinkUrl_ = flinkUrl_;
+        result.flinkVersion_ = flinkVersion_;
         onBuilt();
         return result;
       }
@@ -3913,6 +4085,14 @@ public final class PBRequestScheduler {
         }
         if (other.getStopRunning() != false) {
           setStopRunning(other.getStopRunning());
+        }
+        if (!other.getFlinkUrl().isEmpty()) {
+          flinkUrl_ = other.flinkUrl_;
+          onChanged();
+        }
+        if (!other.getFlinkVersion().isEmpty()) {
+          flinkVersion_ = other.flinkVersion_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4089,6 +4269,198 @@ public final class PBRequestScheduler {
       public Builder clearStopRunning() {
         
         stopRunning_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object flinkUrl_ = "";
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+       * @return The flinkUrl.
+       */
+      public java.lang.String getFlinkUrl() {
+        java.lang.Object ref = flinkUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkUrl.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkUrlBytes() {
+        java.lang.Object ref = flinkUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+       * @param value The flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkUrl() {
+        
+        flinkUrl_ = getDefaultInstance().getFlinkUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_url = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object flinkVersion_ = "";
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+       * @return The flinkVersion.
+       */
+      public java.lang.String getFlinkVersion() {
+        java.lang.Object ref = flinkVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkVersion.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkVersionBytes() {
+        java.lang.Object ref = flinkVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+       * @param value The flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkVersion() {
+        
+        flinkVersion_ = getDefaultInstance().getFlinkVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * </pre>
+       *
+       * <code>string flink_version = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkVersion_ = value;
         onChanged();
         return this;
       }
@@ -6569,20 +6941,21 @@ public final class PBRequestScheduler {
       "\352\001\017Z\r\302\001\n\360\001\024\312\002\004wks-\"l\n\030DeleteStreamJobsBy" +
       "JobIds\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
       "\004wks-\022)\n\007job_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\"b\n\rSubmitSyncJob\0225\n\010property\030\001 " +
-      "\001(\0132\026.model.SyncJobPropertyB\013\342\337\037\007\022\005\342\001\002\020\001" +
-      "\022\032\n\014stop_running\030\002 \001(\010B\004\342\337\037\000\"u\n\013StopSync" +
-      "Job\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
-      "\032\n\014stop_running\030\003 \001(\010B\004\342\337\037\000\"G\n\030DeleteSyn" +
-      "cJobsBySpaceIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024" +
-      "\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004wks-\"j\n\026DeleteSyncJobsBy" +
-      "JobIds\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022)\n\007job_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001" +
-      "\024\312\002\004syj-Bq\n$com.dataomnis.gproto.types.p" +
-      "brequestB\022PBRequestSchedulerP\000Z3github.c" +
-      "om/DataWorkbench/gproto/xgo/types/pbrequ" +
-      "estb\006proto3"
+      "\024\312\002\004stj-\"\246\001\n\rSubmitSyncJob\0225\n\010property\030\001" +
+      " \001(\0132\026.model.SyncJobPropertyB\013\342\337\037\007\022\005\342\001\002\020" +
+      "\001\022\032\n\014stop_running\030\002 \001(\010B\004\342\337\037\000\022\036\n\tflink_u" +
+      "rl\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rflink_version\030\004" +
+      " \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"u\n\013StopSyncJob\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_i" +
+      "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\032\n\014stop_run" +
+      "ning\030\003 \001(\010B\004\342\337\037\000\"G\n\030DeleteSyncJobsBySpac" +
+      "eIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\"j\n\026DeleteSyncJobsByJobIds\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022)\n\007jo" +
+      "b_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004syj-Bq\n" +
+      "$com.dataomnis.gproto.types.pbrequestB\022P" +
+      "BRequestSchedulerP\000Z3github.com/DataWork" +
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6620,7 +6993,7 @@ public final class PBRequestScheduler {
     internal_static_request_SubmitSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SubmitSyncJob_descriptor,
-        new java.lang.String[] { "Property", "StopRunning", });
+        new java.lang.String[] { "Property", "StopRunning", "FlinkUrl", "FlinkVersion", });
     internal_static_request_StopSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_request_StopSyncJob_fieldAccessorTable = new

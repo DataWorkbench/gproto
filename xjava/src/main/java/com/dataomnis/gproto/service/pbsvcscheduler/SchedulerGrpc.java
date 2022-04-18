@@ -357,7 +357,7 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
-     * SubmitSyncJob used when release new stream job or resume stream job.
+     * SubmitSyncJob used when release new sync job or resume sync job.
      * </pre>
      */
     public void submitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitSyncJob request,
@@ -525,7 +525,7 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
-     * SubmitSyncJob used when release new stream job or resume stream job.
+     * SubmitSyncJob used when release new sync job or resume sync job.
      * </pre>
      */
     public void submitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitSyncJob request,
@@ -632,7 +632,7 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
-     * SubmitSyncJob used when release new stream job or resume stream job.
+     * SubmitSyncJob used when release new sync job or resume sync job.
      * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct submitSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitSyncJob request) {
@@ -739,7 +739,7 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
-     * SubmitSyncJob used when release new stream job or resume stream job.
+     * SubmitSyncJob used when release new sync job or resume sync job.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> submitSyncJob(

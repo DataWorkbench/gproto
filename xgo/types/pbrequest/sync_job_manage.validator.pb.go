@@ -755,40 +755,6 @@ func (this *ResumeReleaseSyncJob) Validate() error {
 	return nil
 }
 
-func (this *CommitSyncJob) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("CommitSyncJob", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("CommitSyncJob", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *CommitSyncJob) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("CommitSyncJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("CommitSyncJob", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-// Set default value for message request.CommitSyncJob
-func (this *CommitSyncJob) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_ConvertSyncJobMode_InEnums_Type = map[pbmodel.SyncJob_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ConvertSyncJobMode) _xxx_xxx_Validator_Validate_type() error {

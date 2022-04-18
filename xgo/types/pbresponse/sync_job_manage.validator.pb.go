@@ -153,14 +153,6 @@ func (this *GenerateJobJson) Validate() error {
 	return nil
 }
 
-// Set default value for message response.CommitSyncJob
-func (this *CommitSyncJob) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 // Set default value for message response.ConvertSyncJobMode
 func (this *ConvertSyncJobMode) Validate() error {
 	if this == nil {
