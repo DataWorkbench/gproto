@@ -9217,8 +9217,8 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -9227,8 +9227,8 @@ public final class PBRequestSyncJobManage {
     boolean hasConf();
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -9237,8 +9237,8 @@ public final class PBRequestSyncJobManage {
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf();
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -9453,8 +9453,8 @@ public final class PBRequestSyncJobManage {
     private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -9466,8 +9466,8 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -9479,8 +9479,8 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The args set.
-     * &#64;inject_tag: json:"args"
+     * The conf set.
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10050,8 +10050,8 @@ public final class PBRequestSyncJobManage {
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> confBuilder_;
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10062,8 +10062,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10078,8 +10078,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10099,8 +10099,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10118,8 +10118,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10141,8 +10141,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10160,8 +10160,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10173,8 +10173,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
@@ -10189,8 +10189,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The args set.
-       * &#64;inject_tag: json:"args"
+       * The conf set.
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
