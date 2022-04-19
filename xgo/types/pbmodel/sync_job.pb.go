@@ -788,7 +788,7 @@ type SyncJobConf struct {
 	SourceId string `protobuf:"bytes,1,opt,name=source_id,json=sourceId,proto3" json:"source_id"`
 	// target_id is datasource id
 	TargetId string `protobuf:"bytes,2,opt,name=target_id,json=targetId,proto3" json:"target_id"`
-	// 0:guide mode,1:shell mode
+	// 1:guide mode,2:script mode
 	JobMode SyncJobConf_JobMode `protobuf:"varint,3,opt,name=job_mode,json=jobMode,proto3,enum=model.SyncJobConf_JobMode" json:"job_mode"`
 	// shell mode json
 	JobContent string `protobuf:"bytes,4,opt,name=job_content,json=jobContent,proto3" json:"job_content"`
