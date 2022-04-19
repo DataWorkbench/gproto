@@ -617,8 +617,8 @@ type SetSyncJobConf struct {
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
 	// The sync job ID it belongs to.
 	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
-	// The args set.
-	Conf *pbmodel.SyncJobConf `protobuf:"bytes,3,opt,name=conf,proto3" json:"args"`
+	// The conf set.
+	Conf *pbmodel.SyncJobConf `protobuf:"bytes,3,opt,name=conf,proto3" json:"conf"`
 }
 
 func (x *SetSyncJobConf) Reset() {
