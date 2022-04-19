@@ -152,7 +152,7 @@ message SyncJobConf {
     // @inject_tag: json:"target_id"
     string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
 
-    // 0:guide mode,1:shell mode
+    // 1:guide mode,2:script mode
     // @inject_tag: json:"job_mode"
     JobMode job_mode = 3 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // shell mode json
