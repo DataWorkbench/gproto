@@ -113,9 +113,9 @@ message CreateFlinkCluster {
   // @inject_tag: json:"name"
   string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
+  // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9"
   // @inject_tag: json:"version"
-  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11"] } ];
+  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9"] } ];
 
   // resource config.
   //
@@ -161,9 +161,9 @@ message UpdateFlinkCluster {
   // @inject_tag: json:"name"
   string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  //	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
-  //	// @inject_tag: json:"version" binding:"oneof=flink-1.12.3-scala_2.11"
-  //	string version = 4 [ (validator.field) = { msg_exists: true } ];
+	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9"
+	// @inject_tag: json:"version"
+//  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9"] } ];
 
   // resource config.
   //
