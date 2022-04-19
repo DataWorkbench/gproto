@@ -427,6 +427,11 @@ message SyncJobRelease {
         Deleted = 1;
         Inline = 2;
         Offline = 3;
+        // The sync job has been executed finished.
+        // cases of finished:
+        //     1. Scheduler Policy AppointTime or Immediately.
+        //     2. Scheduler Policy Periodicity end of validity.
+        Finished = 4;
     }
 
     // Workspace ID it belongs to.
@@ -449,7 +454,7 @@ message SyncJobRelease {
     // @inject_tag: json:"type" gorm:"column:type;"
     SyncJob.Type type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
 
-    // Release status, 2 => "Inline", 3 => "Offline"
+    // Release status, 2 => "Inline", 3 => "Offline" 4 => "Finished"
     // @inject_tag: json:"status" gorm:"column:status;"
     Status status = 6 ;
 

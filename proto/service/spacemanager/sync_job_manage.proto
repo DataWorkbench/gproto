@@ -71,6 +71,9 @@ service SyncJobManage {
     // ListReleaseSyncJobs for gets a list of all published job in the workspace.
     rpc ListReleaseSyncJobs(request.ListReleaseSyncJobs) returns (response.ListReleaseSyncJobs) {}
 
+    // UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+    rpc UpdateReleaseSyncJobStatus(request.UpdateReleaseSyncJobStatus) returns (model.EmptyStruct) {}
+
     // Interface for Sync job versions.
     //
     // ListSyncJobVersions for gets a list of all versions of the specified job.
