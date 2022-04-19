@@ -63,6 +63,8 @@ type SyncJobManageClient interface {
 	ResumeReleaseSyncJob(ctx context.Context, in *pbrequest.ResumeReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
 	ListReleaseSyncJobs(ctx context.Context, in *pbrequest.ListReleaseSyncJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseSyncJobs, error)
+	// UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+	UpdateReleaseSyncJobStatus(ctx context.Context, in *pbrequest.UpdateReleaseSyncJobStatus, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// Interface for Sync job versions.
 	//
 	// ListSyncJobVersions for gets a list of all versions of the specified job.
@@ -218,6 +220,15 @@ func (c *syncJobManageClient) ListReleaseSyncJobs(ctx context.Context, in *pbreq
 	return out, nil
 }
 
+func (c *syncJobManageClient) UpdateReleaseSyncJobStatus(ctx context.Context, in *pbrequest.UpdateReleaseSyncJobStatus, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/UpdateReleaseSyncJobStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *syncJobManageClient) ListSyncJobVersions(ctx context.Context, in *pbrequest.ListSyncJobVersions, opts ...grpc.CallOption) (*pbresponse.ListSyncJobVersions, error) {
 	out := new(pbresponse.ListSyncJobVersions)
 	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ListSyncJobVersions", in, out, opts...)
@@ -341,6 +352,8 @@ type SyncJobManageServer interface {
 	ResumeReleaseSyncJob(context.Context, *pbrequest.ResumeReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
 	ListReleaseSyncJobs(context.Context, *pbrequest.ListReleaseSyncJobs) (*pbresponse.ListReleaseSyncJobs, error)
+	// UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+	UpdateReleaseSyncJobStatus(context.Context, *pbrequest.UpdateReleaseSyncJobStatus) (*pbmodel.EmptyStruct, error)
 	// Interface for Sync job versions.
 	//
 	// ListSyncJobVersions for gets a list of all versions of the specified job.
@@ -408,6 +421,9 @@ func (UnimplementedSyncJobManageServer) ResumeReleaseSyncJob(context.Context, *p
 }
 func (UnimplementedSyncJobManageServer) ListReleaseSyncJobs(context.Context, *pbrequest.ListReleaseSyncJobs) (*pbresponse.ListReleaseSyncJobs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseSyncJobs not implemented")
+}
+func (UnimplementedSyncJobManageServer) UpdateReleaseSyncJobStatus(context.Context, *pbrequest.UpdateReleaseSyncJobStatus) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateReleaseSyncJobStatus not implemented")
 }
 func (UnimplementedSyncJobManageServer) ListSyncJobVersions(context.Context, *pbrequest.ListSyncJobVersions) (*pbresponse.ListSyncJobVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListSyncJobVersions not implemented")
@@ -701,6 +717,24 @@ func _SyncJobManage_ListReleaseSyncJobs_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_UpdateReleaseSyncJobStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateReleaseSyncJobStatus)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).UpdateReleaseSyncJobStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/UpdateReleaseSyncJobStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).UpdateReleaseSyncJobStatus(ctx, req.(*pbrequest.UpdateReleaseSyncJobStatus))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SyncJobManage_ListSyncJobVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ListSyncJobVersions)
 	if err := dec(in); err != nil {
@@ -925,6 +959,10 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListReleaseSyncJobs",
 			Handler:    _SyncJobManage_ListReleaseSyncJobs_Handler,
+		},
+		{
+			MethodName: "UpdateReleaseSyncJobStatus",
+			Handler:    _SyncJobManage_UpdateReleaseSyncJobStatus_Handler,
 		},
 		{
 			MethodName: "ListSyncJobVersions",

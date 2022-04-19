@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\022PBSvcSyncJobManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0proto/service/spacemanager/sync_job_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a)proto/types/request/sync_job_manage.proto\x1a*proto/types/response/sync_job_manage.proto2\x93\x0e\n\rSyncJobManage\x12?\n\x0cListSyncJobs\x12\x15.request.ListSyncJobs\x1a\x16.response.ListSyncJobs\"\x00\x12?\n\x0e\x44\x65leteSyncJobs\x12\x17.request.DeleteSyncJobs\x1a\x12.model.EmptyStruct\"\x00\x12;\n\x0cMoveSyncJobs\x12\x15.request.MoveSyncJobs\x1a\x12.model.EmptyStruct\"\x00\x12\x42\n\rCreateSyncJob\x12\x16.request.CreateSyncJob\x1a\x17.response.CreateSyncJob\"\x00\x12=\n\rUpdateSyncJob\x12\x16.request.UpdateSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x44\x65scribeSyncJob\x12\x18.request.DescribeSyncJob\x1a\x19.response.DescribeSyncJob\"\x00\x12?\n\x0eSetSyncJobConf\x12\x17.request.SetSyncJobConf\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eGetSyncJobConf\x12\x17.request.GetSyncJobConf\x1a\x18.response.GetSyncJobConf\"\x00\x12G\n\x12SetSyncJobSchedule\x12\x1b.request.SetSyncJobSchedule\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x12GetSyncJobSchedule\x12\x1b.request.GetSyncJobSchedule\x1a\x1c.response.GetSyncJobSchedule\"\x00\x12?\n\x0eReleaseSyncJob\x12\x17.request.ReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12M\n\x15OfflineReleaseSyncJob\x12\x1e.request.OfflineReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x14ResumeReleaseSyncJob\x12\x1d.request.ResumeReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12T\n\x13ListReleaseSyncJobs\x12\x1c.request.ListReleaseSyncJobs\x1a\x1d.response.ListReleaseSyncJobs\"\x00\x12T\n\x13ListSyncJobVersions\x12\x1c.request.ListSyncJobVersions\x1a\x1d.response.ListSyncJobVersions\"\x00\x12O\n\x16\x44\x65scribeSyncJobVersion\x12\x18.request.DescribeSyncJob\x1a\x19.response.DescribeSyncJob\"\x00\x12L\n\x15GetSyncJobVersionConf\x12\x17.request.GetSyncJobConf\x1a\x18.response.GetSyncJobConf\"\x00\x12X\n\x19GetSyncJobVersionSchedule\x12\x1b.request.GetSyncJobSchedule\x1a\x1c.response.GetSyncJobSchedule\"\x00\x12x\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12(.request.DescribeSyncFlinkUIByInstanceId\x1a).response.DescribeSyncFlinkUIByInstanceId\"\x00\x12H\n\x0fGenerateJobJson\x12\x18.request.GenerateJobJson\x1a\x19.response.GenerateJobJson\"\x00\x12Q\n\x12\x43onvertSyncJobMode\x12\x1b.request.ConvertSyncJobMode\x1a\x1c.response.ConvertSyncJobMode\"\x00\x12Z\n\x15PingSyncJobConnection\x12\x1e.request.PingSyncJobConnection\x1a\x1f.response.PingSyncJobConnection\"\x00\x12]\n\x16\x44\x65scribeSyncConnection\x12\x1f.request.DescribeSyncConnection\x1a .response.DescribeSyncConnection\"\x00\x42w\n\'com.dataomnis.gproto.service.pbsvcspaceB\x12PBSvcSyncJobManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n0proto/service/spacemanager/sync_job_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a)proto/types/request/sync_job_manage.proto\x1a*proto/types/response/sync_job_manage.proto2\xec\x0e\n\rSyncJobManage\x12?\n\x0cListSyncJobs\x12\x15.request.ListSyncJobs\x1a\x16.response.ListSyncJobs\"\x00\x12?\n\x0e\x44\x65leteSyncJobs\x12\x17.request.DeleteSyncJobs\x1a\x12.model.EmptyStruct\"\x00\x12;\n\x0cMoveSyncJobs\x12\x15.request.MoveSyncJobs\x1a\x12.model.EmptyStruct\"\x00\x12\x42\n\rCreateSyncJob\x12\x16.request.CreateSyncJob\x1a\x17.response.CreateSyncJob\"\x00\x12=\n\rUpdateSyncJob\x12\x16.request.UpdateSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x44\x65scribeSyncJob\x12\x18.request.DescribeSyncJob\x1a\x19.response.DescribeSyncJob\"\x00\x12?\n\x0eSetSyncJobConf\x12\x17.request.SetSyncJobConf\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eGetSyncJobConf\x12\x17.request.GetSyncJobConf\x1a\x18.response.GetSyncJobConf\"\x00\x12G\n\x12SetSyncJobSchedule\x12\x1b.request.SetSyncJobSchedule\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x12GetSyncJobSchedule\x12\x1b.request.GetSyncJobSchedule\x1a\x1c.response.GetSyncJobSchedule\"\x00\x12?\n\x0eReleaseSyncJob\x12\x17.request.ReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12M\n\x15OfflineReleaseSyncJob\x12\x1e.request.OfflineReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x14ResumeReleaseSyncJob\x12\x1d.request.ResumeReleaseSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12T\n\x13ListReleaseSyncJobs\x12\x1c.request.ListReleaseSyncJobs\x1a\x1d.response.ListReleaseSyncJobs\"\x00\x12W\n\x1aUpdateReleaseSyncJobStatus\x12#.request.UpdateReleaseSyncJobStatus\x1a\x12.model.EmptyStruct\"\x00\x12T\n\x13ListSyncJobVersions\x12\x1c.request.ListSyncJobVersions\x1a\x1d.response.ListSyncJobVersions\"\x00\x12O\n\x16\x44\x65scribeSyncJobVersion\x12\x18.request.DescribeSyncJob\x1a\x19.response.DescribeSyncJob\"\x00\x12L\n\x15GetSyncJobVersionConf\x12\x17.request.GetSyncJobConf\x1a\x18.response.GetSyncJobConf\"\x00\x12X\n\x19GetSyncJobVersionSchedule\x12\x1b.request.GetSyncJobSchedule\x1a\x1c.response.GetSyncJobSchedule\"\x00\x12x\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12(.request.DescribeSyncFlinkUIByInstanceId\x1a).response.DescribeSyncFlinkUIByInstanceId\"\x00\x12H\n\x0fGenerateJobJson\x12\x18.request.GenerateJobJson\x1a\x19.response.GenerateJobJson\"\x00\x12Q\n\x12\x43onvertSyncJobMode\x12\x1b.request.ConvertSyncJobMode\x1a\x1c.response.ConvertSyncJobMode\"\x00\x12Z\n\x15PingSyncJobConnection\x12\x1e.request.PingSyncJobConnection\x1a\x1f.response.PingSyncJobConnection\"\x00\x12]\n\x16\x44\x65scribeSyncConnection\x12\x1f.request.DescribeSyncConnection\x1a .response.DescribeSyncConnection\"\x00\x42w\n\'com.dataomnis.gproto.service.pbsvcspaceB\x12PBSvcSyncJobManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_sync__job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_sync__job__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=185,
-  serialized_end=1996,
+  serialized_end=2085,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListSyncJobs',
@@ -184,9 +184,19 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='UpdateReleaseSyncJobStatus',
+    full_name='spacemanager.SyncJobManage.UpdateReleaseSyncJobStatus',
+    index=14,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._UPDATERELEASESYNCJOBSTATUS,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListSyncJobVersions',
     full_name='spacemanager.SyncJobManage.ListSyncJobVersions',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._LISTSYNCJOBVERSIONS,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._LISTSYNCJOBVERSIONS,
@@ -196,7 +206,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeSyncJobVersion',
     full_name='spacemanager.SyncJobManage.DescribeSyncJobVersion',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._DESCRIBESYNCJOB,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._DESCRIBESYNCJOB,
@@ -206,7 +216,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetSyncJobVersionConf',
     full_name='spacemanager.SyncJobManage.GetSyncJobVersionConf',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._GETSYNCJOBCONF,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._GETSYNCJOBCONF,
@@ -216,7 +226,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetSyncJobVersionSchedule',
     full_name='spacemanager.SyncJobManage.GetSyncJobVersionSchedule',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._GETSYNCJOBSCHEDULE,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._GETSYNCJOBSCHEDULE,
@@ -226,7 +236,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeSyncFlinkUIByInstanceId',
     full_name='spacemanager.SyncJobManage.DescribeSyncFlinkUIByInstanceId',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._DESCRIBESYNCFLINKUIBYINSTANCEID,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._DESCRIBESYNCFLINKUIBYINSTANCEID,
@@ -236,7 +246,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GenerateJobJson',
     full_name='spacemanager.SyncJobManage.GenerateJobJson',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._GENERATEJOBJSON,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._GENERATEJOBJSON,
@@ -246,7 +256,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ConvertSyncJobMode',
     full_name='spacemanager.SyncJobManage.ConvertSyncJobMode',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._CONVERTSYNCJOBMODE,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._CONVERTSYNCJOBMODE,
@@ -256,7 +266,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PingSyncJobConnection',
     full_name='spacemanager.SyncJobManage.PingSyncJobConnection',
-    index=21,
+    index=22,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._PINGSYNCJOBCONNECTION,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._PINGSYNCJOBCONNECTION,
@@ -266,7 +276,7 @@ _SYNCJOBMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeSyncConnection',
     full_name='spacemanager.SyncJobManage.DescribeSyncConnection',
-    index=22,
+    index=23,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_sync__job__manage__pb2._DESCRIBESYNCCONNECTION,
     output_type=proto_dot_types_dot_response_dot_sync__job__manage__pb2._DESCRIBESYNCCONNECTION,

@@ -27,7 +27,7 @@ public final class PBSvcSyncJobManage {
       "nage.proto\022\014spacemanager\032\035proto/types/mo" +
       "del/empty.proto\032)proto/types/request/syn" +
       "c_job_manage.proto\032*proto/types/response" +
-      "/sync_job_manage.proto2\223\016\n\rSyncJobManage" +
+      "/sync_job_manage.proto2\354\016\n\rSyncJobManage" +
       "\022?\n\014ListSyncJobs\022\025.request.ListSyncJobs\032" +
       "\026.response.ListSyncJobs\"\000\022?\n\016DeleteSyncJ" +
       "obs\022\027.request.DeleteSyncJobs\032\022.model.Emp" +
@@ -52,31 +52,33 @@ public final class PBSvcSyncJobManage {
       "meReleaseSyncJob\022\035.request.ResumeRelease" +
       "SyncJob\032\022.model.EmptyStruct\"\000\022T\n\023ListRel" +
       "easeSyncJobs\022\034.request.ListReleaseSyncJo" +
-      "bs\032\035.response.ListReleaseSyncJobs\"\000\022T\n\023L" +
-      "istSyncJobVersions\022\034.request.ListSyncJob" +
-      "Versions\032\035.response.ListSyncJobVersions\"" +
-      "\000\022O\n\026DescribeSyncJobVersion\022\030.request.De" +
-      "scribeSyncJob\032\031.response.DescribeSyncJob" +
-      "\"\000\022L\n\025GetSyncJobVersionConf\022\027.request.Ge" +
-      "tSyncJobConf\032\030.response.GetSyncJobConf\"\000" +
-      "\022X\n\031GetSyncJobVersionSchedule\022\033.request." +
-      "GetSyncJobSchedule\032\034.response.GetSyncJob" +
-      "Schedule\"\000\022x\n\037DescribeSyncFlinkUIByInsta" +
-      "nceId\022(.request.DescribeSyncFlinkUIByIns" +
-      "tanceId\032).response.DescribeSyncFlinkUIBy" +
-      "InstanceId\"\000\022H\n\017GenerateJobJson\022\030.reques" +
-      "t.GenerateJobJson\032\031.response.GenerateJob" +
-      "Json\"\000\022Q\n\022ConvertSyncJobMode\022\033.request.C" +
-      "onvertSyncJobMode\032\034.response.ConvertSync" +
-      "JobMode\"\000\022Z\n\025PingSyncJobConnection\022\036.req" +
-      "uest.PingSyncJobConnection\032\037.response.Pi" +
-      "ngSyncJobConnection\"\000\022]\n\026DescribeSyncCon" +
-      "nection\022\037.request.DescribeSyncConnection" +
-      "\032 .response.DescribeSyncConnection\"\000Bw\n\'" +
-      "com.dataomnis.gproto.service.pbsvcspaceB" +
-      "\022PBSvcSyncJobManageP\000Z6github.com/DataWo" +
-      "rkbench/gproto/xgo/service/pbsvcspaceb\006p" +
-      "roto3"
+      "bs\032\035.response.ListReleaseSyncJobs\"\000\022W\n\032U" +
+      "pdateReleaseSyncJobStatus\022#.request.Upda" +
+      "teReleaseSyncJobStatus\032\022.model.EmptyStru" +
+      "ct\"\000\022T\n\023ListSyncJobVersions\022\034.request.Li" +
+      "stSyncJobVersions\032\035.response.ListSyncJob" +
+      "Versions\"\000\022O\n\026DescribeSyncJobVersion\022\030.r" +
+      "equest.DescribeSyncJob\032\031.response.Descri" +
+      "beSyncJob\"\000\022L\n\025GetSyncJobVersionConf\022\027.r" +
+      "equest.GetSyncJobConf\032\030.response.GetSync" +
+      "JobConf\"\000\022X\n\031GetSyncJobVersionSchedule\022\033" +
+      ".request.GetSyncJobSchedule\032\034.response.G" +
+      "etSyncJobSchedule\"\000\022x\n\037DescribeSyncFlink" +
+      "UIByInstanceId\022(.request.DescribeSyncFli" +
+      "nkUIByInstanceId\032).response.DescribeSync" +
+      "FlinkUIByInstanceId\"\000\022H\n\017GenerateJobJson" +
+      "\022\030.request.GenerateJobJson\032\031.response.Ge" +
+      "nerateJobJson\"\000\022Q\n\022ConvertSyncJobMode\022\033." +
+      "request.ConvertSyncJobMode\032\034.response.Co" +
+      "nvertSyncJobMode\"\000\022Z\n\025PingSyncJobConnect" +
+      "ion\022\036.request.PingSyncJobConnection\032\037.re" +
+      "sponse.PingSyncJobConnection\"\000\022]\n\026Descri" +
+      "beSyncConnection\022\037.request.DescribeSyncC" +
+      "onnection\032 .response.DescribeSyncConnect" +
+      "ion\"\000Bw\n\'com.dataomnis.gproto.service.pb" +
+      "svcspaceB\022PBSvcSyncJobManageP\000Z6github.c" +
+      "om/DataWorkbench/gproto/xgo/service/pbsv" +
+      "cspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

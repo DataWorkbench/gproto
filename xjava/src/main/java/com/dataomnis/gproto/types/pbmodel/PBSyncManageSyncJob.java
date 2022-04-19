@@ -4540,7 +4540,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * 0:guide mode,1:shell mode
+     * 1:guide mode,2:script mode
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
@@ -4550,7 +4550,7 @@ public final class PBSyncManageSyncJob {
     int getJobModeValue();
     /**
      * <pre>
-     * 0:guide mode,1:shell mode
+     * 1:guide mode,2:script mode
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
@@ -5023,7 +5023,7 @@ public final class PBSyncManageSyncJob {
     private int jobMode_;
     /**
      * <pre>
-     * 0:guide mode,1:shell mode
+     * 1:guide mode,2:script mode
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
@@ -5035,7 +5035,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * 0:guide mode,1:shell mode
+     * 1:guide mode,2:script mode
      * &#64;inject_tag: json:"job_mode"
      * </pre>
      *
@@ -5865,7 +5865,7 @@ public final class PBSyncManageSyncJob {
       private int jobMode_ = 0;
       /**
        * <pre>
-       * 0:guide mode,1:shell mode
+       * 1:guide mode,2:script mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
@@ -5877,7 +5877,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * 0:guide mode,1:shell mode
+       * 1:guide mode,2:script mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
@@ -5893,7 +5893,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * 0:guide mode,1:shell mode
+       * 1:guide mode,2:script mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
@@ -5908,7 +5908,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * 0:guide mode,1:shell mode
+       * 1:guide mode,2:script mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
@@ -5927,7 +5927,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * 0:guide mode,1:shell mode
+       * 1:guide mode,2:script mode
        * &#64;inject_tag: json:"job_mode"
        * </pre>
        *
@@ -20328,7 +20328,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -20338,7 +20338,7 @@ public final class PBSyncManageSyncJob {
     int getStatusValue();
     /**
      * <pre>
-     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -20581,6 +20581,17 @@ public final class PBSyncManageSyncJob {
        * <code>Offline = 3;</code>
        */
       Offline(3),
+      /**
+       * <pre>
+       * The sync job has been executed finished.
+       * cases of finished:
+       *     1. Scheduler Policy AppointTime or Immediately.
+       *     2. Scheduler Policy Periodicity end of validity.
+       * </pre>
+       *
+       * <code>Finished = 4;</code>
+       */
+      Finished(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -20600,6 +20611,17 @@ public final class PBSyncManageSyncJob {
        * <code>Offline = 3;</code>
        */
       public static final int Offline_VALUE = 3;
+      /**
+       * <pre>
+       * The sync job has been executed finished.
+       * cases of finished:
+       *     1. Scheduler Policy AppointTime or Immediately.
+       *     2. Scheduler Policy Periodicity end of validity.
+       * </pre>
+       *
+       * <code>Finished = 4;</code>
+       */
+      public static final int Finished_VALUE = 4;
 
 
       public final int getNumber() {
@@ -20630,6 +20652,7 @@ public final class PBSyncManageSyncJob {
           case 1: return Deleted;
           case 2: return Inline;
           case 3: return Offline;
+          case 4: return Finished;
           default: return null;
         }
       }
@@ -20911,7 +20934,7 @@ public final class PBSyncManageSyncJob {
     private int status_;
     /**
      * <pre>
-     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -20923,7 +20946,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+     * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -22009,7 +22032,7 @@ public final class PBSyncManageSyncJob {
       private int status_ = 0;
       /**
        * <pre>
-       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -22021,7 +22044,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -22037,7 +22060,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -22052,7 +22075,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -22071,7 +22094,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline"
+       * Release status, 2 =&gt; "Inline", 3 =&gt; "Offline" 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -24933,7 +24956,7 @@ public final class PBSyncManageSyncJob {
       "\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n" +
       "\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n" +
       "\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:" +
-      "\006\312\262\004\002\n\000\"\244\003\n\016SyncJobRelease\022%\n\010space_id\030\001" +
+      "\006\312\262\004\002\n\000\"\262\003\n\016SyncJobRelease\022%\n\010space_id\030\001" +
       " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342" +
       "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037" +
       "\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200" +
@@ -24942,24 +24965,24 @@ public final class PBSyncManageSyncJob {
       "JobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreat" +
       "ed_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001" +
       "(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005" +
-      "\262\001\0020\000\"?\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
-      "ted\020\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\"\377\003\n\021SyncJ" +
-      "obConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022>\n\006status\030\006 \001(\0162\037.model.SyncJo" +
-      "bConnection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022>\n\006res" +
-      "ult\030\007 \001(\0162\037.model.SyncJobConnection.Resu" +
-      "ltB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\010 \001(\t\022\034\n\007cr" +
-      "eated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\n \001(\003" +
-      "\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001" +
-      "\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n\nStateUnset\020\000\022" +
-      "\013\n\007Success\020\001\022\n\n\006Failed\020\002Bn\n\"com.dataomni" +
-      "s.gproto.types.pbmodelB\023PBSyncManageSync" +
-      "JobP\000Z1github.com/DataWorkbench/gproto/x" +
-      "go/types/pbmodelb\006proto3"
+      "\262\001\0020\000\"M\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
+      "ted\020\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\022\014\n\010Finish" +
+      "ed\020\004\"\377\003\n\021SyncJobConnection\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022>\n\006status\030\006 \001(\0162" +
+      "\037.model.SyncJobConnection.StatusB\r\342\337\037\t\022\007" +
+      "\332\001\0040\001X\001\022>\n\006result\030\007 \001(\0162\037.model.SyncJobC" +
+      "onnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007messa" +
+      "ge\030\010 \001(\t\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016" +
+      "\n\006elapse\030\n \001(\003\"3\n\006Status\022\017\n\013StatusUnset\020" +
+      "\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n" +
+      "\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002Bn" +
+      "\n\"com.dataomnis.gproto.types.pbmodelB\023PB" +
+      "SyncManageSyncJobP\000Z1github.com/DataWork" +
+      "bench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

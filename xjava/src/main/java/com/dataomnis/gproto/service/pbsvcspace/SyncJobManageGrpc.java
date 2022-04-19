@@ -452,6 +452,37 @@ public final class SyncJobManageGrpc {
     return getListReleaseSyncJobsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseSyncJobStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReleaseSyncJobStatus",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseSyncJobStatusMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateReleaseSyncJobStatusMethod;
+    if ((getUpdateReleaseSyncJobStatusMethod = SyncJobManageGrpc.getUpdateReleaseSyncJobStatusMethod) == null) {
+      synchronized (SyncJobManageGrpc.class) {
+        if ((getUpdateReleaseSyncJobStatusMethod = SyncJobManageGrpc.getUpdateReleaseSyncJobStatusMethod) == null) {
+          SyncJobManageGrpc.getUpdateReleaseSyncJobStatusMethod = getUpdateReleaseSyncJobStatusMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateReleaseSyncJobStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("UpdateReleaseSyncJobStatus"))
+              .build();
+        }
+      }
+    }
+    return getUpdateReleaseSyncJobStatusMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions,
       com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ListSyncJobVersions> getListSyncJobVersionsMethod;
 
@@ -934,6 +965,16 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
+     * UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+     * </pre>
+     */
+    public void updateReleaseSyncJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateReleaseSyncJobStatusMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Interface for Sync job versions.
      *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
@@ -1121,6 +1162,13 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListReleaseSyncJobs,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ListReleaseSyncJobs>(
                   this, METHODID_LIST_RELEASE_SYNC_JOBS)))
+          .addMethod(
+            getUpdateReleaseSyncJobStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_RELEASE_SYNC_JOB_STATUS)))
           .addMethod(
             getListSyncJobVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1367,6 +1415,17 @@ public final class SyncJobManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ListReleaseSyncJobs> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListReleaseSyncJobsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+     * </pre>
+     */
+    public void updateReleaseSyncJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReleaseSyncJobStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1633,6 +1692,16 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ListReleaseSyncJobs listReleaseSyncJobs(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListReleaseSyncJobs request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReleaseSyncJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateReleaseSyncJobStatus(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReleaseSyncJobStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1908,6 +1977,17 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
+     * UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateReleaseSyncJobStatus(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReleaseSyncJobStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Interface for Sync job versions.
      *
      * ListSyncJobVersions for gets a list of all versions of the specified job.
@@ -2019,15 +2099,16 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_OFFLINE_RELEASE_SYNC_JOB = 11;
   private static final int METHODID_RESUME_RELEASE_SYNC_JOB = 12;
   private static final int METHODID_LIST_RELEASE_SYNC_JOBS = 13;
-  private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 14;
-  private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 15;
-  private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 16;
-  private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 17;
-  private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 18;
-  private static final int METHODID_GENERATE_JOB_JSON = 19;
-  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 20;
-  private static final int METHODID_PING_SYNC_JOB_CONNECTION = 21;
-  private static final int METHODID_DESCRIBE_SYNC_CONNECTION = 22;
+  private static final int METHODID_UPDATE_RELEASE_SYNC_JOB_STATUS = 14;
+  private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 15;
+  private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 16;
+  private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 17;
+  private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
+  private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
+  private static final int METHODID_GENERATE_JOB_JSON = 20;
+  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 21;
+  private static final int METHODID_PING_SYNC_JOB_CONNECTION = 22;
+  private static final int METHODID_DESCRIBE_SYNC_CONNECTION = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2101,6 +2182,10 @@ public final class SyncJobManageGrpc {
         case METHODID_LIST_RELEASE_SYNC_JOBS:
           serviceImpl.listReleaseSyncJobs((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListReleaseSyncJobs) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ListReleaseSyncJobs>) responseObserver);
+          break;
+        case METHODID_UPDATE_RELEASE_SYNC_JOB_STATUS:
+          serviceImpl.updateReleaseSyncJobStatus((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.UpdateReleaseSyncJobStatus) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_LIST_SYNC_JOB_VERSIONS:
           serviceImpl.listSyncJobVersions((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions) request,
@@ -2213,6 +2298,7 @@ public final class SyncJobManageGrpc {
               .addMethod(getOfflineReleaseSyncJobMethod())
               .addMethod(getResumeReleaseSyncJobMethod())
               .addMethod(getListReleaseSyncJobsMethod())
+              .addMethod(getUpdateReleaseSyncJobStatusMethod())
               .addMethod(getListSyncJobVersionsMethod())
               .addMethod(getDescribeSyncJobVersionMethod())
               .addMethod(getGetSyncJobVersionConfMethod())
