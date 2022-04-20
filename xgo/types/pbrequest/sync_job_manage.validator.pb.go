@@ -887,30 +887,6 @@ func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_GenerateJobJson_InEnums_SourceType = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
-
-func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_source_type() error {
-	if !(this.SourceType > 0) {
-		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
-	}
-	if !(_xxx_xxx_Validator_GenerateJobJson_InEnums_SourceType[this.SourceType]) {
-		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'source_type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]'", protovalidator.Int32ToString(int32(this.SourceType)))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_GenerateJobJson_InEnums_TargetType = map[pbmodel.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 12: true, 13: true, 14: true, 15: true, 16: true}
-
-func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_target_type() error {
-	if !(this.TargetType > 0) {
-		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'target_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.TargetType)))
-	}
-	if !(_xxx_xxx_Validator_GenerateJobJson_InEnums_TargetType[this.TargetType]) {
-		return protovalidator.FieldError1("GenerateJobJson", "the value of field 'target_type' must in enums of '[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]'", protovalidator.Int32ToString(int32(this.TargetType)))
-	}
-	return nil
-}
-
 func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("GenerateJobJson", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
@@ -925,12 +901,6 @@ func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_job_id() error {
 func (this *GenerateJobJson) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_type(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
