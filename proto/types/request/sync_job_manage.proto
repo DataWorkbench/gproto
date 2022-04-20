@@ -340,8 +340,8 @@ message ResumeReleaseSyncJob {
 
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
-    // The sync job id in HTTP Request-URI
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    // The sync job id
+    // @inject_tag: json:"job_id" uri:"job_id"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // conf
     // @inject_tag: json:"conf" uri:"conf"
@@ -385,24 +385,9 @@ message DescribeSyncFlinkUIByInstanceId {
 
 // GenerateJobJson used as a request parameters for RPC.
 message GenerateJobJson {
-    // source_type
-    // @inject_tag: json:"source_type" uri:"source_type"
-    model.DataSource.Type source_type = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-    // The instance id in HTTP Request-URI. Is Required.
-    // @inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-    string source_version = 2;
-    // target type
-    // @inject_tag: json:"target_type" uri:"target_type"
-    model.DataSource.Type target_type = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-    // target version
-    // @inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-    string target_version = 4;
     // job_id
     // @inject_tag: json:"job_id" uri:"job_id"
-    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
-
-
+    string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
 }
 
 message PingSyncJobConnection {
