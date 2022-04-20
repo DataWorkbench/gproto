@@ -387,7 +387,7 @@ message DescribeSyncFlinkUIByInstanceId {
 message GenerateJobJson {
     // job_id
     // @inject_tag: json:"job_id" uri:"job_id"
-    string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
+    string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
 message PingSyncJobConnection {
