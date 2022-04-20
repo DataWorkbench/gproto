@@ -555,7 +555,7 @@ type SyncJob struct {
 	Desc string `protobuf:"bytes,6,opt,name=desc,proto3" json:"desc" gorm:"column:desc;"`
 	// IsDirectory represents this job whether a directory.
 	IsDirectory bool `protobuf:"varint,7,opt,name=is_directory,json=isDirectory,proto3" json:"is_directory" gorm:"column:is_directory;"`
-	// Job type. 1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
+	// Job type.  1 => "OfflineFull" 2 => "OfflineIncrement" 3 => "RealTime"
 	Type SyncJob_Type `protobuf:"varint,8,opt,name=type,proto3,enum=model.SyncJob_Type" json:"type" gorm:"column:type;"`
 	// Job status, 1 => "Deleted", 2 => "Enabled".
 	Status SyncJob_Status `protobuf:"varint,9,opt,name=status,proto3,enum=model.SyncJob_Status" json:"status" gorm:"column:status;"`
