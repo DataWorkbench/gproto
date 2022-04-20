@@ -896,22 +896,20 @@ func (this *ElasticSearchURL) Validate() error {
 	return nil
 }
 
-func (this *MongoDbURL) _xxx_xxx_Validator_Validate_host() error {
-	if !(len(this.Host) >= 1) {
-		return protovalidator.FieldError1("MongoDbURL", "the byte length of field 'host' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Host))
+func (this *MongoDbURL) _xxx_xxx_Validator_Validate_hosts() error {
+	if !(len(this.Hosts) >= 1) {
+		return protovalidator.FieldError1("MongoDbURL", "the length of field 'hosts' must be greater than or equal to '1'", strconv.Itoa(len(this.Hosts)))
 	}
-	if !(len(this.Host) <= 64) {
-		return protovalidator.FieldError1("MongoDbURL", "the byte length of field 'host' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Host))
+	if !(len(this.Hosts) <= 128) {
+		return protovalidator.FieldError1("MongoDbURL", "the length of field 'hosts' must be less than or equal to '128'", strconv.Itoa(len(this.Hosts)))
 	}
-	return nil
-}
-
-func (this *MongoDbURL) _xxx_xxx_Validator_Validate_port() error {
-	if !(this.Port >= 0) {
-		return protovalidator.FieldError1("MongoDbURL", "the value of field 'port' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Port))
-	}
-	if !(this.Port <= 65536) {
-		return protovalidator.FieldError1("MongoDbURL", "the value of field 'port' must be less than or equal to '65536'", protovalidator.Int32ToString(this.Port))
+	for _, item := range this.Hosts {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -951,10 +949,7 @@ func (this *MongoDbURL) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_hosts(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
@@ -969,14 +964,14 @@ func (this *MongoDbURL) Validate() error {
 	return nil
 }
 
-func (this *RedisURL) _xxx_xxx_Validator_Validate_redis_hosts() error {
-	if !(len(this.RedisHosts) >= 1) {
-		return protovalidator.FieldError1("RedisURL", "the length of field 'redis_hosts' must be greater than or equal to '1'", strconv.Itoa(len(this.RedisHosts)))
+func (this *RedisURL) _xxx_xxx_Validator_Validate_hosts() error {
+	if !(len(this.Hosts) >= 1) {
+		return protovalidator.FieldError1("RedisURL", "the length of field 'hosts' must be greater than or equal to '1'", strconv.Itoa(len(this.Hosts)))
 	}
-	if !(len(this.RedisHosts) <= 128) {
-		return protovalidator.FieldError1("RedisURL", "the length of field 'redis_hosts' must be less than or equal to '128'", strconv.Itoa(len(this.RedisHosts)))
+	if !(len(this.Hosts) <= 128) {
+		return protovalidator.FieldError1("RedisURL", "the length of field 'hosts' must be less than or equal to '128'", strconv.Itoa(len(this.Hosts)))
 	}
-	for _, item := range this.RedisHosts {
+	for _, item := range this.Hosts {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -992,7 +987,7 @@ func (this *RedisURL) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_redis_hosts(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_hosts(); err != nil {
 		return err
 	}
 	return nil
