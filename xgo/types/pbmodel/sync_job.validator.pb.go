@@ -330,7 +330,7 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
 }
 
 func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_job_content() bool {
-	if !(this.JobMode == 1) {
+	if !(this.JobMode == 2) {
 		return false
 	}
 	return true
