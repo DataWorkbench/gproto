@@ -26,30 +26,33 @@ public final class PBSvcDataSourceBroker {
       "\n3proto/service/networkbroker/dataousrce" +
       "_broker.proto\022\rnetworkbroker\032+proto/type" +
       "s/request/dataousrce_broker.proto\032,proto" +
-      "/types/response/dataousrce_broker.proto2" +
-      "\231\003\n\020DataSourceBroker\022{\n PingDataSourceCo" +
-      "nnectionByBroker\022).request.PingDataSourc" +
-      "eConnectionByBroker\032*.response.PingDataS" +
-      "ourceConnectionByBroker\"\000\022{\n DescribeDat" +
-      "aSourceTablesByBroker\022).request.Describe" +
-      "DataSourceTablesByBroker\032*.response.Desc" +
-      "ribeDataSourceTablesByBroker\"\000\022\212\001\n%Descr" +
-      "ibeDataSourceTableSchemaByBroker\022..reque" +
-      "st.DescribeDataSourceTableSchemaByBroker" +
-      "\032/.response.DescribeDataSourceTableSchem" +
-      "aByBroker\"\000B\212\001\n/com.dataomnis.gproto.ser" +
-      "vice.pbsvcnetworkbrokerB\025PBSvcDataSource" +
-      "BrokerP\000Z>github.com/DataWorkbench/gprot" +
-      "o/xgo/service/pbsvcnetworkbrokerb\006proto3"
+      "/types/response/dataousrce_broker.proto\032" +
+      ",proto/types/response/datasource_manage." +
+      "proto2\211\003\n\020DataSourceBroker\022{\n PingDataSo" +
+      "urceConnectionByBroker\022).request.PingDat" +
+      "aSourceConnectionByBroker\032*.response.Pin" +
+      "gDataSourceConnectionByBroker\"\000\022s\n Descr" +
+      "ibeDataSourceTablesByBroker\022).request.De" +
+      "scribeDataSourceTablesByBroker\032\".respons" +
+      "e.DescribeDataSourceTables\"\000\022\202\001\n%Describ" +
+      "eDataSourceTableSchemaByBroker\022..request" +
+      ".DescribeDataSourceTableSchemaByBroker\032\'" +
+      ".response.DescribeDataSourceTableSchema\"" +
+      "\000B\212\001\n/com.dataomnis.gproto.service.pbsvc" +
+      "networkbrokerB\025PBSvcDataSourceBrokerP\000Z>" +
+      "github.com/DataWorkbench/gproto/xgo/serv" +
+      "ice/pbsvcnetworkbrokerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceBroker.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.getDescriptor(),
+          com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceBroker.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.getDescriptor();
+    com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

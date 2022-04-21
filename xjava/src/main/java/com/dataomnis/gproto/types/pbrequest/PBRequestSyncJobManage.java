@@ -17541,8 +17541,8 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * The sync job id
+     * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17551,8 +17551,8 @@ public final class PBRequestSyncJobManage {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * The sync job id
+     * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17696,8 +17696,8 @@ public final class PBRequestSyncJobManage {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * The sync job id
+     * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17718,8 +17718,8 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * The sync job id
+     * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18120,8 +18120,8 @@ public final class PBRequestSyncJobManage {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * The sync job id
+       * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18141,8 +18141,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * The sync job id
+       * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18163,8 +18163,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * The sync job id
+       * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18183,8 +18183,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * The sync job id
+       * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18198,8 +18198,8 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * The sync job id
+       * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -20195,97 +20195,11 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * source_type
-     * &#64;inject_tag: json:"source_type" uri:"source_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for sourceType.
-     */
-    int getSourceTypeValue();
-    /**
-     * <pre>
-     * source_type
-     * &#64;inject_tag: json:"source_type" uri:"source_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-     * @return The sourceType.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType();
-
-    /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string source_version = 2;</code>
-     * @return The sourceVersion.
-     */
-    java.lang.String getSourceVersion();
-    /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string source_version = 2;</code>
-     * @return The bytes for sourceVersion.
-     */
-    com.google.protobuf.ByteString
-        getSourceVersionBytes();
-
-    /**
-     * <pre>
-     * target type
-     * &#64;inject_tag: json:"target_type" uri:"target_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for targetType.
-     */
-    int getTargetTypeValue();
-    /**
-     * <pre>
-     * target type
-     * &#64;inject_tag: json:"target_type" uri:"target_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-     * @return The targetType.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType();
-
-    /**
-     * <pre>
-     * target version
-     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string target_version = 4;</code>
-     * @return The targetVersion.
-     */
-    java.lang.String getTargetVersion();
-    /**
-     * <pre>
-     * target version
-     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string target_version = 4;</code>
-     * @return The bytes for targetVersion.
-     */
-    com.google.protobuf.ByteString
-        getTargetVersionBytes();
-
-    /**
-     * <pre>
      * job_id
      * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 1 [(.validator.field) = { ... }</code>
      * @return The jobId.
      */
     java.lang.String getJobId();
@@ -20295,7 +20209,7 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for jobId.
      */
     com.google.protobuf.ByteString
@@ -20318,10 +20232,6 @@ public final class PBRequestSyncJobManage {
       super(builder);
     }
     private GenerateJobJson() {
-      sourceType_ = 0;
-      sourceVersion_ = "";
-      targetType_ = 0;
-      targetVersion_ = "";
       jobId_ = "";
     }
 
@@ -20355,31 +20265,7 @@ public final class PBRequestSyncJobManage {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              sourceType_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceVersion_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              targetType_ = rawValue;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetVersion_ = s;
-              break;
-            }
-            case 42: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobId_ = s;
@@ -20417,161 +20303,7 @@ public final class PBRequestSyncJobManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.Builder.class);
     }
 
-    public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
-    private int sourceType_;
-    /**
-     * <pre>
-     * source_type
-     * &#64;inject_tag: json:"source_type" uri:"source_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for sourceType.
-     */
-    @java.lang.Override public int getSourceTypeValue() {
-      return sourceType_;
-    }
-    /**
-     * <pre>
-     * source_type
-     * &#64;inject_tag: json:"source_type" uri:"source_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-     * @return The sourceType.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int SOURCE_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceVersion_;
-    /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string source_version = 2;</code>
-     * @return The sourceVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceVersion() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string source_version = 2;</code>
-     * @return The bytes for sourceVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceVersionBytes() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TARGET_TYPE_FIELD_NUMBER = 3;
-    private int targetType_;
-    /**
-     * <pre>
-     * target type
-     * &#64;inject_tag: json:"target_type" uri:"target_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for targetType.
-     */
-    @java.lang.Override public int getTargetTypeValue() {
-      return targetType_;
-    }
-    /**
-     * <pre>
-     * target type
-     * &#64;inject_tag: json:"target_type" uri:"target_type"
-     * </pre>
-     *
-     * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-     * @return The targetType.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int TARGET_VERSION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object targetVersion_;
-    /**
-     * <pre>
-     * target version
-     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string target_version = 4;</code>
-     * @return The targetVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getTargetVersion() {
-      java.lang.Object ref = targetVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * target version
-     * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string target_version = 4;</code>
-     * @return The bytes for targetVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTargetVersionBytes() {
-      java.lang.Object ref = targetVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JOB_ID_FIELD_NUMBER = 5;
+    public static final int JOB_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
@@ -20579,7 +20311,7 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 1 [(.validator.field) = { ... }</code>
      * @return The jobId.
      */
     @java.lang.Override
@@ -20601,7 +20333,7 @@ public final class PBRequestSyncJobManage {
      * &#64;inject_tag: json:"job_id" uri:"job_id"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for jobId.
      */
     @java.lang.Override
@@ -20633,20 +20365,8 @@ public final class PBRequestSyncJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-        output.writeEnum(1, sourceType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceVersion_);
-      }
-      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-        output.writeEnum(3, targetType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, targetVersion_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, jobId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
       }
       unknownFields.writeTo(output);
     }
@@ -20657,22 +20377,8 @@ public final class PBRequestSyncJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (sourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, sourceType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceVersion_);
-      }
-      if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, targetType_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, targetVersion_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, jobId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -20689,12 +20395,6 @@ public final class PBRequestSyncJobManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) obj;
 
-      if (sourceType_ != other.sourceType_) return false;
-      if (!getSourceVersion()
-          .equals(other.getSourceVersion())) return false;
-      if (targetType_ != other.targetType_) return false;
-      if (!getTargetVersion()
-          .equals(other.getTargetVersion())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -20708,14 +20408,6 @@ public final class PBRequestSyncJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + sourceType_;
-      hash = (37 * hash) + SOURCE_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceVersion().hashCode();
-      hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + targetType_;
-      hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetVersion().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -20855,14 +20547,6 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sourceType_ = 0;
-
-        sourceVersion_ = "";
-
-        targetType_ = 0;
-
-        targetVersion_ = "";
-
         jobId_ = "";
 
         return this;
@@ -20891,10 +20575,6 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson(this);
-        result.sourceType_ = sourceType_;
-        result.sourceVersion_ = sourceVersion_;
-        result.targetType_ = targetType_;
-        result.targetVersion_ = targetVersion_;
         result.jobId_ = jobId_;
         onBuilt();
         return result;
@@ -20944,20 +20624,6 @@ public final class PBRequestSyncJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson.getDefaultInstance()) return this;
-        if (other.sourceType_ != 0) {
-          setSourceTypeValue(other.getSourceTypeValue());
-        }
-        if (!other.getSourceVersion().isEmpty()) {
-          sourceVersion_ = other.sourceVersion_;
-          onChanged();
-        }
-        if (other.targetType_ != 0) {
-          setTargetTypeValue(other.getTargetTypeValue());
-        }
-        if (!other.getTargetVersion().isEmpty()) {
-          targetVersion_ = other.targetVersion_;
-          onChanged();
-        }
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
@@ -20991,366 +20657,6 @@ public final class PBRequestSyncJobManage {
         return this;
       }
 
-      private int sourceType_ = 0;
-      /**
-       * <pre>
-       * source_type
-       * &#64;inject_tag: json:"source_type" uri:"source_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for sourceType.
-       */
-      @java.lang.Override public int getSourceTypeValue() {
-        return sourceType_;
-      }
-      /**
-       * <pre>
-       * source_type
-       * &#64;inject_tag: json:"source_type" uri:"source_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for sourceType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceTypeValue(int value) {
-        
-        sourceType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * source_type
-       * &#64;inject_tag: json:"source_type" uri:"source_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-       * @return The sourceType.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getSourceType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(sourceType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * source_type
-       * &#64;inject_tag: json:"source_type" uri:"source_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-       * @param value The sourceType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        sourceType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * source_type
-       * &#64;inject_tag: json:"source_type" uri:"source_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type source_type = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceType() {
-        
-        sourceType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sourceVersion_ = "";
-      /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string source_version = 2;</code>
-       * @return The sourceVersion.
-       */
-      public java.lang.String getSourceVersion() {
-        java.lang.Object ref = sourceVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sourceVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string source_version = 2;</code>
-       * @return The bytes for sourceVersion.
-       */
-      public com.google.protobuf.ByteString
-          getSourceVersionBytes() {
-        java.lang.Object ref = sourceVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sourceVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string source_version = 2;</code>
-       * @param value The sourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string source_version = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceVersion() {
-        
-        sourceVersion_ = getDefaultInstance().getSourceVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"source_version" uri:"source_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string source_version = 2;</code>
-       * @param value The bytes for sourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int targetType_ = 0;
-      /**
-       * <pre>
-       * target type
-       * &#64;inject_tag: json:"target_type" uri:"target_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for targetType.
-       */
-      @java.lang.Override public int getTargetTypeValue() {
-        return targetType_;
-      }
-      /**
-       * <pre>
-       * target type
-       * &#64;inject_tag: json:"target_type" uri:"target_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for targetType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetTypeValue(int value) {
-        
-        targetType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * target type
-       * &#64;inject_tag: json:"target_type" uri:"target_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-       * @return The targetType.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(targetType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * target type
-       * &#64;inject_tag: json:"target_type" uri:"target_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-       * @param value The targetType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        targetType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * target type
-       * &#64;inject_tag: json:"target_type" uri:"target_type"
-       * </pre>
-       *
-       * <code>.model.DataSource.Type target_type = 3 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetType() {
-        
-        targetType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object targetVersion_ = "";
-      /**
-       * <pre>
-       * target version
-       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string target_version = 4;</code>
-       * @return The targetVersion.
-       */
-      public java.lang.String getTargetVersion() {
-        java.lang.Object ref = targetVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          targetVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * target version
-       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string target_version = 4;</code>
-       * @return The bytes for targetVersion.
-       */
-      public com.google.protobuf.ByteString
-          getTargetVersionBytes() {
-        java.lang.Object ref = targetVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * target version
-       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string target_version = 4;</code>
-       * @param value The targetVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        targetVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * target version
-       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string target_version = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetVersion() {
-        
-        targetVersion_ = getDefaultInstance().getTargetVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * target version
-       * &#64;inject_tag: json:"target_version" uri:"target_version" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string target_version = 4;</code>
-       * @param value The bytes for targetVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        targetVersion_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
@@ -21358,7 +20664,7 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 1 [(.validator.field) = { ... }</code>
        * @return The jobId.
        */
       public java.lang.String getJobId() {
@@ -21379,7 +20685,7 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for jobId.
        */
       public com.google.protobuf.ByteString
@@ -21401,7 +20707,7 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 1 [(.validator.field) = { ... }</code>
        * @param value The jobId to set.
        * @return This builder for chaining.
        */
@@ -21421,7 +20727,7 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearJobId() {
@@ -21436,7 +20742,7 @@ public final class PBRequestSyncJobManage {
        * &#64;inject_tag: json:"job_id" uri:"job_id"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for jobId to set.
        * @return This builder for chaining.
        */
@@ -24465,27 +23771,23 @@ public final class PBRequestSyncJobManage {
       "edJ\007updated\022\017\n\007reverse\030\004 \001(\010\022#\n\006job_id\030\005" +
       " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"K\n\037DescribeSyn" +
       "cFlinkUIByInstanceId\022(\n\013instance_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-\"\336\001\n\017GenerateJobJs" +
-      "on\022:\n\013source_type\030\001 \001(\0162\026.model.DataSour" +
-      "ce.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\026\n\016source_version" +
-      "\030\002 \001(\t\022:\n\013target_type\030\003 \001(\0162\026.model.Data" +
-      "Source.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\026\n\016target_ver" +
-      "sion\030\004 \001(\t\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004syi-\"\334\001\n\025PingSyncJobConnection\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_" +
-      "id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster" +
-      "_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource" +
-      "_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget" +
-      "_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\335\001\n\026Descr" +
-      "ibeSyncConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004som-Bu\n$com.dataomnis.gproto.t" +
-      "ypes.pbrequestB\026PBRequestSyncJobManageP\000" +
-      "Z3github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbrequestb\006proto3"
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-\"6\n\017GenerateJobJso" +
+      "n\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\334" +
+      "\001\n\025PingSyncJobConnection\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\335\001\n\026DescribeSyncCo" +
+      "nnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004som-Bu\n$com.dataomnis.gproto.types.pbre" +
+      "questB\026PBRequestSyncJobManageP\000Z3github." +
+      "com/DataWorkbench/gproto/xgo/types/pbreq" +
+      "uestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24608,7 +23910,7 @@ public final class PBRequestSyncJobManage {
     internal_static_request_GenerateJobJson_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GenerateJobJson_descriptor,
-        new java.lang.String[] { "SourceType", "SourceVersion", "TargetType", "TargetVersion", "JobId", });
+        new java.lang.String[] { "JobId", });
     internal_static_request_PingSyncJobConnection_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_request_PingSyncJobConnection_fieldAccessorTable = new

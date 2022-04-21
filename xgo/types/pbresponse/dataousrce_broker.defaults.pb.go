@@ -7,7 +7,6 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
-	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -16,24 +15,8 @@ func (this *PingDataSourceConnectionByBroker) SetDefaults() {
 	if this == nil {
 		return
 	}
-	return
-}
-
-// Set default value for message response.DescribeDataSourceTablesByBroker
-func (this *DescribeDataSourceTablesByBroker) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.DescribeDataSourceTableSchemaByBroker
-func (this *DescribeDataSourceTableSchemaByBroker) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Schema != nil {
-		if dt, ok := interface{}(this.Schema).(interface{ SetDefaults() }); ok {
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

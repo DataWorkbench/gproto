@@ -26,9 +26,9 @@ const _ = grpc.SupportPackageIsVersion7
 type DataSourceBrokerClient interface {
 	PingDataSourceConnectionByBroker(ctx context.Context, in *pbrequest.PingDataSourceConnectionByBroker, opts ...grpc.CallOption) (*pbresponse.PingDataSourceConnectionByBroker, error)
 	// DescribeDataSourceTables get a table list of specified data source.
-	DescribeDataSourceTablesByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTablesByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTablesByBroker, error)
+	DescribeDataSourceTablesByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTablesByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTables, error)
 	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
-	DescribeDataSourceTableSchemaByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTableSchemaByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTableSchemaByBroker, error)
+	DescribeDataSourceTableSchemaByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTableSchemaByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTableSchema, error)
 }
 
 type dataSourceBrokerClient struct {
@@ -48,8 +48,8 @@ func (c *dataSourceBrokerClient) PingDataSourceConnectionByBroker(ctx context.Co
 	return out, nil
 }
 
-func (c *dataSourceBrokerClient) DescribeDataSourceTablesByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTablesByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTablesByBroker, error) {
-	out := new(pbresponse.DescribeDataSourceTablesByBroker)
+func (c *dataSourceBrokerClient) DescribeDataSourceTablesByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTablesByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTables, error) {
+	out := new(pbresponse.DescribeDataSourceTables)
 	err := c.cc.Invoke(ctx, "/networkbroker.DataSourceBroker/DescribeDataSourceTablesByBroker", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -57,8 +57,8 @@ func (c *dataSourceBrokerClient) DescribeDataSourceTablesByBroker(ctx context.Co
 	return out, nil
 }
 
-func (c *dataSourceBrokerClient) DescribeDataSourceTableSchemaByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTableSchemaByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTableSchemaByBroker, error) {
-	out := new(pbresponse.DescribeDataSourceTableSchemaByBroker)
+func (c *dataSourceBrokerClient) DescribeDataSourceTableSchemaByBroker(ctx context.Context, in *pbrequest.DescribeDataSourceTableSchemaByBroker, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTableSchema, error) {
+	out := new(pbresponse.DescribeDataSourceTableSchema)
 	err := c.cc.Invoke(ctx, "/networkbroker.DataSourceBroker/DescribeDataSourceTableSchemaByBroker", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -72,9 +72,9 @@ func (c *dataSourceBrokerClient) DescribeDataSourceTableSchemaByBroker(ctx conte
 type DataSourceBrokerServer interface {
 	PingDataSourceConnectionByBroker(context.Context, *pbrequest.PingDataSourceConnectionByBroker) (*pbresponse.PingDataSourceConnectionByBroker, error)
 	// DescribeDataSourceTables get a table list of specified data source.
-	DescribeDataSourceTablesByBroker(context.Context, *pbrequest.DescribeDataSourceTablesByBroker) (*pbresponse.DescribeDataSourceTablesByBroker, error)
+	DescribeDataSourceTablesByBroker(context.Context, *pbrequest.DescribeDataSourceTablesByBroker) (*pbresponse.DescribeDataSourceTables, error)
 	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
-	DescribeDataSourceTableSchemaByBroker(context.Context, *pbrequest.DescribeDataSourceTableSchemaByBroker) (*pbresponse.DescribeDataSourceTableSchemaByBroker, error)
+	DescribeDataSourceTableSchemaByBroker(context.Context, *pbrequest.DescribeDataSourceTableSchemaByBroker) (*pbresponse.DescribeDataSourceTableSchema, error)
 	mustEmbedUnimplementedDataSourceBrokerServer()
 }
 
@@ -85,10 +85,10 @@ type UnimplementedDataSourceBrokerServer struct {
 func (UnimplementedDataSourceBrokerServer) PingDataSourceConnectionByBroker(context.Context, *pbrequest.PingDataSourceConnectionByBroker) (*pbresponse.PingDataSourceConnectionByBroker, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PingDataSourceConnectionByBroker not implemented")
 }
-func (UnimplementedDataSourceBrokerServer) DescribeDataSourceTablesByBroker(context.Context, *pbrequest.DescribeDataSourceTablesByBroker) (*pbresponse.DescribeDataSourceTablesByBroker, error) {
+func (UnimplementedDataSourceBrokerServer) DescribeDataSourceTablesByBroker(context.Context, *pbrequest.DescribeDataSourceTablesByBroker) (*pbresponse.DescribeDataSourceTables, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceTablesByBroker not implemented")
 }
-func (UnimplementedDataSourceBrokerServer) DescribeDataSourceTableSchemaByBroker(context.Context, *pbrequest.DescribeDataSourceTableSchemaByBroker) (*pbresponse.DescribeDataSourceTableSchemaByBroker, error) {
+func (UnimplementedDataSourceBrokerServer) DescribeDataSourceTableSchemaByBroker(context.Context, *pbrequest.DescribeDataSourceTableSchemaByBroker) (*pbresponse.DescribeDataSourceTableSchema, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceTableSchemaByBroker not implemented")
 }
 func (UnimplementedDataSourceBrokerServer) mustEmbedUnimplementedDataSourceBrokerServer() {}

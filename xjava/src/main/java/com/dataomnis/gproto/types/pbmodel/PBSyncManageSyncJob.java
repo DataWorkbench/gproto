@@ -165,7 +165,7 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -175,7 +175,7 @@ public final class PBSyncManageSyncJob {
     int getTypeValue();
     /**
      * <pre>
-     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -1017,7 +1017,7 @@ public final class PBSyncManageSyncJob {
     private int type_;
     /**
      * <pre>
-     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -1029,7 +1029,7 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+     * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
@@ -2395,7 +2395,7 @@ public final class PBSyncManageSyncJob {
       private int type_ = 0;
       /**
        * <pre>
-       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2407,7 +2407,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2423,7 +2423,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2438,7 +2438,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -2457,7 +2457,7 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * Job type. 1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
+       * Job type.  1 =&gt; "OfflineFull" 2 =&gt; "OfflineIncrement" 3 =&gt; "RealTime"
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
@@ -24887,7 +24887,7 @@ public final class PBSyncManageSyncJob {
       "get_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022C\n\010job" +
       "_mode\030\003 \001(\0162\032.model.SyncJobConf.JobModeB" +
       "\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\0228\n\013job_content\030\004 " +
-      "\001(\tB#\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\002\024" +
+      "\001(\tB#\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\200\002\024" +
       "\022)\n\014syncResource\030\005 \001(\0132\023.model.SyncResou" +
       "rce\022\022\n\ncluster_id\030\006 \001(\t\022.\n\017channel_contr" +
       "ol\030\007 \001(\0132\025.model.ChannelControl\":\n\007JobMo" +

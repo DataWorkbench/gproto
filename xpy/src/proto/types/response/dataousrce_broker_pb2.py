@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import datasource_pb2 as proto_dot_types_dot_model_dot_datasource__pb2
-from proto.types.model.datasource import datasource_table_pb2 as proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\032PBResponseDataSourceBrokerP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/response/dataousrce_broker.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/datasource.proto\x1a\x33proto/types/model/datasource/datasource_table.proto\"\x95\x01\n PingDataSourceConnectionByBroker\x12\x41\n\x06result\x18\x01 \x01(\x0e\x32\".model.DataSourceConnection.ResultB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x62\x65gin\x18\x03 \x01(\x03\x12\x0e\n\x06\x65lapse\x18\x04 \x01(\x03\"1\n DescribeDataSourceTablesByBroker\x12\r\n\x05items\x18\x01 \x03(\t\"P\n%DescribeDataSourceTableSchemaByBroker\x12\'\n\x06schema\x18\x01 \x01(\x0b\x32\x17.datasource.TableSchemaB{\n%com.dataomnis.gproto.types.pbresponseB\x1aPBResponseDataSourceBrokerP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n,proto/types/response/dataousrce_broker.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/datasource.proto\"Z\n PingDataSourceConnectionByBroker\x12\x36\n\x04info\x18\x01 \x01(\x0b\x32\x1b.model.DataSourceConnectionB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\x42{\n%com.dataomnis.gproto.types.pbresponseB\x1aPBResponseDataSourceBrokerP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,])
 
 
 
@@ -38,97 +37,12 @@ _PINGDATASOURCECONNECTIONBYBROKER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='response.PingDataSourceConnectionByBroker.result', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='response.PingDataSourceConnectionByBroker.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='begin', full_name='response.PingDataSourceConnectionByBroker.begin', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='elapse', full_name='response.PingDataSourceConnectionByBroker.elapse', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=201,
-  serialized_end=350,
-)
-
-
-_DESCRIBEDATASOURCETABLESBYBROKER = _descriptor.Descriptor(
-  name='DescribeDataSourceTablesByBroker',
-  full_name='response.DescribeDataSourceTablesByBroker',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='items', full_name='response.DescribeDataSourceTablesByBroker.items', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=352,
-  serialized_end=401,
-)
-
-
-_DESCRIBEDATASOURCETABLESCHEMABYBROKER = _descriptor.Descriptor(
-  name='DescribeDataSourceTableSchemaByBroker',
-  full_name='response.DescribeDataSourceTableSchemaByBroker',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='schema', full_name='response.DescribeDataSourceTableSchemaByBroker.schema', index=0,
+      name='info', full_name='response.PingDataSourceConnectionByBroker.info', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\030\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -141,15 +55,12 @@ _DESCRIBEDATASOURCETABLESCHEMABYBROKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=403,
-  serialized_end=483,
+  serialized_start=147,
+  serialized_end=237,
 )
 
-_PINGDATASOURCECONNECTIONBYBROKER.fields_by_name['result'].enum_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCECONNECTION_RESULT
-_DESCRIBEDATASOURCETABLESCHEMABYBROKER.fields_by_name['schema'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2._TABLESCHEMA
+_PINGDATASOURCECONNECTIONBYBROKER.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCECONNECTION
 DESCRIPTOR.message_types_by_name['PingDataSourceConnectionByBroker'] = _PINGDATASOURCECONNECTIONBYBROKER
-DESCRIPTOR.message_types_by_name['DescribeDataSourceTablesByBroker'] = _DESCRIBEDATASOURCETABLESBYBROKER
-DESCRIPTOR.message_types_by_name['DescribeDataSourceTableSchemaByBroker'] = _DESCRIBEDATASOURCETABLESCHEMABYBROKER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 PingDataSourceConnectionByBroker = _reflection.GeneratedProtocolMessageType('PingDataSourceConnectionByBroker', (_message.Message,), {
@@ -159,21 +70,7 @@ PingDataSourceConnectionByBroker = _reflection.GeneratedProtocolMessageType('Pin
   })
 _sym_db.RegisterMessage(PingDataSourceConnectionByBroker)
 
-DescribeDataSourceTablesByBroker = _reflection.GeneratedProtocolMessageType('DescribeDataSourceTablesByBroker', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEDATASOURCETABLESBYBROKER,
-  '__module__' : 'proto.types.response.dataousrce_broker_pb2'
-  # @@protoc_insertion_point(class_scope:response.DescribeDataSourceTablesByBroker)
-  })
-_sym_db.RegisterMessage(DescribeDataSourceTablesByBroker)
-
-DescribeDataSourceTableSchemaByBroker = _reflection.GeneratedProtocolMessageType('DescribeDataSourceTableSchemaByBroker', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEDATASOURCETABLESCHEMABYBROKER,
-  '__module__' : 'proto.types.response.dataousrce_broker_pb2'
-  # @@protoc_insertion_point(class_scope:response.DescribeDataSourceTableSchemaByBroker)
-  })
-_sym_db.RegisterMessage(DescribeDataSourceTableSchemaByBroker)
-
 
 DESCRIPTOR._options = None
-_PINGDATASOURCECONNECTIONBYBROKER.fields_by_name['result']._options = None
+_PINGDATASOURCECONNECTIONBYBROKER.fields_by_name['info']._options = None
 # @@protoc_insertion_point(module_scope)

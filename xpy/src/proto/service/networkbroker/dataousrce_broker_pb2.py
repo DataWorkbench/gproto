@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from proto.types.request import dataousrce_broker_pb2 as proto_dot_types_dot_request_dot_dataousrce__broker__pb2
 from proto.types.response import dataousrce_broker_pb2 as proto_dot_types_dot_response_dot_dataousrce__broker__pb2
+from proto.types.response import datasource_manage_pb2 as proto_dot_types_dot_response_dot_datasource__manage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n/com.dataomnis.gproto.service.pbsvcnetworkbrokerB\025PBSvcDataSourceBrokerP\000Z>github.com/DataWorkbench/gproto/xgo/service/pbsvcnetworkbroker',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3proto/service/networkbroker/dataousrce_broker.proto\x12\rnetworkbroker\x1a+proto/types/request/dataousrce_broker.proto\x1a,proto/types/response/dataousrce_broker.proto2\x99\x03\n\x10\x44\x61taSourceBroker\x12{\n PingDataSourceConnectionByBroker\x12).request.PingDataSourceConnectionByBroker\x1a*.response.PingDataSourceConnectionByBroker\"\x00\x12{\n DescribeDataSourceTablesByBroker\x12).request.DescribeDataSourceTablesByBroker\x1a*.response.DescribeDataSourceTablesByBroker\"\x00\x12\x8a\x01\n%DescribeDataSourceTableSchemaByBroker\x12..request.DescribeDataSourceTableSchemaByBroker\x1a/.response.DescribeDataSourceTableSchemaByBroker\"\x00\x42\x8a\x01\n/com.dataomnis.gproto.service.pbsvcnetworkbrokerB\x15PBSvcDataSourceBrokerP\x00Z>github.com/DataWorkbench/gproto/xgo/service/pbsvcnetworkbrokerb\x06proto3'
+  serialized_pb=b'\n3proto/service/networkbroker/dataousrce_broker.proto\x12\rnetworkbroker\x1a+proto/types/request/dataousrce_broker.proto\x1a,proto/types/response/dataousrce_broker.proto\x1a,proto/types/response/datasource_manage.proto2\x89\x03\n\x10\x44\x61taSourceBroker\x12{\n PingDataSourceConnectionByBroker\x12).request.PingDataSourceConnectionByBroker\x1a*.response.PingDataSourceConnectionByBroker\"\x00\x12s\n DescribeDataSourceTablesByBroker\x12).request.DescribeDataSourceTablesByBroker\x1a\".response.DescribeDataSourceTables\"\x00\x12\x82\x01\n%DescribeDataSourceTableSchemaByBroker\x12..request.DescribeDataSourceTableSchemaByBroker\x1a\'.response.DescribeDataSourceTableSchema\"\x00\x42\x8a\x01\n/com.dataomnis.gproto.service.pbsvcnetworkbrokerB\x15PBSvcDataSourceBrokerP\x00Z>github.com/DataWorkbench/gproto/xgo/service/pbsvcnetworkbrokerb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_request_dot_dataousrce__broker__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_dataousrce__broker__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_request_dot_dataousrce__broker__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_dataousrce__broker__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_datasource__manage__pb2.DESCRIPTOR,])
 
 
 
@@ -39,8 +40,8 @@ _DATASOURCEBROKER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=162,
-  serialized_end=571,
+  serialized_start=208,
+  serialized_end=601,
   methods=[
   _descriptor.MethodDescriptor(
     name='PingDataSourceConnectionByBroker',
@@ -58,7 +59,7 @@ _DATASOURCEBROKER = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataousrce__broker__pb2._DESCRIBEDATASOURCETABLESBYBROKER,
-    output_type=proto_dot_types_dot_response_dot_dataousrce__broker__pb2._DESCRIBEDATASOURCETABLESBYBROKER,
+    output_type=proto_dot_types_dot_response_dot_datasource__manage__pb2._DESCRIBEDATASOURCETABLES,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -68,7 +69,7 @@ _DATASOURCEBROKER = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataousrce__broker__pb2._DESCRIBEDATASOURCETABLESCHEMABYBROKER,
-    output_type=proto_dot_types_dot_response_dot_dataousrce__broker__pb2._DESCRIBEDATASOURCETABLESCHEMABYBROKER,
+    output_type=proto_dot_types_dot_response_dot_datasource__manage__pb2._DESCRIBEDATASOURCETABLESCHEMA,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -6,21 +6,11 @@
 package pbresponse
 
 import (
-	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
-	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource"
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
-	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-var _xxx_xxx_Validator_PingDataSourceConnectionByBroker_InEnums_Result = map[pbmodel.DataSourceConnection_Result]bool{0: true, 1: true, 2: true}
-
-func (this *PingDataSourceConnectionByBroker) _xxx_xxx_Validator_Validate_result() error {
-	if !(this.Result > 0) {
-		return protovalidator.FieldError1("PingDataSourceConnectionByBroker", "the value of field 'result' must be greater than '0'", protovalidator.Int32ToString(int32(this.Result)))
-	}
-	if !(_xxx_xxx_Validator_PingDataSourceConnectionByBroker_InEnums_Result[this.Result]) {
-		return protovalidator.FieldError1("PingDataSourceConnectionByBroker", "the value of field 'result' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Result)))
-	}
+func (this *PingDataSourceConnectionByBroker) _xxx_xxx_Validator_Validate_info() error {
 	return nil
 }
 
@@ -29,35 +19,7 @@ func (this *PingDataSourceConnectionByBroker) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_result(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message response.DescribeDataSourceTablesByBroker
-func (this *DescribeDataSourceTablesByBroker) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *DescribeDataSourceTableSchemaByBroker) _xxx_xxx_Validator_Validate_schema() error {
-	if dt, ok := interface{}(this.Schema).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.DescribeDataSourceTableSchemaByBroker
-func (this *DescribeDataSourceTableSchemaByBroker) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_schema(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
 		return err
 	}
 	return nil

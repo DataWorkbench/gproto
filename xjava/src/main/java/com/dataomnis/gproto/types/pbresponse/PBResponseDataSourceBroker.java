@@ -20,68 +20,36 @@ public final class PBResponseDataSourceBroker {
 
     /**
      * <pre>
-     * Connection result.
-     * &#64;inject_tag: json:"result"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for result.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the info field is set.
      */
-    int getResultValue();
+    boolean hasInfo();
     /**
      * <pre>
-     * Connection result.
-     * &#64;inject_tag: json:"result"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-     * @return The result.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+     * @return The info.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result getResult();
-
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getInfo();
     /**
      * <pre>
-     * The error message if connection failed.
-     * &#64;inject_tag: json:"message"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>string message = 2;</code>
-     * @return The message.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
      */
-    java.lang.String getMessage();
-    /**
-     * <pre>
-     * The error message if connection failed.
-     * &#64;inject_tag: json:"message"
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-
-    /**
-     * <pre>
-     * The begin testing time.
-     * &#64;inject_tag: json:"begin"
-     * </pre>
-     *
-     * <code>int64 begin = 3;</code>
-     * @return The begin.
-     */
-    long getBegin();
-
-    /**
-     * <pre>
-     * The use time. unit in ms.
-     * &#64;inject_tag: json:"elapse"
-     * </pre>
-     *
-     * <code>int64 elapse = 4;</code>
-     * @return The elapse.
-     */
-    long getElapse();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getInfoOrBuilder();
   }
   /**
    * Protobuf type {@code response.PingDataSourceConnectionByBroker}
@@ -96,8 +64,6 @@ public final class PBResponseDataSourceBroker {
       super(builder);
     }
     private PingDataSourceConnectionByBroker() {
-      result_ = 0;
-      message_ = "";
     }
 
     @java.lang.Override
@@ -130,26 +96,17 @@ public final class PBResponseDataSourceBroker {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
 
-              result_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-            case 24: {
-
-              begin_ = input.readInt64();
-              break;
-            }
-            case 32: {
-
-              elapse_ = input.readInt64();
               break;
             }
             default: {
@@ -184,113 +141,48 @@ public final class PBResponseDataSourceBroker {
               com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker.Builder.class);
     }
 
-    public static final int RESULT_FIELD_NUMBER = 1;
-    private int result_;
+    public static final int INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection info_;
     /**
      * <pre>
-     * Connection result.
-     * &#64;inject_tag: json:"result"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for result.
-     */
-    @java.lang.Override public int getResultValue() {
-      return result_;
-    }
-    /**
-     * <pre>
-     * Connection result.
-     * &#64;inject_tag: json:"result"
-     * </pre>
-     *
-     * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-     * @return The result.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result getResult() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.valueOf(result_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.UNRECOGNIZED : result;
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object message_;
-    /**
-     * <pre>
-     * The error message if connection failed.
-     * &#64;inject_tag: json:"message"
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The message.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the info field is set.
      */
     @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
+    public boolean hasInfo() {
+      return info_ != null;
     }
     /**
      * <pre>
-     * The error message if connection failed.
-     * &#64;inject_tag: json:"message"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+     * @return The info.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getInfo() {
+      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : info_;
     }
-
-    public static final int BEGIN_FIELD_NUMBER = 3;
-    private long begin_;
     /**
      * <pre>
-     * The begin testing time.
-     * &#64;inject_tag: json:"begin"
+     * Info is the Connectivity test results info.
+     * Notice: Filed space_id/source_id/network_id not be set in this interface.
+     * &#64;inject_tag: json:"info"
      * </pre>
      *
-     * <code>int64 begin = 3;</code>
-     * @return The begin.
+     * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public long getBegin() {
-      return begin_;
-    }
-
-    public static final int ELAPSE_FIELD_NUMBER = 4;
-    private long elapse_;
-    /**
-     * <pre>
-     * The use time. unit in ms.
-     * &#64;inject_tag: json:"elapse"
-     * </pre>
-     *
-     * <code>int64 elapse = 4;</code>
-     * @return The elapse.
-     */
-    @java.lang.Override
-    public long getElapse() {
-      return elapse_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getInfoOrBuilder() {
+      return getInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -307,17 +199,8 @@ public final class PBResponseDataSourceBroker {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (result_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.StateUnset.getNumber()) {
-        output.writeEnum(1, result_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-      }
-      if (begin_ != 0L) {
-        output.writeInt64(3, begin_);
-      }
-      if (elapse_ != 0L) {
-        output.writeInt64(4, elapse_);
+      if (info_ != null) {
+        output.writeMessage(1, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -328,20 +211,9 @@ public final class PBResponseDataSourceBroker {
       if (size != -1) return size;
 
       size = 0;
-      if (result_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.StateUnset.getNumber()) {
+      if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, result_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-      }
-      if (begin_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, begin_);
-      }
-      if (elapse_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, elapse_);
+          .computeMessageSize(1, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -358,13 +230,11 @@ public final class PBResponseDataSourceBroker {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker) obj;
 
-      if (result_ != other.result_) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (getBegin()
-          != other.getBegin()) return false;
-      if (getElapse()
-          != other.getElapse()) return false;
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -376,16 +246,10 @@ public final class PBResponseDataSourceBroker {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + result_;
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (37 * hash) + BEGIN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBegin());
-      hash = (37 * hash) + ELAPSE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getElapse());
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -519,14 +383,12 @@ public final class PBResponseDataSourceBroker {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        result_ = 0;
-
-        message_ = "";
-
-        begin_ = 0L;
-
-        elapse_ = 0L;
-
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
         return this;
       }
 
@@ -553,10 +415,11 @@ public final class PBResponseDataSourceBroker {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker(this);
-        result.result_ = result_;
-        result.message_ = message_;
-        result.begin_ = begin_;
-        result.elapse_ = elapse_;
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -605,18 +468,8 @@ public final class PBResponseDataSourceBroker {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.PingDataSourceConnectionByBroker.getDefaultInstance()) return this;
-        if (other.result_ != 0) {
-          setResultValue(other.getResultValue());
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          onChanged();
-        }
-        if (other.getBegin() != 0L) {
-          setBegin(other.getBegin());
-        }
-        if (other.getElapse() != 0L) {
-          setElapse(other.getElapse());
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -647,276 +500,177 @@ public final class PBResponseDataSourceBroker {
         return this;
       }
 
-      private int result_ = 0;
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> infoBuilder_;
       /**
        * <pre>
-       * Connection result.
-       * &#64;inject_tag: json:"result"
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
        * </pre>
        *
-       * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for result.
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the info field is set.
        */
-      @java.lang.Override public int getResultValue() {
-        return result_;
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
       }
       /**
        * <pre>
-       * Connection result.
-       * &#64;inject_tag: json:"result"
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
        * </pre>
        *
-       * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for result to set.
-       * @return This builder for chaining.
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       * @return The info.
        */
-      public Builder setResultValue(int value) {
-        
-        result_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Connection result.
-       * &#64;inject_tag: json:"result"
-       * </pre>
-       *
-       * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-       * @return The result.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result getResult() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.valueOf(result_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Connection result.
-       * &#64;inject_tag: json:"result"
-       * </pre>
-       *
-       * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-       * @param value The result to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResult(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        result_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Connection result.
-       * &#64;inject_tag: json:"result"
-       * </pre>
-       *
-       * <code>.model.DataSourceConnection.Result result = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResult() {
-        
-        result_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <pre>
-       * The error message if connection failed.
-       * &#64;inject_tag: json:"message"
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : info_;
         } else {
-          return (java.lang.String) ref;
+          return infoBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * The error message if connection failed.
-       * &#64;inject_tag: json:"message"
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
        * </pre>
        *
-       * <code>string message = 2;</code>
-       * @return The bytes for message.
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
        */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
+      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setInfo(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : info_;
         }
       }
       /**
        * <pre>
-       * The error message if connection failed.
-       * &#64;inject_tag: json:"message"
+       * Info is the Connectivity test results info.
+       * Notice: Filed space_id/source_id/network_id not be set in this interface.
+       * &#64;inject_tag: json:"info"
        * </pre>
        *
-       * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
+       * <code>.model.DataSourceConnection info = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error message if connection failed.
-       * &#64;inject_tag: json:"message"
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error message if connection failed.
-       * &#64;inject_tag: json:"message"
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        message_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long begin_ ;
-      /**
-       * <pre>
-       * The begin testing time.
-       * &#64;inject_tag: json:"begin"
-       * </pre>
-       *
-       * <code>int64 begin = 3;</code>
-       * @return The begin.
-       */
-      @java.lang.Override
-      public long getBegin() {
-        return begin_;
-      }
-      /**
-       * <pre>
-       * The begin testing time.
-       * &#64;inject_tag: json:"begin"
-       * </pre>
-       *
-       * <code>int64 begin = 3;</code>
-       * @param value The begin to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBegin(long value) {
-        
-        begin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The begin testing time.
-       * &#64;inject_tag: json:"begin"
-       * </pre>
-       *
-       * <code>int64 begin = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBegin() {
-        
-        begin_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long elapse_ ;
-      /**
-       * <pre>
-       * The use time. unit in ms.
-       * &#64;inject_tag: json:"elapse"
-       * </pre>
-       *
-       * <code>int64 elapse = 4;</code>
-       * @return The elapse.
-       */
-      @java.lang.Override
-      public long getElapse() {
-        return elapse_;
-      }
-      /**
-       * <pre>
-       * The use time. unit in ms.
-       * &#64;inject_tag: json:"elapse"
-       * </pre>
-       *
-       * <code>int64 elapse = 4;</code>
-       * @param value The elapse to set.
-       * @return This builder for chaining.
-       */
-      public Builder setElapse(long value) {
-        
-        elapse_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The use time. unit in ms.
-       * &#64;inject_tag: json:"elapse"
-       * </pre>
-       *
-       * <code>int64 elapse = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearElapse() {
-        
-        elapse_ = 0L;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -971,1431 +725,11 @@ public final class PBResponseDataSourceBroker {
 
   }
 
-  public interface DescribeDataSourceTablesByBrokerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.DescribeDataSourceTablesByBroker)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @return A list containing the items.
-     */
-    java.util.List<java.lang.String>
-        getItemsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @return The count of items.
-     */
-    int getItemsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @param index The index of the element to return.
-     * @return The items at the given index.
-     */
-    java.lang.String getItems(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the items at the given index.
-     */
-    com.google.protobuf.ByteString
-        getItemsBytes(int index);
-  }
-  /**
-   * Protobuf type {@code response.DescribeDataSourceTablesByBroker}
-   */
-  public static final class DescribeDataSourceTablesByBroker extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.DescribeDataSourceTablesByBroker)
-      DescribeDataSourceTablesByBrokerOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DescribeDataSourceTablesByBroker.newBuilder() to construct.
-    private DescribeDataSourceTablesByBroker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DescribeDataSourceTablesByBroker() {
-      items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DescribeDataSourceTablesByBroker();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DescribeDataSourceTablesByBroker(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                items_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              items_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          items_ = items_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTablesByBroker_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTablesByBroker_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.Builder.class);
-    }
-
-    public static final int ITEMS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList items_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @return A list containing the items.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getItemsList() {
-      return items_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @return The count of items.
-     */
-    public int getItemsCount() {
-      return items_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @param index The index of the element to return.
-     * @return The items at the given index.
-     */
-    public java.lang.String getItems(int index) {
-      return items_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"items"
-     * </pre>
-     *
-     * <code>repeated string items = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the items at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getItemsBytes(int index) {
-      return items_.getByteString(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < items_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, items_.getRaw(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < items_.size(); i++) {
-          dataSize += computeStringSizeNoTag(items_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getItemsList().size();
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker) obj;
-
-      if (!getItemsList()
-          .equals(other.getItemsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getItemsCount() > 0) {
-        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
-        hash = (53 * hash) + getItemsList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code response.DescribeDataSourceTablesByBroker}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.DescribeDataSourceTablesByBroker)
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBrokerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTablesByBroker_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTablesByBroker_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTablesByBroker_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          items_ = items_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.items_ = items_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker.getDefaultInstance()) return this;
-        if (!other.items_.isEmpty()) {
-          if (items_.isEmpty()) {
-            items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureItemsIsMutable();
-            items_.addAll(other.items_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringList items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureItemsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          items_ = new com.google.protobuf.LazyStringArrayList(items_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @return A list containing the items.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getItemsList() {
-        return items_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @return The count of items.
-       */
-      public int getItemsCount() {
-        return items_.size();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param index The index of the element to return.
-       * @return The items at the given index.
-       */
-      public java.lang.String getItems(int index) {
-        return items_.get(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the items at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getItemsBytes(int index) {
-        return items_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The items to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItems(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureItemsIsMutable();
-        items_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param value The items to add.
-       * @return This builder for chaining.
-       */
-      public Builder addItems(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureItemsIsMutable();
-        items_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param values The items to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllItems(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureItemsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, items_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItems() {
-        items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"items"
-       * </pre>
-       *
-       * <code>repeated string items = 1;</code>
-       * @param value The bytes of the items to add.
-       * @return This builder for chaining.
-       */
-      public Builder addItemsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureItemsIsMutable();
-        items_.add(value);
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:response.DescribeDataSourceTablesByBroker)
-    }
-
-    // @@protoc_insertion_point(class_scope:response.DescribeDataSourceTablesByBroker)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker();
-    }
-
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DescribeDataSourceTablesByBroker>
-        PARSER = new com.google.protobuf.AbstractParser<DescribeDataSourceTablesByBroker>() {
-      @java.lang.Override
-      public DescribeDataSourceTablesByBroker parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescribeDataSourceTablesByBroker(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DescribeDataSourceTablesByBroker> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DescribeDataSourceTablesByBroker> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTablesByBroker getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DescribeDataSourceTableSchemaByBrokerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.DescribeDataSourceTableSchemaByBroker)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     * @return Whether the schema field is set.
-     */
-    boolean hasSchema();
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     * @return The schema.
-     */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema getSchema();
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder getSchemaOrBuilder();
-  }
-  /**
-   * <pre>
-   * TableColumns used as reply parameters in RPC or response body in HTTP.
-   * </pre>
-   *
-   * Protobuf type {@code response.DescribeDataSourceTableSchemaByBroker}
-   */
-  public static final class DescribeDataSourceTableSchemaByBroker extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.DescribeDataSourceTableSchemaByBroker)
-      DescribeDataSourceTableSchemaByBrokerOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DescribeDataSourceTableSchemaByBroker.newBuilder() to construct.
-    private DescribeDataSourceTableSchemaByBroker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DescribeDataSourceTableSchemaByBroker() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DescribeDataSourceTableSchemaByBroker();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DescribeDataSourceTableSchemaByBroker(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder subBuilder = null;
-              if (schema_ != null) {
-                subBuilder = schema_.toBuilder();
-              }
-              schema_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schema_);
-                schema_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTableSchemaByBroker_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.Builder.class);
-    }
-
-    public static final int SCHEMA_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema schema_;
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     * @return Whether the schema field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchema() {
-      return schema_ != null;
-    }
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     * @return The schema.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema getSchema() {
-      return schema_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.getDefaultInstance() : schema_;
-    }
-    /**
-     * <pre>
-     * Schema represents the table schema of specified table.
-     * &#64;inject_tag: json:"schema"
-     * </pre>
-     *
-     * <code>.datasource.TableSchema schema = 1;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder getSchemaOrBuilder() {
-      return getSchema();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (schema_ != null) {
-        output.writeMessage(1, getSchema());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (schema_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSchema());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker) obj;
-
-      if (hasSchema() != other.hasSchema()) return false;
-      if (hasSchema()) {
-        if (!getSchema()
-            .equals(other.getSchema())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchema()) {
-        hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
-        hash = (53 * hash) + getSchema().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * TableColumns used as reply parameters in RPC or response body in HTTP.
-     * </pre>
-     *
-     * Protobuf type {@code response.DescribeDataSourceTableSchemaByBroker}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.DescribeDataSourceTableSchemaByBroker)
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBrokerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTableSchemaByBroker_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (schemaBuilder_ == null) {
-          schema_ = null;
-        } else {
-          schema_ = null;
-          schemaBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker(this);
-        if (schemaBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = schemaBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker.getDefaultInstance()) return this;
-        if (other.hasSchema()) {
-          mergeSchema(other.getSchema());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema schema_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder> schemaBuilder_;
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       * @return Whether the schema field is set.
-       */
-      public boolean hasSchema() {
-        return schemaBuilder_ != null || schema_ != null;
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       * @return The schema.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema getSchema() {
-        if (schemaBuilder_ == null) {
-          return schema_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.getDefaultInstance() : schema_;
-        } else {
-          return schemaBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public Builder setSchema(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema value) {
-        if (schemaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          schema_ = value;
-          onChanged();
-        } else {
-          schemaBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public Builder setSchema(
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder builderForValue) {
-        if (schemaBuilder_ == null) {
-          schema_ = builderForValue.build();
-          onChanged();
-        } else {
-          schemaBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public Builder mergeSchema(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema value) {
-        if (schemaBuilder_ == null) {
-          if (schema_ != null) {
-            schema_ =
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.newBuilder(schema_).mergeFrom(value).buildPartial();
-          } else {
-            schema_ = value;
-          }
-          onChanged();
-        } else {
-          schemaBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public Builder clearSchema() {
-        if (schemaBuilder_ == null) {
-          schema_ = null;
-          onChanged();
-        } else {
-          schema_ = null;
-          schemaBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder getSchemaBuilder() {
-        
-        onChanged();
-        return getSchemaFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder getSchemaOrBuilder() {
-        if (schemaBuilder_ != null) {
-          return schemaBuilder_.getMessageOrBuilder();
-        } else {
-          return schema_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.getDefaultInstance() : schema_;
-        }
-      }
-      /**
-       * <pre>
-       * Schema represents the table schema of specified table.
-       * &#64;inject_tag: json:"schema"
-       * </pre>
-       *
-       * <code>.datasource.TableSchema schema = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder> 
-          getSchemaFieldBuilder() {
-        if (schemaBuilder_ == null) {
-          schemaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchema.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableSchemaOrBuilder>(
-                  getSchema(),
-                  getParentForChildren(),
-                  isClean());
-          schema_ = null;
-        }
-        return schemaBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:response.DescribeDataSourceTableSchemaByBroker)
-    }
-
-    // @@protoc_insertion_point(class_scope:response.DescribeDataSourceTableSchemaByBroker)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker();
-    }
-
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DescribeDataSourceTableSchemaByBroker>
-        PARSER = new com.google.protobuf.AbstractParser<DescribeDataSourceTableSchemaByBroker>() {
-      @java.lang.Override
-      public DescribeDataSourceTableSchemaByBroker parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescribeDataSourceTableSchemaByBroker(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DescribeDataSourceTableSchemaByBroker> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DescribeDataSourceTableSchemaByBroker> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceBroker.DescribeDataSourceTableSchemaByBroker getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_PingDataSourceConnectionByBroker_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_PingDataSourceConnectionByBroker_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_DescribeDataSourceTablesByBroker_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_DescribeDataSourceTablesByBroker_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_DescribeDataSourceTableSchemaByBroker_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2408,45 +742,26 @@ public final class PBResponseDataSourceBroker {
       "\n,proto/types/response/dataousrce_broker" +
       ".proto\022\010response\0323github.com/yu31/protoc" +
       "-plugin/proto/validator.proto\032\"proto/typ" +
-      "es/model/datasource.proto\0323proto/types/m" +
-      "odel/datasource/datasource_table.proto\"\225" +
-      "\001\n PingDataSourceConnectionByBroker\022A\n\006r" +
-      "esult\030\001 \001(\0162\".model.DataSourceConnection" +
-      ".ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\002 \001(\t\022" +
-      "\r\n\005begin\030\003 \001(\003\022\016\n\006elapse\030\004 \001(\003\"1\n Descri" +
-      "beDataSourceTablesByBroker\022\r\n\005items\030\001 \003(" +
-      "\t\"P\n%DescribeDataSourceTableSchemaByBrok" +
-      "er\022\'\n\006schema\030\001 \001(\0132\027.datasource.TableSch" +
-      "emaB{\n%com.dataomnis.gproto.types.pbresp" +
-      "onseB\032PBResponseDataSourceBrokerP\000Z4gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "responseb\006proto3"
+      "es/model/datasource.proto\"Z\n PingDataSou" +
+      "rceConnectionByBroker\0226\n\004info\030\001 \001(\0132\033.mo" +
+      "del.DataSourceConnectionB\013\342\337\037\007\022\005\342\001\002\030\001B{\n" +
+      "%com.dataomnis.gproto.types.pbresponseB\032" +
+      "PBResponseDataSourceBrokerP\000Z4github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbrespon" +
+      "seb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor(),
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.getDescriptor(),
         });
     internal_static_response_PingDataSourceConnectionByBroker_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_response_PingDataSourceConnectionByBroker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_PingDataSourceConnectionByBroker_descriptor,
-        new java.lang.String[] { "Result", "Message", "Begin", "Elapse", });
-    internal_static_response_DescribeDataSourceTablesByBroker_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_response_DescribeDataSourceTablesByBroker_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_DescribeDataSourceTablesByBroker_descriptor,
-        new java.lang.String[] { "Items", });
-    internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_response_DescribeDataSourceTableSchemaByBroker_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_DescribeDataSourceTableSchemaByBroker_descriptor,
-        new java.lang.String[] { "Schema", });
+        new java.lang.String[] { "Info", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
@@ -2454,7 +769,6 @@ public final class PBResponseDataSourceBroker {
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.getDescriptor();
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
