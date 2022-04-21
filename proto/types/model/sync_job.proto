@@ -158,7 +158,7 @@ message SyncJobConf {
     // shell mode json
     // @inject_tag: json:"job_content"
     string job_content = 4 [
-    (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
+    (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 2 } } },
     (validator.field).tags.string = { byte_len_gt: 20  }
     ];
     // sync Resource
