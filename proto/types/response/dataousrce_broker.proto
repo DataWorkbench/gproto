@@ -13,34 +13,10 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/datasource.proto";
-import "proto/types/model/datasource/datasource_table.proto";
 
 message PingDataSourceConnectionByBroker {
-  // Connection result.
-  // @inject_tag: json:"result"
-  model.DataSourceConnection.Result result = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-  // The error message if connection failed.
-  // @inject_tag: json:"message"
-  string message = 2;
-
-  // The begin testing time.
-  // @inject_tag: json:"begin"
-  int64 begin = 3;
-
-  // The use time. unit in ms.
-  // @inject_tag: json:"elapse"
-  int64 elapse = 4;
-}
-
-message DescribeDataSourceTablesByBroker {
-  // @inject_tag: json:"items"
-  repeated string items = 1;
-}
-
-// TableColumns used as reply parameters in RPC or response body in HTTP.
-message DescribeDataSourceTableSchemaByBroker {
-  // Schema represents the table schema of specified table.
-  // @inject_tag: json:"schema"
-  datasource.TableSchema schema = 1;
+  // Info is the Connectivity test results info.
+  // Notice: Filed space_id/source_id/network_id not be set in this interface.
+  // @inject_tag: json:"info"
+  model.DataSourceConnection info = 1 [ (validator.field).tags.message = { skip: true } ];
 }

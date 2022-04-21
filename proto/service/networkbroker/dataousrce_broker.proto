@@ -12,13 +12,15 @@ option java_multiple_files = false;
 
 import "proto/types/request/dataousrce_broker.proto";
 import "proto/types/response/dataousrce_broker.proto";
+import "proto/types/response/datasource_manage.proto";
+
 
 service DataSourceBroker {
   rpc PingDataSourceConnectionByBroker(request.PingDataSourceConnectionByBroker)   returns (response.PingDataSourceConnectionByBroker) {}
 
   // DescribeDataSourceTables get a table list of specified data source.
-  rpc DescribeDataSourceTablesByBroker(request.DescribeDataSourceTablesByBroker)    returns (response.DescribeDataSourceTablesByBroker) {}
+  rpc DescribeDataSourceTablesByBroker(request.DescribeDataSourceTablesByBroker)    returns (response.DescribeDataSourceTables) {}
 
   // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
-  rpc DescribeDataSourceTableSchemaByBroker(request.DescribeDataSourceTableSchemaByBroker) returns (response.DescribeDataSourceTableSchemaByBroker) {}
+  rpc DescribeDataSourceTableSchemaByBroker(request.DescribeDataSourceTableSchemaByBroker) returns (response.DescribeDataSourceTableSchema) {}
 }
