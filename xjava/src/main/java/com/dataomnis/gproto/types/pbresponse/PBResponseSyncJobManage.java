@@ -4769,6 +4769,16 @@ public final class PBResponseSyncJobManage {
      * @return The hasMore.
      */
     boolean getHasMore();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    long getTotal();
   }
   /**
    * <pre>
@@ -4833,6 +4843,11 @@ public final class PBResponseSyncJobManage {
             case 16: {
 
               hasMore_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              total_ = input.readInt64();
               break;
             }
             default: {
@@ -4945,6 +4960,21 @@ public final class PBResponseSyncJobManage {
       return hasMore_;
     }
 
+    public static final int TOTAL_FIELD_NUMBER = 3;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4965,6 +4995,9 @@ public final class PBResponseSyncJobManage {
       if (hasMore_ != false) {
         output.writeBool(2, hasMore_);
       }
+      if (total_ != 0L) {
+        output.writeInt64(3, total_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4981,6 +5014,10 @@ public final class PBResponseSyncJobManage {
       if (hasMore_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, total_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5001,6 +5038,8 @@ public final class PBResponseSyncJobManage {
           .equals(other.getInfosList())) return false;
       if (getHasMore()
           != other.getHasMore()) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5019,6 +5058,9 @@ public final class PBResponseSyncJobManage {
       hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasMore());
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5165,6 +5207,8 @@ public final class PBResponseSyncJobManage {
         }
         hasMore_ = false;
 
+        total_ = 0L;
+
         return this;
       }
 
@@ -5202,6 +5246,7 @@ public final class PBResponseSyncJobManage {
           result.infos_ = infosBuilder_.build();
         }
         result.hasMore_ = hasMore_;
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -5278,6 +5323,9 @@ public final class PBResponseSyncJobManage {
         }
         if (other.getHasMore() != false) {
           setHasMore(other.getHasMore());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5660,6 +5708,49 @@ public final class PBResponseSyncJobManage {
       public Builder clearHasMore() {
         
         hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
         onChanged();
         return this;
       }
@@ -8996,18 +9087,19 @@ public final class PBResponseSyncJobManage {
       " \001(\0132\026.model.SyncJobScheduleB\013\342\337\037\007\022\005\342\001\002\030" +
       "\001\"\\\n\023ListReleaseSyncJobs\022$\n\005infos\030\001 \003(\0132" +
       "\025.model.SyncJobRelease\022\020\n\010has_more\030\002 \001(\010" +
-      "\022\r\n\005total\030\003 \001(\003\"F\n\023ListSyncJobVersions\022\035" +
+      "\022\r\n\005total\030\003 \001(\003\"U\n\023ListSyncJobVersions\022\035" +
       "\n\005infos\030\001 \003(\0132\016.model.SyncJob\022\020\n\010has_mor" +
-      "e\030\002 \001(\010\"1\n\037DescribeSyncFlinkUIByInstance" +
-      "Id\022\016\n\006web_ui\030\001 \001(\t\"*\n\017GenerateJobJson\022\027\n" +
-      "\017sync_job_script\030\001 \001(\t\"!\n\022ConvertSyncJob" +
-      "Mode\022\013\n\003job\030\001 \001(\t\"?\n\025PingSyncJobConnecti" +
-      "on\022&\n\004info\030\001 \001(\0132\030.model.SyncJobConnecti" +
-      "on\"@\n\026DescribeSyncConnection\022&\n\004info\030\001 \001" +
-      "(\0132\030.model.SyncJobConnectionBx\n%com.data" +
-      "omnis.gproto.types.pbresponseB\027PBRespons" +
-      "eSyncJobManageP\000Z4github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbresponseb\006proto3"
+      "e\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"1\n\037DescribeSyncFl" +
+      "inkUIByInstanceId\022\016\n\006web_ui\030\001 \001(\t\"*\n\017Gen" +
+      "erateJobJson\022\027\n\017sync_job_script\030\001 \001(\t\"!\n" +
+      "\022ConvertSyncJobMode\022\013\n\003job\030\001 \001(\t\"?\n\025Ping" +
+      "SyncJobConnection\022&\n\004info\030\001 \001(\0132\030.model." +
+      "SyncJobConnection\"@\n\026DescribeSyncConnect" +
+      "ion\022&\n\004info\030\001 \001(\0132\030.model.SyncJobConnect" +
+      "ionBx\n%com.dataomnis.gproto.types.pbresp" +
+      "onseB\027PBResponseSyncJobManageP\000Z4github." +
+      "com/DataWorkbench/gproto/xgo/types/pbres" +
+      "ponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9056,7 +9148,7 @@ public final class PBResponseSyncJobManage {
     internal_static_response_ListSyncJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ListSyncJobVersions_descriptor,
-        new java.lang.String[] { "Infos", "HasMore", });
+        new java.lang.String[] { "Infos", "HasMore", "Total", });
     internal_static_response_DescribeSyncFlinkUIByInstanceId_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_response_DescribeSyncFlinkUIByInstanceId_fieldAccessorTable = new

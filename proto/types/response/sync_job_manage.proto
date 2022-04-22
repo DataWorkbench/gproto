@@ -66,6 +66,9 @@ message ListSyncJobVersions {
 
     // @inject_tag: json:"has_more"
     bool has_more = 2;
+
+    // @inject_tag: json:"total"
+    int64 total = 3;
 }
 
 

@@ -5398,6 +5398,16 @@ public final class PBResponseStreamJobManage {
      * @return The hasMore.
      */
     boolean getHasMore();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    long getTotal();
   }
   /**
    * <pre>
@@ -5462,6 +5472,11 @@ public final class PBResponseStreamJobManage {
             case 16: {
 
               hasMore_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              total_ = input.readInt64();
               break;
             }
             default: {
@@ -5574,6 +5589,21 @@ public final class PBResponseStreamJobManage {
       return hasMore_;
     }
 
+    public static final int TOTAL_FIELD_NUMBER = 3;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5594,6 +5624,9 @@ public final class PBResponseStreamJobManage {
       if (hasMore_ != false) {
         output.writeBool(2, hasMore_);
       }
+      if (total_ != 0L) {
+        output.writeInt64(3, total_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5610,6 +5643,10 @@ public final class PBResponseStreamJobManage {
       if (hasMore_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, total_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5630,6 +5667,8 @@ public final class PBResponseStreamJobManage {
           .equals(other.getInfosList())) return false;
       if (getHasMore()
           != other.getHasMore()) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5648,6 +5687,9 @@ public final class PBResponseStreamJobManage {
       hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasMore());
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5794,6 +5836,8 @@ public final class PBResponseStreamJobManage {
         }
         hasMore_ = false;
 
+        total_ = 0L;
+
         return this;
       }
 
@@ -5831,6 +5875,7 @@ public final class PBResponseStreamJobManage {
           result.infos_ = infosBuilder_.build();
         }
         result.hasMore_ = hasMore_;
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -5907,6 +5952,9 @@ public final class PBResponseStreamJobManage {
         }
         if (other.getHasMore() != false) {
           setHasMore(other.getHasMore());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6289,6 +6337,49 @@ public final class PBResponseStreamJobManage {
       public Builder clearHasMore() {
         
         hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
         onChanged();
         return this;
       }
@@ -7754,15 +7845,15 @@ public final class PBResponseStreamJobManage {
       "chedule\030\001 \001(\0132\030.model.StreamJobScheduleB" +
       "\013\342\337\037\007\022\005\342\001\002\030\001\"`\n\025ListReleaseStreamJobs\022&\n" +
       "\005infos\030\001 \003(\0132\027.model.StreamJobRelease\022\020\n" +
-      "\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"J\n\025ListSt" +
+      "\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"Y\n\025ListSt" +
       "reamJobVersions\022\037\n\005infos\030\001 \003(\0132\020.model.S" +
-      "treamJob\022\020\n\010has_more\030\002 \001(\010\"&\n\025ListBuiltI" +
-      "nConnectors\022\r\n\005items\030\001 \003(\t\"-\n\033DescribeFl" +
-      "inkUIByInstanceId\022\016\n\006web_ui\030\001 \001(\tBz\n%com" +
-      ".dataomnis.gproto.types.pbresponseB\031PBRe" +
-      "sponseStreamJobManageP\000Z4github.com/Data" +
-      "Workbench/gproto/xgo/types/pbresponseb\006p" +
-      "roto3"
+      "treamJob\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(" +
+      "\003\"&\n\025ListBuiltInConnectors\022\r\n\005items\030\001 \003(" +
+      "\t\"-\n\033DescribeFlinkUIByInstanceId\022\016\n\006web_" +
+      "ui\030\001 \001(\tBz\n%com.dataomnis.gproto.types.p" +
+      "bresponseB\031PBResponseStreamJobManageP\000Z4" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7817,7 +7908,7 @@ public final class PBResponseStreamJobManage {
     internal_static_response_ListStreamJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ListStreamJobVersions_descriptor,
-        new java.lang.String[] { "Infos", "HasMore", });
+        new java.lang.String[] { "Infos", "HasMore", "Total", });
     internal_static_response_ListBuiltInConnectors_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_response_ListBuiltInConnectors_fieldAccessorTable = new
