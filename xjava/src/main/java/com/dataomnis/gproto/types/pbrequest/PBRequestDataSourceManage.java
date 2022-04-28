@@ -156,6 +156,27 @@ public final class PBRequestDataSourceManage {
      * @return The verbose.
      */
     int getVerbose();
+
+    /**
+     * <pre>
+     * The source type
+     * &#64;inject_tag: json:"type" form:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 9;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * The source type
+     * &#64;inject_tag: json:"type" form:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 9;</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType();
   }
   /**
    * <pre>
@@ -178,6 +199,7 @@ public final class PBRequestDataSourceManage {
       sortBy_ = "";
       search_ = "";
       name_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -252,6 +274,12 @@ public final class PBRequestDataSourceManage {
             case 64: {
 
               verbose_ = input.readInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
             default: {
@@ -549,6 +577,35 @@ public final class PBRequestDataSourceManage {
       return verbose_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 9;
+    private int type_;
+    /**
+     * <pre>
+     * The source type
+     * &#64;inject_tag: json:"type" form:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 9;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The source type
+     * &#64;inject_tag: json:"type" form:"type"
+     * </pre>
+     *
+     * <code>.model.DataSource.Type type = 9;</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -587,6 +644,9 @@ public final class PBRequestDataSourceManage {
       if (verbose_ != 0) {
         output.writeInt32(8, verbose_);
       }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(9, type_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -624,6 +684,10 @@ public final class PBRequestDataSourceManage {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, verbose_);
       }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, type_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -655,6 +719,7 @@ public final class PBRequestDataSourceManage {
           .equals(other.getName())) return false;
       if (getVerbose()
           != other.getVerbose()) return false;
+      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -683,6 +748,8 @@ public final class PBRequestDataSourceManage {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
       hash = (53 * hash) + getVerbose();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -836,6 +903,8 @@ public final class PBRequestDataSourceManage {
 
         verbose_ = 0;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -870,6 +939,7 @@ public final class PBRequestDataSourceManage {
         result.search_ = search_;
         result.name_ = name_;
         result.verbose_ = verbose_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -945,6 +1015,9 @@ public final class PBRequestDataSourceManage {
         }
         if (other.getVerbose() != 0) {
           setVerbose(other.getVerbose());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1577,6 +1650,85 @@ public final class PBRequestDataSourceManage {
       public Builder clearVerbose() {
         
         verbose_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * The source type
+       * &#64;inject_tag: json:"type" form:"type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type type = 9;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The source type
+       * &#64;inject_tag: json:"type" form:"type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type type = 9;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The source type
+       * &#64;inject_tag: json:"type" form:"type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type type = 9;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The source type
+       * &#64;inject_tag: json:"type" form:"type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type type = 9;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The source type
+       * &#64;inject_tag: json:"type" form:"type"
+       * </pre>
+       *
+       * <code>.model.DataSource.Type type = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -13753,65 +13905,66 @@ public final class PBRequestDataSourceManage {
       "proto\022\007request\0323github.com/yu31/protoc-p" +
       "lugin/proto/validator.proto\0322github.com/" +
       "yu31/protoc-plugin/proto/defaults.proto\032" +
-      "\"proto/types/model/datasource.proto\"\367\001\n\017" +
+      "\"proto/types/model/datasource.proto\"\235\002\n\017" +
       "ListDataSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
       "\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\00310" +
       "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001" +
       "\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004n" +
       "ameJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016" +
       "\n\006search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\022\017\n\007verbose\030" +
-      "\010 \001(\005\"\332\002\n\020CreateDataSource\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030" +
-      "\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 " +
-      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001" +
-      "\006\200\002\001\230\002@\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004" +
-      "type\030\006 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\0221\n\003url\030\007 \001(\0132\025.model.DataSourc" +
-      "e.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0224\n\017last_connection\030" +
-      "\010 \001(\0132\033.model.DataSourceConnection\"\205\002\n\020U" +
-      "pdateDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
-      "\002\000\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004ty" +
-      "pe\030\005 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource." +
-      "URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-" +
-      "\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002" +
-      "\004som-\"<\n\022DescribeDataSource\022&\n\tsource_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDat" +
-      "aSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d" +
-      "@\001Z\n\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\ns" +
-      "ource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004so" +
-      "m-\"\374\001\n\031ListDataSourceConnections\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsourc" +
-      "e_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B" +
-      "\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005" +
-      "B\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001" +
-      "\026J\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010" +
-      "\022\017\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConn" +
-      "ection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
-      "E\n\005stage\030\003 \001(\0162\'.request.PingDataSourceC" +
-      "onnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource" +
-      "_id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003" +
-      "\360\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.Typ" +
-      "eB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003" +
-      "url\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016" +
-      "\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\n" +
-      "PhaseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterC" +
-      "reate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tso" +
-      "urce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035D" +
-      "escribeDataSourceTableSchema\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id" +
-      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_nam" +
-      "e\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomn" +
-      "is.gproto.types.pbrequestB\031PBRequestData" +
-      "SourceManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "\010 \001(\005\022$\n\004type\030\t \001(\0162\026.model.DataSource.T" +
+      "ype\"\332\002\n\020CreateDataSource\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(" +
+      "\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\001\230\002@\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004ty" +
+      "pe\030\006 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\0221\n\003url\030\007 \001(\0132\025.model.DataSource." +
+      "URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0224\n\017last_connection\030\010 " +
+      "\001(\0132\033.model.DataSourceConnection\"\205\002\n\020Upd" +
+      "ateDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000" +
+      "\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type" +
+      "\030\005 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource.UR" +
+      "LB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\n" +
+      "source_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004s" +
+      "om-\"<\n\022DescribeDataSource\022&\n\tsource_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDataS" +
+      "ources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001" +
+      "Z\n\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nsou" +
+      "rce_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-" +
+      "\"\374\001\n\031ListDataSourceConnections\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_" +
+      "id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B\027\242" +
+      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013" +
+      "\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026J" +
+      "\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022\017" +
+      "\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConnec" +
+      "tion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n" +
+      "\005stage\030\003 \001(\0162\'.request.PingDataSourceCon" +
+      "nection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_i" +
+      "d\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001" +
+      "\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.TypeB" +
+      "!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003ur" +
+      "l\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n\005" +
+      "stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPh" +
+      "aseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCre" +
+      "ate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsour" +
+      "ce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035Des" +
+      "cribeDataSourceTableSchema\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030" +
+      "\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis" +
+      ".gproto.types.pbrequestB\031PBRequestDataSo" +
+      "urceManageP\000Z3github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13825,7 +13978,7 @@ public final class PBRequestDataSourceManage {
     internal_static_request_ListDataSources_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListDataSources_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", "Verbose", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", "Verbose", "Type", });
     internal_static_request_CreateDataSource_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateDataSource_fieldAccessorTable = new
