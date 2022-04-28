@@ -54,7 +54,7 @@ message ListDataSources {
   int32 verbose = 8;
 
   // The source type.
-  // @inject_tag: json:"type" gorm:"column:type;"
+  // @inject_tag: json:"type" gorm:"column:type"
   model.DataSource.Type type = 9;
 }
 
