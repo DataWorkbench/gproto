@@ -54,8 +54,8 @@ message ListDataSources {
   int32 verbose = 8;
 
   // The source type
-  // @inject_tag: json:"source_type" gorm:"column:source_type"
-  model.DataSource.Type source_type = 9;
+  // @inject_tag: json:"type" gorm:"column:type"
+  int32 type = 9;
 }
 
 // CreateDataSource used as request parameters for RPC and HTTP(based on Body)
