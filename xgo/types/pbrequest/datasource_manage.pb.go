@@ -99,7 +99,7 @@ type ListDataSources struct {
 	// If the value greater than 1, The details of the associated information will be returned.
 	Verbose int32 `protobuf:"varint,8,opt,name=verbose,proto3" json:"verbose" form:"verbose"`
 	// The source type.
-	Type pbmodel.DataSource_Type `protobuf:"varint,9,opt,name=type,proto3,enum=model.DataSource_Type" json:"type" gorm:"column:type;"`
+	Type pbmodel.DataSource_Type `protobuf:"varint,9,opt,name=type,proto3,enum=model.DataSource_Type" json:"type" gorm:"column:type"`
 }
 
 func (x *ListDataSources) Reset() {
