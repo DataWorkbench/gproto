@@ -171,14 +171,6 @@ func (this *ListSyncJobVersions) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DescribeSyncFlinkUIByInstanceId
-func (this *DescribeSyncFlinkUIByInstanceId) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.GenerateJobJson
 func (this *GenerateJobJson) SetDefaults() {
 	if this == nil {

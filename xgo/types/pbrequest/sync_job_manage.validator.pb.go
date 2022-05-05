@@ -866,27 +866,6 @@ func (this *ListSyncJobVersions) Validate() error {
 	return nil
 }
 
-func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id() error {
-	if !(len(this.InstanceId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
-	}
-	if !(strings.HasPrefix(this.InstanceId, "syi-")) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'instance_id' must start with string 'syi-'", this.InstanceId)
-	}
-	return nil
-}
-
-// Set default value for message request.DescribeSyncFlinkUIByInstanceId
-func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *GenerateJobJson) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("GenerateJobJson", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))

@@ -190,6 +190,88 @@ public final class PBModelSyncInstance {
      * @return The updated.
      */
     long getUpdated();
+
+    /**
+     * <pre>
+     * The job overview of url in flink-cluster
+     * &#64;inject_tag: json:"flink_ui" gorm:"-"
+     * </pre>
+     *
+     * <code>string flink_ui = 10;</code>
+     * @return The flinkUi.
+     */
+    java.lang.String getFlinkUi();
+    /**
+     * <pre>
+     * The job overview of url in flink-cluster
+     * &#64;inject_tag: json:"flink_ui" gorm:"-"
+     * </pre>
+     *
+     * <code>string flink_ui = 10;</code>
+     * @return The bytes for flinkUi.
+     */
+    com.google.protobuf.ByteString
+        getFlinkUiBytes();
+
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     * @return Whether the syncJob field is set.
+     */
+    boolean hasSyncJob();
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     * @return The syncJob.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob();
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder();
+
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     * @return Whether the syncJobProperty field is set.
+     */
+    boolean hasSyncJobProperty();
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     * @return The syncJobProperty.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty();
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder();
   }
   /**
    * <pre>
@@ -215,6 +297,7 @@ public final class PBModelSyncInstance {
       state_ = 0;
       status_ = 0;
       message_ = "";
+      flinkUi_ = "";
     }
 
     @java.lang.Override
@@ -297,6 +380,38 @@ public final class PBModelSyncInstance {
             case 72: {
 
               updated_ = input.readInt64();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkUi_ = s;
+              break;
+            }
+            case 90: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder subBuilder = null;
+              if (syncJob_ != null) {
+                subBuilder = syncJob_.toBuilder();
+              }
+              syncJob_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(syncJob_);
+                syncJob_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder subBuilder = null;
+              if (syncJobProperty_ != null) {
+                subBuilder = syncJobProperty_.toBuilder();
+              }
+              syncJobProperty_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(syncJobProperty_);
+                syncJobProperty_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -948,6 +1063,136 @@ public final class PBModelSyncInstance {
       return updated_;
     }
 
+    public static final int FLINK_UI_FIELD_NUMBER = 10;
+    private volatile java.lang.Object flinkUi_;
+    /**
+     * <pre>
+     * The job overview of url in flink-cluster
+     * &#64;inject_tag: json:"flink_ui" gorm:"-"
+     * </pre>
+     *
+     * <code>string flink_ui = 10;</code>
+     * @return The flinkUi.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkUi() {
+      java.lang.Object ref = flinkUi_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkUi_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The job overview of url in flink-cluster
+     * &#64;inject_tag: json:"flink_ui" gorm:"-"
+     * </pre>
+     *
+     * <code>string flink_ui = 10;</code>
+     * @return The bytes for flinkUi.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkUiBytes() {
+      java.lang.Object ref = flinkUi_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkUi_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SYNC_JOB_FIELD_NUMBER = 11;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob syncJob_;
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     * @return Whether the syncJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyncJob() {
+      return syncJob_ != null;
+    }
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     * @return The syncJob.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob() {
+      return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance() : syncJob_;
+    }
+    /**
+     * <pre>
+     * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJob sync_job = 11;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder() {
+      return getSyncJob();
+    }
+
+    public static final int SYNC_JOB_PROPERTY_FIELD_NUMBER = 12;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty syncJobProperty_;
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     * @return Whether the syncJobProperty field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyncJobProperty() {
+      return syncJobProperty_ != null;
+    }
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     * @return The syncJobProperty.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty() {
+      return syncJobProperty_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+    }
+    /**
+     * <pre>
+     * The property of sync job. Used to DescribeSyncInstance.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder() {
+      return getSyncJobProperty();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -989,6 +1234,15 @@ public final class PBModelSyncInstance {
       if (updated_ != 0L) {
         output.writeInt64(9, updated_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUi_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, flinkUi_);
+      }
+      if (syncJob_ != null) {
+        output.writeMessage(11, getSyncJob());
+      }
+      if (syncJobProperty_ != null) {
+        output.writeMessage(12, getSyncJobProperty());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1029,6 +1283,17 @@ public final class PBModelSyncInstance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, updated_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUi_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, flinkUi_);
+      }
+      if (syncJob_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getSyncJob());
+      }
+      if (syncJobProperty_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getSyncJobProperty());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1060,6 +1325,18 @@ public final class PBModelSyncInstance {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (!getFlinkUi()
+          .equals(other.getFlinkUi())) return false;
+      if (hasSyncJob() != other.hasSyncJob()) return false;
+      if (hasSyncJob()) {
+        if (!getSyncJob()
+            .equals(other.getSyncJob())) return false;
+      }
+      if (hasSyncJobProperty() != other.hasSyncJobProperty()) return false;
+      if (hasSyncJobProperty()) {
+        if (!getSyncJobProperty()
+            .equals(other.getSyncJobProperty())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1091,6 +1368,16 @@ public final class PBModelSyncInstance {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      hash = (37 * hash) + FLINK_UI_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkUi().hashCode();
+      if (hasSyncJob()) {
+        hash = (37 * hash) + SYNC_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJob().hashCode();
+      }
+      if (hasSyncJobProperty()) {
+        hash = (37 * hash) + SYNC_JOB_PROPERTY_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJobProperty().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1246,6 +1533,20 @@ public final class PBModelSyncInstance {
 
         updated_ = 0L;
 
+        flinkUi_ = "";
+
+        if (syncJobBuilder_ == null) {
+          syncJob_ = null;
+        } else {
+          syncJob_ = null;
+          syncJobBuilder_ = null;
+        }
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = null;
+        } else {
+          syncJobProperty_ = null;
+          syncJobPropertyBuilder_ = null;
+        }
         return this;
       }
 
@@ -1281,6 +1582,17 @@ public final class PBModelSyncInstance {
         result.message_ = message_;
         result.created_ = created_;
         result.updated_ = updated_;
+        result.flinkUi_ = flinkUi_;
+        if (syncJobBuilder_ == null) {
+          result.syncJob_ = syncJob_;
+        } else {
+          result.syncJob_ = syncJobBuilder_.build();
+        }
+        if (syncJobPropertyBuilder_ == null) {
+          result.syncJobProperty_ = syncJobProperty_;
+        } else {
+          result.syncJobProperty_ = syncJobPropertyBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1360,6 +1672,16 @@ public final class PBModelSyncInstance {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
+        }
+        if (!other.getFlinkUi().isEmpty()) {
+          flinkUi_ = other.flinkUi_;
+          onChanged();
+        }
+        if (other.hasSyncJob()) {
+          mergeSyncJob(other.getSyncJob());
+        }
+        if (other.hasSyncJobProperty()) {
+          mergeSyncJobProperty(other.getSyncJobProperty());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2141,6 +2463,435 @@ public final class PBModelSyncInstance {
         onChanged();
         return this;
       }
+
+      private java.lang.Object flinkUi_ = "";
+      /**
+       * <pre>
+       * The job overview of url in flink-cluster
+       * &#64;inject_tag: json:"flink_ui" gorm:"-"
+       * </pre>
+       *
+       * <code>string flink_ui = 10;</code>
+       * @return The flinkUi.
+       */
+      public java.lang.String getFlinkUi() {
+        java.lang.Object ref = flinkUi_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkUi_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The job overview of url in flink-cluster
+       * &#64;inject_tag: json:"flink_ui" gorm:"-"
+       * </pre>
+       *
+       * <code>string flink_ui = 10;</code>
+       * @return The bytes for flinkUi.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkUiBytes() {
+        java.lang.Object ref = flinkUi_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkUi_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The job overview of url in flink-cluster
+       * &#64;inject_tag: json:"flink_ui" gorm:"-"
+       * </pre>
+       *
+       * <code>string flink_ui = 10;</code>
+       * @param value The flinkUi to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUi(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkUi_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job overview of url in flink-cluster
+       * &#64;inject_tag: json:"flink_ui" gorm:"-"
+       * </pre>
+       *
+       * <code>string flink_ui = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkUi() {
+        
+        flinkUi_ = getDefaultInstance().getFlinkUi();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The job overview of url in flink-cluster
+       * &#64;inject_tag: json:"flink_ui" gorm:"-"
+       * </pre>
+       *
+       * <code>string flink_ui = 10;</code>
+       * @param value The bytes for flinkUi to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUiBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkUi_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob syncJob_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> syncJobBuilder_;
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       * @return Whether the syncJob field is set.
+       */
+      public boolean hasSyncJob() {
+        return syncJobBuilder_ != null || syncJob_ != null;
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       * @return The syncJob.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob() {
+        if (syncJobBuilder_ == null) {
+          return syncJob_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance() : syncJob_;
+        } else {
+          return syncJobBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public Builder setSyncJob(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          syncJob_ = value;
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public Builder setSyncJob(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+        if (syncJobBuilder_ == null) {
+          syncJob_ = builderForValue.build();
+          onChanged();
+        } else {
+          syncJobBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public Builder mergeSyncJob(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+        if (syncJobBuilder_ == null) {
+          if (syncJob_ != null) {
+            syncJob_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.newBuilder(syncJob_).mergeFrom(value).buildPartial();
+          } else {
+            syncJob_ = value;
+          }
+          onChanged();
+        } else {
+          syncJobBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public Builder clearSyncJob() {
+        if (syncJobBuilder_ == null) {
+          syncJob_ = null;
+          onChanged();
+        } else {
+          syncJob_ = null;
+          syncJobBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder getSyncJobBuilder() {
+        
+        onChanged();
+        return getSyncJobFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobOrBuilder() {
+        if (syncJobBuilder_ != null) {
+          return syncJobBuilder_.getMessageOrBuilder();
+        } else {
+          return syncJob_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance() : syncJob_;
+        }
+      }
+      /**
+       * <pre>
+       * The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJob sync_job = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+          getSyncJobFieldBuilder() {
+        if (syncJobBuilder_ == null) {
+          syncJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder>(
+                  getSyncJob(),
+                  getParentForChildren(),
+                  isClean());
+          syncJob_ = null;
+        }
+        return syncJobBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty syncJobProperty_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> syncJobPropertyBuilder_;
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       * @return Whether the syncJobProperty field is set.
+       */
+      public boolean hasSyncJobProperty() {
+        return syncJobPropertyBuilder_ != null || syncJobProperty_ != null;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       * @return The syncJobProperty.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty() {
+        if (syncJobPropertyBuilder_ == null) {
+          return syncJobProperty_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+        } else {
+          return syncJobPropertyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public Builder setSyncJobProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (syncJobPropertyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          syncJobProperty_ = value;
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public Builder setSyncJobProperty(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder builderForValue) {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = builderForValue.build();
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public Builder mergeSyncJobProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (syncJobPropertyBuilder_ == null) {
+          if (syncJobProperty_ != null) {
+            syncJobProperty_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.newBuilder(syncJobProperty_).mergeFrom(value).buildPartial();
+          } else {
+            syncJobProperty_ = value;
+          }
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public Builder clearSyncJobProperty() {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = null;
+          onChanged();
+        } else {
+          syncJobProperty_ = null;
+          syncJobPropertyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder getSyncJobPropertyBuilder() {
+        
+        onChanged();
+        return getSyncJobPropertyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder() {
+        if (syncJobPropertyBuilder_ != null) {
+          return syncJobPropertyBuilder_.getMessageOrBuilder();
+        } else {
+          return syncJobProperty_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+        }
+      }
+      /**
+       * <pre>
+       * The property of sync job. Used to DescribeSyncInstance.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> 
+          getSyncJobPropertyFieldBuilder() {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobPropertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder>(
+                  getSyncJobProperty(),
+                  getParentForChildren(),
+                  isClean());
+          syncJobProperty_ = null;
+        }
+        return syncJobPropertyBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2210,41 +2961,47 @@ public final class PBModelSyncInstance {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/sync_instance.proto\022" +
       "\005model\0323github.com/yu31/protoc-plugin/pr" +
-      "oto/validator.proto\"\227\004\n\014SyncInstance\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
-      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007vers" +
-      "ion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\037\n\002id\030\004 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004syi-\0227\n\005state\030\005 \001(\0162\031.model." +
-      "SyncInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\006sta" +
-      "tus\030\006 \001(\0162\032.model.SyncInstance.StatusB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\034\n\007created" +
-      "\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007" +
-      "Deleted\020\001\022\013\n\007Enabled\020\002\"\204\001\n\005State\022\016\n\nStat" +
-      "eUnset\020\000\022\013\n\007Pending\020\001\022\013\n\007Running\020\002\022\014\n\010Re" +
-      "trying\020\003\022\r\n\tSuspended\020\004\022\016\n\nTerminated\020\005\022" +
-      "\013\n\007Succeed\020\006\022\013\n\007Timeout\020\007\022\n\n\006Failed\020\010Bn\n" +
-      "\"com.dataomnis.gproto.types.pbmodelB\023PBM" +
-      "odelSyncInstanceP\000Z1github.com/DataWorkb" +
-      "ench/gproto/xgo/types/pbmodelb\006proto3"
+      "oto/validator.proto\032 proto/types/model/s" +
+      "ync_job.proto\"\376\004\n\014SyncInstance\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\037\n\002id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004syi-\0227\n\005state\030\005 \001(\0162\031.model.SyncIn" +
+      "stance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\006status\030\006 " +
+      "\001(\0162\032.model.SyncInstance.StatusB\r\342\337\037\t\022\007\332" +
+      "\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\034\n\007created\030\010 \001(\003" +
+      "B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001" +
+      "\0020\000\022\020\n\010flink_ui\030\n \001(\t\022 \n\010sync_job\030\013 \001(\0132" +
+      "\016.model.SyncJob\0221\n\021sync_job_property\030\014 \001" +
+      "(\0132\026.model.SyncJobProperty\"3\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
+      "\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013" +
+      "\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004" +
+      "\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout" +
+      "\020\007\022\n\n\006Failed\020\010Bn\n\"com.dataomnis.gproto.t" +
+      "ypes.pbmodelB\023PBModelSyncInstanceP\000Z1git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor(),
         });
     internal_static_model_SyncInstance_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_SyncInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncInstance_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", "Version", "Id", "State", "Status", "Message", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "JobId", "Version", "Id", "State", "Status", "Message", "Created", "Updated", "FlinkUi", "SyncJob", "SyncJobProperty", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

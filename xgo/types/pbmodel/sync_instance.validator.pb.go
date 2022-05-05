@@ -86,6 +86,24 @@ func (this *SyncInstance) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *SyncInstance) _xxx_xxx_Validator_Validate_sync_job() error {
+	if dt, ok := interface{}(this.SyncJob).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *SyncInstance) _xxx_xxx_Validator_Validate_sync_job_property() error {
+	if dt, ok := interface{}(this.SyncJobProperty).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncInstance
 func (this *SyncInstance) Validate() error {
 	if this == nil {
@@ -113,6 +131,12 @@ func (this *SyncInstance) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job_property(); err != nil {
 		return err
 	}
 	return nil

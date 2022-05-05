@@ -14,5 +14,15 @@ func (this *SyncInstance) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.SyncJob != nil {
+		if dt, ok := interface{}(this.SyncJob).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SyncJobProperty != nil {
+		if dt, ok := interface{}(this.SyncJobProperty).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }

@@ -607,37 +607,6 @@ public final class SyncJobManageGrpc {
     return getGetSyncJobVersionScheduleMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> getDescribeSyncFlinkUIByInstanceIdMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeSyncFlinkUIByInstanceId",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId,
-      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> getDescribeSyncFlinkUIByInstanceIdMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> getDescribeSyncFlinkUIByInstanceIdMethod;
-    if ((getDescribeSyncFlinkUIByInstanceIdMethod = SyncJobManageGrpc.getDescribeSyncFlinkUIByInstanceIdMethod) == null) {
-      synchronized (SyncJobManageGrpc.class) {
-        if ((getDescribeSyncFlinkUIByInstanceIdMethod = SyncJobManageGrpc.getDescribeSyncFlinkUIByInstanceIdMethod) == null) {
-          SyncJobManageGrpc.getDescribeSyncFlinkUIByInstanceIdMethod = getDescribeSyncFlinkUIByInstanceIdMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeSyncFlinkUIByInstanceId"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("DescribeSyncFlinkUIByInstanceId"))
-              .build();
-        }
-      }
-    }
-    return getDescribeSyncFlinkUIByInstanceIdMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson,
       com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GenerateJobJson> getGenerateJobJsonMethod;
 
@@ -1017,16 +986,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * Interface for helper.
-     * </pre>
-     */
-    public void describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeSyncFlinkUIByInstanceIdMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Generate Job Json
      * </pre>
      */
@@ -1197,13 +1156,6 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobSchedule,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobSchedule>(
                   this, METHODID_GET_SYNC_JOB_VERSION_SCHEDULE)))
-          .addMethod(
-            getDescribeSyncFlinkUIByInstanceIdMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId,
-                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId>(
-                  this, METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID)))
           .addMethod(
             getGenerateJobJsonMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1476,17 +1428,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * Interface for helper.
-     * </pre>
-     */
-    public void describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * Generate Job Json
      * </pre>
      */
@@ -1744,16 +1685,6 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobSchedule getSyncJobVersionSchedule(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobSchedule request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSyncJobVersionScheduleMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Interface for helper.
-     * </pre>
-     */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId describeSyncFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2034,17 +1965,6 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * Interface for helper.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId> describeSyncFlinkUIByInstanceId(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeSyncFlinkUIByInstanceIdMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Generate Job Json
      * </pre>
      */
@@ -2104,11 +2024,10 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_DESCRIBE_SYNC_JOB_VERSION = 16;
   private static final int METHODID_GET_SYNC_JOB_VERSION_CONF = 17;
   private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
-  private static final int METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID = 19;
-  private static final int METHODID_GENERATE_JOB_JSON = 20;
-  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 21;
-  private static final int METHODID_PING_SYNC_JOB_CONNECTION = 22;
-  private static final int METHODID_DESCRIBE_SYNC_CONNECTION = 23;
+  private static final int METHODID_GENERATE_JOB_JSON = 19;
+  private static final int METHODID_CONVERT_SYNC_JOB_MODE = 20;
+  private static final int METHODID_PING_SYNC_JOB_CONNECTION = 21;
+  private static final int METHODID_DESCRIBE_SYNC_CONNECTION = 22;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2202,10 +2121,6 @@ public final class SyncJobManageGrpc {
         case METHODID_GET_SYNC_JOB_VERSION_SCHEDULE:
           serviceImpl.getSyncJobVersionSchedule((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GetSyncJobSchedule) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.GetSyncJobSchedule>) responseObserver);
-          break;
-        case METHODID_DESCRIBE_SYNC_FLINK_UIBY_INSTANCE_ID:
-          serviceImpl.describeSyncFlinkUIByInstanceId((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncFlinkUIByInstanceId) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.DescribeSyncFlinkUIByInstanceId>) responseObserver);
           break;
         case METHODID_GENERATE_JOB_JSON:
           serviceImpl.generateJobJson((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.GenerateJobJson) request,
@@ -2303,7 +2218,6 @@ public final class SyncJobManageGrpc {
               .addMethod(getDescribeSyncJobVersionMethod())
               .addMethod(getGetSyncJobVersionConfMethod())
               .addMethod(getGetSyncJobVersionScheduleMethod())
-              .addMethod(getDescribeSyncFlinkUIByInstanceIdMethod())
               .addMethod(getGenerateJobJsonMethod())
               .addMethod(getConvertSyncJobModeMethod())
               .addMethod(getPingSyncJobConnectionMethod())
