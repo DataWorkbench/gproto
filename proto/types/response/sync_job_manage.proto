@@ -72,11 +72,11 @@ message ListSyncJobVersions {
 }
 
 
-// DescribeSyncFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
-message DescribeSyncFlinkUIByInstanceId {
-    // @inject_tag: json:"web_ui"
-    string web_ui = 1;
-}
+//// DescribeSyncFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
+//message DescribeSyncFlinkUIByInstanceId {
+//    // @inject_tag: json:"web_ui"
+//    string web_ui = 1;
+//}
 
 // Generate script sync job json
 message GenerateJobJson {

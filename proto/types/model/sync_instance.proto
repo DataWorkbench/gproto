@@ -13,6 +13,8 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
+import "proto/types/model/sync_job.proto";
+
 // The instance info of sync job.
 message SyncInstance {
   enum Status {
@@ -67,7 +69,16 @@ message SyncInstance {
   // Timestamp of update time
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // The job overview of url in flink-cluster
+  // @inject_tag: json:"flink_ui" gorm:"-"
+  string flink_ui = 10;
+
+  // The meta of sync job. Used to ListSyncInstance and DescribeSyncInstance.
+  // @inject_tag: json:"sync_job" gorm:"-"
+  model.SyncJob sync_job = 11;
+
+  // The property of sync job. Used to DescribeSyncInstance.
+  // @inject_tag: json:"sync_job_property" gorm:"-"
+  model.SyncJobProperty sync_job_property = 12;
 }
-
-
-
