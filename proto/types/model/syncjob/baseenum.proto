@@ -10,31 +10,41 @@ option java_outer_classname = "PBBaseEnum";
 option java_multiple_files = false;
 
 message BaseEnum {
+
 	enum PartitionType {
-		DAY = 0;
-		HOUR = 1;
-		MINUTE = 2;
+		PartitionTypeUnset = 0;
+		DAY = 1;
+		HOUR = 2;
+		MINUTE = 3;
 	}
+
 	enum WriteMode {
-		append = 0;
-		overwrite = 1;
+		WriteModeUnset = 0;
+		append = 1;
+		overwrite = 2;
 	}
+
 	enum FileType {
-		text = 0;
-		orc = 1;
-		parquet = 2;
+		FileTypeUnset = 0;
+		text = 1;
+		orc = 2;
+		parquet = 3;
 	}
+
 	enum CompressType {
-		GZIP = 0;
-		BZIP2 = 1;
-		SNAPPY = 2;
-		BZIP = 3;
-		LZ4 = 4;
-		LZO = 5;
+		CompressTypeUnset = 0;
+		GZIP = 1;
+		BZIP2 = 2;
+		SNAPPY = 3;
+		BZIP = 4;
+		LZ4 = 5;
+		LZO = 6;
 	}
+
 	enum Encoding {
-		UTF8 = 0;
-		GBK = 1;
+		EncodingUnset = 0;
+		UTF8 = 1;
+		GBK = 2;
 	}
 
 	enum ColumnMapping {
