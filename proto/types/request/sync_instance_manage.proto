@@ -57,6 +57,11 @@ message ListSyncInstances {
   // Filter by `instance_id`. Not required.
   // @inject_tag: json:"instance_id" form:"instance_id"
   string instance_id = 9;
+
+  // Verbose indicates the verbosity level.
+  // If the value greater than 1, The details of the associated information will be returned.
+  // @inject_tag: json:"verbose" form:"verbose"
+  int32 verbose = 10;
 }
 
 // TerminateSyncInstances used as a request parameters for RPC.
@@ -96,5 +101,12 @@ message ResumeSyncInstances {
 }
 
 message DescribeSyncInstance {
+  // The workspace id in HTTP Request-URI. Is Required.
+  // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
   string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "syi-" } ];
+
+  // Verbose indicates the verbosity level.
+  // If the value greater than 1, The details of the associated information will be returned.
+  // @inject_tag: json:"verbose" form:"verbose"
+  int32 verbose = 2;
 }

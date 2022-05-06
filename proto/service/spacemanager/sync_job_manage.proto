@@ -88,8 +88,8 @@ service SyncJobManage {
     // GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
     rpc GetSyncJobVersionSchedule(request.GetSyncJobSchedule) returns (response.GetSyncJobSchedule) {}
 
-//    // Interface for helper.
-//    rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
+    // Interface for helper.
+    rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
 
     // Generate Job Json
     rpc GenerateJobJson(request.GenerateJobJson)  returns (response.GenerateJobJson) {}

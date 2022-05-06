@@ -376,12 +376,23 @@ message ListSyncJobVersions {
     string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
-//// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
-//message DescribeSyncFlinkUIByInstanceId {
-//    // The instance id in HTTP Request-URI. Is Required.
-//    // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
-//    string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
-//}
+// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+message DescribeSyncFlinkUIByInstanceId {
+    // The space id.
+    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+    // The sync job id
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+
+    // The sync job version
+    // @inject_tag: json:"version" uri:"version" swaggerignore:"true"
+    string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16  } ];
+
+    // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+    string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
+}
 
 // GenerateJobJson used as a request parameters for RPC.
 message GenerateJobJson {
