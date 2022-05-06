@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\033PBRequestSyncInstanceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.proto/types/request/sync_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a%proto/types/model/sync_instance.proto\"\xb9\x02\n\x11ListSyncInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x0e\n\x06job_id\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x35\n\x05state\x18\x06 \x01(\x0e\x32\x19.model.SyncInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x08 \x01(\x08\x12\x13\n\x0binstance_id\x18\t \x01(\t\"p\n\x16TerminateSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"n\n\x14SuspendSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"m\n\x13ResumeSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"@\n\x14\x44\x65scribeSyncInstance\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syi-Bz\n$com.dataomnis.gproto.types.pbrequestB\x1bPBRequestSyncInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n.proto/types/request/sync_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a%proto/types/model/sync_instance.proto\"\xca\x02\n\x11ListSyncInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x0e\n\x06job_id\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x35\n\x05state\x18\x06 \x01(\x0e\x32\x19.model.SyncInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x08 \x01(\x08\x12\x13\n\x0binstance_id\x18\t \x01(\t\x12\x0f\n\x07verbose\x18\n \x01(\x05\"p\n\x16TerminateSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"n\n\x14SuspendSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"m\n\x13ResumeSyncInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cinstance_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syi-\"Q\n\x14\x44\x65scribeSyncInstance\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syi-\x12\x0f\n\x07verbose\x18\x02 \x01(\x05\x42z\n$com.dataomnis.gproto.types.pbrequestB\x1bPBRequestSyncInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__instance__pb2.DESCRIPTOR,])
 
@@ -100,6 +100,13 @@ _LISTSYNCINSTANCES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verbose', full_name='request.ListSyncInstances.verbose', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -113,7 +120,7 @@ _LISTSYNCINSTANCES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=204,
-  serialized_end=517,
+  serialized_end=534,
 )
 
 
@@ -151,8 +158,8 @@ _TERMINATESYNCINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=519,
-  serialized_end=631,
+  serialized_start=536,
+  serialized_end=648,
 )
 
 
@@ -190,8 +197,8 @@ _SUSPENDSYNCINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=633,
-  serialized_end=743,
+  serialized_start=650,
+  serialized_end=760,
 )
 
 
@@ -229,8 +236,8 @@ _RESUMESYNCINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=745,
-  serialized_end=854,
+  serialized_start=762,
+  serialized_end=871,
 )
 
 
@@ -249,6 +256,13 @@ _DESCRIBESYNCINSTANCE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verbose', full_name='request.DescribeSyncInstance.verbose', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -261,8 +275,8 @@ _DESCRIBESYNCINSTANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=856,
-  serialized_end=920,
+  serialized_start=873,
+  serialized_end=954,
 )
 
 _LISTSYNCINSTANCES.fields_by_name['state'].enum_type = proto_dot_types_dot_model_dot_sync__instance__pb2._SYNCINSTANCE_STATE

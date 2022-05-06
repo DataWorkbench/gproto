@@ -186,6 +186,18 @@ public final class PBRequestSyncInstanceManage {
      */
     com.google.protobuf.ByteString
         getInstanceIdBytes();
+
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 10;</code>
+     * @return The verbose.
+     */
+    int getVerbose();
   }
   /**
    * <pre>
@@ -292,6 +304,11 @@ public final class PBRequestSyncInstanceManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               instanceId_ = s;
+              break;
+            }
+            case 80: {
+
+              verbose_ = input.readInt32();
               break;
             }
             default: {
@@ -648,6 +665,23 @@ public final class PBRequestSyncInstanceManage {
       }
     }
 
+    public static final int VERBOSE_FIELD_NUMBER = 10;
+    private int verbose_;
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 10;</code>
+     * @return The verbose.
+     */
+    @java.lang.Override
+    public int getVerbose() {
+      return verbose_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -689,6 +723,9 @@ public final class PBRequestSyncInstanceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, instanceId_);
       }
+      if (verbose_ != 0) {
+        output.writeInt32(10, verbose_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -729,6 +766,10 @@ public final class PBRequestSyncInstanceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, instanceId_);
       }
+      if (verbose_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, verbose_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -761,6 +802,8 @@ public final class PBRequestSyncInstanceManage {
           != other.getReverse()) return false;
       if (!getInstanceId()
           .equals(other.getInstanceId())) return false;
+      if (getVerbose()
+          != other.getVerbose()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -791,6 +834,8 @@ public final class PBRequestSyncInstanceManage {
           getReverse());
       hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerbose();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -947,6 +992,8 @@ public final class PBRequestSyncInstanceManage {
 
         instanceId_ = "";
 
+        verbose_ = 0;
+
         return this;
       }
 
@@ -982,6 +1029,7 @@ public final class PBRequestSyncInstanceManage {
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.instanceId_ = instanceId_;
+        result.verbose_ = verbose_;
         onBuilt();
         return result;
       }
@@ -1061,6 +1109,9 @@ public final class PBRequestSyncInstanceManage {
         if (!other.getInstanceId().isEmpty()) {
           instanceId_ = other.instanceId_;
           onChanged();
+        }
+        if (other.getVerbose() != 0) {
+          setVerbose(other.getVerbose());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1822,6 +1873,55 @@ public final class PBRequestSyncInstanceManage {
   checkByteStringIsUtf8(value);
         
         instanceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int verbose_ ;
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 10;</code>
+       * @return The verbose.
+       */
+      @java.lang.Override
+      public int getVerbose() {
+        return verbose_;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 10;</code>
+       * @param value The verbose to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerbose(int value) {
+        
+        verbose_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerbose() {
+        
+        verbose_ = 0;
         onChanged();
         return this;
       }
@@ -4667,16 +4767,38 @@ public final class PBRequestSyncInstanceManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
      * @return The instanceId.
      */
     java.lang.String getInstanceId();
     /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for instanceId.
      */
     com.google.protobuf.ByteString
         getInstanceIdBytes();
+
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 2;</code>
+     * @return The verbose.
+     */
+    int getVerbose();
   }
   /**
    * Protobuf type {@code request.DescribeSyncInstance}
@@ -4730,6 +4852,11 @@ public final class PBRequestSyncInstanceManage {
               instanceId_ = s;
               break;
             }
+            case 16: {
+
+              verbose_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4765,6 +4892,11 @@ public final class PBRequestSyncInstanceManage {
     public static final int INSTANCE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object instanceId_;
     /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
      * @return The instanceId.
      */
@@ -4782,6 +4914,11 @@ public final class PBRequestSyncInstanceManage {
       }
     }
     /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for instanceId.
      */
@@ -4798,6 +4935,23 @@ public final class PBRequestSyncInstanceManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int VERBOSE_FIELD_NUMBER = 2;
+    private int verbose_;
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 2;</code>
+     * @return The verbose.
+     */
+    @java.lang.Override
+    public int getVerbose() {
+      return verbose_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4817,6 +4971,9 @@ public final class PBRequestSyncInstanceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
       }
+      if (verbose_ != 0) {
+        output.writeInt32(2, verbose_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4828,6 +4985,10 @@ public final class PBRequestSyncInstanceManage {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
+      }
+      if (verbose_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, verbose_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4846,6 +5007,8 @@ public final class PBRequestSyncInstanceManage {
 
       if (!getInstanceId()
           .equals(other.getInstanceId())) return false;
+      if (getVerbose()
+          != other.getVerbose()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4859,6 +5022,8 @@ public final class PBRequestSyncInstanceManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerbose();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4994,6 +5159,8 @@ public final class PBRequestSyncInstanceManage {
         super.clear();
         instanceId_ = "";
 
+        verbose_ = 0;
+
         return this;
       }
 
@@ -5021,6 +5188,7 @@ public final class PBRequestSyncInstanceManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance(this);
         result.instanceId_ = instanceId_;
+        result.verbose_ = verbose_;
         onBuilt();
         return result;
       }
@@ -5073,6 +5241,9 @@ public final class PBRequestSyncInstanceManage {
           instanceId_ = other.instanceId_;
           onChanged();
         }
+        if (other.getVerbose() != 0) {
+          setVerbose(other.getVerbose());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5104,6 +5275,11 @@ public final class PBRequestSyncInstanceManage {
 
       private java.lang.Object instanceId_ = "";
       /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @return The instanceId.
        */
@@ -5120,6 +5296,11 @@ public final class PBRequestSyncInstanceManage {
         }
       }
       /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for instanceId.
        */
@@ -5137,6 +5318,11 @@ public final class PBRequestSyncInstanceManage {
         }
       }
       /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @param value The instanceId to set.
        * @return This builder for chaining.
@@ -5152,6 +5338,11 @@ public final class PBRequestSyncInstanceManage {
         return this;
       }
       /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -5162,6 +5353,11 @@ public final class PBRequestSyncInstanceManage {
         return this;
       }
       /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for instanceId to set.
        * @return This builder for chaining.
@@ -5174,6 +5370,55 @@ public final class PBRequestSyncInstanceManage {
   checkByteStringIsUtf8(value);
         
         instanceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int verbose_ ;
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 2;</code>
+       * @return The verbose.
+       */
+      @java.lang.Override
+      public int getVerbose() {
+        return verbose_;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 2;</code>
+       * @param value The verbose to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerbose(int value) {
+        
+        verbose_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerbose() {
+        
+        verbose_ = 0;
         onChanged();
         return this;
       }
@@ -5269,28 +5514,29 @@ public final class PBRequestSyncInstanceManage {
       "c-plugin/proto/validator.proto\0322github.c" +
       "om/yu31/protoc-plugin/proto/defaults.pro" +
       "to\032%proto/types/model/sync_instance.prot" +
-      "o\"\271\002\n\021ListSyncInstances\022&\n\005limit\030\001 \001(\005B\027" +
+      "o\"\312\002\n\021ListSyncInstances\022&\n\005limit\030\001 \001(\005B\027" +
       "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B" +
       "\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\022\016\n\006job_id\030\004 \001(\t\022\017\n\007version\030\005" +
       " \001(\t\0225\n\005state\030\006 \001(\0162\031.model.SyncInstance" +
       ".StateB\013\342\337\037\007\022\005\332\001\002X\001\022:\n\007sort_by\030\007 \001(\tB)\342\337" +
       "\037%\022#\302\001 J\000J\002idJ\006job_idJ\007createdJ\007updated\022" +
-      "\017\n\007reverse\030\010 \001(\010\022\023\n\013instance_id\030\t \001(\t\"p\n" +
-      "\026TerminateSyncInstances\022%\n\010space_id\030\001 \001(" +
+      "\017\n\007reverse\030\010 \001(\010\022\023\n\013instance_id\030\t \001(\t\022\017\n" +
+      "\007verbose\030\n \001(\005\"p\n\026TerminateSyncInstances" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "/\n\014instance_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001" +
+      "\007\312\002\004syi-\"n\n\024SuspendSyncInstances\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014insta" +
+      "nce_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-" +
+      "\"m\n\023ResumeSyncInstances\022%\n\010space_id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_ids\030\002" +
-      " \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-\"n\n\024Suspe" +
-      "ndSyncInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_ids\030\002 \003(\tB\031\342\337" +
-      "\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-\"m\n\023ResumeSyncIns" +
-      "tances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022/\n\014instance_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000" +
-      "8dZ\n\302\001\007\312\002\004syi-\"@\n\024DescribeSyncInstance\022(" +
-      "\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-" +
-      "Bz\n$com.dataomnis.gproto.types.pbrequest" +
-      "B\033PBRequestSyncInstanceManageP\000Z3github." +
-      "com/DataWorkbench/gproto/xgo/types/pbreq" +
-      "uestb\006proto3"
+      " \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004syi-\"Q\n\024Descr" +
+      "ibeSyncInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004syi-\022\017\n\007verbose\030\002 \001(\005Bz\n$co" +
+      "m.dataomnis.gproto.types.pbrequestB\033PBRe" +
+      "questSyncInstanceManageP\000Z3github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbrequestb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5304,7 +5550,7 @@ public final class PBRequestSyncInstanceManage {
     internal_static_request_ListSyncInstances_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSyncInstances_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SpaceId", "JobId", "Version", "State", "SortBy", "Reverse", "InstanceId", });
+        new java.lang.String[] { "Limit", "Offset", "SpaceId", "JobId", "Version", "State", "SortBy", "Reverse", "InstanceId", "Verbose", });
     internal_static_request_TerminateSyncInstances_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_TerminateSyncInstances_fieldAccessorTable = new
@@ -5328,7 +5574,7 @@ public final class PBRequestSyncInstanceManage {
     internal_static_request_DescribeSyncInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeSyncInstance_descriptor,
-        new java.lang.String[] { "InstanceId", });
+        new java.lang.String[] { "InstanceId", "Verbose", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

@@ -137,6 +137,14 @@ func (this *ListSyncJobVersions) Validate() error {
 	return nil
 }
 
+// Set default value for message response.DescribeSyncFlinkUIByInstanceId
+func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 // Set default value for message response.GenerateJobJson
 func (this *GenerateJobJson) Validate() error {
 	if this == nil {
