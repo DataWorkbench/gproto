@@ -172,7 +172,7 @@ func (x *HiveTarget) GetPartitionType() BaseEnum_PartitionType {
 	if x != nil {
 		return x.PartitionType
 	}
-	return BaseEnum_DAY
+	return BaseEnum_PartitionTypeUnset
 }
 
 func (x *HiveTarget) GetTablesColumn() string {
@@ -186,21 +186,21 @@ func (x *HiveTarget) GetWriteMode() BaseEnum_WriteMode {
 	if x != nil {
 		return x.WriteMode
 	}
-	return BaseEnum_append
+	return BaseEnum_WriteModeUnset
 }
 
 func (x *HiveTarget) GetFileType() BaseEnum_FileType {
 	if x != nil {
 		return x.FileType
 	}
-	return BaseEnum_text
+	return BaseEnum_FileTypeUnset
 }
 
 func (x *HiveTarget) GetCompress() BaseEnum_CompressType {
 	if x != nil {
 		return x.Compress
 	}
-	return BaseEnum_GZIP
+	return BaseEnum_CompressTypeUnset
 }
 
 func (x *HiveTarget) GetFieldDelimiter() string {
@@ -214,7 +214,7 @@ func (x *HiveTarget) GetEncoding() BaseEnum_Encoding {
 	if x != nil {
 		return x.Encoding
 	}
-	return BaseEnum_UTF8
+	return BaseEnum_EncodingUnset
 }
 
 var File_proto_types_model_syncjob_hive_proto protoreflect.FileDescriptor

@@ -91,7 +91,7 @@ func (x *HdfsSource) GetFileType() BaseEnum_FileType {
 	if x != nil {
 		return x.FileType
 	}
-	return BaseEnum_text
+	return BaseEnum_FileTypeUnset
 }
 
 func (x *HdfsSource) GetFilterRegex() string {
@@ -112,7 +112,7 @@ func (x *HdfsSource) GetEncoding() BaseEnum_Encoding {
 	if x != nil {
 		return x.Encoding
 	}
-	return BaseEnum_UTF8
+	return BaseEnum_EncodingUnset
 }
 
 type HdfsTarget struct {
@@ -195,14 +195,14 @@ func (x *HdfsTarget) GetFileType() BaseEnum_FileType {
 	if x != nil {
 		return x.FileType
 	}
-	return BaseEnum_text
+	return BaseEnum_FileTypeUnset
 }
 
 func (x *HdfsTarget) GetWriteMode() BaseEnum_WriteMode {
 	if x != nil {
 		return x.WriteMode
 	}
-	return BaseEnum_append
+	return BaseEnum_WriteModeUnset
 }
 
 func (x *HdfsTarget) GetFieldDelimiter() string {
@@ -216,14 +216,14 @@ func (x *HdfsTarget) GetEncoding() BaseEnum_Encoding {
 	if x != nil {
 		return x.Encoding
 	}
-	return BaseEnum_UTF8
+	return BaseEnum_EncodingUnset
 }
 
 func (x *HdfsTarget) GetCompress() BaseEnum_CompressType {
 	if x != nil {
 		return x.Compress
 	}
-	return BaseEnum_GZIP
+	return BaseEnum_CompressTypeUnset
 }
 
 var File_proto_types_model_syncjob_hdfs_proto protoreflect.FileDescriptor
