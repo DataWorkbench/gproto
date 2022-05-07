@@ -34,6 +34,15 @@ message MongodbSource {
 }
 
 message MongodbTarget {
+    option (gosql.serialize) = {json: {}};
+
+    enum WriteMode {
+        WriteModeUnset = 0;
+        insert = 1;
+        replace = 2;
+        update = 3;
+    }
+
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
@@ -48,7 +57,7 @@ message MongodbTarget {
     string replace_key = 4;
     // write mode
     // @inject_tag: json:"write_mode" 
-    string write_mode = 5;
+    WriteMode write_mode = 5;
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 6;
