@@ -28,7 +28,7 @@ type HiveColumn struct {
 	unknownFields protoimpl.UnknownFields
 
 	// column name
-	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"name"`
+	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key"`
 	// column type
 	Type string `protobuf:"bytes,2,opt,name=type,proto3" json:"type"`
 }
