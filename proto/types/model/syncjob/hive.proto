@@ -17,7 +17,7 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 message HiveColumn{
     option (gosql.serialize) = {json: {}};
     // column name
-    // @inject_tag: json:"name"
+    // @inject_tag: json:"key"
     string key = 1;
     // column type
     // @inject_tag: json:"type"
