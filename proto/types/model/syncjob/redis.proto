@@ -12,7 +12,18 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message RedisTarget {
+
     option (gosql.serialize) = {json: {}};
+
+    enum Type {
+        TypeUnset = 0;
+        string = 1;
+        list = 2;
+        set = 3;
+        zset = 4;
+        hash = 5;
+    }
+
     // select database
     // @inject_tag: json:"database" 
     int32 database = 1;
@@ -27,7 +38,7 @@ message RedisTarget {
     int64 expire_time = 4;
     // type
     // @inject_tag: json:"type" 
-    string type = 5;
+    Type type = 5;
     // mode
     // @inject_tag: json:"mode" 
     string mode = 6;
