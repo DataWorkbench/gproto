@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/stream_job.proto";
 import "proto/types/model/sync_job.proto";
+import "proto/types/model/scheduler.proto";
 
 // SubmitStreamJobs used as a request parameters for RPC.
 message SubmitStreamJob {
@@ -82,4 +83,16 @@ message DeleteSyncJobsByJobIds {
 
   // The list of sync job id.
   repeated string job_ids = 2 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "syj-" } } } ];
+}
+
+message SubmitFlinkClusterMonitor {
+  model.FlinkMonitorEvent event = 1 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+message StopFlinkClusterMonitor {
+  // Workspace ID it belongs to.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Cluster ID
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 }

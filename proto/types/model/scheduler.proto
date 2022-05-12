@@ -15,6 +15,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/stream_job.proto";
 import "proto/types/model/sync_job.proto";
+import "proto/types/model/cluster.proto";
 
 // StreamJobEvent is the event message used in scheduler queue.
 message StreamJobEvent {
@@ -78,5 +79,22 @@ message SyncJobEvent {
   int64 started = 5 [(validator.field) = {}];
 }
 
+message FlinkMonitorEvent {
+  // Workspace ID it belongs to.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
+  // Cluster ID
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 
+  // Flink task number for TaskManager
+  int32 task_num = 3 [(validator.field).tags.int = { gt: 0 }];
+
+  // The time stamp of when the cluster started.
+  int64 started = 4 [(validator.field).tags.int = { gt: 0 }];
+
+  // The internal access address of flink cluster.
+  string flink_url = 5 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The cluster status of last check.
+  model.FlinkCluster.Status last_status = 6;
+}

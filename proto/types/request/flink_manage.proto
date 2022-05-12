@@ -193,7 +193,27 @@ message UpdateFlinkCluster {
 }
 
 message DescribeFlinkCluster {
-  // The workspace id in HTTP Request-URI
+  // The cluster id in HTTP Request-URI
   // @inject_tag: json:"cluster_id" uri:"cluster_id" swaggerignore:"true"
   string cluster_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+}
+
+message UpdateFlinkClusterStatusByScheduler {
+  // The cluster id.
+  // @inject_tag: json:"cluster_id"
+  string cluster_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+
+  // @inject_tag: json:"status"
+  model.FlinkCluster.Status status = 2;
+
+  // @inject_tag: json:"pre_status"
+  model.FlinkCluster.Status pre_status = 3;
+}
+
+message StopFlinkClusterByScheduler {
+  // The workspace id in HTTP Request-URI
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The id of flink cluster.
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 }

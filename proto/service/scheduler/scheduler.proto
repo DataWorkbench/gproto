@@ -47,4 +47,10 @@ service Scheduler {
   // It will stop all stream jobs and terminate all instances.
   // And delete all instances.
   rpc DeleteSyncJobsByJobIds(request.DeleteSyncJobsByJobIds) returns (model.EmptyStruct) {}
+
+  // SubmitFlinkClusterMonitor used when a flink cluster create or start.
+  rpc SubmitFlinkClusterMonitor(request.SubmitFlinkClusterMonitor) returns (model.EmptyStruct) {}
+
+  // StopFlinkClusterMonitor used when a flink cluster delete or stop.
+  rpc StopFlinkClusterMonitor(request.StopFlinkClusterMonitor) returns (model.EmptyStruct) {}
 }

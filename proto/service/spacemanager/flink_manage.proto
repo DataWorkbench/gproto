@@ -30,4 +30,9 @@ service FlinkManage {
   rpc DeleteFlinkClusters(request.DeleteFlinkClusters)   returns (model.EmptyStruct) {}
   rpc StartFlinkClusters(request.StartFlinkClusters)     returns (model.EmptyStruct) {}
   rpc StopFlinkClusters(request.StopFlinkClusters)       returns (model.EmptyStruct) {}
+
+  // UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
+  rpc UpdateFlinkClusterStatusByScheduler(request.UpdateFlinkClusterStatusByScheduler) returns (model.EmptyStruct) {}
+  // StopFlinkClusterByScheduler is an internal interface used by scheduler.
+  rpc StopFlinkClusterByScheduler(request.StopFlinkClusterByScheduler) returns (model.EmptyStruct) {}
 }
