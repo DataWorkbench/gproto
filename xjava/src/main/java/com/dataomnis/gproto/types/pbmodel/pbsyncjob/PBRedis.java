@@ -100,21 +100,20 @@ public final class PBRedis {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 5;</code>
-     * @return The type.
+     * <code>.model.RedisTarget.Type type = 5;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    java.lang.String getType();
+    int getTypeValue();
     /**
      * <pre>
      * type
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 5;</code>
-     * @return The bytes for type.
+     * <code>.model.RedisTarget.Type type = 5;</code>
+     * @return The type.
      */
-    com.google.protobuf.ByteString
-        getTypeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type getType();
 
     /**
      * <pre>
@@ -208,7 +207,7 @@ public final class PBRedis {
     private RedisTarget() {
       keyIndexes_ = emptyIntList();
       dateFormat_ = "";
-      type_ = "";
+      type_ = 0;
       mode_ = "";
       keyFieldDelimiter_ = "";
       valueFieldDelimiter_ = "";
@@ -282,10 +281,10 @@ public final class PBRedis {
               expireTime_ = input.readInt64();
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
+              int rawValue = input.readEnum();
 
-              type_ = s;
+              type_ = rawValue;
               break;
             }
             case 50: {
@@ -344,6 +343,150 @@ public final class PBRedis {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.internal_static_model_RedisTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.RedisTarget.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>string = 1;</code>
+       */
+      string(1),
+      /**
+       * <code>list = 2;</code>
+       */
+      list(2),
+      /**
+       * <code>set = 3;</code>
+       */
+      set(3),
+      /**
+       * <code>zset = 4;</code>
+       */
+      zset(4),
+      /**
+       * <code>hash = 5;</code>
+       */
+      hash(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>string = 1;</code>
+       */
+      public static final int string_VALUE = 1;
+      /**
+       * <code>list = 2;</code>
+       */
+      public static final int list_VALUE = 2;
+      /**
+       * <code>set = 3;</code>
+       */
+      public static final int set_VALUE = 3;
+      /**
+       * <code>zset = 4;</code>
+       */
+      public static final int zset_VALUE = 4;
+      /**
+       * <code>hash = 5;</code>
+       */
+      public static final int hash_VALUE = 5;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return string;
+          case 2: return list;
+          case 3: return set;
+          case 4: return zset;
+          case 5: return hash;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.RedisTarget.Type)
     }
 
     public static final int DATABASE_FIELD_NUMBER = 1;
@@ -470,28 +613,18 @@ public final class PBRedis {
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object type_;
+    private int type_;
     /**
      * <pre>
      * type
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 5;</code>
-     * @return The type.
+     * <code>.model.RedisTarget.Type type = 5;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      }
+    @java.lang.Override public int getTypeValue() {
+      return type_;
     }
     /**
      * <pre>
@@ -499,22 +632,13 @@ public final class PBRedis {
      * &#64;inject_tag: json:"type" 
      * </pre>
      *
-     * <code>string type = 5;</code>
-     * @return The bytes for type.
+     * <code>.model.RedisTarget.Type type = 5;</code>
+     * @return The type.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.UNRECOGNIZED : result;
     }
 
     public static final int MODE_FIELD_NUMBER = 6;
@@ -708,8 +832,8 @@ public final class PBRedis {
       if (expireTime_ != 0L) {
         output.writeInt64(4, expireTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, type_);
+      if (type_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.TypeUnset.getNumber()) {
+        output.writeEnum(5, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, mode_);
@@ -757,8 +881,9 @@ public final class PBRedis {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, expireTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, type_);
+      if (type_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mode_);
@@ -796,8 +921,7 @@ public final class PBRedis {
           .equals(other.getDateFormat())) return false;
       if (getExpireTime()
           != other.getExpireTime()) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
+      if (type_ != other.type_) return false;
       if (!getMode()
           .equals(other.getMode())) return false;
       if (!getKeyFieldDelimiter()
@@ -829,7 +953,7 @@ public final class PBRedis {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpireTime());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
+      hash = (53 * hash) + type_;
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + getMode().hashCode();
       hash = (37 * hash) + KEY_FIELD_DELIMITER_FIELD_NUMBER;
@@ -979,7 +1103,7 @@ public final class PBRedis {
 
         expireTime_ = 0L;
 
-        type_ = "";
+        type_ = 0;
 
         mode_ = "";
 
@@ -1097,9 +1221,8 @@ public final class PBRedis {
         if (other.getExpireTime() != 0L) {
           setExpireTime(other.getExpireTime());
         }
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
-          onChanged();
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         if (!other.getMode().isEmpty()) {
           mode_ = other.mode_;
@@ -1453,27 +1576,18 @@ public final class PBRedis {
         return this;
       }
 
-      private java.lang.Object type_ = "";
+      private int type_ = 0;
       /**
        * <pre>
        * type
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 5;</code>
-       * @return The type.
+       * <code>.model.RedisTarget.Type type = 5;</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          type_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
        * <pre>
@@ -1481,38 +1595,12 @@ public final class PBRedis {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 5;</code>
-       * @return The bytes for type.
-       */
-      public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          type_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * type
-       * &#64;inject_tag: json:"type" 
-       * </pre>
-       *
-       * <code>string type = 5;</code>
-       * @param value The type to set.
+       * <code>.model.RedisTarget.Type type = 5;</code>
+       * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTypeValue(int value) {
+        
         type_ = value;
         onChanged();
         return this;
@@ -1523,33 +1611,46 @@ public final class PBRedis {
        * &#64;inject_tag: json:"type" 
        * </pre>
        *
-       * <code>string type = 5;</code>
+       * <code>.model.RedisTarget.Type type = 5;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" 
+       * </pre>
+       *
+       * <code>.model.RedisTarget.Type type = 5;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRedis.RedisTarget.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" 
+       * </pre>
+       *
+       * <code>.model.RedisTarget.Type type = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
         
-        type_ = getDefaultInstance().getType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * type
-       * &#64;inject_tag: json:"type" 
-       * </pre>
-       *
-       * <code>string type = 5;</code>
-       * @param value The bytes for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        type_ = value;
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -1971,15 +2072,18 @@ public final class PBRedis {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/syncjob/redis.proto\022" +
       "\005model\032/github.com/yu31/protoc-plugin/pr" +
-      "oto/gosql.proto\"\316\001\n\013RedisTarget\022\020\n\010datab" +
+      "oto/gosql.proto\"\261\002\n\013RedisTarget\022\020\n\010datab" +
       "ase\030\001 \001(\005\022\022\n\nkeyIndexes\030\002 \003(\005\022\023\n\013date_fo" +
-      "rmat\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\003\022\014\n\004type\030" +
-      "\005 \001(\t\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_field_delimit" +
-      "er\030\007 \001(\t\022\035\n\025value_field_delimiter\030\010 \001(\t\022" +
-      "\017\n\007timeout\030\t \001(\005:\006\312\262\004\002\n\000Bv\n,com.dataomni" +
-      "s.gproto.types.pbmodel.pbsyncjobB\007PBRedi" +
-      "sP\000Z;github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbmodel/pbsyncjobb\006proto3"
+      "rmat\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\003\022%\n\004type\030" +
+      "\005 \001(\0162\027.model.RedisTarget.Type\022\014\n\004mode\030\006" +
+      " \001(\t\022\033\n\023key_field_delimiter\030\007 \001(\t\022\035\n\025val" +
+      "ue_field_delimiter\030\010 \001(\t\022\017\n\007timeout\030\t \001(" +
+      "\005\"H\n\004Type\022\r\n\tTypeUnset\020\000\022\n\n\006string\020\001\022\010\n\004" +
+      "list\020\002\022\007\n\003set\020\003\022\010\n\004zset\020\004\022\010\n\004hash\020\005:\006\312\262\004" +
+      "\002\n\000Bv\n,com.dataomnis.gproto.types.pbmode" +
+      "l.pbsyncjobB\007PBRedisP\000Z;github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbmodel/pbsync" +
+      "jobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

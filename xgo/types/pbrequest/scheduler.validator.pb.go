@@ -287,3 +287,60 @@ func (this *DeleteSyncJobsByJobIds) Validate() error {
 	}
 	return nil
 }
+
+func (this *SubmitFlinkClusterMonitor) _xxx_xxx_Validator_Validate_event() error {
+	if !(this.Event != nil) {
+		return protovalidator.FieldError2("SubmitFlinkClusterMonitor", "the value of field 'event' cannot be null")
+	}
+	if dt, ok := interface{}(this.Event).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.SubmitFlinkClusterMonitor
+func (this *SubmitFlinkClusterMonitor) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_event(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *StopFlinkClusterMonitor) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StopFlinkClusterMonitor", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StopFlinkClusterMonitor", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *StopFlinkClusterMonitor) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("StopFlinkClusterMonitor", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("StopFlinkClusterMonitor", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
+// Set default value for message request.StopFlinkClusterMonitor
+func (this *StopFlinkClusterMonitor) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	return nil
+}

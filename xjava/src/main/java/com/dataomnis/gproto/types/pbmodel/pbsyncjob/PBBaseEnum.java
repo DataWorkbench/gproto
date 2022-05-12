@@ -101,32 +101,40 @@ public final class PBBaseEnum {
     public enum PartitionType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>DAY = 0;</code>
+       * <code>PartitionTypeUnset = 0;</code>
        */
-      DAY(0),
+      PartitionTypeUnset(0),
       /**
-       * <code>HOUR = 1;</code>
+       * <code>DAY = 1;</code>
        */
-      HOUR(1),
+      DAY(1),
       /**
-       * <code>MINUTE = 2;</code>
+       * <code>HOUR = 2;</code>
        */
-      MINUTE(2),
+      HOUR(2),
+      /**
+       * <code>MINUTE = 3;</code>
+       */
+      MINUTE(3),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>DAY = 0;</code>
+       * <code>PartitionTypeUnset = 0;</code>
        */
-      public static final int DAY_VALUE = 0;
+      public static final int PartitionTypeUnset_VALUE = 0;
       /**
-       * <code>HOUR = 1;</code>
+       * <code>DAY = 1;</code>
        */
-      public static final int HOUR_VALUE = 1;
+      public static final int DAY_VALUE = 1;
       /**
-       * <code>MINUTE = 2;</code>
+       * <code>HOUR = 2;</code>
        */
-      public static final int MINUTE_VALUE = 2;
+      public static final int HOUR_VALUE = 2;
+      /**
+       * <code>MINUTE = 3;</code>
+       */
+      public static final int MINUTE_VALUE = 3;
 
 
       public final int getNumber() {
@@ -153,9 +161,10 @@ public final class PBBaseEnum {
        */
       public static PartitionType forNumber(int value) {
         switch (value) {
-          case 0: return DAY;
-          case 1: return HOUR;
-          case 2: return MINUTE;
+          case 0: return PartitionTypeUnset;
+          case 1: return DAY;
+          case 2: return HOUR;
+          case 3: return MINUTE;
           default: return null;
         }
       }
@@ -218,24 +227,32 @@ public final class PBBaseEnum {
     public enum WriteMode
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>append = 0;</code>
+       * <code>WriteModeUnset = 0;</code>
        */
-      append(0),
+      WriteModeUnset(0),
       /**
-       * <code>overwrite = 1;</code>
+       * <code>append = 1;</code>
        */
-      overwrite(1),
+      append(1),
+      /**
+       * <code>overwrite = 2;</code>
+       */
+      overwrite(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>append = 0;</code>
+       * <code>WriteModeUnset = 0;</code>
        */
-      public static final int append_VALUE = 0;
+      public static final int WriteModeUnset_VALUE = 0;
       /**
-       * <code>overwrite = 1;</code>
+       * <code>append = 1;</code>
        */
-      public static final int overwrite_VALUE = 1;
+      public static final int append_VALUE = 1;
+      /**
+       * <code>overwrite = 2;</code>
+       */
+      public static final int overwrite_VALUE = 2;
 
 
       public final int getNumber() {
@@ -262,8 +279,9 @@ public final class PBBaseEnum {
        */
       public static WriteMode forNumber(int value) {
         switch (value) {
-          case 0: return append;
-          case 1: return overwrite;
+          case 0: return WriteModeUnset;
+          case 1: return append;
+          case 2: return overwrite;
           default: return null;
         }
       }
@@ -326,32 +344,40 @@ public final class PBBaseEnum {
     public enum FileType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>text = 0;</code>
+       * <code>FileTypeUnset = 0;</code>
        */
-      text(0),
+      FileTypeUnset(0),
       /**
-       * <code>orc = 1;</code>
+       * <code>text = 1;</code>
        */
-      orc(1),
+      text(1),
       /**
-       * <code>parquet = 2;</code>
+       * <code>orc = 2;</code>
        */
-      parquet(2),
+      orc(2),
+      /**
+       * <code>parquet = 3;</code>
+       */
+      parquet(3),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>text = 0;</code>
+       * <code>FileTypeUnset = 0;</code>
        */
-      public static final int text_VALUE = 0;
+      public static final int FileTypeUnset_VALUE = 0;
       /**
-       * <code>orc = 1;</code>
+       * <code>text = 1;</code>
        */
-      public static final int orc_VALUE = 1;
+      public static final int text_VALUE = 1;
       /**
-       * <code>parquet = 2;</code>
+       * <code>orc = 2;</code>
        */
-      public static final int parquet_VALUE = 2;
+      public static final int orc_VALUE = 2;
+      /**
+       * <code>parquet = 3;</code>
+       */
+      public static final int parquet_VALUE = 3;
 
 
       public final int getNumber() {
@@ -378,9 +404,10 @@ public final class PBBaseEnum {
        */
       public static FileType forNumber(int value) {
         switch (value) {
-          case 0: return text;
-          case 1: return orc;
-          case 2: return parquet;
+          case 0: return FileTypeUnset;
+          case 1: return text;
+          case 2: return orc;
+          case 3: return parquet;
           default: return null;
         }
       }
@@ -443,56 +470,64 @@ public final class PBBaseEnum {
     public enum CompressType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>GZIP = 0;</code>
+       * <code>CompressTypeUnset = 0;</code>
        */
-      GZIP(0),
+      CompressTypeUnset(0),
       /**
-       * <code>BZIP2 = 1;</code>
+       * <code>GZIP = 1;</code>
        */
-      BZIP2(1),
+      GZIP(1),
       /**
-       * <code>SNAPPY = 2;</code>
+       * <code>BZIP2 = 2;</code>
        */
-      SNAPPY(2),
+      BZIP2(2),
       /**
-       * <code>BZIP = 3;</code>
+       * <code>SNAPPY = 3;</code>
        */
-      BZIP(3),
+      SNAPPY(3),
       /**
-       * <code>LZ4 = 4;</code>
+       * <code>BZIP = 4;</code>
        */
-      LZ4(4),
+      BZIP(4),
       /**
-       * <code>LZO = 5;</code>
+       * <code>LZ4 = 5;</code>
        */
-      LZO(5),
+      LZ4(5),
+      /**
+       * <code>LZO = 6;</code>
+       */
+      LZO(6),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>GZIP = 0;</code>
+       * <code>CompressTypeUnset = 0;</code>
        */
-      public static final int GZIP_VALUE = 0;
+      public static final int CompressTypeUnset_VALUE = 0;
       /**
-       * <code>BZIP2 = 1;</code>
+       * <code>GZIP = 1;</code>
        */
-      public static final int BZIP2_VALUE = 1;
+      public static final int GZIP_VALUE = 1;
       /**
-       * <code>SNAPPY = 2;</code>
+       * <code>BZIP2 = 2;</code>
        */
-      public static final int SNAPPY_VALUE = 2;
+      public static final int BZIP2_VALUE = 2;
       /**
-       * <code>BZIP = 3;</code>
+       * <code>SNAPPY = 3;</code>
        */
-      public static final int BZIP_VALUE = 3;
+      public static final int SNAPPY_VALUE = 3;
       /**
-       * <code>LZ4 = 4;</code>
+       * <code>BZIP = 4;</code>
        */
-      public static final int LZ4_VALUE = 4;
+      public static final int BZIP_VALUE = 4;
       /**
-       * <code>LZO = 5;</code>
+       * <code>LZ4 = 5;</code>
        */
-      public static final int LZO_VALUE = 5;
+      public static final int LZ4_VALUE = 5;
+      /**
+       * <code>LZO = 6;</code>
+       */
+      public static final int LZO_VALUE = 6;
 
 
       public final int getNumber() {
@@ -519,12 +554,13 @@ public final class PBBaseEnum {
        */
       public static CompressType forNumber(int value) {
         switch (value) {
-          case 0: return GZIP;
-          case 1: return BZIP2;
-          case 2: return SNAPPY;
-          case 3: return BZIP;
-          case 4: return LZ4;
-          case 5: return LZO;
+          case 0: return CompressTypeUnset;
+          case 1: return GZIP;
+          case 2: return BZIP2;
+          case 3: return SNAPPY;
+          case 4: return BZIP;
+          case 5: return LZ4;
+          case 6: return LZO;
           default: return null;
         }
       }
@@ -587,24 +623,32 @@ public final class PBBaseEnum {
     public enum Encoding
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>UTF8 = 0;</code>
+       * <code>EncodingUnset = 0;</code>
        */
-      UTF8(0),
+      EncodingUnset(0),
       /**
-       * <code>GBK = 1;</code>
+       * <code>UTF8 = 1;</code>
        */
-      GBK(1),
+      UTF8(1),
+      /**
+       * <code>GBK = 2;</code>
+       */
+      GBK(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>UTF8 = 0;</code>
+       * <code>EncodingUnset = 0;</code>
        */
-      public static final int UTF8_VALUE = 0;
+      public static final int EncodingUnset_VALUE = 0;
       /**
-       * <code>GBK = 1;</code>
+       * <code>UTF8 = 1;</code>
        */
-      public static final int GBK_VALUE = 1;
+      public static final int UTF8_VALUE = 1;
+      /**
+       * <code>GBK = 2;</code>
+       */
+      public static final int GBK_VALUE = 2;
 
 
       public final int getNumber() {
@@ -631,8 +675,9 @@ public final class PBBaseEnum {
        */
       public static Encoding forNumber(int value) {
         switch (value) {
-          case 0: return UTF8;
-          case 1: return GBK;
+          case 0: return EncodingUnset;
+          case 1: return UTF8;
+          case 2: return GBK;
           default: return null;
         }
       }
@@ -1167,18 +1212,21 @@ public final class PBBaseEnum {
   static {
     java.lang.String[] descriptorData = {
       "\n(proto/types/model/syncjob/baseenum.pro" +
-      "to\022\005model\"\271\002\n\010BaseEnum\".\n\rPartitionType\022" +
-      "\007\n\003DAY\020\000\022\010\n\004HOUR\020\001\022\n\n\006MINUTE\020\002\"&\n\tWriteM" +
-      "ode\022\n\n\006append\020\000\022\r\n\toverwrite\020\001\"*\n\010FileTy" +
-      "pe\022\010\n\004text\020\000\022\007\n\003orc\020\001\022\013\n\007parquet\020\002\"K\n\014Co" +
-      "mpressType\022\010\n\004GZIP\020\000\022\t\n\005BZIP2\020\001\022\n\n\006SNAPP" +
-      "Y\020\002\022\010\n\004BZIP\020\003\022\007\n\003LZ4\020\004\022\007\n\003LZO\020\005\"\035\n\010Encod" +
-      "ing\022\010\n\004UTF8\020\000\022\007\n\003GBK\020\001\"=\n\rColumnMapping\022" +
-      "\017\n\013ColumnUnset\020\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004A" +
-      "uto\020\003By\n,com.dataomnis.gproto.types.pbmo" +
-      "del.pbsyncjobB\nPBBaseEnumP\000Z;github.com/" +
-      "DataWorkbench/gproto/xgo/types/pbmodel/p" +
-      "bsyncjobb\006proto3"
+      "to\022\005model\"\242\003\n\010BaseEnum\"F\n\rPartitionType\022" +
+      "\026\n\022PartitionTypeUnset\020\000\022\007\n\003DAY\020\001\022\010\n\004HOUR" +
+      "\020\002\022\n\n\006MINUTE\020\003\":\n\tWriteMode\022\022\n\016WriteMode" +
+      "Unset\020\000\022\n\n\006append\020\001\022\r\n\toverwrite\020\002\"=\n\010Fi" +
+      "leType\022\021\n\rFileTypeUnset\020\000\022\010\n\004text\020\001\022\007\n\003o" +
+      "rc\020\002\022\013\n\007parquet\020\003\"b\n\014CompressType\022\025\n\021Com" +
+      "pressTypeUnset\020\000\022\010\n\004GZIP\020\001\022\t\n\005BZIP2\020\002\022\n\n" +
+      "\006SNAPPY\020\003\022\010\n\004BZIP\020\004\022\007\n\003LZ4\020\005\022\007\n\003LZO\020\006\"0\n" +
+      "\010Encoding\022\021\n\rEncodingUnset\020\000\022\010\n\004UTF8\020\001\022\007" +
+      "\n\003GBK\020\002\"=\n\rColumnMapping\022\017\n\013ColumnUnset\020" +
+      "\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004Auto\020\003By\n,com.da" +
+      "taomnis.gproto.types.pbmodel.pbsyncjobB\n" +
+      "PBBaseEnumP\000Z;github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodel/pbsyncjobb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

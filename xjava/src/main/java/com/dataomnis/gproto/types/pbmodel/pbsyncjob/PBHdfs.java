@@ -588,7 +588,7 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         output.writeEnum(3, fileType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filterRegex_)) {
@@ -597,7 +597,7 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         output.writeEnum(6, encoding_);
       }
       unknownFields.writeTo(output);
@@ -616,7 +616,7 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, fileType_);
       }
@@ -626,7 +626,7 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, encoding_);
       }
@@ -2527,19 +2527,19 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileName_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         output.writeEnum(4, fileType_);
       }
-      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.WriteModeUnset.getNumber()) {
         output.writeEnum(5, writeMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         output.writeEnum(7, encoding_);
       }
-      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.CompressTypeUnset.getNumber()) {
         output.writeEnum(8, compress_);
       }
       unknownFields.writeTo(output);
@@ -2561,22 +2561,22 @@ public final class PBHdfs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileName_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, fileType_);
       }
-      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.WriteModeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, writeMode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, encoding_);
       }
-      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.CompressTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, compress_);
       }

@@ -1752,21 +1752,20 @@ public final class PBMongodb {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
-     * @return The writeMode.
+     * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+     * @return The enum numeric value on the wire for writeMode.
      */
-    java.lang.String getWriteMode();
+    int getWriteModeValue();
     /**
      * <pre>
      * write mode
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
-     * @return The bytes for writeMode.
+     * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+     * @return The writeMode.
      */
-    com.google.protobuf.ByteString
-        getWriteModeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode getWriteMode();
 
     /**
      * <pre>
@@ -1807,7 +1806,7 @@ public final class PBMongodb {
       database_ = "";
       collectionName_ = "";
       replaceKey_ = "";
-      writeMode_ = "";
+      writeMode_ = 0;
     }
 
     @java.lang.Override
@@ -1868,10 +1867,10 @@ public final class PBMongodb {
               replaceKey_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
+              int rawValue = input.readEnum();
 
-              writeMode_ = s;
+              writeMode_ = rawValue;
               break;
             }
             case 48: {
@@ -1917,6 +1916,132 @@ public final class PBMongodb {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.internal_static_model_MongodbTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.MongodbTarget.WriteMode}
+     */
+    public enum WriteMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>WriteModeUnset = 0;</code>
+       */
+      WriteModeUnset(0),
+      /**
+       * <code>insert = 1;</code>
+       */
+      insert(1),
+      /**
+       * <code>replace = 2;</code>
+       */
+      replace(2),
+      /**
+       * <code>update = 3;</code>
+       */
+      update(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>WriteModeUnset = 0;</code>
+       */
+      public static final int WriteModeUnset_VALUE = 0;
+      /**
+       * <code>insert = 1;</code>
+       */
+      public static final int insert_VALUE = 1;
+      /**
+       * <code>replace = 2;</code>
+       */
+      public static final int replace_VALUE = 2;
+      /**
+       * <code>update = 3;</code>
+       */
+      public static final int update_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static WriteMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static WriteMode forNumber(int value) {
+        switch (value) {
+          case 0: return WriteModeUnset;
+          case 1: return insert;
+          case 2: return replace;
+          case 3: return update;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<WriteMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          WriteMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<WriteMode>() {
+              public WriteMode findValueByNumber(int number) {
+                return WriteMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final WriteMode[] VALUES = values();
+
+      public static WriteMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private WriteMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.MongodbTarget.WriteMode)
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
@@ -2129,28 +2254,18 @@ public final class PBMongodb {
     }
 
     public static final int WRITE_MODE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object writeMode_;
+    private int writeMode_;
     /**
      * <pre>
      * write mode
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
-     * @return The writeMode.
+     * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+     * @return The enum numeric value on the wire for writeMode.
      */
-    @java.lang.Override
-    public java.lang.String getWriteMode() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        writeMode_ = s;
-        return s;
-      }
+    @java.lang.Override public int getWriteModeValue() {
+      return writeMode_;
     }
     /**
      * <pre>
@@ -2158,22 +2273,13 @@ public final class PBMongodb {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>string write_mode = 5;</code>
-     * @return The bytes for writeMode.
+     * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+     * @return The writeMode.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWriteModeBytes() {
-      java.lang.Object ref = writeMode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        writeMode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode getWriteMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.valueOf(writeMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.UNRECOGNIZED : result;
     }
 
     public static final int BATCH_SIZE_FIELD_NUMBER = 6;
@@ -2234,8 +2340,8 @@ public final class PBMongodb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replaceKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, replaceKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, writeMode_);
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.WriteModeUnset.getNumber()) {
+        output.writeEnum(5, writeMode_);
       }
       if (batchSize_ != 0) {
         output.writeInt32(6, batchSize_);
@@ -2265,8 +2371,9 @@ public final class PBMongodb {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replaceKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, replaceKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, writeMode_);
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.WriteModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, writeMode_);
       }
       if (batchSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -2299,8 +2406,7 @@ public final class PBMongodb {
           .equals(other.getCollectionName())) return false;
       if (!getReplaceKey()
           .equals(other.getReplaceKey())) return false;
-      if (!getWriteMode()
-          .equals(other.getWriteMode())) return false;
+      if (writeMode_ != other.writeMode_) return false;
       if (getBatchSize()
           != other.getBatchSize()) return false;
       if (getFlushIntervalMills()
@@ -2327,7 +2433,7 @@ public final class PBMongodb {
       hash = (37 * hash) + REPLACE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getReplaceKey().hashCode();
       hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getWriteMode().hashCode();
+      hash = (53 * hash) + writeMode_;
       hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getBatchSize();
       hash = (37 * hash) + FLUSH_INTERVAL_MILLS_FIELD_NUMBER;
@@ -2478,7 +2584,7 @@ public final class PBMongodb {
 
         replaceKey_ = "";
 
-        writeMode_ = "";
+        writeMode_ = 0;
 
         batchSize_ = 0;
 
@@ -2612,9 +2718,8 @@ public final class PBMongodb {
           replaceKey_ = other.replaceKey_;
           onChanged();
         }
-        if (!other.getWriteMode().isEmpty()) {
-          writeMode_ = other.writeMode_;
-          onChanged();
+        if (other.writeMode_ != 0) {
+          setWriteModeValue(other.getWriteModeValue());
         }
         if (other.getBatchSize() != 0) {
           setBatchSize(other.getBatchSize());
@@ -3285,27 +3390,18 @@ public final class PBMongodb {
         return this;
       }
 
-      private java.lang.Object writeMode_ = "";
+      private int writeMode_ = 0;
       /**
        * <pre>
        * write mode
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
-       * @return The writeMode.
+       * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+       * @return The enum numeric value on the wire for writeMode.
        */
-      public java.lang.String getWriteMode() {
-        java.lang.Object ref = writeMode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          writeMode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getWriteModeValue() {
+        return writeMode_;
       }
       /**
        * <pre>
@@ -3313,38 +3409,12 @@ public final class PBMongodb {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
-       * @return The bytes for writeMode.
-       */
-      public com.google.protobuf.ByteString
-          getWriteModeBytes() {
-        java.lang.Object ref = writeMode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          writeMode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 5;</code>
-       * @param value The writeMode to set.
+       * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+       * @param value The enum numeric value on the wire for writeMode to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setWriteModeValue(int value) {
+        
         writeMode_ = value;
         onChanged();
         return this;
@@ -3355,33 +3425,46 @@ public final class PBMongodb {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>string write_mode = 5;</code>
+       * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+       * @return The writeMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode getWriteMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.valueOf(writeMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" 
+       * </pre>
+       *
+       * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
+       * @param value The writeMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBMongodb.MongodbTarget.WriteMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        writeMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" 
+       * </pre>
+       *
+       * <code>.model.MongodbTarget.WriteMode write_mode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteMode() {
         
-        writeMode_ = getDefaultInstance().getWriteMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * write mode
-       * &#64;inject_tag: json:"write_mode" 
-       * </pre>
-       *
-       * <code>string write_mode = 5;</code>
-       * @param value The bytes for writeMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWriteModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        writeMode_ = value;
+        writeMode_ = 0;
         onChanged();
         return this;
       }
@@ -3555,15 +3638,18 @@ public final class PBMongodb {
       "proto/gosql.proto\"\205\001\n\rMongodbSource\022\035\n\006c" +
       "olumn\030\001 \003(\0132\r.model.Column\022\020\n\010database\030\002" +
       " \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_s" +
-      "ize\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t:\006\312\262\004\002\n\000\"\264\001\n\rMo" +
+      "ize\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t:\006\312\262\004\002\n\000\"\242\002\n\rMo" +
       "ngodbTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
       "mn\022\020\n\010database\030\002 \001(\t\022\027\n\017collection_name\030" +
-      "\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\022\022\n\nwrite_mode" +
-      "\030\005 \001(\t\022\022\n\nbatch_size\030\006 \001(\005\022\034\n\024flush_inte" +
-      "rval_mills\030\007 \001(\005Bx\n,com.dataomnis.gproto" +
-      ".types.pbmodel.pbsyncjobB\tPBMongodbP\000Z;g" +
-      "ithub.com/DataWorkbench/gproto/xgo/types" +
-      "/pbmodel/pbsyncjobb\006proto3"
+      "\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\0222\n\nwrite_mode" +
+      "\030\005 \001(\0162\036.model.MongodbTarget.WriteMode\022\022" +
+      "\n\nbatch_size\030\006 \001(\005\022\034\n\024flush_interval_mil" +
+      "ls\030\007 \001(\005\"D\n\tWriteMode\022\022\n\016WriteModeUnset\020" +
+      "\000\022\n\n\006insert\020\001\022\013\n\007replace\020\002\022\n\n\006update\020\003:\006" +
+      "\312\262\004\002\n\000Bx\n,com.dataomnis.gproto.types.pbm" +
+      "odel.pbsyncjobB\tPBMongodbP\000Z;github.com/" +
+      "DataWorkbench/gproto/xgo/types/pbmodel/p" +
+      "bsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

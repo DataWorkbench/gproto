@@ -6876,6 +6876,1417 @@ public final class PBRequestScheduler {
 
   }
 
+  public interface SubmitFlinkClusterMonitorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.SubmitFlinkClusterMonitor)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the event field is set.
+     */
+    boolean hasEvent();
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     * @return The event.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent getEvent();
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder getEventOrBuilder();
+  }
+  /**
+   * Protobuf type {@code request.SubmitFlinkClusterMonitor}
+   */
+  public static final class SubmitFlinkClusterMonitor extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.SubmitFlinkClusterMonitor)
+      SubmitFlinkClusterMonitorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubmitFlinkClusterMonitor.newBuilder() to construct.
+    private SubmitFlinkClusterMonitor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubmitFlinkClusterMonitor() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SubmitFlinkClusterMonitor();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubmitFlinkClusterMonitor(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder subBuilder = null;
+              if (event_ != null) {
+                subBuilder = event_.toBuilder();
+              }
+              event_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(event_);
+                event_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_SubmitFlinkClusterMonitor_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_SubmitFlinkClusterMonitor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.class, com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.Builder.class);
+    }
+
+    public static final int EVENT_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent event_;
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the event field is set.
+     */
+    @java.lang.Override
+    public boolean hasEvent() {
+      return event_ != null;
+    }
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     * @return The event.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent getEvent() {
+      return event_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.getDefaultInstance() : event_;
+    }
+    /**
+     * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder getEventOrBuilder() {
+      return getEvent();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (event_ != null) {
+        output.writeMessage(1, getEvent());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (event_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getEvent());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor other = (com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor) obj;
+
+      if (hasEvent() != other.hasEvent()) return false;
+      if (hasEvent()) {
+        if (!getEvent()
+            .equals(other.getEvent())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEvent()) {
+        hash = (37 * hash) + EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getEvent().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.SubmitFlinkClusterMonitor}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.SubmitFlinkClusterMonitor)
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_SubmitFlinkClusterMonitor_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_SubmitFlinkClusterMonitor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.class, com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (eventBuilder_ == null) {
+          event_ = null;
+        } else {
+          event_ = null;
+          eventBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_SubmitFlinkClusterMonitor_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor result = new com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor(this);
+        if (eventBuilder_ == null) {
+          result.event_ = event_;
+        } else {
+          result.event_ = eventBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.getDefaultInstance()) return this;
+        if (other.hasEvent()) {
+          mergeEvent(other.getEvent());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent event_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder> eventBuilder_;
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the event field is set.
+       */
+      public boolean hasEvent() {
+        return eventBuilder_ != null || event_ != null;
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       * @return The event.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent getEvent() {
+        if (eventBuilder_ == null) {
+          return event_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.getDefaultInstance() : event_;
+        } else {
+          return eventBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setEvent(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent value) {
+        if (eventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          eventBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setEvent(
+          com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder builderForValue) {
+        if (eventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          eventBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeEvent(com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent value) {
+        if (eventBuilder_ == null) {
+          if (event_ != null) {
+            event_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.newBuilder(event_).mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          eventBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearEvent() {
+        if (eventBuilder_ == null) {
+          event_ = null;
+          onChanged();
+        } else {
+          event_ = null;
+          eventBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder getEventBuilder() {
+        
+        onChanged();
+        return getEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder getEventOrBuilder() {
+        if (eventBuilder_ != null) {
+          return eventBuilder_.getMessageOrBuilder();
+        } else {
+          return event_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.getDefaultInstance() : event_;
+        }
+      }
+      /**
+       * <code>.model.FlinkMonitorEvent event = 1 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder> 
+          getEventFieldBuilder() {
+        if (eventBuilder_ == null) {
+          eventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEvent.Builder, com.dataomnis.gproto.types.pbmodel.PBModelScheduler.FlinkMonitorEventOrBuilder>(
+                  getEvent(),
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        return eventBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.SubmitFlinkClusterMonitor)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.SubmitFlinkClusterMonitor)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubmitFlinkClusterMonitor>
+        PARSER = new com.google.protobuf.AbstractParser<SubmitFlinkClusterMonitor>() {
+      @java.lang.Override
+      public SubmitFlinkClusterMonitor parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubmitFlinkClusterMonitor(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubmitFlinkClusterMonitor> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubmitFlinkClusterMonitor> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StopFlinkClusterMonitorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.StopFlinkClusterMonitor)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * Cluster ID
+     * </pre>
+     *
+     * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+     * @return The clusterId.
+     */
+    java.lang.String getClusterId();
+    /**
+     * <pre>
+     * Cluster ID
+     * </pre>
+     *
+     * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for clusterId.
+     */
+    com.google.protobuf.ByteString
+        getClusterIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.StopFlinkClusterMonitor}
+   */
+  public static final class StopFlinkClusterMonitor extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.StopFlinkClusterMonitor)
+      StopFlinkClusterMonitorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopFlinkClusterMonitor.newBuilder() to construct.
+    private StopFlinkClusterMonitor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopFlinkClusterMonitor() {
+      spaceId_ = "";
+      clusterId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopFlinkClusterMonitor();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopFlinkClusterMonitor(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_StopFlinkClusterMonitor_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_StopFlinkClusterMonitor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.class, com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object clusterId_;
+    /**
+     * <pre>
+     * Cluster ID
+     * </pre>
+     *
+     * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+     * @return The clusterId.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterId() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Cluster ID
+     * </pre>
+     *
+     * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for clusterId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClusterIdBytes() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor other = (com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getClusterId()
+          .equals(other.getClusterId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.StopFlinkClusterMonitor}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.StopFlinkClusterMonitor)
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_StopFlinkClusterMonitor_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_StopFlinkClusterMonitor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.class, com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        clusterId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.internal_static_request_StopFlinkClusterMonitor_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor result = new com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor(this);
+        result.spaceId_ = spaceId_;
+        result.clusterId_ = clusterId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getClusterId().isEmpty()) {
+          clusterId_ = other.clusterId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterId_ = "";
+      /**
+       * <pre>
+       * Cluster ID
+       * </pre>
+       *
+       * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+       * @return The clusterId.
+       */
+      public java.lang.String getClusterId() {
+        java.lang.Object ref = clusterId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Cluster ID
+       * </pre>
+       *
+       * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for clusterId.
+       */
+      public com.google.protobuf.ByteString
+          getClusterIdBytes() {
+        java.lang.Object ref = clusterId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clusterId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Cluster ID
+       * </pre>
+       *
+       * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clusterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster ID
+       * </pre>
+       *
+       * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterId() {
+        
+        clusterId_ = getDefaultInstance().getClusterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster ID
+       * </pre>
+       *
+       * <code>string cluster_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clusterId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.StopFlinkClusterMonitor)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.StopFlinkClusterMonitor)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StopFlinkClusterMonitor>
+        PARSER = new com.google.protobuf.AbstractParser<StopFlinkClusterMonitor>() {
+      @java.lang.Override
+      public StopFlinkClusterMonitor parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopFlinkClusterMonitor(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopFlinkClusterMonitor> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopFlinkClusterMonitor> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_SubmitStreamJob_descriptor;
   private static final 
@@ -6916,6 +8327,16 @@ public final class PBRequestScheduler {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteSyncJobsByJobIds_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_SubmitFlinkClusterMonitor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_SubmitFlinkClusterMonitor_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_StopFlinkClusterMonitor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_StopFlinkClusterMonitor_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6929,33 +8350,39 @@ public final class PBRequestScheduler {
       "equest\0323github.com/yu31/protoc-plugin/pr" +
       "oto/validator.proto\032\"proto/types/model/s" +
       "tream_job.proto\032 proto/types/model/sync_" +
-      "job.proto\"\252\001\n\017SubmitStreamJob\0227\n\010propert" +
-      "y\030\001 \001(\0132\030.model.StreamJobPropertyB\013\342\337\037\007\022" +
-      "\005\342\001\002\020\001\022\032\n\014stop_running\030\002 \001(\010B\004\342\337\037\000\022\036\n\tfl" +
-      "ink_url\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rflink_vers" +
-      "ion\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"w\n\rStopStreamJob\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#" +
-      "\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014s" +
-      "top_running\030\003 \001(\010B\004\342\337\037\000\"I\n\032DeleteStreamJ" +
-      "obsBySpaceIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024\022\022" +
-      "\352\001\017Z\r\302\001\n\360\001\024\312\002\004wks-\"l\n\030DeleteStreamJobsBy" +
-      "JobIds\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022)\n\007job_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001" +
-      "\024\312\002\004stj-\"\246\001\n\rSubmitSyncJob\0225\n\010property\030\001" +
-      " \001(\0132\026.model.SyncJobPropertyB\013\342\337\037\007\022\005\342\001\002\020" +
+      "job.proto\032!proto/types/model/scheduler.p" +
+      "roto\"\252\001\n\017SubmitStreamJob\0227\n\010property\030\001 \001" +
+      "(\0132\030.model.StreamJobPropertyB\013\342\337\037\007\022\005\342\001\002\020" +
       "\001\022\032\n\014stop_running\030\002 \001(\010B\004\342\337\037\000\022\036\n\tflink_u" +
       "rl\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rflink_version\030\004" +
-      " \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"u\n\013StopSyncJob\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_i" +
-      "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\032\n\014stop_run" +
-      "ning\030\003 \001(\010B\004\342\337\037\000\"G\n\030DeleteSyncJobsBySpac" +
-      "eIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\"j\n\026DeleteSyncJobsByJobIds\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022)\n\007jo" +
-      "b_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004syj-Bq\n" +
-      "$com.dataomnis.gproto.types.pbrequestB\022P" +
-      "BRequestSchedulerP\000Z3github.com/DataWork" +
-      "bench/gproto/xgo/types/pbrequestb\006proto3"
+      " \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"w\n\rStopStreamJob\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_r" +
+      "unning\030\003 \001(\010B\004\342\337\037\000\"I\n\032DeleteStreamJobsBy" +
+      "SpaceIds\022+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\"l\n\030DeleteStreamJobsByJobId" +
+      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022)\n\007job_ids\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004s" +
+      "tj-\"\246\001\n\rSubmitSyncJob\0225\n\010property\030\001 \001(\0132" +
+      "\026.model.SyncJobPropertyB\013\342\337\037\007\022\005\342\001\002\020\001\022\032\n\014" +
+      "stop_running\030\002 \001(\010B\004\342\337\037\000\022\036\n\tflink_url\030\003 " +
+      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rflink_version\030\004 \001(\tB" +
+      "\013\342\337\037\007\022\005\302\001\002\"\000\"u\n\013StopSyncJob\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\032\n\014stop_running\030" +
+      "\003 \001(\010B\004\342\337\037\000\"G\n\030DeleteSyncJobsBySpaceIds\022" +
+      "+\n\tspace_ids\030\001 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\"j\n\026DeleteSyncJobsByJobIds\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022)\n\007job_ids" +
+      "\030\002 \003(\tB\030\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004syj-\"Q\n\031Subm" +
+      "itFlinkClusterMonitor\0224\n\005event\030\001 \001(\0132\030.m" +
+      "odel.FlinkMonitorEventB\013\342\337\037\007\022\005\342\001\002\020\001\"i\n\027S" +
+      "topFlinkClusterMonitor\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bq\n$com.dataomnis." +
+      "gproto.types.pbrequestB\022PBRequestSchedul" +
+      "erP\000Z3github.com/DataWorkbench/gproto/xg" +
+      "o/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6963,6 +8390,7 @@ public final class PBRequestScheduler {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelScheduler.getDescriptor(),
         });
     internal_static_request_SubmitStreamJob_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -7012,6 +8440,18 @@ public final class PBRequestScheduler {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteSyncJobsByJobIds_descriptor,
         new java.lang.String[] { "SpaceId", "JobIds", });
+    internal_static_request_SubmitFlinkClusterMonitor_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_request_SubmitFlinkClusterMonitor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_SubmitFlinkClusterMonitor_descriptor,
+        new java.lang.String[] { "Event", });
+    internal_static_request_StopFlinkClusterMonitor_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_request_StopFlinkClusterMonitor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_StopFlinkClusterMonitor_descriptor,
+        new java.lang.String[] { "SpaceId", "ClusterId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
@@ -7020,6 +8460,7 @@ public final class PBRequestScheduler {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelScheduler.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

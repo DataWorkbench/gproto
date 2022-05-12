@@ -263,6 +263,68 @@ public final class SchedulerGrpc {
     return getDeleteSyncJobsByJobIdsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSubmitFlinkClusterMonitorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitFlinkClusterMonitor",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSubmitFlinkClusterMonitorMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSubmitFlinkClusterMonitorMethod;
+    if ((getSubmitFlinkClusterMonitorMethod = SchedulerGrpc.getSubmitFlinkClusterMonitorMethod) == null) {
+      synchronized (SchedulerGrpc.class) {
+        if ((getSubmitFlinkClusterMonitorMethod = SchedulerGrpc.getSubmitFlinkClusterMonitorMethod) == null) {
+          SchedulerGrpc.getSubmitFlinkClusterMonitorMethod = getSubmitFlinkClusterMonitorMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitFlinkClusterMonitor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("SubmitFlinkClusterMonitor"))
+              .build();
+        }
+      }
+    }
+    return getSubmitFlinkClusterMonitorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopFlinkClusterMonitorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopFlinkClusterMonitor",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopFlinkClusterMonitorMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopFlinkClusterMonitorMethod;
+    if ((getStopFlinkClusterMonitorMethod = SchedulerGrpc.getStopFlinkClusterMonitorMethod) == null) {
+      synchronized (SchedulerGrpc.class) {
+        if ((getStopFlinkClusterMonitorMethod = SchedulerGrpc.getStopFlinkClusterMonitorMethod) == null) {
+          SchedulerGrpc.getStopFlinkClusterMonitorMethod = getStopFlinkClusterMonitorMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopFlinkClusterMonitor"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("StopFlinkClusterMonitor"))
+              .build();
+        }
+      }
+    }
+    return getStopFlinkClusterMonitorMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -399,6 +461,26 @@ public final class SchedulerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSyncJobsByJobIdsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * SubmitFlinkClusterMonitor used when a flink cluster create or start.
+     * </pre>
+     */
+    public void submitFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitFlinkClusterMonitorMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StopFlinkClusterMonitor used when a flink cluster delete or stop.
+     * </pre>
+     */
+    public void stopFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopFlinkClusterMonitorMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -457,6 +539,20 @@ public final class SchedulerGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteSyncJobsByJobIds,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_SYNC_JOBS_BY_JOB_IDS)))
+          .addMethod(
+            getSubmitFlinkClusterMonitorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_SUBMIT_FLINK_CLUSTER_MONITOR)))
+          .addMethod(
+            getStopFlinkClusterMonitorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_STOP_FLINK_CLUSTER_MONITOR)))
           .build();
     }
   }
@@ -570,6 +666,28 @@ public final class SchedulerGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSyncJobsByJobIdsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * SubmitFlinkClusterMonitor used when a flink cluster create or start.
+     * </pre>
+     */
+    public void submitFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitFlinkClusterMonitorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StopFlinkClusterMonitor used when a flink cluster delete or stop.
+     * </pre>
+     */
+    public void stopFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopFlinkClusterMonitorMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -672,6 +790,26 @@ public final class SchedulerGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteSyncJobsByJobIds(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteSyncJobsByJobIds request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSyncJobsByJobIdsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * SubmitFlinkClusterMonitor used when a flink cluster create or start.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct submitFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitFlinkClusterMonitorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * StopFlinkClusterMonitor used when a flink cluster delete or stop.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopFlinkClusterMonitor(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopFlinkClusterMonitorMethod(), getCallOptions(), request);
     }
   }
 
@@ -784,6 +922,28 @@ public final class SchedulerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSyncJobsByJobIdsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * SubmitFlinkClusterMonitor used when a flink cluster create or start.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> submitFlinkClusterMonitor(
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitFlinkClusterMonitorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * StopFlinkClusterMonitor used when a flink cluster delete or stop.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> stopFlinkClusterMonitor(
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopFlinkClusterMonitorMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SUBMIT_STREAM_JOB = 0;
@@ -794,6 +954,8 @@ public final class SchedulerGrpc {
   private static final int METHODID_STOP_SYNC_JOB = 5;
   private static final int METHODID_DELETE_SYNC_JOBS_BY_SPACE_IDS = 6;
   private static final int METHODID_DELETE_SYNC_JOBS_BY_JOB_IDS = 7;
+  private static final int METHODID_SUBMIT_FLINK_CLUSTER_MONITOR = 8;
+  private static final int METHODID_STOP_FLINK_CLUSTER_MONITOR = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -842,6 +1004,14 @@ public final class SchedulerGrpc {
           break;
         case METHODID_DELETE_SYNC_JOBS_BY_JOB_IDS:
           serviceImpl.deleteSyncJobsByJobIds((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteSyncJobsByJobIds) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_SUBMIT_FLINK_CLUSTER_MONITOR:
+          serviceImpl.submitFlinkClusterMonitor((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.SubmitFlinkClusterMonitor) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_STOP_FLINK_CLUSTER_MONITOR:
+          serviceImpl.stopFlinkClusterMonitor((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopFlinkClusterMonitor) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
@@ -913,6 +1083,8 @@ public final class SchedulerGrpc {
               .addMethod(getStopSyncJobMethod())
               .addMethod(getDeleteSyncJobsBySpaceIdsMethod())
               .addMethod(getDeleteSyncJobsByJobIdsMethod())
+              .addMethod(getSubmitFlinkClusterMonitorMethod())
+              .addMethod(getStopFlinkClusterMonitorMethod())
               .build();
         }
       }

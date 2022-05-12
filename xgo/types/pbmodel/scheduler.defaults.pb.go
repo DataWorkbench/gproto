@@ -34,3 +34,11 @@ func (this *SyncJobEvent) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.FlinkMonitorEvent
+func (this *FlinkMonitorEvent) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

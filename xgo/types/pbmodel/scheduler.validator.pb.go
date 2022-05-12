@@ -8,6 +8,7 @@ package pbmodel
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strings "strings"
 )
 
 func (this *StreamJobEvent) _xxx_xxx_Validator_Validate_property() error {
@@ -91,6 +92,70 @@ func (this *SyncJobEvent) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *FlinkMonitorEvent) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *FlinkMonitorEvent) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *FlinkMonitorEvent) _xxx_xxx_Validator_Validate_task_num() error {
+	if !(this.TaskNum > 0) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the value of field 'task_num' must be greater than '0'", protovalidator.Int32ToString(this.TaskNum))
+	}
+	return nil
+}
+
+func (this *FlinkMonitorEvent) _xxx_xxx_Validator_Validate_started() error {
+	if !(this.Started > 0) {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the value of field 'started' must be greater than '0'", protovalidator.Int64ToString(this.Started))
+	}
+	return nil
+}
+
+func (this *FlinkMonitorEvent) _xxx_xxx_Validator_Validate_flink_url() error {
+	if !(this.FlinkUrl != "") {
+		return protovalidator.FieldError1("FlinkMonitorEvent", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
+	}
+	return nil
+}
+
+// Set default value for message model.FlinkMonitorEvent
+func (this *FlinkMonitorEvent) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_task_num(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_started(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
 		return err
 	}
 	return nil

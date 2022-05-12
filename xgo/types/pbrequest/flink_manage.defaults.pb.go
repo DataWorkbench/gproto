@@ -98,3 +98,19 @@ func (this *DescribeFlinkCluster) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.UpdateFlinkClusterStatusByScheduler
+func (this *UpdateFlinkClusterStatusByScheduler) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.StopFlinkClusterByScheduler
+func (this *StopFlinkClusterByScheduler) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

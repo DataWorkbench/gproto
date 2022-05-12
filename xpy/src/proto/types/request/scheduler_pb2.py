@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import stream_job_pb2 as proto_dot_types_dot_model_dot_stream__job__pb2
 from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
+from proto.types.model import scheduler_pb2 as proto_dot_types_dot_model_dot_scheduler__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\022PBRequestSchedulerP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"\xaa\x01\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1e\n\tflink_url\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\xa6\x01\n\rSubmitSyncJob\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1e\n\tflink_url\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"u\n\x0bStopSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"G\n\x18\x44\x65leteSyncJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"j\n\x16\x44\x65leteSyncJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\x1a!proto/types/model/scheduler.proto\"\xaa\x01\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1e\n\tflink_url\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\xa6\x01\n\rSubmitSyncJob\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1e\n\tflink_url\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"u\n\x0bStopSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"G\n\x18\x44\x65leteSyncJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"j\n\x16\x44\x65leteSyncJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\"Q\n\x19SubmitFlinkClusterMonitor\x12\x34\n\x05\x65vent\x18\x01 \x01(\x0b\x32\x18.model.FlinkMonitorEventB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"i\n\x17StopFlinkClusterMonitor\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_scheduler__pb2.DESCRIPTOR,])
 
 
 
@@ -77,8 +78,8 @@ _SUBMITSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=172,
-  serialized_end=342,
+  serialized_start=207,
+  serialized_end=377,
 )
 
 
@@ -123,8 +124,8 @@ _STOPSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=344,
-  serialized_end=463,
+  serialized_start=379,
+  serialized_end=498,
 )
 
 
@@ -155,8 +156,8 @@ _DELETESTREAMJOBSBYSPACEIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=538,
+  serialized_start=500,
+  serialized_end=573,
 )
 
 
@@ -194,8 +195,8 @@ _DELETESTREAMJOBSBYJOBIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=540,
-  serialized_end=648,
+  serialized_start=575,
+  serialized_end=683,
 )
 
 
@@ -247,8 +248,8 @@ _SUBMITSYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=651,
-  serialized_end=817,
+  serialized_start=686,
+  serialized_end=852,
 )
 
 
@@ -293,8 +294,8 @@ _STOPSYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=819,
-  serialized_end=936,
+  serialized_start=854,
+  serialized_end=971,
 )
 
 
@@ -325,8 +326,8 @@ _DELETESYNCJOBSBYSPACEIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=1009,
+  serialized_start=973,
+  serialized_end=1044,
 )
 
 
@@ -364,12 +365,84 @@ _DELETESYNCJOBSBYJOBIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1011,
-  serialized_end=1117,
+  serialized_start=1046,
+  serialized_end=1152,
+)
+
+
+_SUBMITFLINKCLUSTERMONITOR = _descriptor.Descriptor(
+  name='SubmitFlinkClusterMonitor',
+  full_name='request.SubmitFlinkClusterMonitor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='event', full_name='request.SubmitFlinkClusterMonitor.event', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1154,
+  serialized_end=1235,
+)
+
+
+_STOPFLINKCLUSTERMONITOR = _descriptor.Descriptor(
+  name='StopFlinkClusterMonitor',
+  full_name='request.StopFlinkClusterMonitor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.StopFlinkClusterMonitor.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='request.StopFlinkClusterMonitor.cluster_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1237,
+  serialized_end=1342,
 )
 
 _SUBMITSTREAMJOB.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBPROPERTY
 _SUBMITSYNCJOB.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBPROPERTY
+_SUBMITFLINKCLUSTERMONITOR.fields_by_name['event'].message_type = proto_dot_types_dot_model_dot_scheduler__pb2._FLINKMONITOREVENT
 DESCRIPTOR.message_types_by_name['SubmitStreamJob'] = _SUBMITSTREAMJOB
 DESCRIPTOR.message_types_by_name['StopStreamJob'] = _STOPSTREAMJOB
 DESCRIPTOR.message_types_by_name['DeleteStreamJobsBySpaceIds'] = _DELETESTREAMJOBSBYSPACEIDS
@@ -378,6 +451,8 @@ DESCRIPTOR.message_types_by_name['SubmitSyncJob'] = _SUBMITSYNCJOB
 DESCRIPTOR.message_types_by_name['StopSyncJob'] = _STOPSYNCJOB
 DESCRIPTOR.message_types_by_name['DeleteSyncJobsBySpaceIds'] = _DELETESYNCJOBSBYSPACEIDS
 DESCRIPTOR.message_types_by_name['DeleteSyncJobsByJobIds'] = _DELETESYNCJOBSBYJOBIDS
+DESCRIPTOR.message_types_by_name['SubmitFlinkClusterMonitor'] = _SUBMITFLINKCLUSTERMONITOR
+DESCRIPTOR.message_types_by_name['StopFlinkClusterMonitor'] = _STOPFLINKCLUSTERMONITOR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SubmitStreamJob = _reflection.GeneratedProtocolMessageType('SubmitStreamJob', (_message.Message,), {
@@ -436,6 +511,20 @@ DeleteSyncJobsByJobIds = _reflection.GeneratedProtocolMessageType('DeleteSyncJob
   })
 _sym_db.RegisterMessage(DeleteSyncJobsByJobIds)
 
+SubmitFlinkClusterMonitor = _reflection.GeneratedProtocolMessageType('SubmitFlinkClusterMonitor', (_message.Message,), {
+  'DESCRIPTOR' : _SUBMITFLINKCLUSTERMONITOR,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.SubmitFlinkClusterMonitor)
+  })
+_sym_db.RegisterMessage(SubmitFlinkClusterMonitor)
+
+StopFlinkClusterMonitor = _reflection.GeneratedProtocolMessageType('StopFlinkClusterMonitor', (_message.Message,), {
+  'DESCRIPTOR' : _STOPFLINKCLUSTERMONITOR,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.StopFlinkClusterMonitor)
+  })
+_sym_db.RegisterMessage(StopFlinkClusterMonitor)
+
 
 DESCRIPTOR._options = None
 _SUBMITSTREAMJOB.fields_by_name['property']._options = None
@@ -458,4 +547,7 @@ _STOPSYNCJOB.fields_by_name['stop_running']._options = None
 _DELETESYNCJOBSBYSPACEIDS.fields_by_name['space_ids']._options = None
 _DELETESYNCJOBSBYJOBIDS.fields_by_name['space_id']._options = None
 _DELETESYNCJOBSBYJOBIDS.fields_by_name['job_ids']._options = None
+_SUBMITFLINKCLUSTERMONITOR.fields_by_name['event']._options = None
+_STOPFLINKCLUSTERMONITOR.fields_by_name['space_id']._options = None
+_STOPFLINKCLUSTERMONITOR.fields_by_name['cluster_id']._options = None
 # @@protoc_insertion_point(module_scope)

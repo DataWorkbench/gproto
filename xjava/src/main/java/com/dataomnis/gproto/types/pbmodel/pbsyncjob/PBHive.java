@@ -21,7 +21,7 @@ public final class PBHive {
     /**
      * <pre>
      * column name
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"key"
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -31,7 +31,7 @@ public final class PBHive {
     /**
      * <pre>
      * column name
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"key"
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -158,7 +158,7 @@ public final class PBHive {
     /**
      * <pre>
      * column name
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"key"
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -180,7 +180,7 @@ public final class PBHive {
     /**
      * <pre>
      * column name
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"key"
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -572,7 +572,7 @@ public final class PBHive {
       /**
        * <pre>
        * column name
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"key"
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -593,7 +593,7 @@ public final class PBHive {
       /**
        * <pre>
        * column name
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"key"
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -615,7 +615,7 @@ public final class PBHive {
       /**
        * <pre>
        * column name
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"key"
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -635,7 +635,7 @@ public final class PBHive {
       /**
        * <pre>
        * column name
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"key"
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -650,7 +650,7 @@ public final class PBHive {
       /**
        * <pre>
        * column name
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"key"
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -1682,25 +1682,25 @@ public final class PBHive {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, partition_);
       }
-      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.DAY.getNumber()) {
+      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.PartitionTypeUnset.getNumber()) {
         output.writeEnum(5, partitionType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablesColumn_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tablesColumn_);
       }
-      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.WriteModeUnset.getNumber()) {
         output.writeEnum(7, writeMode_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         output.writeEnum(8, fileType_);
       }
-      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.CompressTypeUnset.getNumber()) {
         output.writeEnum(9, compress_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         output.writeEnum(11, encoding_);
       }
       unknownFields.writeTo(output);
@@ -1726,29 +1726,29 @@ public final class PBHive {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partition_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, partition_);
       }
-      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.DAY.getNumber()) {
+      if (partitionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType.PartitionTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, partitionType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablesColumn_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tablesColumn_);
       }
-      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.append.getNumber()) {
+      if (writeMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode.WriteModeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, writeMode_);
       }
-      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.text.getNumber()) {
+      if (fileType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType.FileTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, fileType_);
       }
-      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.GZIP.getNumber()) {
+      if (compress_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType.CompressTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, compress_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, fieldDelimiter_);
       }
-      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UTF8.getNumber()) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, encoding_);
       }

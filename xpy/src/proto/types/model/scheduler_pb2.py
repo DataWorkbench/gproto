@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import stream_job_pb2 as proto_dot_types_dot_model_dot_stream__job__pb2
 from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
+from proto.types.model import cluster_pb2 as proto_dot_types_dot_model_dot_cluster__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\020PBModelSchedulerP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/model/scheduler.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"\xa7\x02\n\x0eStreamJobEvent\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x15\n\x07retries\x18\x04 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x05 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\",\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03Job\x10\x01\x12\x0c\n\x08Instance\x10\x02\"<\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\"\xa3\x02\n\x0cSyncJobEvent\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x15\n\x07retries\x18\x04 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x05 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\",\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03Job\x10\x01\x12\x0c\n\x08Instance\x10\x02\"<\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelSchedulerP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n!proto/types/model/scheduler.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\x1a\x1fproto/types/model/cluster.proto\"\xa7\x02\n\x0eStreamJobEvent\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x15\n\x07retries\x18\x04 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x05 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\",\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03Job\x10\x01\x12\x0c\n\x08Instance\x10\x02\"<\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\"\xa3\x02\n\x0cSyncJobEvent\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x15\n\x07retries\x18\x04 \x01(\x05\x42\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\x05 \x01(\x03\x42\x04\xe2\xdf\x1f\x00\",\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03Job\x10\x01\x12\x0c\n\x08Instance\x10\x02\"<\n\x06\x41\x63tion\x12\x0f\n\x0b\x41\x63tionUnset\x10\x00\x12\n\n\x06\x43reate\x10\x01\x12\n\n\x06Submit\x10\x02\x12\t\n\x05\x43heck\x10\x04\"\xf1\x01\n\x11\x46linkMonitorEvent\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12\x1d\n\x08task_num\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1e\n\tflink_url\x18\x05 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12/\n\x0blast_status\x18\x06 \x01(\x0e\x32\x1a.model.FlinkCluster.StatusBk\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelSchedulerP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,])
 
 
 
@@ -53,8 +54,8 @@ _STREAMJOBEVENT_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=357,
-  serialized_end=401,
+  serialized_start=390,
+  serialized_end=434,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBEVENT_TYPE)
 
@@ -88,8 +89,8 @@ _STREAMJOBEVENT_ACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=403,
-  serialized_end=463,
+  serialized_start=436,
+  serialized_end=496,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBEVENT_ACTION)
 
@@ -118,8 +119,8 @@ _SYNCJOBEVENT_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=357,
-  serialized_end=401,
+  serialized_start=390,
+  serialized_end=434,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBEVENT_TYPE)
 
@@ -153,8 +154,8 @@ _SYNCJOBEVENT_ACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=403,
-  serialized_end=463,
+  serialized_start=436,
+  serialized_end=496,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBEVENT_ACTION)
 
@@ -216,8 +217,8 @@ _STREAMJOBEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=168,
-  serialized_end=463,
+  serialized_start=201,
+  serialized_end=496,
 )
 
 
@@ -278,8 +279,75 @@ _SYNCJOBEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=466,
-  serialized_end=757,
+  serialized_start=499,
+  serialized_end=790,
+)
+
+
+_FLINKMONITOREVENT = _descriptor.Descriptor(
+  name='FlinkMonitorEvent',
+  full_name='model.FlinkMonitorEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.FlinkMonitorEvent.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='model.FlinkMonitorEvent.cluster_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='task_num', full_name='model.FlinkMonitorEvent.task_num', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='started', full_name='model.FlinkMonitorEvent.started', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flink_url', full_name='model.FlinkMonitorEvent.flink_url', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='last_status', full_name='model.FlinkMonitorEvent.last_status', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=793,
+  serialized_end=1034,
 )
 
 _STREAMJOBEVENT.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBPROPERTY
@@ -288,8 +356,10 @@ _STREAMJOBEVENT_ACTION.containing_type = _STREAMJOBEVENT
 _SYNCJOBEVENT.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBPROPERTY
 _SYNCJOBEVENT_TYPE.containing_type = _SYNCJOBEVENT
 _SYNCJOBEVENT_ACTION.containing_type = _SYNCJOBEVENT
+_FLINKMONITOREVENT.fields_by_name['last_status'].enum_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER_STATUS
 DESCRIPTOR.message_types_by_name['StreamJobEvent'] = _STREAMJOBEVENT
 DESCRIPTOR.message_types_by_name['SyncJobEvent'] = _SYNCJOBEVENT
+DESCRIPTOR.message_types_by_name['FlinkMonitorEvent'] = _FLINKMONITOREVENT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 StreamJobEvent = _reflection.GeneratedProtocolMessageType('StreamJobEvent', (_message.Message,), {
@@ -306,6 +376,13 @@ SyncJobEvent = _reflection.GeneratedProtocolMessageType('SyncJobEvent', (_messag
   })
 _sym_db.RegisterMessage(SyncJobEvent)
 
+FlinkMonitorEvent = _reflection.GeneratedProtocolMessageType('FlinkMonitorEvent', (_message.Message,), {
+  'DESCRIPTOR' : _FLINKMONITOREVENT,
+  '__module__' : 'proto.types.model.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:model.FlinkMonitorEvent)
+  })
+_sym_db.RegisterMessage(FlinkMonitorEvent)
+
 
 DESCRIPTOR._options = None
 _STREAMJOBEVENT.fields_by_name['property']._options = None
@@ -318,4 +395,9 @@ _SYNCJOBEVENT.fields_by_name['flink_url']._options = None
 _SYNCJOBEVENT.fields_by_name['flink_version']._options = None
 _SYNCJOBEVENT.fields_by_name['retries']._options = None
 _SYNCJOBEVENT.fields_by_name['started']._options = None
+_FLINKMONITOREVENT.fields_by_name['space_id']._options = None
+_FLINKMONITOREVENT.fields_by_name['cluster_id']._options = None
+_FLINKMONITOREVENT.fields_by_name['task_num']._options = None
+_FLINKMONITOREVENT.fields_by_name['started']._options = None
+_FLINKMONITOREVENT.fields_by_name['flink_url']._options = None
 # @@protoc_insertion_point(module_scope)

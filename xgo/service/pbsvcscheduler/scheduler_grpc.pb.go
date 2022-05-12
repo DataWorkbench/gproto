@@ -48,6 +48,10 @@ type SchedulerClient interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteSyncJobsByJobIds(ctx context.Context, in *pbrequest.DeleteSyncJobsByJobIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// SubmitFlinkClusterMonitor used when a flink cluster create or start.
+	SubmitFlinkClusterMonitor(ctx context.Context, in *pbrequest.SubmitFlinkClusterMonitor, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// StopFlinkClusterMonitor used when a flink cluster delete or stop.
+	StopFlinkClusterMonitor(ctx context.Context, in *pbrequest.StopFlinkClusterMonitor, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -130,6 +134,24 @@ func (c *schedulerClient) DeleteSyncJobsByJobIds(ctx context.Context, in *pbrequ
 	return out, nil
 }
 
+func (c *schedulerClient) SubmitFlinkClusterMonitor(ctx context.Context, in *pbrequest.SubmitFlinkClusterMonitor, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/SubmitFlinkClusterMonitor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) StopFlinkClusterMonitor(ctx context.Context, in *pbrequest.StopFlinkClusterMonitor, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/StopFlinkClusterMonitor", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SchedulerServer is the server API for Scheduler service.
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
@@ -158,6 +180,10 @@ type SchedulerServer interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteSyncJobsByJobIds(context.Context, *pbrequest.DeleteSyncJobsByJobIds) (*pbmodel.EmptyStruct, error)
+	// SubmitFlinkClusterMonitor used when a flink cluster create or start.
+	SubmitFlinkClusterMonitor(context.Context, *pbrequest.SubmitFlinkClusterMonitor) (*pbmodel.EmptyStruct, error)
+	// StopFlinkClusterMonitor used when a flink cluster delete or stop.
+	StopFlinkClusterMonitor(context.Context, *pbrequest.StopFlinkClusterMonitor) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -188,6 +214,12 @@ func (UnimplementedSchedulerServer) DeleteSyncJobsBySpaceIds(context.Context, *p
 }
 func (UnimplementedSchedulerServer) DeleteSyncJobsByJobIds(context.Context, *pbrequest.DeleteSyncJobsByJobIds) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSyncJobsByJobIds not implemented")
+}
+func (UnimplementedSchedulerServer) SubmitFlinkClusterMonitor(context.Context, *pbrequest.SubmitFlinkClusterMonitor) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitFlinkClusterMonitor not implemented")
+}
+func (UnimplementedSchedulerServer) StopFlinkClusterMonitor(context.Context, *pbrequest.StopFlinkClusterMonitor) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopFlinkClusterMonitor not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -346,6 +378,42 @@ func _Scheduler_DeleteSyncJobsByJobIds_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Scheduler_SubmitFlinkClusterMonitor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SubmitFlinkClusterMonitor)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).SubmitFlinkClusterMonitor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/SubmitFlinkClusterMonitor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).SubmitFlinkClusterMonitor(ctx, req.(*pbrequest.SubmitFlinkClusterMonitor))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_StopFlinkClusterMonitor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StopFlinkClusterMonitor)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).StopFlinkClusterMonitor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/StopFlinkClusterMonitor",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).StopFlinkClusterMonitor(ctx, req.(*pbrequest.StopFlinkClusterMonitor))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Scheduler_ServiceDesc is the grpc.ServiceDesc for Scheduler service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -384,6 +452,14 @@ var Scheduler_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSyncJobsByJobIds",
 			Handler:    _Scheduler_DeleteSyncJobsByJobIds_Handler,
+		},
+		{
+			MethodName: "SubmitFlinkClusterMonitor",
+			Handler:    _Scheduler_SubmitFlinkClusterMonitor_Handler,
+		},
+		{
+			MethodName: "StopFlinkClusterMonitor",
+			Handler:    _Scheduler_StopFlinkClusterMonitor_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/model/syncjob/baseenum.proto\x12\x05model\"\xb9\x02\n\x08\x42\x61seEnum\".\n\rPartitionType\x12\x07\n\x03\x44\x41Y\x10\x00\x12\x08\n\x04HOUR\x10\x01\x12\n\n\x06MINUTE\x10\x02\"&\n\tWriteMode\x12\n\n\x06\x61ppend\x10\x00\x12\r\n\toverwrite\x10\x01\"*\n\x08\x46ileType\x12\x08\n\x04text\x10\x00\x12\x07\n\x03orc\x10\x01\x12\x0b\n\x07parquet\x10\x02\"K\n\x0c\x43ompressType\x12\x08\n\x04GZIP\x10\x00\x12\t\n\x05\x42ZIP2\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04\x42ZIP\x10\x03\x12\x07\n\x03LZ4\x10\x04\x12\x07\n\x03LZO\x10\x05\"\x1d\n\x08\x45ncoding\x12\x08\n\x04UTF8\x10\x00\x12\x07\n\x03GBK\x10\x01\"=\n\rColumnMapping\x12\x0f\n\x0b\x43olumnUnset\x10\x00\x12\x08\n\x04Name\x10\x01\x12\x07\n\x03Row\x10\x02\x12\x08\n\x04\x41uto\x10\x03\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n(proto/types/model/syncjob/baseenum.proto\x12\x05model\"\xa2\x03\n\x08\x42\x61seEnum\"F\n\rPartitionType\x12\x16\n\x12PartitionTypeUnset\x10\x00\x12\x07\n\x03\x44\x41Y\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\n\n\x06MINUTE\x10\x03\":\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06\x61ppend\x10\x01\x12\r\n\toverwrite\x10\x02\"=\n\x08\x46ileType\x12\x11\n\rFileTypeUnset\x10\x00\x12\x08\n\x04text\x10\x01\x12\x07\n\x03orc\x10\x02\x12\x0b\n\x07parquet\x10\x03\"b\n\x0c\x43ompressType\x12\x15\n\x11\x43ompressTypeUnset\x10\x00\x12\x08\n\x04GZIP\x10\x01\x12\t\n\x05\x42ZIP2\x10\x02\x12\n\n\x06SNAPPY\x10\x03\x12\x08\n\x04\x42ZIP\x10\x04\x12\x07\n\x03LZ4\x10\x05\x12\x07\n\x03LZO\x10\x06\"0\n\x08\x45ncoding\x12\x11\n\rEncodingUnset\x10\x00\x12\x08\n\x04UTF8\x10\x01\x12\x07\n\x03GBK\x10\x02\"=\n\rColumnMapping\x12\x0f\n\x0b\x43olumnUnset\x10\x00\x12\x08\n\x04Name\x10\x01\x12\x07\n\x03Row\x10\x02\x12\x08\n\x04\x41uto\x10\x03\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
 )
 
 
@@ -32,17 +32,22 @@ _BASEENUM_PARTITIONTYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='DAY', index=0, number=0,
+      name='PartitionTypeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HOUR', index=1, number=1,
+      name='DAY', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='MINUTE', index=2, number=2,
+      name='HOUR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MINUTE', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -50,7 +55,7 @@ _BASEENUM_PARTITIONTYPE = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=64,
-  serialized_end=110,
+  serialized_end=134,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_PARTITIONTYPE)
 
@@ -62,20 +67,25 @@ _BASEENUM_WRITEMODE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='append', index=0, number=0,
+      name='WriteModeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='overwrite', index=1, number=1,
+      name='append', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='overwrite', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=112,
-  serialized_end=150,
+  serialized_start=136,
+  serialized_end=194,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_WRITEMODE)
 
@@ -87,25 +97,30 @@ _BASEENUM_FILETYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='text', index=0, number=0,
+      name='FileTypeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='orc', index=1, number=1,
+      name='text', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='parquet', index=2, number=2,
+      name='orc', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='parquet', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=152,
-  serialized_end=194,
+  serialized_start=196,
+  serialized_end=257,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_FILETYPE)
 
@@ -117,40 +132,45 @@ _BASEENUM_COMPRESSTYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='GZIP', index=0, number=0,
+      name='CompressTypeUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='BZIP2', index=1, number=1,
+      name='GZIP', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='SNAPPY', index=2, number=2,
+      name='BZIP2', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='BZIP', index=3, number=3,
+      name='SNAPPY', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='LZ4', index=4, number=4,
+      name='BZIP', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='LZO', index=5, number=5,
+      name='LZ4', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LZO', index=6, number=6,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=196,
-  serialized_end=271,
+  serialized_start=259,
+  serialized_end=357,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_COMPRESSTYPE)
 
@@ -162,20 +182,25 @@ _BASEENUM_ENCODING = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='UTF8', index=0, number=0,
+      name='EncodingUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='GBK', index=1, number=1,
+      name='UTF8', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GBK', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=273,
-  serialized_end=302,
+  serialized_start=359,
+  serialized_end=407,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_ENCODING)
 
@@ -209,8 +234,8 @@ _BASEENUM_COLUMNMAPPING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=304,
-  serialized_end=365,
+  serialized_start=409,
+  serialized_end=470,
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_COLUMNMAPPING)
 
@@ -242,7 +267,7 @@ _BASEENUM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=52,
-  serialized_end=365,
+  serialized_end=470,
 )
 
 _BASEENUM_PARTITIONTYPE.containing_type = _BASEENUM

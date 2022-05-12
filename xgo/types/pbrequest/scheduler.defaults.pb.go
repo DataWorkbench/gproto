@@ -83,3 +83,24 @@ func (this *DeleteSyncJobsByJobIds) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.SubmitFlinkClusterMonitor
+func (this *SubmitFlinkClusterMonitor) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Event != nil {
+		if dt, ok := interface{}(this.Event).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.StopFlinkClusterMonitor
+func (this *StopFlinkClusterMonitor) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
