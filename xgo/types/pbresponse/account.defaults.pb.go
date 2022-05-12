@@ -90,3 +90,37 @@ func (this *GetUserRole) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.CreateProvider
+func (this *CreateProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Provider != nil {
+		if dt, ok := interface{}(this.Provider).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.GetProvider
+func (this *GetProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Provider != nil {
+		if dt, ok := interface{}(this.Provider).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DeleteProvider
+func (this *DeleteProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

@@ -8,6 +8,7 @@ package pbsvcaccount
 
 import (
 	context "context"
+	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	pbrequest "github.com/DataWorkbench/gproto/xgo/types/pbrequest"
 	pbresponse "github.com/DataWorkbench/gproto/xgo/types/pbresponse"
 	grpc "google.golang.org/grpc"
@@ -32,6 +33,12 @@ type AccountClient interface {
 	DeleteUser(ctx context.Context, in *pbrequest.DeleteUser, opts ...grpc.CallOption) (*pbresponse.DeleteUser, error)
 	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
 	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
+	CreateProvider(ctx context.Context, in *pbrequest.CreateProvider, opts ...grpc.CallOption) (*pbresponse.CreateProvider, error)
+	GetProvider(ctx context.Context, in *pbrequest.GetProvider, opts ...grpc.CallOption) (*pbresponse.GetProvider, error)
+	DeleteProvider(ctx context.Context, in *pbrequest.DeleteProvider, opts ...grpc.CallOption) (*pbresponse.DeleteProvider, error)
+	UpdateUserPassword(ctx context.Context, in *pbrequest.UpdateUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	UpdateUserRole(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbresponse.UpdateUser, error)
+	UpdateUserZones(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbresponse.UpdateUser, error)
 }
 
 type accountClient struct {
@@ -114,6 +121,60 @@ func (c *accountClient) CreateSession(ctx context.Context, in *pbrequest.CreateS
 	return out, nil
 }
 
+func (c *accountClient) CreateProvider(ctx context.Context, in *pbrequest.CreateProvider, opts ...grpc.CallOption) (*pbresponse.CreateProvider, error) {
+	out := new(pbresponse.CreateProvider)
+	err := c.cc.Invoke(ctx, "/account.Account/CreateProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) GetProvider(ctx context.Context, in *pbrequest.GetProvider, opts ...grpc.CallOption) (*pbresponse.GetProvider, error) {
+	out := new(pbresponse.GetProvider)
+	err := c.cc.Invoke(ctx, "/account.Account/GetProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) DeleteProvider(ctx context.Context, in *pbrequest.DeleteProvider, opts ...grpc.CallOption) (*pbresponse.DeleteProvider, error) {
+	out := new(pbresponse.DeleteProvider)
+	err := c.cc.Invoke(ctx, "/account.Account/DeleteProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) UpdateUserPassword(ctx context.Context, in *pbrequest.UpdateUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.Account/UpdateUserPassword", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) UpdateUserRole(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbresponse.UpdateUser, error) {
+	out := new(pbresponse.UpdateUser)
+	err := c.cc.Invoke(ctx, "/account.Account/UpdateUserRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) UpdateUserZones(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbresponse.UpdateUser, error) {
+	out := new(pbresponse.UpdateUser)
+	err := c.cc.Invoke(ctx, "/account.Account/UpdateUserZones", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServer is the server API for Account service.
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
@@ -126,6 +187,12 @@ type AccountServer interface {
 	DeleteUser(context.Context, *pbrequest.DeleteUser) (*pbresponse.DeleteUser, error)
 	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
 	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
+	CreateProvider(context.Context, *pbrequest.CreateProvider) (*pbresponse.CreateProvider, error)
+	GetProvider(context.Context, *pbrequest.GetProvider) (*pbresponse.GetProvider, error)
+	DeleteProvider(context.Context, *pbrequest.DeleteProvider) (*pbresponse.DeleteProvider, error)
+	UpdateUserPassword(context.Context, *pbrequest.UpdateUserPassword) (*pbmodel.EmptyStruct, error)
+	UpdateUserRole(context.Context, *pbrequest.UpdateUser) (*pbresponse.UpdateUser, error)
+	UpdateUserZones(context.Context, *pbrequest.UpdateUser) (*pbresponse.UpdateUser, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -156,6 +223,24 @@ func (UnimplementedAccountServer) CheckSession(context.Context, *pbrequest.Check
 }
 func (UnimplementedAccountServer) CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSession not implemented")
+}
+func (UnimplementedAccountServer) CreateProvider(context.Context, *pbrequest.CreateProvider) (*pbresponse.CreateProvider, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateProvider not implemented")
+}
+func (UnimplementedAccountServer) GetProvider(context.Context, *pbrequest.GetProvider) (*pbresponse.GetProvider, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetProvider not implemented")
+}
+func (UnimplementedAccountServer) DeleteProvider(context.Context, *pbrequest.DeleteProvider) (*pbresponse.DeleteProvider, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteProvider not implemented")
+}
+func (UnimplementedAccountServer) UpdateUserPassword(context.Context, *pbrequest.UpdateUserPassword) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserPassword not implemented")
+}
+func (UnimplementedAccountServer) UpdateUserRole(context.Context, *pbrequest.UpdateUser) (*pbresponse.UpdateUser, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserRole not implemented")
+}
+func (UnimplementedAccountServer) UpdateUserZones(context.Context, *pbrequest.UpdateUser) (*pbresponse.UpdateUser, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserZones not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -314,6 +399,114 @@ func _Account_CreateSession_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Account_CreateProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateProvider)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).CreateProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/CreateProvider",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).CreateProvider(ctx, req.(*pbrequest.CreateProvider))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_GetProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GetProvider)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).GetProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/GetProvider",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).GetProvider(ctx, req.(*pbrequest.GetProvider))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_DeleteProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteProvider)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).DeleteProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/DeleteProvider",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).DeleteProvider(ctx, req.(*pbrequest.DeleteProvider))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_UpdateUserPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateUserPassword)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).UpdateUserPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/UpdateUserPassword",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).UpdateUserPassword(ctx, req.(*pbrequest.UpdateUserPassword))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_UpdateUserRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateUser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).UpdateUserRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/UpdateUserRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).UpdateUserRole(ctx, req.(*pbrequest.UpdateUser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_UpdateUserZones_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateUser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).UpdateUserZones(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/UpdateUserZones",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).UpdateUserZones(ctx, req.(*pbrequest.UpdateUser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Account_ServiceDesc is the grpc.ServiceDesc for Account service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -352,6 +545,30 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSession",
 			Handler:    _Account_CreateSession_Handler,
+		},
+		{
+			MethodName: "CreateProvider",
+			Handler:    _Account_CreateProvider_Handler,
+		},
+		{
+			MethodName: "GetProvider",
+			Handler:    _Account_GetProvider_Handler,
+		},
+		{
+			MethodName: "DeleteProvider",
+			Handler:    _Account_DeleteProvider_Handler,
+		},
+		{
+			MethodName: "UpdateUserPassword",
+			Handler:    _Account_UpdateUserPassword_Handler,
+		},
+		{
+			MethodName: "UpdateUserRole",
+			Handler:    _Account_UpdateUserRole_Handler,
+		},
+		{
+			MethodName: "UpdateUserZones",
+			Handler:    _Account_UpdateUserZones_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

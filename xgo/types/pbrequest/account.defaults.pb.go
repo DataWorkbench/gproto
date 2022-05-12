@@ -72,3 +72,35 @@ func (this *CreateSession) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.UpdateUserPassword
+func (this *UpdateUserPassword) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.CreateProvider
+func (this *CreateProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteProvider
+func (this *DeleteProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.GetProvider
+func (this *GetProvider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

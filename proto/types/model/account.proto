@@ -63,6 +63,7 @@ message AdminModule {
     SessionManage = 2;
     MessageManage = 3;
     AuthManage = 4;
+    ProviderManage = 5;
   }
 
   // The module id.
@@ -122,6 +123,14 @@ message AdminAPI {
   // It set by func registerHandler. Only used to check permission.
   // @inject_tag: json:"-" swaggerignore:"true"
   map<string, bool> roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
+}
+
+message Provider {
+  string name = 1;
+  string client_id = 2;
+  string client_secret = 3;
+  string token_url = 4;
+  string redirect_url = 5;
 }
 
 

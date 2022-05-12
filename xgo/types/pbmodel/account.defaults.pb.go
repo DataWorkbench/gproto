@@ -53,3 +53,11 @@ func (this *AdminAPI_Permission) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.Provider
+func (this *Provider) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

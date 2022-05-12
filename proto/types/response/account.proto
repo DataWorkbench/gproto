@@ -49,6 +49,8 @@ message CheckSession{
   string user_id = 1;
   string access_key_id = 2;
   string secret_access_key = 3;
+  string role = 4;
+  int32  privilege = 5;
 }
 
 message CreateSession{
@@ -59,4 +61,16 @@ message GetUserRole{
   string user_id = 1;
   string role = 2;
   int32  privilege = 3;
+}
+
+message CreateProvider{
+  model.Provider provider = 1;
+}
+
+message GetProvider{
+  model.Provider provider = 1;
+}
+
+message DeleteProvider{
+  string name = 1;
 }

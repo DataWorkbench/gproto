@@ -223,3 +223,74 @@ func (this *CreateSession) Validate() error {
 	}
 	return nil
 }
+
+func (this *UpdateUserPassword) _xxx_xxx_Validator_Validate_user_name() error {
+	if !(utf8.RuneCountInString(this.UserName) >= 2) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	if !(utf8.RuneCountInString(this.UserName) <= 128) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'user_name' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	return nil
+}
+
+func (this *UpdateUserPassword) _xxx_xxx_Validator_Validate_old_password() error {
+	if !(utf8.RuneCountInString(this.OldPassword) >= 0) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'old_password' must be greater than or equal to '0'", protovalidator.StringCharsetLenToString(this.OldPassword))
+	}
+	if !(utf8.RuneCountInString(this.OldPassword) <= 128) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'old_password' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.OldPassword))
+	}
+	return nil
+}
+
+func (this *UpdateUserPassword) _xxx_xxx_Validator_Validate_new_password() error {
+	if !(utf8.RuneCountInString(this.NewPassword) >= 0) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'new_password' must be greater than or equal to '0'", protovalidator.StringCharsetLenToString(this.NewPassword))
+	}
+	if !(utf8.RuneCountInString(this.NewPassword) <= 128) {
+		return protovalidator.FieldError1("UpdateUserPassword", "the character length of field 'new_password' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.NewPassword))
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateUserPassword
+func (this *UpdateUserPassword) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_old_password(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_new_password(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message request.CreateProvider
+func (this *CreateProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteProvider
+func (this *DeleteProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message request.GetProvider
+func (this *GetProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

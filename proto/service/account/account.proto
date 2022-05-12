@@ -10,6 +10,7 @@ option java_package = "com.dataomnis.gproto.service.pbsvcaccount";
 option java_outer_classname = "PBSvcAccount";
 option java_multiple_files = false;
 
+import "proto/types/model/empty.proto";
 import "proto/types/request/account.proto";
 import "proto/types/response/account.proto";
 
@@ -22,5 +23,10 @@ service Account {
   rpc DeleteUser(request.DeleteUser) returns (response.DeleteUser) {}
   rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
   rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
-
+  rpc CreateProvider(request.CreateProvider) returns (response.CreateProvider) {}
+  rpc GetProvider(request.GetProvider) returns (response.GetProvider) {}
+  rpc DeleteProvider(request.DeleteProvider) returns (response.DeleteProvider) {}
+  rpc UpdateUserPassword(request.UpdateUserPassword) returns (model.EmptyStruct) {}
+  rpc UpdateUserRole(request.UpdateUser) returns (response.UpdateUser) {}
+  rpc UpdateUserZones(request.UpdateUser) returns (response.UpdateUser) {}
 }

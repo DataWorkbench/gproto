@@ -76,14 +76,14 @@ func (this *AdminModule) _xxx_xxx_Validator_Validate_id() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_AdminModule_InEnums_Classify = map[AdminModule_Classify]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+var _xxx_xxx_Validator_AdminModule_InEnums_Classify = map[AdminModule_Classify]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *AdminModule) _xxx_xxx_Validator_Validate_classify() error {
 	if !(this.Classify > 0) {
 		return protovalidator.FieldError1("AdminModule", "the value of field 'classify' must be greater than '0'", protovalidator.Int32ToString(int32(this.Classify)))
 	}
 	if !(_xxx_xxx_Validator_AdminModule_InEnums_Classify[this.Classify]) {
-		return protovalidator.FieldError1("AdminModule", "the value of field 'classify' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Classify)))
+		return protovalidator.FieldError1("AdminModule", "the value of field 'classify' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Classify)))
 	}
 	return nil
 }
@@ -214,6 +214,14 @@ func (this *AdminAPI_Permission) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_role(); err != nil {
 		return err
+	}
+	return nil
+}
+
+// Set default value for message model.Provider
+func (this *Provider) Validate() error {
+	if this == nil {
+		return nil
 	}
 	return nil
 }

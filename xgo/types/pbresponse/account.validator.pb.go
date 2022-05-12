@@ -119,3 +119,51 @@ func (this *GetUserRole) Validate() error {
 	}
 	return nil
 }
+
+func (this *CreateProvider) _xxx_xxx_Validator_Validate_provider() error {
+	if dt, ok := interface{}(this.Provider).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.CreateProvider
+func (this *CreateProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_provider(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *GetProvider) _xxx_xxx_Validator_Validate_provider() error {
+	if dt, ok := interface{}(this.Provider).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.GetProvider
+func (this *GetProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_provider(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message response.DeleteProvider
+func (this *DeleteProvider) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
