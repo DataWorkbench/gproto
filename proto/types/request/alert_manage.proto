@@ -63,23 +63,35 @@ message ListAlertPolicies {
 
 // DeleteAlertPolicies used as a request parameters for RPC and HTTP(based on Body).
 message DeleteAlertPolicies {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
   // The list of alert policy id. Is required, Min 1, Max 100.
   // @inject_tag: json:"alert_ids"
-  repeated string alert_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string alert_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // EnableAlertPolicies used as a request parameters for RPC and HTTP(based on Body).
 message EnableAlertPolicies {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The list of alert policy id. Is required, Min 1, Max 100.
   // @inject_tag: json:"alert_ids"
-  repeated string alert_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string alert_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // DisableAlertPolicies used as a request parameters for RPC and HTTP(based on Body).
 message DisableAlertPolicies {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The list of alert policy id. Is required, Min 1, Max 100.
   // @inject_tag: json:"alert_ids"
-  repeated string alert_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string alert_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // CreateAlertPolicy used as a request parameters for RPC and HTTP(based on Body).
@@ -92,33 +104,41 @@ message CreateAlertPolicy {
   // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 2 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 3 [ (validator.field).tags.string = { ne: "" } ];
+
   // Name. Min Length: 2, Max Length: 128.
   // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
+  string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
+
+  // Alert Policy Description. Max char Length: 1024
+  // @inject_tag: json:"desc"
+  string desc = 5 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 
   // The monitor object , 1 => "StreamJob" 2 => "SyncJob'
   // @inject_tag: json:"monitor_object"
-  model.AlertPolicy.MonitorObject monitor_object = 4 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.MonitorObject monitor_object = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The alert item.
   // @inject_tag: json:"monitor_item"
-  model.AlertPolicy.MonitorItem monitor_item = 5 [ (validator.field).tags.message = { not_null: true } ];
+  model.AlertPolicy.MonitorItem monitor_item = 7 [ (validator.field).tags.message = { not_null: true } ];
 
   // The trigger rule, 1 => "TriggerRuleAnyItem",
   // @inject_tag: json:"trigger_rule"
-  model.AlertPolicy.TriggerRule trigger_rule = 6 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.TriggerRule trigger_rule = 8 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The trigger action, 1 => "TriggerActionSendNotification",
   // @inject_tag: json:"trigger_action"
-  model.AlertPolicy.TriggerAction trigger_action = 7 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.TriggerAction trigger_action = 9 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
   // @inject_tag: json:"notification_ids"
-  repeated string notification_ids = 8 [ (validator.field).tags.repeated = { len_lte: 100 } ];
+  repeated string notification_ids = 10 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 
   // The list id of stream job or sync job to monitor.
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 9;
+  repeated string job_ids = 11;
 }
 
 // UpdateAlertPolicy used as a request parameters for RPC.
@@ -135,83 +155,132 @@ message UpdateAlertPolicy {
   // @inject_tag: json:"name"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
 
+  // Alert Policy Description. Max char Length: 1024
+  // @inject_tag: json:"desc"
+  string desc = 4 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+
   // The monitor object , 1 => "StreamJob" 2 => "SyncJob'
   // @inject_tag: json:"monitor_object"
-  model.AlertPolicy.MonitorObject monitor_object = 4 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.MonitorObject monitor_object = 5 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The alert item.
   // @inject_tag: json:"monitor_item"
-  model.AlertPolicy.MonitorItem monitor_item = 5 [ (validator.field).tags.message = { not_null: true } ];
+  model.AlertPolicy.MonitorItem monitor_item = 6 [ (validator.field).tags.message = { not_null: true } ];
 
   // The trigger rule, 1 => "TriggerRuleAnyItem",
   // @inject_tag: json:"trigger_rule"
-  model.AlertPolicy.TriggerRule trigger_rule = 6 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.TriggerRule trigger_rule = 7 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The trigger action, 1 => "TriggerActionSendNotification",
   // @inject_tag: json:"trigger_action"
-  model.AlertPolicy.TriggerAction trigger_action = 7 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  model.AlertPolicy.TriggerAction trigger_action = 8 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
   // @inject_tag: json:"notification_ids"
-  repeated string notification_ids = 8 [ (validator.field).tags.repeated = { len_lte: 100 } ];
+  repeated string notification_ids = 9 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 
   // The list id of stream job or sync job to monitor.
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 9;
+  repeated string job_ids = 10 [ (validator.field).tags.repeated = { unique: true } ];
 }
 
 // DescribeAlertPolicy used as a request parameters for RPC.
 message DescribeAlertPolicy {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The alert policy id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"rule_id" uri:"alert_id" swaggerignore:"true"
-  string alert_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+  // @inject_tag: json:"alert_id" uri:"alert_id" swaggerignore:"true"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 }
 
 message JobBoundAlertPolicies {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
-  // @inject_tag: json:"job_id"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // The list of alert policy id. Is required, Min 1, Max 100.
   // @inject_tag: json:"alert_ids"
-  repeated string alert_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string alert_ids = 3 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, unique: true } ];
 }
 
 message JobUnboundAlertPolicies {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
-  // @inject_tag: json:"job_id"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // The list of alert policy id. Is required, Min 1, Max 100.
   // @inject_tag: json:"alert_ids"
-  repeated string alert_ids = 2;
+  repeated string alert_ids = 3 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, unique: true } ];;
 }
 
-message ListJobAlertPolicies {
+message ListAlertPoliciesByJob {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
-  // @inject_tag: json:"job_id"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
 }
 
 message AlertPolicyBoundJobs {
-  // @inject_tag: json:"rule_id"
-  string alert_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
+  // @inject_tag: json:"alert_id" uri:"alert_id" swaggerignore:"true"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 2;
+  repeated string job_ids = 3 [ (validator.field).tags.repeated = { unique: true } ];
 }
 
 message AlertPolicyUnboundJobs {
-  // @inject_tag: json:"rule_id"
-  string alert_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
+  // @inject_tag: json:"alert_id" uri:"alert_id" swaggerignore:"true"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 2;
+  repeated string job_ids = 3 [ (validator.field).tags.repeated = { unique: true } ];
 }
 
-message ListAlertPolicyJobs {
-  // @inject_tag: json:"rule_id"
-  string alert_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
-}
+message ListJobsByAlertPolicy {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
 
+  // @inject_tag: json:"alert_id" uri:"alert_id" swaggerignore:"true"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+}
 

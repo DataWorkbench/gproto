@@ -40,15 +40,27 @@ message DescribeAlertPolicy {
   model.AlertPolicy info = 1;
 }
 
-message ListJobAlertPolicies {
+message ListAlertPoliciesByJob {
   // @inject_tag: json:"infos"
   repeated model.AlertPolicy infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3;
 }
 
-message ListAlertPolicyJobs {
+message ListJobsByAlertPolicy {
   // @inject_tag: json:"stream_jobs"
   repeated model.StreamJob stream_jobs = 1;
 
   // @inject_tag: json:"sync_jobs"
   repeated model.SyncJob sync_jobs =  2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+
+  // @inject_tag: json:"total"
+  int64 total = 4;
 }

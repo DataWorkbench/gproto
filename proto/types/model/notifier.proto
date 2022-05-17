@@ -13,16 +13,41 @@ option java_multiple_files = false;
 //import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 message NotificationList {
-  string create_time = 1;
-  repeated NotificationListItem items = 2;
-  string notification_list_id = 3;
-  string notification_list_name = 4;
-  string owner = 5;
-}
+  message Item {
+    // The content of notification item set.
+    // The value is email address if notification_item_type == "email".
+    // The value is phone number is notification_item_type == "phone".
+    // The value is webhook address if notification_item_type == "webhook".
+    // @inject_tag: json:"content"
+    string content = 1;
 
-message NotificationListItem {
-  string content = 1;
-  string create_time = 2;
-  string notification_item_id = 3;
-  string notification_item_type = 4;
+    // @inject_tag: json:"create_time"
+    string create_time = 2;
+
+    // @inject_tag: json:"notification_item_id"
+    string notification_item_id = 3;
+
+    // The notification type. Optional Values: email|phone|webhook
+    // @inject_tag: json:"notification_item_type"
+    string notification_item_type = 4;
+
+    // The item whether verified. 1 for true, 0 for false.
+    // @inject_tag: json:"verified"
+    int32 verified = 5;
+  }
+
+  // @inject_tag: json:"create_time"
+  string create_time = 1;
+
+  // @inject_tag: json:"notification_list_id"
+  string notification_list_id = 3;
+
+  // @inject_tag: json:"notification_list_name"
+  string notification_list_name = 4;
+
+  // @inject_tag: json:"owner"
+  string owner = 5;
+
+  // @inject_tag: json:"items"
+  repeated Item items = 2;
 }

@@ -12,7 +12,10 @@ option java_multiple_files = false;
 
 import "proto/types/model/notifier.proto";
 
-message DescNotificationList {
-  int32 total_count = 1;
-  repeated model.NotificationList notification_lists = 2;
+message ListNotifications {
+  // @inject_tag: json:"notification_lists"
+  repeated model.NotificationList notification_lists = 1;
+
+  // @inject_tag: json:"total"
+  int32 total = 2;
 }

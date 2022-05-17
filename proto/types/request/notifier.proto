@@ -26,12 +26,16 @@ message SendNotification {
   string content = 5 [ (validator.field).tags.string = { byte_len_gt:0 } ];
 }
 
-message DescNotificationList {
-  // @inject_tag: json:"limit"
+message ListNotifications {
+  // @inject_tag: json:"limit" form:"limit"
   int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-  // @inject_tag: json:"offset"
+
+  // @inject_tag: json:"offset" form:"offset"
   int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
-  // @inject_tag: json:"owner" uri:"user_id" swaggerignore:"true"
+
+  // @inject_tag: json:"owner" swaggerignore:"true"
   string owner = 3;
+
+  // @inject_tag: json:"nf_list_ids" swaggerignore:"true"
   repeated string nf_list_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 }

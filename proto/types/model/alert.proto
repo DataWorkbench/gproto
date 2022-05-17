@@ -14,6 +14,8 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
+import "proto/types/model/notifier.proto";
+
 // The alert policy info
 message AlertPolicy {
   enum Status {
@@ -49,6 +51,7 @@ message AlertPolicy {
     bool instance_run_timeout = 2;
 
     // Timeout for the job instance to run. Is valid only when `instance_run_timeout` is true.
+    // unit is seconds.
     // @inject_tag: json:"instance_timeout"
     int32 instance_timeout = 3;
   }
@@ -63,6 +66,7 @@ message AlertPolicy {
     bool instance_run_timeout = 2;
 
     // Timeout for the job instance to run. Is valid only when `instance_run_timeout` is true.
+    // unit is seconds.
     // @inject_tag: json:"instance_timeout"
     int32 instance_timeout = 3;
   }
@@ -86,52 +90,64 @@ message AlertPolicy {
 
   // Name.
   // @inject_tag: json:"name" gorm:"column:name;"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
+
+  // Alert Policy Description.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 4 [ (validator.field).tags.string = { char_len_lte: 1024 } ] ;
 
   // Rule status, 1 => "Deleted", 2 => "enabled", 3 => "disabled".
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // The monitor object , 1 => "StreamJob" 2 => "SyncJob'
   // @inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
-  MonitorObject monitor_object = 5 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  MonitorObject monitor_object = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The alert item.
   // @inject_tag: json:"monitor_item" gorm:"column:monitor_item;"
-  MonitorItem monitor_item = 6 [ (validator.field).tags.message = { not_null: true } ];
+  MonitorItem monitor_item = 7 [ (validator.field).tags.message = { not_null: true } ];
 
   // The trigger rule, 1 => "TriggerRuleAnyItem",
   // @inject_tag: json:"trigger_rule" gorm:"column:trigger_rule;"
-  TriggerRule trigger_rule = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  TriggerRule trigger_rule = 8 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The trigger action, 1 => "TriggerActionSendNotification",
   // @inject_tag: json:"trigger_action" gorm:"column:trigger_action;"
-  TriggerAction trigger_action = 8 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  TriggerAction trigger_action = 9 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
-  // The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+  // The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo",
+  // Max: 100.
   // @inject_tag: json:"notification_ids" gorm:"column:notification_ids;"
-  string notification_ids = 9 [ (validator.field).tags.string = { ne: "" } ];
+  string notification_ids = 10 [ (validator.field).tags.string = { ne: "" } ];
 
   // AlertPolicy owner.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
-  string created_by = 10 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+  string created_by = 11 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 11 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 12 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 12 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // @inject_tag: json:"notification_lists" gorm:"-"
+  repeated NotificationList notification_lists = 14;
 }
 
-// AlertPolicyBinding for record the relationships between alert policy and monitor object.
-message AlertPolicyBinding {
+// AlertPolicyMapping for record the relationships between alert policy and monitor object.
+message AlertPolicyMapping {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
   // The id of alert policy.
-  // @inject_tag: json:"alert_id" gorm:"column:alert_id;"
-  string alert_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+  // @inject_tag: json:"alert_id" gorm:"column:alert_id"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
   // The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
-  // @inject_tag: json:"job_id" gorm:"column:job_id;"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // @inject_tag: json:"job_id" gorm:"column:job_id"
+  string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }

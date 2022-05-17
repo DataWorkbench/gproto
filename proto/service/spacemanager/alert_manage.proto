@@ -20,7 +20,7 @@ service AlertManage {
   rpc DeleteAlertPolicies(request.DeleteAlertPolicies)   returns (model.EmptyStruct)            {}
   rpc EnableAlertPolicies(request.EnableAlertPolicies)   returns (model.EmptyStruct)            {}
   rpc DisableAlertPolicies(request.DisableAlertPolicies) returns (model.EmptyStruct)            {}
-  rpc CreateAlertPolicy(request.CreateAlertPolicy)       returns (model.EmptyStruct)            {}
+  rpc CreateAlertPolicy(request.CreateAlertPolicy)       returns (response.CreateAlertPolicy)   {}
   rpc UpdateAlertPolicy(request.UpdateAlertPolicy)       returns (model.EmptyStruct)            {}
   rpc DescribeAlertPolicy(request.DescribeAlertPolicy)   returns (response.DescribeAlertPolicy) {}
 
@@ -28,13 +28,13 @@ service AlertManage {
   rpc JobBoundAlertPolicies(request.JobBoundAlertPolicies)     returns (model.EmptyStruct)  {}
   // JobUnboundAlertPolicies unbind the alert policies from the specified job.
   rpc JobUnboundAlertPolicies(request.JobUnboundAlertPolicies) returns (model.EmptyStruct)  {}
-  // ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
-  rpc ListJobAlertPolicies(request.ListJobAlertPolicies)       returns (response.ListJobAlertPolicies)  {}
+  // ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
+  rpc ListAlertPoliciesByJob(request.ListAlertPoliciesByJob)   returns (response.ListAlertPoliciesByJob)  {}
 
   // AlertPolicyBoundJobs bind the jobs(stream or sync) to specified alert policy.
   rpc AlertPolicyBoundJobs(request.AlertPolicyBoundJobs)       returns (model.EmptyStruct)  {}
   // AlertPolicyUnboundJobs unbind the jobs(stream or sync) from the specified alert policy.
   rpc AlertPolicyUnboundJobs(request.AlertPolicyUnboundJobs)   returns (model.EmptyStruct)  {}
-  // ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
-  rpc ListAlertPolicyJobs(request.ListAlertPolicyJobs)         returns (response.ListAlertPolicyJobs)  {}
+  // ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
+  rpc ListJobsByAlertPolicy(request.ListJobsByAlertPolicy)         returns (response.ListJobsByAlertPolicy)  {}
 }
