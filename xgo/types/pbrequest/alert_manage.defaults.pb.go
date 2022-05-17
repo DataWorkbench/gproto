@@ -108,10 +108,13 @@ func (this *JobUnboundAlertPolicies) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListJobAlertPolicies
-func (this *ListJobAlertPolicies) SetDefaults() {
+// Set default value for message request.ListAlertPoliciesByJob
+func (this *ListAlertPoliciesByJob) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
 	}
 	return
 }
@@ -132,10 +135,13 @@ func (this *AlertPolicyUnboundJobs) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListAlertPolicyJobs
-func (this *ListAlertPolicyJobs) SetDefaults() {
+// Set default value for message request.ListJobsByAlertPolicy
+func (this *ListJobsByAlertPolicy) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
 	}
 	return
 }

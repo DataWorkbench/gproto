@@ -18,8 +18,8 @@ func (this *SendNotification) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DescNotificationList
-func (this *DescNotificationList) SetDefaults() {
+// Set default value for message request.ListNotifications
+func (this *ListNotifications) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -9,8 +9,8 @@ import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 )
 
-// Set default value for message response.DescNotificationList
-func (this *DescNotificationList) SetDefaults() {
+// Set default value for message response.ListNotifications
+func (this *ListNotifications) SetDefaults() {
 	if this == nil {
 		return
 	}

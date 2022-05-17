@@ -2366,8 +2366,8 @@ public final class PBResponseAlertManage {
 
   }
 
-  public interface ListJobAlertPoliciesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.ListJobAlertPolicies)
+  public interface ListAlertPoliciesByJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ListAlertPoliciesByJob)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2413,20 +2413,40 @@ public final class PBResponseAlertManage {
      */
     com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicyOrBuilder getInfosOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 2;</code>
+     * @return The hasMore.
+     */
+    boolean getHasMore();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    long getTotal();
   }
   /**
-   * Protobuf type {@code response.ListJobAlertPolicies}
+   * Protobuf type {@code response.ListAlertPoliciesByJob}
    */
-  public static final class ListJobAlertPolicies extends
+  public static final class ListAlertPoliciesByJob extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.ListJobAlertPolicies)
-      ListJobAlertPoliciesOrBuilder {
+      // @@protoc_insertion_point(message_implements:response.ListAlertPoliciesByJob)
+      ListAlertPoliciesByJobOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListJobAlertPolicies.newBuilder() to construct.
-    private ListJobAlertPolicies(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListAlertPoliciesByJob.newBuilder() to construct.
+    private ListAlertPoliciesByJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListJobAlertPolicies() {
+    private ListAlertPoliciesByJob() {
       infos_ = java.util.Collections.emptyList();
     }
 
@@ -2434,7 +2454,7 @@ public final class PBResponseAlertManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListJobAlertPolicies();
+      return new ListAlertPoliciesByJob();
     }
 
     @java.lang.Override
@@ -2442,7 +2462,7 @@ public final class PBResponseAlertManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListJobAlertPolicies(
+    private ListAlertPoliciesByJob(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2470,6 +2490,16 @@ public final class PBResponseAlertManage {
                   input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.parser(), extensionRegistry));
               break;
             }
+            case 16: {
+
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              total_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2494,15 +2524,15 @@ public final class PBResponseAlertManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobAlertPolicies_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPoliciesByJob_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobAlertPolicies_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPoliciesByJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.Builder.class);
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
@@ -2565,6 +2595,36 @@ public final class PBResponseAlertManage {
       return infos_.get(index);
     }
 
+    public static final int HAS_MORE_FIELD_NUMBER = 2;
+    private boolean hasMore_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 2;</code>
+     * @return The hasMore.
+     */
+    @java.lang.Override
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 3;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2582,6 +2642,12 @@ public final class PBResponseAlertManage {
       for (int i = 0; i < infos_.size(); i++) {
         output.writeMessage(1, infos_.get(i));
       }
+      if (hasMore_ != false) {
+        output.writeBool(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        output.writeInt64(3, total_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2595,6 +2661,14 @@ public final class PBResponseAlertManage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, infos_.get(i));
       }
+      if (hasMore_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, total_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2605,13 +2679,17 @@ public final class PBResponseAlertManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies other = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob other = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob) obj;
 
       if (!getInfosList()
           .equals(other.getInfosList())) return false;
+      if (getHasMore()
+          != other.getHasMore()) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2627,74 +2705,80 @@ public final class PBResponseAlertManage {
         hash = (37 * hash) + INFOS_FIELD_NUMBER;
         hash = (53 * hash) + getInfosList().hashCode();
       }
+      hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasMore());
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2707,7 +2791,7 @@ public final class PBResponseAlertManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2723,26 +2807,26 @@ public final class PBResponseAlertManage {
       return builder;
     }
     /**
-     * Protobuf type {@code response.ListJobAlertPolicies}
+     * Protobuf type {@code response.ListAlertPoliciesByJob}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.ListJobAlertPolicies)
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPoliciesOrBuilder {
+        // @@protoc_insertion_point(builder_implements:response.ListAlertPoliciesByJob)
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJobOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobAlertPolicies_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPoliciesByJob_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobAlertPolicies_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPoliciesByJob_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2767,23 +2851,27 @@ public final class PBResponseAlertManage {
         } else {
           infosBuilder_.clear();
         }
+        hasMore_ = false;
+
+        total_ = 0L;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobAlertPolicies_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPoliciesByJob_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2791,8 +2879,8 @@ public final class PBResponseAlertManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies result = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob result = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob(this);
         int from_bitField0_ = bitField0_;
         if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -2803,6 +2891,8 @@ public final class PBResponseAlertManage {
         } else {
           result.infos_ = infosBuilder_.build();
         }
+        result.hasMore_ = hasMore_;
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -2841,16 +2931,16 @@ public final class PBResponseAlertManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.getDefaultInstance()) return this;
         if (infosBuilder_ == null) {
           if (!other.infos_.isEmpty()) {
             if (infos_.isEmpty()) {
@@ -2877,6 +2967,12 @@ public final class PBResponseAlertManage {
             }
           }
         }
+        if (other.getHasMore() != false) {
+          setHasMore(other.getHasMore());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2892,11 +2988,11 @@ public final class PBResponseAlertManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3218,6 +3314,92 @@ public final class PBResponseAlertManage {
         }
         return infosBuilder_;
       }
+
+      private boolean hasMore_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @return The hasMore.
+       */
+      @java.lang.Override
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @param value The hasMore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasMore(boolean value) {
+        
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasMore() {
+        
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3231,48 +3413,48 @@ public final class PBResponseAlertManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:response.ListJobAlertPolicies)
+      // @@protoc_insertion_point(builder_scope:response.ListAlertPoliciesByJob)
     }
 
-    // @@protoc_insertion_point(class_scope:response.ListJobAlertPolicies)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:response.ListAlertPoliciesByJob)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListJobAlertPolicies>
-        PARSER = new com.google.protobuf.AbstractParser<ListJobAlertPolicies>() {
+    private static final com.google.protobuf.Parser<ListAlertPoliciesByJob>
+        PARSER = new com.google.protobuf.AbstractParser<ListAlertPoliciesByJob>() {
       @java.lang.Override
-      public ListJobAlertPolicies parsePartialFrom(
+      public ListAlertPoliciesByJob parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListJobAlertPolicies(input, extensionRegistry);
+        return new ListAlertPoliciesByJob(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListJobAlertPolicies> parser() {
+    public static com.google.protobuf.Parser<ListAlertPoliciesByJob> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListJobAlertPolicies> getParserForType() {
+    public com.google.protobuf.Parser<ListAlertPoliciesByJob> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListAlertPolicyJobsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.ListAlertPolicyJobs)
+  public interface ListJobsByAlertPolicyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ListJobsByAlertPolicy)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3362,20 +3544,40 @@ public final class PBResponseAlertManage {
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 3;</code>
+     * @return The hasMore.
+     */
+    boolean getHasMore();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 4;</code>
+     * @return The total.
+     */
+    long getTotal();
   }
   /**
-   * Protobuf type {@code response.ListAlertPolicyJobs}
+   * Protobuf type {@code response.ListJobsByAlertPolicy}
    */
-  public static final class ListAlertPolicyJobs extends
+  public static final class ListJobsByAlertPolicy extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.ListAlertPolicyJobs)
-      ListAlertPolicyJobsOrBuilder {
+      // @@protoc_insertion_point(message_implements:response.ListJobsByAlertPolicy)
+      ListJobsByAlertPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListAlertPolicyJobs.newBuilder() to construct.
-    private ListAlertPolicyJobs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListJobsByAlertPolicy.newBuilder() to construct.
+    private ListJobsByAlertPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListAlertPolicyJobs() {
+    private ListJobsByAlertPolicy() {
       streamJobs_ = java.util.Collections.emptyList();
       syncJobs_ = java.util.Collections.emptyList();
     }
@@ -3384,7 +3586,7 @@ public final class PBResponseAlertManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListAlertPolicyJobs();
+      return new ListJobsByAlertPolicy();
     }
 
     @java.lang.Override
@@ -3392,7 +3594,7 @@ public final class PBResponseAlertManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListAlertPolicyJobs(
+    private ListJobsByAlertPolicy(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3429,6 +3631,16 @@ public final class PBResponseAlertManage {
                   input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.parser(), extensionRegistry));
               break;
             }
+            case 24: {
+
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              total_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3456,15 +3668,15 @@ public final class PBResponseAlertManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPolicyJobs_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobsByAlertPolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPolicyJobs_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobsByAlertPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.Builder.class);
     }
 
     public static final int STREAM_JOBS_FIELD_NUMBER = 1;
@@ -3587,6 +3799,36 @@ public final class PBResponseAlertManage {
       return syncJobs_.get(index);
     }
 
+    public static final int HAS_MORE_FIELD_NUMBER = 3;
+    private boolean hasMore_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 3;</code>
+     * @return The hasMore.
+     */
+    @java.lang.Override
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 4;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 4;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3607,6 +3849,12 @@ public final class PBResponseAlertManage {
       for (int i = 0; i < syncJobs_.size(); i++) {
         output.writeMessage(2, syncJobs_.get(i));
       }
+      if (hasMore_ != false) {
+        output.writeBool(3, hasMore_);
+      }
+      if (total_ != 0L) {
+        output.writeInt64(4, total_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3624,6 +3872,14 @@ public final class PBResponseAlertManage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, syncJobs_.get(i));
       }
+      if (hasMore_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, hasMore_);
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, total_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3634,15 +3890,19 @@ public final class PBResponseAlertManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs other = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy other = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy) obj;
 
       if (!getStreamJobsList()
           .equals(other.getStreamJobsList())) return false;
       if (!getSyncJobsList()
           .equals(other.getSyncJobsList())) return false;
+      if (getHasMore()
+          != other.getHasMore()) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3662,74 +3922,80 @@ public final class PBResponseAlertManage {
         hash = (37 * hash) + SYNC_JOBS_FIELD_NUMBER;
         hash = (53 * hash) + getSyncJobsList().hashCode();
       }
+      hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasMore());
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3742,7 +4008,7 @@ public final class PBResponseAlertManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3758,26 +4024,26 @@ public final class PBResponseAlertManage {
       return builder;
     }
     /**
-     * Protobuf type {@code response.ListAlertPolicyJobs}
+     * Protobuf type {@code response.ListJobsByAlertPolicy}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.ListAlertPolicyJobs)
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:response.ListJobsByAlertPolicy)
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPolicyJobs_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobsByAlertPolicy_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPolicyJobs_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobsByAlertPolicy_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3809,23 +4075,27 @@ public final class PBResponseAlertManage {
         } else {
           syncJobsBuilder_.clear();
         }
+        hasMore_ = false;
+
+        total_ = 0L;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertPolicyJobs_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListJobsByAlertPolicy_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3833,8 +4103,8 @@ public final class PBResponseAlertManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs result = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy result = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy(this);
         int from_bitField0_ = bitField0_;
         if (streamJobsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -3854,6 +4124,8 @@ public final class PBResponseAlertManage {
         } else {
           result.syncJobs_ = syncJobsBuilder_.build();
         }
+        result.hasMore_ = hasMore_;
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -3892,16 +4164,16 @@ public final class PBResponseAlertManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.getDefaultInstance()) return this;
         if (streamJobsBuilder_ == null) {
           if (!other.streamJobs_.isEmpty()) {
             if (streamJobs_.isEmpty()) {
@@ -3954,6 +4226,12 @@ public final class PBResponseAlertManage {
             }
           }
         }
+        if (other.getHasMore() != false) {
+          setHasMore(other.getHasMore());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3969,11 +4247,11 @@ public final class PBResponseAlertManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4607,6 +4885,92 @@ public final class PBResponseAlertManage {
         }
         return syncJobsBuilder_;
       }
+
+      private boolean hasMore_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @return The hasMore.
+       */
+      @java.lang.Override
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @param value The hasMore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasMore(boolean value) {
+        
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasMore() {
+        
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 4;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 4;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4620,41 +4984,41 @@ public final class PBResponseAlertManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:response.ListAlertPolicyJobs)
+      // @@protoc_insertion_point(builder_scope:response.ListJobsByAlertPolicy)
     }
 
-    // @@protoc_insertion_point(class_scope:response.ListAlertPolicyJobs)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:response.ListJobsByAlertPolicy)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListAlertPolicyJobs>
-        PARSER = new com.google.protobuf.AbstractParser<ListAlertPolicyJobs>() {
+    private static final com.google.protobuf.Parser<ListJobsByAlertPolicy>
+        PARSER = new com.google.protobuf.AbstractParser<ListJobsByAlertPolicy>() {
       @java.lang.Override
-      public ListAlertPolicyJobs parsePartialFrom(
+      public ListJobsByAlertPolicy parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListAlertPolicyJobs(input, extensionRegistry);
+        return new ListJobsByAlertPolicy(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListAlertPolicyJobs> parser() {
+    public static com.google.protobuf.Parser<ListJobsByAlertPolicy> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListAlertPolicyJobs> getParserForType() {
+    public com.google.protobuf.Parser<ListJobsByAlertPolicy> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4676,15 +5040,15 @@ public final class PBResponseAlertManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_DescribeAlertPolicy_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_ListJobAlertPolicies_descriptor;
+    internal_static_response_ListAlertPoliciesByJob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_ListJobAlertPolicies_fieldAccessorTable;
+      internal_static_response_ListAlertPoliciesByJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_ListAlertPolicyJobs_descriptor;
+    internal_static_response_ListJobsByAlertPolicy_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_ListAlertPolicyJobs_fieldAccessorTable;
+      internal_static_response_ListJobsByAlertPolicy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4704,14 +5068,15 @@ public final class PBResponseAlertManage {
       "\r\n\005total\030\003 \001(\003\"4\n\021CreateAlertPolicy\022\037\n\002i" +
       "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\"7\n\023Describe" +
       "AlertPolicy\022 \n\004info\030\001 \001(\0132\022.model.AlertP" +
-      "olicy\"9\n\024ListJobAlertPolicies\022!\n\005infos\030\001" +
-      " \003(\0132\022.model.AlertPolicy\"_\n\023ListAlertPol" +
-      "icyJobs\022%\n\013stream_jobs\030\001 \003(\0132\020.model.Str" +
-      "eamJob\022!\n\tsync_jobs\030\002 \003(\0132\016.model.SyncJo" +
-      "bBv\n%com.dataomnis.gproto.types.pbrespon" +
-      "seB\025PBResponseAlertManageP\000Z4github.com/" +
-      "DataWorkbench/gproto/xgo/types/pbrespons" +
-      "eb\006proto3"
+      "olicy\"\\\n\026ListAlertPoliciesByJob\022!\n\005infos" +
+      "\030\001 \003(\0132\022.model.AlertPolicy\022\020\n\010has_more\030\002" +
+      " \001(\010\022\r\n\005total\030\003 \001(\003\"\202\001\n\025ListJobsByAlertP" +
+      "olicy\022%\n\013stream_jobs\030\001 \003(\0132\020.model.Strea" +
+      "mJob\022!\n\tsync_jobs\030\002 \003(\0132\016.model.SyncJob\022" +
+      "\020\n\010has_more\030\003 \001(\010\022\r\n\005total\030\004 \001(\003Bv\n%com." +
+      "dataomnis.gproto.types.pbresponseB\025PBRes" +
+      "ponseAlertManageP\000Z4github.com/DataWorkb" +
+      "ench/gproto/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4739,18 +5104,18 @@ public final class PBResponseAlertManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeAlertPolicy_descriptor,
         new java.lang.String[] { "Info", });
-    internal_static_response_ListJobAlertPolicies_descriptor =
+    internal_static_response_ListAlertPoliciesByJob_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_response_ListJobAlertPolicies_fieldAccessorTable = new
+    internal_static_response_ListAlertPoliciesByJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_ListJobAlertPolicies_descriptor,
-        new java.lang.String[] { "Infos", });
-    internal_static_response_ListAlertPolicyJobs_descriptor =
+        internal_static_response_ListAlertPoliciesByJob_descriptor,
+        new java.lang.String[] { "Infos", "HasMore", "Total", });
+    internal_static_response_ListJobsByAlertPolicy_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_response_ListAlertPolicyJobs_fieldAccessorTable = new
+    internal_static_response_ListJobsByAlertPolicy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_ListAlertPolicyJobs_descriptor,
-        new java.lang.String[] { "StreamJobs", "SyncJobs", });
+        internal_static_response_ListJobsByAlertPolicy_descriptor,
+        new java.lang.String[] { "StreamJobs", "SyncJobs", "HasMore", "Total", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

@@ -12,6 +12,7 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *ListAlertPolicies) _xxx_xxx_Validator_Validate_limit() error {
@@ -70,6 +71,16 @@ func (this *ListAlertPolicies) Validate() error {
 	return nil
 }
 
+func (this *DeleteAlertPolicies) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteAlertPolicies", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteAlertPolicies", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DeleteAlertPolicies) _xxx_xxx_Validator_Validate_alert_ids() error {
 	if !(len(this.AlertIds) > 0) {
 		return protovalidator.FieldError1("DeleteAlertPolicies", "the length of field 'alert_ids' must be greater than '0'", strconv.Itoa(len(this.AlertIds)))
@@ -85,8 +96,21 @@ func (this *DeleteAlertPolicies) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *EnableAlertPolicies) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("EnableAlertPolicies", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("EnableAlertPolicies", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -106,8 +130,21 @@ func (this *EnableAlertPolicies) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *DisableAlertPolicies) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DisableAlertPolicies", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DisableAlertPolicies", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -126,6 +163,9 @@ func (this *DisableAlertPolicies) _xxx_xxx_Validator_Validate_alert_ids() error 
 func (this *DisableAlertPolicies) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_alert_ids(); err != nil {
 		return err
@@ -153,12 +193,26 @@ func (this *CreateAlertPolicy) _xxx_xxx_Validator_Validate_created_by() error {
 	return nil
 }
 
+func (this *CreateAlertPolicy) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateAlertPolicy", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 func (this *CreateAlertPolicy) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) >= 2) {
 		return protovalidator.FieldError1("CreateAlertPolicy", "the byte length of field 'name' must be greater than or equal to '2'", protovalidator.StringByteLenToString(this.Name))
 	}
 	if !(len(this.Name) <= 128) {
 		return protovalidator.FieldError1("CreateAlertPolicy", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *CreateAlertPolicy) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("CreateAlertPolicy", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -229,7 +283,13 @@ func (this *CreateAlertPolicy) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_monitor_object(); err != nil {
@@ -276,6 +336,13 @@ func (this *UpdateAlertPolicy) _xxx_xxx_Validator_Validate_name() error {
 	}
 	if !(len(this.Name) <= 128) {
 		return protovalidator.FieldError1("UpdateAlertPolicy", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *UpdateAlertPolicy) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("UpdateAlertPolicy", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -335,6 +402,13 @@ func (this *UpdateAlertPolicy) _xxx_xxx_Validator_Validate_notification_ids() er
 	return nil
 }
 
+func (this *UpdateAlertPolicy) _xxx_xxx_Validator_Validate_job_ids() error {
+	if !(protovalidator.SliceIsUniqueString(this.JobIds)) {
+		return protovalidator.FieldError2("UpdateAlertPolicy", "the array elements in field 'job_ids' must be unique")
+	}
+	return nil
+}
+
 // Set default value for message request.UpdateAlertPolicy
 func (this *UpdateAlertPolicy) Validate() error {
 	if this == nil {
@@ -347,6 +421,9 @@ func (this *UpdateAlertPolicy) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_monitor_object(); err != nil {
@@ -363,6 +440,19 @@ func (this *UpdateAlertPolicy) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_notification_ids(); err != nil {
 		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DescribeAlertPolicy) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeAlertPolicy", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeAlertPolicy", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -382,8 +472,21 @@ func (this *DescribeAlertPolicy) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *JobBoundAlertPolicies) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("JobBoundAlertPolicies", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("JobBoundAlertPolicies", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -402,6 +505,9 @@ func (this *JobBoundAlertPolicies) _xxx_xxx_Validator_Validate_alert_ids() error
 	if !(len(this.AlertIds) <= 100) {
 		return protovalidator.FieldError1("JobBoundAlertPolicies", "the length of field 'alert_ids' must be less than or equal to '100'", strconv.Itoa(len(this.AlertIds)))
 	}
+	if !(protovalidator.SliceIsUniqueString(this.AlertIds)) {
+		return protovalidator.FieldError2("JobBoundAlertPolicies", "the array elements in field 'alert_ids' must be unique")
+	}
 	return nil
 }
 
@@ -410,11 +516,24 @@ func (this *JobBoundAlertPolicies) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_alert_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *JobUnboundAlertPolicies) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("JobUnboundAlertPolicies", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("JobUnboundAlertPolicies", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -426,31 +545,96 @@ func (this *JobUnboundAlertPolicies) _xxx_xxx_Validator_Validate_job_id() error 
 	return nil
 }
 
+func (this *JobUnboundAlertPolicies) _xxx_xxx_Validator_Validate_alert_ids() error {
+	if !(len(this.AlertIds) > 0) {
+		return protovalidator.FieldError1("JobUnboundAlertPolicies", "the length of field 'alert_ids' must be greater than '0'", strconv.Itoa(len(this.AlertIds)))
+	}
+	if !(len(this.AlertIds) <= 100) {
+		return protovalidator.FieldError1("JobUnboundAlertPolicies", "the length of field 'alert_ids' must be less than or equal to '100'", strconv.Itoa(len(this.AlertIds)))
+	}
+	if !(protovalidator.SliceIsUniqueString(this.AlertIds)) {
+		return protovalidator.FieldError2("JobUnboundAlertPolicies", "the array elements in field 'alert_ids' must be unique")
+	}
+	return nil
+}
+
 // Set default value for message request.JobUnboundAlertPolicies
 func (this *JobUnboundAlertPolicies) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_alert_ids(); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (this *ListJobAlertPolicies) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("ListJobAlertPolicies", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+func (this *ListAlertPoliciesByJob) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-// Set default value for message request.ListJobAlertPolicies
-func (this *ListJobAlertPolicies) Validate() error {
+func (this *ListAlertPoliciesByJob) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	return nil
+}
+
+func (this *ListAlertPoliciesByJob) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListAlertPoliciesByJob) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListAlertPoliciesByJob", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+// Set default value for message request.ListAlertPoliciesByJob
+func (this *ListAlertPoliciesByJob) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *AlertPolicyBoundJobs) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AlertPolicyBoundJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AlertPolicyBoundJobs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -465,13 +649,36 @@ func (this *AlertPolicyBoundJobs) _xxx_xxx_Validator_Validate_alert_id() error {
 	return nil
 }
 
+func (this *AlertPolicyBoundJobs) _xxx_xxx_Validator_Validate_job_ids() error {
+	if !(protovalidator.SliceIsUniqueString(this.JobIds)) {
+		return protovalidator.FieldError2("AlertPolicyBoundJobs", "the array elements in field 'job_ids' must be unique")
+	}
+	return nil
+}
+
 // Set default value for message request.AlertPolicyBoundJobs
 func (this *AlertPolicyBoundJobs) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
 		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *AlertPolicyUnboundJobs) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AlertPolicyUnboundJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AlertPolicyUnboundJobs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -486,33 +693,82 @@ func (this *AlertPolicyUnboundJobs) _xxx_xxx_Validator_Validate_alert_id() error
 	return nil
 }
 
+func (this *AlertPolicyUnboundJobs) _xxx_xxx_Validator_Validate_job_ids() error {
+	if !(protovalidator.SliceIsUniqueString(this.JobIds)) {
+		return protovalidator.FieldError2("AlertPolicyUnboundJobs", "the array elements in field 'job_ids' must be unique")
+	}
+	return nil
+}
+
 // Set default value for message request.AlertPolicyUnboundJobs
 func (this *AlertPolicyUnboundJobs) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_ids(); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (this *ListAlertPolicyJobs) _xxx_xxx_Validator_Validate_alert_id() error {
-	if !(len(this.AlertId) == 20) {
-		return protovalidator.FieldError1("ListAlertPolicyJobs", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
-	if !(strings.HasPrefix(this.AlertId, "alt-")) {
-		return protovalidator.FieldError1("ListAlertPolicyJobs", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-// Set default value for message request.ListAlertPolicyJobs
-func (this *ListAlertPolicyJobs) Validate() error {
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_alert_id() error {
+	if !(len(this.AlertId) == 20) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
+	}
+	if !(strings.HasPrefix(this.AlertId, "alt-")) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
+	}
+	return nil
+}
+
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListJobsByAlertPolicy", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+// Set default value for message request.ListJobsByAlertPolicy
+func (this *ListJobsByAlertPolicy) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
 		return err
 	}
 	return nil

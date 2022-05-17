@@ -19,11 +19,19 @@ public final class PBModelNotifier {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
      * <code>string create_time = 1;</code>
      * @return The createTime.
      */
     java.lang.String getCreateTime();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
      * <code>string create_time = 1;</code>
      * @return The bytes for createTime.
      */
@@ -31,35 +39,19 @@ public final class PBModelNotifier {
         getCreateTimeBytes();
 
     /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> 
-        getItemsList();
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getItems(int index);
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    int getItemsCount();
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder> 
-        getItemsOrBuilderList();
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder getItemsOrBuilder(
-        int index);
-
-    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
      * <code>string notification_list_id = 3;</code>
      * @return The notificationListId.
      */
     java.lang.String getNotificationListId();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
      * <code>string notification_list_id = 3;</code>
      * @return The bytes for notificationListId.
      */
@@ -67,11 +59,19 @@ public final class PBModelNotifier {
         getNotificationListIdBytes();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
      * <code>string notification_list_name = 4;</code>
      * @return The notificationListName.
      */
     java.lang.String getNotificationListName();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
      * <code>string notification_list_name = 4;</code>
      * @return The bytes for notificationListName.
      */
@@ -79,16 +79,68 @@ public final class PBModelNotifier {
         getNotificationListNameBytes();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
      * <code>string owner = 5;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
      * <code>string owner = 5;</code>
      * @return The bytes for owner.
      */
     com.google.protobuf.ByteString
         getOwnerBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> 
+        getItemsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getItems(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    int getItemsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder getItemsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code model.NotificationList}
@@ -104,10 +156,10 @@ public final class PBModelNotifier {
     }
     private NotificationList() {
       createTime_ = "";
-      items_ = java.util.Collections.emptyList();
       notificationListId_ = "";
       notificationListName_ = "";
       owner_ = "";
+      items_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -149,11 +201,11 @@ public final class PBModelNotifier {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem>();
+                items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item>();
                 mutable_bitField0_ |= 0x00000001;
               }
               items_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.parser(), extensionRegistry));
               break;
             }
             case 26: {
@@ -209,9 +261,1315 @@ public final class PBModelNotifier {
               com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.class, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder.class);
     }
 
+    public interface ItemOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:model.NotificationList.Item)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The content.
+       */
+      java.lang.String getContent();
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The bytes for content.
+       */
+      com.google.protobuf.ByteString
+          getContentBytes();
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The createTime.
+       */
+      java.lang.String getCreateTime();
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The bytes for createTime.
+       */
+      com.google.protobuf.ByteString
+          getCreateTimeBytes();
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The notificationItemId.
+       */
+      java.lang.String getNotificationItemId();
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The bytes for notificationItemId.
+       */
+      com.google.protobuf.ByteString
+          getNotificationItemIdBytes();
+
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The notificationItemType.
+       */
+      java.lang.String getNotificationItemType();
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The bytes for notificationItemType.
+       */
+      com.google.protobuf.ByteString
+          getNotificationItemTypeBytes();
+
+      /**
+       * <pre>
+       * The item whether verified. 1 for true, 0 for false.
+       * &#64;inject_tag: json:"verified"
+       * </pre>
+       *
+       * <code>int32 verified = 5;</code>
+       * @return The verified.
+       */
+      int getVerified();
+    }
+    /**
+     * Protobuf type {@code model.NotificationList.Item}
+     */
+    public static final class Item extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:model.NotificationList.Item)
+        ItemOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Item.newBuilder() to construct.
+      private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Item() {
+        content_ = "";
+        createTime_ = "";
+        notificationItemId_ = "";
+        notificationItemType_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Item();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Item(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                content_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                createTime_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                notificationItemId_ = s;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                notificationItemType_ = s;
+                break;
+              }
+              case 40: {
+
+                verified_ = input.readInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationList_Item_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationList_Item_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.class, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder.class);
+      }
+
+      public static final int CONTENT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object content_;
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The content.
+       */
+      @java.lang.Override
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The bytes for content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CREATE_TIME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object createTime_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The createTime.
+       */
+      @java.lang.Override
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The bytes for createTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int NOTIFICATION_ITEM_ID_FIELD_NUMBER = 3;
+      private volatile java.lang.Object notificationItemId_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The notificationItemId.
+       */
+      @java.lang.Override
+      public java.lang.String getNotificationItemId() {
+        java.lang.Object ref = notificationItemId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationItemId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The bytes for notificationItemId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNotificationItemIdBytes() {
+        java.lang.Object ref = notificationItemId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationItemId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int NOTIFICATION_ITEM_TYPE_FIELD_NUMBER = 4;
+      private volatile java.lang.Object notificationItemType_;
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The notificationItemType.
+       */
+      @java.lang.Override
+      public java.lang.String getNotificationItemType() {
+        java.lang.Object ref = notificationItemType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationItemType_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The bytes for notificationItemType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNotificationItemTypeBytes() {
+        java.lang.Object ref = notificationItemType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationItemType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VERIFIED_FIELD_NUMBER = 5;
+      private int verified_;
+      /**
+       * <pre>
+       * The item whether verified. 1 for true, 0 for false.
+       * &#64;inject_tag: json:"verified"
+       * </pre>
+       *
+       * <code>int32 verified = 5;</code>
+       * @return The verified.
+       */
+      @java.lang.Override
+      public int getVerified() {
+        return verified_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, notificationItemId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, notificationItemType_);
+        }
+        if (verified_ != 0) {
+          output.writeInt32(5, verified_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, notificationItemId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, notificationItemType_);
+        }
+        if (verified_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(5, verified_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item)) {
+          return super.equals(obj);
+        }
+        com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item other = (com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item) obj;
+
+        if (!getContent()
+            .equals(other.getContent())) return false;
+        if (!getCreateTime()
+            .equals(other.getCreateTime())) return false;
+        if (!getNotificationItemId()
+            .equals(other.getNotificationItemId())) return false;
+        if (!getNotificationItemType()
+            .equals(other.getNotificationItemType())) return false;
+        if (getVerified()
+            != other.getVerified()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime().hashCode();
+        hash = (37 * hash) + NOTIFICATION_ITEM_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationItemId().hashCode();
+        hash = (37 * hash) + NOTIFICATION_ITEM_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationItemType().hashCode();
+        hash = (37 * hash) + VERIFIED_FIELD_NUMBER;
+        hash = (53 * hash) + getVerified();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code model.NotificationList.Item}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:model.NotificationList.Item)
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationList_Item_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationList_Item_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.class, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder.class);
+        }
+
+        // Construct using com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          content_ = "";
+
+          createTime_ = "";
+
+          notificationItemId_ = "";
+
+          notificationItemType_ = "";
+
+          verified_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationList_Item_descriptor;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getDefaultInstanceForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item build() {
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item buildPartial() {
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item result = new com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item(this);
+          result.content_ = content_;
+          result.createTime_ = createTime_;
+          result.notificationItemId_ = notificationItemId_;
+          result.notificationItemType_ = notificationItemType_;
+          result.verified_ = verified_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item) {
+            return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item other) {
+          if (other == com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.getDefaultInstance()) return this;
+          if (!other.getContent().isEmpty()) {
+            content_ = other.content_;
+            onChanged();
+          }
+          if (!other.getCreateTime().isEmpty()) {
+            createTime_ = other.createTime_;
+            onChanged();
+          }
+          if (!other.getNotificationItemId().isEmpty()) {
+            notificationItemId_ = other.notificationItemId_;
+            onChanged();
+          }
+          if (!other.getNotificationItemType().isEmpty()) {
+            notificationItemType_ = other.notificationItemType_;
+            onChanged();
+          }
+          if (other.getVerified() != 0) {
+            setVerified(other.getVerified());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object content_ = "";
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return The content.
+         */
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            content_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return The bytes for content.
+         */
+        public com.google.protobuf.ByteString
+            getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @param value The content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContent(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          content_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearContent() {
+          
+          content_ = getDefaultInstance().getContent();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @param value The bytes for content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          content_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object createTime_ = "";
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return The createTime.
+         */
+        public java.lang.String getCreateTime() {
+          java.lang.Object ref = createTime_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            createTime_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return The bytes for createTime.
+         */
+        public com.google.protobuf.ByteString
+            getCreateTimeBytes() {
+          java.lang.Object ref = createTime_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            createTime_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @param value The createTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreateTime(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          createTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCreateTime() {
+          
+          createTime_ = getDefaultInstance().getCreateTime();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @param value The bytes for createTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreateTimeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          createTime_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object notificationItemId_ = "";
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return The notificationItemId.
+         */
+        public java.lang.String getNotificationItemId() {
+          java.lang.Object ref = notificationItemId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            notificationItemId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return The bytes for notificationItemId.
+         */
+        public com.google.protobuf.ByteString
+            getNotificationItemIdBytes() {
+          java.lang.Object ref = notificationItemId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            notificationItemId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @param value The notificationItemId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          notificationItemId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearNotificationItemId() {
+          
+          notificationItemId_ = getDefaultInstance().getNotificationItemId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @param value The bytes for notificationItemId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          notificationItemId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object notificationItemType_ = "";
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return The notificationItemType.
+         */
+        public java.lang.String getNotificationItemType() {
+          java.lang.Object ref = notificationItemType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            notificationItemType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return The bytes for notificationItemType.
+         */
+        public com.google.protobuf.ByteString
+            getNotificationItemTypeBytes() {
+          java.lang.Object ref = notificationItemType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            notificationItemType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @param value The notificationItemType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          notificationItemType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearNotificationItemType() {
+          
+          notificationItemType_ = getDefaultInstance().getNotificationItemType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @param value The bytes for notificationItemType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          notificationItemType_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int verified_ ;
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @return The verified.
+         */
+        @java.lang.Override
+        public int getVerified() {
+          return verified_;
+        }
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @param value The verified to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVerified(int value) {
+          
+          verified_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearVerified() {
+          
+          verified_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:model.NotificationList.Item)
+      }
+
+      // @@protoc_insertion_point(class_scope:model.NotificationList.Item)
+      private static final com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item();
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Item>
+          PARSER = new com.google.protobuf.AbstractParser<Item>() {
+        @java.lang.Override
+        public Item parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Item(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Item> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Item> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int CREATE_TIME_FIELD_NUMBER = 1;
     private volatile java.lang.Object createTime_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
      * <code>string create_time = 1;</code>
      * @return The createTime.
      */
@@ -229,6 +1587,10 @@ public final class PBModelNotifier {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
      * <code>string create_time = 1;</code>
      * @return The bytes for createTime.
      */
@@ -247,49 +1609,13 @@ public final class PBModelNotifier {
       }
     }
 
-    public static final int ITEMS_FIELD_NUMBER = 2;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> items_;
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> getItemsList() {
-      return items_;
-    }
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder> 
-        getItemsOrBuilderList() {
-      return items_;
-    }
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    @java.lang.Override
-    public int getItemsCount() {
-      return items_.size();
-    }
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getItems(int index) {
-      return items_.get(index);
-    }
-    /**
-     * <code>repeated .model.NotificationListItem items = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder getItemsOrBuilder(
-        int index) {
-      return items_.get(index);
-    }
-
     public static final int NOTIFICATION_LIST_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object notificationListId_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
      * <code>string notification_list_id = 3;</code>
      * @return The notificationListId.
      */
@@ -307,6 +1633,10 @@ public final class PBModelNotifier {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
      * <code>string notification_list_id = 3;</code>
      * @return The bytes for notificationListId.
      */
@@ -328,6 +1658,10 @@ public final class PBModelNotifier {
     public static final int NOTIFICATION_LIST_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object notificationListName_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
      * <code>string notification_list_name = 4;</code>
      * @return The notificationListName.
      */
@@ -345,6 +1679,10 @@ public final class PBModelNotifier {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
      * <code>string notification_list_name = 4;</code>
      * @return The bytes for notificationListName.
      */
@@ -366,6 +1704,10 @@ public final class PBModelNotifier {
     public static final int OWNER_FIELD_NUMBER = 5;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
      * <code>string owner = 5;</code>
      * @return The owner.
      */
@@ -383,6 +1725,10 @@ public final class PBModelNotifier {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
      * <code>string owner = 5;</code>
      * @return The bytes for owner.
      */
@@ -399,6 +1745,66 @@ public final class PBModelNotifier {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 2;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> items_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> getItemsList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -472,14 +1878,14 @@ public final class PBModelNotifier {
 
       if (!getCreateTime()
           .equals(other.getCreateTime())) return false;
-      if (!getItemsList()
-          .equals(other.getItemsList())) return false;
       if (!getNotificationListId()
           .equals(other.getNotificationListId())) return false;
       if (!getNotificationListName()
           .equals(other.getNotificationListName())) return false;
       if (!getOwner()
           .equals(other.getOwner())) return false;
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -493,16 +1899,16 @@ public final class PBModelNotifier {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
-      if (getItemsCount() > 0) {
-        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
-        hash = (53 * hash) + getItemsList().hashCode();
-      }
       hash = (37 * hash) + NOTIFICATION_LIST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNotificationListId().hashCode();
       hash = (37 * hash) + NOTIFICATION_LIST_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNotificationListName().hashCode();
       hash = (37 * hash) + OWNER_FIELD_NUMBER;
       hash = (53 * hash) + getOwner().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -639,18 +2045,18 @@ public final class PBModelNotifier {
         super.clear();
         createTime_ = "";
 
-        if (itemsBuilder_ == null) {
-          items_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          itemsBuilder_.clear();
-        }
         notificationListId_ = "";
 
         notificationListName_ = "";
 
         owner_ = "";
 
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          itemsBuilder_.clear();
+        }
         return this;
       }
 
@@ -679,6 +2085,9 @@ public final class PBModelNotifier {
         com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList result = new com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList(this);
         int from_bitField0_ = bitField0_;
         result.createTime_ = createTime_;
+        result.notificationListId_ = notificationListId_;
+        result.notificationListName_ = notificationListName_;
+        result.owner_ = owner_;
         if (itemsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             items_ = java.util.Collections.unmodifiableList(items_);
@@ -688,9 +2097,6 @@ public final class PBModelNotifier {
         } else {
           result.items_ = itemsBuilder_.build();
         }
-        result.notificationListId_ = notificationListId_;
-        result.notificationListName_ = notificationListName_;
-        result.owner_ = owner_;
         onBuilt();
         return result;
       }
@@ -743,6 +2149,18 @@ public final class PBModelNotifier {
           createTime_ = other.createTime_;
           onChanged();
         }
+        if (!other.getNotificationListId().isEmpty()) {
+          notificationListId_ = other.notificationListId_;
+          onChanged();
+        }
+        if (!other.getNotificationListName().isEmpty()) {
+          notificationListName_ = other.notificationListName_;
+          onChanged();
+        }
+        if (!other.getOwner().isEmpty()) {
+          owner_ = other.owner_;
+          onChanged();
+        }
         if (itemsBuilder_ == null) {
           if (!other.items_.isEmpty()) {
             if (items_.isEmpty()) {
@@ -768,18 +2186,6 @@ public final class PBModelNotifier {
               itemsBuilder_.addAllMessages(other.items_);
             }
           }
-        }
-        if (!other.getNotificationListId().isEmpty()) {
-          notificationListId_ = other.notificationListId_;
-          onChanged();
-        }
-        if (!other.getNotificationListName().isEmpty()) {
-          notificationListName_ = other.notificationListName_;
-          onChanged();
-        }
-        if (!other.getOwner().isEmpty()) {
-          owner_ = other.owner_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -813,6 +2219,10 @@ public final class PBModelNotifier {
 
       private java.lang.Object createTime_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
        * <code>string create_time = 1;</code>
        * @return The createTime.
        */
@@ -829,6 +2239,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
        * <code>string create_time = 1;</code>
        * @return The bytes for createTime.
        */
@@ -846,6 +2260,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
        * <code>string create_time = 1;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
@@ -861,6 +2279,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
        * <code>string create_time = 1;</code>
        * @return This builder for chaining.
        */
@@ -871,6 +2293,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
        * <code>string create_time = 1;</code>
        * @param value The bytes for createTime to set.
        * @return This builder for chaining.
@@ -887,248 +2313,12 @@ public final class PBModelNotifier {
         return this;
       }
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> items_ =
-        java.util.Collections.emptyList();
-      private void ensureItemsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem>(items_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder> itemsBuilder_;
-
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> getItemsList() {
-        if (itemsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(items_);
-        } else {
-          return itemsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public int getItemsCount() {
-        if (itemsBuilder_ == null) {
-          return items_.size();
-        } else {
-          return itemsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getItems(int index) {
-        if (itemsBuilder_ == null) {
-          return items_.get(index);
-        } else {
-          return itemsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder setItems(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.set(index, value);
-          onChanged();
-        } else {
-          itemsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder setItems(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder addItems(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.add(value);
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder addItems(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.add(index, value);
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder addItems(
-          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.add(builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder addItems(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder addAllItems(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem> values) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, items_);
-          onChanged();
-        } else {
-          itemsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder clearItems() {
-        if (itemsBuilder_ == null) {
-          items_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          itemsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public Builder removeItems(int index) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.remove(index);
-          onChanged();
-        } else {
-          itemsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder getItemsBuilder(
-          int index) {
-        return getItemsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder getItemsOrBuilder(
-          int index) {
-        if (itemsBuilder_ == null) {
-          return items_.get(index);  } else {
-          return itemsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder> 
-           getItemsOrBuilderList() {
-        if (itemsBuilder_ != null) {
-          return itemsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(items_);
-        }
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder addItemsBuilder() {
-        return getItemsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder addItemsBuilder(
-          int index) {
-        return getItemsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .model.NotificationListItem items = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder> 
-           getItemsBuilderList() {
-        return getItemsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder> 
-          getItemsFieldBuilder() {
-        if (itemsBuilder_ == null) {
-          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder>(
-                  items_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          items_ = null;
-        }
-        return itemsBuilder_;
-      }
-
       private java.lang.Object notificationListId_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
        * <code>string notification_list_id = 3;</code>
        * @return The notificationListId.
        */
@@ -1145,6 +2335,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
        * <code>string notification_list_id = 3;</code>
        * @return The bytes for notificationListId.
        */
@@ -1162,6 +2356,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
        * <code>string notification_list_id = 3;</code>
        * @param value The notificationListId to set.
        * @return This builder for chaining.
@@ -1177,6 +2375,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
        * <code>string notification_list_id = 3;</code>
        * @return This builder for chaining.
        */
@@ -1187,6 +2389,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
        * <code>string notification_list_id = 3;</code>
        * @param value The bytes for notificationListId to set.
        * @return This builder for chaining.
@@ -1205,6 +2411,10 @@ public final class PBModelNotifier {
 
       private java.lang.Object notificationListName_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
        * <code>string notification_list_name = 4;</code>
        * @return The notificationListName.
        */
@@ -1221,6 +2431,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
        * <code>string notification_list_name = 4;</code>
        * @return The bytes for notificationListName.
        */
@@ -1238,6 +2452,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
        * <code>string notification_list_name = 4;</code>
        * @param value The notificationListName to set.
        * @return This builder for chaining.
@@ -1253,6 +2471,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
        * <code>string notification_list_name = 4;</code>
        * @return This builder for chaining.
        */
@@ -1263,6 +2485,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
        * <code>string notification_list_name = 4;</code>
        * @param value The bytes for notificationListName to set.
        * @return This builder for chaining.
@@ -1281,6 +2507,10 @@ public final class PBModelNotifier {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
        * <code>string owner = 5;</code>
        * @return The owner.
        */
@@ -1297,6 +2527,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
        * <code>string owner = 5;</code>
        * @return The bytes for owner.
        */
@@ -1314,6 +2548,10 @@ public final class PBModelNotifier {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
        * <code>string owner = 5;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -1329,6 +2567,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
        * <code>string owner = 5;</code>
        * @return This builder for chaining.
        */
@@ -1339,6 +2581,10 @@ public final class PBModelNotifier {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
        * <code>string owner = 5;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -1353,6 +2599,318 @@ public final class PBModelNotifier {
         owner_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder> itemsBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder setItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder setItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.ItemOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1407,1034 +2965,16 @@ public final class PBModelNotifier {
 
   }
 
-  public interface NotificationListItemOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.NotificationListItem)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string content = 1;</code>
-     * @return The content.
-     */
-    java.lang.String getContent();
-    /**
-     * <code>string content = 1;</code>
-     * @return The bytes for content.
-     */
-    com.google.protobuf.ByteString
-        getContentBytes();
-
-    /**
-     * <code>string create_time = 2;</code>
-     * @return The createTime.
-     */
-    java.lang.String getCreateTime();
-    /**
-     * <code>string create_time = 2;</code>
-     * @return The bytes for createTime.
-     */
-    com.google.protobuf.ByteString
-        getCreateTimeBytes();
-
-    /**
-     * <code>string notification_item_id = 3;</code>
-     * @return The notificationItemId.
-     */
-    java.lang.String getNotificationItemId();
-    /**
-     * <code>string notification_item_id = 3;</code>
-     * @return The bytes for notificationItemId.
-     */
-    com.google.protobuf.ByteString
-        getNotificationItemIdBytes();
-
-    /**
-     * <code>string notification_item_type = 4;</code>
-     * @return The notificationItemType.
-     */
-    java.lang.String getNotificationItemType();
-    /**
-     * <code>string notification_item_type = 4;</code>
-     * @return The bytes for notificationItemType.
-     */
-    com.google.protobuf.ByteString
-        getNotificationItemTypeBytes();
-  }
-  /**
-   * Protobuf type {@code model.NotificationListItem}
-   */
-  public static final class NotificationListItem extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.NotificationListItem)
-      NotificationListItemOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use NotificationListItem.newBuilder() to construct.
-    private NotificationListItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private NotificationListItem() {
-      content_ = "";
-      createTime_ = "";
-      notificationItemId_ = "";
-      notificationItemType_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new NotificationListItem();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NotificationListItem(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              content_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createTime_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              notificationItemId_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              notificationItemType_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationListItem_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationListItem_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.class, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder.class);
-    }
-
-    public static final int CONTENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object content_;
-    /**
-     * <code>string content = 1;</code>
-     * @return The content.
-     */
-    @java.lang.Override
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        content_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string content = 1;</code>
-     * @return The bytes for content.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        content_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATE_TIME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object createTime_;
-    /**
-     * <code>string create_time = 2;</code>
-     * @return The createTime.
-     */
-    @java.lang.Override
-    public java.lang.String getCreateTime() {
-      java.lang.Object ref = createTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string create_time = 2;</code>
-     * @return The bytes for createTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreateTimeBytes() {
-      java.lang.Object ref = createTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NOTIFICATION_ITEM_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object notificationItemId_;
-    /**
-     * <code>string notification_item_id = 3;</code>
-     * @return The notificationItemId.
-     */
-    @java.lang.Override
-    public java.lang.String getNotificationItemId() {
-      java.lang.Object ref = notificationItemId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        notificationItemId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string notification_item_id = 3;</code>
-     * @return The bytes for notificationItemId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNotificationItemIdBytes() {
-      java.lang.Object ref = notificationItemId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        notificationItemId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NOTIFICATION_ITEM_TYPE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object notificationItemType_;
-    /**
-     * <code>string notification_item_type = 4;</code>
-     * @return The notificationItemType.
-     */
-    @java.lang.Override
-    public java.lang.String getNotificationItemType() {
-      java.lang.Object ref = notificationItemType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        notificationItemType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string notification_item_type = 4;</code>
-     * @return The bytes for notificationItemType.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNotificationItemTypeBytes() {
-      java.lang.Object ref = notificationItemType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        notificationItemType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, notificationItemId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, notificationItemType_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, notificationItemId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, notificationItemType_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem other = (com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem) obj;
-
-      if (!getContent()
-          .equals(other.getContent())) return false;
-      if (!getCreateTime()
-          .equals(other.getCreateTime())) return false;
-      if (!getNotificationItemId()
-          .equals(other.getNotificationItemId())) return false;
-      if (!getNotificationItemType()
-          .equals(other.getNotificationItemType())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateTime().hashCode();
-      hash = (37 * hash) + NOTIFICATION_ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNotificationItemId().hashCode();
-      hash = (37 * hash) + NOTIFICATION_ITEM_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getNotificationItemType().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code model.NotificationListItem}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.NotificationListItem)
-        com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItemOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationListItem_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationListItem_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.class, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        content_ = "";
-
-        createTime_ = "";
-
-        notificationItemId_ = "";
-
-        notificationItemType_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.internal_static_model_NotificationListItem_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem result = new com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem(this);
-        result.content_ = content_;
-        result.createTime_ = createTime_;
-        result.notificationItemId_ = notificationItemId_;
-        result.notificationItemType_ = notificationItemType_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem.getDefaultInstance()) return this;
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          onChanged();
-        }
-        if (!other.getCreateTime().isEmpty()) {
-          createTime_ = other.createTime_;
-          onChanged();
-        }
-        if (!other.getNotificationItemId().isEmpty()) {
-          notificationItemId_ = other.notificationItemId_;
-          onChanged();
-        }
-        if (!other.getNotificationItemType().isEmpty()) {
-          notificationItemType_ = other.notificationItemType_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object content_ = "";
-      /**
-       * <code>string content = 1;</code>
-       * @return The content.
-       */
-      public java.lang.String getContent() {
-        java.lang.Object ref = content_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          content_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string content = 1;</code>
-       * @return The bytes for content.
-       */
-      public com.google.protobuf.ByteString
-          getContentBytes() {
-        java.lang.Object ref = content_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          content_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string content = 1;</code>
-       * @param value The content to set.
-       * @return This builder for chaining.
-       */
-      public Builder setContent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        content_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string content = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearContent() {
-        
-        content_ = getDefaultInstance().getContent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string content = 1;</code>
-       * @param value The bytes for content to set.
-       * @return This builder for chaining.
-       */
-      public Builder setContentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        content_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createTime_ = "";
-      /**
-       * <code>string create_time = 2;</code>
-       * @return The createTime.
-       */
-      public java.lang.String getCreateTime() {
-        java.lang.Object ref = createTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string create_time = 2;</code>
-       * @return The bytes for createTime.
-       */
-      public com.google.protobuf.ByteString
-          getCreateTimeBytes() {
-        java.lang.Object ref = createTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string create_time = 2;</code>
-       * @param value The createTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string create_time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreateTime() {
-        
-        createTime_ = getDefaultInstance().getCreateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string create_time = 2;</code>
-       * @param value The bytes for createTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object notificationItemId_ = "";
-      /**
-       * <code>string notification_item_id = 3;</code>
-       * @return The notificationItemId.
-       */
-      public java.lang.String getNotificationItemId() {
-        java.lang.Object ref = notificationItemId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          notificationItemId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string notification_item_id = 3;</code>
-       * @return The bytes for notificationItemId.
-       */
-      public com.google.protobuf.ByteString
-          getNotificationItemIdBytes() {
-        java.lang.Object ref = notificationItemId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          notificationItemId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string notification_item_id = 3;</code>
-       * @param value The notificationItemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNotificationItemId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        notificationItemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string notification_item_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNotificationItemId() {
-        
-        notificationItemId_ = getDefaultInstance().getNotificationItemId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string notification_item_id = 3;</code>
-       * @param value The bytes for notificationItemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNotificationItemIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        notificationItemId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object notificationItemType_ = "";
-      /**
-       * <code>string notification_item_type = 4;</code>
-       * @return The notificationItemType.
-       */
-      public java.lang.String getNotificationItemType() {
-        java.lang.Object ref = notificationItemType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          notificationItemType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string notification_item_type = 4;</code>
-       * @return The bytes for notificationItemType.
-       */
-      public com.google.protobuf.ByteString
-          getNotificationItemTypeBytes() {
-        java.lang.Object ref = notificationItemType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          notificationItemType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string notification_item_type = 4;</code>
-       * @param value The notificationItemType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNotificationItemType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        notificationItemType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string notification_item_type = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNotificationItemType() {
-        
-        notificationItemType_ = getDefaultInstance().getNotificationItemType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string notification_item_type = 4;</code>
-       * @param value The bytes for notificationItemType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNotificationItemTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        notificationItemType_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.NotificationListItem)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.NotificationListItem)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<NotificationListItem>
-        PARSER = new com.google.protobuf.AbstractParser<NotificationListItem>() {
-      @java.lang.Override
-      public NotificationListItem parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NotificationListItem(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<NotificationListItem> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<NotificationListItem> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListItem getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_NotificationList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_NotificationList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_NotificationListItem_descriptor;
+    internal_static_model_NotificationList_Item_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_NotificationListItem_fieldAccessorTable;
+      internal_static_model_NotificationList_Item_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2445,17 +2985,17 @@ public final class PBModelNotifier {
   static {
     java.lang.String[] descriptorData = {
       "\n proto/types/model/notifier.proto\022\005mode" +
-      "l\"\240\001\n\020NotificationList\022\023\n\013create_time\030\001 " +
-      "\001(\t\022*\n\005items\030\002 \003(\0132\033.model.NotificationL" +
-      "istItem\022\034\n\024notification_list_id\030\003 \001(\t\022\036\n" +
-      "\026notification_list_name\030\004 \001(\t\022\r\n\005owner\030\005" +
-      " \001(\t\"z\n\024NotificationListItem\022\017\n\007content\030" +
-      "\001 \001(\t\022\023\n\013create_time\030\002 \001(\t\022\034\n\024notificati" +
-      "on_item_id\030\003 \001(\t\022\036\n\026notification_item_ty" +
-      "pe\030\004 \001(\tBj\n\"com.dataomnis.gproto.types.p" +
-      "bmodelB\017PBModelNotifierP\000Z1github.com/Da" +
-      "taWorkbench/gproto/xgo/types/pbmodelb\006pr" +
-      "oto3"
+      "l\"\237\002\n\020NotificationList\022\023\n\013create_time\030\001 " +
+      "\001(\t\022\034\n\024notification_list_id\030\003 \001(\t\022\036\n\026not" +
+      "ification_list_name\030\004 \001(\t\022\r\n\005owner\030\005 \001(\t" +
+      "\022+\n\005items\030\002 \003(\0132\034.model.NotificationList" +
+      ".Item\032|\n\004Item\022\017\n\007content\030\001 \001(\t\022\023\n\013create" +
+      "_time\030\002 \001(\t\022\034\n\024notification_item_id\030\003 \001(" +
+      "\t\022\036\n\026notification_item_type\030\004 \001(\t\022\020\n\010ver" +
+      "ified\030\005 \001(\005Bj\n\"com.dataomnis.gproto.type" +
+      "s.pbmodelB\017PBModelNotifierP\000Z1github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2466,13 +3006,13 @@ public final class PBModelNotifier {
     internal_static_model_NotificationList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_NotificationList_descriptor,
-        new java.lang.String[] { "CreateTime", "Items", "NotificationListId", "NotificationListName", "Owner", });
-    internal_static_model_NotificationListItem_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_model_NotificationListItem_fieldAccessorTable = new
+        new java.lang.String[] { "CreateTime", "NotificationListId", "NotificationListName", "Owner", "Items", });
+    internal_static_model_NotificationList_Item_descriptor =
+      internal_static_model_NotificationList_descriptor.getNestedTypes().get(0);
+    internal_static_model_NotificationList_Item_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_NotificationListItem_descriptor,
-        new java.lang.String[] { "Content", "CreateTime", "NotificationItemId", "NotificationItemType", });
+        internal_static_model_NotificationList_Item_descriptor,
+        new java.lang.String[] { "Content", "CreateTime", "NotificationItemId", "NotificationItemType", "Verified", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

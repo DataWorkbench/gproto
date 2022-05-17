@@ -13,8 +13,8 @@ func (this *NotificationList) SetDefaults() {
 	return
 }
 
-// Set default value for message model.NotificationListItem
-func (this *NotificationListItem) SetDefaults() {
+// Set default value for message model.NotificationList.Item
+func (this *NotificationList_Item) SetDefaults() {
 	if this == nil {
 		return
 	}

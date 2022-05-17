@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\024PBRequestAlertManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/request/alert_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/alert.proto\"\xb3\x02\n\x11ListAlertPolicies\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\x12\x38\n\x0emonitor_object\x18\t \x01(\x0e\x32 .model.AlertPolicy.MonitorObject\"7\n\x13\x44\x65leteAlertPolicies\x12 \n\talert_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"7\n\x13\x45nableAlertPolicies\x12 \n\talert_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"8\n\x14\x44isableAlertPolicies\x12 \n\talert_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"\xe1\x03\n\x11\x43reateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12G\n\x0emonitor_object\x18\x04 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x05 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x06 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\x07 \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\x08 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x0f\n\x07job_ids\x18\t \x03(\t\"\xe3\x03\n\x11UpdateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12G\n\x0emonitor_object\x18\x04 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x05 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x06 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\x07 \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\x08 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x0f\n\x07job_ids\x18\t \x03(\t\"<\n\x13\x44\x65scribeAlertPolicy\x12%\n\x08\x61lert_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"W\n\x15JobBoundAlertPolicies\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"J\n\x17JobUnboundAlertPolicies\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x11\n\talert_ids\x18\x02 \x03(\t\"4\n\x14ListJobAlertPolicies\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"N\n\x14\x41lertPolicyBoundJobs\x12%\n\x08\x61lert_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x0f\n\x07job_ids\x18\x02 \x03(\t\"P\n\x16\x41lertPolicyUnboundJobs\x12%\n\x08\x61lert_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x0f\n\x07job_ids\x18\x02 \x03(\t\"<\n\x13ListAlertPolicyJobs\x12%\n\x08\x61lert_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-Bs\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestAlertManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n&proto/types/request/alert_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/alert.proto\"\xb3\x02\n\x11ListAlertPolicies\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\x12\x38\n\x0emonitor_object\x18\t \x01(\x0e\x32 .model.AlertPolicy.MonitorObject\"^\n\x13\x44\x65leteAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"^\n\x13\x45nableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"_\n\x14\x44isableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"\xa0\x04\n\x11\x43reateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x07 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x08 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\t \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x0f\n\x07job_ids\x18\x0b \x03(\t\"\x8d\x04\n\x11UpdateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x05 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x06 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x07 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\x08 \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\t \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x1c\n\x07job_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"c\n\x13\x44\x65scribeAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"\x80\x01\n\x15JobBoundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\x82\x01\n\x17JobUnboundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\xa2\x01\n\x16ListAlertPoliciesByJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\"\x82\x01\n\x14\x41lertPolicyBoundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\x84\x01\n\x16\x41lertPolicyUnboundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\xaa\x01\n\x15ListJobsByAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestAlertManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_alert__pb2.DESCRIPTOR,])
 
@@ -126,8 +126,15 @@ _DELETEALERTPOLICIES = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_ids', full_name='request.DeleteAlertPolicies.alert_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.DeleteAlertPolicies.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_ids', full_name='request.DeleteAlertPolicies.alert_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -145,7 +152,7 @@ _DELETEALERTPOLICIES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=497,
-  serialized_end=552,
+  serialized_end=591,
 )
 
 
@@ -158,8 +165,15 @@ _ENABLEALERTPOLICIES = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_ids', full_name='request.EnableAlertPolicies.alert_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.EnableAlertPolicies.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_ids', full_name='request.EnableAlertPolicies.alert_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -176,8 +190,8 @@ _ENABLEALERTPOLICIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=554,
-  serialized_end=609,
+  serialized_start=593,
+  serialized_end=687,
 )
 
 
@@ -190,8 +204,15 @@ _DISABLEALERTPOLICIES = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_ids', full_name='request.DisableAlertPolicies.alert_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.DisableAlertPolicies.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_ids', full_name='request.DisableAlertPolicies.alert_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -208,8 +229,8 @@ _DISABLEALERTPOLICIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=611,
-  serialized_end=667,
+  serialized_start=689,
+  serialized_end=784,
 )
 
 
@@ -236,50 +257,64 @@ _CREATEALERTPOLICY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='request.CreateAlertPolicy.name', index=2,
+      name='space_owner', full_name='request.CreateAlertPolicy.space_owner', index=2,
       number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.CreateAlertPolicy.name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='monitor_object', full_name='request.CreateAlertPolicy.monitor_object', index=3,
-      number=4, type=14, cpp_type=8, label=1,
+      name='desc', full_name='request.CreateAlertPolicy.desc', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitor_object', full_name='request.CreateAlertPolicy.monitor_object', index=5,
+      number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='monitor_item', full_name='request.CreateAlertPolicy.monitor_item', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='monitor_item', full_name='request.CreateAlertPolicy.monitor_item', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trigger_rule', full_name='request.CreateAlertPolicy.trigger_rule', index=5,
-      number=6, type=14, cpp_type=8, label=1,
+      name='trigger_rule', full_name='request.CreateAlertPolicy.trigger_rule', index=7,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trigger_action', full_name='request.CreateAlertPolicy.trigger_action', index=6,
-      number=7, type=14, cpp_type=8, label=1,
+      name='trigger_action', full_name='request.CreateAlertPolicy.trigger_action', index=8,
+      number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='notification_ids', full_name='request.CreateAlertPolicy.notification_ids', index=7,
-      number=8, type=9, cpp_type=9, label=3,
+      name='notification_ids', full_name='request.CreateAlertPolicy.notification_ids', index=9,
+      number=10, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\352\001\0028d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_ids', full_name='request.CreateAlertPolicy.job_ids', index=8,
-      number=9, type=9, cpp_type=9, label=3,
+      name='job_ids', full_name='request.CreateAlertPolicy.job_ids', index=10,
+      number=11, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -296,8 +331,8 @@ _CREATEALERTPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=670,
-  serialized_end=1151,
+  serialized_start=787,
+  serialized_end=1331,
 )
 
 
@@ -331,47 +366,54 @@ _UPDATEALERTPOLICY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='monitor_object', full_name='request.UpdateAlertPolicy.monitor_object', index=3,
-      number=4, type=14, cpp_type=8, label=1,
+      name='desc', full_name='request.UpdateAlertPolicy.desc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitor_object', full_name='request.UpdateAlertPolicy.monitor_object', index=4,
+      number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='monitor_item', full_name='request.UpdateAlertPolicy.monitor_item', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='monitor_item', full_name='request.UpdateAlertPolicy.monitor_item', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trigger_rule', full_name='request.UpdateAlertPolicy.trigger_rule', index=5,
-      number=6, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='trigger_action', full_name='request.UpdateAlertPolicy.trigger_action', index=6,
+      name='trigger_rule', full_name='request.UpdateAlertPolicy.trigger_rule', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='notification_ids', full_name='request.UpdateAlertPolicy.notification_ids', index=7,
-      number=8, type=9, cpp_type=9, label=3,
+      name='trigger_action', full_name='request.UpdateAlertPolicy.trigger_action', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\004\252\006\0011\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notification_ids', full_name='request.UpdateAlertPolicy.notification_ids', index=8,
+      number=9, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\352\001\0028d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_ids', full_name='request.UpdateAlertPolicy.job_ids', index=8,
-      number=9, type=9, cpp_type=9, label=3,
+      name='job_ids', full_name='request.UpdateAlertPolicy.job_ids', index=9,
+      number=10, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\352\001\002P\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -384,8 +426,8 @@ _UPDATEALERTPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1154,
-  serialized_end=1637,
+  serialized_start=1334,
+  serialized_end=1859,
 )
 
 
@@ -398,8 +440,15 @@ _DESCRIBEALERTPOLICY = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_id', full_name='request.DescribeAlertPolicy.alert_id', index=0,
+      name='space_id', full_name='request.DescribeAlertPolicy.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='request.DescribeAlertPolicy.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -416,8 +465,8 @@ _DESCRIBEALERTPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1639,
-  serialized_end=1699,
+  serialized_start=1861,
+  serialized_end=1960,
 )
 
 
@@ -430,19 +479,26 @@ _JOBBOUNDALERTPOLICIES = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.JobBoundAlertPolicies.job_id', index=0,
+      name='space_id', full_name='request.JobBoundAlertPolicies.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='request.JobBoundAlertPolicies.job_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='alert_ids', full_name='request.JobBoundAlertPolicies.alert_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
+      name='alert_ids', full_name='request.JobBoundAlertPolicies.alert_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\013\022\t\352\001\0060\0008dP\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -455,8 +511,8 @@ _JOBBOUNDALERTPOLICIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1701,
-  serialized_end=1788,
+  serialized_start=1963,
+  serialized_end=2091,
 )
 
 
@@ -469,19 +525,26 @@ _JOBUNBOUNDALERTPOLICIES = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.JobUnboundAlertPolicies.job_id', index=0,
+      name='space_id', full_name='request.JobUnboundAlertPolicies.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='request.JobUnboundAlertPolicies.job_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='alert_ids', full_name='request.JobUnboundAlertPolicies.alert_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
+      name='alert_ids', full_name='request.JobUnboundAlertPolicies.alert_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\013\022\t\352\001\0060\0008dP\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -494,26 +557,47 @@ _JOBUNBOUNDALERTPOLICIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1790,
-  serialized_end=1864,
+  serialized_start=2094,
+  serialized_end=2224,
 )
 
 
-_LISTJOBALERTPOLICIES = _descriptor.Descriptor(
-  name='ListJobAlertPolicies',
-  full_name='request.ListJobAlertPolicies',
+_LISTALERTPOLICIESBYJOB = _descriptor.Descriptor(
+  name='ListAlertPoliciesByJob',
+  full_name='request.ListAlertPoliciesByJob',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.ListJobAlertPolicies.job_id', index=0,
+      name='space_id', full_name='request.ListAlertPoliciesByJob.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='request.ListAlertPoliciesByJob.job_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListAlertPoliciesByJob.limit', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='request.ListAlertPoliciesByJob.offset', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -526,8 +610,8 @@ _LISTJOBALERTPOLICIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1866,
-  serialized_end=1918,
+  serialized_start=2227,
+  serialized_end=2389,
 )
 
 
@@ -540,19 +624,26 @@ _ALERTPOLICYBOUNDJOBS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_id', full_name='request.AlertPolicyBoundJobs.alert_id', index=0,
+      name='space_id', full_name='request.AlertPolicyBoundJobs.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='request.AlertPolicyBoundJobs.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_ids', full_name='request.AlertPolicyBoundJobs.job_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
+      name='job_ids', full_name='request.AlertPolicyBoundJobs.job_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\352\001\002P\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -565,8 +656,8 @@ _ALERTPOLICYBOUNDJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1920,
-  serialized_end=1998,
+  serialized_start=2392,
+  serialized_end=2522,
 )
 
 
@@ -579,19 +670,26 @@ _ALERTPOLICYUNBOUNDJOBS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_id', full_name='request.AlertPolicyUnboundJobs.alert_id', index=0,
+      name='space_id', full_name='request.AlertPolicyUnboundJobs.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='request.AlertPolicyUnboundJobs.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_ids', full_name='request.AlertPolicyUnboundJobs.job_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
+      name='job_ids', full_name='request.AlertPolicyUnboundJobs.job_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\352\001\002P\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -604,26 +702,47 @@ _ALERTPOLICYUNBOUNDJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2000,
-  serialized_end=2080,
+  serialized_start=2525,
+  serialized_end=2657,
 )
 
 
-_LISTALERTPOLICYJOBS = _descriptor.Descriptor(
-  name='ListAlertPolicyJobs',
-  full_name='request.ListAlertPolicyJobs',
+_LISTJOBSBYALERTPOLICY = _descriptor.Descriptor(
+  name='ListJobsByAlertPolicy',
+  full_name='request.ListJobsByAlertPolicy',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='alert_id', full_name='request.ListAlertPolicyJobs.alert_id', index=0,
+      name='space_id', full_name='request.ListJobsByAlertPolicy.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='request.ListJobsByAlertPolicy.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListJobsByAlertPolicy.limit', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='request.ListJobsByAlertPolicy.offset', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -636,8 +755,8 @@ _LISTALERTPOLICYJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2082,
-  serialized_end=2142,
+  serialized_start=2660,
+  serialized_end=2830,
 )
 
 _LISTALERTPOLICIES.fields_by_name['monitor_object'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITOROBJECT
@@ -658,10 +777,10 @@ DESCRIPTOR.message_types_by_name['UpdateAlertPolicy'] = _UPDATEALERTPOLICY
 DESCRIPTOR.message_types_by_name['DescribeAlertPolicy'] = _DESCRIBEALERTPOLICY
 DESCRIPTOR.message_types_by_name['JobBoundAlertPolicies'] = _JOBBOUNDALERTPOLICIES
 DESCRIPTOR.message_types_by_name['JobUnboundAlertPolicies'] = _JOBUNBOUNDALERTPOLICIES
-DESCRIPTOR.message_types_by_name['ListJobAlertPolicies'] = _LISTJOBALERTPOLICIES
+DESCRIPTOR.message_types_by_name['ListAlertPoliciesByJob'] = _LISTALERTPOLICIESBYJOB
 DESCRIPTOR.message_types_by_name['AlertPolicyBoundJobs'] = _ALERTPOLICYBOUNDJOBS
 DESCRIPTOR.message_types_by_name['AlertPolicyUnboundJobs'] = _ALERTPOLICYUNBOUNDJOBS
-DESCRIPTOR.message_types_by_name['ListAlertPolicyJobs'] = _LISTALERTPOLICYJOBS
+DESCRIPTOR.message_types_by_name['ListJobsByAlertPolicy'] = _LISTJOBSBYALERTPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAlertPolicies = _reflection.GeneratedProtocolMessageType('ListAlertPolicies', (_message.Message,), {
@@ -727,12 +846,12 @@ JobUnboundAlertPolicies = _reflection.GeneratedProtocolMessageType('JobUnboundAl
   })
 _sym_db.RegisterMessage(JobUnboundAlertPolicies)
 
-ListJobAlertPolicies = _reflection.GeneratedProtocolMessageType('ListJobAlertPolicies', (_message.Message,), {
-  'DESCRIPTOR' : _LISTJOBALERTPOLICIES,
+ListAlertPoliciesByJob = _reflection.GeneratedProtocolMessageType('ListAlertPoliciesByJob', (_message.Message,), {
+  'DESCRIPTOR' : _LISTALERTPOLICIESBYJOB,
   '__module__' : 'proto.types.request.alert_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.ListJobAlertPolicies)
+  # @@protoc_insertion_point(class_scope:request.ListAlertPoliciesByJob)
   })
-_sym_db.RegisterMessage(ListJobAlertPolicies)
+_sym_db.RegisterMessage(ListAlertPoliciesByJob)
 
 AlertPolicyBoundJobs = _reflection.GeneratedProtocolMessageType('AlertPolicyBoundJobs', (_message.Message,), {
   'DESCRIPTOR' : _ALERTPOLICYBOUNDJOBS,
@@ -748,12 +867,12 @@ AlertPolicyUnboundJobs = _reflection.GeneratedProtocolMessageType('AlertPolicyUn
   })
 _sym_db.RegisterMessage(AlertPolicyUnboundJobs)
 
-ListAlertPolicyJobs = _reflection.GeneratedProtocolMessageType('ListAlertPolicyJobs', (_message.Message,), {
-  'DESCRIPTOR' : _LISTALERTPOLICYJOBS,
+ListJobsByAlertPolicy = _reflection.GeneratedProtocolMessageType('ListJobsByAlertPolicy', (_message.Message,), {
+  'DESCRIPTOR' : _LISTJOBSBYALERTPOLICY,
   '__module__' : 'proto.types.request.alert_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.ListAlertPolicyJobs)
+  # @@protoc_insertion_point(class_scope:request.ListJobsByAlertPolicy)
   })
-_sym_db.RegisterMessage(ListAlertPolicyJobs)
+_sym_db.RegisterMessage(ListJobsByAlertPolicy)
 
 
 DESCRIPTOR._options = None
@@ -761,12 +880,17 @@ _LISTALERTPOLICIES.fields_by_name['limit']._options = None
 _LISTALERTPOLICIES.fields_by_name['offset']._options = None
 _LISTALERTPOLICIES.fields_by_name['space_id']._options = None
 _LISTALERTPOLICIES.fields_by_name['sort_by']._options = None
+_DELETEALERTPOLICIES.fields_by_name['space_id']._options = None
 _DELETEALERTPOLICIES.fields_by_name['alert_ids']._options = None
+_ENABLEALERTPOLICIES.fields_by_name['space_id']._options = None
 _ENABLEALERTPOLICIES.fields_by_name['alert_ids']._options = None
+_DISABLEALERTPOLICIES.fields_by_name['space_id']._options = None
 _DISABLEALERTPOLICIES.fields_by_name['alert_ids']._options = None
 _CREATEALERTPOLICY.fields_by_name['space_id']._options = None
 _CREATEALERTPOLICY.fields_by_name['created_by']._options = None
+_CREATEALERTPOLICY.fields_by_name['space_owner']._options = None
 _CREATEALERTPOLICY.fields_by_name['name']._options = None
+_CREATEALERTPOLICY.fields_by_name['desc']._options = None
 _CREATEALERTPOLICY.fields_by_name['monitor_object']._options = None
 _CREATEALERTPOLICY.fields_by_name['monitor_item']._options = None
 _CREATEALERTPOLICY.fields_by_name['trigger_rule']._options = None
@@ -775,17 +899,33 @@ _CREATEALERTPOLICY.fields_by_name['notification_ids']._options = None
 _UPDATEALERTPOLICY.fields_by_name['space_id']._options = None
 _UPDATEALERTPOLICY.fields_by_name['alert_id']._options = None
 _UPDATEALERTPOLICY.fields_by_name['name']._options = None
+_UPDATEALERTPOLICY.fields_by_name['desc']._options = None
 _UPDATEALERTPOLICY.fields_by_name['monitor_object']._options = None
 _UPDATEALERTPOLICY.fields_by_name['monitor_item']._options = None
 _UPDATEALERTPOLICY.fields_by_name['trigger_rule']._options = None
 _UPDATEALERTPOLICY.fields_by_name['trigger_action']._options = None
 _UPDATEALERTPOLICY.fields_by_name['notification_ids']._options = None
+_UPDATEALERTPOLICY.fields_by_name['job_ids']._options = None
+_DESCRIBEALERTPOLICY.fields_by_name['space_id']._options = None
 _DESCRIBEALERTPOLICY.fields_by_name['alert_id']._options = None
+_JOBBOUNDALERTPOLICIES.fields_by_name['space_id']._options = None
 _JOBBOUNDALERTPOLICIES.fields_by_name['job_id']._options = None
 _JOBBOUNDALERTPOLICIES.fields_by_name['alert_ids']._options = None
+_JOBUNBOUNDALERTPOLICIES.fields_by_name['space_id']._options = None
 _JOBUNBOUNDALERTPOLICIES.fields_by_name['job_id']._options = None
-_LISTJOBALERTPOLICIES.fields_by_name['job_id']._options = None
+_JOBUNBOUNDALERTPOLICIES.fields_by_name['alert_ids']._options = None
+_LISTALERTPOLICIESBYJOB.fields_by_name['space_id']._options = None
+_LISTALERTPOLICIESBYJOB.fields_by_name['job_id']._options = None
+_LISTALERTPOLICIESBYJOB.fields_by_name['limit']._options = None
+_LISTALERTPOLICIESBYJOB.fields_by_name['offset']._options = None
+_ALERTPOLICYBOUNDJOBS.fields_by_name['space_id']._options = None
 _ALERTPOLICYBOUNDJOBS.fields_by_name['alert_id']._options = None
+_ALERTPOLICYBOUNDJOBS.fields_by_name['job_ids']._options = None
+_ALERTPOLICYUNBOUNDJOBS.fields_by_name['space_id']._options = None
 _ALERTPOLICYUNBOUNDJOBS.fields_by_name['alert_id']._options = None
-_LISTALERTPOLICYJOBS.fields_by_name['alert_id']._options = None
+_ALERTPOLICYUNBOUNDJOBS.fields_by_name['job_ids']._options = None
+_LISTJOBSBYALERTPOLICY.fields_by_name['space_id']._options = None
+_LISTJOBSBYALERTPOLICY.fields_by_name['alert_id']._options = None
+_LISTJOBSBYALERTPOLICY.fields_by_name['limit']._options = None
+_LISTJOBSBYALERTPOLICY.fields_by_name['offset']._options = None
 # @@protoc_insertion_point(module_scope)

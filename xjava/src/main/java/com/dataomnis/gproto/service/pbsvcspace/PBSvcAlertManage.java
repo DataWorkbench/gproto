@@ -27,7 +27,7 @@ public final class PBSvcAlertManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/alert_" +
       "manage.proto\032\'proto/types/response/alert" +
-      "_manage.proto2\223\010\n\013AlertManage\022N\n\021ListAle" +
+      "_manage.proto2\250\010\n\013AlertManage\022N\n\021ListAle" +
       "rtPolicies\022\032.request.ListAlertPolicies\032\033" +
       ".response.ListAlertPolicies\"\000\022I\n\023DeleteA" +
       "lertPolicies\022\034.request.DeleteAlertPolici" +
@@ -35,28 +35,29 @@ public final class PBSvcAlertManage {
       "olicies\022\034.request.EnableAlertPolicies\032\022." +
       "model.EmptyStruct\"\000\022K\n\024DisableAlertPolic" +
       "ies\022\035.request.DisableAlertPolicies\032\022.mod" +
-      "el.EmptyStruct\"\000\022E\n\021CreateAlertPolicy\022\032." +
-      "request.CreateAlertPolicy\032\022.model.EmptyS" +
-      "truct\"\000\022E\n\021UpdateAlertPolicy\022\032.request.U" +
-      "pdateAlertPolicy\032\022.model.EmptyStruct\"\000\022T" +
-      "\n\023DescribeAlertPolicy\022\034.request.Describe" +
-      "AlertPolicy\032\035.response.DescribeAlertPoli" +
-      "cy\"\000\022M\n\025JobBoundAlertPolicies\022\036.request." +
-      "JobBoundAlertPolicies\032\022.model.EmptyStruc" +
-      "t\"\000\022Q\n\027JobUnboundAlertPolicies\022 .request" +
-      ".JobUnboundAlertPolicies\032\022.model.EmptySt" +
-      "ruct\"\000\022W\n\024ListJobAlertPolicies\022\035.request" +
-      ".ListJobAlertPolicies\032\036.response.ListJob" +
-      "AlertPolicies\"\000\022K\n\024AlertPolicyBoundJobs\022" +
-      "\035.request.AlertPolicyBoundJobs\032\022.model.E" +
-      "mptyStruct\"\000\022O\n\026AlertPolicyUnboundJobs\022\037" +
-      ".request.AlertPolicyUnboundJobs\032\022.model." +
-      "EmptyStruct\"\000\022T\n\023ListAlertPolicyJobs\022\034.r" +
-      "equest.ListAlertPolicyJobs\032\035.response.Li" +
-      "stAlertPolicyJobs\"\000Bu\n\'com.dataomnis.gpr" +
-      "oto.service.pbsvcspaceB\020PBSvcAlertManage" +
-      "P\000Z6github.com/DataWorkbench/gproto/xgo/" +
-      "service/pbsvcspaceb\006proto3"
+      "el.EmptyStruct\"\000\022N\n\021CreateAlertPolicy\022\032." +
+      "request.CreateAlertPolicy\032\033.response.Cre" +
+      "ateAlertPolicy\"\000\022E\n\021UpdateAlertPolicy\022\032." +
+      "request.UpdateAlertPolicy\032\022.model.EmptyS" +
+      "truct\"\000\022T\n\023DescribeAlertPolicy\022\034.request" +
+      ".DescribeAlertPolicy\032\035.response.Describe" +
+      "AlertPolicy\"\000\022M\n\025JobBoundAlertPolicies\022\036" +
+      ".request.JobBoundAlertPolicies\032\022.model.E" +
+      "mptyStruct\"\000\022Q\n\027JobUnboundAlertPolicies\022" +
+      " .request.JobUnboundAlertPolicies\032\022.mode" +
+      "l.EmptyStruct\"\000\022]\n\026ListAlertPoliciesByJo" +
+      "b\022\037.request.ListAlertPoliciesByJob\032 .res" +
+      "ponse.ListAlertPoliciesByJob\"\000\022K\n\024AlertP" +
+      "olicyBoundJobs\022\035.request.AlertPolicyBoun" +
+      "dJobs\032\022.model.EmptyStruct\"\000\022O\n\026AlertPoli" +
+      "cyUnboundJobs\022\037.request.AlertPolicyUnbou" +
+      "ndJobs\032\022.model.EmptyStruct\"\000\022Z\n\025ListJobs" +
+      "ByAlertPolicy\022\036.request.ListJobsByAlertP" +
+      "olicy\032\037.response.ListJobsByAlertPolicy\"\000" +
+      "Bu\n\'com.dataomnis.gproto.service.pbsvcsp" +
+      "aceB\020PBSvcAlertManageP\000Z6github.com/Data" +
+      "Workbench/gproto/xgo/service/pbsvcspaceb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

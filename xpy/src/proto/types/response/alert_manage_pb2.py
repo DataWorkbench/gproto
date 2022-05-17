@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\025PBResponseAlertManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/response/alert_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1dproto/types/model/alert.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"W\n\x11ListAlertPolicies\x12!\n\x05infos\x18\x01 \x03(\x0b\x32\x12.model.AlertPolicy\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"4\n\x11\x43reateAlertPolicy\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"7\n\x13\x44\x65scribeAlertPolicy\x12 \n\x04info\x18\x01 \x01(\x0b\x32\x12.model.AlertPolicy\"9\n\x14ListJobAlertPolicies\x12!\n\x05infos\x18\x01 \x03(\x0b\x32\x12.model.AlertPolicy\"_\n\x13ListAlertPolicyJobs\x12%\n\x0bstream_jobs\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12!\n\tsync_jobs\x18\x02 \x03(\x0b\x32\x0e.model.SyncJobBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseAlertManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\'proto/types/response/alert_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1dproto/types/model/alert.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"W\n\x11ListAlertPolicies\x12!\n\x05infos\x18\x01 \x03(\x0b\x32\x12.model.AlertPolicy\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"4\n\x11\x43reateAlertPolicy\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"7\n\x13\x44\x65scribeAlertPolicy\x12 \n\x04info\x18\x01 \x01(\x0b\x32\x12.model.AlertPolicy\"\\\n\x16ListAlertPoliciesByJob\x12!\n\x05infos\x18\x01 \x03(\x0b\x32\x12.model.AlertPolicy\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x82\x01\n\x15ListJobsByAlertPolicy\x12%\n\x0bstream_jobs\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12!\n\tsync_jobs\x18\x02 \x03(\x0b\x32\x0e.model.SyncJob\x12\x10\n\x08has_more\x18\x03 \x01(\x08\x12\r\n\x05total\x18\x04 \x01(\x03\x42v\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseAlertManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_alert__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
 
@@ -140,18 +140,32 @@ _DESCRIBEALERTPOLICY = _descriptor.Descriptor(
 )
 
 
-_LISTJOBALERTPOLICIES = _descriptor.Descriptor(
-  name='ListJobAlertPolicies',
-  full_name='response.ListJobAlertPolicies',
+_LISTALERTPOLICIESBYJOB = _descriptor.Descriptor(
+  name='ListAlertPoliciesByJob',
+  full_name='response.ListAlertPoliciesByJob',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='infos', full_name='response.ListJobAlertPolicies.infos', index=0,
+      name='infos', full_name='response.ListAlertPoliciesByJob.infos', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListAlertPoliciesByJob.has_more', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='response.ListAlertPoliciesByJob.total', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -168,29 +182,43 @@ _LISTJOBALERTPOLICIES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=407,
-  serialized_end=464,
+  serialized_end=499,
 )
 
 
-_LISTALERTPOLICYJOBS = _descriptor.Descriptor(
-  name='ListAlertPolicyJobs',
-  full_name='response.ListAlertPolicyJobs',
+_LISTJOBSBYALERTPOLICY = _descriptor.Descriptor(
+  name='ListJobsByAlertPolicy',
+  full_name='response.ListJobsByAlertPolicy',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='stream_jobs', full_name='response.ListAlertPolicyJobs.stream_jobs', index=0,
+      name='stream_jobs', full_name='response.ListJobsByAlertPolicy.stream_jobs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sync_jobs', full_name='response.ListAlertPolicyJobs.sync_jobs', index=1,
+      name='sync_jobs', full_name='response.ListJobsByAlertPolicy.sync_jobs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListJobsByAlertPolicy.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='response.ListJobsByAlertPolicy.total', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -206,20 +234,20 @@ _LISTALERTPOLICYJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=466,
-  serialized_end=561,
+  serialized_start=502,
+  serialized_end=632,
 )
 
 _LISTALERTPOLICIES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY
 _DESCRIBEALERTPOLICY.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY
-_LISTJOBALERTPOLICIES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY
-_LISTALERTPOLICYJOBS.fields_by_name['stream_jobs'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
-_LISTALERTPOLICYJOBS.fields_by_name['sync_jobs'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
+_LISTALERTPOLICIESBYJOB.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY
+_LISTJOBSBYALERTPOLICY.fields_by_name['stream_jobs'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
+_LISTJOBSBYALERTPOLICY.fields_by_name['sync_jobs'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
 DESCRIPTOR.message_types_by_name['ListAlertPolicies'] = _LISTALERTPOLICIES
 DESCRIPTOR.message_types_by_name['CreateAlertPolicy'] = _CREATEALERTPOLICY
 DESCRIPTOR.message_types_by_name['DescribeAlertPolicy'] = _DESCRIBEALERTPOLICY
-DESCRIPTOR.message_types_by_name['ListJobAlertPolicies'] = _LISTJOBALERTPOLICIES
-DESCRIPTOR.message_types_by_name['ListAlertPolicyJobs'] = _LISTALERTPOLICYJOBS
+DESCRIPTOR.message_types_by_name['ListAlertPoliciesByJob'] = _LISTALERTPOLICIESBYJOB
+DESCRIPTOR.message_types_by_name['ListJobsByAlertPolicy'] = _LISTJOBSBYALERTPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAlertPolicies = _reflection.GeneratedProtocolMessageType('ListAlertPolicies', (_message.Message,), {
@@ -243,19 +271,19 @@ DescribeAlertPolicy = _reflection.GeneratedProtocolMessageType('DescribeAlertPol
   })
 _sym_db.RegisterMessage(DescribeAlertPolicy)
 
-ListJobAlertPolicies = _reflection.GeneratedProtocolMessageType('ListJobAlertPolicies', (_message.Message,), {
-  'DESCRIPTOR' : _LISTJOBALERTPOLICIES,
+ListAlertPoliciesByJob = _reflection.GeneratedProtocolMessageType('ListAlertPoliciesByJob', (_message.Message,), {
+  'DESCRIPTOR' : _LISTALERTPOLICIESBYJOB,
   '__module__' : 'proto.types.response.alert_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.ListJobAlertPolicies)
+  # @@protoc_insertion_point(class_scope:response.ListAlertPoliciesByJob)
   })
-_sym_db.RegisterMessage(ListJobAlertPolicies)
+_sym_db.RegisterMessage(ListAlertPoliciesByJob)
 
-ListAlertPolicyJobs = _reflection.GeneratedProtocolMessageType('ListAlertPolicyJobs', (_message.Message,), {
-  'DESCRIPTOR' : _LISTALERTPOLICYJOBS,
+ListJobsByAlertPolicy = _reflection.GeneratedProtocolMessageType('ListJobsByAlertPolicy', (_message.Message,), {
+  'DESCRIPTOR' : _LISTJOBSBYALERTPOLICY,
   '__module__' : 'proto.types.response.alert_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.ListAlertPolicyJobs)
+  # @@protoc_insertion_point(class_scope:response.ListJobsByAlertPolicy)
   })
-_sym_db.RegisterMessage(ListAlertPolicyJobs)
+_sym_db.RegisterMessage(ListJobsByAlertPolicy)
 
 
 DESCRIPTOR._options = None

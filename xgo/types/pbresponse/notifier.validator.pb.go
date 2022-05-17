@@ -9,7 +9,7 @@ import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 )
 
-func (this *DescNotificationList) _xxx_xxx_Validator_Validate_notification_lists() error {
+func (this *ListNotifications) _xxx_xxx_Validator_Validate_notification_lists() error {
 	for _, item := range this.NotificationLists {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -21,8 +21,8 @@ func (this *DescNotificationList) _xxx_xxx_Validator_Validate_notification_lists
 	return nil
 }
 
-// Set default value for message response.DescNotificationList
-func (this *DescNotificationList) Validate() error {
+// Set default value for message response.ListNotifications
+func (this *ListNotifications) Validate() error {
 	if this == nil {
 		return nil
 	}

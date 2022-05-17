@@ -143,28 +143,28 @@ public final class AlertManageGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateAlertPolicyMethod;
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> getCreateAlertPolicyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateAlertPolicy",
       requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateAlertPolicyMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateAlertPolicyMethod;
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> getCreateAlertPolicyMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> getCreateAlertPolicyMethod;
     if ((getCreateAlertPolicyMethod = AlertManageGrpc.getCreateAlertPolicyMethod) == null) {
       synchronized (AlertManageGrpc.class) {
         if ((getCreateAlertPolicyMethod = AlertManageGrpc.getCreateAlertPolicyMethod) == null) {
           AlertManageGrpc.getCreateAlertPolicyMethod = getCreateAlertPolicyMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAlertPolicy"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy.getDefaultInstance()))
               .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("CreateAlertPolicy"))
               .build();
         }
@@ -297,35 +297,35 @@ public final class AlertManageGrpc {
     return getJobUnboundAlertPoliciesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> getListJobAlertPoliciesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> getListAlertPoliciesByJobMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListJobAlertPolicies",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListAlertPoliciesByJob",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> getListJobAlertPoliciesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> getListJobAlertPoliciesMethod;
-    if ((getListJobAlertPoliciesMethod = AlertManageGrpc.getListJobAlertPoliciesMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> getListAlertPoliciesByJobMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> getListAlertPoliciesByJobMethod;
+    if ((getListAlertPoliciesByJobMethod = AlertManageGrpc.getListAlertPoliciesByJobMethod) == null) {
       synchronized (AlertManageGrpc.class) {
-        if ((getListJobAlertPoliciesMethod = AlertManageGrpc.getListJobAlertPoliciesMethod) == null) {
-          AlertManageGrpc.getListJobAlertPoliciesMethod = getListJobAlertPoliciesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies>newBuilder()
+        if ((getListAlertPoliciesByJobMethod = AlertManageGrpc.getListAlertPoliciesByJobMethod) == null) {
+          AlertManageGrpc.getListAlertPoliciesByJobMethod = getListAlertPoliciesByJobMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListJobAlertPolicies"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAlertPoliciesByJob"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies.getDefaultInstance()))
-              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("ListJobAlertPolicies"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob.getDefaultInstance()))
+              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("ListAlertPoliciesByJob"))
               .build();
         }
       }
     }
-    return getListJobAlertPoliciesMethod;
+    return getListAlertPoliciesByJobMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.AlertPolicyBoundJobs,
@@ -390,35 +390,35 @@ public final class AlertManageGrpc {
     return getAlertPolicyUnboundJobsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> getListAlertPolicyJobsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> getListJobsByAlertPolicyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListAlertPolicyJobs",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListJobsByAlertPolicy",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> getListAlertPolicyJobsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> getListAlertPolicyJobsMethod;
-    if ((getListAlertPolicyJobsMethod = AlertManageGrpc.getListAlertPolicyJobsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> getListJobsByAlertPolicyMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> getListJobsByAlertPolicyMethod;
+    if ((getListJobsByAlertPolicyMethod = AlertManageGrpc.getListJobsByAlertPolicyMethod) == null) {
       synchronized (AlertManageGrpc.class) {
-        if ((getListAlertPolicyJobsMethod = AlertManageGrpc.getListAlertPolicyJobsMethod) == null) {
-          AlertManageGrpc.getListAlertPolicyJobsMethod = getListAlertPolicyJobsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs>newBuilder()
+        if ((getListJobsByAlertPolicyMethod = AlertManageGrpc.getListJobsByAlertPolicyMethod) == null) {
+          AlertManageGrpc.getListJobsByAlertPolicyMethod = getListJobsByAlertPolicyMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAlertPolicyJobs"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListJobsByAlertPolicy"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs.getDefaultInstance()))
-              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("ListAlertPolicyJobs"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy.getDefaultInstance()))
+              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("ListJobsByAlertPolicy"))
               .build();
         }
       }
     }
-    return getListAlertPolicyJobsMethod;
+    return getListJobsByAlertPolicyMethod;
   }
 
   /**
@@ -503,7 +503,7 @@ public final class AlertManageGrpc {
     /**
      */
     public void createAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAlertPolicyMethod(), responseObserver);
     }
 
@@ -543,12 +543,12 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
+     * ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
      * </pre>
      */
-    public void listJobAlertPolicies(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobAlertPoliciesMethod(), responseObserver);
+    public void listAlertPoliciesByJob(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAlertPoliciesByJobMethod(), responseObserver);
     }
 
     /**
@@ -573,12 +573,12 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
+     * ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
      * </pre>
      */
-    public void listAlertPolicyJobs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAlertPolicyJobsMethod(), responseObserver);
+    public void listJobsByAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsByAlertPolicyMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -616,7 +616,7 @@ public final class AlertManageGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy,
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy>(
                   this, METHODID_CREATE_ALERT_POLICY)))
           .addMethod(
             getUpdateAlertPolicyMethod(),
@@ -647,12 +647,12 @@ public final class AlertManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_JOB_UNBOUND_ALERT_POLICIES)))
           .addMethod(
-            getListJobAlertPoliciesMethod(),
+            getListAlertPoliciesByJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies,
-                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies>(
-                  this, METHODID_LIST_JOB_ALERT_POLICIES)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob>(
+                  this, METHODID_LIST_ALERT_POLICIES_BY_JOB)))
           .addMethod(
             getAlertPolicyBoundJobsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -668,12 +668,12 @@ public final class AlertManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_ALERT_POLICY_UNBOUND_JOBS)))
           .addMethod(
-            getListAlertPolicyJobsMethod(),
+            getListJobsByAlertPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs,
-                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs>(
-                  this, METHODID_LIST_ALERT_POLICY_JOBS)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy>(
+                  this, METHODID_LIST_JOBS_BY_ALERT_POLICY)))
           .build();
     }
   }
@@ -730,7 +730,7 @@ public final class AlertManageGrpc {
     /**
      */
     public void createAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAlertPolicyMethod(), getCallOptions()), request, responseObserver);
     }
@@ -775,13 +775,13 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
+     * ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
      * </pre>
      */
-    public void listJobAlertPolicies(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> responseObserver) {
+    public void listAlertPoliciesByJob(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListJobAlertPoliciesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListAlertPoliciesByJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -808,13 +808,13 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
+     * ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
      * </pre>
      */
-    public void listAlertPolicyJobs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> responseObserver) {
+    public void listJobsByAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListAlertPolicyJobsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListJobsByAlertPolicyMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -865,7 +865,7 @@ public final class AlertManageGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy createAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAlertPolicyMethod(), getCallOptions(), request);
     }
@@ -906,12 +906,12 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
+     * ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies listJobAlertPolicies(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob listAlertPoliciesByJob(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListJobAlertPoliciesMethod(), getCallOptions(), request);
+          getChannel(), getListAlertPoliciesByJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -936,12 +936,12 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
+     * ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs listAlertPolicyJobs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy listJobsByAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAlertPolicyJobsMethod(), getCallOptions(), request);
+          getChannel(), getListJobsByAlertPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -996,7 +996,7 @@ public final class AlertManageGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createAlertPolicy(
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy> createAlertPolicy(
         com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAlertPolicyMethod(), getCallOptions()), request);
@@ -1042,13 +1042,13 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
+     * ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies> listJobAlertPolicies(
-        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob> listAlertPoliciesByJob(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListJobAlertPoliciesMethod(), getCallOptions()), request);
+          getChannel().newCall(getListAlertPoliciesByJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1075,13 +1075,13 @@ public final class AlertManageGrpc {
 
     /**
      * <pre>
-     * ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
+     * ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs> listAlertPolicyJobs(
-        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy> listJobsByAlertPolicy(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListAlertPolicyJobsMethod(), getCallOptions()), request);
+          getChannel().newCall(getListJobsByAlertPolicyMethod(), getCallOptions()), request);
     }
   }
 
@@ -1094,10 +1094,10 @@ public final class AlertManageGrpc {
   private static final int METHODID_DESCRIBE_ALERT_POLICY = 6;
   private static final int METHODID_JOB_BOUND_ALERT_POLICIES = 7;
   private static final int METHODID_JOB_UNBOUND_ALERT_POLICIES = 8;
-  private static final int METHODID_LIST_JOB_ALERT_POLICIES = 9;
+  private static final int METHODID_LIST_ALERT_POLICIES_BY_JOB = 9;
   private static final int METHODID_ALERT_POLICY_BOUND_JOBS = 10;
   private static final int METHODID_ALERT_POLICY_UNBOUND_JOBS = 11;
-  private static final int METHODID_LIST_ALERT_POLICY_JOBS = 12;
+  private static final int METHODID_LIST_JOBS_BY_ALERT_POLICY = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1134,7 +1134,7 @@ public final class AlertManageGrpc {
           break;
         case METHODID_CREATE_ALERT_POLICY:
           serviceImpl.createAlertPolicy((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.CreateAlertPolicy) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.CreateAlertPolicy>) responseObserver);
           break;
         case METHODID_UPDATE_ALERT_POLICY:
           serviceImpl.updateAlertPolicy((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.UpdateAlertPolicy) request,
@@ -1152,9 +1152,9 @@ public final class AlertManageGrpc {
           serviceImpl.jobUnboundAlertPolicies((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.JobUnboundAlertPolicies) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_LIST_JOB_ALERT_POLICIES:
-          serviceImpl.listJobAlertPolicies((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobAlertPolicies) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobAlertPolicies>) responseObserver);
+        case METHODID_LIST_ALERT_POLICIES_BY_JOB:
+          serviceImpl.listAlertPoliciesByJob((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPoliciesByJob) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPoliciesByJob>) responseObserver);
           break;
         case METHODID_ALERT_POLICY_BOUND_JOBS:
           serviceImpl.alertPolicyBoundJobs((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.AlertPolicyBoundJobs) request,
@@ -1164,9 +1164,9 @@ public final class AlertManageGrpc {
           serviceImpl.alertPolicyUnboundJobs((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.AlertPolicyUnboundJobs) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_LIST_ALERT_POLICY_JOBS:
-          serviceImpl.listAlertPolicyJobs((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertPolicyJobs) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertPolicyJobs>) responseObserver);
+        case METHODID_LIST_JOBS_BY_ALERT_POLICY:
+          serviceImpl.listJobsByAlertPolicy((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1238,10 +1238,10 @@ public final class AlertManageGrpc {
               .addMethod(getDescribeAlertPolicyMethod())
               .addMethod(getJobBoundAlertPoliciesMethod())
               .addMethod(getJobUnboundAlertPoliciesMethod())
-              .addMethod(getListJobAlertPoliciesMethod())
+              .addMethod(getListAlertPoliciesByJobMethod())
               .addMethod(getAlertPolicyBoundJobsMethod())
               .addMethod(getAlertPolicyUnboundJobsMethod())
-              .addMethod(getListAlertPolicyJobsMethod())
+              .addMethod(getListJobsByAlertPolicyMethod())
               .build();
         }
       }

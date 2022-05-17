@@ -76,7 +76,7 @@ func (this *DescribeAlertPolicy) Validate() error {
 	return nil
 }
 
-func (this *ListJobAlertPolicies) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListAlertPoliciesByJob) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -88,8 +88,8 @@ func (this *ListJobAlertPolicies) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListJobAlertPolicies
-func (this *ListJobAlertPolicies) Validate() error {
+// Set default value for message response.ListAlertPoliciesByJob
+func (this *ListAlertPoliciesByJob) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -99,7 +99,7 @@ func (this *ListJobAlertPolicies) Validate() error {
 	return nil
 }
 
-func (this *ListAlertPolicyJobs) _xxx_xxx_Validator_Validate_stream_jobs() error {
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_stream_jobs() error {
 	for _, item := range this.StreamJobs {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -111,7 +111,7 @@ func (this *ListAlertPolicyJobs) _xxx_xxx_Validator_Validate_stream_jobs() error
 	return nil
 }
 
-func (this *ListAlertPolicyJobs) _xxx_xxx_Validator_Validate_sync_jobs() error {
+func (this *ListJobsByAlertPolicy) _xxx_xxx_Validator_Validate_sync_jobs() error {
 	for _, item := range this.SyncJobs {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -123,8 +123,8 @@ func (this *ListAlertPolicyJobs) _xxx_xxx_Validator_Validate_sync_jobs() error {
 	return nil
 }
 
-// Set default value for message response.ListAlertPolicyJobs
-func (this *ListAlertPolicyJobs) Validate() error {
+// Set default value for message response.ListJobsByAlertPolicy
+func (this *ListJobsByAlertPolicy) Validate() error {
 	if this == nil {
 		return nil
 	}

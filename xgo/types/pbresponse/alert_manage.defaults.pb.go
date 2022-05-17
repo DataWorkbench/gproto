@@ -39,16 +39,16 @@ func (this *DescribeAlertPolicy) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListJobAlertPolicies
-func (this *ListJobAlertPolicies) SetDefaults() {
+// Set default value for message response.ListAlertPoliciesByJob
+func (this *ListAlertPoliciesByJob) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.ListAlertPolicyJobs
-func (this *ListAlertPolicyJobs) SetDefaults() {
+// Set default value for message response.ListJobsByAlertPolicy
+func (this *ListJobsByAlertPolicy) SetDefaults() {
 	if this == nil {
 		return
 	}

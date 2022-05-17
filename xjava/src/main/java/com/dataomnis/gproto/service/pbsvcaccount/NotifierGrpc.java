@@ -46,35 +46,35 @@ public final class NotifierGrpc {
     return getSendNotificationMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList,
-      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> getDescribeNotificationListMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications,
+      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> getListNotificationsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeNotificationList",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListNotifications",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList,
-      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> getDescribeNotificationListMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> getDescribeNotificationListMethod;
-    if ((getDescribeNotificationListMethod = NotifierGrpc.getDescribeNotificationListMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications,
+      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> getListNotificationsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> getListNotificationsMethod;
+    if ((getListNotificationsMethod = NotifierGrpc.getListNotificationsMethod) == null) {
       synchronized (NotifierGrpc.class) {
-        if ((getDescribeNotificationListMethod = NotifierGrpc.getDescribeNotificationListMethod) == null) {
-          NotifierGrpc.getDescribeNotificationListMethod = getDescribeNotificationListMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList>newBuilder()
+        if ((getListNotificationsMethod = NotifierGrpc.getListNotificationsMethod) == null) {
+          NotifierGrpc.getListNotificationsMethod = getListNotificationsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeNotificationList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNotifications"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.getDefaultInstance()))
-              .setSchemaDescriptor(new NotifierMethodDescriptorSupplier("DescribeNotificationList"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.getDefaultInstance()))
+              .setSchemaDescriptor(new NotifierMethodDescriptorSupplier("ListNotifications"))
               .build();
         }
       }
     }
-    return getDescribeNotificationListMethod;
+    return getListNotificationsMethod;
   }
 
   /**
@@ -134,9 +134,9 @@ public final class NotifierGrpc {
 
     /**
      */
-    public void describeNotificationList(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeNotificationListMethod(), responseObserver);
+    public void listNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNotificationsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -149,12 +149,12 @@ public final class NotifierGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_SEND_NOTIFICATION)))
           .addMethod(
-            getDescribeNotificationListMethod(),
+            getListNotificationsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList,
-                com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList>(
-                  this, METHODID_DESCRIBE_NOTIFICATION_LIST)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications,
+                com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications>(
+                  this, METHODID_LIST_NOTIFICATIONS)))
           .build();
     }
   }
@@ -183,10 +183,10 @@ public final class NotifierGrpc {
 
     /**
      */
-    public void describeNotificationList(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> responseObserver) {
+    public void listNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeNotificationListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListNotificationsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -213,9 +213,9 @@ public final class NotifierGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList describeNotificationList(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications listNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeNotificationListMethod(), getCallOptions(), request);
+          getChannel(), getListNotificationsMethod(), getCallOptions(), request);
     }
   }
 
@@ -243,15 +243,15 @@ public final class NotifierGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList> describeNotificationList(
-        com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications> listNotifications(
+        com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeNotificationListMethod(), getCallOptions()), request);
+          getChannel().newCall(getListNotificationsMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_SEND_NOTIFICATION = 0;
-  private static final int METHODID_DESCRIBE_NOTIFICATION_LIST = 1;
+  private static final int METHODID_LIST_NOTIFICATIONS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -274,9 +274,9 @@ public final class NotifierGrpc {
           serviceImpl.sendNotification((com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DESCRIBE_NOTIFICATION_LIST:
-          serviceImpl.describeNotificationList((com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.DescNotificationList) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList>) responseObserver);
+        case METHODID_LIST_NOTIFICATIONS:
+          serviceImpl.listNotifications((com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.ListNotifications) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -340,7 +340,7 @@ public final class NotifierGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new NotifierFileDescriptorSupplier())
               .addMethod(getSendNotificationMethod())
-              .addMethod(getDescribeNotificationListMethod())
+              .addMethod(getListNotificationsMethod())
               .build();
         }
       }

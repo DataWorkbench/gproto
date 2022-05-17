@@ -57,8 +57,8 @@ func (this *AlertPolicy_MonitorItem) SetDefaults() {
 	return
 }
 
-// Set default value for message model.AlertPolicyBinding
-func (this *AlertPolicyBinding) SetDefaults() {
+// Set default value for message model.AlertPolicyMapping
+func (this *AlertPolicyMapping) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -10,6 +10,7 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *AlertPolicy) _xxx_xxx_Validator_Validate_space_id() error {
@@ -38,6 +39,13 @@ func (this *AlertPolicy) _xxx_xxx_Validator_Validate_name() error {
 	}
 	if !(len(this.Name) <= 128) {
 		return protovalidator.FieldError1("AlertPolicy", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *AlertPolicy) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("AlertPolicy", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -133,6 +141,18 @@ func (this *AlertPolicy) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *AlertPolicy) _xxx_xxx_Validator_Validate_notification_lists() error {
+	for _, item := range this.NotificationLists {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.AlertPolicy
 func (this *AlertPolicy) Validate() error {
 	if this == nil {
@@ -145,6 +165,9 @@ func (this *AlertPolicy) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
@@ -172,6 +195,9 @@ func (this *AlertPolicy) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification_lists(); err != nil {
 		return err
 	}
 	return nil
@@ -225,27 +251,40 @@ func (this *AlertPolicy_MonitorItem) Validate() error {
 	return nil
 }
 
-func (this *AlertPolicyBinding) _xxx_xxx_Validator_Validate_alert_id() error {
+func (this *AlertPolicyMapping) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AlertPolicyMapping", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AlertPolicyMapping", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *AlertPolicyMapping) _xxx_xxx_Validator_Validate_alert_id() error {
 	if !(len(this.AlertId) == 20) {
-		return protovalidator.FieldError1("AlertPolicyBinding", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
+		return protovalidator.FieldError1("AlertPolicyMapping", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
 	}
 	if !(strings.HasPrefix(this.AlertId, "alt-")) {
-		return protovalidator.FieldError1("AlertPolicyBinding", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
+		return protovalidator.FieldError1("AlertPolicyMapping", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
 	}
 	return nil
 }
 
-func (this *AlertPolicyBinding) _xxx_xxx_Validator_Validate_job_id() error {
+func (this *AlertPolicyMapping) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("AlertPolicyBinding", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+		return protovalidator.FieldError1("AlertPolicyMapping", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
 	return nil
 }
 
-// Set default value for message model.AlertPolicyBinding
-func (this *AlertPolicyBinding) Validate() error {
+// Set default value for message model.AlertPolicyMapping
+func (this *AlertPolicyMapping) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
 		return err

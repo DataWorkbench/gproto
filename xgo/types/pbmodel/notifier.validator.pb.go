@@ -28,8 +28,8 @@ func (this *NotificationList) Validate() error {
 	return nil
 }
 
-// Set default value for message model.NotificationListItem
-func (this *NotificationListItem) Validate() error {
+// Set default value for message model.NotificationList.Item
+func (this *NotificationList_Item) Validate() error {
 	if this == nil {
 		return nil
 	}

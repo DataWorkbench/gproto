@@ -29,21 +29,21 @@ type AlertManageClient interface {
 	DeleteAlertPolicies(ctx context.Context, in *pbrequest.DeleteAlertPolicies, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	EnableAlertPolicies(ctx context.Context, in *pbrequest.EnableAlertPolicies, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DisableAlertPolicies(ctx context.Context, in *pbrequest.DisableAlertPolicies, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	CreateAlertPolicy(ctx context.Context, in *pbrequest.CreateAlertPolicy, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateAlertPolicy(ctx context.Context, in *pbrequest.CreateAlertPolicy, opts ...grpc.CallOption) (*pbresponse.CreateAlertPolicy, error)
 	UpdateAlertPolicy(ctx context.Context, in *pbrequest.UpdateAlertPolicy, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DescribeAlertPolicy(ctx context.Context, in *pbrequest.DescribeAlertPolicy, opts ...grpc.CallOption) (*pbresponse.DescribeAlertPolicy, error)
 	// JobBoundAlertPolicy bind the alert policies to the specified job(stream or sync)
 	JobBoundAlertPolicies(ctx context.Context, in *pbrequest.JobBoundAlertPolicies, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// JobUnboundAlertPolicies unbind the alert policies from the specified job.
 	JobUnboundAlertPolicies(ctx context.Context, in *pbrequest.JobUnboundAlertPolicies, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
-	ListJobAlertPolicies(ctx context.Context, in *pbrequest.ListJobAlertPolicies, opts ...grpc.CallOption) (*pbresponse.ListJobAlertPolicies, error)
+	// ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
+	ListAlertPoliciesByJob(ctx context.Context, in *pbrequest.ListAlertPoliciesByJob, opts ...grpc.CallOption) (*pbresponse.ListAlertPoliciesByJob, error)
 	// AlertPolicyBoundJobs bind the jobs(stream or sync) to specified alert policy.
 	AlertPolicyBoundJobs(ctx context.Context, in *pbrequest.AlertPolicyBoundJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// AlertPolicyUnboundJobs unbind the jobs(stream or sync) from the specified alert policy.
 	AlertPolicyUnboundJobs(ctx context.Context, in *pbrequest.AlertPolicyUnboundJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
-	ListAlertPolicyJobs(ctx context.Context, in *pbrequest.ListAlertPolicyJobs, opts ...grpc.CallOption) (*pbresponse.ListAlertPolicyJobs, error)
+	// ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
+	ListJobsByAlertPolicy(ctx context.Context, in *pbrequest.ListJobsByAlertPolicy, opts ...grpc.CallOption) (*pbresponse.ListJobsByAlertPolicy, error)
 }
 
 type alertManageClient struct {
@@ -90,8 +90,8 @@ func (c *alertManageClient) DisableAlertPolicies(ctx context.Context, in *pbrequ
 	return out, nil
 }
 
-func (c *alertManageClient) CreateAlertPolicy(ctx context.Context, in *pbrequest.CreateAlertPolicy, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
+func (c *alertManageClient) CreateAlertPolicy(ctx context.Context, in *pbrequest.CreateAlertPolicy, opts ...grpc.CallOption) (*pbresponse.CreateAlertPolicy, error) {
+	out := new(pbresponse.CreateAlertPolicy)
 	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/CreateAlertPolicy", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -135,9 +135,9 @@ func (c *alertManageClient) JobUnboundAlertPolicies(ctx context.Context, in *pbr
 	return out, nil
 }
 
-func (c *alertManageClient) ListJobAlertPolicies(ctx context.Context, in *pbrequest.ListJobAlertPolicies, opts ...grpc.CallOption) (*pbresponse.ListJobAlertPolicies, error) {
-	out := new(pbresponse.ListJobAlertPolicies)
-	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/ListJobAlertPolicies", in, out, opts...)
+func (c *alertManageClient) ListAlertPoliciesByJob(ctx context.Context, in *pbrequest.ListAlertPoliciesByJob, opts ...grpc.CallOption) (*pbresponse.ListAlertPoliciesByJob, error) {
+	out := new(pbresponse.ListAlertPoliciesByJob)
+	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/ListAlertPoliciesByJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -162,9 +162,9 @@ func (c *alertManageClient) AlertPolicyUnboundJobs(ctx context.Context, in *pbre
 	return out, nil
 }
 
-func (c *alertManageClient) ListAlertPolicyJobs(ctx context.Context, in *pbrequest.ListAlertPolicyJobs, opts ...grpc.CallOption) (*pbresponse.ListAlertPolicyJobs, error) {
-	out := new(pbresponse.ListAlertPolicyJobs)
-	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/ListAlertPolicyJobs", in, out, opts...)
+func (c *alertManageClient) ListJobsByAlertPolicy(ctx context.Context, in *pbrequest.ListJobsByAlertPolicy, opts ...grpc.CallOption) (*pbresponse.ListJobsByAlertPolicy, error) {
+	out := new(pbresponse.ListJobsByAlertPolicy)
+	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/ListJobsByAlertPolicy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -179,21 +179,21 @@ type AlertManageServer interface {
 	DeleteAlertPolicies(context.Context, *pbrequest.DeleteAlertPolicies) (*pbmodel.EmptyStruct, error)
 	EnableAlertPolicies(context.Context, *pbrequest.EnableAlertPolicies) (*pbmodel.EmptyStruct, error)
 	DisableAlertPolicies(context.Context, *pbrequest.DisableAlertPolicies) (*pbmodel.EmptyStruct, error)
-	CreateAlertPolicy(context.Context, *pbrequest.CreateAlertPolicy) (*pbmodel.EmptyStruct, error)
+	CreateAlertPolicy(context.Context, *pbrequest.CreateAlertPolicy) (*pbresponse.CreateAlertPolicy, error)
 	UpdateAlertPolicy(context.Context, *pbrequest.UpdateAlertPolicy) (*pbmodel.EmptyStruct, error)
 	DescribeAlertPolicy(context.Context, *pbrequest.DescribeAlertPolicy) (*pbresponse.DescribeAlertPolicy, error)
 	// JobBoundAlertPolicy bind the alert policies to the specified job(stream or sync)
 	JobBoundAlertPolicies(context.Context, *pbrequest.JobBoundAlertPolicies) (*pbmodel.EmptyStruct, error)
 	// JobUnboundAlertPolicies unbind the alert policies from the specified job.
 	JobUnboundAlertPolicies(context.Context, *pbrequest.JobUnboundAlertPolicies) (*pbmodel.EmptyStruct, error)
-	// ListJobAlertPolicies query which alert policies are bound to the specified job(stream or sync).
-	ListJobAlertPolicies(context.Context, *pbrequest.ListJobAlertPolicies) (*pbresponse.ListJobAlertPolicies, error)
+	// ListAlertPoliciesByJob query which alert policies are bound to the specified job(stream or sync).
+	ListAlertPoliciesByJob(context.Context, *pbrequest.ListAlertPoliciesByJob) (*pbresponse.ListAlertPoliciesByJob, error)
 	// AlertPolicyBoundJobs bind the jobs(stream or sync) to specified alert policy.
 	AlertPolicyBoundJobs(context.Context, *pbrequest.AlertPolicyBoundJobs) (*pbmodel.EmptyStruct, error)
 	// AlertPolicyUnboundJobs unbind the jobs(stream or sync) from the specified alert policy.
 	AlertPolicyUnboundJobs(context.Context, *pbrequest.AlertPolicyUnboundJobs) (*pbmodel.EmptyStruct, error)
-	// ListAlertPolicyJobs query which jobs are bound to the specified alert policy.
-	ListAlertPolicyJobs(context.Context, *pbrequest.ListAlertPolicyJobs) (*pbresponse.ListAlertPolicyJobs, error)
+	// ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
+	ListJobsByAlertPolicy(context.Context, *pbrequest.ListJobsByAlertPolicy) (*pbresponse.ListJobsByAlertPolicy, error)
 	mustEmbedUnimplementedAlertManageServer()
 }
 
@@ -213,7 +213,7 @@ func (UnimplementedAlertManageServer) EnableAlertPolicies(context.Context, *pbre
 func (UnimplementedAlertManageServer) DisableAlertPolicies(context.Context, *pbrequest.DisableAlertPolicies) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DisableAlertPolicies not implemented")
 }
-func (UnimplementedAlertManageServer) CreateAlertPolicy(context.Context, *pbrequest.CreateAlertPolicy) (*pbmodel.EmptyStruct, error) {
+func (UnimplementedAlertManageServer) CreateAlertPolicy(context.Context, *pbrequest.CreateAlertPolicy) (*pbresponse.CreateAlertPolicy, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAlertPolicy not implemented")
 }
 func (UnimplementedAlertManageServer) UpdateAlertPolicy(context.Context, *pbrequest.UpdateAlertPolicy) (*pbmodel.EmptyStruct, error) {
@@ -228,8 +228,8 @@ func (UnimplementedAlertManageServer) JobBoundAlertPolicies(context.Context, *pb
 func (UnimplementedAlertManageServer) JobUnboundAlertPolicies(context.Context, *pbrequest.JobUnboundAlertPolicies) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method JobUnboundAlertPolicies not implemented")
 }
-func (UnimplementedAlertManageServer) ListJobAlertPolicies(context.Context, *pbrequest.ListJobAlertPolicies) (*pbresponse.ListJobAlertPolicies, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListJobAlertPolicies not implemented")
+func (UnimplementedAlertManageServer) ListAlertPoliciesByJob(context.Context, *pbrequest.ListAlertPoliciesByJob) (*pbresponse.ListAlertPoliciesByJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAlertPoliciesByJob not implemented")
 }
 func (UnimplementedAlertManageServer) AlertPolicyBoundJobs(context.Context, *pbrequest.AlertPolicyBoundJobs) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AlertPolicyBoundJobs not implemented")
@@ -237,8 +237,8 @@ func (UnimplementedAlertManageServer) AlertPolicyBoundJobs(context.Context, *pbr
 func (UnimplementedAlertManageServer) AlertPolicyUnboundJobs(context.Context, *pbrequest.AlertPolicyUnboundJobs) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AlertPolicyUnboundJobs not implemented")
 }
-func (UnimplementedAlertManageServer) ListAlertPolicyJobs(context.Context, *pbrequest.ListAlertPolicyJobs) (*pbresponse.ListAlertPolicyJobs, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListAlertPolicyJobs not implemented")
+func (UnimplementedAlertManageServer) ListJobsByAlertPolicy(context.Context, *pbrequest.ListJobsByAlertPolicy) (*pbresponse.ListJobsByAlertPolicy, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListJobsByAlertPolicy not implemented")
 }
 func (UnimplementedAlertManageServer) mustEmbedUnimplementedAlertManageServer() {}
 
@@ -415,20 +415,20 @@ func _AlertManage_JobUnboundAlertPolicies_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AlertManage_ListJobAlertPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListJobAlertPolicies)
+func _AlertManage_ListAlertPoliciesByJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListAlertPoliciesByJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AlertManageServer).ListJobAlertPolicies(ctx, in)
+		return srv.(AlertManageServer).ListAlertPoliciesByJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.AlertManage/ListJobAlertPolicies",
+		FullMethod: "/spacemanager.AlertManage/ListAlertPoliciesByJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AlertManageServer).ListJobAlertPolicies(ctx, req.(*pbrequest.ListJobAlertPolicies))
+		return srv.(AlertManageServer).ListAlertPoliciesByJob(ctx, req.(*pbrequest.ListAlertPoliciesByJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -469,20 +469,20 @@ func _AlertManage_AlertPolicyUnboundJobs_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AlertManage_ListAlertPolicyJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListAlertPolicyJobs)
+func _AlertManage_ListJobsByAlertPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListJobsByAlertPolicy)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AlertManageServer).ListAlertPolicyJobs(ctx, in)
+		return srv.(AlertManageServer).ListJobsByAlertPolicy(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.AlertManage/ListAlertPolicyJobs",
+		FullMethod: "/spacemanager.AlertManage/ListJobsByAlertPolicy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AlertManageServer).ListAlertPolicyJobs(ctx, req.(*pbrequest.ListAlertPolicyJobs))
+		return srv.(AlertManageServer).ListJobsByAlertPolicy(ctx, req.(*pbrequest.ListJobsByAlertPolicy))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -531,8 +531,8 @@ var AlertManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AlertManage_JobUnboundAlertPolicies_Handler,
 		},
 		{
-			MethodName: "ListJobAlertPolicies",
-			Handler:    _AlertManage_ListJobAlertPolicies_Handler,
+			MethodName: "ListAlertPoliciesByJob",
+			Handler:    _AlertManage_ListAlertPoliciesByJob_Handler,
 		},
 		{
 			MethodName: "AlertPolicyBoundJobs",
@@ -543,8 +543,8 @@ var AlertManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AlertManage_AlertPolicyUnboundJobs_Handler,
 		},
 		{
-			MethodName: "ListAlertPolicyJobs",
-			Handler:    _AlertManage_ListAlertPolicyJobs_Handler,
+			MethodName: "ListJobsByAlertPolicy",
+			Handler:    _AlertManage_ListJobsByAlertPolicy_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -14,53 +14,77 @@ public final class PBResponseNotifier {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface DescNotificationListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.DescNotificationList)
+  public interface ListNotificationsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ListNotifications)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 total_count = 1;</code>
-     * @return The totalCount.
-     */
-    int getTotalCount();
-
-    /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> 
         getNotificationListsList();
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList getNotificationLists(int index);
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     int getNotificationListsCount();
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder> 
         getNotificationListsOrBuilderList();
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder getNotificationListsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    int getTotal();
   }
   /**
-   * Protobuf type {@code response.DescNotificationList}
+   * Protobuf type {@code response.ListNotifications}
    */
-  public static final class DescNotificationList extends
+  public static final class ListNotifications extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.DescNotificationList)
-      DescNotificationListOrBuilder {
+      // @@protoc_insertion_point(message_implements:response.ListNotifications)
+      ListNotificationsOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescNotificationList.newBuilder() to construct.
-    private DescNotificationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListNotifications.newBuilder() to construct.
+    private ListNotifications(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescNotificationList() {
+    private ListNotifications() {
       notificationLists_ = java.util.Collections.emptyList();
     }
 
@@ -68,7 +92,7 @@ public final class PBResponseNotifier {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DescNotificationList();
+      return new ListNotifications();
     }
 
     @java.lang.Override
@@ -76,7 +100,7 @@ public final class PBResponseNotifier {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescNotificationList(
+    private ListNotifications(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -95,18 +119,18 @@ public final class PBResponseNotifier {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              totalCount_ = input.readInt32();
-              break;
-            }
-            case 18: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 notificationLists_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList>();
                 mutable_bitField0_ |= 0x00000001;
               }
               notificationLists_.add(
                   input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              total_ = input.readInt32();
               break;
             }
             default: {
@@ -133,39 +157,36 @@ public final class PBResponseNotifier {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_DescNotificationList_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_ListNotifications_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_DescNotificationList_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_ListNotifications_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.class, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.class, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.Builder.class);
     }
 
-    public static final int TOTAL_COUNT_FIELD_NUMBER = 1;
-    private int totalCount_;
-    /**
-     * <code>int32 total_count = 1;</code>
-     * @return The totalCount.
-     */
-    @java.lang.Override
-    public int getTotalCount() {
-      return totalCount_;
-    }
-
-    public static final int NOTIFICATION_LISTS_FIELD_NUMBER = 2;
+    public static final int NOTIFICATION_LISTS_FIELD_NUMBER = 1;
     private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> notificationLists_;
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     @java.lang.Override
     public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> getNotificationListsList() {
       return notificationLists_;
     }
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder> 
@@ -173,26 +194,53 @@ public final class PBResponseNotifier {
       return notificationLists_;
     }
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     @java.lang.Override
     public int getNotificationListsCount() {
       return notificationLists_.size();
     }
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList getNotificationLists(int index) {
       return notificationLists_.get(index);
     }
     /**
-     * <code>repeated .model.NotificationList notification_lists = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"notification_lists"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList notification_lists = 1;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder getNotificationListsOrBuilder(
         int index) {
       return notificationLists_.get(index);
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private int total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public int getTotal() {
+      return total_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -209,11 +257,11 @@ public final class PBResponseNotifier {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (totalCount_ != 0) {
-        output.writeInt32(1, totalCount_);
-      }
       for (int i = 0; i < notificationLists_.size(); i++) {
-        output.writeMessage(2, notificationLists_.get(i));
+        output.writeMessage(1, notificationLists_.get(i));
+      }
+      if (total_ != 0) {
+        output.writeInt32(2, total_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,13 +272,13 @@ public final class PBResponseNotifier {
       if (size != -1) return size;
 
       size = 0;
-      if (totalCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, totalCount_);
-      }
       for (int i = 0; i < notificationLists_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, notificationLists_.get(i));
+          .computeMessageSize(1, notificationLists_.get(i));
+      }
+      if (total_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, total_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -242,15 +290,15 @@ public final class PBResponseNotifier {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList other = (com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications other = (com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications) obj;
 
-      if (getTotalCount()
-          != other.getTotalCount()) return false;
       if (!getNotificationListsList()
           .equals(other.getNotificationListsList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -262,80 +310,80 @@ public final class PBResponseNotifier {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalCount();
       if (getNotificationListsCount() > 0) {
         hash = (37 * hash) + NOTIFICATION_LISTS_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationListsList().hashCode();
       }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getTotal();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -348,7 +396,7 @@ public final class PBResponseNotifier {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -364,26 +412,26 @@ public final class PBResponseNotifier {
       return builder;
     }
     /**
-     * Protobuf type {@code response.DescNotificationList}
+     * Protobuf type {@code response.ListNotifications}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.DescNotificationList)
-        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:response.ListNotifications)
+        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotificationsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_DescNotificationList_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_ListNotifications_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_DescNotificationList_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_ListNotifications_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.class, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.class, com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -402,31 +450,31 @@ public final class PBResponseNotifier {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        totalCount_ = 0;
-
         if (notificationListsBuilder_ == null) {
           notificationLists_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           notificationListsBuilder_.clear();
         }
+        total_ = 0;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_DescNotificationList_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.internal_static_response_ListNotifications_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -434,10 +482,9 @@ public final class PBResponseNotifier {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList result = new com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications result = new com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications(this);
         int from_bitField0_ = bitField0_;
-        result.totalCount_ = totalCount_;
         if (notificationListsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             notificationLists_ = java.util.Collections.unmodifiableList(notificationLists_);
@@ -447,6 +494,7 @@ public final class PBResponseNotifier {
         } else {
           result.notificationLists_ = notificationListsBuilder_.build();
         }
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -485,19 +533,16 @@ public final class PBResponseNotifier {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList.getDefaultInstance()) return this;
-        if (other.getTotalCount() != 0) {
-          setTotalCount(other.getTotalCount());
-        }
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications.getDefaultInstance()) return this;
         if (notificationListsBuilder_ == null) {
           if (!other.notificationLists_.isEmpty()) {
             if (notificationLists_.isEmpty()) {
@@ -524,6 +569,9 @@ public final class PBResponseNotifier {
             }
           }
         }
+        if (other.getTotal() != 0) {
+          setTotal(other.getTotal());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -539,11 +587,11 @@ public final class PBResponseNotifier {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -553,37 +601,6 @@ public final class PBResponseNotifier {
         return this;
       }
       private int bitField0_;
-
-      private int totalCount_ ;
-      /**
-       * <code>int32 total_count = 1;</code>
-       * @return The totalCount.
-       */
-      @java.lang.Override
-      public int getTotalCount() {
-        return totalCount_;
-      }
-      /**
-       * <code>int32 total_count = 1;</code>
-       * @param value The totalCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalCount(int value) {
-        
-        totalCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 total_count = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalCount() {
-        
-        totalCount_ = 0;
-        onChanged();
-        return this;
-      }
 
       private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> notificationLists_ =
         java.util.Collections.emptyList();
@@ -598,7 +615,11 @@ public final class PBResponseNotifier {
           com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder> notificationListsBuilder_;
 
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> getNotificationListsList() {
         if (notificationListsBuilder_ == null) {
@@ -608,7 +629,11 @@ public final class PBResponseNotifier {
         }
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public int getNotificationListsCount() {
         if (notificationListsBuilder_ == null) {
@@ -618,7 +643,11 @@ public final class PBResponseNotifier {
         }
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList getNotificationLists(int index) {
         if (notificationListsBuilder_ == null) {
@@ -628,7 +657,11 @@ public final class PBResponseNotifier {
         }
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder setNotificationLists(
           int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList value) {
@@ -645,7 +678,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder setNotificationLists(
           int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder builderForValue) {
@@ -659,7 +696,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder addNotificationLists(com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList value) {
         if (notificationListsBuilder_ == null) {
@@ -675,7 +716,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder addNotificationLists(
           int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList value) {
@@ -692,7 +737,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder addNotificationLists(
           com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder builderForValue) {
@@ -706,7 +755,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder addNotificationLists(
           int index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder builderForValue) {
@@ -720,7 +773,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder addAllNotificationLists(
           java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList> values) {
@@ -735,7 +792,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder clearNotificationLists() {
         if (notificationListsBuilder_ == null) {
@@ -748,7 +809,11 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public Builder removeNotificationLists(int index) {
         if (notificationListsBuilder_ == null) {
@@ -761,14 +826,22 @@ public final class PBResponseNotifier {
         return this;
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder getNotificationListsBuilder(
           int index) {
         return getNotificationListsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder getNotificationListsOrBuilder(
           int index) {
@@ -778,7 +851,11 @@ public final class PBResponseNotifier {
         }
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationListOrBuilder> 
            getNotificationListsOrBuilderList() {
@@ -789,14 +866,22 @@ public final class PBResponseNotifier {
         }
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder addNotificationListsBuilder() {
         return getNotificationListsFieldBuilder().addBuilder(
             com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.getDefaultInstance());
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder addNotificationListsBuilder(
           int index) {
@@ -804,7 +889,11 @@ public final class PBResponseNotifier {
             index, com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.getDefaultInstance());
       }
       /**
-       * <code>repeated .model.NotificationList notification_lists = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"notification_lists"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList notification_lists = 1;</code>
        */
       public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelNotifier.NotificationList.Builder> 
            getNotificationListsBuilderList() {
@@ -824,6 +913,49 @@ public final class PBResponseNotifier {
         }
         return notificationListsBuilder_;
       }
+
+      private int total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public int getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(int value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -837,51 +969,51 @@ public final class PBResponseNotifier {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:response.DescNotificationList)
+      // @@protoc_insertion_point(builder_scope:response.ListNotifications)
     }
 
-    // @@protoc_insertion_point(class_scope:response.DescNotificationList)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:response.ListNotifications)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescNotificationList>
-        PARSER = new com.google.protobuf.AbstractParser<DescNotificationList>() {
+    private static final com.google.protobuf.Parser<ListNotifications>
+        PARSER = new com.google.protobuf.AbstractParser<ListNotifications>() {
       @java.lang.Override
-      public DescNotificationList parsePartialFrom(
+      public ListNotifications parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescNotificationList(input, extensionRegistry);
+        return new ListNotifications(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescNotificationList> parser() {
+    public static com.google.protobuf.Parser<ListNotifications> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescNotificationList> getParserForType() {
+    public com.google.protobuf.Parser<ListNotifications> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.DescNotificationList getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.ListNotifications getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_DescNotificationList_descriptor;
+    internal_static_response_ListNotifications_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_DescNotificationList_fieldAccessorTable;
+      internal_static_response_ListNotifications_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -893,24 +1025,24 @@ public final class PBResponseNotifier {
     java.lang.String[] descriptorData = {
       "\n#proto/types/response/notifier.proto\022\010r" +
       "esponse\032 proto/types/model/notifier.prot" +
-      "o\"`\n\024DescNotificationList\022\023\n\013total_count" +
-      "\030\001 \001(\005\0223\n\022notification_lists\030\002 \003(\0132\027.mod" +
-      "el.NotificationListBs\n%com.dataomnis.gpr" +
-      "oto.types.pbresponseB\022PBResponseNotifier" +
-      "P\000Z4github.com/DataWorkbench/gproto/xgo/" +
-      "types/pbresponseb\006proto3"
+      "o\"W\n\021ListNotifications\0223\n\022notification_l" +
+      "ists\030\001 \003(\0132\027.model.NotificationList\022\r\n\005t" +
+      "otal\030\002 \001(\005Bs\n%com.dataomnis.gproto.types" +
+      ".pbresponseB\022PBResponseNotifierP\000Z4githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "esponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbmodel.PBModelNotifier.getDescriptor(),
         });
-    internal_static_response_DescNotificationList_descriptor =
+    internal_static_response_ListNotifications_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_response_DescNotificationList_fieldAccessorTable = new
+    internal_static_response_ListNotifications_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_DescNotificationList_descriptor,
-        new java.lang.String[] { "TotalCount", "NotificationLists", });
+        internal_static_response_ListNotifications_descriptor,
+        new java.lang.String[] { "NotificationLists", "Total", });
     com.dataomnis.gproto.types.pbmodel.PBModelNotifier.getDescriptor();
   }
 
