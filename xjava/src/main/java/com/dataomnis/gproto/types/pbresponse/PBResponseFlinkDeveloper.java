@@ -905,21 +905,44 @@ public final class PBResponseFlinkDeveloper {
      * &#64;inject_tag: json:"message"
      * </pre>
      *
-     * <code>string message = 1 [(.validator.field) = { ... }</code>
-     * @return The message.
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the message.
      */
-    java.lang.String getMessage();
+    java.util.List<java.lang.String>
+        getMessageList();
     /**
      * <pre>
      * message
      * &#64;inject_tag: json:"message"
      * </pre>
      *
-     * <code>string message = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for message.
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @return The count of message.
+     */
+    int getMessageCount();
+    /**
+     * <pre>
+     * message
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The message at the given index.
+     */
+    java.lang.String getMessage(int index);
+    /**
+     * <pre>
+     * message
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the message at the given index.
      */
     com.google.protobuf.ByteString
-        getMessageBytes();
+        getMessageBytes(int index);
   }
   /**
    * Protobuf type {@code response.ExecuteFlinkSql}
@@ -934,7 +957,7 @@ public final class PBResponseFlinkDeveloper {
       super(builder);
     }
     private ExecuteFlinkSql() {
-      message_ = "";
+      message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -957,6 +980,7 @@ public final class PBResponseFlinkDeveloper {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -969,8 +993,11 @@ public final class PBResponseFlinkDeveloper {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                message_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              message_.add(s);
               break;
             }
             default: {
@@ -988,6 +1015,9 @@ public final class PBResponseFlinkDeveloper {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          message_ = message_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1006,28 +1036,19 @@ public final class PBResponseFlinkDeveloper {
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object message_;
+    private com.google.protobuf.LazyStringList message_;
     /**
      * <pre>
      * message
      * &#64;inject_tag: json:"message"
      * </pre>
      *
-     * <code>string message = 1 [(.validator.field) = { ... }</code>
-     * @return The message.
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the message.
      */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getMessageList() {
+      return message_;
     }
     /**
      * <pre>
@@ -1035,22 +1056,38 @@ public final class PBResponseFlinkDeveloper {
      * &#64;inject_tag: json:"message"
      * </pre>
      *
-     * <code>string message = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for message.
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @return The count of message.
      */
-    @java.lang.Override
+    public int getMessageCount() {
+      return message_.size();
+    }
+    /**
+     * <pre>
+     * message
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The message at the given index.
+     */
+    public java.lang.String getMessage(int index) {
+      return message_.get(index);
+    }
+    /**
+     * <pre>
+     * message
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the message at the given index.
+     */
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getMessageBytes(int index) {
+      return message_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1067,8 +1104,8 @@ public final class PBResponseFlinkDeveloper {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+      for (int i = 0; i < message_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1079,8 +1116,13 @@ public final class PBResponseFlinkDeveloper {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < message_.size(); i++) {
+          dataSize += computeStringSizeNoTag(message_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getMessageList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1097,8 +1139,8 @@ public final class PBResponseFlinkDeveloper {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql other = (com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql) obj;
 
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
+      if (!getMessageList()
+          .equals(other.getMessageList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1110,8 +1152,10 @@ public final class PBResponseFlinkDeveloper {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
+      if (getMessageCount() > 0) {
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessageList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1245,8 +1289,8 @@ public final class PBResponseFlinkDeveloper {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        message_ = "";
-
+        message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1273,6 +1317,11 @@ public final class PBResponseFlinkDeveloper {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql result = new com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          message_ = message_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
         result.message_ = message_;
         onBuilt();
         return result;
@@ -1322,8 +1371,14 @@ public final class PBResponseFlinkDeveloper {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql.getDefaultInstance()) return this;
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
+        if (!other.message_.isEmpty()) {
+          if (message_.isEmpty()) {
+            message_ = other.message_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureMessageIsMutable();
+            message_.addAll(other.message_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1354,28 +1409,14 @@ public final class PBResponseFlinkDeveloper {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object message_ = "";
-      /**
-       * <pre>
-       * message
-       * &#64;inject_tag: json:"message"
-       * </pre>
-       *
-       * <code>string message = 1 [(.validator.field) = { ... }</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureMessageIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          message_ = new com.google.protobuf.LazyStringArrayList(message_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
@@ -1383,21 +1424,51 @@ public final class PBResponseFlinkDeveloper {
        * &#64;inject_tag: json:"message"
        * </pre>
        *
-       * <code>string message = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for message.
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @return A list containing the message.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMessageList() {
+        return message_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @return The count of message.
+       */
+      public int getMessageCount() {
+        return message_.size();
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The message at the given index.
+       */
+      public java.lang.String getMessage(int index) {
+        return message_.get(index);
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the message at the given index.
        */
       public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getMessageBytes(int index) {
+        return message_.getByteString(index);
       }
       /**
        * <pre>
@@ -1405,17 +1476,38 @@ public final class PBResponseFlinkDeveloper {
        * &#64;inject_tag: json:"message"
        * </pre>
        *
-       * <code>string message = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
        * @param value The message to set.
        * @return This builder for chaining.
        */
       public Builder setMessage(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMessageIsMutable();
+        message_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param value The message to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMessage(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        message_ = value;
+  ensureMessageIsMutable();
+        message_.add(value);
         onChanged();
         return this;
       }
@@ -1425,12 +1517,30 @@ public final class PBResponseFlinkDeveloper {
        * &#64;inject_tag: json:"message"
        * </pre>
        *
-       * <code>string message = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param values The message to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMessage(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureMessageIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, message_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
+        message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1440,18 +1550,18 @@ public final class PBResponseFlinkDeveloper {
        * &#64;inject_tag: json:"message"
        * </pre>
        *
-       * <code>string message = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for message to set.
+       * <code>repeated string message = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the message to add.
        * @return This builder for chaining.
        */
-      public Builder setMessageBytes(
+      public Builder addMessageBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        message_ = value;
+        ensureMessageIsMutable();
+        message_.add(value);
         onChanged();
         return this;
       }
@@ -5230,7 +5340,7 @@ public final class PBResponseFlinkDeveloper {
       "linkJob\022+\n\004code\030\001 \001(\0162\035.response.SubmitF" +
       "linkJob.Code\022\025\n\007message\030\002 \001(\tB\004\342\337\037\000\".\n\004C" +
       "ode\022\r\n\tCodeUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Faile" +
-      "d\020\002\"(\n\017ExecuteFlinkSql\022\025\n\007message\030\001 \001(\tB" +
+      "d\020\002\"(\n\017ExecuteFlinkSql\022\025\n\007message\030\001 \003(\tB" +
       "\004\342\337\037\000\"k\n\021GetFlinkJobStatus\022\021\n\tis_exists\030" +
       "\001 \001(\010\022,\n\006status\030\002 \001(\0162\026.flink.FlinkJob.S" +
       "tatusB\004\342\337\037\000\022\025\n\007message\030\003 \001(\tB\004\342\337\037\000\"\243\001\n\021G" +

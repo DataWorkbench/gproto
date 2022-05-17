@@ -33,7 +33,7 @@ message SubmitFlinkJob {
 message ExecuteFlinkSql{
   // message
   // @inject_tag: json:"message"
-  string message = 1[(validator.field) = {}];
+  repeated string message = 1[(validator.field) = {}];
 }
 
 message GetFlinkJobStatus {
