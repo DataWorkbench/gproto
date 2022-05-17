@@ -21,11 +21,7 @@ service FlinkDeveloper {
 
   rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct) {}
 
-  rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
-
   rpc ValidateFlinkJobContext(request.SubmitFlinkJob) returns(response.ValidateFlinkJob){}
 
-  rpc ParseFlinkJobToGraph(request.SubmitFlinkJob) returns (response.ValidateFlinkJob){}
-
-  rpc GetFlinkJobsByUrl(request.GetFlinkJobsByUrl) returns (response.GetFlinkJobsByUrl) {}
+  rpc ExecuteFlinkSql(stream request.ExecuteFlinkSql) returns (stream response.ExecuteFlinkSql){}
 }

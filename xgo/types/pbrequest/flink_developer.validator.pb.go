@@ -73,6 +73,14 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
+// Set default value for message request.ExecuteFlinkSql
+func (this *ExecuteFlinkSql) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 func (this *GetFlinkJobStatus) _xxx_xxx_Validator_Validate_flink_id() error {
 	if !(len(this.FlinkId) == 32) {
 		return protovalidator.FieldError1("GetFlinkJobStatus", "the byte length of field 'flink_id' must be equal to '32'", protovalidator.StringByteLenToString(this.FlinkId))

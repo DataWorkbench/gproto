@@ -41,6 +41,12 @@ message SubmitFlinkJob {
   model.StreamJobCode code = 6  [(validator.field) = {}];
 }
 
+message ExecuteFlinkSql{
+  // The sql or init sql executor message
+  // @inject_tag: json:"content"
+  string content = 1[(validator.field) = {}];
+}
+
 message GetFlinkJobStatus {
   // flink job id
   // @inject_tag: json:"flink_id"

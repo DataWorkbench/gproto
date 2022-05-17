@@ -18,6 +18,14 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
+// Set default value for message response.ExecuteFlinkSql
+func (this *ExecuteFlinkSql) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 // Set default value for message response.GetFlinkJobStatus
 func (this *GetFlinkJobStatus) Validate() error {
 	if this == nil {

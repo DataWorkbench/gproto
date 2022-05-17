@@ -28,6 +28,14 @@ func (this *SubmitFlinkJob) SetDefaults() {
 	return
 }
 
+// Set default value for message request.ExecuteFlinkSql
+func (this *ExecuteFlinkSql) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.GetFlinkJobStatus
 func (this *GetFlinkJobStatus) SetDefaults() {
 	if this == nil {

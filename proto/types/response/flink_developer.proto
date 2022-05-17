@@ -30,6 +30,12 @@ message SubmitFlinkJob {
   string message = 2 [(validator.field) = {}];
 }
 
+message ExecuteFlinkSql{
+  // message
+  // @inject_tag: json:"message"
+  string message = 1[(validator.field) = {}];
+}
+
 message GetFlinkJobStatus {
   // IsExists indicates the job is exists.
   // @inject_tag: json:"is_exists"
