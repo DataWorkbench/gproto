@@ -21,7 +21,7 @@ service FlinkDeveloper {
 
   rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct) {}
 
-  rpc ValidateFlinkJobContext(request.SubmitFlinkJob) returns(response.ValidateFlinkJob){}
+  rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
 
-  rpc ExecuteFlinkSql(stream request.ExecuteFlinkSql) returns (stream response.ExecuteFlinkSql){}
+  rpc ExecuteFlinkSql(stream request.ExecuteFlinkSql) returns(stream response.ExecuteFlinkSql) {}
 }

@@ -27,20 +27,20 @@ public final class PBSvcFlinkDeveloper {
       "r.proto\022\tdeveloper\032\035proto/types/model/em" +
       "pty.proto\032)proto/types/request/flink_dev" +
       "eloper.proto\032*proto/types/response/flink" +
-      "_developer.proto2\210\003\n\016FlinkDeveloper\022E\n\016S" +
+      "_developer.proto2\203\003\n\016FlinkDeveloper\022E\n\016S" +
       "ubmitFlinkJob\022\027.request.SubmitFlinkJob\032\030" +
       ".response.SubmitFlinkJob\"\000\022N\n\021GetFlinkJo" +
       "bStatus\022\032.request.GetFlinkJobStatus\032\033.re" +
       "sponse.GetFlinkJobStatus\"\000\022?\n\016CancelFlin" +
       "kJob\022\027.request.CancelFlinkJob\032\022.model.Em" +
-      "ptyStruct\"\000\022P\n\027ValidateFlinkJobContext\022\027" +
-      ".request.SubmitFlinkJob\032\032.response.Valid" +
-      "ateFlinkJob\"\000\022L\n\017ExecuteFlinkSql\022\030.reque" +
-      "st.ExecuteFlinkSql\032\031.response.ExecuteFli" +
-      "nkSql\"\000(\0010\001B\200\001\n+com.dataomnis.gproto.ser" +
-      "vice.pbsvcdeveloperB\023PBSvcFlinkDeveloper" +
-      "P\000Z:github.com/DataWorkbench/gproto/xgo/" +
-      "service/pbsvcdeveloperb\006proto3"
+      "ptyStruct\"\000\022K\n\020ValidateFlinkJob\022\031.reques" +
+      "t.ValidateFlinkJob\032\032.response.ValidateFl" +
+      "inkJob\"\000\022L\n\017ExecuteFlinkSql\022\030.request.Ex" +
+      "ecuteFlinkSql\032\031.response.ExecuteFlinkSql" +
+      "\"\000(\0010\001B\200\001\n+com.dataomnis.gproto.service." +
+      "pbsvcdeveloperB\023PBSvcFlinkDeveloperP\000Z:g" +
+      "ithub.com/DataWorkbench/gproto/xgo/servi" +
+      "ce/pbsvcdeveloperb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
