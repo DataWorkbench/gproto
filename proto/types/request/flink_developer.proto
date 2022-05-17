@@ -80,10 +80,3 @@ message ValidateFlinkJob {
   // @inject_tag: json:"code"
   model.StreamJobCode code = 1;
 }
-
-message GetFlinkJobsByUrl {
-
-  // The internal access address of flink cluster.
-  // @inject_tag: json:"flink_url"
-  string flink_url = 1 [(validator.field).tags.string = {ne: ""}];
-}
