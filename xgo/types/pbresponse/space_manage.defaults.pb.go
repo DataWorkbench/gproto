@@ -7,6 +7,7 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaas"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -46,6 +47,19 @@ func (this *CheckPermission) SetDefaults() {
 	}
 	if this.Workspace != nil {
 		if dt, ok := interface{}(this.Workspace).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DescribeNetworkConfig
+func (this *DescribeNetworkConfig) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Router != nil {
+		if dt, ok := interface{}(this.Router).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

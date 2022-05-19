@@ -16,3 +16,11 @@ func (this *Workspace) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.NetworkConfig
+func (this *NetworkConfig) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

@@ -296,6 +296,37 @@ public final class SpaceManageGrpc {
     return getCheckPermissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> getDescribeNetworkConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeNetworkConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> getDescribeNetworkConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> getDescribeNetworkConfigMethod;
+    if ((getDescribeNetworkConfigMethod = SpaceManageGrpc.getDescribeNetworkConfigMethod) == null) {
+      synchronized (SpaceManageGrpc.class) {
+        if ((getDescribeNetworkConfigMethod = SpaceManageGrpc.getDescribeNetworkConfigMethod) == null) {
+          SpaceManageGrpc.getDescribeNetworkConfigMethod = getDescribeNetworkConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeNetworkConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.getDefaultInstance()))
+              .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DescribeNetworkConfig"))
+              .build();
+        }
+      }
+    }
+    return getDescribeNetworkConfigMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -429,6 +460,16 @@ public final class SpaceManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckPermissionMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Network config
+     * </pre>
+     */
+    public void describeNetworkConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeNetworkConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -494,6 +535,13 @@ public final class SpaceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>(
                   this, METHODID_CHECK_PERMISSION)))
+          .addMethod(
+            getDescribeNetworkConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig>(
+                  this, METHODID_DESCRIBE_NETWORK_CONFIG)))
           .build();
     }
   }
@@ -605,6 +653,17 @@ public final class SpaceManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckPermissionMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Network config
+     * </pre>
+     */
+    public void describeNetworkConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeNetworkConfigMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -704,6 +763,16 @@ public final class SpaceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Network config
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig describeNetworkConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeNetworkConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -814,6 +883,17 @@ public final class SpaceManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckPermissionMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Network config
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> describeNetworkConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeNetworkConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_WORKSPACES = 0;
@@ -825,6 +905,7 @@ public final class SpaceManageGrpc {
   private static final int METHODID_UPDATE_WORKSPACE = 6;
   private static final int METHODID_DESCRIBE_WORKSPACE = 7;
   private static final int METHODID_CHECK_PERMISSION = 8;
+  private static final int METHODID_DESCRIBE_NETWORK_CONFIG = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -878,6 +959,10 @@ public final class SpaceManageGrpc {
         case METHODID_CHECK_PERMISSION:
           serviceImpl.checkPermission((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_NETWORK_CONFIG:
+          serviceImpl.describeNetworkConfig((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -949,6 +1034,7 @@ public final class SpaceManageGrpc {
               .addMethod(getUpdateWorkspaceMethod())
               .addMethod(getDescribeWorkspaceMethod())
               .addMethod(getCheckPermissionMethod())
+              .addMethod(getDescribeNetworkConfigMethod())
               .build();
         }
       }

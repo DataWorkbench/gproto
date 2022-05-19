@@ -4966,6 +4966,50 @@ public final class PBRequestSpaceManage {
      */
     com.google.protobuf.ByteString
         getDescBytes();
+
+    /**
+     * <pre>
+     * VPC's route id, Is required if enabled network.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5;</code>
+     * @return The routerId.
+     */
+    java.lang.String getRouterId();
+    /**
+     * <pre>
+     * VPC's route id, Is required if enabled network.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5;</code>
+     * @return The bytes for routerId.
+     */
+    com.google.protobuf.ByteString
+        getRouterIdBytes();
+
+    /**
+     * <pre>
+     * vxnet id. Is required if enabled network.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6;</code>
+     * @return The vxnetId.
+     */
+    java.lang.String getVxnetId();
+    /**
+     * <pre>
+     * vxnet id. Is required if enabled network.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6;</code>
+     * @return The bytes for vxnetId.
+     */
+    com.google.protobuf.ByteString
+        getVxnetIdBytes();
   }
   /**
    * <pre>
@@ -4987,6 +5031,8 @@ public final class PBRequestSpaceManage {
       owner_ = "";
       name_ = "";
       desc_ = "";
+      routerId_ = "";
+      vxnetId_ = "";
     }
 
     @java.lang.Override
@@ -5035,6 +5081,18 @@ public final class PBRequestSpaceManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               desc_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              routerId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vxnetId_ = s;
               break;
             }
             default: {
@@ -5215,6 +5273,102 @@ public final class PBRequestSpaceManage {
       }
     }
 
+    public static final int ROUTER_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object routerId_;
+    /**
+     * <pre>
+     * VPC's route id, Is required if enabled network.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5;</code>
+     * @return The routerId.
+     */
+    @java.lang.Override
+    public java.lang.String getRouterId() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * VPC's route id, Is required if enabled network.
+     * &#64;inject_tag: json:"router_id"
+     * </pre>
+     *
+     * <code>string router_id = 5;</code>
+     * @return The bytes for routerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRouterIdBytes() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VXNET_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object vxnetId_;
+    /**
+     * <pre>
+     * vxnet id. Is required if enabled network.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6;</code>
+     * @return The vxnetId.
+     */
+    @java.lang.Override
+    public java.lang.String getVxnetId() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vxnetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * vxnet id. Is required if enabled network.
+     * &#64;inject_tag: json:"vxnet_id"
+     * </pre>
+     *
+     * <code>string vxnet_id = 6;</code>
+     * @return The bytes for vxnetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVxnetIdBytes() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vxnetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5238,6 +5392,12 @@ public final class PBRequestSpaceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vxnetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5255,6 +5415,12 @@ public final class PBRequestSpaceManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vxnetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5277,6 +5443,10 @@ public final class PBRequestSpaceManage {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
+      if (!getRouterId()
+          .equals(other.getRouterId())) return false;
+      if (!getVxnetId()
+          .equals(other.getVxnetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5294,6 +5464,10 @@ public final class PBRequestSpaceManage {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + ROUTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouterId().hashCode();
+      hash = (37 * hash) + VXNET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVxnetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5437,6 +5611,10 @@ public final class PBRequestSpaceManage {
 
         desc_ = "";
 
+        routerId_ = "";
+
+        vxnetId_ = "";
+
         return this;
       }
 
@@ -5466,6 +5644,8 @@ public final class PBRequestSpaceManage {
         result.owner_ = owner_;
         result.name_ = name_;
         result.desc_ = desc_;
+        result.routerId_ = routerId_;
+        result.vxnetId_ = vxnetId_;
         onBuilt();
         return result;
       }
@@ -5524,6 +5704,14 @@ public final class PBRequestSpaceManage {
         }
         if (!other.getDesc().isEmpty()) {
           desc_ = other.desc_;
+          onChanged();
+        }
+        if (!other.getRouterId().isEmpty()) {
+          routerId_ = other.routerId_;
+          onChanged();
+        }
+        if (!other.getVxnetId().isEmpty()) {
+          vxnetId_ = other.vxnetId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5859,6 +6047,208 @@ public final class PBRequestSpaceManage {
   checkByteStringIsUtf8(value);
         
         desc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object routerId_ = "";
+      /**
+       * <pre>
+       * VPC's route id, Is required if enabled network.
+       * &#64;inject_tag: json:"router_id"
+       * </pre>
+       *
+       * <code>string router_id = 5;</code>
+       * @return The routerId.
+       */
+      public java.lang.String getRouterId() {
+        java.lang.Object ref = routerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * VPC's route id, Is required if enabled network.
+       * &#64;inject_tag: json:"router_id"
+       * </pre>
+       *
+       * <code>string router_id = 5;</code>
+       * @return The bytes for routerId.
+       */
+      public com.google.protobuf.ByteString
+          getRouterIdBytes() {
+        java.lang.Object ref = routerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          routerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * VPC's route id, Is required if enabled network.
+       * &#64;inject_tag: json:"router_id"
+       * </pre>
+       *
+       * <code>string router_id = 5;</code>
+       * @param value The routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * VPC's route id, Is required if enabled network.
+       * &#64;inject_tag: json:"router_id"
+       * </pre>
+       *
+       * <code>string router_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouterId() {
+        
+        routerId_ = getDefaultInstance().getRouterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * VPC's route id, Is required if enabled network.
+       * &#64;inject_tag: json:"router_id"
+       * </pre>
+       *
+       * <code>string router_id = 5;</code>
+       * @param value The bytes for routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vxnetId_ = "";
+      /**
+       * <pre>
+       * vxnet id. Is required if enabled network.
+       * &#64;inject_tag: json:"vxnet_id"
+       * </pre>
+       *
+       * <code>string vxnet_id = 6;</code>
+       * @return The vxnetId.
+       */
+      public java.lang.String getVxnetId() {
+        java.lang.Object ref = vxnetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vxnetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * vxnet id. Is required if enabled network.
+       * &#64;inject_tag: json:"vxnet_id"
+       * </pre>
+       *
+       * <code>string vxnet_id = 6;</code>
+       * @return The bytes for vxnetId.
+       */
+      public com.google.protobuf.ByteString
+          getVxnetIdBytes() {
+        java.lang.Object ref = vxnetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vxnetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * vxnet id. Is required if enabled network.
+       * &#64;inject_tag: json:"vxnet_id"
+       * </pre>
+       *
+       * <code>string vxnet_id = 6;</code>
+       * @param value The vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        vxnetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * vxnet id. Is required if enabled network.
+       * &#64;inject_tag: json:"vxnet_id"
+       * </pre>
+       *
+       * <code>string vxnet_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVxnetId() {
+        
+        vxnetId_ = getDefaultInstance().getVxnetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * vxnet id. Is required if enabled network.
+       * &#64;inject_tag: json:"vxnet_id"
+       * </pre>
+       *
+       * <code>string vxnet_id = 6;</code>
+       * @param value The bytes for vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        vxnetId_ = value;
         onChanged();
         return this;
       }
@@ -9253,6 +9643,619 @@ public final class PBRequestSpaceManage {
 
   }
 
+  public interface DescribeNetworkConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeNetworkConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.DescribeNetworkConfig}
+   */
+  public static final class DescribeNetworkConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DescribeNetworkConfig)
+      DescribeNetworkConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeNetworkConfig.newBuilder() to construct.
+    private DescribeNetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeNetworkConfig() {
+      spaceId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeNetworkConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeNetworkConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_DescribeNetworkConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_DescribeNetworkConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig other = (com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.DescribeNetworkConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DescribeNetworkConfig)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_DescribeNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_DescribeNetworkConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_DescribeNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig result = new com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig(this);
+        result.spaceId_ = spaceId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DescribeNetworkConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DescribeNetworkConfig)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeNetworkConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeNetworkConfig>() {
+      @java.lang.Override
+      public DescribeNetworkConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeNetworkConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeNetworkConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeNetworkConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListWorkspaces_descriptor;
   private static final 
@@ -9298,6 +10301,11 @@ public final class PBRequestSpaceManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_CheckPermission_SystemRolesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DescribeNetworkConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DescribeNetworkConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9328,26 +10336,29 @@ public final class PBRequestSpaceManage {
       "\001\006\200\002\001\210\002A\"z\n\020EnableWorkspaces\022,\n\tspace_id" +
       "s\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022\022\n\nre" +
       "sume_job\030\002 \001(\010\022$\n\013req_user_id\030\003 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\200\002\001\210\002A\"n\n\017CreateWorkspace\022\036\n\005owner" +
-      "\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022\036\n\004name\030\002 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
-      "\310\001\200\010\"u\n\017UpdateWorkspace\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310" +
-      "\001\200\010\":\n\021DescribeWorkspace\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\346\002\n\017CheckPermiss" +
-      "ion\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002" +
-      "A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022&\n\tmodule_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-" +
-      "\022<\n\tperm_type\030\004 \001(\0162\032.model.ProjectAPI.P" +
-      "ermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\036\n\010api_name\030\005 \001(\t" +
-      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\022L\n\014system_roles\030\006 \003(\0132).r" +
-      "equest.CheckPermission.SystemRolesEntryB" +
-      "\013\342\337\037\007\022\005\362\001\0020\000\0322\n\020SystemRolesEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001Bs\n$com.dataomni" +
-      "s.gproto.types.pbrequestB\024PBRequestSpace" +
-      "ManageP\000Z3github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbrequestb\006proto3"
+      "\013\022\t\302\001\006\200\002\001\210\002A\"\223\001\n\017CreateWorkspace\022\036\n\005owne" +
+      "r\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022\036\n\004name\030\002 \001(\tB\020" +
+      "\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001" +
+      "\004\310\001\200\010\022\021\n\trouter_id\030\005 \001(\t\022\020\n\010vxnet_id\030\006 \001" +
+      "(\t\"u\n\017UpdateWorkspace\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200" +
+      "\010\":\n\021DescribeWorkspace\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\346\002\n\017CheckPermissio" +
+      "n\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022" +
+      "%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&" +
+      "\n\tmodule_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-\022<" +
+      "\n\tperm_type\030\004 \001(\0162\032.model.ProjectAPI.Per" +
+      "mTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\036\n\010api_name\030\005 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\200\002\000\022L\n\014system_roles\030\006 \003(\0132).req" +
+      "uest.CheckPermission.SystemRolesEntryB\013\342" +
+      "\337\037\007\022\005\362\001\0020\000\0322\n\020SystemRolesEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\">\n\025DescribeNetwor" +
+      "kConfig\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-Bs\n$com.dataomnis.gproto.types.pbr" +
+      "equestB\024PBRequestSpaceManageP\000Z3github.c" +
+      "om/DataWorkbench/gproto/xgo/types/pbrequ" +
+      "estb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9386,7 +10397,7 @@ public final class PBRequestSpaceManage {
     internal_static_request_CreateWorkspace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateWorkspace_descriptor,
-        new java.lang.String[] { "Owner", "Name", "Desc", });
+        new java.lang.String[] { "Owner", "Name", "Desc", "RouterId", "VxnetId", });
     internal_static_request_UpdateWorkspace_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_request_UpdateWorkspace_fieldAccessorTable = new
@@ -9411,6 +10422,12 @@ public final class PBRequestSpaceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CheckPermission_SystemRolesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_request_DescribeNetworkConfig_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_request_DescribeNetworkConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DescribeNetworkConfig_descriptor,
+        new java.lang.String[] { "SpaceId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

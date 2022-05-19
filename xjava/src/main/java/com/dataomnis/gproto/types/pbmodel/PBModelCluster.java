@@ -1897,6 +1897,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * Network config.
+     * FIXME: remove in feature.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
@@ -1907,6 +1908,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * Network config.
+     * FIXME: remove in feature.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
@@ -2047,6 +2049,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -2056,6 +2059,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -2065,6 +2069,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -2702,6 +2707,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * Network config.
+     * FIXME: remove in feature.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
@@ -2724,6 +2730,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * Network config.
+     * FIXME: remove in feature.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
@@ -2962,6 +2969,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -2974,6 +2982,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -2986,6 +2995,7 @@ public final class PBModelCluster {
     /**
      * <pre>
      * &#64;inject_tag: json:"network_info" gorm:"-"
+     * FIXME: remove in feature.
      * </pre>
      *
      * <code>.model.Network network_info = 16;</code>
@@ -4233,6 +4243,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * Network config.
+       * FIXME: remove in feature.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
@@ -4254,6 +4265,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * Network config.
+       * FIXME: remove in feature.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
@@ -4276,6 +4288,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * Network config.
+       * FIXME: remove in feature.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
@@ -4296,6 +4309,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * Network config.
+       * FIXME: remove in feature.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
@@ -4311,6 +4325,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * Network config.
+       * FIXME: remove in feature.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
@@ -4963,6 +4978,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -4974,6 +4990,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -4989,6 +5006,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5009,6 +5027,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5027,6 +5046,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5049,6 +5069,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5067,6 +5088,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5079,6 +5101,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>
@@ -5094,6 +5117,7 @@ public final class PBModelCluster {
       /**
        * <pre>
        * &#64;inject_tag: json:"network_info" gorm:"-"
+       * FIXME: remove in feature.
        * </pre>
        *
        * <code>.model.Network network_info = 16;</code>

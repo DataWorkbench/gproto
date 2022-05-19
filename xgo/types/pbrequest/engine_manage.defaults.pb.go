@@ -61,3 +61,48 @@ func (this *DeleteNetworkBrokerInK8S) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.DeleteNamespacesInK8s
+func (this *DeleteNamespacesInK8S) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.CreateFlinkClusterInK8sV2
+func (this *CreateFlinkClusterInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.DeleteFlinkClusterInK8sV2
+func (this *DeleteFlinkClusterInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.CreateNetworkBrokerInK8sV2
+func (this *CreateNetworkBrokerInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteNetworkBrokerInK8sV2
+func (this *DeleteNetworkBrokerInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\020PBModelWorkspaceP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/model/workspace.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xae\x02\n\tWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1b\n\x05owner\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x36\n\x06status\x18\x05 \x01(\x0e\x32\x17.model.Workspace.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x45nabled\x10\x01\x12\x0c\n\x08\x44isabled\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelWorkspaceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n!proto/types/model/workspace.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xae\x02\n\tWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1b\n\x05owner\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x36\n\x06status\x18\x05 \x01(\x0e\x32\x17.model.Workspace.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x45nabled\x10\x01\x12\x0c\n\x08\x44isabled\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\"\xc2\x02\n\rNetworkConfig\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\trouter_id\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x03 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\x12:\n\x06status\x18\x04 \x01(\x0e\x32\x1b.model.NetworkConfig.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x12\n\nis_default\x18\x05 \x01(\x08\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelWorkspaceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -60,6 +60,36 @@ _WORKSPACE_STATUS = _descriptor.EnumDescriptor(
   serialized_end=400,
 )
 _sym_db.RegisterEnumDescriptor(_WORKSPACE_STATUS)
+
+_NETWORKCONFIG_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='model.NetworkConfig.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='StatusUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Deleted', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Enabled', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=674,
+  serialized_end=725,
+)
+_sym_db.RegisterEnumDescriptor(_NETWORKCONFIG_STATUS)
 
 
 _WORKSPACE = _descriptor.Descriptor(
@@ -136,9 +166,87 @@ _WORKSPACE = _descriptor.Descriptor(
   serialized_end=400,
 )
 
+
+_NETWORKCONFIG = _descriptor.Descriptor(
+  name='NetworkConfig',
+  full_name='model.NetworkConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.NetworkConfig.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='router_id', full_name='model.NetworkConfig.router_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\312\002\004rtr-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_id', full_name='model.NetworkConfig.vxnet_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\016\022\014\302\001\t\312\002\006vxnet-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='model.NetworkConfig.status', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_default', full_name='model.NetworkConfig.is_default', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='model.NetworkConfig.created', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updated', full_name='model.NetworkConfig.updated', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _NETWORKCONFIG_STATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=403,
+  serialized_end=725,
+)
+
 _WORKSPACE.fields_by_name['status'].enum_type = _WORKSPACE_STATUS
 _WORKSPACE_STATUS.containing_type = _WORKSPACE
+_NETWORKCONFIG.fields_by_name['status'].enum_type = _NETWORKCONFIG_STATUS
+_NETWORKCONFIG_STATUS.containing_type = _NETWORKCONFIG
 DESCRIPTOR.message_types_by_name['Workspace'] = _WORKSPACE
+DESCRIPTOR.message_types_by_name['NetworkConfig'] = _NETWORKCONFIG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Workspace = _reflection.GeneratedProtocolMessageType('Workspace', (_message.Message,), {
@@ -148,6 +256,13 @@ Workspace = _reflection.GeneratedProtocolMessageType('Workspace', (_message.Mess
   })
 _sym_db.RegisterMessage(Workspace)
 
+NetworkConfig = _reflection.GeneratedProtocolMessageType('NetworkConfig', (_message.Message,), {
+  'DESCRIPTOR' : _NETWORKCONFIG,
+  '__module__' : 'proto.types.model.workspace_pb2'
+  # @@protoc_insertion_point(class_scope:model.NetworkConfig)
+  })
+_sym_db.RegisterMessage(NetworkConfig)
+
 
 DESCRIPTOR._options = None
 _WORKSPACE.fields_by_name['id']._options = None
@@ -156,4 +271,10 @@ _WORKSPACE.fields_by_name['name']._options = None
 _WORKSPACE.fields_by_name['status']._options = None
 _WORKSPACE.fields_by_name['created']._options = None
 _WORKSPACE.fields_by_name['updated']._options = None
+_NETWORKCONFIG.fields_by_name['space_id']._options = None
+_NETWORKCONFIG.fields_by_name['router_id']._options = None
+_NETWORKCONFIG.fields_by_name['vxnet_id']._options = None
+_NETWORKCONFIG.fields_by_name['status']._options = None
+_NETWORKCONFIG.fields_by_name['created']._options = None
+_NETWORKCONFIG.fields_by_name['updated']._options = None
 # @@protoc_insertion_point(module_scope)

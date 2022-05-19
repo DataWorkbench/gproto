@@ -3563,13 +3563,13 @@ public final class PBModelRole {
        */
       SpaceManage(2),
       /**
-       * <code>NotifierManager = 3;</code>
+       * <code>PlatformManage = 3;</code>
        */
-      NotifierManager(3),
+      PlatformManage(3),
       /**
-       * <code>PlatformManage = 4;</code>
+       * <code>IaaSProxy = 4;</code>
        */
-      PlatformManage(4),
+      IaaSProxy(4),
       /**
        * <pre>
        * Module In workspace;
@@ -3638,6 +3638,10 @@ public final class PBModelRole {
        * <code>AlertManage = 116;</code>
        */
       AlertManage(116),
+      /**
+       * <code>NoticeManage = 117;</code>
+       */
+      NoticeManage(117),
       UNRECOGNIZED(-1),
       ;
 
@@ -3658,13 +3662,13 @@ public final class PBModelRole {
        */
       public static final int SpaceManage_VALUE = 2;
       /**
-       * <code>NotifierManager = 3;</code>
+       * <code>PlatformManage = 3;</code>
        */
-      public static final int NotifierManager_VALUE = 3;
+      public static final int PlatformManage_VALUE = 3;
       /**
-       * <code>PlatformManage = 4;</code>
+       * <code>IaaSProxy = 4;</code>
        */
-      public static final int PlatformManage_VALUE = 4;
+      public static final int IaaSProxy_VALUE = 4;
       /**
        * <pre>
        * Module In workspace;
@@ -3733,6 +3737,10 @@ public final class PBModelRole {
        * <code>AlertManage = 116;</code>
        */
       public static final int AlertManage_VALUE = 116;
+      /**
+       * <code>NoticeManage = 117;</code>
+       */
+      public static final int NoticeManage_VALUE = 117;
 
 
       public final int getNumber() {
@@ -3762,8 +3770,8 @@ public final class PBModelRole {
           case 0: return ClassifyUnSet;
           case 1: return AuditManage;
           case 2: return SpaceManage;
-          case 3: return NotifierManager;
-          case 4: return PlatformManage;
+          case 3: return PlatformManage;
+          case 4: return IaaSProxy;
           case 101: return MemberManage;
           case 102: return RoleManage;
           case 103: return DataSourceMange;
@@ -3780,6 +3788,7 @@ public final class PBModelRole {
           case 114: return SyncJobVersionManage;
           case 115: return SyncJobInstanceManage;
           case 116: return AlertManage;
+          case 117: return NoticeManage;
           default: return null;
         }
       }
@@ -7973,37 +7982,37 @@ public final class PBModelRole {
       "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302" +
       "\001\002\"\000\"^\n\004Type\022\r\n\tTypeUnset\020\000\022\016\n\nSpaceAdmi" +
       "n\020\001\022\022\n\016SpaceDeveloper\020\002\022\021\n\rSpaceOperator" +
-      "\020\003\022\020\n\014SpaceVisitor\020\004\"\370\004\n\rProjectModule\022\037" +
+      "\020\003\022\020\n\014SpaceVisitor\020\004\"\204\005\n\rProjectModule\022\037" +
       "\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-\022>\n\010class" +
       "ify\030\002 \001(\0162\035.model.ProjectModule.Classify" +
       "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
       "\"\000\022$\n\tapi_lists\030\004 \003(\0132\021.model.ProjectAPI" +
-      "\"\304\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
-      "tManage\020\001\022\017\n\013SpaceManage\020\002\022\023\n\017NotifierMa" +
-      "nager\020\003\022\022\n\016PlatformManage\020\004\022\020\n\014MemberMan" +
-      "age\020e\022\016\n\nRoleManage\020f\022\023\n\017DataSourceMange" +
-      "\020g\022\r\n\tUDFManage\020h\022\016\n\nFileManage\020i\022\020\n\014Net" +
-      "workMange\020j\022\020\n\014ClusterMange\020k\022\025\n\021StreamJ" +
-      "obDevMange\020l\022\032\n\026StreamJobReleaseManage\020m" +
-      "\022\032\n\026StreamJobVersionManage\020n\022\033\n\027StreamJo" +
-      "bInstanceManage\020o\022\024\n\020SyncJobDevManage\020p\022" +
-      "\030\n\024SyncJobReleaseManage\020q\022\030\n\024SyncJobVers" +
-      "ionManage\020r\022\031\n\025SyncJobInstanceManage\020s\022\017" +
-      "\n\013AlertManage\020t\"\302\003\n\nProjectAPI\022\035\n\010api_na" +
-      "me\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014display_name\030\002 " +
-      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\tperm_type\030\003 \001(\0162\032.mo" +
-      "del.ProjectAPI.PermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>" +
-      "\n\013permissions\030\004 \003(\0132\034.model.ProjectAPI.P" +
-      "ermissionB\013\342\337\037\007\022\005\352\001\0020\000\022E\n\014system_roles\030\006" +
-      " \003(\0132\".model.ProjectAPI.SystemRolesEntry" +
-      "B\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPermission\022&\n\013system_ro" +
-      "le\030\001 \001(\0132\021.model.SystemRole\022\017\n\007allowed\030\002" +
-      " \001(\010\0322\n\020SystemRolesEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\010:\0028\001\"2\n\010PermType\022\021\n\rPermType" +
-      "Unset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002Bf\n\"com.data" +
-      "omnis.gproto.types.pbmodelB\013PBModelRoleP" +
-      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
-      "ypes/pbmodelb\006proto3"
+      "\"\320\003\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\017\n\013Audi" +
+      "tManage\020\001\022\017\n\013SpaceManage\020\002\022\022\n\016PlatformMa" +
+      "nage\020\003\022\r\n\tIaaSProxy\020\004\022\020\n\014MemberManage\020e\022" +
+      "\016\n\nRoleManage\020f\022\023\n\017DataSourceMange\020g\022\r\n\t" +
+      "UDFManage\020h\022\016\n\nFileManage\020i\022\020\n\014NetworkMa" +
+      "nge\020j\022\020\n\014ClusterMange\020k\022\025\n\021StreamJobDevM" +
+      "ange\020l\022\032\n\026StreamJobReleaseManage\020m\022\032\n\026St" +
+      "reamJobVersionManage\020n\022\033\n\027StreamJobInsta" +
+      "nceManage\020o\022\024\n\020SyncJobDevManage\020p\022\030\n\024Syn" +
+      "cJobReleaseManage\020q\022\030\n\024SyncJobVersionMan" +
+      "age\020r\022\031\n\025SyncJobInstanceManage\020s\022\017\n\013Aler" +
+      "tManage\020t\022\020\n\014NoticeManage\020u\"\302\003\n\nProjectA" +
+      "PI\022\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014dis" +
+      "play_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022<\n\tperm_typ" +
+      "e\030\003 \001(\0162\032.model.ProjectAPI.PermTypeB\r\342\337\037" +
+      "\t\022\007\332\001\0040\000X\001\022>\n\013permissions\030\004 \003(\0132\034.model." +
+      "ProjectAPI.PermissionB\013\342\337\037\007\022\005\352\001\0020\000\022E\n\014sy" +
+      "stem_roles\030\006 \003(\0132\".model.ProjectAPI.Syst" +
+      "emRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032E\n\nPermission\022" +
+      "&\n\013system_role\030\001 \001(\0132\021.model.SystemRole\022" +
+      "\017\n\007allowed\030\002 \001(\010\0322\n\020SystemRolesEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010PermType" +
+      "\022\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002" +
+      "Bf\n\"com.dataomnis.gproto.types.pbmodelB\013" +
+      "PBModelRoleP\000Z1github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -28,6 +28,11 @@ type EngineManageClient interface {
 	DeleteFlinkClusterInK8S(ctx context.Context, in *pbrequest.DeleteFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateNetworkBrokerInK8S(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8S(ctx context.Context, in *pbrequest.DeleteNetworkBrokerInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteNamespacesInK8S(ctx context.Context, in *pbrequest.DeleteNamespacesInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateFlinkClusterInK8SV2(ctx context.Context, in *pbrequest.CreateFlinkClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteFlinkClusterInK8SV2(ctx context.Context, in *pbrequest.DeleteFlinkClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.DeleteNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type engineManageClient struct {
@@ -74,6 +79,51 @@ func (c *engineManageClient) DeleteNetworkBrokerInK8S(ctx context.Context, in *p
 	return out, nil
 }
 
+func (c *engineManageClient) DeleteNamespacesInK8S(ctx context.Context, in *pbrequest.DeleteNamespacesInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/DeleteNamespacesInK8s", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineManageClient) CreateFlinkClusterInK8SV2(ctx context.Context, in *pbrequest.CreateFlinkClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/CreateFlinkClusterInK8sV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineManageClient) DeleteFlinkClusterInK8SV2(ctx context.Context, in *pbrequest.DeleteFlinkClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/DeleteFlinkClusterInK8sV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineManageClient) CreateNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/CreateNetworkBrokerInK8sV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineManageClient) DeleteNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.DeleteNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/DeleteNetworkBrokerInK8sV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EngineManageServer is the server API for EngineManage service.
 // All implementations must embed UnimplementedEngineManageServer
 // for forward compatibility
@@ -82,6 +132,11 @@ type EngineManageServer interface {
 	DeleteFlinkClusterInK8S(context.Context, *pbrequest.DeleteFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
 	CreateNetworkBrokerInK8S(context.Context, *pbrequest.CreateNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8S(context.Context, *pbrequest.DeleteNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error)
+	DeleteNamespacesInK8S(context.Context, *pbrequest.DeleteNamespacesInK8S) (*pbmodel.EmptyStruct, error)
+	CreateFlinkClusterInK8SV2(context.Context, *pbrequest.CreateFlinkClusterInK8SV2) (*pbmodel.EmptyStruct, error)
+	DeleteFlinkClusterInK8SV2(context.Context, *pbrequest.DeleteFlinkClusterInK8SV2) (*pbmodel.EmptyStruct, error)
+	CreateNetworkBrokerInK8SV2(context.Context, *pbrequest.CreateNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error)
+	DeleteNetworkBrokerInK8SV2(context.Context, *pbrequest.DeleteNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedEngineManageServer()
 }
 
@@ -100,6 +155,21 @@ func (UnimplementedEngineManageServer) CreateNetworkBrokerInK8S(context.Context,
 }
 func (UnimplementedEngineManageServer) DeleteNetworkBrokerInK8S(context.Context, *pbrequest.DeleteNetworkBrokerInK8S) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNetworkBrokerInK8S not implemented")
+}
+func (UnimplementedEngineManageServer) DeleteNamespacesInK8S(context.Context, *pbrequest.DeleteNamespacesInK8S) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNamespacesInK8S not implemented")
+}
+func (UnimplementedEngineManageServer) CreateFlinkClusterInK8SV2(context.Context, *pbrequest.CreateFlinkClusterInK8SV2) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFlinkClusterInK8SV2 not implemented")
+}
+func (UnimplementedEngineManageServer) DeleteFlinkClusterInK8SV2(context.Context, *pbrequest.DeleteFlinkClusterInK8SV2) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFlinkClusterInK8SV2 not implemented")
+}
+func (UnimplementedEngineManageServer) CreateNetworkBrokerInK8SV2(context.Context, *pbrequest.CreateNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNetworkBrokerInK8SV2 not implemented")
+}
+func (UnimplementedEngineManageServer) DeleteNetworkBrokerInK8SV2(context.Context, *pbrequest.DeleteNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNetworkBrokerInK8SV2 not implemented")
 }
 func (UnimplementedEngineManageServer) mustEmbedUnimplementedEngineManageServer() {}
 
@@ -186,6 +256,96 @@ func _EngineManage_DeleteNetworkBrokerInK8S_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EngineManage_DeleteNamespacesInK8S_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteNamespacesInK8S)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).DeleteNamespacesInK8S(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/DeleteNamespacesInK8s",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).DeleteNamespacesInK8S(ctx, req.(*pbrequest.DeleteNamespacesInK8S))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EngineManage_CreateFlinkClusterInK8SV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateFlinkClusterInK8SV2)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).CreateFlinkClusterInK8SV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/CreateFlinkClusterInK8sV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).CreateFlinkClusterInK8SV2(ctx, req.(*pbrequest.CreateFlinkClusterInK8SV2))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EngineManage_DeleteFlinkClusterInK8SV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteFlinkClusterInK8SV2)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).DeleteFlinkClusterInK8SV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/DeleteFlinkClusterInK8sV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).DeleteFlinkClusterInK8SV2(ctx, req.(*pbrequest.DeleteFlinkClusterInK8SV2))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EngineManage_CreateNetworkBrokerInK8SV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateNetworkBrokerInK8SV2)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).CreateNetworkBrokerInK8SV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/CreateNetworkBrokerInK8sV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).CreateNetworkBrokerInK8SV2(ctx, req.(*pbrequest.CreateNetworkBrokerInK8SV2))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EngineManage_DeleteNetworkBrokerInK8SV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteNetworkBrokerInK8SV2)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).DeleteNetworkBrokerInK8SV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/DeleteNetworkBrokerInK8sV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).DeleteNetworkBrokerInK8SV2(ctx, req.(*pbrequest.DeleteNetworkBrokerInK8SV2))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EngineManage_ServiceDesc is the grpc.ServiceDesc for EngineManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -208,6 +368,26 @@ var EngineManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteNetworkBrokerInK8s",
 			Handler:    _EngineManage_DeleteNetworkBrokerInK8S_Handler,
+		},
+		{
+			MethodName: "DeleteNamespacesInK8s",
+			Handler:    _EngineManage_DeleteNamespacesInK8S_Handler,
+		},
+		{
+			MethodName: "CreateFlinkClusterInK8sV2",
+			Handler:    _EngineManage_CreateFlinkClusterInK8SV2_Handler,
+		},
+		{
+			MethodName: "DeleteFlinkClusterInK8sV2",
+			Handler:    _EngineManage_DeleteFlinkClusterInK8SV2_Handler,
+		},
+		{
+			MethodName: "CreateNetworkBrokerInK8sV2",
+			Handler:    _EngineManage_CreateNetworkBrokerInK8SV2_Handler,
+		},
+		{
+			MethodName: "DeleteNetworkBrokerInK8sV2",
+			Handler:    _EngineManage_DeleteNetworkBrokerInK8SV2_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

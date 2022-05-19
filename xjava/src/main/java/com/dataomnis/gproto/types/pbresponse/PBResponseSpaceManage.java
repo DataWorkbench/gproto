@@ -2980,6 +2980,1360 @@ public final class PBResponseSpaceManage {
 
   }
 
+  public interface DescribeNetworkConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.DescribeNetworkConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     * @return Whether the router field is set.
+     */
+    boolean hasRouter();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     * @return The router.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router getRouter();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder getRouterOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> 
+        getVxnetsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet getVxnets(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    int getVxnetsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder> 
+        getVxnetsOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder getVxnetsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"default_vxnet_id"
+     * </pre>
+     *
+     * <code>string default_vxnet_id = 3;</code>
+     * @return The defaultVxnetId.
+     */
+    java.lang.String getDefaultVxnetId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"default_vxnet_id"
+     * </pre>
+     *
+     * <code>string default_vxnet_id = 3;</code>
+     * @return The bytes for defaultVxnetId.
+     */
+    com.google.protobuf.ByteString
+        getDefaultVxnetIdBytes();
+  }
+  /**
+   * Protobuf type {@code response.DescribeNetworkConfig}
+   */
+  public static final class DescribeNetworkConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.DescribeNetworkConfig)
+      DescribeNetworkConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeNetworkConfig.newBuilder() to construct.
+    private DescribeNetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeNetworkConfig() {
+      vxnets_ = java.util.Collections.emptyList();
+      defaultVxnetId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeNetworkConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeNetworkConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder subBuilder = null;
+              if (router_ != null) {
+                subBuilder = router_.toBuilder();
+              }
+              router_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(router_);
+                router_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                vxnets_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              vxnets_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultVxnetId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          vxnets_ = java.util.Collections.unmodifiableList(vxnets_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeNetworkConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeNetworkConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.Builder.class);
+    }
+
+    public static final int ROUTER_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router router_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     * @return Whether the router field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouter() {
+      return router_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     * @return The router.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router getRouter() {
+      return router_ == null ? com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.getDefaultInstance() : router_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"router"
+     * </pre>
+     *
+     * <code>.iaas.Router router = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder getRouterOrBuilder() {
+      return getRouter();
+    }
+
+    public static final int VXNETS_FIELD_NUMBER = 2;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> vxnets_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> getVxnetsList() {
+      return vxnets_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder> 
+        getVxnetsOrBuilderList() {
+      return vxnets_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    @java.lang.Override
+    public int getVxnetsCount() {
+      return vxnets_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet getVxnets(int index) {
+      return vxnets_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"vxnets"
+     * </pre>
+     *
+     * <code>repeated .iaas.VXNet vxnets = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder getVxnetsOrBuilder(
+        int index) {
+      return vxnets_.get(index);
+    }
+
+    public static final int DEFAULT_VXNET_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object defaultVxnetId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"default_vxnet_id"
+     * </pre>
+     *
+     * <code>string default_vxnet_id = 3;</code>
+     * @return The defaultVxnetId.
+     */
+    @java.lang.Override
+    public java.lang.String getDefaultVxnetId() {
+      java.lang.Object ref = defaultVxnetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultVxnetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"default_vxnet_id"
+     * </pre>
+     *
+     * <code>string default_vxnet_id = 3;</code>
+     * @return The bytes for defaultVxnetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDefaultVxnetIdBytes() {
+      java.lang.Object ref = defaultVxnetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultVxnetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (router_ != null) {
+        output.writeMessage(1, getRouter());
+      }
+      for (int i = 0; i < vxnets_.size(); i++) {
+        output.writeMessage(2, vxnets_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultVxnetId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultVxnetId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (router_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getRouter());
+      }
+      for (int i = 0; i < vxnets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, vxnets_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultVxnetId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultVxnetId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig) obj;
+
+      if (hasRouter() != other.hasRouter()) return false;
+      if (hasRouter()) {
+        if (!getRouter()
+            .equals(other.getRouter())) return false;
+      }
+      if (!getVxnetsList()
+          .equals(other.getVxnetsList())) return false;
+      if (!getDefaultVxnetId()
+          .equals(other.getDefaultVxnetId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRouter()) {
+        hash = (37 * hash) + ROUTER_FIELD_NUMBER;
+        hash = (53 * hash) + getRouter().hashCode();
+      }
+      if (getVxnetsCount() > 0) {
+        hash = (37 * hash) + VXNETS_FIELD_NUMBER;
+        hash = (53 * hash) + getVxnetsList().hashCode();
+      }
+      hash = (37 * hash) + DEFAULT_VXNET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultVxnetId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.DescribeNetworkConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.DescribeNetworkConfig)
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeNetworkConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getVxnetsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (routerBuilder_ == null) {
+          router_ = null;
+        } else {
+          router_ = null;
+          routerBuilder_ = null;
+        }
+        if (vxnetsBuilder_ == null) {
+          vxnets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          vxnetsBuilder_.clear();
+        }
+        defaultVxnetId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig(this);
+        int from_bitField0_ = bitField0_;
+        if (routerBuilder_ == null) {
+          result.router_ = router_;
+        } else {
+          result.router_ = routerBuilder_.build();
+        }
+        if (vxnetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            vxnets_ = java.util.Collections.unmodifiableList(vxnets_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.vxnets_ = vxnets_;
+        } else {
+          result.vxnets_ = vxnetsBuilder_.build();
+        }
+        result.defaultVxnetId_ = defaultVxnetId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig.getDefaultInstance()) return this;
+        if (other.hasRouter()) {
+          mergeRouter(other.getRouter());
+        }
+        if (vxnetsBuilder_ == null) {
+          if (!other.vxnets_.isEmpty()) {
+            if (vxnets_.isEmpty()) {
+              vxnets_ = other.vxnets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureVxnetsIsMutable();
+              vxnets_.addAll(other.vxnets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.vxnets_.isEmpty()) {
+            if (vxnetsBuilder_.isEmpty()) {
+              vxnetsBuilder_.dispose();
+              vxnetsBuilder_ = null;
+              vxnets_ = other.vxnets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              vxnetsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getVxnetsFieldBuilder() : null;
+            } else {
+              vxnetsBuilder_.addAllMessages(other.vxnets_);
+            }
+          }
+        }
+        if (!other.getDefaultVxnetId().isEmpty()) {
+          defaultVxnetId_ = other.defaultVxnetId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router router_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder> routerBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       * @return Whether the router field is set.
+       */
+      public boolean hasRouter() {
+        return routerBuilder_ != null || router_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       * @return The router.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router getRouter() {
+        if (routerBuilder_ == null) {
+          return router_ == null ? com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.getDefaultInstance() : router_;
+        } else {
+          return routerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public Builder setRouter(com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router value) {
+        if (routerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          router_ = value;
+          onChanged();
+        } else {
+          routerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public Builder setRouter(
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder builderForValue) {
+        if (routerBuilder_ == null) {
+          router_ = builderForValue.build();
+          onChanged();
+        } else {
+          routerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public Builder mergeRouter(com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router value) {
+        if (routerBuilder_ == null) {
+          if (router_ != null) {
+            router_ =
+              com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.newBuilder(router_).mergeFrom(value).buildPartial();
+          } else {
+            router_ = value;
+          }
+          onChanged();
+        } else {
+          routerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public Builder clearRouter() {
+        if (routerBuilder_ == null) {
+          router_ = null;
+          onChanged();
+        } else {
+          router_ = null;
+          routerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder getRouterBuilder() {
+        
+        onChanged();
+        return getRouterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder getRouterOrBuilder() {
+        if (routerBuilder_ != null) {
+          return routerBuilder_.getMessageOrBuilder();
+        } else {
+          return router_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.getDefaultInstance() : router_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"router"
+       * </pre>
+       *
+       * <code>.iaas.Router router = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder> 
+          getRouterFieldBuilder() {
+        if (routerBuilder_ == null) {
+          routerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.Router.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.RouterOrBuilder>(
+                  getRouter(),
+                  getParentForChildren(),
+                  isClean());
+          router_ = null;
+        }
+        return routerBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> vxnets_ =
+        java.util.Collections.emptyList();
+      private void ensureVxnetsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          vxnets_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet>(vxnets_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder> vxnetsBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> getVxnetsList() {
+        if (vxnetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vxnets_);
+        } else {
+          return vxnetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public int getVxnetsCount() {
+        if (vxnetsBuilder_ == null) {
+          return vxnets_.size();
+        } else {
+          return vxnetsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet getVxnets(int index) {
+        if (vxnetsBuilder_ == null) {
+          return vxnets_.get(index);
+        } else {
+          return vxnetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder setVxnets(
+          int index, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet value) {
+        if (vxnetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVxnetsIsMutable();
+          vxnets_.set(index, value);
+          onChanged();
+        } else {
+          vxnetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder setVxnets(
+          int index, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder builderForValue) {
+        if (vxnetsBuilder_ == null) {
+          ensureVxnetsIsMutable();
+          vxnets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          vxnetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder addVxnets(com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet value) {
+        if (vxnetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVxnetsIsMutable();
+          vxnets_.add(value);
+          onChanged();
+        } else {
+          vxnetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder addVxnets(
+          int index, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet value) {
+        if (vxnetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVxnetsIsMutable();
+          vxnets_.add(index, value);
+          onChanged();
+        } else {
+          vxnetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder addVxnets(
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder builderForValue) {
+        if (vxnetsBuilder_ == null) {
+          ensureVxnetsIsMutable();
+          vxnets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          vxnetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder addVxnets(
+          int index, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder builderForValue) {
+        if (vxnetsBuilder_ == null) {
+          ensureVxnetsIsMutable();
+          vxnets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          vxnetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder addAllVxnets(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet> values) {
+        if (vxnetsBuilder_ == null) {
+          ensureVxnetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, vxnets_);
+          onChanged();
+        } else {
+          vxnetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder clearVxnets() {
+        if (vxnetsBuilder_ == null) {
+          vxnets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          vxnetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public Builder removeVxnets(int index) {
+        if (vxnetsBuilder_ == null) {
+          ensureVxnetsIsMutable();
+          vxnets_.remove(index);
+          onChanged();
+        } else {
+          vxnetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder getVxnetsBuilder(
+          int index) {
+        return getVxnetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder getVxnetsOrBuilder(
+          int index) {
+        if (vxnetsBuilder_ == null) {
+          return vxnets_.get(index);  } else {
+          return vxnetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder> 
+           getVxnetsOrBuilderList() {
+        if (vxnetsBuilder_ != null) {
+          return vxnetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(vxnets_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder addVxnetsBuilder() {
+        return getVxnetsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder addVxnetsBuilder(
+          int index) {
+        return getVxnetsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"vxnets"
+       * </pre>
+       *
+       * <code>repeated .iaas.VXNet vxnets = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder> 
+           getVxnetsBuilderList() {
+        return getVxnetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder> 
+          getVxnetsFieldBuilder() {
+        if (vxnetsBuilder_ == null) {
+          vxnetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNet.Builder, com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.VXNetOrBuilder>(
+                  vxnets_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          vxnets_ = null;
+        }
+        return vxnetsBuilder_;
+      }
+
+      private java.lang.Object defaultVxnetId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"default_vxnet_id"
+       * </pre>
+       *
+       * <code>string default_vxnet_id = 3;</code>
+       * @return The defaultVxnetId.
+       */
+      public java.lang.String getDefaultVxnetId() {
+        java.lang.Object ref = defaultVxnetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultVxnetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"default_vxnet_id"
+       * </pre>
+       *
+       * <code>string default_vxnet_id = 3;</code>
+       * @return The bytes for defaultVxnetId.
+       */
+      public com.google.protobuf.ByteString
+          getDefaultVxnetIdBytes() {
+        java.lang.Object ref = defaultVxnetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          defaultVxnetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"default_vxnet_id"
+       * </pre>
+       *
+       * <code>string default_vxnet_id = 3;</code>
+       * @param value The defaultVxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultVxnetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        defaultVxnetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"default_vxnet_id"
+       * </pre>
+       *
+       * <code>string default_vxnet_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultVxnetId() {
+        
+        defaultVxnetId_ = getDefaultInstance().getDefaultVxnetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"default_vxnet_id"
+       * </pre>
+       *
+       * <code>string default_vxnet_id = 3;</code>
+       * @param value The bytes for defaultVxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultVxnetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        defaultVxnetId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.DescribeNetworkConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.DescribeNetworkConfig)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeNetworkConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeNetworkConfig>() {
+      @java.lang.Override
+      public DescribeNetworkConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeNetworkConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeNetworkConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeNetworkConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_ListWorkspaces_descriptor;
   private static final 
@@ -3000,6 +4354,11 @@ public final class PBResponseSpaceManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_CheckPermission_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_DescribeNetworkConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_DescribeNetworkConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3012,22 +4371,27 @@ public final class PBResponseSpaceManage {
       "\n\'proto/types/response/space_manage.prot" +
       "o\022\010response\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\032!proto/types/mo" +
-      "del/workspace.proto\"R\n\016ListWorkspaces\022\037\n" +
-      "\005infos\030\001 \003(\0132\020.model.Workspace\022\020\n\010has_mo" +
-      "re\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"2\n\017CreateWorkspa" +
-      "ce\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021D" +
-      "escribeWorkspace\022\036\n\004info\030\001 \001(\0132\020.model.W" +
-      "orkspace\"6\n\017CheckPermission\022#\n\tworkspace" +
-      "\030\001 \001(\0132\020.model.WorkspaceBv\n%com.dataomni" +
-      "s.gproto.types.pbresponseB\025PBResponseSpa" +
-      "ceManageP\000Z4github.com/DataWorkbench/gpr" +
-      "oto/xgo/types/pbresponseb\006proto3"
+      "del/workspace.proto\032 proto/types/model/i" +
+      "aas/vpc.proto\"R\n\016ListWorkspaces\022\037\n\005infos" +
+      "\030\001 \003(\0132\020.model.Workspace\022\020\n\010has_more\030\002 \001" +
+      "(\010\022\r\n\005total\030\003 \001(\003\"2\n\017CreateWorkspace\022\037\n\002" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021Describ" +
+      "eWorkspace\022\036\n\004info\030\001 \001(\0132\020.model.Workspa" +
+      "ce\"6\n\017CheckPermission\022#\n\tworkspace\030\001 \001(\013" +
+      "2\020.model.Workspace\"l\n\025DescribeNetworkCon" +
+      "fig\022\034\n\006router\030\001 \001(\0132\014.iaas.Router\022\033\n\006vxn" +
+      "ets\030\002 \003(\0132\013.iaas.VXNet\022\030\n\020default_vxnet_" +
+      "id\030\003 \001(\tBv\n%com.dataomnis.gproto.types.p" +
+      "bresponseB\025PBResponseSpaceManageP\000Z4gith" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
+      "responseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.getDescriptor(),
         });
     internal_static_response_ListWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3053,6 +4417,12 @@ public final class PBResponseSpaceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_CheckPermission_descriptor,
         new java.lang.String[] { "Workspace", });
+    internal_static_response_DescribeNetworkConfig_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_response_DescribeNetworkConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_DescribeNetworkConfig_descriptor,
+        new java.lang.String[] { "Router", "Vxnets", "DefaultVxnetId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
@@ -3060,6 +4430,7 @@ public final class PBResponseSpaceManage {
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

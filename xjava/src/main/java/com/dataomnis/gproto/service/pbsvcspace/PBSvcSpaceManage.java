@@ -27,7 +27,7 @@ public final class PBSvcSpaceManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/space_" +
       "manage.proto\032\'proto/types/response/space" +
-      "_manage.proto2\231\005\n\013SpaceManage\022E\n\016ListWor" +
+      "_manage.proto2\365\005\n\013SpaceManage\022E\n\016ListWor" +
       "kspaces\022\027.request.ListWorkspaces\032\030.respo" +
       "nse.ListWorkspaces\"\000\022K\n\024ListMemberWorksp" +
       "aces\022\027.request.ListWorkspaces\032\030.response" +
@@ -44,10 +44,12 @@ public final class PBSvcSpaceManage {
       "escribeWorkspace\032\033.response.DescribeWork" +
       "space\"\000\022H\n\017CheckPermission\022\030.request.Che" +
       "ckPermission\032\031.response.CheckPermission\"" +
-      "\000Bu\n\'com.dataomnis.gproto.service.pbsvcs" +
-      "paceB\020PBSvcSpaceManageP\000Z6github.com/Dat" +
-      "aWorkbench/gproto/xgo/service/pbsvcspace" +
-      "b\006proto3"
+      "\000\022Z\n\025DescribeNetworkConfig\022\036.request.Des" +
+      "cribeNetworkConfig\032\037.response.DescribeNe" +
+      "tworkConfig\"\000Bu\n\'com.dataomnis.gproto.se" +
+      "rvice.pbsvcspaceB\020PBSvcSpaceManageP\000Z6gi" +
+      "thub.com/DataWorkbench/gproto/xgo/servic" +
+      "e/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

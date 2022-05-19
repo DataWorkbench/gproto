@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\024PBRequestSpaceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/request/space_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a!proto/types/model/workspace.proto\x1a\x1cproto/types/model/role.proto\"\xa9\x02\n\x0eListWorkspaces\x12 \n\x07user_id\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0e\n\x06search\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32\x17.model.Workspace.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x11\n\tspace_ids\x18\t \x03(\t\"f\n\x10\x44\x65leteWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12$\n\x0breq_user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"g\n\x11\x44isableWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12$\n\x0breq_user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"z\n\x10\x45nableWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12\x12\n\nresume_job\x18\x02 \x01(\x08\x12$\n\x0breq_user_id\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"n\n\x0f\x43reateWorkspace\x12\x1e\n\x05owner\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12\x1e\n\x04name\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"u\n\x0fUpdateWorkspace\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x04name\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\":\n\x11\x44\x65scribeWorkspace\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"\xe6\x02\n\x0f\x43heckPermission\x12$\n\x0breq_user_id\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tmodule_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\tperm_type\x18\x04 \x01(\x0e\x32\x1a.model.ProjectAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1e\n\x08\x61pi_name\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12L\n\x0csystem_roles\x18\x06 \x03(\x0b\x32).request.CheckPermission.SystemRolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x32\n\x10SystemRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestSpaceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n&proto/types/request/space_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a!proto/types/model/workspace.proto\x1a\x1cproto/types/model/role.proto\"\xa9\x02\n\x0eListWorkspaces\x12 \n\x07user_id\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0e\n\x06search\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32\x17.model.Workspace.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x11\n\tspace_ids\x18\t \x03(\t\"f\n\x10\x44\x65leteWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12$\n\x0breq_user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"g\n\x11\x44isableWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12$\n\x0breq_user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"z\n\x10\x45nableWorkspaces\x12,\n\tspace_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04wks-\x12\x12\n\nresume_job\x18\x02 \x01(\x08\x12$\n\x0breq_user_id\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\"\x93\x01\n\x0f\x43reateWorkspace\x12\x1e\n\x05owner\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12\x1e\n\x04name\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x11\n\trouter_id\x18\x05 \x01(\t\x12\x10\n\x08vxnet_id\x18\x06 \x01(\t\"u\n\x0fUpdateWorkspace\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x04name\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\":\n\x11\x44\x65scribeWorkspace\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"\xe6\x02\n\x0f\x43heckPermission\x12$\n\x0breq_user_id\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x88\x02\x41\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tmodule_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\tperm_type\x18\x04 \x01(\x0e\x32\x1a.model.ProjectAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1e\n\x08\x61pi_name\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12L\n\x0csystem_roles\x18\x06 \x03(\x0b\x32).request.CheckPermission.SystemRolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x32\n\x10SystemRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\">\n\x15\x44\x65scribeNetworkConfig\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-Bs\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestSpaceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_role__pb2.DESCRIPTOR,])
 
@@ -271,6 +271,20 @@ _CREATEWORKSPACE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='router_id', full_name='request.CreateWorkspace.router_id', index=3,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_id', full_name='request.CreateWorkspace.vxnet_id', index=4,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -283,8 +297,8 @@ _CREATEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=854,
-  serialized_end=964,
+  serialized_start=855,
+  serialized_end=1002,
 )
 
 
@@ -329,8 +343,8 @@ _UPDATEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=966,
-  serialized_end=1083,
+  serialized_start=1004,
+  serialized_end=1121,
 )
 
 
@@ -361,8 +375,8 @@ _DESCRIBEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1085,
-  serialized_end=1143,
+  serialized_start=1123,
+  serialized_end=1181,
 )
 
 
@@ -400,8 +414,8 @@ _CHECKPERMISSION_SYSTEMROLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1454,
-  serialized_end=1504,
+  serialized_start=1492,
+  serialized_end=1542,
 )
 
 _CHECKPERMISSION = _descriptor.Descriptor(
@@ -466,8 +480,40 @@ _CHECKPERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1146,
-  serialized_end=1504,
+  serialized_start=1184,
+  serialized_end=1542,
+)
+
+
+_DESCRIBENETWORKCONFIG = _descriptor.Descriptor(
+  name='DescribeNetworkConfig',
+  full_name='request.DescribeNetworkConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.DescribeNetworkConfig.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1544,
+  serialized_end=1606,
 )
 
 _LISTWORKSPACES.fields_by_name['status'].enum_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE_STATUS
@@ -482,6 +528,7 @@ DESCRIPTOR.message_types_by_name['CreateWorkspace'] = _CREATEWORKSPACE
 DESCRIPTOR.message_types_by_name['UpdateWorkspace'] = _UPDATEWORKSPACE
 DESCRIPTOR.message_types_by_name['DescribeWorkspace'] = _DESCRIBEWORKSPACE
 DESCRIPTOR.message_types_by_name['CheckPermission'] = _CHECKPERMISSION
+DESCRIPTOR.message_types_by_name['DescribeNetworkConfig'] = _DESCRIBENETWORKCONFIG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListWorkspaces = _reflection.GeneratedProtocolMessageType('ListWorkspaces', (_message.Message,), {
@@ -548,6 +595,13 @@ CheckPermission = _reflection.GeneratedProtocolMessageType('CheckPermission', (_
 _sym_db.RegisterMessage(CheckPermission)
 _sym_db.RegisterMessage(CheckPermission.SystemRolesEntry)
 
+DescribeNetworkConfig = _reflection.GeneratedProtocolMessageType('DescribeNetworkConfig', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBENETWORKCONFIG,
+  '__module__' : 'proto.types.request.space_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.DescribeNetworkConfig)
+  })
+_sym_db.RegisterMessage(DescribeNetworkConfig)
+
 
 DESCRIPTOR._options = None
 _LISTWORKSPACES.fields_by_name['user_id']._options = None
@@ -575,4 +629,5 @@ _CHECKPERMISSION.fields_by_name['module_id']._options = None
 _CHECKPERMISSION.fields_by_name['perm_type']._options = None
 _CHECKPERMISSION.fields_by_name['api_name']._options = None
 _CHECKPERMISSION.fields_by_name['system_roles']._options = None
+_DESCRIBENETWORKCONFIG.fields_by_name['space_id']._options = None
 # @@protoc_insertion_point(module_scope)

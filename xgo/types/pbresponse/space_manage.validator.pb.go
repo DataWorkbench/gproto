@@ -7,6 +7,7 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaas"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strings "strings"
@@ -91,6 +92,41 @@ func (this *CheckPermission) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_workspace(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DescribeNetworkConfig) _xxx_xxx_Validator_Validate_router() error {
+	if dt, ok := interface{}(this.Router).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DescribeNetworkConfig) _xxx_xxx_Validator_Validate_vxnets() error {
+	for _, item := range this.Vxnets {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeNetworkConfig
+func (this *DescribeNetworkConfig) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_router(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_vxnets(); err != nil {
 		return err
 	}
 	return nil

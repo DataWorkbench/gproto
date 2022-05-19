@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestEngineManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/cluster.proto\x1a\x1fproto/types/model/network.proto\"I\n\x17\x43reateFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"I\n\x17\x44\x65leteFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x43reateNetworkBrokerInK8s\x12)\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x44\x65leteNetworkBrokerInK8s\x12)\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/cluster.proto\x1a\x1fproto/types/model/network.proto\"I\n\x17\x43reateFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"I\n\x17\x44\x65leteFlinkClusterInK8s\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x43reateNetworkBrokerInK8s\x12)\n\x04info\x18\x05 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"E\n\x18\x44\x65leteNetworkBrokerInK8s\x12)\n\x04info\x18\x05 \x01(\x0b\x32\x0e.model.NetworkB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"F\n\x15\x44\x65leteNamespacesInK8s\x12-\n\tspace_ids\x18\x01 \x03(\tB\x1a\xe2\xdf\x1f\x16\x12\x14\xea\x01\x11P\x01Z\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"y\n\x19\x43reateFlinkClusterInK8sV2\x12.\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12,\n\tvxnet_ids\x18\x03 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10P\x01Z\x0c\xc2\x01\t\xca\x02\x06vxnet-\"\x91\x01\n\x19\x44\x65leteFlinkClusterInK8sV2\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12$\n\x08vxnet_id\x18\x03 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\"\x8e\x01\n\x1a\x43reateNetworkBrokerInK8sV2\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\trouter_id\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x03 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\"\x8e\x01\n\x1a\x44\x65leteNetworkBrokerInK8sV2\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\trouter_id\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x03 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-Bt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_network__pb2.DESCRIPTOR,])
 
@@ -103,7 +103,7 @@ _CREATENETWORKBROKERINK8S = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='info', full_name='request.CreateNetworkBrokerInK8s.info', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -135,7 +135,7 @@ _DELETENETWORKBROKERINK8S = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='info', full_name='request.DeleteNetworkBrokerInK8s.info', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -156,14 +156,229 @@ _DELETENETWORKBROKERINK8S = _descriptor.Descriptor(
   serialized_end=461,
 )
 
+
+_DELETENAMESPACESINK8S = _descriptor.Descriptor(
+  name='DeleteNamespacesInK8s',
+  full_name='request.DeleteNamespacesInK8s',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_ids', full_name='request.DeleteNamespacesInK8s.space_ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\026\022\024\352\001\021P\001Z\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=463,
+  serialized_end=533,
+)
+
+
+_CREATEFLINKCLUSTERINK8SV2 = _descriptor.Descriptor(
+  name='CreateFlinkClusterInK8sV2',
+  full_name='request.CreateFlinkClusterInK8sV2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='info', full_name='request.CreateFlinkClusterInK8sV2.info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_ids', full_name='request.CreateFlinkClusterInK8sV2.vxnet_ids', index=1,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\025\022\023\352\001\020P\001Z\014\302\001\t\312\002\006vxnet-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=535,
+  serialized_end=656,
+)
+
+
+_DELETEFLINKCLUSTERINK8SV2 = _descriptor.Descriptor(
+  name='DeleteFlinkClusterInK8sV2',
+  full_name='request.DeleteFlinkClusterInK8sV2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.DeleteFlinkClusterInK8sV2.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='request.DeleteFlinkClusterInK8sV2.cluster_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_id', full_name='request.DeleteFlinkClusterInK8sV2.vxnet_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\016\022\014\302\001\t\312\002\006vxnet-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=659,
+  serialized_end=804,
+)
+
+
+_CREATENETWORKBROKERINK8SV2 = _descriptor.Descriptor(
+  name='CreateNetworkBrokerInK8sV2',
+  full_name='request.CreateNetworkBrokerInK8sV2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.CreateNetworkBrokerInK8sV2.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='router_id', full_name='request.CreateNetworkBrokerInK8sV2.router_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\312\002\004rtr-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_id', full_name='request.CreateNetworkBrokerInK8sV2.vxnet_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\016\022\014\302\001\t\312\002\006vxnet-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=807,
+  serialized_end=949,
+)
+
+
+_DELETENETWORKBROKERINK8SV2 = _descriptor.Descriptor(
+  name='DeleteNetworkBrokerInK8sV2',
+  full_name='request.DeleteNetworkBrokerInK8sV2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.DeleteNetworkBrokerInK8sV2.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='router_id', full_name='request.DeleteNetworkBrokerInK8sV2.router_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\312\002\004rtr-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vxnet_id', full_name='request.DeleteNetworkBrokerInK8sV2.vxnet_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\016\022\014\302\001\t\312\002\006vxnet-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=952,
+  serialized_end=1094,
+)
+
 _CREATEFLINKCLUSTERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 _DELETEFLINKCLUSTERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 _CREATENETWORKBROKERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_network__pb2._NETWORK
 _DELETENETWORKBROKERINK8S.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_network__pb2._NETWORK
+_CREATEFLINKCLUSTERINK8SV2.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 DESCRIPTOR.message_types_by_name['CreateFlinkClusterInK8s'] = _CREATEFLINKCLUSTERINK8S
 DESCRIPTOR.message_types_by_name['DeleteFlinkClusterInK8s'] = _DELETEFLINKCLUSTERINK8S
 DESCRIPTOR.message_types_by_name['CreateNetworkBrokerInK8s'] = _CREATENETWORKBROKERINK8S
 DESCRIPTOR.message_types_by_name['DeleteNetworkBrokerInK8s'] = _DELETENETWORKBROKERINK8S
+DESCRIPTOR.message_types_by_name['DeleteNamespacesInK8s'] = _DELETENAMESPACESINK8S
+DESCRIPTOR.message_types_by_name['CreateFlinkClusterInK8sV2'] = _CREATEFLINKCLUSTERINK8SV2
+DESCRIPTOR.message_types_by_name['DeleteFlinkClusterInK8sV2'] = _DELETEFLINKCLUSTERINK8SV2
+DESCRIPTOR.message_types_by_name['CreateNetworkBrokerInK8sV2'] = _CREATENETWORKBROKERINK8SV2
+DESCRIPTOR.message_types_by_name['DeleteNetworkBrokerInK8sV2'] = _DELETENETWORKBROKERINK8SV2
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateFlinkClusterInK8s = _reflection.GeneratedProtocolMessageType('CreateFlinkClusterInK8s', (_message.Message,), {
@@ -194,10 +409,57 @@ DeleteNetworkBrokerInK8s = _reflection.GeneratedProtocolMessageType('DeleteNetwo
   })
 _sym_db.RegisterMessage(DeleteNetworkBrokerInK8s)
 
+DeleteNamespacesInK8s = _reflection.GeneratedProtocolMessageType('DeleteNamespacesInK8s', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENAMESPACESINK8S,
+  '__module__' : 'proto.types.request.engine_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteNamespacesInK8s)
+  })
+_sym_db.RegisterMessage(DeleteNamespacesInK8s)
+
+CreateFlinkClusterInK8sV2 = _reflection.GeneratedProtocolMessageType('CreateFlinkClusterInK8sV2', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEFLINKCLUSTERINK8SV2,
+  '__module__' : 'proto.types.request.engine_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.CreateFlinkClusterInK8sV2)
+  })
+_sym_db.RegisterMessage(CreateFlinkClusterInK8sV2)
+
+DeleteFlinkClusterInK8sV2 = _reflection.GeneratedProtocolMessageType('DeleteFlinkClusterInK8sV2', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEFLINKCLUSTERINK8SV2,
+  '__module__' : 'proto.types.request.engine_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteFlinkClusterInK8sV2)
+  })
+_sym_db.RegisterMessage(DeleteFlinkClusterInK8sV2)
+
+CreateNetworkBrokerInK8sV2 = _reflection.GeneratedProtocolMessageType('CreateNetworkBrokerInK8sV2', (_message.Message,), {
+  'DESCRIPTOR' : _CREATENETWORKBROKERINK8SV2,
+  '__module__' : 'proto.types.request.engine_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.CreateNetworkBrokerInK8sV2)
+  })
+_sym_db.RegisterMessage(CreateNetworkBrokerInK8sV2)
+
+DeleteNetworkBrokerInK8sV2 = _reflection.GeneratedProtocolMessageType('DeleteNetworkBrokerInK8sV2', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENETWORKBROKERINK8SV2,
+  '__module__' : 'proto.types.request.engine_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteNetworkBrokerInK8sV2)
+  })
+_sym_db.RegisterMessage(DeleteNetworkBrokerInK8sV2)
+
 
 DESCRIPTOR._options = None
 _CREATEFLINKCLUSTERINK8S.fields_by_name['info']._options = None
 _DELETEFLINKCLUSTERINK8S.fields_by_name['info']._options = None
 _CREATENETWORKBROKERINK8S.fields_by_name['info']._options = None
 _DELETENETWORKBROKERINK8S.fields_by_name['info']._options = None
+_DELETENAMESPACESINK8S.fields_by_name['space_ids']._options = None
+_CREATEFLINKCLUSTERINK8SV2.fields_by_name['info']._options = None
+_CREATEFLINKCLUSTERINK8SV2.fields_by_name['vxnet_ids']._options = None
+_DELETEFLINKCLUSTERINK8SV2.fields_by_name['space_id']._options = None
+_DELETEFLINKCLUSTERINK8SV2.fields_by_name['cluster_id']._options = None
+_DELETEFLINKCLUSTERINK8SV2.fields_by_name['vxnet_id']._options = None
+_CREATENETWORKBROKERINK8SV2.fields_by_name['space_id']._options = None
+_CREATENETWORKBROKERINK8SV2.fields_by_name['router_id']._options = None
+_CREATENETWORKBROKERINK8SV2.fields_by_name['vxnet_id']._options = None
+_DELETENETWORKBROKERINK8SV2.fields_by_name['space_id']._options = None
+_DELETENETWORKBROKERINK8SV2.fields_by_name['router_id']._options = None
+_DELETENETWORKBROKERINK8SV2.fields_by_name['vxnet_id']._options = None
 # @@protoc_insertion_point(module_scope)

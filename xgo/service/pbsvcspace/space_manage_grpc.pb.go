@@ -41,6 +41,8 @@ type SpaceManageClient interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(ctx context.Context, in *pbrequest.CheckPermission, opts ...grpc.CallOption) (*pbresponse.CheckPermission, error)
+	// Network config
+	DescribeNetworkConfig(ctx context.Context, in *pbrequest.DescribeNetworkConfig, opts ...grpc.CallOption) (*pbresponse.DescribeNetworkConfig, error)
 }
 
 type spaceManageClient struct {
@@ -132,6 +134,15 @@ func (c *spaceManageClient) CheckPermission(ctx context.Context, in *pbrequest.C
 	return out, nil
 }
 
+func (c *spaceManageClient) DescribeNetworkConfig(ctx context.Context, in *pbrequest.DescribeNetworkConfig, opts ...grpc.CallOption) (*pbresponse.DescribeNetworkConfig, error) {
+	out := new(pbresponse.DescribeNetworkConfig)
+	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/DescribeNetworkConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SpaceManageServer is the server API for SpaceManage service.
 // All implementations must embed UnimplementedSpaceManageServer
 // for forward compatibility
@@ -152,6 +163,8 @@ type SpaceManageServer interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error)
+	// Network config
+	DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error)
 	mustEmbedUnimplementedSpaceManageServer()
 }
 
@@ -185,6 +198,9 @@ func (UnimplementedSpaceManageServer) DescribeWorkspace(context.Context, *pbrequ
 }
 func (UnimplementedSpaceManageServer) CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
+}
+func (UnimplementedSpaceManageServer) DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeNetworkConfig not implemented")
 }
 func (UnimplementedSpaceManageServer) mustEmbedUnimplementedSpaceManageServer() {}
 
@@ -361,6 +377,24 @@ func _SpaceManage_CheckPermission_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SpaceManage_DescribeNetworkConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeNetworkConfig)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).DescribeNetworkConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SpaceManage/DescribeNetworkConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).DescribeNetworkConfig(ctx, req.(*pbrequest.DescribeNetworkConfig))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SpaceManage_ServiceDesc is the grpc.ServiceDesc for SpaceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -403,6 +437,10 @@ var SpaceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckPermission",
 			Handler:    _SpaceManage_CheckPermission_Handler,
+		},
+		{
+			MethodName: "DescribeNetworkConfig",
+			Handler:    _SpaceManage_DescribeNetworkConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
