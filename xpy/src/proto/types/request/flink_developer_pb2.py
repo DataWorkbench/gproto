@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\027PBRequestFlinkDeveloperP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)proto/types/request/flink_developer.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"\xe6\x01\n\x0eSubmitFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1c\n\x0esavepoint_path\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x63ode\x18\x06 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\"w\n\x11GetFlinkJobStatus\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"t\n\x0e\x43\x61ncelFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"6\n\x10ValidateFlinkJob\x12\"\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCode\"3\n\x11GetFlinkJobsByUrl\x12\x1e\n\tflink_url\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x42v\n$com.dataomnis.gproto.types.pbrequestB\x17PBRequestFlinkDeveloperP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n)proto/types/request/flink_developer.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"\xe6\x01\n\x0eSubmitFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1c\n\x0esavepoint_path\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x63ode\x18\x06 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\"(\n\x0f\x45xecuteFlinkSql\x12\x15\n\x07\x63ontent\x18\x01 \x01(\tB\x04\xe2\xdf\x1f\x00\"w\n\x11GetFlinkJobStatus\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"t\n\x0e\x43\x61ncelFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"6\n\x10ValidateFlinkJob\x12\"\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCodeBv\n$com.dataomnis.gproto.types.pbrequestB\x17PBRequestFlinkDeveloperP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,])
 
@@ -95,6 +95,38 @@ _SUBMITFLINKJOB = _descriptor.Descriptor(
 )
 
 
+_EXECUTEFLINKSQL = _descriptor.Descriptor(
+  name='ExecuteFlinkSql',
+  full_name='request.ExecuteFlinkSql',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='content', full_name='request.ExecuteFlinkSql.content', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=376,
+  serialized_end=416,
+)
+
+
 _GETFLINKJOBSTATUS = _descriptor.Descriptor(
   name='GetFlinkJobStatus',
   full_name='request.GetFlinkJobStatus',
@@ -136,8 +168,8 @@ _GETFLINKJOBSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=376,
-  serialized_end=495,
+  serialized_start=418,
+  serialized_end=537,
 )
 
 
@@ -182,8 +214,8 @@ _CANCELFLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=497,
-  serialized_end=613,
+  serialized_start=539,
+  serialized_end=655,
 )
 
 
@@ -214,50 +246,18 @@ _VALIDATEFLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=615,
-  serialized_end=669,
-)
-
-
-_GETFLINKJOBSBYURL = _descriptor.Descriptor(
-  name='GetFlinkJobsByUrl',
-  full_name='request.GetFlinkJobsByUrl',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='flink_url', full_name='request.GetFlinkJobsByUrl.flink_url', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=671,
-  serialized_end=722,
+  serialized_start=657,
+  serialized_end=711,
 )
 
 _SUBMITFLINKJOB.fields_by_name['args'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBARGS
 _SUBMITFLINKJOB.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
 _VALIDATEFLINKJOB.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
 DESCRIPTOR.message_types_by_name['SubmitFlinkJob'] = _SUBMITFLINKJOB
+DESCRIPTOR.message_types_by_name['ExecuteFlinkSql'] = _EXECUTEFLINKSQL
 DESCRIPTOR.message_types_by_name['GetFlinkJobStatus'] = _GETFLINKJOBSTATUS
 DESCRIPTOR.message_types_by_name['CancelFlinkJob'] = _CANCELFLINKJOB
 DESCRIPTOR.message_types_by_name['ValidateFlinkJob'] = _VALIDATEFLINKJOB
-DESCRIPTOR.message_types_by_name['GetFlinkJobsByUrl'] = _GETFLINKJOBSBYURL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SubmitFlinkJob = _reflection.GeneratedProtocolMessageType('SubmitFlinkJob', (_message.Message,), {
@@ -266,6 +266,13 @@ SubmitFlinkJob = _reflection.GeneratedProtocolMessageType('SubmitFlinkJob', (_me
   # @@protoc_insertion_point(class_scope:request.SubmitFlinkJob)
   })
 _sym_db.RegisterMessage(SubmitFlinkJob)
+
+ExecuteFlinkSql = _reflection.GeneratedProtocolMessageType('ExecuteFlinkSql', (_message.Message,), {
+  'DESCRIPTOR' : _EXECUTEFLINKSQL,
+  '__module__' : 'proto.types.request.flink_developer_pb2'
+  # @@protoc_insertion_point(class_scope:request.ExecuteFlinkSql)
+  })
+_sym_db.RegisterMessage(ExecuteFlinkSql)
 
 GetFlinkJobStatus = _reflection.GeneratedProtocolMessageType('GetFlinkJobStatus', (_message.Message,), {
   'DESCRIPTOR' : _GETFLINKJOBSTATUS,
@@ -288,13 +295,6 @@ ValidateFlinkJob = _reflection.GeneratedProtocolMessageType('ValidateFlinkJob', 
   })
 _sym_db.RegisterMessage(ValidateFlinkJob)
 
-GetFlinkJobsByUrl = _reflection.GeneratedProtocolMessageType('GetFlinkJobsByUrl', (_message.Message,), {
-  'DESCRIPTOR' : _GETFLINKJOBSBYURL,
-  '__module__' : 'proto.types.request.flink_developer_pb2'
-  # @@protoc_insertion_point(class_scope:request.GetFlinkJobsByUrl)
-  })
-_sym_db.RegisterMessage(GetFlinkJobsByUrl)
-
 
 DESCRIPTOR._options = None
 _SUBMITFLINKJOB.fields_by_name['flink_id']._options = None
@@ -303,11 +303,11 @@ _SUBMITFLINKJOB.fields_by_name['flink_version']._options = None
 _SUBMITFLINKJOB.fields_by_name['savepoint_path']._options = None
 _SUBMITFLINKJOB.fields_by_name['args']._options = None
 _SUBMITFLINKJOB.fields_by_name['code']._options = None
+_EXECUTEFLINKSQL.fields_by_name['content']._options = None
 _GETFLINKJOBSTATUS.fields_by_name['flink_id']._options = None
 _GETFLINKJOBSTATUS.fields_by_name['flink_url']._options = None
 _GETFLINKJOBSTATUS.fields_by_name['flink_version']._options = None
 _CANCELFLINKJOB.fields_by_name['flink_id']._options = None
 _CANCELFLINKJOB.fields_by_name['flink_url']._options = None
 _CANCELFLINKJOB.fields_by_name['flink_version']._options = None
-_GETFLINKJOBSBYURL.fields_by_name['flink_url']._options = None
 # @@protoc_insertion_point(module_scope)

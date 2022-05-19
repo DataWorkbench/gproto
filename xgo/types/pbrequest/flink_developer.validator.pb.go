@@ -176,21 +176,3 @@ func (this *ValidateFlinkJob) Validate() error {
 	}
 	return nil
 }
-
-func (this *GetFlinkJobsByUrl) _xxx_xxx_Validator_Validate_flink_url() error {
-	if !(this.FlinkUrl != "") {
-		return protovalidator.FieldError1("GetFlinkJobsByUrl", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
-	}
-	return nil
-}
-
-// Set default value for message request.GetFlinkJobsByUrl
-func (this *GetFlinkJobsByUrl) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
-		return err
-	}
-	return nil
-}

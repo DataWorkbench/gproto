@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\030PBResponseFlinkDeveloperP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/response/flink_developer.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\'proto/types/model/flink/flink_job.proto\"\x84\x01\n\x0eSubmitFlinkJob\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.response.SubmitFlinkJob.Code\x12\x15\n\x07message\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\".\n\x04\x43ode\x12\r\n\tCodeUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"k\n\x11GetFlinkJobStatus\x12\x11\n\tis_exists\x18\x01 \x01(\x08\x12,\n\x06status\x18\x02 \x01(\x0e\x32\x16.flink.FlinkJob.StatusB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07message\x18\x03 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xa3\x01\n\x11GetFlinkJobsByUrl\x12\x32\n\x04jobs\x18\x01 \x03(\x0b\x32$.response.GetFlinkJobsByUrl.FlinkJob\x1aZ\n\x08\x46linkJob\x12\x0b\n\x03jid\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05state\x18\x03 \x01(\t\x12\x12\n\nstart_time\x18\x04 \x01(\x03\x12\x10\n\x08\x65nd_time\x18\x05 \x01(\x03\"\x8d\x01\n\x10ValidateFlinkJob\x12\x31\n\x06result\x18\x01 \x01(\x0e\x32!.response.ValidateFlinkJob.Result\x12\x0f\n\x07message\x18\x02 \x01(\t\"5\n\x06Result\x12\x0f\n\x0bResultUnset\x10\x00\x12\x0b\n\x07\x43orrect\x10\x01\x12\r\n\tIncorrect\x10\x02\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseFlinkDeveloperP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n*proto/types/response/flink_developer.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\'proto/types/model/flink/flink_job.proto\"\x84\x01\n\x0eSubmitFlinkJob\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.response.SubmitFlinkJob.Code\x12\x15\n\x07message\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\".\n\x04\x43ode\x12\r\n\tCodeUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"(\n\x0f\x45xecuteFlinkSql\x12\x15\n\x07message\x18\x01 \x03(\tB\x04\xe2\xdf\x1f\x00\"k\n\x11GetFlinkJobStatus\x12\x11\n\tis_exists\x18\x01 \x01(\x08\x12,\n\x06status\x18\x02 \x01(\x0e\x32\x16.flink.FlinkJob.StatusB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07message\x18\x03 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xa3\x01\n\x11GetFlinkJobsByUrl\x12\x32\n\x04jobs\x18\x01 \x03(\x0b\x32$.response.GetFlinkJobsByUrl.FlinkJob\x1aZ\n\x08\x46linkJob\x12\x0b\n\x03jid\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05state\x18\x03 \x01(\t\x12\x12\n\nstart_time\x18\x04 \x01(\x03\x12\x10\n\x08\x65nd_time\x18\x05 \x01(\x03\"\x8d\x01\n\x10ValidateFlinkJob\x12\x31\n\x06result\x18\x01 \x01(\x0e\x32!.response.ValidateFlinkJob.Result\x12\x0f\n\x07message\x18\x02 \x01(\t\"5\n\x06Result\x12\x0f\n\x0bResultUnset\x10\x00\x12\x0b\n\x07\x43orrect\x10\x01\x12\r\n\tIncorrect\x10\x02\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseFlinkDeveloperP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_flink_dot_flink__job__pb2.DESCRIPTOR,])
 
@@ -82,8 +82,8 @@ _VALIDATEFLINKJOB_RESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=649,
-  serialized_end=702,
+  serialized_start=691,
+  serialized_end=744,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATEFLINKJOB_RESULT)
 
@@ -128,6 +128,38 @@ _SUBMITFLINKJOB = _descriptor.Descriptor(
 )
 
 
+_EXECUTEFLINKSQL = _descriptor.Descriptor(
+  name='ExecuteFlinkSql',
+  full_name='response.ExecuteFlinkSql',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='message', full_name='response.ExecuteFlinkSql.message', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=285,
+  serialized_end=325,
+)
+
+
 _GETFLINKJOBSTATUS = _descriptor.Descriptor(
   name='GetFlinkJobStatus',
   full_name='response.GetFlinkJobStatus',
@@ -169,8 +201,8 @@ _GETFLINKJOBSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=285,
-  serialized_end=392,
+  serialized_start=327,
+  serialized_end=434,
 )
 
 
@@ -229,8 +261,8 @@ _GETFLINKJOBSBYURL_FLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=468,
-  serialized_end=558,
+  serialized_start=510,
+  serialized_end=600,
 )
 
 _GETFLINKJOBSBYURL = _descriptor.Descriptor(
@@ -260,8 +292,8 @@ _GETFLINKJOBSBYURL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=395,
-  serialized_end=558,
+  serialized_start=437,
+  serialized_end=600,
 )
 
 
@@ -300,8 +332,8 @@ _VALIDATEFLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=702,
+  serialized_start=603,
+  serialized_end=744,
 )
 
 _SUBMITFLINKJOB.fields_by_name['code'].enum_type = _SUBMITFLINKJOB_CODE
@@ -312,6 +344,7 @@ _GETFLINKJOBSBYURL.fields_by_name['jobs'].message_type = _GETFLINKJOBSBYURL_FLIN
 _VALIDATEFLINKJOB.fields_by_name['result'].enum_type = _VALIDATEFLINKJOB_RESULT
 _VALIDATEFLINKJOB_RESULT.containing_type = _VALIDATEFLINKJOB
 DESCRIPTOR.message_types_by_name['SubmitFlinkJob'] = _SUBMITFLINKJOB
+DESCRIPTOR.message_types_by_name['ExecuteFlinkSql'] = _EXECUTEFLINKSQL
 DESCRIPTOR.message_types_by_name['GetFlinkJobStatus'] = _GETFLINKJOBSTATUS
 DESCRIPTOR.message_types_by_name['GetFlinkJobsByUrl'] = _GETFLINKJOBSBYURL
 DESCRIPTOR.message_types_by_name['ValidateFlinkJob'] = _VALIDATEFLINKJOB
@@ -323,6 +356,13 @@ SubmitFlinkJob = _reflection.GeneratedProtocolMessageType('SubmitFlinkJob', (_me
   # @@protoc_insertion_point(class_scope:response.SubmitFlinkJob)
   })
 _sym_db.RegisterMessage(SubmitFlinkJob)
+
+ExecuteFlinkSql = _reflection.GeneratedProtocolMessageType('ExecuteFlinkSql', (_message.Message,), {
+  'DESCRIPTOR' : _EXECUTEFLINKSQL,
+  '__module__' : 'proto.types.response.flink_developer_pb2'
+  # @@protoc_insertion_point(class_scope:response.ExecuteFlinkSql)
+  })
+_sym_db.RegisterMessage(ExecuteFlinkSql)
 
 GetFlinkJobStatus = _reflection.GeneratedProtocolMessageType('GetFlinkJobStatus', (_message.Message,), {
   'DESCRIPTOR' : _GETFLINKJOBSTATUS,
@@ -356,6 +396,7 @@ _sym_db.RegisterMessage(ValidateFlinkJob)
 
 DESCRIPTOR._options = None
 _SUBMITFLINKJOB.fields_by_name['message']._options = None
+_EXECUTEFLINKSQL.fields_by_name['message']._options = None
 _GETFLINKJOBSTATUS.fields_by_name['status']._options = None
 _GETFLINKJOBSTATUS.fields_by_name['message']._options = None
 # @@protoc_insertion_point(module_scope)

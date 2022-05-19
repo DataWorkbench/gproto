@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcdeveloperB\023PBSvcFlinkDeveloperP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\xa6\x04\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12N\n\x11GetFlinkJobStatus\x12\x1a.request.GetFlinkJobStatus\x1a\x1b.response.GetFlinkJobStatus\"\x00\x12?\n\x0e\x43\x61ncelFlinkJob\x12\x17.request.CancelFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12P\n\x17ValidateFlinkJobContext\x12\x17.request.SubmitFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12M\n\x14ParseFlinkJobToGraph\x12\x17.request.SubmitFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12N\n\x11GetFlinkJobsByUrl\x12\x1a.request.GetFlinkJobsByUrl\x1a\x1b.response.GetFlinkJobsByUrl\"\x00\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
+  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\x83\x03\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12N\n\x11GetFlinkJobStatus\x12\x1a.request.GetFlinkJobStatus\x1a\x1b.response.GetFlinkJobStatus\"\x00\x12?\n\x0e\x43\x61ncelFlinkJob\x12\x17.request.CancelFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12L\n\x0f\x45xecuteFlinkSql\x12\x18.request.ExecuteFlinkSql\x1a\x19.response.ExecuteFlinkSql\"\x00(\x01\x30\x01\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_flink__developer__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_flink__developer__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=179,
-  serialized_end=729,
+  serialized_end=566,
   methods=[
   _descriptor.MethodDescriptor(
     name='SubmitFlinkJob',
@@ -84,32 +84,12 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ValidateFlinkJobContext',
-    full_name='developer.FlinkDeveloper.ValidateFlinkJobContext',
+    name='ExecuteFlinkSql',
+    full_name='developer.FlinkDeveloper.ExecuteFlinkSql',
     index=4,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._SUBMITFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._VALIDATEFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ParseFlinkJobToGraph',
-    full_name='developer.FlinkDeveloper.ParseFlinkJobToGraph',
-    index=5,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._SUBMITFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._VALIDATEFLINKJOB,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetFlinkJobsByUrl',
-    full_name='developer.FlinkDeveloper.GetFlinkJobsByUrl',
-    index=6,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._GETFLINKJOBSBYURL,
-    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._GETFLINKJOBSBYURL,
+    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._EXECUTEFLINKSQL,
+    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._EXECUTEFLINKSQL,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
