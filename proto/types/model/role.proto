@@ -92,8 +92,8 @@ message ProjectModule {
     // Module In project.
     AuditManage = 1;
     SpaceManage = 2;
-    NotifierManager = 3;
-    PlatformManage = 4;
+    PlatformManage = 3;
+    IaaSProxy = 4;
 
     // Module In workspace;
     MemberManage = 101;
@@ -112,6 +112,7 @@ message ProjectModule {
     SyncJobVersionManage = 114;
     SyncJobInstanceManage = 115;
     AlertManage = 116;
+    NoticeManage = 117;
   }
 
   // The module id.

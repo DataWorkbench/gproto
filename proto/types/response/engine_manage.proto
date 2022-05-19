@@ -13,3 +13,8 @@ option java_multiple_files = false;
 //import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
+//message CreateFlinkClusterInK8sV2 {
+//
+//}
+//
+

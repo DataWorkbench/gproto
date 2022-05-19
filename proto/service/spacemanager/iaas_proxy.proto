@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcIaaSProxy";
+option java_multiple_files = false;
+
+//import "proto/types/model/empty.proto";
+import "proto/types/request/iaas_proxy.proto";
+import "proto/types/response/iaas_proxy.proto";
+
+// IaaSProxy declares API for get some info from iaas.
+service IaaSProxy {
+  rpc ListIaaSRouters(request.ListIaaSRouters) returns (response.ListIaaSRouters) {}
+
+  rpc ListIaaSRouterVXNets(request.ListIaaSRouterVXNets) returns (response.ListIaaSRouterVXNets) {}
+}

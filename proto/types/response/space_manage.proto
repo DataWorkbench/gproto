@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/workspace.proto";
+import "proto/types/model/iaas/vpc.proto";
 
 
 // ListWorkspaces used as reply parameters in RPC or response body in HTTP.
@@ -42,4 +43,15 @@ message DescribeWorkspace {
 
 message CheckPermission {
   model.Workspace workspace = 1;
+}
+
+message DescribeNetworkConfig {
+  // @inject_tag: json:"router"
+  iaas.Router router = 1;
+
+  // @inject_tag: json:"vxnets"
+  repeated iaas.VXNet vxnets = 2;
+
+  // @inject_tag: json:"default_vxnet_id"
+  string default_vxnet_id = 3;
 }

@@ -80,6 +80,7 @@ message FlinkCluster {
   float task_cu = 8 [(validator.field).tags.float = {gte: 0.5, lte: 8}];
 
   // Network config.
+  // FIXME: remove in feature.
   // @inject_tag: json:"network_id" gorm:"column:network_id;"
   string network_id = 9 [(validator.field) = {}];
 
@@ -109,6 +110,7 @@ message FlinkCluster {
   string web_ui = 15;
 
   // @inject_tag: json:"network_info" gorm:"-"
+  // FIXME: remove in feature.
   Network network_info = 16;
 }
 

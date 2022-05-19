@@ -49,3 +49,39 @@ message Workspace {
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
 }
+
+// NetworkConfig declares the network config of a workspace.
+message NetworkConfig {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // VPC's route id, Is required.
+  // @inject_tag: json:"router_id" gorm:"column:router_id;"
+  string router_id = 2 [ (validator.field).tags.string = { prefix: "rtr-" } ];
+
+  // vxnet id. Is required.
+  // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+  string vxnet_id = 3 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+
+  // Network Status. 1 => "Deleted" 2 => "Enabled"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // IsDefault indicates the whether the vxnet is the defaults.
+  // @inject_tag: json:"is_default" gorm:"column:is_default;"
+  bool is_default = 5;
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 7 [ (validator.field).tags.int = { gt: 0 } ];
+}

@@ -1,0 +1,162 @@
+syntax = "proto3";
+
+package iaas;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaas";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbiaas";
+// File name of class.
+option java_outer_classname = "PBIaasVPC";
+option java_multiple_files = false;
+
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+
+message EIP {
+  // @inject_tag: json:"eip_name"
+  string eip_name = 1;
+
+  // @inject_tag: json:"eip_id"
+  string eip_id = 2;
+
+  // @inject_tag: json:"eip_addr"
+  string eip_addr = 3;
+}
+
+message Router {
+  // @inject_tag: json:"router_id"
+  string router_id = 1;
+
+  // @inject_tag: json:"router_name"
+  string router_name = 2;
+
+  // The type of router. 0 => "?", 1 => "small-scale" 2 => "?" 3 = "?" 99 = "free-scale"
+  // @inject_tag: json:"router_type"
+  int32 router_type = 3;
+
+  // @inject_tag: json:"owner"
+  string owner = 4;
+
+  // The vpc's status, Optional Value: "active | pending | poweroffed | suspended"
+  // @inject_tag: json:"status"
+  string status = 5;
+
+  // @inject_tag: json:"base_vxnet"
+  string base_vxnet = 6;
+
+  // The ipv4 network range. e.g: 192.168.0.0/16
+  // @inject_tag: json:"vpc_network"
+  string vpc_network = 7;
+
+  // The ipv6 network range. default to empty.
+  // @inject_tag: json:"vpc_ipv6_network"
+  string vpc_ipv6_network = 8;
+
+  // The private ip. e.g: 10.140.148.93
+  // @inject_tag: json:"private_ip"
+  string private_ip = 9;
+
+  // @inject_tag: json:"vpc_id"
+  string vpc_id = 10;
+
+  // @inject_tag: json:"eip"
+  EIP eip = 16;
+
+  // @inject_tag: json:"status_time"
+  string status_time = 17;
+
+  // @inject_tag: json:"is_applied"
+  int32 is_applied = 18;
+
+  // @inject_tag: json:"is_default"
+  int32 is_default = 19;
+
+  // Field for DescribeVxnets
+  //
+  // @inject_tag: json:"manager_ip"
+  string manager_ip = 11;
+
+  // @inject_tag: json:"ip_network"
+  string ip_network = 12;
+
+  // @inject_tag: json:"dyn_ip_start"
+  string dyn_ip_start = 13;
+
+  // @inject_tag: json:"dyn_ip_end"
+  string dyn_ip_end = 14;
+
+  // @inject_tag: json:"border_private_ip"
+  string border_private_ip = 15;
+}
+
+message VXNet {
+  // @inject_tag: json:"vxnet_id"
+  string vxnet_id = 1;
+
+  // @inject_tag: json:"vxnet_name"
+  string vxnet_name = 2;
+
+  // @inject_tag: json:"vxnet_type"
+  int32 vxnet_type = 3;
+
+  // @inject_tag: json:"owner"
+  string owner = 4;
+
+  // @inject_tag: json:"tunnel_type"
+  string tunnel_type = 5;
+
+  // @inject_tag: json:"vpc_router_id"
+  string vpc_router_id = 6;
+
+  // @inject_tag: json:"router"
+  Router router = 7;
+}
+
+// RouterVxnet for declares the vxnet information that in router.
+message RouterVxnet {
+  // @inject_tag: json:"router_id"
+  string router_id = 1;
+
+  // @inject_tag: json:"vxnet_id"
+  string vxnet_id = 2;
+
+  // @inject_tag: json:"vxnet_name"
+  string vxnet_name = 3;
+
+  // @inject_tag: json:"dyn_ip_start"
+  string dyn_ip_start = 4;
+
+  // @inject_tag: json:"dyn_ip_end"
+  string dyn_ip_end = 5;
+
+  // @inject_tag: json:"dyn_ipv6_start"
+  string dyn_ipv6_start = 6;
+
+  // @inject_tag: json:"dyn_ipv6_end"
+  string dyn_ipv6_end = 7;
+
+  // @inject_tag: json:"owner"
+  string owner = 8;
+
+  // @inject_tag: json:"border_private_ip"
+  string border_private_ip = 9;
+
+  // @inject_tag: json:"manager_ip"
+  string manager_ip = 10;
+
+  // @inject_tag: json:"border_id"
+  string border_id = 11;
+
+  // @inject_tag: json:"ip_network"
+  string ip_network = 12;
+
+  // @inject_tag: json:"ipv6_network"
+  string ipv6_network = 13;
+
+  // @inject_tag: json:"mode"
+  int32 mode = 14;
+
+  // @inject_tag: json:"vpc_id"
+  string vpc_id = 15;
+}
