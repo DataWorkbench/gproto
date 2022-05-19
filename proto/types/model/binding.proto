@@ -23,23 +23,21 @@ message BindingModuleSpec {
   // @inject_tag: json:"id"
   string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // The lists of stream job in developing.
-  // Reserved fields, unused on present.
+  // The lists of stream job in developing. Reserved fields, unused on present.
   // @inject_tag: json:"stream_job"
   repeated model.StreamJob stream_job = 2;
 
   // The lists of release stream job.
   // @inject_tag: json:"stream_job_release"
-  repeated model.StreamJob stream_job_release = 3;
+  repeated model.StreamJobRelease stream_job_release = 3;
 
-  // The lists of sync job in developing.
-  // Reserved fields, unused on present.
+  // The lists of sync job in developing. Reserved fields, unused on present.
   // @inject_tag: json:"sync_job"
   repeated model.SyncJob sync_job = 4;
 
   // The lists of release sync job.
   // @inject_tag: json:"sync_job_release"
-  repeated model.SyncJob sync_job_release = 5;
+  repeated model.SyncJobRelease sync_job_release = 5;
 
   // The list of flink cluster.
   // @inject_tag: json:"flink_cluster"
