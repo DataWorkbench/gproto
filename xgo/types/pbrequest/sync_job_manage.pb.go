@@ -1190,9 +1190,9 @@ type ConvertSyncJobMode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The sync job id
-	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id"`
+	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 	// conf
-	Conf *pbmodel.SyncJobConf `protobuf:"bytes,2,opt,name=conf,proto3" json:"conf" uri:"conf"`
+	Conf *pbmodel.SyncJobConf `protobuf:"bytes,2,opt,name=conf,proto3" json:"conf"`
 }
 
 func (x *ConvertSyncJobMode) Reset() {
@@ -1412,7 +1412,7 @@ type GenerateJobJson struct {
 	unknownFields protoimpl.UnknownFields
 
 	// job_id
-	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id"`
+	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
 }
 
 func (x *GenerateJobJson) Reset() {

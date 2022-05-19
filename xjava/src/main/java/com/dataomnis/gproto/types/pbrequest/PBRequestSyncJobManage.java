@@ -17542,7 +17542,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The sync job id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17552,7 +17552,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The sync job id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17564,7 +17564,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -17574,7 +17574,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -17584,7 +17584,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -17697,7 +17697,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The sync job id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17719,7 +17719,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * The sync job id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -17745,7 +17745,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -17758,7 +17758,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -17771,7 +17771,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * conf
-     * &#64;inject_tag: json:"conf" uri:"conf"
+     * &#64;inject_tag: json:"conf"
      * </pre>
      *
      * <code>.model.SyncJobConf conf = 2;</code>
@@ -18121,7 +18121,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The sync job id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18142,7 +18142,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The sync job id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18164,7 +18164,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The sync job id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18184,7 +18184,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The sync job id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18199,7 +18199,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * The sync job id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -18224,7 +18224,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18236,7 +18236,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18252,7 +18252,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18273,7 +18273,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18292,7 +18292,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18315,7 +18315,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18334,7 +18334,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18347,7 +18347,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -18363,7 +18363,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * conf
-       * &#64;inject_tag: json:"conf" uri:"conf"
+       * &#64;inject_tag: json:"conf"
        * </pre>
        *
        * <code>.model.SyncJobConf conf = 2;</code>
@@ -20772,7 +20772,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * job_id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -20782,7 +20782,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * job_id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -20884,7 +20884,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * job_id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -20906,7 +20906,7 @@ public final class PBRequestSyncJobManage {
     /**
      * <pre>
      * job_id
-     * &#64;inject_tag: json:"job_id" uri:"job_id"
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -21237,7 +21237,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * job_id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -21258,7 +21258,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * job_id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -21280,7 +21280,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * job_id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -21300,7 +21300,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * job_id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
@@ -21315,7 +21315,7 @@ public final class PBRequestSyncJobManage {
       /**
        * <pre>
        * job_id
-       * &#64;inject_tag: json:"job_id" uri:"job_id"
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string job_id = 1 [(.validator.field) = { ... }</code>
