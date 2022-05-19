@@ -308,6 +308,7 @@ message OfflineReleaseSyncJob {
     // The sync job id in HTTP Request-URI
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+
     // StopRunning indicates whether stop the sync job instance that state running.
     // @inject_tag: json:"stop_running"
     bool stop_running = 3;
@@ -341,10 +342,10 @@ message ResumeReleaseSyncJob {
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
     // The sync job id
-    // @inject_tag: json:"job_id" uri:"job_id"
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // conf
-    // @inject_tag: json:"conf" uri:"conf"
+    // @inject_tag: json:"conf"
     model.SyncJobConf conf = 2;
 }
 
@@ -397,7 +398,7 @@ message DescribeSyncFlinkUIByInstanceId {
 // GenerateJobJson used as a request parameters for RPC.
 message GenerateJobJson {
     // job_id
-    // @inject_tag: json:"job_id" uri:"job_id"
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
