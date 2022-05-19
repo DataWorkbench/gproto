@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelBindingP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\x1a\x1fproto/types/model/cluster.proto\"\xf9\x01\n\x11\x42indingModuleSpec\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12$\n\nstream_job\x18\x02 \x03(\x0b\x32\x10.model.StreamJob\x12,\n\x12stream_job_release\x18\x03 \x03(\x0b\x32\x10.model.StreamJob\x12 \n\x08sync_job\x18\x04 \x03(\x0b\x32\x0e.model.SyncJob\x12(\n\x10sync_job_release\x18\x05 \x03(\x0b\x32\x0e.model.SyncJob\x12*\n\rflink_cluster\x18\x06 \x03(\x0b\x32\x13.model.FlinkCluster\"^\n\rBindingModule\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x33\n\x07version\x18\x02 \x01(\tB\"\xe2\xdf\x1f\x12\n\x10\n\x07version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x9c\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12!\n\x0bresource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x05 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\x1a\x1fproto/types/model/cluster.proto\"\x87\x02\n\x11\x42indingModuleSpec\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12$\n\nstream_job\x18\x02 \x03(\x0b\x32\x10.model.StreamJob\x12\x33\n\x12stream_job_release\x18\x03 \x03(\x0b\x32\x17.model.StreamJobRelease\x12 \n\x08sync_job\x18\x04 \x03(\x0b\x32\x0e.model.SyncJob\x12/\n\x10sync_job_release\x18\x05 \x03(\x0b\x32\x15.model.SyncJobRelease\x12*\n\rflink_cluster\x18\x06 \x03(\x0b\x32\x13.model.FlinkCluster\"^\n\rBindingModule\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x33\n\x07version\x18\x02 \x01(\tB\"\xe2\xdf\x1f\x12\n\x10\n\x07version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x9c\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12!\n\x0bresource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x05 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,])
 
@@ -93,7 +93,7 @@ _BINDINGMODULESPEC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=199,
-  serialized_end=448,
+  serialized_end=462,
 )
 
 
@@ -131,8 +131,8 @@ _BINDINGMODULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=450,
-  serialized_end=544,
+  serialized_start=464,
+  serialized_end=558,
 )
 
 
@@ -198,14 +198,14 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=547,
-  serialized_end=831,
+  serialized_start=561,
+  serialized_end=845,
 )
 
 _BINDINGMODULESPEC.fields_by_name['stream_job'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
-_BINDINGMODULESPEC.fields_by_name['stream_job_release'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
+_BINDINGMODULESPEC.fields_by_name['stream_job_release'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBRELEASE
 _BINDINGMODULESPEC.fields_by_name['sync_job'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
-_BINDINGMODULESPEC.fields_by_name['sync_job_release'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB
+_BINDINGMODULESPEC.fields_by_name['sync_job_release'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBRELEASE
 _BINDINGMODULESPEC.fields_by_name['flink_cluster'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 DESCRIPTOR.message_types_by_name['BindingModuleSpec'] = _BINDINGMODULESPEC
 DESCRIPTOR.message_types_by_name['BindingModule'] = _BINDINGMODULE

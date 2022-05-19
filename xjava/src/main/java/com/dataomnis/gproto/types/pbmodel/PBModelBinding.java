@@ -42,8 +42,7 @@ public final class PBModelBinding {
 
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -53,8 +52,7 @@ public final class PBModelBinding {
         getStreamJobList();
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -63,8 +61,7 @@ public final class PBModelBinding {
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJob(int index);
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -73,8 +70,7 @@ public final class PBModelBinding {
     int getStreamJobCount();
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -84,8 +80,7 @@ public final class PBModelBinding {
         getStreamJobOrBuilderList();
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -100,9 +95,9 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> 
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> 
         getStreamJobReleaseList();
     /**
      * <pre>
@@ -110,16 +105,16 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobRelease(int index);
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease getStreamJobRelease(int index);
     /**
      * <pre>
      * The lists of release stream job.
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     int getStreamJobReleaseCount();
     /**
@@ -128,9 +123,9 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder> 
         getStreamJobReleaseOrBuilderList();
     /**
      * <pre>
@@ -138,15 +133,14 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobReleaseOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder getStreamJobReleaseOrBuilder(
         int index);
 
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -156,8 +150,7 @@ public final class PBModelBinding {
         getSyncJobList();
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -166,8 +159,7 @@ public final class PBModelBinding {
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJob(int index);
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -176,8 +168,7 @@ public final class PBModelBinding {
     int getSyncJobCount();
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -187,8 +178,7 @@ public final class PBModelBinding {
         getSyncJobOrBuilderList();
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -203,9 +193,9 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> 
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> 
         getSyncJobReleaseList();
     /**
      * <pre>
@@ -213,16 +203,16 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobRelease(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease getSyncJobRelease(int index);
     /**
      * <pre>
      * The lists of release sync job.
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     int getSyncJobReleaseCount();
     /**
@@ -231,9 +221,9 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder> 
         getSyncJobReleaseOrBuilderList();
     /**
      * <pre>
@@ -241,9 +231,9 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobReleaseOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder getSyncJobReleaseOrBuilder(
         int index);
 
     /**
@@ -368,11 +358,11 @@ public final class PBModelBinding {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                streamJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>();
+                streamJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease>();
                 mutable_bitField0_ |= 0x00000002;
               }
               streamJobRelease_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.parser(), extensionRegistry));
               break;
             }
             case 34: {
@@ -386,11 +376,11 @@ public final class PBModelBinding {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                syncJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>();
+                syncJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease>();
                 mutable_bitField0_ |= 0x00000008;
               }
               syncJobRelease_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.parser(), extensionRegistry));
               break;
             }
             case 50: {
@@ -501,8 +491,7 @@ public final class PBModelBinding {
     private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJob_;
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -514,8 +503,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -528,8 +516,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -541,8 +528,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -554,8 +540,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of stream job in developing.
-     * Reserved fields, unused on present.
+     * The lists of stream job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"stream_job"
      * </pre>
      *
@@ -568,17 +553,17 @@ public final class PBModelBinding {
     }
 
     public static final int STREAM_JOB_RELEASE_FIELD_NUMBER = 3;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJobRelease_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> streamJobRelease_;
     /**
      * <pre>
      * The lists of release stream job.
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobReleaseList() {
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> getStreamJobReleaseList() {
       return streamJobRelease_;
     }
     /**
@@ -587,10 +572,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder> 
         getStreamJobReleaseOrBuilderList() {
       return streamJobRelease_;
     }
@@ -600,7 +585,7 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     @java.lang.Override
     public int getStreamJobReleaseCount() {
@@ -612,10 +597,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobRelease(int index) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease getStreamJobRelease(int index) {
       return streamJobRelease_.get(index);
     }
     /**
@@ -624,10 +609,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"stream_job_release"
      * </pre>
      *
-     * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+     * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobReleaseOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder getStreamJobReleaseOrBuilder(
         int index) {
       return streamJobRelease_.get(index);
     }
@@ -636,8 +621,7 @@ public final class PBModelBinding {
     private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJob_;
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -649,8 +633,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -663,8 +646,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -676,8 +658,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -689,8 +670,7 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * The lists of sync job in developing.
-     * Reserved fields, unused on present.
+     * The lists of sync job in developing. Reserved fields, unused on present.
      * &#64;inject_tag: json:"sync_job"
      * </pre>
      *
@@ -703,17 +683,17 @@ public final class PBModelBinding {
     }
 
     public static final int SYNC_JOB_RELEASE_FIELD_NUMBER = 5;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJobRelease_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> syncJobRelease_;
     /**
      * <pre>
      * The lists of release sync job.
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobReleaseList() {
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> getSyncJobReleaseList() {
       return syncJobRelease_;
     }
     /**
@@ -722,10 +702,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder> 
         getSyncJobReleaseOrBuilderList() {
       return syncJobRelease_;
     }
@@ -735,7 +715,7 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     @java.lang.Override
     public int getSyncJobReleaseCount() {
@@ -747,10 +727,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobRelease(int index) {
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease getSyncJobRelease(int index) {
       return syncJobRelease_.get(index);
     }
     /**
@@ -759,10 +739,10 @@ public final class PBModelBinding {
      * &#64;inject_tag: json:"sync_job_release"
      * </pre>
      *
-     * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+     * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobReleaseOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder getSyncJobReleaseOrBuilder(
         int index) {
       return syncJobRelease_.get(index);
     }
@@ -1530,8 +1510,7 @@ public final class PBModelBinding {
 
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1546,8 +1525,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1562,8 +1540,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1578,8 +1555,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1601,8 +1577,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1621,8 +1596,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1643,8 +1617,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1666,8 +1639,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1686,8 +1658,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1706,8 +1677,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1727,8 +1697,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1746,8 +1715,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1765,8 +1733,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1778,8 +1745,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1794,8 +1760,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1811,8 +1776,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1824,8 +1788,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1838,8 +1801,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of stream job in developing.
-       * Reserved fields, unused on present.
+       * The lists of stream job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"stream_job"
        * </pre>
        *
@@ -1864,17 +1826,17 @@ public final class PBModelBinding {
         return streamJobBuilder_;
       }
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> streamJobRelease_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> streamJobRelease_ =
         java.util.Collections.emptyList();
       private void ensureStreamJobReleaseIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          streamJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob>(streamJobRelease_);
+          streamJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease>(streamJobRelease_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> streamJobReleaseBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder> streamJobReleaseBuilder_;
 
       /**
        * <pre>
@@ -1882,9 +1844,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> getStreamJobReleaseList() {
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> getStreamJobReleaseList() {
         if (streamJobReleaseBuilder_ == null) {
           return java.util.Collections.unmodifiableList(streamJobRelease_);
         } else {
@@ -1897,7 +1859,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public int getStreamJobReleaseCount() {
         if (streamJobReleaseBuilder_ == null) {
@@ -1912,9 +1874,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob getStreamJobRelease(int index) {
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease getStreamJobRelease(int index) {
         if (streamJobReleaseBuilder_ == null) {
           return streamJobRelease_.get(index);
         } else {
@@ -1927,10 +1889,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder setStreamJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease value) {
         if (streamJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1949,10 +1911,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder setStreamJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder builderForValue) {
         if (streamJobReleaseBuilder_ == null) {
           ensureStreamJobReleaseIsMutable();
           streamJobRelease_.set(index, builderForValue.build());
@@ -1968,9 +1930,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public Builder addStreamJobRelease(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+      public Builder addStreamJobRelease(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease value) {
         if (streamJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1989,10 +1951,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder addStreamJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease value) {
         if (streamJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2011,10 +1973,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder addStreamJobRelease(
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder builderForValue) {
         if (streamJobReleaseBuilder_ == null) {
           ensureStreamJobReleaseIsMutable();
           streamJobRelease_.add(builderForValue.build());
@@ -2030,10 +1992,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder addStreamJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder builderForValue) {
         if (streamJobReleaseBuilder_ == null) {
           ensureStreamJobReleaseIsMutable();
           streamJobRelease_.add(index, builderForValue.build());
@@ -2049,10 +2011,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder addAllStreamJobRelease(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob> values) {
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease> values) {
         if (streamJobReleaseBuilder_ == null) {
           ensureStreamJobReleaseIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2069,7 +2031,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder clearStreamJobRelease() {
         if (streamJobReleaseBuilder_ == null) {
@@ -2087,7 +2049,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
       public Builder removeStreamJobRelease(int index) {
         if (streamJobReleaseBuilder_ == null) {
@@ -2105,9 +2067,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder getStreamJobReleaseBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder getStreamJobReleaseBuilder(
           int index) {
         return getStreamJobReleaseFieldBuilder().getBuilder(index);
       }
@@ -2117,9 +2079,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder getStreamJobReleaseOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder getStreamJobReleaseOrBuilder(
           int index) {
         if (streamJobReleaseBuilder_ == null) {
           return streamJobRelease_.get(index);  } else {
@@ -2132,9 +2094,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder> 
            getStreamJobReleaseOrBuilderList() {
         if (streamJobReleaseBuilder_ != null) {
           return streamJobReleaseBuilder_.getMessageOrBuilderList();
@@ -2148,11 +2110,11 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobReleaseBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder addStreamJobReleaseBuilder() {
         return getStreamJobReleaseFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+            com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2160,12 +2122,12 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder addStreamJobReleaseBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder addStreamJobReleaseBuilder(
           int index) {
         return getStreamJobReleaseFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.getDefaultInstance());
+            index, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2173,18 +2135,18 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"stream_job_release"
        * </pre>
        *
-       * <code>repeated .model.StreamJob stream_job_release = 3;</code>
+       * <code>repeated .model.StreamJobRelease stream_job_release = 3;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder> 
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder> 
            getStreamJobReleaseBuilderList() {
         return getStreamJobReleaseFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder> 
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder> 
           getStreamJobReleaseFieldBuilder() {
         if (streamJobReleaseBuilder_ == null) {
           streamJobReleaseBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobOrBuilder>(
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobReleaseOrBuilder>(
                   streamJobRelease_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -2208,8 +2170,7 @@ public final class PBModelBinding {
 
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2224,8 +2185,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2240,8 +2200,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2256,8 +2215,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2279,8 +2237,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2299,8 +2256,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2321,8 +2277,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2344,8 +2299,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2364,8 +2318,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2384,8 +2337,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2405,8 +2357,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2424,8 +2375,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2443,8 +2393,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2456,8 +2405,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2472,8 +2420,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2489,8 +2436,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2502,8 +2448,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2516,8 +2461,7 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * The lists of sync job in developing.
-       * Reserved fields, unused on present.
+       * The lists of sync job in developing. Reserved fields, unused on present.
        * &#64;inject_tag: json:"sync_job"
        * </pre>
        *
@@ -2542,17 +2486,17 @@ public final class PBModelBinding {
         return syncJobBuilder_;
       }
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> syncJobRelease_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> syncJobRelease_ =
         java.util.Collections.emptyList();
       private void ensureSyncJobReleaseIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          syncJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob>(syncJobRelease_);
+          syncJobRelease_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease>(syncJobRelease_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> syncJobReleaseBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder> syncJobReleaseBuilder_;
 
       /**
        * <pre>
@@ -2560,9 +2504,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> getSyncJobReleaseList() {
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> getSyncJobReleaseList() {
         if (syncJobReleaseBuilder_ == null) {
           return java.util.Collections.unmodifiableList(syncJobRelease_);
         } else {
@@ -2575,7 +2519,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public int getSyncJobReleaseCount() {
         if (syncJobReleaseBuilder_ == null) {
@@ -2590,9 +2534,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob getSyncJobRelease(int index) {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease getSyncJobRelease(int index) {
         if (syncJobReleaseBuilder_ == null) {
           return syncJobRelease_.get(index);
         } else {
@@ -2605,10 +2549,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder setSyncJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease value) {
         if (syncJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2627,10 +2571,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder setSyncJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder builderForValue) {
         if (syncJobReleaseBuilder_ == null) {
           ensureSyncJobReleaseIsMutable();
           syncJobRelease_.set(index, builderForValue.build());
@@ -2646,9 +2590,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public Builder addSyncJobRelease(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+      public Builder addSyncJobRelease(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease value) {
         if (syncJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2667,10 +2611,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder addSyncJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease value) {
         if (syncJobReleaseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2689,10 +2633,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder addSyncJobRelease(
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder builderForValue) {
         if (syncJobReleaseBuilder_ == null) {
           ensureSyncJobReleaseIsMutable();
           syncJobRelease_.add(builderForValue.build());
@@ -2708,10 +2652,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder addSyncJobRelease(
-          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder builderForValue) {
         if (syncJobReleaseBuilder_ == null) {
           ensureSyncJobReleaseIsMutable();
           syncJobRelease_.add(index, builderForValue.build());
@@ -2727,10 +2671,10 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder addAllSyncJobRelease(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob> values) {
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease> values) {
         if (syncJobReleaseBuilder_ == null) {
           ensureSyncJobReleaseIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2747,7 +2691,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder clearSyncJobRelease() {
         if (syncJobReleaseBuilder_ == null) {
@@ -2765,7 +2709,7 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
       public Builder removeSyncJobRelease(int index) {
         if (syncJobReleaseBuilder_ == null) {
@@ -2783,9 +2727,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder getSyncJobReleaseBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder getSyncJobReleaseBuilder(
           int index) {
         return getSyncJobReleaseFieldBuilder().getBuilder(index);
       }
@@ -2795,9 +2739,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder getSyncJobReleaseOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder getSyncJobReleaseOrBuilder(
           int index) {
         if (syncJobReleaseBuilder_ == null) {
           return syncJobRelease_.get(index);  } else {
@@ -2810,9 +2754,9 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder> 
            getSyncJobReleaseOrBuilderList() {
         if (syncJobReleaseBuilder_ != null) {
           return syncJobReleaseBuilder_.getMessageOrBuilderList();
@@ -2826,11 +2770,11 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobReleaseBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder addSyncJobReleaseBuilder() {
         return getSyncJobReleaseFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2838,12 +2782,12 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder addSyncJobReleaseBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder addSyncJobReleaseBuilder(
           int index) {
         return getSyncJobReleaseFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.getDefaultInstance());
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2851,18 +2795,18 @@ public final class PBModelBinding {
        * &#64;inject_tag: json:"sync_job_release"
        * </pre>
        *
-       * <code>repeated .model.SyncJob sync_job_release = 5;</code>
+       * <code>repeated .model.SyncJobRelease sync_job_release = 5;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder> 
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder> 
            getSyncJobReleaseBuilderList() {
         return getSyncJobReleaseFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder> 
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder> 
           getSyncJobReleaseFieldBuilder() {
         if (syncJobReleaseBuilder_ == null) {
           syncJobReleaseBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJob.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobOrBuilder>(
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobRelease.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobReleaseOrBuilder>(
                   syncJobRelease_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
@@ -5624,26 +5568,26 @@ public final class PBModelBinding {
       "\0323github.com/yu31/protoc-plugin/proto/va" +
       "lidator.proto\032\"proto/types/model/stream_" +
       "job.proto\032 proto/types/model/sync_job.pr" +
-      "oto\032\037proto/types/model/cluster.proto\"\371\001\n" +
+      "oto\032\037proto/types/model/cluster.proto\"\207\002\n" +
       "\021BindingModuleSpec\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
       "\003\360\001\024\022$\n\nstream_job\030\002 \003(\0132\020.model.StreamJ" +
-      "ob\022,\n\022stream_job_release\030\003 \003(\0132\020.model.S" +
-      "treamJob\022 \n\010sync_job\030\004 \003(\0132\016.model.SyncJ" +
-      "ob\022(\n\020sync_job_release\030\005 \003(\0132\016.model.Syn" +
-      "cJob\022*\n\rflink_cluster\030\006 \003(\0132\023.model.Flin" +
-      "kCluster\"^\n\rBindingModule\022\030\n\002id\030\001 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\360\001\024\0223\n\007version\030\002 \001(\tB\"\342\337\037\022\n\020\n\007ve" +
-      "rsion\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\"\234\002\n\007Binding\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tm" +
-      "odule_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_v" +
-      "ersion\030\003 \001(\tB)\342\337\037\031\n\027\n\016module_version\022\005\302\001" +
-      "\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022!\n\013resource_id\030\004 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\360\001\024\022E\n\020resource_version\030\005 \001(\tB+\342\337" +
-      "\037\033\n\031\n\020resource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001" +
-      "\020\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.d" +
-      "ataomnis.gproto.types.pbmodelB\016PBModelBi" +
-      "ndingP\000Z1github.com/DataWorkbench/gproto" +
-      "/xgo/types/pbmodelb\006proto3"
+      "ob\0223\n\022stream_job_release\030\003 \003(\0132\027.model.S" +
+      "treamJobRelease\022 \n\010sync_job\030\004 \003(\0132\016.mode" +
+      "l.SyncJob\022/\n\020sync_job_release\030\005 \003(\0132\025.mo" +
+      "del.SyncJobRelease\022*\n\rflink_cluster\030\006 \003(" +
+      "\0132\023.model.FlinkCluster\"^\n\rBindingModule\022" +
+      "\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0223\n\007version\030\002 \001" +
+      "(\tB\"\342\337\037\022\n\020\n\007version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\"\234" +
+      "\002\n\007Binding\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022\037\n\tmodule_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
+      "\001\024\022A\n\016module_version\030\003 \001(\tB)\342\337\037\031\n\027\n\016modu" +
+      "le_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022!\n\013resourc" +
+      "e_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n\020resource_ver" +
+      "sion\030\005 \001(\tB+\342\337\037\033\n\031\n\020resource_version\022\005\302\001" +
+      "\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005" +
+      "\262\001\0020\000Bi\n\"com.dataomnis.gproto.types.pbmo" +
+      "delB\016PBModelBindingP\000Z1github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
