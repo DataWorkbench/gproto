@@ -144,43 +144,38 @@ message FlinkJar {
 }
 
 // PythonOperatorProperty
-message FlinkPython {
-
-  enum TypeFormat {
-    CodeFormat = 0;
-    FileFormat = 1;
-  }
-
+message FlinkPythonCode {
 
   // code.
   // @inject_tag: json:"code"
   string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
 
-  // format.
-  // @inject_tag: json:"format"
-  TypeFormat format = 2 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+}
 
+
+message FlinkPythonFile {
   // python_path.
   // @inject_tag: json:"python_path"
-  string python_path = 3 [ (validator.field).tags.string = { byte_len_lte: 20, prefix: "res-" } ];
-
-  // python_args.
-  // @inject_tag: json:"python_args"
-  string python_args = 4 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
+  string python_path = 1 [ (validator.field).tags.string = { byte_len_lte: 20, prefix: "res-" } ];
 
   // python_module.
   // @inject_tag: json:"python_module"
-  string python_module = 5 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
+  string python_module = 2 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
+
+  // python_args.
+  // @inject_tag: json:"python_args"
+  string python_args = 3 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
 
   // delete_file_id.
   // Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
   // @inject_tag: json:"delete_file_id"
-  string delete_file_id = 6  [
+  string delete_file_id = 4 [
     (validator.field).check_if = { field: "delete_file_id", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
   ];
-
 }
+
+
 
 // FlinkSQL
 message FlinkSQL {
