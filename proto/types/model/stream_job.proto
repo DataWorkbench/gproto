@@ -23,7 +23,8 @@ message StreamJob {
     Operator = 1;
     SQL = 2;
     Jar = 3;
-    Python = 4;
+    PythonCode = 4;
+    PythonFile = 5;
   }
 
   enum Status {
@@ -140,9 +141,15 @@ message StreamJobCode {
     (validator.field).tags.message = { not_null: true }
   ];
 
-  // Python
-  // @inject_tag: json:"python"
-  flink.FlinkPython python = 5  [
+  // PythonCode
+  // @inject_tag: json:"python_code"
+  flink.FlinkPythonCode python_code = 5  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 4 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+
+  // @inject_tag: json:"python_file"
+  flink.FlinkPythonFile python_file = 6 [
     (validator.field).check_if = { field: "type", tags: { enum: { eq: 4 } }},
     (validator.field).tags.message = {not_null: true}
   ];
