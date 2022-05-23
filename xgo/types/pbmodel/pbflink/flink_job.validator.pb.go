@@ -201,22 +201,92 @@ func (this *FlinkJar) Validate() error {
 	return nil
 }
 
-func (this *FlinkPython) _xxx_xxx_Validator_Validate_code() error {
+func (this *FlinkPythonCode) _xxx_xxx_Validator_Validate_code() error {
 	if !(len(this.Code) <= 40000) {
-		return protovalidator.FieldError1("FlinkPython", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
+		return protovalidator.FieldError1("FlinkPythonCode", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
 	}
 	if !(utf8.ValidString(this.Code)) {
-		return protovalidator.FieldError1("FlinkPython", "the value of field 'code' must be a UTF8 string", this.Code)
+		return protovalidator.FieldError1("FlinkPythonCode", "the value of field 'code' must be a UTF8 string", this.Code)
 	}
 	return nil
 }
 
-// Set default value for message flink.FlinkPython
-func (this *FlinkPython) Validate() error {
+// Set default value for message flink.FlinkPythonCode
+func (this *FlinkPythonCode) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *FlinkPythonFile) _xxx_xxx_Validator_Validate_python_path() error {
+	if !(len(this.PythonPath) <= 20) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the byte length of field 'python_path' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.PythonPath))
+	}
+	if !(strings.HasPrefix(this.PythonPath, "res-")) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the value of field 'python_path' must start with string 'res-'", this.PythonPath)
+	}
+	return nil
+}
+
+func (this *FlinkPythonFile) _xxx_xxx_Validator_Validate_python_module() error {
+	if !(len(this.PythonModule) <= 1024) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the byte length of field 'python_module' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.PythonModule))
+	}
+	if !(utf8.ValidString(this.PythonModule)) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the value of field 'python_module' must be a UTF8 string", this.PythonModule)
+	}
+	return nil
+}
+
+func (this *FlinkPythonFile) _xxx_xxx_Validator_Validate_python_args() error {
+	if !(len(this.PythonArgs) <= 1024) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the byte length of field 'python_args' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.PythonArgs))
+	}
+	if !(utf8.ValidString(this.PythonArgs)) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the value of field 'python_args' must be a UTF8 string", this.PythonArgs)
+	}
+	return nil
+}
+
+func (this *FlinkPythonFile) _xxx_xxx_Validator_CheckIf_delete_file_id() bool {
+	if !(this.DeleteFileId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *FlinkPythonFile) _xxx_xxx_Validator_Validate_delete_file_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_delete_file_id() {
+		return nil
+	}
+	if !(len(this.DeleteFileId) == 20) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the byte length of field 'delete_file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DeleteFileId))
+	}
+	if !(strings.HasPrefix(this.DeleteFileId, "res-")) {
+		return protovalidator.FieldError1("FlinkPythonFile", "the value of field 'delete_file_id' must start with string 'res-'", this.DeleteFileId)
+	}
+	return nil
+}
+
+// Set default value for message flink.FlinkPythonFile
+func (this *FlinkPythonFile) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_python_path(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_python_module(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_python_args(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_delete_file_id(); err != nil {
 		return err
 	}
 	return nil

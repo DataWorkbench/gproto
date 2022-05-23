@@ -38,8 +38,16 @@ func (this *FlinkJar) SetDefaults() {
 	return
 }
 
-// Set default value for message flink.FlinkPython
-func (this *FlinkPython) SetDefaults() {
+// Set default value for message flink.FlinkPythonCode
+func (this *FlinkPythonCode) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message flink.FlinkPythonFile
+func (this *FlinkPythonFile) SetDefaults() {
 	if this == nil {
 		return
 	}

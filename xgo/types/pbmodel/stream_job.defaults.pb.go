@@ -58,8 +58,13 @@ func (this *StreamJobCode) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Python != nil {
-		if dt, ok := interface{}(this.Python).(interface{ SetDefaults() }); ok {
+	if this.PythonCode != nil {
+		if dt, ok := interface{}(this.PythonCode).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.PythonFile != nil {
+		if dt, ok := interface{}(this.PythonFile).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

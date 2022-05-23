@@ -448,7 +448,7 @@ func (x *FlinkJar) GetDeleteFileId() string {
 }
 
 // PythonOperatorProperty
-type FlinkPython struct {
+type FlinkPythonCode struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -457,8 +457,8 @@ type FlinkPython struct {
 	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code"`
 }
 
-func (x *FlinkPython) Reset() {
-	*x = FlinkPython{}
+func (x *FlinkPythonCode) Reset() {
+	*x = FlinkPythonCode{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -466,13 +466,13 @@ func (x *FlinkPython) Reset() {
 	}
 }
 
-func (x *FlinkPython) String() string {
+func (x *FlinkPythonCode) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FlinkPython) ProtoMessage() {}
+func (*FlinkPythonCode) ProtoMessage() {}
 
-func (x *FlinkPython) ProtoReflect() protoreflect.Message {
+func (x *FlinkPythonCode) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -484,14 +484,90 @@ func (x *FlinkPython) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FlinkPython.ProtoReflect.Descriptor instead.
-func (*FlinkPython) Descriptor() ([]byte, []int) {
+// Deprecated: Use FlinkPythonCode.ProtoReflect.Descriptor instead.
+func (*FlinkPythonCode) Descriptor() ([]byte, []int) {
 	return file_proto_types_model_flink_flink_job_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *FlinkPython) GetCode() string {
+func (x *FlinkPythonCode) GetCode() string {
 	if x != nil {
 		return x.Code
+	}
+	return ""
+}
+
+type FlinkPythonFile struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// python_path.
+	PythonPath string `protobuf:"bytes,1,opt,name=python_path,json=pythonPath,proto3" json:"python_path"`
+	// python_module.
+	PythonModule string `protobuf:"bytes,2,opt,name=python_module,json=pythonModule,proto3" json:"python_module"`
+	// python_args.
+	PythonArgs string `protobuf:"bytes,3,opt,name=python_args,json=pythonArgs,proto3" json:"python_args"`
+	// delete_file_id.
+	// Only used to GetStreamJobArgs and GetStreamJobVersionArgs.
+	DeleteFileId string `protobuf:"bytes,4,opt,name=delete_file_id,json=deleteFileId,proto3" json:"delete_file_id"`
+}
+
+func (x *FlinkPythonFile) Reset() {
+	*x = FlinkPythonFile{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FlinkPythonFile) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlinkPythonFile) ProtoMessage() {}
+
+func (x *FlinkPythonFile) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlinkPythonFile.ProtoReflect.Descriptor instead.
+func (*FlinkPythonFile) Descriptor() ([]byte, []int) {
+	return file_proto_types_model_flink_flink_job_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *FlinkPythonFile) GetPythonPath() string {
+	if x != nil {
+		return x.PythonPath
+	}
+	return ""
+}
+
+func (x *FlinkPythonFile) GetPythonModule() string {
+	if x != nil {
+		return x.PythonModule
+	}
+	return ""
+}
+
+func (x *FlinkPythonFile) GetPythonArgs() string {
+	if x != nil {
+		return x.PythonArgs
+	}
+	return ""
+}
+
+func (x *FlinkPythonFile) GetDeleteFileId() string {
+	if x != nil {
+		return x.DeleteFileId
 	}
 	return ""
 }
@@ -509,7 +585,7 @@ type FlinkSQL struct {
 func (x *FlinkSQL) Reset() {
 	*x = FlinkSQL{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[4]
+		mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -522,7 +598,7 @@ func (x *FlinkSQL) String() string {
 func (*FlinkSQL) ProtoMessage() {}
 
 func (x *FlinkSQL) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[4]
+	mi := &file_proto_types_model_flink_flink_job_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -535,7 +611,7 @@ func (x *FlinkSQL) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlinkSQL.ProtoReflect.Descriptor instead.
 func (*FlinkSQL) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_flink_flink_job_proto_rawDescGZIP(), []int{4}
+	return file_proto_types_model_flink_flink_job_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *FlinkSQL) GetCode() string {
@@ -626,10 +702,27 @@ var file_proto_types_model_flink_flink_job_proto_rawDesc = []byte{
 	0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x12, 0x05, 0xc2, 0x01, 0x02, 0x22, 0x00, 0xe2, 0xdf,
 	0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x72, 0x65, 0x73,
 	0x2d, 0x52, 0x0c, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x49, 0x64, 0x22,
-	0x34, 0x0a, 0x0b, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x50, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x12, 0x25,
-	0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x11, 0xe2, 0xdf,
-	0x1f, 0x0d, 0x12, 0x0b, 0xc2, 0x01, 0x08, 0x98, 0x02, 0xc0, 0xb8, 0x02, 0x88, 0x05, 0x01, 0x52,
-	0x04, 0x63, 0x6f, 0x64, 0x65, 0x22, 0x31, 0x0a, 0x08, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x53, 0x51,
+	0x38, 0x0a, 0x0f, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x50, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x43, 0x6f,
+	0x64, 0x65, 0x12, 0x25, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x12, 0x0b, 0xc2, 0x01, 0x08, 0x98, 0x02, 0xc0, 0xb8, 0x02,
+	0x88, 0x05, 0x01, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x22, 0x89, 0x02, 0x0a, 0x0f, 0x46, 0x6c,
+	0x69, 0x6e, 0x6b, 0x50, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x34, 0x0a,
+	0x0b, 0x70, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x74, 0x68, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0x98, 0x02, 0x14,
+	0xca, 0x02, 0x04, 0x72, 0x65, 0x73, 0x2d, 0x52, 0x0a, 0x70, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x50,
+	0x61, 0x74, 0x68, 0x12, 0x35, 0x0a, 0x0d, 0x70, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x5f, 0x6d, 0x6f,
+	0x64, 0x75, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x10, 0xe2, 0xdf, 0x1f, 0x0c,
+	0x12, 0x0a, 0xc2, 0x01, 0x07, 0x98, 0x02, 0x80, 0x08, 0x88, 0x05, 0x01, 0x52, 0x0c, 0x70, 0x79,
+	0x74, 0x68, 0x6f, 0x6e, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x31, 0x0a, 0x0b, 0x70, 0x79,
+	0x74, 0x68, 0x6f, 0x6e, 0x5f, 0x61, 0x72, 0x67, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x10, 0xe2, 0xdf, 0x1f, 0x0c, 0x12, 0x0a, 0xc2, 0x01, 0x07, 0x98, 0x02, 0x80, 0x08, 0x88, 0x05,
+	0x01, 0x52, 0x0a, 0x70, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x41, 0x72, 0x67, 0x73, 0x12, 0x56, 0x0a,
+	0x0e, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x30, 0xe2, 0xdf, 0x1f, 0x19, 0x0a, 0x17, 0x0a, 0x0e, 0x64,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x12, 0x05, 0xc2,
+	0x01, 0x02, 0x22, 0x00, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
+	0xca, 0x02, 0x04, 0x72, 0x65, 0x73, 0x2d, 0x52, 0x0c, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x46,
+	0x69, 0x6c, 0x65, 0x49, 0x64, 0x22, 0x31, 0x0a, 0x08, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x53, 0x51,
 	0x4c, 0x12, 0x25, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
 	0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x12, 0x0b, 0xc2, 0x01, 0x08, 0x98, 0x02, 0xc0, 0xb8, 0x02, 0x88,
 	0x05, 0x01, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x42, 0x75, 0x0a, 0x2a, 0x63, 0x6f, 0x6d, 0x2e,
@@ -656,20 +749,21 @@ func file_proto_types_model_flink_flink_job_proto_rawDescGZIP() []byte {
 }
 
 var file_proto_types_model_flink_flink_job_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_proto_types_model_flink_flink_job_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_proto_types_model_flink_flink_job_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_types_model_flink_flink_job_proto_goTypes = []interface{}{
 	(FlinkJob_Status)(0),     // 0: flink.FlinkJob.Status
 	(FlinkOperator_Type)(0),  // 1: flink.FlinkOperator.Type
 	(*FlinkJob)(nil),         // 2: flink.FlinkJob
 	(*FlinkOperator)(nil),    // 3: flink.FlinkOperator
 	(*FlinkJar)(nil),         // 4: flink.FlinkJar
-	(*FlinkPython)(nil),      // 5: flink.FlinkPython
-	(*FlinkSQL)(nil),         // 6: flink.FlinkSQL
-	(*OperatorProperty)(nil), // 7: flink.OperatorProperty
+	(*FlinkPythonCode)(nil),  // 5: flink.FlinkPythonCode
+	(*FlinkPythonFile)(nil),  // 6: flink.FlinkPythonFile
+	(*FlinkSQL)(nil),         // 7: flink.FlinkSQL
+	(*OperatorProperty)(nil), // 8: flink.OperatorProperty
 }
 var file_proto_types_model_flink_flink_job_proto_depIdxs = []int32{
 	1, // 0: flink.FlinkOperator.type:type_name -> flink.FlinkOperator.Type
-	7, // 1: flink.FlinkOperator.property:type_name -> flink.OperatorProperty
+	8, // 1: flink.FlinkOperator.property:type_name -> flink.OperatorProperty
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -721,7 +815,7 @@ func file_proto_types_model_flink_flink_job_proto_init() {
 			}
 		}
 		file_proto_types_model_flink_flink_job_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FlinkPython); i {
+			switch v := v.(*FlinkPythonCode); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -733,6 +827,18 @@ func file_proto_types_model_flink_flink_job_proto_init() {
 			}
 		}
 		file_proto_types_model_flink_flink_job_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FlinkPythonFile); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_model_flink_flink_job_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FlinkSQL); i {
 			case 0:
 				return &v.state
@@ -751,7 +857,7 @@ func file_proto_types_model_flink_flink_job_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_flink_flink_job_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

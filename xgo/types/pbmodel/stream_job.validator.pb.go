@@ -87,7 +87,7 @@ func (this *StreamJob) _xxx_xxx_Validator_CheckIf_type() bool {
 	return true
 }
 
-var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
@@ -97,7 +97,7 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
 		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJob_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -259,14 +259,14 @@ func (this *StreamJobProperty) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_StreamJobCode_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+var _xxx_xxx_Validator_StreamJobCode_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobCode_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -340,21 +340,43 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_jar() error {
 	return nil
 }
 
-func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_python() bool {
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_python_code() bool {
 	if !(this.Type == 4) {
 		return false
 	}
 	return true
 }
 
-func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python() error {
-	if !this._xxx_xxx_Validator_CheckIf_python() {
+func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python_code() error {
+	if !this._xxx_xxx_Validator_CheckIf_python_code() {
 		return nil
 	}
-	if !(this.Python != nil) {
-		return protovalidator.FieldError2("StreamJobCode", "the value of field 'python' cannot be null")
+	if !(this.PythonCode != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'python_code' cannot be null")
 	}
-	if dt, ok := interface{}(this.Python).(interface{ Validate() error }); ok {
+	if dt, ok := interface{}(this.PythonCode).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_python_file() bool {
+	if !(this.Type == 4) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python_file() error {
+	if !this._xxx_xxx_Validator_CheckIf_python_file() {
+		return nil
+	}
+	if !(this.PythonFile != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'python_file' cannot be null")
+	}
+	if dt, ok := interface{}(this.PythonFile).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -379,7 +401,10 @@ func (this *StreamJobCode) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_jar(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_python(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_python_code(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_python_file(); err != nil {
 		return err
 	}
 	return nil
@@ -458,6 +483,52 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_delete_cluster_id() error
 	return nil
 }
 
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_archives() error {
+	if !(len(this.PyArchives) <= 100) {
+		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'py_archives' must be less than or equal to '100'", strconv.Itoa(len(this.PyArchives)))
+	}
+	for _, item := range this.PyArchives {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'py_archives' must start with string 'res-'", item)
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_files() error {
+	if !(len(this.PyFiles) <= 100) {
+		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'py_files' must be less than or equal to '100'", strconv.Itoa(len(this.PyFiles)))
+	}
+	for _, item := range this.PyFiles {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'py_files' must start with string 'res-'", item)
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_requirements() error {
+	if !(len(this.PyRequirements) <= 1) {
+		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'py_requirements' must be less than or equal to '1'", strconv.Itoa(len(this.PyRequirements)))
+	}
+	for _, item := range this.PyRequirements {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'py_requirements' must start with string 'res-'", item)
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_executable() error {
+	if !(len(this.PyExecutable) == 255) {
+		return protovalidator.FieldError1("StreamJobArgs", "the byte length of field 'py_executable' must be equal to '255'", protovalidator.StringByteLenToString(this.PyExecutable))
+	}
+	return nil
+}
+
 // Set default value for message model.StreamJobArgs
 func (this *StreamJobArgs) Validate() error {
 	if this == nil {
@@ -476,6 +547,18 @@ func (this *StreamJobArgs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_delete_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_py_archives(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_py_files(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_py_requirements(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_py_executable(); err != nil {
 		return err
 	}
 	return nil
@@ -712,14 +795,14 @@ func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_StreamJobRelease_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+var _xxx_xxx_Validator_StreamJobRelease_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_type() error {
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobRelease_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }

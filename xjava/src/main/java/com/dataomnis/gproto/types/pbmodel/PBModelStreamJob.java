@@ -434,9 +434,13 @@ public final class PBModelStreamJob {
        */
       Jar(3),
       /**
-       * <code>Python = 4;</code>
+       * <code>PythonCode = 4;</code>
        */
-      Python(4),
+      PythonCode(4),
+      /**
+       * <code>PythonFile = 5;</code>
+       */
+      PythonFile(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -461,9 +465,13 @@ public final class PBModelStreamJob {
        */
       public static final int Jar_VALUE = 3;
       /**
-       * <code>Python = 4;</code>
+       * <code>PythonCode = 4;</code>
        */
-      public static final int Python_VALUE = 4;
+      public static final int PythonCode_VALUE = 4;
+      /**
+       * <code>PythonFile = 5;</code>
+       */
+      public static final int PythonFile_VALUE = 5;
 
 
       public final int getNumber() {
@@ -494,7 +502,8 @@ public final class PBModelStreamJob {
           case 1: return Operator;
           case 2: return SQL;
           case 3: return Jar;
-          case 4: return Python;
+          case 4: return PythonCode;
+          case 5: return PythonFile;
           default: return null;
         }
       }
@@ -4599,33 +4608,60 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-     * @return Whether the python field is set.
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+     * @return Whether the pythonCode field is set.
      */
-    boolean hasPython();
+    boolean hasPythonCode();
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-     * @return The python.
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+     * @return The pythonCode.
      */
-    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython getPython();
+    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode getPythonCode();
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder getPythonOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder getPythonCodeOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the pythonFile field is set.
+     */
+    boolean hasPythonFile();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     * @return The pythonFile.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile getPythonFile();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder getPythonFileOrBuilder();
   }
   /**
    * <pre>
@@ -4721,14 +4757,27 @@ public final class PBModelStreamJob {
               break;
             }
             case 42: {
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder subBuilder = null;
-              if (python_ != null) {
-                subBuilder = python_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder subBuilder = null;
+              if (pythonCode_ != null) {
+                subBuilder = pythonCode_.toBuilder();
               }
-              python_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.parser(), extensionRegistry);
+              pythonCode_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(python_);
-                python_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(pythonCode_);
+                pythonCode_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder subBuilder = null;
+              if (pythonFile_ != null) {
+                subBuilder = pythonFile_.toBuilder();
+              }
+              pythonFile_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pythonFile_);
+                pythonFile_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4941,45 +4990,83 @@ public final class PBModelStreamJob {
       return getJar();
     }
 
-    public static final int PYTHON_FIELD_NUMBER = 5;
-    private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython python_;
+    public static final int PYTHON_CODE_FIELD_NUMBER = 5;
+    private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode pythonCode_;
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-     * @return Whether the python field is set.
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+     * @return Whether the pythonCode field is set.
      */
     @java.lang.Override
-    public boolean hasPython() {
-      return python_ != null;
+    public boolean hasPythonCode() {
+      return pythonCode_ != null;
     }
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-     * @return The python.
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+     * @return The pythonCode.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython getPython() {
-      return python_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.getDefaultInstance() : python_;
+    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode getPythonCode() {
+      return pythonCode_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.getDefaultInstance() : pythonCode_;
     }
     /**
      * <pre>
-     * Python
-     * &#64;inject_tag: json:"python"
+     * PythonCode
+     * &#64;inject_tag: json:"python_code"
      * </pre>
      *
-     * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+     * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder getPythonOrBuilder() {
-      return getPython();
+    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder getPythonCodeOrBuilder() {
+      return getPythonCode();
+    }
+
+    public static final int PYTHON_FILE_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile pythonFile_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the pythonFile field is set.
+     */
+    @java.lang.Override
+    public boolean hasPythonFile() {
+      return pythonFile_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     * @return The pythonFile.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile getPythonFile() {
+      return pythonFile_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.getDefaultInstance() : pythonFile_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"python_file"
+     * </pre>
+     *
+     * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder getPythonFileOrBuilder() {
+      return getPythonFile();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5008,8 +5095,11 @@ public final class PBModelStreamJob {
       if (jar_ != null) {
         output.writeMessage(4, getJar());
       }
-      if (python_ != null) {
-        output.writeMessage(5, getPython());
+      if (pythonCode_ != null) {
+        output.writeMessage(5, getPythonCode());
+      }
+      if (pythonFile_ != null) {
+        output.writeMessage(6, getPythonFile());
       }
       unknownFields.writeTo(output);
     }
@@ -5036,9 +5126,13 @@ public final class PBModelStreamJob {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getJar());
       }
-      if (python_ != null) {
+      if (pythonCode_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getPython());
+          .computeMessageSize(5, getPythonCode());
+      }
+      if (pythonFile_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getPythonFile());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5068,10 +5162,15 @@ public final class PBModelStreamJob {
         if (!getJar()
             .equals(other.getJar())) return false;
       }
-      if (hasPython() != other.hasPython()) return false;
-      if (hasPython()) {
-        if (!getPython()
-            .equals(other.getPython())) return false;
+      if (hasPythonCode() != other.hasPythonCode()) return false;
+      if (hasPythonCode()) {
+        if (!getPythonCode()
+            .equals(other.getPythonCode())) return false;
+      }
+      if (hasPythonFile() != other.hasPythonFile()) return false;
+      if (hasPythonFile()) {
+        if (!getPythonFile()
+            .equals(other.getPythonFile())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -5098,9 +5197,13 @@ public final class PBModelStreamJob {
         hash = (37 * hash) + JAR_FIELD_NUMBER;
         hash = (53 * hash) + getJar().hashCode();
       }
-      if (hasPython()) {
-        hash = (37 * hash) + PYTHON_FIELD_NUMBER;
-        hash = (53 * hash) + getPython().hashCode();
+      if (hasPythonCode()) {
+        hash = (37 * hash) + PYTHON_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getPythonCode().hashCode();
+      }
+      if (hasPythonFile()) {
+        hash = (37 * hash) + PYTHON_FILE_FIELD_NUMBER;
+        hash = (53 * hash) + getPythonFile().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5260,11 +5363,17 @@ public final class PBModelStreamJob {
           jar_ = null;
           jarBuilder_ = null;
         }
-        if (pythonBuilder_ == null) {
-          python_ = null;
+        if (pythonCodeBuilder_ == null) {
+          pythonCode_ = null;
         } else {
-          python_ = null;
-          pythonBuilder_ = null;
+          pythonCode_ = null;
+          pythonCodeBuilder_ = null;
+        }
+        if (pythonFileBuilder_ == null) {
+          pythonFile_ = null;
+        } else {
+          pythonFile_ = null;
+          pythonFileBuilder_ = null;
         }
         return this;
       }
@@ -5313,10 +5422,15 @@ public final class PBModelStreamJob {
         } else {
           result.jar_ = jarBuilder_.build();
         }
-        if (pythonBuilder_ == null) {
-          result.python_ = python_;
+        if (pythonCodeBuilder_ == null) {
+          result.pythonCode_ = pythonCode_;
         } else {
-          result.python_ = pythonBuilder_.build();
+          result.pythonCode_ = pythonCodeBuilder_.build();
+        }
+        if (pythonFileBuilder_ == null) {
+          result.pythonFile_ = pythonFile_;
+        } else {
+          result.pythonFile_ = pythonFileBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5401,8 +5515,11 @@ public final class PBModelStreamJob {
         if (other.hasJar()) {
           mergeJar(other.getJar());
         }
-        if (other.hasPython()) {
-          mergePython(other.getPython());
+        if (other.hasPythonCode()) {
+          mergePythonCode(other.getPythonCode());
+        }
+        if (other.hasPythonFile()) {
+          mergePythonFile(other.getPythonFile());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6162,168 +6279,323 @@ public final class PBModelStreamJob {
         return jarBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython python_;
+      private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode pythonCode_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder> pythonBuilder_;
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder> pythonCodeBuilder_;
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-       * @return Whether the python field is set.
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+       * @return Whether the pythonCode field is set.
        */
-      public boolean hasPython() {
-        return pythonBuilder_ != null || python_ != null;
+      public boolean hasPythonCode() {
+        return pythonCodeBuilder_ != null || pythonCode_ != null;
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
-       * @return The python.
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
+       * @return The pythonCode.
        */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython getPython() {
-        if (pythonBuilder_ == null) {
-          return python_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.getDefaultInstance() : python_;
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode getPythonCode() {
+        if (pythonCodeBuilder_ == null) {
+          return pythonCode_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.getDefaultInstance() : pythonCode_;
         } else {
-          return pythonBuilder_.getMessage();
+          return pythonCodeBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public Builder setPython(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython value) {
-        if (pythonBuilder_ == null) {
+      public Builder setPythonCode(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode value) {
+        if (pythonCodeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          python_ = value;
+          pythonCode_ = value;
           onChanged();
         } else {
-          pythonBuilder_.setMessage(value);
+          pythonCodeBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public Builder setPython(
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder builderForValue) {
-        if (pythonBuilder_ == null) {
-          python_ = builderForValue.build();
+      public Builder setPythonCode(
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder builderForValue) {
+        if (pythonCodeBuilder_ == null) {
+          pythonCode_ = builderForValue.build();
           onChanged();
         } else {
-          pythonBuilder_.setMessage(builderForValue.build());
+          pythonCodeBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public Builder mergePython(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython value) {
-        if (pythonBuilder_ == null) {
-          if (python_ != null) {
-            python_ =
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.newBuilder(python_).mergeFrom(value).buildPartial();
+      public Builder mergePythonCode(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode value) {
+        if (pythonCodeBuilder_ == null) {
+          if (pythonCode_ != null) {
+            pythonCode_ =
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.newBuilder(pythonCode_).mergeFrom(value).buildPartial();
           } else {
-            python_ = value;
+            pythonCode_ = value;
           }
           onChanged();
         } else {
-          pythonBuilder_.mergeFrom(value);
+          pythonCodeBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public Builder clearPython() {
-        if (pythonBuilder_ == null) {
-          python_ = null;
+      public Builder clearPythonCode() {
+        if (pythonCodeBuilder_ == null) {
+          pythonCode_ = null;
           onChanged();
         } else {
-          python_ = null;
-          pythonBuilder_ = null;
+          pythonCode_ = null;
+          pythonCodeBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder getPythonBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder getPythonCodeBuilder() {
         
         onChanged();
-        return getPythonFieldBuilder().getBuilder();
+        return getPythonCodeFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder getPythonOrBuilder() {
-        if (pythonBuilder_ != null) {
-          return pythonBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder getPythonCodeOrBuilder() {
+        if (pythonCodeBuilder_ != null) {
+          return pythonCodeBuilder_.getMessageOrBuilder();
         } else {
-          return python_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.getDefaultInstance() : python_;
+          return pythonCode_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.getDefaultInstance() : pythonCode_;
         }
       }
       /**
        * <pre>
-       * Python
-       * &#64;inject_tag: json:"python"
+       * PythonCode
+       * &#64;inject_tag: json:"python_code"
        * </pre>
        *
-       * <code>.flink.FlinkPython python = 5 [(.validator.field) = { ... }</code>
+       * <code>.flink.FlinkPythonCode python_code = 5 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder> 
-          getPythonFieldBuilder() {
-        if (pythonBuilder_ == null) {
-          pythonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPython.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonOrBuilder>(
-                  getPython(),
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder> 
+          getPythonCodeFieldBuilder() {
+        if (pythonCodeBuilder_ == null) {
+          pythonCodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCode.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonCodeOrBuilder>(
+                  getPythonCode(),
                   getParentForChildren(),
                   isClean());
-          python_ = null;
+          pythonCode_ = null;
         }
-        return pythonBuilder_;
+        return pythonCodeBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile pythonFile_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder> pythonFileBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       * @return Whether the pythonFile field is set.
+       */
+      public boolean hasPythonFile() {
+        return pythonFileBuilder_ != null || pythonFile_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       * @return The pythonFile.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile getPythonFile() {
+        if (pythonFileBuilder_ == null) {
+          return pythonFile_ == null ? com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.getDefaultInstance() : pythonFile_;
+        } else {
+          return pythonFileBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setPythonFile(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile value) {
+        if (pythonFileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pythonFile_ = value;
+          onChanged();
+        } else {
+          pythonFileBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setPythonFile(
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder builderForValue) {
+        if (pythonFileBuilder_ == null) {
+          pythonFile_ = builderForValue.build();
+          onChanged();
+        } else {
+          pythonFileBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergePythonFile(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile value) {
+        if (pythonFileBuilder_ == null) {
+          if (pythonFile_ != null) {
+            pythonFile_ =
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.newBuilder(pythonFile_).mergeFrom(value).buildPartial();
+          } else {
+            pythonFile_ = value;
+          }
+          onChanged();
+        } else {
+          pythonFileBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearPythonFile() {
+        if (pythonFileBuilder_ == null) {
+          pythonFile_ = null;
+          onChanged();
+        } else {
+          pythonFile_ = null;
+          pythonFileBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder getPythonFileBuilder() {
+        
+        onChanged();
+        return getPythonFileFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder getPythonFileOrBuilder() {
+        if (pythonFileBuilder_ != null) {
+          return pythonFileBuilder_.getMessageOrBuilder();
+        } else {
+          return pythonFile_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.getDefaultInstance() : pythonFile_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"python_file"
+       * </pre>
+       *
+       * <code>.flink.FlinkPythonFile python_file = 6 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder> 
+          getPythonFileFieldBuilder() {
+        if (pythonFileBuilder_ == null) {
+          pythonFileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFile.Builder, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkPythonFileOrBuilder>(
+                  getPythonFile(),
+                  getParentForChildren(),
+                  isClean());
+          pythonFile_ = null;
+        }
+        return pythonFileBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6585,6 +6857,163 @@ public final class PBModelStreamJob {
      */
     com.google.protobuf.ByteString
         getDeleteClusterIdBytes();
+
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyArchives.
+     */
+    java.util.List<java.lang.String>
+        getPyArchivesList();
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @return The count of pyArchives.
+     */
+    int getPyArchivesCount();
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyArchives at the given index.
+     */
+    java.lang.String getPyArchives(int index);
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyArchives at the given index.
+     */
+    com.google.protobuf.ByteString
+        getPyArchivesBytes(int index);
+
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyFiles.
+     */
+    java.util.List<java.lang.String>
+        getPyFilesList();
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @return The count of pyFiles.
+     */
+    int getPyFilesCount();
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyFiles at the given index.
+     */
+    java.lang.String getPyFiles(int index);
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyFiles at the given index.
+     */
+    com.google.protobuf.ByteString
+        getPyFilesBytes(int index);
+
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyRequirements.
+     */
+    java.util.List<java.lang.String>
+        getPyRequirementsList();
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @return The count of pyRequirements.
+     */
+    int getPyRequirementsCount();
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyRequirements at the given index.
+     */
+    java.lang.String getPyRequirements(int index);
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyRequirements at the given index.
+     */
+    com.google.protobuf.ByteString
+        getPyRequirementsBytes(int index);
+
+    /**
+     * <pre>
+     * Specify the path of the python interpreter used to execute the python UDF worker.
+     * &#64;inject_tag: json:"py_executable"
+     * </pre>
+     *
+     * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+     * @return The pyExecutable.
+     */
+    java.lang.String getPyExecutable();
+    /**
+     * <pre>
+     * Specify the path of the python interpreter used to execute the python UDF worker.
+     * &#64;inject_tag: json:"py_executable"
+     * </pre>
+     *
+     * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for pyExecutable.
+     */
+    com.google.protobuf.ByteString
+        getPyExecutableBytes();
   }
   /**
    * <pre>
@@ -6609,6 +7038,10 @@ public final class PBModelStreamJob {
       builtInConnectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       deleteFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       deleteClusterId_ = "";
+      pyArchives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pyFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pyRequirements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pyExecutable_ = "";
     }
 
     @java.lang.Override
@@ -6686,6 +7119,39 @@ public final class PBModelStreamJob {
               deleteClusterId_ = s;
               break;
             }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                pyArchives_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              pyArchives_.add(s);
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                pyFiles_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              pyFiles_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                pyRequirements_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              pyRequirements_.add(s);
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pyExecutable_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6709,6 +7175,15 @@ public final class PBModelStreamJob {
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           deleteFiles_ = deleteFiles_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          pyArchives_ = pyArchives_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          pyFiles_ = pyFiles_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          pyRequirements_ = pyRequirements_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7018,6 +7493,219 @@ public final class PBModelStreamJob {
       }
     }
 
+    public static final int PY_ARCHIVES_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList pyArchives_;
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyArchives.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPyArchivesList() {
+      return pyArchives_;
+    }
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @return The count of pyArchives.
+     */
+    public int getPyArchivesCount() {
+      return pyArchives_.size();
+    }
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyArchives at the given index.
+     */
+    public java.lang.String getPyArchives(int index) {
+      return pyArchives_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of pyArchive files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_archives"
+     * </pre>
+     *
+     * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyArchives at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPyArchivesBytes(int index) {
+      return pyArchives_.getByteString(index);
+    }
+
+    public static final int PY_FILES_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList pyFiles_;
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyFiles.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPyFilesList() {
+      return pyFiles_;
+    }
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @return The count of pyFiles.
+     */
+    public int getPyFilesCount() {
+      return pyFiles_.size();
+    }
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyFiles at the given index.
+     */
+    public java.lang.String getPyFiles(int index) {
+      return pyFiles_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of py files. Not required. Max 100.
+     * &#64;inject_tag: json:"py_files"
+     * </pre>
+     *
+     * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyFiles at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPyFilesBytes(int index) {
+      return pyFiles_.getByteString(index);
+    }
+
+    public static final int PY_REQUIREMENTS_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList pyRequirements_;
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @return A list containing the pyRequirements.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPyRequirementsList() {
+      return pyRequirements_;
+    }
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @return The count of pyRequirements.
+     */
+    public int getPyRequirementsCount() {
+      return pyRequirements_.size();
+    }
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The pyRequirements at the given index.
+     */
+    public java.lang.String getPyRequirements(int index) {
+      return pyRequirements_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of py_requirements files. Not required. Max 1.
+     * &#64;inject_tag: json:"py_requirements"
+     * </pre>
+     *
+     * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the pyRequirements at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPyRequirementsBytes(int index) {
+      return pyRequirements_.getByteString(index);
+    }
+
+    public static final int PY_EXECUTABLE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object pyExecutable_;
+    /**
+     * <pre>
+     * Specify the path of the python interpreter used to execute the python UDF worker.
+     * &#64;inject_tag: json:"py_executable"
+     * </pre>
+     *
+     * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+     * @return The pyExecutable.
+     */
+    @java.lang.Override
+    public java.lang.String getPyExecutable() {
+      java.lang.Object ref = pyExecutable_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pyExecutable_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Specify the path of the python interpreter used to execute the python UDF worker.
+     * &#64;inject_tag: json:"py_executable"
+     * </pre>
+     *
+     * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for pyExecutable.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPyExecutableBytes() {
+      java.lang.Object ref = pyExecutable_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pyExecutable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7049,6 +7737,18 @@ public final class PBModelStreamJob {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteClusterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deleteClusterId_);
+      }
+      for (int i = 0; i < pyArchives_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pyArchives_.getRaw(i));
+      }
+      for (int i = 0; i < pyFiles_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, pyFiles_.getRaw(i));
+      }
+      for (int i = 0; i < pyRequirements_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pyRequirements_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pyExecutable_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pyExecutable_);
       }
       unknownFields.writeTo(output);
     }
@@ -7093,6 +7793,33 @@ public final class PBModelStreamJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deleteClusterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deleteClusterId_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pyArchives_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pyArchives_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPyArchivesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pyFiles_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pyFiles_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPyFilesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pyRequirements_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pyRequirements_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPyRequirementsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pyExecutable_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pyExecutable_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7120,6 +7847,14 @@ public final class PBModelStreamJob {
           .equals(other.getDeleteFilesList())) return false;
       if (!getDeleteClusterId()
           .equals(other.getDeleteClusterId())) return false;
+      if (!getPyArchivesList()
+          .equals(other.getPyArchivesList())) return false;
+      if (!getPyFilesList()
+          .equals(other.getPyFilesList())) return false;
+      if (!getPyRequirementsList()
+          .equals(other.getPyRequirementsList())) return false;
+      if (!getPyExecutable()
+          .equals(other.getPyExecutable())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7149,6 +7884,20 @@ public final class PBModelStreamJob {
       }
       hash = (37 * hash) + DELETE_CLUSTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteClusterId().hashCode();
+      if (getPyArchivesCount() > 0) {
+        hash = (37 * hash) + PY_ARCHIVES_FIELD_NUMBER;
+        hash = (53 * hash) + getPyArchivesList().hashCode();
+      }
+      if (getPyFilesCount() > 0) {
+        hash = (37 * hash) + PY_FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getPyFilesList().hashCode();
+      }
+      if (getPyRequirementsCount() > 0) {
+        hash = (37 * hash) + PY_REQUIREMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPyRequirementsList().hashCode();
+      }
+      hash = (37 * hash) + PY_EXECUTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getPyExecutable().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7299,6 +8048,14 @@ public final class PBModelStreamJob {
         bitField0_ = (bitField0_ & ~0x00000004);
         deleteClusterId_ = "";
 
+        pyArchives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pyFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        pyRequirements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        pyExecutable_ = "";
+
         return this;
       }
 
@@ -7344,6 +8101,22 @@ public final class PBModelStreamJob {
         }
         result.deleteFiles_ = deleteFiles_;
         result.deleteClusterId_ = deleteClusterId_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          pyArchives_ = pyArchives_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.pyArchives_ = pyArchives_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          pyFiles_ = pyFiles_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.pyFiles_ = pyFiles_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          pyRequirements_ = pyRequirements_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.pyRequirements_ = pyRequirements_;
+        result.pyExecutable_ = pyExecutable_;
         onBuilt();
         return result;
       }
@@ -7431,6 +8204,40 @@ public final class PBModelStreamJob {
         }
         if (!other.getDeleteClusterId().isEmpty()) {
           deleteClusterId_ = other.deleteClusterId_;
+          onChanged();
+        }
+        if (!other.pyArchives_.isEmpty()) {
+          if (pyArchives_.isEmpty()) {
+            pyArchives_ = other.pyArchives_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePyArchivesIsMutable();
+            pyArchives_.addAll(other.pyArchives_);
+          }
+          onChanged();
+        }
+        if (!other.pyFiles_.isEmpty()) {
+          if (pyFiles_.isEmpty()) {
+            pyFiles_ = other.pyFiles_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePyFilesIsMutable();
+            pyFiles_.addAll(other.pyFiles_);
+          }
+          onChanged();
+        }
+        if (!other.pyRequirements_.isEmpty()) {
+          if (pyRequirements_.isEmpty()) {
+            pyRequirements_ = other.pyRequirements_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensurePyRequirementsIsMutable();
+            pyRequirements_.addAll(other.pyRequirements_);
+          }
+          onChanged();
+        }
+        if (!other.getPyExecutable().isEmpty()) {
+          pyExecutable_ = other.pyExecutable_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8204,6 +9011,572 @@ public final class PBModelStreamJob {
   checkByteStringIsUtf8(value);
         
         deleteClusterId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList pyArchives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePyArchivesIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          pyArchives_ = new com.google.protobuf.LazyStringArrayList(pyArchives_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @return A list containing the pyArchives.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPyArchivesList() {
+        return pyArchives_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @return The count of pyArchives.
+       */
+      public int getPyArchivesCount() {
+        return pyArchives_.size();
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The pyArchives at the given index.
+       */
+      public java.lang.String getPyArchives(int index) {
+        return pyArchives_.get(index);
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the pyArchives at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPyArchivesBytes(int index) {
+        return pyArchives_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The pyArchives to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPyArchives(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyArchivesIsMutable();
+        pyArchives_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param value The pyArchives to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyArchives(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyArchivesIsMutable();
+        pyArchives_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param values The pyArchives to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPyArchives(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePyArchivesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pyArchives_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPyArchives() {
+        pyArchives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of pyArchive files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_archives"
+       * </pre>
+       *
+       * <code>repeated string py_archives = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the pyArchives to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyArchivesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePyArchivesIsMutable();
+        pyArchives_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList pyFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePyFilesIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          pyFiles_ = new com.google.protobuf.LazyStringArrayList(pyFiles_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @return A list containing the pyFiles.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPyFilesList() {
+        return pyFiles_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @return The count of pyFiles.
+       */
+      public int getPyFilesCount() {
+        return pyFiles_.size();
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The pyFiles at the given index.
+       */
+      public java.lang.String getPyFiles(int index) {
+        return pyFiles_.get(index);
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the pyFiles at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPyFilesBytes(int index) {
+        return pyFiles_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The pyFiles to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPyFiles(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyFilesIsMutable();
+        pyFiles_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param value The pyFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyFiles(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyFilesIsMutable();
+        pyFiles_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param values The pyFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPyFiles(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePyFilesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pyFiles_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPyFiles() {
+        pyFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py files. Not required. Max 100.
+       * &#64;inject_tag: json:"py_files"
+       * </pre>
+       *
+       * <code>repeated string py_files = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the pyFiles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyFilesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePyFilesIsMutable();
+        pyFiles_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList pyRequirements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePyRequirementsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          pyRequirements_ = new com.google.protobuf.LazyStringArrayList(pyRequirements_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @return A list containing the pyRequirements.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPyRequirementsList() {
+        return pyRequirements_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @return The count of pyRequirements.
+       */
+      public int getPyRequirementsCount() {
+        return pyRequirements_.size();
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The pyRequirements at the given index.
+       */
+      public java.lang.String getPyRequirements(int index) {
+        return pyRequirements_.get(index);
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the pyRequirements at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPyRequirementsBytes(int index) {
+        return pyRequirements_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The pyRequirements to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPyRequirements(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyRequirementsIsMutable();
+        pyRequirements_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param value The pyRequirements to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyRequirements(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePyRequirementsIsMutable();
+        pyRequirements_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param values The pyRequirements to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPyRequirements(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePyRequirementsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pyRequirements_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPyRequirements() {
+        pyRequirements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The list of py_requirements files. Not required. Max 1.
+       * &#64;inject_tag: json:"py_requirements"
+       * </pre>
+       *
+       * <code>repeated string py_requirements = 9 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the pyRequirements to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPyRequirementsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePyRequirementsIsMutable();
+        pyRequirements_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pyExecutable_ = "";
+      /**
+       * <pre>
+       * Specify the path of the python interpreter used to execute the python UDF worker.
+       * &#64;inject_tag: json:"py_executable"
+       * </pre>
+       *
+       * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+       * @return The pyExecutable.
+       */
+      public java.lang.String getPyExecutable() {
+        java.lang.Object ref = pyExecutable_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pyExecutable_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Specify the path of the python interpreter used to execute the python UDF worker.
+       * &#64;inject_tag: json:"py_executable"
+       * </pre>
+       *
+       * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+       * @return The bytes for pyExecutable.
+       */
+      public com.google.protobuf.ByteString
+          getPyExecutableBytes() {
+        java.lang.Object ref = pyExecutable_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pyExecutable_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Specify the path of the python interpreter used to execute the python UDF worker.
+       * &#64;inject_tag: json:"py_executable"
+       * </pre>
+       *
+       * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+       * @param value The pyExecutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPyExecutable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pyExecutable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specify the path of the python interpreter used to execute the python UDF worker.
+       * &#64;inject_tag: json:"py_executable"
+       * </pre>
+       *
+       * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPyExecutable() {
+        
+        pyExecutable_ = getDefaultInstance().getPyExecutable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specify the path of the python interpreter used to execute the python UDF worker.
+       * &#64;inject_tag: json:"py_executable"
+       * </pre>
+       *
+       * <code>string py_executable = 10 [(.validator.field) = { ... }</code>
+       * @param value The bytes for pyExecutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPyExecutableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pyExecutable_ = value;
         onChanged();
         return this;
       }
@@ -12882,7 +14255,7 @@ public final class PBModelStreamJob {
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\0322github.com/yu" +
       "31/protoc-plugin/proto/defaults.proto\032\'p" +
-      "roto/types/model/flink/flink_job.proto\"\331" +
+      "roto/types/model/flink/flink_job.proto\"\355" +
       "\004\n\tStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
       "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037" +
@@ -12895,71 +14268,78 @@ public final class PBModelStreamJob {
       "Job.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\ncreated_by\030" +
       "\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\013 \001(\003B" +
       "\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\"A\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022" +
-      "\007\n\003SQL\020\002\022\007\n\003Jar\020\003\022\n\n\006Python\020\004\"3\n\006Status\022" +
-      "\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled" +
-      "\020\002\"\200\002\n\021StreamJobProperty\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(\0132\024.model.StreamJobC" +
-      "odeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model.StreamJo" +
-      "bArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\0132\030.model.St" +
-      "reamJobScheduleB\004\342\337\037\000\"\324\002\n\rStreamJobCode\022" +
-      "2\n\004type\030\001 \001(\0162\025.model.StreamJob.TypeB\r\342\337" +
-      "\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003(\0132\024.flink.F" +
-      "linkOperatorB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352" +
-      "\001\0020\000\022<\n\003sql\030\003 \001(\0132\017.flink.FlinkSQLB\036\342\337\037\017" +
-      "\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132" +
-      "\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037" +
-      "\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink.FlinkPy" +
-      "thonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001:\006\312\262" +
-      "\004\002\n\000\"\307\002\n\rStreamJobArgs\022@\n\ncluster_id\030\001 \001" +
-      "(\tB,\342\337\037\025\n\023\n\ncluster_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004cfi-\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342" +
-      "\337\037\t\022\007\262\001\0048d@\000\022&\n\005files\030\003 \003(\tB\027\342\337\037\023\022\021\352\001\0168d" +
-      "Z\n\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\004 \003(" +
-      "\t\022+\n\014delete_files\030\005 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312" +
-      "\002\004res-\022N\n\021delete_cluster_id\030\006 \001(\tB3\342\337\037\034\n" +
-      "\032\n\021delete_cluster_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004cfi-:\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017" +
-      "schedule_policy\030\001 \001(\0162\'.model.StreamJobS" +
-      "chedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n" +
-      "\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy" +
-      "\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022" +
-      "U\n\022concurrency_policy\030\006 \001(\0162*.model.Stre" +
-      "amJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332" +
-      "\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017sch" +
-      "edule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004ho" +
-      "urJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 " +
-      "\001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022" +
-      "\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022" +
-      "I\n\014retry_policy\030\n \001(\0162$.model.StreamJobS" +
-      "chedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013re" +
-      "try_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332" +
-      "\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(" +
-      "\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048" +
-      "\036@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyU" +
-      "nset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002" +
-      "\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032" +
-      "\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n" +
-      "\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n" +
-      "\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:" +
-      "\006\312\262\004\002\n\000\"\275\003\n\020StreamJobRelease\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230" +
-      "\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.StreamJob.Type" +
-      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model." +
-      "StreamJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022#\n" +
-      "\ncreated_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007cr" +
-      "eated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(" +
-      "\003B\013\342\337\037\007\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUnset\020" +
-      "\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020" +
-      "\003\022\014\n\010Finished\020\004Bk\n\"com.dataomnis.gproto." +
-      "types.pbmodelB\020PBModelStreamJobP\000Z1githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
-      "odelb\006proto3"
+      "0\000\"U\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022" +
+      "\007\n\003SQL\020\002\022\007\n\003Jar\020\003\022\016\n\nPythonCode\020\004\022\016\n\nPyt" +
+      "honFile\020\005\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007" +
+      "Deleted\020\001\022\013\n\007Enabled\020\002\"\200\002\n\021StreamJobProp" +
+      "erty\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007" +
+      "version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(" +
+      "\0132\024.model.StreamJobCodeB\004\342\337\037\000\022(\n\004args\030\005 " +
+      "\001(\0132\024.model.StreamJobArgsB\004\342\337\037\000\0220\n\010sched" +
+      "ule\030\006 \001(\0132\030.model.StreamJobScheduleB\004\342\337\037" +
+      "\000\"\252\003\n\rStreamJobCode\0222\n\004type\030\001 \001(\0162\025.mode" +
+      "l.StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\topera" +
+      "tors\030\002 \003(\0132\024.flink.FlinkOperatorB\036\342\337\037\017\n\r" +
+      "\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352\001\0020\000\022<\n\003sql\030\003 \001(\0132\017." +
+      "flink.FlinkSQLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022" +
+      "\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132\017.flink.FlinkJarB\036\342\337" +
+      "\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022K\n\013python_c" +
+      "ode\030\005 \001(\0132\026.flink.FlinkPythonCodeB\036\342\337\037\017\n" +
+      "\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022K\n\013python_file" +
+      "\030\006 \001(\0132\026.flink.FlinkPythonFileB\036\342\337\037\017\n\r\n\004" +
+      "type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\370\003\n\rStrea" +
+      "mJobArgs\022@\n\ncluster_id\030\001 \001(\tB,\342\337\037\025\n\023\n\ncl" +
+      "uster_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\013pa" +
+      "rallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0048d@\000\022&" +
+      "\n\005files\030\003 \003(\tB\027\342\337\037\023\022\021\352\001\0168dZ\n\302\001\007\312\002\004res-\022\033" +
+      "\n\023built_in_connectors\030\004 \003(\t\022+\n\014delete_fi" +
+      "les\030\005 \003(\tB\025\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004res-\022N\n\021dele" +
+      "te_cluster_id\030\006 \001(\tB3\342\337\037\034\n\032\n\021delete_clus" +
+      "ter_id\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022,\n\013py_a" +
+      "rchives\030\007 \003(\tB\027\342\337\037\023\022\021\352\001\0168dZ\n\302\001\007\312\002\004res-\022)" +
+      "\n\010py_files\030\010 \003(\tB\027\342\337\037\023\022\021\352\001\0168dZ\n\302\001\007\312\002\004res" +
+      "-\0220\n\017py_requirements\030\t \003(\tB\027\342\337\037\023\022\021\352\001\0168\001Z" +
+      "\n\302\001\007\312\002\004res-\022$\n\rpy_executable\030\n \001(\tB\r\342\337\037\t" +
+      "\022\007\302\001\004\360\001\377\001:\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022" +
+      "O\n\017schedule_policy\030\001 \001(\0162\'.model.StreamJ" +
+      "obSchedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_pol" +
+      "icy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "@\000\022U\n\022concurrency_policy\030\006 \001(\0162*.model.S" +
+      "treamJobSchedule.ConcurrencyPolicyB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017" +
+      "schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ" +
+      "\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express" +
+      "\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337" +
+      "\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d" +
+      "@\000\022I\n\014retry_policy\030\n \001(\0162$.model.StreamJ" +
+      "obSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n" +
+      "\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy" +
+      "\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014" +
+      " \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262" +
+      "\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePoli" +
+      "cyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTim" +
+      "e\020\002\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolic" +
+      "y\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001" +
+      "\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy" +
+      "\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto" +
+      "\020\002:\006\312\262\004\002\n\000\"\275\003\n\020StreamJobRelease\022%\n\010space" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220" +
+      "\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.StreamJob.T" +
+      "ypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.mod" +
+      "el.StreamJobRelease.Status\022\014\n\004desc\030\007 \001(\t" +
+      "\022#\n\ncreated_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n" +
+      "\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n" +
+      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUns" +
+      "et\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Delet" +
+      "ed\020\003\022\014\n\010Finished\020\004Bk\n\"com.dataomnis.gpro" +
+      "to.types.pbmodelB\020PBModelStreamJobP\000Z1gi" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
+      "pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12986,13 +14366,13 @@ public final class PBModelStreamJob {
     internal_static_model_StreamJobCode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobCode_descriptor,
-        new java.lang.String[] { "Type", "Operators", "Sql", "Jar", "Python", });
+        new java.lang.String[] { "Type", "Operators", "Sql", "Jar", "PythonCode", "PythonFile", });
     internal_static_model_StreamJobArgs_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_StreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobArgs_descriptor,
-        new java.lang.String[] { "ClusterId", "Parallelism", "Files", "BuiltInConnectors", "DeleteFiles", "DeleteClusterId", });
+        new java.lang.String[] { "ClusterId", "Parallelism", "Files", "BuiltInConnectors", "DeleteFiles", "DeleteClusterId", "PyArchives", "PyFiles", "PyRequirements", "PyExecutable", });
     internal_static_model_StreamJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_StreamJobSchedule_fieldAccessorTable = new
