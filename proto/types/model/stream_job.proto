@@ -196,6 +196,26 @@ message StreamJobArgs {
     (validator.field).check_if = { field: "delete_cluster_id", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq:20, prefix: "cfi-" }
   ];
+
+
+  // The list of pyArchive files. Not required. Max 100.
+// @inject_tag: json:"py_archives"
+  repeated string py_archives = 7 [ (validator.field).tags.repeated = { len_lte: 100, item: { string: { prefix: "res-" } } }];
+
+
+  // The list of py files. Not required. Max 100.
+  // @inject_tag: json:"py_files"
+  repeated string py_files = 8 [ (validator.field).tags.repeated = { len_lte: 100, item: { string: { prefix: "res-" } } }];
+
+
+  // The list of py_requirements files. Not required. Max 1.
+  // @inject_tag: json:"py_requirements"
+  repeated string py_requirements = 9 [ (validator.field).tags.repeated = { len_lte: 1, item: { string: { prefix: "res-" } } }];
+
+
+  // Specify the path of the python interpreter used to execute the python UDF worker.
+  // @inject_tag: json:"py_executable"
+  string py_executable = 10 [ (validator.field).tags.string = { byte_len_eq: 255 }];
 }
 
 // StreamJobSchedule represents a job schedule info.
