@@ -19,29 +19,11 @@ func (this *HbaseSource) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
 // Set default value for message model.HbaseReadParameter
 func (this *HbaseReadParameter) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Range != nil {
-		if dt, ok := interface{}(this.Range).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Range
-func (this *Range) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -57,19 +39,6 @@ func (this *HbaseTarget) SetDefaults() {
 		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
-	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Table
-func (this *Table) SetDefaults() {
-	if this == nil {
-		return
 	}
 	return
 }

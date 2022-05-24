@@ -18,24 +18,12 @@ func (this *HbaseSource) _xxx_xxx_Validator_Validate_parameter() error {
 	return nil
 }
 
-func (this *HbaseSource) _xxx_xxx_Validator_Validate_table() error {
-	if dt, ok := interface{}(this.Table).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message model.HbaseSource
 func (this *HbaseSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_parameter(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_table(); err != nil {
 		return err
 	}
 	return nil
@@ -53,15 +41,6 @@ func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
-func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_range() error {
-	if dt, ok := interface{}(this.Range).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message model.HbaseReadParameter
 func (this *HbaseReadParameter) Validate() error {
 	if this == nil {
@@ -70,31 +49,11 @@ func (this *HbaseReadParameter) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_range(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Range
-func (this *Range) Validate() error {
-	if this == nil {
-		return nil
-	}
 	return nil
 }
 
 func (this *HbaseTarget) _xxx_xxx_Validator_Validate_parameter() error {
 	if dt, ok := interface{}(this.Parameter).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *HbaseTarget) _xxx_xxx_Validator_Validate_table() error {
-	if dt, ok := interface{}(this.Table).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -109,17 +68,6 @@ func (this *HbaseTarget) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_parameter(); err != nil {
 		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_table(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message model.Table
-func (this *Table) Validate() error {
-	if this == nil {
-		return nil
 	}
 	return nil
 }
