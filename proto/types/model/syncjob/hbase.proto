@@ -15,16 +15,6 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message HbaseSource {
     option (gosql.serialize) = {json: {}};
-    // hbase parameter
-    // @inject_tag: json:"parameter" 
-    HbaseReadParameter parameter = 1;
-    // hbase name
-    // @inject_tag: json:"name" 
-    string name = 2;
-}
-
-message HbaseReadParameter {
-    option (gosql.serialize) = {json: {}};
     // column
     // @inject_tag: json:"column"
     repeated Column column = 1;
@@ -60,17 +50,6 @@ message HbaseReadParameter {
 }
 
 message HbaseTarget {
-    option (gosql.serialize) = {json: {}};
-    // hbase parameter
-    // @inject_tag: json:"parameter"
-    HbaseWriteParameter parameter = 1;
-    // name
-    // @inject_tag: json:"name"
-    string name = 2;
-}
-
-
-message HbaseWriteParameter {
     option (gosql.serialize) = {json: {}};
     // @inject_tag: json:"column"
     repeated Column column = 1;
