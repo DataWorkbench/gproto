@@ -45,9 +45,9 @@ message CreateFlinkClusterInK8sV2 {
   // Cluster is the metadata info of flink cluster.
   model.FlinkCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
 
-  // vxnet id. Is required.
-  // @inject_tag: json:"vxnet_ids"
-  repeated string vxnet_ids = 3 [ (validator.field).tags.repeated = { unique: true, item: { string: { prefix: "vxnet-" } } } ];
+//  // vxnet id. Is required.
+//  // @inject_tag: json:"vxnet_id"
+//  string vxnet_id = 2 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
 }
 
 message DeleteFlinkClusterInK8sV2 {

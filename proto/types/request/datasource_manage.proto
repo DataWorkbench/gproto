@@ -207,9 +207,10 @@ message PingDataSourceConnection {
   // @inject_tag: json:"space_id" swaggerignore:"true"
   string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
+  // FIXME: remove in feature.
   // The source id.
   // @inject_tag: json:"network_id"
-  string network_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string network_id  = 2;
 
   // Stage At what stage did the user perform the test.
   // @inject_tag: json:"stage"

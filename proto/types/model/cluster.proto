@@ -112,5 +112,19 @@ message FlinkCluster {
   // @inject_tag: json:"network_info" gorm:"-"
   // FIXME: remove in feature.
   Network network_info = 16;
+
+  // The VPC that this cluster bounds, Only used when `enable_network`.
+  // @inject_tag: json:"router_id" gorm:"column:router_id;"
+  string router_id = 17 [
+    (validator.field).check_if = { field: "router_id"; tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { prefix: "rtr-" }
+  ];
+
+  // The VXNet that this cluster bounds, Only used when `enable_network`.
+  // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+  string vxnet_id = 18 [
+    (validator.field).check_if = { field: "vxnet_id"; tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { prefix: "vxnet-" }
+  ];
 }
 
