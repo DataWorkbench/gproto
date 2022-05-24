@@ -2075,6 +2075,50 @@ public final class PBModelCluster {
      * <code>.model.Network network_info = 16;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelNetwork.NetworkOrBuilder getNetworkInfoOrBuilder();
+
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+     * @return The routerId.
+     */
+    java.lang.String getRouterId();
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+     * @return The bytes for routerId.
+     */
+    com.google.protobuf.ByteString
+        getRouterIdBytes();
+
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+     * @return The vxnetId.
+     */
+    java.lang.String getVxnetId();
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+     * @return The bytes for vxnetId.
+     */
+    com.google.protobuf.ByteString
+        getVxnetIdBytes();
   }
   /**
    * <pre>
@@ -2101,6 +2145,8 @@ public final class PBModelCluster {
       networkId_ = "";
       createdBy_ = "";
       webUi_ = "";
+      routerId_ = "";
+      vxnetId_ = "";
     }
 
     @java.lang.Override
@@ -2243,6 +2289,18 @@ public final class PBModelCluster {
                 networkInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              routerId_ = s;
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vxnetId_ = s;
               break;
             }
             default: {
@@ -3005,6 +3063,102 @@ public final class PBModelCluster {
       return getNetworkInfo();
     }
 
+    public static final int ROUTER_ID_FIELD_NUMBER = 17;
+    private volatile java.lang.Object routerId_;
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+     * @return The routerId.
+     */
+    @java.lang.Override
+    public java.lang.String getRouterId() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+     * @return The bytes for routerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRouterIdBytes() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VXNET_ID_FIELD_NUMBER = 18;
+    private volatile java.lang.Object vxnetId_;
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+     * @return The vxnetId.
+     */
+    @java.lang.Override
+    public java.lang.String getVxnetId() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vxnetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+     * @return The bytes for vxnetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVxnetIdBytes() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vxnetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3066,6 +3220,12 @@ public final class PBModelCluster {
       }
       if (networkInfo_ != null) {
         output.writeMessage(16, getNetworkInfo());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, vxnetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3133,6 +3293,12 @@ public final class PBModelCluster {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getNetworkInfo());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, vxnetId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3190,6 +3356,10 @@ public final class PBModelCluster {
         if (!getNetworkInfo()
             .equals(other.getNetworkInfo())) return false;
       }
+      if (!getRouterId()
+          .equals(other.getRouterId())) return false;
+      if (!getVxnetId()
+          .equals(other.getVxnetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3243,6 +3413,10 @@ public final class PBModelCluster {
         hash = (37 * hash) + NETWORK_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getNetworkInfo().hashCode();
       }
+      hash = (37 * hash) + ROUTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouterId().hashCode();
+      hash = (37 * hash) + VXNET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVxnetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3424,6 +3598,10 @@ public final class PBModelCluster {
           networkInfo_ = null;
           networkInfoBuilder_ = null;
         }
+        routerId_ = "";
+
+        vxnetId_ = "";
+
         return this;
       }
 
@@ -3478,6 +3656,8 @@ public final class PBModelCluster {
         } else {
           result.networkInfo_ = networkInfoBuilder_.build();
         }
+        result.routerId_ = routerId_;
+        result.vxnetId_ = vxnetId_;
         onBuilt();
         return result;
       }
@@ -3580,6 +3760,14 @@ public final class PBModelCluster {
         }
         if (other.hasNetworkInfo()) {
           mergeNetworkInfo(other.getNetworkInfo());
+        }
+        if (!other.getRouterId().isEmpty()) {
+          routerId_ = other.routerId_;
+          onChanged();
+        }
+        if (!other.getVxnetId().isEmpty()) {
+          vxnetId_ = other.vxnetId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5135,6 +5323,208 @@ public final class PBModelCluster {
         }
         return networkInfoBuilder_;
       }
+
+      private java.lang.Object routerId_ = "";
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+       * @return The routerId.
+       */
+      public java.lang.String getRouterId() {
+        java.lang.Object ref = routerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+       * @return The bytes for routerId.
+       */
+      public com.google.protobuf.ByteString
+          getRouterIdBytes() {
+        java.lang.Object ref = routerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          routerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+       * @param value The routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouterId() {
+        
+        routerId_ = getDefaultInstance().getRouterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 17 [(.validator.field) = { ... }</code>
+       * @param value The bytes for routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vxnetId_ = "";
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+       * @return The vxnetId.
+       */
+      public java.lang.String getVxnetId() {
+        java.lang.Object ref = vxnetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vxnetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+       * @return The bytes for vxnetId.
+       */
+      public com.google.protobuf.ByteString
+          getVxnetIdBytes() {
+        java.lang.Object ref = vxnetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vxnetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+       * @param value The vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        vxnetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVxnetId() {
+        
+        vxnetId_ = getDefaultInstance().getVxnetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 18 [(.validator.field) = { ... }</code>
+       * @param value The bytes for vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        vxnetId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5220,7 +5610,7 @@ public final class PBModelCluster {
       "/flink_config.proto\"\205\001\n\013HostAliases\022,\n\005i" +
       "tems\030\001 \003(\0132\027.model.HostAliases.ItemB\004\342\337\037" +
       "\000\032@\n\004Item\022\030\n\002ip\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\006\001\022\036\n\010h" +
-      "ostname\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\007\001:\006\312\262\004\002\n\000\"\365\005\n\014" +
+      "ostname\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\007\001:\006\312\262\004\002\n\000\"\357\006\n\014" +
       "FlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
       "cfi-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022Q\n\007" +
@@ -5237,12 +5627,15 @@ public final class PBModelCluster {
       "\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001" +
       "\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006web" +
       "_ui\030\017 \001(\t\022$\n\014network_info\030\020 \001(\0132\016.model." +
-      "Network\"j\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007De" +
-      "leted\020\001\022\013\n\007Running\020\002\022\013\n\007Stopped\020\003\022\014\n\010Sta" +
-      "rting\020\004\022\r\n\tException\020\005\022\013\n\007Arrears\020\006Bi\n\"c" +
-      "om.dataomnis.gproto.types.pbmodelB\016PBMod" +
-      "elClusterP\000Z1github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodelb\006proto3"
+      "Network\022;\n\trouter_id\030\021 \001(\tB(\342\337\037\024\n\022\n\trout" +
+      "er_id\022\005\302\001\002\"\000\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022;\n\010vxnet_id" +
+      "\030\022 \001(\tB)\342\337\037\023\n\021\n\010vxnet_id\022\005\302\001\002\"\000\342\337\037\016\022\014\302\001\t" +
+      "\312\002\006vxnet-\"j\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007" +
+      "Deleted\020\001\022\013\n\007Running\020\002\022\013\n\007Stopped\020\003\022\014\n\010S" +
+      "tarting\020\004\022\r\n\tException\020\005\022\013\n\007Arrears\020\006Bi\n" +
+      "\"com.dataomnis.gproto.types.pbmodelB\016PBM" +
+      "odelClusterP\000Z1github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5269,7 +5662,7 @@ public final class PBModelCluster {
     internal_static_model_FlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FlinkCluster_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Name", "Version", "Status", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", "CreatedBy", "Created", "Updated", "WebUi", "NetworkInfo", });
+        new java.lang.String[] { "SpaceId", "Id", "Name", "Version", "Status", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", "CreatedBy", "Created", "Updated", "WebUi", "NetworkInfo", "RouterId", "VxnetId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

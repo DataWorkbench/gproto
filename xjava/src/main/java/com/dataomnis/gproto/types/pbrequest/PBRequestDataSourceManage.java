@@ -10381,21 +10381,23 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
+     * FIXME: remove in feature.
      * The source id.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 2;</code>
      * @return The networkId.
      */
     java.lang.String getNetworkId();
     /**
      * <pre>
+     * FIXME: remove in feature.
      * The source id.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 2;</code>
      * @return The bytes for networkId.
      */
     com.google.protobuf.ByteString
@@ -10793,11 +10795,12 @@ public final class PBRequestDataSourceManage {
     private volatile java.lang.Object networkId_;
     /**
      * <pre>
+     * FIXME: remove in feature.
      * The source id.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 2;</code>
      * @return The networkId.
      */
     @java.lang.Override
@@ -10815,11 +10818,12 @@ public final class PBRequestDataSourceManage {
     }
     /**
      * <pre>
+     * FIXME: remove in feature.
      * The source id.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 2;</code>
      * @return The bytes for networkId.
      */
     @java.lang.Override
@@ -11490,11 +11494,12 @@ public final class PBRequestDataSourceManage {
       private java.lang.Object networkId_ = "";
       /**
        * <pre>
+       * FIXME: remove in feature.
        * The source id.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 2;</code>
        * @return The networkId.
        */
       public java.lang.String getNetworkId() {
@@ -11511,11 +11516,12 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * The source id.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 2;</code>
        * @return The bytes for networkId.
        */
       public com.google.protobuf.ByteString
@@ -11533,11 +11539,12 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * The source id.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 2;</code>
        * @param value The networkId to set.
        * @return This builder for chaining.
        */
@@ -11553,11 +11560,12 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * The source id.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearNetworkId() {
@@ -11568,11 +11576,12 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * The source id.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 2;</code>
        * @param value The bytes for networkId to set.
        * @return This builder for chaining.
        */
@@ -13944,27 +13953,27 @@ public final class PBRequestDataSourceManage {
       "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013" +
       "\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026J" +
       "\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022\017" +
-      "\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConnec" +
+      "\n\007verbose\030\007 \001(\005\"\235\003\n\030PingDataSourceConnec" +
       "tion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n" +
-      "\005stage\030\003 \001(\0162\'.request.PingDataSourceCon" +
-      "nection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_i" +
-      "d\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001" +
-      "\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.TypeB" +
-      "!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003ur" +
-      "l\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n\005" +
-      "stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPh" +
-      "aseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCre" +
-      "ate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsour" +
-      "ce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035Des" +
-      "cribeDataSourceTableSchema\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030" +
-      "\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis" +
-      ".gproto.types.pbrequestB\031PBRequestDataSo" +
-      "urceManageP\000Z3github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbrequestb\006proto3"
+      "ks-\022\022\n\nnetwork_id\030\002 \001(\t\022E\n\005stage\030\003 \001(\0162\'" +
+      ".request.PingDataSourceConnection.StageB" +
+      "\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_id\030\004 \001(\tB \342\337\037\020\n" +
+      "\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001\024\022G\n\004type\030\005 \001(" +
+      "\0162\026.model.DataSource.TypeB!\342\337\037\020\n\016\n\005stage" +
+      "\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003url\030\006 \001(\0132\025.mode" +
+      "l.DataSource.URLB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337" +
+      "\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPhaseUnset\020\000\022\020\n\014" +
+      "BeforeCreate\020\001\022\017\n\013AfterCreate\020\002\"i\n\030Descr" +
+      "ibeDataSourceTables\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035DescribeDataSourc" +
+      "eTableSchema\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004som-\022$\n\ntable_name\030\003 \001(\tB\020\342\337\037\014\022\n\302" +
+      "\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.gproto.types." +
+      "pbrequestB\031PBRequestDataSourceManageP\000Z3" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -310,16 +310,6 @@ func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_task_cu() error {
 	return nil
 }
 
-func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("CreateFlinkCluster", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	if !(strings.HasPrefix(this.NetworkId, "net-")) {
-		return protovalidator.FieldError1("CreateFlinkCluster", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
-	}
-	return nil
-}
-
 func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_host_aliases() error {
 	if dt, ok := interface{}(this.HostAliases).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -365,9 +355,6 @@ func (this *CreateFlinkCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_task_cu(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host_aliases(); err != nil {
@@ -446,16 +433,6 @@ func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_task_cu() error {
 	return nil
 }
 
-func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("UpdateFlinkCluster", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	if !(strings.HasPrefix(this.NetworkId, "net-")) {
-		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
-	}
-	return nil
-}
-
 func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_host_aliases() error {
 	if dt, ok := interface{}(this.HostAliases).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -498,9 +475,6 @@ func (this *UpdateFlinkCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_task_cu(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host_aliases(); err != nil {

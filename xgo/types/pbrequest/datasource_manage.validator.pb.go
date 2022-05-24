@@ -474,13 +474,6 @@ func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_space_id() err
 	return nil
 }
 
-func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("PingDataSourceConnection", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_PingDataSourceConnection_InEnums_Stage = map[PingDataSourceConnection_Stage]bool{0: true, 1: true, 2: true}
 
 func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_stage() error {
@@ -555,9 +548,6 @@ func (this *PingDataSourceConnection) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_stage(); err != nil {

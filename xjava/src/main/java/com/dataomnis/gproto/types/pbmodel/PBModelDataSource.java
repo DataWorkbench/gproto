@@ -7927,6 +7927,7 @@ public final class PBModelDataSource {
 
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
@@ -7937,6 +7938,7 @@ public final class PBModelDataSource {
     java.lang.String getNetworkId();
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
@@ -8544,6 +8546,7 @@ public final class PBModelDataSource {
     private volatile java.lang.Object networkId_;
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
@@ -8566,6 +8569,7 @@ public final class PBModelDataSource {
     }
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
@@ -9424,6 +9428,7 @@ public final class PBModelDataSource {
       private java.lang.Object networkId_ = "";
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
@@ -9445,6 +9450,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
@@ -9467,6 +9473,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
@@ -9487,6 +9494,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
@@ -9502,6 +9510,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>

@@ -415,6 +415,7 @@ type DataSourceConnection struct {
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// DataSource ID.
 	SourceId string `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id" gorm:"column:source_id;primaryKey;"`
+	// FIXME: remove in feature.
 	// Source ID, unique within a region.
 	NetworkId string `protobuf:"bytes,3,opt,name=network_id,json=networkId,proto3" json:"network_id" gorm:"column:network_id;"`
 	// Status, 1 => "Deleted", 2 => "Enabled".

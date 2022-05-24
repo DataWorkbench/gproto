@@ -3474,51 +3474,6 @@ public final class PBRequestEngineManage {
      * <code>.model.FlinkCluster info = 1 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkClusterOrBuilder getInfoOrBuilder();
-
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the vxnetIds.
-     */
-    java.util.List<java.lang.String>
-        getVxnetIdsList();
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of vxnetIds.
-     */
-    int getVxnetIdsCount();
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The vxnetIds at the given index.
-     */
-    java.lang.String getVxnetIds(int index);
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the vxnetIds at the given index.
-     */
-    com.google.protobuf.ByteString
-        getVxnetIdsBytes(int index);
   }
   /**
    * Protobuf type {@code request.CreateFlinkClusterInK8sV2}
@@ -3533,7 +3488,6 @@ public final class PBRequestEngineManage {
       super(builder);
     }
     private CreateFlinkClusterInK8sV2() {
-      vxnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -3556,7 +3510,6 @@ public final class PBRequestEngineManage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3580,15 +3533,6 @@ public final class PBRequestEngineManage {
 
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                vxnetIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              vxnetIds_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3604,9 +3548,6 @@ public final class PBRequestEngineManage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          vxnetIds_ = vxnetIds_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3662,61 +3603,6 @@ public final class PBRequestEngineManage {
       return getInfo();
     }
 
-    public static final int VXNET_IDS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList vxnetIds_;
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @return A list containing the vxnetIds.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getVxnetIdsList() {
-      return vxnetIds_;
-    }
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @return The count of vxnetIds.
-     */
-    public int getVxnetIdsCount() {
-      return vxnetIds_.size();
-    }
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The vxnetIds at the given index.
-     */
-    public java.lang.String getVxnetIds(int index) {
-      return vxnetIds_.get(index);
-    }
-    /**
-     * <pre>
-     * vxnet id. Is required.
-     * &#64;inject_tag: json:"vxnet_ids"
-     * </pre>
-     *
-     * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the vxnetIds at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getVxnetIdsBytes(int index) {
-      return vxnetIds_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3734,9 +3620,6 @@ public final class PBRequestEngineManage {
       if (info_ != null) {
         output.writeMessage(1, getInfo());
       }
-      for (int i = 0; i < vxnetIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vxnetIds_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -3749,14 +3632,6 @@ public final class PBRequestEngineManage {
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getInfo());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < vxnetIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(vxnetIds_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getVxnetIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3778,8 +3653,6 @@ public final class PBRequestEngineManage {
         if (!getInfo()
             .equals(other.getInfo())) return false;
       }
-      if (!getVxnetIdsList()
-          .equals(other.getVxnetIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3794,10 +3667,6 @@ public final class PBRequestEngineManage {
       if (hasInfo()) {
         hash = (37 * hash) + INFO_FIELD_NUMBER;
         hash = (53 * hash) + getInfo().hashCode();
-      }
-      if (getVxnetIdsCount() > 0) {
-        hash = (37 * hash) + VXNET_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getVxnetIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3938,8 +3807,6 @@ public final class PBRequestEngineManage {
           info_ = null;
           infoBuilder_ = null;
         }
-        vxnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3966,17 +3833,11 @@ public final class PBRequestEngineManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8sV2 buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8sV2 result = new com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8sV2(this);
-        int from_bitField0_ = bitField0_;
         if (infoBuilder_ == null) {
           result.info_ = info_;
         } else {
           result.info_ = infoBuilder_.build();
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          vxnetIds_ = vxnetIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.vxnetIds_ = vxnetIds_;
         onBuilt();
         return result;
       }
@@ -4028,16 +3889,6 @@ public final class PBRequestEngineManage {
         if (other.hasInfo()) {
           mergeInfo(other.getInfo());
         }
-        if (!other.vxnetIds_.isEmpty()) {
-          if (vxnetIds_.isEmpty()) {
-            vxnetIds_ = other.vxnetIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureVxnetIdsIsMutable();
-            vxnetIds_.addAll(other.vxnetIds_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4066,7 +3917,6 @@ public final class PBRequestEngineManage {
         }
         return this;
       }
-      private int bitField0_;
 
       private com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster info_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4221,161 +4071,6 @@ public final class PBRequestEngineManage {
           info_ = null;
         }
         return infoBuilder_;
-      }
-
-      private com.google.protobuf.LazyStringList vxnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureVxnetIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          vxnetIds_ = new com.google.protobuf.LazyStringArrayList(vxnetIds_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @return A list containing the vxnetIds.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getVxnetIdsList() {
-        return vxnetIds_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @return The count of vxnetIds.
-       */
-      public int getVxnetIdsCount() {
-        return vxnetIds_.size();
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param index The index of the element to return.
-       * @return The vxnetIds at the given index.
-       */
-      public java.lang.String getVxnetIds(int index) {
-        return vxnetIds_.get(index);
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the vxnetIds at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getVxnetIdsBytes(int index) {
-        return vxnetIds_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param index The index to set the value at.
-       * @param value The vxnetIds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVxnetIds(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureVxnetIdsIsMutable();
-        vxnetIds_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The vxnetIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addVxnetIds(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureVxnetIdsIsMutable();
-        vxnetIds_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param values The vxnetIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllVxnetIds(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureVxnetIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, vxnetIds_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVxnetIds() {
-        vxnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * vxnet id. Is required.
-       * &#64;inject_tag: json:"vxnet_ids"
-       * </pre>
-       *
-       * <code>repeated string vxnet_ids = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the vxnetIds to add.
-       * @return This builder for chaining.
-       */
-      public Builder addVxnetIdsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureVxnetIdsIsMutable();
-        vxnetIds_.add(value);
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7497,24 +7192,23 @@ public final class PBRequestEngineManage {
       "NetworkBrokerInK8s\022)\n\004info\030\005 \001(\0132\016.model" +
       ".NetworkB\013\342\337\037\007\022\005\342\001\002\020\001\"F\n\025DeleteNamespace" +
       "sInK8s\022-\n\tspace_ids\030\001 \003(\tB\032\342\337\037\026\022\024\352\001\021P\001Z\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\"y\n\031CreateFlinkClusterInK8s" +
+      "\302\001\n\360\001\024\312\002\004wks-\"K\n\031CreateFlinkClusterInK8s" +
       "V2\022.\n\004info\030\001 \001(\0132\023.model.FlinkClusterB\013\342" +
-      "\337\037\007\022\005\342\001\002\020\001\022,\n\tvxnet_ids\030\003 \003(\tB\031\342\337\037\025\022\023\352\001\020" +
-      "P\001Z\014\302\001\t\312\002\006vxnet-\"\221\001\n\031DeleteFlinkClusterI" +
-      "nK8sV2\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004cfi-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vx" +
-      "net-\"\216\001\n\032CreateNetworkBrokerInK8sV2\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\tro" +
-      "uter_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet" +
-      "_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032Delete" +
-      "NetworkBrokerInK8sV2\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016" +
-      "\022\014\302\001\t\312\002\006vxnet-Bt\n$com.dataomnis.gproto.t" +
-      "ypes.pbrequestB\025PBRequestEngineManageP\000Z" +
-      "3github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbrequestb\006proto3"
+      "\337\037\007\022\005\342\001\002\020\001\"\221\001\n\031DeleteFlinkClusterInK8sV2" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-" +
+      "\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216" +
+      "\001\n\032CreateNetworkBrokerInK8sV2\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_i" +
+      "d\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 " +
+      "\001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032DeleteNetwor" +
+      "kBrokerInK8sV2\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\tB\020\342\337\037\014\022\n" +
+      "\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312" +
+      "\002\006vxnet-Bt\n$com.dataomnis.gproto.types.p" +
+      "brequestB\025PBRequestEngineManageP\000Z3githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "equestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7558,7 +7252,7 @@ public final class PBRequestEngineManage {
     internal_static_request_CreateFlinkClusterInK8sV2_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFlinkClusterInK8sV2_descriptor,
-        new java.lang.String[] { "Info", "VxnetIds", });
+        new java.lang.String[] { "Info", });
     internal_static_request_DeleteFlinkClusterInK8sV2_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_request_DeleteFlinkClusterInK8sV2_fieldAccessorTable = new
