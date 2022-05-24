@@ -14,37 +14,11 @@ func (this *HbaseSource) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.HbaseReadParameter
-func (this *HbaseReadParameter) SetDefaults() {
-	if this == nil {
-		return
-	}
 	return
 }
 
 // Set default value for message model.HbaseTarget
 func (this *HbaseTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.HbaseWriteParameter
-func (this *HbaseWriteParameter) SetDefaults() {
 	if this == nil {
 		return
 	}

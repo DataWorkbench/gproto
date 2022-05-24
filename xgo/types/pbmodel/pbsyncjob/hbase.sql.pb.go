@@ -25,38 +25,12 @@ func (t *HbaseSource) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *HbaseReadParameter) Scan(val interface{}) error {
-	return json.Unmarshal(val.([]byte), t)
-}
-
-// Value for implements driver.Valuer (- database/sql/driver)
-func (t *HbaseReadParameter) Value() (driver.Value, error) {
-	if t == nil {
-		return nil, nil
-	}
-	return json.Marshal(t)
-}
-
-// Scan for implements sql.Scanner (- database/sql).
 func (t *HbaseTarget) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
 func (t *HbaseTarget) Value() (driver.Value, error) {
-	if t == nil {
-		return nil, nil
-	}
-	return json.Marshal(t)
-}
-
-// Scan for implements sql.Scanner (- database/sql).
-func (t *HbaseWriteParameter) Scan(val interface{}) error {
-	return json.Unmarshal(val.([]byte), t)
-}
-
-// Value for implements driver.Valuer (- database/sql/driver)
-func (t *HbaseWriteParameter) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
