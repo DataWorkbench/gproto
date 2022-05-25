@@ -510,8 +510,8 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_files() error {
 }
 
 func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_requirements() error {
-	if !(len(this.PyRequirements) <= 1) {
-		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'py_requirements' must be less than or equal to '1'", strconv.Itoa(len(this.PyRequirements)))
+	if !(len(this.PyRequirements) <= 100) {
+		return protovalidator.FieldError1("StreamJobArgs", "the length of field 'py_requirements' must be less than or equal to '100'", strconv.Itoa(len(this.PyRequirements)))
 	}
 	for _, item := range this.PyRequirements {
 		_ = item // To avoid unused panics.
@@ -523,8 +523,8 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_requirements() error {
 }
 
 func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_py_executable() error {
-	if !(len(this.PyExecutable) == 255) {
-		return protovalidator.FieldError1("StreamJobArgs", "the byte length of field 'py_executable' must be equal to '255'", protovalidator.StringByteLenToString(this.PyExecutable))
+	if !(len(this.PyExecutable) <= 255) {
+		return protovalidator.FieldError1("StreamJobArgs", "the byte length of field 'py_executable' must be less than or equal to '255'", protovalidator.StringByteLenToString(this.PyExecutable))
 	}
 	return nil
 }
