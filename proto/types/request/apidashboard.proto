@@ -229,8 +229,6 @@ message UpdateAuthKey {
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
 
   string name = 2;
-
-  string secret_key = 3;
 }
 
 message ListAuthKeys {

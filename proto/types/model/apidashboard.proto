@@ -130,6 +130,8 @@ message ApiServiceEntity {
   string domain = 7;
   // @inject_tag: json:"user_id" gorm:"column:user_id;"
   string user_id = 8 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"api_count" gorm:"column:api_count;"
+  int32 api_count = 9;
 }
 
 message AuthKeyEntity {
@@ -144,8 +146,6 @@ message AuthKeyEntity {
   string name = 4;
   // @inject_tag: json:"secret_key" gorm:"column:secret_key;"
   string secret_key = 5;
-  // @inject_tag: json:"is_applied" gorm:"column:is_applied;"
-  bool is_applied = 6;
 }
 
 message Upstream {
