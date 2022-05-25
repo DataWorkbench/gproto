@@ -745,6 +745,7 @@ type PingDataSourceConnection struct {
 	// The source id.
 	NetworkId string `protobuf:"bytes,2,opt,name=network_id,json=networkId,proto3" json:"network_id"`
 	// Stage At what stage did the user perform the test.
+	// 1 for BeforeCreate. 2 for AfterCreate.
 	Stage PingDataSourceConnection_Stage `protobuf:"varint,3,opt,name=stage,proto3,enum=request.PingDataSourceConnection_Stage" json:"stage"`
 	// The source id.
 	SourceId string `protobuf:"bytes,4,opt,name=source_id,json=sourceId,proto3" json:"source_id"`

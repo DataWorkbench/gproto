@@ -10406,6 +10406,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * Stage At what stage did the user perform the test.
+     * 1 for BeforeCreate. 2 for AfterCreate.
      * &#64;inject_tag: json:"stage"
      * </pre>
      *
@@ -10416,6 +10417,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * Stage At what stage did the user perform the test.
+     * 1 for BeforeCreate. 2 for AfterCreate.
      * &#64;inject_tag: json:"stage"
      * </pre>
      *
@@ -10846,6 +10848,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * Stage At what stage did the user perform the test.
+     * 1 for BeforeCreate. 2 for AfterCreate.
      * &#64;inject_tag: json:"stage"
      * </pre>
      *
@@ -10858,6 +10861,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * Stage At what stage did the user perform the test.
+     * 1 for BeforeCreate. 2 for AfterCreate.
      * &#64;inject_tag: json:"stage"
      * </pre>
      *
@@ -11601,6 +11605,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * Stage At what stage did the user perform the test.
+       * 1 for BeforeCreate. 2 for AfterCreate.
        * &#64;inject_tag: json:"stage"
        * </pre>
        *
@@ -11613,6 +11618,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * Stage At what stage did the user perform the test.
+       * 1 for BeforeCreate. 2 for AfterCreate.
        * &#64;inject_tag: json:"stage"
        * </pre>
        *
@@ -11629,6 +11635,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * Stage At what stage did the user perform the test.
+       * 1 for BeforeCreate. 2 for AfterCreate.
        * &#64;inject_tag: json:"stage"
        * </pre>
        *
@@ -11644,6 +11651,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * Stage At what stage did the user perform the test.
+       * 1 for BeforeCreate. 2 for AfterCreate.
        * &#64;inject_tag: json:"stage"
        * </pre>
        *
@@ -11663,6 +11671,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * Stage At what stage did the user perform the test.
+       * 1 for BeforeCreate. 2 for AfterCreate.
        * &#64;inject_tag: json:"stage"
        * </pre>
        *
