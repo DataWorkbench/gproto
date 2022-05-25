@@ -213,6 +213,7 @@ message PingDataSourceConnection {
   string network_id  = 2;
 
   // Stage At what stage did the user perform the test.
+  // 1 for BeforeCreate. 2 for AfterCreate.
   // @inject_tag: json:"stage"
   Stage stage = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true }  ];
 
