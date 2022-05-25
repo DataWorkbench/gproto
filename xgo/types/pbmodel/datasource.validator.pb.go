@@ -599,16 +599,6 @@ func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_source_id() error 
 	return nil
 }
 
-func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("DataSourceConnection", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	if !(strings.HasPrefix(this.NetworkId, "net-")) {
-		return protovalidator.FieldError1("DataSourceConnection", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_DataSourceConnection_InEnums_Status = map[DataSourceConnection_Status]bool{0: true, 1: true, 2: true}
 
 func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_status() error {
@@ -658,9 +648,6 @@ func (this *DataSourceConnection) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
