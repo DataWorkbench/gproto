@@ -233,7 +233,7 @@ message DataSourceConnection {
   // FIXME: remove in feature.
   // Source ID, unique within a region.
   // @inject_tag: json:"network_id" gorm:"column:network_id;"
-  string network_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
+  string network_id = 3;
 
   // Status, 1 => "Deleted", 2 => "Enabled".
   // @inject_tag: json:"status" gorm:"column:status;"
