@@ -33,13 +33,8 @@ func (this *SubmitFlinkJobInteractive) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Args != nil {
-		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Code != nil {
-		if dt, ok := interface{}(this.Code).(interface{ SetDefaults() }); ok {
+	if this.Job != nil {
+		if dt, ok := interface{}(this.Job).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

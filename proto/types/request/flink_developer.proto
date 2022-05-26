@@ -42,33 +42,13 @@ message SubmitFlinkJob {
 }
 
 message SubmitFlinkJobInteractive{
-  // JobID
-  // @inject_tag: json:"flink_id"
-  string flink_id = 1  [(validator.field).tags.string = {byte_len_eq: 32}];
-
-  // The internal access address of flink cluster.
-  // @inject_tag: json:"flink_url"
-  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
-
-  // The version of flink cluster.
-  // @inject_tag: json:"flink_version"
-  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
-
-  // Savepoint Path
-  // @inject_tag: json:"savepoint_path"
-  string savepoint_path = 4 [(validator.field) = {}];
-
-  // ENV
-  // @inject_tag: json:"args"
-  model.StreamJobArgs args = 5  [(validator.field) = {}];
-
-  // code
-  // @inject_tag: json:"code"
-  model.StreamJobCode code = 6  [(validator.field) = {}];
+  // SubmitFlinkJob
+  // @inject_tag: json:"submit_flink_job"
+  SubmitFlinkJob job = 1 [(validator.field) = {}];
 
   // cancel
   // @inject_tag: json:"cancel_job"
-  bool cancel_job = 7 [(validator.field) = {}];
+  bool cancel_job = 2 [(validator.field) = {}];
 }
 
 message ExecuteFlinkSql{
