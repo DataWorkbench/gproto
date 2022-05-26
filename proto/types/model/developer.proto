@@ -51,7 +51,7 @@ message JobInfo {
 message InteractiveMessage{
   enum Op{
     Unset = 0;
-    init =1;
+    Init =1;
     Fetch = 2;
     Cancel = 3;
   }

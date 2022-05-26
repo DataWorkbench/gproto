@@ -1870,9 +1870,9 @@ public final class PBModelJobManage {
        */
       Unset(0),
       /**
-       * <code>init = 1;</code>
+       * <code>Init = 1;</code>
        */
-      init(1),
+      Init(1),
       /**
        * <code>Fetch = 2;</code>
        */
@@ -1889,9 +1889,9 @@ public final class PBModelJobManage {
        */
       public static final int Unset_VALUE = 0;
       /**
-       * <code>init = 1;</code>
+       * <code>Init = 1;</code>
        */
-      public static final int init_VALUE = 1;
+      public static final int Init_VALUE = 1;
       /**
        * <code>Fetch = 2;</code>
        */
@@ -1927,7 +1927,7 @@ public final class PBModelJobManage {
       public static Op forNumber(int value) {
         switch (value) {
           case 0: return Unset;
-          case 1: return init;
+          case 1: return Init;
           case 2: return Fetch;
           case 3: return Cancel;
           default: return null;
@@ -2478,7 +2478,7 @@ public final class PBModelJobManage {
       "\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
       "\"\205\001\n\022InteractiveMessage\022=\n\010operator\030\001 \001(" +
       "\0162\034.model.InteractiveMessage.OpB\r\342\337\037\t\022\007\332" +
-      "\001\0040\000X\001\"0\n\002Op\022\t\n\005Unset\020\000\022\010\n\004init\020\001\022\t\n\005Fet" +
+      "\001\0040\000X\001\"0\n\002Op\022\t\n\005Unset\020\000\022\010\n\004Init\020\001\022\t\n\005Fet" +
       "ch\020\002\022\n\n\006Cancel\020\003Bk\n\"com.dataomnis.gproto" +
       ".types.pbmodelB\020PBModelJobManageP\000Z1gith" +
       "ub.com/DataWorkbench/gproto/xgo/types/pb" +
