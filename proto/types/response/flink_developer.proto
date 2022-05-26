@@ -30,24 +30,14 @@ message SubmitFlinkJob {
   string message = 2 [(validator.field) = {}];
 }
 
+message SubmitFlinkJobInteractive{
+  string message = 1 [(validator.field) = {}];
+}
+
 message ExecuteFlinkSql{
   // message
   // @inject_tag: json:"message"
   repeated string message = 1[(validator.field) = {}];
-}
-
-message GetFlinkJobStatus {
-  // IsExists indicates the job is exists.
-  // @inject_tag: json:"is_exists"
-  bool is_exists = 1;
-
-  // The flink job status.
-  // @inject_tag: json:"status"
-  flink.FlinkJob.Status status = 2 [(validator.field) = {}];
-
-  // job message
-  // @inject_tag: json:"message"
-  string message = 3 [(validator.field) = {}];
 }
 
 message GetFlinkJobsByUrl{

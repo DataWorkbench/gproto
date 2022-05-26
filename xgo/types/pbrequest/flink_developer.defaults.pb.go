@@ -36,22 +36,6 @@ func (this *ExecuteFlinkSql) SetDefaults() {
 	return
 }
 
-// Set default value for message request.GetFlinkJobStatus
-func (this *GetFlinkJobStatus) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.CancelFlinkJob
-func (this *CancelFlinkJob) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.ValidateFlinkJob
 func (this *ValidateFlinkJob) SetDefaults() {
 	if this == nil {

@@ -47,34 +47,6 @@ message ExecuteFlinkSql{
   string content = 1[(validator.field) = {}];
 }
 
-message GetFlinkJobStatus {
-  // flink job id
-  // @inject_tag: json:"flink_id"
-  string flink_id = 1 [(validator.field).tags.string = {byte_len_eq: 32}];
-
-  // The internal access address of flink cluster.
-  // @inject_tag: json:"flink_url"
-  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
-
-  // The version of flink cluster.
-  // @inject_tag: json:"flink_version"
-  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
-}
-
-message CancelFlinkJob {
-  // flink job id
-  // @inject_tag: json:"flink_id"
-  string flink_id = 1 [(validator.field).tags.string = {byte_len_eq: 32}];
-
-  // The internal access address of flink cluster.
-  // @inject_tag: json:"flink_url"
-  string flink_url = 2 [(validator.field).tags.string = {ne: ""}];
-
-  // The version of flink cluster.
-  // @inject_tag: json:"flink_version"
-  string flink_version = 3 [(validator.field).tags.string = {ne: ""}];
-}
-
 message ValidateFlinkJob {
   // code
   // @inject_tag: json:"code"

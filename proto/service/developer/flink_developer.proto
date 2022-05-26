@@ -17,9 +17,7 @@ import "proto/types/response/flink_developer.proto";
 service FlinkDeveloper {
   rpc SubmitFlinkJob(request.SubmitFlinkJob) returns (response.SubmitFlinkJob) {}
 
-  rpc GetFlinkJobStatus(request.GetFlinkJobStatus) returns (response.GetFlinkJobStatus) {}
-
-  rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct) {}
+  rpc SubmitFlinkJobInteractive(request.SubmitFlinkJob) returns (stream response.SubmitFlinkJobInteractive){}
 
   rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
 
