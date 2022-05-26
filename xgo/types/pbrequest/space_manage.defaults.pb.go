@@ -85,3 +85,19 @@ func (this *DescribeNetworkConfig) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.AttachVPCToWorkspace
+func (this *AttachVPCToWorkspace) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DetachVPCFromWorkspace
+func (this *DetachVPCFromWorkspace) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

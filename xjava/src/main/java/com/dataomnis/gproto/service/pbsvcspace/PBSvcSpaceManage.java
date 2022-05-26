@@ -27,7 +27,7 @@ public final class PBSvcSpaceManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/space_" +
       "manage.proto\032\'proto/types/response/space" +
-      "_manage.proto2\365\005\n\013SpaceManage\022E\n\016ListWor" +
+      "_manage.proto2\223\007\n\013SpaceManage\022E\n\016ListWor" +
       "kspaces\022\027.request.ListWorkspaces\032\030.respo" +
       "nse.ListWorkspaces\"\000\022K\n\024ListMemberWorksp" +
       "aces\022\027.request.ListWorkspaces\032\030.response" +
@@ -46,10 +46,14 @@ public final class PBSvcSpaceManage {
       "ckPermission\032\031.response.CheckPermission\"" +
       "\000\022Z\n\025DescribeNetworkConfig\022\036.request.Des" +
       "cribeNetworkConfig\032\037.response.DescribeNe" +
-      "tworkConfig\"\000Bu\n\'com.dataomnis.gproto.se" +
-      "rvice.pbsvcspaceB\020PBSvcSpaceManageP\000Z6gi" +
-      "thub.com/DataWorkbench/gproto/xgo/servic" +
-      "e/pbsvcspaceb\006proto3"
+      "tworkConfig\"\000\022K\n\024AttachVPCToWorkspace\022\035." +
+      "request.AttachVPCToWorkspace\032\022.model.Emp" +
+      "tyStruct\"\000\022O\n\026DetachVPCFromWorkspace\022\037.r" +
+      "equest.DetachVPCFromWorkspace\032\022.model.Em" +
+      "ptyStruct\"\000Bu\n\'com.dataomnis.gproto.serv" +
+      "ice.pbsvcspaceB\020PBSvcSpaceManageP\000Z6gith" +
+      "ub.com/DataWorkbench/gproto/xgo/service/" +
+      "pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

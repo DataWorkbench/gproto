@@ -414,3 +414,65 @@ func (this *DescribeNetworkConfig) Validate() error {
 	}
 	return nil
 }
+
+func (this *AttachVPCToWorkspace) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AttachVPCToWorkspace", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AttachVPCToWorkspace", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *AttachVPCToWorkspace) _xxx_xxx_Validator_Validate_router_id() error {
+	if !(strings.HasPrefix(this.RouterId, "rtr-")) {
+		return protovalidator.FieldError1("AttachVPCToWorkspace", "the value of field 'router_id' must start with string 'rtr-'", this.RouterId)
+	}
+	return nil
+}
+
+func (this *AttachVPCToWorkspace) _xxx_xxx_Validator_Validate_vxnet_id() error {
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("AttachVPCToWorkspace", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
+	}
+	return nil
+}
+
+// Set default value for message request.AttachVPCToWorkspace
+func (this *AttachVPCToWorkspace) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_router_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_vxnet_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DetachVPCFromWorkspace) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DetachVPCFromWorkspace", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DetachVPCFromWorkspace", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+// Set default value for message request.DetachVPCFromWorkspace
+func (this *DetachVPCFromWorkspace) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	return nil
+}
