@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/stream_job.proto";
+import "proto/types/model/developer.proto";
 
 message SubmitFlinkJob {
   // JobID
@@ -46,19 +47,23 @@ message SubmitFlinkJobInteractive{
   // @inject_tag: json:"submit_flink_job"
   SubmitFlinkJob job = 1 [(validator.field) = {}];
 
-  // cancel
-  // @inject_tag: json:"cancel_job"
-  bool cancel_job = 2 [(validator.field) = {}];
-}
-
-message ExecuteFlinkSql{
-  // The sql or init sql executor message
-  // @inject_tag: json:"content"
-  string content = 1[(validator.field) = {}];
+  // operator for interactive submit
+  // @inject_tag: json:"op"
+  model.InteractiveMessage.Op op = 2 [(validator.field) = {}];
 }
 
 message ValidateFlinkJob {
   // code
   // @inject_tag: json:"code"
   model.StreamJobCode code = 1;
+}
+
+message ValidateFlinkJob_v2{
+  // args
+  // @inject_tag: json:"args"
+  model.StreamJobArgs args = 1 [(validator.field) = {}];
+
+  // code
+  // @inject_tag: json:"code"
+  model.StreamJobCode code = 2;
 }

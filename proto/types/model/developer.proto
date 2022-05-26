@@ -47,3 +47,16 @@ message JobInfo {
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
 }
+
+message InteractiveMessage{
+  enum Op{
+    Unset = 0;
+    init =1;
+    Fetch = 2;
+    Cancel = 3;
+  }
+
+  // Op
+  // @inject_tag: json:"op"
+  Op operator = 1[(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+}

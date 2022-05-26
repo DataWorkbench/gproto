@@ -34,25 +34,6 @@ message SubmitFlinkJobInteractive{
   string message = 1 [(validator.field) = {}];
 }
 
-message ExecuteFlinkSql{
-  // message
-  // @inject_tag: json:"message"
-  repeated string message = 1[(validator.field) = {}];
-}
-
-message GetFlinkJobsByUrl{
-  message FlinkJob{
-    string jid = 1;
-    string name = 2;
-    string state = 3;
-    int64 start_time = 4;
-    int64 end_time = 5;
-  }
-  // jobs message
-  // @inject_tag: json:"jobs"
-  repeated FlinkJob jobs = 1;
-}
-
 // GetStreamJobCode used as reply parameters in RPC.
 message ValidateFlinkJob {
   enum Result {

@@ -21,5 +21,5 @@ service FlinkDeveloper {
 
   rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
 
-  rpc ExecuteFlinkSql(stream request.ExecuteFlinkSql) returns(stream response.ExecuteFlinkSql) {}
+  rpc ValidateFlinkJob_v2(request.ValidateFlinkJob_v2) returns(response.ValidateFlinkJob){}
 }
