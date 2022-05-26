@@ -73,6 +73,68 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_flink_id() error {
+	if !(len(this.FlinkId) == 32) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the byte length of field 'flink_id' must be equal to '32'", protovalidator.StringByteLenToString(this.FlinkId))
+	}
+	return nil
+}
+
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_flink_url() error {
+	if !(this.FlinkUrl != "") {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
+	}
+	return nil
+}
+
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_flink_version() error {
+	if !(this.FlinkVersion != "") {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
+	}
+	return nil
+}
+
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_args() error {
+	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_code() error {
+	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.SubmitFlinkJobInteractive
+func (this *SubmitFlinkJobInteractive) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
+		return err
+	}
+	return nil
+}
+
 // Set default value for message request.ExecuteFlinkSql
 func (this *ExecuteFlinkSql) Validate() error {
 	if this == nil {
