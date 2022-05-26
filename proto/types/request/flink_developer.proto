@@ -59,11 +59,20 @@ message ValidateFlinkJob {
 }
 
 message ValidateFlinkJob_v2{
+  // The internal access address of flink cluster.
+  // @inject_tag: json:"flink_url"
+  string flink_url = 1 [(validator.field).tags.string = {ne: ""}];
+
+  // The version of flink cluster.
+  // @inject_tag: json:"flink_version"
+  string flink_version = 2 [(validator.field).tags.string = {ne: ""}];
+
   // args
   // @inject_tag: json:"args"
-  model.StreamJobArgs args = 1 [(validator.field) = {}];
+  model.StreamJobArgs args = 3 [(validator.field) = {}];
 
   // code
   // @inject_tag: json:"code"
-  model.StreamJobCode code = 2;
+  model.StreamJobCode code = 4;
+
 }

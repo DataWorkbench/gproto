@@ -3318,11 +3318,55 @@ public final class PBRequestFlinkDeveloper {
 
     /**
      * <pre>
+     * The internal access address of flink cluster.
+     * &#64;inject_tag: json:"flink_url"
+     * </pre>
+     *
+     * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    java.lang.String getFlinkUrl();
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * &#64;inject_tag: json:"flink_url"
+     * </pre>
+     *
+     * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    com.google.protobuf.ByteString
+        getFlinkUrlBytes();
+
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * &#64;inject_tag: json:"flink_version"
+     * </pre>
+     *
+     * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    java.lang.String getFlinkVersion();
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * &#64;inject_tag: json:"flink_version"
+     * </pre>
+     *
+     * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    com.google.protobuf.ByteString
+        getFlinkVersionBytes();
+
+    /**
+     * <pre>
      * args
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      * @return Whether the args field is set.
      */
     boolean hasArgs();
@@ -3332,7 +3376,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      * @return The args.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getArgs();
@@ -3342,7 +3386,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder();
 
@@ -3352,7 +3396,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      * @return Whether the code field is set.
      */
     boolean hasCode();
@@ -3362,7 +3406,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      * @return The code.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode();
@@ -3372,7 +3416,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder();
   }
@@ -3389,6 +3433,8 @@ public final class PBRequestFlinkDeveloper {
       super(builder);
     }
     private ValidateFlinkJob_v2() {
+      flinkUrl_ = "";
+      flinkVersion_ = "";
     }
 
     @java.lang.Override
@@ -3422,6 +3468,18 @@ public final class PBRequestFlinkDeveloper {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkUrl_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flinkVersion_ = s;
+              break;
+            }
+            case 26: {
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder subBuilder = null;
               if (args_ != null) {
                 subBuilder = args_.toBuilder();
@@ -3434,7 +3492,7 @@ public final class PBRequestFlinkDeveloper {
 
               break;
             }
-            case 18: {
+            case 34: {
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder subBuilder = null;
               if (code_ != null) {
                 subBuilder = code_.toBuilder();
@@ -3479,7 +3537,103 @@ public final class PBRequestFlinkDeveloper {
               com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2.class, com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2.Builder.class);
     }
 
-    public static final int ARGS_FIELD_NUMBER = 1;
+    public static final int FLINK_URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object flinkUrl_;
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * &#64;inject_tag: json:"flink_url"
+     * </pre>
+     *
+     * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+     * @return The flinkUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkUrl() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The internal access address of flink cluster.
+     * &#64;inject_tag: json:"flink_url"
+     * </pre>
+     *
+     * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkUrlBytes() {
+      java.lang.Object ref = flinkUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLINK_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object flinkVersion_;
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * &#64;inject_tag: json:"flink_version"
+     * </pre>
+     *
+     * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+     * @return The flinkVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getFlinkVersion() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flinkVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The version of flink cluster.
+     * &#64;inject_tag: json:"flink_version"
+     * </pre>
+     *
+     * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for flinkVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFlinkVersionBytes() {
+      java.lang.Object ref = flinkVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flinkVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ARGS_FIELD_NUMBER = 3;
     private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs args_;
     /**
      * <pre>
@@ -3487,7 +3641,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      * @return Whether the args field is set.
      */
     @java.lang.Override
@@ -3500,7 +3654,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      * @return The args.
      */
     @java.lang.Override
@@ -3513,14 +3667,14 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"args"
      * </pre>
      *
-     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder() {
       return getArgs();
     }
 
-    public static final int CODE_FIELD_NUMBER = 2;
+    public static final int CODE_FIELD_NUMBER = 4;
     private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode code_;
     /**
      * <pre>
@@ -3528,7 +3682,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      * @return Whether the code field is set.
      */
     @java.lang.Override
@@ -3541,7 +3695,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      * @return The code.
      */
     @java.lang.Override
@@ -3554,7 +3708,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"code"
      * </pre>
      *
-     * <code>.model.StreamJobCode code = 2;</code>
+     * <code>.model.StreamJobCode code = 4;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
@@ -3575,11 +3729,17 @@ public final class PBRequestFlinkDeveloper {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flinkVersion_);
+      }
       if (args_ != null) {
-        output.writeMessage(1, getArgs());
+        output.writeMessage(3, getArgs());
       }
       if (code_ != null) {
-        output.writeMessage(2, getCode());
+        output.writeMessage(4, getCode());
       }
       unknownFields.writeTo(output);
     }
@@ -3590,13 +3750,19 @@ public final class PBRequestFlinkDeveloper {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkUrl_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, flinkUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flinkVersion_);
+      }
       if (args_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getArgs());
+          .computeMessageSize(3, getArgs());
       }
       if (code_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCode());
+          .computeMessageSize(4, getCode());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3613,6 +3779,10 @@ public final class PBRequestFlinkDeveloper {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 other = (com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2) obj;
 
+      if (!getFlinkUrl()
+          .equals(other.getFlinkUrl())) return false;
+      if (!getFlinkVersion()
+          .equals(other.getFlinkVersion())) return false;
       if (hasArgs() != other.hasArgs()) return false;
       if (hasArgs()) {
         if (!getArgs()
@@ -3634,6 +3804,10 @@ public final class PBRequestFlinkDeveloper {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FLINK_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkUrl().hashCode();
+      hash = (37 * hash) + FLINK_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getFlinkVersion().hashCode();
       if (hasArgs()) {
         hash = (37 * hash) + ARGS_FIELD_NUMBER;
         hash = (53 * hash) + getArgs().hashCode();
@@ -3775,6 +3949,10 @@ public final class PBRequestFlinkDeveloper {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        flinkUrl_ = "";
+
+        flinkVersion_ = "";
+
         if (argsBuilder_ == null) {
           args_ = null;
         } else {
@@ -3813,6 +3991,8 @@ public final class PBRequestFlinkDeveloper {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 result = new com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2(this);
+        result.flinkUrl_ = flinkUrl_;
+        result.flinkVersion_ = flinkVersion_;
         if (argsBuilder_ == null) {
           result.args_ = args_;
         } else {
@@ -3871,6 +4051,14 @@ public final class PBRequestFlinkDeveloper {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2.getDefaultInstance()) return this;
+        if (!other.getFlinkUrl().isEmpty()) {
+          flinkUrl_ = other.flinkUrl_;
+          onChanged();
+        }
+        if (!other.getFlinkVersion().isEmpty()) {
+          flinkVersion_ = other.flinkVersion_;
+          onChanged();
+        }
         if (other.hasArgs()) {
           mergeArgs(other.getArgs());
         }
@@ -3906,6 +4094,208 @@ public final class PBRequestFlinkDeveloper {
         return this;
       }
 
+      private java.lang.Object flinkUrl_ = "";
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * &#64;inject_tag: json:"flink_url"
+       * </pre>
+       *
+       * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+       * @return The flinkUrl.
+       */
+      public java.lang.String getFlinkUrl() {
+        java.lang.Object ref = flinkUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * &#64;inject_tag: json:"flink_url"
+       * </pre>
+       *
+       * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkUrl.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkUrlBytes() {
+        java.lang.Object ref = flinkUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * &#64;inject_tag: json:"flink_url"
+       * </pre>
+       *
+       * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+       * @param value The flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * &#64;inject_tag: json:"flink_url"
+       * </pre>
+       *
+       * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkUrl() {
+        
+        flinkUrl_ = getDefaultInstance().getFlinkUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal access address of flink cluster.
+       * &#64;inject_tag: json:"flink_url"
+       * </pre>
+       *
+       * <code>string flink_url = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object flinkVersion_ = "";
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * &#64;inject_tag: json:"flink_version"
+       * </pre>
+       *
+       * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+       * @return The flinkVersion.
+       */
+      public java.lang.String getFlinkVersion() {
+        java.lang.Object ref = flinkVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flinkVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * &#64;inject_tag: json:"flink_version"
+       * </pre>
+       *
+       * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for flinkVersion.
+       */
+      public com.google.protobuf.ByteString
+          getFlinkVersionBytes() {
+        java.lang.Object ref = flinkVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flinkVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * &#64;inject_tag: json:"flink_version"
+       * </pre>
+       *
+       * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flinkVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * &#64;inject_tag: json:"flink_version"
+       * </pre>
+       *
+       * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFlinkVersion() {
+        
+        flinkVersion_ = getDefaultInstance().getFlinkVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version of flink cluster.
+       * &#64;inject_tag: json:"flink_version"
+       * </pre>
+       *
+       * <code>string flink_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for flinkVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlinkVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flinkVersion_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs args_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> argsBuilder_;
@@ -3915,7 +4305,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        * @return Whether the args field is set.
        */
       public boolean hasArgs() {
@@ -3927,7 +4317,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        * @return The args.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getArgs() {
@@ -3943,7 +4333,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public Builder setArgs(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
         if (argsBuilder_ == null) {
@@ -3964,7 +4354,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public Builder setArgs(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder builderForValue) {
@@ -3983,7 +4373,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public Builder mergeArgs(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
         if (argsBuilder_ == null) {
@@ -4006,7 +4396,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public Builder clearArgs() {
         if (argsBuilder_ == null) {
@@ -4025,7 +4415,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder getArgsBuilder() {
         
@@ -4038,7 +4428,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder() {
         if (argsBuilder_ != null) {
@@ -4054,7 +4444,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"args"
        * </pre>
        *
-       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 3 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> 
@@ -4079,7 +4469,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        * @return Whether the code field is set.
        */
       public boolean hasCode() {
@@ -4091,7 +4481,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        * @return The code.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode() {
@@ -4107,7 +4497,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public Builder setCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
         if (codeBuilder_ == null) {
@@ -4128,7 +4518,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public Builder setCode(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder builderForValue) {
@@ -4147,7 +4537,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public Builder mergeCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
         if (codeBuilder_ == null) {
@@ -4170,7 +4560,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public Builder clearCode() {
         if (codeBuilder_ == null) {
@@ -4189,7 +4579,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder getCodeBuilder() {
         
@@ -4202,7 +4592,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
         if (codeBuilder_ != null) {
@@ -4218,7 +4608,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"code"
        * </pre>
        *
-       * <code>.model.StreamJobCode code = 2;</code>
+       * <code>.model.StreamJobCode code = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder> 
@@ -4329,13 +4719,15 @@ public final class PBRequestFlinkDeveloper {
       "\n\003job\030\001 \001(\0132\027.request.SubmitFlinkJobB\004\342\337" +
       "\037\000\022.\n\002op\030\002 \001(\0162\034.model.InteractiveMessag" +
       "e.OpB\004\342\337\037\000\"6\n\020ValidateFlinkJob\022\"\n\004code\030\001" +
-      " \001(\0132\024.model.StreamJobCode\"c\n\023ValidateFl" +
-      "inkJob_v2\022(\n\004args\030\001 \001(\0132\024.model.StreamJo" +
-      "bArgsB\004\342\337\037\000\022\"\n\004code\030\002 \001(\0132\024.model.Stream" +
-      "JobCodeBv\n$com.dataomnis.gproto.types.pb" +
-      "requestB\027PBRequestFlinkDeveloperP\000Z3gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "requestb\006proto3"
+      " \001(\0132\024.model.StreamJobCode\"\247\001\n\023ValidateF" +
+      "linkJob_v2\022\036\n\tflink_url\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
+      "\"\000\022\"\n\rflink_version\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022(" +
+      "\n\004args\030\003 \001(\0132\024.model.StreamJobArgsB\004\342\337\037\000" +
+      "\022\"\n\004code\030\004 \001(\0132\024.model.StreamJobCodeBv\n$" +
+      "com.dataomnis.gproto.types.pbrequestB\027PB" +
+      "RequestFlinkDeveloperP\000Z3github.com/Data" +
+      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4367,7 +4759,7 @@ public final class PBRequestFlinkDeveloper {
     internal_static_request_ValidateFlinkJob_v2_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ValidateFlinkJob_v2_descriptor,
-        new java.lang.String[] { "Args", "Code", });
+        new java.lang.String[] { "FlinkUrl", "FlinkVersion", "Args", "Code", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
