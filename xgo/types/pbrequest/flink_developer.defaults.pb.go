@@ -41,18 +41,28 @@ func (this *SubmitFlinkJobInteractive) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ExecuteFlinkSql
-func (this *ExecuteFlinkSql) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.ValidateFlinkJob
 func (this *ValidateFlinkJob) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Code != nil {
+		if dt, ok := interface{}(this.Code).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.ValidateFlinkJob_v2
+func (this *ValidateFlinkJobV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Args != nil {
+		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	if this.Code != nil {
 		if dt, ok := interface{}(this.Code).(interface{ SetDefaults() }); ok {

@@ -93,14 +93,6 @@ func (this *SubmitFlinkJobInteractive) Validate() error {
 	return nil
 }
 
-// Set default value for message request.ExecuteFlinkSql
-func (this *ExecuteFlinkSql) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *ValidateFlinkJob) _xxx_xxx_Validator_Validate_code() error {
 	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -114,6 +106,38 @@ func (this *ValidateFlinkJob) _xxx_xxx_Validator_Validate_code() error {
 func (this *ValidateFlinkJob) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_args() error {
+	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_code() error {
+	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.ValidateFlinkJob_v2
+func (this *ValidateFlinkJobV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
 		return err

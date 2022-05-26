@@ -5,9 +5,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/developer/flink_developer.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class FlinkDeveloperGrpc {
 
   private FlinkDeveloperGrpc() {}
@@ -108,35 +107,35 @@ public final class FlinkDeveloperGrpc {
     return getValidateFlinkJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql,
-      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql> getExecuteFlinkSqlMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2,
+      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> getValidateFlinkJobV2Method;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ExecuteFlinkSql",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql,
-      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql> getExecuteFlinkSqlMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql> getExecuteFlinkSqlMethod;
-    if ((getExecuteFlinkSqlMethod = FlinkDeveloperGrpc.getExecuteFlinkSqlMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "ValidateFlinkJob_v2",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2,
+      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> getValidateFlinkJobV2Method() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> getValidateFlinkJobV2Method;
+    if ((getValidateFlinkJobV2Method = FlinkDeveloperGrpc.getValidateFlinkJobV2Method) == null) {
       synchronized (FlinkDeveloperGrpc.class) {
-        if ((getExecuteFlinkSqlMethod = FlinkDeveloperGrpc.getExecuteFlinkSqlMethod) == null) {
-          FlinkDeveloperGrpc.getExecuteFlinkSqlMethod = getExecuteFlinkSqlMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExecuteFlinkSql"))
+        if ((getValidateFlinkJobV2Method = FlinkDeveloperGrpc.getValidateFlinkJobV2Method) == null) {
+          FlinkDeveloperGrpc.getValidateFlinkJobV2Method = getValidateFlinkJobV2Method =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidateFlinkJob_v2"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql.getDefaultInstance()))
-              .setSchemaDescriptor(new FlinkDeveloperMethodDescriptorSupplier("ExecuteFlinkSql"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob.getDefaultInstance()))
+              .setSchemaDescriptor(new FlinkDeveloperMethodDescriptorSupplier("ValidateFlinkJob_v2"))
               .build();
         }
       }
     }
-    return getExecuteFlinkSqlMethod;
+    return getValidateFlinkJobV2Method;
   }
 
   /**
@@ -210,9 +209,9 @@ public final class FlinkDeveloperGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql> executeFlinkSql(
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getExecuteFlinkSqlMethod(), responseObserver);
+    public void validateFlinkJobV2(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateFlinkJobV2Method(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -239,12 +238,12 @@ public final class FlinkDeveloperGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob>(
                   this, METHODID_VALIDATE_FLINK_JOB)))
           .addMethod(
-            getExecuteFlinkSqlMethod(),
-            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            getValidateFlinkJobV2Method(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql,
-                com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql>(
-                  this, METHODID_EXECUTE_FLINK_SQL)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2,
+                com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob>(
+                  this, METHODID_VALIDATE_FLINK_JOB_V2)))
           .build();
     }
   }
@@ -289,10 +288,10 @@ public final class FlinkDeveloperGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ExecuteFlinkSql> executeFlinkSql(
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getExecuteFlinkSqlMethod(), getCallOptions()), responseObserver);
+    public void validateFlinkJobV2(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getValidateFlinkJobV2Method(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -322,6 +321,13 @@ public final class FlinkDeveloperGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob validateFlinkJob(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getValidateFlinkJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob validateFlinkJobV2(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateFlinkJobV2Method(), getCallOptions(), request);
     }
   }
 
@@ -354,12 +360,20 @@ public final class FlinkDeveloperGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateFlinkJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob> validateFlinkJobV2(
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2 request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getValidateFlinkJobV2Method(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SUBMIT_FLINK_JOB = 0;
   private static final int METHODID_VALIDATE_FLINK_JOB = 1;
-  private static final int METHODID_SUBMIT_FLINK_JOB_INTERACTIVE = 2;
-  private static final int METHODID_EXECUTE_FLINK_SQL = 3;
+  private static final int METHODID_VALIDATE_FLINK_JOB_V2 = 2;
+  private static final int METHODID_SUBMIT_FLINK_JOB_INTERACTIVE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -386,6 +400,10 @@ public final class FlinkDeveloperGrpc {
           serviceImpl.validateFlinkJob((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob>) responseObserver);
           break;
+        case METHODID_VALIDATE_FLINK_JOB_V2:
+          serviceImpl.validateFlinkJobV2((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.ValidateFlinkJob_v2) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ValidateFlinkJob>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -399,9 +417,6 @@ public final class FlinkDeveloperGrpc {
         case METHODID_SUBMIT_FLINK_JOB_INTERACTIVE:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.submitFlinkJobInteractive(
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive>) responseObserver);
-        case METHODID_EXECUTE_FLINK_SQL:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.executeFlinkSql(
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.ExecuteFlinkSql>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -456,7 +471,7 @@ public final class FlinkDeveloperGrpc {
               .addMethod(getSubmitFlinkJobMethod())
               .addMethod(getSubmitFlinkJobInteractiveMethod())
               .addMethod(getValidateFlinkJobMethod())
-              .addMethod(getExecuteFlinkSqlMethod())
+              .addMethod(getValidateFlinkJobV2Method())
               .build();
         }
       }
