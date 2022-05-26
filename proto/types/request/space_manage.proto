@@ -171,3 +171,23 @@ message DescribeNetworkConfig {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
+
+message AttachVPCToWorkspace {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // VPC's route id, Is required.
+  // @inject_tag: json:"router_id" gorm:"column:router_id;"
+  string router_id = 2 [ (validator.field).tags.string = { prefix: "rtr-" } ];
+
+  // vxnet id. Is required.
+  // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+  string vxnet_id = 3 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+}
+
+message DetachVPCFromWorkspace {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+}

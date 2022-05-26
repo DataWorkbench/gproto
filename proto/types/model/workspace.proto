@@ -48,6 +48,10 @@ message Workspace {
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Indicates the workspace whether binds vpc when the network module is enabled.
+  // @inject_tag: json:"network_is_init" gorm:"column:network_is_init;<-:false"
+  bool network_is_init = 9;
 }
 
 // NetworkConfig declares the network config of a workspace.

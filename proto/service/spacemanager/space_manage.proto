@@ -42,4 +42,8 @@ service SpaceManage {
 
   // Network config
   rpc DescribeNetworkConfig(request.DescribeNetworkConfig) returns (response.DescribeNetworkConfig) {}
+
+  rpc AttachVPCToWorkspace(request.AttachVPCToWorkspace) returns (model.EmptyStruct)  {}
+
+  rpc DetachVPCFromWorkspace(request.DetachVPCFromWorkspace) returns (model.EmptyStruct)  {}
 }
