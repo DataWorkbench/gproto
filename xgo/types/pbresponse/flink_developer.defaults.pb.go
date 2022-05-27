@@ -18,32 +18,8 @@ func (this *SubmitFlinkJob) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ExecuteFlinkSql
-func (this *ExecuteFlinkSql) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.GetFlinkJobStatus
-func (this *GetFlinkJobStatus) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.GetFlinkJobsByUrl
-func (this *GetFlinkJobsByUrl) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.GetFlinkJobsByUrl.FlinkJob
-func (this *GetFlinkJobsByUrl_FlinkJob) SetDefaults() {
+// Set default value for message response.SubmitFlinkJobInteractive
+func (this *SubmitFlinkJobInteractive) SetDefaults() {
 	if this == nil {
 		return
 	}

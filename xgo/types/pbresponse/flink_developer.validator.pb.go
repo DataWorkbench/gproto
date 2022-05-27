@@ -18,47 +18,8 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
-// Set default value for message response.ExecuteFlinkSql
-func (this *ExecuteFlinkSql) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-// Set default value for message response.GetFlinkJobStatus
-func (this *GetFlinkJobStatus) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-func (this *GetFlinkJobsByUrl) _xxx_xxx_Validator_Validate_jobs() error {
-	for _, item := range this.Jobs {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.GetFlinkJobsByUrl
-func (this *GetFlinkJobsByUrl) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_jobs(); err != nil {
-		return err
-	}
-	return nil
-}
-
-// Set default value for message response.GetFlinkJobsByUrl.FlinkJob
-func (this *GetFlinkJobsByUrl_FlinkJob) Validate() error {
+// Set default value for message response.SubmitFlinkJobInteractive
+func (this *SubmitFlinkJobInteractive) Validate() error {
 	if this == nil {
 		return nil
 	}

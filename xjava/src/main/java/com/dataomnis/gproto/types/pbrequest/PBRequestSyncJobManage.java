@@ -16719,8 +16719,8 @@ public final class PBRequestSyncJobManage {
 
   }
 
-  public interface ResumeReleaseSyncJobOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.ResumeReleaseSyncJob)
+  public interface ReopenReleaseSyncJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ReopenReleaseSyncJob)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -16766,24 +16766,35 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
+
+    /**
+     * <pre>
+     * Whether stop the running instance.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 3;</code>
+     * @return The stopRunning.
+     */
+    boolean getStopRunning();
   }
   /**
    * <pre>
-   * ResumeReleaseSyncJobs used as a request parameters for RPC.
+   * ReopenReleaseSyncJob used as a request parameters for RPC.
    * </pre>
    *
-   * Protobuf type {@code request.ResumeReleaseSyncJob}
+   * Protobuf type {@code request.ReopenReleaseSyncJob}
    */
-  public static final class ResumeReleaseSyncJob extends
+  public static final class ReopenReleaseSyncJob extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.ResumeReleaseSyncJob)
-      ResumeReleaseSyncJobOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.ReopenReleaseSyncJob)
+      ReopenReleaseSyncJobOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ResumeReleaseSyncJob.newBuilder() to construct.
-    private ResumeReleaseSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ReopenReleaseSyncJob.newBuilder() to construct.
+    private ReopenReleaseSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ResumeReleaseSyncJob() {
+    private ReopenReleaseSyncJob() {
       spaceId_ = "";
       jobId_ = "";
     }
@@ -16792,7 +16803,7 @@ public final class PBRequestSyncJobManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ResumeReleaseSyncJob();
+      return new ReopenReleaseSyncJob();
     }
 
     @java.lang.Override
@@ -16800,7 +16811,7 @@ public final class PBRequestSyncJobManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ResumeReleaseSyncJob(
+    private ReopenReleaseSyncJob(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16830,6 +16841,11 @@ public final class PBRequestSyncJobManage {
               jobId_ = s;
               break;
             }
+            case 24: {
+
+              stopRunning_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -16851,15 +16867,15 @@ public final class PBRequestSyncJobManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ResumeReleaseSyncJob_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ReopenReleaseSyncJob_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ResumeReleaseSyncJob_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ReopenReleaseSyncJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -16958,6 +16974,22 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int STOP_RUNNING_FIELD_NUMBER = 3;
+    private boolean stopRunning_;
+    /**
+     * <pre>
+     * Whether stop the running instance.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 3;</code>
+     * @return The stopRunning.
+     */
+    @java.lang.Override
+    public boolean getStopRunning() {
+      return stopRunning_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16978,6 +17010,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
+      if (stopRunning_ != false) {
+        output.writeBool(3, stopRunning_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16993,6 +17028,10 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
+      if (stopRunning_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, stopRunning_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17003,15 +17042,17 @@ public final class PBRequestSyncJobManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
+      if (getStopRunning()
+          != other.getStopRunning()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17027,74 +17068,77 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + STOP_RUNNING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStopRunning());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17107,7 +17151,7 @@ public final class PBRequestSyncJobManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -17124,29 +17168,29 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * ResumeReleaseSyncJobs used as a request parameters for RPC.
+     * ReopenReleaseSyncJob used as a request parameters for RPC.
      * </pre>
      *
-     * Protobuf type {@code request.ResumeReleaseSyncJob}
+     * Protobuf type {@code request.ReopenReleaseSyncJob}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.ResumeReleaseSyncJob)
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJobOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.ReopenReleaseSyncJob)
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJobOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ResumeReleaseSyncJob_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ReopenReleaseSyncJob_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ResumeReleaseSyncJob_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ReopenReleaseSyncJob_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -17168,23 +17212,25 @@ public final class PBRequestSyncJobManage {
 
         jobId_ = "";
 
+        stopRunning_ = false;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ResumeReleaseSyncJob_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ReopenReleaseSyncJob_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -17192,10 +17238,11 @@ public final class PBRequestSyncJobManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob(this);
         result.spaceId_ = spaceId_;
         result.jobId_ = jobId_;
+        result.stopRunning_ = stopRunning_;
         onBuilt();
         return result;
       }
@@ -17234,16 +17281,16 @@ public final class PBRequestSyncJobManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -17251,6 +17298,9 @@ public final class PBRequestSyncJobManage {
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
+        }
+        if (other.getStopRunning() != false) {
+          setStopRunning(other.getStopRunning());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -17267,11 +17317,11 @@ public final class PBRequestSyncJobManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17482,6 +17532,52 @@ public final class PBRequestSyncJobManage {
         onChanged();
         return this;
       }
+
+      private boolean stopRunning_ ;
+      /**
+       * <pre>
+       * Whether stop the running instance.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @return The stopRunning.
+       */
+      @java.lang.Override
+      public boolean getStopRunning() {
+        return stopRunning_;
+      }
+      /**
+       * <pre>
+       * Whether stop the running instance.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @param value The stopRunning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStopRunning(boolean value) {
+        
+        stopRunning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Whether stop the running instance.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStopRunning() {
+        
+        stopRunning_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -17495,41 +17591,41 @@ public final class PBRequestSyncJobManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.ResumeReleaseSyncJob)
+      // @@protoc_insertion_point(builder_scope:request.ReopenReleaseSyncJob)
     }
 
-    // @@protoc_insertion_point(class_scope:request.ResumeReleaseSyncJob)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.ReopenReleaseSyncJob)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ResumeReleaseSyncJob>
-        PARSER = new com.google.protobuf.AbstractParser<ResumeReleaseSyncJob>() {
+    private static final com.google.protobuf.Parser<ReopenReleaseSyncJob>
+        PARSER = new com.google.protobuf.AbstractParser<ReopenReleaseSyncJob>() {
       @java.lang.Override
-      public ResumeReleaseSyncJob parsePartialFrom(
+      public ReopenReleaseSyncJob parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResumeReleaseSyncJob(input, extensionRegistry);
+        return new ReopenReleaseSyncJob(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ResumeReleaseSyncJob> parser() {
+    public static com.google.protobuf.Parser<ReopenReleaseSyncJob> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ResumeReleaseSyncJob> getParserForType() {
+    public com.google.protobuf.Parser<ReopenReleaseSyncJob> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -24225,10 +24321,10 @@ public final class PBRequestSyncJobManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_OfflineReleaseSyncJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_ResumeReleaseSyncJob_descriptor;
+    internal_static_request_ReopenReleaseSyncJob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_ResumeReleaseSyncJob_fieldAccessorTable;
+      internal_static_request_ReopenReleaseSyncJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ConvertSyncJobMode_descriptor;
   private static final 
@@ -24335,37 +24431,38 @@ public final class PBRequestSyncJobManage {
       "\001(\t\022\024\n\014stop_running\030\004 \001(\010\"y\n\025OfflineRele" +
       "aseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"b\n\024ResumeRe" +
+      "\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"x\n\024ReopenRe" +
       "leaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004syj-\"[\n\022ConvertSyncJobMode\022#\n\006job_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n\004conf\030\002 \001(" +
-      "\0132\022.model.SyncJobConf\"\311\001\n\023ListSyncJobVer" +
-      "sions\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001" +
-      "\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007so" +
-      "rt_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007creat" +
-      "edJ\007updated\022\017\n\007reverse\030\004 \001(\010\022#\n\006job_id\030\005" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\266\001\n\037DescribeSy" +
-      "ncFlinkUIByInstanceId\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001\020\022(\n\013instance_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004syi-\"6\n\017GenerateJobJson\022#\n\006job_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\334\001\n\025PingSyncJ" +
-      "obConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\"\335\001\n\026DescribeSyncConnection\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
-      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\nclus" +
-      "ter_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsou" +
-      "rce_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttar" +
-      "get_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-Bu\n$com" +
-      ".dataomnis.gproto.types.pbrequestB\026PBReq" +
-      "uestSyncJobManageP\000Z3github.com/DataWork" +
-      "bench/gproto/xgo/types/pbrequestb\006proto3"
+      "\024\312\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"[\n\022Conver" +
+      "tSyncJobMode\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004syj-\022 \n\004conf\030\002 \001(\0132\022.model.SyncJobC" +
+      "onf\"\311\001\n\023ListSyncJobVersions\022&\n\005limit\030\001 \001" +
+      "(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 " +
+      "\001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022" +
+      " \302\001\035J\000J\007versionJ\007createdJ\007updated\022\017\n\007rev" +
+      "erse\030\004 \001(\010\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004syj-\"\266\001\n\037DescribeSyncFlinkUIByInstanc" +
+      "eId\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
+      "s-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
+      "\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022(\n\013instan" +
+      "ce_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-\"6\n\017Gene" +
+      "rateJobJson\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004syj-\"\334\001\n\025PingSyncJobConnection\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluste" +
+      "r_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsourc" +
+      "e_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarge" +
+      "t_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\335\001\n\026Desc" +
+      "ribeSyncConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004som-Bu\n$com.dataomnis.gproto." +
+      "types.pbrequestB\026PBRequestSyncJobManageP" +
+      "\000Z3github.com/DataWorkbench/gproto/xgo/t" +
+      "ypes/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24459,12 +24556,12 @@ public final class PBRequestSyncJobManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_OfflineReleaseSyncJob_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", "StopRunning", });
-    internal_static_request_ResumeReleaseSyncJob_descriptor =
+    internal_static_request_ReopenReleaseSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(14);
-    internal_static_request_ResumeReleaseSyncJob_fieldAccessorTable = new
+    internal_static_request_ReopenReleaseSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_ResumeReleaseSyncJob_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", });
+        internal_static_request_ReopenReleaseSyncJob_descriptor,
+        new java.lang.String[] { "SpaceId", "JobId", "StopRunning", });
     internal_static_request_ConvertSyncJobMode_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_request_ConvertSyncJobMode_fieldAccessorTable = new

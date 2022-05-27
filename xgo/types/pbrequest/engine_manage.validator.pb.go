@@ -143,28 +143,12 @@ func (this *CreateFlinkClusterInK8SV2) _xxx_xxx_Validator_Validate_info() error 
 	return nil
 }
 
-func (this *CreateFlinkClusterInK8SV2) _xxx_xxx_Validator_Validate_vxnet_ids() error {
-	if !(protovalidator.SliceIsUniqueString(this.VxnetIds)) {
-		return protovalidator.FieldError2("CreateFlinkClusterInK8SV2", "the array elements in field 'vxnet_ids' must be unique")
-	}
-	for _, item := range this.VxnetIds {
-		_ = item // To avoid unused panics.
-		if !(strings.HasPrefix(item, "vxnet-")) {
-			return protovalidator.FieldError1("CreateFlinkClusterInK8SV2", "the value of array item where in field 'vxnet_ids' must start with string 'vxnet-'", item)
-		}
-	}
-	return nil
-}
-
 // Set default value for message request.CreateFlinkClusterInK8sV2
 func (this *CreateFlinkClusterInK8SV2) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_vxnet_ids(); err != nil {
 		return err
 	}
 	return nil

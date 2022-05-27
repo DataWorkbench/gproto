@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\007PBHbaseP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%proto/types/model/syncjob/hbase.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"n\n\x0bHbaseSource\x12,\n\tparameter\x18\x01 \x01(\x0b\x32\x19.model.HbaseReadParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table:\x06\xca\xb2\x04\x02\n\x00\"\xdb\x01\n\x12HbaseReadParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x13\n\x0bhbaseConfig\x18\x02 \x01(\t\x12\x1b\n\x05range\x18\x03 \x01(\x0b\x32\x0c.model.Range\x12\x12\n\nchange_log\x18\x04 \x01(\t\x12\x10\n\x08\x65ncoding\x18\x05 \x01(\t\x12\x17\n\x0fscan_cache_size\x18\x06 \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x07 \x01(\x05\x12\x14\n\x0chadoopConfig\x18\x08 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"U\n\x05Range\x12\x15\n\rstart_row_key\x18\x01 \x01(\t\x12\x13\n\x0b\x65nd_row_key\x18\x02 \x01(\t\x12\x18\n\x10is_binary_rowkey\x18\x03 \x01(\x08:\x06\xca\xb2\x04\x02\n\x00\"o\n\x0bHbaseTarget\x12-\n\tparameter\x18\x01 \x01(\x0b\x32\x1a.model.HbaseWriteParameter\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x05table\x18\x03 \x01(\x0b\x32\x0c.model.Table:\x06\xca\xb2\x04\x02\n\x00\"#\n\x05Table\x12\x12\n\ntable_name\x18\x01 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xac\x02\n\x13HbaseWriteParameter\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x14\n\x0chbase_config\x18\x02 \x01(\t\x12\x11\n\tnull_mode\x18\x03 \x01(\t\x12\x10\n\x08wal_flag\x18\x04 \x01(\x08\x12\x19\n\x11write_buffer_size\x18\x05 \x01(\x05\x12\x12\n\nchange_log\x18\x06 \x01(\t\x12\x16\n\x0erowkey_express\x18\x07 \x01(\t\x12\x1c\n\x14version_column_index\x18\x08 \x01(\x05\x12\x1c\n\x14version_column_value\x18\t \x01(\t\x12\x17\n\x0fscan_cache_size\x18\n \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x0b \x01(\x05:\x06\xca\xb2\x04\x02\n\x00\x42v\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x07PBHbaseP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n%proto/types/model/syncjob/hbase.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\x8c\x02\n\x0bHbaseSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x13\n\x0bhbaseConfig\x18\x02 \x01(\t\x12\x12\n\nchange_log\x18\x03 \x01(\t\x12\x10\n\x08\x65ncoding\x18\x04 \x01(\t\x12\x17\n\x0fscan_cache_size\x18\x05 \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x06 \x01(\x05\x12\x14\n\x0chadoopConfig\x18\x07 \x01(\t\x12\x15\n\rstart_row_key\x18\x08 \x01(\t\x12\x13\n\x0b\x65nd_row_key\x18\t \x01(\t\x12\x18\n\x10is_binary_rowkey\x18\n \x01(\x08\x12\r\n\x05table\x18\x0b \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xb3\x02\n\x0bHbaseTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x14\n\x0chbase_config\x18\x02 \x01(\t\x12\x11\n\tnull_mode\x18\x03 \x01(\t\x12\x10\n\x08wal_flag\x18\x04 \x01(\x08\x12\x19\n\x11write_buffer_size\x18\x05 \x01(\x05\x12\x12\n\nchange_log\x18\x06 \x01(\t\x12\x16\n\x0erowkey_express\x18\x07 \x01(\t\x12\x1c\n\x14version_column_index\x18\x08 \x01(\x05\x12\x1c\n\x14version_column_value\x18\t \x01(\t\x12\x17\n\x0fscan_cache_size\x18\n \x01(\x05\x12\x17\n\x0fscan_batch_size\x18\x0b \x01(\x05\x12\r\n\x05table\x18\x0c \x01(\t:\x06\xca\xb2\x04\x02\n\x00\x42v\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x07PBHbaseP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
@@ -37,153 +37,82 @@ _HBASESOURCE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='parameter', full_name='model.HbaseSource.parameter', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='model.HbaseSource.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='table', full_name='model.HbaseSource.table', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\312\262\004\002\n\000',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=137,
-  serialized_end=247,
-)
-
-
-_HBASEREADPARAMETER = _descriptor.Descriptor(
-  name='HbaseReadParameter',
-  full_name='model.HbaseReadParameter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='column', full_name='model.HbaseReadParameter.column', index=0,
+      name='column', full_name='model.HbaseSource.column', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hbaseConfig', full_name='model.HbaseReadParameter.hbaseConfig', index=1,
+      name='hbaseConfig', full_name='model.HbaseSource.hbaseConfig', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='range', full_name='model.HbaseReadParameter.range', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='change_log', full_name='model.HbaseSource.change_log', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='change_log', full_name='model.HbaseReadParameter.change_log', index=3,
+      name='encoding', full_name='model.HbaseSource.encoding', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='encoding', full_name='model.HbaseReadParameter.encoding', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='scan_cache_size', full_name='model.HbaseSource.scan_cache_size', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scan_cache_size', full_name='model.HbaseReadParameter.scan_cache_size', index=5,
+      name='scan_batch_size', full_name='model.HbaseSource.scan_batch_size', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scan_batch_size', full_name='model.HbaseReadParameter.scan_batch_size', index=6,
-      number=7, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='hadoopConfig', full_name='model.HbaseSource.hadoopConfig', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hadoopConfig', full_name='model.HbaseReadParameter.hadoopConfig', index=7,
+      name='start_row_key', full_name='model.HbaseSource.start_row_key', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\312\262\004\002\n\000',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=250,
-  serialized_end=469,
-)
-
-
-_RANGE = _descriptor.Descriptor(
-  name='Range',
-  full_name='model.Range',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='start_row_key', full_name='model.Range.start_row_key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='end_row_key', full_name='model.HbaseSource.end_row_key', index=8,
+      number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='end_row_key', full_name='model.Range.end_row_key', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='is_binary_rowkey', full_name='model.Range.is_binary_rowkey', index=2,
-      number=3, type=8, cpp_type=7, label=1,
+      name='is_binary_rowkey', full_name='model.HbaseSource.is_binary_rowkey', index=9,
+      number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table', full_name='model.HbaseSource.table', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -196,8 +125,8 @@ _RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=556,
+  serialized_start=138,
+  serialized_end=406,
 )
 
 
@@ -210,157 +139,86 @@ _HBASETARGET = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='parameter', full_name='model.HbaseTarget.parameter', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='model.HbaseTarget.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='table', full_name='model.HbaseTarget.table', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\312\262\004\002\n\000',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=558,
-  serialized_end=669,
-)
-
-
-_TABLE = _descriptor.Descriptor(
-  name='Table',
-  full_name='model.Table',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='table_name', full_name='model.Table.table_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\312\262\004\002\n\000',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=671,
-  serialized_end=706,
-)
-
-
-_HBASEWRITEPARAMETER = _descriptor.Descriptor(
-  name='HbaseWriteParameter',
-  full_name='model.HbaseWriteParameter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='column', full_name='model.HbaseWriteParameter.column', index=0,
+      name='column', full_name='model.HbaseTarget.column', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hbase_config', full_name='model.HbaseWriteParameter.hbase_config', index=1,
+      name='hbase_config', full_name='model.HbaseTarget.hbase_config', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='null_mode', full_name='model.HbaseWriteParameter.null_mode', index=2,
+      name='null_mode', full_name='model.HbaseTarget.null_mode', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='wal_flag', full_name='model.HbaseWriteParameter.wal_flag', index=3,
+      name='wal_flag', full_name='model.HbaseTarget.wal_flag', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='write_buffer_size', full_name='model.HbaseWriteParameter.write_buffer_size', index=4,
+      name='write_buffer_size', full_name='model.HbaseTarget.write_buffer_size', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='change_log', full_name='model.HbaseWriteParameter.change_log', index=5,
+      name='change_log', full_name='model.HbaseTarget.change_log', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rowkey_express', full_name='model.HbaseWriteParameter.rowkey_express', index=6,
+      name='rowkey_express', full_name='model.HbaseTarget.rowkey_express', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version_column_index', full_name='model.HbaseWriteParameter.version_column_index', index=7,
+      name='version_column_index', full_name='model.HbaseTarget.version_column_index', index=7,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version_column_value', full_name='model.HbaseWriteParameter.version_column_value', index=8,
+      name='version_column_value', full_name='model.HbaseTarget.version_column_value', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scan_cache_size', full_name='model.HbaseWriteParameter.scan_cache_size', index=9,
+      name='scan_cache_size', full_name='model.HbaseTarget.scan_cache_size', index=9,
       number=10, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scan_batch_size', full_name='model.HbaseWriteParameter.scan_batch_size', index=10,
+      name='scan_batch_size', full_name='model.HbaseTarget.scan_batch_size', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table', full_name='model.HbaseTarget.table', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -376,23 +234,14 @@ _HBASEWRITEPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=709,
-  serialized_end=1009,
+  serialized_start=409,
+  serialized_end=716,
 )
 
-_HBASESOURCE.fields_by_name['parameter'].message_type = _HBASEREADPARAMETER
-_HBASESOURCE.fields_by_name['table'].message_type = _TABLE
-_HBASEREADPARAMETER.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
-_HBASEREADPARAMETER.fields_by_name['range'].message_type = _RANGE
-_HBASETARGET.fields_by_name['parameter'].message_type = _HBASEWRITEPARAMETER
-_HBASETARGET.fields_by_name['table'].message_type = _TABLE
-_HBASEWRITEPARAMETER.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
+_HBASESOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
+_HBASETARGET.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 DESCRIPTOR.message_types_by_name['HbaseSource'] = _HBASESOURCE
-DESCRIPTOR.message_types_by_name['HbaseReadParameter'] = _HBASEREADPARAMETER
-DESCRIPTOR.message_types_by_name['Range'] = _RANGE
 DESCRIPTOR.message_types_by_name['HbaseTarget'] = _HBASETARGET
-DESCRIPTOR.message_types_by_name['Table'] = _TABLE
-DESCRIPTOR.message_types_by_name['HbaseWriteParameter'] = _HBASEWRITEPARAMETER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HbaseSource = _reflection.GeneratedProtocolMessageType('HbaseSource', (_message.Message,), {
@@ -402,20 +251,6 @@ HbaseSource = _reflection.GeneratedProtocolMessageType('HbaseSource', (_message.
   })
 _sym_db.RegisterMessage(HbaseSource)
 
-HbaseReadParameter = _reflection.GeneratedProtocolMessageType('HbaseReadParameter', (_message.Message,), {
-  'DESCRIPTOR' : _HBASEREADPARAMETER,
-  '__module__' : 'proto.types.model.syncjob.hbase_pb2'
-  # @@protoc_insertion_point(class_scope:model.HbaseReadParameter)
-  })
-_sym_db.RegisterMessage(HbaseReadParameter)
-
-Range = _reflection.GeneratedProtocolMessageType('Range', (_message.Message,), {
-  'DESCRIPTOR' : _RANGE,
-  '__module__' : 'proto.types.model.syncjob.hbase_pb2'
-  # @@protoc_insertion_point(class_scope:model.Range)
-  })
-_sym_db.RegisterMessage(Range)
-
 HbaseTarget = _reflection.GeneratedProtocolMessageType('HbaseTarget', (_message.Message,), {
   'DESCRIPTOR' : _HBASETARGET,
   '__module__' : 'proto.types.model.syncjob.hbase_pb2'
@@ -423,26 +258,8 @@ HbaseTarget = _reflection.GeneratedProtocolMessageType('HbaseTarget', (_message.
   })
 _sym_db.RegisterMessage(HbaseTarget)
 
-Table = _reflection.GeneratedProtocolMessageType('Table', (_message.Message,), {
-  'DESCRIPTOR' : _TABLE,
-  '__module__' : 'proto.types.model.syncjob.hbase_pb2'
-  # @@protoc_insertion_point(class_scope:model.Table)
-  })
-_sym_db.RegisterMessage(Table)
-
-HbaseWriteParameter = _reflection.GeneratedProtocolMessageType('HbaseWriteParameter', (_message.Message,), {
-  'DESCRIPTOR' : _HBASEWRITEPARAMETER,
-  '__module__' : 'proto.types.model.syncjob.hbase_pb2'
-  # @@protoc_insertion_point(class_scope:model.HbaseWriteParameter)
-  })
-_sym_db.RegisterMessage(HbaseWriteParameter)
-
 
 DESCRIPTOR._options = None
 _HBASESOURCE._options = None
-_HBASEREADPARAMETER._options = None
-_RANGE._options = None
 _HBASETARGET._options = None
-_TABLE._options = None
-_HBASEWRITEPARAMETER._options = None
 # @@protoc_insertion_point(module_scope)

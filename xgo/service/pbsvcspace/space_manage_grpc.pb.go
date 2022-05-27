@@ -43,6 +43,8 @@ type SpaceManageClient interface {
 	CheckPermission(ctx context.Context, in *pbrequest.CheckPermission, opts ...grpc.CallOption) (*pbresponse.CheckPermission, error)
 	// Network config
 	DescribeNetworkConfig(ctx context.Context, in *pbrequest.DescribeNetworkConfig, opts ...grpc.CallOption) (*pbresponse.DescribeNetworkConfig, error)
+	AttachVPCToWorkspace(ctx context.Context, in *pbrequest.AttachVPCToWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DetachVPCFromWorkspace(ctx context.Context, in *pbrequest.DetachVPCFromWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type spaceManageClient struct {
@@ -143,6 +145,24 @@ func (c *spaceManageClient) DescribeNetworkConfig(ctx context.Context, in *pbreq
 	return out, nil
 }
 
+func (c *spaceManageClient) AttachVPCToWorkspace(ctx context.Context, in *pbrequest.AttachVPCToWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/AttachVPCToWorkspace", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *spaceManageClient) DetachVPCFromWorkspace(ctx context.Context, in *pbrequest.DetachVPCFromWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/DetachVPCFromWorkspace", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SpaceManageServer is the server API for SpaceManage service.
 // All implementations must embed UnimplementedSpaceManageServer
 // for forward compatibility
@@ -165,6 +185,8 @@ type SpaceManageServer interface {
 	CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error)
 	// Network config
 	DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error)
+	AttachVPCToWorkspace(context.Context, *pbrequest.AttachVPCToWorkspace) (*pbmodel.EmptyStruct, error)
+	DetachVPCFromWorkspace(context.Context, *pbrequest.DetachVPCFromWorkspace) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedSpaceManageServer()
 }
 
@@ -201,6 +223,12 @@ func (UnimplementedSpaceManageServer) CheckPermission(context.Context, *pbreques
 }
 func (UnimplementedSpaceManageServer) DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeNetworkConfig not implemented")
+}
+func (UnimplementedSpaceManageServer) AttachVPCToWorkspace(context.Context, *pbrequest.AttachVPCToWorkspace) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AttachVPCToWorkspace not implemented")
+}
+func (UnimplementedSpaceManageServer) DetachVPCFromWorkspace(context.Context, *pbrequest.DetachVPCFromWorkspace) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DetachVPCFromWorkspace not implemented")
 }
 func (UnimplementedSpaceManageServer) mustEmbedUnimplementedSpaceManageServer() {}
 
@@ -395,6 +423,42 @@ func _SpaceManage_DescribeNetworkConfig_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SpaceManage_AttachVPCToWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.AttachVPCToWorkspace)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).AttachVPCToWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SpaceManage/AttachVPCToWorkspace",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).AttachVPCToWorkspace(ctx, req.(*pbrequest.AttachVPCToWorkspace))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SpaceManage_DetachVPCFromWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DetachVPCFromWorkspace)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).DetachVPCFromWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SpaceManage/DetachVPCFromWorkspace",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).DetachVPCFromWorkspace(ctx, req.(*pbrequest.DetachVPCFromWorkspace))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SpaceManage_ServiceDesc is the grpc.ServiceDesc for SpaceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -441,6 +505,14 @@ var SpaceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeNetworkConfig",
 			Handler:    _SpaceManage_DescribeNetworkConfig_Handler,
+		},
+		{
+			MethodName: "AttachVPCToWorkspace",
+			Handler:    _SpaceManage_AttachVPCToWorkspace_Handler,
+		},
+		{
+			MethodName: "DetachVPCFromWorkspace",
+			Handler:    _SpaceManage_DetachVPCFromWorkspace_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

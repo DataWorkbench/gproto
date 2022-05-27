@@ -48,8 +48,8 @@ public final class PBSvcSyncJobManage {
       "hedule\"\000\022?\n\016ReleaseSyncJob\022\027.request.Rel" +
       "easeSyncJob\032\022.model.EmptyStruct\"\000\022M\n\025Off" +
       "lineReleaseSyncJob\022\036.request.OfflineRele" +
-      "aseSyncJob\032\022.model.EmptyStruct\"\000\022K\n\024Resu" +
-      "meReleaseSyncJob\022\035.request.ResumeRelease" +
+      "aseSyncJob\032\022.model.EmptyStruct\"\000\022K\n\024Reop" +
+      "enReleaseSyncJob\022\035.request.ReopenRelease" +
       "SyncJob\032\022.model.EmptyStruct\"\000\022T\n\023ListRel" +
       "easeSyncJobs\022\034.request.ListReleaseSyncJo" +
       "bs\032\035.response.ListReleaseSyncJobs\"\000\022W\n\032U" +

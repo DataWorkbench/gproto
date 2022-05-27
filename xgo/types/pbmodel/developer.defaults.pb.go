@@ -16,3 +16,11 @@ func (this *JobInfo) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.InteractiveMessage
+func (this *InteractiveMessage) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

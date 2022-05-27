@@ -8,9 +8,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/spacemanager/sync_job_manage.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class SyncJobManageGrpc {
 
   private SyncJobManageGrpc() {}
@@ -390,35 +389,35 @@ public final class SyncJobManageGrpc {
     return getOfflineReleaseSyncJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getResumeReleaseSyncJobMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseSyncJobMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ResumeReleaseSyncJob",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.class,
+      fullMethodName = SERVICE_NAME + '/' + "ReopenReleaseSyncJob",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getResumeReleaseSyncJobMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getResumeReleaseSyncJobMethod;
-    if ((getResumeReleaseSyncJobMethod = SyncJobManageGrpc.getResumeReleaseSyncJobMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseSyncJobMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseSyncJobMethod;
+    if ((getReopenReleaseSyncJobMethod = SyncJobManageGrpc.getReopenReleaseSyncJobMethod) == null) {
       synchronized (SyncJobManageGrpc.class) {
-        if ((getResumeReleaseSyncJobMethod = SyncJobManageGrpc.getResumeReleaseSyncJobMethod) == null) {
-          SyncJobManageGrpc.getResumeReleaseSyncJobMethod = getResumeReleaseSyncJobMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getReopenReleaseSyncJobMethod = SyncJobManageGrpc.getReopenReleaseSyncJobMethod) == null) {
+          SyncJobManageGrpc.getReopenReleaseSyncJobMethod = getReopenReleaseSyncJobMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResumeReleaseSyncJob"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReopenReleaseSyncJob"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("ResumeReleaseSyncJob"))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("ReopenReleaseSyncJob"))
               .build();
         }
       }
     }
-    return getResumeReleaseSyncJobMethod;
+    return getReopenReleaseSyncJobMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListReleaseSyncJobs,
@@ -945,12 +944,12 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
+     * ReopenReleaseSyncJob to re open the offline job in schedule system.
      * </pre>
      */
-    public void resumeReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob request,
+    public void reopenReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResumeReleaseSyncJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReopenReleaseSyncJobMethod(), responseObserver);
     }
 
     /**
@@ -1149,12 +1148,12 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_OFFLINE_RELEASE_SYNC_JOB)))
           .addMethod(
-            getResumeReleaseSyncJobMethod(),
+            getReopenReleaseSyncJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_RESUME_RELEASE_SYNC_JOB)))
+                  this, METHODID_REOPEN_RELEASE_SYNC_JOB)))
           .addMethod(
             getListReleaseSyncJobsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1397,13 +1396,13 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
+     * ReopenReleaseSyncJob to re open the offline job in schedule system.
      * </pre>
      */
-    public void resumeReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob request,
+    public void reopenReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getResumeReleaseSyncJobMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getReopenReleaseSyncJobMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1676,12 +1675,12 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
+     * ReopenReleaseSyncJob to re open the offline job in schedule system.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct resumeReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct reopenReleaseSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getResumeReleaseSyncJobMethod(), getCallOptions(), request);
+          getChannel(), getReopenReleaseSyncJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1955,13 +1954,13 @@ public final class SyncJobManageGrpc {
 
     /**
      * <pre>
-     * ResumeReleaseSyncJob to resume the suspended job list in schedule system.
+     * ReopenReleaseSyncJob to re open the offline job in schedule system.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> resumeReleaseSyncJob(
-        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> reopenReleaseSyncJob(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getResumeReleaseSyncJobMethod(), getCallOptions()), request);
+          getChannel().newCall(getReopenReleaseSyncJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2097,7 +2096,7 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_GET_SYNC_JOB_SCHEDULE = 9;
   private static final int METHODID_RELEASE_SYNC_JOB = 10;
   private static final int METHODID_OFFLINE_RELEASE_SYNC_JOB = 11;
-  private static final int METHODID_RESUME_RELEASE_SYNC_JOB = 12;
+  private static final int METHODID_REOPEN_RELEASE_SYNC_JOB = 12;
   private static final int METHODID_LIST_RELEASE_SYNC_JOBS = 13;
   private static final int METHODID_UPDATE_RELEASE_SYNC_JOB_STATUS = 14;
   private static final int METHODID_LIST_SYNC_JOB_VERSIONS = 15;
@@ -2175,8 +2174,8 @@ public final class SyncJobManageGrpc {
           serviceImpl.offlineReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.OfflineReleaseSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_RESUME_RELEASE_SYNC_JOB:
-          serviceImpl.resumeReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ResumeReleaseSyncJob) request,
+        case METHODID_REOPEN_RELEASE_SYNC_JOB:
+          serviceImpl.reopenReleaseSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ReopenReleaseSyncJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_LIST_RELEASE_SYNC_JOBS:
@@ -2296,7 +2295,7 @@ public final class SyncJobManageGrpc {
               .addMethod(getGetSyncJobScheduleMethod())
               .addMethod(getReleaseSyncJobMethod())
               .addMethod(getOfflineReleaseSyncJobMethod())
-              .addMethod(getResumeReleaseSyncJobMethod())
+              .addMethod(getReopenReleaseSyncJobMethod())
               .addMethod(getListReleaseSyncJobsMethod())
               .addMethod(getUpdateReleaseSyncJobStatusMethod())
               .addMethod(getListSyncJobVersionsMethod())

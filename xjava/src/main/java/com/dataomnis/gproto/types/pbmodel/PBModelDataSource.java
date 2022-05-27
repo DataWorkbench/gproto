@@ -7927,21 +7927,23 @@ public final class PBModelDataSource {
 
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
-     * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 3;</code>
      * @return The networkId.
      */
     java.lang.String getNetworkId();
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
-     * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 3;</code>
      * @return The bytes for networkId.
      */
     com.google.protobuf.ByteString
@@ -8544,11 +8546,12 @@ public final class PBModelDataSource {
     private volatile java.lang.Object networkId_;
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
-     * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 3;</code>
      * @return The networkId.
      */
     @java.lang.Override
@@ -8566,11 +8569,12 @@ public final class PBModelDataSource {
     }
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Source ID, unique within a region.
      * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
      * </pre>
      *
-     * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 3;</code>
      * @return The bytes for networkId.
      */
     @java.lang.Override
@@ -9424,11 +9428,12 @@ public final class PBModelDataSource {
       private java.lang.Object networkId_ = "";
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
-       * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 3;</code>
        * @return The networkId.
        */
       public java.lang.String getNetworkId() {
@@ -9445,11 +9450,12 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
-       * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 3;</code>
        * @return The bytes for networkId.
        */
       public com.google.protobuf.ByteString
@@ -9467,11 +9473,12 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
-       * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 3;</code>
        * @param value The networkId to set.
        * @return This builder for chaining.
        */
@@ -9487,11 +9494,12 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
-       * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearNetworkId() {
@@ -9502,11 +9510,12 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Source ID, unique within a region.
        * &#64;inject_tag: json:"network_id" gorm:"column:network_id;"
        * </pre>
        *
-       * <code>string network_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 3;</code>
        * @param value The bytes for networkId to set.
        * @return This builder for chaining.
        */
@@ -10784,23 +10793,22 @@ public final class PBModelDataSource {
       "\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020\007\022\010\n\004HDF" +
       "S\020\010\022\r\n\tSqlServer\020\t\022\n\n\006Oracle\020\n\022\007\n\003DB2\020\013\022" +
       "\013\n\007SapHana\020\014\022\010\n\004Hive\020\r\022\021\n\rElasticSearch\020" +
-      "\016\022\013\n\007MongoDb\020\017\022\t\n\005Redis\020\020\"\341\003\n\024DataSource" +
+      "\016\022\013\n\007MongoDb\020\017\022\t\n\005Redis\020\020\"\314\003\n\024DataSource" +
       "Connection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
       "\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004som-\022\'\n\nnetwork_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004net-\022A\n\006status\030\004 \001(\0162\".model.DataS" +
-      "ourceConnection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n" +
-      "\006result\030\005 \001(\0162\".model.DataSourceConnecti" +
-      "on.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\006 \001(" +
-      "\t\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elaps" +
-      "e\030\010 \001(\003\022$\n\014network_info\030\t \001(\0132\016.model.Ne" +
-      "twork\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
-      "ted\020\001\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n\nStateUns" +
-      "et\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002\"\036\n\016DataSou" +
-      "rceKind\022\014\n\004Name\030\001 \001(\tBl\n\"com.dataomnis.g" +
-      "proto.types.pbmodelB\021PBModelDataSourceP\000" +
-      "Z1github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbmodelb\006proto3"
+      "\001\024\312\002\004som-\022\022\n\nnetwork_id\030\003 \001(\t\022A\n\006status\030" +
+      "\004 \001(\0162\".model.DataSourceConnection.Statu" +
+      "sB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n\006result\030\005 \001(\0162\".model" +
+      ".DataSourceConnection.ResultB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\017\n\007message\030\006 \001(\t\022\034\n\007created\030\007 \001(\003B\013\342" +
+      "\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(\003\022$\n\014network_in" +
+      "fo\030\t \001(\0132\016.model.Network\"3\n\006Status\022\017\n\013St" +
+      "atusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"1\n" +
+      "\006Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006" +
+      "Failed\020\002\"\036\n\016DataSourceKind\022\014\n\004Name\030\001 \001(\t" +
+      "Bl\n\"com.dataomnis.gproto.types.pbmodelB\021" +
+      "PBModelDataSourceP\000Z1github.com/DataWork" +
+      "bench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

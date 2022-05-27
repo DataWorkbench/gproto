@@ -59,8 +59,8 @@ type SyncJobManageClient interface {
 	ReleaseSyncJob(ctx context.Context, in *pbrequest.ReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseSyncJobs to suspend the specified job list in schedule system.
 	OfflineReleaseSyncJob(ctx context.Context, in *pbrequest.OfflineReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	// ResumeReleaseSyncJob to resume the suspended job list in schedule system.
-	ResumeReleaseSyncJob(ctx context.Context, in *pbrequest.ResumeReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// ReopenReleaseSyncJob to re open the offline job in schedule system.
+	ReopenReleaseSyncJob(ctx context.Context, in *pbrequest.ReopenReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
 	ListReleaseSyncJobs(ctx context.Context, in *pbrequest.ListReleaseSyncJobs, opts ...grpc.CallOption) (*pbresponse.ListReleaseSyncJobs, error)
 	// UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
@@ -202,9 +202,9 @@ func (c *syncJobManageClient) OfflineReleaseSyncJob(ctx context.Context, in *pbr
 	return out, nil
 }
 
-func (c *syncJobManageClient) ResumeReleaseSyncJob(ctx context.Context, in *pbrequest.ResumeReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *syncJobManageClient) ReopenReleaseSyncJob(ctx context.Context, in *pbrequest.ReopenReleaseSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ResumeReleaseSyncJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ReopenReleaseSyncJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -348,8 +348,8 @@ type SyncJobManageServer interface {
 	ReleaseSyncJob(context.Context, *pbrequest.ReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseSyncJobs to suspend the specified job list in schedule system.
 	OfflineReleaseSyncJob(context.Context, *pbrequest.OfflineReleaseSyncJob) (*pbmodel.EmptyStruct, error)
-	// ResumeReleaseSyncJob to resume the suspended job list in schedule system.
-	ResumeReleaseSyncJob(context.Context, *pbrequest.ResumeReleaseSyncJob) (*pbmodel.EmptyStruct, error)
+	// ReopenReleaseSyncJob to re open the offline job in schedule system.
+	ReopenReleaseSyncJob(context.Context, *pbrequest.ReopenReleaseSyncJob) (*pbmodel.EmptyStruct, error)
 	// ListReleaseSyncJobs for gets a list of all published job in the workspace.
 	ListReleaseSyncJobs(context.Context, *pbrequest.ListReleaseSyncJobs) (*pbresponse.ListReleaseSyncJobs, error)
 	// UpdateReleaseSyncJobStatus is an internal API. called by scheduler when status of sync job is changed.
@@ -416,8 +416,8 @@ func (UnimplementedSyncJobManageServer) ReleaseSyncJob(context.Context, *pbreque
 func (UnimplementedSyncJobManageServer) OfflineReleaseSyncJob(context.Context, *pbrequest.OfflineReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OfflineReleaseSyncJob not implemented")
 }
-func (UnimplementedSyncJobManageServer) ResumeReleaseSyncJob(context.Context, *pbrequest.ResumeReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseSyncJob not implemented")
+func (UnimplementedSyncJobManageServer) ReopenReleaseSyncJob(context.Context, *pbrequest.ReopenReleaseSyncJob) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReopenReleaseSyncJob not implemented")
 }
 func (UnimplementedSyncJobManageServer) ListReleaseSyncJobs(context.Context, *pbrequest.ListReleaseSyncJobs) (*pbresponse.ListReleaseSyncJobs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseSyncJobs not implemented")
@@ -681,20 +681,20 @@ func _SyncJobManage_OfflineReleaseSyncJob_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_ResumeReleaseSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ResumeReleaseSyncJob)
+func _SyncJobManage_ReopenReleaseSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ReopenReleaseSyncJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SyncJobManageServer).ResumeReleaseSyncJob(ctx, in)
+		return srv.(SyncJobManageServer).ReopenReleaseSyncJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/ResumeReleaseSyncJob",
+		FullMethod: "/spacemanager.SyncJobManage/ReopenReleaseSyncJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).ResumeReleaseSyncJob(ctx, req.(*pbrequest.ResumeReleaseSyncJob))
+		return srv.(SyncJobManageServer).ReopenReleaseSyncJob(ctx, req.(*pbrequest.ReopenReleaseSyncJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -953,8 +953,8 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SyncJobManage_OfflineReleaseSyncJob_Handler,
 		},
 		{
-			MethodName: "ResumeReleaseSyncJob",
-			Handler:    _SyncJobManage_ResumeReleaseSyncJob_Handler,
+			MethodName: "ReopenReleaseSyncJob",
+			Handler:    _SyncJobManage_ReopenReleaseSyncJob_Handler,
 		},
 		{
 			MethodName: "ListReleaseSyncJobs",

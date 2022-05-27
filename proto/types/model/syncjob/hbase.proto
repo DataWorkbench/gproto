@@ -15,111 +15,77 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message HbaseSource {
     option (gosql.serialize) = {json: {}};
-    // hbase parameter
-    // @inject_tag: json:"parameter" 
-    HbaseReadParameter parameter = 1;
-    // hbase name
-    // @inject_tag: json:"name" 
-    string name = 2;
-    // hbase table
-    // @inject_tag: json:"table" 
-    Table table = 3;
-}
-
-message HbaseReadParameter {
-    option (gosql.serialize) = {json: {}};
     // column
-    // @inject_tag: json:"column" 
+    // @inject_tag: json:"column"
     repeated Column column = 1;
     // hbaseConfig
-    // @inject_tag: json:"hbaseConfig" 
+    // @inject_tag: json:"hbaseConfig"
     string hbaseConfig = 2;
-    // range
-    // @inject_tag: json:"range" 
-    Range range = 3;
     // change_log
-    // @inject_tag: json:"change_log" 
-    string change_log = 4;
+    // @inject_tag: json:"change_log"
+    string change_log = 3;
     // encoding
-    // @inject_tag: json:"encoding" 
-    string encoding = 5;
+    // @inject_tag: json:"encoding"
+    string encoding = 4;
     // scan cache size
-    // @inject_tag: json:"scan_cache_size" 
-    int32 scan_cache_size = 6;
+    // @inject_tag: json:"scan_cache_size"
+    int32 scan_cache_size = 5;
     // hbase scan batch size
-    // @inject_tag: json:"scan_batch_size" 
-    int32 scan_batch_size = 7;
+    // @inject_tag: json:"scan_batch_size"
+    int32 scan_batch_size = 6;
     // hbase hadoopConfig
-    // @inject_tag: json:"hadoopConfig" 
-    string hadoopConfig = 8;
-}
-
-message Range {
-    option (gosql.serialize) = {json: {}};
-    // start row key
-    // @inject_tag: json:"start_row_key" 
-    string start_row_key = 1;
+    // @inject_tag: json:"hadoopConfig"
+    string hadoopConfig = 7;
+    // @inject_tag: json:"start_row_key"
+    string start_row_key = 8;
     // end row key
-    // @inject_tag: json:"end_row_key" 
-    string end_row_key = 2;
+    // @inject_tag: json:"end_row_key"
+    string end_row_key = 9;
     // is binary rowkey
-    // @inject_tag: json:"is_binary_rowkey" 
-    bool is_binary_rowkey = 3;
+    // @inject_tag: json:"is_binary_rowkey"
+    bool is_binary_rowkey = 10;
+    // hbase table
+    // @inject_tag: json:"table"
+    string table = 11;
 }
 
 message HbaseTarget {
     option (gosql.serialize) = {json: {}};
-    // hbase parameter
-    // @inject_tag: json:"parameter" 
-    HbaseWriteParameter parameter = 1;
-    // name
-    // @inject_tag: json:"name" 
-    string name = 2;
-    // hbase table
-    // @inject_tag: json:"table" 
-    Table table = 3;
-}
-message Table {
-    option (gosql.serialize) = {json: {}};
-    // hbase table_name
-    // @inject_tag: json:"table_name" 
-    string table_name = 1;
-}
-
-message HbaseWriteParameter {
-    option (gosql.serialize) = {json: {}};
-    // @inject_tag: json:"column" 
+    // @inject_tag: json:"column"
     repeated Column column = 1;
     // hbase Config
-    // @inject_tag: json:"hbase_config" 
+    // @inject_tag: json:"hbase_config"
     string hbase_config = 2;
     // null_mode
-    // @inject_tag: json:"null_mode" 
+    // @inject_tag: json:"null_mode"
     string null_mode = 3;
     // wal flag
-    // @inject_tag: json:"wal_flag" 
+    // @inject_tag: json:"wal_flag"
     bool wal_flag = 4;
     // write buffer size
-    // @inject_tag: json:"write_buffer_size" 
+    // @inject_tag: json:"write_buffer_size"
     int32 write_buffer_size = 5;
     // change_log
-    // @inject_tag: json:"change_log" 
+    // @inject_tag: json:"change_log"
     string change_log = 6;
     // rowkey express
-    // @inject_tag: json:"rowkey_express" 
+    // @inject_tag: json:"rowkey_express"
     string rowkey_express = 7;
     // version column index
-    // @inject_tag: json:"version_column_index" 
+    // @inject_tag: json:"version_column_index"
     int32 version_column_index = 8;
     // version column value
-    // @inject_tag: json:"version_column_value" 
+    // @inject_tag: json:"version_column_value"
     string version_column_value = 9;
     // scan cache size
-    // @inject_tag: json:"scan_cache_size" 
+    // @inject_tag: json:"scan_cache_size"
     int32 scan_cache_size = 10;
     // hbase scan batch size
-    // @inject_tag: json:"scan_batch_size" 
+    // @inject_tag: json:"scan_batch_size"
     int32 scan_batch_size = 11;
+    // hbase table
+    // @inject_tag: json:"table"
+    string table = 12;
 }
 
 

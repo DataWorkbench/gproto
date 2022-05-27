@@ -65,8 +65,8 @@ service SyncJobManage {
 //    // SuspendReleaseSyncJob to suspend the specified job list in schedule system.
 //    rpc SuspendReleaseSyncJob(request.SuspendReleaseSyncJob) returns (model.EmptyStruct) {}
 
-    // ResumeReleaseSyncJob to resume the suspended job list in schedule system.
-    rpc ResumeReleaseSyncJob(request.ResumeReleaseSyncJob) returns (model.EmptyStruct) {}
+    // ReopenReleaseSyncJob to re open the offline job in schedule system.
+    rpc ReopenReleaseSyncJob(request.ReopenReleaseSyncJob) returns (model.EmptyStruct) {}
 
     // ListReleaseSyncJobs for gets a list of all published job in the workspace.
     rpc ListReleaseSyncJobs(request.ListReleaseSyncJobs) returns (response.ListReleaseSyncJobs) {}

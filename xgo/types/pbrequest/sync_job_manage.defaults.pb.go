@@ -139,8 +139,8 @@ func (this *OfflineReleaseSyncJob) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ResumeReleaseSyncJob
-func (this *ResumeReleaseSyncJob) SetDefaults() {
+// Set default value for message request.ReopenReleaseSyncJob
+func (this *ReopenReleaseSyncJob) SetDefaults() {
 	if this == nil {
 		return
 	}

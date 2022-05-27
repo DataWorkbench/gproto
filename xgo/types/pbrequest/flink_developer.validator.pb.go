@@ -73,85 +73,21 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
-// Set default value for message request.ExecuteFlinkSql
-func (this *ExecuteFlinkSql) Validate() error {
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_job() error {
+	if dt, ok := interface{}(this.Job).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.SubmitFlinkJobInteractive
+func (this *SubmitFlinkJobInteractive) Validate() error {
 	if this == nil {
 		return nil
 	}
-	return nil
-}
-
-func (this *GetFlinkJobStatus) _xxx_xxx_Validator_Validate_flink_id() error {
-	if !(len(this.FlinkId) == 32) {
-		return protovalidator.FieldError1("GetFlinkJobStatus", "the byte length of field 'flink_id' must be equal to '32'", protovalidator.StringByteLenToString(this.FlinkId))
-	}
-	return nil
-}
-
-func (this *GetFlinkJobStatus) _xxx_xxx_Validator_Validate_flink_url() error {
-	if !(this.FlinkUrl != "") {
-		return protovalidator.FieldError1("GetFlinkJobStatus", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
-	}
-	return nil
-}
-
-func (this *GetFlinkJobStatus) _xxx_xxx_Validator_Validate_flink_version() error {
-	if !(this.FlinkVersion != "") {
-		return protovalidator.FieldError1("GetFlinkJobStatus", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
-	}
-	return nil
-}
-
-// Set default value for message request.GetFlinkJobStatus
-func (this *GetFlinkJobStatus) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *CancelFlinkJob) _xxx_xxx_Validator_Validate_flink_id() error {
-	if !(len(this.FlinkId) == 32) {
-		return protovalidator.FieldError1("CancelFlinkJob", "the byte length of field 'flink_id' must be equal to '32'", protovalidator.StringByteLenToString(this.FlinkId))
-	}
-	return nil
-}
-
-func (this *CancelFlinkJob) _xxx_xxx_Validator_Validate_flink_url() error {
-	if !(this.FlinkUrl != "") {
-		return protovalidator.FieldError1("CancelFlinkJob", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
-	}
-	return nil
-}
-
-func (this *CancelFlinkJob) _xxx_xxx_Validator_Validate_flink_version() error {
-	if !(this.FlinkVersion != "") {
-		return protovalidator.FieldError1("CancelFlinkJob", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
-	}
-	return nil
-}
-
-// Set default value for message request.CancelFlinkJob
-func (this *CancelFlinkJob) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_job(); err != nil {
 		return err
 	}
 	return nil
@@ -170,6 +106,58 @@ func (this *ValidateFlinkJob) _xxx_xxx_Validator_Validate_code() error {
 func (this *ValidateFlinkJob) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_flink_url() error {
+	if !(this.FlinkUrl != "") {
+		return protovalidator.FieldError1("ValidateFlinkJobV2", "the value of field 'flink_url' must be not equal to ''", this.FlinkUrl)
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_flink_version() error {
+	if !(this.FlinkVersion != "") {
+		return protovalidator.FieldError1("ValidateFlinkJobV2", "the value of field 'flink_version' must be not equal to ''", this.FlinkVersion)
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_args() error {
+	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *ValidateFlinkJobV2) _xxx_xxx_Validator_Validate_code() error {
+	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.ValidateFlinkJob_v2
+func (this *ValidateFlinkJobV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_url(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
 		return err

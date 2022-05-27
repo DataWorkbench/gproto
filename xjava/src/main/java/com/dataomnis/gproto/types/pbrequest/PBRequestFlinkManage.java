@@ -5413,21 +5413,23 @@ public final class PBRequestFlinkManage {
 
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The networkId.
      */
     java.lang.String getNetworkId();
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The bytes for networkId.
      */
     com.google.protobuf.ByteString
@@ -5946,11 +5948,12 @@ public final class PBRequestFlinkManage {
     private volatile java.lang.Object networkId_;
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The networkId.
      */
     @java.lang.Override
@@ -5968,11 +5971,12 @@ public final class PBRequestFlinkManage {
     }
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The bytes for networkId.
      */
     @java.lang.Override
@@ -7223,11 +7227,12 @@ public final class PBRequestFlinkManage {
       private java.lang.Object networkId_ = "";
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return The networkId.
        */
       public java.lang.String getNetworkId() {
@@ -7244,11 +7249,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return The bytes for networkId.
        */
       public com.google.protobuf.ByteString
@@ -7266,11 +7272,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @param value The networkId to set.
        * @return This builder for chaining.
        */
@@ -7286,11 +7293,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearNetworkId() {
@@ -7301,11 +7309,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @param value The bytes for networkId to set.
        * @return This builder for chaining.
        */
@@ -7829,21 +7838,23 @@ public final class PBRequestFlinkManage {
 
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The networkId.
      */
     java.lang.String getNetworkId();
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The bytes for networkId.
      */
     com.google.protobuf.ByteString
@@ -8307,11 +8318,12 @@ public final class PBRequestFlinkManage {
     private volatile java.lang.Object networkId_;
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The networkId.
      */
     @java.lang.Override
@@ -8329,11 +8341,12 @@ public final class PBRequestFlinkManage {
     }
     /**
      * <pre>
+     * FIXME: remove in feature.
      * Network config. Is required.
      * &#64;inject_tag: json:"network_id"
      * </pre>
      *
-     * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string network_id = 9;</code>
      * @return The bytes for networkId.
      */
     @java.lang.Override
@@ -9466,11 +9479,12 @@ public final class PBRequestFlinkManage {
       private java.lang.Object networkId_ = "";
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return The networkId.
        */
       public java.lang.String getNetworkId() {
@@ -9487,11 +9501,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return The bytes for networkId.
        */
       public com.google.protobuf.ByteString
@@ -9509,11 +9524,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @param value The networkId to set.
        * @return This builder for chaining.
        */
@@ -9529,11 +9545,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearNetworkId() {
@@ -9544,11 +9561,12 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
+       * FIXME: remove in feature.
        * Network config. Is required.
        * &#64;inject_tag: json:"network_id"
        * </pre>
        *
-       * <code>string network_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string network_id = 9;</code>
        * @param value The bytes for networkId to set.
        * @return This builder for chaining.
        */
@@ -12329,7 +12347,7 @@ public final class PBRequestFlinkManage {
       "_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"j\n" +
       "\021StopFlinkClusters\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030\002 \003(\tB\031" +
-      "\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\350\003\n\022CreateFlin" +
+      "\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\323\003\n\022CreateFlin" +
       "kCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
       "\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
       "\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036" +
@@ -12338,33 +12356,31 @@ public final class PBRequestFlinkManage {
       ".11J\034flink-1.12.3-scala_2.11-q0.9\022\037\n\010tas" +
       "k_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001" +
       "(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_" +
-      "cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\'\n" +
-      "\nnetwork_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022(" +
-      "\n\014host_aliases\030\n \001(\0132\022.model.HostAliases" +
-      "\022\"\n\006config\030\013 \001(\0132\022.flink.FlinkConfig\"\231\003\n" +
-      "\022UpdateFlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013space_owner\030\002 \001(\tB" +
-      "\013\342\337\037\007\022\005\302\001\002\"\000\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
-      "\001\230\002\200\001\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+" +
-      "\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000" +
-      "\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @" +
-      "A\000\000\000\000\000\000\340?\022\'\n\nnetwork_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004net-\022(\n\014host_aliases\030\n \001(\0132\022.model" +
-      ".HostAliases\022\"\n\006config\030\013 \001(\0132\022.flink.Fli" +
-      "nkConfig\"?\n\024DescribeFlinkCluster\022\'\n\nclus" +
-      "ter_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\"\252\001\n#Up" +
-      "dateFlinkClusterStatusByScheduler\022\'\n\nclu" +
-      "ster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\006st" +
-      "atus\030\002 \001(\0162\032.model.FlinkCluster.Status\022." +
-      "\n\npre_status\030\003 \001(\0162\032.model.FlinkCluster." +
-      "Status\"m\n\033StopFlinkClusterByScheduler\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\n" +
-      "cluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bs\n" +
-      "$com.dataomnis.gproto.types.pbrequestB\024P" +
-      "BRequestFlinkManageP\000Z3github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
-      "o3"
+      "cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n" +
+      "\nnetwork_id\030\t \001(\t\022(\n\014host_aliases\030\n \001(\0132" +
+      "\022.model.HostAliases\022\"\n\006config\030\013 \001(\0132\022.fl" +
+      "ink.FlinkConfig\"\204\003\n\022UpdateFlinkCluster\022%" +
+      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n" +
+      "\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\'\n\nclust" +
+      "er_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004name" +
+      "\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\006 \001" +
+      "(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022" +
+      "\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B" +
+      "\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwork_" +
+      "id\030\t \001(\t\022(\n\014host_aliases\030\n \001(\0132\022.model.H" +
+      "ostAliases\022\"\n\006config\030\013 \001(\0132\022.flink.Flink" +
+      "Config\"?\n\024DescribeFlinkCluster\022\'\n\ncluste" +
+      "r_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\"\252\001\n#Upda" +
+      "teFlinkClusterStatusByScheduler\022\'\n\nclust" +
+      "er_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\006stat" +
+      "us\030\002 \001(\0162\032.model.FlinkCluster.Status\022.\n\n" +
+      "pre_status\030\003 \001(\0162\032.model.FlinkCluster.St" +
+      "atus\"m\n\033StopFlinkClusterByScheduler\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncl" +
+      "uster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bs\n$c" +
+      "om.dataomnis.gproto.types.pbrequestB\024PBR" +
+      "equestFlinkManageP\000Z3github.com/DataWork" +
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

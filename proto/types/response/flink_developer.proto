@@ -30,37 +30,8 @@ message SubmitFlinkJob {
   string message = 2 [(validator.field) = {}];
 }
 
-message ExecuteFlinkSql{
-  // message
-  // @inject_tag: json:"message"
-  repeated string message = 1[(validator.field) = {}];
-}
-
-message GetFlinkJobStatus {
-  // IsExists indicates the job is exists.
-  // @inject_tag: json:"is_exists"
-  bool is_exists = 1;
-
-  // The flink job status.
-  // @inject_tag: json:"status"
-  flink.FlinkJob.Status status = 2 [(validator.field) = {}];
-
-  // job message
-  // @inject_tag: json:"message"
-  string message = 3 [(validator.field) = {}];
-}
-
-message GetFlinkJobsByUrl{
-  message FlinkJob{
-    string jid = 1;
-    string name = 2;
-    string state = 3;
-    int64 start_time = 4;
-    int64 end_time = 5;
-  }
-  // jobs message
-  // @inject_tag: json:"jobs"
-  repeated FlinkJob jobs = 1;
+message SubmitFlinkJobInteractive{
+  string message = 1 [(validator.field) = {}];
 }
 
 // GetStreamJobCode used as reply parameters in RPC.

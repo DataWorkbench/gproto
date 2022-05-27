@@ -148,6 +148,17 @@ public final class PBModelWorkspace {
      * @return The updated.
      */
     long getUpdated();
+
+    /**
+     * <pre>
+     * Indicates the workspace whether binds vpc when the network module is enabled.
+     * &#64;inject_tag: json:"network_is_init" gorm:"column:network_is_init;&lt;-:false"
+     * </pre>
+     *
+     * <code>bool network_is_init = 9;</code>
+     * @return The networkIsInit.
+     */
+    boolean getNetworkIsInit();
   }
   /**
    * <pre>
@@ -241,6 +252,11 @@ public final class PBModelWorkspace {
             case 64: {
 
               updated_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              networkIsInit_ = input.readBool();
               break;
             }
             default: {
@@ -654,6 +670,22 @@ public final class PBModelWorkspace {
       return updated_;
     }
 
+    public static final int NETWORK_IS_INIT_FIELD_NUMBER = 9;
+    private boolean networkIsInit_;
+    /**
+     * <pre>
+     * Indicates the workspace whether binds vpc when the network module is enabled.
+     * &#64;inject_tag: json:"network_is_init" gorm:"column:network_is_init;&lt;-:false"
+     * </pre>
+     *
+     * <code>bool network_is_init = 9;</code>
+     * @return The networkIsInit.
+     */
+    @java.lang.Override
+    public boolean getNetworkIsInit() {
+      return networkIsInit_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -689,6 +721,9 @@ public final class PBModelWorkspace {
       if (updated_ != 0L) {
         output.writeInt64(8, updated_);
       }
+      if (networkIsInit_ != false) {
+        output.writeBool(9, networkIsInit_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -722,6 +757,10 @@ public final class PBModelWorkspace {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, updated_);
       }
+      if (networkIsInit_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, networkIsInit_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -750,6 +789,8 @@ public final class PBModelWorkspace {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (getNetworkIsInit()
+          != other.getNetworkIsInit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -777,6 +818,9 @@ public final class PBModelWorkspace {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      hash = (37 * hash) + NETWORK_IS_INIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNetworkIsInit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -928,6 +972,8 @@ public final class PBModelWorkspace {
 
         updated_ = 0L;
 
+        networkIsInit_ = false;
+
         return this;
       }
 
@@ -961,6 +1007,7 @@ public final class PBModelWorkspace {
         result.status_ = status_;
         result.created_ = created_;
         result.updated_ = updated_;
+        result.networkIsInit_ = networkIsInit_;
         onBuilt();
         return result;
       }
@@ -1033,6 +1080,9 @@ public final class PBModelWorkspace {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
+        }
+        if (other.getNetworkIsInit() != false) {
+          setNetworkIsInit(other.getNetworkIsInit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1634,6 +1684,52 @@ public final class PBModelWorkspace {
       public Builder clearUpdated() {
         
         updated_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean networkIsInit_ ;
+      /**
+       * <pre>
+       * Indicates the workspace whether binds vpc when the network module is enabled.
+       * &#64;inject_tag: json:"network_is_init" gorm:"column:network_is_init;&lt;-:false"
+       * </pre>
+       *
+       * <code>bool network_is_init = 9;</code>
+       * @return The networkIsInit.
+       */
+      @java.lang.Override
+      public boolean getNetworkIsInit() {
+        return networkIsInit_;
+      }
+      /**
+       * <pre>
+       * Indicates the workspace whether binds vpc when the network module is enabled.
+       * &#64;inject_tag: json:"network_is_init" gorm:"column:network_is_init;&lt;-:false"
+       * </pre>
+       *
+       * <code>bool network_is_init = 9;</code>
+       * @param value The networkIsInit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkIsInit(boolean value) {
+        
+        networkIsInit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the workspace whether binds vpc when the network module is enabled.
+       * &#64;inject_tag: json:"network_is_init" gorm:"column:network_is_init;&lt;-:false"
+       * </pre>
+       *
+       * <code>bool network_is_init = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNetworkIsInit() {
+        
+        networkIsInit_ = false;
         onChanged();
         return this;
       }
@@ -3279,26 +3375,26 @@ public final class PBModelWorkspace {
     java.lang.String[] descriptorData = {
       "\n!proto/types/model/workspace.proto\022\005mod" +
       "el\0323github.com/yu31/protoc-plugin/proto/" +
-      "validator.proto\"\256\002\n\tWorkspace\022\037\n\002id\030\001 \001(" +
+      "validator.proto\"\307\002\n\tWorkspace\022\037\n\002id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\033\n\005owner\030\002 \001(\tB\014\342" +
       "\337\037\010\022\006\302\001\003\230\002@\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230" +
       "\002\200\001\022\014\n\004desc\030\004 \001(\t\0226\n\006status\030\005 \001(\0162\027.mode" +
       "l.Workspace.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007cre" +
       "ated\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003" +
-      "B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000" +
-      "\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003" +
-      "\"\302\002\n\rNetworkConfig\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014" +
-      "\302\001\t\312\002\006vxnet-\022:\n\006status\030\004 \001(\0162\033.model.Net" +
-      "workConfig.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\022\n\nis_d" +
-      "efault\030\005 \001(\010\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Stat" +
-      "us\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enab" +
-      "led\020\002Bk\n\"com.dataomnis.gproto.types.pbmo" +
-      "delB\020PBModelWorkspaceP\000Z1github.com/Data" +
-      "Workbench/gproto/xgo/types/pbmodelb\006prot" +
-      "o3"
+      "B\013\342\337\037\007\022\005\262\001\0020\000\022\027\n\017network_is_init\030\t \001(\010\"A" +
+      "\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001\022\014" +
+      "\n\010Disabled\020\002\022\013\n\007Deleted\020\003\"\302\002\n\rNetworkCon" +
+      "fig\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
+      "s-\022#\n\trouter_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022" +
+      "$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\022:\n" +
+      "\006status\030\004 \001(\0162\033.model.NetworkConfig.Stat" +
+      "usB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\022\n\nis_default\030\005 \001(\010\022\034\n" +
+      "\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007" +
+      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUns" +
+      "et\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bk\n\"com.da" +
+      "taomnis.gproto.types.pbmodelB\020PBModelWor" +
+      "kspaceP\000Z1github.com/DataWorkbench/gprot" +
+      "o/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3310,7 +3406,7 @@ public final class PBModelWorkspace {
     internal_static_model_Workspace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Workspace_descriptor,
-        new java.lang.String[] { "Id", "Owner", "Name", "Desc", "Status", "Created", "Updated", });
+        new java.lang.String[] { "Id", "Owner", "Name", "Desc", "Status", "Created", "Updated", "NetworkIsInit", });
     internal_static_model_NetworkConfig_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_NetworkConfig_fieldAccessorTable = new

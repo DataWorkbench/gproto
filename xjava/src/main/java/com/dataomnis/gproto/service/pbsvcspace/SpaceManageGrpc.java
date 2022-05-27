@@ -8,9 +8,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/spacemanager/space_manage.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class SpaceManageGrpc {
 
   private SpaceManageGrpc() {}
@@ -328,6 +327,68 @@ public final class SpaceManageGrpc {
     return getDescribeNetworkConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAttachVPCToWorkspaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AttachVPCToWorkspace",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAttachVPCToWorkspaceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAttachVPCToWorkspaceMethod;
+    if ((getAttachVPCToWorkspaceMethod = SpaceManageGrpc.getAttachVPCToWorkspaceMethod) == null) {
+      synchronized (SpaceManageGrpc.class) {
+        if ((getAttachVPCToWorkspaceMethod = SpaceManageGrpc.getAttachVPCToWorkspaceMethod) == null) {
+          SpaceManageGrpc.getAttachVPCToWorkspaceMethod = getAttachVPCToWorkspaceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AttachVPCToWorkspace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("AttachVPCToWorkspace"))
+              .build();
+        }
+      }
+    }
+    return getAttachVPCToWorkspaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDetachVPCFromWorkspaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DetachVPCFromWorkspace",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDetachVPCFromWorkspaceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDetachVPCFromWorkspaceMethod;
+    if ((getDetachVPCFromWorkspaceMethod = SpaceManageGrpc.getDetachVPCFromWorkspaceMethod) == null) {
+      synchronized (SpaceManageGrpc.class) {
+        if ((getDetachVPCFromWorkspaceMethod = SpaceManageGrpc.getDetachVPCFromWorkspaceMethod) == null) {
+          SpaceManageGrpc.getDetachVPCFromWorkspaceMethod = getDetachVPCFromWorkspaceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DetachVPCFromWorkspace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DetachVPCFromWorkspace"))
+              .build();
+        }
+      }
+    }
+    return getDetachVPCFromWorkspaceMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -471,6 +532,20 @@ public final class SpaceManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeNetworkConfigMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void attachVPCToWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAttachVPCToWorkspaceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void detachVPCFromWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachVPCFromWorkspaceMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -543,6 +618,20 @@ public final class SpaceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig>(
                   this, METHODID_DESCRIBE_NETWORK_CONFIG)))
+          .addMethod(
+            getAttachVPCToWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_ATTACH_VPCTO_WORKSPACE)))
+          .addMethod(
+            getDetachVPCFromWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_DETACH_VPCFROM_WORKSPACE)))
           .build();
     }
   }
@@ -665,6 +754,22 @@ public final class SpaceManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeNetworkConfigMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void attachVPCToWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAttachVPCToWorkspaceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void detachVPCFromWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDetachVPCFromWorkspaceMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -774,6 +879,20 @@ public final class SpaceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig describeNetworkConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeNetworkConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct attachVPCToWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAttachVPCToWorkspaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct detachVPCFromWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachVPCFromWorkspaceMethod(), getCallOptions(), request);
     }
   }
 
@@ -895,6 +1014,22 @@ public final class SpaceManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeNetworkConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> attachVPCToWorkspace(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAttachVPCToWorkspaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> detachVPCFromWorkspace(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDetachVPCFromWorkspaceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_WORKSPACES = 0;
@@ -907,6 +1042,8 @@ public final class SpaceManageGrpc {
   private static final int METHODID_DESCRIBE_WORKSPACE = 7;
   private static final int METHODID_CHECK_PERMISSION = 8;
   private static final int METHODID_DESCRIBE_NETWORK_CONFIG = 9;
+  private static final int METHODID_ATTACH_VPCTO_WORKSPACE = 10;
+  private static final int METHODID_DETACH_VPCFROM_WORKSPACE = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -964,6 +1101,14 @@ public final class SpaceManageGrpc {
         case METHODID_DESCRIBE_NETWORK_CONFIG:
           serviceImpl.describeNetworkConfig((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig>) responseObserver);
+          break;
+        case METHODID_ATTACH_VPCTO_WORKSPACE:
+          serviceImpl.attachVPCToWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AttachVPCToWorkspace) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_DETACH_VPCFROM_WORKSPACE:
+          serviceImpl.detachVPCFromWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DetachVPCFromWorkspace) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1036,6 +1181,8 @@ public final class SpaceManageGrpc {
               .addMethod(getDescribeWorkspaceMethod())
               .addMethod(getCheckPermissionMethod())
               .addMethod(getDescribeNetworkConfigMethod())
+              .addMethod(getAttachVPCToWorkspaceMethod())
+              .addMethod(getDetachVPCFromWorkspaceMethod())
               .build();
         }
       }

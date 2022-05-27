@@ -14,68 +14,11 @@ func (this *HbaseSource) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.HbaseReadParameter
-func (this *HbaseReadParameter) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Range != nil {
-		if dt, ok := interface{}(this.Range).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Range
-func (this *Range) SetDefaults() {
-	if this == nil {
-		return
-	}
 	return
 }
 
 // Set default value for message model.HbaseTarget
 func (this *HbaseTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Parameter != nil {
-		if dt, ok := interface{}(this.Parameter).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Table != nil {
-		if dt, ok := interface{}(this.Table).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.Table
-func (this *Table) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.HbaseWriteParameter
-func (this *HbaseWriteParameter) SetDefaults() {
 	if this == nil {
 		return
 	}
