@@ -45,14 +45,8 @@ message UpstreamEntity {
   int64 create_time = 14;
   // @inject_tag: json:"update_time" gorm:"column:update_time;"
   int64 update_time = 15;
-  // @inject_tag: json:"version" gorm:"column:version;"
-  string version = 16;
-  // @inject_tag: json:"build" gorm:"column:build;"
-  string build = 17;
-  // @inject_tag: json:"env" gorm:"column:env;"
-  string env = 18;
   // @inject_tag: json:"key" gorm:"column:key;"
-  string key = 19;
+  string key = 16;
 }
 
 message RouteEntity {
@@ -80,16 +74,10 @@ message RouteEntity {
   int64 create_time = 11;
   // @inject_tag: json:"update_time" gorm:"column:update_time;"
   int64 update_time = 12;
-  // @inject_tag: json:"build" gorm:"column:build;"
-  string build = 13;
-  // @inject_tag: json:"env" gorm:"column:env;"
-  string env = 14;
-  // @inject_tag: json:"version" gorm:"column:version;"
-  string version = 15;
   // @inject_tag: json:"plugins" gorm:"column:plugins;"
-  string plugins = 16;
+  string plugins = 13;
   // @inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
-  string api_service_id = 17;
+  string api_service_id = 14;
 }
 
 message SSLEntity {
@@ -105,12 +93,6 @@ message SSLEntity {
   string cert = 5;
   // @inject_tag: json:"key" gorm:"column:key;"
   string key = 6;
-  // @inject_tag: json:"build" gorm:"column:build;"
-  string build = 7;
-  // @inject_tag: json:"env" gorm:"column:env;"
-  string env = 8;
-  // @inject_tag: json:"version" gorm:"column:version;"
-  string version = 9;
 }
 
 message ApiServiceEntity {
@@ -166,9 +148,6 @@ message Upstream {
   string key = 11;
   int64 create_time = 12;
   int64 update_time = 13;
-  string version = 14;
-  string build = 15;
-  string env = 16;
 }
 
 message Timeout {
@@ -202,10 +181,7 @@ message Route {
   string name = 10 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
   int64 create_time = 11;
   int64 update_time = 12;
-  string version = 13;
-  string build = 14;
-  string env = 15;
-  string api_service_id = 16 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string api_service_id = 13 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
 }
 
 message SSL {
@@ -219,7 +195,4 @@ message SSL {
   string id = 4;
   int64 create_time = 5;
   int64 update_time = 6;
-  string version = 7;
-  string build = 8;
-  string env = 9;
 }
