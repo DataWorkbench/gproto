@@ -13,6 +13,13 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
+message RouteUriRewrite {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"uri"
+  string uri = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
 message DeleteRoute {
   // @inject_tag: json:"id"
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
