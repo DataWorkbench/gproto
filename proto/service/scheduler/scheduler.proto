@@ -21,6 +21,9 @@ service Scheduler {
   // StopStreamJob used when offline stream job.
   rpc StopStreamJob(request.StopStreamJob) returns (model.EmptyStruct) {}
 
+  // StopStreamInstance used when terminate a stream job instance.
+  rpc StopStreamInstance(request.StopStreamInstance) returns (model.EmptyStruct) {}
+
   // DeleteStreamJobsBySpaceIds used when delete workspaces.
   // It will stop all stream jobs and terminate all instances.
   // And delete all instances.

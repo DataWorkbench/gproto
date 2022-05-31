@@ -29,13 +29,22 @@ message SubmitStreamJob {
   string flink_version = 4 [ (validator.field).tags.string = { ne: "" } ];
 }
 
-// SubmitStreamJobs used as a request parameters for RPC.
+// StopStreamJob used as a request parameters for RPC.
 message StopStreamJob {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "stj-" } ];
 
   bool stop_running = 3 [(validator.field) = {}];
+}
+
+// StopStreamInstance used as a request parameters for RPC.
+message StopStreamInstance {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "stj-" } ];
+
+  string instance_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "sti-" } ];
 }
 
 message DeleteStreamJobsBySpaceIds {

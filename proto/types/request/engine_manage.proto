@@ -60,7 +60,10 @@ message DeleteFlinkClusterInK8sV2 {
 
   // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 3 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+  string vxnet_id = 3 [
+    (validator.field).check_if = { field: "vxnet_id", tags: {string: { ne: "" }}},
+    (validator.field).tags.string = { prefix: "vxnet-" }
+  ];
 }
 
 message CreateNetworkBrokerInK8sV2 {
