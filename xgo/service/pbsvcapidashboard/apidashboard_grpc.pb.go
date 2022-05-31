@@ -29,6 +29,7 @@ type ApiDashboardClient interface {
 	DeleteRoute(ctx context.Context, in *pbrequest.DeleteRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListRoutes(ctx context.Context, in *pbrequest.ListRoutes, opts ...grpc.CallOption) (*pbresponse.ListRoutes, error)
 	UpdateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	RouteUriRewrite(ctx context.Context, in *pbrequest.RouteUriRewrite, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(ctx context.Context, in *pbrequest.DeleteUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	UpdateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -88,6 +89,15 @@ func (c *apiDashboardClient) ListRoutes(ctx context.Context, in *pbrequest.ListR
 func (c *apiDashboardClient) UpdateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/UpdateRoute", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apiDashboardClient) RouteUriRewrite(ctx context.Context, in *pbrequest.RouteUriRewrite, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/RouteUriRewrite", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -273,6 +283,7 @@ type ApiDashboardServer interface {
 	DeleteRoute(context.Context, *pbrequest.DeleteRoute) (*pbmodel.EmptyStruct, error)
 	ListRoutes(context.Context, *pbrequest.ListRoutes) (*pbresponse.ListRoutes, error)
 	UpdateRoute(context.Context, *pbmodel.Route) (*pbmodel.EmptyStruct, error)
+	RouteUriRewrite(context.Context, *pbrequest.RouteUriRewrite) (*pbmodel.EmptyStruct, error)
 	CreateUpstream(context.Context, *pbmodel.Upstream) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(context.Context, *pbrequest.DeleteUpstream) (*pbmodel.EmptyStruct, error)
 	UpdateUpstream(context.Context, *pbmodel.Upstream) (*pbmodel.EmptyStruct, error)
@@ -310,6 +321,9 @@ func (UnimplementedApiDashboardServer) ListRoutes(context.Context, *pbrequest.Li
 }
 func (UnimplementedApiDashboardServer) UpdateRoute(context.Context, *pbmodel.Route) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRoute not implemented")
+}
+func (UnimplementedApiDashboardServer) RouteUriRewrite(context.Context, *pbrequest.RouteUriRewrite) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RouteUriRewrite not implemented")
 }
 func (UnimplementedApiDashboardServer) CreateUpstream(context.Context, *pbmodel.Upstream) (*pbresponse.CreateUpstream, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUpstream not implemented")
@@ -449,6 +463,24 @@ func _ApiDashboard_UpdateRoute_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiDashboardServer).UpdateRoute(ctx, req.(*pbmodel.Route))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApiDashboard_RouteUriRewrite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.RouteUriRewrite)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiDashboardServer).RouteUriRewrite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/apidashboard.ApiDashboard/RouteUriRewrite",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiDashboardServer).RouteUriRewrite(ctx, req.(*pbrequest.RouteUriRewrite))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -817,6 +849,10 @@ var ApiDashboard_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRoute",
 			Handler:    _ApiDashboard_UpdateRoute_Handler,
+		},
+		{
+			MethodName: "RouteUriRewrite",
+			Handler:    _ApiDashboard_RouteUriRewrite_Handler,
 		},
 		{
 			MethodName: "CreateUpstream",

@@ -12,6 +12,34 @@ import (
 	strconv "strconv"
 )
 
+func (this *RouteUriRewrite) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) > 0) {
+		return protovalidator.FieldError1("RouteUriRewrite", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+	}
+	return nil
+}
+
+func (this *RouteUriRewrite) _xxx_xxx_Validator_Validate_uri() error {
+	if !(len(this.Uri) > 0) {
+		return protovalidator.FieldError1("RouteUriRewrite", "the byte length of field 'uri' must be greater than '0'", protovalidator.StringByteLenToString(this.Uri))
+	}
+	return nil
+}
+
+// Set default value for message request.RouteUriRewrite
+func (this *RouteUriRewrite) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_uri(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *DeleteRoute) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) > 0) {
 		return protovalidator.FieldError1("DeleteRoute", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))

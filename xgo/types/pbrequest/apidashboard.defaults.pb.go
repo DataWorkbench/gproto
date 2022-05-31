@@ -10,6 +10,14 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message request.RouteUriRewrite
+func (this *RouteUriRewrite) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DeleteRoute
 func (this *DeleteRoute) SetDefaults() {
 	if this == nil {
