@@ -139,6 +139,37 @@ public final class ApiDashboardGrpc {
     return getUpdateRouteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRouteUriRewriteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RouteUriRewrite",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRouteUriRewriteMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRouteUriRewriteMethod;
+    if ((getRouteUriRewriteMethod = ApiDashboardGrpc.getRouteUriRewriteMethod) == null) {
+      synchronized (ApiDashboardGrpc.class) {
+        if ((getRouteUriRewriteMethod = ApiDashboardGrpc.getRouteUriRewriteMethod) == null) {
+          ApiDashboardGrpc.getRouteUriRewriteMethod = getRouteUriRewriteMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RouteUriRewrite"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new ApiDashboardMethodDescriptorSupplier("RouteUriRewrite"))
+              .build();
+        }
+      }
+    }
+    return getRouteUriRewriteMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream,
       com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream> getCreateUpstreamMethod;
 
@@ -806,6 +837,13 @@ public final class ApiDashboardGrpc {
 
     /**
      */
+    public void routeUriRewrite(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRouteUriRewriteMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void createUpstream(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUpstreamMethod(), responseObserver);
@@ -967,6 +1005,13 @@ public final class ApiDashboardGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Route,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_UPDATE_ROUTE)))
+          .addMethod(
+            getRouteUriRewriteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_ROUTE_URI_REWRITE)))
           .addMethod(
             getCreateUpstreamMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1148,6 +1193,14 @@ public final class ApiDashboardGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRouteMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void routeUriRewrite(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRouteUriRewriteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1347,6 +1400,13 @@ public final class ApiDashboardGrpc {
 
     /**
      */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct routeUriRewrite(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRouteUriRewriteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream createUpstream(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateUpstreamMethod(), getCallOptions(), request);
@@ -1527,6 +1587,14 @@ public final class ApiDashboardGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> routeUriRewrite(
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRouteUriRewriteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream> createUpstream(
         com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1682,25 +1750,26 @@ public final class ApiDashboardGrpc {
   private static final int METHODID_DELETE_ROUTE = 1;
   private static final int METHODID_LIST_ROUTES = 2;
   private static final int METHODID_UPDATE_ROUTE = 3;
-  private static final int METHODID_CREATE_UPSTREAM = 4;
-  private static final int METHODID_DELETE_UPSTREAM = 5;
-  private static final int METHODID_UPDATE_UPSTREAM = 6;
-  private static final int METHODID_LIST_UPSTREAMS = 7;
-  private static final int METHODID_CREATE_SSL = 8;
-  private static final int METHODID_DELETE_SSL = 9;
-  private static final int METHODID_LIST_SSLS = 10;
-  private static final int METHODID_CREATE_API_SERVICE = 11;
-  private static final int METHODID_DELETE_API_SERVICE = 12;
-  private static final int METHODID_UPDATE_API_SERVICE = 13;
-  private static final int METHODID_LIST_API_SERVICES = 14;
-  private static final int METHODID_ADD_SVC_REQ_COUNT = 15;
-  private static final int METHODID_GET_SVC_REQ_COUNT = 16;
-  private static final int METHODID_CREATE_AUTH_KEY = 17;
-  private static final int METHODID_DELETE_AUTH_KEY = 18;
-  private static final int METHODID_UPDATE_AUTH_KEY = 19;
-  private static final int METHODID_LIST_AUTH_KEYS = 20;
-  private static final int METHODID_BIND_AUTH_KEY = 21;
-  private static final int METHODID_UNBIND_AUTH_KEY = 22;
+  private static final int METHODID_ROUTE_URI_REWRITE = 4;
+  private static final int METHODID_CREATE_UPSTREAM = 5;
+  private static final int METHODID_DELETE_UPSTREAM = 6;
+  private static final int METHODID_UPDATE_UPSTREAM = 7;
+  private static final int METHODID_LIST_UPSTREAMS = 8;
+  private static final int METHODID_CREATE_SSL = 9;
+  private static final int METHODID_DELETE_SSL = 10;
+  private static final int METHODID_LIST_SSLS = 11;
+  private static final int METHODID_CREATE_API_SERVICE = 12;
+  private static final int METHODID_DELETE_API_SERVICE = 13;
+  private static final int METHODID_UPDATE_API_SERVICE = 14;
+  private static final int METHODID_LIST_API_SERVICES = 15;
+  private static final int METHODID_ADD_SVC_REQ_COUNT = 16;
+  private static final int METHODID_GET_SVC_REQ_COUNT = 17;
+  private static final int METHODID_CREATE_AUTH_KEY = 18;
+  private static final int METHODID_DELETE_AUTH_KEY = 19;
+  private static final int METHODID_UPDATE_AUTH_KEY = 20;
+  private static final int METHODID_LIST_AUTH_KEYS = 21;
+  private static final int METHODID_BIND_AUTH_KEY = 22;
+  private static final int METHODID_UNBIND_AUTH_KEY = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1733,6 +1802,10 @@ public final class ApiDashboardGrpc {
           break;
         case METHODID_UPDATE_ROUTE:
           serviceImpl.updateRoute((com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Route) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_ROUTE_URI_REWRITE:
+          serviceImpl.routeUriRewrite((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_UPSTREAM:
@@ -1876,6 +1949,7 @@ public final class ApiDashboardGrpc {
               .addMethod(getDeleteRouteMethod())
               .addMethod(getListRoutesMethod())
               .addMethod(getUpdateRouteMethod())
+              .addMethod(getRouteUriRewriteMethod())
               .addMethod(getCreateUpstreamMethod())
               .addMethod(getDeleteUpstreamMethod())
               .addMethod(getUpdateUpstreamMethod())

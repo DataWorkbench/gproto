@@ -260,70 +260,10 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 16;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 16;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 17;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 17;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 18;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 18;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"key" gorm:"column:key;"
      * </pre>
      *
-     * <code>string key = 19;</code>
+     * <code>string key = 16;</code>
      * @return The key.
      */
     java.lang.String getKey();
@@ -332,7 +272,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"key" gorm:"column:key;"
      * </pre>
      *
-     * <code>string key = 19;</code>
+     * <code>string key = 16;</code>
      * @return The bytes for key.
      */
     com.google.protobuf.ByteString
@@ -360,9 +300,6 @@ public final class PBModelApiDashboard {
       clientCert_ = "";
       clientKey_ = "";
       id_ = "";
-      version_ = "";
-      build_ = "";
-      env_ = "";
       key_ = "";
     }
 
@@ -481,24 +418,6 @@ public final class PBModelApiDashboard {
               break;
             }
             case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              build_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
-              break;
-            }
-            case 154: {
               java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
@@ -1040,152 +959,14 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 16;
-    private volatile java.lang.Object version_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 16;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 16;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BUILD_FIELD_NUMBER = 17;
-    private volatile java.lang.Object build_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 17;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 17;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 18;
-    private volatile java.lang.Object env_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 18;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 18;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int KEY_FIELD_NUMBER = 19;
+    public static final int KEY_FIELD_NUMBER = 16;
     private volatile java.lang.Object key_;
     /**
      * <pre>
      * &#64;inject_tag: json:"key" gorm:"column:key;"
      * </pre>
      *
-     * <code>string key = 19;</code>
+     * <code>string key = 16;</code>
      * @return The key.
      */
     @java.lang.Override
@@ -1206,7 +987,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"key" gorm:"column:key;"
      * </pre>
      *
-     * <code>string key = 19;</code>
+     * <code>string key = 16;</code>
      * @return The bytes for key.
      */
     @java.lang.Override
@@ -1283,17 +1064,8 @@ public final class PBModelApiDashboard {
       if (updateTime_ != 0L) {
         output.writeInt64(15, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, env_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, key_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, key_);
       }
       unknownFields.writeTo(output);
     }
@@ -1355,17 +1127,8 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, env_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, key_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, key_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1415,12 +1178,6 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
       if (!getKey()
           .equals(other.getKey())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1469,12 +1226,6 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1640,12 +1391,6 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
-        version_ = "";
-
-        build_ = "";
-
-        env_ = "";
-
         key_ = "";
 
         return this;
@@ -1689,9 +1434,6 @@ public final class PBModelApiDashboard {
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
         result.key_ = key_;
         onBuilt();
         return result;
@@ -1794,18 +1536,6 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
         }
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
@@ -2962,301 +2692,13 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object version_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 16;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 16;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 16;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 16;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 17;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 17;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 17;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 17;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 17;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 18;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 18;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 18;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 18;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 18;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object key_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"key" gorm:"column:key;"
        * </pre>
        *
-       * <code>string key = 19;</code>
+       * <code>string key = 16;</code>
        * @return The key.
        */
       public java.lang.String getKey() {
@@ -3276,7 +2718,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"key" gorm:"column:key;"
        * </pre>
        *
-       * <code>string key = 19;</code>
+       * <code>string key = 16;</code>
        * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
@@ -3297,7 +2739,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"key" gorm:"column:key;"
        * </pre>
        *
-       * <code>string key = 19;</code>
+       * <code>string key = 16;</code>
        * @param value The key to set.
        * @return This builder for chaining.
        */
@@ -3316,7 +2758,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"key" gorm:"column:key;"
        * </pre>
        *
-       * <code>string key = 19;</code>
+       * <code>string key = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearKey() {
@@ -3330,7 +2772,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"key" gorm:"column:key;"
        * </pre>
        *
-       * <code>string key = 19;</code>
+       * <code>string key = 16;</code>
        * @param value The bytes for key to set.
        * @return This builder for chaining.
        */
@@ -3604,70 +3046,10 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 13;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 13;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 14;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 14;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 15;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 15;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 16;</code>
+     * <code>string plugins = 13;</code>
      * @return The plugins.
      */
     java.lang.String getPlugins();
@@ -3676,7 +3058,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 16;</code>
+     * <code>string plugins = 13;</code>
      * @return The bytes for plugins.
      */
     com.google.protobuf.ByteString
@@ -3687,7 +3069,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 17;</code>
+     * <code>string api_service_id = 14;</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
@@ -3696,7 +3078,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 17;</code>
+     * <code>string api_service_id = 14;</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
@@ -3723,9 +3105,6 @@ public final class PBModelApiDashboard {
       remoteAddrs_ = "";
       upstreamId_ = "";
       id_ = "";
-      build_ = "";
-      env_ = "";
-      version_ = "";
       plugins_ = "";
       apiServiceId_ = "";
     }
@@ -3831,28 +3210,10 @@ public final class PBModelApiDashboard {
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              build_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               plugins_ = s;
               break;
             }
-            case 138: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiServiceId_ = s;
@@ -4318,152 +3679,14 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int BUILD_FIELD_NUMBER = 13;
-    private volatile java.lang.Object build_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 13;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 13;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 14;
-    private volatile java.lang.Object env_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 14;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 14;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 15;
-    private volatile java.lang.Object version_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 15;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 15;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLUGINS_FIELD_NUMBER = 16;
+    public static final int PLUGINS_FIELD_NUMBER = 13;
     private volatile java.lang.Object plugins_;
     /**
      * <pre>
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 16;</code>
+     * <code>string plugins = 13;</code>
      * @return The plugins.
      */
     @java.lang.Override
@@ -4484,7 +3707,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 16;</code>
+     * <code>string plugins = 13;</code>
      * @return The bytes for plugins.
      */
     @java.lang.Override
@@ -4502,14 +3725,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 17;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 14;
     private volatile java.lang.Object apiServiceId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 17;</code>
+     * <code>string api_service_id = 14;</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -4530,7 +3753,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 17;</code>
+     * <code>string api_service_id = 14;</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -4598,20 +3821,11 @@ public final class PBModelApiDashboard {
       if (updateTime_ != 0L) {
         output.writeInt64(12, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, env_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, version_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plugins_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, plugins_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, plugins_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, apiServiceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4662,20 +3876,11 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, env_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, version_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plugins_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, plugins_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, plugins_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, apiServiceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4716,12 +3921,6 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
       if (!getPlugins()
           .equals(other.getPlugins())) return false;
       if (!getApiServiceId()
@@ -4763,12 +3962,6 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
       hash = (37 * hash) + PLUGINS_FIELD_NUMBER;
       hash = (53 * hash) + getPlugins().hashCode();
       hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
@@ -4930,12 +4123,6 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
-        build_ = "";
-
-        env_ = "";
-
-        version_ = "";
-
         plugins_ = "";
 
         apiServiceId_ = "";
@@ -4978,9 +4165,6 @@ public final class PBModelApiDashboard {
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.build_ = build_;
-        result.env_ = env_;
-        result.version_ = version_;
         result.plugins_ = plugins_;
         result.apiServiceId_ = apiServiceId_;
         onBuilt();
@@ -5074,18 +4258,6 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
         }
         if (!other.getPlugins().isEmpty()) {
           plugins_ = other.plugins_;
@@ -6064,301 +5236,13 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object build_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 13;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 13;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 13;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 13;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 14;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 14;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 14;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 14;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object version_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 15;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 15;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 15;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 15;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object plugins_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 16;</code>
+       * <code>string plugins = 13;</code>
        * @return The plugins.
        */
       public java.lang.String getPlugins() {
@@ -6378,7 +5262,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 16;</code>
+       * <code>string plugins = 13;</code>
        * @return The bytes for plugins.
        */
       public com.google.protobuf.ByteString
@@ -6399,7 +5283,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 16;</code>
+       * <code>string plugins = 13;</code>
        * @param value The plugins to set.
        * @return This builder for chaining.
        */
@@ -6418,7 +5302,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 16;</code>
+       * <code>string plugins = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlugins() {
@@ -6432,7 +5316,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 16;</code>
+       * <code>string plugins = 13;</code>
        * @param value The bytes for plugins to set.
        * @return This builder for chaining.
        */
@@ -6454,7 +5338,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 17;</code>
+       * <code>string api_service_id = 14;</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -6474,7 +5358,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 17;</code>
+       * <code>string api_service_id = 14;</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -6495,7 +5379,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 17;</code>
+       * <code>string api_service_id = 14;</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -6514,7 +5398,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 17;</code>
+       * <code>string api_service_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -6528,7 +5412,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 17;</code>
+       * <code>string api_service_id = 14;</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -6699,66 +5583,6 @@ public final class PBModelApiDashboard {
      */
     com.google.protobuf.ByteString
         getKeyBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 7;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 7;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 8;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 8;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 9;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 9;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
   }
   /**
    * Protobuf type {@code model.SSLEntity}
@@ -6777,9 +5601,6 @@ public final class PBModelApiDashboard {
       snis_ = "";
       cert_ = "";
       key_ = "";
-      build_ = "";
-      env_ = "";
-      version_ = "";
     }
 
     @java.lang.Override
@@ -6844,24 +5665,6 @@ public final class PBModelApiDashboard {
               java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              build_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
               break;
             }
             default: {
@@ -7110,144 +5913,6 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int BUILD_FIELD_NUMBER = 7;
-    private volatile java.lang.Object build_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 7;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build" gorm:"column:build;"
-     * </pre>
-     *
-     * <code>string build = 7;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 8;
-    private volatile java.lang.Object env_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 8;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env" gorm:"column:env;"
-     * </pre>
-     *
-     * <code>string env = 8;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 9;
-    private volatile java.lang.Object version_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 9;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"version" gorm:"column:version;"
-     * </pre>
-     *
-     * <code>string version = 9;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7280,15 +5945,6 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, env_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, version_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7318,15 +5974,6 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, env_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, version_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7354,12 +6001,6 @@ public final class PBModelApiDashboard {
           .equals(other.getCert())) return false;
       if (!getKey()
           .equals(other.getKey())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7385,12 +6026,6 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getCert().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7536,12 +6171,6 @@ public final class PBModelApiDashboard {
 
         key_ = "";
 
-        build_ = "";
-
-        env_ = "";
-
-        version_ = "";
-
         return this;
       }
 
@@ -7574,9 +6203,6 @@ public final class PBModelApiDashboard {
         result.snis_ = snis_;
         result.cert_ = cert_;
         result.key_ = key_;
-        result.build_ = build_;
-        result.env_ = env_;
-        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -7645,18 +6271,6 @@ public final class PBModelApiDashboard {
         }
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -8154,294 +6768,6 @@ public final class PBModelApiDashboard {
   checkByteStringIsUtf8(value);
         
         key_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 7;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 7;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 7;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build" gorm:"column:build;"
-       * </pre>
-       *
-       * <code>string build = 7;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 8;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 8;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 8;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env" gorm:"column:env;"
-       * </pre>
-       *
-       * <code>string env = 8;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object version_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 9;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 9;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 9;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"version" gorm:"column:version;"
-       * </pre>
-       *
-       * <code>string version = 9;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
         onChanged();
         return this;
       }
@@ -11674,42 +10000,6 @@ public final class PBModelApiDashboard {
      * @return The updateTime.
      */
     long getUpdateTime();
-
-    /**
-     * <code>string version = 14;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <code>string version = 14;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <code>string build = 15;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <code>string build = 15;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <code>string env = 16;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <code>string env = 16;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
   }
   /**
    * Protobuf type {@code model.Upstream}
@@ -11732,9 +10022,6 @@ public final class PBModelApiDashboard {
       schema_ = "";
       id_ = "";
       key_ = "";
-      version_ = "";
-      build_ = "";
-      env_ = "";
     }
 
     @java.lang.Override
@@ -11858,24 +10145,6 @@ public final class PBModelApiDashboard {
             case 104: {
 
               updateTime_ = input.readInt64();
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              build_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
               break;
             }
             default: {
@@ -12348,120 +10617,6 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 14;
-    private volatile java.lang.Object version_;
-    /**
-     * <code>string version = 14;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string version = 14;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BUILD_FIELD_NUMBER = 15;
-    private volatile java.lang.Object build_;
-    /**
-     * <code>string build = 15;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string build = 15;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 16;
-    private volatile java.lang.Object env_;
-    /**
-     * <code>string env = 16;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string env = 16;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12514,15 +10669,6 @@ public final class PBModelApiDashboard {
       }
       if (updateTime_ != 0L) {
         output.writeInt64(13, updateTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, env_);
       }
       unknownFields.writeTo(output);
     }
@@ -12578,15 +10724,6 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(13, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, env_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12634,12 +10771,6 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12685,12 +10816,6 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12863,12 +10988,6 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
-        version_ = "";
-
-        build_ = "";
-
-        env_ = "";
-
         return this;
       }
 
@@ -12925,9 +11044,6 @@ public final class PBModelApiDashboard {
         result.key_ = key_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
         onBuilt();
         return result;
       }
@@ -13044,18 +11160,6 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14318,234 +12422,6 @@ public final class PBModelApiDashboard {
       public Builder clearUpdateTime() {
         
         updateTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object version_ = "";
-      /**
-       * <code>string version = 14;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string version = 14;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string version = 14;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 14;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <code>string build = 15;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string build = 15;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string build = 15;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 15;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <code>string env = 16;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string env = 16;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string env = 16;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 16;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
         onChanged();
         return this;
       }
@@ -16834,48 +14710,12 @@ public final class PBModelApiDashboard {
     long getUpdateTime();
 
     /**
-     * <code>string version = 13;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <code>string version = 13;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <code>string build = 14;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <code>string build = 14;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <code>string env = 15;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <code>string env = 15;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
-
-    /**
-     * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
     /**
-     * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
@@ -16902,9 +14742,6 @@ public final class PBModelApiDashboard {
       remoteAddrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       upstreamId_ = "";
       name_ = "";
-      version_ = "";
-      build_ = "";
-      env_ = "";
       apiServiceId_ = "";
     }
 
@@ -17017,24 +14854,6 @@ public final class PBModelApiDashboard {
               break;
             }
             case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              build_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
-              break;
-            }
-            case 130: {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiServiceId_ = s;
@@ -17428,124 +15247,10 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 13;
-    private volatile java.lang.Object version_;
-    /**
-     * <code>string version = 13;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string version = 13;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BUILD_FIELD_NUMBER = 14;
-    private volatile java.lang.Object build_;
-    /**
-     * <code>string build = 14;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string build = 14;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 15;
-    private volatile java.lang.Object env_;
-    /**
-     * <code>string env = 15;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string env = 15;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 16;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 13;
     private volatile java.lang.Object apiServiceId_;
     /**
-     * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -17562,7 +15267,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -17630,17 +15335,8 @@ public final class PBModelApiDashboard {
       if (updateTime_ != 0L) {
         output.writeInt64(12, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, env_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, apiServiceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -17706,17 +15402,8 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, env_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, apiServiceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17757,12 +15444,6 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
       if (!getApiServiceId()
           .equals(other.getApiServiceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -17808,12 +15489,6 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
       hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApiServiceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -17973,12 +15648,6 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
-        version_ = "";
-
-        build_ = "";
-
-        env_ = "";
-
         apiServiceId_ = "";
 
         return this;
@@ -18032,9 +15701,6 @@ public final class PBModelApiDashboard {
         result.name_ = name_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
         result.apiServiceId_ = apiServiceId_;
         onBuilt();
         return result;
@@ -18145,18 +15811,6 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
         }
         if (!other.getApiServiceId().isEmpty()) {
           apiServiceId_ = other.apiServiceId_;
@@ -19046,237 +16700,9 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object version_ = "";
-      /**
-       * <code>string version = 13;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string version = 13;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string version = 13;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 13;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <code>string build = 14;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string build = 14;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string build = 14;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 14;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <code>string env = 15;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string env = 15;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string env = 15;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 15;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object apiServiceId_ = "";
       /**
-       * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -19292,7 +16718,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -19309,7 +16735,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -19324,7 +16750,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -19334,7 +16760,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string api_service_id = 16 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -19518,42 +16944,6 @@ public final class PBModelApiDashboard {
      * @return The updateTime.
      */
     long getUpdateTime();
-
-    /**
-     * <code>string version = 7;</code>
-     * @return The version.
-     */
-    java.lang.String getVersion();
-    /**
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <code>string build = 8;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <code>string env = 9;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
   }
   /**
    * Protobuf type {@code model.SSL}
@@ -19572,9 +16962,6 @@ public final class PBModelApiDashboard {
       key_ = "";
       snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       id_ = "";
-      version_ = "";
-      build_ = "";
-      env_ = "";
     }
 
     @java.lang.Override
@@ -19643,24 +17030,6 @@ public final class PBModelApiDashboard {
             case 48: {
 
               updateTime_ = input.readInt64();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              build_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
               break;
             }
             default: {
@@ -19909,120 +17278,6 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 7;
-    private volatile java.lang.Object version_;
-    /**
-     * <code>string version = 7;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BUILD_FIELD_NUMBER = 8;
-    private volatile java.lang.Object build_;
-    /**
-     * <code>string build = 8;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 9;
-    private volatile java.lang.Object env_;
-    /**
-     * <code>string env = 9;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -20054,15 +17309,6 @@ public final class PBModelApiDashboard {
       }
       if (updateTime_ != 0L) {
         output.writeInt64(6, updateTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, env_);
       }
       unknownFields.writeTo(output);
     }
@@ -20098,15 +17344,6 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, env_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -20134,12 +17371,6 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -20167,12 +17398,6 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -20318,12 +17543,6 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
-        version_ = "";
-
-        build_ = "";
-
-        env_ = "";
-
         return this;
       }
 
@@ -20361,9 +17580,6 @@ public final class PBModelApiDashboard {
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
         onBuilt();
         return result;
       }
@@ -20439,18 +17655,6 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -20977,234 +18181,6 @@ public final class PBModelApiDashboard {
         onChanged();
         return this;
       }
-
-      private java.lang.Object version_ = "";
-      /**
-       * <code>string version = 7;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string version = 7;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string version = 7;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 7;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <code>string build = 8;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string build = 8;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string build = 8;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string build = 8;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <code>string env = 9;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string env = 9;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string env = 9;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string env = 9;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -21326,69 +18302,63 @@ public final class PBModelApiDashboard {
       "model\0323github.com/yu31/protoc-plugin/pro" +
       "to/validator.proto\0322github.com/yu31/prot" +
       "oc-plugin/proto/defaults.proto\032\031google/p" +
-      "rotobuf/any.proto\"\333\002\n\016UpstreamEntity\022\014\n\004" +
+      "rotobuf/any.proto\"\256\002\n\016UpstreamEntity\022\014\n\004" +
       "type\030\001 \001(\t\022\r\n\005nodes\030\002 \001(\t\022\017\n\007retries\030\003 \001" +
       "(\005\022\021\n\tpass_host\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004d" +
       "esc\030\006 \001(\t\022\016\n\006schema\030\007 \001(\t\022\023\n\013client_cert" +
       "\030\010 \001(\t\022\022\n\nclient_key\030\t \001(\t\022\027\n\017timeout_co" +
       "nnect\030\n \001(\002\022\024\n\014timeout_send\030\013 \001(\002\022\024\n\014tim" +
       "eout_read\030\014 \001(\002\022\n\n\002id\030\r \001(\t\022\023\n\013create_ti" +
-      "me\030\016 \001(\003\022\023\n\013update_time\030\017 \001(\003\022\017\n\007version" +
-      "\030\020 \001(\t\022\r\n\005build\030\021 \001(\t\022\013\n\003env\030\022 \001(\t\022\013\n\003ke" +
-      "y\030\023 \001(\t\"\257\002\n\013RouteEntity\022\013\n\003uri\030\001 \001(\t\022\014\n\004" +
-      "name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\020\n\010priority\030\004 \001" +
-      "(\005\022\017\n\007methods\030\005 \001(\t\022\r\n\005hosts\030\006 \001(\t\022\024\n\014re" +
-      "mote_addrs\030\007 \001(\t\022\023\n\013upstream_id\030\010 \001(\t\022\016\n" +
-      "\006status\030\t \001(\005\022\n\n\002id\030\n \001(\t\022\023\n\013create_time" +
-      "\030\013 \001(\003\022\023\n\013update_time\030\014 \001(\003\022\r\n\005build\030\r \001" +
-      "(\t\022\013\n\003env\030\016 \001(\t\022\017\n\007version\030\017 \001(\t\022\017\n\007plug" +
-      "ins\030\020 \001(\t\022\026\n\016api_service_id\030\021 \001(\t\"\227\001\n\tSS" +
-      "LEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003" +
-      "\022\023\n\013update_time\030\003 \001(\003\022\014\n\004snis\030\004 \001(\t\022\014\n\004c" +
-      "ert\030\005 \001(\t\022\013\n\003key\030\006 \001(\t\022\r\n\005build\030\007 \001(\t\022\013\n" +
-      "\003env\030\010 \001(\t\022\017\n\007version\030\t \001(\t\"\273\001\n\020ApiServi" +
-      "ceEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(" +
-      "\003\022\023\n\013update_time\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\014\n\004" +
-      "desc\030\005 \001(\t\022\023\n\013auth_key_id\030\006 \001(\t\022\016\n\006domai" +
-      "n\030\007 \001(\t\022\035\n\007user_id\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\021" +
-      "\n\tapi_count\030\t \001(\005\"g\n\rAuthKeyEntity\022\n\n\002id" +
-      "\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013update_ti" +
-      "me\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\022\n\nsecret_key\030\005 \001" +
-      "(\t\"\351\003\n\010Upstream\022<\n\004type\030\001 \001(\tB.\342\337\037*\022(\302\001%" +
-      "J\nroundrobinJ\005chashJ\004ewmaJ\nleast_conn\022/\n" +
-      "\005nodes\030\002 \003(\0132\023.model.UpstreamNodeB\013\342\337\037\007\022" +
-      "\005\352\001\002@\000\022.\n\007retries\030\003 \001(\005B\035\242\241\037\005\252\006\002-1\342\337\037\020\022\016" +
-      "\262\001\013@\377\377\377\377\377\377\377\377\377\001\022(\n\tpass_host\030\004 \001(\tB\025\342\337\037\021\022" +
-      "\017\302\001\014J\004passJ\004node\022\032\n\004name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\200\002\000\022\022\n\004desc\030\006 \001(\tB\004\342\337\037\000\022&\n\006schema\030\007 \001(\t" +
-      "B\026\342\337\037\022\022\020\302\001\rJ\004httpJ\005https\022%\n\003tls\030\010 \001(\0132\022." +
-      "model.UpstreamTLSB\004\342\337\037\000\022%\n\007timeout\030\t \001(\013" +
-      "2\016.model.TimeoutB\004\342\337\037\000\022\n\n\002id\030\n \001(\t\022\013\n\003ke" +
-      "y\030\013 \001(\t\022\023\n\013create_time\030\014 \001(\003\022\023\n\013update_t" +
-      "ime\030\r \001(\003\022\017\n\007version\030\016 \001(\t\022\r\n\005build\030\017 \001(" +
-      "\t\022\013\n\003env\030\020 \001(\t\"6\n\007Timeout\022\017\n\007connect\030\001 \001" +
-      "(\002\022\014\n\004send\030\002 \001(\002\022\014\n\004read\030\003 \001(\002\"b\n\014Upstre" +
-      "amNode\022\032\n\004host\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004po" +
-      "rt\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022\033\n\006weight\030\003 \001(\005B\013\342" +
-      "\337\037\007\022\005\262\001\0020\000\"6\n\013UpstreamTLS\022\023\n\013client_cert" +
-      "\030\001 \001(\t\022\022\n\nclient_key\030\002 \001(\t\"\371\002\n\005Route\022\031\n\003" +
-      "uri\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\n\n\002id\030\002 \001(\t\022\014\n\004d" +
-      "esc\030\003 \001(\t\022%\n\010priority\030\004 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037" +
-      "\007\022\005\262\001\0020\000\022\017\n\007methods\030\005 \003(\t\022\r\n\005hosts\030\006 \003(\t" +
-      "\022!\n\014remote_addrs\030\007 \003(\tB\013\342\337\037\007\022\005\352\001\002@\000\022\031\n\013u" +
-      "pstream_id\030\010 \001(\tB\004\342\337\037\000\022\035\n\006status\030\t \001(\005B\r" +
-      "\342\337\037\t\022\007\262\001\0048\001@\000\022\032\n\004name\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
-      "\000\022\023\n\013create_time\030\013 \001(\003\022\023\n\013update_time\030\014 " +
-      "\001(\003\022\017\n\007version\030\r \001(\t\022\r\n\005build\030\016 \001(\t\022\013\n\003e" +
-      "nv\030\017 \001(\t\022$\n\016api_service_id\030\020 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\200\002\000\"\272\001\n\003SSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200" +
-      "\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 " +
-      "\003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\023\n\013create_t" +
-      "ime\030\005 \001(\003\022\023\n\013update_time\030\006 \001(\003\022\017\n\007versio" +
-      "n\030\007 \001(\t\022\r\n\005build\030\010 \001(\t\022\013\n\003env\030\t \001(\tBn\n\"c" +
-      "om.dataomnis.gproto.types.pbmodelB\023PBMod" +
-      "elApiDashboardP\000Z1github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbmodelb\006proto3"
+      "me\030\016 \001(\003\022\023\n\013update_time\030\017 \001(\003\022\013\n\003key\030\020 \001" +
+      "(\t\"\202\002\n\013RouteEntity\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\020\n\010priority\030\004 \001(\005\022\017\n" +
+      "\007methods\030\005 \001(\t\022\r\n\005hosts\030\006 \001(\t\022\024\n\014remote_" +
+      "addrs\030\007 \001(\t\022\023\n\013upstream_id\030\010 \001(\t\022\016\n\006stat" +
+      "us\030\t \001(\005\022\n\n\002id\030\n \001(\t\022\023\n\013create_time\030\013 \001(" +
+      "\003\022\023\n\013update_time\030\014 \001(\003\022\017\n\007plugins\030\r \001(\t\022" +
+      "\026\n\016api_service_id\030\016 \001(\t\"j\n\tSSLEntity\022\n\n\002" +
+      "id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013update_" +
+      "time\030\003 \001(\003\022\014\n\004snis\030\004 \001(\t\022\014\n\004cert\030\005 \001(\t\022\013" +
+      "\n\003key\030\006 \001(\t\"\273\001\n\020ApiServiceEntity\022\n\n\002id\030\001" +
+      " \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013update_time" +
+      "\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\014\n\004desc\030\005 \001(\t\022\023\n\013au" +
+      "th_key_id\030\006 \001(\t\022\016\n\006domain\030\007 \001(\t\022\035\n\007user_" +
+      "id\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\021\n\tapi_count\030\t \001(" +
+      "\005\"g\n\rAuthKeyEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create" +
+      "_time\030\002 \001(\003\022\023\n\013update_time\030\003 \001(\003\022\014\n\004name" +
+      "\030\004 \001(\t\022\022\n\nsecret_key\030\005 \001(\t\"\274\003\n\010Upstream\022" +
+      "<\n\004type\030\001 \001(\tB.\342\337\037*\022(\302\001%J\nroundrobinJ\005ch" +
+      "ashJ\004ewmaJ\nleast_conn\022/\n\005nodes\030\002 \003(\0132\023.m" +
+      "odel.UpstreamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022.\n\007retrie" +
+      "s\030\003 \001(\005B\035\242\241\037\005\252\006\002-1\342\337\037\020\022\016\262\001\013@\377\377\377\377\377\377\377\377\377\001\022(" +
+      "\n\tpass_host\030\004 \001(\tB\025\342\337\037\021\022\017\302\001\014J\004passJ\004node" +
+      "\022\032\n\004name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\022\n\004desc\030\006 \001" +
+      "(\tB\004\342\337\037\000\022&\n\006schema\030\007 \001(\tB\026\342\337\037\022\022\020\302\001\rJ\004htt" +
+      "pJ\005https\022%\n\003tls\030\010 \001(\0132\022.model.UpstreamTL" +
+      "SB\004\342\337\037\000\022%\n\007timeout\030\t \001(\0132\016.model.Timeout" +
+      "B\004\342\337\037\000\022\n\n\002id\030\n \001(\t\022\013\n\003key\030\013 \001(\t\022\023\n\013creat" +
+      "e_time\030\014 \001(\003\022\023\n\013update_time\030\r \001(\003\"6\n\007Tim" +
+      "eout\022\017\n\007connect\030\001 \001(\002\022\014\n\004send\030\002 \001(\002\022\014\n\004r" +
+      "ead\030\003 \001(\002\"b\n\014UpstreamNode\022\032\n\004host\030\001 \001(\tB" +
+      "\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004port\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000" +
+      "\022\033\n\006weight\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"6\n\013Upstrea" +
+      "mTLS\022\023\n\013client_cert\030\001 \001(\t\022\022\n\nclient_key\030" +
+      "\002 \001(\t\"\314\002\n\005Route\022\031\n\003uri\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200" +
+      "\002\000\022\n\n\002id\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022%\n\010priority" +
+      "\030\004 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\0020\000\022\017\n\007methods\030\005" +
+      " \003(\t\022\r\n\005hosts\030\006 \003(\t\022!\n\014remote_addrs\030\007 \003(" +
+      "\tB\013\342\337\037\007\022\005\352\001\002@\000\022\031\n\013upstream_id\030\010 \001(\tB\004\342\337\037" +
+      "\000\022\035\n\006status\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048\001@\000\022\032\n\004name" +
+      "\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\023\n\013create_time\030\013 \001(" +
+      "\003\022\023\n\013update_time\030\014 \001(\003\022$\n\016api_service_id" +
+      "\030\r \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\215\001\n\003SSL\022\032\n\004cert\030\001 \001" +
+      "(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001" +
+      "(\t\022\023\n\013create_time\030\005 \001(\003\022\023\n\013update_time\030\006" +
+      " \001(\003Bn\n\"com.dataomnis.gproto.types.pbmod" +
+      "elB\023PBModelApiDashboardP\000Z1github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbmodelb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21402,19 +18372,19 @@ public final class PBModelApiDashboard {
     internal_static_model_UpstreamEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UpstreamEntity_descriptor,
-        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "ClientCert", "ClientKey", "TimeoutConnect", "TimeoutSend", "TimeoutRead", "Id", "CreateTime", "UpdateTime", "Version", "Build", "Env", "Key", });
+        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "ClientCert", "ClientKey", "TimeoutConnect", "TimeoutSend", "TimeoutRead", "Id", "CreateTime", "UpdateTime", "Key", });
     internal_static_model_RouteEntity_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_RouteEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RouteEntity_descriptor,
-        new java.lang.String[] { "Uri", "Name", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Id", "CreateTime", "UpdateTime", "Build", "Env", "Version", "Plugins", "ApiServiceId", });
+        new java.lang.String[] { "Uri", "Name", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Id", "CreateTime", "UpdateTime", "Plugins", "ApiServiceId", });
     internal_static_model_SSLEntity_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_SSLEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SSLEntity_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Snis", "Cert", "Key", "Build", "Env", "Version", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Snis", "Cert", "Key", });
     internal_static_model_ApiServiceEntity_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_ApiServiceEntity_fieldAccessorTable = new
@@ -21432,7 +18402,7 @@ public final class PBModelApiDashboard {
     internal_static_model_Upstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Upstream_descriptor,
-        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", "Key", "CreateTime", "UpdateTime", "Version", "Build", "Env", });
+        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", "Key", "CreateTime", "UpdateTime", });
     internal_static_model_Timeout_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_model_Timeout_fieldAccessorTable = new
@@ -21456,13 +18426,13 @@ public final class PBModelApiDashboard {
     internal_static_model_Route_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Route_descriptor,
-        new java.lang.String[] { "Uri", "Id", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Name", "CreateTime", "UpdateTime", "Version", "Build", "Env", "ApiServiceId", });
+        new java.lang.String[] { "Uri", "Id", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Name", "CreateTime", "UpdateTime", "ApiServiceId", });
     internal_static_model_SSL_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_model_SSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SSL_descriptor,
-        new java.lang.String[] { "Cert", "Key", "Snis", "Id", "CreateTime", "UpdateTime", "Version", "Build", "Env", });
+        new java.lang.String[] { "Cert", "Key", "Snis", "Id", "CreateTime", "UpdateTime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\023PBModelApiDashboardP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$proto/types/model/apidashboard.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x19google/protobuf/any.proto\"\xdb\x02\n\x0eUpstreamEntity\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\r\n\x05nodes\x18\x02 \x01(\t\x12\x0f\n\x07retries\x18\x03 \x01(\x05\x12\x11\n\tpass_host\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x06 \x01(\t\x12\x0e\n\x06schema\x18\x07 \x01(\t\x12\x13\n\x0b\x63lient_cert\x18\x08 \x01(\t\x12\x12\n\nclient_key\x18\t \x01(\t\x12\x17\n\x0ftimeout_connect\x18\n \x01(\x02\x12\x14\n\x0ctimeout_send\x18\x0b \x01(\x02\x12\x14\n\x0ctimeout_read\x18\x0c \x01(\x02\x12\n\n\x02id\x18\r \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0e \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0f \x01(\x03\x12\x0f\n\x07version\x18\x10 \x01(\t\x12\r\n\x05\x62uild\x18\x11 \x01(\t\x12\x0b\n\x03\x65nv\x18\x12 \x01(\t\x12\x0b\n\x03key\x18\x13 \x01(\t\"\xaf\x02\n\x0bRouteEntity\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12\x0f\n\x07methods\x18\x05 \x01(\t\x12\r\n\x05hosts\x18\x06 \x01(\t\x12\x14\n\x0cremote_addrs\x18\x07 \x01(\t\x12\x13\n\x0bupstream_id\x18\x08 \x01(\t\x12\x0e\n\x06status\x18\t \x01(\x05\x12\n\n\x02id\x18\n \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0b \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0c \x01(\x03\x12\r\n\x05\x62uild\x18\r \x01(\t\x12\x0b\n\x03\x65nv\x18\x0e \x01(\t\x12\x0f\n\x07version\x18\x0f \x01(\t\x12\x0f\n\x07plugins\x18\x10 \x01(\t\x12\x16\n\x0e\x61pi_service_id\x18\x11 \x01(\t\"\x97\x01\n\tSSLEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04snis\x18\x04 \x01(\t\x12\x0c\n\x04\x63\x65rt\x18\x05 \x01(\t\x12\x0b\n\x03key\x18\x06 \x01(\t\x12\r\n\x05\x62uild\x18\x07 \x01(\t\x12\x0b\n\x03\x65nv\x18\x08 \x01(\t\x12\x0f\n\x07version\x18\t \x01(\t\"\xbb\x01\n\x10\x41piServiceEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\x12\x13\n\x0b\x61uth_key_id\x18\x06 \x01(\t\x12\x0e\n\x06\x64omain\x18\x07 \x01(\t\x12\x1d\n\x07user_id\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x11\n\tapi_count\x18\t \x01(\x05\"g\n\rAuthKeyEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x12\n\nsecret_key\x18\x05 \x01(\t\"\xe9\x03\n\x08Upstream\x12<\n\x04type\x18\x01 \x01(\tB.\xe2\xdf\x1f*\x12(\xc2\x01%J\nroundrobinJ\x05\x63hashJ\x04\x65wmaJ\nleast_conn\x12/\n\x05nodes\x18\x02 \x03(\x0b\x32\x13.model.UpstreamNodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02@\x00\x12.\n\x07retries\x18\x03 \x01(\x05\x42\x1d\xa2\xa1\x1f\x05\xaa\x06\x02-1\xe2\xdf\x1f\x10\x12\x0e\xb2\x01\x0b@\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12(\n\tpass_host\x18\x04 \x01(\tB\x15\xe2\xdf\x1f\x11\x12\x0f\xc2\x01\x0cJ\x04passJ\x04node\x12\x1a\n\x04name\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x12\n\x04\x64\x65sc\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12&\n\x06schema\x18\x07 \x01(\tB\x16\xe2\xdf\x1f\x12\x12\x10\xc2\x01\rJ\x04httpJ\x05https\x12%\n\x03tls\x18\x08 \x01(\x0b\x32\x12.model.UpstreamTLSB\x04\xe2\xdf\x1f\x00\x12%\n\x07timeout\x18\t \x01(\x0b\x32\x0e.model.TimeoutB\x04\xe2\xdf\x1f\x00\x12\n\n\x02id\x18\n \x01(\t\x12\x0b\n\x03key\x18\x0b \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0c \x01(\x03\x12\x13\n\x0bupdate_time\x18\r \x01(\x03\x12\x0f\n\x07version\x18\x0e \x01(\t\x12\r\n\x05\x62uild\x18\x0f \x01(\t\x12\x0b\n\x03\x65nv\x18\x10 \x01(\t\"6\n\x07Timeout\x12\x0f\n\x07\x63onnect\x18\x01 \x01(\x02\x12\x0c\n\x04send\x18\x02 \x01(\x02\x12\x0c\n\x04read\x18\x03 \x01(\x02\"b\n\x0cUpstreamNode\x12\x1a\n\x04host\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x04port\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1b\n\x06weight\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"6\n\x0bUpstreamTLS\x12\x13\n\x0b\x63lient_cert\x18\x01 \x01(\t\x12\x12\n\nclient_key\x18\x02 \x01(\t\"\xf9\x02\n\x05Route\x12\x19\n\x03uri\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12%\n\x08priority\x18\x04 \x01(\x05\x42\x13\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0f\n\x07methods\x18\x05 \x03(\t\x12\r\n\x05hosts\x18\x06 \x03(\t\x12!\n\x0cremote_addrs\x18\x07 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02@\x00\x12\x19\n\x0bupstream_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1d\n\x06status\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x01@\x00\x12\x1a\n\x04name\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x13\n\x0b\x63reate_time\x18\x0b \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0c \x01(\x03\x12\x0f\n\x07version\x18\r \x01(\t\x12\r\n\x05\x62uild\x18\x0e \x01(\t\x12\x0b\n\x03\x65nv\x18\x0f \x01(\t\x12$\n\x0e\x61pi_service_id\x18\x10 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\xba\x01\n\x03SSL\x12\x1a\n\x04\x63\x65rt\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x03key\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x04snis\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\n\n\x02id\x18\x04 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x05 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x06 \x01(\x03\x12\x0f\n\x07version\x18\x07 \x01(\t\x12\r\n\x05\x62uild\x18\x08 \x01(\t\x12\x0b\n\x03\x65nv\x18\t \x01(\tBn\n\"com.dataomnis.gproto.types.pbmodelB\x13PBModelApiDashboardP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n$proto/types/model/apidashboard.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x19google/protobuf/any.proto\"\xae\x02\n\x0eUpstreamEntity\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\r\n\x05nodes\x18\x02 \x01(\t\x12\x0f\n\x07retries\x18\x03 \x01(\x05\x12\x11\n\tpass_host\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x06 \x01(\t\x12\x0e\n\x06schema\x18\x07 \x01(\t\x12\x13\n\x0b\x63lient_cert\x18\x08 \x01(\t\x12\x12\n\nclient_key\x18\t \x01(\t\x12\x17\n\x0ftimeout_connect\x18\n \x01(\x02\x12\x14\n\x0ctimeout_send\x18\x0b \x01(\x02\x12\x14\n\x0ctimeout_read\x18\x0c \x01(\x02\x12\n\n\x02id\x18\r \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0e \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0f \x01(\x03\x12\x0b\n\x03key\x18\x10 \x01(\t\"\x82\x02\n\x0bRouteEntity\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12\x0f\n\x07methods\x18\x05 \x01(\t\x12\r\n\x05hosts\x18\x06 \x01(\t\x12\x14\n\x0cremote_addrs\x18\x07 \x01(\t\x12\x13\n\x0bupstream_id\x18\x08 \x01(\t\x12\x0e\n\x06status\x18\t \x01(\x05\x12\n\n\x02id\x18\n \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0b \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0c \x01(\x03\x12\x0f\n\x07plugins\x18\r \x01(\t\x12\x16\n\x0e\x61pi_service_id\x18\x0e \x01(\t\"j\n\tSSLEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04snis\x18\x04 \x01(\t\x12\x0c\n\x04\x63\x65rt\x18\x05 \x01(\t\x12\x0b\n\x03key\x18\x06 \x01(\t\"\xbb\x01\n\x10\x41piServiceEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\x12\x13\n\x0b\x61uth_key_id\x18\x06 \x01(\t\x12\x0e\n\x06\x64omain\x18\x07 \x01(\t\x12\x1d\n\x07user_id\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x11\n\tapi_count\x18\t \x01(\x05\"g\n\rAuthKeyEntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x03\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x12\n\nsecret_key\x18\x05 \x01(\t\"\xbc\x03\n\x08Upstream\x12<\n\x04type\x18\x01 \x01(\tB.\xe2\xdf\x1f*\x12(\xc2\x01%J\nroundrobinJ\x05\x63hashJ\x04\x65wmaJ\nleast_conn\x12/\n\x05nodes\x18\x02 \x03(\x0b\x32\x13.model.UpstreamNodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02@\x00\x12.\n\x07retries\x18\x03 \x01(\x05\x42\x1d\xa2\xa1\x1f\x05\xaa\x06\x02-1\xe2\xdf\x1f\x10\x12\x0e\xb2\x01\x0b@\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12(\n\tpass_host\x18\x04 \x01(\tB\x15\xe2\xdf\x1f\x11\x12\x0f\xc2\x01\x0cJ\x04passJ\x04node\x12\x1a\n\x04name\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x12\n\x04\x64\x65sc\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12&\n\x06schema\x18\x07 \x01(\tB\x16\xe2\xdf\x1f\x12\x12\x10\xc2\x01\rJ\x04httpJ\x05https\x12%\n\x03tls\x18\x08 \x01(\x0b\x32\x12.model.UpstreamTLSB\x04\xe2\xdf\x1f\x00\x12%\n\x07timeout\x18\t \x01(\x0b\x32\x0e.model.TimeoutB\x04\xe2\xdf\x1f\x00\x12\n\n\x02id\x18\n \x01(\t\x12\x0b\n\x03key\x18\x0b \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x0c \x01(\x03\x12\x13\n\x0bupdate_time\x18\r \x01(\x03\"6\n\x07Timeout\x12\x0f\n\x07\x63onnect\x18\x01 \x01(\x02\x12\x0c\n\x04send\x18\x02 \x01(\x02\x12\x0c\n\x04read\x18\x03 \x01(\x02\"b\n\x0cUpstreamNode\x12\x1a\n\x04host\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x04port\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1b\n\x06weight\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"6\n\x0bUpstreamTLS\x12\x13\n\x0b\x63lient_cert\x18\x01 \x01(\t\x12\x12\n\nclient_key\x18\x02 \x01(\t\"\xcc\x02\n\x05Route\x12\x19\n\x03uri\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12%\n\x08priority\x18\x04 \x01(\x05\x42\x13\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0f\n\x07methods\x18\x05 \x03(\t\x12\r\n\x05hosts\x18\x06 \x03(\t\x12!\n\x0cremote_addrs\x18\x07 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02@\x00\x12\x19\n\x0bupstream_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1d\n\x06status\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x01@\x00\x12\x1a\n\x04name\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x13\n\x0b\x63reate_time\x18\x0b \x01(\x03\x12\x13\n\x0bupdate_time\x18\x0c \x01(\x03\x12$\n\x0e\x61pi_service_id\x18\r \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\x8d\x01\n\x03SSL\x12\x1a\n\x04\x63\x65rt\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x03key\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x04snis\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\n\n\x02id\x18\x04 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x05 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x06 \x01(\x03\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBModelApiDashboardP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -143,29 +143,8 @@ _UPSTREAMENTITY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='model.UpstreamEntity.version', index=15,
+      name='key', full_name='model.UpstreamEntity.key', index=15,
       number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='build', full_name='model.UpstreamEntity.build', index=16,
-      number=17, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='model.UpstreamEntity.env', index=17,
-      number=18, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='key', full_name='model.UpstreamEntity.key', index=18,
-      number=19, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -183,7 +162,7 @@ _UPSTREAMENTITY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=180,
-  serialized_end=527,
+  serialized_end=482,
 )
 
 
@@ -280,36 +259,15 @@ _ROUTEENTITY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='build', full_name='model.RouteEntity.build', index=12,
+      name='plugins', full_name='model.RouteEntity.plugins', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='env', full_name='model.RouteEntity.env', index=13,
+      name='api_service_id', full_name='model.RouteEntity.api_service_id', index=13,
       number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='model.RouteEntity.version', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='plugins', full_name='model.RouteEntity.plugins', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='api_service_id', full_name='model.RouteEntity.api_service_id', index=16,
-      number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -326,8 +284,8 @@ _ROUTEENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=530,
-  serialized_end=833,
+  serialized_start=485,
+  serialized_end=743,
 )
 
 
@@ -381,27 +339,6 @@ _SSLENTITY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='build', full_name='model.SSLEntity.build', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='model.SSLEntity.env', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='model.SSLEntity.version', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -414,8 +351,8 @@ _SSLENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=836,
-  serialized_end=987,
+  serialized_start=745,
+  serialized_end=851,
 )
 
 
@@ -502,8 +439,8 @@ _APISERVICEENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=990,
-  serialized_end=1177,
+  serialized_start=854,
+  serialized_end=1041,
 )
 
 
@@ -562,8 +499,8 @@ _AUTHKEYENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1179,
-  serialized_end=1282,
+  serialized_start=1043,
+  serialized_end=1146,
 )
 
 
@@ -666,27 +603,6 @@ _UPSTREAM = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='model.Upstream.version', index=13,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='build', full_name='model.Upstream.build', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='model.Upstream.env', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -699,8 +615,8 @@ _UPSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1285,
-  serialized_end=1774,
+  serialized_start=1149,
+  serialized_end=1593,
 )
 
 
@@ -745,8 +661,8 @@ _TIMEOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1776,
-  serialized_end=1830,
+  serialized_start=1595,
+  serialized_end=1649,
 )
 
 
@@ -791,8 +707,8 @@ _UPSTREAMNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1832,
-  serialized_end=1930,
+  serialized_start=1651,
+  serialized_end=1749,
 )
 
 
@@ -830,8 +746,8 @@ _UPSTREAMTLS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1932,
-  serialized_end=1986,
+  serialized_start=1751,
+  serialized_end=1805,
 )
 
 
@@ -928,29 +844,8 @@ _ROUTE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='model.Route.version', index=12,
+      name='api_service_id', full_name='model.Route.api_service_id', index=12,
       number=13, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='build', full_name='model.Route.build', index=13,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='model.Route.env', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='api_service_id', full_name='model.Route.api_service_id', index=15,
-      number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -967,8 +862,8 @@ _ROUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1989,
-  serialized_end=2366,
+  serialized_start=1808,
+  serialized_end=2140,
 )
 
 
@@ -1022,27 +917,6 @@ _SSL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='model.SSL.version', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='build', full_name='model.SSL.build', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='model.SSL.env', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1055,8 +929,8 @@ _SSL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2369,
-  serialized_end=2555,
+  serialized_start=2143,
+  serialized_end=2284,
 )
 
 _UPSTREAM.fields_by_name['nodes'].message_type = _UPSTREAMNODE

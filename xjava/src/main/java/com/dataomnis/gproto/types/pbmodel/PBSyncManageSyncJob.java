@@ -6551,22 +6551,11 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * The allowed percentage where the job is error
-     * &#64;inject_tag: json:"percentage"
-     * </pre>
-     *
-     * <code>int32 percentage = 3 [(.defaults.field) = { ... }</code>
-     * @return The percentage.
-     */
-    int getPercentage();
-
-    /**
-     * <pre>
      *sync rate
      * &#64;inject_tag: json:"rate"
      * </pre>
      *
-     * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+     * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
      * @return The enum numeric value on the wire for rate.
      */
     int getRateValue();
@@ -6576,7 +6565,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"rate"
      * </pre>
      *
-     * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+     * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
      * @return The rate.
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy getRate();
@@ -6587,7 +6576,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"bytes"
      * </pre>
      *
-     * <code>int32 bytes = 5;</code>
+     * <code>int32 bytes = 4;</code>
      * @return The bytes.
      */
     int getBytes();
@@ -6649,17 +6638,12 @@ public final class PBSyncManageSyncJob {
               break;
             }
             case 24: {
-
-              percentage_ = input.readInt32();
-              break;
-            }
-            case 32: {
               int rawValue = input.readEnum();
 
               rate_ = rawValue;
               break;
             }
-            case 40: {
+            case 32: {
 
               bytes_ = input.readInt32();
               break;
@@ -6845,23 +6829,7 @@ public final class PBSyncManageSyncJob {
       return recordNum_;
     }
 
-    public static final int PERCENTAGE_FIELD_NUMBER = 3;
-    private int percentage_;
-    /**
-     * <pre>
-     * The allowed percentage where the job is error
-     * &#64;inject_tag: json:"percentage"
-     * </pre>
-     *
-     * <code>int32 percentage = 3 [(.defaults.field) = { ... }</code>
-     * @return The percentage.
-     */
-    @java.lang.Override
-    public int getPercentage() {
-      return percentage_;
-    }
-
-    public static final int RATE_FIELD_NUMBER = 4;
+    public static final int RATE_FIELD_NUMBER = 3;
     private int rate_;
     /**
      * <pre>
@@ -6869,7 +6837,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"rate"
      * </pre>
      *
-     * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+     * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
      * @return The enum numeric value on the wire for rate.
      */
     @java.lang.Override public int getRateValue() {
@@ -6881,7 +6849,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"rate"
      * </pre>
      *
-     * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+     * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
      * @return The rate.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy getRate() {
@@ -6890,7 +6858,7 @@ public final class PBSyncManageSyncJob {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.UNRECOGNIZED : result;
     }
 
-    public static final int BYTES_FIELD_NUMBER = 5;
+    public static final int BYTES_FIELD_NUMBER = 4;
     private int bytes_;
     /**
      * <pre>
@@ -6898,7 +6866,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"bytes"
      * </pre>
      *
-     * <code>int32 bytes = 5;</code>
+     * <code>int32 bytes = 4;</code>
      * @return The bytes.
      */
     @java.lang.Override
@@ -6926,14 +6894,11 @@ public final class PBSyncManageSyncJob {
       if (recordNum_ != 0) {
         output.writeInt32(2, recordNum_);
       }
-      if (percentage_ != 0) {
-        output.writeInt32(3, percentage_);
-      }
       if (rate_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.RatePolicyUnset.getNumber()) {
-        output.writeEnum(4, rate_);
+        output.writeEnum(3, rate_);
       }
       if (bytes_ != 0) {
-        output.writeInt32(5, bytes_);
+        output.writeInt32(4, bytes_);
       }
       unknownFields.writeTo(output);
     }
@@ -6952,17 +6917,13 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, recordNum_);
       }
-      if (percentage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, percentage_);
-      }
       if (rate_ != com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl.RatePolicy.RatePolicyUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, rate_);
+          .computeEnumSize(3, rate_);
       }
       if (bytes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, bytes_);
+          .computeInt32Size(4, bytes_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6983,8 +6944,6 @@ public final class PBSyncManageSyncJob {
           != other.getParallelism()) return false;
       if (getRecordNum()
           != other.getRecordNum()) return false;
-      if (getPercentage()
-          != other.getPercentage()) return false;
       if (rate_ != other.rate_) return false;
       if (getBytes()
           != other.getBytes()) return false;
@@ -7003,8 +6962,6 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getParallelism();
       hash = (37 * hash) + RECORD_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getRecordNum();
-      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPercentage();
       hash = (37 * hash) + RATE_FIELD_NUMBER;
       hash = (53 * hash) + rate_;
       hash = (37 * hash) + BYTES_FIELD_NUMBER;
@@ -7146,8 +7103,6 @@ public final class PBSyncManageSyncJob {
 
         recordNum_ = 0;
 
-        percentage_ = 0;
-
         rate_ = 0;
 
         bytes_ = 0;
@@ -7180,7 +7135,6 @@ public final class PBSyncManageSyncJob {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ChannelControl(this);
         result.parallelism_ = parallelism_;
         result.recordNum_ = recordNum_;
-        result.percentage_ = percentage_;
         result.rate_ = rate_;
         result.bytes_ = bytes_;
         onBuilt();
@@ -7236,9 +7190,6 @@ public final class PBSyncManageSyncJob {
         }
         if (other.getRecordNum() != 0) {
           setRecordNum(other.getRecordNum());
-        }
-        if (other.getPercentage() != 0) {
-          setPercentage(other.getPercentage());
         }
         if (other.rate_ != 0) {
           setRateValue(other.getRateValue());
@@ -7367,52 +7318,6 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private int percentage_ ;
-      /**
-       * <pre>
-       * The allowed percentage where the job is error
-       * &#64;inject_tag: json:"percentage"
-       * </pre>
-       *
-       * <code>int32 percentage = 3 [(.defaults.field) = { ... }</code>
-       * @return The percentage.
-       */
-      @java.lang.Override
-      public int getPercentage() {
-        return percentage_;
-      }
-      /**
-       * <pre>
-       * The allowed percentage where the job is error
-       * &#64;inject_tag: json:"percentage"
-       * </pre>
-       *
-       * <code>int32 percentage = 3 [(.defaults.field) = { ... }</code>
-       * @param value The percentage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPercentage(int value) {
-        
-        percentage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The allowed percentage where the job is error
-       * &#64;inject_tag: json:"percentage"
-       * </pre>
-       *
-       * <code>int32 percentage = 3 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPercentage() {
-        
-        percentage_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int rate_ = 0;
       /**
        * <pre>
@@ -7420,7 +7325,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"rate"
        * </pre>
        *
-       * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+       * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
        * @return The enum numeric value on the wire for rate.
        */
       @java.lang.Override public int getRateValue() {
@@ -7432,7 +7337,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"rate"
        * </pre>
        *
-       * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+       * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
        * @param value The enum numeric value on the wire for rate to set.
        * @return This builder for chaining.
        */
@@ -7448,7 +7353,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"rate"
        * </pre>
        *
-       * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+       * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
        * @return The rate.
        */
       @java.lang.Override
@@ -7463,7 +7368,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"rate"
        * </pre>
        *
-       * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+       * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
        * @param value The rate to set.
        * @return This builder for chaining.
        */
@@ -7482,7 +7387,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"rate"
        * </pre>
        *
-       * <code>.model.ChannelControl.RatePolicy rate = 4;</code>
+       * <code>.model.ChannelControl.RatePolicy rate = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRate() {
@@ -7499,7 +7404,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"bytes"
        * </pre>
        *
-       * <code>int32 bytes = 5;</code>
+       * <code>int32 bytes = 4;</code>
        * @return The bytes.
        */
       @java.lang.Override
@@ -7512,7 +7417,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"bytes"
        * </pre>
        *
-       * <code>int32 bytes = 5;</code>
+       * <code>int32 bytes = 4;</code>
        * @param value The bytes to set.
        * @return This builder for chaining.
        */
@@ -7528,7 +7433,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"bytes"
        * </pre>
        *
-       * <code>int32 bytes = 5;</code>
+       * <code>int32 bytes = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBytes() {
@@ -24892,97 +24797,97 @@ public final class PBSyncManageSyncJob {
       "rce\022\022\n\ncluster_id\030\006 \001(\t\022.\n\017channel_contr" +
       "ol\030\007 \001(\0132\025.model.ChannelControl\":\n\007JobMo" +
       "de\022\020\n\014JobModeUnset\020\000\022\r\n\tGuideMode\020\001\022\016\n\nS" +
-      "criptMode\020\002:\006\312\262\004\002\n\000\"\374\001\n\016ChannelControl\022*" +
+      "criptMode\020\002:\006\312\262\004\002\n\000\"\335\001\n\016ChannelControl\022*" +
       "\n\013parallelism\030\001 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\000" +
-      "8d\022\035\n\nrecord_num\030\002 \001(\005B\t\242\241\037\005\252\006\002-1\022\035\n\nper" +
-      "centage\030\003 \001(\005B\t\242\241\037\005\252\006\002-1\022.\n\004rate\030\004 \001(\0162 " +
-      ".model.ChannelControl.RatePolicy\022\r\n\005byte" +
-      "s\030\005 \001(\005\"9\n\nRatePolicy\022\023\n\017RatePolicyUnset" +
-      "\020\000\022\t\n\005Limit\020\001\022\013\n\007UnLimit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014S" +
-      "yncResource\022%\n\014mysql_source\030\001 \001(\0132\017.mode" +
-      "l.DBSource\022%\n\014mysql_target\030\002 \001(\0132\017.model" +
-      ".DBTarget\022&\n\roracle_source\030\003 \001(\0132\017.model" +
-      ".DBSource\022&\n\roracle_target\030\004 \001(\0132\017.model" +
-      ".DBTarget\022#\n\ndb2_source\030\005 \001(\0132\017.model.DB" +
-      "Source\022#\n\ndb2_target\030\006 \001(\0132\017.model.DBTar" +
-      "get\022*\n\021postgresql_source\030\007 \001(\0132\017.model.D" +
-      "BSource\022*\n\021postgresql_target\030\010 \001(\0132\017.mod" +
-      "el.DBTarget\022)\n\020sqlserver_source\030\t \001(\0132\017." +
-      "model.DBSource\022)\n\020sqlserver_target\030\n \001(\013" +
-      "2\017.model.DBTarget\022+\n\022click_house_source\030" +
-      "\013 \001(\0132\017.model.DBSource\022+\n\022click_house_ta" +
-      "rget\030\014 \001(\0132\017.model.DBTarget\022(\n\017sap_hana_" +
-      "source\030\r \001(\0132\017.model.DBSource\022(\n\017sap_han" +
-      "a_target\030\016 \001(\0132\017.model.DBTarget\022,\n\016mongo" +
-      "db_source\030\017 \001(\0132\024.model.MongodbSource\022,\n" +
-      "\016mongodb_target\030\020 \001(\0132\024.model.MongodbTar" +
-      "get\0229\n\025elastic_search_source\030\021 \001(\0132\032.mod" +
-      "el.ElasticSearchSource\0229\n\025elastic_search" +
-      "_target\030\022 \001(\0132\032.model.ElasticSearchTarge" +
-      "t\022&\n\013hdfs_source\030\023 \001(\0132\021.model.HdfsSourc" +
-      "e\022&\n\013hdfs_target\030\024 \001(\0132\021.model.HdfsTarge" +
-      "t\022$\n\nftp_source\030\025 \001(\0132\020.model.FtpSource\022" +
-      "$\n\nftp_target\030\026 \001(\0132\020.model.FtpTarget\022(\n" +
-      "\014hbase_source\030\027 \001(\0132\022.model.HbaseSource\022" +
-      "(\n\014hbase_target\030\030 \001(\0132\022.model.HbaseTarge" +
-      "t\022(\n\014kafka_source\030\031 \001(\0132\022.model.KafkaSou" +
-      "rce\022(\n\014kafka_target\030\032 \001(\0132\022.model.KafkaT" +
-      "arget\022*\n\rbinlog_source\030\033 \001(\0132\023.model.Bin" +
-      "logSource\022)\n\rpg_wal_source\030\034 \001(\0132\022.model" +
-      ".PgWalSource\0228\n\025sql_server_cdc_source\030\035 " +
-      "\001(\0132\031.model.SqlServerCdcSource\022/\n\020log_mi" +
-      "ner_source\030\036 \001(\0132\025.model.LogMinerSource\022" +
-      "(\n\014redis_target\030\037 \001(\0132\022.model.RedisTarge" +
-      "t\022&\n\013hive_target\030  \001(\0132\021.model.HiveTarge" +
-      "t:\006\312\262\004\002\n\000\"\353\006\n\017SyncJobSchedule\022M\n\017schedul" +
-      "e_policy\030\001 \001(\0162%.model.SyncJobSchedule.S" +
-      "chedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed" +
-      "\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337" +
-      "\037\n\022\010\262\001\005@\200\206\203\017\0224\n\nparameters\030\003 \003(\0132 .model" +
-      ".SyncJobSchedule.Parameter\022\034\n\007started\030\004 " +
-      "\001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262" +
-      "\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\0162(.model" +
-      ".SyncJobSchedule.ConcurrencyPolicyB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017" +
-      "schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ" +
-      "\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express" +
-      "\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337" +
-      "\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d" +
-      "@\000\032O\n\tParameter\022\037\n\003key\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300" +
-      "\001\001\310\001@\210\005\001\022!\n\005value\030\002 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@" +
-      "\210\005\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyU" +
-      "nset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002" +
-      "\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032" +
-      "\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n" +
-      "\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n" +
-      "\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:" +
-      "\006\312\262\004\002\n\000\"\262\003\n\016SyncJobRelease\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200" +
-      "\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337" +
-      "\037\t\022\007\332\001\004@\000X\001\022,\n\006status\030\006 \001(\0162\034.model.Sync" +
-      "JobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreat" +
-      "ed_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001" +
-      "(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005" +
-      "\262\001\0020\000\"M\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
-      "ted\020\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\022\014\n\010Finish" +
-      "ed\020\004\"\377\003\n\021SyncJobConnection\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022>\n\006status\030\006 \001(\0162" +
-      "\037.model.SyncJobConnection.StatusB\r\342\337\037\t\022\007" +
-      "\332\001\0040\001X\001\022>\n\006result\030\007 \001(\0162\037.model.SyncJobC" +
-      "onnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007messa" +
-      "ge\030\010 \001(\t\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016" +
-      "\n\006elapse\030\n \001(\003\"3\n\006Status\022\017\n\013StatusUnset\020" +
-      "\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n" +
-      "\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002Bn" +
-      "\n\"com.dataomnis.gproto.types.pbmodelB\023PB" +
-      "SyncManageSyncJobP\000Z1github.com/DataWork" +
-      "bench/gproto/xgo/types/pbmodelb\006proto3"
+      "8d\022\035\n\nrecord_num\030\002 \001(\005B\t\242\241\037\005\252\006\002-1\022.\n\004rat" +
+      "e\030\003 \001(\0162 .model.ChannelControl.RatePolic" +
+      "y\022\r\n\005bytes\030\004 \001(\005\"9\n\nRatePolicy\022\023\n\017RatePo" +
+      "licyUnset\020\000\022\t\n\005Limit\020\001\022\013\n\007UnLimit\020\002:\006\312\262\004" +
+      "\002\n\000\"\204\013\n\014SyncResource\022%\n\014mysql_source\030\001 \001" +
+      "(\0132\017.model.DBSource\022%\n\014mysql_target\030\002 \001(" +
+      "\0132\017.model.DBTarget\022&\n\roracle_source\030\003 \001(" +
+      "\0132\017.model.DBSource\022&\n\roracle_target\030\004 \001(" +
+      "\0132\017.model.DBTarget\022#\n\ndb2_source\030\005 \001(\0132\017" +
+      ".model.DBSource\022#\n\ndb2_target\030\006 \001(\0132\017.mo" +
+      "del.DBTarget\022*\n\021postgresql_source\030\007 \001(\0132" +
+      "\017.model.DBSource\022*\n\021postgresql_target\030\010 " +
+      "\001(\0132\017.model.DBTarget\022)\n\020sqlserver_source" +
+      "\030\t \001(\0132\017.model.DBSource\022)\n\020sqlserver_tar" +
+      "get\030\n \001(\0132\017.model.DBTarget\022+\n\022click_hous" +
+      "e_source\030\013 \001(\0132\017.model.DBSource\022+\n\022click" +
+      "_house_target\030\014 \001(\0132\017.model.DBTarget\022(\n\017" +
+      "sap_hana_source\030\r \001(\0132\017.model.DBSource\022(" +
+      "\n\017sap_hana_target\030\016 \001(\0132\017.model.DBTarget" +
+      "\022,\n\016mongodb_source\030\017 \001(\0132\024.model.Mongodb" +
+      "Source\022,\n\016mongodb_target\030\020 \001(\0132\024.model.M" +
+      "ongodbTarget\0229\n\025elastic_search_source\030\021 " +
+      "\001(\0132\032.model.ElasticSearchSource\0229\n\025elast" +
+      "ic_search_target\030\022 \001(\0132\032.model.ElasticSe" +
+      "archTarget\022&\n\013hdfs_source\030\023 \001(\0132\021.model." +
+      "HdfsSource\022&\n\013hdfs_target\030\024 \001(\0132\021.model." +
+      "HdfsTarget\022$\n\nftp_source\030\025 \001(\0132\020.model.F" +
+      "tpSource\022$\n\nftp_target\030\026 \001(\0132\020.model.Ftp" +
+      "Target\022(\n\014hbase_source\030\027 \001(\0132\022.model.Hba" +
+      "seSource\022(\n\014hbase_target\030\030 \001(\0132\022.model.H" +
+      "baseTarget\022(\n\014kafka_source\030\031 \001(\0132\022.model" +
+      ".KafkaSource\022(\n\014kafka_target\030\032 \001(\0132\022.mod" +
+      "el.KafkaTarget\022*\n\rbinlog_source\030\033 \001(\0132\023." +
+      "model.BinlogSource\022)\n\rpg_wal_source\030\034 \001(" +
+      "\0132\022.model.PgWalSource\0228\n\025sql_server_cdc_" +
+      "source\030\035 \001(\0132\031.model.SqlServerCdcSource\022" +
+      "/\n\020log_miner_source\030\036 \001(\0132\025.model.LogMin" +
+      "erSource\022(\n\014redis_target\030\037 \001(\0132\022.model.R" +
+      "edisTarget\022&\n\013hive_target\030  \001(\0132\021.model." +
+      "HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJobSchedule\022M" +
+      "\n\017schedule_policy\030\001 \001(\0162%.model.SyncJobS" +
+      "chedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n" +
+      "\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy" +
+      "\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\nparameters\030\003 \003(" +
+      "\0132 .model.SyncJobSchedule.Parameter\022\034\n\007s" +
+      "tarted\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003" +
+      "B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(" +
+      "\0162(.model.SyncJobSchedule.ConcurrencyPol" +
+      "icyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tB" +
+      "M\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&" +
+      "J\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;" +
+      "\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy" +
+      "\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337" +
+      "\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022\037\n\003key\030\001 \001(\tB\022\342" +
+      "\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002 \001(\tB\022\342\337\037\016\022\014" +
+      "\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016SchedulePolicy\022\027\n\023Schedu" +
+      "lePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appo" +
+      "intTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concurrenc" +
+      "yPolicy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005A" +
+      "llow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013Retry" +
+      "Policy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010" +
+      "\n\004Auto\020\002:\006\312\262\004\002\n\000\"\262\003\n\016SyncJobRelease\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id" +
+      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003" +
+      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n" +
+      "\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob" +
+      ".TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006status\030\006 \001(\0162\034.m" +
+      "odel.SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t" +
+      "\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007cr" +
+      "eated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\"M\n\006Status\022\017\n\013StatusUnset\020" +
+      "\000\022\013\n\007Deleted\020\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\022" +
+      "\014\n\010Finished\020\004\"\377\003\n\021SyncJobConnection\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006jo" +
+      "b_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\nclust" +
+      "er_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsour" +
+      "ce_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarg" +
+      "et_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022>\n\006stat" +
+      "us\030\006 \001(\0162\037.model.SyncJobConnection.Statu" +
+      "sB\r\342\337\037\t\022\007\332\001\0040\001X\001\022>\n\006result\030\007 \001(\0162\037.model" +
+      ".SyncJobConnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022\017\n\007message\030\010 \001(\t\022\034\n\007created\030\t \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\016\n\006elapse\030\n \001(\003\"3\n\006Status\022\017\n\013Sta" +
+      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"1\n\006" +
+      "Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006F" +
+      "ailed\020\002Bn\n\"com.dataomnis.gproto.types.pb" +
+      "modelB\023PBSyncManageSyncJobP\000Z1github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -25028,7 +24933,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_ChannelControl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ChannelControl_descriptor,
-        new java.lang.String[] { "Parallelism", "RecordNum", "Percentage", "Rate", "Bytes", });
+        new java.lang.String[] { "Parallelism", "RecordNum", "Rate", "Bytes", });
     internal_static_model_SyncResource_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_SyncResource_fieldAccessorTable = new

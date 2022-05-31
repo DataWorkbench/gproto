@@ -14,6 +14,796 @@ public final class PBRequestApiDashboard {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface RouteUriRewriteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.RouteUriRewrite)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+  }
+  /**
+   * Protobuf type {@code request.RouteUriRewrite}
+   */
+  public static final class RouteUriRewrite extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.RouteUriRewrite)
+      RouteUriRewriteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RouteUriRewrite.newBuilder() to construct.
+    private RouteUriRewrite(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RouteUriRewrite() {
+      id_ = "";
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RouteUriRewrite();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RouteUriRewrite(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteUriRewrite_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteUriRewrite_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URI_FIELD_NUMBER = 2;
+    private volatile java.lang.Object uri_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getUri()
+          .equals(other.getUri())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.RouteUriRewrite}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.RouteUriRewrite)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewriteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteUriRewrite_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteUriRewrite_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        uri_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteUriRewrite_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite(this);
+        result.id_ = id_;
+        result.uri_ = uri_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object uri_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.RouteUriRewrite)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.RouteUriRewrite)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RouteUriRewrite>
+        PARSER = new com.google.protobuf.AbstractParser<RouteUriRewrite>() {
+      @java.lang.Override
+      public RouteUriRewrite parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RouteUriRewrite(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RouteUriRewrite> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RouteUriRewrite> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteUriRewrite getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DeleteRouteOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.DeleteRoute)
       com.google.protobuf.MessageOrBuilder {
@@ -18547,6 +19337,11 @@ public final class PBRequestApiDashboard {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_RouteUriRewrite_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_RouteUriRewrite_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DeleteRoute_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18648,61 +19443,63 @@ public final class PBRequestApiDashboard {
       "\n&proto/types/request/apidashboard.proto" +
       "\022\007request\0323github.com/yu31/protoc-plugin" +
       "/proto/validator.proto\0322github.com/yu31/" +
-      "protoc-plugin/proto/defaults.proto\"\'\n\013De" +
-      "leteRoute\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\276\002\n\n" +
-      "ListRoutes\022\014\n\004name\030\001 \001(\t\022\031\n\003uri\030\002 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\200\002\000\022\016\n\006status\030\003 \001(\005\022&\n\005limit\030\005 \001" +
-      "(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\006 " +
-      "\001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\007 \001(\tB/\342\337\037+\022" +
-      ")\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_ti" +
-      "me\022\017\n\007reverse\030\010 \001(\010\022\032\n\003ids\030\t \003(\tB\r\342\337\037\t\022\007" +
-      "\352\001\0048d@\000\022\017\n\007version\030\n \001(\t\022\r\n\005build\030\013 \001(\t\022" +
-      "\013\n\003env\030\014 \001(\t\022\026\n\016api_service_id\030\r \001(\t\"*\n\016" +
-      "DeleteUpstream\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
-      "\"\376\001\n\rListUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limi" +
-      "t\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offs" +
-      "et\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/" +
-      "\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013upda" +
-      "te_time\022\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342" +
-      "\337\037\t\022\007\352\001\0048d@\000\022\017\n\007version\030\007 \001(\t\022\r\n\005build\030\010" +
-      " \001(\t\022\013\n\003env\030\t \001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\362\001\n\010ListSSLs\022\032\n\003ids\030\001 \003" +
-      "(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030" +
-      "\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset" +
-      "\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337" +
-      "\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_time\022" +
-      "\017\n\007reverse\030\006 \001(\010\022\017\n\007version\030\007 \001(\t\022\r\n\005bui" +
-      "ld\030\010 \001(\t\022\013\n\003env\030\t \001(\t\"b\n\020CreateApiServic" +
-      "e\022\014\n\004name\030\001 \001(\t\022\014\n\004desc\030\002 \001(\t\022\023\n\013auth_ke" +
-      "y_id\030\003 \001(\t\022\035\n\007user_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
-      "\000\",\n\020DeleteApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\200\002\000\"H\n\020UpdateApiService\022\030\n\002id\030\001 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(" +
-      "\t\"\324\001\n\017ListApiServices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t" +
-      "\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t" +
-      "\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:" +
-      "\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create" +
-      "_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013a" +
-      "uth_key_id\030\006 \001(\t\"F\n\016AddSvcReqCount\022\030\n\002id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\200\002\000\"?\n\rCreateAuthKey\022\014\n\004name\030\001 " +
-      "\001(\t\022 \n\nsecret_key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\")\n" +
-      "\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
-      "\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\200\002\000\022\014\n\004name\030\002 \001(\t\"\315\001\n\014ListAuthKeys\022\032\n\003id" +
-      "s\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242" +
-      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J" +
+      "protoc-plugin/proto/defaults.proto\"F\n\017Ro" +
+      "uteUriRewrite\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022" +
+      "\031\n\003uri\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\'\n\013DeleteRout" +
+      "e\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\276\002\n\nListRout" +
+      "es\022\014\n\004name\030\001 \001(\t\022\031\n\003uri\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\200\002\000\022\016\n\006status\030\003 \001(\005\022&\n\005limit\030\005 \001(\005B\027\242\241\037\006" +
+      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\006 \001(\005B\013\342\337\037" +
+      "\007\022\005\262\001\002@\000\022@\n\007sort_by\030\007 \001(\tB/\342\337\037+\022)\302\001&J\000J\002" +
+      "idJ\004nameJ\013create_timeJ\013update_time\022\017\n\007re" +
+      "verse\030\010 \001(\010\022\032\n\003ids\030\t \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022" +
+      "\017\n\007version\030\n \001(\t\022\r\n\005build\030\013 \001(\t\022\013\n\003env\030\014" +
+      " \001(\t\022\026\n\016api_service_id\030\r \001(\t\"*\n\016DeleteUp" +
+      "stream\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\376\001\n\rLis" +
+      "tUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B" +
+      "\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005" +
+      "B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037+\022)\302\001" +
+      "&J\000J\002idJ\004nameJ\013create_timeJ\013update_time\022" +
+      "\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t\022\007\352\001\004" +
+      "8d@\000\022\017\n\007version\030\007 \001(\t\022\r\n\005build\030\010 \001(\t\022\013\n\003" +
+      "env\030\t \001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\200\002\000\"\362\001\n\010ListSSLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t" +
+      "\022\007\352\001\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030\003 \001(\005B\027\242" +
+      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013" +
+      "\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J" +
       "\000J\002idJ\013create_timeJ\013update_time\022\017\n\007rever" +
-      "se\030\005 \001(\010\022\017\n\007user_id\030\006 \001(\t\"V\n\013BindAuthKey" +
-      "\022!\n\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016a" +
-      "pi_service_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnb" +
-      "indAuthKey\022$\n\016api_service_id\030\001 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\200\002\000Bt\n$com.dataomnis.gproto.types.p" +
-      "brequestB\025PBRequestApiDashboardP\000Z3githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
-      "equestb\006proto3"
+      "se\030\006 \001(\010\022\017\n\007version\030\007 \001(\t\022\r\n\005build\030\010 \001(\t" +
+      "\022\013\n\003env\030\t \001(\t\"b\n\020CreateApiService\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\014\n\004desc\030\002 \001(\t\022\023\n\013auth_key_id\030\003 \001" +
+      "(\t\022\035\n\007user_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\",\n\020Del" +
+      "eteApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"" +
+      "H\n\020UpdateApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\324\001\n\017Li" +
+      "stApiServices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
+      "\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
+      "d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_b" +
+      "y\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013u" +
+      "pdate_time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013auth_key_" +
+      "id\030\006 \001(\t\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000" +
+      "\"*\n\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\200\002\000\"?\n\rCreateAuthKey\022\014\n\004name\030\001 \001(\t\022 \n\ns" +
+      "ecret_key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\")\n\rDeleteA" +
+      "uthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpda" +
+      "teAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004n" +
+      "ame\030\002 \001(\t\"\315\001\n\014ListAuthKeys\022\032\n\003ids\030\001 \003(\tB" +
+      "\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\00310" +
+      "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001" +
+      "\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013c" +
+      "reate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010" +
+      "\022\017\n\007user_id\030\006 \001(\t\"V\n\013BindAuthKey\022!\n\013auth" +
+      "_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016api_servi" +
+      "ce_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnbindAuthK" +
+      "ey\022$\n\016api_service_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
+      "Bt\n$com.dataomnis.gproto.types.pbrequest" +
+      "B\025PBRequestApiDashboardP\000Z3github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbrequestb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18710,110 +19507,116 @@ public final class PBRequestApiDashboard {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
-    internal_static_request_DeleteRoute_descriptor =
+    internal_static_request_RouteUriRewrite_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_request_RouteUriRewrite_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_RouteUriRewrite_descriptor,
+        new java.lang.String[] { "Id", "Uri", });
+    internal_static_request_DeleteRoute_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_request_DeleteRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteRoute_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListRoutes_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_request_ListRoutes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListRoutes_descriptor,
         new java.lang.String[] { "Name", "Uri", "Status", "Limit", "Offset", "SortBy", "Reverse", "Ids", "Version", "Build", "Env", "ApiServiceId", });
     internal_static_request_DeleteUpstream_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_request_DeleteUpstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteUpstream_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListUpstreams_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_request_ListUpstreams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUpstreams_descriptor,
         new java.lang.String[] { "Name", "Limit", "Offset", "SortBy", "Reverse", "Ids", "Version", "Build", "Env", });
     internal_static_request_DeleteSSL_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_request_DeleteSSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteSSL_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListSSLs_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_request_ListSSLs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSSLs_descriptor,
         new java.lang.String[] { "Ids", "Sni", "Limit", "Offset", "SortBy", "Reverse", "Version", "Build", "Env", });
     internal_static_request_CreateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_request_CreateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiService_descriptor,
         new java.lang.String[] { "Name", "Desc", "AuthKeyId", "UserId", });
     internal_static_request_DeleteApiService_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_DeleteApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiService_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_UpdateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateApiService_descriptor,
         new java.lang.String[] { "Id", "Name", "Desc", });
     internal_static_request_ListApiServices_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_request_ListApiServices_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiServices_descriptor,
         new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", });
     internal_static_request_AddSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_AddSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AddSvcReqCount_descriptor,
         new java.lang.String[] { "Id", "Count", });
     internal_static_request_GetSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_GetSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetSvcReqCount_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_CreateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_CreateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateAuthKey_descriptor,
         new java.lang.String[] { "Name", "SecretKey", });
     internal_static_request_DeleteAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_DeleteAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteAuthKey_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_UpdateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateAuthKey_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_request_ListAuthKeys_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_request_ListAuthKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAuthKeys_descriptor,
         new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "UserId", });
     internal_static_request_BindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_BindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_BindAuthKey_descriptor,
         new java.lang.String[] { "AuthKeyId", "ApiServiceId", });
     internal_static_request_UnbindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_UnbindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UnbindAuthKey_descriptor,

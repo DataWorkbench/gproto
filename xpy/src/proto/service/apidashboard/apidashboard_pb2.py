@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n.com.dataomnis.gproto.service.pbsvcapidashboardB\021PBSvcApiDashboardP\000Z=github.com/DataWorkbench/gproto/xgo/service/pbsvcapidashboard',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/apidashboard/apidashboard.proto\x12\x0c\x61pidashboard\x1a&proto/types/request/apidashboard.proto\x1a\'proto/types/response/apidashboard.proto\x1a\x1dproto/types/model/empty.proto\x1a$proto/types/model/apidashboard.proto2\xac\x0b\n\x0c\x41piDashboard\x12\x34\n\x0b\x43reateRoute\x12\x0c.model.Route\x1a\x15.response.CreateRoute\"\x00\x12\x39\n\x0b\x44\x65leteRoute\x12\x14.request.DeleteRoute\x1a\x12.model.EmptyStruct\"\x00\x12\x39\n\nListRoutes\x12\x13.request.ListRoutes\x1a\x14.response.ListRoutes\"\x00\x12\x31\n\x0bUpdateRoute\x12\x0c.model.Route\x1a\x12.model.EmptyStruct\"\x00\x12=\n\x0e\x43reateUpstream\x12\x0f.model.Upstream\x1a\x18.response.CreateUpstream\"\x00\x12?\n\x0e\x44\x65leteUpstream\x12\x17.request.DeleteUpstream\x1a\x12.model.EmptyStruct\"\x00\x12\x37\n\x0eUpdateUpstream\x12\x0f.model.Upstream\x1a\x12.model.EmptyStruct\"\x00\x12\x42\n\rListUpstreams\x12\x16.request.ListUpstreams\x1a\x17.response.ListUpstreams\"\x00\x12.\n\tCreateSSL\x12\n.model.SSL\x1a\x13.response.CreateSSL\"\x00\x12\x35\n\tDeleteSSL\x12\x12.request.DeleteSSL\x1a\x12.model.EmptyStruct\"\x00\x12\x33\n\x08ListSSLs\x12\x11.request.ListSSLs\x1a\x12.response.ListSSLs\"\x00\x12K\n\x10\x43reateApiService\x12\x19.request.CreateApiService\x1a\x1a.response.CreateApiService\"\x00\x12\x43\n\x10\x44\x65leteApiService\x12\x19.request.DeleteApiService\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10UpdateApiService\x12\x19.request.UpdateApiService\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0fListApiServices\x12\x18.request.ListApiServices\x1a\x19.response.ListApiServices\"\x00\x12?\n\x0e\x41\x64\x64SvcReqCount\x12\x17.request.AddSvcReqCount\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eGetSvcReqCount\x12\x17.request.GetSvcReqCount\x1a\x18.response.GetSvcReqCount\"\x00\x12\x42\n\rCreateAuthKey\x12\x16.request.CreateAuthKey\x1a\x17.response.CreateAuthKey\"\x00\x12=\n\rDeleteAuthKey\x12\x16.request.DeleteAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rUpdateAuthKey\x12\x16.request.UpdateAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0cListAuthKeys\x12\x15.request.ListAuthKeys\x1a\x16.response.ListAuthKeys\"\x00\x12\x39\n\x0b\x42indAuthKey\x12\x14.request.BindAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rUnbindAuthKey\x12\x16.request.UnbindAuthKey\x1a\x12.model.EmptyStruct\"\x00\x42\x84\x01\n.com.dataomnis.gproto.service.pbsvcapidashboardB\x11PBSvcApiDashboardP\x00Z=github.com/DataWorkbench/gproto/xgo/service/pbsvcapidashboardb\x06proto3'
+  serialized_pb=b'\n-proto/service/apidashboard/apidashboard.proto\x12\x0c\x61pidashboard\x1a&proto/types/request/apidashboard.proto\x1a\'proto/types/response/apidashboard.proto\x1a\x1dproto/types/model/empty.proto\x1a$proto/types/model/apidashboard.proto2\xef\x0b\n\x0c\x41piDashboard\x12\x34\n\x0b\x43reateRoute\x12\x0c.model.Route\x1a\x15.response.CreateRoute\"\x00\x12\x39\n\x0b\x44\x65leteRoute\x12\x14.request.DeleteRoute\x1a\x12.model.EmptyStruct\"\x00\x12\x39\n\nListRoutes\x12\x13.request.ListRoutes\x1a\x14.response.ListRoutes\"\x00\x12\x31\n\x0bUpdateRoute\x12\x0c.model.Route\x1a\x12.model.EmptyStruct\"\x00\x12\x41\n\x0fRouteUriRewrite\x12\x18.request.RouteUriRewrite\x1a\x12.model.EmptyStruct\"\x00\x12=\n\x0e\x43reateUpstream\x12\x0f.model.Upstream\x1a\x18.response.CreateUpstream\"\x00\x12?\n\x0e\x44\x65leteUpstream\x12\x17.request.DeleteUpstream\x1a\x12.model.EmptyStruct\"\x00\x12\x37\n\x0eUpdateUpstream\x12\x0f.model.Upstream\x1a\x12.model.EmptyStruct\"\x00\x12\x42\n\rListUpstreams\x12\x16.request.ListUpstreams\x1a\x17.response.ListUpstreams\"\x00\x12.\n\tCreateSSL\x12\n.model.SSL\x1a\x13.response.CreateSSL\"\x00\x12\x35\n\tDeleteSSL\x12\x12.request.DeleteSSL\x1a\x12.model.EmptyStruct\"\x00\x12\x33\n\x08ListSSLs\x12\x11.request.ListSSLs\x1a\x12.response.ListSSLs\"\x00\x12K\n\x10\x43reateApiService\x12\x19.request.CreateApiService\x1a\x1a.response.CreateApiService\"\x00\x12\x43\n\x10\x44\x65leteApiService\x12\x19.request.DeleteApiService\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10UpdateApiService\x12\x19.request.UpdateApiService\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0fListApiServices\x12\x18.request.ListApiServices\x1a\x19.response.ListApiServices\"\x00\x12?\n\x0e\x41\x64\x64SvcReqCount\x12\x17.request.AddSvcReqCount\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eGetSvcReqCount\x12\x17.request.GetSvcReqCount\x1a\x18.response.GetSvcReqCount\"\x00\x12\x42\n\rCreateAuthKey\x12\x16.request.CreateAuthKey\x1a\x17.response.CreateAuthKey\"\x00\x12=\n\rDeleteAuthKey\x12\x16.request.DeleteAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rUpdateAuthKey\x12\x16.request.UpdateAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0cListAuthKeys\x12\x15.request.ListAuthKeys\x1a\x16.response.ListAuthKeys\"\x00\x12\x39\n\x0b\x42indAuthKey\x12\x14.request.BindAuthKey\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rUnbindAuthKey\x12\x16.request.UnbindAuthKey\x1a\x12.model.EmptyStruct\"\x00\x42\x84\x01\n.com.dataomnis.gproto.service.pbsvcapidashboardB\x11PBSvcApiDashboardP\x00Z=github.com/DataWorkbench/gproto/xgo/service/pbsvcapidashboardb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_request_dot_apidashboard__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_apidashboard__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_apidashboard__pb2.DESCRIPTOR,])
 
@@ -42,7 +42,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=214,
-  serialized_end=1666,
+  serialized_end=1733,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateRoute',
@@ -85,9 +85,19 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='RouteUriRewrite',
+    full_name='apidashboard.ApiDashboard.RouteUriRewrite',
+    index=4,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._ROUTEURIREWRITE,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='CreateUpstream',
     full_name='apidashboard.ApiDashboard.CreateUpstream',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=proto_dot_types_dot_model_dot_apidashboard__pb2._UPSTREAM,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._CREATEUPSTREAM,
@@ -97,7 +107,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteUpstream',
     full_name='apidashboard.ApiDashboard.DeleteUpstream',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._DELETEUPSTREAM,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -107,7 +117,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateUpstream',
     full_name='apidashboard.ApiDashboard.UpdateUpstream',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=proto_dot_types_dot_model_dot_apidashboard__pb2._UPSTREAM,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -117,7 +127,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListUpstreams',
     full_name='apidashboard.ApiDashboard.ListUpstreams',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._LISTUPSTREAMS,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._LISTUPSTREAMS,
@@ -127,7 +137,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateSSL',
     full_name='apidashboard.ApiDashboard.CreateSSL',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=proto_dot_types_dot_model_dot_apidashboard__pb2._SSL,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._CREATESSL,
@@ -137,7 +147,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteSSL',
     full_name='apidashboard.ApiDashboard.DeleteSSL',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._DELETESSL,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -147,7 +157,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListSSLs',
     full_name='apidashboard.ApiDashboard.ListSSLs',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._LISTSSLS,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._LISTSSLS,
@@ -157,7 +167,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateApiService',
     full_name='apidashboard.ApiDashboard.CreateApiService',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._CREATEAPISERVICE,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._CREATEAPISERVICE,
@@ -167,7 +177,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteApiService',
     full_name='apidashboard.ApiDashboard.DeleteApiService',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._DELETEAPISERVICE,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -177,7 +187,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateApiService',
     full_name='apidashboard.ApiDashboard.UpdateApiService',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._UPDATEAPISERVICE,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -187,7 +197,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListApiServices',
     full_name='apidashboard.ApiDashboard.ListApiServices',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._LISTAPISERVICES,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._LISTAPISERVICES,
@@ -197,7 +207,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='AddSvcReqCount',
     full_name='apidashboard.ApiDashboard.AddSvcReqCount',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._ADDSVCREQCOUNT,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -207,7 +217,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetSvcReqCount',
     full_name='apidashboard.ApiDashboard.GetSvcReqCount',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._GETSVCREQCOUNT,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._GETSVCREQCOUNT,
@@ -217,7 +227,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateAuthKey',
     full_name='apidashboard.ApiDashboard.CreateAuthKey',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._CREATEAUTHKEY,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._CREATEAUTHKEY,
@@ -227,7 +237,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteAuthKey',
     full_name='apidashboard.ApiDashboard.DeleteAuthKey',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._DELETEAUTHKEY,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -237,7 +247,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateAuthKey',
     full_name='apidashboard.ApiDashboard.UpdateAuthKey',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._UPDATEAUTHKEY,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -247,7 +257,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListAuthKeys',
     full_name='apidashboard.ApiDashboard.ListAuthKeys',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._LISTAUTHKEYS,
     output_type=proto_dot_types_dot_response_dot_apidashboard__pb2._LISTAUTHKEYS,
@@ -257,7 +267,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='BindAuthKey',
     full_name='apidashboard.ApiDashboard.BindAuthKey',
-    index=21,
+    index=22,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._BINDAUTHKEY,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -267,7 +277,7 @@ _APIDASHBOARD = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UnbindAuthKey',
     full_name='apidashboard.ApiDashboard.UnbindAuthKey',
-    index=22,
+    index=23,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_apidashboard__pb2._UNBINDAUTHKEY,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
