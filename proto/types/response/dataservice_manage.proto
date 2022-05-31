@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseDataSourceManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/dataservice.proto";
+
+message DescribeCustomerApi {
+  // @inject_tag: json:"api_config"
+  model.ApiConfig api_config = 1;
+  // @inject_tag: json:"request_params"
+  repeated model.ApiRequestParams request_params = 2;
+  // @inject_tag: json:"response_params"
+  repeated model.ApiResponseParams response_params = 3;
+}
+
+message ListApiVersions {
+  // @inject_tag: json:"infos"
+  repeated model.ApiVersion infos = 1;
+  // @inject_tag: json:"total"
+  int64 total = 2;
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message ListDataServiceClusters {
+  // @inject_tag: json:"infos"
+  repeated model.DataServiceCluster infos = 1;
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+  // @inject_tag: json:"total"
+  int64 total = 3;
+}
+
+message DescribeDataServiceCluster {
+  // @inject_tag: json:"service_cluster"
+  model.DataServiceCluster service_cluster = 1;
+}
+
+message CreateDataServiceCluster {
+  // @inject_tag: json:"id"
+  string id = 1;
+}
+
+message ListCustomerApis {
+  // @inject_tag: json:"infos"
+  repeated model.ApiConfig infos = 1;
+}
+
+message CreateCustomerApi {
+  // @inject_tag: json:"id"
+  string id = 1 [(validator.field) = {}];
+}
+
+message TestCustomerApi {
+  // @inject_tag: json:"logs"
+  string logs = 1 [ (validator.field) = { length_gt: 1 , length_lt: 2000}  ];
+  // @inject_tag: json:"response_content"
+  string response_content = 2  [ (validator.field) = { length_gt: 1 , length_lt: 2000}  ];
+}
+
+
+
+
+

@@ -1,0 +1,237 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelDataService";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "google/protobuf/any.proto";
+
+message DataServiceCluster{
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Running = 2;
+    Stopped = 3;
+    Starting = 4;
+    Exception = 5;
+    Arrears = 6;
+  }
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+  // @inject_tag: json:"service_name" gorm:"column:service_name;"
+  string service_name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+  // @inject_tag: json:"service_port" gorm:"column:service_port;"
+  int32 service_port = 5 [(validator.field).tags.int = { gt: 0 }];
+  // @inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
+  string upstream_id = 6;
+  // @inject_tag: json:"resource_spec" gorm:"column:resource_spec;"
+  string resource_spec = 7 ;
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 8 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+}
+
+message ApiVersion{
+  enum Status {
+    StatusUnset = 0;
+    Published = 1;
+    Abolished = 2;
+  }
+  enum ApiMode{
+    ModeUnset = 0;
+    Wizard = 1;
+    Script = 2;
+  }
+  enum RequestMethod{
+    MethodUnset = 0;
+    GET = 1;
+    POST = 2;
+  }
+  enum ResponseType{
+    TypeUnset = 0;
+    JSON = 1;
+    XML = 2;
+  }
+  // @inject_tag: json:"version_id" gorm:"column:version_id;primaryKey;"
+  string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string	version = 2 [(validator.field) = {length_lt: 65}];
+  // @inject_tag: json:"publish_status" gorm:"column:publish_status;"
+  Status publish_status = 3 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+  // @inject_tag: json:"publish_time" gorm:"column:publish_time;"
+  int64 publish_time = 4 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
+  string api_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
+  // @inject_tag: json:"api_name" gorm:"column:api_name;"
+  string api_name = 6 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"api_path" gorm:"column:api_path;"
+  string api_path = 7 [ (validator.field) = { length_gt: 0 , length_lt: 200}  ];
+  // @inject_tag: json:"api_mode" gorm:"column:api_mode;"
+  ApiMode api_mode = 8  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"api_description" gorm:"column:api_description;"
+  string api_description = 9 [ (validator.field) = {length_lt: 257 }  ];
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 10 [ (validator.field) = { length_eq: 20 } ];
+  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+  string protocols = 11 [ (validator.field) = { length_gt: 0 , length_lt: 20}  ];
+  // @inject_tag: json:"request_method" gorm:"column:request_method;"
+  RequestMethod request_method = 12 [ (validator.field) = {int_gt: 0, int_lt: 6} ];
+  // @inject_tag: json:"response_type" gorm:"column:response_type;"
+  ResponseType response_type = 13  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"timeout" gorm:"column:timeout;"
+  int64 timeout = 14 [(validator.field) = {int_gt: 0, int_lt: 30000}];
+  // @inject_tag: json:"datasource_id" gorm:"column:datasource_id;"
+  string datasource_id = 15 [ (validator.field) = { length_lt: 21 }  ];
+  // @inject_tag: json:"table_name" gorm:"column:table_name;"
+  string	table_name = 16 [ (validator.field) = { length_gt: 0 , length_lt: 257}  ];
+  // @inject_tag: json:"script" gorm:"column:script;"
+  string script = 17 [ (validator.field) = {length_lt: 20000 }  ];
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 18 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 19 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"  bool cross_domain" gorm:"column:cross_domain;"
+  bool cross_domain = 20 ;
+  // @inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
+  string api_service_id = 21 ;
+}
+
+message ApiConfig {
+  enum ApiMode{
+    ModeUnset = 0;
+    Wizard = 1;
+    Script = 2;
+  }
+  enum RequestMethod{
+    MethodUnset = 0;
+    GET = 1;
+    POST = 2;
+  }
+  enum ResponseType{
+    TypeUnset = 0;
+    JSON = 1;
+    XML = 2;
+  }
+  // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
+  string api_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
+  // @inject_tag: json:"api_name" gorm:"column:api_name;"
+  string api_name = 2 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"api_path" gorm:"column:api_path;"
+  string api_path = 3 [ (validator.field) = { length_gt: 0 , length_lt: 200}  ];
+  // @inject_tag: json:"api_mode" gorm:"column:api_mode;"
+  ApiMode api_mode = 4  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"api_description" gorm:"column:api_description;"
+  string api_description = 5 [ (validator.field) = {length_lt: 257 }  ];
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 6 [ (validator.field) = { length_eq: 20 } ];
+  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+  string protocols = 7 [ (validator.field) = { length_gt: 0 , length_lt: 20}  ];
+  // @inject_tag: json:"request_method" gorm:"column:request_method;"
+  RequestMethod request_method = 8 [ (validator.field) = {int_gt: 0, int_lt: 6} ];
+  // @inject_tag: json:"response_type" gorm:"column:response_type;"
+  ResponseType response_type = 9  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"timeout" gorm:"column:timeout;"
+  int64 timeout = 10 [(validator.field) = {int_gt: 0, int_lt: 30000}];
+  // @inject_tag: json:"datasource_id" gorm:"column:datasource_id;"
+  string datasource_id = 11 [ (validator.field) = { length_lt: 21 }  ];
+  // @inject_tag: json:"table_name" gorm:"column:table_name;"
+  string	table_name = 12 [ (validator.field) = { length_gt: 0 , length_lt: 257}  ];
+  // @inject_tag: json:"script" gorm:"column:script;"
+  string script = 13 [ (validator.field) = {length_lt: 20000 }  ];
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 14 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 15 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"  bool cross_domain" gorm:"column:cross_domain;"
+  bool cross_domain = 16 ;
+  // @inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
+  string api_service_id = 17 ;
+}
+
+enum ParameterDataType {
+  TypeUnset = 0;
+  String = 1;
+  Int = 2;
+  Long = 3;
+  Float = 4;
+  Double = 5;
+  Boolean = 6;
+}
+
+message ApiRequestParams {
+  enum ParameterOperator{
+    OperatorUnset = 0;
+    Equal = 1;
+    NotEqual = 2;
+    GreaterThan = 3;
+    LessThan = 4;
+    Like = 5;
+    Const = 6;
+    In = 7;
+  }
+  enum ParameterPosition{
+    PositionUnset = 0;
+    Body = 1;
+    Query = 2;
+    Path = 3;
+    Head = 4;
+  }
+  // @inject_tag: json:"param_id" gorm:"column:param_id;primaryKey;"
+  string param_id = 1 [(validator.field) = {length_lt: 21}];
+  // @inject_tag: json:"api_id" gorm:"column:api_id;"
+  string api_id = 2 [(validator.field) = {length_lt: 21}];
+  // @inject_tag: json:"column_name" gorm:"column:column_name;"
+  string column_name = 3 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"default_value" gorm:"column:default_value;"
+  string default_value = 4 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"example_value" gorm:"column:example_value;"
+  string example_value = 5 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"is_required" gorm:"column:is_required;"
+  bool is_required = 6 [(validator.field) = {}];
+  // @inject_tag: json:"data_type" gorm:"column:data_type;"
+  ParameterDataType data_type = 7 [ (validator.field) = {int_gt: 0, int_lt: 6} ];
+  // @inject_tag: json:"param_description" gorm:"column:param_description;"
+  string param_description = 8 [ (validator.field) = { length_gt: 0 , length_lt: 200}  ];
+  // @inject_tag: json:"param_name" gorm:"column:param_name;"
+  string param_name = 9 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"param_operator" gorm:"column:param_operator;"
+  ParameterOperator param_operator = 10  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"param_position" gorm:"column:param_position;"
+  ParameterPosition param_position = 11  [ (validator.field) = {int_gt: 0, int_lt: 3} ];
+  // @inject_tag: json:"version_id" gorm:"column:version_id;"
+  string	version_id = 12 [(validator.field) = {length_lt: 21}];
+}
+
+// api_response_parameters table model
+message ApiResponseParams {
+  // @inject_tag: json:"param_id" gorm:"column:param_id;primaryKey;"
+  string	param_id = 1 [(validator.field) = {length_lt: 21}];
+  // @inject_tag: json:"api_id" gorm:"column:api_id;"
+  string	api_id = 2 [(validator.field) = {length_lt: 21}];
+  // @inject_tag: json:"column_name" gorm:"column:column_name;"
+  string column_name = 3 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"default_value" gorm:"column:default_value;"
+  string default_value = 4 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"example_value" gorm:"column:example_value;"
+  string example_value = 5 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"data_type" gorm:"column:data_type;"
+  ParameterDataType data_type = 6 [ (validator.field) = {int_gt: 0, int_lt: 6} ];
+  // @inject_tag: json:"param_description" gorm:"column:param_description;"
+  string param_description = 7 [ (validator.field) = { length_gt: 0 , length_lt: 200}  ];
+  // @inject_tag: json:"param_name" gorm:"column:param_name;"
+  string param_name = 8 [ (validator.field) = { length_gt: 0 , length_lt: 65}  ];
+  // @inject_tag: json:"version_id" gorm:"column:version_id;"
+  string	version_id = 9 [(validator.field) = {length_lt: 21}];
+}
+

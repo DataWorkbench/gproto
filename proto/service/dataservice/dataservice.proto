@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package dataservice;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcdataservice";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcdataservice";
+// File name of class.
+option java_outer_classname = "PBSvcDataService";
+option java_multiple_files = false;
+
+import "proto/types/request/dataservice.proto";
+import "proto/types/response/dataservice.proto";
+import "proto/types/model/dataservice.proto";
+import "proto/types/model/empty.proto";
+
+service DataService {
+  rpc CreateDataServiceApi(request.CreateCustomerApi) returns (response.CreateCustomerApi) {}
+  rpc UpdateDataServiceApi(request.UpdateCustomerApi) returns (model.EmptyStruct) {}
+  rpc DescribeDataServiceApi(request.DescribeCustomerApi) returns (response.DescribeCustomerApi) {}
+  rpc ListDataServiceApis(request.ListCustomerApis) returns (response.ListCustomerApis) {}
+  //rpc DeleteDataServiceApi() returns () {}
+
+  rpc TestDataServiceApi(request.TestCustomerApi) returns (response.TestCustomerApi) {}
+
+  rpc PublishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
+  rpc ListDataServiceApiVersions(request.ListApiVersions) returns (response.ListApiVersions) {}
+  rpc DescribeDataServiceApiVersion(request.DescribeApiVersion) returns (response.DescribeCustomerApi) {}
+  rpc ListDataServicePublishedApis(request.ListPublishedApis) returns (response.ListApiVersions) {}
+
+  rpc CreateDataServiceCluster(request.CreateDataServiceCluster) returns (response.CreateDataServiceCluster) {}
+  rpc ListDataServiceClusters(request.ListDataServiceClusters) returns (response.ListDataServiceClusters) {}
+  rpc UpdateDataServiceCluster(request.UpdateDataServiceCluster) returns (model.EmptyStruct) {}
+  rpc DescribeDataServiceCluster(request.DescribeDataServiceCluster) returns (model.DescribeDataServiceCluster) {}
+  //rpc DeleteDataServiceCluster() returns () {}
+}
