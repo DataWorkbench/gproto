@@ -89,6 +89,53 @@ func (this *StopStreamJob) Validate() error {
 	return nil
 }
 
+func (this *StopStreamInstance) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StopStreamInstance", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StopStreamInstance", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *StopStreamInstance) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("StopStreamInstance", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("StopStreamInstance", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *StopStreamInstance) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("StopStreamInstance", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("StopStreamInstance", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	}
+	return nil
+}
+
+// Set default value for message request.StopStreamInstance
+func (this *StopStreamInstance) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *DeleteStreamJobsBySpaceIds) _xxx_xxx_Validator_Validate_space_ids() error {
 	for _, item := range this.SpaceIds {
 		_ = item // To avoid unused panics.

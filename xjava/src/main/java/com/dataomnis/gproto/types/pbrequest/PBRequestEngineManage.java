@@ -7194,21 +7194,21 @@ public final class PBRequestEngineManage {
       "sInK8s\022-\n\tspace_ids\030\001 \003(\tB\032\342\337\037\026\022\024\352\001\021P\001Z\r" +
       "\302\001\n\360\001\024\312\002\004wks-\"K\n\031CreateFlinkClusterInK8s" +
       "V2\022.\n\004info\030\001 \001(\0132\023.model.FlinkClusterB\013\342" +
-      "\337\037\007\022\005\342\001\002\020\001\"\221\001\n\031DeleteFlinkClusterInK8sV2" +
+      "\337\037\007\022\005\342\001\002\020\001\"\250\001\n\031DeleteFlinkClusterInK8sV2" +
       "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
       "\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-" +
-      "\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216" +
-      "\001\n\032CreateNetworkBrokerInK8sV2\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_i" +
-      "d\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 " +
-      "\001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032DeleteNetwor" +
-      "kBrokerInK8sV2\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\tB\020\342\337\037\014\022\n" +
-      "\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312" +
-      "\002\006vxnet-Bt\n$com.dataomnis.gproto.types.p" +
-      "brequestB\025PBRequestEngineManageP\000Z3githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
-      "equestb\006proto3"
+      "\022;\n\010vxnet_id\030\003 \001(\tB)\342\337\037\023\n\021\n\010vxnet_id\022\005\302\001" +
+      "\002\"\000\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032CreateNetworkB" +
+      "rokerInK8sV2\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001" +
+      "\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006" +
+      "vxnet-\"\216\001\n\032DeleteNetworkBrokerInK8sV2\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\t" +
+      "router_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxn" +
+      "et_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-Bt\n$com.d" +
+      "ataomnis.gproto.types.pbrequestB\025PBReque" +
+      "stEngineManageP\000Z3github.com/DataWorkben" +
+      "ch/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

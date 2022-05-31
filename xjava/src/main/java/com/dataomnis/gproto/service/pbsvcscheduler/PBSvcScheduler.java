@@ -26,29 +26,31 @@ public final class PBSvcScheduler {
       "\n\'proto/service/scheduler/scheduler.prot" +
       "o\022\tscheduler\032\035proto/types/model/empty.pr" +
       "oto\032#proto/types/request/scheduler.proto" +
-      "2\205\006\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
+      "2\316\006\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
       "est.SubmitStreamJob\032\022.model.EmptyStruct\"" +
       "\000\022=\n\rStopStreamJob\022\026.request.StopStreamJ" +
-      "ob\032\022.model.EmptyStruct\"\000\022W\n\032DeleteStream" +
-      "JobsBySpaceIds\022#.request.DeleteStreamJob" +
-      "sBySpaceIds\032\022.model.EmptyStruct\"\000\022S\n\030Del" +
-      "eteStreamJobsByJobIds\022!.request.DeleteSt" +
-      "reamJobsByJobIds\032\022.model.EmptyStruct\"\000\022=" +
-      "\n\rSubmitSyncJob\022\026.request.SubmitSyncJob\032" +
-      "\022.model.EmptyStruct\"\000\0229\n\013StopSyncJob\022\024.r" +
-      "equest.StopSyncJob\032\022.model.EmptyStruct\"\000" +
-      "\022S\n\030DeleteSyncJobsBySpaceIds\022!.request.D" +
-      "eleteSyncJobsBySpaceIds\032\022.model.EmptyStr" +
-      "uct\"\000\022O\n\026DeleteSyncJobsByJobIds\022\037.reques" +
-      "t.DeleteSyncJobsByJobIds\032\022.model.EmptySt" +
-      "ruct\"\000\022U\n\031SubmitFlinkClusterMonitor\022\".re" +
-      "quest.SubmitFlinkClusterMonitor\032\022.model." +
-      "EmptyStruct\"\000\022Q\n\027StopFlinkClusterMonitor" +
-      "\022 .request.StopFlinkClusterMonitor\032\022.mod" +
-      "el.EmptyStruct\"\000B{\n+com.dataomnis.gproto" +
-      ".service.pbsvcschedulerB\016PBSvcSchedulerP" +
-      "\000Z:github.com/DataWorkbench/gproto/xgo/s" +
-      "ervice/pbsvcschedulerb\006proto3"
+      "ob\032\022.model.EmptyStruct\"\000\022G\n\022StopStreamIn" +
+      "stance\022\033.request.StopStreamInstance\032\022.mo" +
+      "del.EmptyStruct\"\000\022W\n\032DeleteStreamJobsByS" +
+      "paceIds\022#.request.DeleteStreamJobsBySpac" +
+      "eIds\032\022.model.EmptyStruct\"\000\022S\n\030DeleteStre" +
+      "amJobsByJobIds\022!.request.DeleteStreamJob" +
+      "sByJobIds\032\022.model.EmptyStruct\"\000\022=\n\rSubmi" +
+      "tSyncJob\022\026.request.SubmitSyncJob\032\022.model" +
+      ".EmptyStruct\"\000\0229\n\013StopSyncJob\022\024.request." +
+      "StopSyncJob\032\022.model.EmptyStruct\"\000\022S\n\030Del" +
+      "eteSyncJobsBySpaceIds\022!.request.DeleteSy" +
+      "ncJobsBySpaceIds\032\022.model.EmptyStruct\"\000\022O" +
+      "\n\026DeleteSyncJobsByJobIds\022\037.request.Delet" +
+      "eSyncJobsByJobIds\032\022.model.EmptyStruct\"\000\022" +
+      "U\n\031SubmitFlinkClusterMonitor\022\".request.S" +
+      "ubmitFlinkClusterMonitor\032\022.model.EmptySt" +
+      "ruct\"\000\022Q\n\027StopFlinkClusterMonitor\022 .requ" +
+      "est.StopFlinkClusterMonitor\032\022.model.Empt" +
+      "yStruct\"\000B{\n+com.dataomnis.gproto.servic" +
+      "e.pbsvcschedulerB\016PBSvcSchedulerP\000Z:gith" +
+      "ub.com/DataWorkbench/gproto/xgo/service/" +
+      "pbsvcschedulerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

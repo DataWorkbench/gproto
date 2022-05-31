@@ -28,6 +28,8 @@ type SchedulerClient interface {
 	SubmitStreamJob(ctx context.Context, in *pbrequest.SubmitStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// StopStreamJob used when offline stream job.
 	StopStreamJob(ctx context.Context, in *pbrequest.StopStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// StopStreamInstance used when terminate a stream job instance.
+	StopStreamInstance(ctx context.Context, in *pbrequest.StopStreamInstance, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// DeleteStreamJobsBySpaceIds used when delete workspaces.
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
@@ -74,6 +76,15 @@ func (c *schedulerClient) SubmitStreamJob(ctx context.Context, in *pbrequest.Sub
 func (c *schedulerClient) StopStreamJob(ctx context.Context, in *pbrequest.StopStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/StopStreamJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) StopStreamInstance(ctx context.Context, in *pbrequest.StopStreamInstance, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/StopStreamInstance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -160,6 +171,8 @@ type SchedulerServer interface {
 	SubmitStreamJob(context.Context, *pbrequest.SubmitStreamJob) (*pbmodel.EmptyStruct, error)
 	// StopStreamJob used when offline stream job.
 	StopStreamJob(context.Context, *pbrequest.StopStreamJob) (*pbmodel.EmptyStruct, error)
+	// StopStreamInstance used when terminate a stream job instance.
+	StopStreamInstance(context.Context, *pbrequest.StopStreamInstance) (*pbmodel.EmptyStruct, error)
 	// DeleteStreamJobsBySpaceIds used when delete workspaces.
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
@@ -196,6 +209,9 @@ func (UnimplementedSchedulerServer) SubmitStreamJob(context.Context, *pbrequest.
 }
 func (UnimplementedSchedulerServer) StopStreamJob(context.Context, *pbrequest.StopStreamJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopStreamJob not implemented")
+}
+func (UnimplementedSchedulerServer) StopStreamInstance(context.Context, *pbrequest.StopStreamInstance) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopStreamInstance not implemented")
 }
 func (UnimplementedSchedulerServer) DeleteStreamJobsBySpaceIds(context.Context, *pbrequest.DeleteStreamJobsBySpaceIds) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobsBySpaceIds not implemented")
@@ -266,6 +282,24 @@ func _Scheduler_StopStreamJob_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SchedulerServer).StopStreamJob(ctx, req.(*pbrequest.StopStreamJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_StopStreamInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StopStreamInstance)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).StopStreamInstance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/StopStreamInstance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).StopStreamInstance(ctx, req.(*pbrequest.StopStreamInstance))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -428,6 +462,10 @@ var Scheduler_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StopStreamJob",
 			Handler:    _Scheduler_StopStreamJob_Handler,
+		},
+		{
+			MethodName: "StopStreamInstance",
+			Handler:    _Scheduler_StopStreamInstance_Handler,
 		},
 		{
 			MethodName: "DeleteStreamJobsBySpaceIds",

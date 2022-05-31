@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.19.3
-// source: proto/service/scheduler/stream_instance_manage.proto
+// source: proto/service/spacemanager/stream_instance_manage.proto
 
-package pbsvcscheduler
+package pbsvcspace
 
 import (
 	context "context"
@@ -27,9 +27,16 @@ const _ = grpc.SupportPackageIsVersion7
 type StreamInstanceManageClient interface {
 	ListStreamInstances(ctx context.Context, in *pbrequest.ListStreamInstances, opts ...grpc.CallOption) (*pbresponse.ListStreamInstances, error)
 	TerminateStreamInstances(ctx context.Context, in *pbrequest.TerminateStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// TODO: unused on present.
 	SuspendStreamInstances(ctx context.Context, in *pbrequest.SuspendStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// TODO: unused on present.
 	ResumeStreamInstances(ctx context.Context, in *pbrequest.ResumeStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DescribeStreamInstance(ctx context.Context, in *pbrequest.DescribeStreamInstance, opts ...grpc.CallOption) (*pbresponse.DescribeStreamInstance, error)
+	// CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+	// Return no error is the give instance id already exists.
+	CreateStreamInstanceWithId(ctx context.Context, in *pbrequest.CreateStreamInstanceWithId, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// UpdateStreamInstanceState do updates the instance state, Only used in internal.
+	UpdateStreamInstanceState(ctx context.Context, in *pbrequest.UpdateStreamInstanceState, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type streamInstanceManageClient struct {
@@ -85,15 +92,40 @@ func (c *streamInstanceManageClient) DescribeStreamInstance(ctx context.Context,
 	return out, nil
 }
 
+func (c *streamInstanceManageClient) CreateStreamInstanceWithId(ctx context.Context, in *pbrequest.CreateStreamInstanceWithId, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/CreateStreamInstanceWithId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamInstanceManageClient) UpdateStreamInstanceState(ctx context.Context, in *pbrequest.UpdateStreamInstanceState, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/UpdateStreamInstanceState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StreamInstanceManageServer is the server API for StreamInstanceManage service.
 // All implementations must embed UnimplementedStreamInstanceManageServer
 // for forward compatibility
 type StreamInstanceManageServer interface {
 	ListStreamInstances(context.Context, *pbrequest.ListStreamInstances) (*pbresponse.ListStreamInstances, error)
 	TerminateStreamInstances(context.Context, *pbrequest.TerminateStreamInstances) (*pbmodel.EmptyStruct, error)
+	// TODO: unused on present.
 	SuspendStreamInstances(context.Context, *pbrequest.SuspendStreamInstances) (*pbmodel.EmptyStruct, error)
+	// TODO: unused on present.
 	ResumeStreamInstances(context.Context, *pbrequest.ResumeStreamInstances) (*pbmodel.EmptyStruct, error)
 	DescribeStreamInstance(context.Context, *pbrequest.DescribeStreamInstance) (*pbresponse.DescribeStreamInstance, error)
+	// CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+	// Return no error is the give instance id already exists.
+	CreateStreamInstanceWithId(context.Context, *pbrequest.CreateStreamInstanceWithId) (*pbmodel.EmptyStruct, error)
+	// UpdateStreamInstanceState do updates the instance state, Only used in internal.
+	UpdateStreamInstanceState(context.Context, *pbrequest.UpdateStreamInstanceState) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedStreamInstanceManageServer()
 }
 
@@ -115,6 +147,12 @@ func (UnimplementedStreamInstanceManageServer) ResumeStreamInstances(context.Con
 }
 func (UnimplementedStreamInstanceManageServer) DescribeStreamInstance(context.Context, *pbrequest.DescribeStreamInstance) (*pbresponse.DescribeStreamInstance, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeStreamInstance not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) CreateStreamInstanceWithId(context.Context, *pbrequest.CreateStreamInstanceWithId) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStreamInstanceWithId not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) UpdateStreamInstanceState(context.Context, *pbrequest.UpdateStreamInstanceState) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateStreamInstanceState not implemented")
 }
 func (UnimplementedStreamInstanceManageServer) mustEmbedUnimplementedStreamInstanceManageServer() {}
 
@@ -219,6 +257,42 @@ func _StreamInstanceManage_DescribeStreamInstance_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StreamInstanceManage_CreateStreamInstanceWithId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateStreamInstanceWithId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).CreateStreamInstanceWithId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.StreamInstanceManage/CreateStreamInstanceWithId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).CreateStreamInstanceWithId(ctx, req.(*pbrequest.CreateStreamInstanceWithId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamInstanceManage_UpdateStreamInstanceState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateStreamInstanceState)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).UpdateStreamInstanceState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.StreamInstanceManage/UpdateStreamInstanceState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).UpdateStreamInstanceState(ctx, req.(*pbrequest.UpdateStreamInstanceState))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StreamInstanceManage_ServiceDesc is the grpc.ServiceDesc for StreamInstanceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -246,7 +320,15 @@ var StreamInstanceManage_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "DescribeStreamInstance",
 			Handler:    _StreamInstanceManage_DescribeStreamInstance_Handler,
 		},
+		{
+			MethodName: "CreateStreamInstanceWithId",
+			Handler:    _StreamInstanceManage_CreateStreamInstanceWithId_Handler,
+		},
+		{
+			MethodName: "UpdateStreamInstanceState",
+			Handler:    _StreamInstanceManage_UpdateStreamInstanceState_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/service/scheduler/stream_instance_manage.proto",
+	Metadata: "proto/service/spacemanager/stream_instance_manage.proto",
 }

@@ -31,6 +31,14 @@ func (this *StopStreamJob) SetDefaults() {
 	return
 }
 
+// Set default value for message request.StopStreamInstance
+func (this *StopStreamInstance) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DeleteStreamJobsBySpaceIds
 func (this *DeleteStreamJobsBySpaceIds) SetDefaults() {
 	if this == nil {

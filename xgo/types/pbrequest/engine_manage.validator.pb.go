@@ -174,7 +174,17 @@ func (this *DeleteFlinkClusterInK8SV2) _xxx_xxx_Validator_Validate_cluster_id() 
 	return nil
 }
 
+func (this *DeleteFlinkClusterInK8SV2) _xxx_xxx_Validator_CheckIf_vxnet_id() bool {
+	if !(this.VxnetId != "") {
+		return false
+	}
+	return true
+}
+
 func (this *DeleteFlinkClusterInK8SV2) _xxx_xxx_Validator_Validate_vxnet_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_vxnet_id() {
+		return nil
+	}
 	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
 		return protovalidator.FieldError1("DeleteFlinkClusterInK8SV2", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
 	}
