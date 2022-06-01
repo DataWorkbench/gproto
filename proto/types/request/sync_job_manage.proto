@@ -264,6 +264,11 @@ message ListReleaseSyncJobs {
     // The sync job id.
     // @inject_tag: json:"job_id" form:"job_id"
     string job_id = 8;
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 9;
 }
 
 // UpdateReleaseSyncJobStatus used as a request parameters for RPC.

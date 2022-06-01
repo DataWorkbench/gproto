@@ -15,6 +15,7 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/datasource.proto";
+import "proto/types/model/cluster.proto";
 import "proto/types/model/syncjob/binlog.proto";
 import "proto/types/model/syncjob/elasticsearch.proto";
 import "proto/types/model/syncjob/ftp.proto";
@@ -28,6 +29,7 @@ import "proto/types/model/syncjob/pgwal.proto";
 import "proto/types/model/syncjob/redis.proto";
 import "proto/types/model/syncjob/db.proto";
 import "proto/types/model/syncjob/sqlservercdc.proto";
+
 
 // The sync job info
 message SyncJob {
@@ -178,7 +180,9 @@ message SyncJobConf {
     // @inject_tag: json:"channel_control"
     ChannelControl channel_control = 7;
 
-
+    // The cluster info of flink. Only used when query data.
+    // @inject_tag: json:"cluster_info" gorm:"-"
+    model.FlinkCluster cluster_info = 8;
 }
 
 message ChannelControl{
@@ -202,7 +206,6 @@ message ChannelControl{
     // @inject_tag: json:"bytes"
     int32 bytes = 4 ;
 }
-
 
 message SyncResource {
     option (gosql.serialize) = {json: {}};
@@ -309,7 +312,6 @@ message SyncResource {
     // @inject_tag: json:"hive_target"
     HiveTarget hive_target = 32;
 }
-
 
 // SyncJobSchedule represents a job schedule info.
 // Not use with gorm.
@@ -477,6 +479,14 @@ message SyncJobRelease {
     // Timestamp of update time.
     // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
     int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+
+    // The meta of sync job. Only used query data.
+    // @inject_tag: json:"sync_job" gorm:"-"
+    model.SyncJob sync_job = 11;
+
+    // The property of sync job. Only used query data.
+    // @inject_tag: json:"sync_job_property" gorm:"-"
+    model.SyncJobProperty sync_job_property = 12;
 }
 
 // SyncJobConnection represents the network connection between flink cluster and data source that used in sync job..
@@ -534,34 +544,3 @@ message SyncJobConnection {
     // @inject_tag: json:"elapse" gorm:"column:elapse;"
     int64 elapse = 10;
 }
-
-
-/*message HadoopConfig {
-    // @inject_tag: json:"hadoop_username" swaggerignore:"true"
-    string hadoop_username = 1;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_ha_namenodes_ns" swaggerignore:"true"
-    string dfs_ha_namenodes_ns = 2;
-    // Relationaldb column
-    // @inject_tag: json:"default_fs" swaggerignore:"true"
-    string default_fs = 3;
-    // Relationaldb column
-    // @inject_tag: json:"analytical_rules" swaggerignore:"true"
-    string dfs_namenode_rpc_address_ns_nn1 = 4;
-    // Relationaldb column
-    // @inject_tag: json:"schema" swaggerignore:"true"
-    string dfs_namenode_rpc_address_ns_nn2 = 5;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_client_failover_proxy_provider_ns" swaggerignore:"true"
-    string dfs_client_failover_proxy_provider_ns = 6;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_nameservices" swaggerignore:"true"
-    string dfs_nameservices = 7;
-    // Relationaldb column
-    // @inject_tag: json:"fs_Hive_impl_disable_cache" swaggerignore:"true"
-    string fs_Hive_impl_disable_cache = 8;
-    // distributed filesystem
-    // @inject_tag: json:"org_apache_hadoop_hive_distributed_filesystem" swaggerignore:"true"
-    string org_apache_hadoop_hive_distributed_filesystem = 9;
-}*/
-
