@@ -8,6 +8,7 @@ package pbrequest
 import (
 	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"

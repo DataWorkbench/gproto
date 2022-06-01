@@ -12,7 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "proto/types/model/sync_job.proto";
 import "proto/types/model/datasource.proto";
 
@@ -336,8 +336,9 @@ message ReopenReleaseSyncJob {
 
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
+    option (gosql.serialize) = {json: {}};
     // The sync job id
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    // @inject_tag: json:"job_id" uri:"job_id"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // conf
     // @inject_tag: json:"conf"
