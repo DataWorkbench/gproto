@@ -366,7 +366,7 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_content() error {
 	return nil
 }
 
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_syncResource() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_sync_resource() error {
 	if dt, ok := interface{}(this.SyncResource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -401,7 +401,7 @@ func (this *SyncJobConf) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_job_content(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_syncResource(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sync_resource(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_channel_control(); err != nil {

@@ -170,7 +170,7 @@ message SyncJobConf {
     ];
     // sync Resource
     // @inject_tag: json:"sync_resource"
-    SyncResource syncResource = 5;
+    SyncResource sync_resource = 5;
     // The flink cluster id. Is required.
     // @inject_tag: json:"cluster_id"
     string cluster_id = 6;
