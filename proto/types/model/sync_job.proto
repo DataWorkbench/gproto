@@ -144,17 +144,24 @@ message SyncJobConf {
         ScriptMode = 2;
     }
 
+    // 1:guide mode,2:script mode
+    // @inject_tag: json:"job_mode"
+    JobMode job_mode = 1 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
+
     // source_id is datasource id
     // @inject_tag: json:"source_id"
-    string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+    string source_id = 2 [
+     (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
+     (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" }
+    ];
 
     // target_id is datasource id
     // @inject_tag: json:"target_id"
-    string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+    string target_id = 3 [
+    (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" }
+    ];
 
-    // 1:guide mode,2:script mode
-    // @inject_tag: json:"job_mode"
-    JobMode job_mode = 3 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // shell mode json
     // @inject_tag: json:"job_content"
     string job_content = 4 [

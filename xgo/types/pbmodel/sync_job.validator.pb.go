@@ -299,7 +299,27 @@ func (this *SyncJobProperty) Validate() error {
 	return nil
 }
 
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
+	if !(this.JobMode >= 0) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.JobMode)))
+	}
+	if !(this.JobMode <= 1) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
+	}
+	return nil
+}
+
+func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_source_id() bool {
+	if !(this.JobMode == 1) {
+		return false
+	}
+	return true
+}
+
 func (this *SyncJobConf) _xxx_xxx_Validator_Validate_source_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_source_id() {
+		return nil
+	}
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
@@ -309,22 +329,22 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_source_id() error {
 	return nil
 }
 
+func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_target_id() bool {
+	if !(this.JobMode == 1) {
+		return false
+	}
+	return true
+}
+
 func (this *SyncJobConf) _xxx_xxx_Validator_Validate_target_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_target_id() {
+		return nil
+	}
 	if !(len(this.TargetId) == 20) {
 		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
 	}
 	if !(strings.HasPrefix(this.TargetId, "som-")) {
 		return protovalidator.FieldError1("SyncJobConf", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
-	if !(this.JobMode >= 0) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.JobMode)))
-	}
-	if !(this.JobMode <= 1) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
 	}
 	return nil
 }
@@ -369,13 +389,13 @@ func (this *SyncJobConf) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_job_mode(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_mode(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_content(); err != nil {
