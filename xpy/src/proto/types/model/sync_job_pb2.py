@@ -15,6 +15,7 @@ from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 from proto.types.model import datasource_pb2 as proto_dot_types_dot_model_dot_datasource__pb2
+from proto.types.model import cluster_pb2 as proto_dot_types_dot_model_dot_cluster__pb2
 from proto.types.model.syncjob import binlog_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2
 from proto.types.model.syncjob import elasticsearch_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2
 from proto.types.model.syncjob import ftp_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2
@@ -36,9 +37,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\023PBSyncManageSyncJobP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n proto/types/model/sync_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/datasource.proto\x1a&proto/types/model/syncjob/binlog.proto\x1a-proto/types/model/syncjob/elasticsearch.proto\x1a#proto/types/model/syncjob/ftp.proto\x1a%proto/types/model/syncjob/hbase.proto\x1a$proto/types/model/syncjob/hdfs.proto\x1a$proto/types/model/syncjob/hive.proto\x1a%proto/types/model/syncjob/kafka.proto\x1a(proto/types/model/syncjob/logminer.proto\x1a\'proto/types/model/syncjob/mongodb.proto\x1a%proto/types/model/syncjob/pgwal.proto\x1a%proto/types/model/syncjob/redis.proto\x1a\"proto/types/model/syncjob/db.proto\x1a,proto/types/model/syncjob/sqlservercdc.proto\"\xa3\x06\n\x07SyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1f\n\x02id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x14\n\x0cis_directory\x18\x07 \x01(\x08\x12K\n\x04type\x18\x08 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x34\n\x06status\x18\t \x01(\x0e\x32\x15.model.SyncJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12_\n\x0bsource_type\x18\r \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\x12_\n\x0btarget_type\x18\x0e \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\"J\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0f\n\x0bOfflineFull\x10\x01\x12\x14\n\x10OfflineIncrement\x10\x02\x12\x0c\n\x08RealTime\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xd8\x01\n\x0fSyncJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12&\n\x04\x63onf\x18\x04 \x01(\x0b\x32\x12.model.SyncJobConfB\x04\xe2\xdf\x1f\x00\x12.\n\x08schedule\x18\x05 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\x8f\x03\n\x0bSyncJobConf\x12&\n\tsource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x43\n\x08job_mode\x18\x03 \x01(\x0e\x32\x1a.model.SyncJobConf.JobModeB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x38\x01@\x00\x12\x38\n\x0bjob_content\x18\x04 \x01(\tB#\xe2\xdf\x1f\x13\n\x11\n\x08job_mode\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x14\x12)\n\x0csyncResource\x18\x05 \x01(\x0b\x32\x13.model.SyncResource\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12.\n\x0f\x63hannel_control\x18\x07 \x01(\x0b\x32\x15.model.ChannelControl\":\n\x07JobMode\x12\x10\n\x0cJobModeUnset\x10\x00\x12\r\n\tGuideMode\x10\x01\x12\x0e\n\nScriptMode\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xdd\x01\n\x0e\x43hannelControl\x12*\n\x0bparallelism\x18\x01 \x01(\x05\x42\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1d\n\nrecord_num\x18\x02 \x01(\x05\x42\t\xa2\xa1\x1f\x05\xaa\x06\x02-1\x12.\n\x04rate\x18\x03 \x01(\x0e\x32 .model.ChannelControl.RatePolicy\x12\r\n\x05\x62ytes\x18\x04 \x01(\x05\"9\n\nRatePolicy\x12\x13\n\x0fRatePolicyUnset\x10\x00\x12\t\n\x05Limit\x10\x01\x12\x0b\n\x07UnLimit\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x84\x0b\n\x0cSyncResource\x12%\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x0f.model.DBSource\x12%\n\x0cmysql_target\x18\x02 \x01(\x0b\x32\x0f.model.DBTarget\x12&\n\roracle_source\x18\x03 \x01(\x0b\x32\x0f.model.DBSource\x12&\n\roracle_target\x18\x04 \x01(\x0b\x32\x0f.model.DBTarget\x12#\n\ndb2_source\x18\x05 \x01(\x0b\x32\x0f.model.DBSource\x12#\n\ndb2_target\x18\x06 \x01(\x0b\x32\x0f.model.DBTarget\x12*\n\x11postgresql_source\x18\x07 \x01(\x0b\x32\x0f.model.DBSource\x12*\n\x11postgresql_target\x18\x08 \x01(\x0b\x32\x0f.model.DBTarget\x12)\n\x10sqlserver_source\x18\t \x01(\x0b\x32\x0f.model.DBSource\x12)\n\x10sqlserver_target\x18\n \x01(\x0b\x32\x0f.model.DBTarget\x12+\n\x12\x63lick_house_source\x18\x0b \x01(\x0b\x32\x0f.model.DBSource\x12+\n\x12\x63lick_house_target\x18\x0c \x01(\x0b\x32\x0f.model.DBTarget\x12(\n\x0fsap_hana_source\x18\r \x01(\x0b\x32\x0f.model.DBSource\x12(\n\x0fsap_hana_target\x18\x0e \x01(\x0b\x32\x0f.model.DBTarget\x12,\n\x0emongodb_source\x18\x0f \x01(\x0b\x32\x14.model.MongodbSource\x12,\n\x0emongodb_target\x18\x10 \x01(\x0b\x32\x14.model.MongodbTarget\x12\x39\n\x15\x65lastic_search_source\x18\x11 \x01(\x0b\x32\x1a.model.ElasticSearchSource\x12\x39\n\x15\x65lastic_search_target\x18\x12 \x01(\x0b\x32\x1a.model.ElasticSearchTarget\x12&\n\x0bhdfs_source\x18\x13 \x01(\x0b\x32\x11.model.HdfsSource\x12&\n\x0bhdfs_target\x18\x14 \x01(\x0b\x32\x11.model.HdfsTarget\x12$\n\nftp_source\x18\x15 \x01(\x0b\x32\x10.model.FtpSource\x12$\n\nftp_target\x18\x16 \x01(\x0b\x32\x10.model.FtpTarget\x12(\n\x0chbase_source\x18\x17 \x01(\x0b\x32\x12.model.HbaseSource\x12(\n\x0chbase_target\x18\x18 \x01(\x0b\x32\x12.model.HbaseTarget\x12(\n\x0ckafka_source\x18\x19 \x01(\x0b\x32\x12.model.KafkaSource\x12(\n\x0ckafka_target\x18\x1a \x01(\x0b\x32\x12.model.KafkaTarget\x12*\n\rbinlog_source\x18\x1b \x01(\x0b\x32\x13.model.BinlogSource\x12)\n\rpg_wal_source\x18\x1c \x01(\x0b\x32\x12.model.PgWalSource\x12\x38\n\x15sql_server_cdc_source\x18\x1d \x01(\x0b\x32\x19.model.SqlServerCdcSource\x12/\n\x10log_miner_source\x18\x1e \x01(\x0b\x32\x15.model.LogMinerSource\x12(\n\x0credis_target\x18\x1f \x01(\x0b\x32\x12.model.RedisTarget\x12&\n\x0bhive_target\x18  \x01(\x0b\x32\x11.model.HiveTarget:\x06\xca\xb2\x04\x02\n\x00\"\xeb\x06\n\x0fSyncJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32%.model.SyncJobSchedule.SchedulePolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x34\n\nparameters\x18\x03 \x03(\x0b\x32 .model.SyncJobSchedule.Parameter\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12S\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32(.model.SyncJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x1aO\n\tParameter\x12\x1f\n\x03key\x18\x01 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xc0\x01\x01\xc8\x01@\x88\x05\x01\x12!\n\x05value\x18\x02 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xc0\x01\x01\xc8\x01@\x88\x05\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xb2\x03\n\x0eSyncJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x30\n\x04type\x18\x05 \x01(\x0e\x32\x13.model.SyncJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12,\n\x06status\x18\x06 \x01(\x0e\x32\x1c.model.SyncJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"M\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\n\n\x06Inline\x10\x02\x12\x0b\n\x07Offline\x10\x03\x12\x0c\n\x08\x46inished\x10\x04\"\xff\x03\n\x11SyncJobConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\'\n\ncluster_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12&\n\tsource_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12>\n\x06status\x18\x06 \x01(\x0e\x32\x1f.model.SyncJobConnection.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12>\n\x06result\x18\x07 \x01(\x0e\x32\x1f.model.SyncJobConnection.ResultB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x08 \x01(\t\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06\x65lapse\x18\n \x01(\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"1\n\x06Result\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBSyncManageSyncJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n proto/types/model/sync_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/datasource.proto\x1a\x1fproto/types/model/cluster.proto\x1a&proto/types/model/syncjob/binlog.proto\x1a-proto/types/model/syncjob/elasticsearch.proto\x1a#proto/types/model/syncjob/ftp.proto\x1a%proto/types/model/syncjob/hbase.proto\x1a$proto/types/model/syncjob/hdfs.proto\x1a$proto/types/model/syncjob/hive.proto\x1a%proto/types/model/syncjob/kafka.proto\x1a(proto/types/model/syncjob/logminer.proto\x1a\'proto/types/model/syncjob/mongodb.proto\x1a%proto/types/model/syncjob/pgwal.proto\x1a%proto/types/model/syncjob/redis.proto\x1a\"proto/types/model/syncjob/db.proto\x1a,proto/types/model/syncjob/sqlservercdc.proto\"\xa3\x06\n\x07SyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1f\n\x02id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x14\n\x0cis_directory\x18\x07 \x01(\x08\x12K\n\x04type\x18\x08 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x34\n\x06status\x18\t \x01(\x0e\x32\x15.model.SyncJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12_\n\x0bsource_type\x18\r \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\x12_\n\x0btarget_type\x18\x0e \x01(\x0e\x32\x16.model.DataSource.TypeB2\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\x0b\x12\t\xda\x01\x06\x30\x00\x38\x10X\x01\"J\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0f\n\x0bOfflineFull\x10\x01\x12\x14\n\x10OfflineIncrement\x10\x02\x12\x0c\n\x08RealTime\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xd8\x01\n\x0fSyncJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12&\n\x04\x63onf\x18\x04 \x01(\x0b\x32\x12.model.SyncJobConfB\x04\xe2\xdf\x1f\x00\x12.\n\x08schedule\x18\x05 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\xe9\x03\n\x0bSyncJobConf\x12\x43\n\x08job_mode\x18\x01 \x01(\x0e\x32\x1a.model.SyncJobConf.JobModeB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x30\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x38\x01@\x00\x12=\n\tsource_id\x18\x02 \x01(\tB*\xe2\xdf\x1f\x13\n\x11\n\x08job_mode\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12=\n\ttarget_id\x18\x03 \x01(\tB*\xe2\xdf\x1f\x13\n\x11\n\x08job_mode\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x38\n\x0bjob_content\x18\x04 \x01(\tB#\xe2\xdf\x1f\x13\n\x11\n\x08job_mode\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x14\x12*\n\rsync_resource\x18\x05 \x01(\x0b\x32\x13.model.SyncResource\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12.\n\x0f\x63hannel_control\x18\x07 \x01(\x0b\x32\x15.model.ChannelControl\x12)\n\x0c\x63luster_info\x18\x08 \x01(\x0b\x32\x13.model.FlinkCluster\":\n\x07JobMode\x12\x10\n\x0cJobModeUnset\x10\x00\x12\r\n\tGuideMode\x10\x01\x12\x0e\n\nScriptMode\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xdd\x01\n\x0e\x43hannelControl\x12*\n\x0bparallelism\x18\x01 \x01(\x05\x42\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1d\n\nrecord_num\x18\x02 \x01(\x05\x42\t\xa2\xa1\x1f\x05\xaa\x06\x02-1\x12.\n\x04rate\x18\x03 \x01(\x0e\x32 .model.ChannelControl.RatePolicy\x12\r\n\x05\x62ytes\x18\x04 \x01(\x05\"9\n\nRatePolicy\x12\x13\n\x0fRatePolicyUnset\x10\x00\x12\t\n\x05Limit\x10\x01\x12\x0b\n\x07UnLimit\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x84\x0b\n\x0cSyncResource\x12%\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x0f.model.DBSource\x12%\n\x0cmysql_target\x18\x02 \x01(\x0b\x32\x0f.model.DBTarget\x12&\n\roracle_source\x18\x03 \x01(\x0b\x32\x0f.model.DBSource\x12&\n\roracle_target\x18\x04 \x01(\x0b\x32\x0f.model.DBTarget\x12#\n\ndb2_source\x18\x05 \x01(\x0b\x32\x0f.model.DBSource\x12#\n\ndb2_target\x18\x06 \x01(\x0b\x32\x0f.model.DBTarget\x12*\n\x11postgresql_source\x18\x07 \x01(\x0b\x32\x0f.model.DBSource\x12*\n\x11postgresql_target\x18\x08 \x01(\x0b\x32\x0f.model.DBTarget\x12)\n\x10sqlserver_source\x18\t \x01(\x0b\x32\x0f.model.DBSource\x12)\n\x10sqlserver_target\x18\n \x01(\x0b\x32\x0f.model.DBTarget\x12+\n\x12\x63lick_house_source\x18\x0b \x01(\x0b\x32\x0f.model.DBSource\x12+\n\x12\x63lick_house_target\x18\x0c \x01(\x0b\x32\x0f.model.DBTarget\x12(\n\x0fsap_hana_source\x18\r \x01(\x0b\x32\x0f.model.DBSource\x12(\n\x0fsap_hana_target\x18\x0e \x01(\x0b\x32\x0f.model.DBTarget\x12,\n\x0emongodb_source\x18\x0f \x01(\x0b\x32\x14.model.MongodbSource\x12,\n\x0emongodb_target\x18\x10 \x01(\x0b\x32\x14.model.MongodbTarget\x12\x39\n\x15\x65lastic_search_source\x18\x11 \x01(\x0b\x32\x1a.model.ElasticSearchSource\x12\x39\n\x15\x65lastic_search_target\x18\x12 \x01(\x0b\x32\x1a.model.ElasticSearchTarget\x12&\n\x0bhdfs_source\x18\x13 \x01(\x0b\x32\x11.model.HdfsSource\x12&\n\x0bhdfs_target\x18\x14 \x01(\x0b\x32\x11.model.HdfsTarget\x12$\n\nftp_source\x18\x15 \x01(\x0b\x32\x10.model.FtpSource\x12$\n\nftp_target\x18\x16 \x01(\x0b\x32\x10.model.FtpTarget\x12(\n\x0chbase_source\x18\x17 \x01(\x0b\x32\x12.model.HbaseSource\x12(\n\x0chbase_target\x18\x18 \x01(\x0b\x32\x12.model.HbaseTarget\x12(\n\x0ckafka_source\x18\x19 \x01(\x0b\x32\x12.model.KafkaSource\x12(\n\x0ckafka_target\x18\x1a \x01(\x0b\x32\x12.model.KafkaTarget\x12*\n\rbinlog_source\x18\x1b \x01(\x0b\x32\x13.model.BinlogSource\x12)\n\rpg_wal_source\x18\x1c \x01(\x0b\x32\x12.model.PgWalSource\x12\x38\n\x15sql_server_cdc_source\x18\x1d \x01(\x0b\x32\x19.model.SqlServerCdcSource\x12/\n\x10log_miner_source\x18\x1e \x01(\x0b\x32\x15.model.LogMinerSource\x12(\n\x0credis_target\x18\x1f \x01(\x0b\x32\x12.model.RedisTarget\x12&\n\x0bhive_target\x18  \x01(\x0b\x32\x11.model.HiveTarget:\x06\xca\xb2\x04\x02\n\x00\"\xeb\x06\n\x0fSyncJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32%.model.SyncJobSchedule.SchedulePolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x34\n\nparameters\x18\x03 \x03(\x0b\x32 .model.SyncJobSchedule.Parameter\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12S\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32(.model.SyncJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x1aO\n\tParameter\x12\x1f\n\x03key\x18\x01 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xc0\x01\x01\xc8\x01@\x88\x05\x01\x12!\n\x05value\x18\x02 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xc0\x01\x01\xc8\x01@\x88\x05\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x87\x04\n\x0eSyncJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x30\n\x04type\x18\x05 \x01(\x0e\x32\x13.model.SyncJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12,\n\x06status\x18\x06 \x01(\x0e\x32\x1c.model.SyncJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12 \n\x08sync_job\x18\x0b \x01(\x0b\x32\x0e.model.SyncJob\x12\x31\n\x11sync_job_property\x18\x0c \x01(\x0b\x32\x16.model.SyncJobProperty\"M\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\n\n\x06Inline\x10\x02\x12\x0b\n\x07Offline\x10\x03\x12\x0c\n\x08\x46inished\x10\x04\"\xff\x03\n\x11SyncJobConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\'\n\ncluster_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12&\n\tsource_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12>\n\x06status\x18\x06 \x01(\x0e\x32\x1f.model.SyncJobConnection.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12>\n\x06result\x18\x07 \x01(\x0e\x32\x1f.model.SyncJobConnection.ResultB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0f\n\x07message\x18\x08 \x01(\t\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06\x65lapse\x18\n \x01(\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"1\n\x06Result\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x42n\n\"com.dataomnis.gproto.types.pbmodelB\x13PBSyncManageSyncJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_db__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_binlog__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_elasticsearch__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_ftp__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hbase__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hdfs__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_hive__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_kafka__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_logminer__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_mongodb__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_pgwal__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_redis__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_db__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_sqlservercdc__pb2.DESCRIPTOR,])
 
 
 
@@ -72,8 +73,8 @@ _SYNCJOB_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1423,
-  serialized_end=1497,
+  serialized_start=1456,
+  serialized_end=1530,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOB_TYPE)
 
@@ -102,8 +103,8 @@ _SYNCJOB_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1499,
-  serialized_end=1550,
+  serialized_start=1532,
+  serialized_end=1583,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOB_STATUS)
 
@@ -132,8 +133,8 @@ _SYNCJOBCONF_JOBMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2113,
-  serialized_end=2171,
+  serialized_start=2236,
+  serialized_end=2294,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBCONF_JOBMODE)
 
@@ -162,8 +163,8 @@ _CHANNELCONTROL_RATEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2338,
-  serialized_end=2395,
+  serialized_start=2461,
+  serialized_end=2518,
 )
 _sym_db.RegisterEnumDescriptor(_CHANNELCONTROL_RATEPOLICY)
 
@@ -197,8 +198,8 @@ _SYNCJOBSCHEDULE_SCHEDULEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4454,
-  serialized_end=4546,
+  serialized_start=4577,
+  serialized_end=4669,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_SCHEDULEPOLICY)
 
@@ -232,8 +233,8 @@ _SYNCJOBSCHEDULE_CONCURRENCYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4548,
-  serialized_end=4631,
+  serialized_start=4671,
+  serialized_end=4754,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_CONCURRENCYPOLICY)
 
@@ -262,8 +263,8 @@ _SYNCJOBSCHEDULE_RETRYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4633,
-  serialized_end=4688,
+  serialized_start=4756,
+  serialized_end=4811,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBSCHEDULE_RETRYPOLICY)
 
@@ -302,8 +303,8 @@ _SYNCJOBRELEASE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5056,
-  serialized_end=5133,
+  serialized_start=5264,
+  serialized_end=5341,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBRELEASE_STATUS)
 
@@ -332,8 +333,8 @@ _SYNCJOBCONNECTION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1499,
-  serialized_end=1550,
+  serialized_start=1532,
+  serialized_end=1583,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBCONNECTION_STATUS)
 
@@ -362,8 +363,8 @@ _SYNCJOBCONNECTION_RESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5598,
-  serialized_end=5647,
+  serialized_start=5806,
+  serialized_end=5855,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCJOBCONNECTION_RESULT)
 
@@ -488,8 +489,8 @@ _SYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=755,
-  serialized_end=1558,
+  serialized_start=788,
+  serialized_end=1591,
 )
 
 
@@ -548,8 +549,8 @@ _SYNCJOBPROPERTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1561,
-  serialized_end=1777,
+  serialized_start=1594,
+  serialized_end=1810,
 )
 
 
@@ -562,26 +563,26 @@ _SYNCJOBCONF = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source_id', full_name='model.SyncJobConf.source_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='target_id', full_name='model.SyncJobConf.target_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_mode', full_name='model.SyncJobConf.job_mode', index=2,
-      number=3, type=14, cpp_type=8, label=1,
+      name='job_mode', full_name='model.SyncJobConf.job_mode', index=0,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='source_id', full_name='model.SyncJobConf.source_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\001\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='target_id', full_name='model.SyncJobConf.target_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\001\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='job_content', full_name='model.SyncJobConf.job_content', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -590,7 +591,7 @@ _SYNCJOBCONF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\200\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='syncResource', full_name='model.SyncJobConf.syncResource', index=4,
+      name='sync_resource', full_name='model.SyncJobConf.sync_resource', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -610,6 +611,13 @@ _SYNCJOBCONF = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_info', full_name='model.SyncJobConf.cluster_info', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -623,8 +631,8 @@ _SYNCJOBCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1780,
-  serialized_end=2179,
+  serialized_start=1813,
+  serialized_end=2302,
 )
 
 
@@ -677,8 +685,8 @@ _CHANNELCONTROL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2182,
-  serialized_end=2403,
+  serialized_start=2305,
+  serialized_end=2526,
 )
 
 
@@ -926,8 +934,8 @@ _SYNCRESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2406,
-  serialized_end=3818,
+  serialized_start=2529,
+  serialized_end=3941,
 )
 
 
@@ -965,8 +973,8 @@ _SYNCJOBSCHEDULE_PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4373,
-  serialized_end=4452,
+  serialized_start=4496,
+  serialized_end=4575,
 )
 
 _SYNCJOBSCHEDULE = _descriptor.Descriptor(
@@ -1055,8 +1063,8 @@ _SYNCJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3821,
-  serialized_end=4696,
+  serialized_start=3944,
+  serialized_end=4819,
 )
 
 
@@ -1138,6 +1146,20 @@ _SYNCJOBRELEASE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_job', full_name='model.SyncJobRelease.sync_job', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_job_property', full_name='model.SyncJobRelease.sync_job_property', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1151,8 +1173,8 @@ _SYNCJOBRELEASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4699,
-  serialized_end=5133,
+  serialized_start=4822,
+  serialized_end=5341,
 )
 
 
@@ -1248,8 +1270,8 @@ _SYNCJOBCONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5136,
-  serialized_end=5647,
+  serialized_start=5344,
+  serialized_end=5855,
 )
 
 _SYNCJOB.fields_by_name['type'].enum_type = _SYNCJOB_TYPE
@@ -1261,8 +1283,9 @@ _SYNCJOB_STATUS.containing_type = _SYNCJOB
 _SYNCJOBPROPERTY.fields_by_name['conf'].message_type = _SYNCJOBCONF
 _SYNCJOBPROPERTY.fields_by_name['schedule'].message_type = _SYNCJOBSCHEDULE
 _SYNCJOBCONF.fields_by_name['job_mode'].enum_type = _SYNCJOBCONF_JOBMODE
-_SYNCJOBCONF.fields_by_name['syncResource'].message_type = _SYNCRESOURCE
+_SYNCJOBCONF.fields_by_name['sync_resource'].message_type = _SYNCRESOURCE
 _SYNCJOBCONF.fields_by_name['channel_control'].message_type = _CHANNELCONTROL
+_SYNCJOBCONF.fields_by_name['cluster_info'].message_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER
 _SYNCJOBCONF_JOBMODE.containing_type = _SYNCJOBCONF
 _CHANNELCONTROL.fields_by_name['rate'].enum_type = _CHANNELCONTROL_RATEPOLICY
 _CHANNELCONTROL_RATEPOLICY.containing_type = _CHANNELCONTROL
@@ -1307,6 +1330,8 @@ _SYNCJOBSCHEDULE_CONCURRENCYPOLICY.containing_type = _SYNCJOBSCHEDULE
 _SYNCJOBSCHEDULE_RETRYPOLICY.containing_type = _SYNCJOBSCHEDULE
 _SYNCJOBRELEASE.fields_by_name['type'].enum_type = _SYNCJOB_TYPE
 _SYNCJOBRELEASE.fields_by_name['status'].enum_type = _SYNCJOBRELEASE_STATUS
+_SYNCJOBRELEASE.fields_by_name['sync_job'].message_type = _SYNCJOB
+_SYNCJOBRELEASE.fields_by_name['sync_job_property'].message_type = _SYNCJOBPROPERTY
 _SYNCJOBRELEASE_STATUS.containing_type = _SYNCJOBRELEASE
 _SYNCJOBCONNECTION.fields_by_name['status'].enum_type = _SYNCJOBCONNECTION_STATUS
 _SYNCJOBCONNECTION.fields_by_name['result'].enum_type = _SYNCJOBCONNECTION_RESULT
@@ -1408,9 +1433,9 @@ _SYNCJOBPROPERTY.fields_by_name['version']._options = None
 _SYNCJOBPROPERTY.fields_by_name['conf']._options = None
 _SYNCJOBPROPERTY.fields_by_name['schedule']._options = None
 _SYNCJOBPROPERTY._options = None
+_SYNCJOBCONF.fields_by_name['job_mode']._options = None
 _SYNCJOBCONF.fields_by_name['source_id']._options = None
 _SYNCJOBCONF.fields_by_name['target_id']._options = None
-_SYNCJOBCONF.fields_by_name['job_mode']._options = None
 _SYNCJOBCONF.fields_by_name['job_content']._options = None
 _SYNCJOBCONF._options = None
 _CHANNELCONTROL.fields_by_name['parallelism']._options = None

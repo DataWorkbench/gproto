@@ -384,6 +384,15 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_channel_control() error {
 	return nil
 }
 
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_cluster_info() error {
+	if dt, ok := interface{}(this.ClusterInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJobConf
 func (this *SyncJobConf) Validate() error {
 	if this == nil {
@@ -405,6 +414,9 @@ func (this *SyncJobConf) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_channel_control(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_info(); err != nil {
 		return err
 	}
 	return nil
@@ -1081,6 +1093,24 @@ func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_sync_job() error {
+	if dt, ok := interface{}(this.SyncJob).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_sync_job_property() error {
+	if dt, ok := interface{}(this.SyncJobProperty).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJobRelease
 func (this *SyncJobRelease) Validate() error {
 	if this == nil {
@@ -1108,6 +1138,12 @@ func (this *SyncJobRelease) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job_property(); err != nil {
 		return err
 	}
 	return nil
