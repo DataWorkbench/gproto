@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.19.3
-// source: proto/service/scheduler/sync_instance_manage.proto
+// source: proto/service/spacemanager/sync_instance_manage.proto
 
-package pbsvcscheduler
+package pbsvcspace
 
 import (
 	context "context"
@@ -30,6 +30,11 @@ type SyncInstanceManageClient interface {
 	SuspendSyncInstances(ctx context.Context, in *pbrequest.SuspendSyncInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ResumeSyncInstances(ctx context.Context, in *pbrequest.ResumeSyncInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DescribeSyncInstance(ctx context.Context, in *pbrequest.DescribeSyncInstance, opts ...grpc.CallOption) (*pbresponse.DescribeSyncInstance, error)
+	// CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+	// Return no error is the give instance id already exists.
+	CreateSyncInstanceWithId(ctx context.Context, in *pbrequest.CreateSyncInstanceWithId, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// UpdateSyncInstanceState do updates the instance state, Only used in internal.
+	UpdateSyncInstanceState(ctx context.Context, in *pbrequest.UpdateSyncInstanceState, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type syncInstanceManageClient struct {
@@ -42,7 +47,7 @@ func NewSyncInstanceManageClient(cc grpc.ClientConnInterface) SyncInstanceManage
 
 func (c *syncInstanceManageClient) ListSyncInstances(ctx context.Context, in *pbrequest.ListSyncInstances, opts ...grpc.CallOption) (*pbresponse.ListSyncInstances, error) {
 	out := new(pbresponse.ListSyncInstances)
-	err := c.cc.Invoke(ctx, "/scheduler.SyncInstanceManage/ListSyncInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/ListSyncInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +56,7 @@ func (c *syncInstanceManageClient) ListSyncInstances(ctx context.Context, in *pb
 
 func (c *syncInstanceManageClient) TerminateSyncInstances(ctx context.Context, in *pbrequest.TerminateSyncInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/scheduler.SyncInstanceManage/TerminateSyncInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/TerminateSyncInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +65,7 @@ func (c *syncInstanceManageClient) TerminateSyncInstances(ctx context.Context, i
 
 func (c *syncInstanceManageClient) SuspendSyncInstances(ctx context.Context, in *pbrequest.SuspendSyncInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/scheduler.SyncInstanceManage/SuspendSyncInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/SuspendSyncInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +74,7 @@ func (c *syncInstanceManageClient) SuspendSyncInstances(ctx context.Context, in 
 
 func (c *syncInstanceManageClient) ResumeSyncInstances(ctx context.Context, in *pbrequest.ResumeSyncInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/scheduler.SyncInstanceManage/ResumeSyncInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/ResumeSyncInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +83,25 @@ func (c *syncInstanceManageClient) ResumeSyncInstances(ctx context.Context, in *
 
 func (c *syncInstanceManageClient) DescribeSyncInstance(ctx context.Context, in *pbrequest.DescribeSyncInstance, opts ...grpc.CallOption) (*pbresponse.DescribeSyncInstance, error) {
 	out := new(pbresponse.DescribeSyncInstance)
-	err := c.cc.Invoke(ctx, "/scheduler.SyncInstanceManage/DescribeSyncInstance", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/DescribeSyncInstance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *syncInstanceManageClient) CreateSyncInstanceWithId(ctx context.Context, in *pbrequest.CreateSyncInstanceWithId, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/CreateSyncInstanceWithId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *syncInstanceManageClient) UpdateSyncInstanceState(ctx context.Context, in *pbrequest.UpdateSyncInstanceState, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncInstanceManage/UpdateSyncInstanceState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,6 +117,11 @@ type SyncInstanceManageServer interface {
 	SuspendSyncInstances(context.Context, *pbrequest.SuspendSyncInstances) (*pbmodel.EmptyStruct, error)
 	ResumeSyncInstances(context.Context, *pbrequest.ResumeSyncInstances) (*pbmodel.EmptyStruct, error)
 	DescribeSyncInstance(context.Context, *pbrequest.DescribeSyncInstance) (*pbresponse.DescribeSyncInstance, error)
+	// CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+	// Return no error is the give instance id already exists.
+	CreateSyncInstanceWithId(context.Context, *pbrequest.CreateSyncInstanceWithId) (*pbmodel.EmptyStruct, error)
+	// UpdateSyncInstanceState do updates the instance state, Only used in internal.
+	UpdateSyncInstanceState(context.Context, *pbrequest.UpdateSyncInstanceState) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedSyncInstanceManageServer()
 }
 
@@ -115,6 +143,12 @@ func (UnimplementedSyncInstanceManageServer) ResumeSyncInstances(context.Context
 }
 func (UnimplementedSyncInstanceManageServer) DescribeSyncInstance(context.Context, *pbrequest.DescribeSyncInstance) (*pbresponse.DescribeSyncInstance, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncInstance not implemented")
+}
+func (UnimplementedSyncInstanceManageServer) CreateSyncInstanceWithId(context.Context, *pbrequest.CreateSyncInstanceWithId) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSyncInstanceWithId not implemented")
+}
+func (UnimplementedSyncInstanceManageServer) UpdateSyncInstanceState(context.Context, *pbrequest.UpdateSyncInstanceState) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSyncInstanceState not implemented")
 }
 func (UnimplementedSyncInstanceManageServer) mustEmbedUnimplementedSyncInstanceManageServer() {}
 
@@ -139,7 +173,7 @@ func _SyncInstanceManage_ListSyncInstances_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/scheduler.SyncInstanceManage/ListSyncInstances",
+		FullMethod: "/spacemanager.SyncInstanceManage/ListSyncInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncInstanceManageServer).ListSyncInstances(ctx, req.(*pbrequest.ListSyncInstances))
@@ -157,7 +191,7 @@ func _SyncInstanceManage_TerminateSyncInstances_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/scheduler.SyncInstanceManage/TerminateSyncInstances",
+		FullMethod: "/spacemanager.SyncInstanceManage/TerminateSyncInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncInstanceManageServer).TerminateSyncInstances(ctx, req.(*pbrequest.TerminateSyncInstances))
@@ -175,7 +209,7 @@ func _SyncInstanceManage_SuspendSyncInstances_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/scheduler.SyncInstanceManage/SuspendSyncInstances",
+		FullMethod: "/spacemanager.SyncInstanceManage/SuspendSyncInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncInstanceManageServer).SuspendSyncInstances(ctx, req.(*pbrequest.SuspendSyncInstances))
@@ -193,7 +227,7 @@ func _SyncInstanceManage_ResumeSyncInstances_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/scheduler.SyncInstanceManage/ResumeSyncInstances",
+		FullMethod: "/spacemanager.SyncInstanceManage/ResumeSyncInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncInstanceManageServer).ResumeSyncInstances(ctx, req.(*pbrequest.ResumeSyncInstances))
@@ -211,10 +245,46 @@ func _SyncInstanceManage_DescribeSyncInstance_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/scheduler.SyncInstanceManage/DescribeSyncInstance",
+		FullMethod: "/spacemanager.SyncInstanceManage/DescribeSyncInstance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncInstanceManageServer).DescribeSyncInstance(ctx, req.(*pbrequest.DescribeSyncInstance))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SyncInstanceManage_CreateSyncInstanceWithId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateSyncInstanceWithId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncInstanceManageServer).CreateSyncInstanceWithId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncInstanceManage/CreateSyncInstanceWithId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncInstanceManageServer).CreateSyncInstanceWithId(ctx, req.(*pbrequest.CreateSyncInstanceWithId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SyncInstanceManage_UpdateSyncInstanceState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateSyncInstanceState)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncInstanceManageServer).UpdateSyncInstanceState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncInstanceManage/UpdateSyncInstanceState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncInstanceManageServer).UpdateSyncInstanceState(ctx, req.(*pbrequest.UpdateSyncInstanceState))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -223,7 +293,7 @@ func _SyncInstanceManage_DescribeSyncInstance_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SyncInstanceManage_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "scheduler.SyncInstanceManage",
+	ServiceName: "spacemanager.SyncInstanceManage",
 	HandlerType: (*SyncInstanceManageServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -246,7 +316,15 @@ var SyncInstanceManage_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "DescribeSyncInstance",
 			Handler:    _SyncInstanceManage_DescribeSyncInstance_Handler,
 		},
+		{
+			MethodName: "CreateSyncInstanceWithId",
+			Handler:    _SyncInstanceManage_CreateSyncInstanceWithId_Handler,
+		},
+		{
+			MethodName: "UpdateSyncInstanceState",
+			Handler:    _SyncInstanceManage_UpdateSyncInstanceState_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/service/scheduler/sync_instance_manage.proto",
+	Metadata: "proto/service/spacemanager/sync_instance_manage.proto",
 }

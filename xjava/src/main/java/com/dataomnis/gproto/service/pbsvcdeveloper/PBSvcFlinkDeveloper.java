@@ -24,31 +24,29 @@ public final class PBSvcFlinkDeveloper {
   static {
     java.lang.String[] descriptorData = {
       "\n-proto/service/developer/flink_develope" +
-      "r.proto\022\tdeveloper\032\035proto/types/model/em" +
-      "pty.proto\032)proto/types/request/flink_dev" +
-      "eloper.proto\032*proto/types/response/flink" +
-      "_developer.proto2\343\002\n\016FlinkDeveloper\022E\n\016S" +
-      "ubmitFlinkJob\022\027.request.SubmitFlinkJob\032\030" +
-      ".response.SubmitFlinkJob\"\000\022j\n\031SubmitFlin" +
-      "kJobInteractive\022\".request.SubmitFlinkJob" +
-      "Interactive\032#.response.SubmitFlinkJobInt" +
-      "eractive\"\000(\0010\001\022K\n\020ValidateFlinkJob\022\031.req" +
-      "uest.ValidateFlinkJob\032\032.response.Validat" +
-      "eFlinkJob\"\000\022Q\n\023ValidateFlinkJob_v2\022\034.req" +
-      "uest.ValidateFlinkJob_v2\032\032.response.Vali" +
-      "dateFlinkJob\"\000B\200\001\n+com.dataomnis.gproto." +
-      "service.pbsvcdeveloperB\023PBSvcFlinkDevelo" +
-      "perP\000Z:github.com/DataWorkbench/gproto/x" +
-      "go/service/pbsvcdeveloperb\006proto3"
+      "r.proto\022\tdeveloper\032)proto/types/request/" +
+      "flink_developer.proto\032*proto/types/respo" +
+      "nse/flink_developer.proto2\343\002\n\016FlinkDevel" +
+      "oper\022E\n\016SubmitFlinkJob\022\027.request.SubmitF" +
+      "linkJob\032\030.response.SubmitFlinkJob\"\000\022j\n\031S" +
+      "ubmitFlinkJobInteractive\022\".request.Submi" +
+      "tFlinkJobInteractive\032#.response.SubmitFl" +
+      "inkJobInteractive\"\000(\0010\001\022K\n\020ValidateFlink" +
+      "Job\022\031.request.ValidateFlinkJob\032\032.respons" +
+      "e.ValidateFlinkJob\"\000\022Q\n\023ValidateFlinkJob" +
+      "_v2\022\034.request.ValidateFlinkJob_v2\032\032.resp" +
+      "onse.ValidateFlinkJob\"\000B\200\001\n+com.dataomni" +
+      "s.gproto.service.pbsvcdeveloperB\023PBSvcFl" +
+      "inkDeveloperP\000Z:github.com/DataWorkbench" +
+      "/gproto/xgo/service/pbsvcdeveloperb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.getDescriptor(),
         });
-    com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestFlinkDeveloper.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.getDescriptor();
   }

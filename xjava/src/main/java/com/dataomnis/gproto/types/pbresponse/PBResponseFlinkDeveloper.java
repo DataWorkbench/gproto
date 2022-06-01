@@ -2361,26 +2361,24 @@ public final class PBResponseFlinkDeveloper {
     java.lang.String[] descriptorData = {
       "\n*proto/types/response/flink_developer.p" +
       "roto\022\010response\0323github.com/yu31/protoc-p" +
-      "lugin/proto/validator.proto\032\'proto/types" +
-      "/model/flink/flink_job.proto\"\204\001\n\016SubmitF" +
-      "linkJob\022+\n\004code\030\001 \001(\0162\035.response.SubmitF" +
-      "linkJob.Code\022\025\n\007message\030\002 \001(\tB\004\342\337\037\000\".\n\004C" +
-      "ode\022\r\n\tCodeUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Faile" +
-      "d\020\002\"2\n\031SubmitFlinkJobInteractive\022\025\n\007mess" +
-      "age\030\001 \001(\tB\004\342\337\037\000\"\215\001\n\020ValidateFlinkJob\0221\n\006" +
-      "result\030\001 \001(\0162!.response.ValidateFlinkJob" +
-      ".Result\022\017\n\007message\030\002 \001(\t\"5\n\006Result\022\017\n\013Re" +
-      "sultUnset\020\000\022\013\n\007Correct\020\001\022\r\n\tIncorrect\020\002B" +
-      "y\n%com.dataomnis.gproto.types.pbresponse" +
-      "B\030PBResponseFlinkDeveloperP\000Z4github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbrespon" +
-      "seb\006proto3"
+      "lugin/proto/validator.proto\"\204\001\n\016SubmitFl" +
+      "inkJob\022+\n\004code\030\001 \001(\0162\035.response.SubmitFl" +
+      "inkJob.Code\022\025\n\007message\030\002 \001(\tB\004\342\337\037\000\".\n\004Co" +
+      "de\022\r\n\tCodeUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Failed" +
+      "\020\002\"2\n\031SubmitFlinkJobInteractive\022\025\n\007messa" +
+      "ge\030\001 \001(\tB\004\342\337\037\000\"\215\001\n\020ValidateFlinkJob\0221\n\006r" +
+      "esult\030\001 \001(\0162!.response.ValidateFlinkJob." +
+      "Result\022\017\n\007message\030\002 \001(\t\"5\n\006Result\022\017\n\013Res" +
+      "ultUnset\020\000\022\013\n\007Correct\020\001\022\r\n\tIncorrect\020\002By" +
+      "\n%com.dataomnis.gproto.types.pbresponseB" +
+      "\030PBResponseFlinkDeveloperP\000Z4github.com/" +
+      "DataWorkbench/gproto/xgo/types/pbrespons" +
+      "eb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.getDescriptor(),
         });
     internal_static_response_SubmitFlinkJob_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2406,7 +2404,6 @@ public final class PBResponseFlinkDeveloper {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

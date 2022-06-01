@@ -42,6 +42,8 @@ type SchedulerClient interface {
 	SubmitSyncJob(ctx context.Context, in *pbrequest.SubmitSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// StopSyncJob used when offline stream job.
 	StopSyncJob(ctx context.Context, in *pbrequest.StopSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// StopSyncInstance used when terminate a stream job instance.
+	StopSyncInstance(ctx context.Context, in *pbrequest.StopSyncInstance, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// DeleteSyncJobsBySpaceIds used when delete workspaces.
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
@@ -127,6 +129,15 @@ func (c *schedulerClient) StopSyncJob(ctx context.Context, in *pbrequest.StopSyn
 	return out, nil
 }
 
+func (c *schedulerClient) StopSyncInstance(ctx context.Context, in *pbrequest.StopSyncInstance, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/StopSyncInstance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *schedulerClient) DeleteSyncJobsBySpaceIds(ctx context.Context, in *pbrequest.DeleteSyncJobsBySpaceIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/DeleteSyncJobsBySpaceIds", in, out, opts...)
@@ -185,6 +196,8 @@ type SchedulerServer interface {
 	SubmitSyncJob(context.Context, *pbrequest.SubmitSyncJob) (*pbmodel.EmptyStruct, error)
 	// StopSyncJob used when offline stream job.
 	StopSyncJob(context.Context, *pbrequest.StopSyncJob) (*pbmodel.EmptyStruct, error)
+	// StopSyncInstance used when terminate a stream job instance.
+	StopSyncInstance(context.Context, *pbrequest.StopSyncInstance) (*pbmodel.EmptyStruct, error)
 	// DeleteSyncJobsBySpaceIds used when delete workspaces.
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
@@ -224,6 +237,9 @@ func (UnimplementedSchedulerServer) SubmitSyncJob(context.Context, *pbrequest.Su
 }
 func (UnimplementedSchedulerServer) StopSyncJob(context.Context, *pbrequest.StopSyncJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopSyncJob not implemented")
+}
+func (UnimplementedSchedulerServer) StopSyncInstance(context.Context, *pbrequest.StopSyncInstance) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopSyncInstance not implemented")
 }
 func (UnimplementedSchedulerServer) DeleteSyncJobsBySpaceIds(context.Context, *pbrequest.DeleteSyncJobsBySpaceIds) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSyncJobsBySpaceIds not implemented")
@@ -376,6 +392,24 @@ func _Scheduler_StopSyncJob_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Scheduler_StopSyncInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StopSyncInstance)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).StopSyncInstance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/StopSyncInstance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).StopSyncInstance(ctx, req.(*pbrequest.StopSyncInstance))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Scheduler_DeleteSyncJobsBySpaceIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.DeleteSyncJobsBySpaceIds)
 	if err := dec(in); err != nil {
@@ -482,6 +516,10 @@ var Scheduler_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StopSyncJob",
 			Handler:    _Scheduler_StopSyncJob_Handler,
+		},
+		{
+			MethodName: "StopSyncInstance",
+			Handler:    _Scheduler_StopSyncInstance_Handler,
 		},
 		{
 			MethodName: "DeleteSyncJobsBySpaceIds",

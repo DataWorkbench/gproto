@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcschedulerB\016PBSvcSchedulerP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcscheduler',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/service/scheduler/scheduler.proto\x12\tscheduler\x1a\x1dproto/types/model/empty.proto\x1a#proto/types/request/scheduler.proto2\xce\x06\n\tScheduler\x12\x41\n\x0fSubmitStreamJob\x12\x18.request.SubmitStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rStopStreamJob\x12\x16.request.StopStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12G\n\x12StopStreamInstance\x12\x1b.request.StopStreamInstance\x1a\x12.model.EmptyStruct\"\x00\x12W\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12#.request.DeleteStreamJobsBySpaceIds\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteStreamJobsByJobIds\x12!.request.DeleteStreamJobsByJobIds\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rSubmitSyncJob\x12\x16.request.SubmitSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12\x39\n\x0bStopSyncJob\x12\x14.request.StopSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteSyncJobsBySpaceIds\x12!.request.DeleteSyncJobsBySpaceIds\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x44\x65leteSyncJobsByJobIds\x12\x1f.request.DeleteSyncJobsByJobIds\x1a\x12.model.EmptyStruct\"\x00\x12U\n\x19SubmitFlinkClusterMonitor\x12\".request.SubmitFlinkClusterMonitor\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17StopFlinkClusterMonitor\x12 .request.StopFlinkClusterMonitor\x1a\x12.model.EmptyStruct\"\x00\x42{\n+com.dataomnis.gproto.service.pbsvcschedulerB\x0ePBSvcSchedulerP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcschedulerb\x06proto3'
+  serialized_pb=b'\n\'proto/service/scheduler/scheduler.proto\x12\tscheduler\x1a\x1dproto/types/model/empty.proto\x1a#proto/types/request/scheduler.proto2\x93\x07\n\tScheduler\x12\x41\n\x0fSubmitStreamJob\x12\x18.request.SubmitStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rStopStreamJob\x12\x16.request.StopStreamJob\x1a\x12.model.EmptyStruct\"\x00\x12G\n\x12StopStreamInstance\x12\x1b.request.StopStreamInstance\x1a\x12.model.EmptyStruct\"\x00\x12W\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12#.request.DeleteStreamJobsBySpaceIds\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteStreamJobsByJobIds\x12!.request.DeleteStreamJobsByJobIds\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rSubmitSyncJob\x12\x16.request.SubmitSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12\x39\n\x0bStopSyncJob\x12\x14.request.StopSyncJob\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10StopSyncInstance\x12\x19.request.StopSyncInstance\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteSyncJobsBySpaceIds\x12!.request.DeleteSyncJobsBySpaceIds\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x44\x65leteSyncJobsByJobIds\x12\x1f.request.DeleteSyncJobsByJobIds\x1a\x12.model.EmptyStruct\"\x00\x12U\n\x19SubmitFlinkClusterMonitor\x12\".request.SubmitFlinkClusterMonitor\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17StopFlinkClusterMonitor\x12 .request.StopFlinkClusterMonitor\x1a\x12.model.EmptyStruct\"\x00\x42{\n+com.dataomnis.gproto.service.pbsvcschedulerB\x0ePBSvcSchedulerP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcschedulerb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_scheduler__pb2.DESCRIPTOR,])
 
@@ -40,7 +40,7 @@ _SCHEDULER = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=123,
-  serialized_end=969,
+  serialized_end=1038,
   methods=[
   _descriptor.MethodDescriptor(
     name='SubmitStreamJob',
@@ -113,9 +113,19 @@ _SCHEDULER = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='StopSyncInstance',
+    full_name='scheduler.Scheduler.StopSyncInstance',
+    index=7,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_scheduler__pb2._STOPSYNCINSTANCE,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='DeleteSyncJobsBySpaceIds',
     full_name='scheduler.Scheduler.DeleteSyncJobsBySpaceIds',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_scheduler__pb2._DELETESYNCJOBSBYSPACEIDS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -125,7 +135,7 @@ _SCHEDULER = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteSyncJobsByJobIds',
     full_name='scheduler.Scheduler.DeleteSyncJobsByJobIds',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_scheduler__pb2._DELETESYNCJOBSBYJOBIDS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -135,7 +145,7 @@ _SCHEDULER = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SubmitFlinkClusterMonitor',
     full_name='scheduler.Scheduler.SubmitFlinkClusterMonitor',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_scheduler__pb2._SUBMITFLINKCLUSTERMONITOR,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -145,7 +155,7 @@ _SCHEDULER = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='StopFlinkClusterMonitor',
     full_name='scheduler.Scheduler.StopFlinkClusterMonitor',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_scheduler__pb2._STOPFLINKCLUSTERMONITOR,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,

@@ -26,7 +26,7 @@ public final class PBSvcScheduler {
       "\n\'proto/service/scheduler/scheduler.prot" +
       "o\022\tscheduler\032\035proto/types/model/empty.pr" +
       "oto\032#proto/types/request/scheduler.proto" +
-      "2\316\006\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
+      "2\223\007\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
       "est.SubmitStreamJob\032\022.model.EmptyStruct\"" +
       "\000\022=\n\rStopStreamJob\022\026.request.StopStreamJ" +
       "ob\032\022.model.EmptyStruct\"\000\022G\n\022StopStreamIn" +
@@ -38,19 +38,21 @@ public final class PBSvcScheduler {
       "sByJobIds\032\022.model.EmptyStruct\"\000\022=\n\rSubmi" +
       "tSyncJob\022\026.request.SubmitSyncJob\032\022.model" +
       ".EmptyStruct\"\000\0229\n\013StopSyncJob\022\024.request." +
-      "StopSyncJob\032\022.model.EmptyStruct\"\000\022S\n\030Del" +
-      "eteSyncJobsBySpaceIds\022!.request.DeleteSy" +
-      "ncJobsBySpaceIds\032\022.model.EmptyStruct\"\000\022O" +
-      "\n\026DeleteSyncJobsByJobIds\022\037.request.Delet" +
-      "eSyncJobsByJobIds\032\022.model.EmptyStruct\"\000\022" +
-      "U\n\031SubmitFlinkClusterMonitor\022\".request.S" +
-      "ubmitFlinkClusterMonitor\032\022.model.EmptySt" +
-      "ruct\"\000\022Q\n\027StopFlinkClusterMonitor\022 .requ" +
-      "est.StopFlinkClusterMonitor\032\022.model.Empt" +
-      "yStruct\"\000B{\n+com.dataomnis.gproto.servic" +
-      "e.pbsvcschedulerB\016PBSvcSchedulerP\000Z:gith" +
-      "ub.com/DataWorkbench/gproto/xgo/service/" +
-      "pbsvcschedulerb\006proto3"
+      "StopSyncJob\032\022.model.EmptyStruct\"\000\022C\n\020Sto" +
+      "pSyncInstance\022\031.request.StopSyncInstance" +
+      "\032\022.model.EmptyStruct\"\000\022S\n\030DeleteSyncJobs" +
+      "BySpaceIds\022!.request.DeleteSyncJobsBySpa" +
+      "ceIds\032\022.model.EmptyStruct\"\000\022O\n\026DeleteSyn" +
+      "cJobsByJobIds\022\037.request.DeleteSyncJobsBy" +
+      "JobIds\032\022.model.EmptyStruct\"\000\022U\n\031SubmitFl" +
+      "inkClusterMonitor\022\".request.SubmitFlinkC" +
+      "lusterMonitor\032\022.model.EmptyStruct\"\000\022Q\n\027S" +
+      "topFlinkClusterMonitor\022 .request.StopFli" +
+      "nkClusterMonitor\032\022.model.EmptyStruct\"\000B{" +
+      "\n+com.dataomnis.gproto.service.pbsvcsche" +
+      "dulerB\016PBSvcSchedulerP\000Z:github.com/Data" +
+      "Workbench/gproto/xgo/service/pbsvcschedu" +
+      "lerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

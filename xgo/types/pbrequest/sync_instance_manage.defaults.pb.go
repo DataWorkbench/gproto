@@ -53,3 +53,19 @@ func (this *DescribeSyncInstance) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.CreateSyncInstanceWithId
+func (this *CreateSyncInstanceWithId) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateSyncInstanceState
+func (this *UpdateSyncInstanceState) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

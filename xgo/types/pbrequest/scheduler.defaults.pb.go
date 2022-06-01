@@ -76,6 +76,14 @@ func (this *StopSyncJob) SetDefaults() {
 	return
 }
 
+// Set default value for message request.StopSyncInstance
+func (this *StopSyncInstance) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DeleteSyncJobsBySpaceIds
 func (this *DeleteSyncJobsBySpaceIds) SetDefaults() {
 	if this == nil {

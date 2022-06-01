@@ -6,7 +6,6 @@
 package pbresponse
 
 import (
-	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflink"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
