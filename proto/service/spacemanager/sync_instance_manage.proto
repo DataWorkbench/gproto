@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package scheduler;
+package spacemanager;
 
-option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcscheduler";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
 
 // Package name of class.
-option java_package = "com.dataomnis.gproto.service.pbsvcscheduler";
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
 // File name of class.
 option java_outer_classname = "PBSvcSyncInstanceManage";
 option java_multiple_files = false;
@@ -22,4 +22,11 @@ service SyncInstanceManage {
   rpc ResumeSyncInstances(request.ResumeSyncInstances)       returns (model.EmptyStruct)       {}
 
   rpc DescribeSyncInstance(request.DescribeSyncInstance) returns (response.DescribeSyncInstance) {}
+
+  // CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+  // Return no error is the give instance id already exists.
+  rpc CreateSyncInstanceWithId(request.CreateSyncInstanceWithId) returns (model.EmptyStruct) {}
+
+  // UpdateSyncInstanceState do updates the instance state, Only used in internal.
+  rpc UpdateSyncInstanceState(request.UpdateSyncInstanceState) returns(model.EmptyStruct) {}
 }

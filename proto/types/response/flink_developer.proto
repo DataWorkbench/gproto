@@ -13,7 +13,7 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
-import "proto/types/model/flink/flink_job.proto";
+//import "proto/types/model/flink/flink_job.proto";
 
 message SubmitFlinkJob {
   enum Code {

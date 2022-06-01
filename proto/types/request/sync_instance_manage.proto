@@ -110,3 +110,27 @@ message DescribeSyncInstance {
   // @inject_tag: json:"verbose" form:"verbose"
   int32 verbose = 2;
 }
+
+// CreateSyncInstanceWithId used as a request parameters for RPC.
+message CreateSyncInstanceWithId {
+  // The workspace id in HTTP Request-URI. Is Required.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The stream job id
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+
+  // The stream job version
+  string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16  } ];
+
+  string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "syi-" } ];
+
+  string message = 5;
+}
+
+message UpdateSyncInstanceState {
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "syi-" } ];
+
+  model.SyncInstance.State state = 2 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  string message = 3;
+}

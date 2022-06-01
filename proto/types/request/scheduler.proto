@@ -82,6 +82,15 @@ message StopSyncJob {
   bool stop_running = 3 [(validator.field) = {}];
 }
 
+// StopSyncInstance used as a request parameters for RPC.
+message StopSyncInstance {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "syj-" } ];
+
+  string instance_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "syi-" } ];
+}
+
 message DeleteSyncJobsBySpaceIds {
   // The list of workspace id.
   repeated string space_ids = 1 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "wks-" } } } ];
