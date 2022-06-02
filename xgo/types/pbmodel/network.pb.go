@@ -71,6 +71,7 @@ func (Network_Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // Network config.
+// FIXME: remove in feature.
 type Network struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

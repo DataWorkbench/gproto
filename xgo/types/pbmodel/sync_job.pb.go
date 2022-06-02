@@ -435,105 +435,6 @@ func (SyncJobRelease_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_sync_job_proto_rawDescGZIP(), []int{6, 0}
 }
 
-type SyncJobConnection_Status int32
-
-const (
-	SyncJobConnection_StatusUnset SyncJobConnection_Status = 0
-	SyncJobConnection_Deleted     SyncJobConnection_Status = 1
-	SyncJobConnection_Enabled     SyncJobConnection_Status = 2
-)
-
-// Enum value maps for SyncJobConnection_Status.
-var (
-	SyncJobConnection_Status_name = map[int32]string{
-		0: "StatusUnset",
-		1: "Deleted",
-		2: "Enabled",
-	}
-	SyncJobConnection_Status_value = map[string]int32{
-		"StatusUnset": 0,
-		"Deleted":     1,
-		"Enabled":     2,
-	}
-)
-
-func (x SyncJobConnection_Status) Enum() *SyncJobConnection_Status {
-	p := new(SyncJobConnection_Status)
-	*p = x
-	return p
-}
-
-func (x SyncJobConnection_Status) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (SyncJobConnection_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_sync_job_proto_enumTypes[8].Descriptor()
-}
-
-func (SyncJobConnection_Status) Type() protoreflect.EnumType {
-	return &file_proto_types_model_sync_job_proto_enumTypes[8]
-}
-
-func (x SyncJobConnection_Status) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use SyncJobConnection_Status.Descriptor instead.
-func (SyncJobConnection_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_sync_job_proto_rawDescGZIP(), []int{7, 0}
-}
-
-// Result connectivity test results
-type SyncJobConnection_Result int32
-
-const (
-	SyncJobConnection_StateUnset SyncJobConnection_Result = 0
-	SyncJobConnection_Success    SyncJobConnection_Result = 1
-	SyncJobConnection_Failed     SyncJobConnection_Result = 2
-)
-
-// Enum value maps for SyncJobConnection_Result.
-var (
-	SyncJobConnection_Result_name = map[int32]string{
-		0: "StateUnset",
-		1: "Success",
-		2: "Failed",
-	}
-	SyncJobConnection_Result_value = map[string]int32{
-		"StateUnset": 0,
-		"Success":    1,
-		"Failed":     2,
-	}
-)
-
-func (x SyncJobConnection_Result) Enum() *SyncJobConnection_Result {
-	p := new(SyncJobConnection_Result)
-	*p = x
-	return p
-}
-
-func (x SyncJobConnection_Result) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (SyncJobConnection_Result) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_sync_job_proto_enumTypes[9].Descriptor()
-}
-
-func (SyncJobConnection_Result) Type() protoreflect.EnumType {
-	return &file_proto_types_model_sync_job_proto_enumTypes[9]
-}
-
-func (x SyncJobConnection_Result) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use SyncJobConnection_Result.Descriptor instead.
-func (SyncJobConnection_Result) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_sync_job_proto_rawDescGZIP(), []int{7, 1}
-}
-
 // The sync job info
 type SyncJob struct {
 	state         protoimpl.MessageState
@@ -1590,136 +1491,6 @@ func (x *SyncJobRelease) GetSyncJobProperty() *SyncJobProperty {
 	return nil
 }
 
-// SyncJobConnection represents the network connection between flink cluster and data source that used in sync job..
-type SyncJobConnection struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// Space ID, workspace ID.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
-	// The id of sync jod.
-	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" gorm:"column:job_id;primaryKey;"`
-	// The if of flink cluster.
-	ClusterId string `protobuf:"bytes,3,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id" gorm:"column:cluster_id;primaryKey;"`
-	// The datasource id that as a sync source.
-	SourceId string `protobuf:"bytes,4,opt,name=source_id,json=sourceId,proto3" json:"source_id" gorm:"column:source_id;primaryKey;"`
-	// The datasource id that as a sync target.
-	TargetId string `protobuf:"bytes,5,opt,name=target_id,json=targetId,proto3" json:"target_id" gorm:"column:target_id;primaryKey;"`
-	// Status, 1 => "Deleted", 2 => "Enabled".
-	Status SyncJobConnection_Status `protobuf:"varint,6,opt,name=status,proto3,enum=model.SyncJobConnection_Status" json:"status" gorm:"column:status;"`
-	// Connection state  1 => success 2 => failed
-	Result SyncJobConnection_Result `protobuf:"varint,7,opt,name=result,proto3,enum=model.SyncJobConnection_Result" json:"result" gorm:"column:result;"`
-	// Message is the reason when connection failure.
-	Message string `protobuf:"bytes,8,opt,name=message,proto3" json:"message" gorm:"column:message;"`
-	// Create Time, When start tested for usability..
-	Created int64 `protobuf:"varint,9,opt,name=created,proto3" json:"created" gorm:"column:created;"`
-	// Elapse is Used time of tested for usability. unit in ms.
-	Elapse int64 `protobuf:"varint,10,opt,name=elapse,proto3" json:"elapse" gorm:"column:elapse;"`
-}
-
-func (x *SyncJobConnection) Reset() {
-	*x = SyncJobConnection{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_sync_job_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *SyncJobConnection) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SyncJobConnection) ProtoMessage() {}
-
-func (x *SyncJobConnection) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_sync_job_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SyncJobConnection.ProtoReflect.Descriptor instead.
-func (*SyncJobConnection) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_sync_job_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *SyncJobConnection) GetSpaceId() string {
-	if x != nil {
-		return x.SpaceId
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetJobId() string {
-	if x != nil {
-		return x.JobId
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetClusterId() string {
-	if x != nil {
-		return x.ClusterId
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetSourceId() string {
-	if x != nil {
-		return x.SourceId
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetTargetId() string {
-	if x != nil {
-		return x.TargetId
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetStatus() SyncJobConnection_Status {
-	if x != nil {
-		return x.Status
-	}
-	return SyncJobConnection_StatusUnset
-}
-
-func (x *SyncJobConnection) GetResult() SyncJobConnection_Result {
-	if x != nil {
-		return x.Result
-	}
-	return SyncJobConnection_StateUnset
-}
-
-func (x *SyncJobConnection) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
-func (x *SyncJobConnection) GetCreated() int64 {
-	if x != nil {
-		return x.Created
-	}
-	return 0
-}
-
-func (x *SyncJobConnection) GetElapse() int64 {
-	if x != nil {
-		return x.Elapse
-	}
-	return 0
-}
-
 type SyncJobSchedule_Parameter struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1734,7 +1505,7 @@ type SyncJobSchedule_Parameter struct {
 func (x *SyncJobSchedule_Parameter) Reset() {
 	*x = SyncJobSchedule_Parameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_sync_job_proto_msgTypes[8]
+		mi := &file_proto_types_model_sync_job_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1747,7 +1518,7 @@ func (x *SyncJobSchedule_Parameter) String() string {
 func (*SyncJobSchedule_Parameter) ProtoMessage() {}
 
 func (x *SyncJobSchedule_Parameter) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_sync_job_proto_msgTypes[8]
+	mi := &file_proto_types_model_sync_job_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2171,52 +1942,14 @@ var file_proto_types_model_sync_job_proto_rawDesc = []byte{
 	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x49, 0x6e, 0x6c,
 	0x69, 0x6e, 0x65, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65,
 	0x10, 0x03, 0x12, 0x0c, 0x0a, 0x08, 0x46, 0x69, 0x6e, 0x69, 0x73, 0x68, 0x65, 0x64, 0x10, 0x04,
-	0x22, 0xd8, 0x04, 0x0a, 0x11, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d,
-	0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01,
-	0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73, 0x79, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62,
-	0x49, 0x64, 0x12, 0x32, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64,
-	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01,
-	0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x63, 0x66, 0x69, 0x2d, 0x52, 0x09, 0x63, 0x6c, 0x75,
-	0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x30, 0x0a, 0x09, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
-	0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12,
-	0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73, 0x6f, 0x6d, 0x2d, 0x52, 0x08,
-	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x64, 0x12, 0x30, 0x0a, 0x09, 0x74, 0x61, 0x72, 0x67,
-	0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f,
-	0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x73, 0x6f, 0x6d, 0x2d,
-	0x52, 0x08, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x64, 0x12, 0x46, 0x0a, 0x06, 0x73, 0x74,
-	0x61, 0x74, 0x75, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x0d, 0xe2, 0xdf, 0x1f,
-	0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x01, 0x58, 0x01, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74,
-	0x75, 0x73, 0x12, 0x46, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x07, 0x20, 0x01,
-	0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a,
-	0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73,
-	0x75, 0x6c, 0x74, 0x42, 0x0d, 0xe2, 0xdf, 0x1f, 0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00,
-	0x58, 0x01, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x12, 0x25, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18,
-	0x09, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0b, 0xe2, 0xdf, 0x1f, 0x07, 0x12, 0x05, 0xb2, 0x01, 0x02,
-	0x30, 0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x65,
-	0x6c, 0x61, 0x70, 0x73, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x65, 0x6c, 0x61,
-	0x70, 0x73, 0x65, 0x22, 0x33, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0f, 0x0a,
-	0x0b, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0b,
-	0x0a, 0x07, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x45,
-	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x22, 0x31, 0x0a, 0x06, 0x52, 0x65, 0x73, 0x75,
-	0x6c, 0x74, 0x12, 0x0e, 0x0a, 0x0a, 0x53, 0x74, 0x61, 0x74, 0x65, 0x55, 0x6e, 0x73, 0x65, 0x74,
-	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x10, 0x01, 0x12,
-	0x0a, 0x0a, 0x06, 0x46, 0x61, 0x69, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x42, 0x6e, 0x0a, 0x22, 0x63,
-	0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x42, 0x13, 0x50, 0x42, 0x53, 0x79, 0x6e, 0x63, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x53,
-	0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x50, 0x00, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
-	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
-	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x42, 0x6e, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
+	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
+	0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x42, 0x13, 0x50, 0x42, 0x53, 0x79, 0x6e, 0x63, 0x4d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x50, 0x00, 0x5a, 0x31, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
+	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78,
+	0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2231,8 +1964,8 @@ func file_proto_types_model_sync_job_proto_rawDescGZIP() []byte {
 	return file_proto_types_model_sync_job_proto_rawDescData
 }
 
-var file_proto_types_model_sync_job_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
-var file_proto_types_model_sync_job_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_types_model_sync_job_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_proto_types_model_sync_job_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_proto_types_model_sync_job_proto_goTypes = []interface{}{
 	(SyncJob_Type)(0),                      // 0: model.SyncJob.Type
 	(SyncJob_Status)(0),                    // 1: model.SyncJob.Status
@@ -2242,98 +1975,93 @@ var file_proto_types_model_sync_job_proto_goTypes = []interface{}{
 	(SyncJobSchedule_ConcurrencyPolicy)(0), // 5: model.SyncJobSchedule.ConcurrencyPolicy
 	(SyncJobSchedule_RetryPolicy)(0),       // 6: model.SyncJobSchedule.RetryPolicy
 	(SyncJobRelease_Status)(0),             // 7: model.SyncJobRelease.Status
-	(SyncJobConnection_Status)(0),          // 8: model.SyncJobConnection.Status
-	(SyncJobConnection_Result)(0),          // 9: model.SyncJobConnection.Result
-	(*SyncJob)(nil),                        // 10: model.SyncJob
-	(*SyncJobProperty)(nil),                // 11: model.SyncJobProperty
-	(*SyncJobConf)(nil),                    // 12: model.SyncJobConf
-	(*ChannelControl)(nil),                 // 13: model.ChannelControl
-	(*SyncResource)(nil),                   // 14: model.SyncResource
-	(*SyncJobSchedule)(nil),                // 15: model.SyncJobSchedule
-	(*SyncJobRelease)(nil),                 // 16: model.SyncJobRelease
-	(*SyncJobConnection)(nil),              // 17: model.SyncJobConnection
-	(*SyncJobSchedule_Parameter)(nil),      // 18: model.SyncJobSchedule.Parameter
-	(DataSource_Type)(0),                   // 19: model.DataSource.Type
-	(*FlinkCluster)(nil),                   // 20: model.FlinkCluster
-	(*pbsyncjob.DBSource)(nil),             // 21: model.DBSource
-	(*pbsyncjob.DBTarget)(nil),             // 22: model.DBTarget
-	(*pbsyncjob.MongodbSource)(nil),        // 23: model.MongodbSource
-	(*pbsyncjob.MongodbTarget)(nil),        // 24: model.MongodbTarget
-	(*pbsyncjob.ElasticSearchSource)(nil),  // 25: model.ElasticSearchSource
-	(*pbsyncjob.ElasticSearchTarget)(nil),  // 26: model.ElasticSearchTarget
-	(*pbsyncjob.HdfsSource)(nil),           // 27: model.HdfsSource
-	(*pbsyncjob.HdfsTarget)(nil),           // 28: model.HdfsTarget
-	(*pbsyncjob.FtpSource)(nil),            // 29: model.FtpSource
-	(*pbsyncjob.FtpTarget)(nil),            // 30: model.FtpTarget
-	(*pbsyncjob.HbaseSource)(nil),          // 31: model.HbaseSource
-	(*pbsyncjob.HbaseTarget)(nil),          // 32: model.HbaseTarget
-	(*pbsyncjob.KafkaSource)(nil),          // 33: model.KafkaSource
-	(*pbsyncjob.KafkaTarget)(nil),          // 34: model.KafkaTarget
-	(*pbsyncjob.BinlogSource)(nil),         // 35: model.BinlogSource
-	(*pbsyncjob.PgWalSource)(nil),          // 36: model.PgWalSource
-	(*pbsyncjob.SqlServerCdcSource)(nil),   // 37: model.SqlServerCdcSource
-	(*pbsyncjob.LogMinerSource)(nil),       // 38: model.LogMinerSource
-	(*pbsyncjob.RedisTarget)(nil),          // 39: model.RedisTarget
-	(*pbsyncjob.HiveTarget)(nil),           // 40: model.HiveTarget
+	(*SyncJob)(nil),                        // 8: model.SyncJob
+	(*SyncJobProperty)(nil),                // 9: model.SyncJobProperty
+	(*SyncJobConf)(nil),                    // 10: model.SyncJobConf
+	(*ChannelControl)(nil),                 // 11: model.ChannelControl
+	(*SyncResource)(nil),                   // 12: model.SyncResource
+	(*SyncJobSchedule)(nil),                // 13: model.SyncJobSchedule
+	(*SyncJobRelease)(nil),                 // 14: model.SyncJobRelease
+	(*SyncJobSchedule_Parameter)(nil),      // 15: model.SyncJobSchedule.Parameter
+	(DataSource_Type)(0),                   // 16: model.DataSource.Type
+	(*FlinkCluster)(nil),                   // 17: model.FlinkCluster
+	(*pbsyncjob.DBSource)(nil),             // 18: model.DBSource
+	(*pbsyncjob.DBTarget)(nil),             // 19: model.DBTarget
+	(*pbsyncjob.MongodbSource)(nil),        // 20: model.MongodbSource
+	(*pbsyncjob.MongodbTarget)(nil),        // 21: model.MongodbTarget
+	(*pbsyncjob.ElasticSearchSource)(nil),  // 22: model.ElasticSearchSource
+	(*pbsyncjob.ElasticSearchTarget)(nil),  // 23: model.ElasticSearchTarget
+	(*pbsyncjob.HdfsSource)(nil),           // 24: model.HdfsSource
+	(*pbsyncjob.HdfsTarget)(nil),           // 25: model.HdfsTarget
+	(*pbsyncjob.FtpSource)(nil),            // 26: model.FtpSource
+	(*pbsyncjob.FtpTarget)(nil),            // 27: model.FtpTarget
+	(*pbsyncjob.HbaseSource)(nil),          // 28: model.HbaseSource
+	(*pbsyncjob.HbaseTarget)(nil),          // 29: model.HbaseTarget
+	(*pbsyncjob.KafkaSource)(nil),          // 30: model.KafkaSource
+	(*pbsyncjob.KafkaTarget)(nil),          // 31: model.KafkaTarget
+	(*pbsyncjob.BinlogSource)(nil),         // 32: model.BinlogSource
+	(*pbsyncjob.PgWalSource)(nil),          // 33: model.PgWalSource
+	(*pbsyncjob.SqlServerCdcSource)(nil),   // 34: model.SqlServerCdcSource
+	(*pbsyncjob.LogMinerSource)(nil),       // 35: model.LogMinerSource
+	(*pbsyncjob.RedisTarget)(nil),          // 36: model.RedisTarget
+	(*pbsyncjob.HiveTarget)(nil),           // 37: model.HiveTarget
 }
 var file_proto_types_model_sync_job_proto_depIdxs = []int32{
 	0,  // 0: model.SyncJob.type:type_name -> model.SyncJob.Type
 	1,  // 1: model.SyncJob.status:type_name -> model.SyncJob.Status
-	19, // 2: model.SyncJob.source_type:type_name -> model.DataSource.Type
-	19, // 3: model.SyncJob.target_type:type_name -> model.DataSource.Type
-	12, // 4: model.SyncJobProperty.conf:type_name -> model.SyncJobConf
-	15, // 5: model.SyncJobProperty.schedule:type_name -> model.SyncJobSchedule
+	16, // 2: model.SyncJob.source_type:type_name -> model.DataSource.Type
+	16, // 3: model.SyncJob.target_type:type_name -> model.DataSource.Type
+	10, // 4: model.SyncJobProperty.conf:type_name -> model.SyncJobConf
+	13, // 5: model.SyncJobProperty.schedule:type_name -> model.SyncJobSchedule
 	2,  // 6: model.SyncJobConf.job_mode:type_name -> model.SyncJobConf.JobMode
-	14, // 7: model.SyncJobConf.sync_resource:type_name -> model.SyncResource
-	13, // 8: model.SyncJobConf.channel_control:type_name -> model.ChannelControl
-	20, // 9: model.SyncJobConf.cluster_info:type_name -> model.FlinkCluster
+	12, // 7: model.SyncJobConf.sync_resource:type_name -> model.SyncResource
+	11, // 8: model.SyncJobConf.channel_control:type_name -> model.ChannelControl
+	17, // 9: model.SyncJobConf.cluster_info:type_name -> model.FlinkCluster
 	3,  // 10: model.ChannelControl.rate:type_name -> model.ChannelControl.RatePolicy
-	21, // 11: model.SyncResource.mysql_source:type_name -> model.DBSource
-	22, // 12: model.SyncResource.mysql_target:type_name -> model.DBTarget
-	21, // 13: model.SyncResource.oracle_source:type_name -> model.DBSource
-	22, // 14: model.SyncResource.oracle_target:type_name -> model.DBTarget
-	21, // 15: model.SyncResource.db2_source:type_name -> model.DBSource
-	22, // 16: model.SyncResource.db2_target:type_name -> model.DBTarget
-	21, // 17: model.SyncResource.postgresql_source:type_name -> model.DBSource
-	22, // 18: model.SyncResource.postgresql_target:type_name -> model.DBTarget
-	21, // 19: model.SyncResource.sqlserver_source:type_name -> model.DBSource
-	22, // 20: model.SyncResource.sqlserver_target:type_name -> model.DBTarget
-	21, // 21: model.SyncResource.click_house_source:type_name -> model.DBSource
-	22, // 22: model.SyncResource.click_house_target:type_name -> model.DBTarget
-	21, // 23: model.SyncResource.sap_hana_source:type_name -> model.DBSource
-	22, // 24: model.SyncResource.sap_hana_target:type_name -> model.DBTarget
-	23, // 25: model.SyncResource.mongodb_source:type_name -> model.MongodbSource
-	24, // 26: model.SyncResource.mongodb_target:type_name -> model.MongodbTarget
-	25, // 27: model.SyncResource.elastic_search_source:type_name -> model.ElasticSearchSource
-	26, // 28: model.SyncResource.elastic_search_target:type_name -> model.ElasticSearchTarget
-	27, // 29: model.SyncResource.hdfs_source:type_name -> model.HdfsSource
-	28, // 30: model.SyncResource.hdfs_target:type_name -> model.HdfsTarget
-	29, // 31: model.SyncResource.ftp_source:type_name -> model.FtpSource
-	30, // 32: model.SyncResource.ftp_target:type_name -> model.FtpTarget
-	31, // 33: model.SyncResource.hbase_source:type_name -> model.HbaseSource
-	32, // 34: model.SyncResource.hbase_target:type_name -> model.HbaseTarget
-	33, // 35: model.SyncResource.kafka_source:type_name -> model.KafkaSource
-	34, // 36: model.SyncResource.kafka_target:type_name -> model.KafkaTarget
-	35, // 37: model.SyncResource.binlog_source:type_name -> model.BinlogSource
-	36, // 38: model.SyncResource.pg_wal_source:type_name -> model.PgWalSource
-	37, // 39: model.SyncResource.sql_server_cdc_source:type_name -> model.SqlServerCdcSource
-	38, // 40: model.SyncResource.log_miner_source:type_name -> model.LogMinerSource
-	39, // 41: model.SyncResource.redis_target:type_name -> model.RedisTarget
-	40, // 42: model.SyncResource.hive_target:type_name -> model.HiveTarget
+	18, // 11: model.SyncResource.mysql_source:type_name -> model.DBSource
+	19, // 12: model.SyncResource.mysql_target:type_name -> model.DBTarget
+	18, // 13: model.SyncResource.oracle_source:type_name -> model.DBSource
+	19, // 14: model.SyncResource.oracle_target:type_name -> model.DBTarget
+	18, // 15: model.SyncResource.db2_source:type_name -> model.DBSource
+	19, // 16: model.SyncResource.db2_target:type_name -> model.DBTarget
+	18, // 17: model.SyncResource.postgresql_source:type_name -> model.DBSource
+	19, // 18: model.SyncResource.postgresql_target:type_name -> model.DBTarget
+	18, // 19: model.SyncResource.sqlserver_source:type_name -> model.DBSource
+	19, // 20: model.SyncResource.sqlserver_target:type_name -> model.DBTarget
+	18, // 21: model.SyncResource.click_house_source:type_name -> model.DBSource
+	19, // 22: model.SyncResource.click_house_target:type_name -> model.DBTarget
+	18, // 23: model.SyncResource.sap_hana_source:type_name -> model.DBSource
+	19, // 24: model.SyncResource.sap_hana_target:type_name -> model.DBTarget
+	20, // 25: model.SyncResource.mongodb_source:type_name -> model.MongodbSource
+	21, // 26: model.SyncResource.mongodb_target:type_name -> model.MongodbTarget
+	22, // 27: model.SyncResource.elastic_search_source:type_name -> model.ElasticSearchSource
+	23, // 28: model.SyncResource.elastic_search_target:type_name -> model.ElasticSearchTarget
+	24, // 29: model.SyncResource.hdfs_source:type_name -> model.HdfsSource
+	25, // 30: model.SyncResource.hdfs_target:type_name -> model.HdfsTarget
+	26, // 31: model.SyncResource.ftp_source:type_name -> model.FtpSource
+	27, // 32: model.SyncResource.ftp_target:type_name -> model.FtpTarget
+	28, // 33: model.SyncResource.hbase_source:type_name -> model.HbaseSource
+	29, // 34: model.SyncResource.hbase_target:type_name -> model.HbaseTarget
+	30, // 35: model.SyncResource.kafka_source:type_name -> model.KafkaSource
+	31, // 36: model.SyncResource.kafka_target:type_name -> model.KafkaTarget
+	32, // 37: model.SyncResource.binlog_source:type_name -> model.BinlogSource
+	33, // 38: model.SyncResource.pg_wal_source:type_name -> model.PgWalSource
+	34, // 39: model.SyncResource.sql_server_cdc_source:type_name -> model.SqlServerCdcSource
+	35, // 40: model.SyncResource.log_miner_source:type_name -> model.LogMinerSource
+	36, // 41: model.SyncResource.redis_target:type_name -> model.RedisTarget
+	37, // 42: model.SyncResource.hive_target:type_name -> model.HiveTarget
 	4,  // 43: model.SyncJobSchedule.schedule_policy:type_name -> model.SyncJobSchedule.SchedulePolicy
-	18, // 44: model.SyncJobSchedule.parameters:type_name -> model.SyncJobSchedule.Parameter
+	15, // 44: model.SyncJobSchedule.parameters:type_name -> model.SyncJobSchedule.Parameter
 	5,  // 45: model.SyncJobSchedule.concurrency_policy:type_name -> model.SyncJobSchedule.ConcurrencyPolicy
 	0,  // 46: model.SyncJobRelease.type:type_name -> model.SyncJob.Type
 	7,  // 47: model.SyncJobRelease.status:type_name -> model.SyncJobRelease.Status
-	10, // 48: model.SyncJobRelease.sync_job:type_name -> model.SyncJob
-	11, // 49: model.SyncJobRelease.sync_job_property:type_name -> model.SyncJobProperty
-	8,  // 50: model.SyncJobConnection.status:type_name -> model.SyncJobConnection.Status
-	9,  // 51: model.SyncJobConnection.result:type_name -> model.SyncJobConnection.Result
-	52, // [52:52] is the sub-list for method output_type
-	52, // [52:52] is the sub-list for method input_type
-	52, // [52:52] is the sub-list for extension type_name
-	52, // [52:52] is the sub-list for extension extendee
-	0,  // [0:52] is the sub-list for field type_name
+	8,  // 48: model.SyncJobRelease.sync_job:type_name -> model.SyncJob
+	9,  // 49: model.SyncJobRelease.sync_job_property:type_name -> model.SyncJobProperty
+	50, // [50:50] is the sub-list for method output_type
+	50, // [50:50] is the sub-list for method input_type
+	50, // [50:50] is the sub-list for extension type_name
+	50, // [50:50] is the sub-list for extension extendee
+	0,  // [0:50] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_sync_job_proto_init() }
@@ -2429,18 +2157,6 @@ func file_proto_types_model_sync_job_proto_init() {
 			}
 		}
 		file_proto_types_model_sync_job_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SyncJobConnection); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_types_model_sync_job_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SyncJobSchedule_Parameter); i {
 			case 0:
 				return &v.state
@@ -2458,8 +2174,8 @@ func file_proto_types_model_sync_job_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_sync_job_proto_rawDesc,
-			NumEnums:      10,
-			NumMessages:   9,
+			NumEnums:      8,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

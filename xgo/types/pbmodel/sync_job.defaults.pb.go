@@ -285,11 +285,3 @@ func (this *SyncJobRelease) SetDefaults() {
 	}
 	return
 }
-
-// Set default value for message model.SyncJobConnection
-func (this *SyncJobConnection) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}

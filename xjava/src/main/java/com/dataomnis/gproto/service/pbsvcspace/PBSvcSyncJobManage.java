@@ -27,7 +27,7 @@ public final class PBSvcSyncJobManage {
       "nage.proto\022\014spacemanager\032\035proto/types/mo" +
       "del/empty.proto\032)proto/types/request/syn" +
       "c_job_manage.proto\032*proto/types/response" +
-      "/sync_job_manage.proto2\354\016\n\rSyncJobManage" +
+      "/sync_job_manage.proto2\267\014\n\rSyncJobManage" +
       "\022?\n\014ListSyncJobs\022\025.request.ListSyncJobs\032" +
       "\026.response.ListSyncJobs\"\000\022?\n\016DeleteSyncJ" +
       "obs\022\027.request.DeleteSyncJobs\032\022.model.Emp" +
@@ -63,22 +63,14 @@ public final class PBSvcSyncJobManage {
       "equest.GetSyncJobConf\032\030.response.GetSync" +
       "JobConf\"\000\022X\n\031GetSyncJobVersionSchedule\022\033" +
       ".request.GetSyncJobSchedule\032\034.response.G" +
-      "etSyncJobSchedule\"\000\022x\n\037DescribeSyncFlink" +
-      "UIByInstanceId\022(.request.DescribeSyncFli" +
-      "nkUIByInstanceId\032).response.DescribeSync" +
-      "FlinkUIByInstanceId\"\000\022H\n\017GenerateJobJson" +
-      "\022\030.request.GenerateJobJson\032\031.response.Ge" +
-      "nerateJobJson\"\000\022Q\n\022ConvertSyncJobMode\022\033." +
-      "request.ConvertSyncJobMode\032\034.response.Co" +
-      "nvertSyncJobMode\"\000\022Z\n\025PingSyncJobConnect" +
-      "ion\022\036.request.PingSyncJobConnection\032\037.re" +
-      "sponse.PingSyncJobConnection\"\000\022]\n\026Descri" +
-      "beSyncConnection\022\037.request.DescribeSyncC" +
-      "onnection\032 .response.DescribeSyncConnect" +
-      "ion\"\000Bw\n\'com.dataomnis.gproto.service.pb" +
-      "svcspaceB\022PBSvcSyncJobManageP\000Z6github.c" +
-      "om/DataWorkbench/gproto/xgo/service/pbsv" +
-      "cspaceb\006proto3"
+      "etSyncJobSchedule\"\000\022H\n\017GenerateJobJson\022\030" +
+      ".request.GenerateJobJson\032\031.response.Gene" +
+      "rateJobJson\"\000\022Q\n\022ConvertSyncJobMode\022\033.re" +
+      "quest.ConvertSyncJobMode\032\034.response.Conv" +
+      "ertSyncJobMode\"\000Bw\n\'com.dataomnis.gproto" +
+      ".service.pbsvcspaceB\022PBSvcSyncJobManageP" +
+      "\000Z6github.com/DataWorkbench/gproto/xgo/s" +
+      "ervice/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

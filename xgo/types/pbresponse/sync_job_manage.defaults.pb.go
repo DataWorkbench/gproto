@@ -81,14 +81,6 @@ func (this *ListSyncJobVersions) SetDefaults() {
 	return
 }
 
-// Set default value for message response.DescribeSyncFlinkUIByInstanceId
-func (this *DescribeSyncFlinkUIByInstanceId) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message response.GenerateJobJson
 func (this *GenerateJobJson) SetDefaults() {
 	if this == nil {
@@ -101,32 +93,6 @@ func (this *GenerateJobJson) SetDefaults() {
 func (this *ConvertSyncJobMode) SetDefaults() {
 	if this == nil {
 		return
-	}
-	return
-}
-
-// Set default value for message response.PingSyncJobConnection
-func (this *PingSyncJobConnection) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message response.DescribeSyncConnection
-func (this *DescribeSyncConnection) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }

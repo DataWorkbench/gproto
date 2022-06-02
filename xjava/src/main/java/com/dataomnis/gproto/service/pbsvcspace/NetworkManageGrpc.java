@@ -3,6 +3,9 @@ package com.dataomnis.gproto.service.pbsvcspace;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * FIXME: remove in feature.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.43.2)",
@@ -215,6 +218,9 @@ public final class NetworkManageGrpc {
   }
 
   /**
+   * <pre>
+   * FIXME: remove in feature.
+   * </pre>
    */
   public static abstract class NetworkManageImplBase implements io.grpc.BindableService {
 
@@ -298,6 +304,9 @@ public final class NetworkManageGrpc {
   }
 
   /**
+   * <pre>
+   * FIXME: remove in feature.
+   * </pre>
    */
   public static final class NetworkManageStub extends io.grpc.stub.AbstractAsyncStub<NetworkManageStub> {
     private NetworkManageStub(
@@ -356,6 +365,9 @@ public final class NetworkManageGrpc {
   }
 
   /**
+   * <pre>
+   * FIXME: remove in feature.
+   * </pre>
    */
   public static final class NetworkManageBlockingStub extends io.grpc.stub.AbstractBlockingStub<NetworkManageBlockingStub> {
     private NetworkManageBlockingStub(
@@ -409,6 +421,9 @@ public final class NetworkManageGrpc {
   }
 
   /**
+   * <pre>
+   * FIXME: remove in feature.
+   * </pre>
    */
   public static final class NetworkManageFutureStub extends io.grpc.stub.AbstractFutureStub<NetworkManageFutureStub> {
     private NetworkManageFutureStub(
