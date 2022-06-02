@@ -514,6 +514,37 @@ public final class StreamJobManageGrpc {
     return getOfflineReleaseStreamJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseStreamJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReopenReleaseStreamJob",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseStreamJobMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getReopenReleaseStreamJobMethod;
+    if ((getReopenReleaseStreamJobMethod = StreamJobManageGrpc.getReopenReleaseStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getReopenReleaseStreamJobMethod = StreamJobManageGrpc.getReopenReleaseStreamJobMethod) == null) {
+          StreamJobManageGrpc.getReopenReleaseStreamJobMethod = getReopenReleaseStreamJobMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReopenReleaseStreamJob"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ReopenReleaseStreamJob"))
+              .build();
+        }
+      }
+    }
+    return getReopenReleaseStreamJobMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SuspendReleaseStreamJob,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSuspendReleaseStreamJobMethod;
 
@@ -1011,7 +1042,18 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
+     * ReopenReleaseStreamJob to re open the offline job in schedule system.
+     * </pre>
+     */
+    public void reopenReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReopenReleaseStreamJobMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public void suspendReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SuspendReleaseStreamJob request,
@@ -1022,6 +1064,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public void resumeReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ResumeReleaseStreamJob request,
@@ -1214,6 +1257,13 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.OfflineReleaseStreamJob,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_OFFLINE_RELEASE_STREAM_JOB)))
+          .addMethod(
+            getReopenReleaseStreamJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_REOPEN_RELEASE_STREAM_JOB)))
           .addMethod(
             getSuspendReleaseStreamJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1481,7 +1531,19 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
+     * ReopenReleaseStreamJob to re open the offline job in schedule system.
+     * </pre>
+     */
+    public void reopenReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReopenReleaseStreamJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public void suspendReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SuspendReleaseStreamJob request,
@@ -1493,6 +1555,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public void resumeReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ResumeReleaseStreamJob request,
@@ -1764,7 +1827,18 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
+     * ReopenReleaseStreamJob to re open the offline job in schedule system.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct reopenReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReopenReleaseStreamJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct suspendReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SuspendReleaseStreamJob request) {
@@ -1775,6 +1849,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct resumeReleaseStreamJob(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ResumeReleaseStreamJob request) {
@@ -2054,7 +2129,19 @@ public final class StreamJobManageGrpc {
 
     /**
      * <pre>
+     * ReopenReleaseStreamJob to re open the offline job in schedule system.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> reopenReleaseStreamJob(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReopenReleaseStreamJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> suspendReleaseStreamJob(
@@ -2066,6 +2153,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+     * FIXME: remove it.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> resumeReleaseStreamJob(
@@ -2169,15 +2257,16 @@ public final class StreamJobManageGrpc {
   private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 13;
   private static final int METHODID_RELEASE_STREAM_JOB = 14;
   private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 15;
-  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 16;
-  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 17;
-  private static final int METHODID_UPDATE_RELEASE_STREAM_JOB_STATUS = 18;
-  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 19;
-  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 20;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 21;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 22;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 23;
-  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 24;
+  private static final int METHODID_REOPEN_RELEASE_STREAM_JOB = 16;
+  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 17;
+  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 18;
+  private static final int METHODID_UPDATE_RELEASE_STREAM_JOB_STATUS = 19;
+  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 20;
+  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 21;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 22;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 23;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 24;
+  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 25;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2258,6 +2347,10 @@ public final class StreamJobManageGrpc {
           break;
         case METHODID_OFFLINE_RELEASE_STREAM_JOB:
           serviceImpl.offlineReleaseStreamJob((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.OfflineReleaseStreamJob) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_REOPEN_RELEASE_STREAM_JOB:
+          serviceImpl.reopenReleaseStreamJob((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ReopenReleaseStreamJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_SUSPEND_RELEASE_STREAM_JOB:
@@ -2373,6 +2466,7 @@ public final class StreamJobManageGrpc {
               .addMethod(getListReleaseStreamJobsMethod())
               .addMethod(getReleaseStreamJobMethod())
               .addMethod(getOfflineReleaseStreamJobMethod())
+              .addMethod(getReopenReleaseStreamJobMethod())
               .addMethod(getSuspendReleaseStreamJobMethod())
               .addMethod(getResumeReleaseStreamJobMethod())
               .addMethod(getUpdateReleaseStreamJobStatusMethod())

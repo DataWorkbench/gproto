@@ -12085,7 +12085,7 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+     * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -12095,7 +12095,7 @@ public final class PBModelStreamJob {
     int getStatusValue();
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+     * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -12327,13 +12327,13 @@ public final class PBModelStreamJob {
        */
       StatusUnset(0),
       /**
-       * <code>Active = 1;</code>
+       * <code>Inline = 1;</code>
        */
-      Active(1),
+      Inline(1),
       /**
-       * <code>Suspended = 2;</code>
+       * <code>Offline = 2;</code>
        */
-      Suspended(2),
+      Offline(2),
       /**
        * <code>Deleted = 3;</code>
        */
@@ -12357,13 +12357,13 @@ public final class PBModelStreamJob {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Active = 1;</code>
+       * <code>Inline = 1;</code>
        */
-      public static final int Active_VALUE = 1;
+      public static final int Inline_VALUE = 1;
       /**
-       * <code>Suspended = 2;</code>
+       * <code>Offline = 2;</code>
        */
-      public static final int Suspended_VALUE = 2;
+      public static final int Offline_VALUE = 2;
       /**
        * <code>Deleted = 3;</code>
        */
@@ -12406,8 +12406,8 @@ public final class PBModelStreamJob {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Active;
-          case 2: return Suspended;
+          case 1: return Inline;
+          case 2: return Offline;
           case 3: return Deleted;
           case 4: return Finished;
           default: return null;
@@ -12691,7 +12691,7 @@ public final class PBModelStreamJob {
     private int status_;
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+     * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -12703,7 +12703,7 @@ public final class PBModelStreamJob {
     }
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+     * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -13789,7 +13789,7 @@ public final class PBModelStreamJob {
       private int status_ = 0;
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+       * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -13801,7 +13801,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+       * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -13817,7 +13817,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+       * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -13832,7 +13832,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+       * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -13851,7 +13851,7 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active", 2 =&gt; "Suspended", 3 =&gt; "Deleted", 4 =&gt; "Finished"
+       * Release status, 1 =&gt; "Inline", 2 =&gt; "Offline", 3 =&gt; "Deleted", 4 =&gt; "Finished"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -14325,7 +14325,7 @@ public final class PBModelStreamJob {
       "y\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001" +
       "\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy" +
       "\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto" +
-      "\020\002:\006\312\262\004\002\n\000\"\275\003\n\020StreamJobRelease\022%\n\010space" +
+      "\020\002:\006\312\262\004\002\n\000\"\273\003\n\020StreamJobRelease\022%\n\010space" +
       "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001" +
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220" +
@@ -14334,12 +14334,12 @@ public final class PBModelStreamJob {
       "el.StreamJobRelease.Status\022\014\n\004desc\030\007 \001(\t" +
       "\022#\n\ncreated_by\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n" +
       "\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"O\n\006Status\022\017\n\013StatusUns" +
-      "et\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Delet" +
-      "ed\020\003\022\014\n\010Finished\020\004Bk\n\"com.dataomnis.gpro" +
-      "to.types.pbmodelB\020PBModelStreamJobP\000Z1gi" +
-      "thub.com/DataWorkbench/gproto/xgo/types/" +
-      "pbmodelb\006proto3"
+      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"M\n\006Status\022\017\n\013StatusUns" +
+      "et\020\000\022\n\n\006Inline\020\001\022\013\n\007Offline\020\002\022\013\n\007Deleted" +
+      "\020\003\022\014\n\010Finished\020\004Bk\n\"com.dataomnis.gproto" +
+      ".types.pbmodelB\020PBModelStreamJobP\000Z1gith" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
+      "modelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

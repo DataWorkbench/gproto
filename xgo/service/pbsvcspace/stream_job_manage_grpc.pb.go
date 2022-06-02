@@ -66,9 +66,13 @@ type StreamJobManageClient interface {
 	ReleaseStreamJob(ctx context.Context, in *pbrequest.ReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
 	OfflineReleaseStreamJob(ctx context.Context, in *pbrequest.OfflineReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// ReopenReleaseStreamJob to re open the offline job in schedule system.
+	ReopenReleaseStreamJob(ctx context.Context, in *pbrequest.ReopenReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+	// FIXME: remove it.
 	SuspendReleaseStreamJob(ctx context.Context, in *pbrequest.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+	// FIXME: remove it.
 	ResumeReleaseStreamJob(ctx context.Context, in *pbrequest.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
 	UpdateReleaseStreamJobStatus(ctx context.Context, in *pbrequest.UpdateReleaseStreamJobStatus, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -241,6 +245,15 @@ func (c *streamJobManageClient) OfflineReleaseStreamJob(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *streamJobManageClient) ReopenReleaseStreamJob(ctx context.Context, in *pbrequest.ReopenReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/ReopenReleaseStreamJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *streamJobManageClient) SuspendReleaseStreamJob(ctx context.Context, in *pbrequest.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/SuspendReleaseStreamJob", in, out, opts...)
@@ -367,9 +380,13 @@ type StreamJobManageServer interface {
 	ReleaseStreamJob(context.Context, *pbrequest.ReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
 	OfflineReleaseStreamJob(context.Context, *pbrequest.OfflineReleaseStreamJob) (*pbmodel.EmptyStruct, error)
+	// ReopenReleaseStreamJob to re open the offline job in schedule system.
+	ReopenReleaseStreamJob(context.Context, *pbrequest.ReopenReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+	// FIXME: remove it.
 	SuspendReleaseStreamJob(context.Context, *pbrequest.SuspendReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+	// FIXME: remove it.
 	ResumeReleaseStreamJob(context.Context, *pbrequest.ResumeReleaseStreamJob) (*pbmodel.EmptyStruct, error)
 	// UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.
 	UpdateReleaseStreamJobStatus(context.Context, *pbrequest.UpdateReleaseStreamJobStatus) (*pbmodel.EmptyStruct, error)
@@ -442,6 +459,9 @@ func (UnimplementedStreamJobManageServer) ReleaseStreamJob(context.Context, *pbr
 }
 func (UnimplementedStreamJobManageServer) OfflineReleaseStreamJob(context.Context, *pbrequest.OfflineReleaseStreamJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OfflineReleaseStreamJob not implemented")
+}
+func (UnimplementedStreamJobManageServer) ReopenReleaseStreamJob(context.Context, *pbrequest.ReopenReleaseStreamJob) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReopenReleaseStreamJob not implemented")
 }
 func (UnimplementedStreamJobManageServer) SuspendReleaseStreamJob(context.Context, *pbrequest.SuspendReleaseStreamJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamJob not implemented")
@@ -771,6 +791,24 @@ func _StreamJobManage_OfflineReleaseStreamJob_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StreamJobManage_ReopenReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ReopenReleaseStreamJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamJobManageServer).ReopenReleaseStreamJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.StreamJobManage/ReopenReleaseStreamJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamJobManageServer).ReopenReleaseStreamJob(ctx, req.(*pbrequest.ReopenReleaseStreamJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _StreamJobManage_SuspendReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.SuspendReleaseStreamJob)
 	if err := dec(in); err != nil {
@@ -1003,6 +1041,10 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "OfflineReleaseStreamJob",
 			Handler:    _StreamJobManage_OfflineReleaseStreamJob_Handler,
+		},
+		{
+			MethodName: "ReopenReleaseStreamJob",
+			Handler:    _StreamJobManage_ReopenReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "SuspendReleaseStreamJob",
