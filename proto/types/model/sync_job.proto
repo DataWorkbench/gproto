@@ -186,6 +186,9 @@ message SyncJobConf {
     // The cluster info of flink. Only used when query data.
     // @inject_tag: json:"cluster_info" gorm:"-"
     model.FlinkCluster cluster_info = 8;
+    // Timestamp of update time.
+    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+    int64 updated = 9;
 }
 
 message ChannelControl{
