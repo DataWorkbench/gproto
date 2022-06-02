@@ -3076,28 +3076,6 @@ public final class PBSyncManageSyncJob {
      * <code>.model.SyncJobSchedule schedule = 5 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobScheduleOrBuilder getScheduleOrBuilder();
-
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    long getCreated();
-
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
-     * @return The updated.
-     */
-    long getUpdated();
   }
   /**
    * <pre>
@@ -3193,16 +3171,6 @@ public final class PBSyncManageSyncJob {
                 schedule_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 48: {
-
-              created_ = input.readInt64();
-              break;
-            }
-            case 56: {
-
-              updated_ = input.readInt64();
               break;
             }
             default: {
@@ -3457,38 +3425,6 @@ public final class PBSyncManageSyncJob {
       return getSchedule();
     }
 
-    public static final int CREATED_FIELD_NUMBER = 6;
-    private long created_;
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    @java.lang.Override
-    public long getCreated() {
-      return created_;
-    }
-
-    public static final int UPDATED_FIELD_NUMBER = 7;
-    private long updated_;
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
-     * @return The updated.
-     */
-    @java.lang.Override
-    public long getUpdated() {
-      return updated_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3518,12 +3454,6 @@ public final class PBSyncManageSyncJob {
       if (schedule_ != null) {
         output.writeMessage(5, getSchedule());
       }
-      if (created_ != 0L) {
-        output.writeInt64(6, created_);
-      }
-      if (updated_ != 0L) {
-        output.writeInt64(7, updated_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -3549,14 +3479,6 @@ public final class PBSyncManageSyncJob {
       if (schedule_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getSchedule());
-      }
-      if (created_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, created_);
-      }
-      if (updated_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, updated_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3589,10 +3511,6 @@ public final class PBSyncManageSyncJob {
         if (!getSchedule()
             .equals(other.getSchedule())) return false;
       }
-      if (getCreated()
-          != other.getCreated()) return false;
-      if (getUpdated()
-          != other.getUpdated()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3618,12 +3536,6 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
         hash = (53 * hash) + getSchedule().hashCode();
       }
-      hash = (37 * hash) + CREATED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreated());
-      hash = (37 * hash) + UPDATED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUpdated());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3779,10 +3691,6 @@ public final class PBSyncManageSyncJob {
           schedule_ = null;
           scheduleBuilder_ = null;
         }
-        created_ = 0L;
-
-        updated_ = 0L;
-
         return this;
       }
 
@@ -3822,8 +3730,6 @@ public final class PBSyncManageSyncJob {
         } else {
           result.schedule_ = scheduleBuilder_.build();
         }
-        result.created_ = created_;
-        result.updated_ = updated_;
         onBuilt();
         return result;
       }
@@ -3889,12 +3795,6 @@ public final class PBSyncManageSyncJob {
         }
         if (other.hasSchedule()) {
           mergeSchedule(other.getSchedule());
-        }
-        if (other.getCreated() != 0L) {
-          setCreated(other.getCreated());
-        }
-        if (other.getUpdated() != 0L) {
-          setUpdated(other.getUpdated());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4536,98 +4436,6 @@ public final class PBSyncManageSyncJob {
           schedule_ = null;
         }
         return scheduleBuilder_;
-      }
-
-      private long created_ ;
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-       * @return The created.
-       */
-      @java.lang.Override
-      public long getCreated() {
-        return created_;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-       * @param value The created to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreated(long value) {
-        
-        created_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreated() {
-        
-        created_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long updated_ ;
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
-       * @return The updated.
-       */
-      @java.lang.Override
-      public long getUpdated() {
-        return updated_;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
-       * @param value The updated to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdated(long value) {
-        
-        updated_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 7 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdated() {
-        
-        updated_ = 0L;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -25808,116 +25616,115 @@ public final class PBSyncManageSyncJob {
       "\337\037\013\022\t\332\001\0060\0008\020X\001\"J\n\004Type\022\r\n\tTypeUnset\020\000\022\017\n" +
       "\013OfflineFull\020\001\022\024\n\020OfflineIncrement\020\002\022\014\n\010" +
       "RealTime\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n" +
-      "\007Deleted\020\001\022\013\n\007Enabled\020\002:\006\312\262\004\002\n\000\"\224\002\n\017Sync" +
+      "\007Deleted\020\001\022\013\n\007Enabled\020\002:\006\312\262\004\002\n\000\"\330\001\n\017Sync" +
       "JobProperty\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
       "\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004s" +
       "yj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004co" +
       "nf\030\004 \001(\0132\022.model.SyncJobConfB\004\342\337\037\000\022.\n\010sc" +
       "hedule\030\005 \001(\0132\026.model.SyncJobScheduleB\004\342\337" +
-      "\037\000\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007upda" +
-      "ted\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000:\006\312\262\004\002\n\000\"\221\003\n\013SyncJ" +
-      "obConf\022C\n\010job_mode\030\001 \001(\0162\032.model.SyncJob" +
-      "Conf.JobModeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\001@\000\022\021\n\ts" +
-      "ource_id\030\002 \001(\t\022\021\n\ttarget_id\030\003 \001(\t\0228\n\013job" +
-      "_content\030\004 \001(\tB#\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\002\342" +
-      "\337\037\010\022\006\302\001\003\200\002\024\022*\n\rsync_resource\030\005 \001(\0132\023.mod" +
-      "el.SyncResource\022\022\n\ncluster_id\030\006 \001(\t\022.\n\017c" +
-      "hannel_control\030\007 \001(\0132\025.model.ChannelCont" +
-      "rol\022)\n\014cluster_info\030\010 \001(\0132\023.model.FlinkC" +
-      "luster\":\n\007JobMode\022\020\n\014JobModeUnset\020\000\022\r\n\tG" +
-      "uideMode\020\001\022\016\n\nScriptMode\020\002:\006\312\262\004\002\n\000\"\335\001\n\016C" +
-      "hannelControl\022*\n\013parallelism\030\001 \001(\005B\025\242\241\037\004" +
-      "\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d\022\035\n\nrecord_num\030\002 \001(\005B\t\242" +
-      "\241\037\005\252\006\002-1\022.\n\004rate\030\003 \001(\0162 .model.ChannelCo" +
-      "ntrol.RatePolicy\022\r\n\005bytes\030\004 \001(\005\"9\n\nRateP" +
-      "olicy\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Limit\020\001\022\013\n" +
-      "\007UnLimit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResource\022%\n\014m" +
-      "ysql_source\030\001 \001(\0132\017.model.DBSource\022%\n\014my" +
-      "sql_target\030\002 \001(\0132\017.model.DBTarget\022&\n\rora" +
-      "cle_source\030\003 \001(\0132\017.model.DBSource\022&\n\rora" +
-      "cle_target\030\004 \001(\0132\017.model.DBTarget\022#\n\ndb2" +
-      "_source\030\005 \001(\0132\017.model.DBSource\022#\n\ndb2_ta" +
-      "rget\030\006 \001(\0132\017.model.DBTarget\022*\n\021postgresq" +
-      "l_source\030\007 \001(\0132\017.model.DBSource\022*\n\021postg" +
-      "resql_target\030\010 \001(\0132\017.model.DBTarget\022)\n\020s" +
-      "qlserver_source\030\t \001(\0132\017.model.DBSource\022)" +
-      "\n\020sqlserver_target\030\n \001(\0132\017.model.DBTarge" +
-      "t\022+\n\022click_house_source\030\013 \001(\0132\017.model.DB" +
-      "Source\022+\n\022click_house_target\030\014 \001(\0132\017.mod" +
-      "el.DBTarget\022(\n\017sap_hana_source\030\r \001(\0132\017.m" +
-      "odel.DBSource\022(\n\017sap_hana_target\030\016 \001(\0132\017" +
-      ".model.DBTarget\022,\n\016mongodb_source\030\017 \001(\0132" +
-      "\024.model.MongodbSource\022,\n\016mongodb_target\030" +
-      "\020 \001(\0132\024.model.MongodbTarget\0229\n\025elastic_s" +
-      "earch_source\030\021 \001(\0132\032.model.ElasticSearch" +
-      "Source\0229\n\025elastic_search_target\030\022 \001(\0132\032." +
-      "model.ElasticSearchTarget\022&\n\013hdfs_source" +
-      "\030\023 \001(\0132\021.model.HdfsSource\022&\n\013hdfs_target" +
-      "\030\024 \001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030" +
-      "\025 \001(\0132\020.model.FtpSource\022$\n\nftp_target\030\026 " +
-      "\001(\0132\020.model.FtpTarget\022(\n\014hbase_source\030\027 " +
-      "\001(\0132\022.model.HbaseSource\022(\n\014hbase_target\030" +
-      "\030 \001(\0132\022.model.HbaseTarget\022(\n\014kafka_sourc" +
-      "e\030\031 \001(\0132\022.model.KafkaSource\022(\n\014kafka_tar" +
-      "get\030\032 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_" +
-      "source\030\033 \001(\0132\023.model.BinlogSource\022)\n\rpg_" +
-      "wal_source\030\034 \001(\0132\022.model.PgWalSource\0228\n\025" +
-      "sql_server_cdc_source\030\035 \001(\0132\031.model.SqlS" +
-      "erverCdcSource\022/\n\020log_miner_source\030\036 \001(\013" +
-      "2\025.model.LogMinerSource\022(\n\014redis_target\030" +
-      "\037 \001(\0132\022.model.RedisTarget\022&\n\013hive_target" +
-      "\030  \001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017Sy" +
-      "ncJobSchedule\022M\n\017schedule_policy\030\001 \001(\0162%" +
-      ".model.SyncJobSchedule.SchedulePolicyB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017" +
-      "schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\n" +
-      "parameters\030\003 \003(\0132 .model.SyncJobSchedule" +
-      ".Parameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000" +
-      "\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurre" +
-      "ncy_policy\030\006 \001(\0162(.model.SyncJobSchedule" +
-      ".ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013per" +
-      "iod_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022" +
-      "\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004week" +
-      "J\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017" +
-      "schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007ti" +
-      "meout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022" +
-      "\037\n\003key\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005valu" +
-      "e\030\002 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016ScheduleP" +
-      "olicy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Period" +
-      "icity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020" +
-      "\003\"S\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPol" +
-      "icyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Rep" +
-      "lace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnse" +
-      "t\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\207\004\n\016Sync" +
-      "JobRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sy" +
-      "j-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004nam" +
-      "e\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162" +
-      "\023.model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006s" +
-      "tatus\030\006 \001(\0162\034.model.SyncJobRelease.Statu" +
-      "s\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022" +
-      "\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\010sync_jo" +
-      "b\030\013 \001(\0132\016.model.SyncJob\0221\n\021sync_job_prop" +
-      "erty\030\014 \001(\0132\026.model.SyncJobProperty\"M\n\006St" +
-      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006In" +
-      "line\020\002\022\013\n\007Offline\020\003\022\014\n\010Finished\020\004\"\377\003\n\021Sy" +
-      "ncJobConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004syj-\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004cfi-\022&\n\tsource_id\030\004 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004som-\022&\n\ttarget_id\030\005 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004som-\022>\n\006status\030\006 \001(\0162\037.model.Syn" +
-      "cJobConnection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022>\n\006" +
-      "result\030\007 \001(\0162\037.model.SyncJobConnection.R" +
-      "esultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\010 \001(\t\022\034\n" +
-      "\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\n " +
-      "\001(\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Delete" +
-      "d\020\001\022\013\n\007Enabled\020\002\"1\n\006Result\022\016\n\nStateUnset" +
-      "\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002Bn\n\"com.datao" +
-      "mnis.gproto.types.pbmodelB\023PBSyncManageS" +
-      "yncJobP\000Z1github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbmodelb\006proto3"
+      "\037\000:\006\312\262\004\002\n\000\"\221\003\n\013SyncJobConf\022C\n\010job_mode\030\001" +
+      " \001(\0162\032.model.SyncJobConf.JobModeB\025\242\241\037\004\252\006" +
+      "\0010\342\337\037\t\022\007\332\001\0048\002@\001\022\021\n\tsource_id\030\002 \001(\t\022\021\n\tta" +
+      "rget_id\030\003 \001(\t\0228\n\013job_content\030\004 \001(\tB#\342\337\037\023" +
+      "\n\021\n\010job_mode\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\200\002\024\022*\n\rsync_" +
+      "resource\030\005 \001(\0132\023.model.SyncResource\022\022\n\nc" +
+      "luster_id\030\006 \001(\t\022.\n\017channel_control\030\007 \001(\013" +
+      "2\025.model.ChannelControl\022)\n\014cluster_info\030" +
+      "\010 \001(\0132\023.model.FlinkCluster\":\n\007JobMode\022\020\n" +
+      "\014JobModeUnset\020\000\022\r\n\tGuideMode\020\001\022\016\n\nScript" +
+      "Mode\020\002:\006\312\262\004\002\n\000\"\335\001\n\016ChannelControl\022*\n\013par" +
+      "allelism\030\001 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d\022\035\n" +
+      "\nrecord_num\030\002 \001(\005B\t\242\241\037\005\252\006\002-1\022.\n\004rate\030\003 \001" +
+      "(\0162 .model.ChannelControl.RatePolicy\022\r\n\005" +
+      "bytes\030\004 \001(\005\"9\n\nRatePolicy\022\023\n\017RatePolicyU" +
+      "nset\020\000\022\t\n\005Limit\020\001\022\013\n\007UnLimit\020\002:\006\312\262\004\002\n\000\"\204" +
+      "\013\n\014SyncResource\022%\n\014mysql_source\030\001 \001(\0132\017." +
+      "model.DBSource\022%\n\014mysql_target\030\002 \001(\0132\017.m" +
+      "odel.DBTarget\022&\n\roracle_source\030\003 \001(\0132\017.m" +
+      "odel.DBSource\022&\n\roracle_target\030\004 \001(\0132\017.m" +
+      "odel.DBTarget\022#\n\ndb2_source\030\005 \001(\0132\017.mode" +
+      "l.DBSource\022#\n\ndb2_target\030\006 \001(\0132\017.model.D" +
+      "BTarget\022*\n\021postgresql_source\030\007 \001(\0132\017.mod" +
+      "el.DBSource\022*\n\021postgresql_target\030\010 \001(\0132\017" +
+      ".model.DBTarget\022)\n\020sqlserver_source\030\t \001(" +
+      "\0132\017.model.DBSource\022)\n\020sqlserver_target\030\n" +
+      " \001(\0132\017.model.DBTarget\022+\n\022click_house_sou" +
+      "rce\030\013 \001(\0132\017.model.DBSource\022+\n\022click_hous" +
+      "e_target\030\014 \001(\0132\017.model.DBTarget\022(\n\017sap_h" +
+      "ana_source\030\r \001(\0132\017.model.DBSource\022(\n\017sap" +
+      "_hana_target\030\016 \001(\0132\017.model.DBTarget\022,\n\016m" +
+      "ongodb_source\030\017 \001(\0132\024.model.MongodbSourc" +
+      "e\022,\n\016mongodb_target\030\020 \001(\0132\024.model.Mongod" +
+      "bTarget\0229\n\025elastic_search_source\030\021 \001(\0132\032" +
+      ".model.ElasticSearchSource\0229\n\025elastic_se" +
+      "arch_target\030\022 \001(\0132\032.model.ElasticSearchT" +
+      "arget\022&\n\013hdfs_source\030\023 \001(\0132\021.model.HdfsS" +
+      "ource\022&\n\013hdfs_target\030\024 \001(\0132\021.model.HdfsT" +
+      "arget\022$\n\nftp_source\030\025 \001(\0132\020.model.FtpSou" +
+      "rce\022$\n\nftp_target\030\026 \001(\0132\020.model.FtpTarge" +
+      "t\022(\n\014hbase_source\030\027 \001(\0132\022.model.HbaseSou" +
+      "rce\022(\n\014hbase_target\030\030 \001(\0132\022.model.HbaseT" +
+      "arget\022(\n\014kafka_source\030\031 \001(\0132\022.model.Kafk" +
+      "aSource\022(\n\014kafka_target\030\032 \001(\0132\022.model.Ka" +
+      "fkaTarget\022*\n\rbinlog_source\030\033 \001(\0132\023.model" +
+      ".BinlogSource\022)\n\rpg_wal_source\030\034 \001(\0132\022.m" +
+      "odel.PgWalSource\0228\n\025sql_server_cdc_sourc" +
+      "e\030\035 \001(\0132\031.model.SqlServerCdcSource\022/\n\020lo" +
+      "g_miner_source\030\036 \001(\0132\025.model.LogMinerSou" +
+      "rce\022(\n\014redis_target\030\037 \001(\0132\022.model.RedisT" +
+      "arget\022&\n\013hive_target\030  \001(\0132\021.model.HiveT" +
+      "arget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJobSchedule\022M\n\017sch" +
+      "edule_policy\030\001 \001(\0162%.model.SyncJobSchedu" +
+      "le.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010exec" +
+      "uted\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002" +
+      "\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\nparameters\030\003 \003(\0132 .m" +
+      "odel.SyncJobSchedule.Parameter\022\034\n\007starte" +
+      "d\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037" +
+      "\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\0162(.m" +
+      "odel.SyncJobSchedule.ConcurrencyPolicyB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032" +
+      "\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006min" +
+      "uteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007exp" +
+      "ress\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002" +
+      "\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262" +
+      "\001\0048d@\000\032O\n\tParameter\022\037\n\003key\030\001 \001(\tB\022\342\337\037\016\022\014" +
+      "\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001" +
+      "\001\310\001@\210\005\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePol" +
+      "icyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTi" +
+      "me\020\002\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPoli" +
+      "cy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020" +
+      "\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolic" +
+      "y\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Aut" +
+      "o\020\002:\006\312\262\004\002\n\000\"\207\004\n\016SyncJobRelease\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB" +
+      "\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002" +
+      "\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.Type" +
+      "B\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006status\030\006 \001(\0162\034.model." +
+      "SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\nc" +
+      "reated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created" +
+      "\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\022 \n\010sync_job\030\013 \001(\0132\016.model.Sync" +
+      "Job\0221\n\021sync_job_property\030\014 \001(\0132\026.model.S" +
+      "yncJobProperty\"M\n\006Status\022\017\n\013StatusUnset\020" +
+      "\000\022\013\n\007Deleted\020\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\022" +
+      "\014\n\010Finished\020\004\"\377\003\n\021SyncJobConnection\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006jo" +
+      "b_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\'\n\nclust" +
+      "er_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022&\n\tsour" +
+      "ce_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&\n\ttarg" +
+      "et_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022>\n\006stat" +
+      "us\030\006 \001(\0162\037.model.SyncJobConnection.Statu" +
+      "sB\r\342\337\037\t\022\007\332\001\0040\001X\001\022>\n\006result\030\007 \001(\0162\037.model" +
+      ".SyncJobConnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022\017\n\007message\030\010 \001(\t\022\034\n\007created\030\t \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\016\n\006elapse\030\n \001(\003\"3\n\006Status\022\017\n\013Sta" +
+      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"1\n\006" +
+      "Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006F" +
+      "ailed\020\002Bn\n\"com.dataomnis.gproto.types.pb" +
+      "modelB\023PBSyncManageSyncJobP\000Z1github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -25952,7 +25759,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJobProperty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobProperty_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Version", "Conf", "Schedule", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Id", "Version", "Conf", "Schedule", });
     internal_static_model_SyncJobConf_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_SyncJobConf_fieldAccessorTable = new

@@ -276,20 +276,6 @@ func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_schedule() error {
 	return nil
 }
 
-func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_created() error {
-	if !(this.Created > 0) {
-		return protovalidator.FieldError1("SyncJobProperty", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
-	}
-	return nil
-}
-
-func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_updated() error {
-	if !(this.Updated > 0) {
-		return protovalidator.FieldError1("SyncJobProperty", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
-	}
-	return nil
-}
-
 // Set default value for message model.SyncJobProperty
 func (this *SyncJobProperty) Validate() error {
 	if this == nil {
@@ -308,12 +294,6 @@ func (this *SyncJobProperty) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_schedule(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
 	return nil
