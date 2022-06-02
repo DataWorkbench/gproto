@@ -320,11 +320,11 @@ func (this *SyncJobProperty) Validate() error {
 }
 
 func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
-	if !(this.JobMode >= 0) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.JobMode)))
+	if !(this.JobMode >= 1) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
 	}
-	if !(this.JobMode <= 1) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
+	if !(this.JobMode <= 2) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '2'", protovalidator.Int32ToString(int32(this.JobMode)))
 	}
 	return nil
 }

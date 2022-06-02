@@ -353,7 +353,17 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_user() error {
 	return nil
 }
 
+func (this *FtpURL) _xxx_xxx_Validator_CheckIf_password() bool {
+	if !(this.Protocol == 1) {
+		return false
+	}
+	return true
+}
+
 func (this *FtpURL) _xxx_xxx_Validator_Validate_password() error {
+	if !this._xxx_xxx_Validator_CheckIf_password() {
+		return nil
+	}
 	if !(len(this.Password) >= 1) {
 		return protovalidator.FieldError1("FtpURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
 	}
