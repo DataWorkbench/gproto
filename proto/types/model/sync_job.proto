@@ -134,13 +134,13 @@ message SyncJobProperty {
     // @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
     SyncJobSchedule schedule = 5 [(validator.field) = {}];
 
-    // Timestamp of create time.
-    // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-    int64 created = 6 [(validator.field).tags.int = { gt: 0 }];
-
-    // Timestamp of update time.
-    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-    int64 updated = 7 [(validator.field).tags.int = { gt: 0 }];
+//    // Timestamp of create time.
+//    // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+//    int64 created = 6 [(validator.field).tags.int = { gt: 0 }];
+//
+//    // Timestamp of update time.
+//    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+//    int64 updated = 7 [(validator.field).tags.int = { gt: 0 }];
 
 }
 
