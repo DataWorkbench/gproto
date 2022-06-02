@@ -336,8 +336,8 @@ message StreamJobSchedule {
 message StreamJobRelease {
   enum Status {
     StatusUnset = 0;
-    Active = 1;
-    Suspended = 2;
+    Inline = 1;
+    Offline = 2;
     Deleted = 3;
 
     // The stream job has been executed finished.
@@ -367,7 +367,7 @@ message StreamJobRelease {
   // @inject_tag: json:"type" gorm:"column:type;"
   StreamJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted", 4 => "Finished"
+  // Release status, 1 => "Inline", 2 => "Offline", 3 => "Deleted", 4 => "Finished"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 ;
 
