@@ -69,12 +69,12 @@ func (this *ListDataServiceClusters) Validate() error {
 	return nil
 }
 
-func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) == 20) {
-		return protovalidator.FieldError1("DescribeDataServiceCluster", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
+func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("DescribeDataServiceCluster", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
 	}
-	if !(strings.HasPrefix(this.Id, "dsc-")) {
-		return protovalidator.FieldError1("DescribeDataServiceCluster", "the value of field 'id' must start with string 'dsc-'", this.Id)
+	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
+		return protovalidator.FieldError1("DescribeDataServiceCluster", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
 	}
 	return nil
 }
@@ -84,7 +84,7 @@ func (this *DescribeDataServiceCluster) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
 		return err
 	}
 	return nil
@@ -100,12 +100,12 @@ func (this *UpdateDataServiceCluster) _xxx_xxx_Validator_Validate_space_id() err
 	return nil
 }
 
-func (this *UpdateDataServiceCluster) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) == 20) {
-		return protovalidator.FieldError1("UpdateDataServiceCluster", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
+func (this *UpdateDataServiceCluster) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("UpdateDataServiceCluster", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
 	}
-	if !(strings.HasPrefix(this.Id, "dsc-")) {
-		return protovalidator.FieldError1("UpdateDataServiceCluster", "the value of field 'id' must start with string 'dsc-'", this.Id)
+	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
+		return protovalidator.FieldError1("UpdateDataServiceCluster", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
 	}
 	return nil
 }
@@ -140,7 +140,7 @@ func (this *UpdateDataServiceCluster) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
@@ -172,6 +172,23 @@ func (this *CreateDataServiceCluster) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
+func (this *CreateDataServiceCluster) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateDataServiceCluster", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateDataServiceCluster", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *CreateDataServiceCluster) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateDataServiceCluster", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_CreateDataServiceCluster_InEnums_ResourceSpec = map[pbmodel.DataServiceCluster_ResourceSpec]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *CreateDataServiceCluster) _xxx_xxx_Validator_Validate_resource_spec() error {
@@ -193,6 +210,12 @@ func (this *CreateDataServiceCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_resource_spec(); err != nil {
@@ -301,12 +324,25 @@ func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_group_id() error {
+	if !(len(this.GroupId) == 20) {
+		return protovalidator.FieldError1("ListCustomerApis", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
+	}
+	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
+		return protovalidator.FieldError1("ListCustomerApis", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
+	}
+	return nil
+}
+
 // Set default value for message request.ListCustomerApis
 func (this *ListCustomerApis) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_group_id(); err != nil {
 		return err
 	}
 	return nil

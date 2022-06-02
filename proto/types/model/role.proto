@@ -115,6 +115,7 @@ message ProjectModule {
     SyncJobInstanceManage = 115;
     AlertManage = 116;
     NoticeManage = 117;
+    DataService = 118 ;
   }
 
   // The module id.

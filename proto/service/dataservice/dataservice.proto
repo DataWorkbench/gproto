@@ -23,6 +23,7 @@ service DataService {
 
   rpc CreateApiGroup(request.CreateApiGroup) returns (response.CreateApiGroup) {}
   rpc ListApiGroups(request.ListApiGroups) returns (response.ListApiGroups) {}
+  //rpc DeleteApiGroup() returns () {}
 
   rpc CreateDataServiceApi(request.CreateCustomerApi) returns (response.CreateCustomerApi) {}
   rpc UpdateDataServiceApi(request.UpdateCustomerApi) returns (model.EmptyStruct) {}
@@ -35,5 +36,7 @@ service DataService {
   rpc PublishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
   rpc ListDataServiceApiVersions(request.ListApiVersions) returns (response.ListApiVersions) {}
   rpc DescribeDataServiceApiVersion(request.DescribeApiVersion) returns (response.DescribeApiVersion) {}
-  rpc ListDataServicePublishedApis(request.ListPublishedApis) returns (response.ListApiVersions) {}
+  //rpc ListDataServicePublishedApis(request.ListPublishedApis) returns (response.ListApiVersions) {}
+
+  rpc AbolishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
 }
