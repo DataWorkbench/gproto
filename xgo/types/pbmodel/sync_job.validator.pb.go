@@ -329,46 +329,6 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
 	return nil
 }
 
-func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_source_id() bool {
-	if !(this.JobMode == 1) {
-		return false
-	}
-	return true
-}
-
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_source_id() error {
-	if !this._xxx_xxx_Validator_CheckIf_source_id() {
-		return nil
-	}
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
-	}
-	return nil
-}
-
-func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_target_id() bool {
-	if !(this.JobMode == 1) {
-		return false
-	}
-	return true
-}
-
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_target_id() error {
-	if !this._xxx_xxx_Validator_CheckIf_target_id() {
-		return nil
-	}
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
 func (this *SyncJobConf) _xxx_xxx_Validator_CheckIf_job_content() bool {
 	if !(this.JobMode == 2) {
 		return false
@@ -419,12 +379,6 @@ func (this *SyncJobConf) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_mode(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_content(); err != nil {

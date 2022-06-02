@@ -161,17 +161,11 @@ message SyncJobConf {
 
     // source_id is datasource id
     // @inject_tag: json:"source_id"
-    string source_id = 2 [
-     (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
-     (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" }
-    ];
+    string source_id = 2;
 
     // target_id is datasource id
     // @inject_tag: json:"target_id"
-    string target_id = 3 [
-    (validator.field).check_if = { field: "job_mode", tags: { enum: { eq: 1 } } },
-    (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" }
-    ];
+    string target_id = 3;
 
     // shell mode json
     // @inject_tag: json:"job_content"
