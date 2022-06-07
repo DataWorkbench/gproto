@@ -13,21 +13,19 @@ option java_multiple_files = false;
 import "proto/types/request/apidashboard.proto";
 import "proto/types/response/apidashboard.proto";
 import "proto/types/model/empty.proto";
-import "proto/types/model/apidashboard.proto";
 
 service ApiDashboard {
-  rpc CreateRoute(model.Route) returns (response.CreateRoute) {}
+  rpc CreateRoute(request.CreateRoute) returns (response.CreateRoute) {}
   rpc DeleteRoute(request.DeleteRoute) returns (model.EmptyStruct) {}
   rpc ListRoutes(request.ListRoutes) returns (response.ListRoutes) {}
-  rpc UpdateRoute(model.Route) returns (model.EmptyStruct) {}
-  rpc RouteUriRewrite(request.RouteUriRewrite) returns (model.EmptyStruct) {}
+  rpc UpdateRoute(request.UpdateRoute) returns (model.EmptyStruct) {}
 
-  rpc CreateUpstream(model.Upstream) returns (response.CreateUpstream) {}
+  rpc CreateUpstream(request.CreateUpstream) returns (response.CreateUpstream) {}
   rpc DeleteUpstream(request.DeleteUpstream) returns (model.EmptyStruct) {}
-  rpc UpdateUpstream(model.Upstream) returns (model.EmptyStruct) {}
+  rpc UpdateUpstream(request.UpdateUpstream) returns (model.EmptyStruct) {}
   rpc ListUpstreams(request.ListUpstreams) returns (response.ListUpstreams) {}
 
-  rpc CreateSSL(model.SSL) returns (response.CreateSSL) {}
+  rpc CreateSSL(request.CreateSSL) returns (response.CreateSSL) {}
   rpc DeleteSSL(request.DeleteSSL) returns (model.EmptyStruct) {}
   rpc ListSSLs(request.ListSSLs) returns (response.ListSSLs) {}
 
@@ -37,6 +35,7 @@ service ApiDashboard {
   rpc ListApiServices(request.ListApiServices) returns (response.ListApiServices) {}
   rpc AddSvcReqCount(request.AddSvcReqCount) returns (model.EmptyStruct) {}
   rpc GetSvcReqCount(request.GetSvcReqCount) returns (response.GetSvcReqCount) {}
+  rpc DeleteProjectRoutes(request.DeleteProjectRoutes) returns (model.EmptyStruct) {}
 
   rpc CreateAuthKey(request.CreateAuthKey) returns (response.CreateAuthKey) {}
   rpc DeleteAuthKey(request.DeleteAuthKey) returns (model.EmptyStruct) {}

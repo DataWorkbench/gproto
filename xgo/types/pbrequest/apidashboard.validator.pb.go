@@ -6,43 +6,179 @@
 package pbrequest
 
 import (
+	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
+	strings "strings"
 )
 
-func (this *RouteUriRewrite) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) > 0) {
-		return protovalidator.FieldError1("RouteUriRewrite", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+func (this *CreateRoute) _xxx_xxx_Validator_Validate_route_info() error {
+	if dt, ok := interface{}(this.RouteInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
 	}
 	return nil
 }
 
-func (this *RouteUriRewrite) _xxx_xxx_Validator_Validate_uri() error {
-	if !(len(this.Uri) > 0) {
-		return protovalidator.FieldError1("RouteUriRewrite", "the byte length of field 'uri' must be greater than '0'", protovalidator.StringByteLenToString(this.Uri))
-	}
-	return nil
-}
-
-// Set default value for message request.RouteUriRewrite
-func (this *RouteUriRewrite) Validate() error {
+// Set default value for message request.CreateRoute
+func (this *CreateRoute) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_route_info(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *UpdateRoute) _xxx_xxx_Validator_Validate_route_info() error {
+	if dt, ok := interface{}(this.RouteInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateRoute
+func (this *UpdateRoute) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_route_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_uri() error {
+	if !(len(this.Uri) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'uri' must be greater than '0'", protovalidator.StringByteLenToString(this.Uri))
+	}
+	if !(len(this.Uri) <= 256) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'uri' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Uri))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) <= 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'id' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.Id))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_host() error {
+	if !(len(this.Host) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'host' must be greater than '0'", protovalidator.StringByteLenToString(this.Host))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_upstream_id() error {
+	if !(len(this.UpstreamId) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'upstream_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UpstreamId))
+	}
+	if !(len(this.UpstreamId) <= 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'upstream_id' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.UpstreamId))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_name() error {
+	if !(len(this.Name) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'name' must be greater than '0'", protovalidator.StringByteLenToString(this.Name))
+	}
+	if !(len(this.Name) <= 128) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_api_service_id() error {
+	if !(len(this.ApiServiceId) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'api_service_id' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiServiceId))
+	}
+	if !(len(this.ApiServiceId) <= 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'api_service_id' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.ApiServiceId))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_api_version_id() error {
+	if !(len(this.ApiVersionId) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'api_version_id' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiVersionId))
+	}
+	if !(len(this.ApiVersionId) <= 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'api_version_id' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.ApiVersionId))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_proxy_uri() error {
+	if !(len(this.ProxyUri) > 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'proxy_uri' must be greater than '0'", protovalidator.StringByteLenToString(this.ProxyUri))
+	}
+	if !(len(this.ProxyUri) <= 256) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'proxy_uri' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.ProxyUri))
+	}
+	return nil
+}
+
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("RouteInfo", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+// Set default value for message request.RouteInfo
+func (this *RouteInfo) Validate() error {
+	if this == nil {
+		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_uri(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_upstream_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_service_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_version_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_proxy_uri(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	return nil
 }
 
-func (this *DeleteRoute) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) > 0) {
-		return protovalidator.FieldError1("DeleteRoute", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+func (this *DeleteRoute) _xxx_xxx_Validator_Validate_ids() error {
+	if !(len(this.Ids) >= 0) {
+		return protovalidator.FieldError1("DeleteRoute", "the length of field 'ids' must be greater than or equal to '0'", strconv.Itoa(len(this.Ids)))
+	}
+	if !(len(this.Ids) <= 100) {
+		return protovalidator.FieldError1("DeleteRoute", "the length of field 'ids' must be less than or equal to '100'", strconv.Itoa(len(this.Ids)))
 	}
 	return nil
 }
@@ -52,15 +188,17 @@ func (this *DeleteRoute) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_ids(); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (this *ListRoutes) _xxx_xxx_Validator_Validate_uri() error {
-	if !(len(this.Uri) > 0) {
-		return protovalidator.FieldError1("ListRoutes", "the byte length of field 'uri' must be greater than '0'", protovalidator.StringByteLenToString(this.Uri))
+var _xxx_xxx_Validator_ListRoutes_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
+
+func (this *ListRoutes) _xxx_xxx_Validator_Validate_curr_status() error {
+	if !(_xxx_xxx_Validator_ListRoutes_InEnums_CurrStatus[this.CurrStatus]) {
+		return protovalidator.FieldError1("ListRoutes", "the value of field 'curr_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.CurrStatus)))
 	}
 	return nil
 }
@@ -106,7 +244,7 @@ func (this *ListRoutes) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_uri(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_curr_status(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
@@ -119,6 +257,160 @@ func (this *ListRoutes) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateUpstream) _xxx_xxx_Validator_Validate_upstream_info() error {
+	if dt, ok := interface{}(this.UpstreamInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.CreateUpstream
+func (this *CreateUpstream) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_upstream_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateUpstream) _xxx_xxx_Validator_Validate_upstream_info() error {
+	if dt, ok := interface{}(this.UpstreamInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateUpstream
+func (this *UpdateUpstream) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_upstream_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("UpstreamInfo", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_nodes() error {
+	if !(len(this.Nodes) >= 0) {
+		return protovalidator.FieldError1("UpstreamInfo", "the length of field 'nodes' must be greater than or equal to '0'", strconv.Itoa(len(this.Nodes)))
+	}
+	for _, item := range this.Nodes {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_name() error {
+	if !(len(this.Name) > 0) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'name' must be greater than '0'", protovalidator.StringByteLenToString(this.Name))
+	}
+	if !(len(this.Name) < 256) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'name' must be less than '256'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_desc() error {
+	if !(len(this.Desc) > 0) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'desc' must be greater than '0'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	if !(len(this.Desc) < 512) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'desc' must be less than '512'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_UpstreamInfo_InEnums_Schema = map[pbmodel.SchemaType]bool{0: true, 1: true}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_schema() error {
+	if !(_xxx_xxx_Validator_UpstreamInfo_InEnums_Schema[this.Schema]) {
+		return protovalidator.FieldError1("UpstreamInfo", "the value of field 'schema' must in enums of '[0 1]'", protovalidator.Int32ToString(int32(this.Schema)))
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_tls() error {
+	if dt, ok := interface{}(this.Tls).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_timeout() error {
+	if dt, ok := interface{}(this.Timeout).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) < 20) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'id' must be less than '20'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(len(this.Id) >= 0) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'id' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Id))
+	}
+	return nil
+}
+
+// Set default value for message request.UpstreamInfo
+func (this *UpstreamInfo) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_nodes(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_schema(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_tls(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
 	return nil
@@ -178,6 +470,15 @@ func (this *ListUpstreams) _xxx_xxx_Validator_Validate_ids() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListUpstreams_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
+
+func (this *ListUpstreams) _xxx_xxx_Validator_Validate_curr_status() error {
+	if !(_xxx_xxx_Validator_ListUpstreams_InEnums_CurrStatus[this.CurrStatus]) {
+		return protovalidator.FieldError1("ListUpstreams", "the value of field 'curr_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.CurrStatus)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListUpstreams
 func (this *ListUpstreams) Validate() error {
 	if this == nil {
@@ -193,6 +494,47 @@ func (this *ListUpstreams) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_curr_status(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateSSL) _xxx_xxx_Validator_Validate_cert() error {
+	if !(len(this.Cert) > 0) {
+		return protovalidator.FieldError1("CreateSSL", "the byte length of field 'cert' must be greater than '0'", protovalidator.StringByteLenToString(this.Cert))
+	}
+	return nil
+}
+
+func (this *CreateSSL) _xxx_xxx_Validator_Validate_key() error {
+	if !(len(this.Key) > 0) {
+		return protovalidator.FieldError1("CreateSSL", "the byte length of field 'key' must be greater than '0'", protovalidator.StringByteLenToString(this.Key))
+	}
+	return nil
+}
+
+func (this *CreateSSL) _xxx_xxx_Validator_Validate_snis() error {
+	if !(len(this.Snis) > 0) {
+		return protovalidator.FieldError1("CreateSSL", "the length of field 'snis' must be greater than '0'", strconv.Itoa(len(this.Snis)))
+	}
+	return nil
+}
+
+// Set default value for message request.CreateSSL
+func (this *CreateSSL) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_cert(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_key(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_snis(); err != nil {
 		return err
 	}
 	return nil
@@ -252,6 +594,15 @@ func (this *ListSSLs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListSSLs_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
+
+func (this *ListSSLs) _xxx_xxx_Validator_Validate_curr_status() error {
+	if !(_xxx_xxx_Validator_ListSSLs_InEnums_CurrStatus[this.CurrStatus]) {
+		return protovalidator.FieldError1("ListSSLs", "the value of field 'curr_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.CurrStatus)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListSSLs
 func (this *ListSSLs) Validate() error {
 	if this == nil {
@@ -269,12 +620,48 @@ func (this *ListSSLs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_curr_status(); err != nil {
+		return err
+	}
 	return nil
 }
 
-func (this *CreateApiService) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(len(this.UserId) > 0) {
-		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'user_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UserId))
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_desc() error {
+	if !(len(this.Desc) >= 0) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'desc' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	if !(len(this.Desc) <= 256) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'desc' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	return nil
+}
+
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_auth_key_id() error {
+	if !(len(this.AuthKeyId) >= 0) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'auth_key_id' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.AuthKeyId))
+	}
+	if !(len(this.AuthKeyId) <= 256) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'auth_key_id' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.AuthKeyId))
+	}
+	return nil
+}
+
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("CreateApiService", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) <= 256) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'created_by' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -284,7 +671,16 @@ func (this *CreateApiService) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_auth_key_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil
@@ -362,6 +758,15 @@ func (this *ListApiServices) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListApiServices_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
+
+func (this *ListApiServices) _xxx_xxx_Validator_Validate_curr_status() error {
+	if !(_xxx_xxx_Validator_ListApiServices_InEnums_CurrStatus[this.CurrStatus]) {
+		return protovalidator.FieldError1("ListApiServices", "the value of field 'curr_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.CurrStatus)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListApiServices
 func (this *ListApiServices) Validate() error {
 	if this == nil {
@@ -377,6 +782,9 @@ func (this *ListApiServices) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_curr_status(); err != nil {
 		return err
 	}
 	return nil
@@ -428,9 +836,43 @@ func (this *GetSvcReqCount) Validate() error {
 	return nil
 }
 
-func (this *CreateAuthKey) _xxx_xxx_Validator_Validate_secret_key() error {
-	if !(len(this.SecretKey) > 0) {
-		return protovalidator.FieldError1("CreateAuthKey", "the byte length of field 'secret_key' must be greater than '0'", protovalidator.StringByteLenToString(this.SecretKey))
+func (this *DeleteProjectRoutes) _xxx_xxx_Validator_Validate_apiServiceIDs() error {
+	if !(len(this.ApiServiceIDs) > 0) {
+		return protovalidator.FieldError1("DeleteProjectRoutes", "the length of field 'apiServiceIDs' must be greater than '0'", strconv.Itoa(len(this.ApiServiceIDs)))
+	}
+	if !(len(this.ApiServiceIDs) <= 100) {
+		return protovalidator.FieldError1("DeleteProjectRoutes", "the length of field 'apiServiceIDs' must be less than or equal to '100'", strconv.Itoa(len(this.ApiServiceIDs)))
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteProjectRoutes
+func (this *DeleteProjectRoutes) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_apiServiceIDs(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateAuthKey) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("CreateAuthKey", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("CreateAuthKey", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateAuthKey) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateAuthKey", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) <= 256) {
+		return protovalidator.FieldError1("CreateAuthKey", "the byte length of field 'created_by' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -440,7 +882,10 @@ func (this *CreateAuthKey) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_secret_key(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil
@@ -518,6 +963,15 @@ func (this *ListAuthKeys) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListAuthKeys_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
+
+func (this *ListAuthKeys) _xxx_xxx_Validator_Validate_curr_status() error {
+	if !(_xxx_xxx_Validator_ListAuthKeys_InEnums_CurrStatus[this.CurrStatus]) {
+		return protovalidator.FieldError1("ListAuthKeys", "the value of field 'curr_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.CurrStatus)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListAuthKeys
 func (this *ListAuthKeys) Validate() error {
 	if this == nil {
@@ -533,6 +987,9 @@ func (this *ListAuthKeys) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_curr_status(); err != nil {
 		return err
 	}
 	return nil

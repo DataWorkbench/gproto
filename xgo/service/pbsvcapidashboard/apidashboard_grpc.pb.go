@@ -25,16 +25,15 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ApiDashboardClient interface {
-	CreateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbresponse.CreateRoute, error)
+	CreateRoute(ctx context.Context, in *pbrequest.CreateRoute, opts ...grpc.CallOption) (*pbresponse.CreateRoute, error)
 	DeleteRoute(ctx context.Context, in *pbrequest.DeleteRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListRoutes(ctx context.Context, in *pbrequest.ListRoutes, opts ...grpc.CallOption) (*pbresponse.ListRoutes, error)
-	UpdateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	RouteUriRewrite(ctx context.Context, in *pbrequest.RouteUriRewrite, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	CreateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error)
+	UpdateRoute(ctx context.Context, in *pbrequest.UpdateRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateUpstream(ctx context.Context, in *pbrequest.CreateUpstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(ctx context.Context, in *pbrequest.DeleteUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	UpdateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	UpdateUpstream(ctx context.Context, in *pbrequest.UpdateUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListUpstreams(ctx context.Context, in *pbrequest.ListUpstreams, opts ...grpc.CallOption) (*pbresponse.ListUpstreams, error)
-	CreateSSL(ctx context.Context, in *pbmodel.SSL, opts ...grpc.CallOption) (*pbresponse.CreateSSL, error)
+	CreateSSL(ctx context.Context, in *pbrequest.CreateSSL, opts ...grpc.CallOption) (*pbresponse.CreateSSL, error)
 	DeleteSSL(ctx context.Context, in *pbrequest.DeleteSSL, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListSSLs(ctx context.Context, in *pbrequest.ListSSLs, opts ...grpc.CallOption) (*pbresponse.ListSSLs, error)
 	CreateApiService(ctx context.Context, in *pbrequest.CreateApiService, opts ...grpc.CallOption) (*pbresponse.CreateApiService, error)
@@ -43,6 +42,7 @@ type ApiDashboardClient interface {
 	ListApiServices(ctx context.Context, in *pbrequest.ListApiServices, opts ...grpc.CallOption) (*pbresponse.ListApiServices, error)
 	AddSvcReqCount(ctx context.Context, in *pbrequest.AddSvcReqCount, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	GetSvcReqCount(ctx context.Context, in *pbrequest.GetSvcReqCount, opts ...grpc.CallOption) (*pbresponse.GetSvcReqCount, error)
+	DeleteProjectRoutes(ctx context.Context, in *pbrequest.DeleteProjectRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateAuthKey(ctx context.Context, in *pbrequest.CreateAuthKey, opts ...grpc.CallOption) (*pbresponse.CreateAuthKey, error)
 	DeleteAuthKey(ctx context.Context, in *pbrequest.DeleteAuthKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	UpdateAuthKey(ctx context.Context, in *pbrequest.UpdateAuthKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -59,7 +59,7 @@ func NewApiDashboardClient(cc grpc.ClientConnInterface) ApiDashboardClient {
 	return &apiDashboardClient{cc}
 }
 
-func (c *apiDashboardClient) CreateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbresponse.CreateRoute, error) {
+func (c *apiDashboardClient) CreateRoute(ctx context.Context, in *pbrequest.CreateRoute, opts ...grpc.CallOption) (*pbresponse.CreateRoute, error) {
 	out := new(pbresponse.CreateRoute)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/CreateRoute", in, out, opts...)
 	if err != nil {
@@ -86,7 +86,7 @@ func (c *apiDashboardClient) ListRoutes(ctx context.Context, in *pbrequest.ListR
 	return out, nil
 }
 
-func (c *apiDashboardClient) UpdateRoute(ctx context.Context, in *pbmodel.Route, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *apiDashboardClient) UpdateRoute(ctx context.Context, in *pbrequest.UpdateRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/UpdateRoute", in, out, opts...)
 	if err != nil {
@@ -95,16 +95,7 @@ func (c *apiDashboardClient) UpdateRoute(ctx context.Context, in *pbmodel.Route,
 	return out, nil
 }
 
-func (c *apiDashboardClient) RouteUriRewrite(ctx context.Context, in *pbrequest.RouteUriRewrite, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/RouteUriRewrite", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *apiDashboardClient) CreateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error) {
+func (c *apiDashboardClient) CreateUpstream(ctx context.Context, in *pbrequest.CreateUpstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error) {
 	out := new(pbresponse.CreateUpstream)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/CreateUpstream", in, out, opts...)
 	if err != nil {
@@ -122,7 +113,7 @@ func (c *apiDashboardClient) DeleteUpstream(ctx context.Context, in *pbrequest.D
 	return out, nil
 }
 
-func (c *apiDashboardClient) UpdateUpstream(ctx context.Context, in *pbmodel.Upstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *apiDashboardClient) UpdateUpstream(ctx context.Context, in *pbrequest.UpdateUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/UpdateUpstream", in, out, opts...)
 	if err != nil {
@@ -140,7 +131,7 @@ func (c *apiDashboardClient) ListUpstreams(ctx context.Context, in *pbrequest.Li
 	return out, nil
 }
 
-func (c *apiDashboardClient) CreateSSL(ctx context.Context, in *pbmodel.SSL, opts ...grpc.CallOption) (*pbresponse.CreateSSL, error) {
+func (c *apiDashboardClient) CreateSSL(ctx context.Context, in *pbrequest.CreateSSL, opts ...grpc.CallOption) (*pbresponse.CreateSSL, error) {
 	out := new(pbresponse.CreateSSL)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/CreateSSL", in, out, opts...)
 	if err != nil {
@@ -221,6 +212,15 @@ func (c *apiDashboardClient) GetSvcReqCount(ctx context.Context, in *pbrequest.G
 	return out, nil
 }
 
+func (c *apiDashboardClient) DeleteProjectRoutes(ctx context.Context, in *pbrequest.DeleteProjectRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/DeleteProjectRoutes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *apiDashboardClient) CreateAuthKey(ctx context.Context, in *pbrequest.CreateAuthKey, opts ...grpc.CallOption) (*pbresponse.CreateAuthKey, error) {
 	out := new(pbresponse.CreateAuthKey)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/CreateAuthKey", in, out, opts...)
@@ -279,16 +279,15 @@ func (c *apiDashboardClient) UnbindAuthKey(ctx context.Context, in *pbrequest.Un
 // All implementations must embed UnimplementedApiDashboardServer
 // for forward compatibility
 type ApiDashboardServer interface {
-	CreateRoute(context.Context, *pbmodel.Route) (*pbresponse.CreateRoute, error)
+	CreateRoute(context.Context, *pbrequest.CreateRoute) (*pbresponse.CreateRoute, error)
 	DeleteRoute(context.Context, *pbrequest.DeleteRoute) (*pbmodel.EmptyStruct, error)
 	ListRoutes(context.Context, *pbrequest.ListRoutes) (*pbresponse.ListRoutes, error)
-	UpdateRoute(context.Context, *pbmodel.Route) (*pbmodel.EmptyStruct, error)
-	RouteUriRewrite(context.Context, *pbrequest.RouteUriRewrite) (*pbmodel.EmptyStruct, error)
-	CreateUpstream(context.Context, *pbmodel.Upstream) (*pbresponse.CreateUpstream, error)
+	UpdateRoute(context.Context, *pbrequest.UpdateRoute) (*pbmodel.EmptyStruct, error)
+	CreateUpstream(context.Context, *pbrequest.CreateUpstream) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(context.Context, *pbrequest.DeleteUpstream) (*pbmodel.EmptyStruct, error)
-	UpdateUpstream(context.Context, *pbmodel.Upstream) (*pbmodel.EmptyStruct, error)
+	UpdateUpstream(context.Context, *pbrequest.UpdateUpstream) (*pbmodel.EmptyStruct, error)
 	ListUpstreams(context.Context, *pbrequest.ListUpstreams) (*pbresponse.ListUpstreams, error)
-	CreateSSL(context.Context, *pbmodel.SSL) (*pbresponse.CreateSSL, error)
+	CreateSSL(context.Context, *pbrequest.CreateSSL) (*pbresponse.CreateSSL, error)
 	DeleteSSL(context.Context, *pbrequest.DeleteSSL) (*pbmodel.EmptyStruct, error)
 	ListSSLs(context.Context, *pbrequest.ListSSLs) (*pbresponse.ListSSLs, error)
 	CreateApiService(context.Context, *pbrequest.CreateApiService) (*pbresponse.CreateApiService, error)
@@ -297,6 +296,7 @@ type ApiDashboardServer interface {
 	ListApiServices(context.Context, *pbrequest.ListApiServices) (*pbresponse.ListApiServices, error)
 	AddSvcReqCount(context.Context, *pbrequest.AddSvcReqCount) (*pbmodel.EmptyStruct, error)
 	GetSvcReqCount(context.Context, *pbrequest.GetSvcReqCount) (*pbresponse.GetSvcReqCount, error)
+	DeleteProjectRoutes(context.Context, *pbrequest.DeleteProjectRoutes) (*pbmodel.EmptyStruct, error)
 	CreateAuthKey(context.Context, *pbrequest.CreateAuthKey) (*pbresponse.CreateAuthKey, error)
 	DeleteAuthKey(context.Context, *pbrequest.DeleteAuthKey) (*pbmodel.EmptyStruct, error)
 	UpdateAuthKey(context.Context, *pbrequest.UpdateAuthKey) (*pbmodel.EmptyStruct, error)
@@ -310,7 +310,7 @@ type ApiDashboardServer interface {
 type UnimplementedApiDashboardServer struct {
 }
 
-func (UnimplementedApiDashboardServer) CreateRoute(context.Context, *pbmodel.Route) (*pbresponse.CreateRoute, error) {
+func (UnimplementedApiDashboardServer) CreateRoute(context.Context, *pbrequest.CreateRoute) (*pbresponse.CreateRoute, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateRoute not implemented")
 }
 func (UnimplementedApiDashboardServer) DeleteRoute(context.Context, *pbrequest.DeleteRoute) (*pbmodel.EmptyStruct, error) {
@@ -319,25 +319,22 @@ func (UnimplementedApiDashboardServer) DeleteRoute(context.Context, *pbrequest.D
 func (UnimplementedApiDashboardServer) ListRoutes(context.Context, *pbrequest.ListRoutes) (*pbresponse.ListRoutes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListRoutes not implemented")
 }
-func (UnimplementedApiDashboardServer) UpdateRoute(context.Context, *pbmodel.Route) (*pbmodel.EmptyStruct, error) {
+func (UnimplementedApiDashboardServer) UpdateRoute(context.Context, *pbrequest.UpdateRoute) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRoute not implemented")
 }
-func (UnimplementedApiDashboardServer) RouteUriRewrite(context.Context, *pbrequest.RouteUriRewrite) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RouteUriRewrite not implemented")
-}
-func (UnimplementedApiDashboardServer) CreateUpstream(context.Context, *pbmodel.Upstream) (*pbresponse.CreateUpstream, error) {
+func (UnimplementedApiDashboardServer) CreateUpstream(context.Context, *pbrequest.CreateUpstream) (*pbresponse.CreateUpstream, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUpstream not implemented")
 }
 func (UnimplementedApiDashboardServer) DeleteUpstream(context.Context, *pbrequest.DeleteUpstream) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUpstream not implemented")
 }
-func (UnimplementedApiDashboardServer) UpdateUpstream(context.Context, *pbmodel.Upstream) (*pbmodel.EmptyStruct, error) {
+func (UnimplementedApiDashboardServer) UpdateUpstream(context.Context, *pbrequest.UpdateUpstream) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUpstream not implemented")
 }
 func (UnimplementedApiDashboardServer) ListUpstreams(context.Context, *pbrequest.ListUpstreams) (*pbresponse.ListUpstreams, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUpstreams not implemented")
 }
-func (UnimplementedApiDashboardServer) CreateSSL(context.Context, *pbmodel.SSL) (*pbresponse.CreateSSL, error) {
+func (UnimplementedApiDashboardServer) CreateSSL(context.Context, *pbrequest.CreateSSL) (*pbresponse.CreateSSL, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSSL not implemented")
 }
 func (UnimplementedApiDashboardServer) DeleteSSL(context.Context, *pbrequest.DeleteSSL) (*pbmodel.EmptyStruct, error) {
@@ -363,6 +360,9 @@ func (UnimplementedApiDashboardServer) AddSvcReqCount(context.Context, *pbreques
 }
 func (UnimplementedApiDashboardServer) GetSvcReqCount(context.Context, *pbrequest.GetSvcReqCount) (*pbresponse.GetSvcReqCount, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSvcReqCount not implemented")
+}
+func (UnimplementedApiDashboardServer) DeleteProjectRoutes(context.Context, *pbrequest.DeleteProjectRoutes) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteProjectRoutes not implemented")
 }
 func (UnimplementedApiDashboardServer) CreateAuthKey(context.Context, *pbrequest.CreateAuthKey) (*pbresponse.CreateAuthKey, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuthKey not implemented")
@@ -396,7 +396,7 @@ func RegisterApiDashboardServer(s grpc.ServiceRegistrar, srv ApiDashboardServer)
 }
 
 func _ApiDashboard_CreateRoute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.Route)
+	in := new(pbrequest.CreateRoute)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -408,7 +408,7 @@ func _ApiDashboard_CreateRoute_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: "/apidashboard.ApiDashboard/CreateRoute",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).CreateRoute(ctx, req.(*pbmodel.Route))
+		return srv.(ApiDashboardServer).CreateRoute(ctx, req.(*pbrequest.CreateRoute))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -450,7 +450,7 @@ func _ApiDashboard_ListRoutes_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 func _ApiDashboard_UpdateRoute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.Route)
+	in := new(pbrequest.UpdateRoute)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -462,31 +462,13 @@ func _ApiDashboard_UpdateRoute_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: "/apidashboard.ApiDashboard/UpdateRoute",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).UpdateRoute(ctx, req.(*pbmodel.Route))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ApiDashboard_RouteUriRewrite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.RouteUriRewrite)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ApiDashboardServer).RouteUriRewrite(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/apidashboard.ApiDashboard/RouteUriRewrite",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).RouteUriRewrite(ctx, req.(*pbrequest.RouteUriRewrite))
+		return srv.(ApiDashboardServer).UpdateRoute(ctx, req.(*pbrequest.UpdateRoute))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ApiDashboard_CreateUpstream_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.Upstream)
+	in := new(pbrequest.CreateUpstream)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -498,7 +480,7 @@ func _ApiDashboard_CreateUpstream_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/apidashboard.ApiDashboard/CreateUpstream",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).CreateUpstream(ctx, req.(*pbmodel.Upstream))
+		return srv.(ApiDashboardServer).CreateUpstream(ctx, req.(*pbrequest.CreateUpstream))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -522,7 +504,7 @@ func _ApiDashboard_DeleteUpstream_Handler(srv interface{}, ctx context.Context, 
 }
 
 func _ApiDashboard_UpdateUpstream_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.Upstream)
+	in := new(pbrequest.UpdateUpstream)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -534,7 +516,7 @@ func _ApiDashboard_UpdateUpstream_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/apidashboard.ApiDashboard/UpdateUpstream",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).UpdateUpstream(ctx, req.(*pbmodel.Upstream))
+		return srv.(ApiDashboardServer).UpdateUpstream(ctx, req.(*pbrequest.UpdateUpstream))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -558,7 +540,7 @@ func _ApiDashboard_ListUpstreams_Handler(srv interface{}, ctx context.Context, d
 }
 
 func _ApiDashboard_CreateSSL_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.SSL)
+	in := new(pbrequest.CreateSSL)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -570,7 +552,7 @@ func _ApiDashboard_CreateSSL_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/apidashboard.ApiDashboard/CreateSSL",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).CreateSSL(ctx, req.(*pbmodel.SSL))
+		return srv.(ApiDashboardServer).CreateSSL(ctx, req.(*pbrequest.CreateSSL))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -719,6 +701,24 @@ func _ApiDashboard_GetSvcReqCount_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApiDashboard_DeleteProjectRoutes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteProjectRoutes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiDashboardServer).DeleteProjectRoutes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/apidashboard.ApiDashboard/DeleteProjectRoutes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiDashboardServer).DeleteProjectRoutes(ctx, req.(*pbrequest.DeleteProjectRoutes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ApiDashboard_CreateAuthKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.CreateAuthKey)
 	if err := dec(in); err != nil {
@@ -851,10 +851,6 @@ var ApiDashboard_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ApiDashboard_UpdateRoute_Handler,
 		},
 		{
-			MethodName: "RouteUriRewrite",
-			Handler:    _ApiDashboard_RouteUriRewrite_Handler,
-		},
-		{
 			MethodName: "CreateUpstream",
 			Handler:    _ApiDashboard_CreateUpstream_Handler,
 		},
@@ -905,6 +901,10 @@ var ApiDashboard_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSvcReqCount",
 			Handler:    _ApiDashboard_GetSvcReqCount_Handler,
+		},
+		{
+			MethodName: "DeleteProjectRoutes",
+			Handler:    _ApiDashboard_DeleteProjectRoutes_Handler,
 		},
 		{
 			MethodName: "CreateAuthKey",

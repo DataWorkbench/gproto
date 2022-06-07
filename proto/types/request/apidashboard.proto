@@ -12,61 +12,104 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "proto/types/model/apidashboard.proto";
 
-message RouteUriRewrite {
-  // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+message CreateRoute {
+  // @inject_tag: json:"route_info"
+  RouteInfo route_info = 1;
+}
+
+message UpdateRoute {
+  // @inject_tag: json:"route_info"
+  RouteInfo route_info = 1;
+}
+
+message RouteInfo {
   // @inject_tag: json:"uri"
-  string uri = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string uri = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
+  // @inject_tag: json:"id"
+  string id = 2 [ (validator.field).tags.string = { byte_len_lte: 20 } ];
+  // @inject_tag: json:"desc"
+  string desc = 3;
+  // @inject_tag: json:"host"
+  string host = 4 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"hosts"
+  string upstream_id = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  // @inject_tag: json:"name"
+  string name = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 128 } ];
+  // @inject_tag: json:"api_service_id"
+  string api_service_id = 7 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  // @inject_tag: json:"api_version_id"
+  string api_version_id = 8 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  // @inject_tag: json:"proxy_uri"
+  string proxy_uri = 9 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
+  // @inject_tag: json:"space_id"
+  string space_id = 10 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 }
 
 message DeleteRoute {
-  // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"ids"
+  repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 }
 
 message ListRoutes {
   // @inject_tag: json:"name"
   string name = 1;
   // @inject_tag: json:"uri"
-  string uri = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
-  // @inject_tag: json:"status"
-  int32 status = 3;
-
+  string uri = 2;
+  // @inject_tag: json:"curr_status"
+  model.StatusType curr_status = 3 [ (validator.field).tags.enum = { in_enums: true } ];
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit"
-  int32 limit = 5 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
+  int32 limit = 4 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset"
-  int32 offset = 6 [ (validator.field).tags.int  = { gte: 0 } ];
-
+  int32 offset = 5 [ (validator.field).tags.int  = { gte: 0 } ];
   // The field list used to sorted query results.
   // Optional values: {id, name, create_time, create_time}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by"
-  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
-
+  string sort_by = 6 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse"
-  bool reverse = 8;
-
+  bool reverse = 7;
   // The id lists of resource query.
   // @inject_tag: json:"ids" form:"ids"
-  repeated string ids  = 9 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
-
-  // @inject_tag: json:"version"
-  string version = 10;
-
-  // @inject_tag: json:"build"
-  string build = 11;
-
-  // @inject_tag: json:"env"
-  string env = 12;
-
+  repeated string ids  = 8 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+  // @inject_tag: json:"api_version_id"
+  string api_version_id = 9;
   // @inject_tag: json:"api_service_id"
-  string api_service_id = 13;
+  string api_service_id = 10;
+  // @inject_tag: json:"space_id"
+  string space_id = 11;
+}
+
+message CreateUpstream {
+  UpstreamInfo upstream_info = 1;
+}
+
+message UpdateUpstream {
+  UpstreamInfo upstream_info = 1;
+}
+
+message UpstreamInfo {
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"nodes"
+  repeated model.UpstreamNode nodes = 2 [ (validator.field).tags.repeated = { len_gte: 0 } ];
+  // @inject_tag: json:"name"
+  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0,  byte_len_lt: 256} ];
+  // @inject_tag: json:"desc"
+  string desc = 4 [ (validator.field).tags.string = { byte_len_gt: 0,  byte_len_lt: 512} ];
+  // @inject_tag: json:"schema"
+  model.SchemaType schema = 5 [ (validator.field).tags.enum = { in_enums: true } ];
+
+  model.UpstreamTLS tls = 6 [(validator.field) = { }];
+  // @inject_tag: json:"timeout"
+  model.Timeout timeout = 7;
+  // @inject_tag: json:"id"
+  string id = 8 [ (validator.field).tags.string = { byte_len_gte: 0,  byte_len_lt: 20} ];;
 }
 
 message DeleteUpstream {
@@ -77,38 +120,42 @@ message DeleteUpstream {
 message ListUpstreams {
   // @inject_tag: json:"name"
   string name = 1;
-
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset"
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
-
   // The field list used to sorted query results.
   // Optional values: {id, name, create_time, create_time}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by"
   string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
-
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse"
   bool reverse = 5;
-
   // The id lists of resource query.
   // @inject_tag: json:"ids" form:"ids"
   repeated string ids  = 6 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+  // @inject_tag: json:"space_id"
+  string space_id = 7;
+  // @inject_tag: json:"curr_status"
+  model.StatusType curr_status = 8 [ (validator.field).tags.enum = { in_enums: true } ];
 
-  // @inject_tag: json:"version"
-  string version = 7;
+}
 
-  // @inject_tag: json:"build"
-  string build = 8;
-
-  // @inject_tag: json:"env"
-  string env = 9;
+message CreateSSL {
+  // @inject_tag: json:"cert"
+  string cert = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"key"
+  string key = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"snis"
+  repeated string snis = 3 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+  // @inject_tag: json:"id"
+  string id = 4;
+  // @inject_tag: json: "space_id"
+  string space_id = 5;
 }
 
 message DeleteSSL {
@@ -126,41 +173,36 @@ message ListSSLs {
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit"
   int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset"
   int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
-
   // The field list used to sorted query results.
   // Optional values: {id, create_time, create_time}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by"
   string sort_by = 5 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
-
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse"
   bool reverse = 6;
-
-  // @inject_tag: json:"version"
-  string version = 7;
-
-  // @inject_tag: json:"build"
-  string build = 8;
-
-  // @inject_tag: json:"env"
-  string env = 9;
-
+  // @inject_tag: json:"space_id"
+  string space_id = 7;
+  // @inject_tag: json:"created_by"
+  string created_by = 8;
+  // @inject_tag: json:"curr_status"
+  model.StatusType curr_status = 9 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
 message CreateApiService {
   // @inject_tag: json:"name"
   string name = 1;
   // @inject_tag: json:"desc"
-  string desc = 2;
+  string desc = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];;
   // @inject_tag: json:"auth_key_id"
-  string auth_key_id = 3;
-  // @inject_tag: json:"user_id"
-  string user_id = 4 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string auth_key_id = 3 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];
+  // @inject_tag: json:"space_id"
+  string space_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"created_by"
+  string created_by = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
 }
 
 message DeleteApiService {
@@ -186,24 +228,26 @@ message ListApiServices {
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset"
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
-
   // The field list used to sorted query results.
   // Optional values: {id, create_time, create_time}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by"
   string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
-
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse"
   bool reverse = 5;
-
   // Reverse order results. Not required, default: "".
   // @inject_tag: json:"auth_key_id"
   string auth_key_id = 6;
+  // @inject_tag: json:"space_id"
+  string space_id = 7;
+  // @inject_tag: json:"created_by"
+  string created_by = 8;
+  // @inject_tag: json:"curr_status"
+  model.StatusType curr_status = 9 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
 message AddSvcReqCount {
@@ -219,11 +263,17 @@ message GetSvcReqCount {
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
 }
 
+message DeleteProjectRoutes {
+  repeated string apiServiceIDs = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+}
+
 message CreateAuthKey {
   // @inject_tag: json:"name"
   string name = 1;
-  // @inject_tag: json:"secret_key"
-  string secret_key = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"space_id"
+  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"created_by"
+  string created_by = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
 }
 
 message DeleteAuthKey {
@@ -262,7 +312,12 @@ message ListAuthKeys {
   // @inject_tag: json:"reverse"
   bool reverse = 5;
 
-  string user_id = 6;
+  // @inject_tag: json:"space_id"
+  string space_id = 6;
+  // @inject_tag: json:"created_by"
+  string created_by = 7;
+  // @inject_tag: json:"curr_status"
+  model.StatusType curr_status = 8 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
 message BindAuthKey {

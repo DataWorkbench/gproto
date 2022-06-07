@@ -6,17 +6,53 @@
 package pbmodel
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
-	_ "google.golang.org/protobuf/types/known/anypb"
 	strconv "strconv"
+	strings "strings"
 )
+
+func (this *UpstreamEntity) _xxx_xxx_Validator_Validate_nodes() error {
+	if dt, ok := interface{}(this.Nodes).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *UpstreamEntity) _xxx_xxx_Validator_Validate_tls() error {
+	if dt, ok := interface{}(this.Tls).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *UpstreamEntity) _xxx_xxx_Validator_Validate_timeout() error {
+	if dt, ok := interface{}(this.Timeout).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
 
 // Set default value for message model.UpstreamEntity
 func (this *UpstreamEntity) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_nodes(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_tls(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
+		return err
 	}
 	return nil
 }
@@ -37,9 +73,9 @@ func (this *SSLEntity) Validate() error {
 	return nil
 }
 
-func (this *ApiServiceEntity) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(len(this.UserId) > 0) {
-		return protovalidator.FieldError1("ApiServiceEntity", "the byte length of field 'user_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UserId))
+func (this *ApiServiceEntity) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ApiServiceEntity", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -49,7 +85,7 @@ func (this *ApiServiceEntity) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil
@@ -83,22 +119,6 @@ func (this *Upstream) _xxx_xxx_Validator_Validate_nodes() error {
 				return err
 			}
 		}
-	}
-	return nil
-}
-
-func (this *Upstream) _xxx_xxx_Validator_Validate_retries() error {
-	if !(this.Retries >= -1) {
-		return protovalidator.FieldError1("Upstream", "the value of field 'retries' must be greater than or equal to '-1'", protovalidator.Int32ToString(this.Retries))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_Upstream_In_PassHost = map[string]bool{"pass": true, "node": true}
-
-func (this *Upstream) _xxx_xxx_Validator_Validate_pass_host() error {
-	if !(_xxx_xxx_Validator_Upstream_In_PassHost[this.PassHost]) {
-		return protovalidator.FieldError1("Upstream", "the value of field 'pass_host' must be one of '[pass node]'", this.PassHost)
 	}
 	return nil
 }
@@ -137,6 +157,16 @@ func (this *Upstream) _xxx_xxx_Validator_Validate_timeout() error {
 	return nil
 }
 
+func (this *Upstream) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("Upstream", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("Upstream", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 // Set default value for message model.Upstream
 func (this *Upstream) Validate() error {
 	if this == nil {
@@ -146,12 +176,6 @@ func (this *Upstream) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_nodes(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_retries(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_pass_host(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
@@ -164,6 +188,9 @@ func (this *Upstream) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	return nil
@@ -215,6 +242,29 @@ func (this *UpstreamNode) Validate() error {
 	return nil
 }
 
+func (this *UpstreamNodes) _xxx_xxx_Validator_Validate_nodes() error {
+	for _, item := range this.Nodes {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.UpstreamNodes
+func (this *UpstreamNodes) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_nodes(); err != nil {
+		return err
+	}
+	return nil
+}
+
 // Set default value for message model.UpstreamTLS
 func (this *UpstreamTLS) Validate() error {
 	if this == nil {
@@ -230,26 +280,9 @@ func (this *Route) _xxx_xxx_Validator_Validate_uri() error {
 	return nil
 }
 
-func (this *Route) _xxx_xxx_Validator_Validate_priority() error {
-	if !(this.Priority > 0) {
-		return protovalidator.FieldError1("Route", "the value of field 'priority' must be greater than '0'", protovalidator.Int32ToString(this.Priority))
-	}
-	return nil
-}
-
 func (this *Route) _xxx_xxx_Validator_Validate_remote_addrs() error {
 	if !(len(this.RemoteAddrs) >= 0) {
 		return protovalidator.FieldError1("Route", "the length of field 'remote_addrs' must be greater than or equal to '0'", strconv.Itoa(len(this.RemoteAddrs)))
-	}
-	return nil
-}
-
-func (this *Route) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 0) {
-		return protovalidator.FieldError1("Route", "the value of field 'status' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Status))
-	}
-	if !(this.Status <= 1) {
-		return protovalidator.FieldError1("Route", "the value of field 'status' must be less than or equal to '1'", protovalidator.Int32ToString(this.Status))
 	}
 	return nil
 }
@@ -268,6 +301,30 @@ func (this *Route) _xxx_xxx_Validator_Validate_api_service_id() error {
 	return nil
 }
 
+func (this *Route) _xxx_xxx_Validator_Validate_api_version_id() error {
+	if !(len(this.ApiVersionId) > 0) {
+		return protovalidator.FieldError1("Route", "the byte length of field 'api_version_id' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiVersionId))
+	}
+	return nil
+}
+
+func (this *Route) _xxx_xxx_Validator_Validate_proxy_uri() error {
+	if !(len(this.ProxyUri) > 0) {
+		return protovalidator.FieldError1("Route", "the byte length of field 'proxy_uri' must be greater than '0'", protovalidator.StringByteLenToString(this.ProxyUri))
+	}
+	return nil
+}
+
+func (this *Route) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("Route", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("Route", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 // Set default value for message model.Route
 func (this *Route) Validate() error {
 	if this == nil {
@@ -276,19 +333,22 @@ func (this *Route) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_uri(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_priority(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_remote_addrs(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_service_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_version_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_proxy_uri(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	return nil
@@ -315,6 +375,16 @@ func (this *SSL) _xxx_xxx_Validator_Validate_snis() error {
 	return nil
 }
 
+func (this *SSL) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("SSL", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("SSL", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 // Set default value for message model.SSL
 func (this *SSL) Validate() error {
 	if this == nil {
@@ -327,6 +397,9 @@ func (this *SSL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_snis(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	return nil
