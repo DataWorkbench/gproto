@@ -79,3 +79,7 @@ message CreateSession{
   bool ignore_password = 3;
 }
 
+message CheckUserExists{
+  string user_name = 1 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+}
+
