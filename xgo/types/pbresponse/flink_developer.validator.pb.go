@@ -17,8 +17,8 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
-func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_message() error {
-	for _, item := range this.Message {
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_dataset() error {
+	for _, item := range this.Dataset {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -34,7 +34,7 @@ func (this *SubmitFlinkJobInteractive) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_message(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_dataset(); err != nil {
 		return err
 	}
 	return nil

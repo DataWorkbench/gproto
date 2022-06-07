@@ -44,7 +44,7 @@ message SubmitFlinkJobInteractive{
 
   Type type = 1 [(validator.field) = {}];
 
-  repeated DataSet message = 2 [(validator.field) = {}];
+  repeated DataSet dataset = 2 [(validator.field) = {}];
 
   string error_message = 3 [(validator.field) = {}];
 }
