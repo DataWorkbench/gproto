@@ -17,8 +17,31 @@ func (this *SubmitFlinkJob) Validate() error {
 	return nil
 }
 
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_message() error {
+	for _, item := range this.Message {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message response.SubmitFlinkJobInteractive
 func (this *SubmitFlinkJobInteractive) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_message(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message response.SubmitFlinkJobInteractive.DataSet
+func (this *SubmitFlinkJobInteractive_DataSet) Validate() error {
 	if this == nil {
 		return nil
 	}

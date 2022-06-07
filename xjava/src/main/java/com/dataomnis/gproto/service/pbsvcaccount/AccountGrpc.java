@@ -5,9 +5,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.43.2)",
+    value = "by gRPC proto compiler (version 1.38.0)",
     comments = "Source: proto/service/account/account.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class AccountGrpc {
 
   private AccountGrpc() {}
@@ -263,6 +262,37 @@ public final class AccountGrpc {
     return getCreateSessionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> getCheckUserExistsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckUserExists",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> getCheckUserExistsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> getCheckUserExistsMethod;
+    if ((getCheckUserExistsMethod = AccountGrpc.getCheckUserExistsMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getCheckUserExistsMethod = AccountGrpc.getCheckUserExistsMethod) == null) {
+          AccountGrpc.getCheckUserExistsMethod = getCheckUserExistsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckUserExists"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("CheckUserExists"))
+              .build();
+        }
+      }
+    }
+    return getCheckUserExistsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -367,6 +397,13 @@ public final class AccountGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSessionMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void checkUserExists(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckUserExistsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -425,6 +462,13 @@ public final class AccountGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession,
                 com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession>(
                   this, METHODID_CREATE_SESSION)))
+          .addMethod(
+            getCheckUserExistsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists>(
+                  this, METHODID_CHECK_USER_EXISTS)))
           .build();
     }
   }
@@ -506,6 +550,14 @@ public final class AccountGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSessionMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void checkUserExists(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckUserExistsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -576,6 +628,13 @@ public final class AccountGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession createSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists checkUserExists(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckUserExistsMethod(), getCallOptions(), request);
     }
   }
 
@@ -656,6 +715,14 @@ public final class AccountGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSessionMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists> checkUserExists(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckUserExistsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_VALIDATE_REQUEST_SIGNATURE = 0;
@@ -666,6 +733,7 @@ public final class AccountGrpc {
   private static final int METHODID_DELETE_USER = 5;
   private static final int METHODID_CHECK_SESSION = 6;
   private static final int METHODID_CREATE_SESSION = 7;
+  private static final int METHODID_CHECK_USER_EXISTS = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -715,6 +783,10 @@ public final class AccountGrpc {
         case METHODID_CREATE_SESSION:
           serviceImpl.createSession((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession>) responseObserver);
+          break;
+        case METHODID_CHECK_USER_EXISTS:
+          serviceImpl.checkUserExists((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -785,6 +857,7 @@ public final class AccountGrpc {
               .addMethod(getDeleteUserMethod())
               .addMethod(getCheckSessionMethod())
               .addMethod(getCreateSessionMethod())
+              .addMethod(getCheckUserExistsMethod())
               .build();
         }
       }

@@ -25,6 +25,14 @@ func (this *SubmitFlinkJobInteractive) SetDefaults() {
 	return
 }
 
+// Set default value for message response.SubmitFlinkJobInteractive.DataSet
+func (this *SubmitFlinkJobInteractive_DataSet) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.ValidateFlinkJob
 func (this *ValidateFlinkJob) SetDefaults() {
 	if this == nil {
