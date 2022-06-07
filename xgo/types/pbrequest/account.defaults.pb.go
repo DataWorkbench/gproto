@@ -72,3 +72,11 @@ func (this *CreateSession) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.CheckUserExists
+func (this *CheckUserExists) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

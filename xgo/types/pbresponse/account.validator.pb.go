@@ -119,3 +119,11 @@ func (this *GetUserRole) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message response.CheckUserExists
+func (this *CheckUserExists) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
