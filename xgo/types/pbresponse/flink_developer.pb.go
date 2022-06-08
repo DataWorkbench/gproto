@@ -232,9 +232,12 @@ type SubmitFlinkJobInteractive struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type         SubmitFlinkJobInteractive_Type       `protobuf:"varint,1,opt,name=type,proto3,enum=response.SubmitFlinkJobInteractive_Type" json:"type,omitempty"`
-	Dataset      []*SubmitFlinkJobInteractive_DataSet `protobuf:"bytes,2,rep,name=dataset,proto3" json:"dataset,omitempty"`
-	ErrorMessage string                               `protobuf:"bytes,3,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
+	// type
+	Type SubmitFlinkJobInteractive_Type `protobuf:"varint,1,opt,name=type,proto3,enum=response.SubmitFlinkJobInteractive_Type" json:"type"`
+	// dataset
+	Dataset []*SubmitFlinkJobInteractive_DataSet `protobuf:"bytes,2,rep,name=dataset,proto3" json:"inject_tag"`
+	// error message
+	ErrorMessage string `protobuf:"bytes,3,opt,name=error_message,json=errorMessage,proto3" json:"error_message"`
 }
 
 func (x *SubmitFlinkJobInteractive) Reset() {
@@ -353,7 +356,8 @@ type SubmitFlinkJobInteractive_DataSet struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Message []string `protobuf:"bytes,1,rep,name=message,proto3" json:"message,omitempty"`
+	// message
+	Message []string `protobuf:"bytes,1,rep,name=message,proto3" json:"message"`
 }
 
 func (x *SubmitFlinkJobInteractive_DataSet) Reset() {

@@ -217,11 +217,22 @@ public final class PBModelResource {
 
     /**
      * <pre>
+     * The file type, 1=&gt;jar 2=&gt;python 3=&gt;zip
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>int32 type = 12 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    int getType();
+
+    /**
+     * <pre>
      * File owner.
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     java.lang.String getCreatedBy();
@@ -231,7 +242,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
@@ -243,7 +254,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 14 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     long getCreated();
@@ -254,7 +265,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 15 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     long getUpdated();
@@ -371,18 +382,23 @@ public final class PBModelResource {
               version_ = s;
               break;
             }
-            case 98: {
+            case 96: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdBy_ = s;
               break;
             }
-            case 104: {
+            case 112: {
 
               created_ = input.readInt64();
               break;
             }
-            case 112: {
+            case 120: {
 
               updated_ = input.readInt64();
               break;
@@ -933,7 +949,23 @@ public final class PBModelResource {
       }
     }
 
-    public static final int CREATED_BY_FIELD_NUMBER = 12;
+    public static final int TYPE_FIELD_NUMBER = 12;
+    private int type_;
+    /**
+     * <pre>
+     * The file type, 1=&gt;jar 2=&gt;python 3=&gt;zip
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>int32 type = 12 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type_;
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 13;
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
@@ -941,7 +973,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     @java.lang.Override
@@ -963,7 +995,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     @java.lang.Override
@@ -981,7 +1013,7 @@ public final class PBModelResource {
       }
     }
 
-    public static final int CREATED_FIELD_NUMBER = 13;
+    public static final int CREATED_FIELD_NUMBER = 14;
     private long created_;
     /**
      * <pre>
@@ -989,7 +1021,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 14 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     @java.lang.Override
@@ -997,7 +1029,7 @@ public final class PBModelResource {
       return created_;
     }
 
-    public static final int UPDATED_FIELD_NUMBER = 14;
+    public static final int UPDATED_FIELD_NUMBER = 15;
     private long updated_;
     /**
      * <pre>
@@ -1005,7 +1037,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 15 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     @java.lang.Override
@@ -1057,14 +1089,17 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, version_);
       }
+      if (type_ != 0) {
+        output.writeInt32(12, type_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, createdBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, createdBy_);
       }
       if (created_ != 0L) {
-        output.writeInt64(13, created_);
+        output.writeInt64(14, created_);
       }
       if (updated_ != 0L) {
-        output.writeInt64(14, updated_);
+        output.writeInt64(15, updated_);
       }
       unknownFields.writeTo(output);
     }
@@ -1108,16 +1143,20 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, version_);
       }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, type_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, createdBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, createdBy_);
       }
       if (created_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, created_);
+          .computeInt64Size(14, created_);
       }
       if (updated_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(14, updated_);
+          .computeInt64Size(15, updated_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1153,6 +1192,8 @@ public final class PBModelResource {
       if (status_ != other.status_) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
+      if (getType()
+          != other.getType()) return false;
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
       if (getCreated()
@@ -1192,6 +1233,8 @@ public final class PBModelResource {
       hash = (53 * hash) + status_;
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
@@ -1353,6 +1396,8 @@ public final class PBModelResource {
 
         version_ = "";
 
+        type_ = 0;
+
         createdBy_ = "";
 
         created_ = 0L;
@@ -1395,6 +1440,7 @@ public final class PBModelResource {
         result.etag_ = etag_;
         result.status_ = status_;
         result.version_ = version_;
+        result.type_ = type_;
         result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
@@ -1482,6 +1528,9 @@ public final class PBModelResource {
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
           onChanged();
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         if (!other.getCreatedBy().isEmpty()) {
           createdBy_ = other.createdBy_;
@@ -2400,6 +2449,52 @@ public final class PBModelResource {
         return this;
       }
 
+      private int type_ ;
+      /**
+       * <pre>
+       * The file type, 1=&gt;jar 2=&gt;python 3=&gt;zip
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>int32 type = 12 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The file type, 1=&gt;jar 2=&gt;python 3=&gt;zip
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>int32 type = 12 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The file type, 1=&gt;jar 2=&gt;python 3=&gt;zip
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>int32 type = 12 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
@@ -2407,7 +2502,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @return The createdBy.
        */
       public java.lang.String getCreatedBy() {
@@ -2428,7 +2523,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
@@ -2450,7 +2545,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @param value The createdBy to set.
        * @return This builder for chaining.
        */
@@ -2470,7 +2565,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedBy() {
@@ -2485,7 +2580,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
@@ -2508,7 +2603,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 14 [(.validator.field) = { ... }</code>
        * @return The created.
        */
       @java.lang.Override
@@ -2521,7 +2616,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 14 [(.validator.field) = { ... }</code>
        * @param value The created to set.
        * @return This builder for chaining.
        */
@@ -2537,7 +2632,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 14 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreated() {
@@ -2554,7 +2649,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 15 [(.validator.field) = { ... }</code>
        * @return The updated.
        */
       @java.lang.Override
@@ -2567,7 +2662,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 15 [(.validator.field) = { ... }</code>
        * @param value The updated to set.
        * @return This builder for chaining.
        */
@@ -2583,7 +2678,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 15 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdated() {
@@ -2661,7 +2756,7 @@ public final class PBModelResource {
     java.lang.String[] descriptorData = {
       "\n\034proto/types/model/file.proto\022\005model\0323g" +
       "ithub.com/yu31/protoc-plugin/proto/valid" +
-      "ator.proto\"\315\003\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "ator.proto\"\352\003\n\004File\022%\n\010space_id\030\001 \001(\tB\023\342" +
       "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004res-\022\013\n\003pid\030\003 \001(\t\022\024\n\014is_directory" +
       "\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\033" +
@@ -2669,13 +2764,14 @@ public final class PBModelResource {
       "\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\004etag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
       "\001 \0221\n\006status\030\n \001(\0162\022.model.File.StatusB\r" +
       "\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\360\001\020\022#\n\ncreated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002" +
-      "A\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updat" +
-      "ed\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013Statu" +
-      "sUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bj\n\"co" +
-      "m.dataomnis.gproto.types.pbmodelB\017PBMode" +
-      "lResourceP\000Z1github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodelb\006proto3"
+      "\003\360\001\020\022\033\n\004type\030\014 \001(\005B\r\342\337\037\t\022\007\262\001\0048\003@\001\022#\n\ncre" +
+      "ated_by\030\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007create" +
+      "d\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\017 \001(\003B\013\342" +
+      "\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n" +
+      "\007Deleted\020\001\022\013\n\007Enabled\020\002Bj\n\"com.dataomnis" +
+      ".gproto.types.pbmodelB\017PBModelResourceP\000" +
+      "Z1github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2687,7 +2783,7 @@ public final class PBModelResource {
     internal_static_model_File_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_File_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Pid", "IsDirectory", "Name", "Desc", "Size", "Etag", "Status", "Version", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Id", "Pid", "IsDirectory", "Name", "Desc", "Size", "Etag", "Status", "Version", "Type", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
