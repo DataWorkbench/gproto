@@ -7,6 +7,7 @@ package pbrequest
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
@@ -82,12 +83,38 @@ func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_job() error {
 	return nil
 }
 
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_max_count() error {
+	if !(this.MaxCount > 0) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'max_count' must be greater than '0'", protovalidator.Int32ToString(this.MaxCount))
+	}
+	if !(this.MaxCount <= 100) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'max_count' must be less than or equal to '100'", protovalidator.Int32ToString(this.MaxCount))
+	}
+	return nil
+}
+
+func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_refresh_interval() error {
+	if !(this.RefreshInterval >= 1000) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'refresh_interval' must be greater than or equal to '1000'", protovalidator.Int32ToString(this.RefreshInterval))
+	}
+	if !(this.RefreshInterval <= 30000) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'refresh_interval' must be less than or equal to '30000'", protovalidator.Int32ToString(this.RefreshInterval))
+	}
+	return nil
+}
+
 // Set default value for message request.SubmitFlinkJobInteractive
 func (this *SubmitFlinkJobInteractive) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_job(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_max_count(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_refresh_interval(); err != nil {
 		return err
 	}
 	return nil

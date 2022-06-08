@@ -758,8 +758,8 @@ type Upstream struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type       string          `protobuf:"bytes,1,opt,name=type,proto3" json:"type"`
-	Nodes      []*UpstreamNode `protobuf:"bytes,2,rep,name=nodes,proto3" json:"nodes"`
+	Type       string          `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
+	Nodes      []*UpstreamNode `protobuf:"bytes,2,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	Name       string          `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Desc       string          `protobuf:"bytes,4,opt,name=desc,proto3" json:"desc,omitempty"`
 	Schema     string          `protobuf:"bytes,5,opt,name=schema,proto3" json:"schema,omitempty"`

@@ -14,6 +14,231 @@ public final class PBModelApiDashboard {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code model.StatusType}
+   */
+  public enum StatusType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>Skip = 0;</code>
+     */
+    Skip(0),
+    /**
+     * <code>Enabled = 1;</code>
+     */
+    Enabled(1),
+    /**
+     * <code>Deleted = 2;</code>
+     */
+    Deleted(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>Skip = 0;</code>
+     */
+    public static final int Skip_VALUE = 0;
+    /**
+     * <code>Enabled = 1;</code>
+     */
+    public static final int Enabled_VALUE = 1;
+    /**
+     * <code>Deleted = 2;</code>
+     */
+    public static final int Deleted_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StatusType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StatusType forNumber(int value) {
+      switch (value) {
+        case 0: return Skip;
+        case 1: return Enabled;
+        case 2: return Deleted;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StatusType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        StatusType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<StatusType>() {
+            public StatusType findValueByNumber(int number) {
+              return StatusType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final StatusType[] VALUES = values();
+
+    public static StatusType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StatusType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:model.StatusType)
+  }
+
+  /**
+   * Protobuf enum {@code model.SchemaType}
+   */
+  public enum SchemaType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>http = 0;</code>
+     */
+    http(0),
+    /**
+     * <code>https = 1;</code>
+     */
+    https(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>http = 0;</code>
+     */
+    public static final int http_VALUE = 0;
+    /**
+     * <code>https = 1;</code>
+     */
+    public static final int https_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SchemaType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SchemaType forNumber(int value) {
+      switch (value) {
+        case 0: return http;
+        case 1: return https;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SchemaType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SchemaType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SchemaType>() {
+            public SchemaType findValueByNumber(int number) {
+              return SchemaType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final SchemaType[] VALUES = values();
+
+    public static SchemaType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SchemaType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:model.SchemaType)
+  }
+
   public interface UpstreamEntityOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.UpstreamEntity)
       com.google.protobuf.MessageOrBuilder {
@@ -40,60 +265,37 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
      * </pre>
      *
-     * <code>string nodes = 2;</code>
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the nodes field is set.
+     */
+    boolean hasNodes();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+     * </pre>
+     *
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
      * @return The nodes.
      */
-    java.lang.String getNodes();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getNodes();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
      * </pre>
      *
-     * <code>string nodes = 2;</code>
-     * @return The bytes for nodes.
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
      */
-    com.google.protobuf.ByteString
-        getNodesBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"retries" gorm:"column:retries;"
-     * </pre>
-     *
-     * <code>int32 retries = 3;</code>
-     * @return The retries.
-     */
-    int getRetries();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-     * </pre>
-     *
-     * <code>string pass_host = 4;</code>
-     * @return The passHost.
-     */
-    java.lang.String getPassHost();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-     * </pre>
-     *
-     * <code>string pass_host = 4;</code>
-     * @return The bytes for passHost.
-     */
-    com.google.protobuf.ByteString
-        getPassHostBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder getNodesOrBuilder();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 3;</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -102,7 +304,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 3;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -113,7 +315,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 6;</code>
+     * <code>string desc = 4;</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -122,7 +324,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 6;</code>
+     * <code>string desc = 4;</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -133,97 +335,71 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"schema" gorm:"column:schema;"
      * </pre>
      *
-     * <code>string schema = 7;</code>
+     * <code>int32 schema = 5;</code>
      * @return The schema.
      */
-    java.lang.String getSchema();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"schema" gorm:"column:schema;"
-     * </pre>
-     *
-     * <code>string schema = 7;</code>
-     * @return The bytes for schema.
-     */
-    com.google.protobuf.ByteString
-        getSchemaBytes();
+    int getSchema();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
      * </pre>
      *
-     * <code>string client_cert = 8;</code>
-     * @return The clientCert.
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     * @return Whether the tls field is set.
      */
-    java.lang.String getClientCert();
+    boolean hasTls();
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
      * </pre>
      *
-     * <code>string client_cert = 8;</code>
-     * @return The bytes for clientCert.
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     * @return The tls.
      */
-    com.google.protobuf.ByteString
-        getClientCertBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+     * </pre>
+     *
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
      * </pre>
      *
-     * <code>string client_key = 9;</code>
-     * @return The clientKey.
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return Whether the timeout field is set.
      */
-    java.lang.String getClientKey();
+    boolean hasTimeout();
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
      * </pre>
      *
-     * <code>string client_key = 9;</code>
-     * @return The bytes for clientKey.
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return The timeout.
      */
-    com.google.protobuf.ByteString
-        getClientKeyBytes();
-
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout();
     /**
      * <pre>
-     * &#64;inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
      * </pre>
      *
-     * <code>float timeout_connect = 10;</code>
-     * @return The timeoutConnect.
+     * <code>.model.Timeout timeout = 7;</code>
      */
-    float getTimeoutConnect();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
-     * </pre>
-     *
-     * <code>float timeout_send = 11;</code>
-     * @return The timeoutSend.
-     */
-    float getTimeoutSend();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
-     * </pre>
-     *
-     * <code>float timeout_read = 12;</code>
-     * @return The timeoutRead.
-     */
-    float getTimeoutRead();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 13;</code>
+     * <code>string id = 8;</code>
      * @return The id.
      */
     java.lang.String getId();
@@ -232,7 +408,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 13;</code>
+     * <code>string id = 8;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -243,7 +419,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
      * </pre>
      *
-     * <code>int64 create_time = 14;</code>
+     * <code>int64 create_time = 9;</code>
      * @return The createTime.
      */
     long getCreateTime();
@@ -253,30 +429,49 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
      * </pre>
      *
-     * <code>int64 update_time = 15;</code>
+     * <code>int64 update_time = 10;</code>
      * @return The updateTime.
      */
     long getUpdateTime();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"key" gorm:"column:key;"
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string key = 16;</code>
-     * @return The key.
+     * <code>string space_id = 11;</code>
+     * @return The spaceId.
      */
-    java.lang.String getKey();
+    java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"key" gorm:"column:key;"
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string key = 16;</code>
-     * @return The bytes for key.
+     * <code>string space_id = 11;</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getKeyBytes();
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.UpstreamEntity}
@@ -292,15 +487,11 @@ public final class PBModelApiDashboard {
     }
     private UpstreamEntity() {
       type_ = "";
-      nodes_ = "";
-      passHost_ = "";
       name_ = "";
       desc_ = "";
-      schema_ = "";
-      clientCert_ = "";
-      clientKey_ = "";
       id_ = "";
-      key_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -340,87 +531,87 @@ public final class PBModelApiDashboard {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder subBuilder = null;
+              if (nodes_ != null) {
+                subBuilder = nodes_.toBuilder();
+              }
+              nodes_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodes_);
+                nodes_ = subBuilder.buildPartial();
+              }
 
-              nodes_ = s;
               break;
             }
-            case 24: {
-
-              retries_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              passHost_ = s;
-              break;
-            }
-            case 42: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 50: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               desc_ = s;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              schema_ = s;
+              schema_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder subBuilder = null;
+              if (tls_ != null) {
+                subBuilder = tls_.toBuilder();
+              }
+              tls_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tls_);
+                tls_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
+              }
+              timeout_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              clientCert_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientKey_ = s;
-              break;
-            }
-            case 85: {
-
-              timeoutConnect_ = input.readFloat();
-              break;
-            }
-            case 93: {
-
-              timeoutSend_ = input.readFloat();
-              break;
-            }
-            case 101: {
-
-              timeoutRead_ = input.readFloat();
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               id_ = s;
               break;
             }
-            case 112: {
+            case 72: {
 
               createTime_ = input.readInt64();
               break;
             }
-            case 120: {
+            case 80: {
 
               updateTime_ = input.readInt64();
               break;
             }
-            case 130: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              key_ = s;
+              spaceId_ = s;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -502,120 +693,51 @@ public final class PBModelApiDashboard {
     }
 
     public static final int NODES_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nodes_;
+    private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes nodes_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
      * </pre>
      *
-     * <code>string nodes = 2;</code>
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the nodes field is set.
+     */
+    @java.lang.Override
+    public boolean hasNodes() {
+      return nodes_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+     * </pre>
+     *
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
      * @return The nodes.
      */
     @java.lang.Override
-    public java.lang.String getNodes() {
-      java.lang.Object ref = nodes_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nodes_ = s;
-        return s;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getNodes() {
+      return nodes_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.getDefaultInstance() : nodes_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+     * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
      * </pre>
      *
-     * <code>string nodes = 2;</code>
-     * @return The bytes for nodes.
+     * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNodesBytes() {
-      java.lang.Object ref = nodes_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nodes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder getNodesOrBuilder() {
+      return getNodes();
     }
 
-    public static final int RETRIES_FIELD_NUMBER = 3;
-    private int retries_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"retries" gorm:"column:retries;"
-     * </pre>
-     *
-     * <code>int32 retries = 3;</code>
-     * @return The retries.
-     */
-    @java.lang.Override
-    public int getRetries() {
-      return retries_;
-    }
-
-    public static final int PASS_HOST_FIELD_NUMBER = 4;
-    private volatile java.lang.Object passHost_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-     * </pre>
-     *
-     * <code>string pass_host = 4;</code>
-     * @return The passHost.
-     */
-    @java.lang.Override
-    public java.lang.String getPassHost() {
-      java.lang.Object ref = passHost_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        passHost_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-     * </pre>
-     *
-     * <code>string pass_host = 4;</code>
-     * @return The bytes for passHost.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPassHostBytes() {
-      java.lang.Object ref = passHost_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        passHost_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
     /**
      * <pre>
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 3;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -636,7 +758,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 3;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -654,14 +776,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int DESC_FIELD_NUMBER = 6;
+    public static final int DESC_FIELD_NUMBER = 4;
     private volatile java.lang.Object desc_;
     /**
      * <pre>
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 6;</code>
+     * <code>string desc = 4;</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -682,7 +804,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 6;</code>
+     * <code>string desc = 4;</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -700,197 +822,105 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int SCHEMA_FIELD_NUMBER = 7;
-    private volatile java.lang.Object schema_;
+    public static final int SCHEMA_FIELD_NUMBER = 5;
+    private int schema_;
     /**
      * <pre>
      * &#64;inject_tag: json:"schema" gorm:"column:schema;"
      * </pre>
      *
-     * <code>string schema = 7;</code>
+     * <code>int32 schema = 5;</code>
      * @return The schema.
      */
     @java.lang.Override
-    public java.lang.String getSchema() {
-      java.lang.Object ref = schema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        schema_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"schema" gorm:"column:schema;"
-     * </pre>
-     *
-     * <code>string schema = 7;</code>
-     * @return The bytes for schema.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSchemaBytes() {
-      java.lang.Object ref = schema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        schema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getSchema() {
+      return schema_;
     }
 
-    public static final int CLIENT_CERT_FIELD_NUMBER = 8;
-    private volatile java.lang.Object clientCert_;
+    public static final int TLS_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS tls_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
      * </pre>
      *
-     * <code>string client_cert = 8;</code>
-     * @return The clientCert.
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     * @return Whether the tls field is set.
      */
     @java.lang.Override
-    public java.lang.String getClientCert() {
-      java.lang.Object ref = clientCert_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientCert_ = s;
-        return s;
-      }
+    public boolean hasTls() {
+      return tls_ != null;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
      * </pre>
      *
-     * <code>string client_cert = 8;</code>
-     * @return The bytes for clientCert.
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     * @return The tls.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getClientCertBytes() {
-      java.lang.Object ref = clientCert_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientCert_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls() {
+      return tls_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+     * </pre>
+     *
+     * <code>.model.UpstreamTLS tls = 6;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
+      return getTls();
     }
 
-    public static final int CLIENT_KEY_FIELD_NUMBER = 9;
-    private volatile java.lang.Object clientKey_;
+    public static final int TIMEOUT_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout timeout_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
      * </pre>
      *
-     * <code>string client_key = 9;</code>
-     * @return The clientKey.
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return Whether the timeout field is set.
      */
     @java.lang.Override
-    public java.lang.String getClientKey() {
-      java.lang.Object ref = clientKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientKey_ = s;
-        return s;
-      }
+    public boolean hasTimeout() {
+      return timeout_ != null;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
      * </pre>
      *
-     * <code>string client_key = 9;</code>
-     * @return The bytes for clientKey.
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return The timeout.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getClientKeyBytes() {
-      java.lang.Object ref = clientKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout() {
+      return timeout_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
+      return getTimeout();
     }
 
-    public static final int TIMEOUT_CONNECT_FIELD_NUMBER = 10;
-    private float timeoutConnect_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
-     * </pre>
-     *
-     * <code>float timeout_connect = 10;</code>
-     * @return The timeoutConnect.
-     */
-    @java.lang.Override
-    public float getTimeoutConnect() {
-      return timeoutConnect_;
-    }
-
-    public static final int TIMEOUT_SEND_FIELD_NUMBER = 11;
-    private float timeoutSend_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
-     * </pre>
-     *
-     * <code>float timeout_send = 11;</code>
-     * @return The timeoutSend.
-     */
-    @java.lang.Override
-    public float getTimeoutSend() {
-      return timeoutSend_;
-    }
-
-    public static final int TIMEOUT_READ_FIELD_NUMBER = 12;
-    private float timeoutRead_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
-     * </pre>
-     *
-     * <code>float timeout_read = 12;</code>
-     * @return The timeoutRead.
-     */
-    @java.lang.Override
-    public float getTimeoutRead() {
-      return timeoutRead_;
-    }
-
-    public static final int ID_FIELD_NUMBER = 13;
+    public static final int ID_FIELD_NUMBER = 8;
     private volatile java.lang.Object id_;
     /**
      * <pre>
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 13;</code>
+     * <code>string id = 8;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -911,7 +941,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 13;</code>
+     * <code>string id = 8;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -929,14 +959,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int CREATE_TIME_FIELD_NUMBER = 14;
+    public static final int CREATE_TIME_FIELD_NUMBER = 9;
     private long createTime_;
     /**
      * <pre>
      * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
      * </pre>
      *
-     * <code>int64 create_time = 14;</code>
+     * <code>int64 create_time = 9;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -944,14 +974,14 @@ public final class PBModelApiDashboard {
       return createTime_;
     }
 
-    public static final int UPDATE_TIME_FIELD_NUMBER = 15;
+    public static final int UPDATE_TIME_FIELD_NUMBER = 10;
     private long updateTime_;
     /**
      * <pre>
      * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
      * </pre>
      *
-     * <code>int64 update_time = 15;</code>
+     * <code>int64 update_time = 10;</code>
      * @return The updateTime.
      */
     @java.lang.Override
@@ -959,50 +989,77 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int KEY_FIELD_NUMBER = 16;
-    private volatile java.lang.Object key_;
+    public static final int SPACE_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"key" gorm:"column:key;"
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string key = 16;</code>
-     * @return The key.
+     * <code>string space_id = 11;</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        key_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"key" gorm:"column:key;"
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string key = 16;</code>
-     * @return The bytes for key.
+     * <code>string space_id = 11;</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        key_ = b;
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 12;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1022,50 +1079,38 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodes_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodes_);
-      }
-      if (retries_ != 0) {
-        output.writeInt32(3, retries_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passHost_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, passHost_);
+      if (nodes_ != null) {
+        output.writeMessage(2, getNodes());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, schema_);
+      if (schema_ != 0) {
+        output.writeInt32(5, schema_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCert_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, clientCert_);
+      if (tls_ != null) {
+        output.writeMessage(6, getTls());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clientKey_);
-      }
-      if (java.lang.Float.floatToRawIntBits(timeoutConnect_) != 0) {
-        output.writeFloat(10, timeoutConnect_);
-      }
-      if (java.lang.Float.floatToRawIntBits(timeoutSend_) != 0) {
-        output.writeFloat(11, timeoutSend_);
-      }
-      if (java.lang.Float.floatToRawIntBits(timeoutRead_) != 0) {
-        output.writeFloat(12, timeoutRead_);
+      if (timeout_ != null) {
+        output.writeMessage(7, getTimeout());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, id_);
       }
       if (createTime_ != 0L) {
-        output.writeInt64(14, createTime_);
+        output.writeInt64(9, createTime_);
       }
       if (updateTime_ != 0L) {
-        output.writeInt64(15, updateTime_);
+        output.writeInt64(10, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, key_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(12, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -1079,56 +1124,45 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodes_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodes_);
-      }
-      if (retries_ != 0) {
+      if (nodes_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retries_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passHost_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, passHost_);
+          .computeMessageSize(2, getNodes());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, schema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCert_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, clientCert_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clientKey_);
-      }
-      if (java.lang.Float.floatToRawIntBits(timeoutConnect_) != 0) {
+      if (schema_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, timeoutConnect_);
+          .computeInt32Size(5, schema_);
       }
-      if (java.lang.Float.floatToRawIntBits(timeoutSend_) != 0) {
+      if (tls_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, timeoutSend_);
+          .computeMessageSize(6, getTls());
       }
-      if (java.lang.Float.floatToRawIntBits(timeoutRead_) != 0) {
+      if (timeout_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(12, timeoutRead_);
+          .computeMessageSize(7, getTimeout());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, id_);
       }
       if (createTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(14, createTime_);
+          .computeInt64Size(9, createTime_);
       }
       if (updateTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, updateTime_);
+          .computeInt64Size(10, updateTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, key_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1147,39 +1181,36 @@ public final class PBModelApiDashboard {
 
       if (!getType()
           .equals(other.getType())) return false;
-      if (!getNodes()
-          .equals(other.getNodes())) return false;
-      if (getRetries()
-          != other.getRetries()) return false;
-      if (!getPassHost()
-          .equals(other.getPassHost())) return false;
+      if (hasNodes() != other.hasNodes()) return false;
+      if (hasNodes()) {
+        if (!getNodes()
+            .equals(other.getNodes())) return false;
+      }
       if (!getName()
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (!getSchema()
-          .equals(other.getSchema())) return false;
-      if (!getClientCert()
-          .equals(other.getClientCert())) return false;
-      if (!getClientKey()
-          .equals(other.getClientKey())) return false;
-      if (java.lang.Float.floatToIntBits(getTimeoutConnect())
-          != java.lang.Float.floatToIntBits(
-              other.getTimeoutConnect())) return false;
-      if (java.lang.Float.floatToIntBits(getTimeoutSend())
-          != java.lang.Float.floatToIntBits(
-              other.getTimeoutSend())) return false;
-      if (java.lang.Float.floatToIntBits(getTimeoutRead())
-          != java.lang.Float.floatToIntBits(
-              other.getTimeoutRead())) return false;
+      if (getSchema()
+          != other.getSchema()) return false;
+      if (hasTls() != other.hasTls()) return false;
+      if (hasTls()) {
+        if (!getTls()
+            .equals(other.getTls())) return false;
+      }
+      if (hasTimeout() != other.hasTimeout()) return false;
+      if (hasTimeout()) {
+        if (!getTimeout()
+            .equals(other.getTimeout())) return false;
+      }
       if (!getId()
           .equals(other.getId())) return false;
       if (getCreateTime()
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
-      if (!getKey()
-          .equals(other.getKey())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1193,31 +1224,24 @@ public final class PBModelApiDashboard {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + NODES_FIELD_NUMBER;
-      hash = (53 * hash) + getNodes().hashCode();
-      hash = (37 * hash) + RETRIES_FIELD_NUMBER;
-      hash = (53 * hash) + getRetries();
-      hash = (37 * hash) + PASS_HOST_FIELD_NUMBER;
-      hash = (53 * hash) + getPassHost().hashCode();
+      if (hasNodes()) {
+        hash = (37 * hash) + NODES_FIELD_NUMBER;
+        hash = (53 * hash) + getNodes().hashCode();
+      }
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
       hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
-      hash = (53 * hash) + getSchema().hashCode();
-      hash = (37 * hash) + CLIENT_CERT_FIELD_NUMBER;
-      hash = (53 * hash) + getClientCert().hashCode();
-      hash = (37 * hash) + CLIENT_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getClientKey().hashCode();
-      hash = (37 * hash) + TIMEOUT_CONNECT_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getTimeoutConnect());
-      hash = (37 * hash) + TIMEOUT_SEND_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getTimeoutSend());
-      hash = (37 * hash) + TIMEOUT_READ_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getTimeoutRead());
+      hash = (53 * hash) + getSchema();
+      if (hasTls()) {
+        hash = (37 * hash) + TLS_FIELD_NUMBER;
+        hash = (53 * hash) + getTls().hashCode();
+      }
+      if (hasTimeout()) {
+        hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeout().hashCode();
+      }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -1226,8 +1250,10 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1363,35 +1389,39 @@ public final class PBModelApiDashboard {
         super.clear();
         type_ = "";
 
-        nodes_ = "";
-
-        retries_ = 0;
-
-        passHost_ = "";
-
+        if (nodesBuilder_ == null) {
+          nodes_ = null;
+        } else {
+          nodes_ = null;
+          nodesBuilder_ = null;
+        }
         name_ = "";
 
         desc_ = "";
 
-        schema_ = "";
+        schema_ = 0;
 
-        clientCert_ = "";
-
-        clientKey_ = "";
-
-        timeoutConnect_ = 0F;
-
-        timeoutSend_ = 0F;
-
-        timeoutRead_ = 0F;
-
+        if (tlsBuilder_ == null) {
+          tls_ = null;
+        } else {
+          tls_ = null;
+          tlsBuilder_ = null;
+        }
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
+        } else {
+          timeout_ = null;
+          timeoutBuilder_ = null;
+        }
         id_ = "";
 
         createTime_ = 0L;
 
         updateTime_ = 0L;
 
-        key_ = "";
+        spaceId_ = "";
+
+        currStatus_ = 0;
 
         return this;
       }
@@ -1420,21 +1450,29 @@ public final class PBModelApiDashboard {
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity result = new com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity(this);
         result.type_ = type_;
-        result.nodes_ = nodes_;
-        result.retries_ = retries_;
-        result.passHost_ = passHost_;
+        if (nodesBuilder_ == null) {
+          result.nodes_ = nodes_;
+        } else {
+          result.nodes_ = nodesBuilder_.build();
+        }
         result.name_ = name_;
         result.desc_ = desc_;
         result.schema_ = schema_;
-        result.clientCert_ = clientCert_;
-        result.clientKey_ = clientKey_;
-        result.timeoutConnect_ = timeoutConnect_;
-        result.timeoutSend_ = timeoutSend_;
-        result.timeoutRead_ = timeoutRead_;
+        if (tlsBuilder_ == null) {
+          result.tls_ = tls_;
+        } else {
+          result.tls_ = tlsBuilder_.build();
+        }
+        if (timeoutBuilder_ == null) {
+          result.timeout_ = timeout_;
+        } else {
+          result.timeout_ = timeoutBuilder_.build();
+        }
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
-        result.key_ = key_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -1487,16 +1525,8 @@ public final class PBModelApiDashboard {
           type_ = other.type_;
           onChanged();
         }
-        if (!other.getNodes().isEmpty()) {
-          nodes_ = other.nodes_;
-          onChanged();
-        }
-        if (other.getRetries() != 0) {
-          setRetries(other.getRetries());
-        }
-        if (!other.getPassHost().isEmpty()) {
-          passHost_ = other.passHost_;
-          onChanged();
+        if (other.hasNodes()) {
+          mergeNodes(other.getNodes());
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
@@ -1506,26 +1536,14 @@ public final class PBModelApiDashboard {
           desc_ = other.desc_;
           onChanged();
         }
-        if (!other.getSchema().isEmpty()) {
-          schema_ = other.schema_;
-          onChanged();
+        if (other.getSchema() != 0) {
+          setSchema(other.getSchema());
         }
-        if (!other.getClientCert().isEmpty()) {
-          clientCert_ = other.clientCert_;
-          onChanged();
+        if (other.hasTls()) {
+          mergeTls(other.getTls());
         }
-        if (!other.getClientKey().isEmpty()) {
-          clientKey_ = other.clientKey_;
-          onChanged();
-        }
-        if (other.getTimeoutConnect() != 0F) {
-          setTimeoutConnect(other.getTimeoutConnect());
-        }
-        if (other.getTimeoutSend() != 0F) {
-          setTimeoutSend(other.getTimeoutSend());
-        }
-        if (other.getTimeoutRead() != 0F) {
-          setTimeoutRead(other.getTimeoutRead());
+        if (other.hasTimeout()) {
+          mergeTimeout(other.getTimeout());
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
@@ -1537,9 +1555,12 @@ public final class PBModelApiDashboard {
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
         }
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1666,239 +1687,159 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object nodes_ = "";
+      private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes nodes_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder> nodesBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
        * </pre>
        *
-       * <code>string nodes = 2;</code>
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+       * @return Whether the nodes field is set.
+       */
+      public boolean hasNodes() {
+        return nodesBuilder_ != null || nodes_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+       * </pre>
+       *
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
        * @return The nodes.
        */
-      public java.lang.String getNodes() {
-        java.lang.Object ref = nodes_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nodes_ = s;
-          return s;
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getNodes() {
+        if (nodesBuilder_ == null) {
+          return nodes_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.getDefaultInstance() : nodes_;
         } else {
-          return (java.lang.String) ref;
+          return nodesBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
        * </pre>
        *
-       * <code>string nodes = 2;</code>
-       * @return The bytes for nodes.
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
        */
-      public com.google.protobuf.ByteString
-          getNodesBytes() {
-        java.lang.Object ref = nodes_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nodes_ = b;
-          return b;
+      public Builder setNodes(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nodes_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          nodesBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
        * </pre>
        *
-       * <code>string nodes = 2;</code>
-       * @param value The nodes to set.
-       * @return This builder for chaining.
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder setNodes(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        nodes_ = value;
-        onChanged();
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          nodes_ = builderForValue.build();
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
        * </pre>
        *
-       * <code>string nodes = 2;</code>
-       * @return This builder for chaining.
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeNodes(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes value) {
+        if (nodesBuilder_ == null) {
+          if (nodes_ != null) {
+            nodes_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.newBuilder(nodes_).mergeFrom(value).buildPartial();
+          } else {
+            nodes_ = value;
+          }
+          onChanged();
+        } else {
+          nodesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+       * </pre>
+       *
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder clearNodes() {
-        
-        nodes_ = getDefaultInstance().getNodes();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes" gorm:"column:nodes;"
-       * </pre>
-       *
-       * <code>string nodes = 2;</code>
-       * @param value The bytes for nodes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNodesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nodes_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int retries_ ;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"retries" gorm:"column:retries;"
-       * </pre>
-       *
-       * <code>int32 retries = 3;</code>
-       * @return The retries.
-       */
-      @java.lang.Override
-      public int getRetries() {
-        return retries_;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"retries" gorm:"column:retries;"
-       * </pre>
-       *
-       * <code>int32 retries = 3;</code>
-       * @param value The retries to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetries(int value) {
-        
-        retries_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"retries" gorm:"column:retries;"
-       * </pre>
-       *
-       * <code>int32 retries = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetries() {
-        
-        retries_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object passHost_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-       * </pre>
-       *
-       * <code>string pass_host = 4;</code>
-       * @return The passHost.
-       */
-      public java.lang.String getPassHost() {
-        java.lang.Object ref = passHost_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          passHost_ = s;
-          return s;
+        if (nodesBuilder_ == null) {
+          nodes_ = null;
+          onChanged();
         } else {
-          return (java.lang.String) ref;
+          nodes_ = null;
+          nodesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+       * </pre>
+       *
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder getNodesBuilder() {
+        
+        onChanged();
+        return getNodesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
+       * </pre>
+       *
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder getNodesOrBuilder() {
+        if (nodesBuilder_ != null) {
+          return nodesBuilder_.getMessageOrBuilder();
+        } else {
+          return nodes_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.getDefaultInstance() : nodes_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
+       * &#64;inject_tag: json:"nodes gorm:"column:nodes;"
        * </pre>
        *
-       * <code>string pass_host = 4;</code>
-       * @return The bytes for passHost.
+       * <code>.model.UpstreamNodes nodes = 2 [(.validator.field) = { ... }</code>
        */
-      public com.google.protobuf.ByteString
-          getPassHostBytes() {
-        java.lang.Object ref = passHost_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          passHost_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder> 
+          getNodesFieldBuilder() {
+        if (nodesBuilder_ == null) {
+          nodesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder>(
+                  getNodes(),
+                  getParentForChildren(),
+                  isClean());
+          nodes_ = null;
         }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-       * </pre>
-       *
-       * <code>string pass_host = 4;</code>
-       * @param value The passHost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        passHost_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-       * </pre>
-       *
-       * <code>string pass_host = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassHost() {
-        
-        passHost_ = getDefaultInstance().getPassHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"pass_host" gorm:"column:pass_host;"
-       * </pre>
-       *
-       * <code>string pass_host = 4;</code>
-       * @param value The bytes for passHost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        passHost_ = value;
-        onChanged();
-        return this;
+        return nodesBuilder_;
       }
 
       private java.lang.Object name_ = "";
@@ -1907,7 +1848,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 5;</code>
+       * <code>string name = 3;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1927,7 +1868,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 5;</code>
+       * <code>string name = 3;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1948,7 +1889,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 5;</code>
+       * <code>string name = 3;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1967,7 +1908,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 5;</code>
+       * <code>string name = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1981,7 +1922,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 5;</code>
+       * <code>string name = 3;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -2003,7 +1944,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 6;</code>
+       * <code>string desc = 4;</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -2023,7 +1964,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 6;</code>
+       * <code>string desc = 4;</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -2044,7 +1985,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 6;</code>
+       * <code>string desc = 4;</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -2063,7 +2004,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 6;</code>
+       * <code>string desc = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -2077,7 +2018,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 6;</code>
+       * <code>string desc = 4;</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -2093,63 +2034,30 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object schema_ = "";
+      private int schema_ ;
       /**
        * <pre>
        * &#64;inject_tag: json:"schema" gorm:"column:schema;"
        * </pre>
        *
-       * <code>string schema = 7;</code>
+       * <code>int32 schema = 5;</code>
        * @return The schema.
        */
-      public java.lang.String getSchema() {
-        java.lang.Object ref = schema_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          schema_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getSchema() {
+        return schema_;
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"schema" gorm:"column:schema;"
        * </pre>
        *
-       * <code>string schema = 7;</code>
-       * @return The bytes for schema.
-       */
-      public com.google.protobuf.ByteString
-          getSchemaBytes() {
-        java.lang.Object ref = schema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          schema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"schema" gorm:"column:schema;"
-       * </pre>
-       *
-       * <code>string schema = 7;</code>
+       * <code>int32 schema = 5;</code>
        * @param value The schema to set.
        * @return This builder for chaining.
        */
-      public Builder setSchema(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSchema(int value) {
+        
         schema_ = value;
         onChanged();
         return this;
@@ -2159,355 +2067,324 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"schema" gorm:"column:schema;"
        * </pre>
        *
-       * <code>string schema = 7;</code>
+       * <code>int32 schema = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSchema() {
         
-        schema_ = getDefaultInstance().getSchema();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"schema" gorm:"column:schema;"
-       * </pre>
-       *
-       * <code>string schema = 7;</code>
-       * @param value The bytes for schema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        schema_ = value;
+        schema_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object clientCert_ = "";
+      private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS tls_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> tlsBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
        * </pre>
        *
-       * <code>string client_cert = 8;</code>
-       * @return The clientCert.
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       * @return Whether the tls field is set.
        */
-      public java.lang.String getClientCert() {
-        java.lang.Object ref = clientCert_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientCert_ = s;
-          return s;
+      public boolean hasTls() {
+        return tlsBuilder_ != null || tls_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       * @return The tls.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls() {
+        if (tlsBuilder_ == null) {
+          return tls_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
         } else {
-          return (java.lang.String) ref;
+          return tlsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
        * </pre>
        *
-       * <code>string client_cert = 8;</code>
-       * @return The bytes for clientCert.
+       * <code>.model.UpstreamTLS tls = 6;</code>
        */
-      public com.google.protobuf.ByteString
-          getClientCertBytes() {
-        java.lang.Object ref = clientCert_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientCert_ = b;
-          return b;
+      public Builder setTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
+        if (tlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tls_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          tlsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       */
+      public Builder setTls(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder builderForValue) {
+        if (tlsBuilder_ == null) {
+          tls_ = builderForValue.build();
+          onChanged();
+        } else {
+          tlsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       */
+      public Builder mergeTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
+        if (tlsBuilder_ == null) {
+          if (tls_ != null) {
+            tls_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.newBuilder(tls_).mergeFrom(value).buildPartial();
+          } else {
+            tls_ = value;
+          }
+          onChanged();
+        } else {
+          tlsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       */
+      public Builder clearTls() {
+        if (tlsBuilder_ == null) {
+          tls_ = null;
+          onChanged();
+        } else {
+          tls_ = null;
+          tlsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder getTlsBuilder() {
+        
+        onChanged();
+        return getTlsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
+       * </pre>
+       *
+       * <code>.model.UpstreamTLS tls = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
+        if (tlsBuilder_ != null) {
+          return tlsBuilder_.getMessageOrBuilder();
+        } else {
+          return tls_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
+       * &#64;inject_tag: json:"tls" gorm:"column:tls;"
        * </pre>
        *
-       * <code>string client_cert = 8;</code>
-       * @param value The clientCert to set.
-       * @return This builder for chaining.
+       * <code>.model.UpstreamTLS tls = 6;</code>
        */
-      public Builder setClientCert(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientCert_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
-       * </pre>
-       *
-       * <code>string client_cert = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientCert() {
-        
-        clientCert_ = getDefaultInstance().getClientCert();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"client_cert" gorm:"column:client_cert;"
-       * </pre>
-       *
-       * <code>string client_cert = 8;</code>
-       * @param value The bytes for clientCert to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientCertBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientCert_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> 
+          getTlsFieldBuilder() {
+        if (tlsBuilder_ == null) {
+          tlsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder>(
+                  getTls(),
+                  getParentForChildren(),
+                  isClean());
+          tls_ = null;
+        }
+        return tlsBuilder_;
       }
 
-      private java.lang.Object clientKey_ = "";
+      private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout timeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> timeoutBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
        * </pre>
        *
-       * <code>string client_key = 9;</code>
-       * @return The clientKey.
+       * <code>.model.Timeout timeout = 7;</code>
+       * @return Whether the timeout field is set.
        */
-      public java.lang.String getClientKey() {
-        java.lang.Object ref = clientKey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientKey_ = s;
-          return s;
+      public boolean hasTimeout() {
+        return timeoutBuilder_ != null || timeout_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       * @return The timeout.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout() {
+        if (timeoutBuilder_ == null) {
+          return timeout_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
         } else {
-          return (java.lang.String) ref;
+          return timeoutBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
        * </pre>
        *
-       * <code>string client_key = 9;</code>
-       * @return The bytes for clientKey.
+       * <code>.model.Timeout timeout = 7;</code>
        */
-      public com.google.protobuf.ByteString
-          getClientKeyBytes() {
-        java.lang.Object ref = clientKey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientKey_ = b;
-          return b;
+      public Builder setTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
+        if (timeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeout_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          timeoutBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder setTimeout(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder builderForValue) {
+        if (timeoutBuilder_ == null) {
+          timeout_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeoutBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder mergeTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
+        if (timeoutBuilder_ == null) {
+          if (timeout_ != null) {
+            timeout_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.newBuilder(timeout_).mergeFrom(value).buildPartial();
+          } else {
+            timeout_ = value;
+          }
+          onChanged();
+        } else {
+          timeoutBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder clearTimeout() {
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
+          onChanged();
+        } else {
+          timeout_ = null;
+          timeoutBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder getTimeoutBuilder() {
+        
+        onChanged();
+        return getTimeoutFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
+        if (timeoutBuilder_ != null) {
+          return timeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return timeout_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
+       * &#64;inject_tag: json:"timeout" gorm:"column:timeout;"
        * </pre>
        *
-       * <code>string client_key = 9;</code>
-       * @param value The clientKey to set.
-       * @return This builder for chaining.
+       * <code>.model.Timeout timeout = 7;</code>
        */
-      public Builder setClientKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientKey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
-       * </pre>
-       *
-       * <code>string client_key = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientKey() {
-        
-        clientKey_ = getDefaultInstance().getClientKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"client_key" gorm:"column:client_key;"
-       * </pre>
-       *
-       * <code>string client_key = 9;</code>
-       * @param value The bytes for clientKey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientKey_ = value;
-        onChanged();
-        return this;
-      }
-
-      private float timeoutConnect_ ;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
-       * </pre>
-       *
-       * <code>float timeout_connect = 10;</code>
-       * @return The timeoutConnect.
-       */
-      @java.lang.Override
-      public float getTimeoutConnect() {
-        return timeoutConnect_;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
-       * </pre>
-       *
-       * <code>float timeout_connect = 10;</code>
-       * @param value The timeoutConnect to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimeoutConnect(float value) {
-        
-        timeoutConnect_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
-       * </pre>
-       *
-       * <code>float timeout_connect = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimeoutConnect() {
-        
-        timeoutConnect_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float timeoutSend_ ;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
-       * </pre>
-       *
-       * <code>float timeout_send = 11;</code>
-       * @return The timeoutSend.
-       */
-      @java.lang.Override
-      public float getTimeoutSend() {
-        return timeoutSend_;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
-       * </pre>
-       *
-       * <code>float timeout_send = 11;</code>
-       * @param value The timeoutSend to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimeoutSend(float value) {
-        
-        timeoutSend_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
-       * </pre>
-       *
-       * <code>float timeout_send = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimeoutSend() {
-        
-        timeoutSend_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float timeoutRead_ ;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
-       * </pre>
-       *
-       * <code>float timeout_read = 12;</code>
-       * @return The timeoutRead.
-       */
-      @java.lang.Override
-      public float getTimeoutRead() {
-        return timeoutRead_;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
-       * </pre>
-       *
-       * <code>float timeout_read = 12;</code>
-       * @param value The timeoutRead to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimeoutRead(float value) {
-        
-        timeoutRead_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
-       * </pre>
-       *
-       * <code>float timeout_read = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimeoutRead() {
-        
-        timeoutRead_ = 0F;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> 
+          getTimeoutFieldBuilder() {
+        if (timeoutBuilder_ == null) {
+          timeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder>(
+                  getTimeout(),
+                  getParentForChildren(),
+                  isClean());
+          timeout_ = null;
+        }
+        return timeoutBuilder_;
       }
 
       private java.lang.Object id_ = "";
@@ -2516,7 +2393,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 13;</code>
+       * <code>string id = 8;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -2536,7 +2413,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 13;</code>
+       * <code>string id = 8;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -2557,7 +2434,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 13;</code>
+       * <code>string id = 8;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -2576,7 +2453,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 13;</code>
+       * <code>string id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -2590,7 +2467,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 13;</code>
+       * <code>string id = 8;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -2612,7 +2489,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 14;</code>
+       * <code>int64 create_time = 9;</code>
        * @return The createTime.
        */
       @java.lang.Override
@@ -2624,7 +2501,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 14;</code>
+       * <code>int64 create_time = 9;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
        */
@@ -2639,7 +2516,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 14;</code>
+       * <code>int64 create_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
@@ -2655,7 +2532,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 15;</code>
+       * <code>int64 update_time = 10;</code>
        * @return The updateTime.
        */
       @java.lang.Override
@@ -2667,7 +2544,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 15;</code>
+       * <code>int64 update_time = 10;</code>
        * @param value The updateTime to set.
        * @return This builder for chaining.
        */
@@ -2682,7 +2559,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 15;</code>
+       * <code>int64 update_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateTime() {
@@ -2692,22 +2569,22 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"key" gorm:"column:key;"
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string key = 16;</code>
-       * @return The key.
+       * <code>string space_id = 11;</code>
+       * @return The spaceId.
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          key_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2715,20 +2592,20 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"key" gorm:"column:key;"
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string key = 16;</code>
-       * @return The bytes for key.
+       * <code>string space_id = 11;</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          key_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2736,54 +2613,128 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"key" gorm:"column:key;"
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string key = 16;</code>
-       * @param value The key to set.
+       * <code>string space_id = 11;</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setKey(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        key_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"key" gorm:"column:key;"
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string key = 16;</code>
+       * <code>string space_id = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKey() {
+      public Builder clearSpaceId() {
         
-        key_ = getDefaultInstance().getKey();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"key" gorm:"column:key;"
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string key = 16;</code>
-       * @param value The bytes for key to set.
+       * <code>string space_id = 11;</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        key_ = value;
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -2906,20 +2857,10 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"priority" gorm:"column:priority;"
-     * </pre>
-     *
-     * <code>int32 priority = 4;</code>
-     * @return The priority.
-     */
-    int getPriority();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"methods" gorm:"column:methods;"
      * </pre>
      *
-     * <code>string methods = 5;</code>
+     * <code>string methods = 4;</code>
      * @return The methods.
      */
     java.lang.String getMethods();
@@ -2928,7 +2869,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"methods" gorm:"column:methods;"
      * </pre>
      *
-     * <code>string methods = 5;</code>
+     * <code>string methods = 4;</code>
      * @return The bytes for methods.
      */
     com.google.protobuf.ByteString
@@ -2936,30 +2877,30 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+     * &#64;inject_tag: json:"host" gorm:"column:host;"
      * </pre>
      *
-     * <code>string hosts = 6;</code>
-     * @return The hosts.
+     * <code>string host = 5;</code>
+     * @return The host.
      */
-    java.lang.String getHosts();
+    java.lang.String getHost();
     /**
      * <pre>
-     * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+     * &#64;inject_tag: json:"host" gorm:"column:host;"
      * </pre>
      *
-     * <code>string hosts = 6;</code>
-     * @return The bytes for hosts.
+     * <code>string host = 5;</code>
+     * @return The bytes for host.
      */
     com.google.protobuf.ByteString
-        getHostsBytes();
+        getHostBytes();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
      * </pre>
      *
-     * <code>string remote_addrs = 7;</code>
+     * <code>string remote_addrs = 6;</code>
      * @return The remoteAddrs.
      */
     java.lang.String getRemoteAddrs();
@@ -2968,7 +2909,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
      * </pre>
      *
-     * <code>string remote_addrs = 7;</code>
+     * <code>string remote_addrs = 6;</code>
      * @return The bytes for remoteAddrs.
      */
     com.google.protobuf.ByteString
@@ -2979,7 +2920,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
      * </pre>
      *
-     * <code>string upstream_id = 8;</code>
+     * <code>string upstream_id = 7;</code>
      * @return The upstreamId.
      */
     java.lang.String getUpstreamId();
@@ -2988,7 +2929,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
      * </pre>
      *
-     * <code>string upstream_id = 8;</code>
+     * <code>string upstream_id = 7;</code>
      * @return The bytes for upstreamId.
      */
     com.google.protobuf.ByteString
@@ -2996,20 +2937,29 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
      * </pre>
      *
-     * <code>int32 status = 9;</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    int getStatus();
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 9;</code>
      * @return The id.
      */
     java.lang.String getId();
@@ -3018,7 +2968,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 9;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -3029,7 +2979,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
      * </pre>
      *
-     * <code>int64 create_time = 11;</code>
+     * <code>int64 create_time = 10;</code>
      * @return The createTime.
      */
     long getCreateTime();
@@ -3039,7 +2989,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
      * </pre>
      *
-     * <code>int64 update_time = 12;</code>
+     * <code>int64 update_time = 11;</code>
      * @return The updateTime.
      */
     long getUpdateTime();
@@ -3049,7 +2999,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 13;</code>
+     * <code>string plugins = 12;</code>
      * @return The plugins.
      */
     java.lang.String getPlugins();
@@ -3058,7 +3008,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 13;</code>
+     * <code>string plugins = 12;</code>
      * @return The bytes for plugins.
      */
     com.google.protobuf.ByteString
@@ -3069,7 +3019,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 14;</code>
+     * <code>string api_service_id = 13;</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
@@ -3078,11 +3028,71 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 14;</code>
+     * <code>string api_service_id = 13;</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
         getApiServiceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+     * </pre>
+     *
+     * <code>string api_version_id = 14;</code>
+     * @return The apiVersionId.
+     */
+    java.lang.String getApiVersionId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+     * </pre>
+     *
+     * <code>string api_version_id = 14;</code>
+     * @return The bytes for apiVersionId.
+     */
+    com.google.protobuf.ByteString
+        getApiVersionIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+     * </pre>
+     *
+     * <code>string proxy_uri = 15;</code>
+     * @return The proxyUri.
+     */
+    java.lang.String getProxyUri();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+     * </pre>
+     *
+     * <code>string proxy_uri = 15;</code>
+     * @return The bytes for proxyUri.
+     */
+    com.google.protobuf.ByteString
+        getProxyUriBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 16;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 16;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
   }
   /**
    * Protobuf type {@code model.RouteEntity}
@@ -3101,12 +3111,16 @@ public final class PBModelApiDashboard {
       name_ = "";
       desc_ = "";
       methods_ = "";
-      hosts_ = "";
+      host_ = "";
       remoteAddrs_ = "";
       upstreamId_ = "";
+      currStatus_ = 0;
       id_ = "";
       plugins_ = "";
       apiServiceId_ = "";
+      apiVersionId_ = "";
+      proxyUri_ = "";
+      spaceId_ = "";
     }
 
     @java.lang.Override
@@ -3157,66 +3171,80 @@ public final class PBModelApiDashboard {
               desc_ = s;
               break;
             }
-            case 32: {
-
-              priority_ = input.readInt32();
-              break;
-            }
-            case 42: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               methods_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hosts_ = s;
+              host_ = s;
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               remoteAddrs_ = s;
               break;
             }
-            case 66: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               upstreamId_ = s;
               break;
             }
-            case 72: {
+            case 64: {
+              int rawValue = input.readEnum();
 
-              status_ = input.readInt32();
+              currStatus_ = rawValue;
               break;
             }
-            case 82: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
               break;
             }
-            case 88: {
+            case 80: {
 
               createTime_ = input.readInt64();
               break;
             }
-            case 96: {
+            case 88: {
 
               updateTime_ = input.readInt64();
               break;
             }
-            case 106: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               plugins_ = s;
               break;
             }
-            case 114: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiServiceId_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiVersionId_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proxyUri_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
               break;
             }
             default: {
@@ -3389,29 +3417,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int PRIORITY_FIELD_NUMBER = 4;
-    private int priority_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"priority" gorm:"column:priority;"
-     * </pre>
-     *
-     * <code>int32 priority = 4;</code>
-     * @return The priority.
-     */
-    @java.lang.Override
-    public int getPriority() {
-      return priority_;
-    }
-
-    public static final int METHODS_FIELD_NUMBER = 5;
+    public static final int METHODS_FIELD_NUMBER = 4;
     private volatile java.lang.Object methods_;
     /**
      * <pre>
      * &#64;inject_tag: json:"methods" gorm:"column:methods;"
      * </pre>
      *
-     * <code>string methods = 5;</code>
+     * <code>string methods = 4;</code>
      * @return The methods.
      */
     @java.lang.Override
@@ -3432,7 +3445,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"methods" gorm:"column:methods;"
      * </pre>
      *
-     * <code>string methods = 5;</code>
+     * <code>string methods = 4;</code>
      * @return The bytes for methods.
      */
     @java.lang.Override
@@ -3450,60 +3463,60 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int HOSTS_FIELD_NUMBER = 6;
-    private volatile java.lang.Object hosts_;
+    public static final int HOST_FIELD_NUMBER = 5;
+    private volatile java.lang.Object host_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+     * &#64;inject_tag: json:"host" gorm:"column:host;"
      * </pre>
      *
-     * <code>string hosts = 6;</code>
-     * @return The hosts.
+     * <code>string host = 5;</code>
+     * @return The host.
      */
     @java.lang.Override
-    public java.lang.String getHosts() {
-      java.lang.Object ref = hosts_;
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hosts_ = s;
+        host_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+     * &#64;inject_tag: json:"host" gorm:"column:host;"
      * </pre>
      *
-     * <code>string hosts = 6;</code>
-     * @return The bytes for hosts.
+     * <code>string host = 5;</code>
+     * @return The bytes for host.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHostsBytes() {
-      java.lang.Object ref = hosts_;
+        getHostBytes() {
+      java.lang.Object ref = host_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hosts_ = b;
+        host_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int REMOTE_ADDRS_FIELD_NUMBER = 7;
+    public static final int REMOTE_ADDRS_FIELD_NUMBER = 6;
     private volatile java.lang.Object remoteAddrs_;
     /**
      * <pre>
      * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
      * </pre>
      *
-     * <code>string remote_addrs = 7;</code>
+     * <code>string remote_addrs = 6;</code>
      * @return The remoteAddrs.
      */
     @java.lang.Override
@@ -3524,7 +3537,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
      * </pre>
      *
-     * <code>string remote_addrs = 7;</code>
+     * <code>string remote_addrs = 6;</code>
      * @return The bytes for remoteAddrs.
      */
     @java.lang.Override
@@ -3542,14 +3555,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int UPSTREAM_ID_FIELD_NUMBER = 8;
+    public static final int UPSTREAM_ID_FIELD_NUMBER = 7;
     private volatile java.lang.Object upstreamId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
      * </pre>
      *
-     * <code>string upstream_id = 8;</code>
+     * <code>string upstream_id = 7;</code>
      * @return The upstreamId.
      */
     @java.lang.Override
@@ -3570,7 +3583,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
      * </pre>
      *
-     * <code>string upstream_id = 8;</code>
+     * <code>string upstream_id = 7;</code>
      * @return The bytes for upstreamId.
      */
     @java.lang.Override
@@ -3588,29 +3601,41 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 9;
-    private int status_;
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
      * </pre>
      *
-     * <code>int32 status = 9;</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    @java.lang.Override
-    public int getStatus() {
-      return status_;
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
-    public static final int ID_FIELD_NUMBER = 10;
+    public static final int ID_FIELD_NUMBER = 9;
     private volatile java.lang.Object id_;
     /**
      * <pre>
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 9;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -3631,7 +3656,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 9;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -3649,14 +3674,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int CREATE_TIME_FIELD_NUMBER = 11;
+    public static final int CREATE_TIME_FIELD_NUMBER = 10;
     private long createTime_;
     /**
      * <pre>
      * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
      * </pre>
      *
-     * <code>int64 create_time = 11;</code>
+     * <code>int64 create_time = 10;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -3664,14 +3689,14 @@ public final class PBModelApiDashboard {
       return createTime_;
     }
 
-    public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+    public static final int UPDATE_TIME_FIELD_NUMBER = 11;
     private long updateTime_;
     /**
      * <pre>
      * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
      * </pre>
      *
-     * <code>int64 update_time = 12;</code>
+     * <code>int64 update_time = 11;</code>
      * @return The updateTime.
      */
     @java.lang.Override
@@ -3679,14 +3704,14 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int PLUGINS_FIELD_NUMBER = 13;
+    public static final int PLUGINS_FIELD_NUMBER = 12;
     private volatile java.lang.Object plugins_;
     /**
      * <pre>
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 13;</code>
+     * <code>string plugins = 12;</code>
      * @return The plugins.
      */
     @java.lang.Override
@@ -3707,7 +3732,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
      * </pre>
      *
-     * <code>string plugins = 13;</code>
+     * <code>string plugins = 12;</code>
      * @return The bytes for plugins.
      */
     @java.lang.Override
@@ -3725,14 +3750,14 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 14;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 13;
     private volatile java.lang.Object apiServiceId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 14;</code>
+     * <code>string api_service_id = 13;</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -3753,7 +3778,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
      * </pre>
      *
-     * <code>string api_service_id = 14;</code>
+     * <code>string api_service_id = 13;</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -3765,6 +3790,144 @@ public final class PBModelApiDashboard {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         apiServiceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_VERSION_ID_FIELD_NUMBER = 14;
+    private volatile java.lang.Object apiVersionId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+     * </pre>
+     *
+     * <code>string api_version_id = 14;</code>
+     * @return The apiVersionId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiVersionId() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiVersionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+     * </pre>
+     *
+     * <code>string api_version_id = 14;</code>
+     * @return The bytes for apiVersionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiVersionIdBytes() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROXY_URI_FIELD_NUMBER = 15;
+    private volatile java.lang.Object proxyUri_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+     * </pre>
+     *
+     * <code>string proxy_uri = 15;</code>
+     * @return The proxyUri.
+     */
+    @java.lang.Override
+    public java.lang.String getProxyUri() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+     * </pre>
+     *
+     * <code>string proxy_uri = 15;</code>
+     * @return The bytes for proxyUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProxyUriBytes() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 16;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 16;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 16;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3794,38 +3957,44 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
       }
-      if (priority_ != 0) {
-        output.writeInt32(4, priority_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(methods_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, methods_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, methods_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hosts_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, hosts_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, host_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteAddrs_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, remoteAddrs_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, remoteAddrs_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, upstreamId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, upstreamId_);
       }
-      if (status_ != 0) {
-        output.writeInt32(9, status_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, id_);
       }
       if (createTime_ != 0L) {
-        output.writeInt64(11, createTime_);
+        output.writeInt64(10, createTime_);
       }
       if (updateTime_ != 0L) {
-        output.writeInt64(12, updateTime_);
+        output.writeInt64(11, updateTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plugins_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, plugins_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, plugins_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, spaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3845,42 +4014,47 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
       }
-      if (priority_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, priority_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(methods_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, methods_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, methods_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hosts_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, hosts_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, host_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteAddrs_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, remoteAddrs_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, remoteAddrs_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, upstreamId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, upstreamId_);
       }
-      if (status_ != 0) {
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, status_);
+          .computeEnumSize(8, currStatus_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, id_);
       }
       if (createTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, createTime_);
+          .computeInt64Size(10, createTime_);
       }
       if (updateTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, updateTime_);
+          .computeInt64Size(11, updateTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plugins_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, plugins_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, plugins_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, spaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3903,18 +4077,15 @@ public final class PBModelApiDashboard {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (getPriority()
-          != other.getPriority()) return false;
       if (!getMethods()
           .equals(other.getMethods())) return false;
-      if (!getHosts()
-          .equals(other.getHosts())) return false;
+      if (!getHost()
+          .equals(other.getHost())) return false;
       if (!getRemoteAddrs()
           .equals(other.getRemoteAddrs())) return false;
       if (!getUpstreamId()
           .equals(other.getUpstreamId())) return false;
-      if (getStatus()
-          != other.getStatus()) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (getCreateTime()
@@ -3925,6 +4096,12 @@ public final class PBModelApiDashboard {
           .equals(other.getPlugins())) return false;
       if (!getApiServiceId()
           .equals(other.getApiServiceId())) return false;
+      if (!getApiVersionId()
+          .equals(other.getApiVersionId())) return false;
+      if (!getProxyUri()
+          .equals(other.getProxyUri())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3942,18 +4119,16 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-      hash = (53 * hash) + getPriority();
       hash = (37 * hash) + METHODS_FIELD_NUMBER;
       hash = (53 * hash) + getMethods().hashCode();
-      hash = (37 * hash) + HOSTS_FIELD_NUMBER;
-      hash = (53 * hash) + getHosts().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + REMOTE_ADDRS_FIELD_NUMBER;
       hash = (53 * hash) + getRemoteAddrs().hashCode();
       hash = (37 * hash) + UPSTREAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUpstreamId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -3966,6 +4141,12 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getPlugins().hashCode();
       hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApiServiceId().hashCode();
+      hash = (37 * hash) + API_VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiVersionId().hashCode();
+      hash = (37 * hash) + PROXY_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyUri().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4105,17 +4286,15 @@ public final class PBModelApiDashboard {
 
         desc_ = "";
 
-        priority_ = 0;
-
         methods_ = "";
 
-        hosts_ = "";
+        host_ = "";
 
         remoteAddrs_ = "";
 
         upstreamId_ = "";
 
-        status_ = 0;
+        currStatus_ = 0;
 
         id_ = "";
 
@@ -4126,6 +4305,12 @@ public final class PBModelApiDashboard {
         plugins_ = "";
 
         apiServiceId_ = "";
+
+        apiVersionId_ = "";
+
+        proxyUri_ = "";
+
+        spaceId_ = "";
 
         return this;
       }
@@ -4156,17 +4341,19 @@ public final class PBModelApiDashboard {
         result.uri_ = uri_;
         result.name_ = name_;
         result.desc_ = desc_;
-        result.priority_ = priority_;
         result.methods_ = methods_;
-        result.hosts_ = hosts_;
+        result.host_ = host_;
         result.remoteAddrs_ = remoteAddrs_;
         result.upstreamId_ = upstreamId_;
-        result.status_ = status_;
+        result.currStatus_ = currStatus_;
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
         result.plugins_ = plugins_;
         result.apiServiceId_ = apiServiceId_;
+        result.apiVersionId_ = apiVersionId_;
+        result.proxyUri_ = proxyUri_;
+        result.spaceId_ = spaceId_;
         onBuilt();
         return result;
       }
@@ -4227,15 +4414,12 @@ public final class PBModelApiDashboard {
           desc_ = other.desc_;
           onChanged();
         }
-        if (other.getPriority() != 0) {
-          setPriority(other.getPriority());
-        }
         if (!other.getMethods().isEmpty()) {
           methods_ = other.methods_;
           onChanged();
         }
-        if (!other.getHosts().isEmpty()) {
-          hosts_ = other.hosts_;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
           onChanged();
         }
         if (!other.getRemoteAddrs().isEmpty()) {
@@ -4246,8 +4430,8 @@ public final class PBModelApiDashboard {
           upstreamId_ = other.upstreamId_;
           onChanged();
         }
-        if (other.getStatus() != 0) {
-          setStatus(other.getStatus());
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
@@ -4265,6 +4449,18 @@ public final class PBModelApiDashboard {
         }
         if (!other.getApiServiceId().isEmpty()) {
           apiServiceId_ = other.apiServiceId_;
+          onChanged();
+        }
+        if (!other.getApiVersionId().isEmpty()) {
+          apiVersionId_ = other.apiVersionId_;
+          onChanged();
+        }
+        if (!other.getProxyUri().isEmpty()) {
+          proxyUri_ = other.proxyUri_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4584,56 +4780,13 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private int priority_ ;
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"priority" gorm:"column:priority;"
-       * </pre>
-       *
-       * <code>int32 priority = 4;</code>
-       * @return The priority.
-       */
-      @java.lang.Override
-      public int getPriority() {
-        return priority_;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"priority" gorm:"column:priority;"
-       * </pre>
-       *
-       * <code>int32 priority = 4;</code>
-       * @param value The priority to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPriority(int value) {
-        
-        priority_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"priority" gorm:"column:priority;"
-       * </pre>
-       *
-       * <code>int32 priority = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPriority() {
-        
-        priority_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object methods_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"methods" gorm:"column:methods;"
        * </pre>
        *
-       * <code>string methods = 5;</code>
+       * <code>string methods = 4;</code>
        * @return The methods.
        */
       public java.lang.String getMethods() {
@@ -4653,7 +4806,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"methods" gorm:"column:methods;"
        * </pre>
        *
-       * <code>string methods = 5;</code>
+       * <code>string methods = 4;</code>
        * @return The bytes for methods.
        */
       public com.google.protobuf.ByteString
@@ -4674,7 +4827,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"methods" gorm:"column:methods;"
        * </pre>
        *
-       * <code>string methods = 5;</code>
+       * <code>string methods = 4;</code>
        * @param value The methods to set.
        * @return This builder for chaining.
        */
@@ -4693,7 +4846,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"methods" gorm:"column:methods;"
        * </pre>
        *
-       * <code>string methods = 5;</code>
+       * <code>string methods = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMethods() {
@@ -4707,7 +4860,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"methods" gorm:"column:methods;"
        * </pre>
        *
-       * <code>string methods = 5;</code>
+       * <code>string methods = 4;</code>
        * @param value The bytes for methods to set.
        * @return This builder for chaining.
        */
@@ -4723,22 +4876,22 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object hosts_ = "";
+      private java.lang.Object host_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+       * &#64;inject_tag: json:"host" gorm:"column:host;"
        * </pre>
        *
-       * <code>string hosts = 6;</code>
-       * @return The hosts.
+       * <code>string host = 5;</code>
+       * @return The host.
        */
-      public java.lang.String getHosts() {
-        java.lang.Object ref = hosts_;
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hosts_ = s;
+          host_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4746,20 +4899,20 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+       * &#64;inject_tag: json:"host" gorm:"column:host;"
        * </pre>
        *
-       * <code>string hosts = 6;</code>
-       * @return The bytes for hosts.
+       * <code>string host = 5;</code>
+       * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
-          getHostsBytes() {
-        java.lang.Object ref = hosts_;
+          getHostBytes() {
+        java.lang.Object ref = host_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hosts_ = b;
+          host_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4767,54 +4920,54 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+       * &#64;inject_tag: json:"host" gorm:"column:host;"
        * </pre>
        *
-       * <code>string hosts = 6;</code>
-       * @param value The hosts to set.
+       * <code>string host = 5;</code>
+       * @param value The host to set.
        * @return This builder for chaining.
        */
-      public Builder setHosts(
+      public Builder setHost(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        hosts_ = value;
+        host_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+       * &#64;inject_tag: json:"host" gorm:"column:host;"
        * </pre>
        *
-       * <code>string hosts = 6;</code>
+       * <code>string host = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHosts() {
+      public Builder clearHost() {
         
-        hosts_ = getDefaultInstance().getHosts();
+        host_ = getDefaultInstance().getHost();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"hosts" gorm:"column:hosts;"
+       * &#64;inject_tag: json:"host" gorm:"column:host;"
        * </pre>
        *
-       * <code>string hosts = 6;</code>
-       * @param value The bytes for hosts to set.
+       * <code>string host = 5;</code>
+       * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
-      public Builder setHostsBytes(
+      public Builder setHostBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        hosts_ = value;
+        host_ = value;
         onChanged();
         return this;
       }
@@ -4825,7 +4978,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
        * </pre>
        *
-       * <code>string remote_addrs = 7;</code>
+       * <code>string remote_addrs = 6;</code>
        * @return The remoteAddrs.
        */
       public java.lang.String getRemoteAddrs() {
@@ -4845,7 +4998,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
        * </pre>
        *
-       * <code>string remote_addrs = 7;</code>
+       * <code>string remote_addrs = 6;</code>
        * @return The bytes for remoteAddrs.
        */
       public com.google.protobuf.ByteString
@@ -4866,7 +5019,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
        * </pre>
        *
-       * <code>string remote_addrs = 7;</code>
+       * <code>string remote_addrs = 6;</code>
        * @param value The remoteAddrs to set.
        * @return This builder for chaining.
        */
@@ -4885,7 +5038,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
        * </pre>
        *
-       * <code>string remote_addrs = 7;</code>
+       * <code>string remote_addrs = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemoteAddrs() {
@@ -4899,7 +5052,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
        * </pre>
        *
-       * <code>string remote_addrs = 7;</code>
+       * <code>string remote_addrs = 6;</code>
        * @param value The bytes for remoteAddrs to set.
        * @return This builder for chaining.
        */
@@ -4921,7 +5074,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
        * </pre>
        *
-       * <code>string upstream_id = 8;</code>
+       * <code>string upstream_id = 7;</code>
        * @return The upstreamId.
        */
       public java.lang.String getUpstreamId() {
@@ -4941,7 +5094,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
        * </pre>
        *
-       * <code>string upstream_id = 8;</code>
+       * <code>string upstream_id = 7;</code>
        * @return The bytes for upstreamId.
        */
       public com.google.protobuf.ByteString
@@ -4962,7 +5115,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
        * </pre>
        *
-       * <code>string upstream_id = 8;</code>
+       * <code>string upstream_id = 7;</code>
        * @param value The upstreamId to set.
        * @return This builder for chaining.
        */
@@ -4981,7 +5134,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
        * </pre>
        *
-       * <code>string upstream_id = 8;</code>
+       * <code>string upstream_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpstreamId() {
@@ -4995,7 +5148,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
        * </pre>
        *
-       * <code>string upstream_id = 8;</code>
+       * <code>string upstream_id = 7;</code>
        * @param value The bytes for upstreamId to set.
        * @return This builder for chaining.
        */
@@ -5011,45 +5164,76 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private int status_ ;
+      private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
        * </pre>
        *
-       * <code>int32 status = 9;</code>
-       * @return The status.
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The enum numeric value on the wire for currStatus.
        */
-      @java.lang.Override
-      public int getStatus() {
-        return status_;
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
        * </pre>
        *
-       * <code>int32 status = 9;</code>
-       * @param value The status to set.
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(int value) {
+      public Builder setCurrStatusValue(int value) {
         
-        status_ = value;
+        currStatus_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
        * </pre>
        *
-       * <code>int32 status = 9;</code>
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        status_ = 0;
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -5060,7 +5244,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 9;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -5080,7 +5264,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 9;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -5101,7 +5285,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 9;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -5120,7 +5304,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -5134,7 +5318,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 9;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -5156,7 +5340,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @return The createTime.
        */
       @java.lang.Override
@@ -5168,7 +5352,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
        */
@@ -5183,7 +5367,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"create_time" gorm:"column:create_time;"
        * </pre>
        *
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
@@ -5199,7 +5383,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @return The updateTime.
        */
       @java.lang.Override
@@ -5211,7 +5395,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @param value The updateTime to set.
        * @return This builder for chaining.
        */
@@ -5226,7 +5410,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"update_time" gorm:"column:update_time;"
        * </pre>
        *
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateTime() {
@@ -5242,7 +5426,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 13;</code>
+       * <code>string plugins = 12;</code>
        * @return The plugins.
        */
       public java.lang.String getPlugins() {
@@ -5262,7 +5446,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 13;</code>
+       * <code>string plugins = 12;</code>
        * @return The bytes for plugins.
        */
       public com.google.protobuf.ByteString
@@ -5283,7 +5467,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 13;</code>
+       * <code>string plugins = 12;</code>
        * @param value The plugins to set.
        * @return This builder for chaining.
        */
@@ -5302,7 +5486,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 13;</code>
+       * <code>string plugins = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlugins() {
@@ -5316,7 +5500,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"plugins" gorm:"column:plugins;"
        * </pre>
        *
-       * <code>string plugins = 13;</code>
+       * <code>string plugins = 12;</code>
        * @param value The bytes for plugins to set.
        * @return This builder for chaining.
        */
@@ -5338,7 +5522,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 14;</code>
+       * <code>string api_service_id = 13;</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -5358,7 +5542,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 14;</code>
+       * <code>string api_service_id = 13;</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -5379,7 +5563,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 14;</code>
+       * <code>string api_service_id = 13;</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -5398,7 +5582,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 14;</code>
+       * <code>string api_service_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -5412,7 +5596,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
        * </pre>
        *
-       * <code>string api_service_id = 14;</code>
+       * <code>string api_service_id = 13;</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -5424,6 +5608,294 @@ public final class PBModelApiDashboard {
   checkByteStringIsUtf8(value);
         
         apiServiceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiVersionId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+       * </pre>
+       *
+       * <code>string api_version_id = 14;</code>
+       * @return The apiVersionId.
+       */
+      public java.lang.String getApiVersionId() {
+        java.lang.Object ref = apiVersionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiVersionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+       * </pre>
+       *
+       * <code>string api_version_id = 14;</code>
+       * @return The bytes for apiVersionId.
+       */
+      public com.google.protobuf.ByteString
+          getApiVersionIdBytes() {
+        java.lang.Object ref = apiVersionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiVersionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+       * </pre>
+       *
+       * <code>string api_version_id = 14;</code>
+       * @param value The apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+       * </pre>
+       *
+       * <code>string api_version_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiVersionId() {
+        
+        apiVersionId_ = getDefaultInstance().getApiVersionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id" gorm:"column:api_version_id;"
+       * </pre>
+       *
+       * <code>string api_version_id = 14;</code>
+       * @param value The bytes for apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object proxyUri_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+       * </pre>
+       *
+       * <code>string proxy_uri = 15;</code>
+       * @return The proxyUri.
+       */
+      public java.lang.String getProxyUri() {
+        java.lang.Object ref = proxyUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proxyUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+       * </pre>
+       *
+       * <code>string proxy_uri = 15;</code>
+       * @return The bytes for proxyUri.
+       */
+      public com.google.protobuf.ByteString
+          getProxyUriBytes() {
+        java.lang.Object ref = proxyUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proxyUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+       * </pre>
+       *
+       * <code>string proxy_uri = 15;</code>
+       * @param value The proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+       * </pre>
+       *
+       * <code>string proxy_uri = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProxyUri() {
+        
+        proxyUri_ = getDefaultInstance().getProxyUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri" gorm:"column:proxy_uri;"
+       * </pre>
+       *
+       * <code>string proxy_uri = 15;</code>
+       * @param value The bytes for proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 16;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 16;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 16;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 16;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
         onChanged();
         return this;
       }
@@ -5583,6 +6055,45 @@ public final class PBModelApiDashboard {
      */
     com.google.protobuf.ByteString
         getKeyBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.SSLEntity}
@@ -5601,6 +6112,8 @@ public final class PBModelApiDashboard {
       snis_ = "";
       cert_ = "";
       key_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -5665,6 +6178,18 @@ public final class PBModelApiDashboard {
               java.lang.String s = input.readStringRequireUtf8();
 
               key_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -5913,6 +6438,79 @@ public final class PBModelApiDashboard {
       }
     }
 
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5945,6 +6543,12 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, key_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5974,6 +6578,13 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, key_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, currStatus_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6001,6 +6612,9 @@ public final class PBModelApiDashboard {
           .equals(other.getCert())) return false;
       if (!getKey()
           .equals(other.getKey())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6026,6 +6640,10 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getCert().hashCode();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6171,6 +6789,10 @@ public final class PBModelApiDashboard {
 
         key_ = "";
 
+        spaceId_ = "";
+
+        currStatus_ = 0;
+
         return this;
       }
 
@@ -6203,6 +6825,8 @@ public final class PBModelApiDashboard {
         result.snis_ = snis_;
         result.cert_ = cert_;
         result.key_ = key_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -6272,6 +6896,13 @@ public final class PBModelApiDashboard {
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6771,6 +7402,176 @@ public final class PBModelApiDashboard {
         onChanged();
         return this;
       }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6950,23 +7751,23 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-     * @return The userId.
+     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
      */
-    java.lang.String getUserId();
+    java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
+     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
-        getUserIdBytes();
+        getCreatedByBytes();
 
     /**
      * <pre>
@@ -6977,6 +7778,45 @@ public final class PBModelApiDashboard {
      * @return The apiCount.
      */
     int getApiCount();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 10;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 10;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 11;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 11;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.ApiServiceEntity}
@@ -6996,7 +7836,9 @@ public final class PBModelApiDashboard {
       desc_ = "";
       authKeyId_ = "";
       domain_ = "";
-      userId_ = "";
+      createdBy_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -7072,12 +7914,24 @@ public final class PBModelApiDashboard {
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              createdBy_ = s;
               break;
             }
             case 72: {
 
               apiCount_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -7372,46 +8226,46 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 8;
-    private volatile java.lang.Object userId_;
+    public static final int CREATED_BY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-     * @return The userId.
+     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
      */
     @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        createdBy_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
+     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7431,6 +8285,79 @@ public final class PBModelApiDashboard {
     @java.lang.Override
     public int getApiCount() {
       return apiCount_;
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 10;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 10;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 11;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 11;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 11;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7468,11 +8395,17 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, domain_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
       }
       if (apiCount_ != 0) {
         output.writeInt32(9, apiCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(11, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -7506,12 +8439,19 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, domain_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
       }
       if (apiCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, apiCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7542,10 +8482,13 @@ public final class PBModelApiDashboard {
           .equals(other.getAuthKeyId())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (getApiCount()
           != other.getApiCount()) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7573,10 +8516,14 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getAuthKeyId().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + API_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getApiCount();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7724,9 +8671,13 @@ public final class PBModelApiDashboard {
 
         domain_ = "";
 
-        userId_ = "";
+        createdBy_ = "";
 
         apiCount_ = 0;
+
+        spaceId_ = "";
+
+        currStatus_ = 0;
 
         return this;
       }
@@ -7761,8 +8712,10 @@ public final class PBModelApiDashboard {
         result.desc_ = desc_;
         result.authKeyId_ = authKeyId_;
         result.domain_ = domain_;
-        result.userId_ = userId_;
+        result.createdBy_ = createdBy_;
         result.apiCount_ = apiCount_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -7837,12 +8790,19 @@ public final class PBModelApiDashboard {
           domain_ = other.domain_;
           onChanged();
         }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         if (other.getApiCount() != 0) {
           setApiCount(other.getApiCount());
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8439,22 +9399,22 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object userId_ = "";
+      private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-       * @return The userId.
+       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
        */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
+          createdBy_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8462,20 +9422,20 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-       * @return The bytes for userId.
+       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userId_ = b;
+          createdBy_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8483,54 +9443,54 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-       * @param value The userId to set.
+       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setUserId(
+      public Builder setCreatedBy(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userId_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string user_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearUserId() {
+      public Builder clearCreatedBy() {
         
-        userId_ = getDefaultInstance().getUserId();
+        createdBy_ = getDefaultInstance().getCreatedBy();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id" gorm:"column:user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string user_id = 8 [(.validator.field) = { ... }</code>
-       * @param value The bytes for userId to set.
+       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setUserIdBytes(
+      public Builder setCreatedByBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userId_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -8574,6 +9534,176 @@ public final class PBModelApiDashboard {
       public Builder clearApiCount() {
         
         apiCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 10;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 10;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 10;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 10;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 11;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 11;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 11;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 11;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -8715,6 +9845,65 @@ public final class PBModelApiDashboard {
      */
     com.google.protobuf.ByteString
         getSecretKeyBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 6;</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 6;</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.AuthKeyEntity}
@@ -8732,6 +9921,9 @@ public final class PBModelApiDashboard {
       id_ = "";
       name_ = "";
       secretKey_ = "";
+      createdBy_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -8790,6 +9982,24 @@ public final class PBModelApiDashboard {
               java.lang.String s = input.readStringRequireUtf8();
 
               secretKey_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -8994,6 +10204,125 @@ public final class PBModelApiDashboard {
       }
     }
 
+    public static final int CREATED_BY_FIELD_NUMBER = 6;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 6;</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 6;</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9023,6 +10352,15 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, secretKey_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdBy_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9049,6 +10387,16 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, secretKey_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdBy_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, currStatus_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9074,6 +10422,11 @@ public final class PBModelApiDashboard {
           .equals(other.getName())) return false;
       if (!getSecretKey()
           .equals(other.getSecretKey())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9097,6 +10450,12 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + SECRET_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSecretKey().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9240,6 +10599,12 @@ public final class PBModelApiDashboard {
 
         secretKey_ = "";
 
+        createdBy_ = "";
+
+        spaceId_ = "";
+
+        currStatus_ = 0;
+
         return this;
       }
 
@@ -9271,6 +10636,9 @@ public final class PBModelApiDashboard {
         result.updateTime_ = updateTime_;
         result.name_ = name_;
         result.secretKey_ = secretKey_;
+        result.createdBy_ = createdBy_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -9336,6 +10704,17 @@ public final class PBModelApiDashboard {
         if (!other.getSecretKey().isEmpty()) {
           secretKey_ = other.secretKey_;
           onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9744,6 +11123,272 @@ public final class PBModelApiDashboard {
         onChanged();
         return this;
       }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 6;</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 6;</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 6;</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 6;</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status" gorm:"column:curr_status;"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9802,19 +11447,11 @@ public final class PBModelApiDashboard {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
      * <code>string type = 1 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     java.lang.String getType();
     /**
-     * <pre>
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
      * <code>string type = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for type.
      */
@@ -9822,130 +11459,92 @@ public final class PBModelApiDashboard {
         getTypeBytes();
 
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> 
         getNodesList();
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index);
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     int getNodesCount();
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
         getNodesOrBuilderList();
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
         int index);
 
     /**
-     * <code>int32 retries = 3 [(.defaults.field) = { ... }</code>
-     * @return The retries.
-     */
-    int getRetries();
-
-    /**
-     * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-     * @return The passHost.
-     */
-    java.lang.String getPassHost();
-    /**
-     * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for passHost.
-     */
-    com.google.protobuf.ByteString
-        getPassHostBytes();
-
-    /**
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
     /**
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
         getDescBytes();
 
     /**
-     * <code>string schema = 7 [(.validator.field) = { ... }</code>
+     * <code>string schema = 5 [(.validator.field) = { ... }</code>
      * @return The schema.
      */
     java.lang.String getSchema();
     /**
-     * <code>string schema = 7 [(.validator.field) = { ... }</code>
+     * <code>string schema = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for schema.
      */
     com.google.protobuf.ByteString
         getSchemaBytes();
 
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      * @return Whether the tls field is set.
      */
     boolean hasTls();
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      * @return The tls.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls();
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder();
 
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      * @return Whether the timeout field is set.
      */
     boolean hasTimeout();
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      * @return The timeout.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout();
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder();
 
@@ -9954,7 +11553,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 8;</code>
      * @return The id.
      */
     java.lang.String getId();
@@ -9963,43 +11562,46 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 8;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <pre>
-     * &#64;inject_tag: json:"key"
-     * </pre>
-     *
-     * <code>string key = 11;</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"key"
-     * </pre>
-     *
-     * <code>string key = 11;</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>int64 create_time = 12;</code>
+     * <code>int64 create_time = 9;</code>
      * @return The createTime.
      */
     long getCreateTime();
 
     /**
-     * <code>int64 update_time = 13;</code>
+     * <code>int64 update_time = 10;</code>
      * @return The updateTime.
      */
     long getUpdateTime();
+
+    /**
+     * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.Upstream}
@@ -10016,12 +11618,12 @@ public final class PBModelApiDashboard {
     private Upstream() {
       type_ = "";
       nodes_ = java.util.Collections.emptyList();
-      passHost_ = "";
       name_ = "";
       desc_ = "";
       schema_ = "";
       id_ = "";
-      key_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -10070,36 +11672,25 @@ public final class PBModelApiDashboard {
                   input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.parser(), extensionRegistry));
               break;
             }
-            case 24: {
-
-              retries_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              passHost_ = s;
-              break;
-            }
-            case 42: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 50: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               desc_ = s;
               break;
             }
-            case 58: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               schema_ = s;
               break;
             }
-            case 66: {
+            case 50: {
               com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder subBuilder = null;
               if (tls_ != null) {
                 subBuilder = tls_.toBuilder();
@@ -10112,7 +11703,7 @@ public final class PBModelApiDashboard {
 
               break;
             }
-            case 74: {
+            case 58: {
               com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder subBuilder = null;
               if (timeout_ != null) {
                 subBuilder = timeout_.toBuilder();
@@ -10125,26 +11716,32 @@ public final class PBModelApiDashboard {
 
               break;
             }
-            case 82: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
               break;
             }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              key_ = s;
-              break;
-            }
-            case 96: {
+            case 72: {
 
               createTime_ = input.readInt64();
               break;
             }
-            case 104: {
+            case 80: {
 
               updateTime_ = input.readInt64();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -10185,10 +11782,6 @@ public final class PBModelApiDashboard {
     public static final int TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object type_;
     /**
-     * <pre>
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
      * <code>string type = 1 [(.validator.field) = { ... }</code>
      * @return The type.
      */
@@ -10206,10 +11799,6 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <pre>
-     * &#64;inject_tag: json:"type"
-     * </pre>
-     *
      * <code>string type = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for type.
      */
@@ -10231,10 +11820,6 @@ public final class PBModelApiDashboard {
     public static final int NODES_FIELD_NUMBER = 2;
     private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> nodes_;
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
@@ -10242,10 +11827,6 @@ public final class PBModelApiDashboard {
       return nodes_;
     }
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
@@ -10254,10 +11835,6 @@ public final class PBModelApiDashboard {
       return nodes_;
     }
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
@@ -10265,10 +11842,6 @@ public final class PBModelApiDashboard {
       return nodes_.size();
     }
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
@@ -10276,10 +11849,6 @@ public final class PBModelApiDashboard {
       return nodes_.get(index);
     }
     /**
-     * <pre>
-     * &#64;inject_tag: json:"nodes"
-     * </pre>
-     *
      * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
@@ -10288,59 +11857,10 @@ public final class PBModelApiDashboard {
       return nodes_.get(index);
     }
 
-    public static final int RETRIES_FIELD_NUMBER = 3;
-    private int retries_;
-    /**
-     * <code>int32 retries = 3 [(.defaults.field) = { ... }</code>
-     * @return The retries.
-     */
-    @java.lang.Override
-    public int getRetries() {
-      return retries_;
-    }
-
-    public static final int PASS_HOST_FIELD_NUMBER = 4;
-    private volatile java.lang.Object passHost_;
-    /**
-     * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-     * @return The passHost.
-     */
-    @java.lang.Override
-    public java.lang.String getPassHost() {
-      java.lang.Object ref = passHost_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        passHost_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for passHost.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPassHostBytes() {
-      java.lang.Object ref = passHost_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        passHost_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -10357,7 +11877,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -10375,10 +11895,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int DESC_FIELD_NUMBER = 6;
+    public static final int DESC_FIELD_NUMBER = 4;
     private volatile java.lang.Object desc_;
     /**
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -10395,7 +11915,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -10413,10 +11933,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int SCHEMA_FIELD_NUMBER = 7;
+    public static final int SCHEMA_FIELD_NUMBER = 5;
     private volatile java.lang.Object schema_;
     /**
-     * <code>string schema = 7 [(.validator.field) = { ... }</code>
+     * <code>string schema = 5 [(.validator.field) = { ... }</code>
      * @return The schema.
      */
     @java.lang.Override
@@ -10433,7 +11953,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string schema = 7 [(.validator.field) = { ... }</code>
+     * <code>string schema = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for schema.
      */
     @java.lang.Override
@@ -10451,10 +11971,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int TLS_FIELD_NUMBER = 8;
+    public static final int TLS_FIELD_NUMBER = 6;
     private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS tls_;
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      * @return Whether the tls field is set.
      */
     @java.lang.Override
@@ -10462,7 +11982,7 @@ public final class PBModelApiDashboard {
       return tls_ != null;
     }
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      * @return The tls.
      */
     @java.lang.Override
@@ -10470,17 +11990,17 @@ public final class PBModelApiDashboard {
       return tls_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
     }
     /**
-     * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
       return getTls();
     }
 
-    public static final int TIMEOUT_FIELD_NUMBER = 9;
+    public static final int TIMEOUT_FIELD_NUMBER = 7;
     private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout timeout_;
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      * @return Whether the timeout field is set.
      */
     @java.lang.Override
@@ -10488,7 +12008,7 @@ public final class PBModelApiDashboard {
       return timeout_ != null;
     }
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      * @return The timeout.
      */
     @java.lang.Override
@@ -10496,21 +12016,21 @@ public final class PBModelApiDashboard {
       return timeout_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
     }
     /**
-     * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
       return getTimeout();
     }
 
-    public static final int ID_FIELD_NUMBER = 10;
+    public static final int ID_FIELD_NUMBER = 8;
     private volatile java.lang.Object id_;
     /**
      * <pre>
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 8;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -10531,7 +12051,7 @@ public final class PBModelApiDashboard {
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 10;</code>
+     * <code>string id = 8;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -10549,56 +12069,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int KEY_FIELD_NUMBER = 11;
-    private volatile java.lang.Object key_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"key"
-     * </pre>
-     *
-     * <code>string key = 11;</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        key_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"key"
-     * </pre>
-     *
-     * <code>string key = 11;</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATE_TIME_FIELD_NUMBER = 12;
+    public static final int CREATE_TIME_FIELD_NUMBER = 9;
     private long createTime_;
     /**
-     * <code>int64 create_time = 12;</code>
+     * <code>int64 create_time = 9;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -10606,15 +12080,72 @@ public final class PBModelApiDashboard {
       return createTime_;
     }
 
-    public static final int UPDATE_TIME_FIELD_NUMBER = 13;
+    public static final int UPDATE_TIME_FIELD_NUMBER = 10;
     private long updateTime_;
     /**
-     * <code>int64 update_time = 13;</code>
+     * <code>int64 update_time = 10;</code>
      * @return The updateTime.
      */
     @java.lang.Override
     public long getUpdateTime() {
       return updateTime_;
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 12;
+    private int currStatus_;
+    /**
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <code>.model.StatusType curr_status = 12;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10637,38 +12168,35 @@ public final class PBModelApiDashboard {
       for (int i = 0; i < nodes_.size(); i++) {
         output.writeMessage(2, nodes_.get(i));
       }
-      if (retries_ != 0) {
-        output.writeInt32(3, retries_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passHost_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, passHost_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, schema_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, schema_);
       }
       if (tls_ != null) {
-        output.writeMessage(8, getTls());
+        output.writeMessage(6, getTls());
       }
       if (timeout_ != null) {
-        output.writeMessage(9, getTimeout());
+        output.writeMessage(7, getTimeout());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, key_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, id_);
       }
       if (createTime_ != 0L) {
-        output.writeInt64(12, createTime_);
+        output.writeInt64(9, createTime_);
       }
       if (updateTime_ != 0L) {
-        output.writeInt64(13, updateTime_);
+        output.writeInt64(10, updateTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(12, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -10686,43 +12214,40 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, nodes_.get(i));
       }
-      if (retries_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retries_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passHost_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, passHost_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, schema_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, schema_);
       }
       if (tls_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getTls());
+          .computeMessageSize(6, getTls());
       }
       if (timeout_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getTimeout());
+          .computeMessageSize(7, getTimeout());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, key_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, id_);
       }
       if (createTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, createTime_);
+          .computeInt64Size(9, createTime_);
       }
       if (updateTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, updateTime_);
+          .computeInt64Size(10, updateTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10743,10 +12268,6 @@ public final class PBModelApiDashboard {
           .equals(other.getType())) return false;
       if (!getNodesList()
           .equals(other.getNodesList())) return false;
-      if (getRetries()
-          != other.getRetries()) return false;
-      if (!getPassHost()
-          .equals(other.getPassHost())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getDesc()
@@ -10765,12 +12286,13 @@ public final class PBModelApiDashboard {
       }
       if (!getId()
           .equals(other.getId())) return false;
-      if (!getKey()
-          .equals(other.getKey())) return false;
       if (getCreateTime()
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10788,10 +12310,6 @@ public final class PBModelApiDashboard {
         hash = (37 * hash) + NODES_FIELD_NUMBER;
         hash = (53 * hash) + getNodesList().hashCode();
       }
-      hash = (37 * hash) + RETRIES_FIELD_NUMBER;
-      hash = (53 * hash) + getRetries();
-      hash = (37 * hash) + PASS_HOST_FIELD_NUMBER;
-      hash = (53 * hash) + getPassHost().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
@@ -10808,14 +12326,16 @@ public final class PBModelApiDashboard {
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreateTime());
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10958,10 +12478,6 @@ public final class PBModelApiDashboard {
         } else {
           nodesBuilder_.clear();
         }
-        retries_ = 0;
-
-        passHost_ = "";
-
         name_ = "";
 
         desc_ = "";
@@ -10982,11 +12498,13 @@ public final class PBModelApiDashboard {
         }
         id_ = "";
 
-        key_ = "";
-
         createTime_ = 0L;
 
         updateTime_ = 0L;
+
+        spaceId_ = "";
+
+        currStatus_ = 0;
 
         return this;
       }
@@ -11025,8 +12543,6 @@ public final class PBModelApiDashboard {
         } else {
           result.nodes_ = nodesBuilder_.build();
         }
-        result.retries_ = retries_;
-        result.passHost_ = passHost_;
         result.name_ = name_;
         result.desc_ = desc_;
         result.schema_ = schema_;
@@ -11041,9 +12557,10 @@ public final class PBModelApiDashboard {
           result.timeout_ = timeoutBuilder_.build();
         }
         result.id_ = id_;
-        result.key_ = key_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -11122,13 +12639,6 @@ public final class PBModelApiDashboard {
             }
           }
         }
-        if (other.getRetries() != 0) {
-          setRetries(other.getRetries());
-        }
-        if (!other.getPassHost().isEmpty()) {
-          passHost_ = other.passHost_;
-          onChanged();
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -11151,15 +12661,18 @@ public final class PBModelApiDashboard {
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          onChanged();
-        }
         if (other.getCreateTime() != 0L) {
           setCreateTime(other.getCreateTime());
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11193,10 +12706,6 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object type_ = "";
       /**
-       * <pre>
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
        * <code>string type = 1 [(.validator.field) = { ... }</code>
        * @return The type.
        */
@@ -11213,10 +12722,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
        * <code>string type = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for type.
        */
@@ -11234,10 +12739,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
        * <code>string type = 1 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
@@ -11253,10 +12754,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
        * <code>string type = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -11267,10 +12764,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"type"
-       * </pre>
-       *
        * <code>string type = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for type to set.
        * @return This builder for chaining.
@@ -11300,10 +12793,6 @@ public final class PBModelApiDashboard {
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> nodesBuilder_;
 
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> getNodesList() {
@@ -11314,10 +12803,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public int getNodesCount() {
@@ -11328,10 +12813,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index) {
@@ -11342,10 +12823,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder setNodes(
@@ -11363,10 +12840,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder setNodes(
@@ -11381,10 +12854,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder addNodes(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
@@ -11401,10 +12870,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder addNodes(
@@ -11422,10 +12887,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder addNodes(
@@ -11440,10 +12901,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder addNodes(
@@ -11458,10 +12915,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder addAllNodes(
@@ -11477,10 +12930,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder clearNodes() {
@@ -11494,10 +12943,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public Builder removeNodes(int index) {
@@ -11511,10 +12956,6 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder getNodesBuilder(
@@ -11522,10 +12963,6 @@ public final class PBModelApiDashboard {
         return getNodesFieldBuilder().getBuilder(index);
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
@@ -11536,10 +12973,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
@@ -11551,10 +12984,6 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder() {
@@ -11562,10 +12991,6 @@ public final class PBModelApiDashboard {
             com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder(
@@ -11574,10 +12999,6 @@ public final class PBModelApiDashboard {
             index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
       }
       /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
        * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
        */
       public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder> 
@@ -11599,116 +13020,9 @@ public final class PBModelApiDashboard {
         return nodesBuilder_;
       }
 
-      private int retries_ ;
-      /**
-       * <code>int32 retries = 3 [(.defaults.field) = { ... }</code>
-       * @return The retries.
-       */
-      @java.lang.Override
-      public int getRetries() {
-        return retries_;
-      }
-      /**
-       * <code>int32 retries = 3 [(.defaults.field) = { ... }</code>
-       * @param value The retries to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetries(int value) {
-        
-        retries_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retries = 3 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetries() {
-        
-        retries_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object passHost_ = "";
-      /**
-       * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-       * @return The passHost.
-       */
-      public java.lang.String getPassHost() {
-        java.lang.Object ref = passHost_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          passHost_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for passHost.
-       */
-      public com.google.protobuf.ByteString
-          getPassHostBytes() {
-        java.lang.Object ref = passHost_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          passHost_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-       * @param value The passHost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        passHost_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassHost() {
-        
-        passHost_ = getDefaultInstance().getPassHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string pass_host = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for passHost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        passHost_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -11724,7 +13038,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -11741,7 +13055,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -11756,7 +13070,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -11766,7 +13080,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -11784,7 +13098,7 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object desc_ = "";
       /**
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -11800,7 +13114,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -11817,7 +13131,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -11832,7 +13146,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -11842,7 +13156,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -11860,7 +13174,7 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object schema_ = "";
       /**
-       * <code>string schema = 7 [(.validator.field) = { ... }</code>
+       * <code>string schema = 5 [(.validator.field) = { ... }</code>
        * @return The schema.
        */
       public java.lang.String getSchema() {
@@ -11876,7 +13190,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string schema = 7 [(.validator.field) = { ... }</code>
+       * <code>string schema = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for schema.
        */
       public com.google.protobuf.ByteString
@@ -11893,7 +13207,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string schema = 7 [(.validator.field) = { ... }</code>
+       * <code>string schema = 5 [(.validator.field) = { ... }</code>
        * @param value The schema to set.
        * @return This builder for chaining.
        */
@@ -11908,7 +13222,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string schema = 7 [(.validator.field) = { ... }</code>
+       * <code>string schema = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSchema() {
@@ -11918,7 +13232,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string schema = 7 [(.validator.field) = { ... }</code>
+       * <code>string schema = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for schema to set.
        * @return This builder for chaining.
        */
@@ -11938,14 +13252,14 @@ public final class PBModelApiDashboard {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> tlsBuilder_;
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        * @return Whether the tls field is set.
        */
       public boolean hasTls() {
         return tlsBuilder_ != null || tls_ != null;
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        * @return The tls.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls() {
@@ -11956,7 +13270,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public Builder setTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
         if (tlsBuilder_ == null) {
@@ -11972,7 +13286,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public Builder setTls(
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder builderForValue) {
@@ -11986,7 +13300,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public Builder mergeTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
         if (tlsBuilder_ == null) {
@@ -12004,7 +13318,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public Builder clearTls() {
         if (tlsBuilder_ == null) {
@@ -12018,7 +13332,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder getTlsBuilder() {
         
@@ -12026,7 +13340,7 @@ public final class PBModelApiDashboard {
         return getTlsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
         if (tlsBuilder_ != null) {
@@ -12037,7 +13351,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>.model.UpstreamTLS tls = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> 
@@ -12057,14 +13371,14 @@ public final class PBModelApiDashboard {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> timeoutBuilder_;
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        * @return Whether the timeout field is set.
        */
       public boolean hasTimeout() {
         return timeoutBuilder_ != null || timeout_ != null;
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        * @return The timeout.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout() {
@@ -12075,7 +13389,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public Builder setTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
         if (timeoutBuilder_ == null) {
@@ -12091,7 +13405,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public Builder setTimeout(
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder builderForValue) {
@@ -12105,7 +13419,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public Builder mergeTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
         if (timeoutBuilder_ == null) {
@@ -12123,7 +13437,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public Builder clearTimeout() {
         if (timeoutBuilder_ == null) {
@@ -12137,7 +13451,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder getTimeoutBuilder() {
         
@@ -12145,7 +13459,7 @@ public final class PBModelApiDashboard {
         return getTimeoutFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
         if (timeoutBuilder_ != null) {
@@ -12156,7 +13470,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>.model.Timeout timeout = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.Timeout timeout = 7 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> 
@@ -12178,7 +13492,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 8;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -12198,7 +13512,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 8;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -12219,7 +13533,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 8;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -12238,7 +13552,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -12252,7 +13566,7 @@ public final class PBModelApiDashboard {
        * &#64;inject_tag: json:"id"
        * </pre>
        *
-       * <code>string id = 10;</code>
+       * <code>string id = 8;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -12268,105 +13582,9 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private java.lang.Object key_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"key"
-       * </pre>
-       *
-       * <code>string key = 11;</code>
-       * @return The key.
-       */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"key"
-       * </pre>
-       *
-       * <code>string key = 11;</code>
-       * @return The bytes for key.
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"key"
-       * </pre>
-       *
-       * <code>string key = 11;</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"key"
-       * </pre>
-       *
-       * <code>string key = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        
-        key_ = getDefaultInstance().getKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"key"
-       * </pre>
-       *
-       * <code>string key = 11;</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        key_ = value;
-        onChanged();
-        return this;
-      }
-
       private long createTime_ ;
       /**
-       * <code>int64 create_time = 12;</code>
+       * <code>int64 create_time = 9;</code>
        * @return The createTime.
        */
       @java.lang.Override
@@ -12374,7 +13592,7 @@ public final class PBModelApiDashboard {
         return createTime_;
       }
       /**
-       * <code>int64 create_time = 12;</code>
+       * <code>int64 create_time = 9;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
        */
@@ -12385,7 +13603,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>int64 create_time = 12;</code>
+       * <code>int64 create_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
@@ -12397,7 +13615,7 @@ public final class PBModelApiDashboard {
 
       private long updateTime_ ;
       /**
-       * <code>int64 update_time = 13;</code>
+       * <code>int64 update_time = 10;</code>
        * @return The updateTime.
        */
       @java.lang.Override
@@ -12405,7 +13623,7 @@ public final class PBModelApiDashboard {
         return updateTime_;
       }
       /**
-       * <code>int64 update_time = 13;</code>
+       * <code>int64 update_time = 10;</code>
        * @param value The updateTime to set.
        * @return This builder for chaining.
        */
@@ -12416,12 +13634,142 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>int64 update_time = 13;</code>
+       * <code>int64 update_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateTime() {
         
         updateTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 11 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -12483,18 +13831,30 @@ public final class PBModelApiDashboard {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"connect"
+     * </pre>
+     *
      * <code>float connect = 1;</code>
      * @return The connect.
      */
     float getConnect();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"send"
+     * </pre>
+     *
      * <code>float send = 2;</code>
      * @return The send.
      */
     float getSend();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"read"
+     * </pre>
+     *
      * <code>float read = 3;</code>
      * @return The read.
      */
@@ -12595,6 +13955,10 @@ public final class PBModelApiDashboard {
     public static final int CONNECT_FIELD_NUMBER = 1;
     private float connect_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"connect"
+     * </pre>
+     *
      * <code>float connect = 1;</code>
      * @return The connect.
      */
@@ -12606,6 +13970,10 @@ public final class PBModelApiDashboard {
     public static final int SEND_FIELD_NUMBER = 2;
     private float send_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"send"
+     * </pre>
+     *
      * <code>float send = 2;</code>
      * @return The send.
      */
@@ -12617,6 +13985,10 @@ public final class PBModelApiDashboard {
     public static final int READ_FIELD_NUMBER = 3;
     private float read_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"read"
+     * </pre>
+     *
      * <code>float read = 3;</code>
      * @return The read.
      */
@@ -12969,6 +14341,10 @@ public final class PBModelApiDashboard {
 
       private float connect_ ;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"connect"
+       * </pre>
+       *
        * <code>float connect = 1;</code>
        * @return The connect.
        */
@@ -12977,6 +14353,10 @@ public final class PBModelApiDashboard {
         return connect_;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"connect"
+       * </pre>
+       *
        * <code>float connect = 1;</code>
        * @param value The connect to set.
        * @return This builder for chaining.
@@ -12988,6 +14368,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"connect"
+       * </pre>
+       *
        * <code>float connect = 1;</code>
        * @return This builder for chaining.
        */
@@ -13000,6 +14384,10 @@ public final class PBModelApiDashboard {
 
       private float send_ ;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"send"
+       * </pre>
+       *
        * <code>float send = 2;</code>
        * @return The send.
        */
@@ -13008,6 +14396,10 @@ public final class PBModelApiDashboard {
         return send_;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"send"
+       * </pre>
+       *
        * <code>float send = 2;</code>
        * @param value The send to set.
        * @return This builder for chaining.
@@ -13019,6 +14411,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"send"
+       * </pre>
+       *
        * <code>float send = 2;</code>
        * @return This builder for chaining.
        */
@@ -13031,6 +14427,10 @@ public final class PBModelApiDashboard {
 
       private float read_ ;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"read"
+       * </pre>
+       *
        * <code>float read = 3;</code>
        * @return The read.
        */
@@ -13039,6 +14439,10 @@ public final class PBModelApiDashboard {
         return read_;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"read"
+       * </pre>
+       *
        * <code>float read = 3;</code>
        * @param value The read to set.
        * @return This builder for chaining.
@@ -13050,6 +14454,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"read"
+       * </pre>
+       *
        * <code>float read = 3;</code>
        * @return This builder for chaining.
        */
@@ -13117,11 +14525,19 @@ public final class PBModelApiDashboard {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     java.lang.String getHost();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
@@ -13129,12 +14545,20 @@ public final class PBModelApiDashboard {
         getHostBytes();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
      * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     int getPort();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"weight"
+     * </pre>
+     *
      * <code>int32 weight = 3 [(.validator.field) = { ... }</code>
      * @return The weight.
      */
@@ -13237,6 +14661,10 @@ public final class PBModelApiDashboard {
     public static final int HOST_FIELD_NUMBER = 1;
     private volatile java.lang.Object host_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
@@ -13254,6 +14682,10 @@ public final class PBModelApiDashboard {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
@@ -13275,6 +14707,10 @@ public final class PBModelApiDashboard {
     public static final int PORT_FIELD_NUMBER = 2;
     private int port_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
      * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
@@ -13286,6 +14722,10 @@ public final class PBModelApiDashboard {
     public static final int WEIGHT_FIELD_NUMBER = 3;
     private int weight_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"weight"
+     * </pre>
+     *
      * <code>int32 weight = 3 [(.validator.field) = { ... }</code>
      * @return The weight.
      */
@@ -13632,6 +15072,10 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object host_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The host.
        */
@@ -13648,6 +15092,10 @@ public final class PBModelApiDashboard {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for host.
        */
@@ -13665,6 +15113,10 @@ public final class PBModelApiDashboard {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The host to set.
        * @return This builder for chaining.
@@ -13680,6 +15132,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -13690,6 +15146,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for host to set.
        * @return This builder for chaining.
@@ -13708,6 +15168,10 @@ public final class PBModelApiDashboard {
 
       private int port_ ;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return The port.
        */
@@ -13716,6 +15180,10 @@ public final class PBModelApiDashboard {
         return port_;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @param value The port to set.
        * @return This builder for chaining.
@@ -13727,6 +15195,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -13739,6 +15211,10 @@ public final class PBModelApiDashboard {
 
       private int weight_ ;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"weight"
+       * </pre>
+       *
        * <code>int32 weight = 3 [(.validator.field) = { ... }</code>
        * @return The weight.
        */
@@ -13747,6 +15223,10 @@ public final class PBModelApiDashboard {
         return weight_;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"weight"
+       * </pre>
+       *
        * <code>int32 weight = 3 [(.validator.field) = { ... }</code>
        * @param value The weight to set.
        * @return This builder for chaining.
@@ -13758,6 +15238,10 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"weight"
+       * </pre>
+       *
        * <code>int32 weight = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -13815,6 +15299,911 @@ public final class PBModelApiDashboard {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpstreamNodesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.UpstreamNodes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> 
+        getNodesList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    int getNodesCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+        getNodesOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code model.UpstreamNodes}
+   */
+  public static final class UpstreamNodes extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.UpstreamNodes)
+      UpstreamNodesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpstreamNodes.newBuilder() to construct.
+    private UpstreamNodes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpstreamNodes() {
+      nodes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpstreamNodes();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpstreamNodes(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                nodes_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nodes_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          nodes_ = java.util.Collections.unmodifiableList(nodes_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.internal_static_model_UpstreamNodes_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.internal_static_model_UpstreamNodes_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.class, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder.class);
+    }
+
+    public static final int NODES_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> nodes_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> getNodesList() {
+      return nodes_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+        getNodesOrBuilderList() {
+      return nodes_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getNodesCount() {
+      return nodes_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index) {
+      return nodes_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+        int index) {
+      return nodes_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < nodes_.size(); i++) {
+        output.writeMessage(1, nodes_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < nodes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, nodes_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes other = (com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes) obj;
+
+      if (!getNodesList()
+          .equals(other.getNodesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getNodesCount() > 0) {
+        hash = (37 * hash) + NODES_FIELD_NUMBER;
+        hash = (53 * hash) + getNodesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.UpstreamNodes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.UpstreamNodes)
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.internal_static_model_UpstreamNodes_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.internal_static_model_UpstreamNodes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.class, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getNodesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          nodesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.internal_static_model_UpstreamNodes_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes result = new com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes(this);
+        int from_bitField0_ = bitField0_;
+        if (nodesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            nodes_ = java.util.Collections.unmodifiableList(nodes_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.nodes_ = nodes_;
+        } else {
+          result.nodes_ = nodesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes.getDefaultInstance()) return this;
+        if (nodesBuilder_ == null) {
+          if (!other.nodes_.isEmpty()) {
+            if (nodes_.isEmpty()) {
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureNodesIsMutable();
+              nodes_.addAll(other.nodes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodes_.isEmpty()) {
+            if (nodesBuilder_.isEmpty()) {
+              nodesBuilder_.dispose();
+              nodesBuilder_ = null;
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              nodesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNodesFieldBuilder() : null;
+            } else {
+              nodesBuilder_.addAllMessages(other.nodes_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> nodes_ =
+        java.util.Collections.emptyList();
+      private void ensureNodesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          nodes_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode>(nodes_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> nodesBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> getNodesList() {
+        if (nodesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodes_);
+        } else {
+          return nodesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public int getNodesCount() {
+        if (nodesBuilder_ == null) {
+          return nodes_.size();
+        } else {
+          return nodesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);
+        } else {
+          return nodesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.set(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllNodes(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> values) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nodes_);
+          onChanged();
+        } else {
+          nodesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearNodes() {
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          nodesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder removeNodes(int index) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.remove(index);
+          onChanged();
+        } else {
+          nodesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder getNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+          int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);  } else {
+          return nodesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+           getNodesOrBuilderList() {
+        if (nodesBuilder_ != null) {
+          return nodesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodes_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder() {
+        return getNodesFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder> 
+           getNodesBuilderList() {
+        return getNodesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+          getNodesFieldBuilder() {
+        if (nodesBuilder_ == null) {
+          nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder>(
+                  nodes_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          nodes_ = null;
+        }
+        return nodesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.UpstreamNodes)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.UpstreamNodes)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpstreamNodes>
+        PARSER = new com.google.protobuf.AbstractParser<UpstreamNodes>() {
+      @java.lang.Override
+      public UpstreamNodes parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpstreamNodes(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpstreamNodes> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpstreamNodes> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodes getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14587,30 +16976,24 @@ public final class PBModelApiDashboard {
         getDescBytes();
 
     /**
-     * <code>int32 priority = 4 [(.defaults.field) = { ... }</code>
-     * @return The priority.
-     */
-    int getPriority();
-
-    /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @return A list containing the methods.
      */
     java.util.List<java.lang.String>
         getMethodsList();
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @return The count of methods.
      */
     int getMethodsCount();
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @param index The index of the element to return.
      * @return The methods at the given index.
      */
     java.lang.String getMethods(int index);
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the methods at the given index.
      */
@@ -14618,49 +17001,36 @@ public final class PBModelApiDashboard {
         getMethodsBytes(int index);
 
     /**
-     * <code>repeated string hosts = 6;</code>
-     * @return A list containing the hosts.
+     * <code>string host = 5;</code>
+     * @return The host.
      */
-    java.util.List<java.lang.String>
-        getHostsList();
+    java.lang.String getHost();
     /**
-     * <code>repeated string hosts = 6;</code>
-     * @return The count of hosts.
-     */
-    int getHostsCount();
-    /**
-     * <code>repeated string hosts = 6;</code>
-     * @param index The index of the element to return.
-     * @return The hosts at the given index.
-     */
-    java.lang.String getHosts(int index);
-    /**
-     * <code>repeated string hosts = 6;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the hosts at the given index.
+     * <code>string host = 5;</code>
+     * @return The bytes for host.
      */
     com.google.protobuf.ByteString
-        getHostsBytes(int index);
+        getHostBytes();
 
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @return A list containing the remoteAddrs.
      */
     java.util.List<java.lang.String>
         getRemoteAddrsList();
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @return The count of remoteAddrs.
      */
     int getRemoteAddrsCount();
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The remoteAddrs at the given index.
      */
     java.lang.String getRemoteAddrs(int index);
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the remoteAddrs at the given index.
      */
@@ -14668,58 +17038,99 @@ public final class PBModelApiDashboard {
         getRemoteAddrsBytes(int index);
 
     /**
-     * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
      * @return The upstreamId.
      */
     java.lang.String getUpstreamId();
     /**
-     * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for upstreamId.
      */
     com.google.protobuf.ByteString
         getUpstreamIdBytes();
 
     /**
-     * <code>int32 status = 9 [(.validator.field) = { ... }</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    int getStatus();
+    int getCurrStatusValue();
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
 
     /**
-     * <code>string name = 10 [(.validator.field) = { ... }</code>
+     * <code>string name = 9 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 10 [(.validator.field) = { ... }</code>
+     * <code>string name = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>int64 create_time = 11;</code>
+     * <code>int64 create_time = 10;</code>
      * @return The createTime.
      */
     long getCreateTime();
 
     /**
-     * <code>int64 update_time = 12;</code>
+     * <code>int64 update_time = 11;</code>
      * @return The updateTime.
      */
     long getUpdateTime();
 
     /**
-     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
     /**
-     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
         getApiServiceIdBytes();
+
+    /**
+     * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+     * @return The apiVersionId.
+     */
+    java.lang.String getApiVersionId();
+    /**
+     * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiVersionId.
+     */
+    com.google.protobuf.ByteString
+        getApiVersionIdBytes();
+
+    /**
+     * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+     * @return The proxyUri.
+     */
+    java.lang.String getProxyUri();
+    /**
+     * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+     * @return The bytes for proxyUri.
+     */
+    com.google.protobuf.ByteString
+        getProxyUriBytes();
+
+    /**
+     * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
   }
   /**
    * Protobuf type {@code model.Route}
@@ -14738,11 +17149,15 @@ public final class PBModelApiDashboard {
       id_ = "";
       desc_ = "";
       methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      host_ = "";
       remoteAddrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       upstreamId_ = "";
+      currStatus_ = 0;
       name_ = "";
       apiServiceId_ = "";
+      apiVersionId_ = "";
+      proxyUri_ = "";
+      spaceId_ = "";
     }
 
     @java.lang.Override
@@ -14794,12 +17209,7 @@ public final class PBModelApiDashboard {
               desc_ = s;
               break;
             }
-            case 32: {
-
-              priority_ = input.readInt32();
-              break;
-            }
-            case 42: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 methods_ = new com.google.protobuf.LazyStringArrayList();
@@ -14808,55 +17218,71 @@ public final class PBModelApiDashboard {
               methods_.add(s);
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hosts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hosts_.add(s);
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 remoteAddrs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               remoteAddrs_.add(s);
               break;
             }
-            case 66: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               upstreamId_ = s;
               break;
             }
-            case 72: {
+            case 64: {
+              int rawValue = input.readEnum();
 
-              status_ = input.readInt32();
+              currStatus_ = rawValue;
               break;
             }
-            case 82: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 88: {
+            case 80: {
 
               createTime_ = input.readInt64();
               break;
             }
-            case 96: {
+            case 88: {
 
               updateTime_ = input.readInt64();
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiServiceId_ = s;
               break;
             }
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              apiServiceId_ = s;
+              apiVersionId_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proxyUri_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
               break;
             }
             default: {
@@ -14878,9 +17304,6 @@ public final class PBModelApiDashboard {
           methods_ = methods_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          hosts_ = hosts_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           remoteAddrs_ = remoteAddrs_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -15022,21 +17445,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int PRIORITY_FIELD_NUMBER = 4;
-    private int priority_;
-    /**
-     * <code>int32 priority = 4 [(.defaults.field) = { ... }</code>
-     * @return The priority.
-     */
-    @java.lang.Override
-    public int getPriority() {
-      return priority_;
-    }
-
-    public static final int METHODS_FIELD_NUMBER = 5;
+    public static final int METHODS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList methods_;
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @return A list containing the methods.
      */
     public com.google.protobuf.ProtocolStringList
@@ -15044,14 +17456,14 @@ public final class PBModelApiDashboard {
       return methods_;
     }
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @return The count of methods.
      */
     public int getMethodsCount() {
       return methods_.size();
     }
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @param index The index of the element to return.
      * @return The methods at the given index.
      */
@@ -15059,7 +17471,7 @@ public final class PBModelApiDashboard {
       return methods_.get(index);
     }
     /**
-     * <code>repeated string methods = 5;</code>
+     * <code>repeated string methods = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the methods at the given index.
      */
@@ -15068,45 +17480,48 @@ public final class PBModelApiDashboard {
       return methods_.getByteString(index);
     }
 
-    public static final int HOSTS_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList hosts_;
+    public static final int HOST_FIELD_NUMBER = 5;
+    private volatile java.lang.Object host_;
     /**
-     * <code>repeated string hosts = 6;</code>
-     * @return A list containing the hosts.
+     * <code>string host = 5;</code>
+     * @return The host.
      */
-    public com.google.protobuf.ProtocolStringList
-        getHostsList() {
-      return hosts_;
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string hosts = 6;</code>
-     * @return The count of hosts.
+     * <code>string host = 5;</code>
+     * @return The bytes for host.
      */
-    public int getHostsCount() {
-      return hosts_.size();
-    }
-    /**
-     * <code>repeated string hosts = 6;</code>
-     * @param index The index of the element to return.
-     * @return The hosts at the given index.
-     */
-    public java.lang.String getHosts(int index) {
-      return hosts_.get(index);
-    }
-    /**
-     * <code>repeated string hosts = 6;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the hosts at the given index.
-     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getHostsBytes(int index) {
-      return hosts_.getByteString(index);
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int REMOTE_ADDRS_FIELD_NUMBER = 7;
+    public static final int REMOTE_ADDRS_FIELD_NUMBER = 6;
     private com.google.protobuf.LazyStringList remoteAddrs_;
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @return A list containing the remoteAddrs.
      */
     public com.google.protobuf.ProtocolStringList
@@ -15114,14 +17529,14 @@ public final class PBModelApiDashboard {
       return remoteAddrs_;
     }
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @return The count of remoteAddrs.
      */
     public int getRemoteAddrsCount() {
       return remoteAddrs_.size();
     }
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The remoteAddrs at the given index.
      */
@@ -15129,7 +17544,7 @@ public final class PBModelApiDashboard {
       return remoteAddrs_.get(index);
     }
     /**
-     * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+     * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the remoteAddrs at the given index.
      */
@@ -15138,10 +17553,10 @@ public final class PBModelApiDashboard {
       return remoteAddrs_.getByteString(index);
     }
 
-    public static final int UPSTREAM_ID_FIELD_NUMBER = 8;
+    public static final int UPSTREAM_ID_FIELD_NUMBER = 7;
     private volatile java.lang.Object upstreamId_;
     /**
-     * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
      * @return The upstreamId.
      */
     @java.lang.Override
@@ -15158,7 +17573,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for upstreamId.
      */
     @java.lang.Override
@@ -15176,21 +17591,29 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 9;
-    private int status_;
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
     /**
-     * <code>int32 status = 9 [(.validator.field) = { ... }</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    @java.lang.Override
-    public int getStatus() {
-      return status_;
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
-    public static final int NAME_FIELD_NUMBER = 10;
+    public static final int NAME_FIELD_NUMBER = 9;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 10 [(.validator.field) = { ... }</code>
+     * <code>string name = 9 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -15207,7 +17630,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string name = 10 [(.validator.field) = { ... }</code>
+     * <code>string name = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -15225,10 +17648,10 @@ public final class PBModelApiDashboard {
       }
     }
 
-    public static final int CREATE_TIME_FIELD_NUMBER = 11;
+    public static final int CREATE_TIME_FIELD_NUMBER = 10;
     private long createTime_;
     /**
-     * <code>int64 create_time = 11;</code>
+     * <code>int64 create_time = 10;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -15236,10 +17659,10 @@ public final class PBModelApiDashboard {
       return createTime_;
     }
 
-    public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+    public static final int UPDATE_TIME_FIELD_NUMBER = 11;
     private long updateTime_;
     /**
-     * <code>int64 update_time = 12;</code>
+     * <code>int64 update_time = 11;</code>
      * @return The updateTime.
      */
     @java.lang.Override
@@ -15247,10 +17670,10 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 13;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 12;
     private volatile java.lang.Object apiServiceId_;
     /**
-     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -15267,7 +17690,7 @@ public final class PBModelApiDashboard {
       }
     }
     /**
-     * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -15279,6 +17702,120 @@ public final class PBModelApiDashboard {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         apiServiceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_VERSION_ID_FIELD_NUMBER = 13;
+    private volatile java.lang.Object apiVersionId_;
+    /**
+     * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+     * @return The apiVersionId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiVersionId() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiVersionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiVersionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiVersionIdBytes() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROXY_URI_FIELD_NUMBER = 14;
+    private volatile java.lang.Object proxyUri_;
+    /**
+     * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+     * @return The proxyUri.
+     */
+    @java.lang.Override
+    public java.lang.String getProxyUri() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+     * @return The bytes for proxyUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProxyUriBytes() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 15;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -15308,35 +17845,41 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
       }
-      if (priority_ != 0) {
-        output.writeInt32(4, priority_);
-      }
       for (int i = 0; i < methods_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, methods_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, methods_.getRaw(i));
       }
-      for (int i = 0; i < hosts_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, hosts_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, host_);
       }
       for (int i = 0; i < remoteAddrs_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, remoteAddrs_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, remoteAddrs_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, upstreamId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, upstreamId_);
       }
-      if (status_ != 0) {
-        output.writeInt32(9, status_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, name_);
       }
       if (createTime_ != 0L) {
-        output.writeInt64(11, createTime_);
+        output.writeInt64(10, createTime_);
       }
       if (updateTime_ != 0L) {
-        output.writeInt64(12, updateTime_);
+        output.writeInt64(11, updateTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, spaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -15356,10 +17899,6 @@ public final class PBModelApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
       }
-      if (priority_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, priority_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < methods_.size(); i++) {
@@ -15368,13 +17907,8 @@ public final class PBModelApiDashboard {
         size += dataSize;
         size += 1 * getMethodsList().size();
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hosts_.size(); i++) {
-          dataSize += computeStringSizeNoTag(hosts_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getHostsList().size();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, host_);
       }
       {
         int dataSize = 0;
@@ -15385,25 +17919,34 @@ public final class PBModelApiDashboard {
         size += 1 * getRemoteAddrsList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, upstreamId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, upstreamId_);
       }
-      if (status_ != 0) {
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, status_);
+          .computeEnumSize(8, currStatus_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, name_);
       }
       if (createTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, createTime_);
+          .computeInt64Size(10, createTime_);
       }
       if (updateTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, updateTime_);
+          .computeInt64Size(11, updateTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, spaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15426,18 +17969,15 @@ public final class PBModelApiDashboard {
           .equals(other.getId())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (getPriority()
-          != other.getPriority()) return false;
       if (!getMethodsList()
           .equals(other.getMethodsList())) return false;
-      if (!getHostsList()
-          .equals(other.getHostsList())) return false;
+      if (!getHost()
+          .equals(other.getHost())) return false;
       if (!getRemoteAddrsList()
           .equals(other.getRemoteAddrsList())) return false;
       if (!getUpstreamId()
           .equals(other.getUpstreamId())) return false;
-      if (getStatus()
-          != other.getStatus()) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (getCreateTime()
@@ -15446,6 +17986,12 @@ public final class PBModelApiDashboard {
           != other.getUpdateTime()) return false;
       if (!getApiServiceId()
           .equals(other.getApiServiceId())) return false;
+      if (!getApiVersionId()
+          .equals(other.getApiVersionId())) return false;
+      if (!getProxyUri()
+          .equals(other.getProxyUri())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15463,24 +18009,20 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-      hash = (53 * hash) + getPriority();
       if (getMethodsCount() > 0) {
         hash = (37 * hash) + METHODS_FIELD_NUMBER;
         hash = (53 * hash) + getMethodsList().hashCode();
       }
-      if (getHostsCount() > 0) {
-        hash = (37 * hash) + HOSTS_FIELD_NUMBER;
-        hash = (53 * hash) + getHostsList().hashCode();
-      }
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
       if (getRemoteAddrsCount() > 0) {
         hash = (37 * hash) + REMOTE_ADDRS_FIELD_NUMBER;
         hash = (53 * hash) + getRemoteAddrsList().hashCode();
       }
       hash = (37 * hash) + UPSTREAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUpstreamId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -15491,6 +18033,12 @@ public final class PBModelApiDashboard {
           getUpdateTime());
       hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApiServiceId().hashCode();
+      hash = (37 * hash) + API_VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiVersionId().hashCode();
+      hash = (37 * hash) + PROXY_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyUri().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15630,17 +18178,15 @@ public final class PBModelApiDashboard {
 
         desc_ = "";
 
-        priority_ = 0;
-
         methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        host_ = "";
+
         remoteAddrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         upstreamId_ = "";
 
-        status_ = 0;
+        currStatus_ = 0;
 
         name_ = "";
 
@@ -15649,6 +18195,12 @@ public final class PBModelApiDashboard {
         updateTime_ = 0L;
 
         apiServiceId_ = "";
+
+        apiVersionId_ = "";
+
+        proxyUri_ = "";
+
+        spaceId_ = "";
 
         return this;
       }
@@ -15680,28 +18232,26 @@ public final class PBModelApiDashboard {
         result.uri_ = uri_;
         result.id_ = id_;
         result.desc_ = desc_;
-        result.priority_ = priority_;
         if (((bitField0_ & 0x00000001) != 0)) {
           methods_ = methods_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.methods_ = methods_;
+        result.host_ = host_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          hosts_ = hosts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.hosts_ = hosts_;
-        if (((bitField0_ & 0x00000004) != 0)) {
           remoteAddrs_ = remoteAddrs_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.remoteAddrs_ = remoteAddrs_;
         result.upstreamId_ = upstreamId_;
-        result.status_ = status_;
+        result.currStatus_ = currStatus_;
         result.name_ = name_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
         result.apiServiceId_ = apiServiceId_;
+        result.apiVersionId_ = apiVersionId_;
+        result.proxyUri_ = proxyUri_;
+        result.spaceId_ = spaceId_;
         onBuilt();
         return result;
       }
@@ -15762,9 +18312,6 @@ public final class PBModelApiDashboard {
           desc_ = other.desc_;
           onChanged();
         }
-        if (other.getPriority() != 0) {
-          setPriority(other.getPriority());
-        }
         if (!other.methods_.isEmpty()) {
           if (methods_.isEmpty()) {
             methods_ = other.methods_;
@@ -15775,20 +18322,14 @@ public final class PBModelApiDashboard {
           }
           onChanged();
         }
-        if (!other.hosts_.isEmpty()) {
-          if (hosts_.isEmpty()) {
-            hosts_ = other.hosts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureHostsIsMutable();
-            hosts_.addAll(other.hosts_);
-          }
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
           onChanged();
         }
         if (!other.remoteAddrs_.isEmpty()) {
           if (remoteAddrs_.isEmpty()) {
             remoteAddrs_ = other.remoteAddrs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRemoteAddrsIsMutable();
             remoteAddrs_.addAll(other.remoteAddrs_);
@@ -15799,8 +18340,8 @@ public final class PBModelApiDashboard {
           upstreamId_ = other.upstreamId_;
           onChanged();
         }
-        if (other.getStatus() != 0) {
-          setStatus(other.getStatus());
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
@@ -15814,6 +18355,18 @@ public final class PBModelApiDashboard {
         }
         if (!other.getApiServiceId().isEmpty()) {
           apiServiceId_ = other.apiServiceId_;
+          onChanged();
+        }
+        if (!other.getApiVersionId().isEmpty()) {
+          apiVersionId_ = other.apiVersionId_;
+          onChanged();
+        }
+        if (!other.getProxyUri().isEmpty()) {
+          proxyUri_ = other.proxyUri_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -16094,37 +18647,6 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private int priority_ ;
-      /**
-       * <code>int32 priority = 4 [(.defaults.field) = { ... }</code>
-       * @return The priority.
-       */
-      @java.lang.Override
-      public int getPriority() {
-        return priority_;
-      }
-      /**
-       * <code>int32 priority = 4 [(.defaults.field) = { ... }</code>
-       * @param value The priority to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPriority(int value) {
-        
-        priority_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 priority = 4 [(.defaults.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPriority() {
-        
-        priority_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.LazyStringList methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureMethodsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -16133,7 +18655,7 @@ public final class PBModelApiDashboard {
          }
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @return A list containing the methods.
        */
       public com.google.protobuf.ProtocolStringList
@@ -16141,14 +18663,14 @@ public final class PBModelApiDashboard {
         return methods_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @return The count of methods.
        */
       public int getMethodsCount() {
         return methods_.size();
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param index The index of the element to return.
        * @return The methods at the given index.
        */
@@ -16156,7 +18678,7 @@ public final class PBModelApiDashboard {
         return methods_.get(index);
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param index The index of the value to return.
        * @return The bytes of the methods at the given index.
        */
@@ -16165,7 +18687,7 @@ public final class PBModelApiDashboard {
         return methods_.getByteString(index);
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param index The index to set the value at.
        * @param value The methods to set.
        * @return This builder for chaining.
@@ -16181,7 +18703,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param value The methods to add.
        * @return This builder for chaining.
        */
@@ -16196,7 +18718,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param values The methods to add.
        * @return This builder for chaining.
        */
@@ -16209,7 +18731,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMethods() {
@@ -16219,7 +18741,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string methods = 5;</code>
+       * <code>repeated string methods = 4;</code>
        * @param value The bytes of the methods to add.
        * @return This builder for chaining.
        */
@@ -16235,125 +18757,91 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureHostsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          hosts_ = new com.google.protobuf.LazyStringArrayList(hosts_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private java.lang.Object host_ = "";
       /**
-       * <code>repeated string hosts = 6;</code>
-       * @return A list containing the hosts.
+       * <code>string host = 5;</code>
+       * @return The host.
        */
-      public com.google.protobuf.ProtocolStringList
-          getHostsList() {
-        return hosts_.getUnmodifiableView();
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string hosts = 6;</code>
-       * @return The count of hosts.
-       */
-      public int getHostsCount() {
-        return hosts_.size();
-      }
-      /**
-       * <code>repeated string hosts = 6;</code>
-       * @param index The index of the element to return.
-       * @return The hosts at the given index.
-       */
-      public java.lang.String getHosts(int index) {
-        return hosts_.get(index);
-      }
-      /**
-       * <code>repeated string hosts = 6;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the hosts at the given index.
+       * <code>string host = 5;</code>
+       * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
-          getHostsBytes(int index) {
-        return hosts_.getByteString(index);
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string hosts = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The hosts to set.
+       * <code>string host = 5;</code>
+       * @param value The host to set.
        * @return This builder for chaining.
        */
-      public Builder setHosts(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureHostsIsMutable();
-        hosts_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hosts = 6;</code>
-       * @param value The hosts to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHosts(
+      public Builder setHost(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureHostsIsMutable();
-        hosts_.add(value);
+  
+        host_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string hosts = 6;</code>
-       * @param values The hosts to add.
+       * <code>string host = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder addAllHosts(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureHostsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hosts_);
+      public Builder clearHost() {
+        
+        host_ = getDefaultInstance().getHost();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string hosts = 6;</code>
+       * <code>string host = 5;</code>
+       * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
-      public Builder clearHosts() {
-        hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hosts = 6;</code>
-       * @param value The bytes of the hosts to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHostsBytes(
+      public Builder setHostBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureHostsIsMutable();
-        hosts_.add(value);
+        
+        host_ = value;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.LazyStringList remoteAddrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureRemoteAddrsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           remoteAddrs_ = new com.google.protobuf.LazyStringArrayList(remoteAddrs_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @return A list containing the remoteAddrs.
        */
       public com.google.protobuf.ProtocolStringList
@@ -16361,14 +18849,14 @@ public final class PBModelApiDashboard {
         return remoteAddrs_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @return The count of remoteAddrs.
        */
       public int getRemoteAddrsCount() {
         return remoteAddrs_.size();
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The remoteAddrs at the given index.
        */
@@ -16376,7 +18864,7 @@ public final class PBModelApiDashboard {
         return remoteAddrs_.get(index);
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the remoteAddrs at the given index.
        */
@@ -16385,7 +18873,7 @@ public final class PBModelApiDashboard {
         return remoteAddrs_.getByteString(index);
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The remoteAddrs to set.
        * @return This builder for chaining.
@@ -16401,7 +18889,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param value The remoteAddrs to add.
        * @return This builder for chaining.
        */
@@ -16416,7 +18904,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param values The remoteAddrs to add.
        * @return This builder for chaining.
        */
@@ -16429,17 +18917,17 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearRemoteAddrs() {
         remoteAddrs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string remote_addrs = 7 [(.validator.field) = { ... }</code>
+       * <code>repeated string remote_addrs = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes of the remoteAddrs to add.
        * @return This builder for chaining.
        */
@@ -16457,7 +18945,7 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object upstreamId_ = "";
       /**
-       * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
        * @return The upstreamId.
        */
       public java.lang.String getUpstreamId() {
@@ -16473,7 +18961,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
        * @return The bytes for upstreamId.
        */
       public com.google.protobuf.ByteString
@@ -16490,7 +18978,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
        * @param value The upstreamId to set.
        * @return This builder for chaining.
        */
@@ -16505,7 +18993,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpstreamId() {
@@ -16515,7 +19003,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string upstream_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 7 [(.validator.field) = { ... }</code>
        * @param value The bytes for upstreamId to set.
        * @return This builder for chaining.
        */
@@ -16531,40 +19019,63 @@ public final class PBModelApiDashboard {
         return this;
       }
 
-      private int status_ ;
+      private int currStatus_ = 0;
       /**
-       * <code>int32 status = 9 [(.validator.field) = { ... }</code>
-       * @return The status.
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The enum numeric value on the wire for currStatus.
        */
-      @java.lang.Override
-      public int getStatus() {
-        return status_;
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
       }
       /**
-       * <code>int32 status = 9 [(.validator.field) = { ... }</code>
-       * @param value The status to set.
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(int value) {
+      public Builder setCurrStatusValue(int value) {
         
-        status_ = value;
+        currStatus_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 status = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        status_ = 0;
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 10 [(.validator.field) = { ... }</code>
+       * <code>string name = 9 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -16580,7 +19091,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string name = 10 [(.validator.field) = { ... }</code>
+       * <code>string name = 9 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -16597,7 +19108,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string name = 10 [(.validator.field) = { ... }</code>
+       * <code>string name = 9 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -16612,7 +19123,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string name = 10 [(.validator.field) = { ... }</code>
+       * <code>string name = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -16622,7 +19133,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string name = 10 [(.validator.field) = { ... }</code>
+       * <code>string name = 9 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -16640,7 +19151,7 @@ public final class PBModelApiDashboard {
 
       private long createTime_ ;
       /**
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @return The createTime.
        */
       @java.lang.Override
@@ -16648,7 +19159,7 @@ public final class PBModelApiDashboard {
         return createTime_;
       }
       /**
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
        */
@@ -16659,7 +19170,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>int64 create_time = 11;</code>
+       * <code>int64 create_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
@@ -16671,7 +19182,7 @@ public final class PBModelApiDashboard {
 
       private long updateTime_ ;
       /**
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @return The updateTime.
        */
       @java.lang.Override
@@ -16679,7 +19190,7 @@ public final class PBModelApiDashboard {
         return updateTime_;
       }
       /**
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @param value The updateTime to set.
        * @return This builder for chaining.
        */
@@ -16690,7 +19201,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>int64 update_time = 12;</code>
+       * <code>int64 update_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateTime() {
@@ -16702,7 +19213,7 @@ public final class PBModelApiDashboard {
 
       private java.lang.Object apiServiceId_ = "";
       /**
-       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -16718,7 +19229,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -16735,7 +19246,7 @@ public final class PBModelApiDashboard {
         }
       }
       /**
-       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -16750,7 +19261,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -16760,7 +19271,7 @@ public final class PBModelApiDashboard {
         return this;
       }
       /**
-       * <code>string api_service_id = 13 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 12 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -16772,6 +19283,234 @@ public final class PBModelApiDashboard {
   checkByteStringIsUtf8(value);
         
         apiServiceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiVersionId_ = "";
+      /**
+       * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+       * @return The apiVersionId.
+       */
+      public java.lang.String getApiVersionId() {
+        java.lang.Object ref = apiVersionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiVersionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiVersionId.
+       */
+      public com.google.protobuf.ByteString
+          getApiVersionIdBytes() {
+        java.lang.Object ref = apiVersionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiVersionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+       * @param value The apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiVersionId() {
+        
+        apiVersionId_ = getDefaultInstance().getApiVersionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string api_version_id = 13 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object proxyUri_ = "";
+      /**
+       * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+       * @return The proxyUri.
+       */
+      public java.lang.String getProxyUri() {
+        java.lang.Object ref = proxyUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proxyUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+       * @return The bytes for proxyUri.
+       */
+      public com.google.protobuf.ByteString
+          getProxyUriBytes() {
+        java.lang.Object ref = proxyUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proxyUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+       * @param value The proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProxyUri() {
+        
+        proxyUri_ = getDefaultInstance().getProxyUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string proxy_uri = 14 [(.validator.field) = { ... }</code>
+       * @param value The bytes for proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 15 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
         onChanged();
         return this;
       }
@@ -16944,6 +19683,29 @@ public final class PBModelApiDashboard {
      * @return The updateTime.
      */
     long getUpdateTime();
+
+    /**
+     * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code model.SSL}
@@ -16962,6 +19724,8 @@ public final class PBModelApiDashboard {
       key_ = "";
       snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       id_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -17030,6 +19794,18 @@ public final class PBModelApiDashboard {
             case 48: {
 
               updateTime_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -17278,6 +20054,63 @@ public final class PBModelApiDashboard {
       return updateTime_;
     }
 
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <code>.model.StatusType curr_status = 8;</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17309,6 +20142,12 @@ public final class PBModelApiDashboard {
       }
       if (updateTime_ != 0L) {
         output.writeInt64(6, updateTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -17344,6 +20183,13 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, updateTime_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, currStatus_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17371,6 +20217,9 @@ public final class PBModelApiDashboard {
           != other.getCreateTime()) return false;
       if (getUpdateTime()
           != other.getUpdateTime()) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17398,6 +20247,10 @@ public final class PBModelApiDashboard {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateTime());
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17543,6 +20396,10 @@ public final class PBModelApiDashboard {
 
         updateTime_ = 0L;
 
+        spaceId_ = "";
+
+        currStatus_ = 0;
+
         return this;
       }
 
@@ -17580,6 +20437,8 @@ public final class PBModelApiDashboard {
         result.id_ = id_;
         result.createTime_ = createTime_;
         result.updateTime_ = updateTime_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -17655,6 +20514,13 @@ public final class PBModelApiDashboard {
         }
         if (other.getUpdateTime() != 0L) {
           setUpdateTime(other.getUpdateTime());
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18181,6 +21047,136 @@ public final class PBModelApiDashboard {
         onChanged();
         return this;
       }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string space_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.model.StatusType curr_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18275,6 +21271,11 @@ public final class PBModelApiDashboard {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_UpstreamNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_UpstreamNodes_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_UpstreamNodes_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_UpstreamTLS_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18300,109 +21301,121 @@ public final class PBModelApiDashboard {
     java.lang.String[] descriptorData = {
       "\n$proto/types/model/apidashboard.proto\022\005" +
       "model\0323github.com/yu31/protoc-plugin/pro" +
-      "to/validator.proto\0322github.com/yu31/prot" +
-      "oc-plugin/proto/defaults.proto\032\031google/p" +
-      "rotobuf/any.proto\"\256\002\n\016UpstreamEntity\022\014\n\004" +
-      "type\030\001 \001(\t\022\r\n\005nodes\030\002 \001(\t\022\017\n\007retries\030\003 \001" +
-      "(\005\022\021\n\tpass_host\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004d" +
-      "esc\030\006 \001(\t\022\016\n\006schema\030\007 \001(\t\022\023\n\013client_cert" +
-      "\030\010 \001(\t\022\022\n\nclient_key\030\t \001(\t\022\027\n\017timeout_co" +
-      "nnect\030\n \001(\002\022\024\n\014timeout_send\030\013 \001(\002\022\024\n\014tim" +
-      "eout_read\030\014 \001(\002\022\n\n\002id\030\r \001(\t\022\023\n\013create_ti" +
-      "me\030\016 \001(\003\022\023\n\013update_time\030\017 \001(\003\022\013\n\003key\030\020 \001" +
-      "(\t\"\202\002\n\013RouteEntity\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\020\n\010priority\030\004 \001(\005\022\017\n" +
-      "\007methods\030\005 \001(\t\022\r\n\005hosts\030\006 \001(\t\022\024\n\014remote_" +
-      "addrs\030\007 \001(\t\022\023\n\013upstream_id\030\010 \001(\t\022\016\n\006stat" +
-      "us\030\t \001(\005\022\n\n\002id\030\n \001(\t\022\023\n\013create_time\030\013 \001(" +
-      "\003\022\023\n\013update_time\030\014 \001(\003\022\017\n\007plugins\030\r \001(\t\022" +
-      "\026\n\016api_service_id\030\016 \001(\t\"j\n\tSSLEntity\022\n\n\002" +
-      "id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013update_" +
-      "time\030\003 \001(\003\022\014\n\004snis\030\004 \001(\t\022\014\n\004cert\030\005 \001(\t\022\013" +
-      "\n\003key\030\006 \001(\t\"\273\001\n\020ApiServiceEntity\022\n\n\002id\030\001" +
-      " \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013update_time" +
-      "\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\014\n\004desc\030\005 \001(\t\022\023\n\013au" +
-      "th_key_id\030\006 \001(\t\022\016\n\006domain\030\007 \001(\t\022\035\n\007user_" +
-      "id\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\021\n\tapi_count\030\t \001(" +
-      "\005\"g\n\rAuthKeyEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create" +
-      "_time\030\002 \001(\003\022\023\n\013update_time\030\003 \001(\003\022\014\n\004name" +
-      "\030\004 \001(\t\022\022\n\nsecret_key\030\005 \001(\t\"\274\003\n\010Upstream\022" +
-      "<\n\004type\030\001 \001(\tB.\342\337\037*\022(\302\001%J\nroundrobinJ\005ch" +
-      "ashJ\004ewmaJ\nleast_conn\022/\n\005nodes\030\002 \003(\0132\023.m" +
-      "odel.UpstreamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022.\n\007retrie" +
-      "s\030\003 \001(\005B\035\242\241\037\005\252\006\002-1\342\337\037\020\022\016\262\001\013@\377\377\377\377\377\377\377\377\377\001\022(" +
-      "\n\tpass_host\030\004 \001(\tB\025\342\337\037\021\022\017\302\001\014J\004passJ\004node" +
-      "\022\032\n\004name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\022\n\004desc\030\006 \001" +
-      "(\tB\004\342\337\037\000\022&\n\006schema\030\007 \001(\tB\026\342\337\037\022\022\020\302\001\rJ\004htt" +
-      "pJ\005https\022%\n\003tls\030\010 \001(\0132\022.model.UpstreamTL" +
-      "SB\004\342\337\037\000\022%\n\007timeout\030\t \001(\0132\016.model.Timeout" +
-      "B\004\342\337\037\000\022\n\n\002id\030\n \001(\t\022\013\n\003key\030\013 \001(\t\022\023\n\013creat" +
-      "e_time\030\014 \001(\003\022\023\n\013update_time\030\r \001(\003\"6\n\007Tim" +
-      "eout\022\017\n\007connect\030\001 \001(\002\022\014\n\004send\030\002 \001(\002\022\014\n\004r" +
-      "ead\030\003 \001(\002\"b\n\014UpstreamNode\022\032\n\004host\030\001 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004port\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000" +
-      "\022\033\n\006weight\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"6\n\013Upstrea" +
-      "mTLS\022\023\n\013client_cert\030\001 \001(\t\022\022\n\nclient_key\030" +
-      "\002 \001(\t\"\314\002\n\005Route\022\031\n\003uri\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200" +
-      "\002\000\022\n\n\002id\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022%\n\010priority" +
-      "\030\004 \001(\005B\023\242\241\037\004\252\006\0010\342\337\037\007\022\005\262\001\0020\000\022\017\n\007methods\030\005" +
-      " \003(\t\022\r\n\005hosts\030\006 \003(\t\022!\n\014remote_addrs\030\007 \003(" +
-      "\tB\013\342\337\037\007\022\005\352\001\002@\000\022\031\n\013upstream_id\030\010 \001(\tB\004\342\337\037" +
-      "\000\022\035\n\006status\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048\001@\000\022\032\n\004name" +
-      "\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\023\n\013create_time\030\013 \001(" +
-      "\003\022\023\n\013update_time\030\014 \001(\003\022$\n\016api_service_id" +
-      "\030\r \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\215\001\n\003SSL\022\032\n\004cert\030\001 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001" +
-      "(\t\022\023\n\013create_time\030\005 \001(\003\022\023\n\013update_time\030\006" +
-      " \001(\003Bn\n\"com.dataomnis.gproto.types.pbmod" +
-      "elB\023PBModelApiDashboardP\000Z1github.com/Da" +
-      "taWorkbench/gproto/xgo/types/pbmodelb\006pr" +
-      "oto3"
+      "to/validator.proto\032/github.com/yu31/prot" +
+      "oc-plugin/proto/gosql.proto\"\247\002\n\016Upstream" +
+      "Entity\022\014\n\004type\030\001 \001(\t\022)\n\005nodes\030\002 \001(\0132\024.mo" +
+      "del.UpstreamNodesB\004\342\337\037\000\022\014\n\004name\030\003 \001(\t\022\014\n" +
+      "\004desc\030\004 \001(\t\022\016\n\006schema\030\005 \001(\005\022\037\n\003tls\030\006 \001(\013" +
+      "2\022.model.UpstreamTLS\022\037\n\007timeout\030\007 \001(\0132\016." +
+      "model.Timeout\022\n\n\002id\030\010 \001(\t\022\023\n\013create_time" +
+      "\030\t \001(\003\022\023\n\013update_time\030\n \001(\003\022\020\n\010space_id\030" +
+      "\013 \001(\t\022&\n\013curr_status\030\014 \001(\0162\021.model.Statu" +
+      "sType\"\304\002\n\013RouteEntity\022\013\n\003uri\030\001 \001(\t\022\014\n\004na" +
+      "me\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\017\n\007methods\030\004 \001(\t\022" +
+      "\014\n\004host\030\005 \001(\t\022\024\n\014remote_addrs\030\006 \001(\t\022\023\n\013u" +
+      "pstream_id\030\007 \001(\t\022&\n\013curr_status\030\010 \001(\0162\021." +
+      "model.StatusType\022\n\n\002id\030\t \001(\t\022\023\n\013create_t" +
+      "ime\030\n \001(\003\022\023\n\013update_time\030\013 \001(\003\022\017\n\007plugin" +
+      "s\030\014 \001(\t\022\026\n\016api_service_id\030\r \001(\t\022\026\n\016api_v" +
+      "ersion_id\030\016 \001(\t\022\021\n\tproxy_uri\030\017 \001(\t\022\020\n\010sp" +
+      "ace_id\030\020 \001(\t\"\244\001\n\tSSLEntity\022\n\n\002id\030\001 \001(\t\022\023" +
+      "\n\013create_time\030\002 \001(\003\022\023\n\013update_time\030\003 \001(\003" +
+      "\022\014\n\004snis\030\004 \001(\t\022\014\n\004cert\030\005 \001(\t\022\013\n\003key\030\006 \001(" +
+      "\t\022\020\n\010space_id\030\007 \001(\t\022&\n\013curr_status\030\010 \001(\016" +
+      "2\021.model.StatusType\"\370\001\n\020ApiServiceEntity" +
+      "\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013upd" +
+      "ate_time\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\014\n\004desc\030\005 \001" +
+      "(\t\022\023\n\013auth_key_id\030\006 \001(\t\022\016\n\006domain\030\007 \001(\t\022" +
+      " \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\021\n\tapi" +
+      "_count\030\t \001(\005\022\020\n\010space_id\030\n \001(\t\022&\n\013curr_s" +
+      "tatus\030\013 \001(\0162\021.model.StatusType\"\265\001\n\rAuthK" +
+      "eyEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(" +
+      "\003\022\023\n\013update_time\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\022\n\n" +
+      "secret_key\030\005 \001(\t\022\022\n\ncreated_by\030\006 \001(\t\022\020\n\010" +
+      "space_id\030\007 \001(\t\022&\n\013curr_status\030\010 \001(\0162\021.mo" +
+      "del.StatusType\"\244\003\n\010Upstream\022<\n\004type\030\001 \001(" +
+      "\tB.\342\337\037*\022(\302\001%J\nroundrobinJ\005chashJ\004ewmaJ\nl" +
+      "east_conn\022/\n\005nodes\030\002 \003(\0132\023.model.Upstrea" +
+      "mNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\032\n\004name\030\003 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\200\002\000\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022&\n\006schema\030\005 \001" +
+      "(\tB\026\342\337\037\022\022\020\302\001\rJ\004httpJ\005https\022%\n\003tls\030\006 \001(\0132" +
+      "\022.model.UpstreamTLSB\004\342\337\037\000\022%\n\007timeout\030\007 \001" +
+      "(\0132\016.model.TimeoutB\004\342\337\037\000\022\n\n\002id\030\010 \001(\t\022\023\n\013" +
+      "create_time\030\t \001(\003\022\023\n\013update_time\030\n \001(\003\022%" +
+      "\n\010space_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n" +
+      "\013curr_status\030\014 \001(\0162\021.model.StatusType\">\n" +
+      "\007Timeout\022\017\n\007connect\030\001 \001(\002\022\014\n\004send\030\002 \001(\002\022" +
+      "\014\n\004read\030\003 \001(\002:\006\312\262\004\002\n\000\"b\n\014UpstreamNode\022\032\n" +
+      "\004host\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004port\030\002 \001(\005B" +
+      "\013\342\337\037\007\022\005\262\001\0020\000\022\033\n\006weight\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\"A\n\rUpstreamNodes\022(\n\005nodes\030\001 \003(\0132\023.mode" +
+      "l.UpstreamNodeB\004\342\337\037\000:\006\312\262\004\002\n\000\">\n\013Upstream" +
+      "TLS\022\023\n\013client_cert\030\001 \001(\t\022\022\n\nclient_key\030\002" +
+      " \001(\t:\006\312\262\004\002\n\000\"\233\003\n\005Route\022\031\n\003uri\030\001 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\200\002\000\022\n\n\002id\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\017\n\007m" +
+      "ethods\030\004 \003(\t\022\014\n\004host\030\005 \001(\t\022!\n\014remote_add" +
+      "rs\030\006 \003(\tB\013\342\337\037\007\022\005\352\001\002@\000\022\031\n\013upstream_id\030\007 \001" +
+      "(\tB\004\342\337\037\000\022&\n\013curr_status\030\010 \001(\0162\021.model.St" +
+      "atusType\022\032\n\004name\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\023\n\013" +
+      "create_time\030\n \001(\003\022\023\n\013update_time\030\013 \001(\003\022$" +
+      "\n\016api_service_id\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016" +
+      "api_version_id\030\r \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\037\n\tpr" +
+      "oxy_uri\030\016 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022%\n\010space_id\030" +
+      "\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\334\001\n\003SSL\022\032\n\004ce" +
+      "rt\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002" +
+      "id\030\004 \001(\t\022\023\n\013create_time\030\005 \001(\003\022\023\n\013update_" +
+      "time\030\006 \001(\003\022%\n\010space_id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022&\n\013curr_status\030\010 \001(\0162\021.model.S" +
+      "tatusType*0\n\nStatusType\022\010\n\004Skip\020\000\022\013\n\007Ena" +
+      "bled\020\001\022\013\n\007Deleted\020\002*!\n\nSchemaType\022\010\n\004htt" +
+      "p\020\000\022\t\n\005https\020\001Bn\n\"com.dataomnis.gproto.t" +
+      "ypes.pbmodelB\023PBModelApiDashboardP\000Z1git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
-          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_UpstreamEntity_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_UpstreamEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UpstreamEntity_descriptor,
-        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "ClientCert", "ClientKey", "TimeoutConnect", "TimeoutSend", "TimeoutRead", "Id", "CreateTime", "UpdateTime", "Key", });
+        new java.lang.String[] { "Type", "Nodes", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", "CreateTime", "UpdateTime", "SpaceId", "CurrStatus", });
     internal_static_model_RouteEntity_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_RouteEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RouteEntity_descriptor,
-        new java.lang.String[] { "Uri", "Name", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Id", "CreateTime", "UpdateTime", "Plugins", "ApiServiceId", });
+        new java.lang.String[] { "Uri", "Name", "Desc", "Methods", "Host", "RemoteAddrs", "UpstreamId", "CurrStatus", "Id", "CreateTime", "UpdateTime", "Plugins", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
     internal_static_model_SSLEntity_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_SSLEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SSLEntity_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Snis", "Cert", "Key", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Snis", "Cert", "Key", "SpaceId", "CurrStatus", });
     internal_static_model_ApiServiceEntity_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_ApiServiceEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiServiceEntity_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "Desc", "AuthKeyId", "Domain", "UserId", "ApiCount", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "Desc", "AuthKeyId", "Domain", "CreatedBy", "ApiCount", "SpaceId", "CurrStatus", });
     internal_static_model_AuthKeyEntity_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_AuthKeyEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AuthKeyEntity_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "SecretKey", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "SecretKey", "CreatedBy", "SpaceId", "CurrStatus", });
     internal_static_model_Upstream_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_model_Upstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Upstream_descriptor,
-        new java.lang.String[] { "Type", "Nodes", "Retries", "PassHost", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", "Key", "CreateTime", "UpdateTime", });
+        new java.lang.String[] { "Type", "Nodes", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", "CreateTime", "UpdateTime", "SpaceId", "CurrStatus", });
     internal_static_model_Timeout_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_model_Timeout_fieldAccessorTable = new
@@ -18415,33 +21428,38 @@ public final class PBModelApiDashboard {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UpstreamNode_descriptor,
         new java.lang.String[] { "Host", "Port", "Weight", });
-    internal_static_model_UpstreamTLS_descriptor =
+    internal_static_model_UpstreamNodes_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_model_UpstreamNodes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_UpstreamNodes_descriptor,
+        new java.lang.String[] { "Nodes", });
+    internal_static_model_UpstreamTLS_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_model_UpstreamTLS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UpstreamTLS_descriptor,
         new java.lang.String[] { "ClientCert", "ClientKey", });
     internal_static_model_Route_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_model_Route_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Route_descriptor,
-        new java.lang.String[] { "Uri", "Id", "Desc", "Priority", "Methods", "Hosts", "RemoteAddrs", "UpstreamId", "Status", "Name", "CreateTime", "UpdateTime", "ApiServiceId", });
+        new java.lang.String[] { "Uri", "Id", "Desc", "Methods", "Host", "RemoteAddrs", "UpstreamId", "CurrStatus", "Name", "CreateTime", "UpdateTime", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
     internal_static_model_SSL_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_model_SSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SSL_descriptor,
-        new java.lang.String[] { "Cert", "Key", "Snis", "Id", "CreateTime", "UpdateTime", });
+        new java.lang.String[] { "Cert", "Key", "Snis", "Id", "CreateTime", "UpdateTime", "SpaceId", "CurrStatus", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);
+    registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
-    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

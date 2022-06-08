@@ -7,6 +7,7 @@ package pbrequest
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -37,6 +38,12 @@ func (this *SubmitFlinkJobInteractive) SetDefaults() {
 		if dt, ok := interface{}(this.Job).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
+	}
+	if this.MaxCount == 0 {
+		this.MaxCount = 100
+	}
+	if this.RefreshInterval == 0 {
+		this.RefreshInterval = 10000
 	}
 	return
 }
