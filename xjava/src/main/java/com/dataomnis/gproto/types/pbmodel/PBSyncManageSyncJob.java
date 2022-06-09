@@ -23393,86 +23393,86 @@ public final class PBSyncManageSyncJob {
       "2\025.model.ChannelControl\022)\n\014cluster_info\030" +
       "\010 \001(\0132\023.model.FlinkCluster\022\017\n\007updated\030\t " +
       "\001(\003\":\n\007JobMode\022\020\n\014JobModeUnset\020\000\022\r\n\tGuid" +
-      "eMode\020\001\022\016\n\nScriptMode\020\002:\006\312\262\004\002\n\000\"\335\001\n\016Chan" +
+      "eMode\020\001\022\016\n\nScriptMode\020\002:\006\312\262\004\002\n\000\"\334\001\n\016Chan" +
       "nelControl\022*\n\013parallelism\030\001 \001(\005B\025\242\241\037\004\252\006\001" +
-      "1\342\337\037\t\022\007\262\001\0040\0008d\022\035\n\nrecord_num\030\002 \001(\005B\t\242\241\037\005" +
-      "\252\006\002-1\022.\n\004rate\030\003 \001(\0162 .model.ChannelContr" +
-      "ol.RatePolicy\022\r\n\005bytes\030\004 \001(\005\"9\n\nRatePoli" +
-      "cy\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Limit\020\001\022\013\n\007Un" +
-      "Limit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResource\022%\n\014mysq" +
-      "l_source\030\001 \001(\0132\017.model.DBSource\022%\n\014mysql" +
-      "_target\030\002 \001(\0132\017.model.DBTarget\022&\n\roracle" +
-      "_source\030\003 \001(\0132\017.model.DBSource\022&\n\roracle" +
-      "_target\030\004 \001(\0132\017.model.DBTarget\022#\n\ndb2_so" +
-      "urce\030\005 \001(\0132\017.model.DBSource\022#\n\ndb2_targe" +
-      "t\030\006 \001(\0132\017.model.DBTarget\022*\n\021postgresql_s" +
-      "ource\030\007 \001(\0132\017.model.DBSource\022*\n\021postgres" +
-      "ql_target\030\010 \001(\0132\017.model.DBTarget\022)\n\020sqls" +
-      "erver_source\030\t \001(\0132\017.model.DBSource\022)\n\020s" +
-      "qlserver_target\030\n \001(\0132\017.model.DBTarget\022+" +
-      "\n\022click_house_source\030\013 \001(\0132\017.model.DBSou" +
-      "rce\022+\n\022click_house_target\030\014 \001(\0132\017.model." +
-      "DBTarget\022(\n\017sap_hana_source\030\r \001(\0132\017.mode" +
-      "l.DBSource\022(\n\017sap_hana_target\030\016 \001(\0132\017.mo" +
-      "del.DBTarget\022,\n\016mongodb_source\030\017 \001(\0132\024.m" +
-      "odel.MongodbSource\022,\n\016mongodb_target\030\020 \001" +
-      "(\0132\024.model.MongodbTarget\0229\n\025elastic_sear" +
-      "ch_source\030\021 \001(\0132\032.model.ElasticSearchSou" +
-      "rce\0229\n\025elastic_search_target\030\022 \001(\0132\032.mod" +
-      "el.ElasticSearchTarget\022&\n\013hdfs_source\030\023 " +
-      "\001(\0132\021.model.HdfsSource\022&\n\013hdfs_target\030\024 " +
-      "\001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030\025 \001" +
-      "(\0132\020.model.FtpSource\022$\n\nftp_target\030\026 \001(\013" +
-      "2\020.model.FtpTarget\022(\n\014hbase_source\030\027 \001(\013" +
-      "2\022.model.HbaseSource\022(\n\014hbase_target\030\030 \001" +
-      "(\0132\022.model.HbaseTarget\022(\n\014kafka_source\030\031" +
-      " \001(\0132\022.model.KafkaSource\022(\n\014kafka_target" +
-      "\030\032 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_sou" +
-      "rce\030\033 \001(\0132\023.model.BinlogSource\022)\n\rpg_wal" +
-      "_source\030\034 \001(\0132\022.model.PgWalSource\0228\n\025sql" +
-      "_server_cdc_source\030\035 \001(\0132\031.model.SqlServ" +
-      "erCdcSource\022/\n\020log_miner_source\030\036 \001(\0132\025." +
-      "model.LogMinerSource\022(\n\014redis_target\030\037 \001" +
-      "(\0132\022.model.RedisTarget\022&\n\013hive_target\030  " +
-      "\001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJ" +
-      "obSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.mo" +
-      "del.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sch" +
-      "edule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\npar" +
-      "ameters\030\003 \003(\0132 .model.SyncJobSchedule.Pa" +
-      "rameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n" +
-      "\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency" +
-      "_policy\030\006 \001(\0162(.model.SyncJobSchedule.Co" +
-      "ncurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period" +
-      "_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
-      "\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005m" +
-      "onthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sch" +
-      "edule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeo" +
-      "ut\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022\037\n\003" +
-      "key\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002" +
-      " \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016SchedulePoli" +
-      "cy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodici" +
-      "ty\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S" +
-      "\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPolicy" +
-      "Unset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replac" +
-      "e\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000" +
-      "\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\207\004\n\016SyncJob" +
-      "Release\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022" +
-      "\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004" +
-      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.m" +
-      "odel.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006stat" +
-      "us\030\006 \001(\0162\034.model.SyncJobRelease.Status\022\014" +
-      "\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
-      "updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\010sync_job\030\013" +
-      " \001(\0132\016.model.SyncJob\0221\n\021sync_job_propert" +
-      "y\030\014 \001(\0132\026.model.SyncJobProperty\"M\n\006Statu" +
-      "s\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Inlin" +
-      "e\020\002\022\013\n\007Offline\020\003\022\014\n\010Finished\020\004Bn\n\"com.da" +
-      "taomnis.gproto.types.pbmodelB\023PBSyncMana" +
-      "geSyncJobP\000Z1github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodelb\006proto3"
+      "1\342\337\037\t\022\007\262\001\0040\0008d\022\034\n\nrecord_num\030\002 \001(\005B\010\242\241\037\004" +
+      "\252\006\0010\022.\n\004rate\030\003 \001(\0162 .model.ChannelContro" +
+      "l.RatePolicy\022\r\n\005bytes\030\004 \001(\005\"9\n\nRatePolic" +
+      "y\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Limit\020\001\022\013\n\007UnL" +
+      "imit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResource\022%\n\014mysql" +
+      "_source\030\001 \001(\0132\017.model.DBSource\022%\n\014mysql_" +
+      "target\030\002 \001(\0132\017.model.DBTarget\022&\n\roracle_" +
+      "source\030\003 \001(\0132\017.model.DBSource\022&\n\roracle_" +
+      "target\030\004 \001(\0132\017.model.DBTarget\022#\n\ndb2_sou" +
+      "rce\030\005 \001(\0132\017.model.DBSource\022#\n\ndb2_target" +
+      "\030\006 \001(\0132\017.model.DBTarget\022*\n\021postgresql_so" +
+      "urce\030\007 \001(\0132\017.model.DBSource\022*\n\021postgresq" +
+      "l_target\030\010 \001(\0132\017.model.DBTarget\022)\n\020sqlse" +
+      "rver_source\030\t \001(\0132\017.model.DBSource\022)\n\020sq" +
+      "lserver_target\030\n \001(\0132\017.model.DBTarget\022+\n" +
+      "\022click_house_source\030\013 \001(\0132\017.model.DBSour" +
+      "ce\022+\n\022click_house_target\030\014 \001(\0132\017.model.D" +
+      "BTarget\022(\n\017sap_hana_source\030\r \001(\0132\017.model" +
+      ".DBSource\022(\n\017sap_hana_target\030\016 \001(\0132\017.mod" +
+      "el.DBTarget\022,\n\016mongodb_source\030\017 \001(\0132\024.mo" +
+      "del.MongodbSource\022,\n\016mongodb_target\030\020 \001(" +
+      "\0132\024.model.MongodbTarget\0229\n\025elastic_searc" +
+      "h_source\030\021 \001(\0132\032.model.ElasticSearchSour" +
+      "ce\0229\n\025elastic_search_target\030\022 \001(\0132\032.mode" +
+      "l.ElasticSearchTarget\022&\n\013hdfs_source\030\023 \001" +
+      "(\0132\021.model.HdfsSource\022&\n\013hdfs_target\030\024 \001" +
+      "(\0132\021.model.HdfsTarget\022$\n\nftp_source\030\025 \001(" +
+      "\0132\020.model.FtpSource\022$\n\nftp_target\030\026 \001(\0132" +
+      "\020.model.FtpTarget\022(\n\014hbase_source\030\027 \001(\0132" +
+      "\022.model.HbaseSource\022(\n\014hbase_target\030\030 \001(" +
+      "\0132\022.model.HbaseTarget\022(\n\014kafka_source\030\031 " +
+      "\001(\0132\022.model.KafkaSource\022(\n\014kafka_target\030" +
+      "\032 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_sour" +
+      "ce\030\033 \001(\0132\023.model.BinlogSource\022)\n\rpg_wal_" +
+      "source\030\034 \001(\0132\022.model.PgWalSource\0228\n\025sql_" +
+      "server_cdc_source\030\035 \001(\0132\031.model.SqlServe" +
+      "rCdcSource\022/\n\020log_miner_source\030\036 \001(\0132\025.m" +
+      "odel.LogMinerSource\022(\n\014redis_target\030\037 \001(" +
+      "\0132\022.model.RedisTarget\022&\n\013hive_target\030  \001" +
+      "(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJo" +
+      "bSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.mod" +
+      "el.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sche" +
+      "dule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\npara" +
+      "meters\030\003 \003(\0132 .model.SyncJobSchedule.Par" +
+      "ameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005" +
+      "ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_" +
+      "policy\030\006 \001(\0162(.model.SyncJobSchedule.Con" +
+      "currencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_" +
+      "type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002" +
+      "\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005mo" +
+      "nthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sche" +
+      "dule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeou" +
+      "t\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022\037\n\003k" +
+      "ey\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002 " +
+      "\001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016SchedulePolic" +
+      "y\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodicit" +
+      "y\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S\n" +
+      "\021ConcurrencyPolicy\022\032\n\026ConcurrencyPolicyU" +
+      "nset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace" +
+      "\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000\022" +
+      "\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\207\004\n\016SyncJobR" +
+      "elease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035" +
+      "\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 " +
+      "\001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.mo" +
+      "del.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006statu" +
+      "s\030\006 \001(\0162\034.model.SyncJobRelease.Status\022\014\n" +
+      "\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
+      "pdated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\010sync_job\030\013 " +
+      "\001(\0132\016.model.SyncJob\0221\n\021sync_job_property" +
+      "\030\014 \001(\0132\026.model.SyncJobProperty\"M\n\006Status" +
+      "\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Inline" +
+      "\020\002\022\013\n\007Offline\020\003\022\014\n\010Finished\020\004Bn\n\"com.dat" +
+      "aomnis.gproto.types.pbmodelB\023PBSyncManag" +
+      "eSyncJobP\000Z1github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

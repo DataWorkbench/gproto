@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\030PBResponseFlinkDeveloperP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/response/flink_developer.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\x84\x01\n\x0eSubmitFlinkJob\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.response.SubmitFlinkJob.Code\x12\x15\n\x07message\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\".\n\x04\x43ode\x12\r\n\tCodeUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"2\n\x19SubmitFlinkJobInteractive\x12\x15\n\x07message\x18\x01 \x01(\tB\x04\xe2\xdf\x1f\x00\"\x8d\x01\n\x10ValidateFlinkJob\x12\x31\n\x06result\x18\x01 \x01(\x0e\x32!.response.ValidateFlinkJob.Result\x12\x0f\n\x07message\x18\x02 \x01(\t\"5\n\x06Result\x12\x0f\n\x0bResultUnset\x10\x00\x12\x0b\n\x07\x43orrect\x10\x01\x12\r\n\tIncorrect\x10\x02\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseFlinkDeveloperP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n*proto/types/response/flink_developer.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\x84\x01\n\x0eSubmitFlinkJob\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.response.SubmitFlinkJob.Code\x12\x15\n\x07message\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\".\n\x04\x43ode\x12\r\n\tCodeUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\"\x91\x02\n\x19SubmitFlinkJobInteractive\x12<\n\x04type\x18\x01 \x01(\x0e\x32(.response.SubmitFlinkJobInteractive.TypeB\x04\xe2\xdf\x1f\x00\x12\x42\n\x07\x64\x61taset\x18\x02 \x03(\x0b\x32+.response.SubmitFlinkJobInteractive.DataSetB\x04\xe2\xdf\x1f\x00\x12\x1b\n\rerror_message\x18\x03 \x01(\tB\x04\xe2\xdf\x1f\x00\x1a\x1a\n\x07\x44\x61taSet\x12\x0f\n\x07message\x18\x01 \x03(\t\"9\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0c\n\x08\x45rrorMsg\x10\x01\x12\x08\n\x04\x44\x61ta\x10\x02\x12\n\n\x06Schema\x10\x03\"\x8d\x01\n\x10ValidateFlinkJob\x12\x31\n\x06result\x18\x01 \x01(\x0e\x32!.response.ValidateFlinkJob.Result\x12\x0f\n\x07message\x18\x02 \x01(\t\"5\n\x06Result\x12\x0f\n\x0bResultUnset\x10\x00\x12\x0b\n\x07\x43orrect\x10\x01\x12\r\n\tIncorrect\x10\x02\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseFlinkDeveloperP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -56,6 +56,41 @@ _SUBMITFLINKJOB_CODE = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_SUBMITFLINKJOB_CODE)
 
+_SUBMITFLINKJOBINTERACTIVE_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='response.SubmitFlinkJobInteractive.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ErrorMsg', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Data', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Schema', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=461,
+  serialized_end=518,
+)
+_sym_db.RegisterEnumDescriptor(_SUBMITFLINKJOBINTERACTIVE_TYPE)
+
 _VALIDATEFLINKJOB_RESULT = _descriptor.EnumDescriptor(
   name='Result',
   full_name='response.ValidateFlinkJob.Result',
@@ -81,8 +116,8 @@ _VALIDATEFLINKJOB_RESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=385,
-  serialized_end=438,
+  serialized_start=609,
+  serialized_end=662,
 )
 _sym_db.RegisterEnumDescriptor(_VALIDATEFLINKJOB_RESULT)
 
@@ -127,21 +162,21 @@ _SUBMITFLINKJOB = _descriptor.Descriptor(
 )
 
 
-_SUBMITFLINKJOBINTERACTIVE = _descriptor.Descriptor(
-  name='SubmitFlinkJobInteractive',
-  full_name='response.SubmitFlinkJobInteractive',
+_SUBMITFLINKJOBINTERACTIVE_DATASET = _descriptor.Descriptor(
+  name='DataSet',
+  full_name='response.SubmitFlinkJobInteractive.DataSet',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='response.SubmitFlinkJobInteractive.message', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='message', full_name='response.SubmitFlinkJobInteractive.DataSet.message', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -154,8 +189,54 @@ _SUBMITFLINKJOBINTERACTIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=294,
+  serialized_start=433,
+  serialized_end=459,
+)
+
+_SUBMITFLINKJOBINTERACTIVE = _descriptor.Descriptor(
+  name='SubmitFlinkJobInteractive',
+  full_name='response.SubmitFlinkJobInteractive',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='response.SubmitFlinkJobInteractive.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dataset', full_name='response.SubmitFlinkJobInteractive.dataset', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error_message', full_name='response.SubmitFlinkJobInteractive.error_message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SUBMITFLINKJOBINTERACTIVE_DATASET, ],
+  enum_types=[
+    _SUBMITFLINKJOBINTERACTIVE_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=245,
+  serialized_end=518,
 )
 
 
@@ -194,12 +275,16 @@ _VALIDATEFLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=297,
-  serialized_end=438,
+  serialized_start=521,
+  serialized_end=662,
 )
 
 _SUBMITFLINKJOB.fields_by_name['code'].enum_type = _SUBMITFLINKJOB_CODE
 _SUBMITFLINKJOB_CODE.containing_type = _SUBMITFLINKJOB
+_SUBMITFLINKJOBINTERACTIVE_DATASET.containing_type = _SUBMITFLINKJOBINTERACTIVE
+_SUBMITFLINKJOBINTERACTIVE.fields_by_name['type'].enum_type = _SUBMITFLINKJOBINTERACTIVE_TYPE
+_SUBMITFLINKJOBINTERACTIVE.fields_by_name['dataset'].message_type = _SUBMITFLINKJOBINTERACTIVE_DATASET
+_SUBMITFLINKJOBINTERACTIVE_TYPE.containing_type = _SUBMITFLINKJOBINTERACTIVE
 _VALIDATEFLINKJOB.fields_by_name['result'].enum_type = _VALIDATEFLINKJOB_RESULT
 _VALIDATEFLINKJOB_RESULT.containing_type = _VALIDATEFLINKJOB
 DESCRIPTOR.message_types_by_name['SubmitFlinkJob'] = _SUBMITFLINKJOB
@@ -215,11 +300,19 @@ SubmitFlinkJob = _reflection.GeneratedProtocolMessageType('SubmitFlinkJob', (_me
 _sym_db.RegisterMessage(SubmitFlinkJob)
 
 SubmitFlinkJobInteractive = _reflection.GeneratedProtocolMessageType('SubmitFlinkJobInteractive', (_message.Message,), {
+
+  'DataSet' : _reflection.GeneratedProtocolMessageType('DataSet', (_message.Message,), {
+    'DESCRIPTOR' : _SUBMITFLINKJOBINTERACTIVE_DATASET,
+    '__module__' : 'proto.types.response.flink_developer_pb2'
+    # @@protoc_insertion_point(class_scope:response.SubmitFlinkJobInteractive.DataSet)
+    })
+  ,
   'DESCRIPTOR' : _SUBMITFLINKJOBINTERACTIVE,
   '__module__' : 'proto.types.response.flink_developer_pb2'
   # @@protoc_insertion_point(class_scope:response.SubmitFlinkJobInteractive)
   })
 _sym_db.RegisterMessage(SubmitFlinkJobInteractive)
+_sym_db.RegisterMessage(SubmitFlinkJobInteractive.DataSet)
 
 ValidateFlinkJob = _reflection.GeneratedProtocolMessageType('ValidateFlinkJob', (_message.Message,), {
   'DESCRIPTOR' : _VALIDATEFLINKJOB,
@@ -231,5 +324,7 @@ _sym_db.RegisterMessage(ValidateFlinkJob)
 
 DESCRIPTOR._options = None
 _SUBMITFLINKJOB.fields_by_name['message']._options = None
-_SUBMITFLINKJOBINTERACTIVE.fields_by_name['message']._options = None
+_SUBMITFLINKJOBINTERACTIVE.fields_by_name['type']._options = None
+_SUBMITFLINKJOBINTERACTIVE.fields_by_name['dataset']._options = None
+_SUBMITFLINKJOBINTERACTIVE.fields_by_name['error_message']._options = None
 # @@protoc_insertion_point(module_scope)

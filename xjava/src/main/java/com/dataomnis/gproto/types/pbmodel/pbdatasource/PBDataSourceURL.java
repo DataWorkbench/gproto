@@ -4675,12 +4675,35 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
+     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+     * &#64;inject_tag: json:"auth_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for authMode.
+     */
+    int getAuthModeValue();
+    /**
+     * <pre>
+     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+     * &#64;inject_tag: json:"auth_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The authMode.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode getAuthMode();
+
+    /**
+     * <pre>
      * The SFTP private key content.  Is Required if protocol == 2 (SFTP).
      * Min Bytes Length: 1, Max Bytes Length: 2048
      * &#64;inject_tag: json:"private_key"
      * </pre>
      *
-     * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+     * <code>string private_key = 4 [(.validator.field) = { ... }</code>
      * @return The privateKey.
      */
     java.lang.String getPrivateKey();
@@ -4691,7 +4714,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"private_key"
      * </pre>
      *
-     * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+     * <code>string private_key = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for privateKey.
      */
     com.google.protobuf.ByteString
@@ -4703,7 +4726,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * <code>string host = 5 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     java.lang.String getHost();
@@ -4713,7 +4736,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * <code>string host = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     com.google.protobuf.ByteString
@@ -4725,7 +4748,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 5 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 6 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     int getPort();
@@ -4736,7 +4759,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 6 [(.validator.field) = { ... }</code>
+     * <code>string user = 7 [(.validator.field) = { ... }</code>
      * @return The user.
      */
     java.lang.String getUser();
@@ -4746,7 +4769,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 6 [(.validator.field) = { ... }</code>
+     * <code>string user = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for user.
      */
     com.google.protobuf.ByteString
@@ -4758,7 +4781,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 7 [(.validator.field) = { ... }</code>
+     * <code>string password = 8 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     java.lang.String getPassword();
@@ -4768,7 +4791,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 7 [(.validator.field) = { ... }</code>
+     * <code>string password = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
@@ -4793,6 +4816,7 @@ public final class PBDataSourceURL {
     private FtpURL() {
       protocol_ = 0;
       connectionMode_ = 0;
+      authMode_ = 0;
       privateKey_ = "";
       host_ = "";
       user_ = "";
@@ -4841,30 +4865,36 @@ public final class PBDataSourceURL {
               connectionMode_ = rawValue;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              privateKey_ = s;
+              authMode_ = rawValue;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              privateKey_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               host_ = s;
               break;
             }
-            case 40: {
+            case 48: {
 
               port_ = input.readInt32();
               break;
             }
-            case 50: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               user_ = s;
               break;
             }
-            case 58: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
@@ -5136,6 +5166,123 @@ public final class PBDataSourceURL {
       // @@protoc_insertion_point(enum_scope:datasource.FtpURL.ConnectionMode)
     }
 
+    /**
+     * Protobuf enum {@code datasource.FtpURL.AuthMode}
+     */
+    public enum AuthMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>AuthModeUnset = 0;</code>
+       */
+      AuthModeUnset(0),
+      /**
+       * <code>Password = 1;</code>
+       */
+      Password(1),
+      /**
+       * <code>PrivateKey = 2;</code>
+       */
+      PrivateKey(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>AuthModeUnset = 0;</code>
+       */
+      public static final int AuthModeUnset_VALUE = 0;
+      /**
+       * <code>Password = 1;</code>
+       */
+      public static final int Password_VALUE = 1;
+      /**
+       * <code>PrivateKey = 2;</code>
+       */
+      public static final int PrivateKey_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AuthMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AuthMode forNumber(int value) {
+        switch (value) {
+          case 0: return AuthModeUnset;
+          case 1: return Password;
+          case 2: return PrivateKey;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AuthMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          AuthMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AuthMode>() {
+              public AuthMode findValueByNumber(int number) {
+                return AuthMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final AuthMode[] VALUES = values();
+
+      public static AuthMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AuthMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:datasource.FtpURL.AuthMode)
+    }
+
     public static final int PROTOCOL_FIELD_NUMBER = 1;
     private int protocol_;
     /**
@@ -5196,7 +5343,38 @@ public final class PBDataSourceURL {
       return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.UNRECOGNIZED : result;
     }
 
-    public static final int PRIVATE_KEY_FIELD_NUMBER = 3;
+    public static final int AUTH_MODE_FIELD_NUMBER = 3;
+    private int authMode_;
+    /**
+     * <pre>
+     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+     * &#64;inject_tag: json:"auth_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for authMode.
+     */
+    @java.lang.Override public int getAuthModeValue() {
+      return authMode_;
+    }
+    /**
+     * <pre>
+     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+     * &#64;inject_tag: json:"auth_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The authMode.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode getAuthMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.valueOf(authMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.UNRECOGNIZED : result;
+    }
+
+    public static final int PRIVATE_KEY_FIELD_NUMBER = 4;
     private volatile java.lang.Object privateKey_;
     /**
      * <pre>
@@ -5205,7 +5383,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"private_key"
      * </pre>
      *
-     * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+     * <code>string private_key = 4 [(.validator.field) = { ... }</code>
      * @return The privateKey.
      */
     @java.lang.Override
@@ -5228,7 +5406,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"private_key"
      * </pre>
      *
-     * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+     * <code>string private_key = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for privateKey.
      */
     @java.lang.Override
@@ -5246,7 +5424,7 @@ public final class PBDataSourceURL {
       }
     }
 
-    public static final int HOST_FIELD_NUMBER = 4;
+    public static final int HOST_FIELD_NUMBER = 5;
     private volatile java.lang.Object host_;
     /**
      * <pre>
@@ -5254,7 +5432,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * <code>string host = 5 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     @java.lang.Override
@@ -5276,7 +5454,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * <code>string host = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     @java.lang.Override
@@ -5294,7 +5472,7 @@ public final class PBDataSourceURL {
       }
     }
 
-    public static final int PORT_FIELD_NUMBER = 5;
+    public static final int PORT_FIELD_NUMBER = 6;
     private int port_;
     /**
      * <pre>
@@ -5302,7 +5480,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 5 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 6 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     @java.lang.Override
@@ -5310,7 +5488,7 @@ public final class PBDataSourceURL {
       return port_;
     }
 
-    public static final int USER_FIELD_NUMBER = 6;
+    public static final int USER_FIELD_NUMBER = 7;
     private volatile java.lang.Object user_;
     /**
      * <pre>
@@ -5318,7 +5496,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 6 [(.validator.field) = { ... }</code>
+     * <code>string user = 7 [(.validator.field) = { ... }</code>
      * @return The user.
      */
     @java.lang.Override
@@ -5340,7 +5518,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 6 [(.validator.field) = { ... }</code>
+     * <code>string user = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for user.
      */
     @java.lang.Override
@@ -5358,7 +5536,7 @@ public final class PBDataSourceURL {
       }
     }
 
-    public static final int PASSWORD_FIELD_NUMBER = 7;
+    public static final int PASSWORD_FIELD_NUMBER = 8;
     private volatile java.lang.Object password_;
     /**
      * <pre>
@@ -5366,7 +5544,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 7 [(.validator.field) = { ... }</code>
+     * <code>string password = 8 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     @java.lang.Override
@@ -5388,7 +5566,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 7 [(.validator.field) = { ... }</code>
+     * <code>string password = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -5426,20 +5604,23 @@ public final class PBDataSourceURL {
       if (connectionMode_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.ConnectionModeUnset.getNumber()) {
         output.writeEnum(2, connectionMode_);
       }
+      if (authMode_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.AuthModeUnset.getNumber()) {
+        output.writeEnum(3, authMode_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, privateKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, privateKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, host_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, host_);
       }
       if (port_ != 0) {
-        output.writeInt32(5, port_);
+        output.writeInt32(6, port_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, user_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, user_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, password_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, password_);
       }
       unknownFields.writeTo(output);
     }
@@ -5458,21 +5639,25 @@ public final class PBDataSourceURL {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, connectionMode_);
       }
+      if (authMode_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.AuthModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, authMode_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, privateKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, privateKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, host_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, host_);
       }
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, port_);
+          .computeInt32Size(6, port_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, user_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, user_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, password_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, password_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5491,6 +5676,7 @@ public final class PBDataSourceURL {
 
       if (protocol_ != other.protocol_) return false;
       if (connectionMode_ != other.connectionMode_) return false;
+      if (authMode_ != other.authMode_) return false;
       if (!getPrivateKey()
           .equals(other.getPrivateKey())) return false;
       if (!getHost()
@@ -5516,6 +5702,8 @@ public final class PBDataSourceURL {
       hash = (53 * hash) + protocol_;
       hash = (37 * hash) + CONNECTION_MODE_FIELD_NUMBER;
       hash = (53 * hash) + connectionMode_;
+      hash = (37 * hash) + AUTH_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + authMode_;
       hash = (37 * hash) + PRIVATE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateKey().hashCode();
       hash = (37 * hash) + HOST_FIELD_NUMBER;
@@ -5667,6 +5855,8 @@ public final class PBDataSourceURL {
 
         connectionMode_ = 0;
 
+        authMode_ = 0;
+
         privateKey_ = "";
 
         host_ = "";
@@ -5705,6 +5895,7 @@ public final class PBDataSourceURL {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL(this);
         result.protocol_ = protocol_;
         result.connectionMode_ = connectionMode_;
+        result.authMode_ = authMode_;
         result.privateKey_ = privateKey_;
         result.host_ = host_;
         result.port_ = port_;
@@ -5763,6 +5954,9 @@ public final class PBDataSourceURL {
         }
         if (other.connectionMode_ != 0) {
           setConnectionModeValue(other.getConnectionModeValue());
+        }
+        if (other.authMode_ != 0) {
+          setAuthModeValue(other.getAuthModeValue());
         }
         if (!other.getPrivateKey().isEmpty()) {
           privateKey_ = other.privateKey_;
@@ -5975,6 +6169,90 @@ public final class PBDataSourceURL {
         return this;
       }
 
+      private int authMode_ = 0;
+      /**
+       * <pre>
+       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+       * &#64;inject_tag: json:"auth_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for authMode.
+       */
+      @java.lang.Override public int getAuthModeValue() {
+        return authMode_;
+      }
+      /**
+       * <pre>
+       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+       * &#64;inject_tag: json:"auth_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for authMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthModeValue(int value) {
+        
+        authMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+       * &#64;inject_tag: json:"auth_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+       * @return The authMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode getAuthMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.valueOf(authMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+       * &#64;inject_tag: json:"auth_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+       * @param value The authMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthMode(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.AuthMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        authMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
+       * &#64;inject_tag: json:"auth_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.AuthMode auth_mode = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthMode() {
+        
+        authMode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object privateKey_ = "";
       /**
        * <pre>
@@ -5983,7 +6261,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"private_key"
        * </pre>
        *
-       * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+       * <code>string private_key = 4 [(.validator.field) = { ... }</code>
        * @return The privateKey.
        */
       public java.lang.String getPrivateKey() {
@@ -6005,7 +6283,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"private_key"
        * </pre>
        *
-       * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+       * <code>string private_key = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for privateKey.
        */
       public com.google.protobuf.ByteString
@@ -6028,7 +6306,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"private_key"
        * </pre>
        *
-       * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+       * <code>string private_key = 4 [(.validator.field) = { ... }</code>
        * @param value The privateKey to set.
        * @return This builder for chaining.
        */
@@ -6049,7 +6327,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"private_key"
        * </pre>
        *
-       * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+       * <code>string private_key = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPrivateKey() {
@@ -6065,7 +6343,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"private_key"
        * </pre>
        *
-       * <code>string private_key = 3 [(.validator.field) = { ... }</code>
+       * <code>string private_key = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for privateKey to set.
        * @return This builder for chaining.
        */
@@ -6088,7 +6366,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * <code>string host = 5 [(.validator.field) = { ... }</code>
        * @return The host.
        */
       public java.lang.String getHost() {
@@ -6109,7 +6387,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * <code>string host = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
@@ -6131,7 +6409,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * <code>string host = 5 [(.validator.field) = { ... }</code>
        * @param value The host to set.
        * @return This builder for chaining.
        */
@@ -6151,7 +6429,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * <code>string host = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearHost() {
@@ -6166,7 +6444,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * <code>string host = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
@@ -6189,7 +6467,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 5 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 6 [(.validator.field) = { ... }</code>
        * @return The port.
        */
       @java.lang.Override
@@ -6202,7 +6480,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 5 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 6 [(.validator.field) = { ... }</code>
        * @param value The port to set.
        * @return This builder for chaining.
        */
@@ -6218,7 +6496,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 5 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPort() {
@@ -6235,7 +6513,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 6 [(.validator.field) = { ... }</code>
+       * <code>string user = 7 [(.validator.field) = { ... }</code>
        * @return The user.
        */
       public java.lang.String getUser() {
@@ -6256,7 +6534,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 6 [(.validator.field) = { ... }</code>
+       * <code>string user = 7 [(.validator.field) = { ... }</code>
        * @return The bytes for user.
        */
       public com.google.protobuf.ByteString
@@ -6278,7 +6556,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 6 [(.validator.field) = { ... }</code>
+       * <code>string user = 7 [(.validator.field) = { ... }</code>
        * @param value The user to set.
        * @return This builder for chaining.
        */
@@ -6298,7 +6576,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 6 [(.validator.field) = { ... }</code>
+       * <code>string user = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUser() {
@@ -6313,7 +6591,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 6 [(.validator.field) = { ... }</code>
+       * <code>string user = 7 [(.validator.field) = { ... }</code>
        * @param value The bytes for user to set.
        * @return This builder for chaining.
        */
@@ -6336,7 +6614,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 7 [(.validator.field) = { ... }</code>
+       * <code>string password = 8 [(.validator.field) = { ... }</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -6357,7 +6635,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 7 [(.validator.field) = { ... }</code>
+       * <code>string password = 8 [(.validator.field) = { ... }</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -6379,7 +6657,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 7 [(.validator.field) = { ... }</code>
+       * <code>string password = 8 [(.validator.field) = { ... }</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -6399,7 +6677,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 7 [(.validator.field) = { ... }</code>
+       * <code>string password = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -6414,7 +6692,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 7 [(.validator.field) = { ... }</code>
+       * <code>string password = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -20389,65 +20667,68 @@ public final class PBDataSourceURL {
       "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262" +
       "\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
       "!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010da" +
-      "tabase\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\376\003" +
+      "tabase\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\222\005" +
       "\n\006FtpURL\022<\n\010protocol\030\001 \001(\0162\033.datasource." +
       "FtpURL.ProtocolB\r\342\337\037\t\022\007\332\001\0040\000X\001\022`\n\017connec" +
       "tion_mode\030\002 \001(\0162!.datasource.FtpURL.Conn" +
       "ectionModeB$\342\337\037\023\n\021\n\010protocol\022\005\332\001\002\030\001\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022?\n\013private_key\030\003 \001(\tB*\342\337\037\023\n\021\n\010p" +
-      "rotocol\022\005\332\001\002\030\002\342\337\037\017\022\r\302\001\n\200\002\001\230\002\200\020\210\005\001\022\035\n\004hos" +
-      "t\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\005 \001(\005B\017" +
-      "\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\220\002\001\230\002@\0228\n\010password\030\007 \001(\tB&\342\337\037\023\n\021\n\010protoc" +
-      "ol\022\005\332\001\002\030\001\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\"0\n\010Protocol\022\021\n\r" +
-      "ProtocolUnset\020\000\022\007\n\003FTP\020\001\022\010\n\004SFTP\020\002\"B\n\016Co" +
-      "nnectionMode\022\027\n\023ConnectionModeUnset\020\000\022\n\n" +
-      "\006Active\020\001\022\013\n\007Passive\020\002:\006\312\262\004\002\n\000\"\017\n\005S3URL:" +
-      "\006\312\262\004\002\n\000\"K\n\010KafkaURL\0227\n\rkafka_brokers\030\001 \003" +
-      "(\0132\020.datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001:\006\312\262" +
-      "\004\002\n\000\"8\n\010HBaseURL\022$\n\006config\030\001 \001(\tB\024\342\337\037\020\022\016" +
-      "\302\001\013\220\002\001\230\002\200\200\001\350\010\001:\006\312\262\004\002\n\000\"\214\001\n\007HDFSURL\022\"\n\tna" +
-      "me_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002" +
-      " \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\0226\n\006config\030\003 \001(\tB&\342" +
-      "\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\r\022\013\302\001\010\230\002\200\200\001\350\010\001:\006\312" +
-      "\262\004\002\n\000\"\271\001\n\014SqlServerURL\022\035\n\004host\030\001 \001(\tB\017\342\337" +
-      "\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200" +
-      "\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010p" +
-      "assword\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010databa" +
-      "se\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\266\001\n\tOr" +
-      "acleURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035" +
-      "\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022" +
-      "\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\263\001\n\006DB2URL\022\035\n\004host\030\001 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013" +
-      "\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230" +
-      "\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n" +
-      "\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000" +
-      "\"\267\001\n\nSapHanaURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n" +
-      "\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password" +
-      "\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(" +
-      "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\265\001\n\007HiveURL\022\035" +
-      "\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 " +
-      "\001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\014\n\004user\030\003 \001(\t\022\020\n\010pa" +
-      "ssword\030\004 \001(\t\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001" +
-      "\006\220\002\001\230\002@\022\016\n\006config\030\006 \001(\t\022\021\n\tdefaultFS\030\007 \001" +
-      "(\t:\006\312\262\004\002\n\000\"\232\001\n\020ElasticSearchURL\022\035\n\004host\030" +
-      "\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337" +
-      "\037\013\022\t\262\001\0068\200\200\004@\000\022\014\n\004user\030\003 \001(\t\022\020\n\010password\030" +
-      "\004 \001(\t\022 \n\007version\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:" +
-      "\006\312\262\004\002\n\000\"\252\001\n\nMongoDbURL\022/\n\005hosts\030\001 \003(\0132\020." +
-      "datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\035\n\004user\030" +
-      "\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\003 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\004 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"U\n\010RedisURL\022/\n\005host" +
-      "s\030\001 \003(\0132\020.datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@" +
-      "\001\022\020\n\010password\030\002 \001(\t:\006\312\262\004\002\n\000B\204\001\n/com.data" +
-      "omnis.gproto.types.pbmodel.pbdatasourceB" +
-      "\017PBDataSourceURLP\000Z>github.com/DataWorkb" +
-      "ench/gproto/xgo/types/pbmodel/pbdatasour" +
-      "ceb\006proto3"
+      "\007\332\001\0040\000X\001\022T\n\tauth_mode\030\003 \001(\0162\033.datasource" +
+      ".FtpURL.AuthModeB$\342\337\037\023\n\021\n\010protocol\022\005\332\001\002\030" +
+      "\002\342\337\037\t\022\007\332\001\0040\000X\001\022@\n\013private_key\030\004 \001(\tB+\342\337\037" +
+      "\024\n\022\n\tauth_mode\022\005\332\001\002\030\002\342\337\037\017\022\r\302\001\n\200\002\001\230\002\200\020\210\005\001" +
+      "\022\035\n\004host\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030" +
+      "\006 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\007 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\220\002\001\230\002@\0228\n\010password\030\010 \001(\tB&\342\337\037\023\n\021\n" +
+      "\010protocol\022\005\332\001\002\030\001\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\"0\n\010Proto" +
+      "col\022\021\n\rProtocolUnset\020\000\022\007\n\003FTP\020\001\022\010\n\004SFTP\020" +
+      "\002\"B\n\016ConnectionMode\022\027\n\023ConnectionModeUns" +
+      "et\020\000\022\n\n\006Active\020\001\022\013\n\007Passive\020\002\";\n\010AuthMod" +
+      "e\022\021\n\rAuthModeUnset\020\000\022\014\n\010Password\020\001\022\016\n\nPr" +
+      "ivateKey\020\002:\006\312\262\004\002\n\000\"\017\n\005S3URL:\006\312\262\004\002\n\000\"K\n\010K" +
+      "afkaURL\0227\n\rkafka_brokers\030\001 \003(\0132\020.datasou" +
+      "rce.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001:\006\312\262\004\002\n\000\"8\n\010HBas" +
+      "eURL\022$\n\006config\030\001 \001(\tB\024\342\337\037\020\022\016\302\001\013\220\002\001\230\002\200\200\001\350" +
+      "\010\001:\006\312\262\004\002\n\000\"\214\001\n\007HDFSURL\022\"\n\tname_node\030\001 \001(" +
+      "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t" +
+      "\262\001\0068\200\200\004@\000\0226\n\006config\030\003 \001(\tB&\342\337\037\021\n\017\n\006confi" +
+      "g\022\005\302\001\002\"\000\342\337\037\r\022\013\302\001\010\230\002\200\200\001\350\010\001:\006\312\262\004\002\n\000\"\271\001\n\014Sq" +
+      "lServerURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002" +
+      "@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user" +
+      "\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(" +
+      "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\266\001\n\tOracleURL\022\035\n\004h" +
+      "ost\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005" +
+      "B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001" +
+      "\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006" +
+      "\312\262\004\002\n\000\"\263\001\n\006DB2URL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022" +
+      "\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010passwo" +
+      "rd\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\267\001\n\nSapHana" +
+      "URL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004po" +
+      "rt\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013" +
+      "\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\220\002\001\230\002@:\006\312\262\004\002\n\000\"\265\001\n\007HiveURL\022\035\n\004host\030\001 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262" +
+      "\001\0068\200\200\004@\000\022\014\n\004user\030\003 \001(\t\022\020\n\010password\030\004 \001(\t" +
+      "\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\016\n\006c" +
+      "onfig\030\006 \001(\t\022\021\n\tdefaultFS\030\007 \001(\t:\006\312\262\004\002\n\000\"\232" +
+      "\001\n\020ElasticSearchURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@" +
+      "\000\022\014\n\004user\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\022 \n\007ver" +
+      "sion\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\252\001\n\n" +
+      "MongoDbURL\022/\n\005hosts\030\001 \003(\0132\020.datasource.H" +
+      "ostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\035\n\004user\030\002 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220" +
+      "\002\001\230\002@\022!\n\010database\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
+      ":\006\312\262\004\002\n\000\"U\n\010RedisURL\022/\n\005hosts\030\001 \003(\0132\020.da" +
+      "tasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\020\n\010passwor" +
+      "d\030\002 \001(\t:\006\312\262\004\002\n\000B\204\001\n/com.dataomnis.gproto" +
+      ".types.pbmodel.pbdatasourceB\017PBDataSourc" +
+      "eURLP\000Z>github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbmodel/pbdatasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20484,7 +20765,7 @@ public final class PBDataSourceURL {
     internal_static_datasource_FtpURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_FtpURL_descriptor,
-        new java.lang.String[] { "Protocol", "ConnectionMode", "PrivateKey", "Host", "Port", "User", "Password", });
+        new java.lang.String[] { "Protocol", "ConnectionMode", "AuthMode", "PrivateKey", "Host", "Port", "User", "Password", });
     internal_static_datasource_S3URL_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_datasource_S3URL_fieldAccessorTable = new

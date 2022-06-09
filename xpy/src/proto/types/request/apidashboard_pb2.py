@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
+from proto.types.model import apidashboard_pb2 as proto_dot_types_dot_model_dot_apidashboard__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,35 +22,28 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestApiDashboardP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/request/apidashboard.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"F\n\x0fRouteUriRewrite\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x03uri\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\'\n\x0b\x44\x65leteRoute\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\xbe\x02\n\nListRoutes\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x19\n\x03uri\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12&\n\x05limit\x18\x05 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x06 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12@\n\x07sort_by\x18\x07 \x01(\tB/\xe2\xdf\x1f+\x12)\xc2\x01&J\x00J\x02idJ\x04nameJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x08 \x01(\x08\x12\x1a\n\x03ids\x18\t \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x0f\n\x07version\x18\n \x01(\t\x12\r\n\x05\x62uild\x18\x0b \x01(\t\x12\x0b\n\x03\x65nv\x18\x0c \x01(\t\x12\x16\n\x0e\x61pi_service_id\x18\r \x01(\t\"*\n\x0e\x44\x65leteUpstream\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\xfe\x01\n\rListUpstreams\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12@\n\x07sort_by\x18\x04 \x01(\tB/\xe2\xdf\x1f+\x12)\xc2\x01&J\x00J\x02idJ\x04nameJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x1a\n\x03ids\x18\x06 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x0f\n\x07version\x18\x07 \x01(\t\x12\r\n\x05\x62uild\x18\x08 \x01(\t\x12\x0b\n\x03\x65nv\x18\t \x01(\t\"%\n\tDeleteSSL\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\xf2\x01\n\x08ListSSLs\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x0b\n\x03sni\x18\x02 \x01(\t\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x05 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x06 \x01(\x08\x12\x0f\n\x07version\x18\x07 \x01(\t\x12\r\n\x05\x62uild\x18\x08 \x01(\t\x12\x0b\n\x03\x65nv\x18\t \x01(\t\"b\n\x10\x43reateApiService\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x02 \x01(\t\x12\x13\n\x0b\x61uth_key_id\x18\x03 \x01(\t\x12\x1d\n\x07user_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\",\n\x10\x44\x65leteApiService\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"H\n\x10UpdateApiService\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\"\xd4\x01\n\x0fListApiServices\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x04 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x13\n\x0b\x61uth_key_id\x18\x06 \x01(\t\"F\n\x0e\x41\x64\x64SvcReqCount\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1a\n\x05\x63ount\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"*\n\x0eGetSvcReqCount\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"?\n\rCreateAuthKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12 \n\nsecret_key\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\")\n\rDeleteAuthKey\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"7\n\rUpdateAuthKey\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xcd\x01\n\x0cListAuthKeys\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x04 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0f\n\x07user_id\x18\x06 \x01(\t\"V\n\x0b\x42indAuthKey\x12!\n\x0b\x61uth_key_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12$\n\x0e\x61pi_service_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"5\n\rUnbindAuthKey\x12$\n\x0e\x61pi_service_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestApiDashboardP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n&proto/types/request/apidashboard.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a$proto/types/model/apidashboard.proto\"5\n\x0b\x43reateRoute\x12&\n\nroute_info\x18\x01 \x01(\x0b\x32\x12.request.RouteInfo\"5\n\x0bUpdateRoute\x12&\n\nroute_info\x18\x01 \x01(\x0b\x32\x12.request.RouteInfo\"\xd2\x02\n\tRouteInfo\x12\x1d\n\x03uri\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\x80\x02\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02\x14\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x1a\n\x04host\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12$\n\x0bupstream_id\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02\x14\x12\x1e\n\x04name\x18\x06 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\x80\x01\x12\'\n\x0e\x61pi_service_id\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02\x14\x12\'\n\x0e\x61pi_version_id\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02\x14\x12#\n\tproxy_uri\x18\t \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\x80\x02\x12%\n\x08space_id\x18\n \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\")\n\x0b\x44\x65leteRoute\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\"\xd2\x02\n\nListRoutes\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\x12\x33\n\x0b\x63urr_status\x18\x03 \x01(\x0e\x32\x11.model.StatusTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12&\n\x05limit\x18\x04 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x05 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12@\n\x07sort_by\x18\x06 \x01(\tB/\xe2\xdf\x1f+\x12)\xc2\x01&J\x00J\x02idJ\x04nameJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x07 \x01(\x08\x12\x1a\n\x03ids\x18\x08 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x16\n\x0e\x61pi_version_id\x18\t \x01(\t\x12\x16\n\x0e\x61pi_service_id\x18\n \x01(\t\x12\x10\n\x08space_id\x18\x0b \x01(\t\">\n\x0e\x43reateUpstream\x12,\n\rupstream_info\x18\x01 \x01(\x0b\x32\x15.request.UpstreamInfo\">\n\x0eUpdateUpstream\x12,\n\rupstream_info\x18\x01 \x01(\x0b\x32\x15.request.UpstreamInfo\"\xbb\x02\n\x0cUpstreamInfo\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x05nodes\x18\x02 \x03(\x0b\x32\x13.model.UpstreamNodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02@\x00\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x88\x02\x80\x02\x12\x1e\n\x04\x64\x65sc\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x88\x02\x80\x04\x12.\n\x06schema\x18\x05 \x01(\x0e\x32\x11.model.SchemaTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12%\n\x03tls\x18\x06 \x01(\x0b\x32\x12.model.UpstreamTLSB\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x07 \x01(\x0b\x32\x0e.model.Timeout\x12\x1b\n\x02id\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x88\x02\x14\x90\x02\x00\"*\n\x0e\x44\x65leteUpstream\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\x98\x02\n\rListUpstreams\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12@\n\x07sort_by\x18\x04 \x01(\tB/\xe2\xdf\x1f+\x12)\xc2\x01&J\x00J\x02idJ\x04nameJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x1a\n\x03ids\x18\x06 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x10\n\x08space_id\x18\x07 \x01(\t\x12\x33\n\x0b\x63urr_status\x18\x08 \x01(\x0e\x32\x11.model.StatusTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\"{\n\tCreateSSL\x12\x1a\n\x04\x63\x65rt\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x03key\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x19\n\x04snis\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\n\n\x02id\x18\x04 \x01(\t\x12\x10\n\x08space_id\x18\x05 \x01(\t\"%\n\tDeleteSSL\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\xa0\x02\n\x08ListSSLs\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12\x0b\n\x03sni\x18\x02 \x01(\t\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x05 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x06 \x01(\x08\x12\x10\n\x08space_id\x18\x07 \x01(\t\x12\x12\n\ncreated_by\x18\x08 \x01(\t\x12\x33\n\x0b\x63urr_status\x18\t \x01(\x0e\x32\x11.model.StatusTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\"\xb4\x01\n\x10\x43reateApiService\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1e\n\x04\x64\x65sc\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x00\x98\x02\x80\x02\x12%\n\x0b\x61uth_key_id\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x00\x98\x02\x80\x02\x12%\n\x08space_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12$\n\ncreated_by\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\x80\x02\",\n\x10\x44\x65leteApiService\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"H\n\x10UpdateApiService\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\"\xaf\x02\n\x0fListApiServices\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x04 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x13\n\x0b\x61uth_key_id\x18\x06 \x01(\t\x12\x10\n\x08space_id\x18\x07 \x01(\t\x12\x12\n\ncreated_by\x18\x08 \x01(\t\x12\x33\n\x0b\x63urr_status\x18\t \x01(\x0e\x32\x11.model.StatusTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\"F\n\x0e\x41\x64\x64SvcReqCount\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1a\n\x05\x63ount\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"*\n\x0eGetSvcReqCount\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\";\n\x13\x44\x65leteProjectRoutes\x12$\n\rapiServiceIDs\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"j\n\rCreateAuthKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12$\n\ncreated_by\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\x80\x02\")\n\rDeleteAuthKey\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"7\n\rUpdateAuthKey\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x97\x02\n\x0cListAuthKeys\x12\x1a\n\x03ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12:\n\x07sort_by\x18\x04 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x0b\x63reate_timeJ\x0bupdate_time\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x10\n\x08space_id\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x07 \x01(\t\x12\x33\n\x0b\x63urr_status\x18\x08 \x01(\x0e\x32\x11.model.StatusTypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\"V\n\x0b\x42indAuthKey\x12!\n\x0b\x61uth_key_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12$\n\x0e\x61pi_service_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"5\n\rUnbindAuthKey\x12$\n\x0e\x61pi_service_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestApiDashboardP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_apidashboard__pb2.DESCRIPTOR,])
 
 
 
 
-_ROUTEURIREWRITE = _descriptor.Descriptor(
-  name='RouteUriRewrite',
-  full_name='request.RouteUriRewrite',
+_CREATEROUTE = _descriptor.Descriptor(
+  name='CreateRoute',
+  full_name='request.CreateRoute',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='request.RouteUriRewrite.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='route_info', full_name='request.CreateRoute.route_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='request.RouteUriRewrite.uri', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -62,8 +56,135 @@ _ROUTEURIREWRITE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=156,
-  serialized_end=226,
+  serialized_start=194,
+  serialized_end=247,
+)
+
+
+_UPDATEROUTE = _descriptor.Descriptor(
+  name='UpdateRoute',
+  full_name='request.UpdateRoute',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='route_info', full_name='request.UpdateRoute.route_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=249,
+  serialized_end=302,
+)
+
+
+_ROUTEINFO = _descriptor.Descriptor(
+  name='RouteInfo',
+  full_name='request.RouteInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uri', full_name='request.RouteInfo.uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='request.RouteInfo.id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\230\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='request.RouteInfo.desc', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host', full_name='request.RouteInfo.host', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='upstream_id', full_name='request.RouteInfo.upstream_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.RouteInfo.name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_service_id', full_name='request.RouteInfo.api_service_id', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_version_id', full_name='request.RouteInfo.api_version_id', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='proxy_uri', full_name='request.RouteInfo.proxy_uri', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.RouteInfo.space_id', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=305,
+  serialized_end=643,
 )
 
 
@@ -76,12 +197,12 @@ _DELETEROUTE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='request.DeleteRoute.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='ids', full_name='request.DeleteRoute.ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -94,8 +215,8 @@ _DELETEROUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=228,
-  serialized_end=267,
+  serialized_start=645,
+  serialized_end=686,
 )
 
 
@@ -120,73 +241,66 @@ _LISTROUTES = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='request.ListRoutes.status', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      name='curr_status', full_name='request.ListRoutes.curr_status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='limit', full_name='request.ListRoutes.limit', index=3,
-      number=5, type=5, cpp_type=1, label=1,
+      number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='request.ListRoutes.offset', index=4,
-      number=6, type=5, cpp_type=1, label=1,
+      number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sort_by', full_name='request.ListRoutes.sort_by', index=5,
-      number=7, type=9, cpp_type=9, label=1,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_time', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reverse', full_name='request.ListRoutes.reverse', index=6,
-      number=8, type=8, cpp_type=7, label=1,
+      number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ids', full_name='request.ListRoutes.ids', index=7,
-      number=9, type=9, cpp_type=9, label=3,
+      number=8, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='request.ListRoutes.version', index=8,
+      name='api_version_id', full_name='request.ListRoutes.api_version_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_service_id', full_name='request.ListRoutes.api_service_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='build', full_name='request.ListRoutes.build', index=9,
+      name='space_id', full_name='request.ListRoutes.space_id', index=10,
       number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='env', full_name='request.ListRoutes.env', index=10,
-      number=12, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='api_service_id', full_name='request.ListRoutes.api_service_id', index=11,
-      number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -203,8 +317,153 @@ _LISTROUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=588,
+  serialized_start=689,
+  serialized_end=1027,
+)
+
+
+_CREATEUPSTREAM = _descriptor.Descriptor(
+  name='CreateUpstream',
+  full_name='request.CreateUpstream',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='upstream_info', full_name='request.CreateUpstream.upstream_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1029,
+  serialized_end=1091,
+)
+
+
+_UPDATEUPSTREAM = _descriptor.Descriptor(
+  name='UpdateUpstream',
+  full_name='request.UpdateUpstream',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='upstream_info', full_name='request.UpdateUpstream.upstream_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1093,
+  serialized_end=1155,
+)
+
+
+_UPSTREAMINFO = _descriptor.Descriptor(
+  name='UpstreamInfo',
+  full_name='request.UpstreamInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.UpstreamInfo.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='nodes', full_name='request.UpstreamInfo.nodes', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\352\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.UpstreamInfo.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='request.UpstreamInfo.desc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\004', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='schema', full_name='request.UpstreamInfo.schema', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tls', full_name='request.UpstreamInfo.tls', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='request.UpstreamInfo.timeout', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='request.UpstreamInfo.id', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\210\002\024\220\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1158,
+  serialized_end=1473,
 )
 
 
@@ -235,8 +494,8 @@ _DELETEUPSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=590,
-  serialized_end=632,
+  serialized_start=1475,
+  serialized_end=1517,
 )
 
 
@@ -291,22 +550,75 @@ _LISTUPSTREAMS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='request.ListUpstreams.version', index=6,
+      name='space_id', full_name='request.ListUpstreams.space_id', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='build', full_name='request.ListUpstreams.build', index=7,
-      number=8, type=9, cpp_type=9, label=1,
+      name='curr_status', full_name='request.ListUpstreams.curr_status', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1520,
+  serialized_end=1800,
+)
+
+
+_CREATESSL = _descriptor.Descriptor(
+  name='CreateSSL',
+  full_name='request.CreateSSL',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cert', full_name='request.CreateSSL.cert', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='key', full_name='request.CreateSSL.key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='snis', full_name='request.CreateSSL.snis', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\352\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='request.CreateSSL.id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='env', full_name='request.ListUpstreams.env', index=8,
-      number=9, type=9, cpp_type=9, label=1,
+      name='space_id', full_name='request.CreateSSL.space_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -323,8 +635,8 @@ _LISTUPSTREAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=635,
-  serialized_end=889,
+  serialized_start=1802,
+  serialized_end=1925,
 )
 
 
@@ -355,8 +667,8 @@ _DELETESSL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=891,
-  serialized_end=928,
+  serialized_start=1927,
+  serialized_end=1964,
 )
 
 
@@ -411,26 +723,26 @@ _LISTSSLS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='request.ListSSLs.version', index=6,
+      name='space_id', full_name='request.ListSSLs.space_id', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='build', full_name='request.ListSSLs.build', index=7,
+      name='created_by', full_name='request.ListSSLs.created_by', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='env', full_name='request.ListSSLs.env', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='curr_status', full_name='request.ListSSLs.curr_status', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -443,8 +755,8 @@ _LISTSSLS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=931,
-  serialized_end=1173,
+  serialized_start=1967,
+  serialized_end=2255,
 )
 
 
@@ -469,21 +781,28 @@ _CREATEAPISERVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='auth_key_id', full_name='request.CreateApiService.auth_key_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='request.CreateApiService.user_id', index=3,
+      name='space_id', full_name='request.CreateApiService.space_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_by', full_name='request.CreateApiService.created_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -496,8 +815,8 @@ _CREATEAPISERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1273,
+  serialized_start=2258,
+  serialized_end=2438,
 )
 
 
@@ -528,8 +847,8 @@ _DELETEAPISERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1275,
-  serialized_end=1319,
+  serialized_start=2440,
+  serialized_end=2484,
 )
 
 
@@ -574,8 +893,8 @@ _UPDATEAPISERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1321,
-  serialized_end=1393,
+  serialized_start=2486,
+  serialized_end=2558,
 )
 
 
@@ -629,6 +948,27 @@ _LISTAPISERVICES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.ListApiServices.space_id', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_by', full_name='request.ListApiServices.created_by', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='curr_status', full_name='request.ListApiServices.curr_status', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -641,8 +981,8 @@ _LISTAPISERVICES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1396,
-  serialized_end=1608,
+  serialized_start=2561,
+  serialized_end=2864,
 )
 
 
@@ -680,8 +1020,8 @@ _ADDSVCREQCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1610,
-  serialized_end=1680,
+  serialized_start=2866,
+  serialized_end=2936,
 )
 
 
@@ -712,8 +1052,40 @@ _GETSVCREQCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1682,
-  serialized_end=1724,
+  serialized_start=2938,
+  serialized_end=2980,
+)
+
+
+_DELETEPROJECTROUTES = _descriptor.Descriptor(
+  name='DeleteProjectRoutes',
+  full_name='request.DeleteProjectRoutes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='apiServiceIDs', full_name='request.DeleteProjectRoutes.apiServiceIDs', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2982,
+  serialized_end=3041,
 )
 
 
@@ -733,12 +1105,19 @@ _CREATEAUTHKEY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret_key', full_name='request.CreateAuthKey.secret_key', index=1,
+      name='space_id', full_name='request.CreateAuthKey.space_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_by', full_name='request.CreateAuthKey.created_by', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -751,8 +1130,8 @@ _CREATEAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1726,
-  serialized_end=1789,
+  serialized_start=3043,
+  serialized_end=3149,
 )
 
 
@@ -783,8 +1162,8 @@ _DELETEAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1791,
-  serialized_end=1832,
+  serialized_start=3151,
+  serialized_end=3192,
 )
 
 
@@ -822,8 +1201,8 @@ _UPDATEAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1834,
-  serialized_end=1889,
+  serialized_start=3194,
+  serialized_end=3249,
 )
 
 
@@ -871,12 +1250,26 @@ _LISTAUTHKEYS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='request.ListAuthKeys.user_id', index=5,
+      name='space_id', full_name='request.ListAuthKeys.space_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_by', full_name='request.ListAuthKeys.created_by', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='curr_status', full_name='request.ListAuthKeys.curr_status', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -889,8 +1282,8 @@ _LISTAUTHKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1892,
-  serialized_end=2097,
+  serialized_start=3252,
+  serialized_end=3531,
 )
 
 
@@ -928,8 +1321,8 @@ _BINDAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2099,
-  serialized_end=2185,
+  serialized_start=3533,
+  serialized_end=3619,
 )
 
 
@@ -960,15 +1353,34 @@ _UNBINDAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2187,
-  serialized_end=2240,
+  serialized_start=3621,
+  serialized_end=3674,
 )
 
-DESCRIPTOR.message_types_by_name['RouteUriRewrite'] = _ROUTEURIREWRITE
+_CREATEROUTE.fields_by_name['route_info'].message_type = _ROUTEINFO
+_UPDATEROUTE.fields_by_name['route_info'].message_type = _ROUTEINFO
+_LISTROUTES.fields_by_name['curr_status'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._STATUSTYPE
+_CREATEUPSTREAM.fields_by_name['upstream_info'].message_type = _UPSTREAMINFO
+_UPDATEUPSTREAM.fields_by_name['upstream_info'].message_type = _UPSTREAMINFO
+_UPSTREAMINFO.fields_by_name['nodes'].message_type = proto_dot_types_dot_model_dot_apidashboard__pb2._UPSTREAMNODE
+_UPSTREAMINFO.fields_by_name['schema'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._SCHEMATYPE
+_UPSTREAMINFO.fields_by_name['tls'].message_type = proto_dot_types_dot_model_dot_apidashboard__pb2._UPSTREAMTLS
+_UPSTREAMINFO.fields_by_name['timeout'].message_type = proto_dot_types_dot_model_dot_apidashboard__pb2._TIMEOUT
+_LISTUPSTREAMS.fields_by_name['curr_status'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._STATUSTYPE
+_LISTSSLS.fields_by_name['curr_status'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._STATUSTYPE
+_LISTAPISERVICES.fields_by_name['curr_status'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._STATUSTYPE
+_LISTAUTHKEYS.fields_by_name['curr_status'].enum_type = proto_dot_types_dot_model_dot_apidashboard__pb2._STATUSTYPE
+DESCRIPTOR.message_types_by_name['CreateRoute'] = _CREATEROUTE
+DESCRIPTOR.message_types_by_name['UpdateRoute'] = _UPDATEROUTE
+DESCRIPTOR.message_types_by_name['RouteInfo'] = _ROUTEINFO
 DESCRIPTOR.message_types_by_name['DeleteRoute'] = _DELETEROUTE
 DESCRIPTOR.message_types_by_name['ListRoutes'] = _LISTROUTES
+DESCRIPTOR.message_types_by_name['CreateUpstream'] = _CREATEUPSTREAM
+DESCRIPTOR.message_types_by_name['UpdateUpstream'] = _UPDATEUPSTREAM
+DESCRIPTOR.message_types_by_name['UpstreamInfo'] = _UPSTREAMINFO
 DESCRIPTOR.message_types_by_name['DeleteUpstream'] = _DELETEUPSTREAM
 DESCRIPTOR.message_types_by_name['ListUpstreams'] = _LISTUPSTREAMS
+DESCRIPTOR.message_types_by_name['CreateSSL'] = _CREATESSL
 DESCRIPTOR.message_types_by_name['DeleteSSL'] = _DELETESSL
 DESCRIPTOR.message_types_by_name['ListSSLs'] = _LISTSSLS
 DESCRIPTOR.message_types_by_name['CreateApiService'] = _CREATEAPISERVICE
@@ -977,6 +1389,7 @@ DESCRIPTOR.message_types_by_name['UpdateApiService'] = _UPDATEAPISERVICE
 DESCRIPTOR.message_types_by_name['ListApiServices'] = _LISTAPISERVICES
 DESCRIPTOR.message_types_by_name['AddSvcReqCount'] = _ADDSVCREQCOUNT
 DESCRIPTOR.message_types_by_name['GetSvcReqCount'] = _GETSVCREQCOUNT
+DESCRIPTOR.message_types_by_name['DeleteProjectRoutes'] = _DELETEPROJECTROUTES
 DESCRIPTOR.message_types_by_name['CreateAuthKey'] = _CREATEAUTHKEY
 DESCRIPTOR.message_types_by_name['DeleteAuthKey'] = _DELETEAUTHKEY
 DESCRIPTOR.message_types_by_name['UpdateAuthKey'] = _UPDATEAUTHKEY
@@ -985,12 +1398,26 @@ DESCRIPTOR.message_types_by_name['BindAuthKey'] = _BINDAUTHKEY
 DESCRIPTOR.message_types_by_name['UnbindAuthKey'] = _UNBINDAUTHKEY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-RouteUriRewrite = _reflection.GeneratedProtocolMessageType('RouteUriRewrite', (_message.Message,), {
-  'DESCRIPTOR' : _ROUTEURIREWRITE,
+CreateRoute = _reflection.GeneratedProtocolMessageType('CreateRoute', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEROUTE,
   '__module__' : 'proto.types.request.apidashboard_pb2'
-  # @@protoc_insertion_point(class_scope:request.RouteUriRewrite)
+  # @@protoc_insertion_point(class_scope:request.CreateRoute)
   })
-_sym_db.RegisterMessage(RouteUriRewrite)
+_sym_db.RegisterMessage(CreateRoute)
+
+UpdateRoute = _reflection.GeneratedProtocolMessageType('UpdateRoute', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEROUTE,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateRoute)
+  })
+_sym_db.RegisterMessage(UpdateRoute)
+
+RouteInfo = _reflection.GeneratedProtocolMessageType('RouteInfo', (_message.Message,), {
+  'DESCRIPTOR' : _ROUTEINFO,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.RouteInfo)
+  })
+_sym_db.RegisterMessage(RouteInfo)
 
 DeleteRoute = _reflection.GeneratedProtocolMessageType('DeleteRoute', (_message.Message,), {
   'DESCRIPTOR' : _DELETEROUTE,
@@ -1006,6 +1433,27 @@ ListRoutes = _reflection.GeneratedProtocolMessageType('ListRoutes', (_message.Me
   })
 _sym_db.RegisterMessage(ListRoutes)
 
+CreateUpstream = _reflection.GeneratedProtocolMessageType('CreateUpstream', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEUPSTREAM,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.CreateUpstream)
+  })
+_sym_db.RegisterMessage(CreateUpstream)
+
+UpdateUpstream = _reflection.GeneratedProtocolMessageType('UpdateUpstream', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEUPSTREAM,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateUpstream)
+  })
+_sym_db.RegisterMessage(UpdateUpstream)
+
+UpstreamInfo = _reflection.GeneratedProtocolMessageType('UpstreamInfo', (_message.Message,), {
+  'DESCRIPTOR' : _UPSTREAMINFO,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpstreamInfo)
+  })
+_sym_db.RegisterMessage(UpstreamInfo)
+
 DeleteUpstream = _reflection.GeneratedProtocolMessageType('DeleteUpstream', (_message.Message,), {
   'DESCRIPTOR' : _DELETEUPSTREAM,
   '__module__' : 'proto.types.request.apidashboard_pb2'
@@ -1019,6 +1467,13 @@ ListUpstreams = _reflection.GeneratedProtocolMessageType('ListUpstreams', (_mess
   # @@protoc_insertion_point(class_scope:request.ListUpstreams)
   })
 _sym_db.RegisterMessage(ListUpstreams)
+
+CreateSSL = _reflection.GeneratedProtocolMessageType('CreateSSL', (_message.Message,), {
+  'DESCRIPTOR' : _CREATESSL,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.CreateSSL)
+  })
+_sym_db.RegisterMessage(CreateSSL)
 
 DeleteSSL = _reflection.GeneratedProtocolMessageType('DeleteSSL', (_message.Message,), {
   'DESCRIPTOR' : _DELETESSL,
@@ -1076,6 +1531,13 @@ GetSvcReqCount = _reflection.GeneratedProtocolMessageType('GetSvcReqCount', (_me
   })
 _sym_db.RegisterMessage(GetSvcReqCount)
 
+DeleteProjectRoutes = _reflection.GeneratedProtocolMessageType('DeleteProjectRoutes', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEPROJECTROUTES,
+  '__module__' : 'proto.types.request.apidashboard_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteProjectRoutes)
+  })
+_sym_db.RegisterMessage(DeleteProjectRoutes)
+
 CreateAuthKey = _reflection.GeneratedProtocolMessageType('CreateAuthKey', (_message.Message,), {
   'DESCRIPTOR' : _CREATEAUTHKEY,
   '__module__' : 'proto.types.request.apidashboard_pb2'
@@ -1120,41 +1582,67 @@ _sym_db.RegisterMessage(UnbindAuthKey)
 
 
 DESCRIPTOR._options = None
-_ROUTEURIREWRITE.fields_by_name['id']._options = None
-_ROUTEURIREWRITE.fields_by_name['uri']._options = None
-_DELETEROUTE.fields_by_name['id']._options = None
-_LISTROUTES.fields_by_name['uri']._options = None
+_ROUTEINFO.fields_by_name['uri']._options = None
+_ROUTEINFO.fields_by_name['id']._options = None
+_ROUTEINFO.fields_by_name['host']._options = None
+_ROUTEINFO.fields_by_name['upstream_id']._options = None
+_ROUTEINFO.fields_by_name['name']._options = None
+_ROUTEINFO.fields_by_name['api_service_id']._options = None
+_ROUTEINFO.fields_by_name['api_version_id']._options = None
+_ROUTEINFO.fields_by_name['proxy_uri']._options = None
+_ROUTEINFO.fields_by_name['space_id']._options = None
+_DELETEROUTE.fields_by_name['ids']._options = None
+_LISTROUTES.fields_by_name['curr_status']._options = None
 _LISTROUTES.fields_by_name['limit']._options = None
 _LISTROUTES.fields_by_name['offset']._options = None
 _LISTROUTES.fields_by_name['sort_by']._options = None
 _LISTROUTES.fields_by_name['ids']._options = None
+_UPSTREAMINFO.fields_by_name['space_id']._options = None
+_UPSTREAMINFO.fields_by_name['nodes']._options = None
+_UPSTREAMINFO.fields_by_name['name']._options = None
+_UPSTREAMINFO.fields_by_name['desc']._options = None
+_UPSTREAMINFO.fields_by_name['schema']._options = None
+_UPSTREAMINFO.fields_by_name['tls']._options = None
+_UPSTREAMINFO.fields_by_name['id']._options = None
 _DELETEUPSTREAM.fields_by_name['id']._options = None
 _LISTUPSTREAMS.fields_by_name['limit']._options = None
 _LISTUPSTREAMS.fields_by_name['offset']._options = None
 _LISTUPSTREAMS.fields_by_name['sort_by']._options = None
 _LISTUPSTREAMS.fields_by_name['ids']._options = None
+_LISTUPSTREAMS.fields_by_name['curr_status']._options = None
+_CREATESSL.fields_by_name['cert']._options = None
+_CREATESSL.fields_by_name['key']._options = None
+_CREATESSL.fields_by_name['snis']._options = None
 _DELETESSL.fields_by_name['id']._options = None
 _LISTSSLS.fields_by_name['ids']._options = None
 _LISTSSLS.fields_by_name['limit']._options = None
 _LISTSSLS.fields_by_name['offset']._options = None
 _LISTSSLS.fields_by_name['sort_by']._options = None
-_CREATEAPISERVICE.fields_by_name['user_id']._options = None
+_LISTSSLS.fields_by_name['curr_status']._options = None
+_CREATEAPISERVICE.fields_by_name['desc']._options = None
+_CREATEAPISERVICE.fields_by_name['auth_key_id']._options = None
+_CREATEAPISERVICE.fields_by_name['space_id']._options = None
+_CREATEAPISERVICE.fields_by_name['created_by']._options = None
 _DELETEAPISERVICE.fields_by_name['id']._options = None
 _UPDATEAPISERVICE.fields_by_name['id']._options = None
 _LISTAPISERVICES.fields_by_name['ids']._options = None
 _LISTAPISERVICES.fields_by_name['limit']._options = None
 _LISTAPISERVICES.fields_by_name['offset']._options = None
 _LISTAPISERVICES.fields_by_name['sort_by']._options = None
+_LISTAPISERVICES.fields_by_name['curr_status']._options = None
 _ADDSVCREQCOUNT.fields_by_name['id']._options = None
 _ADDSVCREQCOUNT.fields_by_name['count']._options = None
 _GETSVCREQCOUNT.fields_by_name['id']._options = None
-_CREATEAUTHKEY.fields_by_name['secret_key']._options = None
+_DELETEPROJECTROUTES.fields_by_name['apiServiceIDs']._options = None
+_CREATEAUTHKEY.fields_by_name['space_id']._options = None
+_CREATEAUTHKEY.fields_by_name['created_by']._options = None
 _DELETEAUTHKEY.fields_by_name['id']._options = None
 _UPDATEAUTHKEY.fields_by_name['id']._options = None
 _LISTAUTHKEYS.fields_by_name['ids']._options = None
 _LISTAUTHKEYS.fields_by_name['limit']._options = None
 _LISTAUTHKEYS.fields_by_name['offset']._options = None
 _LISTAUTHKEYS.fields_by_name['sort_by']._options = None
+_LISTAUTHKEYS.fields_by_name['curr_status']._options = None
 _BINDAUTHKEY.fields_by_name['auth_key_id']._options = None
 _BINDAUTHKEY.fields_by_name['api_service_id']._options = None
 _UNBINDAUTHKEY.fields_by_name['api_service_id']._options = None

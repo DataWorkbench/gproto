@@ -811,6 +811,16 @@ func (this *ConvertSyncJobMode) Validate() error {
 	return nil
 }
 
+func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("ListSyncJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
+	}
+	return nil
+}
+
 func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -837,20 +847,13 @@ func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("ListSyncJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
 // Set default value for message request.ListSyncJobVersions
 func (this *ListSyncJobVersions) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
@@ -859,9 +862,6 @@ func (this *ListSyncJobVersions) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
 	}
 	return nil

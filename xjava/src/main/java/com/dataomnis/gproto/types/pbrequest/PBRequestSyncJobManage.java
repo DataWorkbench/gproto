@@ -18636,6 +18636,28 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
      * &#64;inject_tag: json:"limit" form:"limit"
@@ -18698,25 +18720,25 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The jobId.
+     * <code>string version = 6;</code>
+     * @return The version.
      */
-    java.lang.String getJobId();
+    java.lang.String getVersion();
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
+     * <code>string version = 6;</code>
+     * @return The bytes for version.
      */
     com.google.protobuf.ByteString
-        getJobIdBytes();
+        getVersionBytes();
   }
   /**
    * <pre>
@@ -18735,8 +18757,9 @@ public final class PBRequestSyncJobManage {
       super(builder);
     }
     private ListSyncJobVersions() {
-      sortBy_ = "";
       jobId_ = "";
+      sortBy_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -18796,6 +18819,12 @@ public final class PBRequestSyncJobManage {
               jobId_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -18826,6 +18855,54 @@ public final class PBRequestSyncJobManage {
       return com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.internal_static_request_ListSyncJobVersions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions.Builder.class);
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The sync job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -18931,48 +19008,48 @@ public final class PBRequestSyncJobManage {
       return reverse_;
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object jobId_;
+    public static final int VERSION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object version_;
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The jobId.
+     * <code>string version = 6;</code>
+     * @return The version.
      */
     @java.lang.Override
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
+        version_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The sync job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
+     * <code>string version = 6;</code>
+     * @return The bytes for version.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
+        getVersionBytes() {
+      java.lang.Object ref = version_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        jobId_ = b;
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -19008,6 +19085,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19035,6 +19115,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -19050,6 +19133,8 @@ public final class PBRequestSyncJobManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions other = (com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions) obj;
 
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
@@ -19058,8 +19143,8 @@ public final class PBRequestSyncJobManage {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19071,6 +19156,8 @@ public final class PBRequestSyncJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -19080,8 +19167,8 @@ public final class PBRequestSyncJobManage {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19219,6 +19306,8 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        jobId_ = "";
+
         limit_ = 0;
 
         offset_ = 0;
@@ -19227,7 +19316,7 @@ public final class PBRequestSyncJobManage {
 
         reverse_ = false;
 
-        jobId_ = "";
+        version_ = "";
 
         return this;
       }
@@ -19255,11 +19344,12 @@ public final class PBRequestSyncJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions(this);
+        result.jobId_ = jobId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
-        result.jobId_ = jobId_;
+        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -19308,6 +19398,10 @@ public final class PBRequestSyncJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ListSyncJobVersions.getDefaultInstance()) return this;
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
         }
@@ -19321,8 +19415,8 @@ public final class PBRequestSyncJobManage {
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
         }
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -19351,6 +19445,107 @@ public final class PBRequestSyncJobManage {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
         return this;
       }
 
@@ -19611,23 +19806,23 @@ public final class PBRequestSyncJobManage {
         return this;
       }
 
-      private java.lang.Object jobId_ = "";
+      private java.lang.Object version_ = "";
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @return The jobId.
+       * <code>string version = 6;</code>
+       * @return The version.
        */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
+          version_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -19635,21 +19830,21 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for jobId.
+       * <code>string version = 6;</code>
+       * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
+          getVersionBytes() {
+        java.lang.Object ref = version_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          jobId_ = b;
+          version_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -19657,57 +19852,57 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The jobId to set.
+       * <code>string version = 6;</code>
+       * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setJobId(
+      public Builder setVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jobId_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJobId() {
+      public Builder clearVersion() {
         
-        jobId_ = getDefaultInstance().getJobId();
+        version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The sync job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for jobId to set.
+       * <code>string version = 6;</code>
+       * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
-      public Builder setJobIdBytes(
+      public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        jobId_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
@@ -20558,17 +20753,18 @@ public final class PBRequestSyncJobManage {
       "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\024\n\014st" +
       "op_running\030\003 \001(\010\"c\n\022ConvertSyncJobMode\022#" +
       "\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n\004c" +
-      "onf\030\002 \001(\0132\022.model.SyncJobConf:\006\312\262\004\002\n\000\"\311\001" +
-      "\n\023ListSyncJobVersions\022&\n\005limit\030\001 \001(\005B\027\242\241" +
-      "\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342" +
-      "\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000" +
-      "J\007versionJ\007createdJ\007updated\022\017\n\007reverse\030\004" +
-      " \001(\010\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj" +
-      "-\"6\n\017GenerateJobJson\022#\n\006job_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004syj-Bu\n$com.dataomnis.gprot" +
-      "o.types.pbrequestB\026PBRequestSyncJobManag" +
-      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "onf\030\002 \001(\0132\022.model.SyncJobConf:\006\312\262\004\002\n\000\"\332\001" +
+      "\n\023ListSyncJobVersions\022#\n\006job_id\030\005 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252" +
+      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007v" +
+      "ersionJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(" +
+      "\010\022\017\n\007version\030\006 \001(\t\"6\n\017GenerateJobJson\022#\n" +
+      "\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-Bu\n$co" +
+      "m.dataomnis.gproto.types.pbrequestB\026PBRe" +
+      "questSyncJobManageP\000Z3github.com/DataWor" +
+      "kbench/gproto/xgo/types/pbrequestb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20680,7 +20876,7 @@ public final class PBRequestSyncJobManage {
     internal_static_request_ListSyncJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSyncJobVersions_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "JobId", });
+        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", "Version", });
     internal_static_request_GenerateJobJson_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_request_GenerateJobJson_fieldAccessorTable = new

@@ -21052,6 +21052,28 @@ public final class PBRequestStreamJobManage {
      * @return The reverse.
      */
     boolean getReverse();
+
+    /**
+     * <pre>
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
   }
   /**
    * <pre>
@@ -21072,6 +21094,7 @@ public final class PBRequestStreamJobManage {
     private ListStreamJobVersions() {
       jobId_ = "";
       sortBy_ = "";
+      version_ = "";
     }
 
     @java.lang.Override
@@ -21129,6 +21152,12 @@ public final class PBRequestStreamJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
             default: {
@@ -21314,6 +21343,54 @@ public final class PBRequestStreamJobManage {
       return reverse_;
     }
 
+    public static final int VERSION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by specified version.
+     * &#64;inject_tag: json:"version" form:"version"
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -21343,6 +21420,9 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -21370,6 +21450,9 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -21395,6 +21478,8 @@ public final class PBRequestStreamJobManage {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -21417,6 +21502,8 @@ public final class PBRequestStreamJobManage {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -21564,6 +21651,8 @@ public final class PBRequestStreamJobManage {
 
         reverse_ = false;
 
+        version_ = "";
+
         return this;
       }
 
@@ -21595,6 +21684,7 @@ public final class PBRequestStreamJobManage {
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
+        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -21659,6 +21749,10 @@ public final class PBRequestStreamJobManage {
         }
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -22043,6 +22137,107 @@ public final class PBRequestStreamJobManage {
       public Builder clearReverse() {
         
         reverse_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
+       * </pre>
+       *
+       * <code>string version = 6;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
+       * </pre>
+       *
+       * <code>string version = 6;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
+       * </pre>
+       *
+       * <code>string version = 6;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
+       * </pre>
+       *
+       * <code>string version = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by specified version.
+       * &#64;inject_tag: json:"version" form:"version"
+       * </pre>
+       *
+       * <code>string version = 6;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
         onChanged();
         return this;
       }
@@ -23107,18 +23302,18 @@ public final class PBRequestStreamJobManage {
       "-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035" +
       "\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022<\n\006status\030" +
       "\004 \001(\0162\036.model.StreamJobRelease.StatusB\014\342" +
-      "\337\037\010\022\006\332\001\003J\001\004\"\313\001\n\025ListStreamJobVersions\022#\n" +
+      "\337\037\010\022\006\332\001\003J\001\004\"\334\001\n\025ListStreamJobVersions\022#\n" +
       "\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022&\n\005li" +
       "mit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006of" +
       "fset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\t" +
       "B&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007updated" +
-      "\022\017\n\007reverse\030\004 \001(\010\"n\n\033DescribeFlinkUIByIn" +
-      "stanceId\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022(\n\013instance_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004sti-Bw\n$com.dataomnis.gproto.types." +
-      "pbrequestB\030PBRequestStreamJobManageP\000Z3g" +
-      "ithub.com/DataWorkbench/gproto/xgo/types" +
-      "/pbrequestb\006proto3"
+      "\022\017\n\007reverse\030\004 \001(\010\022\017\n\007version\030\006 \001(\t\"n\n\033De" +
+      "scribeFlinkUIByInstanceId\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013instance_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dataom" +
+      "nis.gproto.types.pbrequestB\030PBRequestStr" +
+      "eamJobManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23246,7 +23441,7 @@ public final class PBRequestStreamJobManage {
     internal_static_request_ListStreamJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListStreamJobVersions_descriptor,
-        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", });
+        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", "Version", });
     internal_static_request_DescribeFlinkUIByInstanceId_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable = new
