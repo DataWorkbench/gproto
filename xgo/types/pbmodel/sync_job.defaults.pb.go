@@ -79,7 +79,7 @@ func (this *ChannelControl) SetDefaults() {
 		this.Parallelism = 1
 	}
 	if this.RecordNum == 0 {
-		this.RecordNum = -1
+		this.RecordNum = 0
 	}
 	return
 }

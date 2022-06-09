@@ -204,7 +204,7 @@ message ChannelControl{
     int32 parallelism = 1 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
     // The allowed record num where the job is error
     // @inject_tag: json:"record_num"
-    int32 record_num = 2 [ (defaults.field).basic = "-1" ];
+    int32 record_num = 2 [ (defaults.field).basic = "0" ];
     //sync rate
     // @inject_tag: json:"rate"
     RatePolicy rate = 3 ;
