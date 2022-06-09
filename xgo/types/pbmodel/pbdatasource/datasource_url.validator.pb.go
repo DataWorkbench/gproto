@@ -300,8 +300,30 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_connection_mode() error {
 	return nil
 }
 
-func (this *FtpURL) _xxx_xxx_Validator_CheckIf_private_key() bool {
+func (this *FtpURL) _xxx_xxx_Validator_CheckIf_auth_mode() bool {
 	if !(this.Protocol == 2) {
+		return false
+	}
+	return true
+}
+
+var _xxx_xxx_Validator_FtpURL_InEnums_AuthMode = map[FtpURL_AuthMode]bool{0: true, 1: true, 2: true}
+
+func (this *FtpURL) _xxx_xxx_Validator_Validate_auth_mode() error {
+	if !this._xxx_xxx_Validator_CheckIf_auth_mode() {
+		return nil
+	}
+	if !(this.AuthMode > 0) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'auth_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.AuthMode)))
+	}
+	if !(_xxx_xxx_Validator_FtpURL_InEnums_AuthMode[this.AuthMode]) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'auth_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.AuthMode)))
+	}
+	return nil
+}
+
+func (this *FtpURL) _xxx_xxx_Validator_CheckIf_private_key() bool {
+	if !(this.AuthMode == 2) {
 		return false
 	}
 	return true
@@ -382,6 +404,9 @@ func (this *FtpURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_connection_mode(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_auth_mode(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_private_key(); err != nil {
