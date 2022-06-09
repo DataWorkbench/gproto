@@ -392,6 +392,10 @@ message ListStreamJobVersions {
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 4;
+
+  // Filter by specified version.
+  // @inject_tag: json:"version" form:"version"
+  string version = 6;
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.

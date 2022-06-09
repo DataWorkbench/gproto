@@ -347,6 +347,9 @@ message ConvertSyncJobMode {
 
 // ListSyncJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSyncJobVersions {
+    // The sync job id in HTTP Request-URI
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // Limit the maximum number of entries returned this time.
     // Not required, Max 100, default 100.
@@ -368,9 +371,9 @@ message ListSyncJobVersions {
     // @inject_tag: json:"reverse" form:"reverse"
     bool reverse = 4;
 
-    // The sync job id in HTTP Request-URI
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+    // Filter by specified version.
+    // @inject_tag: json:"version" form:"version"
+    string version = 6;
 }
 
 // FIXME: remove it.
