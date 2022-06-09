@@ -492,7 +492,7 @@ type FtpURL struct {
 	// The connection modes.  Is Required if protocol == 1 (FTP).
 	// 1 => "Active" 2 = > "Passive";
 	ConnectionMode FtpURL_ConnectionMode `protobuf:"varint,2,opt,name=connection_mode,json=connectionMode,proto3,enum=datasource.FtpURL_ConnectionMode" json:"connection_mode"`
-	// The connection modes.  Is Required if protocol == 2 (SFTP).
+	// The AuthMode modes.  Is Required if protocol == 2 (SFTP).
 	// 1 => "Password" 2 = > "PrivateKey";
 	AuthMode FtpURL_AuthMode `protobuf:"varint,3,opt,name=auth_mode,json=authMode,proto3,enum=datasource.FtpURL_AuthMode" json:"auth_mode"`
 	// The SFTP private key content.  Is Required if protocol == 2 (SFTP).

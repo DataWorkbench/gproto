@@ -132,7 +132,7 @@ message FtpURL {
     (validator.field).tags.enum = { gt: 0, in_enums: true }
   ];
 
-  // The connection modes.  Is Required if protocol == 2 (SFTP).
+  // The AuthMode modes.  Is Required if protocol == 2 (SFTP).
   // 1 => "Password" 2 = > "PrivateKey";
   // @inject_tag: json:"auth_mode"
   AuthMode auth_mode = 3 [
