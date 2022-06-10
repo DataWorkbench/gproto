@@ -4360,6 +4360,712 @@ public final class PBRequestApiDashboard {
 
   }
 
+  public interface DeleteRouteByVersionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DeleteRouteByVersion)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the versions.
+     */
+    java.util.List<java.lang.String>
+        getVersionsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @return The count of versions.
+     */
+    int getVersionsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The versions at the given index.
+     */
+    java.lang.String getVersions(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the versions at the given index.
+     */
+    com.google.protobuf.ByteString
+        getVersionsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.DeleteRouteByVersion}
+   */
+  public static final class DeleteRouteByVersion extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DeleteRouteByVersion)
+      DeleteRouteByVersionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteRouteByVersion.newBuilder() to construct.
+    private DeleteRouteByVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteRouteByVersion() {
+      versions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeleteRouteByVersion();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteRouteByVersion(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                versions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              versions_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          versions_ = versions_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRouteByVersion_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRouteByVersion_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.Builder.class);
+    }
+
+    public static final int VERSIONS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList versions_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the versions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVersionsList() {
+      return versions_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @return The count of versions.
+     */
+    public int getVersionsCount() {
+      return versions_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The versions at the given index.
+     */
+    public java.lang.String getVersions(int index) {
+      return versions_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"versions"
+     * </pre>
+     *
+     * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the versions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getVersionsBytes(int index) {
+      return versions_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < versions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, versions_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < versions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(versions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getVersionsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion) obj;
+
+      if (!getVersionsList()
+          .equals(other.getVersionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getVersionsCount() > 0) {
+        hash = (37 * hash) + VERSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getVersionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.DeleteRouteByVersion}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DeleteRouteByVersion)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRouteByVersion_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRouteByVersion_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        versions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRouteByVersion_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          versions_ = versions_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.versions_ = versions_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.getDefaultInstance()) return this;
+        if (!other.versions_.isEmpty()) {
+          if (versions_.isEmpty()) {
+            versions_ = other.versions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureVersionsIsMutable();
+            versions_.addAll(other.versions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList versions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureVersionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          versions_ = new com.google.protobuf.LazyStringArrayList(versions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @return A list containing the versions.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVersionsList() {
+        return versions_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @return The count of versions.
+       */
+      public int getVersionsCount() {
+        return versions_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The versions at the given index.
+       */
+      public java.lang.String getVersions(int index) {
+        return versions_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the versions at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getVersionsBytes(int index) {
+        return versions_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The versions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersions(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVersionsIsMutable();
+        versions_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param value The versions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addVersions(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVersionsIsMutable();
+        versions_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param values The versions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllVersions(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVersionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, versions_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersions() {
+        versions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"versions"
+       * </pre>
+       *
+       * <code>repeated string versions = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the versions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addVersionsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureVersionsIsMutable();
+        versions_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DeleteRouteByVersion)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DeleteRouteByVersion)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteRouteByVersion>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteRouteByVersion>() {
+      @java.lang.Override
+      public DeleteRouteByVersion parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteRouteByVersion(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteRouteByVersion> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteRouteByVersion> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListRoutesOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.ListRoutes)
       com.google.protobuf.MessageOrBuilder {
@@ -28744,6 +29450,11 @@ public final class PBRequestApiDashboard {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteRoute_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DeleteRouteByVersion_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DeleteRouteByVersion_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListRoutes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -28879,84 +29590,86 @@ public final class PBRequestApiDashboard {
       "\006\200\002\000\230\002\024\022#\n\tproxy_uri\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000" +
       "\230\002\200\002\022%\n\010space_id\030\n \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\")\n\013DeleteRoute\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352" +
-      "\001\0048d@\000\"\322\002\n\nListRoutes\022\014\n\004name\030\001 \001(\t\022\013\n\003u" +
-      "ri\030\002 \001(\t\0223\n\013curr_status\030\003 \001(\0162\021.model.St" +
-      "atusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022&\n\005limit\030\004 \001(\005B\027\242\241" +
-      "\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\005 \001(\005B\013\342" +
-      "\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\006 \001(\tB/\342\337\037+\022)\302\001&J\000" +
-      "J\002idJ\004nameJ\013create_timeJ\013update_time\022\017\n\007" +
-      "reverse\030\007 \001(\010\022\032\n\003ids\030\010 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
-      "\000\022\026\n\016api_version_id\030\t \001(\t\022\026\n\016api_service" +
-      "_id\030\n \001(\t\022\020\n\010space_id\030\013 \001(\t\">\n\016CreateUps" +
-      "tream\022,\n\rupstream_info\030\001 \001(\0132\025.request.U" +
-      "pstreamInfo\">\n\016UpdateUpstream\022,\n\rupstrea" +
-      "m_info\030\001 \001(\0132\025.request.UpstreamInfo\"\273\002\n\014" +
-      "UpstreamInfo\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022/\n\005nodes\030\002 \003(\0132\023.model.Upstr" +
-      "eamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014" +
-      "\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n\004desc\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000" +
-      "\210\002\200\004\022.\n\006schema\030\005 \001(\0162\021.model.SchemaTypeB" +
-      "\013\342\337\037\007\022\005\332\001\002X\001\022%\n\003tls\030\006 \001(\0132\022.model.Upstre" +
-      "amTLSB\004\342\337\037\000\022\037\n\007timeout\030\007 \001(\0132\016.model.Tim" +
-      "eout\022\033\n\002id\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\210\002\024\220\002\000\"*\n\016Del" +
-      "eteUpstream\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\230\002" +
-      "\n\rListUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002" +
-      " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
-      "\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037" +
-      "+\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_" +
-      "time\022\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t" +
-      "\022\007\352\001\0048d@\000\022\020\n\010space_id\030\007 \001(\t\0223\n\013curr_stat" +
-      "us\030\010 \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001" +
-      "\"{\n\tCreateSSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
-      "\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003" +
-      "(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\020\n\010space_id\030" +
-      "\005 \001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\200\002\000\"\240\002\n\010ListSSLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001" +
-      "\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252" +
-      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J\000J\002i" +
-      "dJ\013create_timeJ\013update_time\022\017\n\007reverse\030\006" +
-      " \001(\010\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001" +
-      "(\t\0223\n\013curr_status\030\t \001(\0162\021.model.StatusTy" +
-      "peB\013\342\337\037\007\022\005\332\001\002X\001\"\264\001\n\020CreateApiService\022\014\n\004" +
-      "name\030\001 \001(\t\022\036\n\004desc\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002" +
-      "\200\002\022%\n\013auth_key_id\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200" +
-      "\002\022%\n\010space_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022$\n\ncreated_by\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\"," +
-      "\n\020DeleteApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\200\002\000\"H\n\020UpdateApiService\022\030\n\002id\030\001 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\257" +
-      "\002\n\017ListApiServices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352" +
-      "\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
-      "\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007s" +
-      "ort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_ti" +
-      "meJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013auth" +
-      "_key_id\030\006 \001(\t\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreat" +
-      "ed_by\030\010 \001(\t\0223\n\013curr_status\030\t \001(\0162\021.model" +
-      ".StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"F\n\016AddSvcReqCou" +
-      "nt\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 " +
-      "\001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\";\n\023DeleteProjectRou" +
-      "tes\022$\n\rapiServiceIDs\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008" +
-      "d\"j\n\rCreateAuthKey\022\014\n\004name\030\001 \001(\t\022%\n\010spac" +
-      "e_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreat" +
-      "ed_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\")\n\rDeleteA" +
-      "uthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpda" +
-      "teAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004n" +
-      "ame\030\002 \001(\t\"\227\002\n\014ListAuthKeys\022\032\n\003ids\030\001 \003(\tB" +
-      "\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\00310" +
-      "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001" +
-      "\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013c" +
-      "reate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010" +
-      "\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated_by\030\007 \001(\t\0223" +
-      "\n\013curr_status\030\010 \001(\0162\021.model.StatusTypeB\013" +
-      "\342\337\037\007\022\005\332\001\002X\001\"V\n\013BindAuthKey\022!\n\013auth_key_i" +
-      "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016api_service_id\030" +
-      "\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnbindAuthKey\022$\n\016" +
-      "api_service_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000Bt\n$co" +
-      "m.dataomnis.gproto.types.pbrequestB\025PBRe" +
-      "questApiDashboardP\000Z3github.com/DataWork" +
-      "bench/gproto/xgo/types/pbrequestb\006proto3"
+      "\001\0048d@\000\"7\n\024DeleteRouteByVersion\022\037\n\010versio" +
+      "ns\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\"\322\002\n\nListRoutes\022\014" +
+      "\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\0223\n\013curr_status" +
+      "\030\003 \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022&" +
+      "\n\005limit\030\004 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033" +
+      "\n\006offset\030\005 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\006" +
+      " \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013create_time" +
+      "J\013update_time\022\017\n\007reverse\030\007 \001(\010\022\032\n\003ids\030\010 " +
+      "\003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\026\n\016api_version_id\030\t \001" +
+      "(\t\022\026\n\016api_service_id\030\n \001(\t\022\020\n\010space_id\030\013" +
+      " \001(\t\">\n\016CreateUpstream\022,\n\rupstream_info\030" +
+      "\001 \001(\0132\025.request.UpstreamInfo\">\n\016UpdateUp" +
+      "stream\022,\n\rupstream_info\030\001 \001(\0132\025.request." +
+      "UpstreamInfo\"\273\002\n\014UpstreamInfo\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\005nodes\030\002 " +
+      "\003(\0132\023.model.UpstreamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n" +
+      "\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n\004desc\030\004 " +
+      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\004\022.\n\006schema\030\005 \001(\0162\021." +
+      "model.SchemaTypeB\013\342\337\037\007\022\005\332\001\002X\001\022%\n\003tls\030\006 \001" +
+      "(\0132\022.model.UpstreamTLSB\004\342\337\037\000\022\037\n\007timeout\030" +
+      "\007 \001(\0132\016.model.Timeout\022\033\n\002id\030\010 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\210\002\024\220\002\000\"*\n\016DeleteUpstream\022\030\n\002id\030\001 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\"\230\002\n\rListUpstreams\022\014\n\004name" +
+      "\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
+      "\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007s" +
+      "ort_by\030\004 \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013cre" +
+      "ate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\032" +
+      "\n\003ids\030\006 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\020\n\010space_id\030\007" +
+      " \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.model.Status" +
+      "TypeB\013\342\337\037\007\022\005\332\001\002X\001\"{\n\tCreateSSL\022\032\n\004cert\030\001" +
+      " \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004" +
+      " \001(\t\022\020\n\010space_id\030\005 \001(\t\"%\n\tDeleteSSL\022\030\n\002i" +
+      "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\240\002\n\010ListSSLs\022\032\n\003id" +
+      "s\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005l" +
+      "imit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
+      "ffset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(" +
+      "\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_" +
+      "time\022\017\n\007reverse\030\006 \001(\010\022\020\n\010space_id\030\007 \001(\t\022" +
+      "\022\n\ncreated_by\030\010 \001(\t\0223\n\013curr_status\030\t \001(\016" +
+      "2\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"\264\001\n\020Cre" +
+      "ateApiService\022\014\n\004name\030\001 \001(\t\022\036\n\004desc\030\002 \001(" +
+      "\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\013auth_key_id\030\003 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\010space_id\030\004 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreated_by\030\005 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\",\n\020DeleteApiService\022\030\n\002i" +
+      "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"H\n\020UpdateApiServic" +
+      "e\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(" +
+      "\t\022\014\n\004desc\030\003 \001(\t\"\257\002\n\017ListApiServices\022\032\n\003i" +
+      "ds\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027" +
+      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B" +
+      "\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 " +
+      "J\000J\002idJ\013create_timeJ\013update_time\022\017\n\007reve" +
+      "rse\030\005 \001(\010\022\023\n\013auth_key_id\030\006 \001(\t\022\020\n\010space_" +
+      "id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t\0223\n\013curr_sta" +
+      "tus\030\t \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X" +
+      "\001\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016Get" +
+      "SvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\";\n" +
+      "\023DeleteProjectRoutes\022$\n\rapiServiceIDs\030\001 " +
+      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"j\n\rCreateAuthKey\022\014\n\004n" +
+      "ame\030\001 \001(\t\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022$\n\ncreated_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200" +
+      "\002\000\230\002\200\002\")\n\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\200\002\000\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\"\227\002\n\014ListAuthK" +
+      "eys\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit" +
+      "\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offse" +
+      "t\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342" +
+      "\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_time" +
+      "\022\017\n\007reverse\030\005 \001(\010\022\020\n\010space_id\030\006 \001(\t\022\022\n\nc" +
+      "reated_by\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.m" +
+      "odel.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"V\n\013BindAuth" +
+      "Key\022!\n\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$" +
+      "\n\016api_service_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\r" +
+      "UnbindAuthKey\022$\n\016api_service_id\030\001 \001(\tB\014\342" +
+      "\337\037\010\022\006\302\001\003\200\002\000Bt\n$com.dataomnis.gproto.type" +
+      "s.pbrequestB\025PBRequestApiDashboardP\000Z3gi" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
+      "pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28989,134 +29702,140 @@ public final class PBRequestApiDashboard {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteRoute_descriptor,
         new java.lang.String[] { "Ids", });
-    internal_static_request_ListRoutes_descriptor =
+    internal_static_request_DeleteRouteByVersion_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_request_DeleteRouteByVersion_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DeleteRouteByVersion_descriptor,
+        new java.lang.String[] { "Versions", });
+    internal_static_request_ListRoutes_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_request_ListRoutes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListRoutes_descriptor,
         new java.lang.String[] { "Name", "Uri", "CurrStatus", "Limit", "Offset", "SortBy", "Reverse", "Ids", "ApiVersionId", "ApiServiceId", "SpaceId", });
     internal_static_request_CreateUpstream_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_request_CreateUpstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateUpstream_descriptor,
         new java.lang.String[] { "UpstreamInfo", });
     internal_static_request_UpdateUpstream_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_request_UpdateUpstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateUpstream_descriptor,
         new java.lang.String[] { "UpstreamInfo", });
     internal_static_request_UpstreamInfo_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_UpstreamInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpstreamInfo_descriptor,
         new java.lang.String[] { "SpaceId", "Nodes", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", });
     internal_static_request_DeleteUpstream_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_DeleteUpstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteUpstream_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListUpstreams_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_request_ListUpstreams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUpstreams_descriptor,
         new java.lang.String[] { "Name", "Limit", "Offset", "SortBy", "Reverse", "Ids", "SpaceId", "CurrStatus", });
     internal_static_request_CreateSSL_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_CreateSSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateSSL_descriptor,
         new java.lang.String[] { "Cert", "Key", "Snis", "Id", "SpaceId", });
     internal_static_request_DeleteSSL_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_DeleteSSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteSSL_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListSSLs_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_ListSSLs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSSLs_descriptor,
         new java.lang.String[] { "Ids", "Sni", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_CreateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_CreateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiService_descriptor,
         new java.lang.String[] { "Name", "Desc", "AuthKeyId", "SpaceId", "CreatedBy", });
     internal_static_request_DeleteApiService_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_DeleteApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiService_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_request_UpdateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateApiService_descriptor,
         new java.lang.String[] { "Id", "Name", "Desc", });
     internal_static_request_ListApiServices_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_ListApiServices_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiServices_descriptor,
         new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_AddSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_AddSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AddSvcReqCount_descriptor,
         new java.lang.String[] { "Id", "Count", });
     internal_static_request_GetSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_request_GetSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetSvcReqCount_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_DeleteProjectRoutes_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_request_DeleteProjectRoutes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteProjectRoutes_descriptor,
         new java.lang.String[] { "ApiServiceIDs", });
     internal_static_request_CreateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_request_CreateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateAuthKey_descriptor,
         new java.lang.String[] { "Name", "SpaceId", "CreatedBy", });
     internal_static_request_DeleteAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_request_DeleteAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteAuthKey_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_request_UpdateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateAuthKey_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_request_ListAuthKeys_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_request_ListAuthKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAuthKeys_descriptor,
         new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_BindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_request_BindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_BindAuthKey_descriptor,
         new java.lang.String[] { "AuthKeyId", "ApiServiceId", });
     internal_static_request_UnbindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_request_UnbindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UnbindAuthKey_descriptor,

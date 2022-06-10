@@ -6,7 +6,7 @@
 
     <groupId>com.dataomnis.gproto</groupId>
     <artifactId>dataomnis-gproto</artifactId>
-    <version>0.8.8</version>
+    <version>0.8.10</version>
 <!--    <packaging>pom</packaging>-->
 
     <properties>
