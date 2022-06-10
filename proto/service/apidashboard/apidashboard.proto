@@ -35,7 +35,7 @@ service ApiDashboard {
   rpc ListApiServices(request.ListApiServices) returns (response.ListApiServices) {}
   rpc AddSvcReqCount(request.AddSvcReqCount) returns (model.EmptyStruct) {}
   rpc GetSvcReqCount(request.GetSvcReqCount) returns (response.GetSvcReqCount) {}
-  rpc DeleteProjectRoutes(request.DeleteProjectRoutes) returns (model.EmptyStruct) {}
+  rpc DeleteClusterRoutes(request.DeleteClusterRoutes) returns (model.EmptyStruct) {}
 
   rpc CreateAuthKey(request.CreateAuthKey) returns (response.CreateAuthKey) {}
   rpc DeleteAuthKey(request.DeleteAuthKey) returns (model.EmptyStruct) {}

@@ -203,11 +203,13 @@ message CreateApiService {
   string space_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
   // @inject_tag: json:"created_by"
   string created_by = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
+  // @inject_tag: json:"id"
+  string id = 6 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];
 }
 
 message DeleteApiService {
   // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 256} ];
 }
 
 message UpdateApiService {
@@ -263,8 +265,13 @@ message GetSvcReqCount {
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
 }
 
-message DeleteProjectRoutes {
-  repeated string apiServiceIDs = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+message DeleteClusterRoutes {
+  repeated ApiServiceAndRoutes items = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+}
+
+message ApiServiceAndRoutes {
+  string api_service_id = 1;
+  repeated string routeIDs = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message CreateAuthKey {

@@ -1804,32 +1804,11 @@ public final class PBRequestFlinkDeveloper {
 
     /**
      * <pre>
-     * operator for interactive submit
-     * &#64;inject_tag: json:"op"
-     * </pre>
-     *
-     * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for op.
-     */
-    int getOpValue();
-    /**
-     * <pre>
-     * operator for interactive submit
-     * &#64;inject_tag: json:"op"
-     * </pre>
-     *
-     * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-     * @return The op.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op getOp();
-
-    /**
-     * <pre>
      * max count for per batch
      * &#64;inject_tag: json:"max_count"
      * </pre>
      *
-     * <code>int32 max_count = 3 [(.defaults.field) = { ... }</code>
+     * <code>int32 max_count = 2 [(.defaults.field) = { ... }</code>
      * @return The maxCount.
      */
     int getMaxCount();
@@ -1840,10 +1819,21 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"refresh_interval"
      * </pre>
      *
-     * <code>int32 refresh_interval = 4 [(.defaults.field) = { ... }</code>
+     * <code>int32 refresh_interval = 3 [(.defaults.field) = { ... }</code>
      * @return The refreshInterval.
      */
     int getRefreshInterval();
+
+    /**
+     * <pre>
+     * result display mode, changelog mode and tableau mode
+     * &#64;inject_tag: json:"is_changelog"
+     * </pre>
+     *
+     * <code>bool is_changelog = 4;</code>
+     * @return The isChangelog.
+     */
+    boolean getIsChangelog();
   }
   /**
    * Protobuf type {@code request.SubmitFlinkJobInteractive}
@@ -1858,7 +1848,6 @@ public final class PBRequestFlinkDeveloper {
       super(builder);
     }
     private SubmitFlinkJobInteractive() {
-      op_ = 0;
     }
 
     @java.lang.Override
@@ -1905,19 +1894,18 @@ public final class PBRequestFlinkDeveloper {
               break;
             }
             case 16: {
-              int rawValue = input.readEnum();
-
-              op_ = rawValue;
-              break;
-            }
-            case 24: {
 
               maxCount_ = input.readInt32();
               break;
             }
-            case 32: {
+            case 24: {
 
               refreshInterval_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              isChangelog_ = input.readBool();
               break;
             }
             default: {
@@ -1993,36 +1981,7 @@ public final class PBRequestFlinkDeveloper {
       return getJob();
     }
 
-    public static final int OP_FIELD_NUMBER = 2;
-    private int op_;
-    /**
-     * <pre>
-     * operator for interactive submit
-     * &#64;inject_tag: json:"op"
-     * </pre>
-     *
-     * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for op.
-     */
-    @java.lang.Override public int getOpValue() {
-      return op_;
-    }
-    /**
-     * <pre>
-     * operator for interactive submit
-     * &#64;inject_tag: json:"op"
-     * </pre>
-     *
-     * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-     * @return The op.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op getOp() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op result = com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.valueOf(op_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.UNRECOGNIZED : result;
-    }
-
-    public static final int MAX_COUNT_FIELD_NUMBER = 3;
+    public static final int MAX_COUNT_FIELD_NUMBER = 2;
     private int maxCount_;
     /**
      * <pre>
@@ -2030,7 +1989,7 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"max_count"
      * </pre>
      *
-     * <code>int32 max_count = 3 [(.defaults.field) = { ... }</code>
+     * <code>int32 max_count = 2 [(.defaults.field) = { ... }</code>
      * @return The maxCount.
      */
     @java.lang.Override
@@ -2038,7 +1997,7 @@ public final class PBRequestFlinkDeveloper {
       return maxCount_;
     }
 
-    public static final int REFRESH_INTERVAL_FIELD_NUMBER = 4;
+    public static final int REFRESH_INTERVAL_FIELD_NUMBER = 3;
     private int refreshInterval_;
     /**
      * <pre>
@@ -2046,12 +2005,28 @@ public final class PBRequestFlinkDeveloper {
      * &#64;inject_tag: json:"refresh_interval"
      * </pre>
      *
-     * <code>int32 refresh_interval = 4 [(.defaults.field) = { ... }</code>
+     * <code>int32 refresh_interval = 3 [(.defaults.field) = { ... }</code>
      * @return The refreshInterval.
      */
     @java.lang.Override
     public int getRefreshInterval() {
       return refreshInterval_;
+    }
+
+    public static final int IS_CHANGELOG_FIELD_NUMBER = 4;
+    private boolean isChangelog_;
+    /**
+     * <pre>
+     * result display mode, changelog mode and tableau mode
+     * &#64;inject_tag: json:"is_changelog"
+     * </pre>
+     *
+     * <code>bool is_changelog = 4;</code>
+     * @return The isChangelog.
+     */
+    @java.lang.Override
+    public boolean getIsChangelog() {
+      return isChangelog_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2071,14 +2046,14 @@ public final class PBRequestFlinkDeveloper {
       if (job_ != null) {
         output.writeMessage(1, getJob());
       }
-      if (op_ != com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.Unset.getNumber()) {
-        output.writeEnum(2, op_);
-      }
       if (maxCount_ != 0) {
-        output.writeInt32(3, maxCount_);
+        output.writeInt32(2, maxCount_);
       }
       if (refreshInterval_ != 0) {
-        output.writeInt32(4, refreshInterval_);
+        output.writeInt32(3, refreshInterval_);
+      }
+      if (isChangelog_ != false) {
+        output.writeBool(4, isChangelog_);
       }
       unknownFields.writeTo(output);
     }
@@ -2093,17 +2068,17 @@ public final class PBRequestFlinkDeveloper {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getJob());
       }
-      if (op_ != com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.Unset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, op_);
-      }
       if (maxCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, maxCount_);
+          .computeInt32Size(2, maxCount_);
       }
       if (refreshInterval_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, refreshInterval_);
+          .computeInt32Size(3, refreshInterval_);
+      }
+      if (isChangelog_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isChangelog_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2125,11 +2100,12 @@ public final class PBRequestFlinkDeveloper {
         if (!getJob()
             .equals(other.getJob())) return false;
       }
-      if (op_ != other.op_) return false;
       if (getMaxCount()
           != other.getMaxCount()) return false;
       if (getRefreshInterval()
           != other.getRefreshInterval()) return false;
+      if (getIsChangelog()
+          != other.getIsChangelog()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2145,12 +2121,13 @@ public final class PBRequestFlinkDeveloper {
         hash = (37 * hash) + JOB_FIELD_NUMBER;
         hash = (53 * hash) + getJob().hashCode();
       }
-      hash = (37 * hash) + OP_FIELD_NUMBER;
-      hash = (53 * hash) + op_;
       hash = (37 * hash) + MAX_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getMaxCount();
       hash = (37 * hash) + REFRESH_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getRefreshInterval();
+      hash = (37 * hash) + IS_CHANGELOG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsChangelog());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2290,11 +2267,11 @@ public final class PBRequestFlinkDeveloper {
           job_ = null;
           jobBuilder_ = null;
         }
-        op_ = 0;
-
         maxCount_ = 0;
 
         refreshInterval_ = 0;
+
+        isChangelog_ = false;
 
         return this;
       }
@@ -2327,9 +2304,9 @@ public final class PBRequestFlinkDeveloper {
         } else {
           result.job_ = jobBuilder_.build();
         }
-        result.op_ = op_;
         result.maxCount_ = maxCount_;
         result.refreshInterval_ = refreshInterval_;
+        result.isChangelog_ = isChangelog_;
         onBuilt();
         return result;
       }
@@ -2381,14 +2358,14 @@ public final class PBRequestFlinkDeveloper {
         if (other.hasJob()) {
           mergeJob(other.getJob());
         }
-        if (other.op_ != 0) {
-          setOpValue(other.getOpValue());
-        }
         if (other.getMaxCount() != 0) {
           setMaxCount(other.getMaxCount());
         }
         if (other.getRefreshInterval() != 0) {
           setRefreshInterval(other.getRefreshInterval());
+        }
+        if (other.getIsChangelog() != false) {
+          setIsChangelog(other.getIsChangelog());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2583,85 +2560,6 @@ public final class PBRequestFlinkDeveloper {
         return jobBuilder_;
       }
 
-      private int op_ = 0;
-      /**
-       * <pre>
-       * operator for interactive submit
-       * &#64;inject_tag: json:"op"
-       * </pre>
-       *
-       * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for op.
-       */
-      @java.lang.Override public int getOpValue() {
-        return op_;
-      }
-      /**
-       * <pre>
-       * operator for interactive submit
-       * &#64;inject_tag: json:"op"
-       * </pre>
-       *
-       * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for op to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpValue(int value) {
-        
-        op_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * operator for interactive submit
-       * &#64;inject_tag: json:"op"
-       * </pre>
-       *
-       * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-       * @return The op.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op getOp() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op result = com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.valueOf(op_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * operator for interactive submit
-       * &#64;inject_tag: json:"op"
-       * </pre>
-       *
-       * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-       * @param value The op to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOp(com.dataomnis.gproto.types.pbmodel.PBModelJobManage.InteractiveMessage.Op value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        op_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * operator for interactive submit
-       * &#64;inject_tag: json:"op"
-       * </pre>
-       *
-       * <code>.model.InteractiveMessage.Op op = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOp() {
-        
-        op_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int maxCount_ ;
       /**
        * <pre>
@@ -2669,7 +2567,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"max_count"
        * </pre>
        *
-       * <code>int32 max_count = 3 [(.defaults.field) = { ... }</code>
+       * <code>int32 max_count = 2 [(.defaults.field) = { ... }</code>
        * @return The maxCount.
        */
       @java.lang.Override
@@ -2682,7 +2580,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"max_count"
        * </pre>
        *
-       * <code>int32 max_count = 3 [(.defaults.field) = { ... }</code>
+       * <code>int32 max_count = 2 [(.defaults.field) = { ... }</code>
        * @param value The maxCount to set.
        * @return This builder for chaining.
        */
@@ -2698,7 +2596,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"max_count"
        * </pre>
        *
-       * <code>int32 max_count = 3 [(.defaults.field) = { ... }</code>
+       * <code>int32 max_count = 2 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxCount() {
@@ -2715,7 +2613,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"refresh_interval"
        * </pre>
        *
-       * <code>int32 refresh_interval = 4 [(.defaults.field) = { ... }</code>
+       * <code>int32 refresh_interval = 3 [(.defaults.field) = { ... }</code>
        * @return The refreshInterval.
        */
       @java.lang.Override
@@ -2728,7 +2626,7 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"refresh_interval"
        * </pre>
        *
-       * <code>int32 refresh_interval = 4 [(.defaults.field) = { ... }</code>
+       * <code>int32 refresh_interval = 3 [(.defaults.field) = { ... }</code>
        * @param value The refreshInterval to set.
        * @return This builder for chaining.
        */
@@ -2744,12 +2642,58 @@ public final class PBRequestFlinkDeveloper {
        * &#64;inject_tag: json:"refresh_interval"
        * </pre>
        *
-       * <code>int32 refresh_interval = 4 [(.defaults.field) = { ... }</code>
+       * <code>int32 refresh_interval = 3 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearRefreshInterval() {
         
         refreshInterval_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isChangelog_ ;
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @return The isChangelog.
+       */
+      @java.lang.Override
+      public boolean getIsChangelog() {
+        return isChangelog_;
+      }
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @param value The isChangelog to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsChangelog(boolean value) {
+        
+        isChangelog_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsChangelog() {
+        
+        isChangelog_ = false;
         onChanged();
         return this;
       }
@@ -4906,21 +4850,21 @@ public final class PBRequestFlinkDeveloper {
       "_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\034\n\016savepoint" +
       "_path\030\004 \001(\tB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model." +
       "StreamJobArgsB\004\342\337\037\000\022(\n\004code\030\006 \001(\0132\024.mode" +
-      "l.StreamJobCodeB\004\342\337\037\000\"\333\001\n\031SubmitFlinkJob" +
+      "l.StreamJobCodeB\004\342\337\037\000\"\277\001\n\031SubmitFlinkJob" +
       "Interactive\022*\n\003job\030\001 \001(\0132\027.request.Submi" +
-      "tFlinkJobB\004\342\337\037\000\022.\n\002op\030\002 \001(\0162\034.model.Inte" +
-      "ractiveMessage.OpB\004\342\337\037\000\022*\n\tmax_count\030\003 \001" +
-      "(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\0226\n\020refresh_i" +
-      "nterval\030\004 \001(\005B\034\242\241\037\010\252\006\00510000\342\337\037\014\022\n\262\001\0078\260\352\001" +
-      "@\350\007\"6\n\020ValidateFlinkJob\022\"\n\004code\030\001 \001(\0132\024." +
-      "model.StreamJobCode\"\247\001\n\023ValidateFlinkJob" +
-      "_v2\022\036\n\tflink_url\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rf" +
-      "link_version\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022(\n\004args\030" +
-      "\003 \001(\0132\024.model.StreamJobArgsB\004\342\337\037\000\022\"\n\004cod" +
-      "e\030\004 \001(\0132\024.model.StreamJobCodeBv\n$com.dat" +
-      "aomnis.gproto.types.pbrequestB\027PBRequest" +
-      "FlinkDeveloperP\000Z3github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbrequestb\006proto3"
+      "tFlinkJobB\004\342\337\037\000\022*\n\tmax_count\030\002 \001(\005B\027\242\241\037\006" +
+      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\0224\n\020refresh_interval\030" +
+      "\003 \001(\005B\032\242\241\037\007\252\006\0042000\342\337\037\013\022\t\262\001\0068\220N@\350\007\022\024\n\014is_" +
+      "changelog\030\004 \001(\010\"6\n\020ValidateFlinkJob\022\"\n\004c" +
+      "ode\030\001 \001(\0132\024.model.StreamJobCode\"\247\001\n\023Vali" +
+      "dateFlinkJob_v2\022\036\n\tflink_url\030\001 \001(\tB\013\342\337\037\007" +
+      "\022\005\302\001\002\"\000\022\"\n\rflink_version\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022(\n\004args\030\003 \001(\0132\024.model.StreamJobArgsB" +
+      "\004\342\337\037\000\022\"\n\004code\030\004 \001(\0132\024.model.StreamJobCod" +
+      "eBv\n$com.dataomnis.gproto.types.pbreques" +
+      "tB\027PBRequestFlinkDeveloperP\000Z3github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbreques" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4941,7 +4885,7 @@ public final class PBRequestFlinkDeveloper {
     internal_static_request_SubmitFlinkJobInteractive_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SubmitFlinkJobInteractive_descriptor,
-        new java.lang.String[] { "Job", "Op", "MaxCount", "RefreshInterval", });
+        new java.lang.String[] { "Job", "MaxCount", "RefreshInterval", "IsChangelog", });
     internal_static_request_ValidateFlinkJob_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ValidateFlinkJob_fieldAccessorTable = new

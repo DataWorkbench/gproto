@@ -97,8 +97,8 @@ func (this *SubmitFlinkJobInteractive) _xxx_xxx_Validator_Validate_refresh_inter
 	if !(this.RefreshInterval >= 1000) {
 		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'refresh_interval' must be greater than or equal to '1000'", protovalidator.Int32ToString(this.RefreshInterval))
 	}
-	if !(this.RefreshInterval <= 30000) {
-		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'refresh_interval' must be less than or equal to '30000'", protovalidator.Int32ToString(this.RefreshInterval))
+	if !(this.RefreshInterval <= 10000) {
+		return protovalidator.FieldError1("SubmitFlinkJobInteractive", "the value of field 'refresh_interval' must be less than or equal to '10000'", protovalidator.Int32ToString(this.RefreshInterval))
 	}
 	return nil
 }

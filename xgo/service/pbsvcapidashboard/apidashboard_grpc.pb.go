@@ -42,7 +42,7 @@ type ApiDashboardClient interface {
 	ListApiServices(ctx context.Context, in *pbrequest.ListApiServices, opts ...grpc.CallOption) (*pbresponse.ListApiServices, error)
 	AddSvcReqCount(ctx context.Context, in *pbrequest.AddSvcReqCount, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	GetSvcReqCount(ctx context.Context, in *pbrequest.GetSvcReqCount, opts ...grpc.CallOption) (*pbresponse.GetSvcReqCount, error)
-	DeleteProjectRoutes(ctx context.Context, in *pbrequest.DeleteProjectRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteClusterRoutes(ctx context.Context, in *pbrequest.DeleteClusterRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateAuthKey(ctx context.Context, in *pbrequest.CreateAuthKey, opts ...grpc.CallOption) (*pbresponse.CreateAuthKey, error)
 	DeleteAuthKey(ctx context.Context, in *pbrequest.DeleteAuthKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	UpdateAuthKey(ctx context.Context, in *pbrequest.UpdateAuthKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -212,9 +212,9 @@ func (c *apiDashboardClient) GetSvcReqCount(ctx context.Context, in *pbrequest.G
 	return out, nil
 }
 
-func (c *apiDashboardClient) DeleteProjectRoutes(ctx context.Context, in *pbrequest.DeleteProjectRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *apiDashboardClient) DeleteClusterRoutes(ctx context.Context, in *pbrequest.DeleteClusterRoutes, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/DeleteProjectRoutes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/DeleteClusterRoutes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -296,7 +296,7 @@ type ApiDashboardServer interface {
 	ListApiServices(context.Context, *pbrequest.ListApiServices) (*pbresponse.ListApiServices, error)
 	AddSvcReqCount(context.Context, *pbrequest.AddSvcReqCount) (*pbmodel.EmptyStruct, error)
 	GetSvcReqCount(context.Context, *pbrequest.GetSvcReqCount) (*pbresponse.GetSvcReqCount, error)
-	DeleteProjectRoutes(context.Context, *pbrequest.DeleteProjectRoutes) (*pbmodel.EmptyStruct, error)
+	DeleteClusterRoutes(context.Context, *pbrequest.DeleteClusterRoutes) (*pbmodel.EmptyStruct, error)
 	CreateAuthKey(context.Context, *pbrequest.CreateAuthKey) (*pbresponse.CreateAuthKey, error)
 	DeleteAuthKey(context.Context, *pbrequest.DeleteAuthKey) (*pbmodel.EmptyStruct, error)
 	UpdateAuthKey(context.Context, *pbrequest.UpdateAuthKey) (*pbmodel.EmptyStruct, error)
@@ -361,8 +361,8 @@ func (UnimplementedApiDashboardServer) AddSvcReqCount(context.Context, *pbreques
 func (UnimplementedApiDashboardServer) GetSvcReqCount(context.Context, *pbrequest.GetSvcReqCount) (*pbresponse.GetSvcReqCount, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSvcReqCount not implemented")
 }
-func (UnimplementedApiDashboardServer) DeleteProjectRoutes(context.Context, *pbrequest.DeleteProjectRoutes) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteProjectRoutes not implemented")
+func (UnimplementedApiDashboardServer) DeleteClusterRoutes(context.Context, *pbrequest.DeleteClusterRoutes) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteClusterRoutes not implemented")
 }
 func (UnimplementedApiDashboardServer) CreateAuthKey(context.Context, *pbrequest.CreateAuthKey) (*pbresponse.CreateAuthKey, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuthKey not implemented")
@@ -701,20 +701,20 @@ func _ApiDashboard_GetSvcReqCount_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ApiDashboard_DeleteProjectRoutes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DeleteProjectRoutes)
+func _ApiDashboard_DeleteClusterRoutes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteClusterRoutes)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ApiDashboardServer).DeleteProjectRoutes(ctx, in)
+		return srv.(ApiDashboardServer).DeleteClusterRoutes(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/apidashboard.ApiDashboard/DeleteProjectRoutes",
+		FullMethod: "/apidashboard.ApiDashboard/DeleteClusterRoutes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ApiDashboardServer).DeleteProjectRoutes(ctx, req.(*pbrequest.DeleteProjectRoutes))
+		return srv.(ApiDashboardServer).DeleteClusterRoutes(ctx, req.(*pbrequest.DeleteClusterRoutes))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -903,8 +903,8 @@ var ApiDashboard_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ApiDashboard_GetSvcReqCount_Handler,
 		},
 		{
-			MethodName: "DeleteProjectRoutes",
-			Handler:    _ApiDashboard_DeleteProjectRoutes_Handler,
+			MethodName: "DeleteClusterRoutes",
+			Handler:    _ApiDashboard_DeleteClusterRoutes_Handler,
 		},
 		{
 			MethodName: "CreateAuthKey",

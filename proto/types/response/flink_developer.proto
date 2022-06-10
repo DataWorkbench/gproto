@@ -33,9 +33,10 @@ message SubmitFlinkJob {
 message SubmitFlinkJobInteractive{
   enum Type{
     TypeUnset = 0;
-    ErrorMsg = 1;
+    Schema = 1;
     Data = 2;
-    Schema = 3;
+    NOData = 3;
+    ErrorMsg = 4;
   }
 
   message DataSet{
@@ -49,7 +50,7 @@ message SubmitFlinkJobInteractive{
   Type type = 1 [(validator.field) = {}];
 
   // dataset
-  // @inject_tag: json:"inject_tag"
+  // @inject_tag: json:"dataset"
   repeated DataSet dataset = 2 [(validator.field) = {}];
 
   // error message

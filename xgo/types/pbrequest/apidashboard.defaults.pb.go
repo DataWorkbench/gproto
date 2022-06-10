@@ -205,8 +205,16 @@ func (this *GetSvcReqCount) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DeleteProjectRoutes
-func (this *DeleteProjectRoutes) SetDefaults() {
+// Set default value for message request.DeleteClusterRoutes
+func (this *DeleteClusterRoutes) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.ApiServiceAndRoutes
+func (this *ApiServiceAndRoutes) SetDefaults() {
 	if this == nil {
 		return
 	}

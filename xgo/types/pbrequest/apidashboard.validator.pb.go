@@ -666,6 +666,16 @@ func (this *CreateApiService) _xxx_xxx_Validator_Validate_created_by() error {
 	return nil
 }
 
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) >= 0) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'id' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(len(this.Id) <= 256) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'id' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Id))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateApiService
 func (this *CreateApiService) Validate() error {
 	if this == nil {
@@ -683,12 +693,18 @@ func (this *CreateApiService) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (this *DeleteApiService) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) > 0) {
 		return protovalidator.FieldError1("DeleteApiService", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(len(this.Id) < 256) {
+		return protovalidator.FieldError1("DeleteApiService", "the byte length of field 'id' must be less than '256'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
@@ -836,22 +852,51 @@ func (this *GetSvcReqCount) Validate() error {
 	return nil
 }
 
-func (this *DeleteProjectRoutes) _xxx_xxx_Validator_Validate_apiServiceIDs() error {
-	if !(len(this.ApiServiceIDs) > 0) {
-		return protovalidator.FieldError1("DeleteProjectRoutes", "the length of field 'apiServiceIDs' must be greater than '0'", strconv.Itoa(len(this.ApiServiceIDs)))
+func (this *DeleteClusterRoutes) _xxx_xxx_Validator_Validate_items() error {
+	if !(len(this.Items) > 0) {
+		return protovalidator.FieldError1("DeleteClusterRoutes", "the length of field 'items' must be greater than '0'", strconv.Itoa(len(this.Items)))
 	}
-	if !(len(this.ApiServiceIDs) <= 100) {
-		return protovalidator.FieldError1("DeleteProjectRoutes", "the length of field 'apiServiceIDs' must be less than or equal to '100'", strconv.Itoa(len(this.ApiServiceIDs)))
+	if !(len(this.Items) <= 100) {
+		return protovalidator.FieldError1("DeleteClusterRoutes", "the length of field 'items' must be less than or equal to '100'", strconv.Itoa(len(this.Items)))
+	}
+	for _, item := range this.Items {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
 
-// Set default value for message request.DeleteProjectRoutes
-func (this *DeleteProjectRoutes) Validate() error {
+// Set default value for message request.DeleteClusterRoutes
+func (this *DeleteClusterRoutes) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_apiServiceIDs(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_items(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ApiServiceAndRoutes) _xxx_xxx_Validator_Validate_routeIDs() error {
+	if !(len(this.RouteIDs) > 0) {
+		return protovalidator.FieldError1("ApiServiceAndRoutes", "the length of field 'routeIDs' must be greater than '0'", strconv.Itoa(len(this.RouteIDs)))
+	}
+	if !(len(this.RouteIDs) <= 100) {
+		return protovalidator.FieldError1("ApiServiceAndRoutes", "the length of field 'routeIDs' must be less than or equal to '100'", strconv.Itoa(len(this.RouteIDs)))
+	}
+	return nil
+}
+
+// Set default value for message request.ApiServiceAndRoutes
+func (this *ApiServiceAndRoutes) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_routeIDs(); err != nil {
 		return err
 	}
 	return nil

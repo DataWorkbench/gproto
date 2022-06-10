@@ -62,26 +62,3 @@ func (this *JobInfo) Validate() error {
 	}
 	return nil
 }
-
-var _xxx_xxx_Validator_InteractiveMessage_InEnums_Operator = map[InteractiveMessage_Op]bool{0: true, 1: true, 2: true, 3: true}
-
-func (this *InteractiveMessage) _xxx_xxx_Validator_Validate_operator() error {
-	if !(this.Operator > 0) {
-		return protovalidator.FieldError1("InteractiveMessage", "the value of field 'operator' must be greater than '0'", protovalidator.Int32ToString(int32(this.Operator)))
-	}
-	if !(_xxx_xxx_Validator_InteractiveMessage_InEnums_Operator[this.Operator]) {
-		return protovalidator.FieldError1("InteractiveMessage", "the value of field 'operator' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Operator)))
-	}
-	return nil
-}
-
-// Set default value for message model.InteractiveMessage
-func (this *InteractiveMessage) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_operator(); err != nil {
-		return err
-	}
-	return nil
-}

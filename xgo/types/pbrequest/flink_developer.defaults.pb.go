@@ -43,7 +43,7 @@ func (this *SubmitFlinkJobInteractive) SetDefaults() {
 		this.MaxCount = 100
 	}
 	if this.RefreshInterval == 0 {
-		this.RefreshInterval = 10000
+		this.RefreshInterval = 2000
 	}
 	return
 }
