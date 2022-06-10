@@ -171,6 +171,11 @@ message DescribeSyncJob {
     // The sync job version id in HTTP Request-URI
     // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
     string version = 2 [(validator.field) = {}];
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 3;
 }
 
 // SetSyncJobschedule used as a request parameters for RPC.
@@ -374,6 +379,11 @@ message ListSyncJobVersions {
     // Filter by specified version.
     // @inject_tag: json:"version" form:"version"
     string version = 6;
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 7;
 }
 
 // FIXME: remove it.

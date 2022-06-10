@@ -111,6 +111,10 @@ message SyncJob {
     DataSource.Type target_type = 14 [
         (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
         (defaults.field).basic = "0",(validator.field).tags.enum = { gt: 0,lte: 16; in_enums: true  } ];
+
+    // The property of sync job. Only used query data.
+    // @inject_tag: json:"sync_job_property" gorm:"-"
+    model.SyncJobProperty sync_job_property = 15;
 }
 
 // SyncJobProperty represents property of job.
