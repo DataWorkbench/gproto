@@ -90,3 +90,11 @@ func (this *GetUserRole) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.CheckUserExists
+func (this *CheckUserExists) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

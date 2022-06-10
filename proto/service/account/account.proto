@@ -22,5 +22,6 @@ service Account {
   rpc DeleteUser(request.DeleteUser) returns (response.DeleteUser) {}
   rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
   rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
+  rpc CheckUserExists(request.CheckUserExists) returns (response.CheckUserExists) {}
 
 }

@@ -196,6 +196,7 @@ public final class PBModelNetwork {
   /**
    * <pre>
    * Network config.
+   * FIXME: remove in feature.
    * </pre>
    *
    * Protobuf type {@code model.Network}
@@ -1040,6 +1041,7 @@ public final class PBModelNetwork {
     /**
      * <pre>
      * Network config.
+     * FIXME: remove in feature.
      * </pre>
      *
      * Protobuf type {@code model.Network}

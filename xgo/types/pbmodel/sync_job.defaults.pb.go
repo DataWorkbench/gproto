@@ -23,6 +23,11 @@ func (this *SyncJob) SetDefaults() {
 	if this.TargetType == 0 {
 		this.TargetType = DataSource_Type(0)
 	}
+	if this.SyncJobProperty != nil {
+		if dt, ok := interface{}(this.SyncJobProperty).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 
@@ -62,6 +67,11 @@ func (this *SyncJobConf) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.ClusterInfo != nil {
+		if dt, ok := interface{}(this.ClusterInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 
@@ -74,7 +84,7 @@ func (this *ChannelControl) SetDefaults() {
 		this.Parallelism = 1
 	}
 	if this.RecordNum == 0 {
-		this.RecordNum = -1
+		this.RecordNum = 0
 	}
 	return
 }
@@ -268,13 +278,15 @@ func (this *SyncJobRelease) SetDefaults() {
 	if this == nil {
 		return
 	}
-	return
-}
-
-// Set default value for message model.SyncJobConnection
-func (this *SyncJobConnection) SetDefaults() {
-	if this == nil {
-		return
+	if this.SyncJob != nil {
+		if dt, ok := interface{}(this.SyncJob).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SyncJobProperty != nil {
+		if dt, ok := interface{}(this.SyncJobProperty).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }

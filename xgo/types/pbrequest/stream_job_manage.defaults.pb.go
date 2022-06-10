@@ -152,6 +152,14 @@ func (this *OfflineReleaseStreamJob) SetDefaults() {
 	return
 }
 
+// Set default value for message request.ReopenReleaseStreamJob
+func (this *ReopenReleaseStreamJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.SuspendReleaseStreamJob
 func (this *SuspendReleaseStreamJob) SetDefaults() {
 	if this == nil {

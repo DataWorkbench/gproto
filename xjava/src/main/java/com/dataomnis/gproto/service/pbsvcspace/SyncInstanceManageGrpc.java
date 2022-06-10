@@ -1,4 +1,4 @@
-package com.dataomnis.gproto.service.pbsvcscheduler;
+package com.dataomnis.gproto.service.pbsvcspace;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -8,13 +8,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
-    comments = "Source: proto/service/scheduler/sync_instance_manage.proto")
+    value = "by gRPC proto compiler (version 1.43.2)",
+    comments = "Source: proto/service/spacemanager/sync_instance_manage.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class SyncInstanceManageGrpc {
 
   private SyncInstanceManageGrpc() {}
 
-  public static final String SERVICE_NAME = "scheduler.SyncInstanceManage";
+  public static final String SERVICE_NAME = "spacemanager.SyncInstanceManage";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.ListSyncInstances,
@@ -172,6 +173,68 @@ public final class SyncInstanceManageGrpc {
     return getDescribeSyncInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateSyncInstanceWithIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSyncInstanceWithId",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateSyncInstanceWithIdMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateSyncInstanceWithIdMethod;
+    if ((getCreateSyncInstanceWithIdMethod = SyncInstanceManageGrpc.getCreateSyncInstanceWithIdMethod) == null) {
+      synchronized (SyncInstanceManageGrpc.class) {
+        if ((getCreateSyncInstanceWithIdMethod = SyncInstanceManageGrpc.getCreateSyncInstanceWithIdMethod) == null) {
+          SyncInstanceManageGrpc.getCreateSyncInstanceWithIdMethod = getCreateSyncInstanceWithIdMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSyncInstanceWithId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncInstanceManageMethodDescriptorSupplier("CreateSyncInstanceWithId"))
+              .build();
+        }
+      }
+    }
+    return getCreateSyncInstanceWithIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateSyncInstanceStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSyncInstanceState",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateSyncInstanceStateMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateSyncInstanceStateMethod;
+    if ((getUpdateSyncInstanceStateMethod = SyncInstanceManageGrpc.getUpdateSyncInstanceStateMethod) == null) {
+      synchronized (SyncInstanceManageGrpc.class) {
+        if ((getUpdateSyncInstanceStateMethod = SyncInstanceManageGrpc.getUpdateSyncInstanceStateMethod) == null) {
+          SyncInstanceManageGrpc.getUpdateSyncInstanceStateMethod = getUpdateSyncInstanceStateMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSyncInstanceState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncInstanceManageMethodDescriptorSupplier("UpdateSyncInstanceState"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSyncInstanceStateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -258,6 +321,27 @@ public final class SyncInstanceManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeSyncInstanceMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public void createSyncInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSyncInstanceWithIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSyncInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public void updateSyncInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSyncInstanceStateMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -295,6 +379,20 @@ public final class SyncInstanceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncInstanceManage.DescribeSyncInstance>(
                   this, METHODID_DESCRIBE_SYNC_INSTANCE)))
+          .addMethod(
+            getCreateSyncInstanceWithIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_CREATE_SYNC_INSTANCE_WITH_ID)))
+          .addMethod(
+            getUpdateSyncInstanceStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_SYNC_INSTANCE_STATE)))
           .build();
     }
   }
@@ -355,6 +453,29 @@ public final class SyncInstanceManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeSyncInstanceMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public void createSyncInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSyncInstanceWithIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSyncInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public void updateSyncInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSyncInstanceStateMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -407,6 +528,27 @@ public final class SyncInstanceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncInstanceManage.DescribeSyncInstance describeSyncInstance(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeSyncInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createSyncInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSyncInstanceWithIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSyncInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateSyncInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSyncInstanceStateMethod(), getCallOptions(), request);
     }
   }
 
@@ -466,6 +608,29 @@ public final class SyncInstanceManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeSyncInstanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * CreateSyncInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createSyncInstanceWithId(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSyncInstanceWithIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSyncInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateSyncInstanceState(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSyncInstanceStateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SYNC_INSTANCES = 0;
@@ -473,6 +638,8 @@ public final class SyncInstanceManageGrpc {
   private static final int METHODID_SUSPEND_SYNC_INSTANCES = 2;
   private static final int METHODID_RESUME_SYNC_INSTANCES = 3;
   private static final int METHODID_DESCRIBE_SYNC_INSTANCE = 4;
+  private static final int METHODID_CREATE_SYNC_INSTANCE_WITH_ID = 5;
+  private static final int METHODID_UPDATE_SYNC_INSTANCE_STATE = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -511,6 +678,14 @@ public final class SyncInstanceManageGrpc {
           serviceImpl.describeSyncInstance((com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.DescribeSyncInstance) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncInstanceManage.DescribeSyncInstance>) responseObserver);
           break;
+        case METHODID_CREATE_SYNC_INSTANCE_WITH_ID:
+          serviceImpl.createSyncInstanceWithId((com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.CreateSyncInstanceWithId) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_UPDATE_SYNC_INSTANCE_STATE:
+          serviceImpl.updateSyncInstanceState((com.dataomnis.gproto.types.pbrequest.PBRequestSyncInstanceManage.UpdateSyncInstanceState) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -533,7 +708,7 @@ public final class SyncInstanceManageGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.dataomnis.gproto.service.pbsvcscheduler.PBSvcSyncInstanceManage.getDescriptor();
+      return com.dataomnis.gproto.service.pbsvcspace.PBSvcSyncInstanceManage.getDescriptor();
     }
 
     @java.lang.Override
@@ -577,6 +752,8 @@ public final class SyncInstanceManageGrpc {
               .addMethod(getSuspendSyncInstancesMethod())
               .addMethod(getResumeSyncInstancesMethod())
               .addMethod(getDescribeSyncInstanceMethod())
+              .addMethod(getCreateSyncInstanceWithIdMethod())
+              .addMethod(getUpdateSyncInstanceStateMethod())
               .build();
         }
       }

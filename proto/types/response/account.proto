@@ -60,3 +60,7 @@ message GetUserRole{
   string role = 2;
   int32  privilege = 3;
 }
+
+message CheckUserExists{
+  bool exists = 1;
+}

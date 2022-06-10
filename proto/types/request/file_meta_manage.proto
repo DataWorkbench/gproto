@@ -178,6 +178,10 @@ message ListFileMetas {
   // The parent id. Not required.
   // @inject_tag: json:"pid" form:"pid"
   string pid = 9;
+
+  // The types.Not required.
+  // @inject_tag: json:"types" form:"types"
+  repeated int32 types = 10;
 }
 
 message DeleteFileMetas {

@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.types.model import empty_pb2 as proto_dot_types_dot_model_dot_empty__pb2
 from proto.types.request import flink_developer_pb2 as proto_dot_types_dot_request_dot_flink__developer__pb2
 from proto.types.response import flink_developer_pb2 as proto_dot_types_dot_response_dot_flink__developer__pb2
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcdeveloperB\023PBSvcFlinkDeveloperP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\xde\x02\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12j\n\x19SubmitFlinkJobInteractive\x12\".request.SubmitFlinkJobInteractive\x1a#.response.SubmitFlinkJobInteractive\"\x00(\x01\x30\x01\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12L\n\x0f\x45xecuteFlinkSql\x12\x18.request.ExecuteFlinkSql\x1a\x19.response.ExecuteFlinkSql\"\x00(\x01\x30\x01\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
+  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\xe3\x02\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12j\n\x19SubmitFlinkJobInteractive\x12\".request.SubmitFlinkJobInteractive\x1a#.response.SubmitFlinkJobInteractive\"\x00(\x01\x30\x01\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12Q\n\x13ValidateFlinkJob_v2\x12\x1c.request.ValidateFlinkJob_v2\x1a\x1a.response.ValidateFlinkJob\"\x00\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_flink__developer__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_flink__developer__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_request_dot_flink__developer__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_flink__developer__pb2.DESCRIPTOR,])
 
 
 
@@ -40,8 +39,8 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=179,
-  serialized_end=529,
+  serialized_start=148,
+  serialized_end=503,
   methods=[
   _descriptor.MethodDescriptor(
     name='SubmitFlinkJob',
@@ -74,12 +73,12 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ExecuteFlinkSql',
-    full_name='developer.FlinkDeveloper.ExecuteFlinkSql',
+    name='ValidateFlinkJob_v2',
+    full_name='developer.FlinkDeveloper.ValidateFlinkJob_v2',
     index=3,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._EXECUTEFLINKSQL,
-    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._EXECUTEFLINKSQL,
+    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._VALIDATEFLINKJOB_V2,
+    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._VALIDATEFLINKJOB,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

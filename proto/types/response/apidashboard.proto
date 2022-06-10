@@ -27,7 +27,7 @@ message ListRoutes {
 
 message ListUpstreams {
   // @inject_tag: json:"entities"
-  repeated model.Upstream entities = 1;
+  repeated model.UpstreamEntity entities = 1;
 
   // @inject_tag: json:"total"
   int64 total = 2;

@@ -6,15 +6,29 @@
 package pbmodel
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
-	_ "google.golang.org/protobuf/types/known/anypb"
 )
 
 // Set default value for message model.UpstreamEntity
 func (this *UpstreamEntity) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Nodes != nil {
+		if dt, ok := interface{}(this.Nodes).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Tls != nil {
+		if dt, ok := interface{}(this.Tls).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Timeout != nil {
+		if dt, ok := interface{}(this.Timeout).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }
@@ -56,9 +70,6 @@ func (this *Upstream) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Retries == 0 {
-		this.Retries = -1
-	}
 	if this.Tls != nil {
 		if dt, ok := interface{}(this.Tls).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
@@ -88,6 +99,14 @@ func (this *UpstreamNode) SetDefaults() {
 	return
 }
 
+// Set default value for message model.UpstreamNodes
+func (this *UpstreamNodes) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.UpstreamTLS
 func (this *UpstreamTLS) SetDefaults() {
 	if this == nil {
@@ -100,9 +119,6 @@ func (this *UpstreamTLS) SetDefaults() {
 func (this *Route) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Priority == 0 {
-		this.Priority = 0
 	}
 	return
 }

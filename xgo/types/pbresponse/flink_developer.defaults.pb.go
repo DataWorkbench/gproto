@@ -6,7 +6,6 @@
 package pbresponse
 
 import (
-	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflink"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -20,6 +19,14 @@ func (this *SubmitFlinkJob) SetDefaults() {
 
 // Set default value for message response.SubmitFlinkJobInteractive
 func (this *SubmitFlinkJobInteractive) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.SubmitFlinkJobInteractive.DataSet
+func (this *SubmitFlinkJobInteractive_DataSet) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -8,6 +8,7 @@ package pbrequest
 import (
 	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
@@ -810,6 +811,16 @@ func (this *ConvertSyncJobMode) Validate() error {
 	return nil
 }
 
+func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("ListSyncJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
+	}
+	return nil
+}
+
 func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -836,20 +847,13 @@ func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListSyncJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("ListSyncJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("ListSyncJobVersions", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
 // Set default value for message request.ListSyncJobVersions
 func (this *ListSyncJobVersions) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
@@ -858,66 +862,6 @@ func (this *ListSyncJobVersions) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_version() error {
-	if !(len(this.Version) == 16) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
-	}
-	return nil
-}
-
-func (this *DescribeSyncFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id() error {
-	if !(len(this.InstanceId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
-	}
-	if !(strings.HasPrefix(this.InstanceId, "syi-")) {
-		return protovalidator.FieldError1("DescribeSyncFlinkUIByInstanceId", "the value of field 'instance_id' must start with string 'syi-'", this.InstanceId)
-	}
-	return nil
-}
-
-// Set default value for message request.DescribeSyncFlinkUIByInstanceId
-func (this *DescribeSyncFlinkUIByInstanceId) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
 		return err
 	}
 	return nil
@@ -939,152 +883,6 @@ func (this *GenerateJobJson) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
-	}
-	return nil
-}
-
-func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
-	}
-	return nil
-}
-
-func (this *PingSyncJobConnection) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("PingSyncJobConnection", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
-// Set default value for message request.PingSyncJobConnection
-func (this *PingSyncJobConnection) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
-	}
-	return nil
-}
-
-func (this *DescribeSyncConnection) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("DescribeSyncConnection", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
-// Set default value for message request.DescribeSyncConnection
-func (this *DescribeSyncConnection) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
 		return err
 	}
 	return nil

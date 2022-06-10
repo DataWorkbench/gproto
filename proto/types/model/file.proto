@@ -59,15 +59,19 @@ message File {
   // @inject_tag: json:"version" gorm:"column:version;"
   string version = 11 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
 
+  // The file type, 1=>jar 2=>python 3=>zip
+  // @inject_tag: json:"type" gorm:"column:type;"
+  int32 type = 12[ (validator.field).tags.int = { gte: 1, lte: 3 } ];
+
   // File owner.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
-  string created_by = 12 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+  string created_by = 13 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 13 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 14 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 14 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 15 [ (validator.field).tags.int = { gt: 0 } ];
 }

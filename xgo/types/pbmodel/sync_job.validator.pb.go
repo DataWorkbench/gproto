@@ -184,6 +184,15 @@ func (this *SyncJob) _xxx_xxx_Validator_Validate_target_type() error {
 	return nil
 }
 
+func (this *SyncJob) _xxx_xxx_Validator_Validate_sync_job_property() error {
+	if dt, ok := interface{}(this.SyncJobProperty).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJob
 func (this *SyncJob) Validate() error {
 	if this == nil {
@@ -226,6 +235,9 @@ func (this *SyncJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_target_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job_property(); err != nil {
 		return err
 	}
 	return nil
@@ -299,32 +311,12 @@ func (this *SyncJobProperty) Validate() error {
 	return nil
 }
 
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
-	}
-	return nil
-}
-
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("SyncJobConf", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
 func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_mode() error {
-	if !(this.JobMode >= 0) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '0'", protovalidator.Int32ToString(int32(this.JobMode)))
+	if !(this.JobMode >= 1) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
 	}
-	if !(this.JobMode <= 1) {
-		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '1'", protovalidator.Int32ToString(int32(this.JobMode)))
+	if !(this.JobMode <= 2) {
+		return protovalidator.FieldError1("SyncJobConf", "the value of field 'job_mode' must be less than or equal to '2'", protovalidator.Int32ToString(int32(this.JobMode)))
 	}
 	return nil
 }
@@ -346,7 +338,7 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_job_content() error {
 	return nil
 }
 
-func (this *SyncJobConf) _xxx_xxx_Validator_Validate_syncResource() error {
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_sync_resource() error {
 	if dt, ok := interface{}(this.SyncResource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -364,16 +356,19 @@ func (this *SyncJobConf) _xxx_xxx_Validator_Validate_channel_control() error {
 	return nil
 }
 
+func (this *SyncJobConf) _xxx_xxx_Validator_Validate_cluster_info() error {
+	if dt, ok := interface{}(this.ClusterInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJobConf
 func (this *SyncJobConf) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_mode(); err != nil {
 		return err
@@ -381,10 +376,13 @@ func (this *SyncJobConf) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_job_content(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_syncResource(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sync_resource(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_channel_control(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_info(); err != nil {
 		return err
 	}
 	return nil
@@ -1061,6 +1059,24 @@ func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_sync_job() error {
+	if dt, ok := interface{}(this.SyncJob).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *SyncJobRelease) _xxx_xxx_Validator_Validate_sync_job_property() error {
+	if dt, ok := interface{}(this.SyncJobProperty).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJobRelease
 func (this *SyncJobRelease) Validate() error {
 	if this == nil {
@@ -1090,117 +1106,10 @@ func (this *SyncJobRelease) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("SyncJobConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("SyncJobConnection", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	if !(strings.HasPrefix(this.JobId, "syj-")) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
-	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("SyncJobConnection", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
-	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("SyncJobConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	if !(strings.HasPrefix(this.SourceId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
-	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("SyncJobConnection", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	if !(strings.HasPrefix(this.TargetId, "som-")) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'target_id' must start with string 'som-'", this.TargetId)
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_SyncJobConnection_InEnums_Status = map[SyncJobConnection_Status]bool{0: true, 1: true, 2: true}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status > 1) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'status' must be greater than '1'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	if !(_xxx_xxx_Validator_SyncJobConnection_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_SyncJobConnection_InEnums_Result = map[SyncJobConnection_Result]bool{0: true, 1: true, 2: true}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_result() error {
-	if !(this.Result > 0) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'result' must be greater than '0'", protovalidator.Int32ToString(int32(this.Result)))
-	}
-	if !(_xxx_xxx_Validator_SyncJobConnection_InEnums_Result[this.Result]) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'result' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Result)))
-	}
-	return nil
-}
-
-func (this *SyncJobConnection) _xxx_xxx_Validator_Validate_created() error {
-	if !(this.Created > 0) {
-		return protovalidator.FieldError1("SyncJobConnection", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
-	}
-	return nil
-}
-
-// Set default value for message model.SyncJobConnection
-func (this *SyncJobConnection) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_result(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sync_job_property(); err != nil {
 		return err
 	}
 	return nil

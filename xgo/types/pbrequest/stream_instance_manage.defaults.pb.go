@@ -53,3 +53,19 @@ func (this *DescribeStreamInstance) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.CreateStreamInstanceWithId
+func (this *CreateStreamInstanceWithId) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateStreamInstanceState
+func (this *UpdateStreamInstanceState) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

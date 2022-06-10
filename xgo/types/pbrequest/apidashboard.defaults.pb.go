@@ -6,12 +6,39 @@
 package pbrequest
 
 import (
+	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message request.RouteUriRewrite
-func (this *RouteUriRewrite) SetDefaults() {
+// Set default value for message request.CreateRoute
+func (this *CreateRoute) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.RouteInfo != nil {
+		if dt, ok := interface{}(this.RouteInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.UpdateRoute
+func (this *UpdateRoute) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.RouteInfo != nil {
+		if dt, ok := interface{}(this.RouteInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.RouteInfo
+func (this *RouteInfo) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -37,6 +64,50 @@ func (this *ListRoutes) SetDefaults() {
 	return
 }
 
+// Set default value for message request.CreateUpstream
+func (this *CreateUpstream) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.UpstreamInfo != nil {
+		if dt, ok := interface{}(this.UpstreamInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.UpdateUpstream
+func (this *UpdateUpstream) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.UpstreamInfo != nil {
+		if dt, ok := interface{}(this.UpstreamInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.UpstreamInfo
+func (this *UpstreamInfo) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Tls != nil {
+		if dt, ok := interface{}(this.Tls).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Timeout != nil {
+		if dt, ok := interface{}(this.Timeout).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
 // Set default value for message request.DeleteUpstream
 func (this *DeleteUpstream) SetDefaults() {
 	if this == nil {
@@ -52,6 +123,14 @@ func (this *ListUpstreams) SetDefaults() {
 	}
 	if this.Limit == 0 {
 		this.Limit = 100
+	}
+	return
+}
+
+// Set default value for message request.CreateSSL
+func (this *CreateSSL) SetDefaults() {
+	if this == nil {
+		return
 	}
 	return
 }
@@ -120,6 +199,14 @@ func (this *AddSvcReqCount) SetDefaults() {
 
 // Set default value for message request.GetSvcReqCount
 func (this *GetSvcReqCount) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteProjectRoutes
+func (this *DeleteProjectRoutes) SetDefaults() {
 	if this == nil {
 		return
 	}

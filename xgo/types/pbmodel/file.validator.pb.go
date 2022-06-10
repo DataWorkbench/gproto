@@ -82,6 +82,16 @@ func (this *File) _xxx_xxx_Validator_Validate_version() error {
 	return nil
 }
 
+func (this *File) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type >= 1) {
+		return protovalidator.FieldError1("File", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(this.Type))
+	}
+	if !(this.Type <= 3) {
+		return protovalidator.FieldError1("File", "the value of field 'type' must be less than or equal to '3'", protovalidator.Int32ToString(this.Type))
+	}
+	return nil
+}
+
 func (this *File) _xxx_xxx_Validator_Validate_created_by() error {
 	if !(len(this.CreatedBy) > 0) {
 		return protovalidator.FieldError1("File", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
@@ -133,6 +143,9 @@ func (this *File) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {

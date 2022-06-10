@@ -27,7 +27,7 @@ public final class PBSvcStreamJobManage {
       "manage.proto\022\014spacemanager\032\035proto/types/" +
       "model/empty.proto\032+proto/types/request/s" +
       "tream_job_manage.proto\032,proto/types/resp" +
-      "onse/stream_job_manage.proto2\363\017\n\017StreamJ" +
+      "onse/stream_job_manage.proto2\304\020\n\017StreamJ" +
       "obManage\022E\n\016ListStreamJobs\022\027.request.Lis" +
       "tStreamJobs\032\030.response.ListStreamJobs\"\000\022" +
       "C\n\020DeleteStreamJobs\022\031.request.DeleteStre" +
@@ -58,30 +58,32 @@ public final class PBSvcStreamJobManage {
       "mJob\022\031.request.ReleaseStreamJob\032\022.model." +
       "EmptyStruct\"\000\022Q\n\027OfflineReleaseStreamJob" +
       "\022 .request.OfflineReleaseStreamJob\032\022.mod" +
-      "el.EmptyStruct\"\000\022Q\n\027SuspendReleaseStream" +
-      "Job\022 .request.SuspendReleaseStreamJob\032\022." +
-      "model.EmptyStruct\"\000\022O\n\026ResumeReleaseStre" +
-      "amJob\022\037.request.ResumeReleaseStreamJob\032\022" +
-      ".model.EmptyStruct\"\000\022[\n\034UpdateReleaseStr" +
-      "eamJobStatus\022%.request.UpdateReleaseStre" +
-      "amJobStatus\032\022.model.EmptyStruct\"\000\022Z\n\025Lis" +
-      "tStreamJobVersions\022\036.request.ListStreamJ" +
-      "obVersions\032\037.response.ListStreamJobVersi" +
-      "ons\"\000\022U\n\030DescribeStreamJobVersion\022\032.requ" +
-      "est.DescribeStreamJob\032\033.response.Describ" +
-      "eStreamJob\"\000\022R\n\027GetStreamJobVersionCode\022" +
-      "\031.request.GetStreamJobCode\032\032.response.Ge" +
-      "tStreamJobCode\"\000\022R\n\027GetStreamJobVersionA" +
-      "rgs\022\031.request.GetStreamJobArgs\032\032.respons" +
-      "e.GetStreamJobArgs\"\000\022^\n\033GetStreamJobVers" +
-      "ionSchedule\022\035.request.GetStreamJobSchedu" +
-      "le\032\036.response.GetStreamJobSchedule\"\000\022l\n\033" +
-      "DescribeFlinkUIByInstanceId\022$.request.De" +
-      "scribeFlinkUIByInstanceId\032%.response.Des" +
-      "cribeFlinkUIByInstanceId\"\000By\n\'com.dataom" +
-      "nis.gproto.service.pbsvcspaceB\024PBSvcStre" +
-      "amJobManageP\000Z6github.com/DataWorkbench/" +
-      "gproto/xgo/service/pbsvcspaceb\006proto3"
+      "el.EmptyStruct\"\000\022O\n\026ReopenReleaseStreamJ" +
+      "ob\022\037.request.ReopenReleaseStreamJob\032\022.mo" +
+      "del.EmptyStruct\"\000\022Q\n\027SuspendReleaseStrea" +
+      "mJob\022 .request.SuspendReleaseStreamJob\032\022" +
+      ".model.EmptyStruct\"\000\022O\n\026ResumeReleaseStr" +
+      "eamJob\022\037.request.ResumeReleaseStreamJob\032" +
+      "\022.model.EmptyStruct\"\000\022[\n\034UpdateReleaseSt" +
+      "reamJobStatus\022%.request.UpdateReleaseStr" +
+      "eamJobStatus\032\022.model.EmptyStruct\"\000\022Z\n\025Li" +
+      "stStreamJobVersions\022\036.request.ListStream" +
+      "JobVersions\032\037.response.ListStreamJobVers" +
+      "ions\"\000\022U\n\030DescribeStreamJobVersion\022\032.req" +
+      "uest.DescribeStreamJob\032\033.response.Descri" +
+      "beStreamJob\"\000\022R\n\027GetStreamJobVersionCode" +
+      "\022\031.request.GetStreamJobCode\032\032.response.G" +
+      "etStreamJobCode\"\000\022R\n\027GetStreamJobVersion" +
+      "Args\022\031.request.GetStreamJobArgs\032\032.respon" +
+      "se.GetStreamJobArgs\"\000\022^\n\033GetStreamJobVer" +
+      "sionSchedule\022\035.request.GetStreamJobSched" +
+      "ule\032\036.response.GetStreamJobSchedule\"\000\022l\n" +
+      "\033DescribeFlinkUIByInstanceId\022$.request.D" +
+      "escribeFlinkUIByInstanceId\032%.response.De" +
+      "scribeFlinkUIByInstanceId\"\000By\n\'com.datao" +
+      "mnis.gproto.service.pbsvcspaceB\024PBSvcStr" +
+      "eamJobManageP\000Z6github.com/DataWorkbench" +
+      "/gproto/xgo/service/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

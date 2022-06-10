@@ -12,7 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "proto/types/model/sync_job.proto";
 import "proto/types/model/datasource.proto";
 
@@ -171,6 +171,11 @@ message DescribeSyncJob {
     // The sync job version id in HTTP Request-URI
     // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
     string version = 2 [(validator.field) = {}];
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 3;
 }
 
 // SetSyncJobschedule used as a request parameters for RPC.
@@ -264,6 +269,11 @@ message ListReleaseSyncJobs {
     // The sync job id.
     // @inject_tag: json:"job_id" form:"job_id"
     string job_id = 8;
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 9;
 }
 
 // UpdateReleaseSyncJobStatus used as a request parameters for RPC.
@@ -331,8 +341,9 @@ message ReopenReleaseSyncJob {
 
 // ConvertSyncJobMode used as a request parameters for RPC.
 message ConvertSyncJobMode {
+    option (gosql.serialize) = {json: {}};
     // The sync job id
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    // @inject_tag: json:"job_id" uri:"job_id"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
     // conf
     // @inject_tag: json:"conf"
@@ -341,6 +352,9 @@ message ConvertSyncJobMode {
 
 // ListSyncJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSyncJobVersions {
+    // The sync job id in HTTP Request-URI
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // Limit the maximum number of entries returned this time.
     // Not required, Max 100, default 100.
@@ -362,28 +376,34 @@ message ListSyncJobVersions {
     // @inject_tag: json:"reverse" form:"reverse"
     bool reverse = 4;
 
-    // The sync job id in HTTP Request-URI
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+    // Filter by specified version.
+    // @inject_tag: json:"version" form:"version"
+    string version = 6;
+
+    // Verbose indicates the verbosity level.
+    // If the value greater than 1, The details of the associated information will be returned.
+    // @inject_tag: json:"verbose" form:"verbose"
+    int32 verbose = 7;
 }
 
-// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
-message DescribeSyncFlinkUIByInstanceId {
-    // The space id.
-    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-    // The sync job id
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-
-    // The sync job version
-    // @inject_tag: json:"version" uri:"version" swaggerignore:"true"
-    string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16  } ];
-
-    // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
-    string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
-}
+// FIXME: remove it.
+//// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+//message DescribeSyncFlinkUIByInstanceId {
+//    // The space id.
+//    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+//    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+//
+//    // The sync job id
+//    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+//    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+//
+//    // The sync job version
+//    // @inject_tag: json:"version" uri:"version" swaggerignore:"true"
+//    string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16  } ];
+//
+//    // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+//    string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syi-" } ];
+//}
 
 // GenerateJobJson used as a request parameters for RPC.
 message GenerateJobJson {
@@ -392,44 +412,45 @@ message GenerateJobJson {
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
 
-message PingSyncJobConnection {
-    // The space id.
-    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-    // The id of sync jod.
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-
-    // @inject_tag: json:"cluster_id" form:"cluster_id"
-    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
-
-    // The datasource id that as a sync source.
-    // @inject_tag: json:"source_id" form:"source_id"
-    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-
-    // The datasource id that as a sync target.
-    // @inject_tag: json:"target_id" form:"target_id"
-    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-}
-
-message DescribeSyncConnection {
-    // The space id.
-    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-    // The id of sync jod.
-    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-
-    // @inject_tag: json:"cluster_id" form:"cluster_id"
-    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
-
-    // The datasource id that as a sync source.
-    // @inject_tag: json:"source_id" form:"source_id"
-    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-
-    // The datasource id that as a sync target.
-    // @inject_tag: json:"target_id" form:"target_id"
-    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-}
+// FIXME: remove it.
+//message PingSyncJobConnection {
+//    // The space id.
+//    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+//    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+//
+//    // The id of sync jod.
+//    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+//    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+//
+//    // @inject_tag: json:"cluster_id" form:"cluster_id"
+//    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+//
+//    // The datasource id that as a sync source.
+//    // @inject_tag: json:"source_id" form:"source_id"
+//    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//
+//    // The datasource id that as a sync target.
+//    // @inject_tag: json:"target_id" form:"target_id"
+//    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//}
+// FIXME: remove it.
+//message DescribeSyncConnection {
+//    // The space id.
+//    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+//    string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+//
+//    // The id of sync jod.
+//    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+//    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+//
+//    // @inject_tag: json:"cluster_id" form:"cluster_id"
+//    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+//
+//    // The datasource id that as a sync source.
+//    // @inject_tag: json:"source_id" form:"source_id"
+//    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//
+//    // The datasource id that as a sync target.
+//    // @inject_tag: json:"target_id" form:"target_id"
+//    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//}

@@ -223,3 +223,24 @@ func (this *CreateSession) Validate() error {
 	}
 	return nil
 }
+
+func (this *CheckUserExists) _xxx_xxx_Validator_Validate_user_name() error {
+	if !(utf8.RuneCountInString(this.UserName) >= 2) {
+		return protovalidator.FieldError1("CheckUserExists", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	if !(utf8.RuneCountInString(this.UserName) <= 128) {
+		return protovalidator.FieldError1("CheckUserExists", "the character length of field 'user_name' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	return nil
+}
+
+// Set default value for message request.CheckUserExists
+func (this *CheckUserExists) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_name(); err != nil {
+		return err
+	}
+	return nil
+}

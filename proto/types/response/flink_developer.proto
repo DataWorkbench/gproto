@@ -13,7 +13,7 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
-import "proto/types/model/flink/flink_job.proto";
+//import "proto/types/model/flink/flink_job.proto";
 
 message SubmitFlinkJob {
   enum Code {
@@ -31,7 +31,30 @@ message SubmitFlinkJob {
 }
 
 message SubmitFlinkJobInteractive{
-  string message = 1 [(validator.field) = {}];
+  enum Type{
+    TypeUnset = 0;
+    ErrorMsg = 1;
+    Data = 2;
+    Schema = 3;
+  }
+
+  message DataSet{
+    // message
+    // @inject_tag: json:"message"
+    repeated string message = 1;
+  }
+
+  // type
+  // @inject_tag: json:"type"
+  Type type = 1 [(validator.field) = {}];
+
+  // dataset
+  // @inject_tag: json:"inject_tag"
+  repeated DataSet dataset = 2 [(validator.field) = {}];
+
+  // error message
+  // @inject_tag: json:"error_message"
+  string error_message = 3 [(validator.field) = {}];
 }
 
 // GetStreamJobCode used as reply parameters in RPC.

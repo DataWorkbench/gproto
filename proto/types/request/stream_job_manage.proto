@@ -312,6 +312,21 @@ message OfflineReleaseStreamJob {
   bool stop_running = 4;
 }
 
+// ReopenReleaseStreamJob used as a request parameters for RPC.
+message ReopenReleaseStreamJob {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The stream job id in HTTP Request-URI
+  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+  // Whether stop the running instance.
+  // @inject_tag: json:"stop_running"
+  bool stop_running = 3;
+}
+
 // SuspendReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
 message SuspendReleaseStreamJob {
   // The workspace id in HTTP Request-URI
@@ -377,6 +392,10 @@ message ListStreamJobVersions {
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 4;
+
+  // Filter by specified version.
+  // @inject_tag: json:"version" form:"version"
+  string version = 6;
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.

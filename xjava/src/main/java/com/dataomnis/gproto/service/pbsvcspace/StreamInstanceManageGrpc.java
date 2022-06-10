@@ -1,4 +1,4 @@
-package com.dataomnis.gproto.service.pbsvcscheduler;
+package com.dataomnis.gproto.service.pbsvcspace;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -8,8 +8,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
-    comments = "Source: proto/service/scheduler/stream_instance_manage.proto")
+    value = "by gRPC proto compiler (version 1.43.2)",
+    comments = "Source: proto/service/spacemanager/stream_instance_manage.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class StreamInstanceManageGrpc {
 
   private StreamInstanceManageGrpc() {}
@@ -172,6 +173,68 @@ public final class StreamInstanceManageGrpc {
     return getDescribeStreamInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateStreamInstanceWithIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateStreamInstanceWithId",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateStreamInstanceWithIdMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateStreamInstanceWithIdMethod;
+    if ((getCreateStreamInstanceWithIdMethod = StreamInstanceManageGrpc.getCreateStreamInstanceWithIdMethod) == null) {
+      synchronized (StreamInstanceManageGrpc.class) {
+        if ((getCreateStreamInstanceWithIdMethod = StreamInstanceManageGrpc.getCreateStreamInstanceWithIdMethod) == null) {
+          StreamInstanceManageGrpc.getCreateStreamInstanceWithIdMethod = getCreateStreamInstanceWithIdMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateStreamInstanceWithId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamInstanceManageMethodDescriptorSupplier("CreateStreamInstanceWithId"))
+              .build();
+        }
+      }
+    }
+    return getCreateStreamInstanceWithIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateStreamInstanceStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateStreamInstanceState",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateStreamInstanceStateMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateStreamInstanceStateMethod;
+    if ((getUpdateStreamInstanceStateMethod = StreamInstanceManageGrpc.getUpdateStreamInstanceStateMethod) == null) {
+      synchronized (StreamInstanceManageGrpc.class) {
+        if ((getUpdateStreamInstanceStateMethod = StreamInstanceManageGrpc.getUpdateStreamInstanceStateMethod) == null) {
+          StreamInstanceManageGrpc.getUpdateStreamInstanceStateMethod = getUpdateStreamInstanceStateMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateStreamInstanceState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamInstanceManageMethodDescriptorSupplier("UpdateStreamInstanceState"))
+              .build();
+        }
+      }
+    }
+    return getUpdateStreamInstanceStateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -238,6 +301,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public void suspendStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.SuspendStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -245,6 +311,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public void resumeStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ResumeStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -256,6 +325,27 @@ public final class StreamInstanceManageGrpc {
     public void describeStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeStreamInstanceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public void createStreamInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateStreamInstanceWithIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateStreamInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public void updateStreamInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateStreamInstanceStateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -295,6 +385,20 @@ public final class StreamInstanceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance,
                 com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance>(
                   this, METHODID_DESCRIBE_STREAM_INSTANCE)))
+          .addMethod(
+            getCreateStreamInstanceWithIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_CREATE_STREAM_INSTANCE_WITH_ID)))
+          .addMethod(
+            getUpdateStreamInstanceStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_STREAM_INSTANCE_STATE)))
           .build();
     }
   }
@@ -333,6 +437,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public void suspendStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.SuspendStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -341,6 +448,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public void resumeStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ResumeStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -354,6 +464,29 @@ public final class StreamInstanceManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeStreamInstanceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public void createStreamInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateStreamInstanceWithIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateStreamInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public void updateStreamInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateStreamInstanceStateMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -389,6 +522,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct suspendStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.SuspendStreamInstances request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -396,6 +532,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct resumeStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ResumeStreamInstances request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -407,6 +546,27 @@ public final class StreamInstanceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance describeStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeStreamInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createStreamInstanceWithId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStreamInstanceWithIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateStreamInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateStreamInstanceState(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStreamInstanceStateMethod(), getCallOptions(), request);
     }
   }
 
@@ -444,6 +604,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> suspendStreamInstances(
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.SuspendStreamInstances request) {
@@ -452,6 +615,9 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
+     * <pre>
+     * TODO: unused on present.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> resumeStreamInstances(
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ResumeStreamInstances request) {
@@ -466,6 +632,29 @@ public final class StreamInstanceManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeStreamInstanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+     * Return no error is the give instance id already exists.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createStreamInstanceWithId(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateStreamInstanceWithIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateStreamInstanceState do updates the instance state, Only used in internal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateStreamInstanceState(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateStreamInstanceStateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_STREAM_INSTANCES = 0;
@@ -473,6 +662,8 @@ public final class StreamInstanceManageGrpc {
   private static final int METHODID_SUSPEND_STREAM_INSTANCES = 2;
   private static final int METHODID_RESUME_STREAM_INSTANCES = 3;
   private static final int METHODID_DESCRIBE_STREAM_INSTANCE = 4;
+  private static final int METHODID_CREATE_STREAM_INSTANCE_WITH_ID = 5;
+  private static final int METHODID_UPDATE_STREAM_INSTANCE_STATE = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -511,6 +702,14 @@ public final class StreamInstanceManageGrpc {
           serviceImpl.describeStreamInstance((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance>) responseObserver);
           break;
+        case METHODID_CREATE_STREAM_INSTANCE_WITH_ID:
+          serviceImpl.createStreamInstanceWithId((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.CreateStreamInstanceWithId) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_UPDATE_STREAM_INSTANCE_STATE:
+          serviceImpl.updateStreamInstanceState((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.UpdateStreamInstanceState) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -533,7 +732,7 @@ public final class StreamInstanceManageGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.dataomnis.gproto.service.pbsvcscheduler.PBSvcStreamInstanceManage.getDescriptor();
+      return com.dataomnis.gproto.service.pbsvcspace.PBSvcStreamInstanceManage.getDescriptor();
     }
 
     @java.lang.Override
@@ -577,6 +776,8 @@ public final class StreamInstanceManageGrpc {
               .addMethod(getSuspendStreamInstancesMethod())
               .addMethod(getResumeStreamInstancesMethod())
               .addMethod(getDescribeStreamInstanceMethod())
+              .addMethod(getCreateStreamInstanceWithIdMethod())
+              .addMethod(getUpdateStreamInstanceStateMethod())
               .build();
         }
       }

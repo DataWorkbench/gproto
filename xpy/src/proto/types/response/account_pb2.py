@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseAccountP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\" \n\rCreateSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"?\n\x0bGetUserRole\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x11\n\tprivilege\x18\x03 \x01(\x05\x42r\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\" \n\rCreateSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"?\n\x0bGetUserRole\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x11\n\tprivilege\x18\x03 \x01(\x05\"!\n\x0f\x43heckUserExists\x12\x0e\n\x06\x65xists\x18\x01 \x01(\x08\x42r\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
@@ -384,6 +384,38 @@ _GETUSERROLE = _descriptor.Descriptor(
   serialized_end=617,
 )
 
+
+_CHECKUSEREXISTS = _descriptor.Descriptor(
+  name='CheckUserExists',
+  full_name='response.CheckUserExists',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exists', full_name='response.CheckUserExists.exists', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=619,
+  serialized_end=652,
+)
+
 _DESCRIBEUSERS.fields_by_name['user_set'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
 _CREATEUSER.fields_by_name['user'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
 _UPDATEUSER.fields_by_name['user'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
@@ -396,6 +428,7 @@ DESCRIPTOR.message_types_by_name['DeleteUser'] = _DELETEUSER
 DESCRIPTOR.message_types_by_name['CheckSession'] = _CHECKSESSION
 DESCRIPTOR.message_types_by_name['CreateSession'] = _CREATESESSION
 DESCRIPTOR.message_types_by_name['GetUserRole'] = _GETUSERROLE
+DESCRIPTOR.message_types_by_name['CheckUserExists'] = _CHECKUSEREXISTS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DescribeAccessKey = _reflection.GeneratedProtocolMessageType('DescribeAccessKey', (_message.Message,), {
@@ -460,6 +493,13 @@ GetUserRole = _reflection.GeneratedProtocolMessageType('GetUserRole', (_message.
   # @@protoc_insertion_point(class_scope:response.GetUserRole)
   })
 _sym_db.RegisterMessage(GetUserRole)
+
+CheckUserExists = _reflection.GeneratedProtocolMessageType('CheckUserExists', (_message.Message,), {
+  'DESCRIPTOR' : _CHECKUSEREXISTS,
+  '__module__' : 'proto.types.response.account_pb2'
+  # @@protoc_insertion_point(class_scope:response.CheckUserExists)
+  })
+_sym_db.RegisterMessage(CheckUserExists)
 
 
 DESCRIPTOR._options = None

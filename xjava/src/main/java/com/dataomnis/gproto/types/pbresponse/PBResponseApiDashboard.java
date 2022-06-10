@@ -1623,24 +1623,24 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> 
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> 
         getEntitiesList();
     /**
      * <pre>
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream getEntities(int index);
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity getEntities(int index);
     /**
      * <pre>
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     int getEntitiesCount();
     /**
@@ -1648,18 +1648,18 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder> 
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder> 
         getEntitiesOrBuilderList();
     /**
      * <pre>
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder getEntitiesOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder getEntitiesOrBuilder(
         int index);
 
     /**
@@ -1721,11 +1721,11 @@ public final class PBResponseApiDashboard {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                entities_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream>();
+                entities_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity>();
                 mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.parser(), extensionRegistry));
               break;
             }
             case 16: {
@@ -1769,16 +1769,16 @@ public final class PBResponseApiDashboard {
     }
 
     public static final int ENTITIES_FIELD_NUMBER = 1;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> entities_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> entities_;
     /**
      * <pre>
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> getEntitiesList() {
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> getEntitiesList() {
       return entities_;
     }
     /**
@@ -1786,10 +1786,10 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder> 
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder> 
         getEntitiesOrBuilderList() {
       return entities_;
     }
@@ -1798,7 +1798,7 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     @java.lang.Override
     public int getEntitiesCount() {
@@ -1809,10 +1809,10 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream getEntities(int index) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity getEntities(int index) {
       return entities_.get(index);
     }
     /**
@@ -1820,10 +1820,10 @@ public final class PBResponseApiDashboard {
      * &#64;inject_tag: json:"entities"
      * </pre>
      *
-     * <code>repeated .model.Upstream entities = 1;</code>
+     * <code>repeated .model.UpstreamEntity entities = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder getEntitiesOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder getEntitiesOrBuilder(
         int index) {
       return entities_.get(index);
     }
@@ -2203,26 +2203,26 @@ public final class PBResponseApiDashboard {
       }
       private int bitField0_;
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> entities_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> entities_ =
         java.util.Collections.emptyList();
       private void ensureEntitiesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          entities_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream>(entities_);
+          entities_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity>(entities_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder> entitiesBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder> entitiesBuilder_;
 
       /**
        * <pre>
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> getEntitiesList() {
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> getEntitiesList() {
         if (entitiesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(entities_);
         } else {
@@ -2234,7 +2234,7 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public int getEntitiesCount() {
         if (entitiesBuilder_ == null) {
@@ -2248,9 +2248,9 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream getEntities(int index) {
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity getEntities(int index) {
         if (entitiesBuilder_ == null) {
           return entities_.get(index);
         } else {
@@ -2262,10 +2262,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder setEntities(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2283,10 +2283,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder setEntities(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.set(index, builderForValue.build());
@@ -2301,9 +2301,9 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public Builder addEntities(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream value) {
+      public Builder addEntities(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2321,10 +2321,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder addEntities(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2342,10 +2342,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder addEntities(
-          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.add(builderForValue.build());
@@ -2360,10 +2360,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder addEntities(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.add(index, builderForValue.build());
@@ -2378,10 +2378,10 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder addAllEntities(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream> values) {
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity> values) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2397,7 +2397,7 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder clearEntities() {
         if (entitiesBuilder_ == null) {
@@ -2414,7 +2414,7 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
       public Builder removeEntities(int index) {
         if (entitiesBuilder_ == null) {
@@ -2431,9 +2431,9 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder getEntitiesBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder getEntitiesBuilder(
           int index) {
         return getEntitiesFieldBuilder().getBuilder(index);
       }
@@ -2442,9 +2442,9 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder getEntitiesOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder getEntitiesOrBuilder(
           int index) {
         if (entitiesBuilder_ == null) {
           return entities_.get(index);  } else {
@@ -2456,9 +2456,9 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder> 
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder> 
            getEntitiesOrBuilderList() {
         if (entitiesBuilder_ != null) {
           return entitiesBuilder_.getMessageOrBuilderList();
@@ -2471,41 +2471,41 @@ public final class PBResponseApiDashboard {
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder addEntitiesBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder addEntitiesBuilder() {
         return getEntitiesFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.getDefaultInstance());
+            com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder addEntitiesBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder addEntitiesBuilder(
           int index) {
         return getEntitiesFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.getDefaultInstance());
+            index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"entities"
        * </pre>
        *
-       * <code>repeated .model.Upstream entities = 1;</code>
+       * <code>repeated .model.UpstreamEntity entities = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder> 
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder> 
            getEntitiesBuilderList() {
         return getEntitiesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder> 
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder> 
           getEntitiesFieldBuilder() {
         if (entitiesBuilder_ == null) {
           entitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Upstream.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamOrBuilder>(
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntity.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamEntityOrBuilder>(
                   entities_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -8962,21 +8962,22 @@ public final class PBResponseApiDashboard {
       "o\022\010response\032$proto/types/model/apidashbo" +
       "ard.proto\"\031\n\013CreateRoute\022\n\n\002id\030\001 \001(\t\";\n\n" +
       "ListRoutes\022\036\n\010entities\030\001 \003(\0132\014.model.Rou" +
-      "te\022\r\n\005total\030\002 \001(\003\"A\n\rListUpstreams\022!\n\010en" +
-      "tities\030\001 \003(\0132\017.model.Upstream\022\r\n\005total\030\002" +
-      " \001(\003\"\034\n\016CreateUpstream\022\n\n\002id\030\001 \001(\t\"\027\n\tCr" +
-      "eateSSL\022\n\n\002id\030\001 \001(\t\"7\n\010ListSSLs\022\034\n\010entit" +
-      "ies\030\001 \003(\0132\n.model.SSL\022\r\n\005total\030\002 \001(\003\"\036\n\020" +
-      "CreateApiService\022\n\n\002id\030\001 \001(\t\"K\n\017ListApiS" +
-      "ervices\022)\n\010entities\030\001 \003(\0132\027.model.ApiSer" +
-      "viceEntity\022\r\n\005total\030\002 \001(\003\"E\n\014ListAuthKey" +
-      "s\022&\n\010entities\030\001 \003(\0132\024.model.AuthKeyEntit" +
-      "y\022\r\n\005total\030\002 \001(\003\"/\n\rCreateAuthKey\022\n\n\002id\030" +
-      "\001 \001(\t\022\022\n\nsecret_key\030\002 \001(\t\"+\n\016GetSvcReqCo" +
-      "unt\022\n\n\002id\030\001 \001(\t\022\r\n\005count\030\002 \001(\005Bw\n%com.da" +
-      "taomnis.gproto.types.pbresponseB\026PBRespo" +
-      "nseApiDashboardP\000Z4github.com/DataWorkbe" +
-      "nch/gproto/xgo/types/pbresponseb\006proto3"
+      "te\022\r\n\005total\030\002 \001(\003\"G\n\rListUpstreams\022\'\n\010en" +
+      "tities\030\001 \003(\0132\025.model.UpstreamEntity\022\r\n\005t" +
+      "otal\030\002 \001(\003\"\034\n\016CreateUpstream\022\n\n\002id\030\001 \001(\t" +
+      "\"\027\n\tCreateSSL\022\n\n\002id\030\001 \001(\t\"7\n\010ListSSLs\022\034\n" +
+      "\010entities\030\001 \003(\0132\n.model.SSL\022\r\n\005total\030\002 \001" +
+      "(\003\"\036\n\020CreateApiService\022\n\n\002id\030\001 \001(\t\"K\n\017Li" +
+      "stApiServices\022)\n\010entities\030\001 \003(\0132\027.model." +
+      "ApiServiceEntity\022\r\n\005total\030\002 \001(\003\"E\n\014ListA" +
+      "uthKeys\022&\n\010entities\030\001 \003(\0132\024.model.AuthKe" +
+      "yEntity\022\r\n\005total\030\002 \001(\003\"/\n\rCreateAuthKey\022" +
+      "\n\n\002id\030\001 \001(\t\022\022\n\nsecret_key\030\002 \001(\t\"+\n\016GetSv" +
+      "cReqCount\022\n\n\002id\030\001 \001(\t\022\r\n\005count\030\002 \001(\005Bw\n%" +
+      "com.dataomnis.gproto.types.pbresponseB\026P" +
+      "BResponseApiDashboardP\000Z4github.com/Data" +
+      "Workbench/gproto/xgo/types/pbresponseb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

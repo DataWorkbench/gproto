@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package scheduler;
 
-option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcscheduler";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
 
 // Package name of class.
-option java_package = "com.dataomnis.gproto.service.pbsvcscheduler";
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
 // File name of class.
 option java_outer_classname = "PBSvcStreamInstanceManage";
 option java_multiple_files = false;
@@ -18,8 +18,17 @@ import "proto/types/response/stream_instance_manage.proto";
 service StreamInstanceManage {
   rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
   rpc TerminateStreamInstances(request.TerminateStreamInstances) returns (model.EmptyStruct)       {}
+  // TODO: unused on present.
   rpc SuspendStreamInstances(request.SuspendStreamInstances)     returns (model.EmptyStruct)       {}
+  // TODO: unused on present.
   rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
 
   rpc DescribeStreamInstance(request.DescribeStreamInstance) returns (response.DescribeStreamInstance) {}
+
+  // CreateStreamInstanceWithId do creates a instance with generated id. Only used in internal.
+  // Return no error is the give instance id already exists.
+  rpc CreateStreamInstanceWithId(request.CreateStreamInstanceWithId) returns (model.EmptyStruct) {}
+
+  // UpdateStreamInstanceState do updates the instance state, Only used in internal.
+  rpc UpdateStreamInstanceState(request.UpdateStreamInstanceState) returns(model.EmptyStruct) {}
 }

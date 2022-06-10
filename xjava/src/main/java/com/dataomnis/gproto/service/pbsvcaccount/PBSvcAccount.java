@@ -25,7 +25,7 @@ public final class PBSvcAccount {
     java.lang.String[] descriptorData = {
       "\n#proto/service/account/account.proto\022\007a" +
       "ccount\032!proto/types/request/account.prot" +
-      "o\032\"proto/types/response/account.proto2\270\004" +
+      "o\032\"proto/types/response/account.proto2\202\005" +
       "\n\007Account\022c\n\030ValidateRequestSignature\022!." +
       "request.ValidateRequestSignature\032\".respo" +
       "nse.ValidateRequestSignature\"\000\022B\n\rDescri" +
@@ -40,10 +40,12 @@ public final class PBSvcAccount {
       "heckSession\022\025.request.CheckSession\032\026.res" +
       "ponse.CheckSession\"\000\022B\n\rCreateSession\022\026." +
       "request.CreateSession\032\027.response.CreateS" +
-      "ession\"\000Bu\n)com.dataomnis.gproto.service" +
-      ".pbsvcaccountB\014PBSvcAccountP\000Z8github.co" +
-      "m/DataWorkbench/gproto/xgo/service/pbsvc" +
-      "accountb\006proto3"
+      "ession\"\000\022H\n\017CheckUserExists\022\030.request.Ch" +
+      "eckUserExists\032\031.response.CheckUserExists" +
+      "\"\000Bu\n)com.dataomnis.gproto.service.pbsvc" +
+      "accountB\014PBSvcAccountP\000Z8github.com/Data" +
+      "Workbench/gproto/xgo/service/pbsvcaccoun" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

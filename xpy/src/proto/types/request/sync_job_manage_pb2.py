@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
+from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
 from proto.types.model import datasource_pb2 as proto_dot_types_dot_model_dot_datasource__pb2
 
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\026PBRequestSyncJobManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)proto/types/request/sync_job_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a proto/types/model/sync_job.proto\x1a\"proto/types/model/datasource.proto\"\xf8\x01\n\x0cListSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0b\n\x03pid\x18\x07 \x01(\t\x12\x14\n\x0cis_directory\x18\x08 \x01(\x08\"\x96\x04\n\rCreateSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xfc\x07\x12K\n\x04type\x18\x07 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x18\n\ncluster_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12 \n\x0bspace_owner\x18\t \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12U\n\x0bsource_type\x18\n \x01(\x0e\x32\x16.model.DataSource.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12U\n\x0btarget_type\x18\x0b \x01(\x0e\x32\x16.model.DataSource.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"c\n\x0e\x44\x65leteSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syj-\"\x9b\x01\n\x0cMoveSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syj-\x12\x38\n\x06target\x18\x03 \x01(\tB(\xe2\xdf\x1f\x11\n\x0f\n\x06target\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\"\x98\x01\n\rUpdateSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"M\n\x0f\x44\x65scribeSyncJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\x97\x01\n\x12SetSyncJobSchedule\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x35\n\x08schedule\x18\x03 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x8b\x01\n\x0eSetSyncJobConf\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12-\n\x04\x63onf\x18\x03 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"P\n\x12GetSyncJobSchedule\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"L\n\x0eGetSyncJobConf\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xa7\x02\n\x13ListReleaseSyncJobs\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x39\n\x06status\x18\x07 \x01(\x0e\x32\x1c.model.SyncJobRelease.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0e\n\x06job_id\x18\x08 \x01(\t\"\xc3\x01\n\x1aUpdateReleaseSyncJobStatus\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12:\n\x06status\x18\x04 \x01(\x0e\x32\x1c.model.SyncJobRelease.StatusB\x0c\xe2\xdf\x1f\x08\x12\x06\xda\x01\x03J\x01\x04\"{\n\x0eReleaseSyncJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x14\n\x0cstop_running\x18\x04 \x01(\x08\"y\n\x15OfflineReleaseSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cstop_running\x18\x03 \x01(\x08\"x\n\x14ReopenReleaseSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cstop_running\x18\x03 \x01(\x08\"[\n\x12\x43onvertSyncJobMode\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12 \n\x04\x63onf\x18\x02 \x01(\x0b\x32\x12.model.SyncJobConf\"\xc9\x01\n\x13ListSyncJobVersions\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x03 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07versionJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12#\n\x06job_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\"\xb6\x01\n\x1f\x44\x65scribeSyncFlinkUIByInstanceId\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12(\n\x0binstance_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syi-\"6\n\x0fGenerateJobJson\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\"\xdc\x01\n\x15PingSyncJobConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\'\n\ncluster_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12&\n\tsource_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\"\xdd\x01\n\x16\x44\x65scribeSyncConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\'\n\ncluster_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12&\n\tsource_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12&\n\ttarget_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestSyncJobManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n)proto/types/request/sync_job_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a proto/types/model/sync_job.proto\x1a\"proto/types/model/datasource.proto\"\xf8\x01\n\x0cListSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0b\n\x03pid\x18\x07 \x01(\t\x12\x14\n\x0cis_directory\x18\x08 \x01(\x08\"\x96\x04\n\rCreateSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xfc\x07\x12K\n\x04type\x18\x07 \x01(\x0e\x32\x13.model.SyncJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x18\n\ncluster_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12 \n\x0bspace_owner\x18\t \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12U\n\x0bsource_type\x18\n \x01(\x0e\x32\x16.model.DataSource.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12U\n\x0btarget_type\x18\x0b \x01(\x0e\x32\x16.model.DataSource.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"c\n\x0e\x44\x65leteSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syj-\"\x9b\x01\n\x0cMoveSyncJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04syj-\x12\x38\n\x06target\x18\x03 \x01(\tB(\xe2\xdf\x1f\x11\n\x0f\n\x06target\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\"\x98\x01\n\rUpdateSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"^\n\x0f\x44\x65scribeSyncJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x0f\n\x07verbose\x18\x03 \x01(\x05\"\x97\x01\n\x12SetSyncJobSchedule\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x35\n\x08schedule\x18\x03 \x01(\x0b\x32\x16.model.SyncJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x8b\x01\n\x0eSetSyncJobConf\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12-\n\x04\x63onf\x18\x03 \x01(\x0b\x32\x12.model.SyncJobConfB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"P\n\x12GetSyncJobSchedule\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"L\n\x0eGetSyncJobConf\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xb8\x02\n\x13ListReleaseSyncJobs\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x39\n\x06status\x18\x07 \x01(\x0e\x32\x1c.model.SyncJobRelease.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0e\n\x06job_id\x18\x08 \x01(\t\x12\x0f\n\x07verbose\x18\t \x01(\x05\"\xc3\x01\n\x1aUpdateReleaseSyncJobStatus\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x1d\n\x07version\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12:\n\x06status\x18\x04 \x01(\x0e\x32\x1c.model.SyncJobRelease.StatusB\x0c\xe2\xdf\x1f\x08\x12\x06\xda\x01\x03J\x01\x04\"{\n\x0eReleaseSyncJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x14\n\x0cstop_running\x18\x04 \x01(\x08\"y\n\x15OfflineReleaseSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cstop_running\x18\x03 \x01(\x08\"x\n\x14ReopenReleaseSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12\x14\n\x0cstop_running\x18\x03 \x01(\x08\"c\n\x12\x43onvertSyncJobMode\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12 \n\x04\x63onf\x18\x02 \x01(\x0b\x32\x12.model.SyncJobConf:\x06\xca\xb2\x04\x02\n\x00\"\xeb\x01\n\x13ListSyncJobVersions\x12#\n\x06job_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x03 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07versionJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0f\n\x07version\x18\x06 \x01(\t\x12\x0f\n\x07verbose\x18\x07 \x01(\x05\"6\n\x0fGenerateJobJson\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04syj-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestSyncJobManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,])
 
 
 
@@ -106,8 +107,8 @@ _LISTSYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=230,
-  serialized_end=478,
+  serialized_start=279,
+  serialized_end=527,
 )
 
 
@@ -208,8 +209,8 @@ _CREATESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=481,
-  serialized_end=1015,
+  serialized_start=530,
+  serialized_end=1064,
 )
 
 
@@ -247,8 +248,8 @@ _DELETESYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1116,
+  serialized_start=1066,
+  serialized_end=1165,
 )
 
 
@@ -293,8 +294,8 @@ _MOVESYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1119,
-  serialized_end=1274,
+  serialized_start=1168,
+  serialized_end=1323,
 )
 
 
@@ -346,8 +347,8 @@ _UPDATESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1277,
-  serialized_end=1429,
+  serialized_start=1326,
+  serialized_end=1478,
 )
 
 
@@ -373,6 +374,13 @@ _DESCRIBESYNCJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verbose', full_name='request.DescribeSyncJob.verbose', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -385,8 +393,8 @@ _DESCRIBESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1431,
-  serialized_end=1508,
+  serialized_start=1480,
+  serialized_end=1574,
 )
 
 
@@ -431,8 +439,8 @@ _SETSYNCJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1511,
-  serialized_end=1662,
+  serialized_start=1577,
+  serialized_end=1728,
 )
 
 
@@ -477,8 +485,8 @@ _SETSYNCJOBCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1665,
-  serialized_end=1804,
+  serialized_start=1731,
+  serialized_end=1870,
 )
 
 
@@ -516,8 +524,8 @@ _GETSYNCJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1806,
-  serialized_end=1886,
+  serialized_start=1872,
+  serialized_end=1952,
 )
 
 
@@ -555,8 +563,8 @@ _GETSYNCJOBCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1888,
-  serialized_end=1964,
+  serialized_start=1954,
+  serialized_end=2030,
 )
 
 
@@ -624,6 +632,13 @@ _LISTRELEASESYNCJOBS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verbose', full_name='request.ListReleaseSyncJobs.verbose', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -636,8 +651,8 @@ _LISTRELEASESYNCJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1967,
-  serialized_end=2262,
+  serialized_start=2033,
+  serialized_end=2345,
 )
 
 
@@ -689,8 +704,8 @@ _UPDATERELEASESYNCJOBSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2265,
-  serialized_end=2460,
+  serialized_start=2348,
+  serialized_end=2543,
 )
 
 
@@ -742,8 +757,8 @@ _RELEASESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2462,
-  serialized_end=2585,
+  serialized_start=2545,
+  serialized_end=2668,
 )
 
 
@@ -788,8 +803,8 @@ _OFFLINERELEASESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2587,
-  serialized_end=2708,
+  serialized_start=2670,
+  serialized_end=2791,
 )
 
 
@@ -834,8 +849,8 @@ _REOPENRELEASESYNCJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2710,
-  serialized_end=2830,
+  serialized_start=2793,
+  serialized_end=2913,
 )
 
 
@@ -867,14 +882,14 @@ _CONVERTSYNCJOBMODE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2832,
-  serialized_end=2923,
+  serialized_start=2915,
+  serialized_end=3014,
 )
 
 
@@ -887,40 +902,54 @@ _LISTSYNCJOBVERSIONS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='request.ListSyncJobVersions.limit', index=0,
+      name='job_id', full_name='request.ListSyncJobVersions.job_id', index=0,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListSyncJobVersions.limit', index=1,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='request.ListSyncJobVersions.offset', index=1,
+      name='offset', full_name='request.ListSyncJobVersions.offset', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sort_by', full_name='request.ListSyncJobVersions.sort_by', index=2,
+      name='sort_by', full_name='request.ListSyncJobVersions.sort_by', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007updated', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reverse', full_name='request.ListSyncJobVersions.reverse', index=3,
+      name='reverse', full_name='request.ListSyncJobVersions.reverse', index=4,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.ListSyncJobVersions.job_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='version', full_name='request.ListSyncJobVersions.version', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='verbose', full_name='request.ListSyncJobVersions.verbose', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -933,61 +962,8 @@ _LISTSYNCJOBVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2926,
-  serialized_end=3127,
-)
-
-
-_DESCRIBESYNCFLINKUIBYINSTANCEID = _descriptor.Descriptor(
-  name='DescribeSyncFlinkUIByInstanceId',
-  full_name='request.DescribeSyncFlinkUIByInstanceId',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.DescribeSyncFlinkUIByInstanceId.space_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.DescribeSyncFlinkUIByInstanceId.job_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='request.DescribeSyncFlinkUIByInstanceId.version', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='instance_id', full_name='request.DescribeSyncFlinkUIByInstanceId.instance_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3130,
-  serialized_end=3312,
+  serialized_start=3017,
+  serialized_end=3252,
 )
 
 
@@ -1018,128 +994,8 @@ _GENERATEJOBJSON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3314,
-  serialized_end=3368,
-)
-
-
-_PINGSYNCJOBCONNECTION = _descriptor.Descriptor(
-  name='PingSyncJobConnection',
-  full_name='request.PingSyncJobConnection',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.PingSyncJobConnection.space_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.PingSyncJobConnection.job_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='request.PingSyncJobConnection.cluster_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='source_id', full_name='request.PingSyncJobConnection.source_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='target_id', full_name='request.PingSyncJobConnection.target_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3371,
-  serialized_end=3591,
-)
-
-
-_DESCRIBESYNCCONNECTION = _descriptor.Descriptor(
-  name='DescribeSyncConnection',
-  full_name='request.DescribeSyncConnection',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.DescribeSyncConnection.space_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.DescribeSyncConnection.job_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='request.DescribeSyncConnection.cluster_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='source_id', full_name='request.DescribeSyncConnection.source_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='target_id', full_name='request.DescribeSyncConnection.target_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3594,
-  serialized_end=3815,
+  serialized_start=3254,
+  serialized_end=3308,
 )
 
 _CREATESYNCJOB.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOB_TYPE
@@ -1167,10 +1023,7 @@ DESCRIPTOR.message_types_by_name['OfflineReleaseSyncJob'] = _OFFLINERELEASESYNCJ
 DESCRIPTOR.message_types_by_name['ReopenReleaseSyncJob'] = _REOPENRELEASESYNCJOB
 DESCRIPTOR.message_types_by_name['ConvertSyncJobMode'] = _CONVERTSYNCJOBMODE
 DESCRIPTOR.message_types_by_name['ListSyncJobVersions'] = _LISTSYNCJOBVERSIONS
-DESCRIPTOR.message_types_by_name['DescribeSyncFlinkUIByInstanceId'] = _DESCRIBESYNCFLINKUIBYINSTANCEID
 DESCRIPTOR.message_types_by_name['GenerateJobJson'] = _GENERATEJOBJSON
-DESCRIPTOR.message_types_by_name['PingSyncJobConnection'] = _PINGSYNCJOBCONNECTION
-DESCRIPTOR.message_types_by_name['DescribeSyncConnection'] = _DESCRIBESYNCCONNECTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListSyncJobs = _reflection.GeneratedProtocolMessageType('ListSyncJobs', (_message.Message,), {
@@ -1292,33 +1145,12 @@ ListSyncJobVersions = _reflection.GeneratedProtocolMessageType('ListSyncJobVersi
   })
 _sym_db.RegisterMessage(ListSyncJobVersions)
 
-DescribeSyncFlinkUIByInstanceId = _reflection.GeneratedProtocolMessageType('DescribeSyncFlinkUIByInstanceId', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBESYNCFLINKUIBYINSTANCEID,
-  '__module__' : 'proto.types.request.sync_job_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DescribeSyncFlinkUIByInstanceId)
-  })
-_sym_db.RegisterMessage(DescribeSyncFlinkUIByInstanceId)
-
 GenerateJobJson = _reflection.GeneratedProtocolMessageType('GenerateJobJson', (_message.Message,), {
   'DESCRIPTOR' : _GENERATEJOBJSON,
   '__module__' : 'proto.types.request.sync_job_manage_pb2'
   # @@protoc_insertion_point(class_scope:request.GenerateJobJson)
   })
 _sym_db.RegisterMessage(GenerateJobJson)
-
-PingSyncJobConnection = _reflection.GeneratedProtocolMessageType('PingSyncJobConnection', (_message.Message,), {
-  'DESCRIPTOR' : _PINGSYNCJOBCONNECTION,
-  '__module__' : 'proto.types.request.sync_job_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.PingSyncJobConnection)
-  })
-_sym_db.RegisterMessage(PingSyncJobConnection)
-
-DescribeSyncConnection = _reflection.GeneratedProtocolMessageType('DescribeSyncConnection', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBESYNCCONNECTION,
-  '__module__' : 'proto.types.request.sync_job_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DescribeSyncConnection)
-  })
-_sym_db.RegisterMessage(DescribeSyncConnection)
 
 
 DESCRIPTOR._options = None
@@ -1373,23 +1205,10 @@ _OFFLINERELEASESYNCJOB.fields_by_name['job_id']._options = None
 _REOPENRELEASESYNCJOB.fields_by_name['space_id']._options = None
 _REOPENRELEASESYNCJOB.fields_by_name['job_id']._options = None
 _CONVERTSYNCJOBMODE.fields_by_name['job_id']._options = None
+_CONVERTSYNCJOBMODE._options = None
+_LISTSYNCJOBVERSIONS.fields_by_name['job_id']._options = None
 _LISTSYNCJOBVERSIONS.fields_by_name['limit']._options = None
 _LISTSYNCJOBVERSIONS.fields_by_name['offset']._options = None
 _LISTSYNCJOBVERSIONS.fields_by_name['sort_by']._options = None
-_LISTSYNCJOBVERSIONS.fields_by_name['job_id']._options = None
-_DESCRIBESYNCFLINKUIBYINSTANCEID.fields_by_name['space_id']._options = None
-_DESCRIBESYNCFLINKUIBYINSTANCEID.fields_by_name['job_id']._options = None
-_DESCRIBESYNCFLINKUIBYINSTANCEID.fields_by_name['version']._options = None
-_DESCRIBESYNCFLINKUIBYINSTANCEID.fields_by_name['instance_id']._options = None
 _GENERATEJOBJSON.fields_by_name['job_id']._options = None
-_PINGSYNCJOBCONNECTION.fields_by_name['space_id']._options = None
-_PINGSYNCJOBCONNECTION.fields_by_name['job_id']._options = None
-_PINGSYNCJOBCONNECTION.fields_by_name['cluster_id']._options = None
-_PINGSYNCJOBCONNECTION.fields_by_name['source_id']._options = None
-_PINGSYNCJOBCONNECTION.fields_by_name['target_id']._options = None
-_DESCRIBESYNCCONNECTION.fields_by_name['space_id']._options = None
-_DESCRIBESYNCCONNECTION.fields_by_name['job_id']._options = None
-_DESCRIBESYNCCONNECTION.fields_by_name['cluster_id']._options = None
-_DESCRIBESYNCCONNECTION.fields_by_name['source_id']._options = None
-_DESCRIBESYNCCONNECTION.fields_by_name['target_id']._options = None
 # @@protoc_insertion_point(module_scope)

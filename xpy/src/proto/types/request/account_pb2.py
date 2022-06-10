@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\020PBRequestAccountP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"l\n\rDescribeUsers\x12(\n\x05users\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04usr-\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\t\"\xcc\x02\n\nCreateUser\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12!\n\x04lang\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\nJ\x00J\x02\x63nJ\x02\x65n\x12\x1f\n\x05\x65mail\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1f\n\x05phone\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\'\n\x08\x63urrency\x18\x08 \x01(\tB\x15\xe2\xdf\x1f\x11\x12\x0f\xc2\x01\x0cJ\x00J\x03\x43NYJ\x03USD\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\"\xfe\x01\n\nUpdateUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"2\n\nDeleteUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\"\x1f\n\x0c\x43heckSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"q\n\rCreateSession\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x00\xc8\x01\x80\x01\x12\x17\n\x0fignore_password\x18\x03 \x01(\x08\x42o\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"l\n\rDescribeUsers\x12(\n\x05users\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04usr-\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\t\"\xcc\x02\n\nCreateUser\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12!\n\x04lang\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\nJ\x00J\x02\x63nJ\x02\x65n\x12\x1f\n\x05\x65mail\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1f\n\x05phone\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\'\n\x08\x63urrency\x18\x08 \x01(\tB\x15\xe2\xdf\x1f\x11\x12\x0f\xc2\x01\x0cJ\x00J\x03\x43NYJ\x03USD\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\"\xfe\x01\n\nUpdateUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"2\n\nDeleteUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\"\x1f\n\x0c\x43heckSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"q\n\rCreateSession\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x00\xc8\x01\x80\x01\x12\x17\n\x0fignore_password\x18\x03 \x01(\x08\"6\n\x0f\x43heckUserExists\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x42o\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -527,6 +527,38 @@ _CREATESESSION = _descriptor.Descriptor(
   serialized_end=1248,
 )
 
+
+_CHECKUSEREXISTS = _descriptor.Descriptor(
+  name='CheckUserExists',
+  full_name='request.CheckUserExists',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='request.CheckUserExists.user_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1250,
+  serialized_end=1304,
+)
+
 DESCRIPTOR.message_types_by_name['DescribeAccessKey'] = _DESCRIBEACCESSKEY
 DESCRIPTOR.message_types_by_name['DescribeUsers'] = _DESCRIBEUSERS
 DESCRIPTOR.message_types_by_name['ValidateRequestSignature'] = _VALIDATEREQUESTSIGNATURE
@@ -535,6 +567,7 @@ DESCRIPTOR.message_types_by_name['UpdateUser'] = _UPDATEUSER
 DESCRIPTOR.message_types_by_name['DeleteUser'] = _DELETEUSER
 DESCRIPTOR.message_types_by_name['CheckSession'] = _CHECKSESSION
 DESCRIPTOR.message_types_by_name['CreateSession'] = _CREATESESSION
+DESCRIPTOR.message_types_by_name['CheckUserExists'] = _CHECKUSEREXISTS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DescribeAccessKey = _reflection.GeneratedProtocolMessageType('DescribeAccessKey', (_message.Message,), {
@@ -593,6 +626,13 @@ CreateSession = _reflection.GeneratedProtocolMessageType('CreateSession', (_mess
   })
 _sym_db.RegisterMessage(CreateSession)
 
+CheckUserExists = _reflection.GeneratedProtocolMessageType('CheckUserExists', (_message.Message,), {
+  'DESCRIPTOR' : _CHECKUSEREXISTS,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.CheckUserExists)
+  })
+_sym_db.RegisterMessage(CheckUserExists)
+
 
 DESCRIPTOR._options = None
 _DESCRIBEUSERS.fields_by_name['users']._options = None
@@ -606,4 +646,5 @@ _UPDATEUSER.fields_by_name['user_id']._options = None
 _DELETEUSER.fields_by_name['user_id']._options = None
 _CREATESESSION.fields_by_name['user_name']._options = None
 _CREATESESSION.fields_by_name['password']._options = None
+_CHECKUSEREXISTS.fields_by_name['user_name']._options = None
 # @@protoc_insertion_point(module_scope)

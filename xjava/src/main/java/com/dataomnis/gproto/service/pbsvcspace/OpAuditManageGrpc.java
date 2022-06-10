@@ -5,8 +5,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
+    value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/service/spacemanager/opaudit_manage.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class OpAuditManageGrpc {
 
   private OpAuditManageGrpc() {}

@@ -7896,6 +7896,38 @@ public final class PBRequestFileMetaManage {
      */
     com.google.protobuf.ByteString
         getPidBytes();
+
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @return A list containing the types.
+     */
+    java.util.List<java.lang.Integer> getTypesList();
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @return The count of types.
+     */
+    int getTypesCount();
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @param index The index of the element to return.
+     * @return The types at the given index.
+     */
+    int getTypes(int index);
   }
   /**
    * Protobuf type {@code request.ListFileMetas}
@@ -7915,6 +7947,7 @@ public final class PBRequestFileMetaManage {
       search_ = "";
       sortBy_ = "";
       pid_ = "";
+      types_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -7937,6 +7970,7 @@ public final class PBRequestFileMetaManage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7992,6 +8026,27 @@ public final class PBRequestFileMetaManage {
               pid_ = s;
               break;
             }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                types_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              types_.addInt(input.readInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                types_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                types_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8007,6 +8062,9 @@ public final class PBRequestFileMetaManage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          types_.makeImmutable(); // C
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -8317,6 +8375,49 @@ public final class PBRequestFileMetaManage {
       }
     }
 
+    public static final int TYPES_FIELD_NUMBER = 10;
+    private com.google.protobuf.Internal.IntList types_;
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @return A list containing the types.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getTypesList() {
+      return types_;
+    }
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @return The count of types.
+     */
+    public int getTypesCount() {
+      return types_.size();
+    }
+    /**
+     * <pre>
+     * The types.Not required.
+     * &#64;inject_tag: json:"types" form:"types"
+     * </pre>
+     *
+     * <code>repeated int32 types = 10;</code>
+     * @param index The index of the element to return.
+     * @return The types at the given index.
+     */
+    public int getTypes(int index) {
+      return types_.getInt(index);
+    }
+    private int typesMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8331,6 +8432,7 @@ public final class PBRequestFileMetaManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
@@ -8354,6 +8456,13 @@ public final class PBRequestFileMetaManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pid_);
+      }
+      if (getTypesList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(typesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < types_.size(); i++) {
+        output.writeInt32NoTag(types_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -8391,6 +8500,20 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pid_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < types_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(types_.getInt(i));
+        }
+        size += dataSize;
+        if (!getTypesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        typesMemoizedSerializedSize = dataSize;
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8422,6 +8545,8 @@ public final class PBRequestFileMetaManage {
           != other.getReverse()) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
+      if (!getTypesList()
+          .equals(other.getTypesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8450,6 +8575,10 @@ public final class PBRequestFileMetaManage {
           getReverse());
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
+      if (getTypesCount() > 0) {
+        hash = (37 * hash) + TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getTypesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8599,6 +8728,8 @@ public final class PBRequestFileMetaManage {
 
         pid_ = "";
 
+        types_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -8625,6 +8756,7 @@ public final class PBRequestFileMetaManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ListFileMetas buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ListFileMetas result = new com.dataomnis.gproto.types.pbrequest.PBRequestFileMetaManage.ListFileMetas(this);
+        int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
@@ -8633,6 +8765,11 @@ public final class PBRequestFileMetaManage {
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.pid_ = pid_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          types_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.types_ = types_;
         onBuilt();
         return result;
       }
@@ -8710,6 +8847,16 @@ public final class PBRequestFileMetaManage {
           pid_ = other.pid_;
           onChanged();
         }
+        if (!other.types_.isEmpty()) {
+          if (types_.isEmpty()) {
+            types_ = other.types_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTypesIsMutable();
+            types_.addAll(other.types_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8738,6 +8885,7 @@ public final class PBRequestFileMetaManage {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object spaceId_ = "";
       /**
@@ -9391,6 +9539,120 @@ public final class PBRequestFileMetaManage {
   checkByteStringIsUtf8(value);
         
         pid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList types_ = emptyIntList();
+      private void ensureTypesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          types_ = mutableCopy(types_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @return A list containing the types.
+       */
+      public java.util.List<java.lang.Integer>
+          getTypesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(types_) : types_;
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @return The count of types.
+       */
+      public int getTypesCount() {
+        return types_.size();
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @param index The index of the element to return.
+       * @return The types at the given index.
+       */
+      public int getTypes(int index) {
+        return types_.getInt(index);
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The types to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypes(
+          int index, int value) {
+        ensureTypesIsMutable();
+        types_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @param value The types to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTypes(int value) {
+        ensureTypesIsMutable();
+        types_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @param values The types to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTypes(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, types_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The types.Not required.
+       * &#64;inject_tag: json:"types" form:"types"
+       * </pre>
+       *
+       * <code>repeated int32 types = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTypes() {
+        types_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10445,20 +10707,20 @@ public final class PBRequestFileMetaManage {
       "\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileMeta\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\007f" +
       "ile_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\t" +
-      "B\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\"\206\002\n\r" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\"\225\002\n\r" +
       "ListFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
       "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
       "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
       "\000\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007\302" +
       "\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002id" +
       "J\007createdJ\007updatedJ\004nameJ\004size\022\017\n\007revers" +
-      "e\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017DeleteFileMetas\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022+" +
-      "\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004r" +
-      "es-Bv\n$com.dataomnis.gproto.types.pbrequ" +
-      "estB\027PBRequestFileMetaManageP\000Z3github.c" +
-      "om/DataWorkbench/gproto/xgo/types/pbrequ" +
-      "estb\006proto3"
+      "e\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\022\r\n\005types\030\n \003(\005\"e\n\017D" +
+      "eleteFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352" +
+      "\001\0200\0008dZ\n\302\001\007\312\002\004res-Bv\n$com.dataomnis.gpro" +
+      "to.types.pbrequestB\027PBRequestFileMetaMan" +
+      "ageP\000Z3github.com/DataWorkbench/gproto/x" +
+      "go/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10507,7 +10769,7 @@ public final class PBRequestFileMetaManage {
     internal_static_request_ListFileMetas_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListFileMetas_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "Name", "Search", "SortBy", "Reverse", "Pid", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "Name", "Search", "SortBy", "Reverse", "Pid", "Types", });
     internal_static_request_DeleteFileMetas_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_request_DeleteFileMetas_fieldAccessorTable = new

@@ -77,10 +77,15 @@ service StreamJobManage {
   // SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
   rpc OfflineReleaseStreamJob(request.OfflineReleaseStreamJob) returns (model.EmptyStruct) {}
 
+  // ReopenReleaseStreamJob to re open the offline job in schedule system.
+  rpc ReopenReleaseStreamJob(request.ReopenReleaseStreamJob) returns (model.EmptyStruct) {}
+
   // SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+  // FIXME: remove it.
   rpc SuspendReleaseStreamJob(request.SuspendReleaseStreamJob) returns (model.EmptyStruct) {}
 
   // ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+  // FIXME: remove it.
   rpc ResumeReleaseStreamJob(request.ResumeReleaseStreamJob) returns (model.EmptyStruct) {}
 
   // UpdateReleaseStreamJobStatus is an internal API. called by scheduler when status of stream job is changed.

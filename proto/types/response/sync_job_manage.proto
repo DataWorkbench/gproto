@@ -72,11 +72,12 @@ message ListSyncJobVersions {
 }
 
 
-// DescribeSyncFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
-message DescribeSyncFlinkUIByInstanceId {
-    // @inject_tag: json:"web_ui"
-    string web_ui = 1;
-}
+// FIXME: remove it.
+//// DescribeSyncFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
+//message DescribeSyncFlinkUIByInstanceId {
+//    // @inject_tag: json:"web_ui"
+//    string web_ui = 1;
+//}
 
 // Generate script sync job json
 message GenerateJobJson {
@@ -90,12 +91,13 @@ message ConvertSyncJobMode {
     string job = 1;
 }
 
-message PingSyncJobConnection {
-    // @inject_tag: json:"info"
-    model.SyncJobConnection info = 1;
-}
-
-message DescribeSyncConnection {
-    // @inject_tag: json:"info"
-    model.SyncJobConnection info = 1;
-}
+// FIXME: remove it.
+//message PingSyncJobConnection {
+//    // @inject_tag: json:"info"
+//    model.SyncJobConnection info = 1;
+//}
+//
+//message DescribeSyncConnection {
+//    // @inject_tag: json:"info"
+//    model.SyncJobConnection info = 1;
+//}

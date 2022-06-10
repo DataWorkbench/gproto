@@ -32,6 +32,7 @@ type AccountClient interface {
 	DeleteUser(ctx context.Context, in *pbrequest.DeleteUser, opts ...grpc.CallOption) (*pbresponse.DeleteUser, error)
 	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
 	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
+	CheckUserExists(ctx context.Context, in *pbrequest.CheckUserExists, opts ...grpc.CallOption) (*pbresponse.CheckUserExists, error)
 }
 
 type accountClient struct {
@@ -114,6 +115,15 @@ func (c *accountClient) CreateSession(ctx context.Context, in *pbrequest.CreateS
 	return out, nil
 }
 
+func (c *accountClient) CheckUserExists(ctx context.Context, in *pbrequest.CheckUserExists, opts ...grpc.CallOption) (*pbresponse.CheckUserExists, error) {
+	out := new(pbresponse.CheckUserExists)
+	err := c.cc.Invoke(ctx, "/account.Account/CheckUserExists", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServer is the server API for Account service.
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
@@ -126,6 +136,7 @@ type AccountServer interface {
 	DeleteUser(context.Context, *pbrequest.DeleteUser) (*pbresponse.DeleteUser, error)
 	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
 	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
+	CheckUserExists(context.Context, *pbrequest.CheckUserExists) (*pbresponse.CheckUserExists, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -156,6 +167,9 @@ func (UnimplementedAccountServer) CheckSession(context.Context, *pbrequest.Check
 }
 func (UnimplementedAccountServer) CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSession not implemented")
+}
+func (UnimplementedAccountServer) CheckUserExists(context.Context, *pbrequest.CheckUserExists) (*pbresponse.CheckUserExists, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckUserExists not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -314,6 +328,24 @@ func _Account_CreateSession_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Account_CheckUserExists_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CheckUserExists)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).CheckUserExists(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/CheckUserExists",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).CheckUserExists(ctx, req.(*pbrequest.CheckUserExists))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Account_ServiceDesc is the grpc.ServiceDesc for Account service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -352,6 +384,10 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSession",
 			Handler:    _Account_CreateSession_Handler,
+		},
+		{
+			MethodName: "CheckUserExists",
+			Handler:    _Account_CheckUserExists_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

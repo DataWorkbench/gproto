@@ -11,7 +11,7 @@ option java_outer_classname = "PBRequestFlinkDeveloper";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
-//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/stream_job.proto";
 import "proto/types/model/developer.proto";
@@ -50,6 +50,14 @@ message SubmitFlinkJobInteractive{
   // operator for interactive submit
   // @inject_tag: json:"op"
   model.InteractiveMessage.Op op = 2 [(validator.field) = {}];
+
+  // max count for per batch
+  // @inject_tag: json:"max_count"
+  int32 max_count = 3 [(defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 }];
+
+  // refresh interval for fetching data
+  // @inject_tag: json:"refresh_interval"
+  int32 refresh_interval = 4 [(defaults.field).basic = "10000", (validator.field).tags.int = { gte: 1000, lte: 30000 }];
 }
 
 message ValidateFlinkJob {

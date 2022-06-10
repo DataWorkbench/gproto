@@ -14,51 +14,57 @@ public final class PBRequestApiDashboard {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface DeleteRouteOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.DeleteRoute)
+  public interface CreateRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateRoute)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"route_info"
      * </pre>
      *
-     * <code>string id = 1 [(.validator.field) = { ... }</code>
-     * @return The id.
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return Whether the routeInfo field is set.
      */
-    java.lang.String getId();
+    boolean hasRouteInfo();
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"route_info"
      * </pre>
      *
-     * <code>string id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for id.
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return The routeInfo.
      */
-    com.google.protobuf.ByteString
-        getIdBytes();
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder();
   }
   /**
-   * Protobuf type {@code request.DeleteRoute}
+   * Protobuf type {@code request.CreateRoute}
    */
-  public static final class DeleteRoute extends
+  public static final class CreateRoute extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.DeleteRoute)
-      DeleteRouteOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.CreateRoute)
+      CreateRouteOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DeleteRoute.newBuilder() to construct.
-    private DeleteRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateRoute.newBuilder() to construct.
+    private CreateRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DeleteRoute() {
-      id_ = "";
+    private CreateRoute() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DeleteRoute();
+      return new CreateRoute();
     }
 
     @java.lang.Override
@@ -66,7 +72,7 @@ public final class PBRequestApiDashboard {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeleteRoute(
+    private CreateRoute(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -85,9 +91,16 @@ public final class PBRequestApiDashboard {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder subBuilder = null;
+              if (routeInfo_ != null) {
+                subBuilder = routeInfo_.toBuilder();
+              }
+              routeInfo_ = input.readMessage(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(routeInfo_);
+                routeInfo_ = subBuilder.buildPartial();
+              }
 
-              id_ = s;
               break;
             }
             default: {
@@ -111,25 +124,1663 @@ public final class PBRequestApiDashboard {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRoute_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateRoute_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRoute_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateRoute_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
+    public static final int ROUTE_INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo routeInfo_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return Whether the routeInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouteInfo() {
+      return routeInfo_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return The routeInfo.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo() {
+      return routeInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder() {
+      return getRouteInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (routeInfo_ != null) {
+        output.writeMessage(1, getRouteInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (routeInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getRouteInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute) obj;
+
+      if (hasRouteInfo() != other.hasRouteInfo()) return false;
+      if (hasRouteInfo()) {
+        if (!getRouteInfo()
+            .equals(other.getRouteInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRouteInfo()) {
+        hash = (37 * hash) + ROUTE_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.CreateRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.CreateRoute)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = null;
+        } else {
+          routeInfo_ = null;
+          routeInfoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute(this);
+        if (routeInfoBuilder_ == null) {
+          result.routeInfo_ = routeInfo_;
+        } else {
+          result.routeInfo_ = routeInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute.getDefaultInstance()) return this;
+        if (other.hasRouteInfo()) {
+          mergeRouteInfo(other.getRouteInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo routeInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder> routeInfoBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       * @return Whether the routeInfo field is set.
+       */
+      public boolean hasRouteInfo() {
+        return routeInfoBuilder_ != null || routeInfo_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       * @return The routeInfo.
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo() {
+        if (routeInfoBuilder_ == null) {
+          return routeInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+        } else {
+          return routeInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder setRouteInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo value) {
+        if (routeInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          routeInfo_ = value;
+          onChanged();
+        } else {
+          routeInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder setRouteInfo(
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder builderForValue) {
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          routeInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder mergeRouteInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo value) {
+        if (routeInfoBuilder_ == null) {
+          if (routeInfo_ != null) {
+            routeInfo_ =
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.newBuilder(routeInfo_).mergeFrom(value).buildPartial();
+          } else {
+            routeInfo_ = value;
+          }
+          onChanged();
+        } else {
+          routeInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder clearRouteInfo() {
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = null;
+          onChanged();
+        } else {
+          routeInfo_ = null;
+          routeInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder getRouteInfoBuilder() {
+        
+        onChanged();
+        return getRouteInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder() {
+        if (routeInfoBuilder_ != null) {
+          return routeInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return routeInfo_ == null ?
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder> 
+          getRouteInfoFieldBuilder() {
+        if (routeInfoBuilder_ == null) {
+          routeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder>(
+                  getRouteInfo(),
+                  getParentForChildren(),
+                  isClean());
+          routeInfo_ = null;
+        }
+        return routeInfoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.CreateRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.CreateRoute)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateRoute>
+        PARSER = new com.google.protobuf.AbstractParser<CreateRoute>() {
+      @java.lang.Override
+      public CreateRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateRoute(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpdateRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return Whether the routeInfo field is set.
+     */
+    boolean hasRouteInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return The routeInfo.
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code request.UpdateRoute}
+   */
+  public static final class UpdateRoute extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.UpdateRoute)
+      UpdateRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateRoute.newBuilder() to construct.
+    private UpdateRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateRoute() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateRoute();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateRoute(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder subBuilder = null;
+              if (routeInfo_ != null) {
+                subBuilder = routeInfo_.toBuilder();
+              }
+              routeInfo_ = input.readMessage(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(routeInfo_);
+                routeInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.Builder.class);
+    }
+
+    public static final int ROUTE_INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo routeInfo_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return Whether the routeInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouteInfo() {
+      return routeInfo_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     * @return The routeInfo.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo() {
+      return routeInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"route_info"
+     * </pre>
+     *
+     * <code>.request.RouteInfo route_info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder() {
+      return getRouteInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (routeInfo_ != null) {
+        output.writeMessage(1, getRouteInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (routeInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getRouteInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute) obj;
+
+      if (hasRouteInfo() != other.hasRouteInfo()) return false;
+      if (hasRouteInfo()) {
+        if (!getRouteInfo()
+            .equals(other.getRouteInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRouteInfo()) {
+        hash = (37 * hash) + ROUTE_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.UpdateRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.UpdateRoute)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = null;
+        } else {
+          routeInfo_ = null;
+          routeInfoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute(this);
+        if (routeInfoBuilder_ == null) {
+          result.routeInfo_ = routeInfo_;
+        } else {
+          result.routeInfo_ = routeInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute.getDefaultInstance()) return this;
+        if (other.hasRouteInfo()) {
+          mergeRouteInfo(other.getRouteInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo routeInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder> routeInfoBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       * @return Whether the routeInfo field is set.
+       */
+      public boolean hasRouteInfo() {
+        return routeInfoBuilder_ != null || routeInfo_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       * @return The routeInfo.
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getRouteInfo() {
+        if (routeInfoBuilder_ == null) {
+          return routeInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+        } else {
+          return routeInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder setRouteInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo value) {
+        if (routeInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          routeInfo_ = value;
+          onChanged();
+        } else {
+          routeInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder setRouteInfo(
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder builderForValue) {
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          routeInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder mergeRouteInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo value) {
+        if (routeInfoBuilder_ == null) {
+          if (routeInfo_ != null) {
+            routeInfo_ =
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.newBuilder(routeInfo_).mergeFrom(value).buildPartial();
+          } else {
+            routeInfo_ = value;
+          }
+          onChanged();
+        } else {
+          routeInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public Builder clearRouteInfo() {
+        if (routeInfoBuilder_ == null) {
+          routeInfo_ = null;
+          onChanged();
+        } else {
+          routeInfo_ = null;
+          routeInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder getRouteInfoBuilder() {
+        
+        onChanged();
+        return getRouteInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder getRouteInfoOrBuilder() {
+        if (routeInfoBuilder_ != null) {
+          return routeInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return routeInfo_ == null ?
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance() : routeInfo_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"route_info"
+       * </pre>
+       *
+       * <code>.request.RouteInfo route_info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder> 
+          getRouteInfoFieldBuilder() {
+        if (routeInfoBuilder_ == null) {
+          routeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder>(
+                  getRouteInfo(),
+                  getParentForChildren(),
+                  isClean());
+          routeInfo_ = null;
+        }
+        return routeInfoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.UpdateRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.UpdateRoute)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateRoute>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateRoute>() {
+      @java.lang.Override
+      public UpdateRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateRoute(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RouteInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.RouteInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 1 [(.validator.field) = { ... }</code>
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 3;</code>
+     * @return The desc.
+     */
+    java.lang.String getDesc();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 3;</code>
+     * @return The bytes for desc.
+     */
+    com.google.protobuf.ByteString
+        getDescBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"hosts"
+     * </pre>
+     *
+     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * @return The upstreamId.
+     */
+    java.lang.String getUpstreamId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"hosts"
+     * </pre>
+     *
+     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for upstreamId.
+     */
+    com.google.protobuf.ByteString
+        getUpstreamIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_service_id"
+     * </pre>
+     *
+     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * @return The apiServiceId.
+     */
+    java.lang.String getApiServiceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_service_id"
+     * </pre>
+     *
+     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiServiceId.
+     */
+    com.google.protobuf.ByteString
+        getApiServiceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id"
+     * </pre>
+     *
+     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * @return The apiVersionId.
+     */
+    java.lang.String getApiVersionId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id"
+     * </pre>
+     *
+     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiVersionId.
+     */
+    com.google.protobuf.ByteString
+        getApiVersionIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri"
+     * </pre>
+     *
+     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * @return The proxyUri.
+     */
+    java.lang.String getProxyUri();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri"
+     * </pre>
+     *
+     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for proxyUri.
+     */
+    com.google.protobuf.ByteString
+        getProxyUriBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.RouteInfo}
+   */
+  public static final class RouteInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.RouteInfo)
+      RouteInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RouteInfo.newBuilder() to construct.
+    private RouteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RouteInfo() {
+      uri_ = "";
+      id_ = "";
+      desc_ = "";
+      host_ = "";
+      upstreamId_ = "";
+      name_ = "";
+      apiServiceId_ = "";
+      apiVersionId_ = "";
+      proxyUri_ = "";
+      spaceId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RouteInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RouteInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              desc_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              upstreamId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiServiceId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiVersionId_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proxyUri_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uri_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 1 [(.validator.field) = { ... }</code>
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
      * <pre>
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
      * @return The id.
      */
     @java.lang.Override
@@ -150,7 +1801,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"id"
      * </pre>
      *
-     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -162,6 +1813,374 @@ public final class PBRequestApiDashboard {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESC_FIELD_NUMBER = 3;
+    private volatile java.lang.Object desc_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 3;</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 3;</code>
+     * @return The bytes for desc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HOST_FIELD_NUMBER = 4;
+    private volatile java.lang.Object host_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPSTREAM_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object upstreamId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"hosts"
+     * </pre>
+     *
+     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * @return The upstreamId.
+     */
+    @java.lang.Override
+    public java.lang.String getUpstreamId() {
+      java.lang.Object ref = upstreamId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        upstreamId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"hosts"
+     * </pre>
+     *
+     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for upstreamId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUpstreamIdBytes() {
+      java.lang.Object ref = upstreamId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        upstreamId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object apiServiceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_service_id"
+     * </pre>
+     *
+     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * @return The apiServiceId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiServiceId() {
+      java.lang.Object ref = apiServiceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiServiceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_service_id"
+     * </pre>
+     *
+     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiServiceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiServiceIdBytes() {
+      java.lang.Object ref = apiServiceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiServiceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_VERSION_ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object apiVersionId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id"
+     * </pre>
+     *
+     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * @return The apiVersionId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiVersionId() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiVersionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_version_id"
+     * </pre>
+     *
+     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiVersionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiVersionIdBytes() {
+      java.lang.Object ref = apiVersionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROXY_URI_FIELD_NUMBER = 9;
+    private volatile java.lang.Object proxyUri_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri"
+     * </pre>
+     *
+     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * @return The proxyUri.
+     */
+    @java.lang.Override
+    public java.lang.String getProxyUri() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"proxy_uri"
+     * </pre>
+     *
+     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for proxyUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProxyUriBytes() {
+      java.lang.Object ref = proxyUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -182,8 +2201,35 @@ public final class PBRequestApiDashboard {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upstreamId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, spaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -194,8 +2240,1640 @@ public final class PBRequestApiDashboard {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upstreamId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, apiVersionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, proxyUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, spaceId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo) obj;
+
+      if (!getUri()
+          .equals(other.getUri())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (!getUpstreamId()
+          .equals(other.getUpstreamId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getApiServiceId()
+          .equals(other.getApiServiceId())) return false;
+      if (!getApiVersionId()
+          .equals(other.getApiVersionId())) return false;
+      if (!getProxyUri()
+          .equals(other.getProxyUri())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + UPSTREAM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUpstreamId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiServiceId().hashCode();
+      hash = (37 * hash) + API_VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiVersionId().hashCode();
+      hash = (37 * hash) + PROXY_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyUri().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.RouteInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.RouteInfo)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uri_ = "";
+
+        id_ = "";
+
+        desc_ = "";
+
+        host_ = "";
+
+        upstreamId_ = "";
+
+        name_ = "";
+
+        apiServiceId_ = "";
+
+        apiVersionId_ = "";
+
+        proxyUri_ = "";
+
+        spaceId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_RouteInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo(this);
+        result.uri_ = uri_;
+        result.id_ = id_;
+        result.desc_ = desc_;
+        result.host_ = host_;
+        result.upstreamId_ = upstreamId_;
+        result.name_ = name_;
+        result.apiServiceId_ = apiServiceId_;
+        result.apiVersionId_ = apiVersionId_;
+        result.proxyUri_ = proxyUri_;
+        result.spaceId_ = spaceId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo.getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
+          onChanged();
+        }
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (!other.getUpstreamId().isEmpty()) {
+          upstreamId_ = other.upstreamId_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getApiServiceId().isEmpty()) {
+          apiServiceId_ = other.apiServiceId_;
+          onChanged();
+        }
+        if (!other.getApiVersionId().isEmpty()) {
+          apiVersionId_ = other.apiVersionId_;
+          onChanged();
+        }
+        if (!other.getProxyUri().isEmpty()) {
+          proxyUri_ = other.proxyUri_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uri_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 1 [(.validator.field) = { ... }</code>
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 1 [(.validator.field) = { ... }</code>
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object desc_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 3;</code>
+       * @return The desc.
+       */
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          desc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 3;</code>
+       * @return The bytes for desc.
+       */
+      public com.google.protobuf.ByteString
+          getDescBytes() {
+        java.lang.Object ref = desc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          desc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 3;</code>
+       * @param value The desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDesc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDesc() {
+        
+        desc_ = getDefaultInstance().getDesc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 3;</code>
+       * @param value The bytes for desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        host_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        
+        host_ = getDefaultInstance().getHost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        host_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object upstreamId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"hosts"
+       * </pre>
+       *
+       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * @return The upstreamId.
+       */
+      public java.lang.String getUpstreamId() {
+        java.lang.Object ref = upstreamId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          upstreamId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"hosts"
+       * </pre>
+       *
+       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for upstreamId.
+       */
+      public com.google.protobuf.ByteString
+          getUpstreamIdBytes() {
+        java.lang.Object ref = upstreamId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          upstreamId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"hosts"
+       * </pre>
+       *
+       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The upstreamId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpstreamId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        upstreamId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"hosts"
+       * </pre>
+       *
+       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpstreamId() {
+        
+        upstreamId_ = getDefaultInstance().getUpstreamId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"hosts"
+       * </pre>
+       *
+       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for upstreamId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpstreamIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        upstreamId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiServiceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_service_id"
+       * </pre>
+       *
+       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * @return The apiServiceId.
+       */
+      public java.lang.String getApiServiceId() {
+        java.lang.Object ref = apiServiceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiServiceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_service_id"
+       * </pre>
+       *
+       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiServiceId.
+       */
+      public com.google.protobuf.ByteString
+          getApiServiceIdBytes() {
+        java.lang.Object ref = apiServiceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiServiceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_service_id"
+       * </pre>
+       *
+       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The apiServiceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiServiceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiServiceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_service_id"
+       * </pre>
+       *
+       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiServiceId() {
+        
+        apiServiceId_ = getDefaultInstance().getApiServiceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_service_id"
+       * </pre>
+       *
+       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiServiceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiServiceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiServiceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiVersionId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id"
+       * </pre>
+       *
+       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * @return The apiVersionId.
+       */
+      public java.lang.String getApiVersionId() {
+        java.lang.Object ref = apiVersionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiVersionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id"
+       * </pre>
+       *
+       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiVersionId.
+       */
+      public com.google.protobuf.ByteString
+          getApiVersionIdBytes() {
+        java.lang.Object ref = apiVersionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiVersionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id"
+       * </pre>
+       *
+       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * @param value The apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id"
+       * </pre>
+       *
+       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiVersionId() {
+        
+        apiVersionId_ = getDefaultInstance().getApiVersionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_version_id"
+       * </pre>
+       *
+       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiVersionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiVersionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiVersionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object proxyUri_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri"
+       * </pre>
+       *
+       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * @return The proxyUri.
+       */
+      public java.lang.String getProxyUri() {
+        java.lang.Object ref = proxyUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proxyUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri"
+       * </pre>
+       *
+       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * @return The bytes for proxyUri.
+       */
+      public com.google.protobuf.ByteString
+          getProxyUriBytes() {
+        java.lang.Object ref = proxyUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proxyUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri"
+       * </pre>
+       *
+       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * @param value The proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri"
+       * </pre>
+       *
+       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProxyUri() {
+        
+        proxyUri_ = getDefaultInstance().getProxyUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"proxy_uri"
+       * </pre>
+       *
+       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * @param value The bytes for proxyUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProxyUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        proxyUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.RouteInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.RouteInfo)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RouteInfo>
+        PARSER = new com.google.protobuf.AbstractParser<RouteInfo>() {
+      @java.lang.Override
+      public RouteInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RouteInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RouteInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RouteInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeleteRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DeleteRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the ids.
+     */
+    java.util.List<java.lang.String>
+        getIdsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @return The count of ids.
+     */
+    int getIdsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The ids at the given index.
+     */
+    java.lang.String getIds(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ids at the given index.
+     */
+    com.google.protobuf.ByteString
+        getIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.DeleteRoute}
+   */
+  public static final class DeleteRoute extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DeleteRoute)
+      DeleteRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteRoute.newBuilder() to construct.
+    private DeleteRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteRoute() {
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeleteRoute();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteRoute(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                ids_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              ids_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          ids_ = ids_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute.Builder.class);
+    }
+
+    public static final int IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList ids_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the ids.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getIdsList() {
+      return ids_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @return The count of ids.
+     */
+    public int getIdsCount() {
+      return ids_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The ids at the given index.
+     */
+    public java.lang.String getIds(int index) {
+      return ids_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"ids"
+     * </pre>
+     *
+     * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ids at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getIdsBytes(int index) {
+      return ids_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < ids_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ids_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ids_.size(); i++) {
+          dataSize += computeStringSizeNoTag(ids_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -212,8 +3890,8 @@ public final class PBRequestApiDashboard {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (!getIdsList()
+          .equals(other.getIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -225,8 +3903,10 @@ public final class PBRequestApiDashboard {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      if (getIdsCount() > 0) {
+        hash = (37 * hash) + IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -360,8 +4040,8 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
-
+        ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -388,7 +4068,12 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute(this);
-        result.id_ = id_;
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          ids_ = ids_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.ids_ = ids_;
         onBuilt();
         return result;
       }
@@ -437,8 +4122,14 @@ public final class PBRequestApiDashboard {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRoute.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
+        if (!other.ids_.isEmpty()) {
+          if (ids_.isEmpty()) {
+            ids_ = other.ids_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureIdsIsMutable();
+            ids_.addAll(other.ids_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -469,99 +4160,150 @@ public final class PBRequestApiDashboard {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object id_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"id"
-       * </pre>
-       *
-       * <code>string id = 1 [(.validator.field) = { ... }</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"ids"
        * </pre>
        *
-       * <code>string id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for id.
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @return A list containing the ids.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getIdsList() {
+        return ids_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"ids"
+       * </pre>
+       *
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @return The count of ids.
+       */
+      public int getIdsCount() {
+        return ids_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"ids"
+       * </pre>
+       *
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The ids at the given index.
+       */
+      public java.lang.String getIds(int index) {
+        return ids_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"ids"
+       * </pre>
+       *
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the ids at the given index.
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getIdsBytes(int index) {
+        return ids_.getByteString(index);
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"ids"
        * </pre>
        *
-       * <code>string id = 1 [(.validator.field) = { ... }</code>
-       * @param value The id to set.
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The ids to set.
        * @return This builder for chaining.
        */
-      public Builder setId(
+      public Builder setIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdsIsMutable();
+        ids_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"ids"
+       * </pre>
+       *
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param value The ids to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        id_ = value;
+  ensureIdsIsMutable();
+        ids_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"ids"
        * </pre>
        *
-       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param values The ids to add.
        * @return This builder for chaining.
        */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
+      public Builder addAllIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ids_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"ids"
        * </pre>
        *
-       * <code>string id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for id to set.
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder setIdBytes(
+      public Builder clearIds() {
+        ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"ids"
+       * </pre>
+       *
+       * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the ids to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        id_ = value;
+        ensureIdsIsMutable();
+        ids_.add(value);
         onChanged();
         return this;
       }
@@ -647,7 +4389,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"uri"
      * </pre>
      *
-     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * <code>string uri = 2;</code>
      * @return The uri.
      */
     java.lang.String getUri();
@@ -656,7 +4398,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"uri"
      * </pre>
      *
-     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * <code>string uri = 2;</code>
      * @return The bytes for uri.
      */
     com.google.protobuf.ByteString
@@ -664,13 +4406,22 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"status"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>int32 status = 3;</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    int getStatus();
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
 
     /**
      * <pre>
@@ -679,7 +4430,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"limit"
      * </pre>
      *
-     * <code>int32 limit = 5 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     int getLimit();
@@ -690,7 +4441,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"offset"
      * </pre>
      *
-     * <code>int32 offset = 6 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     int getOffset();
@@ -703,7 +4454,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     java.lang.String getSortBy();
@@ -715,7 +4466,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     com.google.protobuf.ByteString
@@ -727,7 +4478,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8;</code>
+     * <code>bool reverse = 7;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -738,7 +4489,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @return A list containing the ids.
      */
     java.util.List<java.lang.String>
@@ -749,7 +4500,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @return The count of ids.
      */
     int getIdsCount();
@@ -759,7 +4510,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The ids at the given index.
      */
@@ -770,7 +4521,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the ids at the given index.
      */
@@ -779,70 +4530,30 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string version = 10;</code>
-     * @return The version.
+     * <code>string api_version_id = 9;</code>
+     * @return The apiVersionId.
      */
-    java.lang.String getVersion();
+    java.lang.String getApiVersionId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string version = 10;</code>
-     * @return The bytes for version.
+     * <code>string api_version_id = 9;</code>
+     * @return The bytes for apiVersionId.
      */
     com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build"
-     * </pre>
-     *
-     * <code>string build = 11;</code>
-     * @return The build.
-     */
-    java.lang.String getBuild();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build"
-     * </pre>
-     *
-     * <code>string build = 11;</code>
-     * @return The bytes for build.
-     */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 12;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 12;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
+        getApiVersionIdBytes();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 13;</code>
+     * <code>string api_service_id = 10;</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
@@ -851,11 +4562,31 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 13;</code>
+     * <code>string api_service_id = 10;</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
         getApiServiceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 11;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 11;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
   }
   /**
    * Protobuf type {@code request.ListRoutes}
@@ -872,12 +4603,12 @@ public final class PBRequestApiDashboard {
     private ListRoutes() {
       name_ = "";
       uri_ = "";
+      currStatus_ = 0;
       sortBy_ = "";
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      version_ = "";
-      build_ = "";
-      env_ = "";
+      apiVersionId_ = "";
       apiServiceId_ = "";
+      spaceId_ = "";
     }
 
     @java.lang.Override
@@ -924,32 +4655,33 @@ public final class PBRequestApiDashboard {
               break;
             }
             case 24: {
+              int rawValue = input.readEnum();
 
-              status_ = input.readInt32();
+              currStatus_ = rawValue;
               break;
             }
-            case 40: {
+            case 32: {
 
               limit_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 40: {
 
               offset_ = input.readInt32();
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sortBy_ = s;
               break;
             }
-            case 64: {
+            case 56: {
 
               reverse_ = input.readBool();
               break;
             }
-            case 74: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ids_ = new com.google.protobuf.LazyStringArrayList();
@@ -958,28 +4690,22 @@ public final class PBRequestApiDashboard {
               ids_.add(s);
               break;
             }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiVersionId_ = s;
+              break;
+            }
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              version_ = s;
+              apiServiceId_ = s;
               break;
             }
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              build_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              apiServiceId_ = s;
+              spaceId_ = s;
               break;
             }
             default: {
@@ -1070,7 +4796,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"uri"
      * </pre>
      *
-     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * <code>string uri = 2;</code>
      * @return The uri.
      */
     @java.lang.Override
@@ -1091,7 +4817,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"uri"
      * </pre>
      *
-     * <code>string uri = 2 [(.validator.field) = { ... }</code>
+     * <code>string uri = 2;</code>
      * @return The bytes for uri.
      */
     @java.lang.Override
@@ -1109,22 +4835,34 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 3;
-    private int status_;
+    public static final int CURR_STATUS_FIELD_NUMBER = 3;
+    private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"status"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>int32 status = 3;</code>
-     * @return The status.
+     * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    @java.lang.Override
-    public int getStatus() {
-      return status_;
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 5;
+    public static final int LIMIT_FIELD_NUMBER = 4;
     private int limit_;
     /**
      * <pre>
@@ -1133,7 +4871,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"limit"
      * </pre>
      *
-     * <code>int32 limit = 5 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -1141,7 +4879,7 @@ public final class PBRequestApiDashboard {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 6;
+    public static final int OFFSET_FIELD_NUMBER = 5;
     private int offset_;
     /**
      * <pre>
@@ -1149,7 +4887,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"offset"
      * </pre>
      *
-     * <code>int32 offset = 6 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     @java.lang.Override
@@ -1157,7 +4895,7 @@ public final class PBRequestApiDashboard {
       return offset_;
     }
 
-    public static final int SORT_BY_FIELD_NUMBER = 7;
+    public static final int SORT_BY_FIELD_NUMBER = 6;
     private volatile java.lang.Object sortBy_;
     /**
      * <pre>
@@ -1167,7 +4905,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     @java.lang.Override
@@ -1191,7 +4929,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     @java.lang.Override
@@ -1209,7 +4947,7 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int REVERSE_FIELD_NUMBER = 8;
+    public static final int REVERSE_FIELD_NUMBER = 7;
     private boolean reverse_;
     /**
      * <pre>
@@ -1217,7 +4955,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8;</code>
+     * <code>bool reverse = 7;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -1225,7 +4963,7 @@ public final class PBRequestApiDashboard {
       return reverse_;
     }
 
-    public static final int IDS_FIELD_NUMBER = 9;
+    public static final int IDS_FIELD_NUMBER = 8;
     private com.google.protobuf.LazyStringList ids_;
     /**
      * <pre>
@@ -1233,7 +4971,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1246,7 +4984,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @return The count of ids.
      */
     public int getIdsCount() {
@@ -1258,7 +4996,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The ids at the given index.
      */
@@ -1271,7 +5009,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
-     * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+     * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the ids at the given index.
      */
@@ -1280,152 +5018,60 @@ public final class PBRequestApiDashboard {
       return ids_.getByteString(index);
     }
 
-    public static final int VERSION_FIELD_NUMBER = 10;
-    private volatile java.lang.Object version_;
+    public static final int API_VERSION_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object apiVersionId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string version = 10;</code>
-     * @return The version.
+     * <code>string api_version_id = 9;</code>
+     * @return The apiVersionId.
      */
     @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
+    public java.lang.String getApiVersionId() {
+      java.lang.Object ref = apiVersionId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        version_ = s;
+        apiVersionId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string version = 10;</code>
-     * @return The bytes for version.
+     * <code>string api_version_id = 9;</code>
+     * @return The bytes for apiVersionId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
+        getApiVersionIdBytes() {
+      java.lang.Object ref = apiVersionId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        version_ = b;
+        apiVersionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BUILD_FIELD_NUMBER = 11;
-    private volatile java.lang.Object build_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build"
-     * </pre>
-     *
-     * <code>string build = 11;</code>
-     * @return The build.
-     */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"build"
-     * </pre>
-     *
-     * <code>string build = 11;</code>
-     * @return The bytes for build.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 12;
-    private volatile java.lang.Object env_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 12;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 12;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 13;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 10;
     private volatile java.lang.Object apiServiceId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 13;</code>
+     * <code>string api_service_id = 10;</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -1446,7 +5092,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 13;</code>
+     * <code>string api_service_id = 10;</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -1458,6 +5104,52 @@ public final class PBRequestApiDashboard {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         apiServiceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 11;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 11;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1484,35 +5176,32 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
       }
-      if (status_ != 0) {
-        output.writeInt32(3, status_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(3, currStatus_);
       }
       if (limit_ != 0) {
-        output.writeInt32(5, limit_);
+        output.writeInt32(4, limit_);
       }
       if (offset_ != 0) {
-        output.writeInt32(6, offset_);
+        output.writeInt32(5, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sortBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sortBy_);
       }
       if (reverse_ != false) {
-        output.writeBool(8, reverse_);
+        output.writeBool(7, reverse_);
       }
       for (int i = 0; i < ids_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, ids_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, ids_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, env_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, apiVersionId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, spaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1529,24 +5218,24 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
       }
-      if (status_ != 0) {
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, status_);
+          .computeEnumSize(3, currStatus_);
       }
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, limit_);
+          .computeInt32Size(4, limit_);
       }
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, offset_);
+          .computeInt32Size(5, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sortBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sortBy_);
       }
       if (reverse_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, reverse_);
+          .computeBoolSize(7, reverse_);
       }
       {
         int dataSize = 0;
@@ -1556,17 +5245,14 @@ public final class PBRequestApiDashboard {
         size += dataSize;
         size += 1 * getIdsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, env_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, apiVersionId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, apiServiceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, spaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1587,8 +5273,7 @@ public final class PBRequestApiDashboard {
           .equals(other.getName())) return false;
       if (!getUri()
           .equals(other.getUri())) return false;
-      if (getStatus()
-          != other.getStatus()) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
@@ -1599,14 +5284,12 @@ public final class PBRequestApiDashboard {
           != other.getReverse()) return false;
       if (!getIdsList()
           .equals(other.getIdsList())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
+      if (!getApiVersionId()
+          .equals(other.getApiVersionId())) return false;
       if (!getApiServiceId()
           .equals(other.getApiServiceId())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1622,8 +5305,8 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + URI_FIELD_NUMBER;
       hash = (53 * hash) + getUri().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -1637,14 +5320,12 @@ public final class PBRequestApiDashboard {
         hash = (37 * hash) + IDS_FIELD_NUMBER;
         hash = (53 * hash) + getIdsList().hashCode();
       }
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
+      hash = (37 * hash) + API_VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiVersionId().hashCode();
       hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApiServiceId().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1782,7 +5463,7 @@ public final class PBRequestApiDashboard {
 
         uri_ = "";
 
-        status_ = 0;
+        currStatus_ = 0;
 
         limit_ = 0;
 
@@ -1794,13 +5475,11 @@ public final class PBRequestApiDashboard {
 
         ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        version_ = "";
-
-        build_ = "";
-
-        env_ = "";
+        apiVersionId_ = "";
 
         apiServiceId_ = "";
+
+        spaceId_ = "";
 
         return this;
       }
@@ -1831,7 +5510,7 @@ public final class PBRequestApiDashboard {
         int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.uri_ = uri_;
-        result.status_ = status_;
+        result.currStatus_ = currStatus_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
@@ -1841,10 +5520,9 @@ public final class PBRequestApiDashboard {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.ids_ = ids_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
+        result.apiVersionId_ = apiVersionId_;
         result.apiServiceId_ = apiServiceId_;
+        result.spaceId_ = spaceId_;
         onBuilt();
         return result;
       }
@@ -1901,8 +5579,8 @@ public final class PBRequestApiDashboard {
           uri_ = other.uri_;
           onChanged();
         }
-        if (other.getStatus() != 0) {
-          setStatus(other.getStatus());
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
@@ -1927,20 +5605,16 @@ public final class PBRequestApiDashboard {
           }
           onChanged();
         }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
+        if (!other.getApiVersionId().isEmpty()) {
+          apiVersionId_ = other.apiVersionId_;
           onChanged();
         }
         if (!other.getApiServiceId().isEmpty()) {
           apiServiceId_ = other.apiServiceId_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2075,7 +5749,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"uri"
        * </pre>
        *
-       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * <code>string uri = 2;</code>
        * @return The uri.
        */
       public java.lang.String getUri() {
@@ -2095,7 +5769,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"uri"
        * </pre>
        *
-       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * <code>string uri = 2;</code>
        * @return The bytes for uri.
        */
       public com.google.protobuf.ByteString
@@ -2116,7 +5790,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"uri"
        * </pre>
        *
-       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * <code>string uri = 2;</code>
        * @param value The uri to set.
        * @return This builder for chaining.
        */
@@ -2135,7 +5809,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"uri"
        * </pre>
        *
-       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * <code>string uri = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUri() {
@@ -2149,7 +5823,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"uri"
        * </pre>
        *
-       * <code>string uri = 2 [(.validator.field) = { ... }</code>
+       * <code>string uri = 2;</code>
        * @param value The bytes for uri to set.
        * @return This builder for chaining.
        */
@@ -2165,45 +5839,76 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private int status_ ;
+      private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"status"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>int32 status = 3;</code>
-       * @return The status.
+       * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for currStatus.
        */
-      @java.lang.Override
-      public int getStatus() {
-        return status_;
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"status"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>int32 status = 3;</code>
-       * @param value The status to set.
+       * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(int value) {
+      public Builder setCurrStatusValue(int value) {
         
-        status_ = value;
+        currStatus_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"status"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>int32 status = 3;</code>
+       * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+       * @param value The currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        status_ = 0;
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -2216,7 +5921,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"limit"
        * </pre>
        *
-       * <code>int32 limit = 5 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -2230,7 +5935,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"limit"
        * </pre>
        *
-       * <code>int32 limit = 5 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -2247,7 +5952,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"limit"
        * </pre>
        *
-       * <code>int32 limit = 5 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -2264,7 +5969,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"offset"
        * </pre>
        *
-       * <code>int32 offset = 6 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -2277,7 +5982,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"offset"
        * </pre>
        *
-       * <code>int32 offset = 6 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -2293,7 +5998,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"offset"
        * </pre>
        *
-       * <code>int32 offset = 6 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
@@ -2312,7 +6017,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
        * @return The sortBy.
        */
       public java.lang.String getSortBy() {
@@ -2335,7 +6040,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for sortBy.
        */
       public com.google.protobuf.ByteString
@@ -2359,7 +6064,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
        * @param value The sortBy to set.
        * @return This builder for chaining.
        */
@@ -2381,7 +6086,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSortBy() {
@@ -2398,7 +6103,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 7 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for sortBy to set.
        * @return This builder for chaining.
        */
@@ -2421,7 +6126,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8;</code>
+       * <code>bool reverse = 7;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -2434,7 +6139,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8;</code>
+       * <code>bool reverse = 7;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -2450,7 +6155,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8;</code>
+       * <code>bool reverse = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -2473,7 +6178,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @return A list containing the ids.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2486,7 +6191,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @return The count of ids.
        */
       public int getIdsCount() {
@@ -2498,7 +6203,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The ids at the given index.
        */
@@ -2511,7 +6216,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the ids at the given index.
        */
@@ -2525,7 +6230,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The ids to set.
        * @return This builder for chaining.
@@ -2546,7 +6251,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param value The ids to add.
        * @return This builder for chaining.
        */
@@ -2566,7 +6271,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param values The ids to add.
        * @return This builder for chaining.
        */
@@ -2584,7 +6289,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearIds() {
@@ -2599,7 +6304,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
-       * <code>repeated string ids = 9 [(.validator.field) = { ... }</code>
+       * <code>repeated string ids = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes of the ids to add.
        * @return This builder for chaining.
        */
@@ -2615,22 +6320,22 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object version_ = "";
+      private java.lang.Object apiVersionId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string version = 10;</code>
-       * @return The version.
+       * <code>string api_version_id = 9;</code>
+       * @return The apiVersionId.
        */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
+      public java.lang.String getApiVersionId() {
+        java.lang.Object ref = apiVersionId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          version_ = s;
+          apiVersionId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2638,20 +6343,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string version = 10;</code>
-       * @return The bytes for version.
+       * <code>string api_version_id = 9;</code>
+       * @return The bytes for apiVersionId.
        */
       public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
+          getApiVersionIdBytes() {
+        java.lang.Object ref = apiVersionId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          version_ = b;
+          apiVersionId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2659,246 +6364,54 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string version = 10;</code>
-       * @param value The version to set.
+       * <code>string api_version_id = 9;</code>
+       * @param value The apiVersionId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersion(
+      public Builder setApiVersionId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        version_ = value;
+        apiVersionId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string version = 10;</code>
+       * <code>string api_version_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVersion() {
+      public Builder clearApiVersionId() {
         
-        version_ = getDefaultInstance().getVersion();
+        apiVersionId_ = getDefaultInstance().getApiVersionId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string version = 10;</code>
-       * @param value The bytes for version to set.
+       * <code>string api_version_id = 9;</code>
+       * @param value The bytes for apiVersionId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersionBytes(
+      public Builder setApiVersionIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object build_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 11;</code>
-       * @return The build.
-       */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 11;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 11;</code>
-       * @param value The build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
-        
-        build_ = getDefaultInstance().getBuild();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 11;</code>
-       * @param value The bytes for build to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 12;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 12;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 12;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnv() {
-        
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 12;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
+        apiVersionId_ = value;
         onChanged();
         return this;
       }
@@ -2909,7 +6422,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 13;</code>
+       * <code>string api_service_id = 10;</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -2929,7 +6442,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 13;</code>
+       * <code>string api_service_id = 10;</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -2950,7 +6463,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 13;</code>
+       * <code>string api_service_id = 10;</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -2969,7 +6482,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 13;</code>
+       * <code>string api_service_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -2983,7 +6496,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 13;</code>
+       * <code>string api_service_id = 10;</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -2995,6 +6508,102 @@ public final class PBRequestApiDashboard {
   checkByteStringIsUtf8(value);
         
         apiServiceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 11;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 11;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 11;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 11;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
         onChanged();
         return this;
       }
@@ -3046,6 +6655,3506 @@ public final class PBRequestApiDashboard {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.ListRoutes getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateUpstreamOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateUpstream)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return Whether the upstreamInfo field is set.
+     */
+    boolean hasUpstreamInfo();
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return The upstreamInfo.
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo();
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code request.CreateUpstream}
+   */
+  public static final class CreateUpstream extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.CreateUpstream)
+      CreateUpstreamOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateUpstream.newBuilder() to construct.
+    private CreateUpstream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateUpstream() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateUpstream();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateUpstream(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder subBuilder = null;
+              if (upstreamInfo_ != null) {
+                subBuilder = upstreamInfo_.toBuilder();
+              }
+              upstreamInfo_ = input.readMessage(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upstreamInfo_);
+                upstreamInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateUpstream_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateUpstream_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.Builder.class);
+    }
+
+    public static final int UPSTREAM_INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo upstreamInfo_;
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return Whether the upstreamInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpstreamInfo() {
+      return upstreamInfo_ != null;
+    }
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return The upstreamInfo.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo() {
+      return upstreamInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+    }
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder() {
+      return getUpstreamInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (upstreamInfo_ != null) {
+        output.writeMessage(1, getUpstreamInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (upstreamInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getUpstreamInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream) obj;
+
+      if (hasUpstreamInfo() != other.hasUpstreamInfo()) return false;
+      if (hasUpstreamInfo()) {
+        if (!getUpstreamInfo()
+            .equals(other.getUpstreamInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUpstreamInfo()) {
+        hash = (37 * hash) + UPSTREAM_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getUpstreamInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.CreateUpstream}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.CreateUpstream)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstreamOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateUpstream_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateUpstream_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = null;
+        } else {
+          upstreamInfo_ = null;
+          upstreamInfoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateUpstream_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream(this);
+        if (upstreamInfoBuilder_ == null) {
+          result.upstreamInfo_ = upstreamInfo_;
+        } else {
+          result.upstreamInfo_ = upstreamInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream.getDefaultInstance()) return this;
+        if (other.hasUpstreamInfo()) {
+          mergeUpstreamInfo(other.getUpstreamInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo upstreamInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder> upstreamInfoBuilder_;
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       * @return Whether the upstreamInfo field is set.
+       */
+      public boolean hasUpstreamInfo() {
+        return upstreamInfoBuilder_ != null || upstreamInfo_ != null;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       * @return The upstreamInfo.
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo() {
+        if (upstreamInfoBuilder_ == null) {
+          return upstreamInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+        } else {
+          return upstreamInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder setUpstreamInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo value) {
+        if (upstreamInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstreamInfo_ = value;
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder setUpstreamInfo(
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder builderForValue) {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder mergeUpstreamInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo value) {
+        if (upstreamInfoBuilder_ == null) {
+          if (upstreamInfo_ != null) {
+            upstreamInfo_ =
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.newBuilder(upstreamInfo_).mergeFrom(value).buildPartial();
+          } else {
+            upstreamInfo_ = value;
+          }
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder clearUpstreamInfo() {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = null;
+          onChanged();
+        } else {
+          upstreamInfo_ = null;
+          upstreamInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder getUpstreamInfoBuilder() {
+        
+        onChanged();
+        return getUpstreamInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder() {
+        if (upstreamInfoBuilder_ != null) {
+          return upstreamInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return upstreamInfo_ == null ?
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+        }
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder> 
+          getUpstreamInfoFieldBuilder() {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder>(
+                  getUpstreamInfo(),
+                  getParentForChildren(),
+                  isClean());
+          upstreamInfo_ = null;
+        }
+        return upstreamInfoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.CreateUpstream)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.CreateUpstream)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateUpstream>
+        PARSER = new com.google.protobuf.AbstractParser<CreateUpstream>() {
+      @java.lang.Override
+      public CreateUpstream parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateUpstream(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateUpstream> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateUpstream> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateUpstreamOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpdateUpstream)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return Whether the upstreamInfo field is set.
+     */
+    boolean hasUpstreamInfo();
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return The upstreamInfo.
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo();
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code request.UpdateUpstream}
+   */
+  public static final class UpdateUpstream extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.UpdateUpstream)
+      UpdateUpstreamOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateUpstream.newBuilder() to construct.
+    private UpdateUpstream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateUpstream() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateUpstream();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateUpstream(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder subBuilder = null;
+              if (upstreamInfo_ != null) {
+                subBuilder = upstreamInfo_.toBuilder();
+              }
+              upstreamInfo_ = input.readMessage(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upstreamInfo_);
+                upstreamInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateUpstream_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateUpstream_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.Builder.class);
+    }
+
+    public static final int UPSTREAM_INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo upstreamInfo_;
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return Whether the upstreamInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpstreamInfo() {
+      return upstreamInfo_ != null;
+    }
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     * @return The upstreamInfo.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo() {
+      return upstreamInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+    }
+    /**
+     * <code>.request.UpstreamInfo upstream_info = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder() {
+      return getUpstreamInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (upstreamInfo_ != null) {
+        output.writeMessage(1, getUpstreamInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (upstreamInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getUpstreamInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream) obj;
+
+      if (hasUpstreamInfo() != other.hasUpstreamInfo()) return false;
+      if (hasUpstreamInfo()) {
+        if (!getUpstreamInfo()
+            .equals(other.getUpstreamInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUpstreamInfo()) {
+        hash = (37 * hash) + UPSTREAM_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getUpstreamInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.UpdateUpstream}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.UpdateUpstream)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstreamOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateUpstream_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateUpstream_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = null;
+        } else {
+          upstreamInfo_ = null;
+          upstreamInfoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpdateUpstream_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream(this);
+        if (upstreamInfoBuilder_ == null) {
+          result.upstreamInfo_ = upstreamInfo_;
+        } else {
+          result.upstreamInfo_ = upstreamInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream.getDefaultInstance()) return this;
+        if (other.hasUpstreamInfo()) {
+          mergeUpstreamInfo(other.getUpstreamInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo upstreamInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder> upstreamInfoBuilder_;
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       * @return Whether the upstreamInfo field is set.
+       */
+      public boolean hasUpstreamInfo() {
+        return upstreamInfoBuilder_ != null || upstreamInfo_ != null;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       * @return The upstreamInfo.
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getUpstreamInfo() {
+        if (upstreamInfoBuilder_ == null) {
+          return upstreamInfo_ == null ? com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+        } else {
+          return upstreamInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder setUpstreamInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo value) {
+        if (upstreamInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstreamInfo_ = value;
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder setUpstreamInfo(
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder builderForValue) {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder mergeUpstreamInfo(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo value) {
+        if (upstreamInfoBuilder_ == null) {
+          if (upstreamInfo_ != null) {
+            upstreamInfo_ =
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.newBuilder(upstreamInfo_).mergeFrom(value).buildPartial();
+          } else {
+            upstreamInfo_ = value;
+          }
+          onChanged();
+        } else {
+          upstreamInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public Builder clearUpstreamInfo() {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfo_ = null;
+          onChanged();
+        } else {
+          upstreamInfo_ = null;
+          upstreamInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder getUpstreamInfoBuilder() {
+        
+        onChanged();
+        return getUpstreamInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder getUpstreamInfoOrBuilder() {
+        if (upstreamInfoBuilder_ != null) {
+          return upstreamInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return upstreamInfo_ == null ?
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance() : upstreamInfo_;
+        }
+      }
+      /**
+       * <code>.request.UpstreamInfo upstream_info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder> 
+          getUpstreamInfoFieldBuilder() {
+        if (upstreamInfoBuilder_ == null) {
+          upstreamInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder>(
+                  getUpstreamInfo(),
+                  getParentForChildren(),
+                  isClean());
+          upstreamInfo_ = null;
+        }
+        return upstreamInfoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.UpdateUpstream)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.UpdateUpstream)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateUpstream>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateUpstream>() {
+      @java.lang.Override
+      public UpdateUpstream parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateUpstream(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateUpstream> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateUpstream> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateUpstream getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpstreamInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpstreamInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> 
+        getNodesList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    int getNodesCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+        getNodesOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    java.lang.String getDesc();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    com.google.protobuf.ByteString
+        getDescBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for schema.
+     */
+    int getSchemaValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+     * @return The schema.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType getSchema();
+
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the tls field is set.
+     */
+    boolean hasTls();
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     * @return The tls.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls();
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return Whether the timeout field is set.
+     */
+    boolean hasTimeout();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return The timeout.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 8 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.UpstreamInfo}
+   */
+  public static final class UpstreamInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.UpstreamInfo)
+      UpstreamInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpstreamInfo.newBuilder() to construct.
+    private UpstreamInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpstreamInfo() {
+      spaceId_ = "";
+      nodes_ = java.util.Collections.emptyList();
+      name_ = "";
+      desc_ = "";
+      schema_ = 0;
+      id_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpstreamInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpstreamInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                nodes_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nodes_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              desc_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              schema_ = rawValue;
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder subBuilder = null;
+              if (tls_ != null) {
+                subBuilder = tls_.toBuilder();
+              }
+              tls_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tls_);
+                tls_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
+              }
+              timeout_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          nodes_ = java.util.Collections.unmodifiableList(nodes_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpstreamInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpstreamInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NODES_FIELD_NUMBER = 2;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> nodes_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> getNodesList() {
+      return nodes_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+        getNodesOrBuilderList() {
+      return nodes_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getNodesCount() {
+      return nodes_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index) {
+      return nodes_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"nodes"
+     * </pre>
+     *
+     * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+        int index) {
+      return nodes_.get(index);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESC_FIELD_NUMBER = 4;
+    private volatile java.lang.Object desc_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCHEMA_FIELD_NUMBER = 5;
+    private int schema_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for schema.
+     */
+    @java.lang.Override public int getSchemaValue() {
+      return schema_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+     * @return The schema.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType getSchema() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.valueOf(schema_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.UNRECOGNIZED : result;
+    }
+
+    public static final int TLS_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS tls_;
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     * @return Whether the tls field is set.
+     */
+    @java.lang.Override
+    public boolean hasTls() {
+      return tls_ != null;
+    }
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     * @return The tls.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls() {
+      return tls_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
+    }
+    /**
+     * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
+      return getTls();
+    }
+
+    public static final int TIMEOUT_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout timeout_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return Whether the timeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeout() {
+      return timeout_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     * @return The timeout.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout() {
+      return timeout_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>.model.Timeout timeout = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
+      return getTimeout();
+    }
+
+    public static final int ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 8 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      for (int i = 0; i < nodes_.size(); i++) {
+        output.writeMessage(2, nodes_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
+      }
+      if (schema_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.http.getNumber()) {
+        output.writeEnum(5, schema_);
+      }
+      if (tls_ != null) {
+        output.writeMessage(6, getTls());
+      }
+      if (timeout_ != null) {
+        output.writeMessage(7, getTimeout());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      for (int i = 0; i < nodes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, nodes_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
+      }
+      if (schema_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.http.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, schema_);
+      }
+      if (tls_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getTls());
+      }
+      if (timeout_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getTimeout());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getNodesList()
+          .equals(other.getNodesList())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
+      if (schema_ != other.schema_) return false;
+      if (hasTls() != other.hasTls()) return false;
+      if (hasTls()) {
+        if (!getTls()
+            .equals(other.getTls())) return false;
+      }
+      if (hasTimeout() != other.hasTimeout()) return false;
+      if (hasTimeout()) {
+        if (!getTimeout()
+            .equals(other.getTimeout())) return false;
+      }
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      if (getNodesCount() > 0) {
+        hash = (37 * hash) + NODES_FIELD_NUMBER;
+        hash = (53 * hash) + getNodesList().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + schema_;
+      if (hasTls()) {
+        hash = (37 * hash) + TLS_FIELD_NUMBER;
+        hash = (53 * hash) + getTls().hashCode();
+      }
+      if (hasTimeout()) {
+        hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeout().hashCode();
+      }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.UpstreamInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.UpstreamInfo)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpstreamInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpstreamInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getNodesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          nodesBuilder_.clear();
+        }
+        name_ = "";
+
+        desc_ = "";
+
+        schema_ = 0;
+
+        if (tlsBuilder_ == null) {
+          tls_ = null;
+        } else {
+          tls_ = null;
+          tlsBuilder_ = null;
+        }
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
+        } else {
+          timeout_ = null;
+          timeoutBuilder_ = null;
+        }
+        id_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_UpstreamInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo(this);
+        int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
+        if (nodesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            nodes_ = java.util.Collections.unmodifiableList(nodes_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.nodes_ = nodes_;
+        } else {
+          result.nodes_ = nodesBuilder_.build();
+        }
+        result.name_ = name_;
+        result.desc_ = desc_;
+        result.schema_ = schema_;
+        if (tlsBuilder_ == null) {
+          result.tls_ = tls_;
+        } else {
+          result.tls_ = tlsBuilder_.build();
+        }
+        if (timeoutBuilder_ == null) {
+          result.timeout_ = timeout_;
+        } else {
+          result.timeout_ = timeoutBuilder_.build();
+        }
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (nodesBuilder_ == null) {
+          if (!other.nodes_.isEmpty()) {
+            if (nodes_.isEmpty()) {
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureNodesIsMutable();
+              nodes_.addAll(other.nodes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodes_.isEmpty()) {
+            if (nodesBuilder_.isEmpty()) {
+              nodesBuilder_.dispose();
+              nodesBuilder_ = null;
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              nodesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNodesFieldBuilder() : null;
+            } else {
+              nodesBuilder_.addAllMessages(other.nodes_);
+            }
+          }
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
+          onChanged();
+        }
+        if (other.schema_ != 0) {
+          setSchemaValue(other.getSchemaValue());
+        }
+        if (other.hasTls()) {
+          mergeTls(other.getTls());
+        }
+        if (other.hasTimeout()) {
+          mergeTimeout(other.getTimeout());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> nodes_ =
+        java.util.Collections.emptyList();
+      private void ensureNodesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          nodes_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode>(nodes_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> nodesBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> getNodesList() {
+        if (nodesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodes_);
+        } else {
+          return nodesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public int getNodesCount() {
+        if (nodesBuilder_ == null) {
+          return nodes_.size();
+        } else {
+          return nodesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode getNodes(int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);
+        } else {
+          return nodesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.set(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder addNodes(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllNodes(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode> values) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nodes_);
+          onChanged();
+        } else {
+          nodesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearNodes() {
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          nodesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder removeNodes(int index) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.remove(index);
+          onChanged();
+        } else {
+          nodesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder getNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder getNodesOrBuilder(
+          int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);  } else {
+          return nodesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+           getNodesOrBuilderList() {
+        if (nodesBuilder_ != null) {
+          return nodesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodes_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder() {
+        return getNodesFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder addNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"nodes"
+       * </pre>
+       *
+       * <code>repeated .model.UpstreamNode nodes = 2 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder> 
+           getNodesBuilderList() {
+        return getNodesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder> 
+          getNodesFieldBuilder() {
+        if (nodesBuilder_ == null) {
+          nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamNodeOrBuilder>(
+                  nodes_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          nodes_ = null;
+        }
+        return nodesBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object desc_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The desc.
+       */
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          desc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
+       */
+      public com.google.protobuf.ByteString
+          getDescBytes() {
+        java.lang.Object ref = desc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          desc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDesc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDesc() {
+        
+        desc_ = getDefaultInstance().getDesc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int schema_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for schema.
+       */
+      @java.lang.Override public int getSchemaValue() {
+        return schema_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaValue(int value) {
+        
+        schema_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+       * @return The schema.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType getSchema() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.valueOf(schema_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+       * @param value The schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchema(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.SchemaType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        schema_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>.model.SchemaType schema = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSchema() {
+        
+        schema_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS tls_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> tlsBuilder_;
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       * @return Whether the tls field is set.
+       */
+      public boolean hasTls() {
+        return tlsBuilder_ != null || tls_ != null;
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       * @return The tls.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS getTls() {
+        if (tlsBuilder_ == null) {
+          return tls_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
+        } else {
+          return tlsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
+        if (tlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tls_ = value;
+          onChanged();
+        } else {
+          tlsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder setTls(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder builderForValue) {
+        if (tlsBuilder_ == null) {
+          tls_ = builderForValue.build();
+          onChanged();
+        } else {
+          tlsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeTls(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS value) {
+        if (tlsBuilder_ == null) {
+          if (tls_ != null) {
+            tls_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.newBuilder(tls_).mergeFrom(value).buildPartial();
+          } else {
+            tls_ = value;
+          }
+          onChanged();
+        } else {
+          tlsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearTls() {
+        if (tlsBuilder_ == null) {
+          tls_ = null;
+          onChanged();
+        } else {
+          tls_ = null;
+          tlsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder getTlsBuilder() {
+        
+        onChanged();
+        return getTlsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder getTlsOrBuilder() {
+        if (tlsBuilder_ != null) {
+          return tlsBuilder_.getMessageOrBuilder();
+        } else {
+          return tls_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.getDefaultInstance() : tls_;
+        }
+      }
+      /**
+       * <code>.model.UpstreamTLS tls = 6 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder> 
+          getTlsFieldBuilder() {
+        if (tlsBuilder_ == null) {
+          tlsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLS.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.UpstreamTLSOrBuilder>(
+                  getTls(),
+                  getParentForChildren(),
+                  isClean());
+          tls_ = null;
+        }
+        return tlsBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout timeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> timeoutBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       * @return Whether the timeout field is set.
+       */
+      public boolean hasTimeout() {
+        return timeoutBuilder_ != null || timeout_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       * @return The timeout.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout getTimeout() {
+        if (timeoutBuilder_ == null) {
+          return timeout_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
+        } else {
+          return timeoutBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder setTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
+        if (timeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeout_ = value;
+          onChanged();
+        } else {
+          timeoutBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder setTimeout(
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder builderForValue) {
+        if (timeoutBuilder_ == null) {
+          timeout_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeoutBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder mergeTimeout(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout value) {
+        if (timeoutBuilder_ == null) {
+          if (timeout_ != null) {
+            timeout_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.newBuilder(timeout_).mergeFrom(value).buildPartial();
+          } else {
+            timeout_ = value;
+          }
+          onChanged();
+        } else {
+          timeoutBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public Builder clearTimeout() {
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
+          onChanged();
+        } else {
+          timeout_ = null;
+          timeoutBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder getTimeoutBuilder() {
+        
+        onChanged();
+        return getTimeoutFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder getTimeoutOrBuilder() {
+        if (timeoutBuilder_ != null) {
+          return timeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return timeout_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.getDefaultInstance() : timeout_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>.model.Timeout timeout = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder> 
+          getTimeoutFieldBuilder() {
+        if (timeoutBuilder_ == null) {
+          timeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.Timeout.Builder, com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.TimeoutOrBuilder>(
+                  getTimeout(),
+                  getParentForChildren(),
+                  isClean());
+          timeout_ = null;
+        }
+        return timeoutBuilder_;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 8 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 8 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.UpstreamInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.UpstreamInfo)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpstreamInfo>
+        PARSER = new com.google.protobuf.AbstractParser<UpstreamInfo>() {
+      @java.lang.Override
+      public UpstreamInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpstreamInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpstreamInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpstreamInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpstreamInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3786,63 +10895,42 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The version.
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
      */
-    java.lang.String getVersion();
+    java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getVersionBytes();
+        getSpaceIdBytes();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The build.
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    java.lang.String getBuild();
+    int getCurrStatusValue();
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
      */
-    com.google.protobuf.ByteString
-        getBuildBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 9;</code>
-     * @return The env.
-     */
-    java.lang.String getEnv();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
-     */
-    com.google.protobuf.ByteString
-        getEnvBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code request.ListUpstreams}
@@ -3860,9 +10948,8 @@ public final class PBRequestApiDashboard {
       name_ = "";
       sortBy_ = "";
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      version_ = "";
-      build_ = "";
-      env_ = "";
+      spaceId_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -3935,19 +11022,13 @@ public final class PBRequestApiDashboard {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              version_ = s;
+              spaceId_ = s;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
+              int rawValue = input.readEnum();
 
-              build_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              env_ = s;
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -4187,142 +11268,77 @@ public final class PBRequestApiDashboard {
       return ids_.getByteString(index);
     }
 
-    public static final int VERSION_FIELD_NUMBER = 7;
-    private volatile java.lang.Object version_;
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The version.
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        version_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        version_ = b;
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BUILD_FIELD_NUMBER = 8;
-    private volatile java.lang.Object build_;
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The build.
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        build_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        build_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENV_FIELD_NUMBER = 9;
-    private volatile java.lang.Object env_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 9;</code>
-     * @return The env.
-     */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"env"
-     * </pre>
-     *
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4357,14 +11373,11 @@ public final class PBRequestApiDashboard {
       for (int i = 0; i < ids_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ids_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, env_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -4401,14 +11414,12 @@ public final class PBRequestApiDashboard {
         size += dataSize;
         size += 1 * getIdsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, build_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, env_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4437,12 +11448,9 @@ public final class PBRequestApiDashboard {
           != other.getReverse()) return false;
       if (!getIdsList()
           .equals(other.getIdsList())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4469,12 +11477,10 @@ public final class PBRequestApiDashboard {
         hash = (37 * hash) + IDS_FIELD_NUMBER;
         hash = (53 * hash) + getIdsList().hashCode();
       }
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4620,11 +11626,9 @@ public final class PBRequestApiDashboard {
 
         ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        version_ = "";
+        spaceId_ = "";
 
-        build_ = "";
-
-        env_ = "";
+        currStatus_ = 0;
 
         return this;
       }
@@ -4663,9 +11667,8 @@ public final class PBRequestApiDashboard {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.ids_ = ids_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
+        result.spaceId_ = spaceId_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -4741,17 +11744,12 @@ public final class PBRequestApiDashboard {
           }
           onChanged();
         }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
-          onChanged();
-        }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5286,22 +12284,22 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object version_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @return The version.
+       * <code>string space_id = 7;</code>
+       * @return The spaceId.
        */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          version_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5309,20 +12307,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @return The bytes for version.
+       * <code>string space_id = 7;</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          version_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5330,246 +12328,128 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @param value The version to set.
+       * <code>string space_id = 7;</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersion(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        version_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
+       * <code>string space_id = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVersion() {
+      public Builder clearSpaceId() {
         
-        version_ = getDefaultInstance().getVersion();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @param value The bytes for version to set.
+       * <code>string space_id = 7;</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersionBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        version_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object build_ = "";
+      private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @return The build.
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for currStatus.
        */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          build_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @return The bytes for build.
-       */
-      public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          build_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 8;</code>
-       * @param value The build to set.
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setBuild(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        build_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"build"
-       * </pre>
-       *
-       * <code>string build = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBuild() {
+      public Builder setCurrStatusValue(int value) {
         
-        build_ = getDefaultInstance().getBuild();
+        currStatus_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @param value The bytes for build to set.
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @param value The currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setBuildBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        build_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object env_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 9;</code>
-       * @return The env.
-       */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+          throw new NullPointerException();
         }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 9;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 9;</code>
-       * @param value The env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
+        
+        currStatus_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"env"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string env = 9;</code>
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearEnv() {
+      public Builder clearCurrStatus() {
         
-        env_ = getDefaultInstance().getEnv();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 9;</code>
-       * @param value The bytes for env to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        env_ = value;
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -5621,6 +12501,1456 @@ public final class PBRequestApiDashboard {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.ListUpstreams getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateSSLOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateSSL)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cert"
+     * </pre>
+     *
+     * <code>string cert = 1 [(.validator.field) = { ... }</code>
+     * @return The cert.
+     */
+    java.lang.String getCert();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cert"
+     * </pre>
+     *
+     * <code>string cert = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for cert.
+     */
+    com.google.protobuf.ByteString
+        getCertBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"key"
+     * </pre>
+     *
+     * <code>string key = 2 [(.validator.field) = { ... }</code>
+     * @return The key.
+     */
+    java.lang.String getKey();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"key"
+     * </pre>
+     *
+     * <code>string key = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for key.
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the snis.
+     */
+    java.util.List<java.lang.String>
+        getSnisList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @return The count of snis.
+     */
+    int getSnisCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The snis at the given index.
+     */
+    java.lang.String getSnis(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the snis at the given index.
+     */
+    com.google.protobuf.ByteString
+        getSnisBytes(int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 4;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 4;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json: "space_id"
+     * </pre>
+     *
+     * <code>string space_id = 5;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json: "space_id"
+     * </pre>
+     *
+     * <code>string space_id = 5;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.CreateSSL}
+   */
+  public static final class CreateSSL extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.CreateSSL)
+      CreateSSLOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateSSL.newBuilder() to construct.
+    private CreateSSL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateSSL() {
+      cert_ = "";
+      key_ = "";
+      snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      id_ = "";
+      spaceId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateSSL();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateSSL(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cert_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                snis_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              snis_.add(s);
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          snis_ = snis_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateSSL_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateSSL_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.Builder.class);
+    }
+
+    public static final int CERT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cert_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cert"
+     * </pre>
+     *
+     * <code>string cert = 1 [(.validator.field) = { ... }</code>
+     * @return The cert.
+     */
+    @java.lang.Override
+    public java.lang.String getCert() {
+      java.lang.Object ref = cert_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cert_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cert"
+     * </pre>
+     *
+     * <code>string cert = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for cert.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCertBytes() {
+      java.lang.Object ref = cert_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cert_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object key_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"key"
+     * </pre>
+     *
+     * <code>string key = 2 [(.validator.field) = { ... }</code>
+     * @return The key.
+     */
+    @java.lang.Override
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"key"
+     * </pre>
+     *
+     * <code>string key = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SNIS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList snis_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @return A list containing the snis.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSnisList() {
+      return snis_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @return The count of snis.
+     */
+    public int getSnisCount() {
+      return snis_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The snis at the given index.
+     */
+    public java.lang.String getSnis(int index) {
+      return snis_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"snis"
+     * </pre>
+     *
+     * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the snis at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSnisBytes(int index) {
+      return snis_.getByteString(index);
+    }
+
+    public static final int ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 4;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string id = 4;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json: "space_id"
+     * </pre>
+     *
+     * <code>string space_id = 5;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json: "space_id"
+     * </pre>
+     *
+     * <code>string space_id = 5;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cert_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cert_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, key_);
+      }
+      for (int i = 0; i < snis_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, snis_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, spaceId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cert_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cert_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, key_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < snis_.size(); i++) {
+          dataSize += computeStringSizeNoTag(snis_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSnisList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, spaceId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL) obj;
+
+      if (!getCert()
+          .equals(other.getCert())) return false;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getSnisList()
+          .equals(other.getSnisList())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CERT_FIELD_NUMBER;
+      hash = (53 * hash) + getCert().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      if (getSnisCount() > 0) {
+        hash = (37 * hash) + SNIS_FIELD_NUMBER;
+        hash = (53 * hash) + getSnisList().hashCode();
+      }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.CreateSSL}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.CreateSSL)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateSSL_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateSSL_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        cert_ = "";
+
+        key_ = "";
+
+        snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = "";
+
+        spaceId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_CreateSSL_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL(this);
+        int from_bitField0_ = bitField0_;
+        result.cert_ = cert_;
+        result.key_ = key_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          snis_ = snis_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.snis_ = snis_;
+        result.id_ = id_;
+        result.spaceId_ = spaceId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL.getDefaultInstance()) return this;
+        if (!other.getCert().isEmpty()) {
+          cert_ = other.cert_;
+          onChanged();
+        }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.snis_.isEmpty()) {
+          if (snis_.isEmpty()) {
+            snis_ = other.snis_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSnisIsMutable();
+            snis_.addAll(other.snis_);
+          }
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object cert_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cert"
+       * </pre>
+       *
+       * <code>string cert = 1 [(.validator.field) = { ... }</code>
+       * @return The cert.
+       */
+      public java.lang.String getCert() {
+        java.lang.Object ref = cert_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cert_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cert"
+       * </pre>
+       *
+       * <code>string cert = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for cert.
+       */
+      public com.google.protobuf.ByteString
+          getCertBytes() {
+        java.lang.Object ref = cert_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cert_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cert"
+       * </pre>
+       *
+       * <code>string cert = 1 [(.validator.field) = { ... }</code>
+       * @param value The cert to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCert(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cert_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cert"
+       * </pre>
+       *
+       * <code>string cert = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCert() {
+        
+        cert_ = getDefaultInstance().getCert();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cert"
+       * </pre>
+       *
+       * <code>string cert = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for cert to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCertBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cert_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 2 [(.validator.field) = { ... }</code>
+       * @return The key.
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for key.
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 2 [(.validator.field) = { ... }</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"key"
+       * </pre>
+       *
+       * <code>string key = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSnisIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          snis_ = new com.google.protobuf.LazyStringArrayList(snis_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @return A list containing the snis.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getSnisList() {
+        return snis_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @return The count of snis.
+       */
+      public int getSnisCount() {
+        return snis_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The snis at the given index.
+       */
+      public java.lang.String getSnis(int index) {
+        return snis_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the snis at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getSnisBytes(int index) {
+        return snis_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The snis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSnis(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnisIsMutable();
+        snis_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param value The snis to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSnis(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnisIsMutable();
+        snis_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param values The snis to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSnis(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSnisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, snis_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSnis() {
+        snis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"snis"
+       * </pre>
+       *
+       * <code>repeated string snis = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the snis to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSnisBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureSnisIsMutable();
+        snis_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 4;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 4;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 4;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string id = 4;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json: "space_id"
+       * </pre>
+       *
+       * <code>string space_id = 5;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json: "space_id"
+       * </pre>
+       *
+       * <code>string space_id = 5;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json: "space_id"
+       * </pre>
+       *
+       * <code>string space_id = 5;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json: "space_id"
+       * </pre>
+       *
+       * <code>string space_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json: "space_id"
+       * </pre>
+       *
+       * <code>string space_id = 5;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.CreateSSL)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.CreateSSL)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateSSL>
+        PARSER = new com.google.protobuf.AbstractParser<CreateSSL>() {
+      @java.lang.Override
+      public CreateSSL parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateSSL(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateSSL> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateSSL> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateSSL getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6361,63 +14691,62 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The version.
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
      */
-    java.lang.String getVersion();
+    java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getVersionBytes();
+        getSpaceIdBytes();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The build.
+     * <code>string created_by = 8;</code>
+     * @return The createdBy.
      */
-    java.lang.String getBuild();
+    java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
+     * <code>string created_by = 8;</code>
+     * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
-        getBuildBytes();
+        getCreatedByBytes();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"env"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string env = 9;</code>
-     * @return The env.
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    java.lang.String getEnv();
+    int getCurrStatusValue();
     /**
      * <pre>
-     * &#64;inject_tag: json:"env"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
      */
-    com.google.protobuf.ByteString
-        getEnvBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code request.ListSSLs}
@@ -6435,9 +14764,9 @@ public final class PBRequestApiDashboard {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       sni_ = "";
       sortBy_ = "";
-      version_ = "";
-      build_ = "";
-      env_ = "";
+      spaceId_ = "";
+      createdBy_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -6510,19 +14839,19 @@ public final class PBRequestApiDashboard {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              version_ = s;
+              spaceId_ = s;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              build_ = s;
+              createdBy_ = s;
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 72: {
+              int rawValue = input.readEnum();
 
-              env_ = s;
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -6762,142 +15091,123 @@ public final class PBRequestApiDashboard {
       return reverse_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 7;
-    private volatile java.lang.Object version_;
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The version.
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        version_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"version"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string version = 7;</code>
-     * @return The bytes for version.
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        version_ = b;
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BUILD_FIELD_NUMBER = 8;
-    private volatile java.lang.Object build_;
+    public static final int CREATED_BY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The build.
+     * <code>string created_by = 8;</code>
+     * @return The createdBy.
      */
     @java.lang.Override
-    public java.lang.String getBuild() {
-      java.lang.Object ref = build_;
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        build_ = s;
+        createdBy_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"build"
+     * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string build = 8;</code>
-     * @return The bytes for build.
+     * <code>string created_by = 8;</code>
+     * @return The bytes for createdBy.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getBuildBytes() {
-      java.lang.Object ref = build_;
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        build_ = b;
+        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ENV_FIELD_NUMBER = 9;
-    private volatile java.lang.Object env_;
+    public static final int CURR_STATUS_FIELD_NUMBER = 9;
+    private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"env"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string env = 9;</code>
-     * @return The env.
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
      */
-    @java.lang.Override
-    public java.lang.String getEnv() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        env_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"env"
+     * &#64;inject_tag: json:"curr_status"
      * </pre>
      *
-     * <code>string env = 9;</code>
-     * @return The bytes for env.
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnvBytes() {
-      java.lang.Object ref = env_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        env_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6932,14 +15242,14 @@ public final class PBRequestApiDashboard {
       if (reverse_ != false) {
         output.writeBool(6, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, build_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, env_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(9, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -6976,14 +15286,15 @@ public final class PBRequestApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(build_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, build_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, env_);
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7012,12 +15323,11 @@ public final class PBRequestApiDashboard {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!getBuild()
-          .equals(other.getBuild())) return false;
-      if (!getEnv()
-          .equals(other.getEnv())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7044,12 +15354,12 @@ public final class PBRequestApiDashboard {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + BUILD_FIELD_NUMBER;
-      hash = (53 * hash) + getBuild().hashCode();
-      hash = (37 * hash) + ENV_FIELD_NUMBER;
-      hash = (53 * hash) + getEnv().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7195,11 +15505,11 @@ public final class PBRequestApiDashboard {
 
         reverse_ = false;
 
-        version_ = "";
+        spaceId_ = "";
 
-        build_ = "";
+        createdBy_ = "";
 
-        env_ = "";
+        currStatus_ = 0;
 
         return this;
       }
@@ -7238,9 +15548,9 @@ public final class PBRequestApiDashboard {
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
-        result.version_ = version_;
-        result.build_ = build_;
-        result.env_ = env_;
+        result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -7316,17 +15626,16 @@ public final class PBRequestApiDashboard {
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
         }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getBuild().isEmpty()) {
-          build_ = other.build_;
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
-        if (!other.getEnv().isEmpty()) {
-          env_ = other.env_;
-          onChanged();
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7861,22 +16170,22 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object version_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @return The version.
+       * <code>string space_id = 7;</code>
+       * @return The spaceId.
        */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          version_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7884,20 +16193,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @return The bytes for version.
+       * <code>string space_id = 7;</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          version_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7905,74 +16214,74 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @param value The version to set.
+       * <code>string space_id = 7;</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersion(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        version_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
+       * <code>string space_id = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVersion() {
+      public Builder clearSpaceId() {
         
-        version_ = getDefaultInstance().getVersion();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"version"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string version = 7;</code>
-       * @param value The bytes for version to set.
+       * <code>string space_id = 7;</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setVersionBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        version_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object build_ = "";
+      private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @return The build.
+       * <code>string created_by = 8;</code>
+       * @return The createdBy.
        */
-      public java.lang.String getBuild() {
-        java.lang.Object ref = build_;
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          build_ = s;
+          createdBy_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7980,20 +16289,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @return The bytes for build.
+       * <code>string created_by = 8;</code>
+       * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
-          getBuildBytes() {
-        java.lang.Object ref = build_;
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          build_ = b;
+          createdBy_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8001,150 +16310,128 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @param value The build to set.
+       * <code>string created_by = 8;</code>
+       * @param value The createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setBuild(
+      public Builder setCreatedBy(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        build_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string build = 8;</code>
+       * <code>string created_by = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBuild() {
+      public Builder clearCreatedBy() {
         
-        build_ = getDefaultInstance().getBuild();
+        createdBy_ = getDefaultInstance().getCreatedBy();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"build"
+       * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string build = 8;</code>
-       * @param value The bytes for build to set.
+       * <code>string created_by = 8;</code>
+       * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setBuildBytes(
+      public Builder setCreatedByBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        build_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object env_ = "";
+      private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"env"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string env = 9;</code>
-       * @return The env.
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for currStatus.
        */
-      public java.lang.String getEnv() {
-        java.lang.Object ref = env_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          env_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"env"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string env = 9;</code>
-       * @return The bytes for env.
-       */
-      public com.google.protobuf.ByteString
-          getEnvBytes() {
-        java.lang.Object ref = env_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          env_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"env"
-       * </pre>
-       *
-       * <code>string env = 9;</code>
-       * @param value The env to set.
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setEnv(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        env_ = value;
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"env"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string env = 9;</code>
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @param value The currStatus to set.
        * @return This builder for chaining.
        */
-      public Builder clearEnv() {
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        env_ = getDefaultInstance().getEnv();
+        currStatus_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"env"
+       * &#64;inject_tag: json:"curr_status"
        * </pre>
        *
-       * <code>string env = 9;</code>
-       * @param value The bytes for env to set.
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder setEnvBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearCurrStatus() {
         
-        env_ = value;
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -8230,7 +16517,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 2;</code>
+     * <code>string desc = 2 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -8239,7 +16526,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 2;</code>
+     * <code>string desc = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -8250,7 +16537,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"auth_key_id"
      * </pre>
      *
-     * <code>string auth_key_id = 3;</code>
+     * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
      * @return The authKeyId.
      */
     java.lang.String getAuthKeyId();
@@ -8259,7 +16546,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"auth_key_id"
      * </pre>
      *
-     * <code>string auth_key_id = 3;</code>
+     * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for authKeyId.
      */
     com.google.protobuf.ByteString
@@ -8267,23 +16554,43 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-     * @return The userId.
+     * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
      */
-    java.lang.String getUserId();
+    java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
+     * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getUserIdBytes();
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
   }
   /**
    * Protobuf type {@code request.CreateApiService}
@@ -8301,7 +16608,8 @@ public final class PBRequestApiDashboard {
       name_ = "";
       desc_ = "";
       authKeyId_ = "";
-      userId_ = "";
+      spaceId_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -8355,7 +16663,13 @@ public final class PBRequestApiDashboard {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              spaceId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
               break;
             }
             default: {
@@ -8443,7 +16757,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 2;</code>
+     * <code>string desc = 2 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -8464,7 +16778,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string desc = 2;</code>
+     * <code>string desc = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -8489,7 +16803,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"auth_key_id"
      * </pre>
      *
-     * <code>string auth_key_id = 3;</code>
+     * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
      * @return The authKeyId.
      */
     @java.lang.Override
@@ -8510,7 +16824,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"auth_key_id"
      * </pre>
      *
-     * <code>string auth_key_id = 3;</code>
+     * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for authKeyId.
      */
     @java.lang.Override
@@ -8528,46 +16842,92 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object userId_;
+    public static final int SPACE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-     * @return The userId.
+     * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"user_id"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
+     * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 5;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8597,8 +16957,11 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdBy_);
       }
       unknownFields.writeTo(output);
     }
@@ -8618,8 +16981,11 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdBy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8642,8 +17008,10 @@ public final class PBRequestApiDashboard {
           .equals(other.getDesc())) return false;
       if (!getAuthKeyId()
           .equals(other.getAuthKeyId())) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8661,8 +17029,10 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getDesc().hashCode();
       hash = (37 * hash) + AUTH_KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthKeyId().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8802,7 +17172,9 @@ public final class PBRequestApiDashboard {
 
         authKeyId_ = "";
 
-        userId_ = "";
+        spaceId_ = "";
+
+        createdBy_ = "";
 
         return this;
       }
@@ -8833,7 +17205,8 @@ public final class PBRequestApiDashboard {
         result.name_ = name_;
         result.desc_ = desc_;
         result.authKeyId_ = authKeyId_;
-        result.userId_ = userId_;
+        result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
         onBuilt();
         return result;
       }
@@ -8894,8 +17267,12 @@ public final class PBRequestApiDashboard {
           authKeyId_ = other.authKeyId_;
           onChanged();
         }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9029,7 +17406,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 2;</code>
+       * <code>string desc = 2 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -9049,7 +17426,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 2;</code>
+       * <code>string desc = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -9070,7 +17447,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 2;</code>
+       * <code>string desc = 2 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -9089,7 +17466,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 2;</code>
+       * <code>string desc = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -9103,7 +17480,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string desc = 2;</code>
+       * <code>string desc = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -9125,7 +17502,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"auth_key_id"
        * </pre>
        *
-       * <code>string auth_key_id = 3;</code>
+       * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
        * @return The authKeyId.
        */
       public java.lang.String getAuthKeyId() {
@@ -9145,7 +17522,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"auth_key_id"
        * </pre>
        *
-       * <code>string auth_key_id = 3;</code>
+       * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for authKeyId.
        */
       public com.google.protobuf.ByteString
@@ -9166,7 +17543,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"auth_key_id"
        * </pre>
        *
-       * <code>string auth_key_id = 3;</code>
+       * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
        * @param value The authKeyId to set.
        * @return This builder for chaining.
        */
@@ -9185,7 +17562,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"auth_key_id"
        * </pre>
        *
-       * <code>string auth_key_id = 3;</code>
+       * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthKeyId() {
@@ -9199,7 +17576,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"auth_key_id"
        * </pre>
        *
-       * <code>string auth_key_id = 3;</code>
+       * <code>string auth_key_id = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for authKeyId to set.
        * @return This builder for chaining.
        */
@@ -9215,22 +17592,22 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object userId_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-       * @return The userId.
+       * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
        */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -9238,20 +17615,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for userId.
+       * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userId_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -9259,54 +17636,150 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The userId to set.
+       * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setUserId(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userId_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string user_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearUserId() {
+      public Builder clearSpaceId() {
         
-        userId_ = getDefaultInstance().getUserId();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"user_id"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string user_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for userId to set.
+       * <code>string space_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setUserIdBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userId_ = value;
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -11001,6 +19474,65 @@ public final class PBRequestApiDashboard {
      */
     com.google.protobuf.ByteString
         getAuthKeyIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 8;</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 8;</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code request.ListApiServices}
@@ -11018,6 +19550,9 @@ public final class PBRequestApiDashboard {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       sortBy_ = "";
       authKeyId_ = "";
+      spaceId_ = "";
+      createdBy_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -11085,6 +19620,24 @@ public final class PBRequestApiDashboard {
               java.lang.String s = input.readStringRequireUtf8();
 
               authKeyId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -11326,6 +19879,125 @@ public final class PBRequestApiDashboard {
       }
     }
 
+    public static final int SPACE_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 7;</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 8;</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 8;</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 9;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11357,6 +20029,15 @@ public final class PBRequestApiDashboard {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, authKeyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(9, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -11393,6 +20074,16 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, authKeyId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, currStatus_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11420,6 +20111,11 @@ public final class PBRequestApiDashboard {
           != other.getReverse()) return false;
       if (!getAuthKeyId()
           .equals(other.getAuthKeyId())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11446,6 +20142,12 @@ public final class PBRequestApiDashboard {
           getReverse());
       hash = (37 * hash) + AUTH_KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthKeyId().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11591,6 +20293,12 @@ public final class PBRequestApiDashboard {
 
         authKeyId_ = "";
 
+        spaceId_ = "";
+
+        createdBy_ = "";
+
+        currStatus_ = 0;
+
         return this;
       }
 
@@ -11628,6 +20336,9 @@ public final class PBRequestApiDashboard {
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.authKeyId_ = authKeyId_;
+        result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -11702,6 +20413,17 @@ public final class PBRequestApiDashboard {
         if (!other.getAuthKeyId().isEmpty()) {
           authKeyId_ = other.authKeyId_;
           onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12237,6 +20959,272 @@ public final class PBRequestApiDashboard {
   checkByteStringIsUtf8(value);
         
         authKeyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 7;</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 8;</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 8;</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 8;</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 8;</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -13600,6 +22588,644 @@ public final class PBRequestApiDashboard {
 
   }
 
+  public interface DeleteProjectRoutesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DeleteProjectRoutes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIDs.
+     */
+    java.util.List<java.lang.String>
+        getApiServiceIDsList();
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIDs.
+     */
+    int getApiServiceIDsCount();
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIDs at the given index.
+     */
+    java.lang.String getApiServiceIDs(int index);
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIDs at the given index.
+     */
+    com.google.protobuf.ByteString
+        getApiServiceIDsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.DeleteProjectRoutes}
+   */
+  public static final class DeleteProjectRoutes extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DeleteProjectRoutes)
+      DeleteProjectRoutesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteProjectRoutes.newBuilder() to construct.
+    private DeleteProjectRoutes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteProjectRoutes() {
+      apiServiceIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeleteProjectRoutes();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteProjectRoutes(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                apiServiceIDs_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              apiServiceIDs_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          apiServiceIDs_ = apiServiceIDs_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteProjectRoutes_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteProjectRoutes_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.Builder.class);
+    }
+
+    public static final int APISERVICEIDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList apiServiceIDs_;
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIDs.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getApiServiceIDsList() {
+      return apiServiceIDs_;
+    }
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIDs.
+     */
+    public int getApiServiceIDsCount() {
+      return apiServiceIDs_.size();
+    }
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIDs at the given index.
+     */
+    public java.lang.String getApiServiceIDs(int index) {
+      return apiServiceIDs_.get(index);
+    }
+    /**
+     * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIDs at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getApiServiceIDsBytes(int index) {
+      return apiServiceIDs_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < apiServiceIDs_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiServiceIDs_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < apiServiceIDs_.size(); i++) {
+          dataSize += computeStringSizeNoTag(apiServiceIDs_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getApiServiceIDsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes) obj;
+
+      if (!getApiServiceIDsList()
+          .equals(other.getApiServiceIDsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getApiServiceIDsCount() > 0) {
+        hash = (37 * hash) + APISERVICEIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getApiServiceIDsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.DeleteProjectRoutes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DeleteProjectRoutes)
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteProjectRoutes_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteProjectRoutes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        apiServiceIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.internal_static_request_DeleteProjectRoutes_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIDs_ = apiServiceIDs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.apiServiceIDs_ = apiServiceIDs_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.getDefaultInstance()) return this;
+        if (!other.apiServiceIDs_.isEmpty()) {
+          if (apiServiceIDs_.isEmpty()) {
+            apiServiceIDs_ = other.apiServiceIDs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureApiServiceIDsIsMutable();
+            apiServiceIDs_.addAll(other.apiServiceIDs_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList apiServiceIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureApiServiceIDsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIDs_ = new com.google.protobuf.LazyStringArrayList(apiServiceIDs_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @return A list containing the apiServiceIDs.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getApiServiceIDsList() {
+        return apiServiceIDs_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @return The count of apiServiceIDs.
+       */
+      public int getApiServiceIDsCount() {
+        return apiServiceIDs_.size();
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The apiServiceIDs at the given index.
+       */
+      public java.lang.String getApiServiceIDs(int index) {
+        return apiServiceIDs_.get(index);
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the apiServiceIDs at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getApiServiceIDsBytes(int index) {
+        return apiServiceIDs_.getByteString(index);
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The apiServiceIDs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiServiceIDs(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureApiServiceIDsIsMutable();
+        apiServiceIDs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param value The apiServiceIDs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIDs(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureApiServiceIDsIsMutable();
+        apiServiceIDs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param values The apiServiceIDs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllApiServiceIDs(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureApiServiceIDsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, apiServiceIDs_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiServiceIDs() {
+        apiServiceIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string apiServiceIDs = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the apiServiceIDs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIDsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureApiServiceIDsIsMutable();
+        apiServiceIDs_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DeleteProjectRoutes)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DeleteProjectRoutes)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteProjectRoutes>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteProjectRoutes>() {
+      @java.lang.Override
+      public DeleteProjectRoutes parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteProjectRoutes(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteProjectRoutes> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteProjectRoutes> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CreateAuthKeyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.CreateAuthKey)
       com.google.protobuf.MessageOrBuilder {
@@ -13626,23 +23252,43 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"secret_key"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-     * @return The secretKey.
+     * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
      */
-    java.lang.String getSecretKey();
+    java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"secret_key"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for secretKey.
+     * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getSecretKeyBytes();
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
   }
   /**
    * Protobuf type {@code request.CreateAuthKey}
@@ -13658,7 +23304,8 @@ public final class PBRequestApiDashboard {
     }
     private CreateAuthKey() {
       name_ = "";
-      secretKey_ = "";
+      spaceId_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -13700,7 +23347,13 @@ public final class PBRequestApiDashboard {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              secretKey_ = s;
+              spaceId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
               break;
             }
             default: {
@@ -13781,46 +23434,92 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int SECRET_KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object secretKey_;
+    public static final int SPACE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"secret_key"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-     * @return The secretKey.
+     * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getSecretKey() {
-      java.lang.Object ref = secretKey_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        secretKey_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"secret_key"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for secretKey.
+     * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSecretKeyBytes() {
-      java.lang.Object ref = secretKey_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        secretKey_ = b;
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -13844,8 +23543,11 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, createdBy_);
       }
       unknownFields.writeTo(output);
     }
@@ -13859,8 +23561,11 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, createdBy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13879,8 +23584,10 @@ public final class PBRequestApiDashboard {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getSecretKey()
-          .equals(other.getSecretKey())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13894,8 +23601,10 @@ public final class PBRequestApiDashboard {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + SECRET_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getSecretKey().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14031,7 +23740,9 @@ public final class PBRequestApiDashboard {
         super.clear();
         name_ = "";
 
-        secretKey_ = "";
+        spaceId_ = "";
+
+        createdBy_ = "";
 
         return this;
       }
@@ -14060,7 +23771,8 @@ public final class PBRequestApiDashboard {
       public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateAuthKey buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateAuthKey result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateAuthKey(this);
         result.name_ = name_;
-        result.secretKey_ = secretKey_;
+        result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
         onBuilt();
         return result;
       }
@@ -14113,8 +23825,12 @@ public final class PBRequestApiDashboard {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getSecretKey().isEmpty()) {
-          secretKey_ = other.secretKey_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -14242,22 +23958,22 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object secretKey_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"secret_key"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-       * @return The secretKey.
+       * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
        */
-      public java.lang.String getSecretKey() {
-        java.lang.Object ref = secretKey_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          secretKey_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -14265,20 +23981,20 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"secret_key"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for secretKey.
+       * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getSecretKeyBytes() {
-        java.lang.Object ref = secretKey_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          secretKey_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -14286,54 +24002,150 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"secret_key"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-       * @param value The secretKey to set.
+       * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSecretKey(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        secretKey_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"secret_key"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearSecretKey() {
+      public Builder clearSpaceId() {
         
-        secretKey_ = getDefaultInstance().getSecretKey();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"secret_key"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string secret_key = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for secretKey to set.
+       * <code>string space_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSecretKeyBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        secretKey_ = value;
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -15858,16 +25670,63 @@ public final class PBRequestApiDashboard {
     boolean getReverse();
 
     /**
-     * <code>string user_id = 6;</code>
-     * @return The userId.
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 6;</code>
+     * @return The spaceId.
      */
-    java.lang.String getUserId();
+    java.lang.String getSpaceId();
     /**
-     * <code>string user_id = 6;</code>
-     * @return The bytes for userId.
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 6;</code>
+     * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
-        getUserIdBytes();
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 7;</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 7;</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    int getCurrStatusValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
   }
   /**
    * Protobuf type {@code request.ListAuthKeys}
@@ -15884,7 +25743,9 @@ public final class PBRequestApiDashboard {
     private ListAuthKeys() {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       sortBy_ = "";
-      userId_ = "";
+      spaceId_ = "";
+      createdBy_ = "";
+      currStatus_ = 0;
     }
 
     @java.lang.Override
@@ -15951,7 +25812,19 @@ public final class PBRequestApiDashboard {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              userId_ = s;
+              spaceId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              currStatus_ = rawValue;
               break;
             }
             default: {
@@ -16145,42 +26018,123 @@ public final class PBRequestApiDashboard {
       return reverse_;
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object userId_;
+    public static final int SPACE_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object spaceId_;
     /**
-     * <code>string user_id = 6;</code>
-     * @return The userId.
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 6;</code>
+     * @return The spaceId.
      */
     @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
+        spaceId_ = s;
         return s;
       }
     }
     /**
-     * <code>string user_id = 6;</code>
-     * @return The bytes for userId.
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 6;</code>
+     * @return The bytes for spaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userId_ = b;
+        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 7;</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by"
+     * </pre>
+     *
+     * <code>string created_by = 7;</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURR_STATUS_FIELD_NUMBER = 8;
+    private int currStatus_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for currStatus.
+     */
+    @java.lang.Override public int getCurrStatusValue() {
+      return currStatus_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"curr_status"
+     * </pre>
+     *
+     * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+     * @return The currStatus.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16212,8 +26166,14 @@ public final class PBRequestApiDashboard {
       if (reverse_ != false) {
         output.writeBool(5, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdBy_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        output.writeEnum(8, currStatus_);
       }
       unknownFields.writeTo(output);
     }
@@ -16247,8 +26207,15 @@ public final class PBRequestApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdBy_);
+      }
+      if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, currStatus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16275,8 +26242,11 @@ public final class PBRequestApiDashboard {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (currStatus_ != other.currStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16301,8 +26271,12 @@ public final class PBRequestApiDashboard {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + currStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16446,7 +26420,11 @@ public final class PBRequestApiDashboard {
 
         reverse_ = false;
 
-        userId_ = "";
+        spaceId_ = "";
+
+        createdBy_ = "";
+
+        currStatus_ = 0;
 
         return this;
       }
@@ -16484,7 +26462,9 @@ public final class PBRequestApiDashboard {
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
-        result.userId_ = userId_;
+        result.spaceId_ = spaceId_;
+        result.createdBy_ = createdBy_;
+        result.currStatus_ = currStatus_;
         onBuilt();
         return result;
       }
@@ -16556,9 +26536,16 @@ public final class PBRequestApiDashboard {
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
         }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
           onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (other.currStatus_ != 0) {
+          setCurrStatusValue(other.getCurrStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16997,78 +26984,268 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object userId_ = "";
+      private java.lang.Object spaceId_ = "";
       /**
-       * <code>string user_id = 6;</code>
-       * @return The userId.
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 6;</code>
+       * @return The spaceId.
        */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
+          spaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string user_id = 6;</code>
-       * @return The bytes for userId.
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 6;</code>
+       * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          userId_ = b;
+          spaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string user_id = 6;</code>
-       * @param value The userId to set.
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 6;</code>
+       * @param value The spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setUserId(
+      public Builder setSpaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        userId_ = value;
+        spaceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string user_id = 6;</code>
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUserId() {
+      public Builder clearSpaceId() {
         
-        userId_ = getDefaultInstance().getUserId();
+        spaceId_ = getDefaultInstance().getSpaceId();
         onChanged();
         return this;
       }
       /**
-       * <code>string user_id = 6;</code>
-       * @param value The bytes for userId to set.
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 6;</code>
+       * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setUserIdBytes(
+      public Builder setSpaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        userId_ = value;
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 7;</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 7;</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 7;</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by"
+       * </pre>
+       *
+       * <code>string created_by = 7;</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int currStatus_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for currStatus.
+       */
+      @java.lang.Override public int getCurrStatusValue() {
+        return currStatus_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatusValue(int value) {
+        
+        currStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @return The currStatus.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType result = com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.valueOf(currStatus_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @param value The currStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrStatus(com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"curr_status"
+       * </pre>
+       *
+       * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrStatus() {
+        
+        currStatus_ = 0;
         onChanged();
         return this;
       }
@@ -18547,6 +28724,21 @@ public final class PBRequestApiDashboard {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_CreateRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_CreateRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_UpdateRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_UpdateRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_RouteInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_RouteInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DeleteRoute_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18557,6 +28749,21 @@ public final class PBRequestApiDashboard {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ListRoutes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_CreateUpstream_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_CreateUpstream_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_UpdateUpstream_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_UpdateUpstream_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_UpstreamInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_UpstreamInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DeleteUpstream_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18566,6 +28773,11 @@ public final class PBRequestApiDashboard {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ListUpstreams_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_CreateSSL_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_CreateSSL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DeleteSSL_descriptor;
   private static final 
@@ -18606,6 +28818,11 @@ public final class PBRequestApiDashboard {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_GetSvcReqCount_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DeleteProjectRoutes_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DeleteProjectRoutes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_CreateAuthKey_descriptor;
   private static final 
@@ -18648,172 +28865,258 @@ public final class PBRequestApiDashboard {
       "\n&proto/types/request/apidashboard.proto" +
       "\022\007request\0323github.com/yu31/protoc-plugin" +
       "/proto/validator.proto\0322github.com/yu31/" +
-      "protoc-plugin/proto/defaults.proto\"\'\n\013De" +
-      "leteRoute\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\276\002\n\n" +
-      "ListRoutes\022\014\n\004name\030\001 \001(\t\022\031\n\003uri\030\002 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\200\002\000\022\016\n\006status\030\003 \001(\005\022&\n\005limit\030\005 \001" +
-      "(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\006 " +
-      "\001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\007 \001(\tB/\342\337\037+\022" +
-      ")\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_ti" +
-      "me\022\017\n\007reverse\030\010 \001(\010\022\032\n\003ids\030\t \003(\tB\r\342\337\037\t\022\007" +
-      "\352\001\0048d@\000\022\017\n\007version\030\n \001(\t\022\r\n\005build\030\013 \001(\t\022" +
-      "\013\n\003env\030\014 \001(\t\022\026\n\016api_service_id\030\r \001(\t\"*\n\016" +
-      "DeleteUpstream\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
-      "\"\376\001\n\rListUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limi" +
-      "t\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offs" +
-      "et\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/" +
-      "\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013upda" +
-      "te_time\022\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342" +
-      "\337\037\t\022\007\352\001\0048d@\000\022\017\n\007version\030\007 \001(\t\022\r\n\005build\030\010" +
-      " \001(\t\022\013\n\003env\030\t \001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\362\001\n\010ListSSLs\022\032\n\003ids\030\001 \003" +
-      "(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030" +
-      "\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset" +
-      "\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337" +
-      "\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_time\022" +
-      "\017\n\007reverse\030\006 \001(\010\022\017\n\007version\030\007 \001(\t\022\r\n\005bui" +
-      "ld\030\010 \001(\t\022\013\n\003env\030\t \001(\t\"b\n\020CreateApiServic" +
-      "e\022\014\n\004name\030\001 \001(\t\022\014\n\004desc\030\002 \001(\t\022\023\n\013auth_ke" +
-      "y_id\030\003 \001(\t\022\035\n\007user_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
-      "\000\",\n\020DeleteApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\200\002\000\"H\n\020UpdateApiService\022\030\n\002id\030\001 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(" +
-      "\t\"\324\001\n\017ListApiServices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t" +
-      "\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t" +
-      "\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:" +
-      "\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create" +
-      "_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013a" +
-      "uth_key_id\030\006 \001(\t\"F\n\016AddSvcReqCount\022\030\n\002id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\200\002\000\"?\n\rCreateAuthKey\022\014\n\004name\030\001 " +
-      "\001(\t\022 \n\nsecret_key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\")\n" +
-      "\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
-      "\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\200\002\000\022\014\n\004name\030\002 \001(\t\"\315\001\n\014ListAuthKeys\022\032\n\003id" +
-      "s\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242" +
-      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J" +
-      "\000J\002idJ\013create_timeJ\013update_time\022\017\n\007rever" +
-      "se\030\005 \001(\010\022\017\n\007user_id\030\006 \001(\t\"V\n\013BindAuthKey" +
-      "\022!\n\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016a" +
-      "pi_service_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnb" +
-      "indAuthKey\022$\n\016api_service_id\030\001 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\200\002\000Bt\n$com.dataomnis.gproto.types.p" +
-      "brequestB\025PBRequestApiDashboardP\000Z3githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
-      "equestb\006proto3"
+      "protoc-plugin/proto/defaults.proto\032$prot" +
+      "o/types/model/apidashboard.proto\"5\n\013Crea" +
+      "teRoute\022&\n\nroute_info\030\001 \001(\0132\022.request.Ro" +
+      "uteInfo\"5\n\013UpdateRoute\022&\n\nroute_info\030\001 \001" +
+      "(\0132\022.request.RouteInfo\"\322\002\n\tRouteInfo\022\035\n\003" +
+      "uri\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022\030\n\002id\030\002 \001(\tB" +
+      "\014\342\337\037\010\022\006\302\001\003\230\002\024\022\014\n\004desc\030\003 \001(\t\022\032\n\004host\030\004 \001(" +
+      "\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\013upstream_id\030\005 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\230\002\024\022\036\n\004name\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
+      "\000\230\002\200\001\022\'\n\016api_service_id\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\200\002\000\230\002\024\022\'\n\016api_version_id\030\010 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\000\230\002\024\022#\n\tproxy_uri\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000" +
+      "\230\002\200\002\022%\n\010space_id\030\n \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\")\n\013DeleteRoute\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352" +
+      "\001\0048d@\000\"\322\002\n\nListRoutes\022\014\n\004name\030\001 \001(\t\022\013\n\003u" +
+      "ri\030\002 \001(\t\0223\n\013curr_status\030\003 \001(\0162\021.model.St" +
+      "atusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022&\n\005limit\030\004 \001(\005B\027\242\241" +
+      "\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\005 \001(\005B\013\342" +
+      "\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\006 \001(\tB/\342\337\037+\022)\302\001&J\000" +
+      "J\002idJ\004nameJ\013create_timeJ\013update_time\022\017\n\007" +
+      "reverse\030\007 \001(\010\022\032\n\003ids\030\010 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
+      "\000\022\026\n\016api_version_id\030\t \001(\t\022\026\n\016api_service" +
+      "_id\030\n \001(\t\022\020\n\010space_id\030\013 \001(\t\">\n\016CreateUps" +
+      "tream\022,\n\rupstream_info\030\001 \001(\0132\025.request.U" +
+      "pstreamInfo\">\n\016UpdateUpstream\022,\n\rupstrea" +
+      "m_info\030\001 \001(\0132\025.request.UpstreamInfo\"\273\002\n\014" +
+      "UpstreamInfo\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022/\n\005nodes\030\002 \003(\0132\023.model.Upstr" +
+      "eamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n\004desc\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000" +
+      "\210\002\200\004\022.\n\006schema\030\005 \001(\0162\021.model.SchemaTypeB" +
+      "\013\342\337\037\007\022\005\332\001\002X\001\022%\n\003tls\030\006 \001(\0132\022.model.Upstre" +
+      "amTLSB\004\342\337\037\000\022\037\n\007timeout\030\007 \001(\0132\016.model.Tim" +
+      "eout\022\033\n\002id\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\210\002\024\220\002\000\"*\n\016Del" +
+      "eteUpstream\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\230\002" +
+      "\n\rListUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002" +
+      " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
+      "\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037" +
+      "+\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_" +
+      "time\022\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t" +
+      "\022\007\352\001\0048d@\000\022\020\n\010space_id\030\007 \001(\t\0223\n\013curr_stat" +
+      "us\030\010 \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001" +
+      "\"{\n\tCreateSSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
+      "\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003" +
+      "(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\020\n\010space_id\030" +
+      "\005 \001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\200\002\000\"\240\002\n\010ListSSLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001" +
+      "\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252" +
+      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J\000J\002i" +
+      "dJ\013create_timeJ\013update_time\022\017\n\007reverse\030\006" +
+      " \001(\010\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001" +
+      "(\t\0223\n\013curr_status\030\t \001(\0162\021.model.StatusTy" +
+      "peB\013\342\337\037\007\022\005\332\001\002X\001\"\264\001\n\020CreateApiService\022\014\n\004" +
+      "name\030\001 \001(\t\022\036\n\004desc\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002" +
+      "\200\002\022%\n\013auth_key_id\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200" +
+      "\002\022%\n\010space_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022$\n\ncreated_by\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\"," +
+      "\n\020DeleteApiService\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\200\002\000\"H\n\020UpdateApiService\022\030\n\002id\030\001 \001(\tB\014\342\337" +
+      "\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\257" +
+      "\002\n\017ListApiServices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352" +
+      "\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
+      "\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007s" +
+      "ort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_ti" +
+      "meJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013auth" +
+      "_key_id\030\006 \001(\t\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreat" +
+      "ed_by\030\010 \001(\t\0223\n\013curr_status\030\t \001(\0162\021.model" +
+      ".StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"F\n\016AddSvcReqCou" +
+      "nt\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 " +
+      "\001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id" +
+      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\";\n\023DeleteProjectRou" +
+      "tes\022$\n\rapiServiceIDs\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008" +
+      "d\"j\n\rCreateAuthKey\022\014\n\004name\030\001 \001(\t\022%\n\010spac" +
+      "e_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreat" +
+      "ed_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\")\n\rDeleteA" +
+      "uthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpda" +
+      "teAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004n" +
+      "ame\030\002 \001(\t\"\227\002\n\014ListAuthKeys\022\032\n\003ids\030\001 \003(\tB" +
+      "\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\00310" +
+      "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001" +
+      "\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013c" +
+      "reate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010" +
+      "\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated_by\030\007 \001(\t\0223" +
+      "\n\013curr_status\030\010 \001(\0162\021.model.StatusTypeB\013" +
+      "\342\337\037\007\022\005\332\001\002X\001\"V\n\013BindAuthKey\022!\n\013auth_key_i" +
+      "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016api_service_id\030" +
+      "\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnbindAuthKey\022$\n\016" +
+      "api_service_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000Bt\n$co" +
+      "m.dataomnis.gproto.types.pbrequestB\025PBRe" +
+      "questApiDashboardP\000Z3github.com/DataWork" +
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.getDescriptor(),
         });
-    internal_static_request_DeleteRoute_descriptor =
+    internal_static_request_CreateRoute_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_request_CreateRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_CreateRoute_descriptor,
+        new java.lang.String[] { "RouteInfo", });
+    internal_static_request_UpdateRoute_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_request_UpdateRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_UpdateRoute_descriptor,
+        new java.lang.String[] { "RouteInfo", });
+    internal_static_request_RouteInfo_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_request_RouteInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_RouteInfo_descriptor,
+        new java.lang.String[] { "Uri", "Id", "Desc", "Host", "UpstreamId", "Name", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
+    internal_static_request_DeleteRoute_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_request_DeleteRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteRoute_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Ids", });
     internal_static_request_ListRoutes_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_request_ListRoutes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListRoutes_descriptor,
-        new java.lang.String[] { "Name", "Uri", "Status", "Limit", "Offset", "SortBy", "Reverse", "Ids", "Version", "Build", "Env", "ApiServiceId", });
+        new java.lang.String[] { "Name", "Uri", "CurrStatus", "Limit", "Offset", "SortBy", "Reverse", "Ids", "ApiVersionId", "ApiServiceId", "SpaceId", });
+    internal_static_request_CreateUpstream_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_request_CreateUpstream_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_CreateUpstream_descriptor,
+        new java.lang.String[] { "UpstreamInfo", });
+    internal_static_request_UpdateUpstream_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_request_UpdateUpstream_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_UpdateUpstream_descriptor,
+        new java.lang.String[] { "UpstreamInfo", });
+    internal_static_request_UpstreamInfo_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_request_UpstreamInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_UpstreamInfo_descriptor,
+        new java.lang.String[] { "SpaceId", "Nodes", "Name", "Desc", "Schema", "Tls", "Timeout", "Id", });
     internal_static_request_DeleteUpstream_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_DeleteUpstream_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteUpstream_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListUpstreams_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_ListUpstreams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUpstreams_descriptor,
-        new java.lang.String[] { "Name", "Limit", "Offset", "SortBy", "Reverse", "Ids", "Version", "Build", "Env", });
+        new java.lang.String[] { "Name", "Limit", "Offset", "SortBy", "Reverse", "Ids", "SpaceId", "CurrStatus", });
+    internal_static_request_CreateSSL_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_request_CreateSSL_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_CreateSSL_descriptor,
+        new java.lang.String[] { "Cert", "Key", "Snis", "Id", "SpaceId", });
     internal_static_request_DeleteSSL_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_DeleteSSL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteSSL_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_ListSSLs_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_ListSSLs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSSLs_descriptor,
-        new java.lang.String[] { "Ids", "Sni", "Limit", "Offset", "SortBy", "Reverse", "Version", "Build", "Env", });
+        new java.lang.String[] { "Ids", "Sni", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_CreateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_CreateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiService_descriptor,
-        new java.lang.String[] { "Name", "Desc", "AuthKeyId", "UserId", });
+        new java.lang.String[] { "Name", "Desc", "AuthKeyId", "SpaceId", "CreatedBy", });
     internal_static_request_DeleteApiService_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_DeleteApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiService_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateApiService_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_UpdateApiService_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateApiService_descriptor,
         new java.lang.String[] { "Id", "Name", "Desc", });
     internal_static_request_ListApiServices_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_request_ListApiServices_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiServices_descriptor,
-        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", });
+        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_AddSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_AddSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AddSvcReqCount_descriptor,
         new java.lang.String[] { "Id", "Count", });
     internal_static_request_GetSvcReqCount_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_GetSvcReqCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetSvcReqCount_descriptor,
         new java.lang.String[] { "Id", });
+    internal_static_request_DeleteProjectRoutes_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_request_DeleteProjectRoutes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DeleteProjectRoutes_descriptor,
+        new java.lang.String[] { "ApiServiceIDs", });
     internal_static_request_CreateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_request_CreateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateAuthKey_descriptor,
-        new java.lang.String[] { "Name", "SecretKey", });
+        new java.lang.String[] { "Name", "SpaceId", "CreatedBy", });
     internal_static_request_DeleteAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_request_DeleteAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteAuthKey_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_request_UpdateAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_request_UpdateAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateAuthKey_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_request_ListAuthKeys_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_request_ListAuthKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAuthKeys_descriptor,
-        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "UserId", });
+        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", });
     internal_static_request_BindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_request_BindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_BindAuthKey_descriptor,
         new java.lang.String[] { "AuthKeyId", "ApiServiceId", });
     internal_static_request_UnbindAuthKey_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_request_UnbindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UnbindAuthKey_descriptor,
@@ -18826,6 +29129,7 @@ public final class PBRequestApiDashboard {
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

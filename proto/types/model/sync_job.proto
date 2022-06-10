@@ -15,6 +15,7 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/datasource.proto";
+import "proto/types/model/cluster.proto";
 import "proto/types/model/syncjob/binlog.proto";
 import "proto/types/model/syncjob/elasticsearch.proto";
 import "proto/types/model/syncjob/ftp.proto";
@@ -28,6 +29,7 @@ import "proto/types/model/syncjob/pgwal.proto";
 import "proto/types/model/syncjob/redis.proto";
 import "proto/types/model/syncjob/db.proto";
 import "proto/types/model/syncjob/sqlservercdc.proto";
+
 
 // The sync job info
 message SyncJob {
@@ -109,6 +111,10 @@ message SyncJob {
     DataSource.Type target_type = 14 [
         (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
         (defaults.field).basic = "0",(validator.field).tags.enum = { gt: 0,lte: 16; in_enums: true  } ];
+
+    // The property of sync job. Only used query data.
+    // @inject_tag: json:"sync_job_property" gorm:"-"
+    model.SyncJobProperty sync_job_property = 15;
 }
 
 // SyncJobProperty represents property of job.
@@ -131,6 +137,15 @@ message SyncJobProperty {
 
     // @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
     SyncJobSchedule schedule = 5 [(validator.field) = {}];
+
+//    // Timestamp of create time.
+//    // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+//    int64 created = 6 [(validator.field).tags.int = { gt: 0 }];
+//
+//    // Timestamp of update time.
+//    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+//    int64 updated = 7 [(validator.field).tags.int = { gt: 0 }];
+
 }
 
 // SyncJobConf represents a job running parameters.
@@ -144,17 +159,18 @@ message SyncJobConf {
         ScriptMode = 2;
     }
 
+    // 1:guide mode,2:script mode
+    // @inject_tag: json:"job_mode"
+    JobMode job_mode = 1 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 1,lte: 2 } ];
+
     // source_id is datasource id
     // @inject_tag: json:"source_id"
-    string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+    string source_id = 2;
 
     // target_id is datasource id
     // @inject_tag: json:"target_id"
-    string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+    string target_id = 3;
 
-    // 1:guide mode,2:script mode
-    // @inject_tag: json:"job_mode"
-    JobMode job_mode = 3 [ (defaults.field).basic = "0", (validator.field).tags.enum = { gte: 0,lte: 1 } ];
     // shell mode json
     // @inject_tag: json:"job_content"
     string job_content = 4 [
@@ -163,7 +179,7 @@ message SyncJobConf {
     ];
     // sync Resource
     // @inject_tag: json:"sync_resource"
-    SyncResource syncResource = 5;
+    SyncResource sync_resource = 5;
     // The flink cluster id. Is required.
     // @inject_tag: json:"cluster_id"
     string cluster_id = 6;
@@ -171,7 +187,12 @@ message SyncJobConf {
     // @inject_tag: json:"channel_control"
     ChannelControl channel_control = 7;
 
-
+    // The cluster info of flink. Only used when query data.
+    // @inject_tag: json:"cluster_info" gorm:"-"
+    model.FlinkCluster cluster_info = 8;
+    // Timestamp of update time.
+    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+    int64 updated = 9;
 }
 
 message ChannelControl{
@@ -187,7 +208,7 @@ message ChannelControl{
     int32 parallelism = 1 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
     // The allowed record num where the job is error
     // @inject_tag: json:"record_num"
-    int32 record_num = 2 [ (defaults.field).basic = "-1" ];
+    int32 record_num = 2 [ (defaults.field).basic = "0" ];
     //sync rate
     // @inject_tag: json:"rate"
     RatePolicy rate = 3 ;
@@ -195,7 +216,6 @@ message ChannelControl{
     // @inject_tag: json:"bytes"
     int32 bytes = 4 ;
 }
-
 
 message SyncResource {
     option (gosql.serialize) = {json: {}};
@@ -302,7 +322,6 @@ message SyncResource {
     // @inject_tag: json:"hive_target"
     HiveTarget hive_target = 32;
 }
-
 
 // SyncJobSchedule represents a job schedule info.
 // Not use with gorm.
@@ -470,91 +489,69 @@ message SyncJobRelease {
     // Timestamp of update time.
     // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
     int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+
+    // The meta of sync job. Only used query data.
+    // @inject_tag: json:"sync_job" gorm:"-"
+    model.SyncJob sync_job = 11;
+
+    // The property of sync job. Only used query data.
+    // @inject_tag: json:"sync_job_property" gorm:"-"
+    model.SyncJobProperty sync_job_property = 12;
 }
 
-// SyncJobConnection represents the network connection between flink cluster and data source that used in sync job..
-message SyncJobConnection {
-    enum Status {
-        StatusUnset = 0;
-        Deleted = 1;
-        Enabled = 2;
-    }
-
-    // Result connectivity test results
-    enum Result {
-        StateUnset = 0;
-        Success = 1;
-        Failed = 2;
-    }
-
-    // Space ID, workspace ID.
-    // @inject_tag: json:"space_id" gorm:"column:space_id;"
-    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
-
-    // The id of sync jod.
-    // @inject_tag: json:"job_id" gorm:"column:job_id;primaryKey;"
-    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
-
-    // The if of flink cluster.
-    // @inject_tag: json:"cluster_id" gorm:"column:cluster_id;primaryKey;"
-    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
-
-    // The datasource id that as a sync source.
-    // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-
-    // The datasource id that as a sync target.
-    // @inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
-
-    // Status, 1 => "Deleted", 2 => "Enabled".
-    // @inject_tag: json:"status" gorm:"column:status;"
-    Status status = 6 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
-
-    // Connection state  1 => success 2 => failed
-    // @inject_tag: json:"result" gorm:"column:result;"
-    Result result = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-    // Message is the reason when connection failure.
-    // @inject_tag: json:"message" gorm:"column:message;"
-    string message = 8;
-
-    // Create Time, When start tested for usability..
-    // @inject_tag: json:"created" gorm:"column:created;"
-    int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
-
-    // Elapse is Used time of tested for usability. unit in ms.
-    // @inject_tag: json:"elapse" gorm:"column:elapse;"
-    int64 elapse = 10;
-}
-
-
-/*message HadoopConfig {
-    // @inject_tag: json:"hadoop_username" swaggerignore:"true"
-    string hadoop_username = 1;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_ha_namenodes_ns" swaggerignore:"true"
-    string dfs_ha_namenodes_ns = 2;
-    // Relationaldb column
-    // @inject_tag: json:"default_fs" swaggerignore:"true"
-    string default_fs = 3;
-    // Relationaldb column
-    // @inject_tag: json:"analytical_rules" swaggerignore:"true"
-    string dfs_namenode_rpc_address_ns_nn1 = 4;
-    // Relationaldb column
-    // @inject_tag: json:"schema" swaggerignore:"true"
-    string dfs_namenode_rpc_address_ns_nn2 = 5;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_client_failover_proxy_provider_ns" swaggerignore:"true"
-    string dfs_client_failover_proxy_provider_ns = 6;
-    // Relationaldb column
-    // @inject_tag: json:"dfs_nameservices" swaggerignore:"true"
-    string dfs_nameservices = 7;
-    // Relationaldb column
-    // @inject_tag: json:"fs_Hive_impl_disable_cache" swaggerignore:"true"
-    string fs_Hive_impl_disable_cache = 8;
-    // distributed filesystem
-    // @inject_tag: json:"org_apache_hadoop_hive_distributed_filesystem" swaggerignore:"true"
-    string org_apache_hadoop_hive_distributed_filesystem = 9;
-}*/
-
+// FIXME: remove it.
+//// SyncJobConnection represents the network connection between flink cluster and data source that used in sync job..
+//message SyncJobConnection {
+//    enum Status {
+//        StatusUnset = 0;
+//        Deleted = 1;
+//        Enabled = 2;
+//    }
+//
+//    // Result connectivity test results
+//    enum Result {
+//        StateUnset = 0;
+//        Success = 1;
+//        Failed = 2;
+//    }
+//
+//    // Space ID, workspace ID.
+//    // @inject_tag: json:"space_id" gorm:"column:space_id;"
+//    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+//
+//    // The id of sync jod.
+//    // @inject_tag: json:"job_id" gorm:"column:job_id;primaryKey;"
+//    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+//
+//    // The if of flink cluster.
+//    // @inject_tag: json:"cluster_id" gorm:"column:cluster_id;primaryKey;"
+//    string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+//
+//    // The datasource id that as a sync source.
+//    // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+//    string source_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//
+//    // The datasource id that as a sync target.
+//    // @inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+//    string target_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+//
+//    // Status, 1 => "Deleted", 2 => "Enabled".
+//    // @inject_tag: json:"status" gorm:"column:status;"
+//    Status status = 6 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+//
+//    // Connection state  1 => success 2 => failed
+//    // @inject_tag: json:"result" gorm:"column:result;"
+//    Result result = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+//
+//    // Message is the reason when connection failure.
+//    // @inject_tag: json:"message" gorm:"column:message;"
+//    string message = 8;
+//
+//    // Create Time, When start tested for usability..
+//    // @inject_tag: json:"created" gorm:"column:created;"
+//    int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+//
+//    // Elapse is Used time of tested for usability. unit in ms.
+//    // @inject_tag: json:"elapse" gorm:"column:elapse;"
+//    int64 elapse = 10;
+//}

@@ -75,15 +75,9 @@ type SyncJobManageClient interface {
 	GetSyncJobVersionConf(ctx context.Context, in *pbrequest.GetSyncJobConf, opts ...grpc.CallOption) (*pbresponse.GetSyncJobConf, error)
 	// GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetSyncJobVersionSchedule(ctx context.Context, in *pbrequest.GetSyncJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetSyncJobSchedule, error)
-	// Interface for helper.
-	DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error)
-	// PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
-	PingSyncJobConnection(ctx context.Context, in *pbrequest.PingSyncJobConnection, opts ...grpc.CallOption) (*pbresponse.PingSyncJobConnection, error)
-	// DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
-	DescribeSyncConnection(ctx context.Context, in *pbrequest.DescribeSyncConnection, opts ...grpc.CallOption) (*pbresponse.DescribeSyncConnection, error)
 }
 
 type syncJobManageClient struct {
@@ -265,15 +259,6 @@ func (c *syncJobManageClient) GetSyncJobVersionSchedule(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *syncJobManageClient) DescribeSyncFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeSyncFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error) {
-	out := new(pbresponse.DescribeSyncFlinkUIByInstanceId)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/DescribeSyncFlinkUIByInstanceId", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *syncJobManageClient) GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error) {
 	out := new(pbresponse.GenerateJobJson)
 	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/GenerateJobJson", in, out, opts...)
@@ -286,24 +271,6 @@ func (c *syncJobManageClient) GenerateJobJson(ctx context.Context, in *pbrequest
 func (c *syncJobManageClient) ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error) {
 	out := new(pbresponse.ConvertSyncJobMode)
 	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/ConvertSyncJobMode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *syncJobManageClient) PingSyncJobConnection(ctx context.Context, in *pbrequest.PingSyncJobConnection, opts ...grpc.CallOption) (*pbresponse.PingSyncJobConnection, error) {
-	out := new(pbresponse.PingSyncJobConnection)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/PingSyncJobConnection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *syncJobManageClient) DescribeSyncConnection(ctx context.Context, in *pbrequest.DescribeSyncConnection, opts ...grpc.CallOption) (*pbresponse.DescribeSyncConnection, error) {
-	out := new(pbresponse.DescribeSyncConnection)
-	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/DescribeSyncConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -364,15 +331,9 @@ type SyncJobManageServer interface {
 	GetSyncJobVersionConf(context.Context, *pbrequest.GetSyncJobConf) (*pbresponse.GetSyncJobConf, error)
 	// GetSyncJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error)
-	// Interface for helper.
-	DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error)
 	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error)
-	// PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
-	PingSyncJobConnection(context.Context, *pbrequest.PingSyncJobConnection) (*pbresponse.PingSyncJobConnection, error)
-	// DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
-	DescribeSyncConnection(context.Context, *pbrequest.DescribeSyncConnection) (*pbresponse.DescribeSyncConnection, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -437,20 +398,11 @@ func (UnimplementedSyncJobManageServer) GetSyncJobVersionConf(context.Context, *
 func (UnimplementedSyncJobManageServer) GetSyncJobVersionSchedule(context.Context, *pbrequest.GetSyncJobSchedule) (*pbresponse.GetSyncJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSyncJobVersionSchedule not implemented")
 }
-func (UnimplementedSyncJobManageServer) DescribeSyncFlinkUIByInstanceId(context.Context, *pbrequest.DescribeSyncFlinkUIByInstanceId) (*pbresponse.DescribeSyncFlinkUIByInstanceId, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncFlinkUIByInstanceId not implemented")
-}
 func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateJobJson not implemented")
 }
 func (UnimplementedSyncJobManageServer) ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvertSyncJobMode not implemented")
-}
-func (UnimplementedSyncJobManageServer) PingSyncJobConnection(context.Context, *pbrequest.PingSyncJobConnection) (*pbresponse.PingSyncJobConnection, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PingSyncJobConnection not implemented")
-}
-func (UnimplementedSyncJobManageServer) DescribeSyncConnection(context.Context, *pbrequest.DescribeSyncConnection) (*pbresponse.DescribeSyncConnection, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeSyncConnection not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -807,24 +759,6 @@ func _SyncJobManage_GetSyncJobVersionSchedule_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DescribeSyncFlinkUIByInstanceId)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SyncJobManageServer).DescribeSyncFlinkUIByInstanceId(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/DescribeSyncFlinkUIByInstanceId",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).DescribeSyncFlinkUIByInstanceId(ctx, req.(*pbrequest.DescribeSyncFlinkUIByInstanceId))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SyncJobManage_GenerateJobJson_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.GenerateJobJson)
 	if err := dec(in); err != nil {
@@ -857,42 +791,6 @@ func _SyncJobManage_ConvertSyncJobMode_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SyncJobManageServer).ConvertSyncJobMode(ctx, req.(*pbrequest.ConvertSyncJobMode))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _SyncJobManage_PingSyncJobConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.PingSyncJobConnection)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SyncJobManageServer).PingSyncJobConnection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/PingSyncJobConnection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).PingSyncJobConnection(ctx, req.(*pbrequest.PingSyncJobConnection))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _SyncJobManage_DescribeSyncConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DescribeSyncConnection)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SyncJobManageServer).DescribeSyncConnection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SyncJobManage/DescribeSyncConnection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SyncJobManageServer).DescribeSyncConnection(ctx, req.(*pbrequest.DescribeSyncConnection))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -981,24 +879,12 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SyncJobManage_GetSyncJobVersionSchedule_Handler,
 		},
 		{
-			MethodName: "DescribeSyncFlinkUIByInstanceId",
-			Handler:    _SyncJobManage_DescribeSyncFlinkUIByInstanceId_Handler,
-		},
-		{
 			MethodName: "GenerateJobJson",
 			Handler:    _SyncJobManage_GenerateJobJson_Handler,
 		},
 		{
 			MethodName: "ConvertSyncJobMode",
 			Handler:    _SyncJobManage_ConvertSyncJobMode_Handler,
-		},
-		{
-			MethodName: "PingSyncJobConnection",
-			Handler:    _SyncJobManage_PingSyncJobConnection_Handler,
-		},
-		{
-			MethodName: "DescribeSyncConnection",
-			Handler:    _SyncJobManage_DescribeSyncConnection_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

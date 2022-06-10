@@ -5,8 +5,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
+    value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/service/scheduler/scheduler.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class SchedulerGrpc {
 
   private SchedulerGrpc() {}
@@ -74,6 +75,37 @@ public final class SchedulerGrpc {
       }
     }
     return getStopStreamJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopStreamInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopStreamInstance",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopStreamInstanceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopStreamInstanceMethod;
+    if ((getStopStreamInstanceMethod = SchedulerGrpc.getStopStreamInstanceMethod) == null) {
+      synchronized (SchedulerGrpc.class) {
+        if ((getStopStreamInstanceMethod = SchedulerGrpc.getStopStreamInstanceMethod) == null) {
+          SchedulerGrpc.getStopStreamInstanceMethod = getStopStreamInstanceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopStreamInstance"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("StopStreamInstance"))
+              .build();
+        }
+      }
+    }
+    return getStopStreamInstanceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteStreamJobsBySpaceIds,
@@ -198,6 +230,37 @@ public final class SchedulerGrpc {
       }
     }
     return getStopSyncJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopSyncInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopSyncInstance",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopSyncInstanceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getStopSyncInstanceMethod;
+    if ((getStopSyncInstanceMethod = SchedulerGrpc.getStopSyncInstanceMethod) == null) {
+      synchronized (SchedulerGrpc.class) {
+        if ((getStopSyncInstanceMethod = SchedulerGrpc.getStopSyncInstanceMethod) == null) {
+          SchedulerGrpc.getStopSyncInstanceMethod = getStopSyncInstanceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopSyncInstance"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("StopSyncInstance"))
+              .build();
+        }
+      }
+    }
+    return getStopSyncInstanceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteSyncJobsBySpaceIds,
@@ -394,6 +457,16 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
+     * StopStreamInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public void stopStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopStreamInstanceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * DeleteStreamJobsBySpaceIds used when delete workspaces.
      * It will stop all stream jobs and terminate all instances.
      * And delete all instances.
@@ -434,6 +507,16 @@ public final class SchedulerGrpc {
     public void stopSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncJob request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopSyncJobMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StopSyncInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public void stopSyncInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopSyncInstanceMethod(), responseObserver);
     }
 
     /**
@@ -497,6 +580,13 @@ public final class SchedulerGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_STOP_STREAM_JOB)))
           .addMethod(
+            getStopStreamInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_STOP_STREAM_INSTANCE)))
+          .addMethod(
             getDeleteStreamJobsBySpaceIdsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -524,6 +614,13 @@ public final class SchedulerGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncJob,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_STOP_SYNC_JOB)))
+          .addMethod(
+            getStopSyncInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_STOP_SYNC_INSTANCE)))
           .addMethod(
             getDeleteSyncJobsBySpaceIdsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -594,6 +691,17 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
+     * StopStreamInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public void stopStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopStreamInstanceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * DeleteStreamJobsBySpaceIds used when delete workspaces.
      * It will stop all stream jobs and terminate all instances.
      * And delete all instances.
@@ -638,6 +746,17 @@ public final class SchedulerGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStopSyncJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StopSyncInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public void stopSyncInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopSyncInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -725,6 +844,16 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
+     * StopStreamInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopStreamInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * DeleteStreamJobsBySpaceIds used when delete workspaces.
      * It will stop all stream jobs and terminate all instances.
      * And delete all instances.
@@ -765,6 +894,16 @@ public final class SchedulerGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopSyncJob(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncJob request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStopSyncJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * StopSyncInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopSyncInstance(com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopSyncInstanceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -850,6 +989,17 @@ public final class SchedulerGrpc {
 
     /**
      * <pre>
+     * StopStreamInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> stopStreamInstance(
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopStreamInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * DeleteStreamJobsBySpaceIds used when delete workspaces.
      * It will stop all stream jobs and terminate all instances.
      * And delete all instances.
@@ -894,6 +1044,17 @@ public final class SchedulerGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncJob request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStopSyncJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * StopSyncInstance used when terminate a stream job instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> stopSyncInstance(
+        com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopSyncInstanceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -947,14 +1108,16 @@ public final class SchedulerGrpc {
 
   private static final int METHODID_SUBMIT_STREAM_JOB = 0;
   private static final int METHODID_STOP_STREAM_JOB = 1;
-  private static final int METHODID_DELETE_STREAM_JOBS_BY_SPACE_IDS = 2;
-  private static final int METHODID_DELETE_STREAM_JOBS_BY_JOB_IDS = 3;
-  private static final int METHODID_SUBMIT_SYNC_JOB = 4;
-  private static final int METHODID_STOP_SYNC_JOB = 5;
-  private static final int METHODID_DELETE_SYNC_JOBS_BY_SPACE_IDS = 6;
-  private static final int METHODID_DELETE_SYNC_JOBS_BY_JOB_IDS = 7;
-  private static final int METHODID_SUBMIT_FLINK_CLUSTER_MONITOR = 8;
-  private static final int METHODID_STOP_FLINK_CLUSTER_MONITOR = 9;
+  private static final int METHODID_STOP_STREAM_INSTANCE = 2;
+  private static final int METHODID_DELETE_STREAM_JOBS_BY_SPACE_IDS = 3;
+  private static final int METHODID_DELETE_STREAM_JOBS_BY_JOB_IDS = 4;
+  private static final int METHODID_SUBMIT_SYNC_JOB = 5;
+  private static final int METHODID_STOP_SYNC_JOB = 6;
+  private static final int METHODID_STOP_SYNC_INSTANCE = 7;
+  private static final int METHODID_DELETE_SYNC_JOBS_BY_SPACE_IDS = 8;
+  private static final int METHODID_DELETE_SYNC_JOBS_BY_JOB_IDS = 9;
+  private static final int METHODID_SUBMIT_FLINK_CLUSTER_MONITOR = 10;
+  private static final int METHODID_STOP_FLINK_CLUSTER_MONITOR = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -981,6 +1144,10 @@ public final class SchedulerGrpc {
           serviceImpl.stopStreamJob((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
+        case METHODID_STOP_STREAM_INSTANCE:
+          serviceImpl.stopStreamInstance((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopStreamInstance) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
         case METHODID_DELETE_STREAM_JOBS_BY_SPACE_IDS:
           serviceImpl.deleteStreamJobsBySpaceIds((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.DeleteStreamJobsBySpaceIds) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
@@ -995,6 +1162,10 @@ public final class SchedulerGrpc {
           break;
         case METHODID_STOP_SYNC_JOB:
           serviceImpl.stopSyncJob((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncJob) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_STOP_SYNC_INSTANCE:
+          serviceImpl.stopSyncInstance((com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.StopSyncInstance) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_DELETE_SYNC_JOBS_BY_SPACE_IDS:
@@ -1076,10 +1247,12 @@ public final class SchedulerGrpc {
               .setSchemaDescriptor(new SchedulerFileDescriptorSupplier())
               .addMethod(getSubmitStreamJobMethod())
               .addMethod(getStopStreamJobMethod())
+              .addMethod(getStopStreamInstanceMethod())
               .addMethod(getDeleteStreamJobsBySpaceIdsMethod())
               .addMethod(getDeleteStreamJobsByJobIdsMethod())
               .addMethod(getSubmitSyncJobMethod())
               .addMethod(getStopSyncJobMethod())
+              .addMethod(getStopSyncInstanceMethod())
               .addMethod(getDeleteSyncJobsBySpaceIdsMethod())
               .addMethod(getDeleteSyncJobsByJobIdsMethod())
               .addMethod(getSubmitFlinkClusterMonitorMethod())

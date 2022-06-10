@@ -222,3 +222,96 @@ func (this *DescribeStreamInstance) Validate() error {
 	}
 	return nil
 }
+
+func (this *CreateStreamInstanceWithId) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateStreamInstanceWithId) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *CreateStreamInstanceWithId) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
+	}
+	return nil
+}
+
+func (this *CreateStreamInstanceWithId) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("CreateStreamInstanceWithId", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	}
+	return nil
+}
+
+// Set default value for message request.CreateStreamInstanceWithId
+func (this *CreateStreamInstanceWithId) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateStreamInstanceState) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("UpdateStreamInstanceState", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("UpdateStreamInstanceState", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_UpdateStreamInstanceState_InEnums_State = map[pbmodel.StreamInstance_State]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+
+func (this *UpdateStreamInstanceState) _xxx_xxx_Validator_Validate_state() error {
+	if !(this.State > 0) {
+		return protovalidator.FieldError1("UpdateStreamInstanceState", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
+	}
+	if !(_xxx_xxx_Validator_UpdateStreamInstanceState_InEnums_State[this.State]) {
+		return protovalidator.FieldError1("UpdateStreamInstanceState", "the value of field 'state' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.State)))
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateStreamInstanceState
+func (this *UpdateStreamInstanceState) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_state(); err != nil {
+		return err
+	}
+	return nil
+}
