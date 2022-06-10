@@ -46,6 +46,14 @@ func (this *CreateDataServiceCluster) SetDefaults() {
 	return
 }
 
+// Set default value for message request.DeleteDataServiceClusters
+func (this *DeleteDataServiceClusters) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.ListApiGroups
 func (this *ListApiGroups) SetDefaults() {
 	if this == nil {
@@ -59,6 +67,14 @@ func (this *ListApiGroups) SetDefaults() {
 
 // Set default value for message request.CreateApiGroup
 func (this *CreateApiGroup) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteApiGroups
+func (this *DeleteApiGroups) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -88,6 +104,14 @@ func (this *UpdateCustomerApi) SetDefaults() {
 
 // Set default value for message request.DescribeCustomerApi
 func (this *DescribeCustomerApi) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteCustomerApis
+func (this *DeleteCustomerApis) SetDefaults() {
 	if this == nil {
 		return
 	}

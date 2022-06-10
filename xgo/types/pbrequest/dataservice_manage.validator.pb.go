@@ -10,6 +10,7 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strconv "strconv"
 	strings "strings"
 )
 
@@ -69,6 +70,16 @@ func (this *ListDataServiceClusters) Validate() error {
 	return nil
 }
 
+func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeDataServiceCluster", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeDataServiceCluster", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_cluster_id() error {
 	if !(len(this.ClusterId) == 20) {
 		return protovalidator.FieldError1("DescribeDataServiceCluster", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
@@ -83,6 +94,9 @@ func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_cluster_id()
 func (this *DescribeDataServiceCluster) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
 		return err
@@ -224,6 +238,46 @@ func (this *CreateDataServiceCluster) Validate() error {
 	return nil
 }
 
+func (this *DeleteDataServiceClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteDataServiceClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteDataServiceClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DeleteDataServiceClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
+	if !(len(this.ClusterIds) >= 1) {
+		return protovalidator.FieldError1("DeleteDataServiceClusters", "the length of field 'cluster_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	if !(len(this.ClusterIds) <= 100) {
+		return protovalidator.FieldError1("DeleteDataServiceClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsc-")) {
+			return protovalidator.FieldError1("DeleteDataServiceClusters", "the value of array item where in field 'cluster_ids' must start with string 'dsc-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteDataServiceClusters
+func (this *DeleteDataServiceClusters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ListApiGroups) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("ListApiGroups", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -309,6 +363,46 @@ func (this *CreateApiGroup) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DeleteApiGroups) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteApiGroups", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteApiGroups", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DeleteApiGroups) _xxx_xxx_Validator_Validate_group_ids() error {
+	if !(len(this.GroupIds) >= 1) {
+		return protovalidator.FieldError1("DeleteApiGroups", "the length of field 'group_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.GroupIds)))
+	}
+	if !(len(this.GroupIds) <= 100) {
+		return protovalidator.FieldError1("DeleteApiGroups", "the length of field 'group_ids' must be less than or equal to '100'", strconv.Itoa(len(this.GroupIds)))
+	}
+	for _, item := range this.GroupIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsg-")) {
+			return protovalidator.FieldError1("DeleteApiGroups", "the value of array item where in field 'group_ids' must start with string 'dsg-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteApiGroups
+func (this *DeleteApiGroups) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_group_ids(); err != nil {
 		return err
 	}
 	return nil
@@ -571,6 +665,46 @@ func (this *DescribeCustomerApi) Validate() error {
 	return nil
 }
 
+func (this *DeleteCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteCustomerApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteCustomerApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DeleteCustomerApis) _xxx_xxx_Validator_Validate_api_ids() error {
+	if !(len(this.ApiIds) >= 1) {
+		return protovalidator.FieldError1("DeleteCustomerApis", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
+	}
+	if !(len(this.ApiIds) <= 100) {
+		return protovalidator.FieldError1("DeleteCustomerApis", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
+	}
+	for _, item := range this.ApiIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsa-")) {
+			return protovalidator.FieldError1("DeleteCustomerApis", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteCustomerApis
+func (this *DeleteCustomerApis) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_api_name() error {
 	if !(len(this.ApiName) > 0) {
 		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
@@ -710,6 +844,16 @@ func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_cluster_id() error {
 	return nil
 }
 
+func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateCustomerApi
 func (this *CreateCustomerApi) Validate() error {
 	if this == nil {
@@ -755,6 +899,9 @@ func (this *CreateCustomerApi) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil
@@ -1098,6 +1245,16 @@ func (this *ListPublishedApis) Validate() error {
 	return nil
 }
 
+func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeApiVersion", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeApiVersion", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
 	if !(len(this.VersionId) == 20) {
 		return protovalidator.FieldError1("DescribeApiVersion", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
@@ -1113,8 +1270,21 @@ func (this *DescribeApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_version_id(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *PublishCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("PublishCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("PublishCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -1134,8 +1304,21 @@ func (this *PublishCustomerApi) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("TestCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -1164,6 +1347,9 @@ func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_request_content() error
 func (this *TestCustomerApi) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
 		return err

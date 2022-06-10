@@ -17,19 +17,6 @@ func (this *ListDataServiceClusters) SetDefaults() {
 	return
 }
 
-// Set default value for message response.DescribeDataServiceCluster
-func (this *DescribeDataServiceCluster) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.ServiceCluster != nil {
-		if dt, ok := interface{}(this.ServiceCluster).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
 // Set default value for message response.CreateDataServiceCluster
 func (this *CreateDataServiceCluster) SetDefaults() {
 	if this == nil {

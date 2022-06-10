@@ -28,18 +28,21 @@ type DataServiceClient interface {
 	CreateDataServiceCluster(ctx context.Context, in *pbrequest.CreateDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(ctx context.Context, in *pbrequest.ListDataServiceClusters, opts ...grpc.CallOption) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(ctx context.Context, in *pbrequest.UpdateDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceCluster, error)
+	DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.DataServiceCluster, error)
+	DeleteDataServiceClusters(ctx context.Context, in *pbrequest.DeleteDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateApiGroup(ctx context.Context, in *pbrequest.CreateApiGroup, opts ...grpc.CallOption) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(ctx context.Context, in *pbrequest.ListApiGroups, opts ...grpc.CallOption) (*pbresponse.ListApiGroups, error)
+	DeleteApiGroups(ctx context.Context, in *pbrequest.DeleteApiGroups, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateDataServiceApi(ctx context.Context, in *pbrequest.CreateCustomerApi, opts ...grpc.CallOption) (*pbresponse.CreateCustomerApi, error)
 	UpdateDataServiceApi(ctx context.Context, in *pbrequest.UpdateCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DescribeDataServiceApi(ctx context.Context, in *pbrequest.DescribeCustomerApi, opts ...grpc.CallOption) (*pbresponse.DescribeCustomerApi, error)
 	ListDataServiceApis(ctx context.Context, in *pbrequest.ListCustomerApis, opts ...grpc.CallOption) (*pbresponse.ListCustomerApis, error)
+	DeleteDataServiceApis(ctx context.Context, in *pbrequest.DeleteCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(ctx context.Context, in *pbrequest.TestCustomerApi, opts ...grpc.CallOption) (*pbresponse.TestCustomerApi, error)
 	PublishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListApiVersions, opts ...grpc.CallOption) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbresponse.DescribeApiVersion, error)
-	//rpc ListDataServicePublishedApis(request.ListPublishedApis) returns (response.ListApiVersions) {}
+	RepublishDataServiceApi(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	AbolishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
@@ -78,9 +81,18 @@ func (c *dataServiceClient) UpdateDataServiceCluster(ctx context.Context, in *pb
 	return out, nil
 }
 
-func (c *dataServiceClient) DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceCluster, error) {
-	out := new(pbresponse.DescribeDataServiceCluster)
+func (c *dataServiceClient) DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.DataServiceCluster, error) {
+	out := new(pbmodel.DataServiceCluster)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribeDataServiceCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) DeleteDataServiceClusters(ctx context.Context, in *pbrequest.DeleteDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteDataServiceClusters", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,6 +111,15 @@ func (c *dataServiceClient) CreateApiGroup(ctx context.Context, in *pbrequest.Cr
 func (c *dataServiceClient) ListApiGroups(ctx context.Context, in *pbrequest.ListApiGroups, opts ...grpc.CallOption) (*pbresponse.ListApiGroups, error) {
 	out := new(pbresponse.ListApiGroups)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListApiGroups", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) DeleteApiGroups(ctx context.Context, in *pbrequest.DeleteApiGroups, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteApiGroups", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -141,6 +162,15 @@ func (c *dataServiceClient) ListDataServiceApis(ctx context.Context, in *pbreque
 	return out, nil
 }
 
+func (c *dataServiceClient) DeleteDataServiceApis(ctx context.Context, in *pbrequest.DeleteCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteDataServiceApis", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) TestDataServiceApi(ctx context.Context, in *pbrequest.TestCustomerApi, opts ...grpc.CallOption) (*pbresponse.TestCustomerApi, error) {
 	out := new(pbresponse.TestCustomerApi)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/TestDataServiceApi", in, out, opts...)
@@ -177,6 +207,15 @@ func (c *dataServiceClient) DescribeDataServiceApiVersion(ctx context.Context, i
 	return out, nil
 }
 
+func (c *dataServiceClient) RepublishDataServiceApi(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/RepublishDataServiceApi", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) AbolishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/AbolishDataServiceApi", in, out, opts...)
@@ -193,18 +232,21 @@ type DataServiceServer interface {
 	CreateDataServiceCluster(context.Context, *pbrequest.CreateDataServiceCluster) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(context.Context, *pbrequest.ListDataServiceClusters) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(context.Context, *pbrequest.UpdateDataServiceCluster) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbresponse.DescribeDataServiceCluster, error)
+	DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbmodel.DataServiceCluster, error)
+	DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error)
 	CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(context.Context, *pbrequest.ListApiGroups) (*pbresponse.ListApiGroups, error)
+	DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error)
 	CreateDataServiceApi(context.Context, *pbrequest.CreateCustomerApi) (*pbresponse.CreateCustomerApi, error)
 	UpdateDataServiceApi(context.Context, *pbrequest.UpdateCustomerApi) (*pbmodel.EmptyStruct, error)
 	DescribeDataServiceApi(context.Context, *pbrequest.DescribeCustomerApi) (*pbresponse.DescribeCustomerApi, error)
 	ListDataServiceApis(context.Context, *pbrequest.ListCustomerApis) (*pbresponse.ListCustomerApis, error)
+	DeleteDataServiceApis(context.Context, *pbrequest.DeleteCustomerApis) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(context.Context, *pbrequest.TestCustomerApi) (*pbresponse.TestCustomerApi, error)
 	PublishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error)
 	ListDataServiceApiVersions(context.Context, *pbrequest.ListApiVersions) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeApiVersion) (*pbresponse.DescribeApiVersion, error)
-	//rpc ListDataServicePublishedApis(request.ListPublishedApis) returns (response.ListApiVersions) {}
+	RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error)
 	AbolishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
@@ -222,14 +264,20 @@ func (UnimplementedDataServiceServer) ListDataServiceClusters(context.Context, *
 func (UnimplementedDataServiceServer) UpdateDataServiceCluster(context.Context, *pbrequest.UpdateDataServiceCluster) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataServiceCluster not implemented")
 }
-func (UnimplementedDataServiceServer) DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbresponse.DescribeDataServiceCluster, error) {
+func (UnimplementedDataServiceServer) DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbmodel.DataServiceCluster, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataServiceCluster not implemented")
+}
+func (UnimplementedDataServiceServer) DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataServiceClusters not implemented")
 }
 func (UnimplementedDataServiceServer) CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApiGroup not implemented")
 }
 func (UnimplementedDataServiceServer) ListApiGroups(context.Context, *pbrequest.ListApiGroups) (*pbresponse.ListApiGroups, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApiGroups not implemented")
+}
+func (UnimplementedDataServiceServer) DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiGroups not implemented")
 }
 func (UnimplementedDataServiceServer) CreateDataServiceApi(context.Context, *pbrequest.CreateCustomerApi) (*pbresponse.CreateCustomerApi, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDataServiceApi not implemented")
@@ -243,6 +291,9 @@ func (UnimplementedDataServiceServer) DescribeDataServiceApi(context.Context, *p
 func (UnimplementedDataServiceServer) ListDataServiceApis(context.Context, *pbrequest.ListCustomerApis) (*pbresponse.ListCustomerApis, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDataServiceApis not implemented")
 }
+func (UnimplementedDataServiceServer) DeleteDataServiceApis(context.Context, *pbrequest.DeleteCustomerApis) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataServiceApis not implemented")
+}
 func (UnimplementedDataServiceServer) TestDataServiceApi(context.Context, *pbrequest.TestCustomerApi) (*pbresponse.TestCustomerApi, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestDataServiceApi not implemented")
 }
@@ -254,6 +305,9 @@ func (UnimplementedDataServiceServer) ListDataServiceApiVersions(context.Context
 }
 func (UnimplementedDataServiceServer) DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeApiVersion) (*pbresponse.DescribeApiVersion, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataServiceApiVersion not implemented")
+}
+func (UnimplementedDataServiceServer) RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RepublishDataServiceApi not implemented")
 }
 func (UnimplementedDataServiceServer) AbolishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApi not implemented")
@@ -343,6 +397,24 @@ func _DataService_DescribeDataServiceCluster_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_DeleteDataServiceClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteDataServiceClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DeleteDataServiceClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/DeleteDataServiceClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DeleteDataServiceClusters(ctx, req.(*pbrequest.DeleteDataServiceClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_CreateApiGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.CreateApiGroup)
 	if err := dec(in); err != nil {
@@ -375,6 +447,24 @@ func _DataService_ListApiGroups_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ListApiGroups(ctx, req.(*pbrequest.ListApiGroups))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_DeleteApiGroups_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteApiGroups)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DeleteApiGroups(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/DeleteApiGroups",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DeleteApiGroups(ctx, req.(*pbrequest.DeleteApiGroups))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -451,6 +541,24 @@ func _DataService_ListDataServiceApis_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_DeleteDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteCustomerApis)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DeleteDataServiceApis(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/DeleteDataServiceApis",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DeleteDataServiceApis(ctx, req.(*pbrequest.DeleteCustomerApis))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_TestDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.TestCustomerApi)
 	if err := dec(in); err != nil {
@@ -523,6 +631,24 @@ func _DataService_DescribeDataServiceApiVersion_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_RepublishDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeApiVersion)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).RepublishDataServiceApi(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/RepublishDataServiceApi",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).RepublishDataServiceApi(ctx, req.(*pbrequest.DescribeApiVersion))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_AbolishDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.PublishCustomerApi)
 	if err := dec(in); err != nil {
@@ -565,12 +691,20 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_DescribeDataServiceCluster_Handler,
 		},
 		{
+			MethodName: "DeleteDataServiceClusters",
+			Handler:    _DataService_DeleteDataServiceClusters_Handler,
+		},
+		{
 			MethodName: "CreateApiGroup",
 			Handler:    _DataService_CreateApiGroup_Handler,
 		},
 		{
 			MethodName: "ListApiGroups",
 			Handler:    _DataService_ListApiGroups_Handler,
+		},
+		{
+			MethodName: "DeleteApiGroups",
+			Handler:    _DataService_DeleteApiGroups_Handler,
 		},
 		{
 			MethodName: "CreateDataServiceApi",
@@ -589,6 +723,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_ListDataServiceApis_Handler,
 		},
 		{
+			MethodName: "DeleteDataServiceApis",
+			Handler:    _DataService_DeleteDataServiceApis_Handler,
+		},
+		{
 			MethodName: "TestDataServiceApi",
 			Handler:    _DataService_TestDataServiceApi_Handler,
 		},
@@ -603,6 +741,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeDataServiceApiVersion",
 			Handler:    _DataService_DescribeDataServiceApiVersion_Handler,
+		},
+		{
+			MethodName: "RepublishDataServiceApi",
+			Handler:    _DataService_RepublishDataServiceApi_Handler,
 		},
 		{
 			MethodName: "AbolishDataServiceApi",

@@ -67,6 +67,30 @@ func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
+func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("DataServiceCluster", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("DataServiceCluster", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("DataServiceCluster", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("DataServiceCluster", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
 // Set default value for message model.DataServiceCluster
 func (this *DataServiceCluster) Validate() error {
 	if this == nil {
@@ -85,6 +109,15 @@ func (this *DataServiceCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
 	return nil
@@ -277,6 +310,16 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_script() error {
 	return nil
 }
 
+func (this *ApiConfig) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_created() error {
 	if !(this.Created > 0) {
 		return protovalidator.FieldError1("ApiConfig", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
@@ -287,6 +330,18 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_created() error {
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_updated() error {
 	if !(this.Updated > 0) {
 		return protovalidator.FieldError1("ApiConfig", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfig_InEnums_Status = map[ApiConfig_Status]bool{0: true, 1: true, 2: true}
+
+func (this *ApiConfig) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("ApiConfig", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfig_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("ApiConfig", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	return nil
 }
@@ -338,10 +393,16 @@ func (this *ApiConfig) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_script(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
 	return nil

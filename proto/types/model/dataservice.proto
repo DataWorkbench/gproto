@@ -41,6 +41,12 @@ message DataServiceCluster{
   ResourceSpec resource_spec = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 6 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
 // table api_group
@@ -75,6 +81,12 @@ message ApiConfig {
     HTTP = 1;
     HTTPS = 2;
   }
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
+
   // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
   string api_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
   // @inject_tag: json:"group_id" gorm:"column:group_id;"
@@ -107,10 +119,16 @@ message ApiConfig {
   string table_name = 15 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];
   // @inject_tag: json:"script" gorm:"column:script;"
   string script = 16 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 17 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 17 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 18 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 18 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 19 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 20 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+  // @inject_tag: json:"accessible_version" gorm:"column:accessible_version;"
+  string  accessible_version = 21 ;
 }
 
 // table api_versions

@@ -32,26 +32,6 @@ func (this *ListDataServiceClusters) Validate() error {
 	return nil
 }
 
-func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_service_cluster() error {
-	if dt, ok := interface{}(this.ServiceCluster).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.DescribeDataServiceCluster
-func (this *DescribeDataServiceCluster) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_service_cluster(); err != nil {
-		return err
-	}
-	return nil
-}
-
 // Set default value for message response.CreateDataServiceCluster
 func (this *CreateDataServiceCluster) Validate() error {
 	if this == nil {
