@@ -290,6 +290,36 @@ public final class PBSyncManageSyncJob {
      * @return The targetType.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type getTargetType();
+
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     * @return Whether the syncJobProperty field is set.
+     */
+    boolean hasSyncJobProperty();
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     * @return The syncJobProperty.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty();
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder();
   }
   /**
    * <pre>
@@ -430,6 +460,19 @@ public final class PBSyncManageSyncJob {
               int rawValue = input.readEnum();
 
               targetType_ = rawValue;
+              break;
+            }
+            case 122: {
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder subBuilder = null;
+              if (syncJobProperty_ != null) {
+                subBuilder = syncJobProperty_.toBuilder();
+              }
+              syncJobProperty_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(syncJobProperty_);
+                syncJobProperty_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1209,6 +1252,47 @@ public final class PBSyncManageSyncJob {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.UNRECOGNIZED : result;
     }
 
+    public static final int SYNC_JOB_PROPERTY_FIELD_NUMBER = 15;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty syncJobProperty_;
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     * @return Whether the syncJobProperty field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyncJobProperty() {
+      return syncJobProperty_ != null;
+    }
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     * @return The syncJobProperty.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty() {
+      return syncJobProperty_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+    }
+    /**
+     * <pre>
+     * The property of sync job. Only used query data.
+     * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder() {
+      return getSyncJobProperty();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1264,6 +1348,9 @@ public final class PBSyncManageSyncJob {
       }
       if (targetType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
         output.writeEnum(14, targetType_);
+      }
+      if (syncJobProperty_ != null) {
+        output.writeMessage(15, getSyncJobProperty());
       }
       unknownFields.writeTo(output);
     }
@@ -1323,6 +1410,10 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, targetType_);
       }
+      if (syncJobProperty_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getSyncJobProperty());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1362,6 +1453,11 @@ public final class PBSyncManageSyncJob {
           != other.getUpdated()) return false;
       if (sourceType_ != other.sourceType_) return false;
       if (targetType_ != other.targetType_) return false;
+      if (hasSyncJobProperty() != other.hasSyncJobProperty()) return false;
+      if (hasSyncJobProperty()) {
+        if (!getSyncJobProperty()
+            .equals(other.getSyncJobProperty())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1404,6 +1500,10 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + sourceType_;
       hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + targetType_;
+      if (hasSyncJobProperty()) {
+        hash = (37 * hash) + SYNC_JOB_PROPERTY_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncJobProperty().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1569,6 +1669,12 @@ public final class PBSyncManageSyncJob {
 
         targetType_ = 0;
 
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = null;
+        } else {
+          syncJobProperty_ = null;
+          syncJobPropertyBuilder_ = null;
+        }
         return this;
       }
 
@@ -1609,6 +1715,11 @@ public final class PBSyncManageSyncJob {
         result.updated_ = updated_;
         result.sourceType_ = sourceType_;
         result.targetType_ = targetType_;
+        if (syncJobPropertyBuilder_ == null) {
+          result.syncJobProperty_ = syncJobProperty_;
+        } else {
+          result.syncJobProperty_ = syncJobPropertyBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1705,6 +1816,9 @@ public final class PBSyncManageSyncJob {
         }
         if (other.targetType_ != 0) {
           setTargetTypeValue(other.getTargetTypeValue());
+        }
+        if (other.hasSyncJobProperty()) {
+          mergeSyncJobProperty(other.getSyncJobProperty());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2899,6 +3013,170 @@ public final class PBSyncManageSyncJob {
         targetType_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty syncJobProperty_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> syncJobPropertyBuilder_;
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       * @return Whether the syncJobProperty field is set.
+       */
+      public boolean hasSyncJobProperty() {
+        return syncJobPropertyBuilder_ != null || syncJobProperty_ != null;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       * @return The syncJobProperty.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty getSyncJobProperty() {
+        if (syncJobPropertyBuilder_ == null) {
+          return syncJobProperty_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+        } else {
+          return syncJobPropertyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public Builder setSyncJobProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (syncJobPropertyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          syncJobProperty_ = value;
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public Builder setSyncJobProperty(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder builderForValue) {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = builderForValue.build();
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public Builder mergeSyncJobProperty(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty value) {
+        if (syncJobPropertyBuilder_ == null) {
+          if (syncJobProperty_ != null) {
+            syncJobProperty_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.newBuilder(syncJobProperty_).mergeFrom(value).buildPartial();
+          } else {
+            syncJobProperty_ = value;
+          }
+          onChanged();
+        } else {
+          syncJobPropertyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public Builder clearSyncJobProperty() {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobProperty_ = null;
+          onChanged();
+        } else {
+          syncJobProperty_ = null;
+          syncJobPropertyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder getSyncJobPropertyBuilder() {
+        
+        onChanged();
+        return getSyncJobPropertyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder getSyncJobPropertyOrBuilder() {
+        if (syncJobPropertyBuilder_ != null) {
+          return syncJobPropertyBuilder_.getMessageOrBuilder();
+        } else {
+          return syncJobProperty_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.getDefaultInstance() : syncJobProperty_;
+        }
+      }
+      /**
+       * <pre>
+       * The property of sync job. Only used query data.
+       * &#64;inject_tag: json:"sync_job_property" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.SyncJobProperty sync_job_property = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder> 
+          getSyncJobPropertyFieldBuilder() {
+        if (syncJobPropertyBuilder_ == null) {
+          syncJobPropertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobProperty.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobPropertyOrBuilder>(
+                  getSyncJobProperty(),
+                  getParentForChildren(),
+                  isClean());
+          syncJobProperty_ = null;
+        }
+        return syncJobPropertyBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -23357,7 +23635,7 @@ public final class PBSyncManageSyncJob {
       "odel/syncjob/pgwal.proto\032%proto/types/mo" +
       "del/syncjob/redis.proto\032\"proto/types/mod" +
       "el/syncjob/db.proto\032,proto/types/model/s" +
-      "yncjob/sqlservercdc.proto\"\243\006\n\007SyncJob\022%\n" +
+      "yncjob/sqlservercdc.proto\"\326\006\n\007SyncJob\022%\n" +
       "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0222\n\003" +
       "pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001" +
       "\024\312\002\004syj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj" +
@@ -23374,105 +23652,106 @@ public final class PBSyncManageSyncJob {
       "rectory\022\005\322\001\002\030\000\242\241\037\004\252\006\0010\342\337\037\013\022\t\332\001\0060\0008\020X\001\022_\n" +
       "\013target_type\030\016 \001(\0162\026.model.DataSource.Ty" +
       "peB2\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\242\241\037\004\252\006\0010\342" +
-      "\337\037\013\022\t\332\001\0060\0008\020X\001\"J\n\004Type\022\r\n\tTypeUnset\020\000\022\017\n" +
-      "\013OfflineFull\020\001\022\024\n\020OfflineIncrement\020\002\022\014\n\010" +
-      "RealTime\020\003\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n" +
-      "\007Deleted\020\001\022\013\n\007Enabled\020\002:\006\312\262\004\002\n\000\"\330\001\n\017Sync" +
-      "JobProperty\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004s" +
-      "yj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004co" +
-      "nf\030\004 \001(\0132\022.model.SyncJobConfB\004\342\337\037\000\022.\n\010sc" +
-      "hedule\030\005 \001(\0132\026.model.SyncJobScheduleB\004\342\337" +
-      "\037\000:\006\312\262\004\002\n\000\"\242\003\n\013SyncJobConf\022C\n\010job_mode\030\001" +
-      " \001(\0162\032.model.SyncJobConf.JobModeB\025\242\241\037\004\252\006" +
-      "\0010\342\337\037\t\022\007\332\001\0048\002@\001\022\021\n\tsource_id\030\002 \001(\t\022\021\n\tta" +
-      "rget_id\030\003 \001(\t\0228\n\013job_content\030\004 \001(\tB#\342\337\037\023" +
-      "\n\021\n\010job_mode\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\200\002\024\022*\n\rsync_" +
-      "resource\030\005 \001(\0132\023.model.SyncResource\022\022\n\nc" +
-      "luster_id\030\006 \001(\t\022.\n\017channel_control\030\007 \001(\013" +
-      "2\025.model.ChannelControl\022)\n\014cluster_info\030" +
-      "\010 \001(\0132\023.model.FlinkCluster\022\017\n\007updated\030\t " +
-      "\001(\003\":\n\007JobMode\022\020\n\014JobModeUnset\020\000\022\r\n\tGuid" +
-      "eMode\020\001\022\016\n\nScriptMode\020\002:\006\312\262\004\002\n\000\"\334\001\n\016Chan" +
-      "nelControl\022*\n\013parallelism\030\001 \001(\005B\025\242\241\037\004\252\006\001" +
-      "1\342\337\037\t\022\007\262\001\0040\0008d\022\034\n\nrecord_num\030\002 \001(\005B\010\242\241\037\004" +
-      "\252\006\0010\022.\n\004rate\030\003 \001(\0162 .model.ChannelContro" +
-      "l.RatePolicy\022\r\n\005bytes\030\004 \001(\005\"9\n\nRatePolic" +
-      "y\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Limit\020\001\022\013\n\007UnL" +
-      "imit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResource\022%\n\014mysql" +
-      "_source\030\001 \001(\0132\017.model.DBSource\022%\n\014mysql_" +
-      "target\030\002 \001(\0132\017.model.DBTarget\022&\n\roracle_" +
-      "source\030\003 \001(\0132\017.model.DBSource\022&\n\roracle_" +
-      "target\030\004 \001(\0132\017.model.DBTarget\022#\n\ndb2_sou" +
-      "rce\030\005 \001(\0132\017.model.DBSource\022#\n\ndb2_target" +
-      "\030\006 \001(\0132\017.model.DBTarget\022*\n\021postgresql_so" +
-      "urce\030\007 \001(\0132\017.model.DBSource\022*\n\021postgresq" +
-      "l_target\030\010 \001(\0132\017.model.DBTarget\022)\n\020sqlse" +
-      "rver_source\030\t \001(\0132\017.model.DBSource\022)\n\020sq" +
-      "lserver_target\030\n \001(\0132\017.model.DBTarget\022+\n" +
-      "\022click_house_source\030\013 \001(\0132\017.model.DBSour" +
-      "ce\022+\n\022click_house_target\030\014 \001(\0132\017.model.D" +
-      "BTarget\022(\n\017sap_hana_source\030\r \001(\0132\017.model" +
-      ".DBSource\022(\n\017sap_hana_target\030\016 \001(\0132\017.mod" +
-      "el.DBTarget\022,\n\016mongodb_source\030\017 \001(\0132\024.mo" +
-      "del.MongodbSource\022,\n\016mongodb_target\030\020 \001(" +
-      "\0132\024.model.MongodbTarget\0229\n\025elastic_searc" +
-      "h_source\030\021 \001(\0132\032.model.ElasticSearchSour" +
-      "ce\0229\n\025elastic_search_target\030\022 \001(\0132\032.mode" +
-      "l.ElasticSearchTarget\022&\n\013hdfs_source\030\023 \001" +
-      "(\0132\021.model.HdfsSource\022&\n\013hdfs_target\030\024 \001" +
-      "(\0132\021.model.HdfsTarget\022$\n\nftp_source\030\025 \001(" +
-      "\0132\020.model.FtpSource\022$\n\nftp_target\030\026 \001(\0132" +
-      "\020.model.FtpTarget\022(\n\014hbase_source\030\027 \001(\0132" +
-      "\022.model.HbaseSource\022(\n\014hbase_target\030\030 \001(" +
-      "\0132\022.model.HbaseTarget\022(\n\014kafka_source\030\031 " +
-      "\001(\0132\022.model.KafkaSource\022(\n\014kafka_target\030" +
-      "\032 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_sour" +
-      "ce\030\033 \001(\0132\023.model.BinlogSource\022)\n\rpg_wal_" +
-      "source\030\034 \001(\0132\022.model.PgWalSource\0228\n\025sql_" +
-      "server_cdc_source\030\035 \001(\0132\031.model.SqlServe" +
-      "rCdcSource\022/\n\020log_miner_source\030\036 \001(\0132\025.m" +
-      "odel.LogMinerSource\022(\n\014redis_target\030\037 \001(" +
-      "\0132\022.model.RedisTarget\022&\n\013hive_target\030  \001" +
-      "(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\353\006\n\017SyncJo" +
-      "bSchedule\022M\n\017schedule_policy\030\001 \001(\0162%.mod" +
-      "el.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sche" +
-      "dule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\0224\n\npara" +
-      "meters\030\003 \003(\0132 .model.SyncJobSchedule.Par" +
-      "ameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005" +
-      "ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022concurrency_" +
-      "policy\030\006 \001(\0162(.model.SyncJobSchedule.Con" +
-      "currencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_" +
-      "type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002" +
-      "\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005mo" +
-      "nthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sche" +
-      "dule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeou" +
-      "t\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tParameter\022\037\n\003k" +
-      "ey\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022!\n\005value\030\002 " +
-      "\001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016SchedulePolic" +
-      "y\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodicit" +
-      "y\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003\"S\n" +
-      "\021ConcurrencyPolicy\022\032\n\026ConcurrencyPolicyU" +
-      "nset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace" +
-      "\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000\022" +
-      "\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\207\004\n\016SyncJobR" +
-      "elease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035" +
-      "\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.mo" +
-      "del.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022,\n\006statu" +
-      "s\030\006 \001(\0162\034.model.SyncJobRelease.Status\022\014\n" +
-      "\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
-      "pdated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\010sync_job\030\013 " +
-      "\001(\0132\016.model.SyncJob\0221\n\021sync_job_property" +
-      "\030\014 \001(\0132\026.model.SyncJobProperty\"M\n\006Status" +
-      "\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Inline" +
-      "\020\002\022\013\n\007Offline\020\003\022\014\n\010Finished\020\004Bn\n\"com.dat" +
-      "aomnis.gproto.types.pbmodelB\023PBSyncManag" +
-      "eSyncJobP\000Z1github.com/DataWorkbench/gpr" +
-      "oto/xgo/types/pbmodelb\006proto3"
+      "\337\037\013\022\t\332\001\0060\0008\020X\001\0221\n\021sync_job_property\030\017 \001(" +
+      "\0132\026.model.SyncJobProperty\"J\n\004Type\022\r\n\tTyp" +
+      "eUnset\020\000\022\017\n\013OfflineFull\020\001\022\024\n\020OfflineIncr" +
+      "ement\020\002\022\014\n\010RealTime\020\003\"3\n\006Status\022\017\n\013Statu" +
+      "sUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002:\006\312\262\004\002" +
+      "\n\000\"\330\001\n\017SyncJobProperty\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\360\001\020\022&\n\004conf\030\004 \001(\0132\022.model.SyncJobConfB" +
+      "\004\342\337\037\000\022.\n\010schedule\030\005 \001(\0132\026.model.SyncJobS" +
+      "cheduleB\004\342\337\037\000:\006\312\262\004\002\n\000\"\242\003\n\013SyncJobConf\022C\n" +
+      "\010job_mode\030\001 \001(\0162\032.model.SyncJobConf.JobM" +
+      "odeB\025\242\241\037\004\252\006\0010\342\337\037\t\022\007\332\001\0048\002@\001\022\021\n\tsource_id\030" +
+      "\002 \001(\t\022\021\n\ttarget_id\030\003 \001(\t\0228\n\013job_content\030" +
+      "\004 \001(\tB#\342\337\037\023\n\021\n\010job_mode\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\200" +
+      "\002\024\022*\n\rsync_resource\030\005 \001(\0132\023.model.SyncRe" +
+      "source\022\022\n\ncluster_id\030\006 \001(\t\022.\n\017channel_co" +
+      "ntrol\030\007 \001(\0132\025.model.ChannelControl\022)\n\014cl" +
+      "uster_info\030\010 \001(\0132\023.model.FlinkCluster\022\017\n" +
+      "\007updated\030\t \001(\003\":\n\007JobMode\022\020\n\014JobModeUnse" +
+      "t\020\000\022\r\n\tGuideMode\020\001\022\016\n\nScriptMode\020\002:\006\312\262\004\002" +
+      "\n\000\"\334\001\n\016ChannelControl\022*\n\013parallelism\030\001 \001" +
+      "(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\0008d\022\034\n\nrecord_num\030" +
+      "\002 \001(\005B\010\242\241\037\004\252\006\0010\022.\n\004rate\030\003 \001(\0162 .model.Ch" +
+      "annelControl.RatePolicy\022\r\n\005bytes\030\004 \001(\005\"9" +
+      "\n\nRatePolicy\022\023\n\017RatePolicyUnset\020\000\022\t\n\005Lim" +
+      "it\020\001\022\013\n\007UnLimit\020\002:\006\312\262\004\002\n\000\"\204\013\n\014SyncResour" +
+      "ce\022%\n\014mysql_source\030\001 \001(\0132\017.model.DBSourc" +
+      "e\022%\n\014mysql_target\030\002 \001(\0132\017.model.DBTarget" +
+      "\022&\n\roracle_source\030\003 \001(\0132\017.model.DBSource" +
+      "\022&\n\roracle_target\030\004 \001(\0132\017.model.DBTarget" +
+      "\022#\n\ndb2_source\030\005 \001(\0132\017.model.DBSource\022#\n" +
+      "\ndb2_target\030\006 \001(\0132\017.model.DBTarget\022*\n\021po" +
+      "stgresql_source\030\007 \001(\0132\017.model.DBSource\022*" +
+      "\n\021postgresql_target\030\010 \001(\0132\017.model.DBTarg" +
+      "et\022)\n\020sqlserver_source\030\t \001(\0132\017.model.DBS" +
+      "ource\022)\n\020sqlserver_target\030\n \001(\0132\017.model." +
+      "DBTarget\022+\n\022click_house_source\030\013 \001(\0132\017.m" +
+      "odel.DBSource\022+\n\022click_house_target\030\014 \001(" +
+      "\0132\017.model.DBTarget\022(\n\017sap_hana_source\030\r " +
+      "\001(\0132\017.model.DBSource\022(\n\017sap_hana_target\030" +
+      "\016 \001(\0132\017.model.DBTarget\022,\n\016mongodb_source" +
+      "\030\017 \001(\0132\024.model.MongodbSource\022,\n\016mongodb_" +
+      "target\030\020 \001(\0132\024.model.MongodbTarget\0229\n\025el" +
+      "astic_search_source\030\021 \001(\0132\032.model.Elasti" +
+      "cSearchSource\0229\n\025elastic_search_target\030\022" +
+      " \001(\0132\032.model.ElasticSearchTarget\022&\n\013hdfs" +
+      "_source\030\023 \001(\0132\021.model.HdfsSource\022&\n\013hdfs" +
+      "_target\030\024 \001(\0132\021.model.HdfsTarget\022$\n\nftp_" +
+      "source\030\025 \001(\0132\020.model.FtpSource\022$\n\nftp_ta" +
+      "rget\030\026 \001(\0132\020.model.FtpTarget\022(\n\014hbase_so" +
+      "urce\030\027 \001(\0132\022.model.HbaseSource\022(\n\014hbase_" +
+      "target\030\030 \001(\0132\022.model.HbaseTarget\022(\n\014kafk" +
+      "a_source\030\031 \001(\0132\022.model.KafkaSource\022(\n\014ka" +
+      "fka_target\030\032 \001(\0132\022.model.KafkaTarget\022*\n\r" +
+      "binlog_source\030\033 \001(\0132\023.model.BinlogSource" +
+      "\022)\n\rpg_wal_source\030\034 \001(\0132\022.model.PgWalSou" +
+      "rce\0228\n\025sql_server_cdc_source\030\035 \001(\0132\031.mod" +
+      "el.SqlServerCdcSource\022/\n\020log_miner_sourc" +
+      "e\030\036 \001(\0132\025.model.LogMinerSource\022(\n\014redis_" +
+      "target\030\037 \001(\0132\022.model.RedisTarget\022&\n\013hive" +
+      "_target\030  \001(\0132\021.model.HiveTarget:\006\312\262\004\002\n\000" +
+      "\"\353\006\n\017SyncJobSchedule\022M\n\017schedule_policy\030" +
+      "\001 \001(\0162%.model.SyncJobSchedule.SchedulePo" +
+      "licyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342" +
+      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200" +
+      "\206\203\017\0224\n\nparameters\030\003 \003(\0132 .model.SyncJobS" +
+      "chedule.Parameter\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022c" +
+      "oncurrency_policy\030\006 \001(\0162(.model.SyncJobS" +
+      "chedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_" +
+      "policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003da" +
+      "yJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342" +
+      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005" +
+      "\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\032O\n\tPar" +
+      "ameter\022\037\n\003key\030\001 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\022" +
+      "!\n\005value\030\002 \001(\tB\022\342\337\037\016\022\014\302\001\t\300\001\001\310\001@\210\005\001\"\\\n\016Sc" +
+      "hedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n" +
+      "\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immed" +
+      "iately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concurr" +
+      "encyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002" +
+      "\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPol" +
+      "icyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\207" +
+      "\004\n\016SyncJobRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020" +
+      "\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004type" +
+      "\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\004@\000" +
+      "X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJobReleas" +
+      "e.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001" +
+      "(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022" +
+      "\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022 \n\010" +
+      "sync_job\030\013 \001(\0132\016.model.SyncJob\0221\n\021sync_j" +
+      "ob_property\030\014 \001(\0132\026.model.SyncJobPropert" +
+      "y\"M\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020" +
+      "\001\022\n\n\006Inline\020\002\022\013\n\007Offline\020\003\022\014\n\010Finished\020\004" +
+      "Bn\n\"com.dataomnis.gproto.types.pbmodelB\023" +
+      "PBSyncManageSyncJobP\000Z1github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23501,7 +23780,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJob_descriptor,
-        new java.lang.String[] { "SpaceId", "Pid", "Id", "Version", "Name", "Desc", "IsDirectory", "Type", "Status", "CreatedBy", "Created", "Updated", "SourceType", "TargetType", });
+        new java.lang.String[] { "SpaceId", "Pid", "Id", "Version", "Name", "Desc", "IsDirectory", "Type", "Status", "CreatedBy", "Created", "Updated", "SourceType", "TargetType", "SyncJobProperty", });
     internal_static_model_SyncJobProperty_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_SyncJobProperty_fieldAccessorTable = new

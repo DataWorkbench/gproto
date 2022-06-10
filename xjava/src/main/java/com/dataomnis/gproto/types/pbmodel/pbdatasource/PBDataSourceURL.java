@@ -4675,7 +4675,7 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
      * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
      * &#64;inject_tag: json:"auth_mode"
      * </pre>
@@ -4686,7 +4686,7 @@ public final class PBDataSourceURL {
     int getAuthModeValue();
     /**
      * <pre>
-     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
      * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
      * &#64;inject_tag: json:"auth_mode"
      * </pre>
@@ -5347,7 +5347,7 @@ public final class PBDataSourceURL {
     private int authMode_;
     /**
      * <pre>
-     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
      * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
      * &#64;inject_tag: json:"auth_mode"
      * </pre>
@@ -5360,7 +5360,7 @@ public final class PBDataSourceURL {
     }
     /**
      * <pre>
-     * The connection modes.  Is Required if protocol == 2 (SFTP).
+     * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
      * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
      * &#64;inject_tag: json:"auth_mode"
      * </pre>
@@ -6172,7 +6172,7 @@ public final class PBDataSourceURL {
       private int authMode_ = 0;
       /**
        * <pre>
-       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
        * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
        * &#64;inject_tag: json:"auth_mode"
        * </pre>
@@ -6185,7 +6185,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
        * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
        * &#64;inject_tag: json:"auth_mode"
        * </pre>
@@ -6202,7 +6202,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
        * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
        * &#64;inject_tag: json:"auth_mode"
        * </pre>
@@ -6218,7 +6218,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
        * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
        * &#64;inject_tag: json:"auth_mode"
        * </pre>
@@ -6238,7 +6238,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The connection modes.  Is Required if protocol == 2 (SFTP).
+       * The AuthMode modes.  Is Required if protocol == 2 (SFTP).
        * 1 =&gt; "Password" 2 = &gt; "PrivateKey";
        * &#64;inject_tag: json:"auth_mode"
        * </pre>

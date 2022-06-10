@@ -184,6 +184,15 @@ func (this *SyncJob) _xxx_xxx_Validator_Validate_target_type() error {
 	return nil
 }
 
+func (this *SyncJob) _xxx_xxx_Validator_Validate_sync_job_property() error {
+	if dt, ok := interface{}(this.SyncJobProperty).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.SyncJob
 func (this *SyncJob) Validate() error {
 	if this == nil {
@@ -226,6 +235,9 @@ func (this *SyncJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_target_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job_property(); err != nil {
 		return err
 	}
 	return nil

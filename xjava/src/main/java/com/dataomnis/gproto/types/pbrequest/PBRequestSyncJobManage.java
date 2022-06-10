@@ -7304,6 +7304,18 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getVersionBytes();
+
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 3;</code>
+     * @return The verbose.
+     */
+    int getVerbose();
   }
   /**
    * <pre>
@@ -7366,6 +7378,11 @@ public final class PBRequestSyncJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               version_ = s;
+              break;
+            }
+            case 24: {
+
+              verbose_ = input.readInt32();
               break;
             }
             default: {
@@ -7496,6 +7513,23 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int VERBOSE_FIELD_NUMBER = 3;
+    private int verbose_;
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 3;</code>
+     * @return The verbose.
+     */
+    @java.lang.Override
+    public int getVerbose() {
+      return verbose_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7516,6 +7550,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
+      if (verbose_ != 0) {
+        output.writeInt32(3, verbose_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7530,6 +7567,10 @@ public final class PBRequestSyncJobManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
+      }
+      if (verbose_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, verbose_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7550,6 +7591,8 @@ public final class PBRequestSyncJobManage {
           .equals(other.getJobId())) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
+      if (getVerbose()
+          != other.getVerbose()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7565,6 +7608,8 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getJobId().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerbose();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7706,6 +7751,8 @@ public final class PBRequestSyncJobManage {
 
         version_ = "";
 
+        verbose_ = 0;
+
         return this;
       }
 
@@ -7734,6 +7781,7 @@ public final class PBRequestSyncJobManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.DescribeSyncJob(this);
         result.jobId_ = jobId_;
         result.version_ = version_;
+        result.verbose_ = verbose_;
         onBuilt();
         return result;
       }
@@ -7789,6 +7837,9 @@ public final class PBRequestSyncJobManage {
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
           onChanged();
+        }
+        if (other.getVerbose() != 0) {
+          setVerbose(other.getVerbose());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8017,6 +8068,55 @@ public final class PBRequestSyncJobManage {
   checkByteStringIsUtf8(value);
         
         version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int verbose_ ;
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 3;</code>
+       * @return The verbose.
+       */
+      @java.lang.Override
+      public int getVerbose() {
+        return verbose_;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 3;</code>
+       * @param value The verbose to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerbose(int value) {
+        
+        verbose_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerbose() {
+        
+        verbose_ = 0;
         onChanged();
         return this;
       }
@@ -18739,6 +18839,18 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getVersionBytes();
+
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 7;</code>
+     * @return The verbose.
+     */
+    int getVerbose();
   }
   /**
    * <pre>
@@ -18823,6 +18935,11 @@ public final class PBRequestSyncJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               version_ = s;
+              break;
+            }
+            case 56: {
+
+              verbose_ = input.readInt32();
               break;
             }
             default: {
@@ -19056,6 +19173,23 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int VERBOSE_FIELD_NUMBER = 7;
+    private int verbose_;
+    /**
+     * <pre>
+     * Verbose indicates the verbosity level.
+     * If the value greater than 1, The details of the associated information will be returned.
+     * &#64;inject_tag: json:"verbose" form:"verbose"
+     * </pre>
+     *
+     * <code>int32 verbose = 7;</code>
+     * @return The verbose.
+     */
+    @java.lang.Override
+    public int getVerbose() {
+      return verbose_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -19088,6 +19222,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
       }
+      if (verbose_ != 0) {
+        output.writeInt32(7, verbose_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19118,6 +19255,10 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
       }
+      if (verbose_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, verbose_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -19145,6 +19286,8 @@ public final class PBRequestSyncJobManage {
           != other.getReverse()) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
+      if (getVerbose()
+          != other.getVerbose()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19169,6 +19312,8 @@ public final class PBRequestSyncJobManage {
           getReverse());
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerbose();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19318,6 +19463,8 @@ public final class PBRequestSyncJobManage {
 
         version_ = "";
 
+        verbose_ = 0;
+
         return this;
       }
 
@@ -19350,6 +19497,7 @@ public final class PBRequestSyncJobManage {
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.version_ = version_;
+        result.verbose_ = verbose_;
         onBuilt();
         return result;
       }
@@ -19418,6 +19566,9 @@ public final class PBRequestSyncJobManage {
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
           onChanged();
+        }
+        if (other.getVerbose() != 0) {
+          setVerbose(other.getVerbose());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19903,6 +20054,55 @@ public final class PBRequestSyncJobManage {
   checkByteStringIsUtf8(value);
         
         version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int verbose_ ;
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 7;</code>
+       * @return The verbose.
+       */
+      @java.lang.Override
+      public int getVerbose() {
+        return verbose_;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 7;</code>
+       * @param value The verbose to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerbose(int value) {
+        
+        verbose_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Verbose indicates the verbosity level.
+       * If the value greater than 1, The details of the associated information will be returned.
+       * &#64;inject_tag: json:"verbose" form:"verbose"
+       * </pre>
+       *
+       * <code>int32 verbose = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerbose() {
+        
+        verbose_ = 0;
         onChanged();
         return this;
       }
@@ -20715,56 +20915,56 @@ public final class PBRequestSyncJobManage {
       "yj-\"\230\001\n\rUpdateSyncJob\022%\n\010space_id\030\001 \001(\tB" +
       "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302" +
-      "\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"M" +
+      "\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"^" +
       "\n\017DescribeSyncJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\227\001" +
-      "\n\022SetSyncJobSchedule\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004syj-\0225\n\010schedule\030\003 \001(\0132\026.mod" +
-      "el.SyncJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\213\001\n\016SetS" +
-      "yncJobConf\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004syj-\022-\n\004conf\030\003 \001(\0132\022.model.SyncJobConf" +
-      "B\013\342\337\037\007\022\005\342\001\002\020\001\"P\n\022GetSyncJobSchedule\022#\n\006j" +
-      "ob_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007vers" +
-      "ion\030\002 \001(\tB\004\342\337\037\000\"L\n\016GetSyncJobConf\022#\n\006job" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007versio" +
-      "n\030\002 \001(\tB\004\342\337\037\000\"\270\002\n\023ListReleaseSyncJobs\022&\n" +
-      "\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n" +
-      "\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\005" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228\n\007sort_by\030\003 \001" +
-      "(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007upda" +
-      "ted\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\006 \001(\t\0229\n\006" +
-      "status\030\007 \001(\0162\034.model.SyncJobRelease.Stat" +
-      "usB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_id\030\010 \001(\t\022\017\n\007verbo" +
-      "se\030\t \001(\005\"\303\001\n\032UpdateReleaseSyncJobStatus\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#" +
-      "\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007v" +
-      "ersion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022:\n\006status\030\004 \001" +
-      "(\0162\034.model.SyncJobRelease.StatusB\014\342\337\037\010\022\006" +
-      "\332\001\003J\001\004\"{\n\016ReleaseSyncJob\022#\n\006job_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n\ncreated_by\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030\003 \001(\t\022\024\n\014stop_ru" +
-      "nning\030\004 \001(\010\"y\n\025OfflineReleaseSyncJob\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
-      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\024\n\014stop" +
-      "_running\030\003 \001(\010\"x\n\024ReopenReleaseSyncJob\022%" +
-      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n" +
-      "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\024\n\014st" +
-      "op_running\030\003 \001(\010\"c\n\022ConvertSyncJobMode\022#" +
-      "\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n\004c" +
-      "onf\030\002 \001(\0132\022.model.SyncJobConf:\006\312\262\004\002\n\000\"\332\001" +
-      "\n\023ListSyncJobVersions\022#\n\006job_id\030\005 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252" +
-      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007v" +
-      "ersionJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(" +
-      "\010\022\017\n\007version\030\006 \001(\t\"6\n\017GenerateJobJson\022#\n" +
-      "\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-Bu\n$co" +
-      "m.dataomnis.gproto.types.pbrequestB\026PBRe" +
-      "questSyncJobManageP\000Z3github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbrequestb\006proto" +
-      "3"
+      "\r\302\001\n\360\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\022\017\n" +
+      "\007verbose\030\003 \001(\005\"\227\001\n\022SetSyncJobSchedule\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006" +
+      "job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\0225\n\010sch" +
+      "edule\030\003 \001(\0132\026.model.SyncJobScheduleB\013\342\337\037" +
+      "\007\022\005\342\001\002\020\001\"\213\001\n\016SetSyncJobConf\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022-\n\004conf\030\003 \001(\0132\022." +
+      "model.SyncJobConfB\013\342\337\037\007\022\005\342\001\002\020\001\"P\n\022GetSyn" +
+      "cJobSchedule\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"L\n\016GetS" +
+      "yncJobConf\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004syj-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\270\002\n\023ListR" +
+      "eleaseSyncJobs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\00310" +
+      "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001" +
+      "\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
+      "s-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004na" +
+      "meJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010\022\016\n" +
+      "\006search\030\006 \001(\t\0229\n\006status\030\007 \001(\0162\034.model.Sy" +
+      "ncJobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_" +
+      "id\030\010 \001(\t\022\017\n\007verbose\030\t \001(\005\"\303\001\n\032UpdateRele" +
+      "aseSyncJobStatus\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\360\001\020\022:\n\006status\030\004 \001(\0162\034.model.SyncJobRelea" +
+      "se.StatusB\014\342\337\037\010\022\006\332\001\003J\001\004\"{\n\016ReleaseSyncJo" +
+      "b\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 " +
+      "\n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc" +
+      "\030\003 \001(\t\022\024\n\014stop_running\030\004 \001(\010\"y\n\025OfflineR" +
+      "eleaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"x\n\024Reope" +
+      "nReleaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004syj-\022\024\n\014stop_running\030\003 \001(\010\"c\n\022Con" +
+      "vertSyncJobMode\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004syj-\022 \n\004conf\030\002 \001(\0132\022.model.SyncJ" +
+      "obConf:\006\312\262\004\002\n\000\"\353\001\n\023ListSyncJobVersions\022#" +
+      "\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022&\n\005l" +
+      "imit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
+      "ffset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(" +
+      "\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007update" +
+      "d\022\017\n\007reverse\030\004 \001(\010\022\017\n\007version\030\006 \001(\t\022\017\n\007v" +
+      "erbose\030\007 \001(\005\"6\n\017GenerateJobJson\022#\n\006job_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-Bu\n$com.data" +
+      "omnis.gproto.types.pbrequestB\026PBRequestS" +
+      "yncJobManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20810,7 +21010,7 @@ public final class PBRequestSyncJobManage {
     internal_static_request_DescribeSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeSyncJob_descriptor,
-        new java.lang.String[] { "JobId", "Version", });
+        new java.lang.String[] { "JobId", "Version", "Verbose", });
     internal_static_request_SetSyncJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_request_SetSyncJobSchedule_fieldAccessorTable = new
@@ -20876,7 +21076,7 @@ public final class PBRequestSyncJobManage {
     internal_static_request_ListSyncJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListSyncJobVersions_descriptor,
-        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", "Version", });
+        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", "Version", "Verbose", });
     internal_static_request_GenerateJobJson_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_request_GenerateJobJson_fieldAccessorTable = new

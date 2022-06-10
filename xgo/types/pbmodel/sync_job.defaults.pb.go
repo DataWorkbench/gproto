@@ -23,6 +23,11 @@ func (this *SyncJob) SetDefaults() {
 	if this.TargetType == 0 {
 		this.TargetType = DataSource_Type(0)
 	}
+	if this.SyncJobProperty != nil {
+		if dt, ok := interface{}(this.SyncJobProperty).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 
