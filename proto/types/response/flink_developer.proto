@@ -50,7 +50,7 @@ message SubmitFlinkJobInteractive{
   Type type = 1 [(validator.field) = {}];
 
   // dataset
-  // @inject_tag: json:"inject_tag"
+  // @inject_tag: json:"dataset"
   repeated DataSet dataset = 2 [(validator.field) = {}];
 
   // error message

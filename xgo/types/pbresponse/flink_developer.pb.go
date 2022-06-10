@@ -238,7 +238,7 @@ type SubmitFlinkJobInteractive struct {
 	// type
 	Type SubmitFlinkJobInteractive_Type `protobuf:"varint,1,opt,name=type,proto3,enum=response.SubmitFlinkJobInteractive_Type" json:"type"`
 	// dataset
-	Dataset []*SubmitFlinkJobInteractive_DataSet `protobuf:"bytes,2,rep,name=dataset,proto3" json:"inject_tag"`
+	Dataset []*SubmitFlinkJobInteractive_DataSet `protobuf:"bytes,2,rep,name=dataset,proto3" json:"dataset"`
 	// error message
 	ErrorMessage string `protobuf:"bytes,3,opt,name=error_message,json=errorMessage,proto3" json:"error_message"`
 }

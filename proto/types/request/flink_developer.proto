@@ -49,11 +49,15 @@ message SubmitFlinkJobInteractive{
 
   // max count for per batch
   // @inject_tag: json:"max_count"
-  int32 max_count = 2 [(defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 }];
+  int32 max_count = 2 [(defaults.field).basic = "100", (validator.field).tags.int = {gt: 0, lte: 100}];
 
   // refresh interval for fetching data
   // @inject_tag: json:"refresh_interval"
-  int32 refresh_interval = 3 [(defaults.field).basic = "2000", (validator.field).tags.int = { gte: 1000, lte: 10000 }];
+  int32 refresh_interval = 3 [(defaults.field).basic = "2000", (validator.field).tags.int = {gte: 1000, lte: 10000}];
+
+  // result display mode, changelog mode and tableau mode
+  // @inject_tag: json:"is_changelog"
+  bool is_changelog = 4;
 }
 
 message ValidateFlinkJob {

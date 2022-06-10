@@ -1823,6 +1823,17 @@ public final class PBRequestFlinkDeveloper {
      * @return The refreshInterval.
      */
     int getRefreshInterval();
+
+    /**
+     * <pre>
+     * result display mode, changelog mode and tableau mode
+     * &#64;inject_tag: json:"is_changelog"
+     * </pre>
+     *
+     * <code>bool is_changelog = 4;</code>
+     * @return The isChangelog.
+     */
+    boolean getIsChangelog();
   }
   /**
    * Protobuf type {@code request.SubmitFlinkJobInteractive}
@@ -1890,6 +1901,11 @@ public final class PBRequestFlinkDeveloper {
             case 24: {
 
               refreshInterval_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              isChangelog_ = input.readBool();
               break;
             }
             default: {
@@ -1997,6 +2013,22 @@ public final class PBRequestFlinkDeveloper {
       return refreshInterval_;
     }
 
+    public static final int IS_CHANGELOG_FIELD_NUMBER = 4;
+    private boolean isChangelog_;
+    /**
+     * <pre>
+     * result display mode, changelog mode and tableau mode
+     * &#64;inject_tag: json:"is_changelog"
+     * </pre>
+     *
+     * <code>bool is_changelog = 4;</code>
+     * @return The isChangelog.
+     */
+    @java.lang.Override
+    public boolean getIsChangelog() {
+      return isChangelog_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2020,6 +2052,9 @@ public final class PBRequestFlinkDeveloper {
       if (refreshInterval_ != 0) {
         output.writeInt32(3, refreshInterval_);
       }
+      if (isChangelog_ != false) {
+        output.writeBool(4, isChangelog_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2040,6 +2075,10 @@ public final class PBRequestFlinkDeveloper {
       if (refreshInterval_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, refreshInterval_);
+      }
+      if (isChangelog_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isChangelog_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2065,6 +2104,8 @@ public final class PBRequestFlinkDeveloper {
           != other.getMaxCount()) return false;
       if (getRefreshInterval()
           != other.getRefreshInterval()) return false;
+      if (getIsChangelog()
+          != other.getIsChangelog()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2084,6 +2125,9 @@ public final class PBRequestFlinkDeveloper {
       hash = (53 * hash) + getMaxCount();
       hash = (37 * hash) + REFRESH_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getRefreshInterval();
+      hash = (37 * hash) + IS_CHANGELOG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsChangelog());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2227,6 +2271,8 @@ public final class PBRequestFlinkDeveloper {
 
         refreshInterval_ = 0;
 
+        isChangelog_ = false;
+
         return this;
       }
 
@@ -2260,6 +2306,7 @@ public final class PBRequestFlinkDeveloper {
         }
         result.maxCount_ = maxCount_;
         result.refreshInterval_ = refreshInterval_;
+        result.isChangelog_ = isChangelog_;
         onBuilt();
         return result;
       }
@@ -2316,6 +2363,9 @@ public final class PBRequestFlinkDeveloper {
         }
         if (other.getRefreshInterval() != 0) {
           setRefreshInterval(other.getRefreshInterval());
+        }
+        if (other.getIsChangelog() != false) {
+          setIsChangelog(other.getIsChangelog());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2598,6 +2648,52 @@ public final class PBRequestFlinkDeveloper {
       public Builder clearRefreshInterval() {
         
         refreshInterval_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isChangelog_ ;
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @return The isChangelog.
+       */
+      @java.lang.Override
+      public boolean getIsChangelog() {
+        return isChangelog_;
+      }
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @param value The isChangelog to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsChangelog(boolean value) {
+        
+        isChangelog_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * result display mode, changelog mode and tableau mode
+       * &#64;inject_tag: json:"is_changelog"
+       * </pre>
+       *
+       * <code>bool is_changelog = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsChangelog() {
+        
+        isChangelog_ = false;
         onChanged();
         return this;
       }
@@ -4754,20 +4850,21 @@ public final class PBRequestFlinkDeveloper {
       "_version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\034\n\016savepoint" +
       "_path\030\004 \001(\tB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model." +
       "StreamJobArgsB\004\342\337\037\000\022(\n\004code\030\006 \001(\0132\024.mode" +
-      "l.StreamJobCodeB\004\342\337\037\000\"\251\001\n\031SubmitFlinkJob" +
+      "l.StreamJobCodeB\004\342\337\037\000\"\277\001\n\031SubmitFlinkJob" +
       "Interactive\022*\n\003job\030\001 \001(\0132\027.request.Submi" +
       "tFlinkJobB\004\342\337\037\000\022*\n\tmax_count\030\002 \001(\005B\027\242\241\037\006" +
       "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\0224\n\020refresh_interval\030" +
-      "\003 \001(\005B\032\242\241\037\007\252\006\0042000\342\337\037\013\022\t\262\001\0068\220N@\350\007\"6\n\020Val" +
-      "idateFlinkJob\022\"\n\004code\030\001 \001(\0132\024.model.Stre" +
-      "amJobCode\"\247\001\n\023ValidateFlinkJob_v2\022\036\n\tfli" +
-      "nk_url\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\rflink_versi" +
-      "on\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022(\n\004args\030\003 \001(\0132\024.mo" +
-      "del.StreamJobArgsB\004\342\337\037\000\022\"\n\004code\030\004 \001(\0132\024." +
-      "model.StreamJobCodeBv\n$com.dataomnis.gpr" +
-      "oto.types.pbrequestB\027PBRequestFlinkDevel" +
-      "operP\000Z3github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbrequestb\006proto3"
+      "\003 \001(\005B\032\242\241\037\007\252\006\0042000\342\337\037\013\022\t\262\001\0068\220N@\350\007\022\024\n\014is_" +
+      "changelog\030\004 \001(\010\"6\n\020ValidateFlinkJob\022\"\n\004c" +
+      "ode\030\001 \001(\0132\024.model.StreamJobCode\"\247\001\n\023Vali" +
+      "dateFlinkJob_v2\022\036\n\tflink_url\030\001 \001(\tB\013\342\337\037\007" +
+      "\022\005\302\001\002\"\000\022\"\n\rflink_version\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022(\n\004args\030\003 \001(\0132\024.model.StreamJobArgsB" +
+      "\004\342\337\037\000\022\"\n\004code\030\004 \001(\0132\024.model.StreamJobCod" +
+      "eBv\n$com.dataomnis.gproto.types.pbreques" +
+      "tB\027PBRequestFlinkDeveloperP\000Z3github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbreques" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4788,7 +4885,7 @@ public final class PBRequestFlinkDeveloper {
     internal_static_request_SubmitFlinkJobInteractive_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SubmitFlinkJobInteractive_descriptor,
-        new java.lang.String[] { "Job", "MaxCount", "RefreshInterval", });
+        new java.lang.String[] { "Job", "MaxCount", "RefreshInterval", "IsChangelog", });
     internal_static_request_ValidateFlinkJob_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ValidateFlinkJob_fieldAccessorTable = new
