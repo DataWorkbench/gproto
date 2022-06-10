@@ -194,6 +194,27 @@ func (this *DeleteRoute) Validate() error {
 	return nil
 }
 
+func (this *DeleteRouteByVersion) _xxx_xxx_Validator_Validate_versions() error {
+	if !(len(this.Versions) >= 0) {
+		return protovalidator.FieldError1("DeleteRouteByVersion", "the length of field 'versions' must be greater than or equal to '0'", strconv.Itoa(len(this.Versions)))
+	}
+	if !(len(this.Versions) <= 100) {
+		return protovalidator.FieldError1("DeleteRouteByVersion", "the length of field 'versions' must be less than or equal to '100'", strconv.Itoa(len(this.Versions)))
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteRouteByVersion
+func (this *DeleteRouteByVersion) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_versions(); err != nil {
+		return err
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ListRoutes_InEnums_CurrStatus = map[pbmodel.StatusType]bool{0: true, 1: true, 2: true}
 
 func (this *ListRoutes) _xxx_xxx_Validator_Validate_curr_status() error {

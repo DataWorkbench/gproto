@@ -53,6 +53,14 @@ func (this *DeleteRoute) SetDefaults() {
 	return
 }
 
+// Set default value for message request.DeleteRouteByVersion
+func (this *DeleteRouteByVersion) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.ListRoutes
 func (this *ListRoutes) SetDefaults() {
 	if this == nil {

@@ -52,6 +52,11 @@ message DeleteRoute {
   repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 }
 
+message DeleteRouteByVersion {
+  // @inject_tag: json:"versions"
+  repeated string versions  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+}
+
 message ListRoutes {
   // @inject_tag: json:"name"
   string name = 1;

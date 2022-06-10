@@ -19,6 +19,7 @@ service ApiDashboard {
   rpc DeleteRoute(request.DeleteRoute) returns (model.EmptyStruct) {}
   rpc ListRoutes(request.ListRoutes) returns (response.ListRoutes) {}
   rpc UpdateRoute(request.UpdateRoute) returns (model.EmptyStruct) {}
+  rpc DeleteRouteByVersion(request.DeleteRouteByVersion) returns (model.EmptyStruct) {}
 
   rpc CreateUpstream(request.CreateUpstream) returns (response.CreateUpstream) {}
   rpc DeleteUpstream(request.DeleteUpstream) returns (model.EmptyStruct) {}
