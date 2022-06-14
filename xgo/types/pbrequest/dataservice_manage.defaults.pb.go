@@ -193,6 +193,14 @@ func (this *PublishCustomerApi) SetDefaults() {
 	return
 }
 
+// Set default value for message request.AbolishCustomerApis
+func (this *AbolishCustomerApis) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.TestCustomerApi
 func (this *TestCustomerApi) SetDefaults() {
 	if this == nil {

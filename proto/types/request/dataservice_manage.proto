@@ -274,6 +274,13 @@ message PublishCustomerApi {
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
 }
 
+message AbolishCustomerApis {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"api_ids"
+  repeated string api_ids = 2  [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsa-" } } } ];
+}
+
 message TestCustomerApi {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];

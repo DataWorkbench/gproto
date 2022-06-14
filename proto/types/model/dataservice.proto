@@ -51,12 +51,19 @@ message DataServiceCluster{
 
 // table api_group
 message ApiGroup{
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
   // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
   string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" }];
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 // table api_config
@@ -162,8 +169,7 @@ message ApiVersion{
   string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
   // @inject_tag: json:"publish_status" gorm:"column:publish_status;"
   Status publish_status = 2 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
-  // @inject_tag: json:"publish_time" gorm:"column:publish_time;"
-  int64 publish_time = 3 [ (validator.field).tags.int = { gt: 0 } ];
+  //int64 publish_time = 3 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
   string api_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
   // @inject_tag: json:"group_id" gorm:"column:group_id;"
@@ -196,6 +202,10 @@ message ApiVersion{
   string table_name = 18 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];;
   // @inject_tag: json:"script" gorm:"column:script;"
   string script = 19 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 3 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 20 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
 enum ParameterDataType {

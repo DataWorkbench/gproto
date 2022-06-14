@@ -39,5 +39,5 @@ service DataService {
   rpc DescribeDataServiceApiVersion(request.DescribeApiVersion) returns (response.DescribeApiVersion) {}
   rpc RepublishDataServiceApi(request.DescribeApiVersion) returns (model.EmptyStruct) {}
 
-  rpc AbolishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
+  rpc AbolishDataServiceApis(request.AbolishCustomerApis) returns (model.EmptyStruct) {}
 }

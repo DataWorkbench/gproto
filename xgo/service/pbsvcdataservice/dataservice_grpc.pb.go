@@ -43,7 +43,7 @@ type DataServiceClient interface {
 	ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListApiVersions, opts ...grpc.CallOption) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbresponse.DescribeApiVersion, error)
 	RepublishDataServiceApi(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	AbolishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type dataServiceClient struct {
@@ -216,9 +216,9 @@ func (c *dataServiceClient) RepublishDataServiceApi(ctx context.Context, in *pbr
 	return out, nil
 }
 
-func (c *dataServiceClient) AbolishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *dataServiceClient) AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/AbolishDataServiceApi", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/AbolishDataServiceApis", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -247,7 +247,7 @@ type DataServiceServer interface {
 	ListDataServiceApiVersions(context.Context, *pbrequest.ListApiVersions) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeApiVersion) (*pbresponse.DescribeApiVersion, error)
 	RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error)
-	AbolishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error)
+	AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -309,8 +309,8 @@ func (UnimplementedDataServiceServer) DescribeDataServiceApiVersion(context.Cont
 func (UnimplementedDataServiceServer) RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RepublishDataServiceApi not implemented")
 }
-func (UnimplementedDataServiceServer) AbolishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApi not implemented")
+func (UnimplementedDataServiceServer) AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApis not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -649,20 +649,20 @@ func _DataService_RepublishDataServiceApi_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_AbolishDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.PublishCustomerApi)
+func _DataService_AbolishDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.AbolishCustomerApis)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).AbolishDataServiceApi(ctx, in)
+		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/AbolishDataServiceApi",
+		FullMethod: "/dataservice.DataService/AbolishDataServiceApis",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).AbolishDataServiceApi(ctx, req.(*pbrequest.PublishCustomerApi))
+		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, req.(*pbrequest.AbolishCustomerApis))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -747,8 +747,8 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_RepublishDataServiceApi_Handler,
 		},
 		{
-			MethodName: "AbolishDataServiceApi",
-			Handler:    _DataService_AbolishDataServiceApi_Handler,
+			MethodName: "AbolishDataServiceApis",
+			Handler:    _DataService_AbolishDataServiceApis_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

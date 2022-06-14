@@ -1313,6 +1313,46 @@ func (this *PublishCustomerApi) Validate() error {
 	return nil
 }
 
+func (this *AbolishCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AbolishCustomerApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AbolishCustomerApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *AbolishCustomerApis) _xxx_xxx_Validator_Validate_api_ids() error {
+	if !(len(this.ApiIds) >= 1) {
+		return protovalidator.FieldError1("AbolishCustomerApis", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
+	}
+	if !(len(this.ApiIds) <= 100) {
+		return protovalidator.FieldError1("AbolishCustomerApis", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
+	}
+	for _, item := range this.ApiIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsa-")) {
+			return protovalidator.FieldError1("AbolishCustomerApis", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.AbolishCustomerApis
+func (this *AbolishCustomerApis) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
