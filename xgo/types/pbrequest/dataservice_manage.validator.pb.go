@@ -408,28 +408,28 @@ func (this *DeleteApiGroups) Validate() error {
 	return nil
 }
 
-func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *ListApiConfigs) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ListCustomerApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("ListApiConfigs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ListCustomerApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("ListApiConfigs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_group_id() error {
+func (this *ListApiConfigs) _xxx_xxx_Validator_Validate_group_id() error {
 	if !(len(this.GroupId) == 20) {
-		return protovalidator.FieldError1("ListCustomerApis", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
+		return protovalidator.FieldError1("ListApiConfigs", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
 	}
 	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
-		return protovalidator.FieldError1("ListCustomerApis", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
+		return protovalidator.FieldError1("ListApiConfigs", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
 	}
 	return nil
 }
 
-// Set default value for message request.ListCustomerApis
-func (this *ListCustomerApis) Validate() error {
+// Set default value for message request.ListApiConfigs
+func (this *ListApiConfigs) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -442,120 +442,120 @@ func (this *ListCustomerApis) Validate() error {
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_api_id() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
 	}
 	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_api_name() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_api_name() error {
 	if !(len(this.ApiName) > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
 	}
 	if !(len(this.ApiName) <= 64) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ApiName))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ApiName))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_api_path() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_api_path() error {
 	if !(len(this.ApiPath) > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_path' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiPath))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_path' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiPath))
 	}
 	if !(len(this.ApiPath) <= 200) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_path' must be less than or equal to '200'", protovalidator.StringByteLenToString(this.ApiPath))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_path' must be less than or equal to '200'", protovalidator.StringByteLenToString(this.ApiPath))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateCustomerApi_InEnums_ApiMode = map[pbmodel.ApiConfig_ApiMode]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_UpdateApiConfig_InEnums_ApiMode = map[pbmodel.ApiConfig_ApiMode]bool{0: true, 1: true, 2: true}
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_api_mode() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_api_mode() error {
 	if !(this.ApiMode > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'api_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ApiMode)))
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'api_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ApiMode)))
 	}
-	if !(_xxx_xxx_Validator_UpdateCustomerApi_InEnums_ApiMode[this.ApiMode]) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'api_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ApiMode)))
+	if !(_xxx_xxx_Validator_UpdateApiConfig_InEnums_ApiMode[this.ApiMode]) {
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'api_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ApiMode)))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_api_description() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_api_description() error {
 	if !(len(this.ApiDescription) <= 257) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'api_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ApiDescription))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'api_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ApiDescription))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateCustomerApi_InEnums_RequestMethod = map[pbmodel.ApiConfig_RequestMethod]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_UpdateApiConfig_InEnums_RequestMethod = map[pbmodel.ApiConfig_RequestMethod]bool{0: true, 1: true, 2: true}
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_request_method() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_request_method() error {
 	if !(this.RequestMethod > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'request_method' must be greater than '0'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'request_method' must be greater than '0'", protovalidator.Int32ToString(int32(this.RequestMethod)))
 	}
-	if !(_xxx_xxx_Validator_UpdateCustomerApi_InEnums_RequestMethod[this.RequestMethod]) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'request_method' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+	if !(_xxx_xxx_Validator_UpdateApiConfig_InEnums_RequestMethod[this.RequestMethod]) {
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'request_method' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RequestMethod)))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateCustomerApi_InEnums_ResponseType = map[pbmodel.ApiConfig_ResponseType]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_UpdateApiConfig_InEnums_ResponseType = map[pbmodel.ApiConfig_ResponseType]bool{0: true, 1: true, 2: true}
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_response_type() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_response_type() error {
 	if !(this.ResponseType > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'response_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResponseType)))
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'response_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResponseType)))
 	}
-	if !(_xxx_xxx_Validator_UpdateCustomerApi_InEnums_ResponseType[this.ResponseType]) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'response_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ResponseType)))
+	if !(_xxx_xxx_Validator_UpdateApiConfig_InEnums_ResponseType[this.ResponseType]) {
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'response_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ResponseType)))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_timeout() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_timeout() error {
 	if !(this.Timeout >= 1) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
 	}
 	if !(this.Timeout <= 180) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_datasource_id() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_datasource_id() error {
 	if !(len(this.DatasourceId) == 20) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
 	}
 	if !(strings.HasPrefix(this.DatasourceId, "som-")) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_table_name() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_table_name() error {
 	if !(len(this.TableName) > 0) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
 	}
 	if !(len(this.TableName) <= 64) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_wizardDetails() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_wizardDetails() error {
 	if dt, ok := interface{}(this.WizardDetails).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -564,35 +564,35 @@ func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_wizardDetails() error
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_script() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_script() error {
 	if !(len(this.Script) <= 20000) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_group_id() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_group_id() error {
 	if !(len(this.GroupId) == 20) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
 	}
 	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
 	}
 	return nil
 }
 
-func (this *UpdateCustomerApi) _xxx_xxx_Validator_Validate_cluster_id() error {
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_cluster_id() error {
 	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
 	}
 	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
-		return protovalidator.FieldError1("UpdateCustomerApi", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
 	}
 	return nil
 }
 
-// Set default value for message request.UpdateCustomerApi
-func (this *UpdateCustomerApi) Validate() error {
+// Set default value for message request.UpdateApiConfig
+func (this *UpdateApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -644,18 +644,18 @@ func (this *UpdateCustomerApi) Validate() error {
 	return nil
 }
 
-func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_api_id() error {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("DescribeCustomerApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+		return protovalidator.FieldError1("DescribeApiConfig", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
 	}
 	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("DescribeCustomerApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+		return protovalidator.FieldError1("DescribeApiConfig", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
 	}
 	return nil
 }
 
-// Set default value for message request.DescribeCustomerApi
-func (this *DescribeCustomerApi) Validate() error {
+// Set default value for message request.DescribeApiConfig
+func (this *DescribeApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -665,34 +665,34 @@ func (this *DescribeCustomerApi) Validate() error {
 	return nil
 }
 
-func (this *DeleteCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *DeleteApiConfigs) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("DeleteCustomerApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("DeleteApiConfigs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("DeleteCustomerApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("DeleteApiConfigs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *DeleteCustomerApis) _xxx_xxx_Validator_Validate_api_ids() error {
+func (this *DeleteApiConfigs) _xxx_xxx_Validator_Validate_api_ids() error {
 	if !(len(this.ApiIds) >= 1) {
-		return protovalidator.FieldError1("DeleteCustomerApis", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
+		return protovalidator.FieldError1("DeleteApiConfigs", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
 	}
 	if !(len(this.ApiIds) <= 100) {
-		return protovalidator.FieldError1("DeleteCustomerApis", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
+		return protovalidator.FieldError1("DeleteApiConfigs", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
 	}
 	for _, item := range this.ApiIds {
 		_ = item // To avoid unused panics.
 		if !(strings.HasPrefix(item, "dsa-")) {
-			return protovalidator.FieldError1("DeleteCustomerApis", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
+			return protovalidator.FieldError1("DeleteApiConfigs", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
 		}
 	}
 	return nil
 }
 
-// Set default value for message request.DeleteCustomerApis
-func (this *DeleteCustomerApis) Validate() error {
+// Set default value for message request.DeleteApiConfigs
+func (this *DeleteApiConfigs) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -705,110 +705,110 @@ func (this *DeleteCustomerApis) Validate() error {
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_api_name() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_api_name() error {
 	if !(len(this.ApiName) > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
 	}
 	if !(len(this.ApiName) <= 64) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ApiName))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'api_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ApiName))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_api_path() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_api_path() error {
 	if !(len(this.ApiPath) > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_path' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiPath))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'api_path' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiPath))
 	}
 	if !(len(this.ApiPath) <= 200) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_path' must be less than or equal to '200'", protovalidator.StringByteLenToString(this.ApiPath))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'api_path' must be less than or equal to '200'", protovalidator.StringByteLenToString(this.ApiPath))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateCustomerApi_InEnums_ApiMode = map[pbmodel.ApiConfig_ApiMode]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_CreateApiConfig_InEnums_ApiMode = map[pbmodel.ApiConfig_ApiMode]bool{0: true, 1: true, 2: true}
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_api_mode() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_api_mode() error {
 	if !(this.ApiMode > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'api_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ApiMode)))
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'api_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ApiMode)))
 	}
-	if !(_xxx_xxx_Validator_CreateCustomerApi_InEnums_ApiMode[this.ApiMode]) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'api_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ApiMode)))
+	if !(_xxx_xxx_Validator_CreateApiConfig_InEnums_ApiMode[this.ApiMode]) {
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'api_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ApiMode)))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_api_description() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_api_description() error {
 	if !(len(this.ApiDescription) <= 257) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'api_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ApiDescription))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'api_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ApiDescription))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateCustomerApi_InEnums_RequestMethod = map[pbmodel.ApiConfig_RequestMethod]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_CreateApiConfig_InEnums_RequestMethod = map[pbmodel.ApiConfig_RequestMethod]bool{0: true, 1: true, 2: true}
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_request_method() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_request_method() error {
 	if !(this.RequestMethod > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'request_method' must be greater than '0'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'request_method' must be greater than '0'", protovalidator.Int32ToString(int32(this.RequestMethod)))
 	}
-	if !(_xxx_xxx_Validator_CreateCustomerApi_InEnums_RequestMethod[this.RequestMethod]) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'request_method' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+	if !(_xxx_xxx_Validator_CreateApiConfig_InEnums_RequestMethod[this.RequestMethod]) {
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'request_method' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RequestMethod)))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateCustomerApi_InEnums_ResponseType = map[pbmodel.ApiConfig_ResponseType]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_CreateApiConfig_InEnums_ResponseType = map[pbmodel.ApiConfig_ResponseType]bool{0: true, 1: true, 2: true}
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_response_type() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_response_type() error {
 	if !(this.ResponseType > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'response_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResponseType)))
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'response_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResponseType)))
 	}
-	if !(_xxx_xxx_Validator_CreateCustomerApi_InEnums_ResponseType[this.ResponseType]) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'response_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ResponseType)))
+	if !(_xxx_xxx_Validator_CreateApiConfig_InEnums_ResponseType[this.ResponseType]) {
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'response_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ResponseType)))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_timeout() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_timeout() error {
 	if !(this.Timeout >= 1) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
 	}
 	if !(this.Timeout <= 180) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_datasource_id() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_datasource_id() error {
 	if !(len(this.DatasourceId) == 20) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
 	}
 	if !(strings.HasPrefix(this.DatasourceId, "som-")) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_table_name() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_table_name() error {
 	if !(len(this.TableName) > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
 	}
 	if !(len(this.TableName) <= 64) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_wizardDetails() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_wizardDetails() error {
 	if dt, ok := interface{}(this.WizardDetails).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -817,45 +817,45 @@ func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_wizardDetails() error
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_script() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_script() error {
 	if !(len(this.Script) <= 20000) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_group_id() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_group_id() error {
 	if !(len(this.GroupId) == 20) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
 	}
 	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_cluster_id() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_cluster_id() error {
 	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
 	}
 	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
 	}
 	return nil
 }
 
-func (this *CreateCustomerApi) _xxx_xxx_Validator_Validate_created_by() error {
+func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_created_by() error {
 	if !(len(this.CreatedBy) > 0) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	if !(len(this.CreatedBy) < 65) {
-		return protovalidator.FieldError1("CreateCustomerApi", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
 
-// Set default value for message request.CreateCustomerApi
-func (this *CreateCustomerApi) Validate() error {
+// Set default value for message request.CreateApiConfig
+func (this *CreateApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}

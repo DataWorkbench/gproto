@@ -95,14 +95,14 @@ message DeleteApiGroups {
   repeated string group_ids = 2 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsg-" } } } ];
 }
 
-message ListCustomerApis {
+message ListApiConfigs {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [(validator.field).tags.string = {byte_len_eq: 20; prefix: "wks-"}];
-  // @inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+  // @inject_tag: json:"group_id" form:"group_id"
   string group_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
 }
 
-message UpdateCustomerApi {
+message UpdateApiConfig {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
@@ -139,12 +139,12 @@ message UpdateCustomerApi {
   string cluster_id = 17 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
 }
 
-message DescribeCustomerApi {
+message DescribeApiConfig {
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
 }
 
-message DeleteCustomerApis {
+message DeleteApiConfigs {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_ids"
@@ -152,7 +152,7 @@ message DeleteCustomerApis {
 }
 
 
-message CreateCustomerApi {
+message CreateApiConfig {
   // @inject_tag: json:"api_name"
   string api_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
   // @inject_tag: json:"api_path"

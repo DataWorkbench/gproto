@@ -33,17 +33,17 @@ type DataServiceClient interface {
 	CreateApiGroup(ctx context.Context, in *pbrequest.CreateApiGroup, opts ...grpc.CallOption) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(ctx context.Context, in *pbrequest.ListApiGroups, opts ...grpc.CallOption) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(ctx context.Context, in *pbrequest.DeleteApiGroups, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	CreateDataServiceApi(ctx context.Context, in *pbrequest.CreateCustomerApi, opts ...grpc.CallOption) (*pbresponse.CreateCustomerApi, error)
-	UpdateDataServiceApi(ctx context.Context, in *pbrequest.UpdateCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceApi(ctx context.Context, in *pbrequest.DescribeCustomerApi, opts ...grpc.CallOption) (*pbresponse.DescribeCustomerApi, error)
-	ListDataServiceApis(ctx context.Context, in *pbrequest.ListCustomerApis, opts ...grpc.CallOption) (*pbresponse.ListCustomerApis, error)
-	DeleteDataServiceApis(ctx context.Context, in *pbrequest.DeleteCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	ListApiConfigs(ctx context.Context, in *pbrequest.ListApiConfigs, opts ...grpc.CallOption) (*pbresponse.ListApiConfigs, error)
+	DescribeApiConfig(ctx context.Context, in *pbrequest.DescribeApiConfig, opts ...grpc.CallOption) (*pbresponse.DescribeApiConfig, error)
+	CreateApiConfig(ctx context.Context, in *pbrequest.CreateApiConfig, opts ...grpc.CallOption) (*pbresponse.CreateApiConfig, error)
+	UpdateApiConfig(ctx context.Context, in *pbrequest.UpdateApiConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteApiConfigs(ctx context.Context, in *pbrequest.DeleteApiConfigs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(ctx context.Context, in *pbrequest.TestCustomerApi, opts ...grpc.CallOption) (*pbresponse.TestCustomerApi, error)
 	PublishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListApiVersions, opts ...grpc.CallOption) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbresponse.DescribeApiVersion, error)
 	RepublishDataServiceApi(ctx context.Context, in *pbrequest.DescribeApiVersion, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type dataServiceClient struct {
@@ -126,45 +126,45 @@ func (c *dataServiceClient) DeleteApiGroups(ctx context.Context, in *pbrequest.D
 	return out, nil
 }
 
-func (c *dataServiceClient) CreateDataServiceApi(ctx context.Context, in *pbrequest.CreateCustomerApi, opts ...grpc.CallOption) (*pbresponse.CreateCustomerApi, error) {
-	out := new(pbresponse.CreateCustomerApi)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/CreateDataServiceApi", in, out, opts...)
+func (c *dataServiceClient) ListApiConfigs(ctx context.Context, in *pbrequest.ListApiConfigs, opts ...grpc.CallOption) (*pbresponse.ListApiConfigs, error) {
+	out := new(pbresponse.ListApiConfigs)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListApiConfigs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataServiceClient) UpdateDataServiceApi(ctx context.Context, in *pbrequest.UpdateCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *dataServiceClient) DescribeApiConfig(ctx context.Context, in *pbrequest.DescribeApiConfig, opts ...grpc.CallOption) (*pbresponse.DescribeApiConfig, error) {
+	out := new(pbresponse.DescribeApiConfig)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribeApiConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CreateApiConfig(ctx context.Context, in *pbrequest.CreateApiConfig, opts ...grpc.CallOption) (*pbresponse.CreateApiConfig, error) {
+	out := new(pbresponse.CreateApiConfig)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/CreateApiConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UpdateApiConfig(ctx context.Context, in *pbrequest.UpdateApiConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/UpdateDataServiceApi", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/UpdateApiConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataServiceClient) DescribeDataServiceApi(ctx context.Context, in *pbrequest.DescribeCustomerApi, opts ...grpc.CallOption) (*pbresponse.DescribeCustomerApi, error) {
-	out := new(pbresponse.DescribeCustomerApi)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribeDataServiceApi", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) ListDataServiceApis(ctx context.Context, in *pbrequest.ListCustomerApis, opts ...grpc.CallOption) (*pbresponse.ListCustomerApis, error) {
-	out := new(pbresponse.ListCustomerApis)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListDataServiceApis", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataServiceClient) DeleteDataServiceApis(ctx context.Context, in *pbrequest.DeleteCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+func (c *dataServiceClient) DeleteApiConfigs(ctx context.Context, in *pbrequest.DeleteApiConfigs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteDataServiceApis", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteApiConfigs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -183,6 +183,15 @@ func (c *dataServiceClient) TestDataServiceApi(ctx context.Context, in *pbreques
 func (c *dataServiceClient) PublishDataServiceApi(ctx context.Context, in *pbrequest.PublishCustomerApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/PublishDataServiceApi", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/AbolishDataServiceApis", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -216,15 +225,6 @@ func (c *dataServiceClient) RepublishDataServiceApi(ctx context.Context, in *pbr
 	return out, nil
 }
 
-func (c *dataServiceClient) AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishCustomerApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/dataservice.DataService/AbolishDataServiceApis", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -237,17 +237,17 @@ type DataServiceServer interface {
 	CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(context.Context, *pbrequest.ListApiGroups) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error)
-	CreateDataServiceApi(context.Context, *pbrequest.CreateCustomerApi) (*pbresponse.CreateCustomerApi, error)
-	UpdateDataServiceApi(context.Context, *pbrequest.UpdateCustomerApi) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceApi(context.Context, *pbrequest.DescribeCustomerApi) (*pbresponse.DescribeCustomerApi, error)
-	ListDataServiceApis(context.Context, *pbrequest.ListCustomerApis) (*pbresponse.ListCustomerApis, error)
-	DeleteDataServiceApis(context.Context, *pbrequest.DeleteCustomerApis) (*pbmodel.EmptyStruct, error)
+	ListApiConfigs(context.Context, *pbrequest.ListApiConfigs) (*pbresponse.ListApiConfigs, error)
+	DescribeApiConfig(context.Context, *pbrequest.DescribeApiConfig) (*pbresponse.DescribeApiConfig, error)
+	CreateApiConfig(context.Context, *pbrequest.CreateApiConfig) (*pbresponse.CreateApiConfig, error)
+	UpdateApiConfig(context.Context, *pbrequest.UpdateApiConfig) (*pbmodel.EmptyStruct, error)
+	DeleteApiConfigs(context.Context, *pbrequest.DeleteApiConfigs) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(context.Context, *pbrequest.TestCustomerApi) (*pbresponse.TestCustomerApi, error)
 	PublishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error)
+	AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error)
 	ListDataServiceApiVersions(context.Context, *pbrequest.ListApiVersions) (*pbresponse.ListApiVersions, error)
 	DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeApiVersion) (*pbresponse.DescribeApiVersion, error)
 	RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error)
-	AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -279,26 +279,29 @@ func (UnimplementedDataServiceServer) ListApiGroups(context.Context, *pbrequest.
 func (UnimplementedDataServiceServer) DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiGroups not implemented")
 }
-func (UnimplementedDataServiceServer) CreateDataServiceApi(context.Context, *pbrequest.CreateCustomerApi) (*pbresponse.CreateCustomerApi, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDataServiceApi not implemented")
+func (UnimplementedDataServiceServer) ListApiConfigs(context.Context, *pbrequest.ListApiConfigs) (*pbresponse.ListApiConfigs, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListApiConfigs not implemented")
 }
-func (UnimplementedDataServiceServer) UpdateDataServiceApi(context.Context, *pbrequest.UpdateCustomerApi) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataServiceApi not implemented")
+func (UnimplementedDataServiceServer) DescribeApiConfig(context.Context, *pbrequest.DescribeApiConfig) (*pbresponse.DescribeApiConfig, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeApiConfig not implemented")
 }
-func (UnimplementedDataServiceServer) DescribeDataServiceApi(context.Context, *pbrequest.DescribeCustomerApi) (*pbresponse.DescribeCustomerApi, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataServiceApi not implemented")
+func (UnimplementedDataServiceServer) CreateApiConfig(context.Context, *pbrequest.CreateApiConfig) (*pbresponse.CreateApiConfig, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApiConfig not implemented")
 }
-func (UnimplementedDataServiceServer) ListDataServiceApis(context.Context, *pbrequest.ListCustomerApis) (*pbresponse.ListCustomerApis, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListDataServiceApis not implemented")
+func (UnimplementedDataServiceServer) UpdateApiConfig(context.Context, *pbrequest.UpdateApiConfig) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiConfig not implemented")
 }
-func (UnimplementedDataServiceServer) DeleteDataServiceApis(context.Context, *pbrequest.DeleteCustomerApis) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataServiceApis not implemented")
+func (UnimplementedDataServiceServer) DeleteApiConfigs(context.Context, *pbrequest.DeleteApiConfigs) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiConfigs not implemented")
 }
 func (UnimplementedDataServiceServer) TestDataServiceApi(context.Context, *pbrequest.TestCustomerApi) (*pbresponse.TestCustomerApi, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TestDataServiceApi not implemented")
 }
 func (UnimplementedDataServiceServer) PublishDataServiceApi(context.Context, *pbrequest.PublishCustomerApi) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublishDataServiceApi not implemented")
+}
+func (UnimplementedDataServiceServer) AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApis not implemented")
 }
 func (UnimplementedDataServiceServer) ListDataServiceApiVersions(context.Context, *pbrequest.ListApiVersions) (*pbresponse.ListApiVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDataServiceApiVersions not implemented")
@@ -308,9 +311,6 @@ func (UnimplementedDataServiceServer) DescribeDataServiceApiVersion(context.Cont
 }
 func (UnimplementedDataServiceServer) RepublishDataServiceApi(context.Context, *pbrequest.DescribeApiVersion) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RepublishDataServiceApi not implemented")
-}
-func (UnimplementedDataServiceServer) AbolishDataServiceApis(context.Context, *pbrequest.AbolishCustomerApis) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApis not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -469,92 +469,92 @@ func _DataService_DeleteApiGroups_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_CreateDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.CreateCustomerApi)
+func _DataService_ListApiConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListApiConfigs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).CreateDataServiceApi(ctx, in)
+		return srv.(DataServiceServer).ListApiConfigs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/CreateDataServiceApi",
+		FullMethod: "/dataservice.DataService/ListApiConfigs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).CreateDataServiceApi(ctx, req.(*pbrequest.CreateCustomerApi))
+		return srv.(DataServiceServer).ListApiConfigs(ctx, req.(*pbrequest.ListApiConfigs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_UpdateDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.UpdateCustomerApi)
+func _DataService_DescribeApiConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeApiConfig)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).UpdateDataServiceApi(ctx, in)
+		return srv.(DataServiceServer).DescribeApiConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/UpdateDataServiceApi",
+		FullMethod: "/dataservice.DataService/DescribeApiConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).UpdateDataServiceApi(ctx, req.(*pbrequest.UpdateCustomerApi))
+		return srv.(DataServiceServer).DescribeApiConfig(ctx, req.(*pbrequest.DescribeApiConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_DescribeDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DescribeCustomerApi)
+func _DataService_CreateApiConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateApiConfig)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).DescribeDataServiceApi(ctx, in)
+		return srv.(DataServiceServer).CreateApiConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/DescribeDataServiceApi",
+		FullMethod: "/dataservice.DataService/CreateApiConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).DescribeDataServiceApi(ctx, req.(*pbrequest.DescribeCustomerApi))
+		return srv.(DataServiceServer).CreateApiConfig(ctx, req.(*pbrequest.CreateApiConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_ListDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListCustomerApis)
+func _DataService_UpdateApiConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateApiConfig)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).ListDataServiceApis(ctx, in)
+		return srv.(DataServiceServer).UpdateApiConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/ListDataServiceApis",
+		FullMethod: "/dataservice.DataService/UpdateApiConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).ListDataServiceApis(ctx, req.(*pbrequest.ListCustomerApis))
+		return srv.(DataServiceServer).UpdateApiConfig(ctx, req.(*pbrequest.UpdateApiConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_DeleteDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DeleteCustomerApis)
+func _DataService_DeleteApiConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteApiConfigs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataServiceServer).DeleteDataServiceApis(ctx, in)
+		return srv.(DataServiceServer).DeleteApiConfigs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/dataservice.DataService/DeleteDataServiceApis",
+		FullMethod: "/dataservice.DataService/DeleteApiConfigs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).DeleteDataServiceApis(ctx, req.(*pbrequest.DeleteCustomerApis))
+		return srv.(DataServiceServer).DeleteApiConfigs(ctx, req.(*pbrequest.DeleteApiConfigs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -591,6 +591,24 @@ func _DataService_PublishDataServiceApi_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).PublishDataServiceApi(ctx, req.(*pbrequest.PublishCustomerApi))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_AbolishDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.AbolishCustomerApis)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/AbolishDataServiceApis",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, req.(*pbrequest.AbolishCustomerApis))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -649,24 +667,6 @@ func _DataService_RepublishDataServiceApi_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataService_AbolishDataServiceApis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.AbolishCustomerApis)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/dataservice.DataService/AbolishDataServiceApis",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataServiceServer).AbolishDataServiceApis(ctx, req.(*pbrequest.AbolishCustomerApis))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -707,24 +707,24 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_DeleteApiGroups_Handler,
 		},
 		{
-			MethodName: "CreateDataServiceApi",
-			Handler:    _DataService_CreateDataServiceApi_Handler,
+			MethodName: "ListApiConfigs",
+			Handler:    _DataService_ListApiConfigs_Handler,
 		},
 		{
-			MethodName: "UpdateDataServiceApi",
-			Handler:    _DataService_UpdateDataServiceApi_Handler,
+			MethodName: "DescribeApiConfig",
+			Handler:    _DataService_DescribeApiConfig_Handler,
 		},
 		{
-			MethodName: "DescribeDataServiceApi",
-			Handler:    _DataService_DescribeDataServiceApi_Handler,
+			MethodName: "CreateApiConfig",
+			Handler:    _DataService_CreateApiConfig_Handler,
 		},
 		{
-			MethodName: "ListDataServiceApis",
-			Handler:    _DataService_ListDataServiceApis_Handler,
+			MethodName: "UpdateApiConfig",
+			Handler:    _DataService_UpdateApiConfig_Handler,
 		},
 		{
-			MethodName: "DeleteDataServiceApis",
-			Handler:    _DataService_DeleteDataServiceApis_Handler,
+			MethodName: "DeleteApiConfigs",
+			Handler:    _DataService_DeleteApiConfigs_Handler,
 		},
 		{
 			MethodName: "TestDataServiceApi",
@@ -733,6 +733,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PublishDataServiceApi",
 			Handler:    _DataService_PublishDataServiceApi_Handler,
+		},
+		{
+			MethodName: "AbolishDataServiceApis",
+			Handler:    _DataService_AbolishDataServiceApis_Handler,
 		},
 		{
 			MethodName: "ListDataServiceApiVersions",
@@ -745,10 +749,6 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RepublishDataServiceApi",
 			Handler:    _DataService_RepublishDataServiceApi_Handler,
-		},
-		{
-			MethodName: "AbolishDataServiceApis",
-			Handler:    _DataService_AbolishDataServiceApis_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -81,16 +81,16 @@ func (this *DeleteApiGroups) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListCustomerApis
-func (this *ListCustomerApis) SetDefaults() {
+// Set default value for message request.ListApiConfigs
+func (this *ListApiConfigs) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.UpdateCustomerApi
-func (this *UpdateCustomerApi) SetDefaults() {
+// Set default value for message request.UpdateApiConfig
+func (this *UpdateApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -102,24 +102,24 @@ func (this *UpdateCustomerApi) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DescribeCustomerApi
-func (this *DescribeCustomerApi) SetDefaults() {
+// Set default value for message request.DescribeApiConfig
+func (this *DescribeApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.DeleteCustomerApis
-func (this *DeleteCustomerApis) SetDefaults() {
+// Set default value for message request.DeleteApiConfigs
+func (this *DeleteApiConfigs) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.CreateCustomerApi
-func (this *CreateCustomerApi) SetDefaults() {
+// Set default value for message request.CreateApiConfig
+func (this *CreateApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}

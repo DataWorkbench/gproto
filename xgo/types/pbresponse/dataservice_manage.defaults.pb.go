@@ -41,16 +41,16 @@ func (this *CreateApiGroup) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListCustomerApis
-func (this *ListCustomerApis) SetDefaults() {
+// Set default value for message response.ListApiConfigs
+func (this *ListApiConfigs) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.DescribeCustomerApi
-func (this *DescribeCustomerApi) SetDefaults() {
+// Set default value for message response.DescribeApiConfig
+func (this *DescribeApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -62,8 +62,8 @@ func (this *DescribeCustomerApi) SetDefaults() {
 	return
 }
 
-// Set default value for message response.CreateCustomerApi
-func (this *CreateCustomerApi) SetDefaults() {
+// Set default value for message response.CreateApiConfig
+func (this *CreateApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}

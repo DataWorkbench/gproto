@@ -25,19 +25,20 @@ service DataService {
   rpc CreateApiGroup(request.CreateApiGroup) returns (response.CreateApiGroup) {}
   rpc ListApiGroups(request.ListApiGroups) returns (response.ListApiGroups) {}
   rpc DeleteApiGroups(request.DeleteApiGroups)   returns (model.EmptyStruct) {}
+  // rpc DescribeApiGroup() returns () {}
 
-  rpc CreateDataServiceApi(request.CreateCustomerApi) returns (response.CreateCustomerApi) {}
-  rpc UpdateDataServiceApi(request.UpdateCustomerApi) returns (model.EmptyStruct) {}
-  rpc DescribeDataServiceApi(request.DescribeCustomerApi) returns (response.DescribeCustomerApi) {}
-  rpc ListDataServiceApis(request.ListCustomerApis) returns (response.ListCustomerApis) {}
-  rpc DeleteDataServiceApis(request.DeleteCustomerApis)   returns (model.EmptyStruct) {}
+  rpc ListApiConfigs(request.ListApiConfigs) returns (response.ListApiConfigs) {}
+  rpc DescribeApiConfig(request.DescribeApiConfig) returns (response.DescribeApiConfig) {}
+  rpc CreateApiConfig(request.CreateApiConfig) returns (response.CreateApiConfig) {}
+  rpc UpdateApiConfig(request.UpdateApiConfig) returns (model.EmptyStruct) {}
+  rpc DeleteApiConfigs(request.DeleteApiConfigs)   returns (model.EmptyStruct) {}
 
   rpc TestDataServiceApi(request.TestCustomerApi) returns (response.TestCustomerApi) {}
-
   rpc PublishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
+  rpc AbolishDataServiceApis(request.AbolishCustomerApis) returns (model.EmptyStruct) {}
+
   rpc ListDataServiceApiVersions(request.ListApiVersions) returns (response.ListApiVersions) {}
   rpc DescribeDataServiceApiVersion(request.DescribeApiVersion) returns (response.DescribeApiVersion) {}
   rpc RepublishDataServiceApi(request.DescribeApiVersion) returns (model.EmptyStruct) {}
 
-  rpc AbolishDataServiceApis(request.AbolishCustomerApis) returns (model.EmptyStruct) {}
 }

@@ -40,7 +40,7 @@ message CreateApiGroup {
   string id = 1;
 }
 
-message ListCustomerApis {
+message ListApiConfigs {
   // @inject_tag: json:"infos"
   repeated model.ApiConfig infos = 1;
   // @inject_tag: json:"total"
@@ -49,7 +49,7 @@ message ListCustomerApis {
   bool has_more = 3;
 }
 
-message DescribeCustomerApi {
+message DescribeApiConfig {
   // @inject_tag: json:"api_config"
   model.ApiConfig api_config = 1;
   // @inject_tag: json:"request_params"
@@ -58,7 +58,7 @@ message DescribeCustomerApi {
   repeated model.ApiResponseParams response_params = 3;
 }
 
-message CreateCustomerApi {
+message CreateApiConfig {
   // @inject_tag: json:"id"
   string id = 1 ;
 }

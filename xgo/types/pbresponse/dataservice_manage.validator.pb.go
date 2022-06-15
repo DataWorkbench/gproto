@@ -71,7 +71,7 @@ func (this *CreateApiGroup) Validate() error {
 	return nil
 }
 
-func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListApiConfigs) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -83,8 +83,8 @@ func (this *ListCustomerApis) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListCustomerApis
-func (this *ListCustomerApis) Validate() error {
+// Set default value for message response.ListApiConfigs
+func (this *ListApiConfigs) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -94,7 +94,7 @@ func (this *ListCustomerApis) Validate() error {
 	return nil
 }
 
-func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_api_config() error {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_config() error {
 	if dt, ok := interface{}(this.ApiConfig).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -103,7 +103,7 @@ func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_api_config() error 
 	return nil
 }
 
-func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_request_params() error {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_request_params() error {
 	for _, item := range this.RequestParams {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -115,7 +115,7 @@ func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_request_params() er
 	return nil
 }
 
-func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_response_params() error {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_response_params() error {
 	for _, item := range this.ResponseParams {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -127,8 +127,8 @@ func (this *DescribeCustomerApi) _xxx_xxx_Validator_Validate_response_params() e
 	return nil
 }
 
-// Set default value for message response.DescribeCustomerApi
-func (this *DescribeCustomerApi) Validate() error {
+// Set default value for message response.DescribeApiConfig
+func (this *DescribeApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -144,8 +144,8 @@ func (this *DescribeCustomerApi) Validate() error {
 	return nil
 }
 
-// Set default value for message response.CreateCustomerApi
-func (this *CreateCustomerApi) Validate() error {
+// Set default value for message response.CreateApiConfig
+func (this *CreateApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}
