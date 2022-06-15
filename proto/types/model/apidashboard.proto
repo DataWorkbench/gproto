@@ -128,6 +128,8 @@ message ApiServiceEntity {
   string space_id = 10;
   // @inject_tag: json:"curr_status" gorm:"column:curr_status;"
   StatusType curr_status = 11;
+  // @inject_tag: json:"pre_path" gorm:"column:pre_path;"
+  string pre_path = 12;
 }
 
 message AuthKeyEntity {

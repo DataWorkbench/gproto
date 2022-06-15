@@ -205,6 +205,8 @@ message CreateApiService {
   string created_by = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"id"
   string id = 6 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];
+  // @inject_tag: json:"pre_path"
+  string pre_path = 7 [ (validator.field).tags.string = { byte_len_lte: 128 } ];
 }
 
 message DeleteApiService {

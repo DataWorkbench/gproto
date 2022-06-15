@@ -676,6 +676,13 @@ func (this *CreateApiService) _xxx_xxx_Validator_Validate_id() error {
 	return nil
 }
 
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_pre_path() error {
+	if !(len(this.PrePath) <= 128) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'pre_path' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.PrePath))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateApiService
 func (this *CreateApiService) Validate() error {
 	if this == nil {
@@ -694,6 +701,9 @@ func (this *CreateApiService) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_pre_path(); err != nil {
 		return err
 	}
 	return nil
