@@ -25,14 +25,6 @@ func (this *DescribeUsers) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ValidateRequestSignature
-func (this *ValidateRequestSignature) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message response.CreateUser
 func (this *CreateUser) SetDefaults() {
 	if this == nil {
@@ -93,6 +85,53 @@ func (this *GetUserRole) SetDefaults() {
 
 // Set default value for message response.CheckUserExists
 func (this *CheckUserExists) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.CreateNotification
+func (this *CreateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.UpdateNotification
+func (this *UpdateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DeleteNotification
+func (this *DeleteNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.GetNotifications
+func (this *GetNotifications) SetDefaults() {
 	if this == nil {
 		return
 	}

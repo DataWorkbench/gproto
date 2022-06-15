@@ -676,6 +676,13 @@ func (this *CreateApiService) _xxx_xxx_Validator_Validate_id() error {
 	return nil
 }
 
+func (this *CreateApiService) _xxx_xxx_Validator_Validate_pre_path() error {
+	if !(len(this.PrePath) <= 128) {
+		return protovalidator.FieldError1("CreateApiService", "the byte length of field 'pre_path' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.PrePath))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateApiService
 func (this *CreateApiService) Validate() error {
 	if this == nil {
@@ -694,6 +701,9 @@ func (this *CreateApiService) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_pre_path(); err != nil {
 		return err
 	}
 	return nil
@@ -1047,9 +1057,12 @@ func (this *BindAuthKey) _xxx_xxx_Validator_Validate_auth_key_id() error {
 	return nil
 }
 
-func (this *BindAuthKey) _xxx_xxx_Validator_Validate_api_service_id() error {
-	if !(len(this.ApiServiceId) > 0) {
-		return protovalidator.FieldError1("BindAuthKey", "the byte length of field 'api_service_id' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiServiceId))
+func (this *BindAuthKey) _xxx_xxx_Validator_Validate_api_service_ids() error {
+	if !(len(this.ApiServiceIds) > 0) {
+		return protovalidator.FieldError1("BindAuthKey", "the length of field 'api_service_ids' must be greater than '0'", strconv.Itoa(len(this.ApiServiceIds)))
+	}
+	if !(len(this.ApiServiceIds) <= 100) {
+		return protovalidator.FieldError1("BindAuthKey", "the length of field 'api_service_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiServiceIds)))
 	}
 	return nil
 }
@@ -1062,15 +1075,18 @@ func (this *BindAuthKey) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_auth_key_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_service_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_service_ids(); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (this *UnbindAuthKey) _xxx_xxx_Validator_Validate_api_service_id() error {
-	if !(len(this.ApiServiceId) > 0) {
-		return protovalidator.FieldError1("UnbindAuthKey", "the byte length of field 'api_service_id' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiServiceId))
+func (this *UnbindAuthKey) _xxx_xxx_Validator_Validate_api_service_ids() error {
+	if !(len(this.ApiServiceIds) > 0) {
+		return protovalidator.FieldError1("UnbindAuthKey", "the length of field 'api_service_ids' must be greater than '0'", strconv.Itoa(len(this.ApiServiceIds)))
+	}
+	if !(len(this.ApiServiceIds) <= 100) {
+		return protovalidator.FieldError1("UnbindAuthKey", "the length of field 'api_service_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiServiceIds)))
 	}
 	return nil
 }
@@ -1080,7 +1096,7 @@ func (this *UnbindAuthKey) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_service_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_service_ids(); err != nil {
 		return err
 	}
 	return nil

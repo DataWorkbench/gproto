@@ -48,14 +48,6 @@ func (this *DescribeUsers) Validate() error {
 	return nil
 }
 
-// Set default value for message request.ValidateRequestSignature
-func (this *ValidateRequestSignature) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *CreateUser) _xxx_xxx_Validator_Validate_user_name() error {
 	if !(utf8.RuneCountInString(this.UserName) >= 2) {
 		return protovalidator.FieldError1("CreateUser", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))
@@ -240,6 +232,90 @@ func (this *CheckUserExists) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_user_name(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateNotification) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("CreateNotification", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("CreateNotification", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
+	}
+	return nil
+}
+
+// Set default value for message request.CreateNotification
+func (this *CreateNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateNotification) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("UpdateNotification", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("UpdateNotification", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateNotification
+func (this *UpdateNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DeleteNotification) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("DeleteNotification", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("DeleteNotification", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteNotification
+func (this *DeleteNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *GetNotifications) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("GetNotifications", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("GetNotifications", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
+	}
+	return nil
+}
+
+// Set default value for message request.GetNotifications
+func (this *GetNotifications) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
 		return err
 	}
 	return nil

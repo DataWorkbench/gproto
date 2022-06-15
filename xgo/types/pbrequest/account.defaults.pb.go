@@ -25,14 +25,6 @@ func (this *DescribeUsers) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ValidateRequestSignature
-func (this *ValidateRequestSignature) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.CreateUser
 func (this *CreateUser) SetDefaults() {
 	if this == nil {
@@ -75,6 +67,38 @@ func (this *CreateSession) SetDefaults() {
 
 // Set default value for message request.CheckUserExists
 func (this *CheckUserExists) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.CreateNotification
+func (this *CreateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateNotification
+func (this *UpdateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteNotification
+func (this *DeleteNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.GetNotifications
+func (this *GetNotifications) SetDefaults() {
 	if this == nil {
 		return
 	}

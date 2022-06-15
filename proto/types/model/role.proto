@@ -95,7 +95,6 @@ message ProjectModule {
     PlatformManage = 3;
     IaaSProxy = 4;
     NotifierManager = 5;
-    ApiGateway = 6;
 
     // Module In workspace;
     MemberManage = 101;
@@ -116,6 +115,7 @@ message ProjectModule {
     AlertManage = 116;
     NoticeManage = 117;
     DataService = 118 ;
+    ApiGateway = 119;
   }
 
   // The module id.

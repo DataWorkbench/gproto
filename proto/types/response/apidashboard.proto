@@ -23,6 +23,9 @@ message ListRoutes {
 
   // @inject_tag: json:"total"
   int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }
 
 message ListUpstreams {
@@ -31,6 +34,9 @@ message ListUpstreams {
 
   // @inject_tag: json:"total"
   int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }
 
 message CreateUpstream {
@@ -62,6 +68,9 @@ message ListApiServices {
 
   // @inject_tag: json:"total"
   int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }
 
 message ListAuthKeys {
@@ -70,6 +79,9 @@ message ListAuthKeys {
 
   // @inject_tag: json:"total"
   int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }
 
 message CreateAuthKey {

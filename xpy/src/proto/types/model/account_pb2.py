@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xe3\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"\xb9\x01\n\x04Role\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04ros-\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"F\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05\x41\x64min\x10\x01\x12\r\n\tDeveloper\x10\x02\x12\x08\n\x04User\x10\x03\x12\x0b\n\x07Visitor\x10\x04\"\x90\x02\n\x0b\x41\x64minModule\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\x08\x63lassify\x18\x02 \x01(\x0e\x32\x1b.model.AdminModule.ClassifyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\tapi_lists\x18\x04 \x03(\x0b\x32\x0f.model.AdminAPI\"c\n\x08\x43lassify\x12\x11\n\rClassifyUnSet\x10\x00\x12\x0e\n\nUserManage\x10\x01\x12\x11\n\rSessionManage\x10\x02\x12\x11\n\rMessageManage\x10\x03\x12\x0e\n\nAuthManage\x10\x04\"\x9a\x03\n\x08\x41\x64minAPI\x12\x1d\n\x08\x61pi_name\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12:\n\tperm_type\x18\x03 \x01(\x0e\x32\x18.model.AdminAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\x0bpermissions\x18\x04 \x03(\x0b\x32\x1a.model.AdminAPI.PermissionB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\x36\n\x05roles\x18\x06 \x03(\x0b\x32\x1a.model.AdminAPI.RolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x38\n\nPermission\x12\x19\n\x04role\x18\x01 \x01(\x0b\x32\x0b.model.Role\x12\x0f\n\x07\x61llowed\x18\x02 \x01(\x08\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"2\n\x08PermType\x12\x11\n\rPermTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xe3\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"\xb9\x01\n\x04Role\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04ros-\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"F\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05\x41\x64min\x10\x01\x12\r\n\tDeveloper\x10\x02\x12\x08\n\x04User\x10\x03\x12\x0b\n\x07Visitor\x10\x04\"\x90\x02\n\x0b\x41\x64minModule\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\x08\x63lassify\x18\x02 \x01(\x0e\x32\x1b.model.AdminModule.ClassifyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\tapi_lists\x18\x04 \x03(\x0b\x32\x0f.model.AdminAPI\"c\n\x08\x43lassify\x12\x11\n\rClassifyUnSet\x10\x00\x12\x0e\n\nUserManage\x10\x01\x12\x11\n\rSessionManage\x10\x02\x12\x11\n\rMessageManage\x10\x03\x12\x0e\n\nAuthManage\x10\x04\"\x9a\x03\n\x08\x41\x64minAPI\x12\x1d\n\x08\x61pi_name\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12:\n\tperm_type\x18\x03 \x01(\x0e\x32\x18.model.AdminAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\x0bpermissions\x18\x04 \x03(\x0b\x32\x1a.model.AdminAPI.PermissionB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\x36\n\x05roles\x18\x06 \x03(\x0b\x32\x1a.model.AdminAPI.RolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x38\n\nPermission\x12\x19\n\x04role\x18\x01 \x01(\x0b\x32\x0b.model.Role\x12\x0f\n\x07\x61llowed\x18\x02 \x01(\x08\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"2\n\x08PermType\x12\x11\n\rPermTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\"v\n\x0cNotification\x12\x11\n\trecipient\x18\x01 \x01(\t\x12\x0c\n\x04note\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x12\n\ncreated_at\x18\x05 \x01(\x03\x12\x12\n\nupdated_at\x18\x06 \x01(\x03\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -490,6 +490,73 @@ _ADMINAPI = _descriptor.Descriptor(
   serialized_end=1199,
 )
 
+
+_NOTIFICATION = _descriptor.Descriptor(
+  name='Notification',
+  full_name='model.Notification',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='recipient', full_name='model.Notification.recipient', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='note', full_name='model.Notification.note', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='model.Notification.status', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='model.Notification.email', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='model.Notification.created_at', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updated_at', full_name='model.Notification.updated_at', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1201,
+  serialized_end=1319,
+)
+
 _ROLE.fields_by_name['type'].enum_type = _ROLE_TYPE
 _ROLE_TYPE.containing_type = _ROLE
 _ADMINMODULE.fields_by_name['classify'].enum_type = _ADMINMODULE_CLASSIFY
@@ -506,6 +573,7 @@ DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
 DESCRIPTOR.message_types_by_name['AdminModule'] = _ADMINMODULE
 DESCRIPTOR.message_types_by_name['AdminAPI'] = _ADMINAPI
+DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
@@ -551,6 +619,13 @@ AdminAPI = _reflection.GeneratedProtocolMessageType('AdminAPI', (_message.Messag
 _sym_db.RegisterMessage(AdminAPI)
 _sym_db.RegisterMessage(AdminAPI.Permission)
 _sym_db.RegisterMessage(AdminAPI.RolesEntry)
+
+Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), {
+  'DESCRIPTOR' : _NOTIFICATION,
+  '__module__' : 'proto.types.model.account_pb2'
+  # @@protoc_insertion_point(class_scope:model.Notification)
+  })
+_sym_db.RegisterMessage(Notification)
 
 
 DESCRIPTOR._options = None

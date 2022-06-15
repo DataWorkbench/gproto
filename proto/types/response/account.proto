@@ -26,11 +26,12 @@ message DescribeUsers {
   string message = 4 ;
 }
 
-message ValidateRequestSignature {
-  int32 status = 1;
-  string message = 2 ;
-  string user_id = 3;
-}
+// FIXME: removed it.
+//message ValidateRequestSignature {
+//  int32 status = 1;
+//  string message = 2 ;
+//  string user_id = 3;
+//}
 
 
 message CreateUser{
@@ -63,4 +64,23 @@ message GetUserRole{
 
 message CheckUserExists{
   bool exists = 1;
+}
+
+
+message CreateNotification{
+  model.Notification notification = 1;
+}
+
+message UpdateNotification{
+  model.Notification notification = 1;
+}
+
+message DeleteNotification{
+  model.Notification notification = 1;
+}
+
+
+message GetNotifications{
+  int64 total_count = 3;
+  repeated model.Notification notification_set = 4;
 }

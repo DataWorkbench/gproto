@@ -53,3 +53,11 @@ func (this *AdminAPI_Permission) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.Notification
+func (this *Notification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

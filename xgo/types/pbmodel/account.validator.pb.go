@@ -217,3 +217,11 @@ func (this *AdminAPI_Permission) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message model.Notification
+func (this *Notification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

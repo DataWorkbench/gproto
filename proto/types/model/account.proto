@@ -125,3 +125,13 @@ message AdminAPI {
 }
 
 
+// notification
+message Notification{
+  // messager receiver
+  string recipient = 1;
+  string note = 2;
+  string status = 3;
+  string email = 4;
+  int64 created_at = 5;
+  int64 updated_at = 6;
+}

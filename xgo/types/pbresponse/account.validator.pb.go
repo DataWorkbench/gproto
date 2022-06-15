@@ -40,14 +40,6 @@ func (this *DescribeUsers) Validate() error {
 	return nil
 }
 
-// Set default value for message response.ValidateRequestSignature
-func (this *ValidateRequestSignature) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *CreateUser) _xxx_xxx_Validator_Validate_user() error {
 	if dt, ok := interface{}(this.User).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -124,6 +116,89 @@ func (this *GetUserRole) Validate() error {
 func (this *CheckUserExists) Validate() error {
 	if this == nil {
 		return nil
+	}
+	return nil
+}
+
+func (this *CreateNotification) _xxx_xxx_Validator_Validate_notification() error {
+	if dt, ok := interface{}(this.Notification).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.CreateNotification
+func (this *CreateNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateNotification) _xxx_xxx_Validator_Validate_notification() error {
+	if dt, ok := interface{}(this.Notification).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.UpdateNotification
+func (this *UpdateNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DeleteNotification) _xxx_xxx_Validator_Validate_notification() error {
+	if dt, ok := interface{}(this.Notification).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DeleteNotification
+func (this *DeleteNotification) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *GetNotifications) _xxx_xxx_Validator_Validate_notification_set() error {
+	for _, item := range this.NotificationSet {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.GetNotifications
+func (this *GetNotifications) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification_set(); err != nil {
+		return err
 	}
 	return nil
 }
