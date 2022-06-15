@@ -64,3 +64,8 @@ message GetUserRole{
 message CheckUserExists{
   bool exists = 1;
 }
+
+message GetNotifications{
+  int64 total_count = 3;
+  repeated model.Notification notification_set = 4;
+}

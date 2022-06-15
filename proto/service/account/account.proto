@@ -23,5 +23,8 @@ service Account {
   rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
   rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
   rpc CheckUserExists(request.CheckUserExists) returns (response.CheckUserExists) {}
-
+  rpc CreateNotification(request.CreateNotification) returns (response.CreateNotification) {}
+  rpc UpdateNotification(request.UpdateNotification) returns (response.UpdateNotification) {}
+  rpc DeleteNotification(request.DeleteNotification) returns (response.DeleteNotification) {}
+  rpc GetNotifications(request.GetNotifications) returns (response.GetNotifications) {}
 }
