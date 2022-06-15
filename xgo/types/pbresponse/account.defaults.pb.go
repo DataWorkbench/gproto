@@ -98,3 +98,50 @@ func (this *CheckUserExists) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.CreateNotification
+func (this *CreateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.UpdateNotification
+func (this *UpdateNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DeleteNotification
+func (this *DeleteNotification) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Notification != nil {
+		if dt, ok := interface{}(this.Notification).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.GetNotifications
+func (this *GetNotifications) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

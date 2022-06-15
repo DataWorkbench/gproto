@@ -33,6 +33,10 @@ type AccountClient interface {
 	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
 	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
 	CheckUserExists(ctx context.Context, in *pbrequest.CheckUserExists, opts ...grpc.CallOption) (*pbresponse.CheckUserExists, error)
+	CreateNotification(ctx context.Context, in *pbrequest.CreateNotification, opts ...grpc.CallOption) (*pbresponse.CreateNotification, error)
+	UpdateNotification(ctx context.Context, in *pbrequest.UpdateNotification, opts ...grpc.CallOption) (*pbresponse.UpdateNotification, error)
+	DeleteNotification(ctx context.Context, in *pbrequest.DeleteNotification, opts ...grpc.CallOption) (*pbresponse.DeleteNotification, error)
+	GetNotifications(ctx context.Context, in *pbrequest.GetNotifications, opts ...grpc.CallOption) (*pbresponse.GetNotifications, error)
 }
 
 type accountClient struct {
@@ -124,6 +128,42 @@ func (c *accountClient) CheckUserExists(ctx context.Context, in *pbrequest.Check
 	return out, nil
 }
 
+func (c *accountClient) CreateNotification(ctx context.Context, in *pbrequest.CreateNotification, opts ...grpc.CallOption) (*pbresponse.CreateNotification, error) {
+	out := new(pbresponse.CreateNotification)
+	err := c.cc.Invoke(ctx, "/account.Account/CreateNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) UpdateNotification(ctx context.Context, in *pbrequest.UpdateNotification, opts ...grpc.CallOption) (*pbresponse.UpdateNotification, error) {
+	out := new(pbresponse.UpdateNotification)
+	err := c.cc.Invoke(ctx, "/account.Account/UpdateNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) DeleteNotification(ctx context.Context, in *pbrequest.DeleteNotification, opts ...grpc.CallOption) (*pbresponse.DeleteNotification, error) {
+	out := new(pbresponse.DeleteNotification)
+	err := c.cc.Invoke(ctx, "/account.Account/DeleteNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) GetNotifications(ctx context.Context, in *pbrequest.GetNotifications, opts ...grpc.CallOption) (*pbresponse.GetNotifications, error) {
+	out := new(pbresponse.GetNotifications)
+	err := c.cc.Invoke(ctx, "/account.Account/GetNotifications", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServer is the server API for Account service.
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
@@ -137,6 +177,10 @@ type AccountServer interface {
 	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
 	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
 	CheckUserExists(context.Context, *pbrequest.CheckUserExists) (*pbresponse.CheckUserExists, error)
+	CreateNotification(context.Context, *pbrequest.CreateNotification) (*pbresponse.CreateNotification, error)
+	UpdateNotification(context.Context, *pbrequest.UpdateNotification) (*pbresponse.UpdateNotification, error)
+	DeleteNotification(context.Context, *pbrequest.DeleteNotification) (*pbresponse.DeleteNotification, error)
+	GetNotifications(context.Context, *pbrequest.GetNotifications) (*pbresponse.GetNotifications, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -170,6 +214,18 @@ func (UnimplementedAccountServer) CreateSession(context.Context, *pbrequest.Crea
 }
 func (UnimplementedAccountServer) CheckUserExists(context.Context, *pbrequest.CheckUserExists) (*pbresponse.CheckUserExists, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckUserExists not implemented")
+}
+func (UnimplementedAccountServer) CreateNotification(context.Context, *pbrequest.CreateNotification) (*pbresponse.CreateNotification, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotification not implemented")
+}
+func (UnimplementedAccountServer) UpdateNotification(context.Context, *pbrequest.UpdateNotification) (*pbresponse.UpdateNotification, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotification not implemented")
+}
+func (UnimplementedAccountServer) DeleteNotification(context.Context, *pbrequest.DeleteNotification) (*pbresponse.DeleteNotification, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotification not implemented")
+}
+func (UnimplementedAccountServer) GetNotifications(context.Context, *pbrequest.GetNotifications) (*pbresponse.GetNotifications, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotifications not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -346,6 +402,78 @@ func _Account_CheckUserExists_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Account_CreateNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).CreateNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/CreateNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).CreateNotification(ctx, req.(*pbrequest.CreateNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_UpdateNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).UpdateNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/UpdateNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).UpdateNotification(ctx, req.(*pbrequest.UpdateNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_DeleteNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).DeleteNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/DeleteNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).DeleteNotification(ctx, req.(*pbrequest.DeleteNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_GetNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.GetNotifications)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).GetNotifications(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/GetNotifications",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).GetNotifications(ctx, req.(*pbrequest.GetNotifications))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Account_ServiceDesc is the grpc.ServiceDesc for Account service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -388,6 +516,22 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckUserExists",
 			Handler:    _Account_CheckUserExists_Handler,
+		},
+		{
+			MethodName: "CreateNotification",
+			Handler:    _Account_CreateNotification_Handler,
+		},
+		{
+			MethodName: "UpdateNotification",
+			Handler:    _Account_UpdateNotification_Handler,
+		},
+		{
+			MethodName: "DeleteNotification",
+			Handler:    _Account_DeleteNotification_Handler,
+		},
+		{
+			MethodName: "GetNotifications",
+			Handler:    _Account_GetNotifications_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

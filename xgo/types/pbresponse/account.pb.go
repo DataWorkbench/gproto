@@ -571,6 +571,202 @@ func (x *CheckUserExists) GetExists() bool {
 	return false
 }
 
+type CreateNotification struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Notification *pbmodel.Notification `protobuf:"bytes,1,opt,name=notification,proto3" json:"notification,omitempty"`
+}
+
+func (x *CreateNotification) Reset() {
+	*x = CreateNotification{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_account_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNotification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNotification) ProtoMessage() {}
+
+func (x *CreateNotification) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_account_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNotification.ProtoReflect.Descriptor instead.
+func (*CreateNotification) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_account_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *CreateNotification) GetNotification() *pbmodel.Notification {
+	if x != nil {
+		return x.Notification
+	}
+	return nil
+}
+
+type UpdateNotification struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Notification *pbmodel.Notification `protobuf:"bytes,1,opt,name=notification,proto3" json:"notification,omitempty"`
+}
+
+func (x *UpdateNotification) Reset() {
+	*x = UpdateNotification{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_account_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateNotification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateNotification) ProtoMessage() {}
+
+func (x *UpdateNotification) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_account_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateNotification.ProtoReflect.Descriptor instead.
+func (*UpdateNotification) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_account_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *UpdateNotification) GetNotification() *pbmodel.Notification {
+	if x != nil {
+		return x.Notification
+	}
+	return nil
+}
+
+type DeleteNotification struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Notification *pbmodel.Notification `protobuf:"bytes,1,opt,name=notification,proto3" json:"notification,omitempty"`
+}
+
+func (x *DeleteNotification) Reset() {
+	*x = DeleteNotification{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_account_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteNotification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteNotification) ProtoMessage() {}
+
+func (x *DeleteNotification) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_account_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteNotification.ProtoReflect.Descriptor instead.
+func (*DeleteNotification) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_account_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *DeleteNotification) GetNotification() *pbmodel.Notification {
+	if x != nil {
+		return x.Notification
+	}
+	return nil
+}
+
+type GetNotifications struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TotalCount      int64                   `protobuf:"varint,3,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	NotificationSet []*pbmodel.Notification `protobuf:"bytes,4,rep,name=notification_set,json=notificationSet,proto3" json:"notification_set,omitempty"`
+}
+
+func (x *GetNotifications) Reset() {
+	*x = GetNotifications{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_account_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetNotifications) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNotifications) ProtoMessage() {}
+
+func (x *GetNotifications) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_account_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNotifications.ProtoReflect.Descriptor instead.
+func (*GetNotifications) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_account_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *GetNotifications) GetTotalCount() int64 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+func (x *GetNotifications) GetNotificationSet() []*pbmodel.Notification {
+	if x != nil {
+		return x.NotificationSet
+	}
+	return nil
+}
+
 var File_proto_types_response_account_proto protoreflect.FileDescriptor
 
 var file_proto_types_response_account_proto_rawDesc = []byte{
@@ -626,15 +822,37 @@ var file_proto_types_response_account_proto_rawDesc = []byte{
 	0x28, 0x05, 0x52, 0x09, 0x70, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x22, 0x29, 0x0a,
 	0x0f, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x69, 0x73, 0x74, 0x73,
 	0x12, 0x16, 0x0a, 0x06, 0x65, 0x78, 0x69, 0x73, 0x74, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x06, 0x65, 0x78, 0x69, 0x73, 0x74, 0x73, 0x42, 0x72, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e,
-	0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x42, 0x11, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x41, 0x63, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68,
-	0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65,
-	0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x06, 0x65, 0x78, 0x69, 0x73, 0x74, 0x73, 0x22, 0x4d, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x37,
+	0x0a, 0x0c, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4d, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x37, 0x0a,
+	0x0c, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4d, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x37, 0x0a, 0x0c,
+	0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0c, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x73, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x1f, 0x0a, 0x0b, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x3e, 0x0a, 0x10, 0x6e, 0x6f,
+	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x04,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4e, 0x6f, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0f, 0x6e, 0x6f, 0x74, 0x69, 0x66,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x74, 0x42, 0x72, 0x0a, 0x25, 0x63, 0x6f,
+	0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x42, 0x11, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x41,
+	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
+	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
+	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -649,7 +867,7 @@ func file_proto_types_response_account_proto_rawDescGZIP() []byte {
 	return file_proto_types_response_account_proto_rawDescData
 }
 
-var file_proto_types_response_account_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_proto_types_response_account_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_proto_types_response_account_proto_goTypes = []interface{}{
 	(*DescribeAccessKey)(nil),        // 0: response.DescribeAccessKey
 	(*DescribeUsers)(nil),            // 1: response.DescribeUsers
@@ -661,17 +879,26 @@ var file_proto_types_response_account_proto_goTypes = []interface{}{
 	(*CreateSession)(nil),            // 7: response.CreateSession
 	(*GetUserRole)(nil),              // 8: response.GetUserRole
 	(*CheckUserExists)(nil),          // 9: response.CheckUserExists
-	(*pbmodel.User)(nil),             // 10: model.User
+	(*CreateNotification)(nil),       // 10: response.CreateNotification
+	(*UpdateNotification)(nil),       // 11: response.UpdateNotification
+	(*DeleteNotification)(nil),       // 12: response.DeleteNotification
+	(*GetNotifications)(nil),         // 13: response.GetNotifications
+	(*pbmodel.User)(nil),             // 14: model.User
+	(*pbmodel.Notification)(nil),     // 15: model.Notification
 }
 var file_proto_types_response_account_proto_depIdxs = []int32{
-	10, // 0: response.DescribeUsers.user_set:type_name -> model.User
-	10, // 1: response.CreateUser.user:type_name -> model.User
-	10, // 2: response.UpdateUser.user:type_name -> model.User
-	3,  // [3:3] is the sub-list for method output_type
-	3,  // [3:3] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	14, // 0: response.DescribeUsers.user_set:type_name -> model.User
+	14, // 1: response.CreateUser.user:type_name -> model.User
+	14, // 2: response.UpdateUser.user:type_name -> model.User
+	15, // 3: response.CreateNotification.notification:type_name -> model.Notification
+	15, // 4: response.UpdateNotification.notification:type_name -> model.Notification
+	15, // 5: response.DeleteNotification.notification:type_name -> model.Notification
+	15, // 6: response.GetNotifications.notification_set:type_name -> model.Notification
+	7,  // [7:7] is the sub-list for method output_type
+	7,  // [7:7] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_response_account_proto_init() }
@@ -800,6 +1027,54 @@ func file_proto_types_response_account_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_response_account_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateNotification); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_response_account_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateNotification); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_response_account_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteNotification); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_response_account_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetNotifications); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -807,7 +1082,7 @@ func file_proto_types_response_account_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_response_account_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
