@@ -14,7 +14,8 @@ import "proto/types/request/account.proto";
 import "proto/types/response/account.proto";
 
 service Account {
-  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
+  // FIXME: removed it.
+//  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
   rpc DescribeUsers(request.DescribeUsers) returns (response.DescribeUsers) {}
   rpc DescribeAccessKey(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
   rpc CreateUser(request.CreateUser) returns (response.CreateUser) {}

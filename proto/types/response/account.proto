@@ -26,11 +26,12 @@ message DescribeUsers {
   string message = 4 ;
 }
 
-message ValidateRequestSignature {
-  int32 status = 1;
-  string message = 2 ;
-  string user_id = 3;
-}
+// FIXME: removed it.
+//message ValidateRequestSignature {
+//  int32 status = 1;
+//  string message = 2 ;
+//  string user_id = 3;
+//}
 
 
 message CreateUser{

@@ -23,16 +23,17 @@ message DescribeUsers {
   string req_source = 4;
 }
 
-message ValidateRequestSignature {
-  string req_method = 1;
-  string req_path = 2;
-  string req_query_string = 3;
-  string req_body = 4;
-  string req_signature = 5;
-  string req_access_key_id = 6;
-  string req_source = 7;
-  string req_user_agent = 8;
-}
+// FIXME: removed it.
+//message ValidateRequestSignature {
+//  string req_method = 1;
+//  string req_path = 2;
+//  string req_query_string = 3;
+//  string req_body = 4;
+//  string req_signature = 5;
+//  string req_access_key_id = 6;
+//  string req_source = 7;
+//  string req_user_agent = 8;
+//}
 
 message CreateUser{
   string user_name = 1 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
