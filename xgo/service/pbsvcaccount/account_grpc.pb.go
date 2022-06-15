@@ -24,7 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountClient interface {
-	ValidateRequestSignature(ctx context.Context, in *pbrequest.ValidateRequestSignature, opts ...grpc.CallOption) (*pbresponse.ValidateRequestSignature, error)
+	// FIXME: removed it.
+	//  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
 	DescribeUsers(ctx context.Context, in *pbrequest.DescribeUsers, opts ...grpc.CallOption) (*pbresponse.DescribeUsers, error)
 	DescribeAccessKey(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
 	CreateUser(ctx context.Context, in *pbrequest.CreateUser, opts ...grpc.CallOption) (*pbresponse.CreateUser, error)
@@ -45,15 +46,6 @@ type accountClient struct {
 
 func NewAccountClient(cc grpc.ClientConnInterface) AccountClient {
 	return &accountClient{cc}
-}
-
-func (c *accountClient) ValidateRequestSignature(ctx context.Context, in *pbrequest.ValidateRequestSignature, opts ...grpc.CallOption) (*pbresponse.ValidateRequestSignature, error) {
-	out := new(pbresponse.ValidateRequestSignature)
-	err := c.cc.Invoke(ctx, "/account.Account/ValidateRequestSignature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *accountClient) DescribeUsers(ctx context.Context, in *pbrequest.DescribeUsers, opts ...grpc.CallOption) (*pbresponse.DescribeUsers, error) {
@@ -168,7 +160,8 @@ func (c *accountClient) GetNotifications(ctx context.Context, in *pbrequest.GetN
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
 type AccountServer interface {
-	ValidateRequestSignature(context.Context, *pbrequest.ValidateRequestSignature) (*pbresponse.ValidateRequestSignature, error)
+	// FIXME: removed it.
+	//  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
 	DescribeUsers(context.Context, *pbrequest.DescribeUsers) (*pbresponse.DescribeUsers, error)
 	DescribeAccessKey(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
 	CreateUser(context.Context, *pbrequest.CreateUser) (*pbresponse.CreateUser, error)
@@ -188,9 +181,6 @@ type AccountServer interface {
 type UnimplementedAccountServer struct {
 }
 
-func (UnimplementedAccountServer) ValidateRequestSignature(context.Context, *pbrequest.ValidateRequestSignature) (*pbresponse.ValidateRequestSignature, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ValidateRequestSignature not implemented")
-}
 func (UnimplementedAccountServer) DescribeUsers(context.Context, *pbrequest.DescribeUsers) (*pbresponse.DescribeUsers, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeUsers not implemented")
 }
@@ -238,24 +228,6 @@ type UnsafeAccountServer interface {
 
 func RegisterAccountServer(s grpc.ServiceRegistrar, srv AccountServer) {
 	s.RegisterService(&Account_ServiceDesc, srv)
-}
-
-func _Account_ValidateRequestSignature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ValidateRequestSignature)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccountServer).ValidateRequestSignature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/account.Account/ValidateRequestSignature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServer).ValidateRequestSignature(ctx, req.(*pbrequest.ValidateRequestSignature))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Account_DescribeUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -481,10 +453,6 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "account.Account",
 	HandlerType: (*AccountServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "ValidateRequestSignature",
-			Handler:    _Account_ValidateRequestSignature_Handler,
-		},
 		{
 			MethodName: "DescribeUsers",
 			Handler:    _Account_DescribeUsers_Handler,

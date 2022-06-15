@@ -7817,6 +7817,26 @@ public final class PBModelApiDashboard {
      * @return The currStatus.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+     * </pre>
+     *
+     * <code>string pre_path = 12;</code>
+     * @return The prePath.
+     */
+    java.lang.String getPrePath();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+     * </pre>
+     *
+     * <code>string pre_path = 12;</code>
+     * @return The bytes for prePath.
+     */
+    com.google.protobuf.ByteString
+        getPrePathBytes();
   }
   /**
    * Protobuf type {@code model.ApiServiceEntity}
@@ -7839,6 +7859,7 @@ public final class PBModelApiDashboard {
       createdBy_ = "";
       spaceId_ = "";
       currStatus_ = 0;
+      prePath_ = "";
     }
 
     @java.lang.Override
@@ -7932,6 +7953,12 @@ public final class PBModelApiDashboard {
               int rawValue = input.readEnum();
 
               currStatus_ = rawValue;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              prePath_ = s;
               break;
             }
             default: {
@@ -8360,6 +8387,52 @@ public final class PBModelApiDashboard {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
+    public static final int PRE_PATH_FIELD_NUMBER = 12;
+    private volatile java.lang.Object prePath_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+     * </pre>
+     *
+     * <code>string pre_path = 12;</code>
+     * @return The prePath.
+     */
+    @java.lang.Override
+    public java.lang.String getPrePath() {
+      java.lang.Object ref = prePath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prePath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+     * </pre>
+     *
+     * <code>string pre_path = 12;</code>
+     * @return The bytes for prePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPrePathBytes() {
+      java.lang.Object ref = prePath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8407,6 +8480,9 @@ public final class PBModelApiDashboard {
       if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         output.writeEnum(11, currStatus_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prePath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, prePath_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8453,6 +8529,9 @@ public final class PBModelApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, currStatus_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prePath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, prePath_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8489,6 +8568,8 @@ public final class PBModelApiDashboard {
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
       if (currStatus_ != other.currStatus_) return false;
+      if (!getPrePath()
+          .equals(other.getPrePath())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8524,6 +8605,8 @@ public final class PBModelApiDashboard {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + currStatus_;
+      hash = (37 * hash) + PRE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPrePath().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8679,6 +8762,8 @@ public final class PBModelApiDashboard {
 
         currStatus_ = 0;
 
+        prePath_ = "";
+
         return this;
       }
 
@@ -8716,6 +8801,7 @@ public final class PBModelApiDashboard {
         result.apiCount_ = apiCount_;
         result.spaceId_ = spaceId_;
         result.currStatus_ = currStatus_;
+        result.prePath_ = prePath_;
         onBuilt();
         return result;
       }
@@ -8803,6 +8889,10 @@ public final class PBModelApiDashboard {
         }
         if (other.currStatus_ != 0) {
           setCurrStatusValue(other.getCurrStatusValue());
+        }
+        if (!other.getPrePath().isEmpty()) {
+          prePath_ = other.prePath_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9704,6 +9794,102 @@ public final class PBModelApiDashboard {
       public Builder clearCurrStatus() {
         
         currStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object prePath_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+       * </pre>
+       *
+       * <code>string pre_path = 12;</code>
+       * @return The prePath.
+       */
+      public java.lang.String getPrePath() {
+        java.lang.Object ref = prePath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          prePath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+       * </pre>
+       *
+       * <code>string pre_path = 12;</code>
+       * @return The bytes for prePath.
+       */
+      public com.google.protobuf.ByteString
+          getPrePathBytes() {
+        java.lang.Object ref = prePath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          prePath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+       * </pre>
+       *
+       * <code>string pre_path = 12;</code>
+       * @param value The prePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrePath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        prePath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+       * </pre>
+       *
+       * <code>string pre_path = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrePath() {
+        
+        prePath_ = getDefaultInstance().getPrePath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"pre_path" gorm:"column:pre_path;"
+       * </pre>
+       *
+       * <code>string pre_path = 12;</code>
+       * @param value The bytes for prePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrePathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        prePath_ = value;
         onChanged();
         return this;
       }
@@ -21322,57 +21508,57 @@ public final class PBModelApiDashboard {
       "\n\013create_time\030\002 \001(\003\022\023\n\013update_time\030\003 \001(\003" +
       "\022\014\n\004snis\030\004 \001(\t\022\014\n\004cert\030\005 \001(\t\022\013\n\003key\030\006 \001(" +
       "\t\022\020\n\010space_id\030\007 \001(\t\022&\n\013curr_status\030\010 \001(\016" +
-      "2\021.model.StatusType\"\370\001\n\020ApiServiceEntity" +
+      "2\021.model.StatusType\"\212\002\n\020ApiServiceEntity" +
       "\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(\003\022\023\n\013upd" +
       "ate_time\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\014\n\004desc\030\005 \001" +
       "(\t\022\023\n\013auth_key_id\030\006 \001(\t\022\016\n\006domain\030\007 \001(\t\022" +
       " \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\021\n\tapi" +
       "_count\030\t \001(\005\022\020\n\010space_id\030\n \001(\t\022&\n\013curr_s" +
-      "tatus\030\013 \001(\0162\021.model.StatusType\"\265\001\n\rAuthK" +
-      "eyEntity\022\n\n\002id\030\001 \001(\t\022\023\n\013create_time\030\002 \001(" +
-      "\003\022\023\n\013update_time\030\003 \001(\003\022\014\n\004name\030\004 \001(\t\022\022\n\n" +
-      "secret_key\030\005 \001(\t\022\022\n\ncreated_by\030\006 \001(\t\022\020\n\010" +
-      "space_id\030\007 \001(\t\022&\n\013curr_status\030\010 \001(\0162\021.mo" +
-      "del.StatusType\"\244\003\n\010Upstream\022<\n\004type\030\001 \001(" +
-      "\tB.\342\337\037*\022(\302\001%J\nroundrobinJ\005chashJ\004ewmaJ\nl" +
-      "east_conn\022/\n\005nodes\030\002 \003(\0132\023.model.Upstrea" +
-      "mNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\032\n\004name\030\003 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\200\002\000\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022&\n\006schema\030\005 \001" +
-      "(\tB\026\342\337\037\022\022\020\302\001\rJ\004httpJ\005https\022%\n\003tls\030\006 \001(\0132" +
-      "\022.model.UpstreamTLSB\004\342\337\037\000\022%\n\007timeout\030\007 \001" +
-      "(\0132\016.model.TimeoutB\004\342\337\037\000\022\n\n\002id\030\010 \001(\t\022\023\n\013" +
-      "create_time\030\t \001(\003\022\023\n\013update_time\030\n \001(\003\022%" +
-      "\n\010space_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n" +
-      "\013curr_status\030\014 \001(\0162\021.model.StatusType\">\n" +
-      "\007Timeout\022\017\n\007connect\030\001 \001(\002\022\014\n\004send\030\002 \001(\002\022" +
-      "\014\n\004read\030\003 \001(\002:\006\312\262\004\002\n\000\"b\n\014UpstreamNode\022\032\n" +
-      "\004host\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004port\030\002 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\0020\000\022\033\n\006weight\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\"A\n\rUpstreamNodes\022(\n\005nodes\030\001 \003(\0132\023.mode" +
-      "l.UpstreamNodeB\004\342\337\037\000:\006\312\262\004\002\n\000\">\n\013Upstream" +
-      "TLS\022\023\n\013client_cert\030\001 \001(\t\022\022\n\nclient_key\030\002" +
-      " \001(\t:\006\312\262\004\002\n\000\"\233\003\n\005Route\022\031\n\003uri\030\001 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\200\002\000\022\n\n\002id\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\017\n\007m" +
-      "ethods\030\004 \003(\t\022\014\n\004host\030\005 \001(\t\022!\n\014remote_add" +
-      "rs\030\006 \003(\tB\013\342\337\037\007\022\005\352\001\002@\000\022\031\n\013upstream_id\030\007 \001" +
-      "(\tB\004\342\337\037\000\022&\n\013curr_status\030\010 \001(\0162\021.model.St" +
-      "atusType\022\032\n\004name\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\023\n\013" +
-      "create_time\030\n \001(\003\022\023\n\013update_time\030\013 \001(\003\022$" +
-      "\n\016api_service_id\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016" +
-      "api_version_id\030\r \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\037\n\tpr" +
-      "oxy_uri\030\016 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022%\n\010space_id\030" +
-      "\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\334\001\n\003SSL\022\032\n\004ce" +
-      "rt\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002" +
-      "id\030\004 \001(\t\022\023\n\013create_time\030\005 \001(\003\022\023\n\013update_" +
-      "time\030\006 \001(\003\022%\n\010space_id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022&\n\013curr_status\030\010 \001(\0162\021.model.S" +
-      "tatusType*0\n\nStatusType\022\010\n\004Skip\020\000\022\013\n\007Ena" +
-      "bled\020\001\022\013\n\007Deleted\020\002*!\n\nSchemaType\022\010\n\004htt" +
-      "p\020\000\022\t\n\005https\020\001Bn\n\"com.dataomnis.gproto.t" +
-      "ypes.pbmodelB\023PBModelApiDashboardP\000Z1git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodelb\006proto3"
+      "tatus\030\013 \001(\0162\021.model.StatusType\022\020\n\010pre_pa" +
+      "th\030\014 \001(\t\"\265\001\n\rAuthKeyEntity\022\n\n\002id\030\001 \001(\t\022\023" +
+      "\n\013create_time\030\002 \001(\003\022\023\n\013update_time\030\003 \001(\003" +
+      "\022\014\n\004name\030\004 \001(\t\022\022\n\nsecret_key\030\005 \001(\t\022\022\n\ncr" +
+      "eated_by\030\006 \001(\t\022\020\n\010space_id\030\007 \001(\t\022&\n\013curr" +
+      "_status\030\010 \001(\0162\021.model.StatusType\"\244\003\n\010Ups" +
+      "tream\022<\n\004type\030\001 \001(\tB.\342\337\037*\022(\302\001%J\nroundrob" +
+      "inJ\005chashJ\004ewmaJ\nleast_conn\022/\n\005nodes\030\002 \003" +
+      "(\0132\023.model.UpstreamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\032\n\004" +
+      "name\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\022\n\004desc\030\004 \001(\tB\004" +
+      "\342\337\037\000\022&\n\006schema\030\005 \001(\tB\026\342\337\037\022\022\020\302\001\rJ\004httpJ\005h" +
+      "ttps\022%\n\003tls\030\006 \001(\0132\022.model.UpstreamTLSB\004\342" +
+      "\337\037\000\022%\n\007timeout\030\007 \001(\0132\016.model.TimeoutB\004\342\337" +
+      "\037\000\022\n\n\002id\030\010 \001(\t\022\023\n\013create_time\030\t \001(\003\022\023\n\013u" +
+      "pdate_time\030\n \001(\003\022%\n\010space_id\030\013 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\013curr_status\030\014 \001(\0162\021.m" +
+      "odel.StatusType\">\n\007Timeout\022\017\n\007connect\030\001 " +
+      "\001(\002\022\014\n\004send\030\002 \001(\002\022\014\n\004read\030\003 \001(\002:\006\312\262\004\002\n\000\"" +
+      "b\n\014UpstreamNode\022\032\n\004host\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\200\002\000\022\031\n\004port\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022\033\n\006weight" +
+      "\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\rUpstreamNodes\022(\n\005" +
+      "nodes\030\001 \003(\0132\023.model.UpstreamNodeB\004\342\337\037\000:\006" +
+      "\312\262\004\002\n\000\">\n\013UpstreamTLS\022\023\n\013client_cert\030\001 \001" +
+      "(\t\022\022\n\nclient_key\030\002 \001(\t:\006\312\262\004\002\n\000\"\233\003\n\005Route" +
+      "\022\031\n\003uri\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\n\n\002id\030\002 \001(\t\022" +
+      "\014\n\004desc\030\003 \001(\t\022\017\n\007methods\030\004 \003(\t\022\014\n\004host\030\005" +
+      " \001(\t\022!\n\014remote_addrs\030\006 \003(\tB\013\342\337\037\007\022\005\352\001\002@\000\022" +
+      "\031\n\013upstream_id\030\007 \001(\tB\004\342\337\037\000\022&\n\013curr_statu" +
+      "s\030\010 \001(\0162\021.model.StatusType\022\032\n\004name\030\t \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\022\023\n\013create_time\030\n \001(\003\022\023\n\013u" +
+      "pdate_time\030\013 \001(\003\022$\n\016api_service_id\030\014 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016api_version_id\030\r \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\200\002\000\022\037\n\tproxy_uri\030\016 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\200\002\000\022%\n\010space_id\030\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\"\334\001\n\003SSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
+      "\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(" +
+      "\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\023\n\013create_tim" +
+      "e\030\005 \001(\003\022\023\n\013update_time\030\006 \001(\003\022%\n\010space_id" +
+      "\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\013curr_stat" +
+      "us\030\010 \001(\0162\021.model.StatusType*0\n\nStatusTyp" +
+      "e\022\010\n\004Skip\020\000\022\013\n\007Enabled\020\001\022\013\n\007Deleted\020\002*!\n" +
+      "\nSchemaType\022\010\n\004http\020\000\022\t\n\005https\020\001Bn\n\"com." +
+      "dataomnis.gproto.types.pbmodelB\023PBModelA" +
+      "piDashboardP\000Z1github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21403,7 +21589,7 @@ public final class PBModelApiDashboard {
     internal_static_model_ApiServiceEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiServiceEntity_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "Desc", "AuthKeyId", "Domain", "CreatedBy", "ApiCount", "SpaceId", "CurrStatus", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "Name", "Desc", "AuthKeyId", "Domain", "CreatedBy", "ApiCount", "SpaceId", "CurrStatus", "PrePath", });
     internal_static_model_AuthKeyEntity_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_AuthKeyEntity_fieldAccessorTable = new

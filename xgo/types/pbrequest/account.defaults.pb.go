@@ -25,14 +25,6 @@ func (this *DescribeUsers) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ValidateRequestSignature
-func (this *ValidateRequestSignature) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.CreateUser
 func (this *CreateUser) SetDefaults() {
 	if this == nil {

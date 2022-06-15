@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\027PBRequestFlinkDeveloperP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)proto/types/request/flink_developer.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/stream_job.proto\x1a!proto/types/model/developer.proto\"\xe6\x01\n\x0eSubmitFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1c\n\x0esavepoint_path\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x63ode\x18\x06 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\"\xdb\x01\n\x19SubmitFlinkJobInteractive\x12*\n\x03job\x18\x01 \x01(\x0b\x32\x17.request.SubmitFlinkJobB\x04\xe2\xdf\x1f\x00\x12.\n\x02op\x18\x02 \x01(\x0e\x32\x1c.model.InteractiveMessage.OpB\x04\xe2\xdf\x1f\x00\x12*\n\tmax_count\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x36\n\x10refresh_interval\x18\x04 \x01(\x05\x42\x1c\xa2\xa1\x1f\x08\xaa\x06\x05\x31\x30\x30\x30\x30\xe2\xdf\x1f\x0c\x12\n\xb2\x01\x07\x38\xb0\xea\x01@\xe8\x07\"6\n\x10ValidateFlinkJob\x12\"\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCode\"\xa7\x01\n\x13ValidateFlinkJob_v2\x12\x1e\n\tflink_url\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12(\n\x04\x61rgs\x18\x03 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12\"\n\x04\x63ode\x18\x04 \x01(\x0b\x32\x14.model.StreamJobCodeBv\n$com.dataomnis.gproto.types.pbrequestB\x17PBRequestFlinkDeveloperP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n)proto/types/request/flink_developer.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/stream_job.proto\x1a!proto/types/model/developer.proto\"\xe6\x01\n\x0eSubmitFlinkJob\x12\x1e\n\x08\x66link_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1e\n\tflink_url\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1c\n\x0esavepoint_path\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x63ode\x18\x06 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\"\xbf\x01\n\x19SubmitFlinkJobInteractive\x12*\n\x03job\x18\x01 \x01(\x0b\x32\x17.request.SubmitFlinkJobB\x04\xe2\xdf\x1f\x00\x12*\n\tmax_count\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x34\n\x10refresh_interval\x18\x03 \x01(\x05\x42\x1a\xa2\xa1\x1f\x07\xaa\x06\x04\x32\x30\x30\x30\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x90N@\xe8\x07\x12\x14\n\x0cis_changelog\x18\x04 \x01(\x08\"6\n\x10ValidateFlinkJob\x12\"\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCode\"\xa7\x01\n\x13ValidateFlinkJob_v2\x12\x1e\n\tflink_url\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\rflink_version\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12(\n\x04\x61rgs\x18\x03 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12\"\n\x04\x63ode\x18\x04 \x01(\x0b\x32\x14.model.StreamJobCodeBv\n$com.dataomnis.gproto.types.pbrequestB\x17PBRequestFlinkDeveloperP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_developer__pb2.DESCRIPTOR,])
 
@@ -113,26 +113,26 @@ _SUBMITFLINKJOBINTERACTIVE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='op', full_name='request.SubmitFlinkJobInteractive.op', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='max_count', full_name='request.SubmitFlinkJobInteractive.max_count', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      name='max_count', full_name='request.SubmitFlinkJobInteractive.max_count', index=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='refresh_interval', full_name='request.SubmitFlinkJobInteractive.refresh_interval', index=3,
-      number=4, type=5, cpp_type=1, label=1,
+      name='refresh_interval', full_name='request.SubmitFlinkJobInteractive.refresh_interval', index=2,
+      number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\010\252\006\00510000\342\337\037\014\022\n\262\001\0078\260\352\001@\350\007', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\242\241\037\007\252\006\0042000\342\337\037\013\022\t\262\001\0068\220N@\350\007', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_changelog', full_name='request.SubmitFlinkJobInteractive.is_changelog', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -146,7 +146,7 @@ _SUBMITFLINKJOBINTERACTIVE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=464,
-  serialized_end=683,
+  serialized_end=655,
 )
 
 
@@ -177,8 +177,8 @@ _VALIDATEFLINKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=685,
-  serialized_end=739,
+  serialized_start=657,
+  serialized_end=711,
 )
 
 
@@ -230,14 +230,13 @@ _VALIDATEFLINKJOB_V2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=742,
-  serialized_end=909,
+  serialized_start=714,
+  serialized_end=881,
 )
 
 _SUBMITFLINKJOB.fields_by_name['args'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBARGS
 _SUBMITFLINKJOB.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
 _SUBMITFLINKJOBINTERACTIVE.fields_by_name['job'].message_type = _SUBMITFLINKJOB
-_SUBMITFLINKJOBINTERACTIVE.fields_by_name['op'].enum_type = proto_dot_types_dot_model_dot_developer__pb2._INTERACTIVEMESSAGE_OP
 _VALIDATEFLINKJOB.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
 _VALIDATEFLINKJOB_V2.fields_by_name['args'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBARGS
 _VALIDATEFLINKJOB_V2.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
@@ -284,7 +283,6 @@ _SUBMITFLINKJOB.fields_by_name['savepoint_path']._options = None
 _SUBMITFLINKJOB.fields_by_name['args']._options = None
 _SUBMITFLINKJOB.fields_by_name['code']._options = None
 _SUBMITFLINKJOBINTERACTIVE.fields_by_name['job']._options = None
-_SUBMITFLINKJOBINTERACTIVE.fields_by_name['op']._options = None
 _SUBMITFLINKJOBINTERACTIVE.fields_by_name['max_count']._options = None
 _SUBMITFLINKJOBINTERACTIVE.fields_by_name['refresh_interval']._options = None
 _VALIDATEFLINKJOB_V2.fields_by_name['flink_url']._options = None

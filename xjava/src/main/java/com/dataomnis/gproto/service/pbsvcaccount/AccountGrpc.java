@@ -5,8 +5,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
+    value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/service/account/account.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AccountGrpc {
 
   private AccountGrpc() {}
@@ -14,37 +15,6 @@ public final class AccountGrpc {
   public static final String SERVICE_NAME = "account.Account";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> getValidateRequestSignatureMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ValidateRequestSignature",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> getValidateRequestSignatureMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> getValidateRequestSignatureMethod;
-    if ((getValidateRequestSignatureMethod = AccountGrpc.getValidateRequestSignatureMethod) == null) {
-      synchronized (AccountGrpc.class) {
-        if ((getValidateRequestSignatureMethod = AccountGrpc.getValidateRequestSignatureMethod) == null) {
-          AccountGrpc.getValidateRequestSignatureMethod = getValidateRequestSignatureMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidateRequestSignature"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature.getDefaultInstance()))
-              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("ValidateRequestSignature"))
-              .build();
-        }
-      }
-    }
-    return getValidateRequestSignatureMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers,
       com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers> getDescribeUsersMethod;
 
@@ -293,6 +263,130 @@ public final class AccountGrpc {
     return getCheckUserExistsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> getCreateNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNotification",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> getCreateNotificationMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> getCreateNotificationMethod;
+    if ((getCreateNotificationMethod = AccountGrpc.getCreateNotificationMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getCreateNotificationMethod = AccountGrpc.getCreateNotificationMethod) == null) {
+          AccountGrpc.getCreateNotificationMethod = getCreateNotificationMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("CreateNotification"))
+              .build();
+        }
+      }
+    }
+    return getCreateNotificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> getUpdateNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNotification",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> getUpdateNotificationMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> getUpdateNotificationMethod;
+    if ((getUpdateNotificationMethod = AccountGrpc.getUpdateNotificationMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getUpdateNotificationMethod = AccountGrpc.getUpdateNotificationMethod) == null) {
+          AccountGrpc.getUpdateNotificationMethod = getUpdateNotificationMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("UpdateNotification"))
+              .build();
+        }
+      }
+    }
+    return getUpdateNotificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> getDeleteNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNotification",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> getDeleteNotificationMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> getDeleteNotificationMethod;
+    if ((getDeleteNotificationMethod = AccountGrpc.getDeleteNotificationMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getDeleteNotificationMethod = AccountGrpc.getDeleteNotificationMethod) == null) {
+          AccountGrpc.getDeleteNotificationMethod = getDeleteNotificationMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("DeleteNotification"))
+              .build();
+        }
+      }
+    }
+    return getDeleteNotificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> getGetNotificationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNotifications",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> getGetNotificationsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> getGetNotificationsMethod;
+    if ((getGetNotificationsMethod = AccountGrpc.getGetNotificationsMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getGetNotificationsMethod = AccountGrpc.getGetNotificationsMethod) == null) {
+          AccountGrpc.getGetNotificationsMethod = getGetNotificationsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNotifications"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("GetNotifications"))
+              .build();
+        }
+      }
+    }
+    return getGetNotificationsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -342,13 +436,10 @@ public final class AccountGrpc {
   public static abstract class AccountImplBase implements io.grpc.BindableService {
 
     /**
-     */
-    public void validateRequestSignature(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateRequestSignatureMethod(), responseObserver);
-    }
-
-    /**
+     * <pre>
+     * FIXME: removed it.
+     *  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
+     * </pre>
      */
     public void describeUsers(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers> responseObserver) {
@@ -404,15 +495,36 @@ public final class AccountGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckUserExistsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void createNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNotificationsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getValidateRequestSignatureMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature,
-                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature>(
-                  this, METHODID_VALIDATE_REQUEST_SIGNATURE)))
           .addMethod(
             getDescribeUsersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -469,6 +581,34 @@ public final class AccountGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists,
                 com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists>(
                   this, METHODID_CHECK_USER_EXISTS)))
+          .addMethod(
+            getCreateNotificationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification>(
+                  this, METHODID_CREATE_NOTIFICATION)))
+          .addMethod(
+            getUpdateNotificationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification>(
+                  this, METHODID_UPDATE_NOTIFICATION)))
+          .addMethod(
+            getDeleteNotificationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification>(
+                  this, METHODID_DELETE_NOTIFICATION)))
+          .addMethod(
+            getGetNotificationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications>(
+                  this, METHODID_GET_NOTIFICATIONS)))
           .build();
     }
   }
@@ -488,14 +628,10 @@ public final class AccountGrpc {
     }
 
     /**
-     */
-    public void validateRequestSignature(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getValidateRequestSignatureMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
+     * <pre>
+     * FIXME: removed it.
+     *  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
+     * </pre>
      */
     public void describeUsers(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers> responseObserver) {
@@ -558,6 +694,38 @@ public final class AccountGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckUserExistsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNotificationsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -575,13 +743,10 @@ public final class AccountGrpc {
     }
 
     /**
-     */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature validateRequestSignature(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getValidateRequestSignatureMethod(), getCallOptions(), request);
-    }
-
-    /**
+     * <pre>
+     * FIXME: removed it.
+     *  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers describeUsers(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -636,6 +801,34 @@ public final class AccountGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckUserExistsMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification createNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification updateNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification deleteNotification(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications getNotifications(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -653,14 +846,10 @@ public final class AccountGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature> validateRequestSignature(
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getValidateRequestSignatureMethod(), getCallOptions()), request);
-    }
-
-    /**
+     * <pre>
+     * FIXME: removed it.
+     *  rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers> describeUsers(
         com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers request) {
@@ -723,17 +912,52 @@ public final class AccountGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckUserExistsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification> createNotification(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification> updateNotification(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification> deleteNotification(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications> getNotifications(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNotificationsMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_VALIDATE_REQUEST_SIGNATURE = 0;
-  private static final int METHODID_DESCRIBE_USERS = 1;
-  private static final int METHODID_DESCRIBE_ACCESS_KEY = 2;
-  private static final int METHODID_CREATE_USER = 3;
-  private static final int METHODID_UPDATE_USER = 4;
-  private static final int METHODID_DELETE_USER = 5;
-  private static final int METHODID_CHECK_SESSION = 6;
-  private static final int METHODID_CREATE_SESSION = 7;
-  private static final int METHODID_CHECK_USER_EXISTS = 8;
+  private static final int METHODID_DESCRIBE_USERS = 0;
+  private static final int METHODID_DESCRIBE_ACCESS_KEY = 1;
+  private static final int METHODID_CREATE_USER = 2;
+  private static final int METHODID_UPDATE_USER = 3;
+  private static final int METHODID_DELETE_USER = 4;
+  private static final int METHODID_CHECK_SESSION = 5;
+  private static final int METHODID_CREATE_SESSION = 6;
+  private static final int METHODID_CHECK_USER_EXISTS = 7;
+  private static final int METHODID_CREATE_NOTIFICATION = 8;
+  private static final int METHODID_UPDATE_NOTIFICATION = 9;
+  private static final int METHODID_DELETE_NOTIFICATION = 10;
+  private static final int METHODID_GET_NOTIFICATIONS = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -752,10 +976,6 @@ public final class AccountGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_VALIDATE_REQUEST_SIGNATURE:
-          serviceImpl.validateRequestSignature((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.ValidateRequestSignature) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.ValidateRequestSignature>) responseObserver);
-          break;
         case METHODID_DESCRIBE_USERS:
           serviceImpl.describeUsers((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeUsers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeUsers>) responseObserver);
@@ -787,6 +1007,22 @@ public final class AccountGrpc {
         case METHODID_CHECK_USER_EXISTS:
           serviceImpl.checkUserExists((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckUserExists) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckUserExists>) responseObserver);
+          break;
+        case METHODID_CREATE_NOTIFICATION:
+          serviceImpl.createNotification((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateNotification) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateNotification>) responseObserver);
+          break;
+        case METHODID_UPDATE_NOTIFICATION:
+          serviceImpl.updateNotification((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateNotification) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateNotification>) responseObserver);
+          break;
+        case METHODID_DELETE_NOTIFICATION:
+          serviceImpl.deleteNotification((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteNotification>) responseObserver);
+          break;
+        case METHODID_GET_NOTIFICATIONS:
+          serviceImpl.getNotifications((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetNotifications>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -849,7 +1085,6 @@ public final class AccountGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new AccountFileDescriptorSupplier())
-              .addMethod(getValidateRequestSignatureMethod())
               .addMethod(getDescribeUsersMethod())
               .addMethod(getDescribeAccessKeyMethod())
               .addMethod(getCreateUserMethod())
@@ -858,6 +1093,10 @@ public final class AccountGrpc {
               .addMethod(getCheckSessionMethod())
               .addMethod(getCreateSessionMethod())
               .addMethod(getCheckUserExistsMethod())
+              .addMethod(getCreateNotificationMethod())
+              .addMethod(getUpdateNotificationMethod())
+              .addMethod(getDeleteNotificationMethod())
+              .addMethod(getGetNotificationsMethod())
               .build();
         }
       }

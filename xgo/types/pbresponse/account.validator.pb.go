@@ -40,14 +40,6 @@ func (this *DescribeUsers) Validate() error {
 	return nil
 }
 
-// Set default value for message response.ValidateRequestSignature
-func (this *ValidateRequestSignature) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *CreateUser) _xxx_xxx_Validator_Validate_user() error {
 	if dt, ok := interface{}(this.User).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {

@@ -48,14 +48,6 @@ func (this *DescribeUsers) Validate() error {
 	return nil
 }
 
-// Set default value for message request.ValidateRequestSignature
-func (this *ValidateRequestSignature) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *CreateUser) _xxx_xxx_Validator_Validate_user_name() error {
 	if !(utf8.RuneCountInString(this.UserName) >= 2) {
 		return protovalidator.FieldError1("CreateUser", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))

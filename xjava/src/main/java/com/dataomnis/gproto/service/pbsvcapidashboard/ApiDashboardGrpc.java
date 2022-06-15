@@ -5,8 +5,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
+    value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/service/apidashboard/apidashboard.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ApiDashboardGrpc {
 
   private ApiDashboardGrpc() {}
@@ -136,37 +137,6 @@ public final class ApiDashboardGrpc {
       }
     }
     return getUpdateRouteMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteRouteByVersionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteRouteByVersion",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteRouteByVersionMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteRouteByVersionMethod;
-    if ((getDeleteRouteByVersionMethod = ApiDashboardGrpc.getDeleteRouteByVersionMethod) == null) {
-      synchronized (ApiDashboardGrpc.class) {
-        if ((getDeleteRouteByVersionMethod = ApiDashboardGrpc.getDeleteRouteByVersionMethod) == null) {
-          ApiDashboardGrpc.getDeleteRouteByVersionMethod = getDeleteRouteByVersionMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRouteByVersion"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new ApiDashboardMethodDescriptorSupplier("DeleteRouteByVersion"))
-              .build();
-        }
-      }
-    }
-    return getDeleteRouteByVersionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream,
@@ -572,35 +542,35 @@ public final class ApiDashboardGrpc {
     return getGetSvcReqCountMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteProjectRoutesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteClusterRoutesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteProjectRoutes",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteClusterRoutes",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteProjectRoutesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteProjectRoutesMethod;
-    if ((getDeleteProjectRoutesMethod = ApiDashboardGrpc.getDeleteProjectRoutesMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteClusterRoutesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteClusterRoutesMethod;
+    if ((getDeleteClusterRoutesMethod = ApiDashboardGrpc.getDeleteClusterRoutesMethod) == null) {
       synchronized (ApiDashboardGrpc.class) {
-        if ((getDeleteProjectRoutesMethod = ApiDashboardGrpc.getDeleteProjectRoutesMethod) == null) {
-          ApiDashboardGrpc.getDeleteProjectRoutesMethod = getDeleteProjectRoutesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getDeleteClusterRoutesMethod = ApiDashboardGrpc.getDeleteClusterRoutesMethod) == null) {
+          ApiDashboardGrpc.getDeleteClusterRoutesMethod = getDeleteClusterRoutesMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteProjectRoutes"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteClusterRoutes"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new ApiDashboardMethodDescriptorSupplier("DeleteProjectRoutes"))
+              .setSchemaDescriptor(new ApiDashboardMethodDescriptorSupplier("DeleteClusterRoutes"))
               .build();
         }
       }
     }
-    return getDeleteProjectRoutesMethod;
+    return getDeleteClusterRoutesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateAuthKey,
@@ -867,13 +837,6 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public void deleteRouteByVersion(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRouteByVersionMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void createUpstream(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUpstreamMethod(), responseObserver);
@@ -965,9 +928,9 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public void deleteProjectRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes request,
+    public void deleteClusterRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteProjectRoutesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteClusterRoutesMethod(), responseObserver);
     }
 
     /**
@@ -1042,13 +1005,6 @@ public final class ApiDashboardGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_UPDATE_ROUTE)))
-          .addMethod(
-            getDeleteRouteByVersionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion,
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_DELETE_ROUTE_BY_VERSION)))
           .addMethod(
             getCreateUpstreamMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1141,12 +1097,12 @@ public final class ApiDashboardGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.GetSvcReqCount>(
                   this, METHODID_GET_SVC_REQ_COUNT)))
           .addMethod(
-            getDeleteProjectRoutesMethod(),
+            getDeleteClusterRoutesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes,
+                com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_DELETE_PROJECT_ROUTES)))
+                  this, METHODID_DELETE_CLUSTER_ROUTES)))
           .addMethod(
             getCreateAuthKeyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1237,14 +1193,6 @@ public final class ApiDashboardGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRouteMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void deleteRouteByVersion(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteRouteByVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1353,10 +1301,10 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public void deleteProjectRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes request,
+    public void deleteClusterRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteProjectRoutesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteClusterRoutesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1452,13 +1400,6 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteRouteByVersion(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteRouteByVersionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.CreateUpstream createUpstream(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.CreateUpstream request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateUpstreamMethod(), getCallOptions(), request);
@@ -1550,9 +1491,9 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteProjectRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteClusterRoutes(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteProjectRoutesMethod(), getCallOptions(), request);
+          getChannel(), getDeleteClusterRoutesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1642,14 +1583,6 @@ public final class ApiDashboardGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRouteMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteRouteByVersion(
-        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteRouteByVersionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1758,10 +1691,10 @@ public final class ApiDashboardGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteProjectRoutes(
-        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteClusterRoutes(
+        com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteProjectRoutesMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteClusterRoutesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1817,27 +1750,26 @@ public final class ApiDashboardGrpc {
   private static final int METHODID_DELETE_ROUTE = 1;
   private static final int METHODID_LIST_ROUTES = 2;
   private static final int METHODID_UPDATE_ROUTE = 3;
-  private static final int METHODID_DELETE_ROUTE_BY_VERSION = 4;
-  private static final int METHODID_CREATE_UPSTREAM = 5;
-  private static final int METHODID_DELETE_UPSTREAM = 6;
-  private static final int METHODID_UPDATE_UPSTREAM = 7;
-  private static final int METHODID_LIST_UPSTREAMS = 8;
-  private static final int METHODID_CREATE_SSL = 9;
-  private static final int METHODID_DELETE_SSL = 10;
-  private static final int METHODID_LIST_SSLS = 11;
-  private static final int METHODID_CREATE_API_SERVICE = 12;
-  private static final int METHODID_DELETE_API_SERVICE = 13;
-  private static final int METHODID_UPDATE_API_SERVICE = 14;
-  private static final int METHODID_LIST_API_SERVICES = 15;
-  private static final int METHODID_ADD_SVC_REQ_COUNT = 16;
-  private static final int METHODID_GET_SVC_REQ_COUNT = 17;
-  private static final int METHODID_DELETE_PROJECT_ROUTES = 18;
-  private static final int METHODID_CREATE_AUTH_KEY = 19;
-  private static final int METHODID_DELETE_AUTH_KEY = 20;
-  private static final int METHODID_UPDATE_AUTH_KEY = 21;
-  private static final int METHODID_LIST_AUTH_KEYS = 22;
-  private static final int METHODID_BIND_AUTH_KEY = 23;
-  private static final int METHODID_UNBIND_AUTH_KEY = 24;
+  private static final int METHODID_CREATE_UPSTREAM = 4;
+  private static final int METHODID_DELETE_UPSTREAM = 5;
+  private static final int METHODID_UPDATE_UPSTREAM = 6;
+  private static final int METHODID_LIST_UPSTREAMS = 7;
+  private static final int METHODID_CREATE_SSL = 8;
+  private static final int METHODID_DELETE_SSL = 9;
+  private static final int METHODID_LIST_SSLS = 10;
+  private static final int METHODID_CREATE_API_SERVICE = 11;
+  private static final int METHODID_DELETE_API_SERVICE = 12;
+  private static final int METHODID_UPDATE_API_SERVICE = 13;
+  private static final int METHODID_LIST_API_SERVICES = 14;
+  private static final int METHODID_ADD_SVC_REQ_COUNT = 15;
+  private static final int METHODID_GET_SVC_REQ_COUNT = 16;
+  private static final int METHODID_DELETE_CLUSTER_ROUTES = 17;
+  private static final int METHODID_CREATE_AUTH_KEY = 18;
+  private static final int METHODID_DELETE_AUTH_KEY = 19;
+  private static final int METHODID_UPDATE_AUTH_KEY = 20;
+  private static final int METHODID_LIST_AUTH_KEYS = 21;
+  private static final int METHODID_BIND_AUTH_KEY = 22;
+  private static final int METHODID_UNBIND_AUTH_KEY = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1870,10 +1802,6 @@ public final class ApiDashboardGrpc {
           break;
         case METHODID_UPDATE_ROUTE:
           serviceImpl.updateRoute((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UpdateRoute) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
-          break;
-        case METHODID_DELETE_ROUTE_BY_VERSION:
-          serviceImpl.deleteRouteByVersion((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteRouteByVersion) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_UPSTREAM:
@@ -1928,8 +1856,8 @@ public final class ApiDashboardGrpc {
           serviceImpl.getSvcReqCount((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.GetSvcReqCount) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseApiDashboard.GetSvcReqCount>) responseObserver);
           break;
-        case METHODID_DELETE_PROJECT_ROUTES:
-          serviceImpl.deleteProjectRoutes((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteProjectRoutes) request,
+        case METHODID_DELETE_CLUSTER_ROUTES:
+          serviceImpl.deleteClusterRoutes((com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.DeleteClusterRoutes) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_AUTH_KEY:
@@ -2021,7 +1949,6 @@ public final class ApiDashboardGrpc {
               .addMethod(getDeleteRouteMethod())
               .addMethod(getListRoutesMethod())
               .addMethod(getUpdateRouteMethod())
-              .addMethod(getDeleteRouteByVersionMethod())
               .addMethod(getCreateUpstreamMethod())
               .addMethod(getDeleteUpstreamMethod())
               .addMethod(getUpdateUpstreamMethod())
@@ -2035,7 +1962,7 @@ public final class ApiDashboardGrpc {
               .addMethod(getListApiServicesMethod())
               .addMethod(getAddSvcReqCountMethod())
               .addMethod(getGetSvcReqCountMethod())
-              .addMethod(getDeleteProjectRoutesMethod())
+              .addMethod(getDeleteClusterRoutesMethod())
               .addMethod(getCreateAuthKeyMethod())
               .addMethod(getDeleteAuthKeyMethod())
               .addMethod(getUpdateAuthKeyMethod())
