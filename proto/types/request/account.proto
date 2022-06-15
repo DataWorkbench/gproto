@@ -111,5 +111,4 @@ message GetNotifications{
   string user_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "usr-" } ];
   int32 limit = 2;
   int32 offset = 3;
-  repeated string emails = 4;
 }

@@ -81,6 +81,6 @@ message DeleteNotification{
 
 
 message GetNotifications{
-  int64 total_count = 3;
-  repeated model.Notification notification_set = 4;
+  int64 total_count = 1;
+  repeated model.Notification notification_set = 2;
 }
