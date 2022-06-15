@@ -33,12 +33,12 @@ service DataService {
   rpc UpdateApiConfig(request.UpdateApiConfig) returns (model.EmptyStruct) {}
   rpc DeleteApiConfigs(request.DeleteApiConfigs)   returns (model.EmptyStruct) {}
 
-  rpc TestDataServiceApi(request.TestCustomerApi) returns (response.TestCustomerApi) {}
-  rpc PublishDataServiceApi(request.PublishCustomerApi) returns (model.EmptyStruct) {}
-  rpc AbolishDataServiceApis(request.AbolishCustomerApis) returns (model.EmptyStruct) {}
+  rpc TestDataServiceApi(request.TestDataServiceApi) returns (response.TestDataServiceApi) {}
+  rpc PublishDataServiceApi(request.PublishDataServiceApi) returns (model.EmptyStruct) {}
+  rpc AbolishDataServiceApis(request.AbolishDataServiceApis) returns (model.EmptyStruct) {}
 
-  rpc ListDataServiceApiVersions(request.ListApiVersions) returns (response.ListApiVersions) {}
-  rpc DescribeDataServiceApiVersion(request.DescribeApiVersion) returns (response.DescribeApiVersion) {}
-  rpc RepublishDataServiceApi(request.DescribeApiVersion) returns (model.EmptyStruct) {}
+  rpc ListDataServiceApiVersions(request.ListDataServiceApiVersions) returns (response.ListDataServiceApiVersions) {}
+  rpc DescribeDataServiceApiVersion(request.DescribeDataServiceApiVersion) returns (response.DescribeDataServiceApiVersion) {}
+  rpc RepublishDataServiceApi(request.RepublishDataServiceApi) returns (model.EmptyStruct) {}
 
 }

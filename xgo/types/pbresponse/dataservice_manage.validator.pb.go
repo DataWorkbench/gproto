@@ -152,7 +152,7 @@ func (this *CreateApiConfig) Validate() error {
 	return nil
 }
 
-func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_api_version() error {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_version() error {
 	if dt, ok := interface{}(this.ApiVersion).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -161,7 +161,7 @@ func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_api_version() error 
 	return nil
 }
 
-func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_request_params() error {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_request_params() error {
 	for _, item := range this.RequestParams {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -173,7 +173,7 @@ func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_request_params() err
 	return nil
 }
 
-func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_response_params() error {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_response_params() error {
 	for _, item := range this.ResponseParams {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -185,8 +185,8 @@ func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_response_params() er
 	return nil
 }
 
-// Set default value for message response.DescribeApiVersion
-func (this *DescribeApiVersion) Validate() error {
+// Set default value for message response.DescribeDataServiceApiVersion
+func (this *DescribeDataServiceApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -202,7 +202,7 @@ func (this *DescribeApiVersion) Validate() error {
 	return nil
 }
 
-func (this *ListApiVersions) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -214,8 +214,8 @@ func (this *ListApiVersions) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListApiVersions
-func (this *ListApiVersions) Validate() error {
+// Set default value for message response.ListDataServiceApiVersions
+func (this *ListDataServiceApiVersions) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -225,8 +225,8 @@ func (this *ListApiVersions) Validate() error {
 	return nil
 }
 
-// Set default value for message response.TestCustomerApi
-func (this *TestCustomerApi) Validate() error {
+// Set default value for message response.TestDataServiceApi
+func (this *TestDataServiceApi) Validate() error {
 	if this == nil {
 		return nil
 	}

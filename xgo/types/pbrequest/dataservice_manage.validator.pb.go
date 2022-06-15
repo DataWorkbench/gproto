@@ -1133,46 +1133,59 @@ func (this *WizardResponseParameters) Validate() error {
 	return nil
 }
 
-func (this *ListApiVersions) _xxx_xxx_Validator_Validate_api_id() error {
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("ListApiVersions", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
 	}
 	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("ListApiVersions", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
 	}
 	return nil
 }
 
-func (this *ListApiVersions) _xxx_xxx_Validator_Validate_limit() error {
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("ListApiVersions", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
 	}
 	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("ListApiVersions", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
 	}
 	return nil
 }
 
-func (this *ListApiVersions) _xxx_xxx_Validator_Validate_offset() error {
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_offset() error {
 	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListApiVersions", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_ListApiVersions_In_SortBy = map[string]bool{"": true, "id": true, "created": true, "updated": true}
+var _xxx_xxx_Validator_ListDataServiceApiVersions_In_SortBy = map[string]bool{"": true, "id": true, "created": true, "updated": true}
 
-func (this *ListApiVersions) _xxx_xxx_Validator_Validate_sort_by() error {
-	if !(_xxx_xxx_Validator_ListApiVersions_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListApiVersions", "the value of field 'sort_by' must be one of '[ id created updated]'", this.SortBy)
+func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListDataServiceApiVersions_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListDataServiceApiVersions", "the value of field 'sort_by' must be one of '[ id created updated]'", this.SortBy)
 	}
 	return nil
 }
 
-// Set default value for message request.ListApiVersions
-func (this *ListApiVersions) Validate() error {
+// Set default value for message request.ListDataServiceApiVersions
+func (this *ListDataServiceApiVersions) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
 		return err
@@ -1245,32 +1258,45 @@ func (this *ListPublishedApis) Validate() error {
 	return nil
 }
 
-func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("DescribeApiVersion", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("DescribeApiVersion", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *DescribeApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_id() error {
+	if !(len(this.ApiId) == 20) {
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+	}
+	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+	}
+	return nil
+}
+
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
 	if !(len(this.VersionId) == 20) {
-		return protovalidator.FieldError1("DescribeApiVersion", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
 	}
 	if !(strings.HasPrefix(this.VersionId, "dsv-")) {
-		return protovalidator.FieldError1("DescribeApiVersion", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
 	}
 	return nil
 }
 
-// Set default value for message request.DescribeApiVersion
-func (this *DescribeApiVersion) Validate() error {
+// Set default value for message request.DescribeDataServiceApiVersion
+func (this *DescribeDataServiceApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_version_id(); err != nil {
@@ -1279,28 +1305,75 @@ func (this *DescribeApiVersion) Validate() error {
 	return nil
 }
 
-func (this *PublishCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *RepublishDataServiceApi) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("PublishCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("PublishCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *PublishCustomerApi) _xxx_xxx_Validator_Validate_api_id() error {
+func (this *RepublishDataServiceApi) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("PublishCustomerApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
 	}
 	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("PublishCustomerApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
 	}
 	return nil
 }
 
-// Set default value for message request.PublishCustomerApi
-func (this *PublishCustomerApi) Validate() error {
+func (this *RepublishDataServiceApi) _xxx_xxx_Validator_Validate_version_id() error {
+	if !(len(this.VersionId) == 20) {
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
+	}
+	if !(strings.HasPrefix(this.VersionId, "dsv-")) {
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
+	}
+	return nil
+}
+
+// Set default value for message request.RepublishDataServiceApi
+func (this *RepublishDataServiceApi) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *PublishDataServiceApi) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("PublishDataServiceApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("PublishDataServiceApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *PublishDataServiceApi) _xxx_xxx_Validator_Validate_api_id() error {
+	if !(len(this.ApiId) == 20) {
+		return protovalidator.FieldError1("PublishDataServiceApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+	}
+	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
+		return protovalidator.FieldError1("PublishDataServiceApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+	}
+	return nil
+}
+
+// Set default value for message request.PublishDataServiceApi
+func (this *PublishDataServiceApi) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1313,34 +1386,34 @@ func (this *PublishCustomerApi) Validate() error {
 	return nil
 }
 
-func (this *AbolishCustomerApis) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *AbolishDataServiceApis) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("AbolishCustomerApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("AbolishDataServiceApis", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("AbolishCustomerApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("AbolishDataServiceApis", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *AbolishCustomerApis) _xxx_xxx_Validator_Validate_api_ids() error {
+func (this *AbolishDataServiceApis) _xxx_xxx_Validator_Validate_api_ids() error {
 	if !(len(this.ApiIds) >= 1) {
-		return protovalidator.FieldError1("AbolishCustomerApis", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
+		return protovalidator.FieldError1("AbolishDataServiceApis", "the length of field 'api_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ApiIds)))
 	}
 	if !(len(this.ApiIds) <= 100) {
-		return protovalidator.FieldError1("AbolishCustomerApis", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
+		return protovalidator.FieldError1("AbolishDataServiceApis", "the length of field 'api_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ApiIds)))
 	}
 	for _, item := range this.ApiIds {
 		_ = item // To avoid unused panics.
 		if !(strings.HasPrefix(item, "dsa-")) {
-			return protovalidator.FieldError1("AbolishCustomerApis", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
+			return protovalidator.FieldError1("AbolishDataServiceApis", "the value of array item where in field 'api_ids' must start with string 'dsa-'", item)
 		}
 	}
 	return nil
 }
 
-// Set default value for message request.AbolishCustomerApis
-func (this *AbolishCustomerApis) Validate() error {
+// Set default value for message request.AbolishDataServiceApis
+func (this *AbolishDataServiceApis) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1353,38 +1426,38 @@ func (this *AbolishCustomerApis) Validate() error {
 	return nil
 }
 
-func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("TestCustomerApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("TestDataServiceApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_api_id() error {
+func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
 	}
 	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("TestCustomerApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+		return protovalidator.FieldError1("TestDataServiceApi", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
 	}
 	return nil
 }
 
-func (this *TestCustomerApi) _xxx_xxx_Validator_Validate_request_content() error {
+func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_request_content() error {
 	if !(len(this.RequestContent) > 0) {
-		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'request_content' must be greater than '0'", protovalidator.StringByteLenToString(this.RequestContent))
+		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'request_content' must be greater than '0'", protovalidator.StringByteLenToString(this.RequestContent))
 	}
 	if !(len(this.RequestContent) <= 20000) {
-		return protovalidator.FieldError1("TestCustomerApi", "the byte length of field 'request_content' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.RequestContent))
+		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'request_content' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.RequestContent))
 	}
 	return nil
 }
 
-// Set default value for message request.TestCustomerApi
-func (this *TestCustomerApi) Validate() error {
+// Set default value for message request.TestDataServiceApi
+func (this *TestDataServiceApi) Validate() error {
 	if this == nil {
 		return nil
 	}

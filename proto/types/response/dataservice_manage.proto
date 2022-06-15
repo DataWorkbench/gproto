@@ -63,7 +63,7 @@ message CreateApiConfig {
   string id = 1 ;
 }
 
-message DescribeApiVersion {
+message DescribeDataServiceApiVersion {
   // @inject_tag: json:"api_version"
   model.ApiVersion api_version = 1;
   // @inject_tag: json:"request_params"
@@ -72,7 +72,7 @@ message DescribeApiVersion {
   repeated model.ApiResponseParams response_params = 3;
 }
 
-message ListApiVersions {
+message ListDataServiceApiVersions {
   // @inject_tag: json:"infos"
   repeated model.ApiVersion infos = 1;
   // @inject_tag: json:"total"
@@ -81,7 +81,7 @@ message ListApiVersions {
   bool has_more = 3;
 }
 
-message TestCustomerApi {
+message TestDataServiceApi {
   // @inject_tag: json:"logs"
   string logs = 1 ;
   // @inject_tag: json:"response_content"

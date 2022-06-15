@@ -70,8 +70,8 @@ func (this *CreateApiConfig) SetDefaults() {
 	return
 }
 
-// Set default value for message response.DescribeApiVersion
-func (this *DescribeApiVersion) SetDefaults() {
+// Set default value for message response.DescribeDataServiceApiVersion
+func (this *DescribeDataServiceApiVersion) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -83,16 +83,16 @@ func (this *DescribeApiVersion) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListApiVersions
-func (this *ListApiVersions) SetDefaults() {
+// Set default value for message response.ListDataServiceApiVersions
+func (this *ListDataServiceApiVersions) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.TestCustomerApi
-func (this *TestCustomerApi) SetDefaults() {
+// Set default value for message response.TestDataServiceApi
+func (this *TestDataServiceApi) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -232,15 +232,17 @@ message WizardResponseParameters {
   string param_name = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }   ];
 }
 
-message ListApiVersions {
+message ListDataServiceApiVersions {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
-  string api_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" }  ];
+  string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" }  ];
   // @inject_tag: json:"limit" form:"limit"
-  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // @inject_tag: json:"offset" form:"offset"
-  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+  int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
   // @inject_tag: json:"sort_by" form:"sort_by"
-  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "created", "updated"] } ];
+  string sort_by = 5 [ (validator.field).tags.string = { in: ["", "id", "created", "updated"] } ];
 }
 
 message ListPublishedApis {
@@ -260,28 +262,39 @@ message ListPublishedApis {
   string name = 7;
 }
 
-message DescribeApiVersion{
+message DescribeDataServiceApiVersion{
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+  string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
   // @inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
-  string version_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
 }
 
-message PublishCustomerApi {
+message RepublishDataServiceApi{
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+  string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
+  // @inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+}
+
+message PublishDataServiceApi {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
 }
 
-message AbolishCustomerApis {
+message AbolishDataServiceApis {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_ids"
   repeated string api_ids = 2  [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsa-" } } } ];
 }
 
-message TestCustomerApi {
+message TestDataServiceApi {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"

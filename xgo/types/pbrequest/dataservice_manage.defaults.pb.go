@@ -155,8 +155,8 @@ func (this *WizardResponseParameters) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListApiVersions
-func (this *ListApiVersions) SetDefaults() {
+// Set default value for message request.ListDataServiceApiVersions
+func (this *ListDataServiceApiVersions) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -177,32 +177,40 @@ func (this *ListPublishedApis) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DescribeApiVersion
-func (this *DescribeApiVersion) SetDefaults() {
+// Set default value for message request.DescribeDataServiceApiVersion
+func (this *DescribeDataServiceApiVersion) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.PublishCustomerApi
-func (this *PublishCustomerApi) SetDefaults() {
+// Set default value for message request.RepublishDataServiceApi
+func (this *RepublishDataServiceApi) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.AbolishCustomerApis
-func (this *AbolishCustomerApis) SetDefaults() {
+// Set default value for message request.PublishDataServiceApi
+func (this *PublishDataServiceApi) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.TestCustomerApi
-func (this *TestCustomerApi) SetDefaults() {
+// Set default value for message request.AbolishDataServiceApis
+func (this *AbolishDataServiceApis) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.TestDataServiceApi
+func (this *TestDataServiceApi) SetDefaults() {
 	if this == nil {
 		return
 	}
