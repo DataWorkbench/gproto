@@ -135,5 +135,5 @@ message Notification{
   int64 created_at = 5;
   int64 updated_at = 6;
   string user_id = 7;
-  string notification_id = 8;
+  int64 id = 8;
 }
