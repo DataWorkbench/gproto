@@ -97,12 +97,12 @@ message UpdateNotification{
   string recipient = 2;
   string note = 3;
   string email = 4;
-  string notification_id = 6;
+  int64 id = 6;
 }
 
 message DeleteNotification{
   string user_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "usr-" } ];
-  string notification_id = 2;
+  int64 id = 2;
 }
 
 message GetNotifications{
