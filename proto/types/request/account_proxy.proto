@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestAccountProxy";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+message DescribeAccessKeyByProxy {
+  string access_key_id = 1;
+}
+
+message ListUsersByProxy {
+  repeated string users = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, } ];
+  int32 limit = 2;
+  int32 offset = 3 ;
+}
+
+message ListNotificationsByProxy {
+  // The user id.
+  // @inject_tag: json:"owner" swaggerignore:"true"
+  string owner = 1;
+
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // @inject_tag: json:"nf_list_ids" swaggerignore:"true"
+  repeated string nf_list_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+}
+

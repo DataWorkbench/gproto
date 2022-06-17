@@ -10,12 +10,12 @@ option java_package = "com.dataomnis.gproto.types.pbresponse";
 option java_outer_classname = "PBResponseNotifier";
 option java_multiple_files = false;
 
-import "proto/types/model/notifier.proto";
+//import "proto/types/model/notifier.proto";
 
-message ListNotifications {
-  // @inject_tag: json:"notification_lists"
-  repeated model.NotificationList notification_lists = 1;
-
-  // @inject_tag: json:"total"
-  int32 total = 2;
-}
+//message ListNotifications {
+//  // @inject_tag: json:"notification_lists"
+//  repeated model.NotificationList notification_lists = 1;
+//
+//  // @inject_tag: json:"total"
+//  int32 total = 2;
+//}

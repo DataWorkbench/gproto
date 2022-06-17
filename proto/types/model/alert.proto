@@ -14,7 +14,8 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-import "proto/types/model/notifier.proto";
+//import "proto/types/model/notifier.proto";
+import "proto/types/model/account.proto";
 
 // The alert policy info
 message AlertPolicy {
@@ -134,7 +135,7 @@ message AlertPolicy {
   int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
 
   // @inject_tag: json:"notification_lists" gorm:"-"
-  repeated NotificationList notification_lists = 14;
+  repeated model.NotificationList notification_lists = 14;
 }
 
 // AlertPolicyMapping for record the relationships between alert policy and monitor object.

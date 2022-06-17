@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcaccount";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcaccount";
+// File name of class.
+option java_outer_classname = "PBSvcAccountProxy";
+option java_multiple_files = false;
+
+import "proto/types/request/account_proxy.proto";
+import "proto/types/response/account_proxy.proto";
+
+service AccountProxy {
+  rpc ListUsersByProxy(request.ListUsersByProxy) returns (response.ListUsersByProxy) {}
+  rpc DescribeAccessKeyByProxy(request.DescribeAccessKeyByProxy) returns (response.DescribeAccessKeyByProxy) {}
+  rpc ListNotificationsByProxy(request.ListNotificationsByProxy) returns (response.ListNotificationsByProxy) {}
+}

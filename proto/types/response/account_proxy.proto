@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseAccountProxy";
+option java_multiple_files = false;
+
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+import "proto/types/model/account.proto";
+
+message DescribeAccessKeyByProxy {
+  model.AccessKey key_set = 1;
+}
+
+message ListUsersByProxy {
+  repeated model.User user_set = 1;
+  int64 total_count = 2;
+}
+
+message ListNotificationsByProxy {
+  // @inject_tag: json:"notification_lists"
+  repeated model.NotificationList notification_lists = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+}
+
